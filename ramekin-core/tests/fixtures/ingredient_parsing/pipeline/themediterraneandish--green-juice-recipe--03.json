@@ -1,15 +1,13 @@
 {
   "raw": "1 Granny smith apple (or any large apple)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Granny smith apple (or any large apple)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Granny smith apple (or any large apple)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

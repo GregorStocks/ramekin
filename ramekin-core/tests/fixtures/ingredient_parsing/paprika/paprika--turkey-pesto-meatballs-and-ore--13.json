@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chicken or vegetable broth (see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken or vegetable broth (see Note)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken or vegetable broth (see Note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

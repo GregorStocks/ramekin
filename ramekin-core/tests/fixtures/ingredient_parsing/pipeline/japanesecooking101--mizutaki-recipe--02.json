@@ -1,15 +1,13 @@
 {
   "raw": "4  white fish filets (cut into 2\"-3\")",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white fish filets (cut into 2\"-3\")",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white fish filets (cut into 2\"-3\")",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

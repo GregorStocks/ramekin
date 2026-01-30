@@ -1,15 +1,13 @@
 {
   "raw": "2  naval oranges, (plus zest)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "naval oranges, (plus zest)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "naval oranges, (plus zest)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

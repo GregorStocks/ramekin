@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp green onions (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "green onions",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped"
   }
 }

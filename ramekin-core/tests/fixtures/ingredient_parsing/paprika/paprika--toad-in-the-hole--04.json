@@ -1,23 +1,21 @@
 {
   "raw": "4 3/4 ounces whole milk (135 g; 1/2 cup plus 1 tablespoon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "4 3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "135",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "4 3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "135",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

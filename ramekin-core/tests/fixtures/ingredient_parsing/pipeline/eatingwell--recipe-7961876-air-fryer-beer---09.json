@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup beer, preferably lager",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beer, preferably lager",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beer, preferably lager",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

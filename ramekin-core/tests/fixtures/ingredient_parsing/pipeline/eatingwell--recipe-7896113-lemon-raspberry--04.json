@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup whole-milk ricotta cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-milk ricotta cheese",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-milk ricotta cheese",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

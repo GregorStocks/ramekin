@@ -1,10 +1,8 @@
 {
   "raw": "shaved Parmigiano Reggiano to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shaved Parmigiano Reggiano to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "shaved Parmigiano Reggiano to taste",
+    "measurements": [],
+    "note": null
   }
 }

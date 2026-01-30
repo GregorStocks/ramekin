@@ -1,19 +1,17 @@
 {
   "raw": "1.7 ounce Zesty Italian Dressing Mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Zesty Italian Dressing Mix",
-      "measurements": [
-        {
-          "amount": "1.7",
-          "unit": "oz"
-        },
-        {
-          "amount": "48",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Zesty Italian Dressing Mix",
+    "measurements": [
+      {
+        "amount": "1.7",
+        "unit": "oz"
+      },
+      {
+        "amount": "48",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

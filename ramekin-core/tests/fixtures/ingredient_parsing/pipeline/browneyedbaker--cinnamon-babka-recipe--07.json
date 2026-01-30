@@ -1,15 +1,13 @@
 {
   "raw": "½ cup whole milk (heated to 110 degrees F)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk (heated to 110 degrees F)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk (heated to 110 degrees F)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

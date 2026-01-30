@@ -1,23 +1,21 @@
 {
   "raw": "1 fluid ounce (30 ml) fresh espresso or 1 1/2 fluid ounces (45 ml) fresh strong coffee from a moka pot or cold brew concentrate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh espresso",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "fl oz"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": "or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate"
-    }
+  "expected": {
+    "item": "fresh espresso",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "fl oz"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": "or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate"
   }
 }

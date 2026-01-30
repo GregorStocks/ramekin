@@ -1,15 +1,13 @@
 {
   "raw": "6 cups baby kale",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby kale",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby kale",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

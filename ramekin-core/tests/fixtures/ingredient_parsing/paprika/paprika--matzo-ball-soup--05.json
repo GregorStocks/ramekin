@@ -1,15 +1,13 @@
 {
   "raw": "2 onions, unpeeled and quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "unpeeled and quartered"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "unpeeled and quartered"
   }
 }

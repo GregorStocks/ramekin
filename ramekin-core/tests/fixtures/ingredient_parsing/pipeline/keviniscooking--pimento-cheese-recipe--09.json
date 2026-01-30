@@ -1,15 +1,13 @@
 {
   "raw": "2 slices  cooked bacon (crumbled (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked bacon",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": "crumbled (optional"
-    }
+  "expected": {
+    "item": "cooked bacon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slice"
+      }
+    ],
+    "note": "crumbled (optional"
   }
 }

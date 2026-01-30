@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (31g) all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "31",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "31",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

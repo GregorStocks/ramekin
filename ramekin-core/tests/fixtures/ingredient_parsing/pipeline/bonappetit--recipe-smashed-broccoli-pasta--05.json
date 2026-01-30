@@ -1,15 +1,13 @@
 {
   "raw": "8 oil-packed anchovy fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil-packed anchovy fillets",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil-packed anchovy fillets",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

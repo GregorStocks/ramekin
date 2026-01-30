@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (28 g)&nbsp;sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

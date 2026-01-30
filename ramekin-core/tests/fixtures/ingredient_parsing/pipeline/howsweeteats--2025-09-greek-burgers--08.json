@@ -1,15 +1,13 @@
 {
   "raw": "½ cup grated cucumber",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated cucumber",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

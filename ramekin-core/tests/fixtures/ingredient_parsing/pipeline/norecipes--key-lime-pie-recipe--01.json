@@ -1,15 +1,13 @@
 {
   "raw": "130 grams graham crackers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "graham crackers",
-      "measurements": [
-        {
-          "amount": "130",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "graham crackers",
+    "measurements": [
+      {
+        "amount": "130",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pineapple (fresh, frozen, or canned, drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "fresh, frozen, or canned, drained"
-    }
+  "expected": {
+    "item": "pineapple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "fresh, frozen, or canned, drained"
   }
 }

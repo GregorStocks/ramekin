@@ -1,15 +1,13 @@
 {
   "raw": "Pinch of black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

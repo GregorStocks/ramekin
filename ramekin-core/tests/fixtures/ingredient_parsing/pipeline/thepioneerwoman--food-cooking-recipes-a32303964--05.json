@@ -1,15 +1,13 @@
 {
   "raw": "2 oranges, thinly sliced and quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oranges",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced and quartered"
-    }
+  "expected": {
+    "item": "oranges",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced and quartered"
   }
 }

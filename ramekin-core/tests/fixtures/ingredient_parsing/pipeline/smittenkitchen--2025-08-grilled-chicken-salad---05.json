@@ -1,10 +1,8 @@
 {
   "raw": "Finely grated zest and juice of 2 medium/large limes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Finely grated zest and juice of 2 medium/large limes",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Finely grated zest and juice of 2 medium/large limes",
+    "measurements": [],
+    "note": null
   }
 }

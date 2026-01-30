@@ -1,15 +1,13 @@
 {
   "raw": "1  bunch Kikuna (cut 2\" long)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kikuna (cut 2\" long)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kikuna (cut 2\" long)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

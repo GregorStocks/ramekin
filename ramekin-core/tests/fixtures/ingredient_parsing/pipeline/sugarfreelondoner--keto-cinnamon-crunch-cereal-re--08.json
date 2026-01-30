@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp xanthan gum (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "xanthan gum",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "xanthan gum",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 teaspoons toasted sesame oil (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame oil",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "toasted sesame oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Chopped scallion and cilantro ((to garnish))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped scallion and cilantro (to garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped scallion and cilantro (to garnish)",
+    "measurements": [],
+    "note": null
   }
 }

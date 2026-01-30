@@ -1,15 +1,13 @@
 {
   "raw": "1  large yellow onions, (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onions",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "chopped"
   }
 }

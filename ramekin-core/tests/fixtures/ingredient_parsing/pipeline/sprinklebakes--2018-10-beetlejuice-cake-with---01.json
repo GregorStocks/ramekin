@@ -1,19 +1,17 @@
 {
   "raw": "3 cups 350g cake flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cake flour",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

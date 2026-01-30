@@ -1,10 +1,8 @@
 {
   "raw": "vegetable or canola oil ((for brushing))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable or canola oil (for brushing)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable or canola oil (for brushing)",
+    "measurements": [],
+    "note": null
   }
 }

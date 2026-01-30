@@ -1,15 +1,13 @@
 {
   "raw": "2  kiwi fruit, (peeled and sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kiwi fruit",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled and sliced"
-    }
+  "expected": {
+    "item": "kiwi fruit",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and sliced"
   }
 }

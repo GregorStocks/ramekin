@@ -1,19 +1,17 @@
 {
   "raw": "2 (12 fluid ounce) cans evaporated skim milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "evaporated skim milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "12",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "evaporated skim milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "12",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 button mushrooms, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "button mushrooms",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "button mushrooms",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

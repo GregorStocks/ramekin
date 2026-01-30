@@ -1,15 +1,13 @@
 {
   "raw": "1  carrot, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrot, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

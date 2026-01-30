@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds littleneck clams",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "littleneck clams",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "littleneck clams",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

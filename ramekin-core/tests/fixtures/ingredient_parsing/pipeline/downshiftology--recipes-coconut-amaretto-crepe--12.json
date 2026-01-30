@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup coconut cream ((from the top of a chilled can of full fat coconut milk))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut cream",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "from the top of a chilled can of full fat coconut milk"
-    }
+  "expected": {
+    "item": "coconut cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "from the top of a chilled can of full fat coconut milk"
   }
 }

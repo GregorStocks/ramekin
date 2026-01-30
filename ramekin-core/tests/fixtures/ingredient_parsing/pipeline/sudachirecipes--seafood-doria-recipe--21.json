@@ -1,15 +1,13 @@
 {
   "raw": "½  chicken bouillon cube",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken bouillon cube",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken bouillon cube",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  handfuls of fresh baby arugula or spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh baby arugula or spinach",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh baby arugula or spinach",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

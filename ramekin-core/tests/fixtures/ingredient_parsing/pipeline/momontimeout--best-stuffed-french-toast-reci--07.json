@@ -1,15 +1,13 @@
 {
   "raw": "10 slices Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 medium white onion, quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "quartered"
   }
 }

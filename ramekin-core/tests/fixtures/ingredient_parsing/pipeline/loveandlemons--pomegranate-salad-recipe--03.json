@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces halloumi, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "halloumi",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "halloumi",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "cubed"
   }
 }

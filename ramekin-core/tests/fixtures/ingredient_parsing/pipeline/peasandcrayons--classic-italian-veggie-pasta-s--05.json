@@ -1,15 +1,13 @@
 {
   "raw": "1/2  a large seedless cucumber",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a large seedless cucumber",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "a large seedless cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

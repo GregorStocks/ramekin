@@ -1,19 +1,17 @@
 {
   "raw": "12 oz cherry tomatoes, cut into quarters",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes, cut into quarters",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry tomatoes, cut into quarters",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

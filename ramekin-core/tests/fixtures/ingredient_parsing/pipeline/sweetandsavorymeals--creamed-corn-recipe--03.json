@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons white sugar (brown sugar can be used for a deeper caramely flavor)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white sugar (brown sugar can be used for a deeper caramely flavor)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white sugar (brown sugar can be used for a deeper caramely flavor)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

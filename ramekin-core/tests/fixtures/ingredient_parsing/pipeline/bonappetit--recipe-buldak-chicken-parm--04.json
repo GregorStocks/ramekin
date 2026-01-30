@@ -1,10 +1,8 @@
 {
   "raw": "mild chile flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mild chile flakes",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "mild chile flakes",
+    "measurements": [],
+    "note": null
   }
 }

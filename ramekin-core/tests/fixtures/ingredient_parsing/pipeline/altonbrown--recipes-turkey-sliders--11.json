@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ground dark turkey meat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground dark turkey meat",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground dark turkey meat",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

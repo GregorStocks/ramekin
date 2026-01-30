@@ -1,15 +1,13 @@
 {
   "raw": "1 small onion, chopped small",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "chopped small"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "chopped small"
   }
 }

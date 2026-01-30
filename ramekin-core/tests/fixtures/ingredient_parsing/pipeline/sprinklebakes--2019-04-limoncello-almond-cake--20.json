@@ -1,19 +1,17 @@
 {
   "raw": "6 oz. bright white candy melts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bright white candy melts",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bright white candy melts",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

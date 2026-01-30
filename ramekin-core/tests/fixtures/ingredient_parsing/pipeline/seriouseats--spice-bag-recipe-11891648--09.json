@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Sichuan chili flakes, see notes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sichuan chili flakes, see notes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sichuan chili flakes, see notes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

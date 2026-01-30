@@ -1,15 +1,13 @@
 {
   "raw": "1/2  onion (, diced (or 2 medium shallots))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "diced (or 2 medium shallots"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "diced (or 2 medium shallots"
   }
 }

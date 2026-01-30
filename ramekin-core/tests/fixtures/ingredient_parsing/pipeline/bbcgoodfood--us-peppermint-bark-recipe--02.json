@@ -1,19 +1,17 @@
 {
   "raw": "3½ oz white chocolate broken into chunks, or use melts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white chocolate broken into chunks, or use melts",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "99",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white chocolate broken into chunks, or use melts",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "99",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

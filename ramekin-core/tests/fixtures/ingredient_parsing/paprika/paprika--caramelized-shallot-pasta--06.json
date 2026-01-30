@@ -1,23 +1,21 @@
 {
   "raw": "1 (2-ounce) can anchovy fillets (about 12), drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anchovy fillets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "anchovy fillets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "drained"
   }
 }

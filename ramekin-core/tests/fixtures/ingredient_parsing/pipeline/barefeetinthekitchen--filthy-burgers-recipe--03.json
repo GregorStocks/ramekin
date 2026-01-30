@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds ground chuck or ground beef (between 80/20 - 75/25 lean)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground chuck or ground beef (between 80/20 - 75/25 lean)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground chuck or ground beef (between 80/20 - 75/25 lean)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

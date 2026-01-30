@@ -1,15 +1,13 @@
 {
   "raw": "15-ounce can red kidney beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounce can red kidney beans",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-ounce can red kidney beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

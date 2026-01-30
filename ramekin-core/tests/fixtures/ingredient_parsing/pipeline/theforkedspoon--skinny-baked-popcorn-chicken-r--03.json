@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoon hot sauce ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "hot sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

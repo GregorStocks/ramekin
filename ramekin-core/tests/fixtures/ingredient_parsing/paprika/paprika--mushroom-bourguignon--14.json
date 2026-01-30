@@ -1,10 +1,8 @@
 {
   "raw": "Sour cream and chopped chives or parsley, for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sour cream and chopped chives or parsley, for garnish",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sour cream and chopped chives or parsley, for garnish",
+    "measurements": [],
+    "note": "optional"
   }
 }

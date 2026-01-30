@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Paprika",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Paprika",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

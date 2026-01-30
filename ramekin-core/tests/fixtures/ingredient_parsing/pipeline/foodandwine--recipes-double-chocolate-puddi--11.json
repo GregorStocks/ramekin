@@ -1,10 +1,8 @@
 {
   "raw": "Lightly whipped cream, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lightly whipped cream",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Lightly whipped cream",
+    "measurements": [],
+    "note": "for serving"
   }
 }

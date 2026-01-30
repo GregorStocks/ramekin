@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons natural unsweetened cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "natural unsweetened cocoa powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "natural unsweetened cocoa powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

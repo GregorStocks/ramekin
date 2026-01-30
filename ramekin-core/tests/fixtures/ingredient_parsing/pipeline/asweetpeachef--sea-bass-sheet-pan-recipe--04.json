@@ -1,15 +1,13 @@
 {
   "raw": "2 6- oz fillets sea bass",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6- oz fillets sea bass",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6- oz fillets sea bass",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

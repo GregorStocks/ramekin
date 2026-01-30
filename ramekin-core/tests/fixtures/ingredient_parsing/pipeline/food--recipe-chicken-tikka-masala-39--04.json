@@ -1,15 +1,13 @@
 {
   "raw": "4   tablespoons    yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yogurt",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yogurt",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

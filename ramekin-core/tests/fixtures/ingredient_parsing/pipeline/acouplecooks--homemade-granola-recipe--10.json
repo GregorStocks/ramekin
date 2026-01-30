@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup slivered almonds (or any nuts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slivered almonds (or any nuts)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slivered almonds (or any nuts)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

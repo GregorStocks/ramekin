@@ -1,19 +1,17 @@
 {
   "raw": "8 oz Cream Cheese (, room temp.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cream Cheese (, room temp.)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cream Cheese (, room temp.)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

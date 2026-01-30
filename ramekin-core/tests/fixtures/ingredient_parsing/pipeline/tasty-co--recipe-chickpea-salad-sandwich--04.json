@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons vegan mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegan mayonnaise",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegan mayonnaise",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

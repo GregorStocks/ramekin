@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons graham cracker crumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "graham cracker crumbs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "graham cracker crumbs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

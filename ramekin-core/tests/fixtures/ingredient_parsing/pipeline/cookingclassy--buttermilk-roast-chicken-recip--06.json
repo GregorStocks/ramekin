@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp minced fresh rosemary leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced fresh rosemary leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced fresh rosemary leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

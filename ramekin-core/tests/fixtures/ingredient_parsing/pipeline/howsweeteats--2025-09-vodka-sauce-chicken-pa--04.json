@@ -1,15 +1,13 @@
 {
   "raw": "½ cup finely grated parmesan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated parmesan",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated parmesan",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

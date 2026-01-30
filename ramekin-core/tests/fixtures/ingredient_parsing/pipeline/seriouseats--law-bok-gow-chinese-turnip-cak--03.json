@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon plus 2 teaspoons brown sugar, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 tablespoon plus 2 teaspoons brown sugar, divided",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 2 teaspoons brown sugar, divided"
-    }
+  "expected": {
+    "item": "1 tablespoon plus 2 teaspoons brown sugar, divided",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus 2 teaspoons brown sugar, divided"
   }
 }

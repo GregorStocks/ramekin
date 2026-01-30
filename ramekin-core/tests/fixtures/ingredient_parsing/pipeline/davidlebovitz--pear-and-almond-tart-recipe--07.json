@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 teaspoons rum (Calvados, or kirsch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rum (Calvados, or kirsch)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rum (Calvados, or kirsch)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

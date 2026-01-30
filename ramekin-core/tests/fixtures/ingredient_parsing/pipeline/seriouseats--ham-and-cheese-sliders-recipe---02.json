@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) sweet relish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet relish",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet relish",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

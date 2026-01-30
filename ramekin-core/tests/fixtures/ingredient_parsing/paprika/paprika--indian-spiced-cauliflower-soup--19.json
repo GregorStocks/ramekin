@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup cooked basmati or other long-grain white rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked basmati or other long-grain white rice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked basmati or other long-grain white rice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

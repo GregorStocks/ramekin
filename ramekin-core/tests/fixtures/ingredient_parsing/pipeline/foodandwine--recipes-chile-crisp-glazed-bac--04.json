@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon crushed cumin seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed cumin seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed cumin seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Basil and parsley leaves, torn&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Basil and parsley leaves, torn",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Basil and parsley leaves, torn",
+    "measurements": [],
+    "note": null
   }
 }

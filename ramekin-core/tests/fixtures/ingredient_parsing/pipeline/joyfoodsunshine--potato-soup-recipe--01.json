@@ -1,19 +1,17 @@
 {
   "raw": "10 oz bacon ((diced small))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "diced small"
-    }
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "diced small"
   }
 }

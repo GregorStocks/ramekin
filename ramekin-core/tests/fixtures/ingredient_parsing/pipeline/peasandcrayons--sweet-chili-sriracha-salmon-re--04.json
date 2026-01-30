@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP low sodium soy sauce ((GF or regular))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low sodium soy sauce (GF or regular)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low sodium soy sauce (GF or regular)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

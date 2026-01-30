@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons very thinly sliced fresh mint leaves (from about 5 sprigs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very thinly sliced fresh mint leaves (from about 5 sprigs)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "very thinly sliced fresh mint leaves (from about 5 sprigs)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

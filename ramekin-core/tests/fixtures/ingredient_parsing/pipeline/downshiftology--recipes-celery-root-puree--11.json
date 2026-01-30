@@ -1,15 +1,13 @@
 {
   "raw": "4 cups celery root (peeled and diced into 1/2 inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery root",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "peeled and diced into 1/2 inch cubes"
-    }
+  "expected": {
+    "item": "celery root",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "peeled and diced into 1/2 inch cubes"
   }
 }

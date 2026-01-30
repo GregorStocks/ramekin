@@ -1,15 +1,13 @@
 {
   "raw": "1 lb sweet red cherries (fresh or frozen, pitted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet red cherries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "fresh or frozen, pitted"
-    }
+  "expected": {
+    "item": "sweet red cherries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "fresh or frozen, pitted"
   }
 }

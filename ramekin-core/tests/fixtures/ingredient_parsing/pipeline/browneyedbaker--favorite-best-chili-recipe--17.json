@@ -1,19 +1,17 @@
 {
   "raw": "12 ounce bottle mild lager, such as Budweiser",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bottle mild lager, such as Budweiser",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bottle mild lager, such as Budweiser",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

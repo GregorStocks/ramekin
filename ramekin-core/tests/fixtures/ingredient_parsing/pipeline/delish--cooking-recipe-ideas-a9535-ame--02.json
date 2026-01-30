@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 oz. Campari",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Campari",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Campari",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

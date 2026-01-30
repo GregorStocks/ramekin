@@ -1,15 +1,13 @@
 {
   "raw": "1 small head cabbage, preferably Savoy or Napa (for their softness)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head cabbage, preferably Savoy or Napa (for their softness)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head cabbage, preferably Savoy or Napa (for their softness)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 (28-oz) cans whole peeled tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole peeled tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "28",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole peeled tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

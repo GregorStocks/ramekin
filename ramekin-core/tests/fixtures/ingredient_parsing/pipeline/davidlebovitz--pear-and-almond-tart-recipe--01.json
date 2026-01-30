@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces (170g) almond paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond paste",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond paste",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

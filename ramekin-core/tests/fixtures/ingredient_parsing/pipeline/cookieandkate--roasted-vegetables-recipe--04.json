@@ -1,15 +1,13 @@
 {
   "raw": "1 small red onion, cut into ½”-wide wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion, cut into 1/2”-wide wedges",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red onion, cut into 1/2”-wide wedges",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

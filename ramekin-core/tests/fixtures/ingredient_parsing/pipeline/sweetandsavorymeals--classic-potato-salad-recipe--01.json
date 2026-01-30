@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds russet potatoes (peeled and cut into 1-inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "russet potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and cut into 1-inch cubes"
-    }
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and cut into 1-inch cubes"
   }
 }

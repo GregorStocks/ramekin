@@ -1,15 +1,13 @@
 {
   "raw": "5  plump dates, pitted and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plump dates",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "pitted and chopped"
-    }
+  "expected": {
+    "item": "plump dates",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "pitted and chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 small boiled yukon gold potato, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boiled yukon gold potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "boiled yukon gold potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced"
   }
 }

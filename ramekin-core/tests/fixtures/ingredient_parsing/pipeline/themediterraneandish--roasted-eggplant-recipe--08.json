@@ -1,10 +1,8 @@
 {
   "raw": "Make this Tahini Sauce Recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Make this Tahini Sauce Recipe",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Make this Tahini Sauce Recipe",
+    "measurements": [],
+    "note": null
   }
 }

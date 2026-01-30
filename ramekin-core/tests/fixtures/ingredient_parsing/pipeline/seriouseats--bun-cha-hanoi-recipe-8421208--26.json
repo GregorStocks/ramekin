@@ -1,15 +1,13 @@
 {
   "raw": "1 head butter lettuce, leaves picked and washed&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": "leaves picked and washed"
-    }
+  "expected": {
+    "item": "butter lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": "leaves picked and washed"
   }
 }

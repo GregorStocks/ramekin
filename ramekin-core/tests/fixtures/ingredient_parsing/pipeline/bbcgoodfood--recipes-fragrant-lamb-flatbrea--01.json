@@ -1,10 +1,8 @@
 {
   "raw": "half a 500g pack  bread mix - or make your own (see below)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "half a 500g pack  bread mix - or make your own (see below)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "half a 500g pack  bread mix - or make your own (see below)",
+    "measurements": [],
+    "note": null
   }
 }

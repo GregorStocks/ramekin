@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces dried rice vermicelli",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried rice vermicelli",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried rice vermicelli",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

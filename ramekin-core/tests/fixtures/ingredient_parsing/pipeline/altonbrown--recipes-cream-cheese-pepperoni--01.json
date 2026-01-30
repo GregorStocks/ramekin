@@ -1,15 +1,13 @@
 {
   "raw": "20  pitted Deglet Noor dates",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted Deglet Noor dates",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitted Deglet Noor dates",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

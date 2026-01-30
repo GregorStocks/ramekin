@@ -1,15 +1,13 @@
 {
   "raw": "100g warm filtered water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm filtered water",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm filtered water",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

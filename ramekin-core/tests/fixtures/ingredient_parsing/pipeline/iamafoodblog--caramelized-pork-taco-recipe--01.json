@@ -1,15 +1,13 @@
 {
   "raw": "1 lb boneless centre cut pork loin cut into thin strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless centre cut pork loin cut into thin strips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless centre cut pork loin cut into thin strips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp Japanese mayonnaise (or regular mayonnaise)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese mayonnaise (or regular mayonnaise)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese mayonnaise (or regular mayonnaise)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

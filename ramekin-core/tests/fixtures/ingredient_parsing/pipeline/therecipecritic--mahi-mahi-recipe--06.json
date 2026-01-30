@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons fresh lime juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

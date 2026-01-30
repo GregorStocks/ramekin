@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cup (225 g) frozen peas, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen peas",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen peas",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed"
   }
 }

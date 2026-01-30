@@ -1,15 +1,13 @@
 {
   "raw": "3- ounces fresh raspberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "- ounces fresh raspberries",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "- ounces fresh raspberries",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

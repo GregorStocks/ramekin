@@ -1,15 +1,13 @@
 {
   "raw": "1½ to 2 pounds fresh peaches (peeled, pitted and chopped finely into tiny pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 2 pounds fresh peaches",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": null
-        }
-      ],
-      "note": "peeled, pitted and chopped finely into tiny pieces"
-    }
+  "expected": {
+    "item": "to 2 pounds fresh peaches",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": "peeled, pitted and chopped finely into tiny pieces"
   }
 }

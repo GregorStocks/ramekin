@@ -1,10 +1,8 @@
 {
   "raw": "Dragee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dragee",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Dragee",
+    "measurements": [],
+    "note": null
   }
 }

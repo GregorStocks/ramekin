@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (135 grams) fresh or frozen corn kernels, no need to defrost",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen corn kernels, no need to defrost",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "135",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen corn kernels, no need to defrost",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "135",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

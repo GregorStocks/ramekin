@@ -1,10 +1,8 @@
 {
   "raw": "Graham cracker crumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Graham cracker crumbs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Graham cracker crumbs",
+    "measurements": [],
+    "note": null
   }
 }

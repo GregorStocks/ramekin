@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup orange juice, freshly squeezed if you are up for it",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange juice",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "freshly squeezed if you are up for it"
-    }
+  "expected": {
+    "item": "orange juice",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "freshly squeezed if you are up for it"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces  oyster mushrooms, tough ends removed and torn into generous bite-sized pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oyster mushrooms, tough ends removed and torn into generous bite-sized pieces",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oyster mushrooms, tough ends removed and torn into generous bite-sized pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

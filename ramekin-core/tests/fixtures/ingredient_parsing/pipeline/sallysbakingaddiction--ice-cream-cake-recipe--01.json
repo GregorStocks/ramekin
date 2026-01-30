@@ -1,19 +1,17 @@
 {
   "raw": "10 Oreo cookies (110g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oreo cookies",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        },
-        {
-          "amount": "110",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Oreo cookies",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      },
+      {
+        "amount": "110",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

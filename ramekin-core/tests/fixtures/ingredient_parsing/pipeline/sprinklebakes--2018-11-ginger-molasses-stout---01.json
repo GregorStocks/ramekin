@@ -1,19 +1,17 @@
 {
   "raw": "2 cups 500ml Guinness extra stout",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Guinness extra stout",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "500",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Guinness extra stout",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "500",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1/2 pound (2 sticks, 225 g) cold, unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold, unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "2",
-          "unit": "stick"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold, unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "2",
+        "unit": "stick"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

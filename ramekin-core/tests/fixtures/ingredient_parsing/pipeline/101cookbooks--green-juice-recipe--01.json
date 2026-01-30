@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  kale leaves, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kale leaves",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "kale leaves",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": "to taste"
   }
 }

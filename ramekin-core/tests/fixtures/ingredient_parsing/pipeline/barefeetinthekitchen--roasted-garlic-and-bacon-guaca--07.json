@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon fresh lime juice (about 1 lime's worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

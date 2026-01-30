@@ -1,15 +1,13 @@
 {
   "raw": "2 cups homemade beef stock or homemade chicken stock or store-bought low-sodium chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade beef stock or homemade chicken stock or store-bought low-sodium chicken broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade beef stock or homemade chicken stock or store-bought low-sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

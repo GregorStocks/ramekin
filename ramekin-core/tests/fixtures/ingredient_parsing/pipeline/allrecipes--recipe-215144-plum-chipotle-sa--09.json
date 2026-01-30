@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon roasted garlic seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted garlic seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted garlic seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

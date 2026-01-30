@@ -1,10 +1,8 @@
 {
   "raw": "Ice, for stirring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ice, for stirring",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ice, for stirring",
+    "measurements": [],
+    "note": null
   }
 }

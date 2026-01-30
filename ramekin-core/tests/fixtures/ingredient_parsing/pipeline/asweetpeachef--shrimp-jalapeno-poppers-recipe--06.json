@@ -1,15 +1,13 @@
 {
   "raw": "1 cup full fat greek yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full fat greek yogurt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full fat greek yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

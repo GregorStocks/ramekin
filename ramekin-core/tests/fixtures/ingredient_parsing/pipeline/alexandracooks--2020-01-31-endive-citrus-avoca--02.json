@@ -1,15 +1,13 @@
 {
   "raw": "1 grapefruit",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapefruit",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapefruit",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

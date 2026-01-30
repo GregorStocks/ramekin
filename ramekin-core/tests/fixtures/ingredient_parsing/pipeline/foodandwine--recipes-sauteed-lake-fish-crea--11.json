@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons minced chives, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced chives",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "minced chives",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "for garnish"
   }
 }

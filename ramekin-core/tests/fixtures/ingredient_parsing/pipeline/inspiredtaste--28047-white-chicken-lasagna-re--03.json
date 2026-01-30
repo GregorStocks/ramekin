@@ -1,19 +1,17 @@
 {
   "raw": "4 cups (945 ml) milk, we use 2% reduced fat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk, we use 2% reduced fat",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "945",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk, we use 2% reduced fat",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "945",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

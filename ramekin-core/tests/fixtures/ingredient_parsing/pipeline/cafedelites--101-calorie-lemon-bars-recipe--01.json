@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons reduced fat butter (room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced fat butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "reduced fat butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "room temperature"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "10 ounces semisweet chocolate, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

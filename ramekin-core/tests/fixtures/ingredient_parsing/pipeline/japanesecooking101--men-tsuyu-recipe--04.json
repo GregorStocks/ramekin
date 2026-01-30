@@ -1,15 +1,13 @@
 {
   "raw": "handful of Dried Bonito Flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dried Bonito Flakes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dried Bonito Flakes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  square Aburaage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "square Aburaage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "square Aburaage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. buttermilk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

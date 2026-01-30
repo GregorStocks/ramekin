@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon turmeric ((haldi))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turmeric (haldi)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turmeric (haldi)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

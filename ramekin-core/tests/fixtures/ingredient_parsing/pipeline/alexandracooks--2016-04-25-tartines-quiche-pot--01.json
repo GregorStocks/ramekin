@@ -1,10 +1,8 @@
 {
   "raw": "about a pound of red-skinned (or other) potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "about a pound of red-skinned (or other) potatoes",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "about a pound of red-skinned (or other) potatoes",
+    "measurements": [],
+    "note": null
   }
 }

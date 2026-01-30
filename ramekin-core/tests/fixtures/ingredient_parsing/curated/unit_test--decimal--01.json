@@ -1,19 +1,17 @@
 {
   "raw": "2.5 oz cream cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "2.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "71",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "71",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

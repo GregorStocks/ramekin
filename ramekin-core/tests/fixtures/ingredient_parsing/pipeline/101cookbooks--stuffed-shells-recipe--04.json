@@ -1,15 +1,13 @@
 {
   "raw": "scant 3/4 teaspoon fine grain sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine grain sea salt",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "scant tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine grain sea salt",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "scant tsp"
+      }
+    ],
+    "note": null
   }
 }

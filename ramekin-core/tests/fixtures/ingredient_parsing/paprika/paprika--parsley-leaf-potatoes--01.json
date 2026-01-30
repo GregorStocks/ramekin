@@ -1,23 +1,21 @@
 {
   "raw": "3 ounces (6 tablespoons) unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

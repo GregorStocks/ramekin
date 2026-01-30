@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup plus 3 tablespoons cornstarch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/4 cup plus 3 tablespoons cornstarch",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 3 tablespoons cornstarch"
-    }
+  "expected": {
+    "item": "1/4 cup plus 3 tablespoons cornstarch",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 3 tablespoons cornstarch"
   }
 }

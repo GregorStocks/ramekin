@@ -1,15 +1,13 @@
 {
   "raw": "140 grams pancetta (or lardons (cut into batons))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pancetta (or lardons (cut into batons)",
-      "measurements": [
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pancetta (or lardons (cut into batons)",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

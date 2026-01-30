@@ -1,15 +1,13 @@
 {
   "raw": "1-1/3 cups graham flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "graham flour",
-      "measurements": [
-        {
-          "amount": "1-1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "graham flour",
+    "measurements": [
+      {
+        "amount": "1-1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

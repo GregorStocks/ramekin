@@ -1,23 +1,21 @@
 {
   "raw": "1  packet (.25 oz. powdered gelatin)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packet",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": ".25",
-          "unit": "oz"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": ".25",
+        "unit": "oz"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

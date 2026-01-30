@@ -1,15 +1,13 @@
 {
   "raw": "1kg squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "squash",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "kg"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "squash",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "kg"
+      }
+    ],
+    "note": null
   }
 }

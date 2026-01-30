@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (56g) unsalted butter, cut into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into pieces",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "56",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter, cut into pieces",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

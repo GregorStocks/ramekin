@@ -1,23 +1,21 @@
 {
   "raw": "1 cup (225 grams or 8 ounces) unsalted butter, cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter, cut into chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

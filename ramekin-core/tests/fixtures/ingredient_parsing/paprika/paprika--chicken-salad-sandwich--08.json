@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon minced chives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced chives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced chives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

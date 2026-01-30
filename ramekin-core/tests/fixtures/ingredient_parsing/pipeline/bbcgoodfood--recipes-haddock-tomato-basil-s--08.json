@@ -1,15 +1,13 @@
 {
   "raw": "8 large  basil leaves plus a few extra for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil leaves",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "large"
-        }
-      ],
-      "note": "plus a few extra for sprinkling"
-    }
+  "expected": {
+    "item": "basil leaves",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "large"
+      }
+    ],
+    "note": "plus a few extra for sprinkling"
   }
 }

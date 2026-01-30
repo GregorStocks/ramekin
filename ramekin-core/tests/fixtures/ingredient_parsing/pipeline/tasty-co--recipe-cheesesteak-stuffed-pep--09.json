@@ -1,15 +1,13 @@
 {
   "raw": "3 large white onions, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white onions",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "white onions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "sliced"
   }
 }

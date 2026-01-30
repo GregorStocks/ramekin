@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons coriander leaves ( (cilantro chopped finely))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander leaves",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "(cilantro chopped finely"
-    }
+  "expected": {
+    "item": "coriander leaves",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "(cilantro chopped finely"
   }
 }

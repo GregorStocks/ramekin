@@ -1,15 +1,13 @@
 {
   "raw": "½ cup red wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red wine",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red wine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

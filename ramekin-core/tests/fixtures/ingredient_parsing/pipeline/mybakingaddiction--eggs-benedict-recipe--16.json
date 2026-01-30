@@ -1,10 +1,8 @@
 {
   "raw": "Steamed asparagus",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Steamed asparagus",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Steamed asparagus",
+    "measurements": [],
+    "note": null
   }
 }

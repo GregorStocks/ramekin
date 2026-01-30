@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons finely grated parmesan or pecorino romano cheese, plus more to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated parmesan or pecorino romano cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to serve"
-    }
+  "expected": {
+    "item": "finely grated parmesan or pecorino romano cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more to serve"
   }
 }

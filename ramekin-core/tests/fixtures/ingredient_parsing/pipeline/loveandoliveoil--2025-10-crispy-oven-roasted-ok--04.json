@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon togarashi (or other dry seasoning, as desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "togarashi (or other dry seasoning, as desired)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "togarashi (or other dry seasoning, as desired)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

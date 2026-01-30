@@ -1,15 +1,13 @@
 {
   "raw": "2 crispy fried quail eggs or 1 regular fried egg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crispy fried quail eggs or 1 regular fried egg",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crispy fried quail eggs or 1 regular fried egg",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

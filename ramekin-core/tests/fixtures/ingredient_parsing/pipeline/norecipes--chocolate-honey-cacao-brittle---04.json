@@ -1,19 +1,17 @@
 {
   "raw": "120 grams cacao nibs ((~1 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cacao nibs",
-      "measurements": [
-        {
-          "amount": "120",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cacao nibs",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

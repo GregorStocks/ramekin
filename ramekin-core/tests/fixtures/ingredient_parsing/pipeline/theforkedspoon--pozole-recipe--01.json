@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds pork shoulder (Boston Butt) (best with bone and well-marbled with fat, cut into large 2-inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork shoulder (Boston Butt) (best with bone and well-marbled with fat, cut into large 2-inch cubes)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork shoulder (Boston Butt) (best with bone and well-marbled with fat, cut into large 2-inch cubes)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

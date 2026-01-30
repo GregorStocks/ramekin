@@ -1,15 +1,13 @@
 {
   "raw": "100 grams cabbage ((~2 leaves, chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cabbage",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "~2 leaves, chopped"
-    }
+  "expected": {
+    "item": "cabbage",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "~2 leaves, chopped"
   }
 }

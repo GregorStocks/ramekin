@@ -1,10 +1,8 @@
 {
   "raw": "pimento",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pimento",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "pimento",
+    "measurements": [],
+    "note": null
   }
 }

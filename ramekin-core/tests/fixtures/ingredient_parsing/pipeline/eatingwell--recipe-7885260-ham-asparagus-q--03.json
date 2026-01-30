@@ -1,19 +1,17 @@
 {
   "raw": "1 pound fresh asparagus, trimmed and cut diagonally (1-inch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh asparagus",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "trimmed and cut diagonally"
-    }
+  "expected": {
+    "item": "fresh asparagus",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "trimmed and cut diagonally"
   }
 }

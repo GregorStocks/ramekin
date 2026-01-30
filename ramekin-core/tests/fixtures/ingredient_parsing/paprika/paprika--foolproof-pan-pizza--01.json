@@ -1,23 +1,21 @@
 {
   "raw": "400g bread flour (14 ounces; about 2 1/2 cups), plus more for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread flour",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        },
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for dusting"
-    }
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for dusting"
   }
 }

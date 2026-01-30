@@ -1,19 +1,17 @@
 {
   "raw": "42  saltine crackers (about 1 ½ sleeves)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "saltine crackers",
-      "measurements": [
-        {
-          "amount": "42",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "saltine crackers",
+    "measurements": [
+      {
+        "amount": "42",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

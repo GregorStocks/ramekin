@@ -1,19 +1,17 @@
 {
   "raw": "16 ounces white mushrooms (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white mushrooms",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "white mushrooms",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "quartered"
   }
 }

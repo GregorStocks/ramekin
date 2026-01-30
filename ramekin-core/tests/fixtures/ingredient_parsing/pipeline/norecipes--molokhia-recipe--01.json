@@ -1,15 +1,13 @@
 {
   "raw": "1/2 large chicken ((or 1 small about 750 grams))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken (or 1 small about 750 grams)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken (or 1 small about 750 grams)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

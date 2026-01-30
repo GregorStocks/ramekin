@@ -1,19 +1,17 @@
 {
   "raw": "3 oz fresh baby mozzarella (or feta cheese), optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh baby mozzarella (or feta cheese)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh baby mozzarella (or feta cheese)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
   }
 }

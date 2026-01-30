@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons rice wine vinegar (or white vinegar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice wine vinegar (or white vinegar)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice wine vinegar (or white vinegar)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

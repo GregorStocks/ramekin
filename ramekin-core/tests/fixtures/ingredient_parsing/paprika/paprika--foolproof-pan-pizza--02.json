@@ -1,23 +1,21 @@
 {
   "raw": "10 g kosher salt (0.35 ounces; about 2 teaspoons), plus more for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        },
-        {
-          "amount": "0.35",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more for sprinkling"
-    }
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      },
+      {
+        "amount": "0.35",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for sprinkling"
   }
 }

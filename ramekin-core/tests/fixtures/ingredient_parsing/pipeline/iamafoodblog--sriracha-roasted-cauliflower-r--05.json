@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sriracha – start with a teaspoon and adjust this to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sriracha - start with a teaspoon and adjust this to taste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sriracha - start with a teaspoon and adjust this to taste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

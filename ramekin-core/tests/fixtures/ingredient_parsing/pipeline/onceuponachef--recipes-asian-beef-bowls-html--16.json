@@ -1,10 +1,8 @@
 {
   "raw": "Shredded veggies, such as carrots, lettuce or bell peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shredded veggies, such as carrots, lettuce or bell peppers",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shredded veggies, such as carrots, lettuce or bell peppers",
+    "measurements": [],
+    "note": null
   }
 }

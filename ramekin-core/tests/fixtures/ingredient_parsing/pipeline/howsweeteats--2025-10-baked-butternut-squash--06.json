@@ -1,15 +1,13 @@
 {
   "raw": "3 cups cubed butternut squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cubed butternut squash",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cubed butternut squash",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

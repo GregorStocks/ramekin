@@ -1,10 +1,8 @@
 {
   "raw": "pork pâté, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork pâté",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "pork pâté",
+    "measurements": [],
+    "note": "to taste"
   }
 }

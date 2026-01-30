@@ -1,10 +1,8 @@
 {
   "raw": "Mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mayonnaise",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mayonnaise",
+    "measurements": [],
+    "note": null
   }
 }

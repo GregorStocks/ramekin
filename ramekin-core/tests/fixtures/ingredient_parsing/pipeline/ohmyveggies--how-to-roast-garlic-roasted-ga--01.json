@@ -1,15 +1,13 @@
 {
   "raw": "1  medium head garlic (roasted according to instructions above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head garlic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "roasted according to instructions above"
-    }
+  "expected": {
+    "item": "head garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "roasted according to instructions above"
   }
 }

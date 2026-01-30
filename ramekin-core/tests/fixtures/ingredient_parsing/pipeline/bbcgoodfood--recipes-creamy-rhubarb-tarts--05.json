@@ -1,15 +1,13 @@
 {
   "raw": "2 sticks rhubarb thinly sliced on an angle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rhubarb thinly sliced on an angle",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rhubarb thinly sliced on an angle",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

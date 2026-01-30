@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp gelatin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gelatin",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gelatin",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

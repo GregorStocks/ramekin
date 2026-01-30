@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons olive or vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive or vegetable oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive or vegetable oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Pita",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pita",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pita",
+    "measurements": [],
+    "note": null
   }
 }

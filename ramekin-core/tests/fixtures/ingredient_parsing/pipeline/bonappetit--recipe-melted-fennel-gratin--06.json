@@ -1,15 +1,13 @@
 {
   "raw": "4 small dried bay leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried bay leaves",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried bay leaves",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 large eggs, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "divided"
   }
 }

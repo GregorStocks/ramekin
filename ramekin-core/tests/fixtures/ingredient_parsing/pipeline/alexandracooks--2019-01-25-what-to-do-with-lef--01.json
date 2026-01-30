@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup finely minced shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely minced shallots",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely minced shallots",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

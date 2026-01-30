@@ -1,10 +1,8 @@
 {
   "raw": "Lime mayonnaise, recipe below",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lime mayonnaise, recipe below",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Lime mayonnaise, recipe below",
+    "measurements": [],
+    "note": null
   }
 }

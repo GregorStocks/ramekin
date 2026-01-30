@@ -1,15 +1,13 @@
 {
   "raw": "2 cups button mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "button mushrooms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "button mushrooms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

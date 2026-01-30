@@ -1,15 +1,13 @@
 {
   "raw": "1 pound slender asparagus spears, trimmed, cut into 1- to 1 1/2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slender asparagus spears, trimmed, cut into 1- to 1 1/2-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slender asparagus spears, trimmed, cut into 1- to 1 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

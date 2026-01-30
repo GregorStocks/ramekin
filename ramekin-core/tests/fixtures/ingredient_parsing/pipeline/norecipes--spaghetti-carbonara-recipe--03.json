@@ -1,15 +1,13 @@
 {
   "raw": "120 grams guanciale ((cut into 3/16-inch batons))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "guanciale (cut into 3/16-inch batons)",
-      "measurements": [
-        {
-          "amount": "120",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "guanciale (cut into 3/16-inch batons)",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

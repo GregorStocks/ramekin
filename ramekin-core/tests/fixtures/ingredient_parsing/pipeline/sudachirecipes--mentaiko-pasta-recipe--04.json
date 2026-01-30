@@ -1,15 +1,13 @@
 {
   "raw": "80 g spicy cod roe (mentaiko) (or plain tarako for non spicy option)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spicy cod roe (mentaiko) (or plain tarako for non spicy option)",
-      "measurements": [
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spicy cod roe (mentaiko) (or plain tarako for non spicy option)",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

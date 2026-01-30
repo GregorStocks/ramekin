@@ -1,19 +1,17 @@
 {
   "raw": "50 g (1 3/4 ounces) flat-leaf parsley leaves, from 1 small bunch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flat-leaf parsley leaves, from 1 small bunch",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        },
-        {
-          "amount": "1 3/4",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flat-leaf parsley leaves, from 1 small bunch",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      },
+      {
+        "amount": "1 3/4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

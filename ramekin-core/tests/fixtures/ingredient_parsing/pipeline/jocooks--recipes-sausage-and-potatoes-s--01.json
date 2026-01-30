@@ -1,15 +1,13 @@
 {
   "raw": "4-6  smoked sausages (such as kielbasa)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked sausages (such as kielbasa)",
-      "measurements": [
-        {
-          "amount": "4-6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked sausages (such as kielbasa)",
+    "measurements": [
+      {
+        "amount": "4-6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

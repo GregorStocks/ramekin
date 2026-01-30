@@ -1,23 +1,21 @@
 {
   "raw": "1 small onion (4 ounces), peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled"
   }
 }

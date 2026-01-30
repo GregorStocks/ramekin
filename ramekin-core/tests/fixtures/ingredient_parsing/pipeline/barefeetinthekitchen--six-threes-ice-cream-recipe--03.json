@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup fresh lemon juice, about 1 lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lemon juice, about 1 lemon",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lemon juice, about 1 lemon",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

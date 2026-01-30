@@ -1,10 +1,8 @@
 {
   "raw": "dried parsley (optional garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried parsley",
-      "measurements": [],
-      "note": "optional garnish"
-    }
+  "expected": {
+    "item": "dried parsley",
+    "measurements": [],
+    "note": "optional garnish"
   }
 }

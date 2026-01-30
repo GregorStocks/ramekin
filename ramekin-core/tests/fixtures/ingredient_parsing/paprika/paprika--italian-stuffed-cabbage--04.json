@@ -1,19 +1,17 @@
 {
   "raw": "14 ounces (400 grams) or approximately 4 plain pork sausages (I used sweet — i.e. non-spicy — Italian), casings removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "or approximately 4 plain pork sausages (I used sweet - i.e. non-spicy - Italian), casings removed",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "or approximately 4 plain pork sausages (I used sweet - i.e. non-spicy - Italian), casings removed",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

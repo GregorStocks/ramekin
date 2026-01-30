@@ -1,15 +1,13 @@
 {
   "raw": "10   allspice berries (lightly crushed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "allspice berries",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "lightly crushed"
-    }
+  "expected": {
+    "item": "allspice berries",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "lightly crushed"
   }
 }

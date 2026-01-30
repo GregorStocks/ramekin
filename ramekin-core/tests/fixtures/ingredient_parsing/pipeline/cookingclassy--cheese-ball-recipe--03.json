@@ -1,19 +1,17 @@
 {
   "raw": "8  oz. shredded medium cheddar cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded medium cheddar cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded medium cheddar cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

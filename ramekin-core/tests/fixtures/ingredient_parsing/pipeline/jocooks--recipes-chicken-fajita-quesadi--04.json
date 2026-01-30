@@ -1,15 +1,13 @@
 {
   "raw": "1 medium red bell pepper (cut into long strips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell pepper (cut into long strips)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red bell pepper (cut into long strips)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

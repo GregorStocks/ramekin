@@ -1,10 +1,8 @@
 {
   "raw": "~ 8 to 10 oz. brewed mushroom coffee,&nbsp;or water if using a mushroom coffee packet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "~ 8 to 10 oz. brewed mushroom coffee, or water if using a mushroom coffee packet",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "~ 8 to 10 oz. brewed mushroom coffee, or water if using a mushroom coffee packet",
+    "measurements": [],
+    "note": null
   }
 }

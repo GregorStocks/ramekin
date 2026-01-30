@@ -1,15 +1,13 @@
 {
   "raw": "Handful pitted kalamata olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted kalamata olives",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitted kalamata olives",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

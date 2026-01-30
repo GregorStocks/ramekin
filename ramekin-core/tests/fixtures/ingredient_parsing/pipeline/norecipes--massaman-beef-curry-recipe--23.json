@@ -1,15 +1,13 @@
 {
   "raw": "400 grams small potatoes ((scrubbed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small potatoes",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": "scrubbed"
-    }
+  "expected": {
+    "item": "small potatoes",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": "scrubbed"
   }
 }

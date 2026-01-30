@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup quality olive oil (or avocado oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quality olive oil (or avocado oil)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quality olive oil (or avocado oil)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

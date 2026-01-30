@@ -1,19 +1,17 @@
 {
   "raw": "1.5 quarts (1.42L) chocolate ice cream, softened (or other flavor)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate ice cream",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "quart"
-        },
-        {
-          "amount": "1.42",
-          "unit": "l"
-        }
-      ],
-      "note": "softened (or other flavor)"
-    }
+  "expected": {
+    "item": "chocolate ice cream",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "quart"
+      },
+      {
+        "amount": "1.42",
+        "unit": "l"
+      }
+    ],
+    "note": "softened (or other flavor)"
   }
 }

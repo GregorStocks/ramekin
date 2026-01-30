@@ -1,15 +1,13 @@
 {
   "raw": "60 g cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cabbage",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cabbage",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup crushed peanut brittle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed peanut brittle",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed peanut brittle",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

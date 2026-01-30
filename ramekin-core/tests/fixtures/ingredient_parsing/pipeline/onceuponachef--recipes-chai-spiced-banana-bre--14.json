@@ -1,15 +1,13 @@
 {
   "raw": "½ cup chopped walnuts ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped walnuts",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chopped walnuts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

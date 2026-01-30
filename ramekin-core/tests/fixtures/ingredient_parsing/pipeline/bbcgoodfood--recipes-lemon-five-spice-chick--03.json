@@ -1,10 +1,8 @@
 {
   "raw": "thumb-sized piece  ginger shredded (no need to peel)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thumb-sized piece  ginger shredded (no need to peel)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "thumb-sized piece  ginger shredded (no need to peel)",
+    "measurements": [],
+    "note": null
   }
 }

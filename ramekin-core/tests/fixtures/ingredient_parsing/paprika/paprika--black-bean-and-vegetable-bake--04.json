@@ -1,15 +1,13 @@
 {
   "raw": "1 fresh jalapeño or habanero pepper, minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh jalapeño or habanero pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "fresh jalapeño or habanero pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "minced"
   }
 }

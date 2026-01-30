@@ -1,15 +1,13 @@
 {
   "raw": "4 strips cooked thick-cut bacon, see how we bake bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strips cooked thick-cut bacon, see how we bake bacon",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strips cooked thick-cut bacon, see how we bake bacon",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

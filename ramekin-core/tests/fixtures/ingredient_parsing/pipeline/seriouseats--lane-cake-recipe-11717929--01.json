@@ -1,10 +1,8 @@
 {
   "raw": "Baking spray with flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Baking spray with flour",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Baking spray with flour",
+    "measurements": [],
+    "note": null
   }
 }

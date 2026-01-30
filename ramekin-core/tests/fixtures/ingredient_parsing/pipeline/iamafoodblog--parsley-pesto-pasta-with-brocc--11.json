@@ -1,15 +1,13 @@
 {
   "raw": "1 small salmon fillet cut in two",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon fillet cut in two",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salmon fillet cut in two",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

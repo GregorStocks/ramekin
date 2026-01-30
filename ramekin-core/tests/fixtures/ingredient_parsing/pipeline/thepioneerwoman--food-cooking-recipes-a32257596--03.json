@@ -1,15 +1,13 @@
 {
   "raw": "2 c. miniature pretzel twists",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miniature pretzel twists",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "miniature pretzel twists",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

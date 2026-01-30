@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs hearty french bread or hearty sandwich bread*, (cut into 3/4-inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hearty french bread or hearty sandwich bread*, (cut into 3/4-inch cubes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hearty french bread or hearty sandwich bread*, (cut into 3/4-inch cubes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

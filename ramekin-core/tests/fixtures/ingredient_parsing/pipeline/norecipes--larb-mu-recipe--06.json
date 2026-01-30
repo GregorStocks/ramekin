@@ -1,15 +1,13 @@
 {
   "raw": "1 small head butter lettuce ((leaves separated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head butter lettuce (leaves separated)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head butter lettuce (leaves separated)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

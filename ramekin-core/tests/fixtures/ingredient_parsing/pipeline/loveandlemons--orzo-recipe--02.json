@@ -1,19 +1,17 @@
 {
   "raw": "½ cup finely diced scallions or 1 small shallot (1/4 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely diced scallions",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or 1 small shallot"
-    }
+  "expected": {
+    "item": "finely diced scallions",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "or 1 small shallot"
   }
 }

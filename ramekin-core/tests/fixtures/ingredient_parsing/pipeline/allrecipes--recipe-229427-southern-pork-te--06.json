@@ -1,19 +1,17 @@
 {
   "raw": "1 (1 pound) pork tenderloin, cut crosswise into 1/2-inch thick slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork tenderloin, cut crosswise into 1/2-inch thick slices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork tenderloin, cut crosswise into 1/2-inch thick slices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

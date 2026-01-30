@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons bourbon, I used Maker's Mark  ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bourbon, I used Maker's Mark",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "bourbon, I used Maker's Mark",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

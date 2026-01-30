@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces unsalted butter, softened (1 stick; 115g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "stick"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "stick"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": "softened"
   }
 }

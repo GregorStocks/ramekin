@@ -1,15 +1,13 @@
 {
   "raw": "2 cups unsweetened shredded coconut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened shredded coconut",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened shredded coconut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

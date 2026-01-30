@@ -1,15 +1,13 @@
 {
   "raw": "¾ cups dutch process or special dark cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dutch process or special dark cocoa powder",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dutch process or special dark cocoa powder",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

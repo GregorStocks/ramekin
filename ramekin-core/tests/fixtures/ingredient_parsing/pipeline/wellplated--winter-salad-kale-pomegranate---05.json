@@ -1,19 +1,17 @@
 {
   "raw": "4&nbsp; ounces crumbled feta cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled feta cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled feta cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

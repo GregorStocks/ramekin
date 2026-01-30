@@ -1,19 +1,17 @@
 {
   "raw": "1 (12-oz.) jar pepperoncini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepperoncini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepperoncini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

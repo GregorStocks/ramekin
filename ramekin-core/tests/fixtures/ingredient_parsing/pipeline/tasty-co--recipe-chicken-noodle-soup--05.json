@@ -1,15 +1,13 @@
 {
   "raw": "1 cup carrot, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

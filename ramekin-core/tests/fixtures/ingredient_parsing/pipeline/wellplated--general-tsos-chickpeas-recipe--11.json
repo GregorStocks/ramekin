@@ -1,15 +1,13 @@
 {
   "raw": "1/4&nbsp; cup&nbsp; hoisin sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hoisin sauce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hoisin sauce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

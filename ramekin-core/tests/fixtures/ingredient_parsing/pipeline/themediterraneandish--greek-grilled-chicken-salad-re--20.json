@@ -1,10 +1,8 @@
 {
   "raw": "Pitted Kalamata olives,  (to your liking)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pitted Kalamata olives,  (to your liking)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pitted Kalamata olives,  (to your liking)",
+    "measurements": [],
+    "note": null
   }
 }

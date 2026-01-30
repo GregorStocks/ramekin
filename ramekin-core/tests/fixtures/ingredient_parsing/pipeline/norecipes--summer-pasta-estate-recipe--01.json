@@ -1,15 +1,13 @@
 {
   "raw": "210 grams cherry tomatoes ((cut in half if large))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes (cut in half if large)",
-      "measurements": [
-        {
-          "amount": "210",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry tomatoes (cut in half if large)",
+    "measurements": [
+      {
+        "amount": "210",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

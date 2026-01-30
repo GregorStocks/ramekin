@@ -1,15 +1,13 @@
 {
   "raw": "5 g active dry yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "active dry yeast",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

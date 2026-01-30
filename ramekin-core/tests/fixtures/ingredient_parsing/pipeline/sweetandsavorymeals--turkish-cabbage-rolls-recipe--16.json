@@ -1,15 +1,13 @@
 {
   "raw": "1 cup bulgur wheat (soaked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bulgur wheat (soaked)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bulgur wheat (soaked)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "can find), preferably bone-in (1½–2 lb.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "find), preferably bone-in",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "can"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "find), preferably bone-in",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "can"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

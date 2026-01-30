@@ -1,15 +1,13 @@
 {
   "raw": "Small Thai or Serrano chiles, thinly sliced, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai or Serrano chiles, thinly sliced",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Thai or Serrano chiles, thinly sliced",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": "to taste"
   }
 }

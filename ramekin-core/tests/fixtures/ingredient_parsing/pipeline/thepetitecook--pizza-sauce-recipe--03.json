@@ -1,10 +1,8 @@
 {
   "raw": "fine sea salt (to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine sea salt",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "fine sea salt",
+    "measurements": [],
+    "note": "to taste"
   }
 }

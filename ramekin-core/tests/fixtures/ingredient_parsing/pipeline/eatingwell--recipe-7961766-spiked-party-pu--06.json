@@ -1,23 +1,21 @@
 {
   "raw": "1 (12 ounce) can frozen lemonade concentrate, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen lemonade concentrate",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen lemonade concentrate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed"
   }
 }

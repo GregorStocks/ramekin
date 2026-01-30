@@ -1,15 +1,13 @@
 {
   "raw": "1.5 teaspoon ground turmeric",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground turmeric",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground turmeric",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

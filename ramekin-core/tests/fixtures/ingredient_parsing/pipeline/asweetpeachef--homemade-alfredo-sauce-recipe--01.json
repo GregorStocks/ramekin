@@ -1,23 +1,21 @@
 {
   "raw": "24  oz (3 cups) full fat cottage cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full fat cottage cheese",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full fat cottage cheese",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

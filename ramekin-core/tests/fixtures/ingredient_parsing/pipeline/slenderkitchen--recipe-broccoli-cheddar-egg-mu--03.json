@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tbsp Dijon mustard (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dijon mustard",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Dijon mustard",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lb paneer cut into 1in cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paneer cut into 1in cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "paneer cut into 1in cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 ounce dried porcini or cepe mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried porcini or cepe mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried porcini or cepe mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp hot sauce (tapatio or cholula)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce (tapatio or cholula)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot sauce (tapatio or cholula)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 (14.5-ounce) can whole peeled tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole peeled tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14.5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole peeled tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14.5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 hoagie or sub rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hoagie or sub rolls",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hoagie or sub rolls",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

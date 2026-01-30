@@ -1,15 +1,13 @@
 {
   "raw": "2 cups dried mafalda noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried mafalda noodles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried mafalda noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

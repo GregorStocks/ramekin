@@ -1,10 +1,8 @@
 {
   "raw": "thinly sliced red onion (pickled or raw)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced red onion",
-      "measurements": [],
-      "note": "pickled or raw"
-    }
+  "expected": {
+    "item": "thinly sliced red onion",
+    "measurements": [],
+    "note": "pickled or raw"
   }
 }

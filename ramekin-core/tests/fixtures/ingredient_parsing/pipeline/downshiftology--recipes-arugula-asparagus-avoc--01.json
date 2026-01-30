@@ -1,15 +1,13 @@
 {
   "raw": "22  stalks asparagus ((I used asparagus tips as they're thinner))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asparagus (I used asparagus tips as they're thinner)",
-      "measurements": [
-        {
-          "amount": "22",
-          "unit": "stalk"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "asparagus (I used asparagus tips as they're thinner)",
+    "measurements": [
+      {
+        "amount": "22",
+        "unit": "stalk"
+      }
+    ],
+    "note": null
   }
 }

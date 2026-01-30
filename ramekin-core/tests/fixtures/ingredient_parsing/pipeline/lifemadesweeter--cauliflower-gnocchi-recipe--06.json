@@ -1,15 +1,13 @@
 {
   "raw": "1 package Trader Joe&amp;#039;s Cauliflower Gnocchi",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Trader Joe's Cauliflower Gnocchi",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Trader Joe's Cauliflower Gnocchi",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

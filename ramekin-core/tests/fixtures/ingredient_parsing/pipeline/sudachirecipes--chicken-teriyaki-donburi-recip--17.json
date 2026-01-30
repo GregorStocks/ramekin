@@ -1,15 +1,13 @@
 {
   "raw": "2  soft-boiled egg (boiled for 6 ½-8 minutes depending on preferred doneness.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soft-boiled egg (boiled for 6 1/2-8 minutes depending on preferred doneness.)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soft-boiled egg (boiled for 6 1/2-8 minutes depending on preferred doneness.)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

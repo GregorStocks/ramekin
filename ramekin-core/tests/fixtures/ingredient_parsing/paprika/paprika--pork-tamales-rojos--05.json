@@ -1,15 +1,13 @@
 {
   "raw": "2 morita chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "morita chiles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "morita chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

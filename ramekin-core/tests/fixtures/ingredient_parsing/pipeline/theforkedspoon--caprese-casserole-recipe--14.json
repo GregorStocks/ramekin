@@ -1,15 +1,13 @@
 {
   "raw": "4 cups cauliflower rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower rice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 heaped cup  paneer ( crumbled (about 150 grams))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paneer",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaped cup"
-        }
-      ],
-      "note": "crumbled (about 150 grams"
-    }
+  "expected": {
+    "item": "paneer",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped cup"
+      }
+    ],
+    "note": "crumbled (about 150 grams"
   }
 }

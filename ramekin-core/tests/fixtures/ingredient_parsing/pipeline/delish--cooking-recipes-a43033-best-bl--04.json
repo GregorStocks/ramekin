@@ -1,15 +1,13 @@
 {
   "raw": "1 c. fresh or frozen blueberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen blueberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen blueberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup sherry vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sherry vinegar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sherry vinegar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

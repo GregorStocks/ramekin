@@ -1,15 +1,13 @@
 {
   "raw": "568ml pot  single cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pot  single cream",
-      "measurements": [
-        {
-          "amount": "568",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pot  single cream",
+    "measurements": [
+      {
+        "amount": "568",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

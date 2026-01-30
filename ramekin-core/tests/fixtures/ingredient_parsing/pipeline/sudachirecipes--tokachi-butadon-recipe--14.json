@@ -1,10 +1,8 @@
 {
   "raw": "red pickled ginger (benishoga) (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pickled ginger (benishoga) (optional)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "red pickled ginger (benishoga) (optional)",
+    "measurements": [],
+    "note": null
   }
 }

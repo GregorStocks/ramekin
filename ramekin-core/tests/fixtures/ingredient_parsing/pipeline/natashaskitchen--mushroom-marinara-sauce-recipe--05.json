@@ -1,15 +1,13 @@
 {
   "raw": "2  15 oz cans diced tomatoes (Italian style)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced tomatoes (Italian style)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "15 oz cans"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced tomatoes (Italian style)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "15 oz cans"
+      }
+    ],
+    "note": null
   }
 }

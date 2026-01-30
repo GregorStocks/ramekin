@@ -1,15 +1,13 @@
 {
   "raw": "1 3/4 cups plus 2 tablespoons vegetable or chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 3/4 cups plus 2 tablespoons vegetable or chicken broth",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tablespoons vegetable or chicken broth"
-    }
+  "expected": {
+    "item": "1 3/4 cups plus 2 tablespoons vegetable or chicken broth",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons vegetable or chicken broth"
   }
 }

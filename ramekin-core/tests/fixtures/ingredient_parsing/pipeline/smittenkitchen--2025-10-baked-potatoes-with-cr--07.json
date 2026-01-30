@@ -1,10 +1,8 @@
 {
   "raw": "Sharp orange cheddar, coarsely grated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sharp orange cheddar",
-      "measurements": [],
-      "note": "coarsely grated"
-    }
+  "expected": {
+    "item": "Sharp orange cheddar",
+    "measurements": [],
+    "note": "coarsely grated"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces white mushrooms (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white mushrooms",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "white mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

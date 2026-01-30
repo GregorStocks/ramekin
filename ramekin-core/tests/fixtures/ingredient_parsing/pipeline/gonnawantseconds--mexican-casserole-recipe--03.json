@@ -1,19 +1,17 @@
 {
   "raw": "1 (16-ounce) jar salsa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salsa",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salsa",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

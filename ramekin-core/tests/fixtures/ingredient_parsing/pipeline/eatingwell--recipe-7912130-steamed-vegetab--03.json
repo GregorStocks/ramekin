@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons room-temperature water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "room-temperature water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "room-temperature water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

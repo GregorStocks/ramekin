@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp dill (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dill",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "dill",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

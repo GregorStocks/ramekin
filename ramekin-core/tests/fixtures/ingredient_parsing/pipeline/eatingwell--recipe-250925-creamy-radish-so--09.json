@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chopped fresh radish greens or parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh radish greens or parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh radish greens or parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

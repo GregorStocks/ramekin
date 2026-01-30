@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup brown sugar (dark or light)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown sugar (dark or light)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown sugar (dark or light)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

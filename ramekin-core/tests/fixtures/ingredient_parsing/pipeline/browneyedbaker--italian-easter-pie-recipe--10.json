@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces hard salami (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hard salami",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "hard salami",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "5 ounces chocolate candies ((1 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate candies",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate candies",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

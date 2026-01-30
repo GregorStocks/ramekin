@@ -1,15 +1,13 @@
 {
   "raw": "1/4 tsp each ginger, nutmeg and cloves*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "each ginger, nutmeg and cloves*",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "each ginger, nutmeg and cloves*",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

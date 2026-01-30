@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup chopped fresh basil ((20g) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh basil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh basil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

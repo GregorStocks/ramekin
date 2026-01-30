@@ -1,10 +1,8 @@
 {
   "raw": "powdered sugar or maple syrup and fresh berries, to serve (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar or maple syrup and fresh berries, to serve",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "powdered sugar or maple syrup and fresh berries, to serve",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp. brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown sugar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

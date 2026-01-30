@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces pepperoni",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepperoni",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepperoni",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

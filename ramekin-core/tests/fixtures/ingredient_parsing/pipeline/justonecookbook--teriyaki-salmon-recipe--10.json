@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp unsalted butter ((for cooking))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter (for cooking)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter (for cooking)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

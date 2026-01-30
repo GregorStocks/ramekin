@@ -1,10 +1,8 @@
 {
   "raw": "Gather Your Ingredients",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gather Your Ingredients",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Gather Your Ingredients",
+    "measurements": [],
+    "note": null
   }
 }

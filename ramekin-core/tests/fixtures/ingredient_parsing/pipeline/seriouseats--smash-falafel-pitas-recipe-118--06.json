@@ -1,10 +1,8 @@
 {
   "raw": "chopped fresh cucumbers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh cucumbers",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh cucumbers",
+    "measurements": [],
+    "note": null
   }
 }

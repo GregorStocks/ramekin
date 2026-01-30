@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups (355 ml) stock or broth (chicken, vegetable or mushroom)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stock or broth (chicken, vegetable or mushroom)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "355",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stock or broth (chicken, vegetable or mushroom)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "355",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

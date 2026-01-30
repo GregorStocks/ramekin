@@ -1,15 +1,13 @@
 {
   "raw": "2 medium eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "pinch saffron, about 10 threads",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "saffron, about 10 threads",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "saffron, about 10 threads",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

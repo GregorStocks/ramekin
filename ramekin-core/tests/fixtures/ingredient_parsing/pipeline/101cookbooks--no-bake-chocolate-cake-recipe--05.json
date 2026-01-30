@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons finely ground espresso (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely ground espresso",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "finely ground espresso",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound boneless, skinless chicken thighs (thinly sliced into bite-size pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken thighs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "thinly sliced into bite-size pieces"
-    }
+  "expected": {
+    "item": "boneless, skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "thinly sliced into bite-size pieces"
   }
 }

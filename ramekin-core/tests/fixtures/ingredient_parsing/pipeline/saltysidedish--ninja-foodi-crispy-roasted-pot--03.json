@@ -1,10 +1,8 @@
 {
   "raw": "garlic salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic salt",
+    "measurements": [],
+    "note": null
   }
 }

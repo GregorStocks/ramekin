@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoon black pepper (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "black pepper",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

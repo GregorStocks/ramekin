@@ -1,10 +1,8 @@
 {
   "raw": "fresh guacamole (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh guacamole",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh guacamole",
+    "measurements": [],
+    "note": "optional"
   }
 }

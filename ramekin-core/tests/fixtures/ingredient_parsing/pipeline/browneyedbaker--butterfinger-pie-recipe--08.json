@@ -1,15 +1,13 @@
 {
   "raw": "8  Fun Size Butterfinger candy bars (coarsely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fun Size Butterfinger candy bars",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "Fun Size Butterfinger candy bars",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

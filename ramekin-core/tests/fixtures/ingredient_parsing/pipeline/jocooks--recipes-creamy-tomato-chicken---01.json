@@ -1,19 +1,17 @@
 {
   "raw": "8 ounce rotini pasta (uncooked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rotini pasta",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "uncooked"
-    }
+  "expected": {
+    "item": "rotini pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "uncooked"
   }
 }

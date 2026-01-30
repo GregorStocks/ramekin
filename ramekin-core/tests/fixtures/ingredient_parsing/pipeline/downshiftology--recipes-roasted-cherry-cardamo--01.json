@@ -1,15 +1,13 @@
 {
   "raw": "1 cup raw cashews ((soaked overnight))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw cashews (soaked overnight)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw cashews (soaked overnight)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

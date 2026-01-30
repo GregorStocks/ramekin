@@ -1,15 +1,13 @@
 {
   "raw": "1 pint rum raisin ice cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rum raisin ice cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rum raisin ice cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": null
   }
 }

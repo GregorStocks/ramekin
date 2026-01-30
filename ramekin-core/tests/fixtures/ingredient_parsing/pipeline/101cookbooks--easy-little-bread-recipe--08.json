@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons butter, melted, for brushing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter, melted, for brushing",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter, melted, for brushing",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

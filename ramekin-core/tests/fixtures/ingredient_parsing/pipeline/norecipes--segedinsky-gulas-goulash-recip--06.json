@@ -1,15 +1,13 @@
 {
   "raw": "2 cups sauerkraut ((drained))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sauerkraut",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "sauerkraut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
   }
 }

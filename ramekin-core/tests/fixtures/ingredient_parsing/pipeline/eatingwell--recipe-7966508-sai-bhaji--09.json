@@ -1,19 +1,17 @@
 {
   "raw": "1 small potato, diced (1/2-inch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

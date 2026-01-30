@@ -1,15 +1,13 @@
 {
   "raw": "2 c. jarred salsa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jarred salsa",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jarred salsa",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

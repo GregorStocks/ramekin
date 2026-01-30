@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp bicarbonate of soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bicarbonate of soda",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bicarbonate of soda",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

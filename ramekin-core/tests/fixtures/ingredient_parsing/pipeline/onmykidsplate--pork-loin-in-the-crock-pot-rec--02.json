@@ -1,15 +1,13 @@
 {
   "raw": "1 large onion  (I prefer sweet onion or Vidalia)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion  (I prefer sweet onion or Vidalia)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion  (I prefer sweet onion or Vidalia)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

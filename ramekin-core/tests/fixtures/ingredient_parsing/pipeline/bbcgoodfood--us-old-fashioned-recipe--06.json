@@ -1,10 +1,8 @@
 {
   "raw": "orange slice to garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange slice to garnish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "orange slice to garnish",
+    "measurements": [],
+    "note": null
   }
 }

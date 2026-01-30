@@ -1,19 +1,17 @@
 {
   "raw": "2 shallots, thinly sliced (about 3/4 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces (227g) mozzarella cheese, shredded; preferably whole milk (about 2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded; preferably whole milk"
-    }
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded; preferably whole milk"
   }
 }

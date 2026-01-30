@@ -1,15 +1,13 @@
 {
   "raw": "2  carrots (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "shredded"
   }
 }

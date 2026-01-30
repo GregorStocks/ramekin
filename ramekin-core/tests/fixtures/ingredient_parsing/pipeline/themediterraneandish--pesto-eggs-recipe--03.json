@@ -1,19 +1,17 @@
 {
   "raw": "2 to 3 ounces fresh mozzarella cheese,  (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "oz"
-        },
-        {
-          "amount": "57 to 85",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "fresh mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "oz"
+      },
+      {
+        "amount": "57 to 85",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

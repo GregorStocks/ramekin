@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. (227 g) dry ditalini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry ditalini",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry ditalini",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

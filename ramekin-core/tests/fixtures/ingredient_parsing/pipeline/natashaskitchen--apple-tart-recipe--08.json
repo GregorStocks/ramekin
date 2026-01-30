@@ -1,19 +1,17 @@
 {
   "raw": "1 lb granny smith apples  ((3 medium apples))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granny smith apples",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granny smith apples",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

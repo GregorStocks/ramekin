@@ -1,15 +1,13 @@
 {
   "raw": "1 cup toasted pine nuts, almonds, or walnuts (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted pine nuts, almonds, or walnuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "toasted pine nuts, almonds, or walnuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 ciabatta rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ciabatta rolls",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ciabatta rolls",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

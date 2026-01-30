@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

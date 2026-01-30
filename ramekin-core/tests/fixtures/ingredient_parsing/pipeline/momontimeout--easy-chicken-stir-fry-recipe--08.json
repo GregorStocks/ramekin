@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp minced ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

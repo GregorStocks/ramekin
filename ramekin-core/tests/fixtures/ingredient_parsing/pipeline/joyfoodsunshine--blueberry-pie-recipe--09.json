@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon cinnamon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

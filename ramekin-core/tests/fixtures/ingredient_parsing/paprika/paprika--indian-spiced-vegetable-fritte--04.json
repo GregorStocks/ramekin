@@ -1,15 +1,13 @@
 {
   "raw": "1 yam or sweet potato, peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yam or sweet potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "yam or sweet potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

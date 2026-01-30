@@ -1,15 +1,13 @@
 {
   "raw": "11 tablespoons unsalted butter (melted and cooled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "11",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted and cooled"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "11",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted and cooled"
   }
 }

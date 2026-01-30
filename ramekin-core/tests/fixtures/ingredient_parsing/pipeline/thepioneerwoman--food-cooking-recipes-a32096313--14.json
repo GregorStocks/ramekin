@@ -1,10 +1,8 @@
 {
   "raw": "Chopped fresh basil, for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped fresh basil, for sprinkling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped fresh basil, for sprinkling",
+    "measurements": [],
+    "note": null
   }
 }

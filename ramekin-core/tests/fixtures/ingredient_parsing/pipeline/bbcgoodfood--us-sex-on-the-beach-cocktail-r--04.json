@@ -1,15 +1,13 @@
 {
   "raw": "2 oranges juiced, plus 2 slices to garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oranges juiced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "plus 2 slices to garnish"
-    }
+  "expected": {
+    "item": "oranges juiced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "plus 2 slices to garnish"
   }
 }

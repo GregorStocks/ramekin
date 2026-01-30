@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup plus 2 tablespoons honey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "¼ cup plus 2 tablespoons honey",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tablespoons honey"
-    }
+  "expected": {
+    "item": "¼ cup plus 2 tablespoons honey",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons honey"
   }
 }

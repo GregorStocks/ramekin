@@ -1,15 +1,13 @@
 {
   "raw": "500 grams small shrimp (shelled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small shrimp (shelled)",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "small shrimp (shelled)",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

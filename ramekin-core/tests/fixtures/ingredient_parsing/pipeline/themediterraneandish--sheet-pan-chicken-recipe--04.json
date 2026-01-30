@@ -1,19 +1,17 @@
 {
   "raw": "9 oz baby broccoli (trimmed and cut into pieces of equal size)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby broccoli",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "255",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed and cut into pieces of equal size"
-    }
+  "expected": {
+    "item": "baby broccoli",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "255",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed and cut into pieces of equal size"
   }
 }

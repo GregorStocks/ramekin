@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp coarse sugar (turbinado or similar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse sugar (turbinado or similar)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarse sugar (turbinado or similar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

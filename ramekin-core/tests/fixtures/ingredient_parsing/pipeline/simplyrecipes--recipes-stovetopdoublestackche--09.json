@@ -1,15 +1,13 @@
 {
   "raw": "4 to 8 slices American cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "American cheese",
-      "measurements": [
-        {
-          "amount": "4 to 8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "American cheese",
+    "measurements": [
+      {
+        "amount": "4 to 8",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

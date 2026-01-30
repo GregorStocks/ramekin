@@ -1,23 +1,21 @@
 {
   "raw": "7 ounce marshmallow creme (1 jar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marshmallow creme",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marshmallow creme",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

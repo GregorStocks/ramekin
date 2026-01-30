@@ -1,15 +1,13 @@
 {
   "raw": "1 cup packed fresh mint leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed fresh mint leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed fresh mint leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

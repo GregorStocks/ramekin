@@ -1,15 +1,13 @@
 {
   "raw": "100 grams walnuts ((toasted))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "walnuts",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "walnuts",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "toasted"
   }
 }

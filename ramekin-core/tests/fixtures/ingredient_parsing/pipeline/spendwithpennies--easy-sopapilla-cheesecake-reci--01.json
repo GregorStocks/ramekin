@@ -1,19 +1,17 @@
 {
   "raw": "2 (8 ounce each) can refrigerated crescent rolls (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refrigerated crescent rolls",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "8",
-          "unit": "oz each"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "refrigerated crescent rolls",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "8",
+        "unit": "oz each"
+      }
+    ],
+    "note": "divided"
   }
 }

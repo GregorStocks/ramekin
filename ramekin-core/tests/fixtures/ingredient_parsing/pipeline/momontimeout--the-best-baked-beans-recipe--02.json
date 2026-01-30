@@ -1,15 +1,13 @@
 {
   "raw": "1 med onion (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "med onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "med onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

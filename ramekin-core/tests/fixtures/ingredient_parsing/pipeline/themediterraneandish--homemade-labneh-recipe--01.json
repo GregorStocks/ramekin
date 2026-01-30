@@ -1,23 +1,21 @@
 {
   "raw": "4 cups (32 ounces) whole milk yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk yogurt",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk yogurt",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

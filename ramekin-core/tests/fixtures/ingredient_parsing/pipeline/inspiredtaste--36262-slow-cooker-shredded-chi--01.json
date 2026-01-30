@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds boneless chicken thighs or combination of thighs and breast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless chicken thighs or combination of thighs and breast",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless chicken thighs or combination of thighs and breast",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

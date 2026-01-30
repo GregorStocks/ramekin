@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup caramel (store bought or measured out from the batch you made earlier)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramel (store bought or measured out from the batch you made earlier)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caramel (store bought or measured out from the batch you made earlier)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

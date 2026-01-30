@@ -1,15 +1,13 @@
 {
   "raw": "1 12- to 16-pound fresh turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "12- to 16-pound fresh turkey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "12- to 16-pound fresh turkey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups hot cooked jasmine rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot cooked jasmine rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot cooked jasmine rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup fresh baby carrots, halved diagonally",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh baby carrots",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved diagonally"
-    }
+  "expected": {
+    "item": "fresh baby carrots",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved diagonally"
   }
 }

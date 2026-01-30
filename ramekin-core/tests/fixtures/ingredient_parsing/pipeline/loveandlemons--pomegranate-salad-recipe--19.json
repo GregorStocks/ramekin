@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons toasted walnuts or pepitas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted walnuts or pepitas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted walnuts or pepitas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

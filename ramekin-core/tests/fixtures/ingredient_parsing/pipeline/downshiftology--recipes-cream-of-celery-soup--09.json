@@ -1,10 +1,8 @@
 {
   "raw": "Celery leaves, black pepper and paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Celery leaves, black pepper and paprika",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Celery leaves, black pepper and paprika",
+    "measurements": [],
+    "note": null
   }
 }

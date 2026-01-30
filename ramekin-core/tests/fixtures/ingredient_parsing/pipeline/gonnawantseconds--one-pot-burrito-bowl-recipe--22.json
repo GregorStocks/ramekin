@@ -1,10 +1,8 @@
 {
   "raw": "Monterey jack cheese,  (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Monterey jack cheese",
-      "measurements": [],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "Monterey jack cheese",
+    "measurements": [],
+    "note": "shredded"
   }
 }

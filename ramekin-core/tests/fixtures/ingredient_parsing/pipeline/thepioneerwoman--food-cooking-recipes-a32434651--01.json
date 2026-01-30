@@ -1,15 +1,13 @@
 {
   "raw": "4 lb. skin-on, bone-in chicken pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skin-on, bone-in chicken pieces",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skin-on, bone-in chicken pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

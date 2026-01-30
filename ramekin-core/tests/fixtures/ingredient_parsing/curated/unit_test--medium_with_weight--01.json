@@ -1,23 +1,21 @@
 {
   "raw": "2 medium (8 oz) onions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

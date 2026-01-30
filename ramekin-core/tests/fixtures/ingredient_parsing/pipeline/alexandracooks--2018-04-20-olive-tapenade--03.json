@@ -1,15 +1,13 @@
 {
   "raw": "pinch crushed red pepper flakes, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper flakes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "crushed red pepper flakes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
   }
 }

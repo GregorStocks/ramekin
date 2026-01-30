@@ -1,15 +1,13 @@
 {
   "raw": "2  green onion stalks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onion stalks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green onion stalks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

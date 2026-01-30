@@ -1,19 +1,17 @@
 {
   "raw": "1 small red cabbage, cored and thinly sliced (1.75 to 2 lbs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red cabbage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "1.75 to 2",
-          "unit": "lb"
-        }
-      ],
-      "note": "cored and thinly sliced"
-    }
+  "expected": {
+    "item": "red cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "1.75 to 2",
+        "unit": "lb"
+      }
+    ],
+    "note": "cored and thinly sliced"
   }
 }

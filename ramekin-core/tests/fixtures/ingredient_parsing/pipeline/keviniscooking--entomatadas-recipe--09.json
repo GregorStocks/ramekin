@@ -1,15 +1,13 @@
 {
   "raw": "1 cup vegetable oil (frying tortillas)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil (frying tortillas)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil (frying tortillas)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

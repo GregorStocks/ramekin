@@ -1,15 +1,13 @@
 {
   "raw": "2-3 tablespoons soy sauce (more to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "more to taste"
-    }
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "more to taste"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 serrano chile, stemmed and roughly chopped (remove seeds before chopping for a less hot result)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "serrano chile",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "stemmed and roughly chopped (remove seeds before chopping for a less hot result)"
-    }
+  "expected": {
+    "item": "serrano chile",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "stemmed and roughly chopped (remove seeds before chopping for a less hot result)"
   }
 }

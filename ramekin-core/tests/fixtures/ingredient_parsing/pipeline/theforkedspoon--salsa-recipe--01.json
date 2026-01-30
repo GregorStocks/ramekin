@@ -1,15 +1,13 @@
 {
   "raw": "4 large ripe tomatoes (seeds removed and roughly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe tomatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": "seeds removed and roughly chopped"
-    }
+  "expected": {
+    "item": "ripe tomatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "seeds removed and roughly chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "15 picked fresh sage leaves, if making optional frizzled sage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "picked fresh sage leaves",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": "if making optional frizzled sage"
-    }
+  "expected": {
+    "item": "picked fresh sage leaves",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "if making optional frizzled sage"
   }
 }

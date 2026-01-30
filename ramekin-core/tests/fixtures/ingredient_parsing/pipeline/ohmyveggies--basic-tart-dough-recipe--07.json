@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups 250 g dried beans, for blind-baking",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "250 g dried beans, for blind-baking",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "250 g dried beans, for blind-baking",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 cups frozen corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen corn",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen corn",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 ripe avocados, halved and pitted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe avocados",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "halved and pitted"
-    }
+  "expected": {
+    "item": "ripe avocados",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "halved and pitted"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cup 175g canned pumpkin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned pumpkin",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "175",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned pumpkin",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "175",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp chopped flat leaf parsley, or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped flat leaf parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "chopped flat leaf parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

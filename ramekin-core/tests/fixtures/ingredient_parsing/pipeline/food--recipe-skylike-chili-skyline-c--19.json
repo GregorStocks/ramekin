@@ -1,10 +1,8 @@
 {
   "raw": "kidney bean (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kidney bean",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "kidney bean",
+    "measurements": [],
+    "note": "optional"
   }
 }

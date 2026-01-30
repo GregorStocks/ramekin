@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces (1 1/4 cups) dried chickpeas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chickpeas",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chickpeas",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

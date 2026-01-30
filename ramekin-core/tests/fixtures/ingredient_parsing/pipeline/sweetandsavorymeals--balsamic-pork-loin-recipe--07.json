@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup maple syrup (or honey)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup (or honey)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup (or honey)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

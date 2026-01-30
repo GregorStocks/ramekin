@@ -1,15 +1,13 @@
 {
   "raw": "1 cup bran",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bran",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bran",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

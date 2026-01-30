@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon black pepper, as needed for seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "as needed for seasoning"
-    }
+  "expected": {
+    "item": "black pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "as needed for seasoning"
   }
 }

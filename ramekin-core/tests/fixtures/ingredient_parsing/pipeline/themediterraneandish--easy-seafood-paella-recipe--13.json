@@ -1,19 +1,17 @@
 {
   "raw": "6 oz French green beans, (trimmed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "French green beans",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "French green beans",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed"
   }
 }

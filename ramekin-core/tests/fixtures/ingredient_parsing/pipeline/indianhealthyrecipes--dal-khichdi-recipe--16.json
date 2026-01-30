@@ -1,15 +1,13 @@
 {
   "raw": "8  french beans (cut to 1 inch length)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "french beans (cut to 1 inch length)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "french beans (cut to 1 inch length)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

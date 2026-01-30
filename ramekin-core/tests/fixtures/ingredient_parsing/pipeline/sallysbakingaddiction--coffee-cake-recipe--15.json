@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (120g) confectioners&amp;#8217; sugar, sifted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners’ sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "g"
-        }
-      ],
-      "note": "sifted"
-    }
+  "expected": {
+    "item": "confectioners’ sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": "sifted"
   }
 }

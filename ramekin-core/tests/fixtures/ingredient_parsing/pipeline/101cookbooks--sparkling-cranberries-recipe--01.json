@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cranberries, picked over",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cranberries, picked over",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cranberries, picked over",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

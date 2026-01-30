@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. Brown Mushrooms (, sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brown Mushrooms",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "Brown Mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

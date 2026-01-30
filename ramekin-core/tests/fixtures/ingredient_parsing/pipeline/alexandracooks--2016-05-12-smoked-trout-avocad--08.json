@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;firm, ripe avocado",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm, ripe avocado",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "firm, ripe avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

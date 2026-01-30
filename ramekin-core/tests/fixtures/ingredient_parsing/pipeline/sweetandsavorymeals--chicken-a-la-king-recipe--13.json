@@ -1,15 +1,13 @@
 {
   "raw": "1 cup jarred pimientos (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jarred pimientos",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "jarred pimientos",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

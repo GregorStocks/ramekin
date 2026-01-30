@@ -1,15 +1,13 @@
 {
   "raw": "4-5  Kazunoko (herring roe)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kazunoko (herring roe)",
-      "measurements": [
-        {
-          "amount": "4-5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kazunoko (herring roe)",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

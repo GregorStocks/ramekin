@@ -1,10 +1,8 @@
 {
   "raw": "finely grated zest from 2 medium lemons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated zest from 2 medium lemons",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated zest from 2 medium lemons",
+    "measurements": [],
+    "note": null
   }
 }

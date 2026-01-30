@@ -1,15 +1,13 @@
 {
   "raw": "1 lb pork",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

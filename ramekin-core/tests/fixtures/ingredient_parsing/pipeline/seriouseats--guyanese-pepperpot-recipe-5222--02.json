@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons (8g) kosher salt, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "8",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "roasted garlic hummus with extra virgin olive oil and paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted garlic hummus with extra virgin olive oil and paprika",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted garlic hummus with extra virgin olive oil and paprika",
+    "measurements": [],
+    "note": null
   }
 }

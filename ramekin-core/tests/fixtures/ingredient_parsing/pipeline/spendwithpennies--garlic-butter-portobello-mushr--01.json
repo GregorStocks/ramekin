@@ -1,15 +1,13 @@
 {
   "raw": "3 large portobello mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portobello mushrooms",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "portobello mushrooms",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

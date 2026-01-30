@@ -1,10 +1,8 @@
 {
   "raw": "blackberries (for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blackberries",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "blackberries",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

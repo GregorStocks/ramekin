@@ -1,10 +1,8 @@
 {
   "raw": "Stir ins: 3 large brownies (chopped into 1/2\" pieces, about 2 cups worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Stir ins: 3 large brownies",
-      "measurements": [],
-      "note": "chopped into 1/2\" pieces, about 2 cups worth"
-    }
+  "expected": {
+    "item": "Stir ins: 3 large brownies",
+    "measurements": [],
+    "note": "chopped into 1/2\" pieces, about 2 cups worth"
   }
 }

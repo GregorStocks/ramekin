@@ -1,10 +1,8 @@
 {
   "raw": "Sansyo (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sansyo",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sansyo",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 Tablespoons (28g) cold unsalted butter, cut into small cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold unsalted butter, cut into small cubes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold unsalted butter, cut into small cubes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

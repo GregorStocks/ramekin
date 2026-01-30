@@ -1,23 +1,21 @@
 {
   "raw": "8 oz 80% less fat cream cheese (2 tubs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "80% less fat cream cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "80% less fat cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

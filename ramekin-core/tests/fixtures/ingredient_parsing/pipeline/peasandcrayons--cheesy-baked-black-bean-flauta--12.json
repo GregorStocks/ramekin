@@ -1,10 +1,8 @@
 {
   "raw": "hot sauce (I used Sriracha to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce",
-      "measurements": [],
-      "note": "I used Sriracha to taste"
-    }
+  "expected": {
+    "item": "hot sauce",
+    "measurements": [],
+    "note": "I used Sriracha to taste"
   }
 }

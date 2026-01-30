@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp collagen powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "collagen powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "collagen powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

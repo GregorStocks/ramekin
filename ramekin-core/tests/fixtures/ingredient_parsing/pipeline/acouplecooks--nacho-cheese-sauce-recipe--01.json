@@ -1,23 +1,21 @@
 {
   "raw": "6 ounces mild to medium cheddar cheese, grated (2 cups)*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mild to medium cheddar cheese",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "grated *"
-    }
+  "expected": {
+    "item": "mild to medium cheddar cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "grated *"
   }
 }

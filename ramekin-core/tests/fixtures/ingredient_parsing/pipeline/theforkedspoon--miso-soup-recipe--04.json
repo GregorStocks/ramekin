@@ -1,15 +1,13 @@
 {
   "raw": "½ cup Wakame seaweed (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Wakame seaweed",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "Wakame seaweed",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

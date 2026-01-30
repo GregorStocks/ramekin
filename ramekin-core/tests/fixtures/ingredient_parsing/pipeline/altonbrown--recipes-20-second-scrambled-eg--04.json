@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon harissa, or 2 teaspoons chopped fresh chives, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "harissa, or 2 teaspoons chopped fresh chives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "harissa, or 2 teaspoons chopped fresh chives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

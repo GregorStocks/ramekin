@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons Worcestershire sauce (note: this is not vegetarian)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Worcestershire sauce (note: this is not vegetarian)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Worcestershire sauce (note: this is not vegetarian)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

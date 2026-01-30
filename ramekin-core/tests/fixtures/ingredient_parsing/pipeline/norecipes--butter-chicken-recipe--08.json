@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon saffron ((threads crushed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "saffron",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "threads crushed"
-    }
+  "expected": {
+    "item": "saffron",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "threads crushed"
   }
 }

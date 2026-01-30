@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp chopped fresh mint leaves for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh mint leaves for garnish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh mint leaves for garnish",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "6 Tbsp (35g) Dutch process cocoa powder, (plus more for dusting pan)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dutch process cocoa powder",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "35",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for dusting pan"
-    }
+  "expected": {
+    "item": "Dutch process cocoa powder",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for dusting pan"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 12-15 lb turkey (completely thawed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "12-15 lb turkey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "completely thawed"
-    }
+  "expected": {
+    "item": "12-15 lb turkey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "completely thawed"
   }
 }

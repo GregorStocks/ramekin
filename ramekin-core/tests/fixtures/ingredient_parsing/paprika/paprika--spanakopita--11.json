@@ -1,19 +1,17 @@
 {
   "raw": "1-pound (454-gram) package phyllo/filo pastry, defrosted [see Note]",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-pound package phyllo/filo pastry, defrosted [see Note]",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "454",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-pound package phyllo/filo pastry, defrosted [see Note]",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "454",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

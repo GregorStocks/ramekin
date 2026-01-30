@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds mixed fresh mushrooms, any tough stems discarded and roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed fresh mushrooms",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "any tough stems discarded and roughly chopped"
-    }
+  "expected": {
+    "item": "mixed fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "any tough stems discarded and roughly chopped"
   }
 }

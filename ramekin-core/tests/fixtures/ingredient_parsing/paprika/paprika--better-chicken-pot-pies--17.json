@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup milk or heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk or heavy cream",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk or heavy cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

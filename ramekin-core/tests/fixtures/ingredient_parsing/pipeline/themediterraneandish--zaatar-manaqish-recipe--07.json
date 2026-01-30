@@ -1,15 +1,13 @@
 {
   "raw": "7 to 8 tbsp quality Za'atar spice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quality Za'atar spice",
-      "measurements": [
-        {
-          "amount": "7 to 8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quality Za'atar spice",
+    "measurements": [
+      {
+        "amount": "7 to 8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups sliced fresh mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced fresh mushrooms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

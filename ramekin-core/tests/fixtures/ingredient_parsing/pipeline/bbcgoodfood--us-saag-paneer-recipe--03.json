@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Kashmiri chili powder or regular chili powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kashmiri chili powder or regular chili powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kashmiri chili powder or regular chili powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

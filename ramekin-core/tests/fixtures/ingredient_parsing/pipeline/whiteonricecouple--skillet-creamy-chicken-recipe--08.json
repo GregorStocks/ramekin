@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup White Wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "White Wine",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "White Wine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

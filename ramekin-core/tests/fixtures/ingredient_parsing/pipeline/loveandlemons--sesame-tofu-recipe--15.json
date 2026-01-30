@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup frozen edamame (steamed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen edamame (steamed)",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen edamame (steamed)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

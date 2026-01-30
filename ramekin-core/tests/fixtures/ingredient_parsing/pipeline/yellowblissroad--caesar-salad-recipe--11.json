@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup fresh shredded parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh shredded parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh shredded parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

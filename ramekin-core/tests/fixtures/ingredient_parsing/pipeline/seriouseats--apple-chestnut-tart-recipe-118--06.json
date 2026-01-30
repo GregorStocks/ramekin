@@ -1,19 +1,17 @@
 {
   "raw": "13 g (1 tablespoon) light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar",
-      "measurements": [
-        {
-          "amount": "13",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "13",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

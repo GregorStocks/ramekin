@@ -1,10 +1,8 @@
 {
   "raw": "toasted sliced almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sliced almonds",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted sliced almonds",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound 90%-lean ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "90%-lean ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "90%-lean ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

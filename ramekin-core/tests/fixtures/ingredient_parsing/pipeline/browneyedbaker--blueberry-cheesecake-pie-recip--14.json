@@ -1,15 +1,13 @@
 {
   "raw": "1½ tablespoons cornstarch whisked into 2 tablespoons water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch whisked into 2 tablespoons water",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch whisked into 2 tablespoons water",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

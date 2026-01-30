@@ -1,15 +1,13 @@
 {
   "raw": "150 grams small shrimp ((peeled and deveined))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small shrimp",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and deveined"
-    }
+  "expected": {
+    "item": "small shrimp",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and deveined"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh arugula or baby spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh arugula or baby spinach",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh arugula or baby spinach",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

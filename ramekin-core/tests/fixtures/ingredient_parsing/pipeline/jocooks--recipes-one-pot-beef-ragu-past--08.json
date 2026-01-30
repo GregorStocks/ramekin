@@ -1,15 +1,13 @@
 {
   "raw": "2 cups beef broth (low sodium or no sodium added)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef broth (low sodium or no sodium added)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef broth (low sodium or no sodium added)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

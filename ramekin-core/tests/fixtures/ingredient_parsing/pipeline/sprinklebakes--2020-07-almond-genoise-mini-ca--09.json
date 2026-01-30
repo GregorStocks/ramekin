@@ -1,19 +1,17 @@
 {
   "raw": "5 cups 570g confectioners’ sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners’ sugar",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        },
-        {
-          "amount": "570",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "confectioners’ sugar",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      },
+      {
+        "amount": "570",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

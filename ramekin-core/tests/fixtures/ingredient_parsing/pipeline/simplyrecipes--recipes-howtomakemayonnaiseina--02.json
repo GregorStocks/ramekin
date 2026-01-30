@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Dijon mustard, or 1/2 teaspoon dry mustard powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dijon mustard,",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1/2 teaspoon dry mustard powder"
-    }
+  "expected": {
+    "item": "Dijon mustard,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 1/2 teaspoon dry mustard powder"
   }
 }

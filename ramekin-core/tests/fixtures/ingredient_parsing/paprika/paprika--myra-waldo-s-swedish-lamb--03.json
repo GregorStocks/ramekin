@@ -1,15 +1,13 @@
 {
   "raw": "1 five-pound leg of lamb",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "five-pound leg of lamb",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "five-pound leg of lamb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

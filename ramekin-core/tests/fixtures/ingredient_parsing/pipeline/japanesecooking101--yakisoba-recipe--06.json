@@ -1,15 +1,13 @@
 {
   "raw": "1/4  green bell pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green bell pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green bell pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

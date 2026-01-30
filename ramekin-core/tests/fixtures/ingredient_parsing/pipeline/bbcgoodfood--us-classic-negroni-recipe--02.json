@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp sweet vermouth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet vermouth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet vermouth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

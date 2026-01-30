@@ -1,15 +1,13 @@
 {
   "raw": "3-finger pinch kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-finger pinch kosher salt",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-finger pinch kosher salt",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

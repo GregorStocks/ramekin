@@ -1,15 +1,13 @@
 {
   "raw": "2 fluid ounces brandy",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brandy",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brandy",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

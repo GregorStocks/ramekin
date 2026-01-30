@@ -1,10 +1,8 @@
 {
   "raw": "Finely grated zest of 1 lime",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Finely grated zest of 1 lime",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Finely grated zest of 1 lime",
+    "measurements": [],
+    "note": null
   }
 }

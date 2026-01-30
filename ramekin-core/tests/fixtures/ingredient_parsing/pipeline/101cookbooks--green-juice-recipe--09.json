@@ -1,15 +1,13 @@
 {
   "raw": "2  small cucumbers, peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cucumbers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "cucumbers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "peeled"
   }
 }

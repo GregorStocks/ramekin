@@ -1,15 +1,13 @@
 {
   "raw": "3 cups green cabbage, finely shredded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cabbage",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely shredded"
-    }
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely shredded"
   }
 }

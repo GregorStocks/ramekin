@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sweet chili sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet chili sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet chili sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

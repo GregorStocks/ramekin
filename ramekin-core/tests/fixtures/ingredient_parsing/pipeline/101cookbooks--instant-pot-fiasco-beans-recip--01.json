@@ -1,19 +1,17 @@
 {
   "raw": "1 pound / 433 g dried borlotti (cranberry) or cannellini beans, soaked overnight, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried borlotti (cranberry) or cannellini beans, soaked overnight",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "433",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "dried borlotti (cranberry) or cannellini beans, soaked overnight",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "433",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

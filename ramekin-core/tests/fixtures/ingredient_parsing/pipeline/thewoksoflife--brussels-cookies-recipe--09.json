@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. dark or semisweet chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark or semisweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark or semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

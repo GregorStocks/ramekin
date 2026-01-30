@@ -1,15 +1,13 @@
 {
   "raw": "Dash of fish sauce (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fish sauce",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": "optional"
   }
 }

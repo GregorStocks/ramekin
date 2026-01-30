@@ -1,10 +1,8 @@
 {
   "raw": "Olive brine (for serving; optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Olive brine",
-      "measurements": [],
-      "note": "for serving; optional"
-    }
+  "expected": {
+    "item": "Olive brine",
+    "measurements": [],
+    "note": "for serving; optional"
   }
 }

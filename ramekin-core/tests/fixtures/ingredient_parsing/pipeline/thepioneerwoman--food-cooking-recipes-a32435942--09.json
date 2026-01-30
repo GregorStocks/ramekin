@@ -1,15 +1,13 @@
 {
   "raw": "6 shallots, quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "quartered"
   }
 }

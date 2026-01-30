@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces Cool Whip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cool Whip",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cool Whip",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

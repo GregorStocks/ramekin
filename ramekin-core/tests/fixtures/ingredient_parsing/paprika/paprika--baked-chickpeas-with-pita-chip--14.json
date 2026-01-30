@@ -1,10 +1,8 @@
 {
   "raw": "Fixings:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fixings:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fixings:",
+    "measurements": [],
+    "note": null
   }
 }

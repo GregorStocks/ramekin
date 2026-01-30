@@ -1,19 +1,17 @@
 {
   "raw": "4-8 ounces firm tofu (cut into 1-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm tofu (cut into 1-inch pieces)",
-      "measurements": [
-        {
-          "amount": "4-8",
-          "unit": "oz"
-        },
-        {
-          "amount": "113-227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "firm tofu (cut into 1-inch pieces)",
+    "measurements": [
+      {
+        "amount": "4-8",
+        "unit": "oz"
+      },
+      {
+        "amount": "113-227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

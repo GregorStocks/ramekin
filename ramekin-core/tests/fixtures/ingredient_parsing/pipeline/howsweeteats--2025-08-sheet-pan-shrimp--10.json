@@ -1,15 +1,13 @@
 {
   "raw": "3  ears of corn (kernels cut from the cob)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ears of corn (kernels cut from the cob)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ears of corn (kernels cut from the cob)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

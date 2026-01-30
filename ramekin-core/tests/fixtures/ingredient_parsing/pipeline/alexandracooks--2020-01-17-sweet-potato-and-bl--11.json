@@ -1,15 +1,13 @@
 {
   "raw": "6 burrito-sized tortillas, homemade are fun",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "burrito-sized tortillas, homemade are fun",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "burrito-sized tortillas, homemade are fun",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

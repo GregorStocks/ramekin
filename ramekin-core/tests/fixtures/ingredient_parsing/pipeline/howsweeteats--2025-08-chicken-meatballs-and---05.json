@@ -1,15 +1,13 @@
 {
   "raw": "½ cup seasoned breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seasoned breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seasoned breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

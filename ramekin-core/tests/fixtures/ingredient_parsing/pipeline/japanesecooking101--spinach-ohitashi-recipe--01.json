@@ -1,15 +1,13 @@
 {
   "raw": "1 bunch spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

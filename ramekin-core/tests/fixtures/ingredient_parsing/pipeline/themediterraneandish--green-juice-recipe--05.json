@@ -1,15 +1,13 @@
 {
   "raw": "½ large English cucumber",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English cucumber",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "English cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

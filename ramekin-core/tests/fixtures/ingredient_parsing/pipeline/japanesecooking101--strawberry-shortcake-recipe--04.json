@@ -1,15 +1,13 @@
 {
   "raw": "1 lb strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

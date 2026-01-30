@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces sharp cheddar cheese, coarsely grated (2 1/2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sharp cheddar cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "coarsely grated"
-    }
+  "expected": {
+    "item": "sharp cheddar cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "coarsely grated"
   }
 }

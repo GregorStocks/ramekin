@@ -1,15 +1,13 @@
 {
   "raw": "240 g bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread flour",
-      "measurements": [
-        {
-          "amount": "240",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "240",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

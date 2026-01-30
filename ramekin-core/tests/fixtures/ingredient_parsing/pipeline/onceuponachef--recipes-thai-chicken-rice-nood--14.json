@@ -1,15 +1,13 @@
 {
   "raw": "3 scallions, light and dark green parts, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions, light and dark green parts",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "scallions, light and dark green parts",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (125ml) milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "125",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

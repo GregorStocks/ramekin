@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon cornstarch or arrowroot starch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch or arrowroot starch",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch or arrowroot starch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

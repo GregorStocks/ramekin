@@ -1,15 +1,13 @@
 {
   "raw": "2  red radishes (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red radishes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "red radishes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

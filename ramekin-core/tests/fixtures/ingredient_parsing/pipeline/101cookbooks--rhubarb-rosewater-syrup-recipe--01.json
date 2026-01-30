@@ -1,23 +1,21 @@
 {
   "raw": "4  large / 500 g / 1 pound rhubarb stalks, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rhubarb stalks",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        },
-        {
-          "amount": "500",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "rhubarb stalks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      },
+      {
+        "amount": "500",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped"
   }
 }

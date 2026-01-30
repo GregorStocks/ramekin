@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup fresh or stale coarse plain breadcrumbs (panko worked great here)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or stale coarse plain breadcrumbs (panko worked great here)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or stale coarse plain breadcrumbs (panko worked great here)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

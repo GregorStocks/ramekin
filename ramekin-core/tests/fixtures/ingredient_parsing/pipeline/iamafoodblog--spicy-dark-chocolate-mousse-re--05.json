@@ -1,10 +1,8 @@
 {
   "raw": "mint, to garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint, to garnish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "mint, to garnish",
+    "measurements": [],
+    "note": null
   }
 }

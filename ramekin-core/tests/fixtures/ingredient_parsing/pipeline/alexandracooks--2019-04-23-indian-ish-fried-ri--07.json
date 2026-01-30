@@ -1,15 +1,13 @@
 {
   "raw": "1 cup roasted unsalted peanuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted unsalted peanuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted unsalted peanuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

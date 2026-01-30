@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon whole coriander seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole coriander seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole coriander seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

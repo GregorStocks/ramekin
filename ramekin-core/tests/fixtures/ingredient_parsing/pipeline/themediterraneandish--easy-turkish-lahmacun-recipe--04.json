@@ -1,15 +1,13 @@
 {
   "raw": "1/2  sweet red pepper (cored, cut into chunks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet red pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "cored, cut into chunks"
-    }
+  "expected": {
+    "item": "sweet red pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "cored, cut into chunks"
   }
 }

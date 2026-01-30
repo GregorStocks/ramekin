@@ -1,23 +1,21 @@
 {
   "raw": "1 (14 ounce) can no-salt-added tomato sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "no-salt-added tomato sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "no-salt-added tomato sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

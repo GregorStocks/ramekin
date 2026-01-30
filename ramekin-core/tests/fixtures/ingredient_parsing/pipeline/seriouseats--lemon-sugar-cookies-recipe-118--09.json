@@ -1,23 +1,21 @@
 {
   "raw": "140g sifted powdered sugar (about 5 ounces; 1 1/2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sifted powdered sugar",
-      "measurements": [
-        {
-          "amount": "140",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sifted powdered sugar",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

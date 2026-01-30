@@ -1,15 +1,13 @@
 {
   "raw": "1  medium shallot (finely sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "finely sliced"
-    }
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "finely sliced"
   }
 }

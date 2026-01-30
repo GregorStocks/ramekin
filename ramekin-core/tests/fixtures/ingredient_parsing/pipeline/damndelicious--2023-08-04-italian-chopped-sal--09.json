@@ -1,15 +1,13 @@
 {
   "raw": "6  pepperoncini (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepperoncini",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "pepperoncini",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

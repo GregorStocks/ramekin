@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup organic sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "organic sugar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "organic sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup chopped scallions, (from 4 to 5 scallions)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped scallions, (from 4 to 5 scallions)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped scallions, (from 4 to 5 scallions)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

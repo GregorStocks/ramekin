@@ -1,19 +1,17 @@
 {
   "raw": "6 cups all-purpose flour ((720 grams))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        },
-        {
-          "amount": "720",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      },
+      {
+        "amount": "720",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

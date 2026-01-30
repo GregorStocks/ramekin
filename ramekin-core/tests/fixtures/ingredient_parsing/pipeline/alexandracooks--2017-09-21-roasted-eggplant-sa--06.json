@@ -1,23 +1,21 @@
 {
   "raw": "1&nbsp;box no-boil noodles (about 9 oz, you&amp;#8217;ll need 12 sheets, see notes above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "no-boil noodles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "box"
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "255",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "no-boil noodles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "box"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "255",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

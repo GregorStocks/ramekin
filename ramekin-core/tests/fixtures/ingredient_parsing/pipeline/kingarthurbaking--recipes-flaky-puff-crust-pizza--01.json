@@ -1,19 +1,17 @@
 {
   "raw": "4 tablespoons (57g) butter, cold*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "cold*"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "cold*"
   }
 }

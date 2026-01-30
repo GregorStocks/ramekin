@@ -1,10 +1,8 @@
 {
   "raw": "queso fresco",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "queso fresco",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "queso fresco",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 c. shredded cheddar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheddar",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheddar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

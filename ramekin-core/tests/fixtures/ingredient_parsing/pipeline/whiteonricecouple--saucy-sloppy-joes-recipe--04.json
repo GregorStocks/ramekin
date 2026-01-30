@@ -1,15 +1,13 @@
 {
   "raw": "1 cup ketchup (, *see head note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ketchup (, *see head note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ketchup (, *see head note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

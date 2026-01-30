@@ -1,15 +1,13 @@
 {
   "raw": "1  serrano pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "serrano pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "serrano pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

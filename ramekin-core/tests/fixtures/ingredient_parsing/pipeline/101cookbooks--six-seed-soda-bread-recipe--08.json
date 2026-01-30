@@ -1,10 +1,8 @@
 {
   "raw": "a bit of extra buttermilk/milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a bit of extra buttermilk/milk",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a bit of extra buttermilk/milk",
+    "measurements": [],
+    "note": null
   }
 }

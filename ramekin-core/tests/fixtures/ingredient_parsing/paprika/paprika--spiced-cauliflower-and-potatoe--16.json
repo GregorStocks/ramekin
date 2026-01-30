@@ -1,10 +1,8 @@
 {
   "raw": "Cucumber Scallion Raita",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cucumber Scallion Raita",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cucumber Scallion Raita",
+    "measurements": [],
+    "note": null
   }
 }

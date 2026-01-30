@@ -1,15 +1,13 @@
 {
   "raw": "1 TBSP water (if/as needed to thin the sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "if/as needed to thin the sauce"
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "if/as needed to thin the sauce"
   }
 }

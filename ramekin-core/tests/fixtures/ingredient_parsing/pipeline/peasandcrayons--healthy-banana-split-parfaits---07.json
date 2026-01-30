@@ -1,15 +1,13 @@
 {
   "raw": "1 cup nonfat or whole milk vanilla yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nonfat or whole milk vanilla yogurt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "nonfat or whole milk vanilla yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

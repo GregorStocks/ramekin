@@ -1,15 +1,13 @@
 {
   "raw": "130 grams canned mandarins ((drained))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned mandarins",
-      "measurements": [
-        {
-          "amount": "130",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "canned mandarins",
+    "measurements": [
+      {
+        "amount": "130",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

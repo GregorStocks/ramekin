@@ -1,10 +1,8 @@
 {
   "raw": "Warm tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Warm tortillas",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Warm tortillas",
+    "measurements": [],
+    "note": null
   }
 }

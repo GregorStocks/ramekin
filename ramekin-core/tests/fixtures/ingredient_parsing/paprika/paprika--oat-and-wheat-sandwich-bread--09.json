@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 tablespoons (about 14 grams) instant yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant yeast",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

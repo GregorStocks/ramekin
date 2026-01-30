@@ -1,15 +1,13 @@
 {
   "raw": "12  crisp lady fingers (chopped into 1-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crisp lady fingers",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": "chopped into 1-inch pieces"
-    }
+  "expected": {
+    "item": "crisp lady fingers",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "chopped into 1-inch pieces"
   }
 }

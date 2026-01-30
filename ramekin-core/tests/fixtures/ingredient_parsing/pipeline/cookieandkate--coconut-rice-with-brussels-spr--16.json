@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoons coconut sugar or cane sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut sugar or cane sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut sugar or cane sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

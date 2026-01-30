@@ -1,15 +1,13 @@
 {
   "raw": "1  purple onion (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "purple onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "purple onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

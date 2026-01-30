@@ -1,15 +1,13 @@
 {
   "raw": "2-3 cups of cherries (pitted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherries (pitted)",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherries (pitted)",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Chopped Avocado",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped Avocado",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped Avocado",
+    "measurements": [],
+    "note": null
   }
 }

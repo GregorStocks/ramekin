@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pecans (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "pecans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

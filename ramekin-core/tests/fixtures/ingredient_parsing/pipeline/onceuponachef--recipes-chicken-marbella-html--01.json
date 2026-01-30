@@ -1,19 +1,17 @@
 {
   "raw": "2  cut-up chickens, (2½ lbs (1.1 k) each, quartered, bone-in, skin-on (see note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cut-up chickens each, quartered, bone-in, skin-on (see note)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cut-up chickens each, quartered, bone-in, skin-on (see note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

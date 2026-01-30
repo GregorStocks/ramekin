@@ -1,15 +1,13 @@
 {
   "raw": "3¾ cups chicken or vegetable broth (or miso soup mix)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken or vegetable broth (or miso soup mix)",
-      "measurements": [
-        {
-          "amount": "3 3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken or vegetable broth (or miso soup mix)",
+    "measurements": [
+      {
+        "amount": "3 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

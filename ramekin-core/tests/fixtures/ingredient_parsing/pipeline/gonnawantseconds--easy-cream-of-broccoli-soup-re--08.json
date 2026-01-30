@@ -1,15 +1,13 @@
 {
   "raw": "2  Bay Leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bay Leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bay Leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

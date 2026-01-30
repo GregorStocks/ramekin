@@ -1,15 +1,13 @@
 {
   "raw": "3  medium sweet potatoes (diced into cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": "diced into cubes"
-    }
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced into cubes"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "½  lemon (juiced, about 2 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

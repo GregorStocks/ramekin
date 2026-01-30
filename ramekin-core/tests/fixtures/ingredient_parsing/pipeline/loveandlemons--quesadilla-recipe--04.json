@@ -1,15 +1,13 @@
 {
   "raw": "¾ cup cooked black beans (drained and rinsed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked black beans",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained and rinsed"
-    }
+  "expected": {
+    "item": "cooked black beans",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained and rinsed"
   }
 }

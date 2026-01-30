@@ -1,19 +1,17 @@
 {
   "raw": "1  (15-ounce) can salmon (drained (wild-caught if possible))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": "drained (wild-caught if possible"
-    }
+  "expected": {
+    "item": "salmon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "drained (wild-caught if possible"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 oranges, Cara Cara are nice if you can find them",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oranges, Cara Cara are nice if you can find them",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oranges, Cara Cara are nice if you can find them",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

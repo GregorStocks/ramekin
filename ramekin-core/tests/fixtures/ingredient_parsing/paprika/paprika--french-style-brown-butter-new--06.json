@@ -1,10 +1,8 @@
 {
   "raw": "Sliced chives, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sliced chives",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Sliced chives",
+    "measurements": [],
+    "note": "for serving"
   }
 }

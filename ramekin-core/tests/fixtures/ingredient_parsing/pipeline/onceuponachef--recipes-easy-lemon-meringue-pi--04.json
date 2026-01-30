@@ -1,15 +1,13 @@
 {
   "raw": "4  large egg yolks (reserve the whites for the meringue)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolks (reserve the whites for the meringue)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg yolks (reserve the whites for the meringue)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup arrowroot flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arrowroot flour",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arrowroot flour",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

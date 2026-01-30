@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup dried unsweetened shredded coconut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried unsweetened shredded coconut",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried unsweetened shredded coconut",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

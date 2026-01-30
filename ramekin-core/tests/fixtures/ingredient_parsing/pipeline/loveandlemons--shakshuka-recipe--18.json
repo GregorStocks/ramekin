@@ -1,10 +1,8 @@
 {
   "raw": "Toasted bread (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted bread",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Toasted bread",
+    "measurements": [],
+    "note": "for serving"
   }
 }

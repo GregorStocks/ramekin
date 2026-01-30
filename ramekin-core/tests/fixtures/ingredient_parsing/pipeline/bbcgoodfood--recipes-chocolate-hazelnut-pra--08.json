@@ -1,19 +1,17 @@
 {
   "raw": "200g dark chocolate (70% cocoa)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark chocolate",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        },
-        {
-          "amount": "70",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      },
+      {
+        "amount": "70",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

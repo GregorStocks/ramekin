@@ -1,23 +1,21 @@
 {
   "raw": "1/3 cup (5 Tbsp; 71g) unsalted butter, melted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "71",
-          "unit": "g"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "71",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
   }
 }

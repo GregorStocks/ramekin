@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces ginger beer, (or ginger ale)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger beer, (or ginger ale)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger beer, (or ginger ale)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

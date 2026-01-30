@@ -1,15 +1,13 @@
 {
   "raw": "1  large sweet onion (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "sweet onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

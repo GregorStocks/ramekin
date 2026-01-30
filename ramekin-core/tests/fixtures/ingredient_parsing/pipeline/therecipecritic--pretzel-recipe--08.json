@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup baking soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking soda",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking soda",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

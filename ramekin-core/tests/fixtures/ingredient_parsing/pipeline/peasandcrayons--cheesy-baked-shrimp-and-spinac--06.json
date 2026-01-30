@@ -1,15 +1,13 @@
 {
   "raw": "2 cloves garlic (smashed and minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "clove"
-        }
-      ],
-      "note": "smashed and minced"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "clove"
+      }
+    ],
+    "note": "smashed and minced"
   }
 }

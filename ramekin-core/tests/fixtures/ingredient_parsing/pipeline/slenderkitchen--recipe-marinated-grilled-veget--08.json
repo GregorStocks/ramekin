@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp olive oil (marinade)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil (marinade)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil (marinade)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

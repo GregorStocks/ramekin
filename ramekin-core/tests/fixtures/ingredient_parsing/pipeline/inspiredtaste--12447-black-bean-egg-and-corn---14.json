@@ -1,15 +1,13 @@
 {
   "raw": "6 cherry tomatoes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "halved"
   }
 }

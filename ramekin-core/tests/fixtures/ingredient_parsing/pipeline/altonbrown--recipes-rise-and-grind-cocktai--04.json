@@ -1,15 +1,13 @@
 {
   "raw": "1/4 fluid ounce Fernet Branca",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fernet Branca",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Fernet Branca",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

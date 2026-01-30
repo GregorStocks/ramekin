@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup low fat cream cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low fat cream cheese",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low fat cream cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

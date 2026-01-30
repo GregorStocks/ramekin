@@ -1,15 +1,13 @@
 {
   "raw": "1 bacon slice, preferably thick-cut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon slice, preferably thick-cut",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon slice, preferably thick-cut",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

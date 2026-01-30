@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tablespoons pesto",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pesto",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pesto",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

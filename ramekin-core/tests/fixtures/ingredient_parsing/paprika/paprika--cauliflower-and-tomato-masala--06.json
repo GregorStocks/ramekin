@@ -1,15 +1,13 @@
 {
   "raw": "1 jalapeño or another green chile, finely chopped (use more or less to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño or another green chile, finely chopped",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "use more or less to taste"
-    }
+  "expected": {
+    "item": "jalapeño or another green chile, finely chopped",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "use more or less to taste"
   }
 }

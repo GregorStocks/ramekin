@@ -1,10 +1,8 @@
 {
   "raw": "egg wash for pie crust:&nbsp;1 large egg beaten with 1 Tablespoon milk or heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg wash for pie crust: 1 large egg beaten with 1 Tablespoon milk or heavy cream",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "egg wash for pie crust: 1 large egg beaten with 1 Tablespoon milk or heavy cream",
+    "measurements": [],
+    "note": null
   }
 }

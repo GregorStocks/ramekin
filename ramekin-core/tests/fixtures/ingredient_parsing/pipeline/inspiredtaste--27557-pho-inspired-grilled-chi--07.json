@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons fish sauce (see notes below for our fish sauce buying guide)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce (see notes below for our fish sauce buying guide)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fish sauce (see notes below for our fish sauce buying guide)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

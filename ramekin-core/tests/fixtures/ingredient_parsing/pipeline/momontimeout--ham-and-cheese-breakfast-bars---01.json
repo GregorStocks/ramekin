@@ -1,23 +1,21 @@
 {
   "raw": "8 oz reduced-fat crescent rolls (1 can)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-fat crescent rolls",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-fat crescent rolls",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

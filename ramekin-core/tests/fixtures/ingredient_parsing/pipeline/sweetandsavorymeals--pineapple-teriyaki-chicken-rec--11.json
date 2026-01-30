@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh pineapple (diced into 1 inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh pineapple",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced into 1 inch pieces"
-    }
+  "expected": {
+    "item": "fresh pineapple",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced into 1 inch pieces"
   }
 }

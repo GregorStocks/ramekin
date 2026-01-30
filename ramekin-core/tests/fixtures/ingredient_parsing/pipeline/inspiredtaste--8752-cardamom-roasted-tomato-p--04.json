@@ -1,15 +1,13 @@
 {
   "raw": "6 cardamom pods, pressed with the flat of a knife to crack pod",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cardamom pods, pressed with the flat of a knife to crack pod",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cardamom pods, pressed with the flat of a knife to crack pod",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

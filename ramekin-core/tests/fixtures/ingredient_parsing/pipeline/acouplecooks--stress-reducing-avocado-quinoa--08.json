@@ -1,15 +1,13 @@
 {
   "raw": "16 cups spinach leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spinach leaves",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spinach leaves",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

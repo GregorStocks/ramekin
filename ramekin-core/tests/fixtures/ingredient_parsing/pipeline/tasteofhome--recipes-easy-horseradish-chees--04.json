@@ -1,10 +1,8 @@
 {
   "raw": "Assorted crackers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Assorted crackers",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Assorted crackers",
+    "measurements": [],
+    "note": null
   }
 }

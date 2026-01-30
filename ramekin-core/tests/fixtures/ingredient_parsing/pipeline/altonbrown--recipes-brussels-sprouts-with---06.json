@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup dried cranberries, coarsely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried cranberries",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "dried cranberries",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

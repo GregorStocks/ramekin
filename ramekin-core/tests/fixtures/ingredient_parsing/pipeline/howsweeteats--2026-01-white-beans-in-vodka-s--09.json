@@ -1,15 +1,13 @@
 {
   "raw": "1 cups starchy pasta water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "starchy pasta water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "starchy pasta water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

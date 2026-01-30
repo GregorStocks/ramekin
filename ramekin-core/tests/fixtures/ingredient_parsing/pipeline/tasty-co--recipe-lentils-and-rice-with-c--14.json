@@ -1,15 +1,13 @@
 {
   "raw": "1 lemon, cut into wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon, cut into wedges",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon, cut into wedges",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

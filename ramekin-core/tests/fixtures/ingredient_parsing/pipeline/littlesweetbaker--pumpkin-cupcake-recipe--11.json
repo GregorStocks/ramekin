@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup (half stick) unsalted butter (room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "(half stick) unsalted butter (room temperature)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "(half stick) unsalted butter (room temperature)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

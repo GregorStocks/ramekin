@@ -1,15 +1,13 @@
 {
   "raw": "8 white bread slices (such as Pepperidge Farm), cut into 3-inch rounds and sautéed in butter and oil until browned",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white bread slices (such as Pepperidge Farm), cut into 3-inch rounds and sautéed in butter and oil until browned",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white bread slices (such as Pepperidge Farm), cut into 3-inch rounds and sautéed in butter and oil until browned",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

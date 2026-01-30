@@ -1,15 +1,13 @@
 {
   "raw": "2 cups sifted confectioners' sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sifted confectioners' sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sifted confectioners' sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

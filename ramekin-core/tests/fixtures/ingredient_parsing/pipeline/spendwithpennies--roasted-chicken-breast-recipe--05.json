@@ -1,15 +1,13 @@
 {
   "raw": "4  split chicken breasts (bone-in, skin on)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "split chicken breasts (bone-in, skin on)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "split chicken breasts (bone-in, skin on)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

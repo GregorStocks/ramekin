@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon minced flat-leaf parsley leaves and tender stems",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced flat-leaf parsley leaves and tender stems",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced flat-leaf parsley leaves and tender stems",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

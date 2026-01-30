@@ -1,19 +1,17 @@
 {
   "raw": "4 oz freshly grated gouda cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated gouda cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated gouda cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1½ teaspoons baking powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking powder",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking powder",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

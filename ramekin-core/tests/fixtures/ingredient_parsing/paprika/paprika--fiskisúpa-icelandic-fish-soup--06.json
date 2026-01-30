@@ -1,19 +1,17 @@
 {
   "raw": "1 leeks, white and light-green parts only, halved lengthwise, sliced thin (1 cup), and washed thoroughly",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leeks, white and light-green parts only, halved lengthwise, sliced thin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "and washed thoroughly"
-    }
+  "expected": {
+    "item": "leeks, white and light-green parts only, halved lengthwise, sliced thin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "and washed thoroughly"
   }
 }

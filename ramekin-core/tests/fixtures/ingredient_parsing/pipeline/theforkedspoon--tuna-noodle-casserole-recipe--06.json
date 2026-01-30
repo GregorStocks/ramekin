@@ -1,19 +1,17 @@
 {
   "raw": "12 oz wide egg noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wide egg noodles",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wide egg noodles",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  Medium cauliflower",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp ranch seasoning (store bought or homemade)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ranch seasoning (store bought or homemade)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ranch seasoning (store bought or homemade)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

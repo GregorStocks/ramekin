@@ -1,15 +1,13 @@
 {
   "raw": "1½ cup raw sona masuri rice ((refer notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw sona masuri rice (refer notes)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw sona masuri rice (refer notes)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

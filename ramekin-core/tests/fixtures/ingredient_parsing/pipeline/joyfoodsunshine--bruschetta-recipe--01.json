@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs tomatoes ((Roma, heirloom, vine tomatoes, etc))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes (Roma, heirloom, vine tomatoes, etc)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes (Roma, heirloom, vine tomatoes, etc)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

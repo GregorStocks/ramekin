@@ -1,15 +1,13 @@
 {
   "raw": "1 14.5 oz canned tomatoes (see notes*)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "14.5 oz canned tomatoes (see notes*)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "14.5 oz canned tomatoes (see notes*)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

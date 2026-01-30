@@ -1,19 +1,17 @@
 {
   "raw": "8 oz Mexican blend  (or Monterey Jack cheese)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican blend  (or Monterey Jack cheese)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican blend  (or Monterey Jack cheese)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

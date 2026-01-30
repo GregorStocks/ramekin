@@ -1,15 +1,13 @@
 {
   "raw": "1  Тbsp mayo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Тbsp mayo",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Тbsp mayo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

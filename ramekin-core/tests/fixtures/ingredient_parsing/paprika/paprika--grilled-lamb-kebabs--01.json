@@ -1,15 +1,13 @@
 {
   "raw": "1 pound plain yogurt (regular or lowfat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain yogurt (regular or lowfat)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain yogurt (regular or lowfat)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

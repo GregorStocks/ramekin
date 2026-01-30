@@ -1,19 +1,17 @@
 {
   "raw": "16 ounce jar maraschino cherries (drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jar maraschino cherries",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "jar maraschino cherries",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

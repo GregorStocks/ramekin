@@ -1,15 +1,13 @@
 {
   "raw": "½ tbsp lard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lard",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lard",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

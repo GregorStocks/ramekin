@@ -1,15 +1,13 @@
 {
   "raw": "1 small white onion (diced (approx. 1 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "diced (approx. 1 cup"
-    }
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "diced (approx. 1 cup"
   }
 }

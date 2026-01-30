@@ -1,15 +1,13 @@
 {
   "raw": "1 cup finely diced tomato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely diced tomato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely diced tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups leaf lettuce, any type or combination, torn into bite size pieces, if necessary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leaf lettuce, any type or combination, torn into bite size pieces, if necessary",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leaf lettuce, any type or combination, torn into bite size pieces, if necessary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

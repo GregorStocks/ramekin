@@ -1,10 +1,8 @@
 {
   "raw": "dried red chili pepper (slices, optional garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried red chili pepper",
-      "measurements": [],
-      "note": "slices, optional garnish"
-    }
+  "expected": {
+    "item": "dried red chili pepper",
+    "measurements": [],
+    "note": "slices, optional garnish"
   }
 }

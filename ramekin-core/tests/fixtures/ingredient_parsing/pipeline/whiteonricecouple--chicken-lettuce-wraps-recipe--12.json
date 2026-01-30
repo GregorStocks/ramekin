@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup toasted sliced almonds ((23g) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sliced almonds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "23",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted sliced almonds",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "23",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

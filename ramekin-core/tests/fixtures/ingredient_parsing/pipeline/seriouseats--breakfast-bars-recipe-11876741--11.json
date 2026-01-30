@@ -1,23 +1,21 @@
 {
   "raw": "1/4 cup (1 1/4 ounces; 36g) raw unsalted sunflower kernels",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw unsalted sunflower kernels",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1 1/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "36",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw unsalted sunflower kernels",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "36",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh or frozen cranberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen cranberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen cranberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

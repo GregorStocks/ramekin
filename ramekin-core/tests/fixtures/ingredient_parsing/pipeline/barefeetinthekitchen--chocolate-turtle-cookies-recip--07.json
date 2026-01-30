@@ -1,15 +1,13 @@
 {
   "raw": "½ cup caramel bits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramel bits",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caramel bits",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

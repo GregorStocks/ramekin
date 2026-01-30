@@ -1,15 +1,13 @@
 {
   "raw": "1   teaspoon    dried fenugreek leaves, crushed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried fenugreek leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "crushed"
-    }
+  "expected": {
+    "item": "dried fenugreek leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "crushed"
   }
 }

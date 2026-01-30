@@ -1,19 +1,17 @@
 {
   "raw": "18 ounces ground sirloin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground sirloin",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": "oz"
-        },
-        {
-          "amount": "510",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground sirloin",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "oz"
+      },
+      {
+        "amount": "510",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

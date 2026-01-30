@@ -1,19 +1,17 @@
 {
   "raw": "1 (12- to 14-pound) whole Butterball turkey, thawed if frozen, giblets removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole Butterball turkey, thawed if frozen, giblets removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole Butterball turkey, thawed if frozen, giblets removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2  recipe lemon vinaigrette",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "recipe lemon vinaigrette",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "recipe lemon vinaigrette",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon crushed Szechuan peppercorns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed Szechuan peppercorns",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed Szechuan peppercorns",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

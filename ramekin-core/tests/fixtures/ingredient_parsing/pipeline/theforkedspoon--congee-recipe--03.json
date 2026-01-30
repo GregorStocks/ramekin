@@ -1,15 +1,13 @@
 {
   "raw": "6 cups low-sodium broth ((chicken, beef, or vegetable))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium broth (chicken, beef, or vegetable)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium broth (chicken, beef, or vegetable)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

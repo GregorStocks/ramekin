@@ -1,15 +1,13 @@
 {
   "raw": "4  rosemary sprigs needles picked and finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rosemary sprigs needles picked and finely chopped",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rosemary sprigs needles picked and finely chopped",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

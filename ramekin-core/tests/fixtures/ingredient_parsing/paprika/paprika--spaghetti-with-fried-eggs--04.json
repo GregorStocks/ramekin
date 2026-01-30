@@ -1,15 +1,13 @@
 {
   "raw": "2 large cloves garlic, lightly smashed and peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "lightly smashed and peeled"
-    }
+  "expected": {
+    "item": "cloves garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "lightly smashed and peeled"
   }
 }

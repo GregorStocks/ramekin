@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces Mascarpone (at room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mascarpone",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "Mascarpone",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

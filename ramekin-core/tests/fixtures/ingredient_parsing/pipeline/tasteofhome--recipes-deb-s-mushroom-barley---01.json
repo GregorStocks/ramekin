@@ -1,15 +1,13 @@
 {
   "raw": "1 pound sliced baby portobello mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced baby portobello mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced baby portobello mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

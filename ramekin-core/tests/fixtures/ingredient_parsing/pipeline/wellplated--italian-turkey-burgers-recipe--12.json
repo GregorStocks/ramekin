@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces Mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

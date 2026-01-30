@@ -1,15 +1,13 @@
 {
   "raw": "1 small sprig of sage, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sprig of sage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "sprig of sage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "75 grams red onion ((1/2 large onion, chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion",
-      "measurements": [
-        {
-          "amount": "75",
-          "unit": "g"
-        }
-      ],
-      "note": "1/2 large onion, chopped"
-    }
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": "1/2 large onion, chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "handful of salt and vinegar kettle chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt and vinegar kettle chips",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt and vinegar kettle chips",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

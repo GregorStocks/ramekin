@@ -1,15 +1,13 @@
 {
   "raw": "6 low carb tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low carb tortillas",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low carb tortillas",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

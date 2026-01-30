@@ -1,15 +1,13 @@
 {
   "raw": "150 g boneless chicken thigh (skin on)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless chicken thigh (skin on)",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless chicken thigh (skin on)",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

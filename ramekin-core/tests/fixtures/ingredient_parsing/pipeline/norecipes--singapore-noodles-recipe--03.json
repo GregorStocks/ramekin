@@ -1,15 +1,13 @@
 {
   "raw": "130 grams pork loin ((sliced into strips))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork loin",
-      "measurements": [
-        {
-          "amount": "130",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced into strips"
-    }
+  "expected": {
+    "item": "pork loin",
+    "measurements": [
+      {
+        "amount": "130",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced into strips"
   }
 }

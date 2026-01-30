@@ -1,19 +1,17 @@
 {
   "raw": "4 oz. white chocolate candy coating or almond bark",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white chocolate candy coating or almond bark",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white chocolate candy coating or almond bark",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

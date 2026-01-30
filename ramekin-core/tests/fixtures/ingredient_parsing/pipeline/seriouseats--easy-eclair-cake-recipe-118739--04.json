@@ -1,19 +1,17 @@
 {
   "raw": "2 1/2 cups (600ml) heavy whipping cream, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy whipping cream",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "600",
-          "unit": "ml"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "600",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided"
   }
 }

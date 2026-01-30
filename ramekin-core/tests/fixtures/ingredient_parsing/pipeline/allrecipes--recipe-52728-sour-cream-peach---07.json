@@ -1,15 +1,13 @@
 {
   "raw": "4 cups sliced fresh or frozen peaches",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced fresh or frozen peaches",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced fresh or frozen peaches",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

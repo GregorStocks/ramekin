@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup seasoned Panko breadcrumbs (or regular)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seasoned Panko breadcrumbs (or regular)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seasoned Panko breadcrumbs (or regular)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

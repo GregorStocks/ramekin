@@ -1,19 +1,17 @@
 {
   "raw": "26 ounces frozen chicken nuggets (chopped) or popcorn chicken  (heated per package instructions)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen chicken nuggets or popcorn chicken  (heated per package instructions)",
-      "measurements": [
-        {
-          "amount": "26",
-          "unit": "oz"
-        },
-        {
-          "amount": "737",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "frozen chicken nuggets or popcorn chicken  (heated per package instructions)",
+    "measurements": [
+      {
+        "amount": "26",
+        "unit": "oz"
+      },
+      {
+        "amount": "737",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

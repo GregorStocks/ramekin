@@ -1,15 +1,13 @@
 {
   "raw": "10  star anise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "star anise",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "star anise",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

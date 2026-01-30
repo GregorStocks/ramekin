@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups unsalted cashews (or the nut of your choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted cashews (or the nut of your choice)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted cashews (or the nut of your choice)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 clove garlic (mashed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic (mashed)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic (mashed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

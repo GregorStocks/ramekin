@@ -1,15 +1,13 @@
 {
   "raw": "50ml stock or water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stock or water",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stock or water",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

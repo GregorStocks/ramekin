@@ -1,15 +1,13 @@
 {
   "raw": "1 quart vegetable broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable broth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

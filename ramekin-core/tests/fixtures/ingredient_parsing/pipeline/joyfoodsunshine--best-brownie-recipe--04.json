@@ -1,23 +1,21 @@
 {
   "raw": "10 ounces bittersweet or semisweet chocolate* ((1 ½ cups) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet or semisweet chocolate*",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet or semisweet chocolate*",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

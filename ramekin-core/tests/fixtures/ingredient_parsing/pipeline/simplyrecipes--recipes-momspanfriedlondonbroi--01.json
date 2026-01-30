@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds top round cut of steak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "top round cut of steak",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "top round cut of steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2.5 teaspoons Dijon mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dijon mustard",
-      "measurements": [
-        {
-          "amount": "2.5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dijon mustard",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

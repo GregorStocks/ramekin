@@ -1,15 +1,13 @@
 {
   "raw": "½ tablespoon Tamarind puree (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tamarind puree",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Tamarind puree",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

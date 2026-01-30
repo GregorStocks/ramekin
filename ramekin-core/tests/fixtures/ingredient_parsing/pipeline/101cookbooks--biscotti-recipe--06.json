@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup / 70 g unbleached all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "70",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

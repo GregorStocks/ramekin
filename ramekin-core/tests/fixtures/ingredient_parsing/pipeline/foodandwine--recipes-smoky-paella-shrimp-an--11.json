@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound baby squid, bodies cut into 1/4-inch rings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby squid, bodies cut into 1/4-inch rings",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby squid, bodies cut into 1/4-inch rings",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "5 cups (635 grams) whole-wheat flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-wheat flour",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        },
-        {
-          "amount": "635",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-wheat flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      },
+      {
+        "amount": "635",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

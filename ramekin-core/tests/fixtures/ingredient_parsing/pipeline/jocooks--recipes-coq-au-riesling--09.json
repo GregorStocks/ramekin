@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Riesling wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Riesling wine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Riesling wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

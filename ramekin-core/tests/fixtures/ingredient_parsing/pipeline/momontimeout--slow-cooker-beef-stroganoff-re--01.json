@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lbs top sirloin (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "top sirloin",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "top sirloin",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

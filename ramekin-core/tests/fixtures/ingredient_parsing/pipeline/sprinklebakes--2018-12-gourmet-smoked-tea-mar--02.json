@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup 15 grams loose lapsang souchong tea leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "15 grams loose lapsang souchong tea leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "15 grams loose lapsang souchong tea leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

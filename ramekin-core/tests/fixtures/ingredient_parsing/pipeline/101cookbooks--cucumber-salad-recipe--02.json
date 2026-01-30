@@ -1,10 +1,8 @@
 {
   "raw": "fine grain sea salt &amp;amp; lots of freshly cracked pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine grain sea salt & lots of freshly cracked pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fine grain sea salt & lots of freshly cracked pepper",
+    "measurements": [],
+    "note": null
   }
 }

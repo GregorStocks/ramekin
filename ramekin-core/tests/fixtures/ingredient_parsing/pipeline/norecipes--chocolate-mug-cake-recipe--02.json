@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons evaporated cane sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "evaporated cane sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "evaporated cane sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

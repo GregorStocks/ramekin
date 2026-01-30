@@ -1,15 +1,13 @@
 {
   "raw": "1  small head of brocolli",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head of brocolli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head of brocolli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Dried parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dried parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dried parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

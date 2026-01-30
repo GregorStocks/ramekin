@@ -1,15 +1,13 @@
 {
   "raw": "3 Tablespoons Butter (, melted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "Butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted"
   }
 }

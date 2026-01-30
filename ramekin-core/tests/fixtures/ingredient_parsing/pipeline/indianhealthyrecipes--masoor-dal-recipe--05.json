@@ -1,15 +1,13 @@
 {
   "raw": "1¼ to 1½ cup water ((or 1 cup for IP + ¼ cup if using moong dal))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 1 1/2 cup water (or 1 cup for IP + 1/4 cup if using moong dal)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 1 1/2 cup water (or 1 cup for IP + 1/4 cup if using moong dal)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

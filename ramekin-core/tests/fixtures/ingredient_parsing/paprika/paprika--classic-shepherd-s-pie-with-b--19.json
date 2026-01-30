@@ -1,19 +1,17 @@
 {
   "raw": "1 teaspoon (5 ml) Marmite (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Marmite",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": "ml"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Marmite",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "5",
+        "unit": "ml"
+      }
+    ],
+    "note": "optional"
   }
 }

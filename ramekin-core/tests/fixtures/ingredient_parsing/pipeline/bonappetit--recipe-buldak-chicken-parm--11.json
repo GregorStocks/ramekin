@@ -1,23 +1,21 @@
 {
   "raw": "8 oz. low-moisture mozzarella, coarsely grated (about 2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-moisture mozzarella",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "coarsely grated"
-    }
+  "expected": {
+    "item": "low-moisture mozzarella",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "coarsely grated"
   }
 }

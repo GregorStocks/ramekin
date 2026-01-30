@@ -1,10 +1,8 @@
 {
   "raw": "leftover slices/bits of turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover slices/bits of turkey",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover slices/bits of turkey",
+    "measurements": [],
+    "note": null
   }
 }

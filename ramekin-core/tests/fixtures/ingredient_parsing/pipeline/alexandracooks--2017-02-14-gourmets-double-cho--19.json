@@ -1,15 +1,13 @@
 {
   "raw": "small square of semi-sweet (or other) chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "square of semi-sweet (or other) chocolate",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "square of semi-sweet (or other) chocolate",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

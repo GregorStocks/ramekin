@@ -1,15 +1,13 @@
 {
   "raw": "½ cup finely chopped parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped parsley",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped parsley",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

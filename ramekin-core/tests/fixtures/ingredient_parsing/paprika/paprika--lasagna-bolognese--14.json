@@ -1,10 +1,8 @@
 {
   "raw": "A few sprigs thyme, tied in a bundle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A few sprigs thyme, tied in a bundle",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A few sprigs thyme, tied in a bundle",
+    "measurements": [],
+    "note": null
   }
 }

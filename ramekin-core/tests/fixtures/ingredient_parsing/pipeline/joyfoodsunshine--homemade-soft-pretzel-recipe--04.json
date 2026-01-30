@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons whole milk (room temperature.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "room temperature."
-    }
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "room temperature."
   }
 }

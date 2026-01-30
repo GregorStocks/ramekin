@@ -1,15 +1,13 @@
 {
   "raw": "4 medium yellow squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow squash",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

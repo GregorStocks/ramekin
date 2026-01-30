@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups cake flour ((or all-purpose flour-156g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cake flour (or all-purpose flour-156g)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cake flour (or all-purpose flour-156g)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

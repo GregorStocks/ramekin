@@ -1,10 +1,8 @@
 {
   "raw": "finger length piece fresh root ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finger length piece fresh root ginger",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "finger length piece fresh root ginger",
+    "measurements": [],
+    "note": null
   }
 }

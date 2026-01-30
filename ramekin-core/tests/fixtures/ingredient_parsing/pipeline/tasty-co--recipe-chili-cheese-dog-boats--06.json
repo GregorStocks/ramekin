@@ -1,19 +1,17 @@
 {
   "raw": "15 oz chili, with or without beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili, with or without beans",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili, with or without beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

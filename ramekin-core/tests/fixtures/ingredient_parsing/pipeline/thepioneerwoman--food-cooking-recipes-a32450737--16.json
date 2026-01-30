@@ -1,10 +1,8 @@
 {
   "raw": "Grated monterey jack cheese and chopped avocado, for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grated monterey jack cheese and chopped avocado, for topping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Grated monterey jack cheese and chopped avocado, for topping",
+    "measurements": [],
+    "note": null
   }
 }

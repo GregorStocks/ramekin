@@ -1,15 +1,13 @@
 {
   "raw": "6 cups spinach, roughly chopped, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spinach, roughly chopped, to serve",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spinach, roughly chopped, to serve",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

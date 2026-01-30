@@ -1,19 +1,17 @@
 {
   "raw": "1 (4-inch) cinnamon stick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon stick",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon stick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

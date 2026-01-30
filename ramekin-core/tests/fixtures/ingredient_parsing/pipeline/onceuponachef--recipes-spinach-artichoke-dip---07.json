@@ -1,19 +1,17 @@
 {
   "raw": "1 (14-ounce) can quartered artichoke hearts, (drained, rinsed, chopped, and blotted dry with paper towels (see note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quartered artichoke hearts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": "drained, rinsed, chopped, and blotted dry with paper towels (see note"
-    }
+  "expected": {
+    "item": "quartered artichoke hearts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": "drained, rinsed, chopped, and blotted dry with paper towels (see note"
   }
 }

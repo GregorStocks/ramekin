@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp nonfat plain Greek yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nonfat plain Greek yogurt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "nonfat plain Greek yogurt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "40 g honey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

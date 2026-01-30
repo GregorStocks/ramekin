@@ -1,15 +1,13 @@
 {
   "raw": "8 tablespoons unsalted Kerrygold butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted Kerrygold butter",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted Kerrygold butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

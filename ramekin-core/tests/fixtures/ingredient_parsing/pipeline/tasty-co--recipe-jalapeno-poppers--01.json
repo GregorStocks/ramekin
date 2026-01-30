@@ -1,15 +1,13 @@
 {
   "raw": "4 jalapeñoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeñoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeñoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

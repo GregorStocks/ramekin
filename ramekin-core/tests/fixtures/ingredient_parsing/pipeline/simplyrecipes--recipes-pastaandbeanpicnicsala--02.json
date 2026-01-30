@@ -1,15 +1,13 @@
 {
   "raw": "1 pound small-shaped pasta (curly, twisted, corkscrew, shells, or bow-ties)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small-shaped pasta (curly, twisted, corkscrew, shells, or bow-ties)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "small-shaped pasta (curly, twisted, corkscrew, shells, or bow-ties)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

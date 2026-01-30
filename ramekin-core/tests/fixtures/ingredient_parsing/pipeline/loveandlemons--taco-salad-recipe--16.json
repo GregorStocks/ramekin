@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon tamari",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tamari",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tamari",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

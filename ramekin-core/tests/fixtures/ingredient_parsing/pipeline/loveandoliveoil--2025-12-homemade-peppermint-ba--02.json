@@ -1,19 +1,17 @@
 {
   "raw": "5 oz good quality dark chocolate (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good quality dark chocolate",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "good quality dark chocolate",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

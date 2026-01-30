@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cup warm coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm coffee",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm coffee",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

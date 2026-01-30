@@ -1,10 +1,8 @@
 {
   "raw": "fresh or leftover grilled/roasted/sautéed veggies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or leftover grilled/roasted/sautéed veggies",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or leftover grilled/roasted/sautéed veggies",
+    "measurements": [],
+    "note": null
   }
 }

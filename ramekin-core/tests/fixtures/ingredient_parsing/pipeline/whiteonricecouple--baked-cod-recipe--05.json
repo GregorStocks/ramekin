@@ -1,15 +1,13 @@
 {
   "raw": "3 Tablespoons butter (, softened (not melted))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "softened (not melted"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "softened (not melted"
   }
 }

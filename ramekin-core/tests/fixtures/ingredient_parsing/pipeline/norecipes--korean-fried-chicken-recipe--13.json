@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon toasted sesame seeds ((for garnish))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "toasted sesame seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "for garnish"
   }
 }

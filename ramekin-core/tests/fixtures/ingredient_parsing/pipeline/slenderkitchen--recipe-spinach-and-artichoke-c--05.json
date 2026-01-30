@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup reduced fat cream cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced fat cream cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced fat cream cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

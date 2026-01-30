@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

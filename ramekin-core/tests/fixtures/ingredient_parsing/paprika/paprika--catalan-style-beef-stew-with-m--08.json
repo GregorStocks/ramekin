@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon smoked paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked paprika",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked paprika",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

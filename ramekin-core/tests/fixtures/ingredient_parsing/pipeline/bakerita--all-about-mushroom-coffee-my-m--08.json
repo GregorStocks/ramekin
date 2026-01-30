@@ -1,10 +1,8 @@
 {
   "raw": "Cinnamon and spice, to taste, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cinnamon and spice, to taste",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Cinnamon and spice, to taste",
+    "measurements": [],
+    "note": "optional"
   }
 }

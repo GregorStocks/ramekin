@@ -1,15 +1,13 @@
 {
   "raw": "8 scallions, white parts minced, green parts cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions, white parts minced, green parts cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scallions, white parts minced, green parts cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

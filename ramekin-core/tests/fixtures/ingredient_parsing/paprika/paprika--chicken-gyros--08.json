@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 teaspoons dried oregano, crumbled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried oregano",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "dried oregano",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "crumbled"
   }
 }

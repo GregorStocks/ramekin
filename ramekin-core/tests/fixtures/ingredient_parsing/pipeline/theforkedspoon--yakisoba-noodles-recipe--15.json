@@ -1,15 +1,13 @@
 {
   "raw": "¼  green cabbage (&nbsp;cored and sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cabbage",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": "cored and sliced"
-    }
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": "cored and sliced"
   }
 }

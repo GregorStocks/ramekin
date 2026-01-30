@@ -1,19 +1,17 @@
 {
   "raw": "1.5 pounds chicken tenders (about 10-12 pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken tenders",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        },
-        {
-          "amount": "10-12",
-          "unit": "piece"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken tenders",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lb"
+      },
+      {
+        "amount": "10-12",
+        "unit": "piece"
+      }
+    ],
+    "note": null
   }
 }

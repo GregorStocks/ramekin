@@ -1,15 +1,13 @@
 {
   "raw": "1½ tablespoons oil ((for sauce))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil (for sauce)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil (for sauce)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

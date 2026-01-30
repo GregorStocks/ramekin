@@ -1,15 +1,13 @@
 {
   "raw": "1 cup shredded gruyère cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded gruyère cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded gruyère cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

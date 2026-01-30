@@ -1,15 +1,13 @@
 {
   "raw": "1 pound chicken tenders (or chicken breasts cut into 1-inch strips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken tenders (or chicken breasts cut into 1-inch strips)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken tenders (or chicken breasts cut into 1-inch strips)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

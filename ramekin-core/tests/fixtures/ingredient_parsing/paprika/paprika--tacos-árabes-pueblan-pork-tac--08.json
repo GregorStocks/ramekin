@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon cumin seeds, toasted and cracked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cumin seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "toasted and cracked"
-    }
+  "expected": {
+    "item": "cumin seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "toasted and cracked"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons unsweetened apple sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened apple sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened apple sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

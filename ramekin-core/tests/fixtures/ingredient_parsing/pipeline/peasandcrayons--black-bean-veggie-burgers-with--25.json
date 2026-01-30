@@ -1,10 +1,8 @@
 {
   "raw": "arugula or lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arugula or lettuce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "arugula or lettuce",
+    "measurements": [],
+    "note": null
   }
 }

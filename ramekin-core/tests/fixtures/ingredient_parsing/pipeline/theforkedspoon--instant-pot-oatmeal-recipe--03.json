@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon butter (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

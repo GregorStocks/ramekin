@@ -1,15 +1,13 @@
 {
   "raw": "10 tablespoons European-style salted butter (increase salt to 3/4 teaspoon if using unsalted butter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "European-style salted butter (increase salt to 3/4 teaspoon if using unsalted butter)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "European-style salted butter (increase salt to 3/4 teaspoon if using unsalted butter)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

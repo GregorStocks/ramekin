@@ -1,15 +1,13 @@
 {
   "raw": "6  scallions (thinly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "thinly chopped"
-    }
+  "expected": {
+    "item": "scallions",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "thinly chopped"
   }
 }

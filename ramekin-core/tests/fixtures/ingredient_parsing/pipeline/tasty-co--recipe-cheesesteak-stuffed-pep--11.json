@@ -1,15 +1,13 @@
 {
   "raw": "6 red bell peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell peppers",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red bell peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon hot sauce ( or Sriracha sauce - optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or Sriracha sauce - optional"
-    }
+  "expected": {
+    "item": "hot sauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or Sriracha sauce - optional"
   }
 }

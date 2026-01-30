@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon fresh or dried thyme (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or dried thyme",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh or dried thyme",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

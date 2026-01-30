@@ -1,10 +1,8 @@
 {
   "raw": "Freshly ground black pepper and red pepper flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Freshly ground black pepper and red pepper flakes",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Freshly ground black pepper and red pepper flakes",
+    "measurements": [],
+    "note": null
   }
 }

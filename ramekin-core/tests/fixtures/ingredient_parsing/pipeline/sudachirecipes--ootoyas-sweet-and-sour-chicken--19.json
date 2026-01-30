@@ -1,15 +1,13 @@
 {
   "raw": "75 g onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "75",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

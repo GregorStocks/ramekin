@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces cherry tomatoes (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "quartered"
   }
 }

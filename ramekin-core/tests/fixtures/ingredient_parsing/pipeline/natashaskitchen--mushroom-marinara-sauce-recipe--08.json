@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp Kosher Salt (or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher Salt (or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kosher Salt (or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "230 grams napa cabbage ((shredded))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "napa cabbage",
-      "measurements": [
-        {
-          "amount": "230",
-          "unit": "g"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "napa cabbage",
+    "measurements": [
+      {
+        "amount": "230",
+        "unit": "g"
+      }
+    ],
+    "note": "shredded"
   }
 }

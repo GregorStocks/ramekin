@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup lightly packed dark muscovado sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly packed dark muscovado sugar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly packed dark muscovado sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

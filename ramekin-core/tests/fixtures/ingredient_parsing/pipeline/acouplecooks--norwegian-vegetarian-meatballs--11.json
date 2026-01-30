@@ -1,10 +1,8 @@
 {
   "raw": "Chopped Italian parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped Italian parsley",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped Italian parsley",
+    "measurements": [],
+    "note": null
   }
 }

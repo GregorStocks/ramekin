@@ -1,23 +1,21 @@
 {
   "raw": "2 (15-ounce; 425 g each) cans kidney beans, rinsed and drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kidney beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        },
-        {
-          "amount": "425",
-          "unit": "g each"
-        }
-      ],
-      "note": "rinsed and drained"
-    }
+  "expected": {
+    "item": "kidney beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      },
+      {
+        "amount": "425",
+        "unit": "g each"
+      }
+    ],
+    "note": "rinsed and drained"
   }
 }

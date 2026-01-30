@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon finely minced fresh chili (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely minced fresh chili",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "finely minced fresh chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

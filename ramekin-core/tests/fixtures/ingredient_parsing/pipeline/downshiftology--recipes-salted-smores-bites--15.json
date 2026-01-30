@@ -1,10 +1,8 @@
 {
   "raw": "Coating: 2 tbsp organic powdered sugar or arrowroot flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Coating: 2 tbsp organic powdered sugar or arrowroot flour",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Coating: 2 tbsp organic powdered sugar or arrowroot flour",
+    "measurements": [],
+    "note": null
   }
 }

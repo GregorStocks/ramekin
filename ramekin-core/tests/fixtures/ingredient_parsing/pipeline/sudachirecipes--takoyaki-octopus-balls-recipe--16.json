@@ -1,10 +1,8 @@
 {
   "raw": "Japanese mayonnaise (such as Kewpie)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese mayonnaise (such as Kewpie)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese mayonnaise (such as Kewpie)",
+    "measurements": [],
+    "note": null
   }
 }

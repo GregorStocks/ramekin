@@ -1,19 +1,17 @@
 {
   "raw": "2 tubes (8 ounces each) refrigerated crescent rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tubes refrigerated crescent rolls",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tubes refrigerated crescent rolls",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

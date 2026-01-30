@@ -1,15 +1,13 @@
 {
   "raw": "3 small fresh ginseng roots ((dried works okay too))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ginseng roots",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "small"
-        }
-      ],
-      "note": "dried works okay too"
-    }
+  "expected": {
+    "item": "fresh ginseng roots",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "small"
+      }
+    ],
+    "note": "dried works okay too"
   }
 }

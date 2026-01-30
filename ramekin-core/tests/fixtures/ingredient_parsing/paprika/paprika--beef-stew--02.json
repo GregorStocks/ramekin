@@ -1,19 +1,17 @@
 {
   "raw": "4 anchovy fillets, finely minced (about 2 teaspoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anchovy fillets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "anchovy fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "finely minced"
   }
 }

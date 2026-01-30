@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons finely chopped fresh garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fresh garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped fresh garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

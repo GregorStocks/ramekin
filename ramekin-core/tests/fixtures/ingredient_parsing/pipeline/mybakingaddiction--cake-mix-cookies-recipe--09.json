@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 teaspoons clear vanilla extract (this helps maintain the bright white color)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clear vanilla extract (this helps maintain the bright white color)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "clear vanilla extract (this helps maintain the bright white color)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

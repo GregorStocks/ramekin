@@ -1,15 +1,13 @@
 {
   "raw": "1 4-ounce log goat cheese, crumbled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "4-ounce log goat cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "4-ounce log goat cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "crumbled"
   }
 }

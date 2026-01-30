@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (453 g) cremini mushrooms, trimmed and quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cremini mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "453",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed and quartered"
-    }
+  "expected": {
+    "item": "cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "453",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed and quartered"
   }
 }

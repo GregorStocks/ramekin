@@ -1,10 +1,8 @@
 {
   "raw": "Season the fries with chili powder, paprika, and garlic powder (before baking)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Season the fries with chili powder, paprika, and garlic powder (before baking)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Season the fries with chili powder, paprika, and garlic powder (before baking)",
+    "measurements": [],
+    "note": null
   }
 }

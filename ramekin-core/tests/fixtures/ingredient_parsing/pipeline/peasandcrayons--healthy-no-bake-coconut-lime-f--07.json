@@ -1,15 +1,13 @@
 {
   "raw": "1-2 cups fresh fruit (see below)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh fruit (see below)",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh fruit (see below)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac12; cup melted coconut oil or olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted coconut oil or olive oil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted coconut oil or olive oil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

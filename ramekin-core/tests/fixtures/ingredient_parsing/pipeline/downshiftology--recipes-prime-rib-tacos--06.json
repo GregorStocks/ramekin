@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons fresh cilantro leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cilantro leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

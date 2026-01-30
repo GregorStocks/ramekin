@@ -1,15 +1,13 @@
 {
   "raw": "2  scallions ((chopped for garnish))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "chopped for garnish"
-    }
+  "expected": {
+    "item": "scallions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "chopped for garnish"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch fresh thyme leaves, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "fresh thyme leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": "to taste"
   }
 }

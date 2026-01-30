@@ -1,15 +1,13 @@
 {
   "raw": "1 small ahi tuna steak, at least 1 inch thick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ahi tuna steak, at least 1 inch thick",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ahi tuna steak, at least 1 inch thick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup packed culantro (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed culantro (see notes)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed culantro (see notes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

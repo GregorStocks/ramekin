@@ -1,19 +1,17 @@
 {
   "raw": "1 block (12- to 15-oz) firm or extra-firm tofu",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "block firm or extra-firm tofu",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "block firm or extra-firm tofu",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

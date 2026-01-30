@@ -1,15 +1,13 @@
 {
   "raw": "1  green cardamom pod (, smashed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cardamom pod (, smashed)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green cardamom pod (, smashed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

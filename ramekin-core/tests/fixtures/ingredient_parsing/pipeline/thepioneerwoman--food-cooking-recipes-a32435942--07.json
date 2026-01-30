@@ -1,15 +1,13 @@
 {
   "raw": "2 pork tenderloins (each slightly over 1 pound)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork tenderloins (each slightly over 1 pound)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork tenderloins (each slightly over 1 pound)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

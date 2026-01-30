@@ -1,15 +1,13 @@
 {
   "raw": "1 14-ounce jar roasted chestnuts (see Tip)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted chestnuts (see Tip)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "14-ounce jar"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted chestnuts (see Tip)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "14-ounce jar"
+      }
+    ],
+    "note": null
   }
 }

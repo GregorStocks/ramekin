@@ -1,10 +1,8 @@
 {
   "raw": "Cooked crumbled bacon ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooked crumbled bacon",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Cooked crumbled bacon",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup grated onion, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "grated onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
   }
 }

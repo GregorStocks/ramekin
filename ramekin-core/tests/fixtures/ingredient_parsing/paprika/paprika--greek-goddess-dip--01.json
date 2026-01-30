@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup packed fresh dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed fresh dill",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed fresh dill",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "12 slices baguette, 1/2-inch thick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baguette, 1/2-inch thick",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baguette, 1/2-inch thick",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

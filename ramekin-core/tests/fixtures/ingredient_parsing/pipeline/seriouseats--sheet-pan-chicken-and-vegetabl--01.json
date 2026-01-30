@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) Thai red curry paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai red curry paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai red curry paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

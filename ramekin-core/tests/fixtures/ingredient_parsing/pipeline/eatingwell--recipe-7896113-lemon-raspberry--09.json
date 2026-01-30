@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup white whole-wheat flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white whole-wheat flour",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white whole-wheat flour",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

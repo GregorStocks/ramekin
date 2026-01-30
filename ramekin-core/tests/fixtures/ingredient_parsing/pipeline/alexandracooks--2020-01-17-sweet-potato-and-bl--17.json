@@ -1,10 +1,8 @@
 {
   "raw": "fresh lime to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lime to taste",
+    "measurements": [],
+    "note": null
   }
 }

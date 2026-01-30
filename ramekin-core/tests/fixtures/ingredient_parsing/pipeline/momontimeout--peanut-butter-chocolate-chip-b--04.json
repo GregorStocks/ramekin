@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup creamy peanut butter (I used Skippy Natural)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "creamy peanut butter (I used Skippy Natural)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "creamy peanut butter (I used Skippy Natural)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

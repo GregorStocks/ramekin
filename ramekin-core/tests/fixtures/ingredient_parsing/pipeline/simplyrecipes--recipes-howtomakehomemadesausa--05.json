@@ -1,15 +1,13 @@
 {
   "raw": "20 grams toasted fennel seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted fennel seeds",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted fennel seeds",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

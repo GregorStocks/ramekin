@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4  cups    sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

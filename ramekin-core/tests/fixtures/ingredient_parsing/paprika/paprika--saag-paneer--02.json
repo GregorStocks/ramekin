@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons ghee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ghee",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

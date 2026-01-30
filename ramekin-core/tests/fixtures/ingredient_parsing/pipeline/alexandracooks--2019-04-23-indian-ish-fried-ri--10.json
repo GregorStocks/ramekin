@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped fresh cilantro or more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh cilantro or more to taste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh cilantro or more to taste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

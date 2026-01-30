@@ -1,15 +1,13 @@
 {
   "raw": "4 plum tomatoes, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plum tomatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "plum tomatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

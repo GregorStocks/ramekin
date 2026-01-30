@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons minced fresh dill (, or 1 teaspoon dried dill)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced fresh dill",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1 teaspoon dried dill"
-    }
+  "expected": {
+    "item": "minced fresh dill",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1 teaspoon dried dill"
   }
 }

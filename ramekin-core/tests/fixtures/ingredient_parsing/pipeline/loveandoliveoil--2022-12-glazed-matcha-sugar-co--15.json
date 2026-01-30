@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon matcha (optional if you want a green glaze)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "matcha",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional if you want a green glaze"
-    }
+  "expected": {
+    "item": "matcha",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional if you want a green glaze"
   }
 }

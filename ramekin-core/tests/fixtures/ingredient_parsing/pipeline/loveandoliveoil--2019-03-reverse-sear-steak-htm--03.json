@@ -1,15 +1,13 @@
 {
   "raw": "2-3 tablespoons vegetable oil vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil vegetable oil",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil vegetable oil",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

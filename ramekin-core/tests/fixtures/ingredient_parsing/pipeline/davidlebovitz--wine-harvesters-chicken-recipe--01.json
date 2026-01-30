@@ -1,23 +1,21 @@
 {
   "raw": "1 whole chicken (cut into 6 or 8 pieces, or 4 thighs cut in half (see headnote))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chicken",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": "piece"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole chicken",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "piece"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

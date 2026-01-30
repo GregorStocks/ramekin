@@ -1,23 +1,21 @@
 {
   "raw": "4 ripe Hass avocados (about 7 ounces; 200 g each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe Hass avocados",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "7",
-          "unit": "oz each"
-        },
-        {
-          "amount": "200",
-          "unit": "g each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe Hass avocados",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "7",
+        "unit": "oz each"
+      },
+      {
+        "amount": "200",
+        "unit": "g each"
+      }
+    ],
+    "note": null
   }
 }

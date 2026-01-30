@@ -1,10 +1,8 @@
 {
   "raw": "Hand immersion blender (preferred &amp;amp; easier, or food processor, or blender))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hand immersion blender (preferred & easier, or food processor, or blender)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Hand immersion blender (preferred & easier, or food processor, or blender)",
+    "measurements": [],
+    "note": null
   }
 }

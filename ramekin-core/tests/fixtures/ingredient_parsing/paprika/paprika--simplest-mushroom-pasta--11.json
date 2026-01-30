@@ -1,10 +1,8 @@
 {
   "raw": "Grated parmesan or pecorino",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grated parmesan or pecorino",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Grated parmesan or pecorino",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tomato, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Toasted sesame seeds (medium heat 2 minutes, tossing frequently)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted sesame seeds",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Toasted sesame seeds",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

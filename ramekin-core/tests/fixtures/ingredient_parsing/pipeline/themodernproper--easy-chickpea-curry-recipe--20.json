@@ -1,10 +1,8 @@
 {
   "raw": "Greek yogurt, for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek yogurt, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Greek yogurt, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

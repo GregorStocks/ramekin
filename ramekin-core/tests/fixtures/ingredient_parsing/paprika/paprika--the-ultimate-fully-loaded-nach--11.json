@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup picked cilantro leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "picked cilantro leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "picked cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

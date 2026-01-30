@@ -1,15 +1,13 @@
 {
   "raw": "1   medium    white onion, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
   }
 }

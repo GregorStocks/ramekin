@@ -1,15 +1,13 @@
 {
   "raw": "8 cloves black garlic (, sliced thinly)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black garlic",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "clove"
-        }
-      ],
-      "note": "sliced thinly"
-    }
+  "expected": {
+    "item": "black garlic",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "clove"
+      }
+    ],
+    "note": "sliced thinly"
   }
 }

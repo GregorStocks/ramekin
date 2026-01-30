@@ -1,19 +1,17 @@
 {
   "raw": "8 oz chicken livers (minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken livers",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "chicken livers",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "minced"
   }
 }

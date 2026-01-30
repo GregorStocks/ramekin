@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces bacon (diced (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "diced (optional"
-    }
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "diced (optional"
   }
 }

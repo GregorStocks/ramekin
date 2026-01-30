@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon pepper (add more or less to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "add more or less to taste"
-    }
+  "expected": {
+    "item": "pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "add more or less to taste"
   }
 }

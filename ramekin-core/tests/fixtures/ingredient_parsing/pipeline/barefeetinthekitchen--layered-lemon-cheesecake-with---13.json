@@ -1,15 +1,13 @@
 {
   "raw": "2 cups sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds flank or skirt steak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flank or skirt steak",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flank or skirt steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

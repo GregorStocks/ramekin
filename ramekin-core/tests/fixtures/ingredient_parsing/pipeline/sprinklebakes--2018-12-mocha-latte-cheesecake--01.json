@@ -1,19 +1,17 @@
 {
   "raw": "60  gingersnap cookies (230g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gingersnap cookies",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": null
-        },
-        {
-          "amount": "230",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gingersnap cookies",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": null
+      },
+      {
+        "amount": "230",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

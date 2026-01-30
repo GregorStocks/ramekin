@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup packed brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed brown sugar",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed brown sugar",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

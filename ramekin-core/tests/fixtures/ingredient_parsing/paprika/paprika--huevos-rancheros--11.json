@@ -1,10 +1,8 @@
 {
   "raw": "Mexican cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican cheese",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1-2  anchovies*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anchovies*",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "anchovies*",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

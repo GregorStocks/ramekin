@@ -1,23 +1,21 @@
 {
   "raw": "3.5 oz dark chocolate (100g, 90% cocoa solids or sugar free)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark chocolate",
-      "measurements": [
-        {
-          "amount": "3.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        },
-        {
-          "amount": "90",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      },
+      {
+        "amount": "90",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

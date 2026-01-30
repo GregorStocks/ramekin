@@ -1,15 +1,13 @@
 {
   "raw": "½  banana (sliced or diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "banana",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "sliced or diced"
-    }
+  "expected": {
+    "item": "banana",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "sliced or diced"
   }
 }

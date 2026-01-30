@@ -1,15 +1,13 @@
 {
   "raw": "100g pea",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pea",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pea",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

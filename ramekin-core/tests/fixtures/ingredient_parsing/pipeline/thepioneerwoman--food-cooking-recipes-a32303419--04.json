@@ -1,19 +1,17 @@
 {
   "raw": "1 oz. fresh lime juice, plus 2 lime wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": "plus 2 lime wedges"
-    }
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "plus 2 lime wedges"
   }
 }

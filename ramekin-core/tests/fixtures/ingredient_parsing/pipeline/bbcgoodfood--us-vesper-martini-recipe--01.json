@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp gin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gin",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gin",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

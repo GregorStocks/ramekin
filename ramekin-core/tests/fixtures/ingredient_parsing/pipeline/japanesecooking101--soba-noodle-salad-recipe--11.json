@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp oil (canola or vegetable oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil (canola or vegetable oil)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil (canola or vegetable oil)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

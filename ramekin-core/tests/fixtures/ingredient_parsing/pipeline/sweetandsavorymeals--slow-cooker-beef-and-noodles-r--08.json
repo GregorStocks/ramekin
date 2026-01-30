@@ -1,15 +1,13 @@
 {
   "raw": "6  pepperoncini peppers (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepperoncini peppers",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "pepperoncini peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

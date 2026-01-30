@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon coriander powder ((ground coriander seeds))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "ground coriander seeds"
-    }
+  "expected": {
+    "item": "coriander powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "ground coriander seeds"
   }
 }

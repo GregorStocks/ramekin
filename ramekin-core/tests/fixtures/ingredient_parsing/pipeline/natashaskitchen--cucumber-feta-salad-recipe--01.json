@@ -1,15 +1,13 @@
 {
   "raw": "2  English Cucumber (sliced into rings)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English Cucumber",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced into rings"
-    }
+  "expected": {
+    "item": "English Cucumber",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced into rings"
   }
 }

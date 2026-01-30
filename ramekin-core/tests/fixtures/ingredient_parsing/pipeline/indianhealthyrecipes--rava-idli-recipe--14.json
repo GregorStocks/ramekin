@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon lemon juice ((omit if using eno))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice (omit if using eno)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice (omit if using eno)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

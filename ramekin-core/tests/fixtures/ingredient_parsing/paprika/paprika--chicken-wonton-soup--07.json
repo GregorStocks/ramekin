@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons minced garlic chives, regular chives or scallions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced garlic chives, regular chives or scallions",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced garlic chives, regular chives or scallions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

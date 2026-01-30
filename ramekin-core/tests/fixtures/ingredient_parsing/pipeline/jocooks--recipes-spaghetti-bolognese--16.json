@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons basil (chopped, for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped, for garnish"
-    }
+  "expected": {
+    "item": "basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped, for garnish"
   }
 }

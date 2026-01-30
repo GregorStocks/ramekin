@@ -1,19 +1,17 @@
 {
   "raw": "150 grams tomatoes ((~2 small cut into bite-size pieces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

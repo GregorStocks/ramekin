@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ pounds imitation crab meat (chopped - using a knife or food processor)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "imitation crab meat",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "chopped - using a knife or food processor"
-    }
+  "expected": {
+    "item": "imitation crab meat",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped - using a knife or food processor"
   }
 }

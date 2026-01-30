@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. pitted niçoise olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted niçoise olives",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitted niçoise olives",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

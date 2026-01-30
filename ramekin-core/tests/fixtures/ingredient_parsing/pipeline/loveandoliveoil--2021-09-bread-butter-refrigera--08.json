@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon whole yellow mustard seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole yellow mustard seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole yellow mustard seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

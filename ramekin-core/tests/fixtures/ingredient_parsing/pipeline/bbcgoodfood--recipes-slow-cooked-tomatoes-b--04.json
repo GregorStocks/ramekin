@@ -1,15 +1,13 @@
 {
   "raw": "500ml  light olive oil plus extra for drizzling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light olive oil",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus extra for drizzling"
-    }
+  "expected": {
+    "item": "light olive oil",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus extra for drizzling"
   }
 }

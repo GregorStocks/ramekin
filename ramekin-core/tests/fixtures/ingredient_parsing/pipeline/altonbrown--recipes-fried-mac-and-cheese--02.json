@@ -1,15 +1,13 @@
 {
   "raw": "6 cups leftover macaroni and cheese, refrigerated overnight",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover macaroni and cheese, refrigerated overnight",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover macaroni and cheese, refrigerated overnight",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

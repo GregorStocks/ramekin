@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup freshly squeezed orange juice, strained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly squeezed orange juice, strained",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly squeezed orange juice, strained",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

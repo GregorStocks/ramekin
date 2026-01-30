@@ -1,19 +1,17 @@
 {
   "raw": "320 - 400 ml warm water (105 - 115F)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "320-400",
-          "unit": "ml"
-        },
-        {
-          "amount": "105",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "320-400",
+        "unit": "ml"
+      },
+      {
+        "amount": "105",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1kg sweet potato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "kg"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "kg"
+      }
+    ],
+    "note": null
   }
 }

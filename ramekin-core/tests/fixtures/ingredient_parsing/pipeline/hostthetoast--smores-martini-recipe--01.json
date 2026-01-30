@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup marshmallow fluff",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marshmallow fluff",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marshmallow fluff",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 cloves garlic (peeled and sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "clove"
-        }
-      ],
-      "note": "peeled and sliced"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "clove"
+      }
+    ],
+    "note": "peeled and sliced"
   }
 }

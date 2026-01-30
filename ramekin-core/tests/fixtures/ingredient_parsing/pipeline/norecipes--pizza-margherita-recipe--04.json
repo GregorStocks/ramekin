@@ -1,19 +1,17 @@
 {
   "raw": "375 grams bread flour ((~3 cups))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread flour",
-      "measurements": [
-        {
-          "amount": "375",
-          "unit": "g"
-        },
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "375",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

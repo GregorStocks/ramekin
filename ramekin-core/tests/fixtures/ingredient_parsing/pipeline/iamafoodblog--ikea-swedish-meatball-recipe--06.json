@@ -1,15 +1,13 @@
 {
   "raw": "2 small potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "10-ounces chopped frozen spinach, thawed, squeezed dry, chopped further (or 10 ounces chopped fresh spinach)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounces chopped frozen spinach, thawed, squeezed dry, chopped further",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "or 10 ounces chopped fresh spinach"
-    }
+  "expected": {
+    "item": "-ounces chopped frozen spinach, thawed, squeezed dry, chopped further",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "or 10 ounces chopped fresh spinach"
   }
 }

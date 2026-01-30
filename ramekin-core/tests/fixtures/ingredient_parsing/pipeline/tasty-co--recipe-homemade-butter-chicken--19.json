@@ -1,15 +1,13 @@
 {
   "raw": "1 ¼ cups cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

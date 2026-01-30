@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chuck roast (or pot roast)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chuck roast (or pot roast)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chuck roast (or pot roast)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

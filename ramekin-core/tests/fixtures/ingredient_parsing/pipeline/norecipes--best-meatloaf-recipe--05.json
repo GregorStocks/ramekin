@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup panko ((Japanese bread crumbs))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "panko (Japanese bread crumbs)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "panko (Japanese bread crumbs)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

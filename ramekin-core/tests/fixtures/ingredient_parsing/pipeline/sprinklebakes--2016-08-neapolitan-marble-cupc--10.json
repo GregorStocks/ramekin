@@ -1,15 +1,13 @@
 {
   "raw": "1 cup 226 g unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "226 g unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "226 g unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

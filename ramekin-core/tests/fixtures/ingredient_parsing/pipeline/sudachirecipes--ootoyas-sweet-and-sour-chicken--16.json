@@ -1,15 +1,13 @@
 {
   "raw": "75 g carrot",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "75",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "160 grams Tocino",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tocino",
-      "measurements": [
-        {
-          "amount": "160",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tocino",
+    "measurements": [
+      {
+        "amount": "160",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

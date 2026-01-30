@@ -1,15 +1,13 @@
 {
   "raw": "1  loaf day-old sourdough or white bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf day-old sourdough or white bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loaf day-old sourdough or white bread",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

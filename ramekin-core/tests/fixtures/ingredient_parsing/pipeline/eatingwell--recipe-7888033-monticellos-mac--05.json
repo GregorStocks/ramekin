@@ -1,15 +1,13 @@
 {
   "raw": "3 cups shredded mild Cheddar cheese or a mixture of Colby and Cheddar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded mild Cheddar cheese or a mixture of Colby and Cheddar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded mild Cheddar cheese or a mixture of Colby and Cheddar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

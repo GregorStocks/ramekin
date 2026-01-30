@@ -1,23 +1,21 @@
 {
   "raw": "10 ounces cream of chicken soup ((1 can))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream of chicken soup",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream of chicken soup",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

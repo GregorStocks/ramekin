@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp full-fat milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat milk",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full-fat milk",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

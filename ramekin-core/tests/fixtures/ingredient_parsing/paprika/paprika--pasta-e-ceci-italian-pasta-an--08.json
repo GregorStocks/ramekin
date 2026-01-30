@@ -1,19 +1,17 @@
 {
   "raw": "1 (15-ounce) can chickpeas, rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": "rinsed"
-    }
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "rinsed"
   }
 }

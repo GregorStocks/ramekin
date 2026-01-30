@@ -1,10 +1,8 @@
 {
   "raw": "For serving: 1-2 cups cooked lentils, drizzle of your best extra virgin olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For serving: 1-2 cups cooked lentils, drizzle of your best extra virgin olive oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "For serving: 1-2 cups cooked lentils, drizzle of your best extra virgin olive oil",
+    "measurements": [],
+    "note": null
   }
 }

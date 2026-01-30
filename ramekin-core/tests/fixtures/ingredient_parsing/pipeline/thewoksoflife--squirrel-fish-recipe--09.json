@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 tablespoons tomato paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato paste",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato paste",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cups heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

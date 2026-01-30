@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (113 g) cold unsalted butter, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "cold unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "cubed"
   }
 }

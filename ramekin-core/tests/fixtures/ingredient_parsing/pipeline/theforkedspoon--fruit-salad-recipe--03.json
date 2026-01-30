@@ -1,15 +1,13 @@
 {
   "raw": "2 cups seedless red grapes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seedless red grapes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seedless red grapes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

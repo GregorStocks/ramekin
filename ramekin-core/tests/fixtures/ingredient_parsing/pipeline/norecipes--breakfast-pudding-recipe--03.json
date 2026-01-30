@@ -1,15 +1,13 @@
 {
   "raw": "170 grams stale baguette",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stale baguette",
-      "measurements": [
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stale baguette",
+    "measurements": [
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

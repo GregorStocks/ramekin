@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup crème fraîche, or substitute equal parts sour cream and heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crème fraîche, or substitute equal parts sour cream and heavy cream",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crème fraîche, or substitute equal parts sour cream and heavy cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

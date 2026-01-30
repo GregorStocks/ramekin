@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15 mL) balsamic vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "balsamic vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "balsamic vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

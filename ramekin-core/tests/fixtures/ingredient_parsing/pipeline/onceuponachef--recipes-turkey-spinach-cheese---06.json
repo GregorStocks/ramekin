@@ -1,15 +1,13 @@
 {
   "raw": "1.25 pounds 93/7 ground turkey (I use Shady Brook Farms)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "93/7 ground turkey (I use Shady Brook Farms)",
-      "measurements": [
-        {
-          "amount": "1.25",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "93/7 ground turkey (I use Shady Brook Farms)",
+    "measurements": [
+      {
+        "amount": "1.25",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

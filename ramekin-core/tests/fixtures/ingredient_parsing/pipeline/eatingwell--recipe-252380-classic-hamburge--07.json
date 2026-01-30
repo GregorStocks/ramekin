@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces lean (90&amp;amp;#37; or leaner) ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground beef",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "90",
-          "unit": null
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean ground beef",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "90",
+        "unit": null
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

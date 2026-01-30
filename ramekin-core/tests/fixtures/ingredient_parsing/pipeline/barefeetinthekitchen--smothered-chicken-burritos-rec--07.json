@@ -1,10 +1,8 @@
 {
   "raw": "Burrito ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Burrito ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Burrito ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

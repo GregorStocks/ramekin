@@ -1,10 +1,8 @@
 {
   "raw": "Tabasco sauce, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tabasco sauce",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Tabasco sauce",
+    "measurements": [],
+    "note": "for serving"
   }
 }

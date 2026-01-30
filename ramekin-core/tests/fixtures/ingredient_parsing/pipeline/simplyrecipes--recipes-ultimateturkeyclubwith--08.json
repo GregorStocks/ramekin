@@ -1,15 +1,13 @@
 {
   "raw": "3 avocados, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocados",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "avocados",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

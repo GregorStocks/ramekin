@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Madeira, Marsala or sherry, or 1/2 cup white wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Madeira, Marsala or sherry, or 1/2 cup white wine",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Madeira, Marsala or sherry, or 1/2 cup white wine",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

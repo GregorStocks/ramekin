@@ -1,15 +1,13 @@
 {
   "raw": "6 Tablespoons pine nuts ((toasted))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pine nuts",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "toasted"
   }
 }

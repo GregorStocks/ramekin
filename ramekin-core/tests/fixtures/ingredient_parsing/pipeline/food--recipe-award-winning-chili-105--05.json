@@ -1,23 +1,21 @@
 {
   "raw": "1 (14   ounce) can   Mexican-style tomatoes (like Rotel)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican-style tomatoes (like Rotel)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican-style tomatoes (like Rotel)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

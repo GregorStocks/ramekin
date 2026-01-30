@@ -1,15 +1,13 @@
 {
   "raw": "3 3-ounce packages ramen noodles&nbsp;(seasoning packets, discarded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ramen noodles (seasoning packets, discarded)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "3-ounce packages"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ramen noodles (seasoning packets, discarded)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "3-ounce packages"
+      }
+    ],
+    "note": null
   }
 }

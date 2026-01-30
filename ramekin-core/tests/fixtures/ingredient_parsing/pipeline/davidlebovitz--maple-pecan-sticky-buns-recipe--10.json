@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60ml) maple syrup ((dark amber))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup (dark amber)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup (dark amber)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

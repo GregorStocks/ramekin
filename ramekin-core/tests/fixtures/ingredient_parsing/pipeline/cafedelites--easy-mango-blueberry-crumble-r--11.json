@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon light brown sugar (or coconut sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar (or coconut sugar)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar (or coconut sugar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

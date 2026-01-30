@@ -1,15 +1,13 @@
 {
   "raw": "2 lb. zucchini noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini noodles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "zucchini noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

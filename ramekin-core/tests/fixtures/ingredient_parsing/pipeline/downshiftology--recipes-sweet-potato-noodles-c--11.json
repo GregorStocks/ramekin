@@ -1,15 +1,13 @@
 {
   "raw": "1  bunch parsley or cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley or cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsley or cilantro",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

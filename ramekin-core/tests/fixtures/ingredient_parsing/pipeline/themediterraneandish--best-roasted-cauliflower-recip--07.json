@@ -1,15 +1,13 @@
 {
   "raw": "Handful fresh parsley for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh parsley for garnish",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh parsley for garnish",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "optional"
   }
 }

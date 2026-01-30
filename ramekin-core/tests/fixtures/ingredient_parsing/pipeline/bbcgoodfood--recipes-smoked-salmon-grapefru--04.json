@@ -1,15 +1,13 @@
 {
   "raw": "12 slices smoked salmon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked salmon",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked salmon",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

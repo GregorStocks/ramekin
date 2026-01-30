@@ -1,15 +1,13 @@
 {
   "raw": "1 gallon ice water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "gallon"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "gallon"
+      }
+    ],
+    "note": null
   }
 }

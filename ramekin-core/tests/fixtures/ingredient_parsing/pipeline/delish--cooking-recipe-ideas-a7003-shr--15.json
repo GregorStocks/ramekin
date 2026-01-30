@@ -1,15 +1,13 @@
 {
   "raw": "2 dashes hot sauce, such as Tabasco",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce, such as Tabasco",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot sauce, such as Tabasco",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

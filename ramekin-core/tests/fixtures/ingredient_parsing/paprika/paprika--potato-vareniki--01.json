@@ -1,10 +1,8 @@
 {
   "raw": "SIMPLE POTATO FILLING:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "SIMPLE POTATO FILLING:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "SIMPLE POTATO FILLING:",
+    "measurements": [],
+    "note": null
   }
 }

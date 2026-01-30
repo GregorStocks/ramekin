@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30ml) finely chopped fresh cilantro leaves and tender stems",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fresh cilantro leaves and tender stems",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped fresh cilantro leaves and tender stems",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

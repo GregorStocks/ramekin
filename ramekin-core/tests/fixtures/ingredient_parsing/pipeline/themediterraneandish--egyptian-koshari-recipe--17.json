@@ -1,15 +1,13 @@
 {
   "raw": "2 cups elbow pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "elbow pasta",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "elbow pasta",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

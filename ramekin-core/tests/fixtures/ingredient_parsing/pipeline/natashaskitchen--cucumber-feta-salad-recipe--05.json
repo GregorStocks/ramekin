@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp Extra Virgin Olive Oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra Virgin Olive Oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Extra Virgin Olive Oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

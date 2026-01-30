@@ -1,23 +1,21 @@
 {
   "raw": "1 package (10-ounce or 283-gram) frozen chopped spinach, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen chopped spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "10",
-          "unit": null
-        },
-        {
-          "amount": "283",
-          "unit": null
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen chopped spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "10",
+        "unit": null
+      },
+      {
+        "amount": "283",
+        "unit": null
+      }
+    ],
+    "note": "thawed"
   }
 }

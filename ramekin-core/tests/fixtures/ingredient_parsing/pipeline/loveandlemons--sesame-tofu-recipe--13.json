@@ -1,10 +1,8 @@
 {
   "raw": "Cilantro Lime Rice or Cauliflower Rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cilantro Lime Rice or Cauliflower Rice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cilantro Lime Rice or Cauliflower Rice",
+    "measurements": [],
+    "note": null
   }
 }

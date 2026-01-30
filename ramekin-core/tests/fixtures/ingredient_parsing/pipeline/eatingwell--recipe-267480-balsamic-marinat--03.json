@@ -1,15 +1,13 @@
 {
   "raw": "0.66666668653488 cup balsamic vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "balsamic vinegar",
-      "measurements": [
-        {
-          "amount": "0.66666668653488",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "balsamic vinegar",
+    "measurements": [
+      {
+        "amount": "0.66666668653488",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

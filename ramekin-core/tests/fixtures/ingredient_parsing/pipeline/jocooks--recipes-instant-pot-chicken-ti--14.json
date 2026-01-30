@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons coriander (ground)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "ground"
-    }
+  "expected": {
+    "item": "coriander",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "ground"
   }
 }

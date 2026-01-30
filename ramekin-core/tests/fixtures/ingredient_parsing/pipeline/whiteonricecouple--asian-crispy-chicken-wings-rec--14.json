@@ -1,10 +1,8 @@
 {
   "raw": "lots of fresh ground black pepper to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lots of fresh ground black pepper to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "lots of fresh ground black pepper to taste",
+    "measurements": [],
+    "note": null
   }
 }

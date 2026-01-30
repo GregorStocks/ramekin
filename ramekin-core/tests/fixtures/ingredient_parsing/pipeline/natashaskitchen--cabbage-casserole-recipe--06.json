@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp corn starch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn starch",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn starch",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

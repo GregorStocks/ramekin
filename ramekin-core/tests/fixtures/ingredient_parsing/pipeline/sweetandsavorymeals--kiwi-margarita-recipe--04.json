@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces orange liqueur (like Cointreau)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange liqueur (like Cointreau)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange liqueur (like Cointreau)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

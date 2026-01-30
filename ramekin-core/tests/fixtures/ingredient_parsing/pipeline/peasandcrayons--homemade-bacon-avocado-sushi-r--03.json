@@ -1,15 +1,13 @@
 {
   "raw": "1 TBSP seasoned rice vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seasoned rice vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seasoned rice vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

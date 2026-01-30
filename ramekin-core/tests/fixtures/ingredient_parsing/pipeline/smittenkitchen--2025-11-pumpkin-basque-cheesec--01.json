@@ -1,19 +1,17 @@
 {
   "raw": "¼ cup (50 grams) granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

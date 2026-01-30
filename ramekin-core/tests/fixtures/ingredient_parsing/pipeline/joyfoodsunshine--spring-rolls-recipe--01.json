@@ -1,15 +1,13 @@
 {
   "raw": "3  large carrots (julienned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "julienned"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "julienned"
   }
 }

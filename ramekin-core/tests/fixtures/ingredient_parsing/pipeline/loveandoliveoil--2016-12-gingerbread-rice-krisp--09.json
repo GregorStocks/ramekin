@@ -1,15 +1,13 @@
 {
   "raw": "7 cups rice krispies cereal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice krispies cereal",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice krispies cereal",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

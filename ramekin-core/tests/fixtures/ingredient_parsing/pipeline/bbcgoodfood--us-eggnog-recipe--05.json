@@ -1,15 +1,13 @@
 {
   "raw": "6 tbsp brandy",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brandy",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brandy",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

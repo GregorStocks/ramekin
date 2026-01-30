@@ -1,15 +1,13 @@
 {
   "raw": "4 large bananas (mashed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bananas (mashed)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bananas (mashed)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

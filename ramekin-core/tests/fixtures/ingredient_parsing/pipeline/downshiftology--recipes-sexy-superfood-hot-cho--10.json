@@ -1,15 +1,13 @@
 {
   "raw": "pinch cardamom",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cardamom",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cardamom",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

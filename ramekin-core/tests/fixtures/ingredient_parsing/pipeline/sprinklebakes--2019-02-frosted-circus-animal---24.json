@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons rainbow nonpareils",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rainbow nonpareils",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rainbow nonpareils",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

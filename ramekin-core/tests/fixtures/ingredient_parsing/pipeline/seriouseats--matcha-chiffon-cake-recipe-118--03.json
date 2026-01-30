@@ -1,23 +1,21 @@
 {
   "raw": "142 g granulated sugar (5 ounces; about 2/3 cups), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "142",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "142",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

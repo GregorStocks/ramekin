@@ -1,15 +1,13 @@
 {
   "raw": "4 scallions, trimmed and cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "trimmed and cut into 1-inch pieces"
-    }
+  "expected": {
+    "item": "scallions",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "trimmed and cut into 1-inch pieces"
   }
 }

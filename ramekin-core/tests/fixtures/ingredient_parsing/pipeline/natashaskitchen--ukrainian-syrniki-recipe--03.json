@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cups all-purpose flour + 1/2 cup for dredging",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour + 1/2 cup for dredging",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour + 1/2 cup for dredging",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

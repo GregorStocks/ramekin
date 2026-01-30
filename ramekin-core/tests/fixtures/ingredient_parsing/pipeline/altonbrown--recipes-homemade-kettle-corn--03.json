@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

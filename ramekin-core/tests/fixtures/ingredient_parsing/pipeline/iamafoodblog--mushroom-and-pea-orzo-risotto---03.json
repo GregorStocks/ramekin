@@ -1,15 +1,13 @@
 {
   "raw": "1 cup diced white button mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced white button mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced white button mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

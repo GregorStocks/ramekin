@@ -1,15 +1,13 @@
 {
   "raw": "1/4-1/2 teaspoon almond extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond extract",
-      "measurements": [
-        {
-          "amount": "1/4-1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond extract",
+    "measurements": [
+      {
+        "amount": "1/4-1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

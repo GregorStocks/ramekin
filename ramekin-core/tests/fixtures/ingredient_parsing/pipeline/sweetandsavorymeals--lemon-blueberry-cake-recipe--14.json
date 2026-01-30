@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cup unsalted butter (softened to room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "softened to room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "softened to room temperature"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 large sprig fresh sage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sprig fresh sage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sprig fresh sage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

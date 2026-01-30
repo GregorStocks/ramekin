@@ -1,15 +1,13 @@
 {
   "raw": "1 envelope active dry yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "envelope active dry yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "envelope active dry yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

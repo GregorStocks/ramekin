@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cilantro lime rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro lime rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cilantro lime rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

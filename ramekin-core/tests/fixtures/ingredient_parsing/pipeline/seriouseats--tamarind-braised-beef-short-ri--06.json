@@ -1,15 +1,13 @@
 {
   "raw": "Pinch of asafetida (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asafetida",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "asafetida",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
   }
 }

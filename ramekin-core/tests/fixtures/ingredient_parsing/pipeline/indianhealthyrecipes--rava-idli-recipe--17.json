@@ -1,15 +1,13 @@
 {
   "raw": "4  whole cashewnuts  (or 8 split )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole cashewnuts  (or 8 split",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole cashewnuts  (or 8 split",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

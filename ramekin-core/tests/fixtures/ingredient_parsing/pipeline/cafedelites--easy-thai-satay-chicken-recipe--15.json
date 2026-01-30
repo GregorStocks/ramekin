@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Thai red curry paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai red curry paste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai red curry paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

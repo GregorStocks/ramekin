@@ -1,15 +1,13 @@
 {
   "raw": "1 cup diced zucchini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced zucchini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

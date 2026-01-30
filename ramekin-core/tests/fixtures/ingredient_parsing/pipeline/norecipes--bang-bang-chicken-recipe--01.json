@@ -1,19 +1,17 @@
 {
   "raw": "32 grams scallion ((2-3 scallions, white parts only))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallion",
-      "measurements": [
-        {
-          "amount": "32",
-          "unit": "g"
-        },
-        {
-          "amount": "2-3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scallion",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "g"
+      },
+      {
+        "amount": "2-3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

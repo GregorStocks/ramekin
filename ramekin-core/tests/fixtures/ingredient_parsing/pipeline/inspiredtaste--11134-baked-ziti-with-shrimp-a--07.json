@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces medium shrimp, peeled and deveined",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium shrimp",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and deveined"
-    }
+  "expected": {
+    "item": "medium shrimp",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and deveined"
   }
 }

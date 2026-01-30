@@ -1,19 +1,17 @@
 {
   "raw": "1 1/4 cups (420ml) cassareep , divided&nbsp;&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cassareep",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "420",
-          "unit": "ml"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "cassareep",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "420",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided"
   }
 }

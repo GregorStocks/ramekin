@@ -1,15 +1,13 @@
 {
   "raw": "1 lb Daikon radish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Daikon radish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Daikon radish",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

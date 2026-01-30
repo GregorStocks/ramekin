@@ -1,15 +1,13 @@
 {
   "raw": "four&nbsp;3- to 4-ounce fillets Arctic Char",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "3- to 4-ounce fillets Arctic Char",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "3- to 4-ounce fillets Arctic Char",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

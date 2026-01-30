@@ -1,15 +1,13 @@
 {
   "raw": "6  brussels sprouts (sliced as thinly as possible, about 1 cups worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brussels sprouts",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "sliced as thinly as possible, about 1 cups worth"
-    }
+  "expected": {
+    "item": "brussels sprouts",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "sliced as thinly as possible, about 1 cups worth"
   }
 }

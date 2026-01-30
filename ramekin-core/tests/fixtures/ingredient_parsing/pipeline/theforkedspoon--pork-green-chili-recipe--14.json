@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup fresh cilantro (chopped, plus more for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped, plus more for serving"
-    }
+  "expected": {
+    "item": "fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped, plus more for serving"
   }
 }

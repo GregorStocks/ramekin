@@ -1,10 +1,8 @@
 {
   "raw": "Cooking spray (butter or lard for making pancakes (Gramma's favorite was Crisco))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooking spray (butter or lard for making pancakes (Gramma's favorite was Crisco)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cooking spray (butter or lard for making pancakes (Gramma's favorite was Crisco)",
+    "measurements": [],
+    "note": null
   }
 }

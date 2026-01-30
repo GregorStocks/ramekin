@@ -1,15 +1,13 @@
 {
   "raw": "3  cans low sodium black beans (rinsed and drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low sodium black beans",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "can"
-        }
-      ],
-      "note": "rinsed and drained"
-    }
+  "expected": {
+    "item": "low sodium black beans",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "can"
+      }
+    ],
+    "note": "rinsed and drained"
   }
 }

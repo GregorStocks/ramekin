@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon  white soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white soy sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

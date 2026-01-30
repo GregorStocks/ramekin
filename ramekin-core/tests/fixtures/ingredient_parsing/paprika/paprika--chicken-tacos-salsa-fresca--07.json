@@ -1,15 +1,13 @@
 {
   "raw": "2 large fresh ripe tomatoes, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ripe tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh ripe tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "chopped"
   }
 }

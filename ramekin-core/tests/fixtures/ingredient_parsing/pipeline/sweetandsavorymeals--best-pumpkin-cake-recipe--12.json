@@ -1,19 +1,17 @@
 {
   "raw": "24 oz cream cheese (softened to room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "softened to room temperature"
-    }
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "softened to room temperature"
   }
 }

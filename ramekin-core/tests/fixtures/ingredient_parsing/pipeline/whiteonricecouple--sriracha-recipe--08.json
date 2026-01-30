@@ -1,15 +1,13 @@
 {
   "raw": "3 Tablespoons Sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sugar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

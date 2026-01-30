@@ -1,15 +1,13 @@
 {
   "raw": "1  Bell Pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bell Pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bell Pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

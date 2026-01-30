@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon lemongrass (minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemongrass",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "lemongrass",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "minced"
   }
 }

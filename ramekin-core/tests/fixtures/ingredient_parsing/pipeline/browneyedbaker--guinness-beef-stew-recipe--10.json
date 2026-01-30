@@ -1,15 +1,13 @@
 {
   "raw": "4½ teaspoons dark brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark brown sugar",
-      "measurements": [
-        {
-          "amount": "4 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "4 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

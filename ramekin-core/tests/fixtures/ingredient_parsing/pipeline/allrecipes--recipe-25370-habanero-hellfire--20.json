@@ -1,23 +1,21 @@
 {
   "raw": "2 (16 ounce) cans chili beans, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "chili beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

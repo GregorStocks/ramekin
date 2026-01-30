@@ -1,19 +1,17 @@
 {
   "raw": "4 oz thin rice noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin rice noodles",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin rice noodles",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 pound (454 g) ground beef (85/15)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        },
-        {
-          "amount": "85/15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      },
+      {
+        "amount": "85/15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

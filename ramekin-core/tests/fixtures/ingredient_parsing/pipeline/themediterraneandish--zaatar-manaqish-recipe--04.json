@@ -1,15 +1,13 @@
 {
   "raw": "3 cups unbleached all-purpose flour (more for dusting)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached all-purpose flour (more for dusting)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unbleached all-purpose flour (more for dusting)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 large clove garlic, grated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clove garlic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "clove garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "grated"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons cornstarch, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 up light mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "up light mayonnaise",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "up light mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

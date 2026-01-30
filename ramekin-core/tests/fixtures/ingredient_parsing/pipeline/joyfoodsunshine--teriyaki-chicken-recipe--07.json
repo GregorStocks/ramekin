@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken breasts ((or thighs))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts (or thighs)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts (or thighs)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

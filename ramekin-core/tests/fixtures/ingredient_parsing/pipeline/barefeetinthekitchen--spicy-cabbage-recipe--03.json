@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon light flavored olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light flavored olive oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light flavored olive oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

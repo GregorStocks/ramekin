@@ -1,23 +1,21 @@
 {
   "raw": "1  can (13.4 ounces prepared dulce de leche)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1  can (13.4 ounces prepared dulce de leche)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "13.4",
-          "unit": "oz"
-        },
-        {
-          "amount": "380",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1  can (13.4 ounces prepared dulce de leche)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "13.4",
+        "unit": "oz"
+      },
+      {
+        "amount": "380",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "3 servings Yaki-soba Noodles ((one package of pre-steamed noodles contains 3 servings, 16-17 ounces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "servings Yaki-soba Noodles",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        },
-        {
-          "amount": "16-17",
-          "unit": "oz"
-        },
-        {
-          "amount": "454-482",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "servings Yaki-soba Noodles",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "16-17",
+        "unit": "oz"
+      },
+      {
+        "amount": "454-482",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

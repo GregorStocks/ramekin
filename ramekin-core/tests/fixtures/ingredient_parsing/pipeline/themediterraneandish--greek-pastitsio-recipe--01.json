@@ -1,15 +1,13 @@
 {
   "raw": "3 1/2 cups uncooked Penne pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked Penne pasta",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked Penne pasta",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

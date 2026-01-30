@@ -1,10 +1,8 @@
 {
   "raw": "butter, room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [],
+    "note": "room temperature"
   }
 }

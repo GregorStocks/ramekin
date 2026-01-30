@@ -1,15 +1,13 @@
 {
   "raw": "1 rib celery (minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rib celery",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "rib celery",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "minced"
   }
 }

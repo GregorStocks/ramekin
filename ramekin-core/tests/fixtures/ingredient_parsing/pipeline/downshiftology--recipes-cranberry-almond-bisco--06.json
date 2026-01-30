@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp arrowroot flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arrowroot flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arrowroot flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

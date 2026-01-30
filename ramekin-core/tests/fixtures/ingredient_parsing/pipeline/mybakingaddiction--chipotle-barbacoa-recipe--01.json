@@ -1,15 +1,13 @@
 {
   "raw": "4 pound chuck roast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chuck roast",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chuck roast",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

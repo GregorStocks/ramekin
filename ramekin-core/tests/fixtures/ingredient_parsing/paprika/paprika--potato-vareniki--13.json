@@ -1,19 +1,17 @@
 {
   "raw": "5 tablespoons (55 grams) fine semolina flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine semolina flour",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine semolina flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

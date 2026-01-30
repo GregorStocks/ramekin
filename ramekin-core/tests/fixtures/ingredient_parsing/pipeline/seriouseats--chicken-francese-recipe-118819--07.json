@@ -1,10 +1,8 @@
 {
   "raw": "Neutral oil, such as vegetable oil, for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Neutral oil, such as vegetable oil, for frying",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Neutral oil, such as vegetable oil, for frying",
+    "measurements": [],
+    "note": null
   }
 }

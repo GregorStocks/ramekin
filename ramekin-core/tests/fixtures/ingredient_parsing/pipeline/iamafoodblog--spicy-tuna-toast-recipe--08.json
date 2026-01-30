@@ -1,15 +1,13 @@
 {
   "raw": "12 round brioche toasts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "round brioche toasts",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "round brioche toasts",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

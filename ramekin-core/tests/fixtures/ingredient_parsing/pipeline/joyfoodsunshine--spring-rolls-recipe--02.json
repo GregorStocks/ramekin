@@ -1,15 +1,13 @@
 {
   "raw": "1  cucumber (julienned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "julienned"
-    }
+  "expected": {
+    "item": "cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "julienned"
   }
 }

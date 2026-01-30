@@ -1,15 +1,13 @@
 {
   "raw": "70 grams burdock root ((1/3 root julienned))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "burdock root",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": "1/3 root julienned"
-    }
+  "expected": {
+    "item": "burdock root",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      }
+    ],
+    "note": "1/3 root julienned"
   }
 }

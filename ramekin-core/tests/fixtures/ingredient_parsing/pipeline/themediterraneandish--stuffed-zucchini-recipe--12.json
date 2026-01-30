@@ -1,15 +1,13 @@
 {
   "raw": "4  large and very firm tomatoes, (divided (3 to be cored and stuffed, and 1 to be sliced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "and very firm tomatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": "divided (3 to be cored and stuffed, and 1 to be sliced"
-    }
+  "expected": {
+    "item": "and very firm tomatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "divided (3 to be cored and stuffed, and 1 to be sliced"
   }
 }

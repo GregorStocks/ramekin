@@ -1,23 +1,21 @@
 {
   "raw": "1 (10-ounce) package frozen spinach, thawed and squeezed dry (about 1 1/4 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "10",
-          "unit": null
-        },
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed and squeezed dry"
-    }
+  "expected": {
+    "item": "frozen spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "10",
+        "unit": null
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed and squeezed dry"
   }
 }

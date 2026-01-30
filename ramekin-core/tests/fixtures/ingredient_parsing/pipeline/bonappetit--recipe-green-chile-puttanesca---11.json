@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp. drained capers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "drained capers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "drained capers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

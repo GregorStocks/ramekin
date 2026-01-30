@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons (10 ml) light soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light soy sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "10",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

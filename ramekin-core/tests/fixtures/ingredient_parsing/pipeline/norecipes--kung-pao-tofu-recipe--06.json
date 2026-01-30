@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Chinese dark soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chinese dark soy sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chinese dark soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

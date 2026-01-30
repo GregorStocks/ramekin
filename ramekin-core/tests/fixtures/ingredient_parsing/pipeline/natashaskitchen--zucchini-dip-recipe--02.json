@@ -1,19 +1,17 @@
 {
   "raw": "2  med/large tomatoes (1 lb)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "med/large tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "med/large tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

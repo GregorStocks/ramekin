@@ -1,23 +1,21 @@
 {
   "raw": "1 medium onion (8 ounces; 226g), diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "226",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

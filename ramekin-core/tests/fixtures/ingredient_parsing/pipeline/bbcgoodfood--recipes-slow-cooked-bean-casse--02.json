@@ -1,15 +1,13 @@
 {
   "raw": "350g piece  bacon with rind",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "piece  bacon with rind",
-      "measurements": [
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "piece  bacon with rind",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

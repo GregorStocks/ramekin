@@ -1,10 +1,8 @@
 {
   "raw": "Baby tomatoes, fresh basil, parmesan cheese, etc. ((optional garnishes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Baby tomatoes, fresh basil, parmesan cheese, etc.",
-      "measurements": [],
-      "note": "optional garnishes"
-    }
+  "expected": {
+    "item": "Baby tomatoes, fresh basil, parmesan cheese, etc.",
+    "measurements": [],
+    "note": "optional garnishes"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces snow peas, cut into thirds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "snow peas, cut into thirds",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "snow peas, cut into thirds",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound carrots, (peeled and chopped into 1-inch (2.5-cm) pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and chopped into 1-inch (2.5-cm"
-    }
+  "expected": {
+    "item": "carrots pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and chopped into 1-inch (2.5-cm"
   }
 }

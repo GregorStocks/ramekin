@@ -1,15 +1,13 @@
 {
   "raw": "2  serrano peppers (sliced thin)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "serrano peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced thin"
-    }
+  "expected": {
+    "item": "serrano peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced thin"
   }
 }

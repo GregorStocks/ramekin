@@ -1,15 +1,13 @@
 {
   "raw": "2 c. shredded mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

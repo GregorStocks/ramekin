@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fresh asparagus, trimmed and cut into 1/2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh asparagus",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed and cut into 1/2-inch pieces"
-    }
+  "expected": {
+    "item": "fresh asparagus",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed and cut into 1/2-inch pieces"
   }
 }

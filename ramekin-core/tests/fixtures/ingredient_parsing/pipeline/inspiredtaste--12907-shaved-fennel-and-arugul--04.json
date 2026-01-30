@@ -1,15 +1,13 @@
 {
   "raw": "1 medium fennel bulb",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fennel bulb",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fennel bulb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

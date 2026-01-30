@@ -1,23 +1,21 @@
 {
   "raw": "1 cup (200 g) plus 1 tablespoon (15 g) sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 cup (200 g) plus 1 tablespoon (15 g) sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "200",
-          "unit": "g"
-        },
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": "plus 1 tablespoon sugar"
-    }
+  "expected": {
+    "item": "1 cup (200 g) plus 1 tablespoon (15 g) sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": "plus 1 tablespoon sugar"
   }
 }

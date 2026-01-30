@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup port wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "port wine",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "port wine",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

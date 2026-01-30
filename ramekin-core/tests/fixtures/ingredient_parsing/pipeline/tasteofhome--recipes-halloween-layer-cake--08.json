@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup baking cocoa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking cocoa",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking cocoa",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

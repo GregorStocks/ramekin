@@ -1,19 +1,17 @@
 {
   "raw": "1 1/3 cups (189g) unbleached all-purpose flour, (scoop and level to measure*)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached all-purpose flour, (scoop and level to measure*)",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "189",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unbleached all-purpose flour, (scoop and level to measure*)",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "189",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

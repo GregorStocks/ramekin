@@ -1,23 +1,21 @@
 {
   "raw": "8 cups or 1-16 ounce bag coleslaw cabbage (finely diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bag coleslaw cabbage",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        },
-        {
-          "amount": "1-16",
-          "unit": "oz"
-        },
-        {
-          "amount": "28-454",
-          "unit": "g"
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "bag coleslaw cabbage",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      },
+      {
+        "amount": "1-16",
+        "unit": "oz"
+      },
+      {
+        "amount": "28-454",
+        "unit": "g"
+      }
+    ],
+    "note": "finely diced"
   }
 }

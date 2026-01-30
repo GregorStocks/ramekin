@@ -1,10 +1,8 @@
 {
   "raw": "Orange rinds left from squeezing juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Orange rinds left from squeezing juice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Orange rinds left from squeezing juice",
+    "measurements": [],
+    "note": null
   }
 }

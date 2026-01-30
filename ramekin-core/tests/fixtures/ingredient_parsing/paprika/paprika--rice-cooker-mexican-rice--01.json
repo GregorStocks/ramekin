@@ -1,15 +1,13 @@
 {
   "raw": "1.5 cups long-grain rice, rinsed well and drained (real cups, not rice cooker cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long-grain rice, rinsed well and drained (real cups, not rice cooker cups)",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long-grain rice, rinsed well and drained (real cups, not rice cooker cups)",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

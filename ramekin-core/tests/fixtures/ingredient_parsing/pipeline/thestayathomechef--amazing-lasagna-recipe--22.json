@@ -1,19 +1,17 @@
 {
   "raw": "1 pound thinly sliced mozzarella cheese (about 24 slices)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "24",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "24",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

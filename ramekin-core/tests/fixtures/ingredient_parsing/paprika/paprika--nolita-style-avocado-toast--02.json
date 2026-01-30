@@ -1,15 +1,13 @@
 {
   "raw": "1/2 a large, ripe avocado",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a large, ripe avocado",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "a large, ripe avocado",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

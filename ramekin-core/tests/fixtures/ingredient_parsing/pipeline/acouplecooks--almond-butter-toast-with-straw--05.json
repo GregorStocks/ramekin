@@ -1,10 +1,8 @@
 {
   "raw": "Other optional toppings:&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Other optional toppings:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Other optional toppings:",
+    "measurements": [],
+    "note": null
   }
 }

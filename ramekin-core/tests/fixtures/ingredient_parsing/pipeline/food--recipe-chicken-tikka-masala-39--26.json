@@ -1,19 +1,17 @@
 {
   "raw": "4   ounces    onions, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

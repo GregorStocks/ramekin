@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon chicken bouillon granules",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken bouillon granules",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken bouillon granules",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

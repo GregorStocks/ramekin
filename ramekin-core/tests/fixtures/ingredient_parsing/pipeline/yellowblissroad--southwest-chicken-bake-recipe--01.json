@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken breasts boneless (skinless (4 medium sized))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts boneless (skinless (4 medium sized)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts boneless (skinless (4 medium sized)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

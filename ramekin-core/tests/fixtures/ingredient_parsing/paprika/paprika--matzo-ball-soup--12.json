@@ -1,10 +1,8 @@
 {
   "raw": "Any vegetables you have stashed in your Stock Bag (described above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Any vegetables you have stashed in your Stock Bag (described above)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Any vegetables you have stashed in your Stock Bag (described above)",
+    "measurements": [],
+    "note": null
   }
 }

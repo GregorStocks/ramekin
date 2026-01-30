@@ -1,15 +1,13 @@
 {
   "raw": "1 pound button or cremini mushrooms, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "button or cremini mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "button or cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced"
   }
 }

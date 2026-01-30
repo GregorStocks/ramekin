@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons salted butter (softened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "softened"
   }
 }

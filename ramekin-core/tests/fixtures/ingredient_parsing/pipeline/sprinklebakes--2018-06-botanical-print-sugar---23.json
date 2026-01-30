@@ -1,10 +1,8 @@
 {
   "raw": "Gold luster dust",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gold luster dust",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Gold luster dust",
+    "measurements": [],
+    "note": null
   }
 }

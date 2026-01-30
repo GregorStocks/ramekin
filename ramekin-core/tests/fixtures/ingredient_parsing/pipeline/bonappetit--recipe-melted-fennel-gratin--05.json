@@ -1,15 +1,13 @@
 {
   "raw": "4 medium fennel bulbs, trimmed, some fronds reserved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fennel bulbs, trimmed, some fronds reserved",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fennel bulbs, trimmed, some fronds reserved",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "DOUGH",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "DOUGH",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "DOUGH",
+    "measurements": [],
+    "note": null
   }
 }

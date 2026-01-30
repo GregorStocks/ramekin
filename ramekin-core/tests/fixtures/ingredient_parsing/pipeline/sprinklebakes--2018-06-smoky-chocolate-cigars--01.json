@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups 360ml heavy whipping cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy whipping cream",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "360",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "360",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

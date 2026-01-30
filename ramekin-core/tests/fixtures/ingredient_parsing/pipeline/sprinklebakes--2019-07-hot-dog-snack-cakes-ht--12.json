@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces white vanilla covering chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white vanilla covering chocolate",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white vanilla covering chocolate",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

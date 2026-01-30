@@ -1,10 +1,8 @@
 {
   "raw": "sliced olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced olives",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced olives",
+    "measurements": [],
+    "note": null
   }
 }

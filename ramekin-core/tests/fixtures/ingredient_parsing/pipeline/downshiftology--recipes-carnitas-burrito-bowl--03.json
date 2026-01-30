@@ -1,15 +1,13 @@
 {
   "raw": "2 cups slow-cooker carnitas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slow-cooker carnitas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slow-cooker carnitas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

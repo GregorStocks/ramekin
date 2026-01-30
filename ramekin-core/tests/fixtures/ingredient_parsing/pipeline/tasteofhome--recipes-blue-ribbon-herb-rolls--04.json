@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup honey or molasses",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey or molasses",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey or molasses",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

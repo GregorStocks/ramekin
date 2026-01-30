@@ -1,23 +1,21 @@
 {
   "raw": "1 (18.25 ounce) package chocolate cake mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate cake mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "18.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "517",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate cake mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "18.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "517",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

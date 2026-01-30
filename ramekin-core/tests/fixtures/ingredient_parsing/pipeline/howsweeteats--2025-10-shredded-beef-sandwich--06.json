@@ -1,10 +1,8 @@
 {
   "raw": "kaiser rolls, (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kaiser rolls",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "kaiser rolls",
+    "measurements": [],
+    "note": "for serving"
   }
 }

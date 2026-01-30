@@ -1,15 +1,13 @@
 {
   "raw": "2 large, boneless, skinless chicken breasts, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken breasts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "boneless, skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "cubed"
   }
 }

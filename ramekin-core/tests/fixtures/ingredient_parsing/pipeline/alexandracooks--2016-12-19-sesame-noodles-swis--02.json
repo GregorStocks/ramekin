@@ -1,19 +1,17 @@
 {
   "raw": "8&nbsp;ounces dried fettuccine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried fettuccine",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried fettuccine",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

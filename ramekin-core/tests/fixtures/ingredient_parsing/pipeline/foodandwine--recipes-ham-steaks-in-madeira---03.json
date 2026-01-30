@@ -1,19 +1,17 @@
 {
   "raw": "2 (12-ounce) boneless cured ham steaks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless cured ham steaks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless cured ham steaks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

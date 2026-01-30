@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup (or more) loosely packed fennel fronds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loosely packed fennel fronds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more"
-    }
+  "expected": {
+    "item": "loosely packed fennel fronds",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons cornstarch (or 3 tablespoons all purpose flour)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch (or 3 tablespoons all purpose flour)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch (or 3 tablespoons all purpose flour)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

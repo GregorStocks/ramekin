@@ -1,15 +1,13 @@
 {
   "raw": "8 slices kamaboko fish cake (kamaboko)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kamaboko fish cake (kamaboko)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kamaboko fish cake (kamaboko)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

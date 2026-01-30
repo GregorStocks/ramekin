@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 pounds beef sirloin, cut into 1/2-inch strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef sirloin, cut into 1/2-inch strips",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef sirloin, cut into 1/2-inch strips",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

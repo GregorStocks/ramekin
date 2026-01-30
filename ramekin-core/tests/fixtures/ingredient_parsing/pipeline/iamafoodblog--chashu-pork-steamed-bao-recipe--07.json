@@ -1,10 +1,8 @@
 {
   "raw": "slow braised chashu slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slow braised chashu slices",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "slow braised chashu slices",
+    "measurements": [],
+    "note": null
   }
 }

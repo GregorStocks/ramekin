@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 packages of gyoza (pot sticker) wrappers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gyoza (pot sticker) wrappers",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gyoza (pot sticker) wrappers",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

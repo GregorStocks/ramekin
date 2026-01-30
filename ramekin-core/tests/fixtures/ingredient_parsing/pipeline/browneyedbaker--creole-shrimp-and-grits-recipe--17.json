@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups uncooked quick-cooking grits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked quick-cooking grits",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked quick-cooking grits",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

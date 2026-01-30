@@ -1,23 +1,21 @@
 {
   "raw": "1 (8 ounce) jar prepared salsa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared salsa",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared salsa",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

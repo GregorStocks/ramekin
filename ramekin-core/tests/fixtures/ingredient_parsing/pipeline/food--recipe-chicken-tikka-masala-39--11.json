@@ -1,15 +1,13 @@
 {
   "raw": "1   teaspoon    coriander seed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander seed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coriander seed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

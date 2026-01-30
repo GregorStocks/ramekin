@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup grated Parmesan cheese, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated Parmesan cheese",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "grated Parmesan cheese",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

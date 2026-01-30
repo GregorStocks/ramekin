@@ -1,10 +1,8 @@
 {
   "raw": "chili flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili flakes",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chili flakes",
+    "measurements": [],
+    "note": null
   }
 }

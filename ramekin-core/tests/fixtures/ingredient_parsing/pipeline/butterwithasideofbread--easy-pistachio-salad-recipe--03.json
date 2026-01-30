@@ -1,19 +1,17 @@
 {
   "raw": "16 oz cottage cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cottage cheese",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cottage cheese",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

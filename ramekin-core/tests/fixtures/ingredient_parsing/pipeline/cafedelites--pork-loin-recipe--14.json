@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons rice wine vinegar (or cider vinegar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice wine vinegar (or cider vinegar)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice wine vinegar (or cider vinegar)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "14 ounce can pinto beans, (drained and rinsed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can pinto beans",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": "drained and rinsed"
-    }
+  "expected": {
+    "item": "can pinto beans",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": "drained and rinsed"
   }
 }

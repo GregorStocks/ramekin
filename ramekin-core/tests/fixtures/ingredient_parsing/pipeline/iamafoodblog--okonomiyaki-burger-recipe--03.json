@@ -1,15 +1,13 @@
 {
   "raw": "12 soft mini brioche buns (or buns of your choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soft mini brioche buns (or buns of your choice)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soft mini brioche buns (or buns of your choice)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

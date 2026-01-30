@@ -1,10 +1,8 @@
 {
   "raw": "marshmallows or freshly whipped cream (optional, for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marshmallows or freshly whipped cream",
-      "measurements": [],
-      "note": "optional, for serving"
-    }
+  "expected": {
+    "item": "marshmallows or freshly whipped cream",
+    "measurements": [],
+    "note": "optional, for serving"
   }
 }

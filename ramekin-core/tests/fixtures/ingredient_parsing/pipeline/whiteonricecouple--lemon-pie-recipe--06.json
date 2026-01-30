@@ -1,10 +1,8 @@
 {
   "raw": "finely grated zest from about 4 meyer lemons ((or 3 large lemons))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated zest from about 4 meyer lemons (or 3 large lemons)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated zest from about 4 meyer lemons (or 3 large lemons)",
+    "measurements": [],
+    "note": null
   }
 }

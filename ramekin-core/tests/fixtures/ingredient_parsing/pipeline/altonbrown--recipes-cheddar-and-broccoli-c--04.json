@@ -1,15 +1,13 @@
 {
   "raw": "2 3/4 cups mushrooms, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushrooms",
-      "measurements": [
-        {
-          "amount": "2 3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "mushrooms",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced"
   }
 }

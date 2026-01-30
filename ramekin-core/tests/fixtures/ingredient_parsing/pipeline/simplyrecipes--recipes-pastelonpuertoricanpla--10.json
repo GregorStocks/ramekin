@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon capers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "capers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "capers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "2 cups (8 ounces) coarsely grated gruyere cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely grated gruyere cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely grated gruyere cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

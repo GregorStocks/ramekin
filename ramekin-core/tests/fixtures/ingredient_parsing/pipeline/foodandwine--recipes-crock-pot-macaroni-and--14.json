@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup plain dry breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain dry breadcrumbs",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain dry breadcrumbs",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4  large Eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Eggs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

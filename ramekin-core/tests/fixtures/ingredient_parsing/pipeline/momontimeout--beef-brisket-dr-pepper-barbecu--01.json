@@ -1,19 +1,17 @@
 {
   "raw": "1  beef brisket (7 to 9 lbs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef brisket",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "7 to 9",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef brisket",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "7 to 9",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

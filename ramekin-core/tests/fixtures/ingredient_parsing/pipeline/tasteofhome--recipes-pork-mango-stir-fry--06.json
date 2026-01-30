@@ -1,23 +1,21 @@
 {
   "raw": "1 package (8 ounces) fresh sugar snap peas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh sugar snap peas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh sugar snap peas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

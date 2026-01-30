@@ -1,15 +1,13 @@
 {
   "raw": "4 cups peeled and chopped potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peeled and chopped potatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peeled and chopped potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

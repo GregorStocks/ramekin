@@ -1,15 +1,13 @@
 {
   "raw": "2 large tomatoes, seeded and diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "seeded and diced"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "seeded and diced"
   }
 }

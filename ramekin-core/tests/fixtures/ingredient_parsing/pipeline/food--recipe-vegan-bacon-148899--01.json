@@ -1,15 +1,13 @@
 {
   "raw": "1   lb    firm tofu, cut into strips shaped like bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm tofu, cut into strips shaped like bacon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "firm tofu, cut into strips shaped like bacon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

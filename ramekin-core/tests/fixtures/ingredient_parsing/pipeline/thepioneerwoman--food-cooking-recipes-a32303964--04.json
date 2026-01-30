@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. Campari or Aperol",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Campari or Aperol",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Campari or Aperol",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8  snow peas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "snow peas",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "snow peas",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

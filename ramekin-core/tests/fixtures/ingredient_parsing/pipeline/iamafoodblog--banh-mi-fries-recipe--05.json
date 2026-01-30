@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup pickled daikons and carrots, recipe here",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickled daikons and carrots, recipe here",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pickled daikons and carrots, recipe here",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

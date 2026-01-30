@@ -1,15 +1,13 @@
 {
   "raw": "6 firm medium zucchini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm medium zucchini",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "firm medium zucchini",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

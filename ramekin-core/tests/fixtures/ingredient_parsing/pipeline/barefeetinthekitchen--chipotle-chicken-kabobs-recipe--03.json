@@ -1,15 +1,13 @@
 {
   "raw": "juice of 2 limes (about 1/4 cup's worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "juice of 2 limes",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "juice of 2 limes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

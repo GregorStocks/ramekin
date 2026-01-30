@@ -1,15 +1,13 @@
 {
   "raw": "4 pounds Yukon Gold Potatoes (, or similar potato)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon Gold Potatoes (, or similar potato)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Yukon Gold Potatoes (, or similar potato)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

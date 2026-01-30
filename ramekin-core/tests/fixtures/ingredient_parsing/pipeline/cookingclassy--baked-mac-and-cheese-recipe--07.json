@@ -1,19 +1,17 @@
 {
   "raw": "2 1/2 cups (590ml) whole milk, (warmed**)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk, (warmed**)",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "590",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk, (warmed**)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "590",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

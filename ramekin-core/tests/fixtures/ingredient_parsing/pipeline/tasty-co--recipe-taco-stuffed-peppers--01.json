@@ -1,15 +1,13 @@
 {
   "raw": "6 large bell peppers, ensure they have a flat base so they will stand up when cooking",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bell peppers, ensure they have a flat base so they will stand up when cooking",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bell peppers, ensure they have a flat base so they will stand up when cooking",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

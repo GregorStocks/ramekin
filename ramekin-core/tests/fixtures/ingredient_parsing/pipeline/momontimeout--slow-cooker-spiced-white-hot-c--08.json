@@ -1,19 +1,17 @@
 {
   "raw": "1/2 tsp ground cardamom ( OR 4 cardamom pods)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cardamom",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cardamom",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

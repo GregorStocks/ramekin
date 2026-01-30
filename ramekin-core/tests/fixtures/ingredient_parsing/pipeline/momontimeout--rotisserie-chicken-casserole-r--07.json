@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup crushed corn flakes (see post for more topping ideas)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed corn flakes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "see post for more topping ideas"
-    }
+  "expected": {
+    "item": "crushed corn flakes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "see post for more topping ideas"
   }
 }

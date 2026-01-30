@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon sugar ((to activate the yeast))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar (to activate the yeast)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar (to activate the yeast)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

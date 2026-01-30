@@ -1,15 +1,13 @@
 {
   "raw": "1 cup banana (frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "banana",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "frozen"
-    }
+  "expected": {
+    "item": "banana",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "frozen"
   }
 }

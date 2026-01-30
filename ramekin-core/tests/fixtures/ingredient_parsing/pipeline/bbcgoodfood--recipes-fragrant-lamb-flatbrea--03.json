@@ -1,15 +1,13 @@
 {
   "raw": "250g lean minced lamb",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean minced lamb",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean minced lamb",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

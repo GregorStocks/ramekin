@@ -1,10 +1,8 @@
 {
   "raw": "A generous 1/2 cup grated Parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A generous 1/2 cup grated Parmesan cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A generous 1/2 cup grated Parmesan cheese",
+    "measurements": [],
+    "note": null
   }
 }

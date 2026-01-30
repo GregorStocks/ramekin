@@ -1,15 +1,13 @@
 {
   "raw": "1 pound sweet Italian sausage (pork, turkey or chicken), casing removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet Italian sausage (pork, turkey or chicken), casing removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet Italian sausage (pork, turkey or chicken), casing removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "600 g boneless chicken thigh (skin-on (or chicken breast))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless chicken thigh (skin-on (or chicken breast)",
-      "measurements": [
-        {
-          "amount": "600",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless chicken thigh (skin-on (or chicken breast)",
+    "measurements": [
+      {
+        "amount": "600",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

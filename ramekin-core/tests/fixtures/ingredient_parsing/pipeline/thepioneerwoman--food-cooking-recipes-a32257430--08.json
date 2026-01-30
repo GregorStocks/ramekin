@@ -1,15 +1,13 @@
 {
   "raw": "5 c. cereal squares",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cereal squares",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cereal squares",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

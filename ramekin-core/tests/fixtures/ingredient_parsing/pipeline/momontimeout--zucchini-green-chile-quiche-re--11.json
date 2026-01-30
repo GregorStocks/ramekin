@@ -1,19 +1,17 @@
 {
   "raw": "4 oz green chiles (1 can - drained, chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chiles",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "1 can - drained, chopped"
-    }
+  "expected": {
+    "item": "green chiles",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "1 can - drained, chopped"
   }
 }

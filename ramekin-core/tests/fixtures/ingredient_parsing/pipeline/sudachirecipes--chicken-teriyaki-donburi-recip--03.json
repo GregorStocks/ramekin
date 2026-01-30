@@ -1,15 +1,13 @@
 {
   "raw": "2 pinches salt and pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt and pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt and pepper",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

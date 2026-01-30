@@ -1,15 +1,13 @@
 {
   "raw": "16 large mint leaves, coarsely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint leaves",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "large"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "mint leaves",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "large"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

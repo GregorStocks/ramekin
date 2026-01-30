@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Dashi (or water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dashi (or water)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dashi (or water)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

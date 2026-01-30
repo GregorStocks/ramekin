@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces pate de foie gras",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pate de foie gras",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pate de foie gras",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

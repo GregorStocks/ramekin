@@ -1,10 +1,8 @@
 {
   "raw": "goat cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "goat cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "goat cheese",
+    "measurements": [],
+    "note": null
   }
 }

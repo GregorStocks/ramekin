@@ -1,23 +1,21 @@
 {
   "raw": "1 (16 ounce) can white frosting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white frosting",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white frosting",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

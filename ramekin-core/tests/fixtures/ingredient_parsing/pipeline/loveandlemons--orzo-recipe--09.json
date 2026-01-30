@@ -1,15 +1,13 @@
 {
   "raw": "2 small zucchini, sliced in half lengthwise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced in half lengthwise"
-    }
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced in half lengthwise"
   }
 }

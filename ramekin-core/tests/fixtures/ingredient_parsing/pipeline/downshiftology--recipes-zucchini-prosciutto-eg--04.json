@@ -1,15 +1,13 @@
 {
   "raw": "1  bell pepper (finely diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bell pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Creole seasoning (such as Tony Chachere's)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Creole seasoning (such as Tony Chachere's)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Creole seasoning (such as Tony Chachere's)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

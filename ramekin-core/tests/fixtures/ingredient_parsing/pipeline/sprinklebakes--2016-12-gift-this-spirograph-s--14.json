@@ -1,10 +1,8 @@
 {
   "raw": "Corn syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Corn syrup",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Corn syrup",
+    "measurements": [],
+    "note": null
   }
 }

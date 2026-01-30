@@ -1,15 +1,13 @@
 {
   "raw": "2 – 3 tbsp vegetable or canola oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable or canola oil",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable or canola oil",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

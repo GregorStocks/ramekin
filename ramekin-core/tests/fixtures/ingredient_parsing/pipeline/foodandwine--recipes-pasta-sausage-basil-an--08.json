@@ -1,15 +1,13 @@
 {
   "raw": "1 cup thinly sliced basil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced basil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced basil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

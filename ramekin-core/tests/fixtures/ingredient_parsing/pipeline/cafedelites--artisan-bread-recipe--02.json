@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon white granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white granulated sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

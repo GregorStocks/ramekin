@@ -1,15 +1,13 @@
 {
   "raw": "20 jumbo dried pasta shells",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jumbo dried pasta shells",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jumbo dried pasta shells",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

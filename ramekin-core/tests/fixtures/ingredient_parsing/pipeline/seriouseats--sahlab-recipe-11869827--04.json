@@ -1,15 +1,13 @@
 {
   "raw": "Pinch Diamond Crystal kosher salt; for table salt use half as much by volume",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

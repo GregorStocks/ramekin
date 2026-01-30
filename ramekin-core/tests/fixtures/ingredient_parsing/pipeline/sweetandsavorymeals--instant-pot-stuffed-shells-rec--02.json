@@ -1,15 +1,13 @@
 {
   "raw": "2 cups mozzarella cheese (shredded and divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded and divided"
-    }
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded and divided"
   }
 }

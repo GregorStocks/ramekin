@@ -1,15 +1,13 @@
 {
   "raw": "1  red chile pepper deseeded and finely sliced, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chile pepper deseeded and finely sliced, to serve",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red chile pepper deseeded and finely sliced, to serve",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

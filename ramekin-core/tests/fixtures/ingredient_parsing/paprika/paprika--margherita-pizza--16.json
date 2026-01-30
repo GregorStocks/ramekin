@@ -1,10 +1,8 @@
 {
   "raw": "Few leaves of fresh basil, torn or sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Few leaves of fresh basil",
-      "measurements": [],
-      "note": "torn or sliced"
-    }
+  "expected": {
+    "item": "Few leaves of fresh basil",
+    "measurements": [],
+    "note": "torn or sliced"
   }
 }

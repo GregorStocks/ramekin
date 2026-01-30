@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons fish sauce (, optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fish sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

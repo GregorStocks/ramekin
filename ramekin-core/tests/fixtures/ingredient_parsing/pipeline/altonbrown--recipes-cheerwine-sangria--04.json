@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon cherry bitters",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry bitters",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry bitters",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup tahini paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tahini paste",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tahini paste",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

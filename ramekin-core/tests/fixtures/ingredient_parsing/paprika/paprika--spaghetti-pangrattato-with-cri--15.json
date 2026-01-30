@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons small capers, drained (rinsed if salted), chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small capers, drained , chopped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "rinsed if salted"
-    }
+  "expected": {
+    "item": "small capers, drained , chopped",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "rinsed if salted"
   }
 }

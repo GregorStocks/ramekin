@@ -1,15 +1,13 @@
 {
   "raw": "4 slices hearty white sandwich bread,  (torn into small pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hearty white sandwich bread,  (torn into small pieces)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hearty white sandwich bread,  (torn into small pieces)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

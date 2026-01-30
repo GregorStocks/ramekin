@@ -1,15 +1,13 @@
 {
   "raw": "12 grams medium garlic cloves  ((peeled))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium garlic cloves",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "medium garlic cloves",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled"
   }
 }

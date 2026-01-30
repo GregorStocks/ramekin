@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups graham cracker crumbs (from 12 whole crackers)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "graham cracker crumbs",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "from 12 whole crackers"
-    }
+  "expected": {
+    "item": "graham cracker crumbs",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "from 12 whole crackers"
   }
 }

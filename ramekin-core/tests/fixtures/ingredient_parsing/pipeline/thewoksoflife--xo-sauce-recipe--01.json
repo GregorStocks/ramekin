@@ -1,23 +1,21 @@
 {
   "raw": "300 g dried scallops ((11 ounces, mini or large))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried scallops",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        },
-        {
-          "amount": "11",
-          "unit": "oz"
-        },
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried scallops",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      },
+      {
+        "amount": "11",
+        "unit": "oz"
+      },
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

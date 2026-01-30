@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces dry gin (preferably Tanqueray)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry gin (preferably Tanqueray)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry gin (preferably Tanqueray)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

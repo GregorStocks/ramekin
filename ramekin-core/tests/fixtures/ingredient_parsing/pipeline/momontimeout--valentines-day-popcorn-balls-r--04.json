@@ -1,23 +1,21 @@
 {
   "raw": "2.75 oz popcorn (1 bag)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "popcorn",
-      "measurements": [
-        {
-          "amount": "2.75",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "78",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "popcorn",
+    "measurements": [
+      {
+        "amount": "2.75",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "78",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

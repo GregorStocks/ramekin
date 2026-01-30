@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon powdered ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered ginger",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered ginger",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

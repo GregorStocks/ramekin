@@ -1,15 +1,13 @@
 {
   "raw": "1 medium bulb fennel ((sliced thinly))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bulb fennel",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "sliced thinly"
-    }
+  "expected": {
+    "item": "bulb fennel",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced thinly"
   }
 }

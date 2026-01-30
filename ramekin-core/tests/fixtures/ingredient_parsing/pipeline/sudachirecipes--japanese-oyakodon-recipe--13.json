@@ -1,10 +1,8 @@
 {
   "raw": "Japanese wild parsley (mitsuba) (or chopped green onion, optional garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese wild parsley (mitsuba) (or chopped green onion",
-      "measurements": [],
-      "note": "optional garnish)"
-    }
+  "expected": {
+    "item": "Japanese wild parsley (mitsuba) (or chopped green onion",
+    "measurements": [],
+    "note": "optional garnish)"
   }
 }

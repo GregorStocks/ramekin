@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 g)&nbsp;butter at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter at room temperature",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter at room temperature",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1  can (21 oz, cherry pie filling)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1  can (21 oz, cherry pie filling)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "21",
-          "unit": "oz"
-        },
-        {
-          "amount": "595",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1  can (21 oz, cherry pie filling)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "21",
+        "unit": "oz"
+      },
+      {
+        "amount": "595",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

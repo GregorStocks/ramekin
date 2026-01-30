@@ -1,19 +1,17 @@
 {
   "raw": "16 ounces cremini mushrooms (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cremini mushrooms",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "quartered"
   }
 }

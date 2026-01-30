@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons finely crushed soft peppermint candies (22 g), plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely crushed soft peppermint candies",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "22",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "finely crushed soft peppermint candies",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "22",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

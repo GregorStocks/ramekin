@@ -1,15 +1,13 @@
 {
   "raw": "2 cups tomato sauce (or passata )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato sauce (or passata",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato sauce (or passata",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

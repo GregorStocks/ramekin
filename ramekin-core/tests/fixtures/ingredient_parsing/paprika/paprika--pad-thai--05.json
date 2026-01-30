@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp fish sauce (Note 3)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce (Note 3)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fish sauce (Note 3)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

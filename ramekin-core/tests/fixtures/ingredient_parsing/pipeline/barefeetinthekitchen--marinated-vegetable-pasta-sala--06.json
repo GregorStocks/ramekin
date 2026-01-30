@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup finely diced red onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely diced red onion",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely diced red onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

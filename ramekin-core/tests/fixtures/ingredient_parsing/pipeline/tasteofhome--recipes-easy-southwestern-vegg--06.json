@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup minced fresh cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced fresh cilantro",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

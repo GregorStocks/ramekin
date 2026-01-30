@@ -1,15 +1,13 @@
 {
   "raw": "4 scoops vanilla ice cream (or hazelnut)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scoops vanilla ice cream (or hazelnut)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scoops vanilla ice cream (or hazelnut)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

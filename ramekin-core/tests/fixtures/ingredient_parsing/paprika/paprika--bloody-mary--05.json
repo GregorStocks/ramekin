@@ -1,10 +1,8 @@
 {
   "raw": "fresh horseradish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh horseradish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh horseradish",
+    "measurements": [],
+    "note": null
   }
 }

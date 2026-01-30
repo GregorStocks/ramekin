@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded Monterey Jack cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded Monterey Jack cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded Monterey Jack cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

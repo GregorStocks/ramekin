@@ -1,15 +1,13 @@
 {
   "raw": "1¼ cups fine dried breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine dried breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine dried breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

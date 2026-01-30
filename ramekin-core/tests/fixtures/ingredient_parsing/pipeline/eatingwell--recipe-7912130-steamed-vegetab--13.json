@@ -1,15 +1,13 @@
 {
   "raw": "0.125 teaspoon ground white pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground white pepper",
-      "measurements": [
-        {
-          "amount": "0.125",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground white pepper",
+    "measurements": [
+      {
+        "amount": "0.125",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

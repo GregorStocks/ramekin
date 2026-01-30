@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp Katsuobushi dried bonito flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Katsuobushi dried bonito flakes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Katsuobushi dried bonito flakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

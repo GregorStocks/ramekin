@@ -1,15 +1,13 @@
 {
   "raw": "8-12 thin slices of ham",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin slices of ham",
-      "measurements": [
-        {
-          "amount": "8-12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin slices of ham",
+    "measurements": [
+      {
+        "amount": "8-12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

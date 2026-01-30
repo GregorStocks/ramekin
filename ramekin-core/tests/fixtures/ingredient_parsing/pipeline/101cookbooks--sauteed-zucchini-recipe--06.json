@@ -1,10 +1,8 @@
 {
   "raw": "a good handful of dill and/or scallions, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a good handful of dill and/or scallions",
-      "measurements": [],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "a good handful of dill and/or scallions",
+    "measurements": [],
+    "note": "chopped"
   }
 }

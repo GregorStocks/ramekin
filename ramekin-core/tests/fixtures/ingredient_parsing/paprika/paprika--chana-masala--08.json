@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon ground cayenne pepper (I used a quarter of this because my cayenne is extremely hot)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cayenne pepper (I used a quarter of this because my cayenne is extremely hot)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cayenne pepper (I used a quarter of this because my cayenne is extremely hot)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces (113 g) pancetta, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pancetta",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "pancetta",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

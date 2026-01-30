@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Red Wine (Soft Red, or Cabernet Sauvignon, most red wines will do)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red Wine (Soft Red, or Cabernet Sauvignon, most red wines will do)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Red Wine (Soft Red, or Cabernet Sauvignon, most red wines will do)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Handful fresh basil, about ½ cup packed, torn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil, about 1/2 cup packed, torn",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh basil, about 1/2 cup packed, torn",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

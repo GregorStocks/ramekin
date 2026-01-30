@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups chopped canned tomatoes with the juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped canned tomatoes with the juice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped canned tomatoes with the juice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup to 1 cup Parmesan cheese (depends how thick and cheesy you want it)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 1 cup Parmesan cheese (depends how thick and cheesy you want it)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 1 cup Parmesan cheese (depends how thick and cheesy you want it)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

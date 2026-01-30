@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 tablespoons ice water, more as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice water",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "more as needed"
-    }
+  "expected": {
+    "item": "ice water",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "more as needed"
   }
 }

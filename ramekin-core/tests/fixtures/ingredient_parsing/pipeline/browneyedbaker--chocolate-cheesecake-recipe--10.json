@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces bittersweet chocolate (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet chocolate",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

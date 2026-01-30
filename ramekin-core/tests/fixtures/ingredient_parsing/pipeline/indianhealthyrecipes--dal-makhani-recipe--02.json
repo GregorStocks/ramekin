@@ -1,19 +1,17 @@
 {
   "raw": "¼ cup (55 grams)  rajma  ((red kidney beans, or sub with urad dal))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rajma  (red kidney beans, or sub with urad dal)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rajma  (red kidney beans, or sub with urad dal)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

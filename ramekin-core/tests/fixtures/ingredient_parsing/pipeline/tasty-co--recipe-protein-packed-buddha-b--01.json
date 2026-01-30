@@ -1,19 +1,17 @@
 {
   "raw": "8 oz firm tofu, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm tofu",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "firm tofu",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

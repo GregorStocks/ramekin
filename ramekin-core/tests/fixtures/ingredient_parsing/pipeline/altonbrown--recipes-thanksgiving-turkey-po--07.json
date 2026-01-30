@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons plus 1/2 teaspoon kosher salt, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2 tablespoons plus 1/2 teaspoon kosher salt, divided",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 1/2 teaspoon kosher salt, divided"
-    }
+  "expected": {
+    "item": "2 tablespoons plus 1/2 teaspoon kosher salt, divided",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus 1/2 teaspoon kosher salt, divided"
   }
 }

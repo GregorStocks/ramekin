@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp flaxseed meal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaxseed meal",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flaxseed meal",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

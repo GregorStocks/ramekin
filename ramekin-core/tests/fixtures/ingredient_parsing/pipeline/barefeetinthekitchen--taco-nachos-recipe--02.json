@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons Mexican Spice Mix or taco seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican Spice Mix or taco seasoning",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican Spice Mix or taco seasoning",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

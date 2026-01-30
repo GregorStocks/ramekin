@@ -1,23 +1,21 @@
 {
   "raw": "6 ounces (175ml) hot black coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot black coffee",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "175",
-          "unit": "ml"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot black coffee",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "175",
+        "unit": "ml"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

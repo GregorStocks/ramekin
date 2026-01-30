@@ -1,15 +1,13 @@
 {
   "raw": "1 lb fresh salmon filet*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh salmon filet*",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh salmon filet*",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

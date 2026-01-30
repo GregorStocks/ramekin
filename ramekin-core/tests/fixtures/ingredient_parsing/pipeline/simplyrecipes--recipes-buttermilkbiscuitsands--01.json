@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 cups self-rising flour (plus extra for flouring your surface)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "self-rising flour (plus extra for flouring your surface)",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "self-rising flour (plus extra for flouring your surface)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

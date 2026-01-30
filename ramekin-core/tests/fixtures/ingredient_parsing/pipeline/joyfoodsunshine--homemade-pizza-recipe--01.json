@@ -1,10 +1,8 @@
 {
   "raw": "Pizza Dough",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pizza Dough",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pizza Dough",
+    "measurements": [],
+    "note": null
   }
 }

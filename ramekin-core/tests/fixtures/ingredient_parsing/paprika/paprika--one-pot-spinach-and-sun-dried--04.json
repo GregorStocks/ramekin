@@ -1,15 +1,13 @@
 {
   "raw": "2 small shallots, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced"
   }
 }

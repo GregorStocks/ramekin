@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon cilantro (freshly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "freshly chopped"
-    }
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "freshly chopped"
   }
 }

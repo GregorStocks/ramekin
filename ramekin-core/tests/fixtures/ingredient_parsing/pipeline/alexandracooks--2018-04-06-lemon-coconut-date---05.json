@@ -1,19 +1,17 @@
 {
   "raw": "2 cups dates, pitted (about 28, soft ones are best)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dates, pitted",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "28",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dates, pitted",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "28",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

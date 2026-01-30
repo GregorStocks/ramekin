@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons oyster sauce ((or vegetarian or gluten-free oyster sauce))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oyster sauce (or vegetarian or gluten-free oyster sauce)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oyster sauce (or vegetarian or gluten-free oyster sauce)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

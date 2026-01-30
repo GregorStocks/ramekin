@@ -1,15 +1,13 @@
 {
   "raw": "4 green chillies finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chillies finely chopped",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green chillies finely chopped",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

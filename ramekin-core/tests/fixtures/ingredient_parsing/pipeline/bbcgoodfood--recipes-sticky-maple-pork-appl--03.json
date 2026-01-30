@@ -1,15 +1,13 @@
 {
   "raw": "2 eating apples cored and cut into eighths",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eating apples cored and cut into eighths",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eating apples cored and cut into eighths",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

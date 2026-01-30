@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup dried black lentils or French green lentils",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried black lentils or French green lentils",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried black lentils or French green lentils",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

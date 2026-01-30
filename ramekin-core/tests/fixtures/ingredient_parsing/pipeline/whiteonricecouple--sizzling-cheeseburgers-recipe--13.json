@@ -1,15 +1,13 @@
 {
   "raw": "1  onion (, sliced (optional) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced (optional"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced (optional"
   }
 }

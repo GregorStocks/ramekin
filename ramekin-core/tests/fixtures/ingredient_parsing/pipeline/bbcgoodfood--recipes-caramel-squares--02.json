@@ -1,15 +1,13 @@
 {
   "raw": "25g cornflour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornflour",
-      "measurements": [
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornflour",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

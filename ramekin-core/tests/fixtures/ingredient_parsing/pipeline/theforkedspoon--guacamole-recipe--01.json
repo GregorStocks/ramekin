@@ -1,15 +1,13 @@
 {
   "raw": "5 large avocados (peeled, pitted, and mashed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocados",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled, pitted, and mashed"
-    }
+  "expected": {
+    "item": "avocados",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled, pitted, and mashed"
   }
 }

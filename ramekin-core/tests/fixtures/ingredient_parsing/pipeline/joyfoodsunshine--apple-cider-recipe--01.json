@@ -1,15 +1,13 @@
 {
   "raw": "4 pounds apples ((about 12, cored &amp;amp; quartered))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apples",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": "about 12, cored & quartered"
-    }
+  "expected": {
+    "item": "apples",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": "about 12, cored & quartered"
   }
 }

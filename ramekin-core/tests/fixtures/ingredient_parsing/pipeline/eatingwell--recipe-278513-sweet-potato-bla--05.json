@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup vegan mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegan mayonnaise",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegan mayonnaise",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

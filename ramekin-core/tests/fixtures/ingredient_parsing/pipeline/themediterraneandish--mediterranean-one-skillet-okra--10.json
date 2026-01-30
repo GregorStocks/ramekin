@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cup crushed tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed tomatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed tomatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

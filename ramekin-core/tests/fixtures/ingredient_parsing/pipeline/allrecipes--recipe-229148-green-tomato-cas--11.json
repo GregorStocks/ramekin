@@ -1,15 +1,13 @@
 {
   "raw": "0.5 teaspoon red pepper flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper flakes",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red pepper flakes",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

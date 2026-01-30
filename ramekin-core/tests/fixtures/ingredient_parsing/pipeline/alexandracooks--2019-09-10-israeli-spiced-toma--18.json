@@ -1,15 +1,13 @@
 {
   "raw": "Good bread for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread for serving",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "good"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread for serving",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "good"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 large red onion, sliced, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion, sliced",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "red onion, sliced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "divided"
   }
 }

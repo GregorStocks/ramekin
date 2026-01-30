@@ -1,15 +1,13 @@
 {
   "raw": "1 medium carrot, in big chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot, in big chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrot, in big chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

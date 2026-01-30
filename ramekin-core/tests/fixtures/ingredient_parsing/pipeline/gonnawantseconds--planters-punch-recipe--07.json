@@ -1,10 +1,8 @@
 {
   "raw": "pineapple wedge",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple wedge",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "pineapple wedge",
+    "measurements": [],
+    "note": null
   }
 }

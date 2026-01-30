@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Cointreau",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cointreau",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cointreau",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

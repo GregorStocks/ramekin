@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kosher salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

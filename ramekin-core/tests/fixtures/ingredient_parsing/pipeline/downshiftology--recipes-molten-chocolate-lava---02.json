@@ -1,19 +1,17 @@
 {
   "raw": "7 oz dark bittersweet chocolate (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark bittersweet chocolate",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "dark bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

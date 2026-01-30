@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon diced lemon peel",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced lemon peel",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced lemon peel",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

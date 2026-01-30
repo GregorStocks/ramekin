@@ -1,15 +1,13 @@
 {
   "raw": "6 sprigs parsley, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "sprig"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "sprig"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

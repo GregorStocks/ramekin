@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups almond milk (we used Califia Farms)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond milk (we used Califia Farms)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond milk (we used Califia Farms)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

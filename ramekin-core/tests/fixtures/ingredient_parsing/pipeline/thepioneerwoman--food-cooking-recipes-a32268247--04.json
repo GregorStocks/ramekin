@@ -1,15 +1,13 @@
 {
   "raw": "4 tsp. packed light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed light brown sugar",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed light brown sugar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

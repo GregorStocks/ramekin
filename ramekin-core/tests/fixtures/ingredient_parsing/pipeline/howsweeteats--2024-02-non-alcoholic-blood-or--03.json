@@ -1,15 +1,13 @@
 {
   "raw": "2  fresh jalapeño slices, (or more or less, depending on your tolerance)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh jalapeño slices",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "or more or less, depending on your tolerance"
-    }
+  "expected": {
+    "item": "fresh jalapeño slices",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "or more or less, depending on your tolerance"
   }
 }

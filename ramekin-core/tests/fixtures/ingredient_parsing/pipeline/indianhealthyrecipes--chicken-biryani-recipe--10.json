@@ -1,15 +1,13 @@
 {
   "raw": "4  green cardamoms ((choti elaichi))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cardamoms (choti elaichi)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green cardamoms (choti elaichi)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  button mushrooms (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "button mushrooms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "button mushrooms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (100g) lightly packed brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly packed brown sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly packed brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

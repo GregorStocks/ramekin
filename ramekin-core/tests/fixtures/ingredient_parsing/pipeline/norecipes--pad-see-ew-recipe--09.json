@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Thai dark soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai dark soy sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai dark soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

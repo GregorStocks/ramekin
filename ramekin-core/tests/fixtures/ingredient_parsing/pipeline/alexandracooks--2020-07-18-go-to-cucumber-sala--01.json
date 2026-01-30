@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. cucumbers, any variety or varieties you like",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cucumbers, any variety or varieties you like",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cucumbers, any variety or varieties you like",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

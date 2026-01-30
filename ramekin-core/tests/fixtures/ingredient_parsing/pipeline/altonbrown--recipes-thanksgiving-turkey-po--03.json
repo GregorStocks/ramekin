@@ -1,19 +1,17 @@
 {
   "raw": "1 medium yellow onion, diced and divided (1 1/2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced and divided"
-    }
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced and divided"
   }
 }

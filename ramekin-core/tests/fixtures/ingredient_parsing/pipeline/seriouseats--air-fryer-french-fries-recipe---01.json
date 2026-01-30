@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 pounds (680 g) russet potatoes, peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "russet potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled"
   }
 }

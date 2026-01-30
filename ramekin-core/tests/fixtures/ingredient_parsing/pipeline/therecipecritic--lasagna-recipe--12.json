@@ -1,15 +1,13 @@
 {
   "raw": "12  lasagna noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lasagna noodles",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lasagna noodles",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon fresh Lemon Juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Lemon Juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Lemon Juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

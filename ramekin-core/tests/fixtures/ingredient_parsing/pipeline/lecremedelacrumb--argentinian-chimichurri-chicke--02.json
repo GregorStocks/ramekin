@@ -1,15 +1,13 @@
 {
   "raw": "4  medium-large boneless skinless chicken breasts (cut into 1 1/2 inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-large boneless skinless chicken breasts (cut into 1 1/2 inch pieces)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium-large boneless skinless chicken breasts (cut into 1 1/2 inch pieces)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

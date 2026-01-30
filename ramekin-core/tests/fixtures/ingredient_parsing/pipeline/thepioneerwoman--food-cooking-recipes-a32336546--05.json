@@ -1,15 +1,13 @@
 {
   "raw": "Sprig of mint, to garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint, to garnish",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "sprig"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mint, to garnish",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "sprig"
+      }
+    ],
+    "note": null
   }
 }

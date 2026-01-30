@@ -1,15 +1,13 @@
 {
   "raw": "300 grams Japanese short-grain rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese short-grain rice",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese short-grain rice",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

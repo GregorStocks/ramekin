@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ pounds chicken wings and drumsticks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken wings and drumsticks",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken wings and drumsticks",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

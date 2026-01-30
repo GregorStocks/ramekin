@@ -1,19 +1,17 @@
 {
   "raw": "18 large head-on shrimp (about 2 1/4 pounds)—shelled and deveined, heads and shells reserved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head-on shrimp -shelled and deveined, heads and shells reserved",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": "large"
-        },
-        {
-          "amount": "2 1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head-on shrimp -shelled and deveined, heads and shells reserved",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "large"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

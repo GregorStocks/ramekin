@@ -1,15 +1,13 @@
 {
   "raw": "10 grams culantro ((or cilantro, chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "culantro",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": "or cilantro, chopped"
-    }
+  "expected": {
+    "item": "culantro",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": "or cilantro, chopped"
   }
 }

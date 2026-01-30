@@ -1,19 +1,17 @@
 {
   "raw": "12 oz Casarecce pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Casarecce pasta",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Casarecce pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

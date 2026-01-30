@@ -1,15 +1,13 @@
 {
   "raw": "1-2 good knobs butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "knobs butter",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "good"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "knobs butter",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "good"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 c. diced fresh mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced fresh mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced fresh mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

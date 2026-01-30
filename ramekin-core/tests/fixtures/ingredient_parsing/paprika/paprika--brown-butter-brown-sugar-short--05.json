@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cup (145 grams) packed dark brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed dark brown sugar",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "145",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed dark brown sugar",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "145",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

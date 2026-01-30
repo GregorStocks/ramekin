@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces (about 8 large) medjool dates, pitted and roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medjool dates",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "8",
-          "unit": "large"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "pitted and roughly chopped"
-    }
+  "expected": {
+    "item": "medjool dates",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "8",
+        "unit": "large"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "pitted and roughly chopped"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Crumbled cotija cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crumbled cotija cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Crumbled cotija cheese",
+    "measurements": [],
+    "note": null
   }
 }

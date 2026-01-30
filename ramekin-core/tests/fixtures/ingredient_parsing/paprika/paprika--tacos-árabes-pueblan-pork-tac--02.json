@@ -1,10 +1,8 @@
 {
   "raw": "PORK AND ONIONS:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "PORK AND ONIONS:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "PORK AND ONIONS:",
+    "measurements": [],
+    "note": null
   }
 }

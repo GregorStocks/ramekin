@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup crumbled feta or more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled feta or more to taste",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled feta or more to taste",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

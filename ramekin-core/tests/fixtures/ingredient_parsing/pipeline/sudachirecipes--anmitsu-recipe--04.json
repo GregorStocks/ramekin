@@ -1,15 +1,13 @@
 {
   "raw": "50 g dark brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark brown sugar",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

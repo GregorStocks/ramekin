@@ -1,15 +1,13 @@
 {
   "raw": "2  6 Ounce Cans Fancy Crabmeat-Drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fancy Crabmeat-Drained",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "6 Ounce Cans"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Fancy Crabmeat-Drained",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "6 Ounce Cans"
+      }
+    ],
+    "note": null
   }
 }

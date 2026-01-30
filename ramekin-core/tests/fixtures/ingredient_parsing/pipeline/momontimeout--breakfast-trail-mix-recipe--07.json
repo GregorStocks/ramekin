@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup  miniature marshmallows (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miniature marshmallows",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "miniature marshmallows",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

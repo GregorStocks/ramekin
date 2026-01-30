@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds seedless grapes (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seedless grapes (see notes)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seedless grapes (see notes)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp chopped fresh mint",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh mint",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh mint",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

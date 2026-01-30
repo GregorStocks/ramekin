@@ -1,15 +1,13 @@
 {
   "raw": "½ small red onion (peeled &amp;amp; quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "small"
-        }
-      ],
-      "note": "peeled & quartered"
-    }
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "small"
+      }
+    ],
+    "note": "peeled & quartered"
   }
 }

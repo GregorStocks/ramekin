@@ -1,10 +1,8 @@
 {
   "raw": "A pinch of cayenne",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A pinch of cayenne",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A pinch of cayenne",
+    "measurements": [],
+    "note": null
   }
 }

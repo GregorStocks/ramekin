@@ -1,19 +1,17 @@
 {
   "raw": "3 Tablespoons sugar ((45g) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Steamed white or brown rice, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Steamed white or brown rice",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Steamed white or brown rice",
+    "measurements": [],
+    "note": "for serving"
   }
 }

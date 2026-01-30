@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon&nbsp;finely chopped shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped shallots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped shallots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

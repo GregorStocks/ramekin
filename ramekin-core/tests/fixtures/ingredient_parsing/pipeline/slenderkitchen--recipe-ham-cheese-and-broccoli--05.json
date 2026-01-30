@@ -1,15 +1,13 @@
 {
   "raw": "1 cup boneless lean ham, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless lean ham",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "boneless lean ham",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

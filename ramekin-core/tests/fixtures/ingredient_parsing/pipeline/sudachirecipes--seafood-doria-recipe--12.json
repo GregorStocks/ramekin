@@ -1,15 +1,13 @@
 {
   "raw": "½  knorr chicken bouillon cube (use the other half for béchamel sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "knorr chicken bouillon cube (use the other half for béchamel sauce)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "knorr chicken bouillon cube (use the other half for béchamel sauce)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

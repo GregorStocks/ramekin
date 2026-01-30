@@ -1,15 +1,13 @@
 {
   "raw": "1 - 2  diced green jalapeño chilli (optional (14g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced green jalapeño chilli",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": null
-        }
-      ],
-      "note": "optional (14g"
-    }
+  "expected": {
+    "item": "diced green jalapeño chilli",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": null
+      }
+    ],
+    "note": "optional (14g"
   }
 }

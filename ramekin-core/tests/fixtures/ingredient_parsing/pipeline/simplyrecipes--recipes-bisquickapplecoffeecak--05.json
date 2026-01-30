@@ -1,15 +1,13 @@
 {
   "raw": "1 tart green apple, cored, peeled, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tart green apple, cored, peeled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "tart green apple, cored, peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

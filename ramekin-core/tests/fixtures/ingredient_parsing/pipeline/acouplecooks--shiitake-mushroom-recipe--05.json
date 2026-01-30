@@ -1,15 +1,13 @@
 {
   "raw": "2 dashes toasted sesame oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted sesame oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

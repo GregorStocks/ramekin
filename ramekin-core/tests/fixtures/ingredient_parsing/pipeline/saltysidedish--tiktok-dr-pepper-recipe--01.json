@@ -1,19 +1,17 @@
 {
   "raw": "33.8 oz bottle of S. Pellegrino Sparkling Water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bottle of S. Pellegrino Sparkling Water",
-      "measurements": [
-        {
-          "amount": "33.8",
-          "unit": "oz"
-        },
-        {
-          "amount": "958",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bottle of S. Pellegrino Sparkling Water",
+    "measurements": [
+      {
+        "amount": "33.8",
+        "unit": "oz"
+      },
+      {
+        "amount": "958",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

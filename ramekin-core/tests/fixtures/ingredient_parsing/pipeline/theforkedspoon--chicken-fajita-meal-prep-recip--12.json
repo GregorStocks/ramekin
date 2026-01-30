@@ -1,15 +1,13 @@
 {
   "raw": "1  yellow or red onion (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow or red onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "yellow or red onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

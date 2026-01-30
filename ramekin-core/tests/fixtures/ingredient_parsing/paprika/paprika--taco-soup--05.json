@@ -1,23 +1,21 @@
 {
   "raw": "2 small jalapeño peppers (2 ounces; 60g), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "jalapeño peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

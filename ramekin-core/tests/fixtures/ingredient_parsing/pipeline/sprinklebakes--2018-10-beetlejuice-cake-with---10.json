@@ -1,23 +1,21 @@
 {
   "raw": "1 cup 6oz. white chocolate, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white chocolate",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "white chocolate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

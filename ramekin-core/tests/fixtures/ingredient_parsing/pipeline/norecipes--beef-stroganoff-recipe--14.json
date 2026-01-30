@@ -1,15 +1,13 @@
 {
   "raw": "240 grams egg noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg noodles",
-      "measurements": [
-        {
-          "amount": "240",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg noodles",
+    "measurements": [
+      {
+        "amount": "240",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

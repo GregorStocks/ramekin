@@ -1,15 +1,13 @@
 {
   "raw": "4 medium Potatoes (, peeled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Potatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "Potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled"
   }
 }

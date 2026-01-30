@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp cold shortening",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold shortening",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold shortening",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

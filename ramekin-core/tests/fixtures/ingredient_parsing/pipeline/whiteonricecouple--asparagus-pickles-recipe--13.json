@@ -1,15 +1,13 @@
 {
   "raw": "1/2  medium Red Onion (,&nbsp;thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red Onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "Red Onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

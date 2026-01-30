@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces mozzarella cheese, cut into 1/2 inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese, cut into 1/2 inch cubes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mozzarella cheese, cut into 1/2 inch cubes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

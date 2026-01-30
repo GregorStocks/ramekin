@@ -1,10 +1,8 @@
 {
   "raw": "up to 2 cups add-ins (see recipe note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "up to 2 cups add-ins (see recipe note)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "up to 2 cups add-ins (see recipe note)",
+    "measurements": [],
+    "note": null
   }
 }

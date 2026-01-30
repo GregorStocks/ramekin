@@ -1,15 +1,13 @@
 {
   "raw": "1 Teaspoon Sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

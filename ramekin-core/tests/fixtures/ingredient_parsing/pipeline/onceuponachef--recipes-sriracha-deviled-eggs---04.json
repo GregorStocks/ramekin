@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon whole grain mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole grain mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole grain mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

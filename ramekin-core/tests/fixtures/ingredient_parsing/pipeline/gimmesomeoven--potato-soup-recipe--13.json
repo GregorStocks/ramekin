@@ -1,10 +1,8 @@
 {
   "raw": "optional toppings: thinly-sliced green onions or chives, extra shredded cheese, extra bacon, sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional toppings: thinly-sliced green onions or chives, extra shredded cheese, extra bacon, sour cream",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "optional toppings: thinly-sliced green onions or chives, extra shredded cheese, extra bacon, sour cream",
+    "measurements": [],
+    "note": null
   }
 }

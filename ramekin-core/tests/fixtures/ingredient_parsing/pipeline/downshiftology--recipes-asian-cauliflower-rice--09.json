@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup tamari (or coconut aminos)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tamari (or coconut aminos)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tamari (or coconut aminos)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

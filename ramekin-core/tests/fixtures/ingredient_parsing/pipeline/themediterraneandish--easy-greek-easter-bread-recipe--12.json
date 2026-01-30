@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 tbsp toasted sesame seeds (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame seeds",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "toasted sesame seeds",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

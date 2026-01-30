@@ -1,10 +1,8 @@
 {
   "raw": "Sugar, for garnish, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sugar, for garnish",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sugar, for garnish",
+    "measurements": [],
+    "note": "optional"
   }
 }

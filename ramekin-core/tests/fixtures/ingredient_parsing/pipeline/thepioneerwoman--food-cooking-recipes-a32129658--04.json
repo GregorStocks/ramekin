@@ -1,10 +1,8 @@
 {
   "raw": "Red gel icing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red gel icing",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Red gel icing",
+    "measurements": [],
+    "note": null
   }
 }

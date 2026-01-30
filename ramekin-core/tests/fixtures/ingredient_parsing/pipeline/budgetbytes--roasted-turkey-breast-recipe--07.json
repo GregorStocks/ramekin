@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp dried sage ($0.05)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried sage ($0.05)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried sage ($0.05)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

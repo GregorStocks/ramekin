@@ -1,10 +1,8 @@
 {
   "raw": "More chopped green onions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "More chopped green onions",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "More chopped green onions",
+    "measurements": [],
+    "note": null
   }
 }

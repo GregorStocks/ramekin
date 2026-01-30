@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons curry powder, I love Madras brand",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curry powder, I love Madras brand",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "curry powder, I love Madras brand",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

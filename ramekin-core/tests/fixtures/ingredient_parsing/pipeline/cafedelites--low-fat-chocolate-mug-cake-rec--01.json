@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons self raising flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "self raising flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "self raising flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

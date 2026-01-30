@@ -1,19 +1,17 @@
 {
   "raw": "1 (1 1/2-inch) stick cinnamon, broken into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon, broken into pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon, broken into pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

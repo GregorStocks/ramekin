@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons neutral-flavored oil, such as avocado&nbsp; or &nbsp;grapeseed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neutral-flavored oil, such as avocado  or  grapeseed",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "neutral-flavored oil, such as avocado  or  grapeseed",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

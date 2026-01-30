@@ -1,15 +1,13 @@
 {
   "raw": "4  golden beets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden beets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "golden beets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

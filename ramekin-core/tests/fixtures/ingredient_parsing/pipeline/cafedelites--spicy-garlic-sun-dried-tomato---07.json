@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon red pepper (adjust to your preference)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper (adjust to your preference)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red pepper (adjust to your preference)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

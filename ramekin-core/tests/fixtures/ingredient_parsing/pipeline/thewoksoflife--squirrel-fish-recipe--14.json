@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons clear rice wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clear rice wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "clear rice wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

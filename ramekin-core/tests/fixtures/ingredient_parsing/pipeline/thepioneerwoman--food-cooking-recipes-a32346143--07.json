@@ -1,15 +1,13 @@
 {
   "raw": "1/4 c. minced canned chipotle chiles in adobo sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced canned chipotle chiles in adobo sauce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced canned chipotle chiles in adobo sauce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

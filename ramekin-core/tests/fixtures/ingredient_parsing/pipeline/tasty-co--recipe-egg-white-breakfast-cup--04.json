@@ -1,15 +1,13 @@
 {
   "raw": "2 cups egg white",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg white",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg white",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

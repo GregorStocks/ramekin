@@ -1,15 +1,13 @@
 {
   "raw": "1  head broccoli (washed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": "washed"
-    }
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": "washed"
   }
 }

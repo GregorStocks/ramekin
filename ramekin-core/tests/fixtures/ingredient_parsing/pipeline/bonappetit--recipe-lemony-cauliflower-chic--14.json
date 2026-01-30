@@ -1,10 +1,8 @@
 {
   "raw": "Cooked jasmine rice, to taste (see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooked jasmine rice",
-      "measurements": [],
-      "note": "to taste (see Note)"
-    }
+  "expected": {
+    "item": "Cooked jasmine rice",
+    "measurements": [],
+    "note": "to taste (see Note)"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 leftover turkey carcass",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover turkey carcass",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover turkey carcass",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

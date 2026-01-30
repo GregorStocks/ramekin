@@ -1,15 +1,13 @@
 {
   "raw": "1/4&nbsp;cup peanut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peanut oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peanut oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

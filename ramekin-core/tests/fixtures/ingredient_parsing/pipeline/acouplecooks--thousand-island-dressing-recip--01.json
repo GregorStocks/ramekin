@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons minced dill pickle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced dill pickle",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced dill pickle",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

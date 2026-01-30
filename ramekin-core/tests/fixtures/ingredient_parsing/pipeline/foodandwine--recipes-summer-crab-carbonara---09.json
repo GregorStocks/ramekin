@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces fresh Jonah, blue, or stone crabmeat, picked over",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Jonah, blue, or stone crabmeat, picked over",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Jonah, blue, or stone crabmeat, picked over",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tsp toasted sesame seeds for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame seeds for topping",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted sesame seeds for topping",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "3½ ounces Manchego, (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Manchego",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "99",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "Manchego",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "99",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

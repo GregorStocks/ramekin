@@ -1,23 +1,21 @@
 {
   "raw": "12 ounces cauliflower florets ((1 small cauliflower))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower florets",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower florets",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

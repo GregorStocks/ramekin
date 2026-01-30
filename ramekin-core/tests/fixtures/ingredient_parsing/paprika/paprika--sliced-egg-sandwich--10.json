@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh arugula, roughly torn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh arugula, roughly torn",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh arugula, roughly torn",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

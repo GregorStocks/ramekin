@@ -1,19 +1,17 @@
 {
   "raw": "24 ounces imitation crab meat (flaked style or sticks, chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "imitation crab meat",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "flaked style or sticks, chopped"
-    }
+  "expected": {
+    "item": "imitation crab meat",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "flaked style or sticks, chopped"
   }
 }

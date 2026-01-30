@@ -1,15 +1,13 @@
 {
   "raw": "4.25 cups powdered sugar, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar",
-      "measurements": [
-        {
-          "amount": "4.25",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "4.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

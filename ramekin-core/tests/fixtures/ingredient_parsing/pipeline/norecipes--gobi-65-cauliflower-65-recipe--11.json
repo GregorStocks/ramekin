@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chili paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili paste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

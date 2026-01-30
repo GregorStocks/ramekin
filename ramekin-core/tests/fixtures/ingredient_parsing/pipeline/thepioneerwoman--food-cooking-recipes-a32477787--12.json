@@ -1,15 +1,13 @@
 {
   "raw": "2 bell peppers (any color), sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bell peppers (any color)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "bell peppers (any color)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

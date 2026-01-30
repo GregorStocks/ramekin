@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup double-concentrated tomato paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "double-concentrated tomato paste",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "double-concentrated tomato paste",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

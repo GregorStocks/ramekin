@@ -1,10 +1,8 @@
 {
   "raw": "Smoked hot or sweet paprika, more cayenne, chipotle powder and/or minced chives to garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Smoked hot or sweet paprika, more cayenne",
-      "measurements": [],
-      "note": "chipotle powder and/or minced chives to garnish"
-    }
+  "expected": {
+    "item": "Smoked hot or sweet paprika, more cayenne",
+    "measurements": [],
+    "note": "chipotle powder and/or minced chives to garnish"
   }
 }

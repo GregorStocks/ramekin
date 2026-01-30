@@ -1,15 +1,13 @@
 {
   "raw": "1½ pound ground beef (lean)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef (lean)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef (lean)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

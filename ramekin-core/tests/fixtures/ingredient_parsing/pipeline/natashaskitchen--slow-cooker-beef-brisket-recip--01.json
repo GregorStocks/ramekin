@@ -1,15 +1,13 @@
 {
   "raw": "3 Tbsp Olive oil to sauté (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Olive oil to sauté",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "Olive oil to sauté",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ medium  yellow onion (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
   }
 }

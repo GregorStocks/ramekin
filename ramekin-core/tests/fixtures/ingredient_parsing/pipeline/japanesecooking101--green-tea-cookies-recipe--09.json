@@ -1,10 +1,8 @@
 {
   "raw": "white chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white chocolate",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "white chocolate",
+    "measurements": [],
+    "note": null
   }
 }

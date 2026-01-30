@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup walnuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "walnuts",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "walnuts",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

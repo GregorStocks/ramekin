@@ -1,19 +1,17 @@
 {
   "raw": "Two 14.5-ounce (411g) cans fire-roasted diced tomatoes, undrained, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fire-roasted diced tomatoes, undrained",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "14.5-ounce cans"
-        },
-        {
-          "amount": "411",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "fire-roasted diced tomatoes, undrained",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "14.5-ounce cans"
+      },
+      {
+        "amount": "411",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

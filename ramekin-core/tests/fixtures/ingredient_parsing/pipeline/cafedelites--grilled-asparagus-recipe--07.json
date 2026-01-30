@@ -1,15 +1,13 @@
 {
   "raw": "1 squeeze lemon juice (freshly squeezed, adjust to your tastes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "squeeze lemon juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "freshly squeezed, adjust to your tastes"
-    }
+  "expected": {
+    "item": "squeeze lemon juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "freshly squeezed, adjust to your tastes"
   }
 }

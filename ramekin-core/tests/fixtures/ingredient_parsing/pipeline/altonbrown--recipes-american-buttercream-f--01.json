@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup low-fat buttermilk, cold",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat buttermilk",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "cold"
-    }
+  "expected": {
+    "item": "low-fat buttermilk",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold"
   }
 }

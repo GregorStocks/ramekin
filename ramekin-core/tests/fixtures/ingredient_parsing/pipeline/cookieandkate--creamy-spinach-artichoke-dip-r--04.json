@@ -1,15 +1,13 @@
 {
   "raw": "1 chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

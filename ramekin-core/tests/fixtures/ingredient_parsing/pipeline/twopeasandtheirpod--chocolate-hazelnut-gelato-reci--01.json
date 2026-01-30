@@ -1,15 +1,13 @@
 {
   "raw": "1-1/2 cups 185 grams toasted hazelnuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "185 grams toasted hazelnuts",
-      "measurements": [
-        {
-          "amount": "1-1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "185 grams toasted hazelnuts",
+    "measurements": [
+      {
+        "amount": "1-1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 gallons&nbsp;water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "gallon"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "gallon"
+      }
+    ],
+    "note": null
   }
 }

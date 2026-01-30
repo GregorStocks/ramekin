@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons dried minced garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried minced garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried minced garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

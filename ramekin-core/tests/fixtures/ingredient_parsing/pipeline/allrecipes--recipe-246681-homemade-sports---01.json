@@ -1,15 +1,13 @@
 {
   "raw": "8 cups fresh cold water, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cold water",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "fresh cold water",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

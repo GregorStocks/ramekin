@@ -1,15 +1,13 @@
 {
   "raw": "4  egg yolks (you can whisk the whites to fold into the eggnog just before serving, if you like)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolks (you can whisk the whites to fold into the eggnog just before serving, if you like)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg yolks (you can whisk the whites to fold into the eggnog just before serving, if you like)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

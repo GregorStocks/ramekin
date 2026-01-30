@@ -1,15 +1,13 @@
 {
   "raw": "1 14.5-oz can diced tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "14.5-oz can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "14.5-oz can"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2/3 lb. ground pork",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pork",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground pork",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

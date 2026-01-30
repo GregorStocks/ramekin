@@ -1,15 +1,13 @@
 {
   "raw": "1 medium sweet orange pepper, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet orange pepper, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet orange pepper, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

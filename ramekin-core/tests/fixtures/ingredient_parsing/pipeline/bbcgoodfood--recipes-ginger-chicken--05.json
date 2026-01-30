@@ -1,15 +1,13 @@
 {
   "raw": "15g pack fresh coriander chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pack fresh coriander chopped",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pack fresh coriander chopped",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

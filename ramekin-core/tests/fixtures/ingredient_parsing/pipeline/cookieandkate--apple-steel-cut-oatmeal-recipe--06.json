@@ -1,10 +1,8 @@
 {
   "raw": "Maple syrup or honey, to taste (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Maple syrup or honey, to taste",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Maple syrup or honey, to taste",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 jars marinara sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinara sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "jar"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinara sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "jar"
+      }
+    ],
+    "note": null
   }
 }

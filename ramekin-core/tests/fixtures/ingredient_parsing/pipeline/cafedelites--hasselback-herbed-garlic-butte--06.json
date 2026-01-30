@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon salt and black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt and black pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt and black pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

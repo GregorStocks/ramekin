@@ -1,15 +1,13 @@
 {
   "raw": "1 medium yellow or white onion, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow or white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "yellow or white onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
   }
 }

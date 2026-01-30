@@ -1,15 +1,13 @@
 {
   "raw": "1 cup frozen yellow corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen yellow corn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen yellow corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

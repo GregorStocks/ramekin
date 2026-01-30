@@ -1,19 +1,17 @@
 {
   "raw": "1 can (2-1/4 ounces) sliced ripe olives, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced ripe olives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "2-1/4",
-          "unit": "oz"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "sliced ripe olives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "2-1/4",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon salt, plus more for cooking vegetables",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more for cooking vegetables"
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for cooking vegetables"
   }
 }

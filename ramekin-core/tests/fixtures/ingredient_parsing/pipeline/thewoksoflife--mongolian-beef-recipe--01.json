@@ -1,15 +1,13 @@
 {
   "raw": "1 pound flank steak ((sliced against the grain into 1/4-inch/6mm thick slices))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flank steak",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced against the grain into 1/4-inch/6mm thick slices"
-    }
+  "expected": {
+    "item": "flank steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced against the grain into 1/4-inch/6mm thick slices"
   }
 }

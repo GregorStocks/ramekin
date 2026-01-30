@@ -1,15 +1,13 @@
 {
   "raw": "2 cups rolled oats",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rolled oats",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rolled oats",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

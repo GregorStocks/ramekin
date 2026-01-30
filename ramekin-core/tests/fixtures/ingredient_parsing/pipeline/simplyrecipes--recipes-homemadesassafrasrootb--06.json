@@ -1,15 +1,13 @@
 {
   "raw": "1-inch of stick cinnamon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-inch of stick cinnamon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-inch of stick cinnamon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

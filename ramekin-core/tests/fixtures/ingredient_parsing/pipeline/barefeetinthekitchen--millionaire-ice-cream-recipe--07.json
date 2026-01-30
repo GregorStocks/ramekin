@@ -1,15 +1,13 @@
 {
   "raw": "4 - 5&nbsp;  Millionaire Bars (chopped small, about 1 1/2 cups worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Millionaire Bars",
-      "measurements": [
-        {
-          "amount": "4-5",
-          "unit": null
-        }
-      ],
-      "note": "chopped small, about 1 1/2 cups worth"
-    }
+  "expected": {
+    "item": "Millionaire Bars",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": null
+      }
+    ],
+    "note": "chopped small, about 1 1/2 cups worth"
   }
 }

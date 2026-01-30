@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon prepared mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared mustard",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared mustard",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

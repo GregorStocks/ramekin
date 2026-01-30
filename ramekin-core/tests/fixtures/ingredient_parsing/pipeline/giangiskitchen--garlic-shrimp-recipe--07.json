@@ -1,15 +1,13 @@
 {
   "raw": "1  French baguette",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "French baguette",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "French baguette",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

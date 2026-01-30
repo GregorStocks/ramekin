@@ -1,15 +1,13 @@
 {
   "raw": "4 to 6 buns, (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buns",
-      "measurements": [
-        {
-          "amount": "4 to 6",
-          "unit": null
-        }
-      ],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "buns",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": "for serving"
   }
 }

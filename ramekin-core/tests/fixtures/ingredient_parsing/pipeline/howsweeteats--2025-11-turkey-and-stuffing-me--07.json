@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup diced sweet onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced sweet onion",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced sweet onion",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

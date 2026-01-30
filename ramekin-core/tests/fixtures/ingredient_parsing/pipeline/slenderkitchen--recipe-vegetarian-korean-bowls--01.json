@@ -1,15 +1,13 @@
 {
   "raw": "3 cups mixed Asian vegetables",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed Asian vegetables",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed Asian vegetables",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

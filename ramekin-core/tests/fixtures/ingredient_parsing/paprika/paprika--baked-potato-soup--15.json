@@ -1,10 +1,8 @@
 {
   "raw": "A drizzle of melted (or melted and browned) butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A drizzle of melted butter",
-      "measurements": [],
-      "note": "or melted and browned"
-    }
+  "expected": {
+    "item": "A drizzle of melted butter",
+    "measurements": [],
+    "note": "or melted and browned"
   }
 }

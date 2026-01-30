@@ -1,15 +1,13 @@
 {
   "raw": "12 lemon Oreos",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon Oreos",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon Oreos",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  mangos (large, sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mangos",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "large, sliced"
-    }
+  "expected": {
+    "item": "mangos",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "large, sliced"
   }
 }

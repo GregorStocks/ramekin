@@ -1,23 +1,21 @@
 {
   "raw": "1 large (about 12 ounces), not-too-firm seeded baguette",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "not-too-firm seeded baguette",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "not-too-firm seeded baguette",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

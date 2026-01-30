@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped candied pecans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped candied pecans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped candied pecans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

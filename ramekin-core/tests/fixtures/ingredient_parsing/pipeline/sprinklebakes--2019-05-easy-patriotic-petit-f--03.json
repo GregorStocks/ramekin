@@ -1,10 +1,8 @@
 {
   "raw": "Red and sky blue gel food color",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red and sky blue gel food color",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Red and sky blue gel food color",
+    "measurements": [],
+    "note": null
   }
 }

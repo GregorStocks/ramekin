@@ -1,15 +1,13 @@
 {
   "raw": "1 cup buffalo wing sauce, (frank’s red hot wing sauce is our favorite)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buffalo wing sauce, (frank’s red hot wing sauce is our favorite)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buffalo wing sauce, (frank’s red hot wing sauce is our favorite)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

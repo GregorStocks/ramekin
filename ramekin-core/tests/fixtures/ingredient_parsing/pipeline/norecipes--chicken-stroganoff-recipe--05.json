@@ -1,15 +1,13 @@
 {
   "raw": "175 grams onions ((1 small onion, finely diced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "175",
-          "unit": "g"
-        }
-      ],
-      "note": "1 small onion, finely diced"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "175",
+        "unit": "g"
+      }
+    ],
+    "note": "1 small onion, finely diced"
   }
 }

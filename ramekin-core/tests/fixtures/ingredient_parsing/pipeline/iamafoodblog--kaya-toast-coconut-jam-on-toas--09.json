@@ -1,10 +1,8 @@
 {
   "raw": "kaya",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kaya",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "kaya",
+    "measurements": [],
+    "note": null
   }
 }

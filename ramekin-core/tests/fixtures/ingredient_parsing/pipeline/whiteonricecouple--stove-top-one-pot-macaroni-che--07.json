@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Salt (, plus additional for final season later)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salt (",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus additional for final season later)"
-    }
+  "expected": {
+    "item": "Salt (",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus additional for final season later)"
   }
 }

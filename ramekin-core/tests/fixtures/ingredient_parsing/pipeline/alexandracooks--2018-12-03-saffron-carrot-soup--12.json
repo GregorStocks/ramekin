@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons ground sumac, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground sumac",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "ground sumac",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

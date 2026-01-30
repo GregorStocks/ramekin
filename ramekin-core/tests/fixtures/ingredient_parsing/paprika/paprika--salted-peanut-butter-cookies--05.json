@@ -1,19 +1,17 @@
 {
   "raw": "1 3/4 cups (450 grams) smooth peanut butter (see note at end)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smooth peanut butter (see note at end)",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "450",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smooth peanut butter (see note at end)",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

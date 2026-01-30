@@ -1,19 +1,17 @@
 {
   "raw": "8 oz fresh or frozen strawberries (hulled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen strawberries (hulled)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen strawberries (hulled)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

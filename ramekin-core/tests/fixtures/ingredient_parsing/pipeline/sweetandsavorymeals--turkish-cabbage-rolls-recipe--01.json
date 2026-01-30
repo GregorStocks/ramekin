@@ -1,15 +1,13 @@
 {
   "raw": "1  head green cabbage (choose a larger one)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cabbage (choose a larger one)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green cabbage (choose a larger one)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

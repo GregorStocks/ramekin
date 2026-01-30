@@ -1,15 +1,13 @@
 {
   "raw": "3 slices white bread (crust removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white bread (crust removed)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white bread (crust removed)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

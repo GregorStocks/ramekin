@@ -1,15 +1,13 @@
 {
   "raw": "12 unpeeled garlic cloves plus 24 peeled garlic cloves (from 4 heads), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unpeeled garlic cloves",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": "plus 24 peeled garlic cloves (from 4 heads), divided"
-    }
+  "expected": {
+    "item": "unpeeled garlic cloves",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "plus 24 peeled garlic cloves (from 4 heads), divided"
   }
 }

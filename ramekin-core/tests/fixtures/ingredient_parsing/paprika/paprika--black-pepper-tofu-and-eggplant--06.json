@@ -1,15 +1,13 @@
 {
   "raw": "3 to 4 tablespoons unsalted butter (the higher amount is slightly more rich)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter (the higher amount is slightly more rich)",
-      "measurements": [
-        {
-          "amount": "3 to 4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter (the higher amount is slightly more rich)",
+    "measurements": [
+      {
+        "amount": "3 to 4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

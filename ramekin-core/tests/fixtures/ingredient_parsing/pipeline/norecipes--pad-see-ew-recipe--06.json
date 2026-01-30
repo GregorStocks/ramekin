@@ -1,15 +1,13 @@
 {
   "raw": "200 grams chicken ((thinly sliced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "chicken",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

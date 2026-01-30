@@ -1,19 +1,17 @@
 {
   "raw": "12 oz sliced cooked bacon*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced cooked bacon*",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced cooked bacon*",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

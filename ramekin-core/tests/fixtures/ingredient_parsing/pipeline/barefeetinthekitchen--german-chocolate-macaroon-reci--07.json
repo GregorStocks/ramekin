@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup semi sweet or dark chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi sweet or dark chocolate chips",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semi sweet or dark chocolate chips",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

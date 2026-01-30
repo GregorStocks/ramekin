@@ -1,10 +1,8 @@
 {
   "raw": "nonstick cooking spray, for greasing pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nonstick cooking spray, for greasing pan",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "nonstick cooking spray, for greasing pan",
+    "measurements": [],
+    "note": null
   }
 }

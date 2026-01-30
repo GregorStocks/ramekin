@@ -1,23 +1,21 @@
 {
   "raw": "1 can reduced-sodium black beans ((15 ounces) rinsed and drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium black beans rinsed and drained)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium black beans rinsed and drained)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

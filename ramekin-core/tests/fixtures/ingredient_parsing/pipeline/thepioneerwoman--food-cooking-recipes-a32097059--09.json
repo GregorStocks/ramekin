@@ -1,10 +1,8 @@
 {
   "raw": "Sugar, for coating",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sugar, for coating",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sugar, for coating",
+    "measurements": [],
+    "note": null
   }
 }

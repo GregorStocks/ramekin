@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 c. of your favorite barbecue sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your favorite barbecue sauce",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "your favorite barbecue sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

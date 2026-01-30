@@ -1,15 +1,13 @@
 {
   "raw": "1 head of garlic, cloves separated, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic, cloves separated",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "garlic, cloves separated",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": "divided"
   }
 }

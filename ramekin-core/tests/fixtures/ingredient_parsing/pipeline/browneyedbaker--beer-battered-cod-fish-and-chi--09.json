@@ -1,15 +1,13 @@
 {
   "raw": "1½ pounds 1-inch-thick cod filet (cut into eight 3-ounce pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1-inch-thick cod filet (cut into eight 3-ounce pieces)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1-inch-thick cod filet (cut into eight 3-ounce pieces)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

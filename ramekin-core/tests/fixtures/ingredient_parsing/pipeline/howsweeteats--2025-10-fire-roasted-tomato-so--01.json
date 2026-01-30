@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces finely grated asiago cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated asiago cheese",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated asiago cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 4 –6-oz. skinless salmon fillets or one 1–1½-lb. skinless salmon fillet, cut into 1\" pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "4 -6-oz. skinless salmon fillets or one 1-1 1/2-lb. skinless salmon fillet, cut into 1\" pieces",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "4 -6-oz. skinless salmon fillets or one 1-1 1/2-lb. skinless salmon fillet, cut into 1\" pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

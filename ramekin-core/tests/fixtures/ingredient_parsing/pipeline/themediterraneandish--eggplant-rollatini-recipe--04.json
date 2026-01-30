@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Store-bought Marinara sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Store-bought Marinara sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Store-bought Marinara sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

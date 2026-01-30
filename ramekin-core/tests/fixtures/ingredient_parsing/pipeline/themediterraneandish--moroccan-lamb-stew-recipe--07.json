@@ -1,15 +1,13 @@
 {
   "raw": "3 large garlic cloves, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

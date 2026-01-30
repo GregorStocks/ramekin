@@ -1,10 +1,8 @@
 {
   "raw": "scallions ((chopped, for garnish))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions",
-      "measurements": [],
-      "note": "chopped, for garnish"
-    }
+  "expected": {
+    "item": "scallions",
+    "measurements": [],
+    "note": "chopped, for garnish"
   }
 }

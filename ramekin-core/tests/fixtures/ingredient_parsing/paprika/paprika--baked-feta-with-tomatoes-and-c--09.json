@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoons fresh chopped herbs (parsley, cilantro, mint, dill, basil, or rosemary, or a mix)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chopped herbs (parsley, cilantro, mint, dill, basil, or rosemary, or a mix)",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh chopped herbs (parsley, cilantro, mint, dill, basil, or rosemary, or a mix)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

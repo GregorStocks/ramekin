@@ -1,19 +1,17 @@
 {
   "raw": "5 g orange extract or orange water (1 tsp)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange extract or orange water",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange extract or orange water",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

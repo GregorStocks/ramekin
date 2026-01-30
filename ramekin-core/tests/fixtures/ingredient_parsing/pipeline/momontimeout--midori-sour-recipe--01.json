@@ -1,19 +1,17 @@
 {
   "raw": "2 oz MIDORI",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "MIDORI",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "MIDORI",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

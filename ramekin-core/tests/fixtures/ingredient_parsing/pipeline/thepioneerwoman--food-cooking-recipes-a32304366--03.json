@@ -1,15 +1,13 @@
 {
   "raw": "1 pt. strawberries, hulled and halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": "hulled and halved"
-    }
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": "hulled and halved"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 cups cubed butternut squash (1 inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cubed butternut squash",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cubed butternut squash",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

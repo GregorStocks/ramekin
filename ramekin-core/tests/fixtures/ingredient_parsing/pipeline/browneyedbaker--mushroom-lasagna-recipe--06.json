@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds red onions (chopped fine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "chopped fine"
-    }
+  "expected": {
+    "item": "red onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped fine"
   }
 }

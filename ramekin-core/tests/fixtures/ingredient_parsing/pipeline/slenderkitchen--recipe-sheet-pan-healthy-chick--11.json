@@ -1,19 +1,17 @@
 {
   "raw": "4 oz fresh mozzarella cheese (or part skim shredded mozzarella)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "or part skim shredded mozzarella"
-    }
+  "expected": {
+    "item": "fresh mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "or part skim shredded mozzarella"
   }
 }

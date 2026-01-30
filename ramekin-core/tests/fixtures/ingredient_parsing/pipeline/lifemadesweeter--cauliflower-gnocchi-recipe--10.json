@@ -1,10 +1,8 @@
 {
   "raw": "dried herbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried herbs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "dried herbs",
+    "measurements": [],
+    "note": null
   }
 }

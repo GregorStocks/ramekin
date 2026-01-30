@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp. small bunch parsley, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small bunch parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "small bunch parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

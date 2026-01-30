@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup coarsely chopped flat-leaf parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely chopped flat-leaf parsley",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely chopped flat-leaf parsley",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

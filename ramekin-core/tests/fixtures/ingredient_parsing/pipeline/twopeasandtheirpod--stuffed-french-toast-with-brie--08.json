@@ -1,10 +1,8 @@
 {
   "raw": "Mixed berries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mixed berries",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mixed berries",
+    "measurements": [],
+    "note": null
   }
 }

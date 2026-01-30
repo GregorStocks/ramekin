@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon red chili powder or cayenne (to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chili powder or cayenne",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "red chili powder or cayenne",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

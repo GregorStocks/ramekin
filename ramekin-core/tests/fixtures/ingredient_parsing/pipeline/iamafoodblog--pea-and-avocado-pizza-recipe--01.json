@@ -1,15 +1,13 @@
 {
   "raw": "1 ball no-knead pizza dough",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ball no-knead pizza dough",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ball no-knead pizza dough",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

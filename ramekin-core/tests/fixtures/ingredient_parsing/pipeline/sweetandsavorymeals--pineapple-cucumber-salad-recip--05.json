@@ -1,15 +1,13 @@
 {
   "raw": "1  avocado (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

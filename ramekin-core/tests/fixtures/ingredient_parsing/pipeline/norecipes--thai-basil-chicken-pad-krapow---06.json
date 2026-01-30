@@ -1,15 +1,13 @@
 {
   "raw": "9 grams garlic ((2 medium cloves, roughly chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "g"
-        }
-      ],
-      "note": "2 medium cloves, roughly chopped"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "g"
+      }
+    ],
+    "note": "2 medium cloves, roughly chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cranberry juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cranberry juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cranberry juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

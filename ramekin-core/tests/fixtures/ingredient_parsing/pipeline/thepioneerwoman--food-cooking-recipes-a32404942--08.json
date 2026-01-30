@@ -1,15 +1,13 @@
 {
   "raw": "1/2 jalapeño pepper, seeded and diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "seeded and diced"
-    }
+  "expected": {
+    "item": "jalapeño pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "seeded and diced"
   }
 }

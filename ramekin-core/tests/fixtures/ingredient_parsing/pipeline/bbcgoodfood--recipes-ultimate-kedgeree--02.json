@@ -1,15 +1,13 @@
 {
   "raw": "2medium onions halved and very thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions halved and very thinly sliced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onions halved and very thinly sliced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

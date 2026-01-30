@@ -1,10 +1,8 @@
 {
   "raw": "Salt  (Optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salt",
-      "measurements": [],
-      "note": "Optional"
-    }
+  "expected": {
+    "item": "Salt",
+    "measurements": [],
+    "note": "Optional"
   }
 }

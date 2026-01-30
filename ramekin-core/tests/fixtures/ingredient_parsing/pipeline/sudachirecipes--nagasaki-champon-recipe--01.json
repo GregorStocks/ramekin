@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp lard (or cooking oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lard (or cooking oil)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lard (or cooking oil)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

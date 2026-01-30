@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup long-grain sticky rice ((sometimes called glutinous rice))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long-grain sticky rice (sometimes called glutinous rice)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long-grain sticky rice (sometimes called glutinous rice)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 ounce sweet vermouth (I like Dolin or Carpano Antica)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet vermouth (I like Dolin or Carpano Antica)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet vermouth (I like Dolin or Carpano Antica)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons finely diced shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely diced shallots",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely diced shallots",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

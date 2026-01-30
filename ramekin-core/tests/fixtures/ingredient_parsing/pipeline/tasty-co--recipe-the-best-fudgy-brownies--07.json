@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa powder",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cocoa powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups of white flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white flour",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white flour",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

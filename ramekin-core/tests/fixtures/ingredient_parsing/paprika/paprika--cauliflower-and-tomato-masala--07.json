@@ -1,15 +1,13 @@
 {
   "raw": "1 big handful fresh cilantro, stems finely chopped, leaves roughly torn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "big handful fresh cilantro, stems finely chopped, leaves roughly torn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "big handful fresh cilantro, stems finely chopped, leaves roughly torn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

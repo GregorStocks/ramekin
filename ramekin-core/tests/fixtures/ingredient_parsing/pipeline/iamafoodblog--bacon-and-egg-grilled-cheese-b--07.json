@@ -1,10 +1,8 @@
 {
   "raw": "jalapeño slices, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño slices",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "jalapeño slices",
+    "measurements": [],
+    "note": "to taste"
   }
 }

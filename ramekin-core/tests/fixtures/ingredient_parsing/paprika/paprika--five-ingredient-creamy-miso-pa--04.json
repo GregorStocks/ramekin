@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons white (or red) miso",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white (or red) miso",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white (or red) miso",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

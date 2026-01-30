@@ -1,15 +1,13 @@
 {
   "raw": "1 ⅔ cups all-purpose flour ((about 250 grams, plus more for dusting))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1 2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "about 250 grams, plus more for dusting"
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "about 250 grams, plus more for dusting"
   }
 }

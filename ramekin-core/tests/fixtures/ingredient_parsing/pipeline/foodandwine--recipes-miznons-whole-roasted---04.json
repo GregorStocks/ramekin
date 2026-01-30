@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons best-quality extra-virgin olive oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "best-quality extra-virgin olive oil",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "best-quality extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

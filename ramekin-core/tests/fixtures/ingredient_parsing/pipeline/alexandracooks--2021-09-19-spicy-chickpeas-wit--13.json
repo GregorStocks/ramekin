@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon miso, optional, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miso, optional, see notes above",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "miso, optional, see notes above",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8 cups Romaine lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Romaine lettuce",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Romaine lettuce",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

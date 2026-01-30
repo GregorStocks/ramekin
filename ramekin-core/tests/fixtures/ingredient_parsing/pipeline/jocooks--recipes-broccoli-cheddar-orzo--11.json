@@ -1,15 +1,13 @@
 {
   "raw": "½ cup milk  (or half-and-half)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk  (or half-and-half)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk  (or half-and-half)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

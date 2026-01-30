@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cauliflower florets (or more broccoli)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower florets",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more broccoli"
-    }
+  "expected": {
+    "item": "cauliflower florets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more broccoli"
   }
 }

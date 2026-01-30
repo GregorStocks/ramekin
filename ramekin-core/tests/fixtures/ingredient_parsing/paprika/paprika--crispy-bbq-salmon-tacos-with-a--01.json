@@ -1,23 +1,21 @@
 {
   "raw": "4 (4-6 ounce) salmon or white fish filets, cut into bite-size chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon or white fish filets, cut into bite-size chunks",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "4-6",
-          "unit": "oz"
-        },
-        {
-          "amount": "113-170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salmon or white fish filets, cut into bite-size chunks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "4-6",
+        "unit": "oz"
+      },
+      {
+        "amount": "113-170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

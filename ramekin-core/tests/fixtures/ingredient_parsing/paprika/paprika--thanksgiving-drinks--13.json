@@ -1,19 +1,17 @@
 {
   "raw": "¼ ounce maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

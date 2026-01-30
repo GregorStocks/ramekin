@@ -1,19 +1,17 @@
 {
   "raw": "1 heaped cup (150 grams) fresh or frozen strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaped cup"
-        },
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped cup"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

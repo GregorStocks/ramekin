@@ -1,23 +1,21 @@
 {
   "raw": "2 ounces (2/3 cup) grated gruyere or comte cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated gruyere or comte cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated gruyere or comte cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

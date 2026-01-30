@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces fresh or frozen blueberries (about 1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen blueberries",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen blueberries",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

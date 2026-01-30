@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds portobello mushroom caps (gills removed, caps halved and sliced crosswise ¼-inch thick)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portobello mushroom caps",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "gills removed, caps halved and sliced crosswise 1/4-inch thick"
-    }
+  "expected": {
+    "item": "portobello mushroom caps",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "gills removed, caps halved and sliced crosswise 1/4-inch thick"
   }
 }

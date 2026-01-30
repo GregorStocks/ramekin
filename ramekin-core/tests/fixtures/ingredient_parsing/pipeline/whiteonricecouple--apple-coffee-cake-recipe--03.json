@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ground Cinnamon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground Cinnamon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground Cinnamon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

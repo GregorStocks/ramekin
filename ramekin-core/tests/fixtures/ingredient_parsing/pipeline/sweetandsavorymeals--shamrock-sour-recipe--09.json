@@ -1,10 +1,8 @@
 {
   "raw": "Mint",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mint",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mint",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "14 ounce can crushed tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can crushed tomatoes",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can crushed tomatoes",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

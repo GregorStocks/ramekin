@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces tomato juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato juice",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato juice",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

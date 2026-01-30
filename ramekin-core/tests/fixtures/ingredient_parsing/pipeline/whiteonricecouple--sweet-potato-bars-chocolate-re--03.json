@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup packed brown sugar ((55g) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed brown sugar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed brown sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Pinch smoked Maldon sea salt or additional kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked Maldon sea salt or additional kosher salt",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked Maldon sea salt or additional kosher salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

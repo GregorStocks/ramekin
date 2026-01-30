@@ -1,15 +1,13 @@
 {
   "raw": "½  lemon juiced, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juiced, to serve",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juiced, to serve",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

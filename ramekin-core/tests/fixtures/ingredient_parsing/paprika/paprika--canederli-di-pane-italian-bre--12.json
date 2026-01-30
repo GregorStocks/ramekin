@@ -1,19 +1,17 @@
 {
   "raw": "2 quarts (2 L) rich homemade chicken stock or broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rich homemade chicken stock or broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "quart"
-        },
-        {
-          "amount": "2",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rich homemade chicken stock or broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quart"
+      },
+      {
+        "amount": "2",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Flour (any kind) for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Flour (any kind) for dusting",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Flour (any kind) for dusting",
+    "measurements": [],
+    "note": null
   }
 }

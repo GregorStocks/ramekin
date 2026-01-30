@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded coconut, toasted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded coconut",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "shredded coconut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "toasted"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Parmigiano Reggiano or pecorino, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmigiano Reggiano or pecorino",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Parmigiano Reggiano or pecorino",
+    "measurements": [],
+    "note": "optional"
   }
 }

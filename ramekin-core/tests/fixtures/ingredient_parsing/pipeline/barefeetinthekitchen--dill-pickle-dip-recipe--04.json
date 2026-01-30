@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup pickle juice (use less for a thicker dip)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickle juice (use less for a thicker dip)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pickle juice (use less for a thicker dip)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

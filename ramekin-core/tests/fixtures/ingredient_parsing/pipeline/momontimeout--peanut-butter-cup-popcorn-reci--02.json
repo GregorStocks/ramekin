@@ -1,15 +1,13 @@
 {
   "raw": "1 cup milk chocolate melting candy",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk chocolate melting candy",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk chocolate melting candy",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

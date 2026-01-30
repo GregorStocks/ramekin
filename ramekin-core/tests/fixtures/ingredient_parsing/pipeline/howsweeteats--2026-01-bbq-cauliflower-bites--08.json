@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces your favorite beer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your favorite beer",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "your favorite beer",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 stale corn tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stale corn tortillas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stale corn tortillas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

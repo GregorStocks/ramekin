@@ -1,15 +1,13 @@
 {
   "raw": "1 cup strong piping hot coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strong piping hot coffee",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strong piping hot coffee",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

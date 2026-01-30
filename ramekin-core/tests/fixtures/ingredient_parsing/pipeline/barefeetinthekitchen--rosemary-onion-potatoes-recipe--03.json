@@ -1,19 +1,17 @@
 {
   "raw": "3  medium russet potatoes (cut into 1/2\" pieces, about 4 cup's worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "russet potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

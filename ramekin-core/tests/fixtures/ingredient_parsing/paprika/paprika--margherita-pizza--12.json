@@ -1,15 +1,13 @@
 {
   "raw": "Pinch of sugar, if desired",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar, if desired",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar, if desired",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

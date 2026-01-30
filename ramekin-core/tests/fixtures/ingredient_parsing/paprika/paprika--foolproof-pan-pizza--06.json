@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups pizza sauce, such as our New York–style pizza sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pizza sauce, such as our New York-style pizza sauce",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pizza sauce, such as our New York-style pizza sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

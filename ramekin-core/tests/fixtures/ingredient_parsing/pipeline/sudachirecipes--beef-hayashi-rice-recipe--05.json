@@ -1,15 +1,13 @@
 {
   "raw": "200 g thinly sliced beef (beef round, boneless beef short-rib, or similar, avoid extremely lean cuts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced beef (beef round, boneless beef short-rib, or similar, avoid extremely lean cuts)",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced beef (beef round, boneless beef short-rib, or similar, avoid extremely lean cuts)",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

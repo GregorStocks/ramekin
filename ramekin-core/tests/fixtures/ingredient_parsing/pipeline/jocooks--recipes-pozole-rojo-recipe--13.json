@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoon cumin (ground)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cumin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "ground"
-    }
+  "expected": {
+    "item": "cumin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "ground"
   }
 }

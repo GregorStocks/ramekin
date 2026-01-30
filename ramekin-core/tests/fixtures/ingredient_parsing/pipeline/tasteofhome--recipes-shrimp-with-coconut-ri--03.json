@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons butter, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup ready-made frosting (or homemade buttercream)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ready-made frosting (or homemade buttercream)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ready-made frosting (or homemade buttercream)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

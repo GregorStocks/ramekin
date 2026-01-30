@@ -1,15 +1,13 @@
 {
   "raw": "4 cups | 1 L buttermilk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "| 1 L buttermilk",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "| 1 L buttermilk",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

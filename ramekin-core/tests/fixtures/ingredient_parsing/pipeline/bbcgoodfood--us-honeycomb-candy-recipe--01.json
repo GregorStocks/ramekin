@@ -1,10 +1,8 @@
 {
   "raw": "butter for the pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter for the pan",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "butter for the pan",
+    "measurements": [],
+    "note": null
   }
 }

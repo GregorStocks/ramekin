@@ -1,15 +1,13 @@
 {
   "raw": "2-3 T freshly squeezed grapefruit juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "T freshly squeezed grapefruit juice",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "T freshly squeezed grapefruit juice",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

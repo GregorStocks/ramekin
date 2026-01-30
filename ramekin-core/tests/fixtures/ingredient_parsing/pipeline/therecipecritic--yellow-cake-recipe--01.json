@@ -1,15 +1,13 @@
 {
   "raw": "2 ¼ Cups Cake Flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cake Flour",
-      "measurements": [
-        {
-          "amount": "2 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cake Flour",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

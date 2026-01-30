@@ -1,15 +1,13 @@
 {
   "raw": "250 grams cooked chickpeas ((drained))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked chickpeas",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "cooked chickpeas",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

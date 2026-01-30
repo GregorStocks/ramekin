@@ -1,23 +1,21 @@
 {
   "raw": "4 thin slices ham or prosciutto (about 4 oz. total)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin slices ham or prosciutto",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin slices ham or prosciutto",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

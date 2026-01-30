@@ -1,15 +1,13 @@
 {
   "raw": "2  large shallots (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

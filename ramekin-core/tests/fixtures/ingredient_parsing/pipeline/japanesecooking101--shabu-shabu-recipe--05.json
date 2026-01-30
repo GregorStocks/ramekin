@@ -1,15 +1,13 @@
 {
   "raw": "6 leaves nappa cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leaves nappa cabbage",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leaves nappa cabbage",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

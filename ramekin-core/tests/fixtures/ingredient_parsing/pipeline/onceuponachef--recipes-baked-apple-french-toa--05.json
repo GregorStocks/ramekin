@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons bourbon ((optional; see note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bourbon",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional; see note"
-    }
+  "expected": {
+    "item": "bourbon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional; see note"
   }
 }

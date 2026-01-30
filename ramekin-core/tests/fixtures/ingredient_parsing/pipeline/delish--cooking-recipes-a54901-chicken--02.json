@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. fresh or frozen breaded chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen breaded chicken",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen breaded chicken",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

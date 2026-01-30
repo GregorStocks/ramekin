@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeno pepper (seeds removed and roughly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "seeds removed and roughly chopped"
-    }
+  "expected": {
+    "item": "jalapeno pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "seeds removed and roughly chopped"
   }
 }

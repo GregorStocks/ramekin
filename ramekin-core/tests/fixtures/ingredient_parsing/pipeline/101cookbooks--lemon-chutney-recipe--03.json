@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup / 60 ml extra-virgin olive oil, plus more for brushing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra-virgin olive oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus more for brushing"
-    }
+  "expected": {
+    "item": "extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus more for brushing"
   }
 }

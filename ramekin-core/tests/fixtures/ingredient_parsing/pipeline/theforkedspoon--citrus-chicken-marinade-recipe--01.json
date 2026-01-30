@@ -1,15 +1,13 @@
 {
   "raw": "6  chicken breasts (or thighs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts (or thighs)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts (or thighs)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

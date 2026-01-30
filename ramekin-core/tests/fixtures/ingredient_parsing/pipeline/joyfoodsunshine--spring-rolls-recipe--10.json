@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces vermicelli noodles ((or Maifun brown rice noodles, or cooked quinoa or rice))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vermicelli noodles",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "or Maifun brown rice noodles, or cooked quinoa or rice"
-    }
+  "expected": {
+    "item": "vermicelli noodles",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "or Maifun brown rice noodles, or cooked quinoa or rice"
   }
 }

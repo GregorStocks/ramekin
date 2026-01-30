@@ -1,19 +1,17 @@
 {
   "raw": "6 oz  bittersweet chocolate  ((or semisweet, milk, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet chocolate  (or semisweet, milk, etc.)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet chocolate  (or semisweet, milk, etc.)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

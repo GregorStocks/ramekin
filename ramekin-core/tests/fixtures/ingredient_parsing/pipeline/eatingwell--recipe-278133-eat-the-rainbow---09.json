@@ -1,15 +1,13 @@
 {
   "raw": "1 cup quartered grape tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quartered grape tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quartered grape tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

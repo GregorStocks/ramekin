@@ -1,19 +1,17 @@
 {
   "raw": "16 oz  asparagus, (ends removed, cut into bite-size pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asparagus, (ends removed, cut into bite-size pieces)",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "asparagus, (ends removed, cut into bite-size pieces)",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

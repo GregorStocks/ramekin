@@ -1,15 +1,13 @@
 {
   "raw": "500g dried  red kidney beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried  red kidney beans",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried  red kidney beans",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

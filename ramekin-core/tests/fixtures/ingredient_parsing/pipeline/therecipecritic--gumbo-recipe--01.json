@@ -1,23 +1,21 @@
 {
   "raw": "12 ounces sliced Andouille sausage (½-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced Andouille sausage",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced Andouille sausage",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

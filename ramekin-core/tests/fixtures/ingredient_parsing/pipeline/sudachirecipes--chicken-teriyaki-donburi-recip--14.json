@@ -1,10 +1,8 @@
 {
   "raw": "Japanese mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese mayonnaise",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese mayonnaise",
+    "measurements": [],
+    "note": null
   }
 }

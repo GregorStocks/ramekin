@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP fresh cilantro or parsley ((pick your favorite!))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro or parsley (pick your favorite!)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cilantro or parsley (pick your favorite!)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 boneless, skinless chicken breasts (about 6 to 8 ounces each) (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken breasts (see notes)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "6 to 8",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless, skinless chicken breasts (see notes)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "6 to 8",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

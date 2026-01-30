@@ -1,23 +1,21 @@
 {
   "raw": "1 (15 ounce) can no-salt-added white beans, rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "no-salt-added white beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "rinsed"
-    }
+  "expected": {
+    "item": "no-salt-added white beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "rinsed"
   }
 }

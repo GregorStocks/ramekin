@@ -1,19 +1,17 @@
 {
   "raw": "2  racks baby back pork ribs ((about 3 to 4 lbs))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "racks baby back pork ribs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "3 to 4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "racks baby back pork ribs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "3 to 4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

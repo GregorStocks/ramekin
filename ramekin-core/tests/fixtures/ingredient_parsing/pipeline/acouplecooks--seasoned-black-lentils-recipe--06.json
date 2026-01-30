@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dried tarragon (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried tarragon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "dried tarragon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

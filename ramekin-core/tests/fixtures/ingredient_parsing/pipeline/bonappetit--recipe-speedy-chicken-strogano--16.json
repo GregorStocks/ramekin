@@ -1,15 +1,13 @@
 {
   "raw": "2 dashes Worcestershire sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Worcestershire sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Worcestershire sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

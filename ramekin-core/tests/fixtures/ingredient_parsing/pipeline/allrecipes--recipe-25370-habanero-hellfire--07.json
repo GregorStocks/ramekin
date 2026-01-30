@@ -1,19 +1,17 @@
 {
   "raw": "1 (12 fluid ounce) can beer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beer",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "12",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beer",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "12",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

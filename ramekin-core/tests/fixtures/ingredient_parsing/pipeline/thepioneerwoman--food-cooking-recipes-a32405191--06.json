@@ -1,15 +1,13 @@
 {
   "raw": "2 4-ounce jars diced pimientos, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced pimientos",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "4-ounce jars"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "diced pimientos",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "4-ounce jars"
+      }
+    ],
+    "note": "drained"
   }
 }

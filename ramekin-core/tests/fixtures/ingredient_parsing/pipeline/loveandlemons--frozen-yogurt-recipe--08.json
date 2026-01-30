@@ -1,10 +1,8 @@
 {
   "raw": "extra tart cherries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra tart cherries",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "extra tart cherries",
+    "measurements": [],
+    "note": null
   }
 }

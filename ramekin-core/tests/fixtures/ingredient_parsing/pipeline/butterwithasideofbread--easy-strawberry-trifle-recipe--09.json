@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp powdered sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

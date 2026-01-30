@@ -1,15 +1,13 @@
 {
   "raw": "120 g silken tofu",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "silken tofu",
-      "measurements": [
-        {
-          "amount": "120",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "silken tofu",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (240g) graham cracker crumbs* ((from about 16 sheets))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "graham cracker crumbs* (from about 16 sheets)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "graham cracker crumbs* (from about 16 sheets)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 teaspoon anise seeds (can sub fennel)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anise seeds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": null,
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "anise seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

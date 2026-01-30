@@ -1,19 +1,17 @@
 {
   "raw": "Scant 2 pounds of starchy potatoes, (2 large russets)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "starchy potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "scant lb"
-        },
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "starchy potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "scant lb"
+      },
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

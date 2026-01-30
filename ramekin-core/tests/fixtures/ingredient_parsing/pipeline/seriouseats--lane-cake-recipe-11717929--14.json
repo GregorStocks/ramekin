@@ -1,23 +1,21 @@
 {
   "raw": "6 ounces unsalted butter (170 g; 12 tablespoons), at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        },
-        {
-          "amount": "12",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      },
+      {
+        "amount": "12",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

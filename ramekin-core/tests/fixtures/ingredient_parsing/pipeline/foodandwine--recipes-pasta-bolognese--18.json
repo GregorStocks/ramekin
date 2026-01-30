@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds penne rigate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "penne rigate",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "penne rigate",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

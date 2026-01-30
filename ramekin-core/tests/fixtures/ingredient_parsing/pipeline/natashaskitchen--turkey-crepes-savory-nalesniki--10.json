@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb mushrooms (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushrooms",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "mushrooms",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced"
   }
 }

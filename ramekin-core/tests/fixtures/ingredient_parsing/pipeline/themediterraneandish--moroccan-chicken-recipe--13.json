@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup/ 58.5 g pitted green olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cup/ 58.5 g pitted green olives",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cup/ 58.5 g pitted green olives",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

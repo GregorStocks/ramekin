@@ -1,23 +1,21 @@
 {
   "raw": "6 large, thin slices prosciutto (about 4 ounces; 115g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin slices prosciutto",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin slices prosciutto",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

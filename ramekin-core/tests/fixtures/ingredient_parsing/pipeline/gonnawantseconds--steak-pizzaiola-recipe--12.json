@@ -1,19 +1,17 @@
 {
   "raw": "1 (12-ounce) jar sliced roasted red peppers (drained and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced roasted red peppers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": "drained and chopped"
-    }
+  "expected": {
+    "item": "sliced roasted red peppers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "drained and chopped"
   }
 }

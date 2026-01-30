@@ -1,15 +1,13 @@
 {
   "raw": "handful of sage leaves finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sage leaves finely chopped",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sage leaves finely chopped",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon green peppercorns in brine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green peppercorns in brine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green peppercorns in brine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

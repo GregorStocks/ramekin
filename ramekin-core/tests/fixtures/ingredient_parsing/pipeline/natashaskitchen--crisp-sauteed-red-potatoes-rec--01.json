@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lbs small red potatoes (cut in half or quartered to make 3/4-inch thick pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small red potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "cut in half or quartered to make 3/4-inch thick pieces"
-    }
+  "expected": {
+    "item": "small red potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "cut in half or quartered to make 3/4-inch thick pieces"
   }
 }

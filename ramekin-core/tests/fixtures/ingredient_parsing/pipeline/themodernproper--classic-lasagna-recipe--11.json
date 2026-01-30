@@ -1,19 +1,17 @@
 {
   "raw": "16 ounces whole milk ricotta cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk ricotta cheese",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk ricotta cheese",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

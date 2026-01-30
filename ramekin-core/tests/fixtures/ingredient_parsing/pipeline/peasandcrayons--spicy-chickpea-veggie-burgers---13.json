@@ -1,15 +1,13 @@
 {
   "raw": "4  onion roll buns (see post for GF swaps)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion roll buns (see post for GF swaps)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion roll buns (see post for GF swaps)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

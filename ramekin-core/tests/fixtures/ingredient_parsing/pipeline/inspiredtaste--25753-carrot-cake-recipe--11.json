@@ -1,19 +1,17 @@
 {
   "raw": "1 cup coarsely chopped pecans (120g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely chopped pecans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely chopped pecans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

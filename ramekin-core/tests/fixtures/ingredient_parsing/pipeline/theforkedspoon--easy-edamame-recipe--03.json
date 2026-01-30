@@ -1,19 +1,17 @@
 {
   "raw": "1 (12-ounce) bag frozen edamame",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen edamame",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen edamame",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

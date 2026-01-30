@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp  psyllium husk powder (or 2 tbsp psyllium husks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "psyllium husk powder (or 2 tbsp psyllium husks)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "psyllium husk powder (or 2 tbsp psyllium husks)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

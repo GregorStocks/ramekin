@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons diced celery",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced celery",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced celery",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

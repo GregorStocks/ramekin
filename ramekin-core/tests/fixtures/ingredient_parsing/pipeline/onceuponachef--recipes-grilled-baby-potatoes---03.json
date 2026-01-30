@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup Dijon mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dijon mustard",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dijon mustard",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

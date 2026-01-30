@@ -1,15 +1,13 @@
 {
   "raw": "1 red Fresno chile pepper, halved and thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red Fresno chile pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "halved and thinly sliced"
-    }
+  "expected": {
+    "item": "red Fresno chile pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "halved and thinly sliced"
   }
 }

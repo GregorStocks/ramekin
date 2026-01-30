@@ -1,10 +1,8 @@
 {
   "raw": "FILLING :",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "FILLING :",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "FILLING :",
+    "measurements": [],
+    "note": null
   }
 }

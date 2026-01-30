@@ -1,10 +1,8 @@
 {
   "raw": "Apple and Herb Stuffing* for All Seasons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Apple and Herb Stuffing* for All Seasons",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Apple and Herb Stuffing* for All Seasons",
+    "measurements": [],
+    "note": null
   }
 }

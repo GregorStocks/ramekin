@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp kimchi ((optional; plus more for topping/serving; cut into bite-size pieces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kimchi",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional; plus more for topping/serving; cut into bite-size pieces"
-    }
+  "expected": {
+    "item": "kimchi",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional; plus more for topping/serving; cut into bite-size pieces"
   }
 }

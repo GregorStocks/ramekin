@@ -1,15 +1,13 @@
 {
   "raw": "12 large fresh strawberries, hulled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh strawberries, hulled",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh strawberries, hulled",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

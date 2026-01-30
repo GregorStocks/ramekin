@@ -1,15 +1,13 @@
 {
   "raw": "3/4 pound ridged penne pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ridged penne pasta",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ridged penne pasta",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

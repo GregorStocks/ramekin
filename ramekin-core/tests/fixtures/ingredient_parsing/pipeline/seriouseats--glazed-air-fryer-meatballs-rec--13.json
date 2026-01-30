@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (45 ml) white miso",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white miso",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white miso",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds lingcod fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lingcod fillets",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lingcod fillets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

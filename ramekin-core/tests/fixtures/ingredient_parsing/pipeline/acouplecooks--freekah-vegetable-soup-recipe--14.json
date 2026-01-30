@@ -1,10 +1,8 @@
 {
   "raw": "Chopped fresh herbs (za’atar, parsley, chives, or scallions), for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped fresh herbs (za’atar, parsley, chives, or scallions)",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Chopped fresh herbs (za’atar, parsley, chives, or scallions)",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

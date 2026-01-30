@@ -1,19 +1,17 @@
 {
   "raw": "10 (9x14-inch)  sheets phyllo dough, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets phyllo dough",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        },
-        {
-          "amount": "9",
-          "unit": null
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "sheets phyllo dough",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      },
+      {
+        "amount": "9",
+        "unit": null
+      }
+    ],
+    "note": "thawed"
   }
 }

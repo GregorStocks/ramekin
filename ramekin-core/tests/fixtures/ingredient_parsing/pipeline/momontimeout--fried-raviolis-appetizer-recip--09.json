@@ -1,10 +1,8 @@
 {
   "raw": "marinara sauce for dipping (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinara sauce for dipping",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "marinara sauce for dipping",
+    "measurements": [],
+    "note": "optional"
   }
 }

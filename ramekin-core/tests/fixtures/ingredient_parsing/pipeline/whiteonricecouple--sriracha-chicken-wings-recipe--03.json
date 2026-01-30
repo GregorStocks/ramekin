@@ -1,10 +1,8 @@
 {
   "raw": "ground black pepper (, to season wings)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground black pepper (, to season wings)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "ground black pepper (, to season wings)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "½ cup (125 mL) cooked cannellini beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked cannellini beans",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked cannellini beans",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "125",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp dry white wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry white wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry white wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

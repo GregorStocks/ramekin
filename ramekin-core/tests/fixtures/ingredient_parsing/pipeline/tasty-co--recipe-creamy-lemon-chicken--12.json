@@ -1,15 +1,13 @@
 {
   "raw": "1 lemon, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "lemon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

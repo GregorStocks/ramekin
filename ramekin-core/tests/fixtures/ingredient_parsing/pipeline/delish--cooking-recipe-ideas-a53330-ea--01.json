@@ -1,15 +1,13 @@
 {
   "raw": "1 c. butter, melted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
   }
 }

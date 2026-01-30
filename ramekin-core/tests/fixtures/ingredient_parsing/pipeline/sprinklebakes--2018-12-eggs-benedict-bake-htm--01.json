@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. package English Muffins (lightly toasted (about 6 whole))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "package English Muffins",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "lightly toasted (about 6 whole"
-    }
+  "expected": {
+    "item": "package English Muffins",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "lightly toasted (about 6 whole"
   }
 }

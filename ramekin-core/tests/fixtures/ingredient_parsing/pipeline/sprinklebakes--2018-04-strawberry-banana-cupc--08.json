@@ -1,19 +1,17 @@
 {
   "raw": "1 1/4 cups 170g cake flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cake flour",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

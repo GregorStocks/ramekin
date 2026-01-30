@@ -1,15 +1,13 @@
 {
   "raw": "0.125 teaspoon ground ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground ginger",
-      "measurements": [
-        {
-          "amount": "0.125",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground ginger",
+    "measurements": [
+      {
+        "amount": "0.125",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

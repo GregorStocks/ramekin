@@ -1,15 +1,13 @@
 {
   "raw": "Heaping ¾ cup semi-sweet chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-sweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "heaping cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semi-sweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "heaping cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4  skinless chicken thighs (bone-in or out)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless chicken thighs (bone-in or out)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless chicken thighs (bone-in or out)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

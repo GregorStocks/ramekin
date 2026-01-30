@@ -1,15 +1,13 @@
 {
   "raw": "1 dash soy sauce, or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "dash"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "dash"
+      }
+    ],
+    "note": "or to taste"
   }
 }

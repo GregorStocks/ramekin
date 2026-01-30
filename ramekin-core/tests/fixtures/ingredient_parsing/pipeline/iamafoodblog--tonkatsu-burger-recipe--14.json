@@ -1,10 +1,8 @@
 {
   "raw": "tonkatsu sauce, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tonkatsu sauce",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "tonkatsu sauce",
+    "measurements": [],
+    "note": "to taste"
   }
 }

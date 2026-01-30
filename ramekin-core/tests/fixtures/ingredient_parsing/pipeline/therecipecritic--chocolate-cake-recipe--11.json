@@ -1,15 +1,13 @@
 {
   "raw": "½ Cup unsalted Butter (softened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted Butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "unsalted Butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "softened"
   }
 }

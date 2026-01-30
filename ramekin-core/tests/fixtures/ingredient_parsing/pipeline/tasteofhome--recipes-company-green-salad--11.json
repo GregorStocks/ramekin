@@ -1,15 +1,13 @@
 {
   "raw": "1 medium sweet yellow pepper, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet yellow pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "sweet yellow pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
   }
 }

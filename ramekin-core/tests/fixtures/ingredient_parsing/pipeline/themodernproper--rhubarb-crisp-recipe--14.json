@@ -1,10 +1,8 @@
 {
   "raw": "Vanilla ice cream (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vanilla ice cream",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Vanilla ice cream",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon minced fresh ginger root",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced fresh ginger root",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced fresh ginger root",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

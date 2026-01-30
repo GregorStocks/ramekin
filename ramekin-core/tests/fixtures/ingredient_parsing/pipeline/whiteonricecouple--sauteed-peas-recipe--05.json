@@ -1,15 +1,13 @@
 {
   "raw": "handful fresh mint ((minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mint",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "fresh mint",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "minced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 bowl ice water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bowl ice water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bowl ice water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

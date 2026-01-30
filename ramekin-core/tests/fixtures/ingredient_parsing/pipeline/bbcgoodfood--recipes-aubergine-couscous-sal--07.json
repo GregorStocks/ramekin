@@ -1,15 +1,13 @@
 {
   "raw": "100g log firm goat's cheese cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "log firm goat's cheese cubed",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "log firm goat's cheese cubed",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

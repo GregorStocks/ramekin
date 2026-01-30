@@ -1,15 +1,13 @@
 {
   "raw": "1  super ripe peach, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "super ripe peach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "super ripe peach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

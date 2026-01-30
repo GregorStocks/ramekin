@@ -1,15 +1,13 @@
 {
   "raw": "3 cups leftover vegetables (or frozen vegetables, drained &amp;amp; thawed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover vegetables",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "or frozen vegetables, drained & thawed"
-    }
+  "expected": {
+    "item": "leftover vegetables",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "or frozen vegetables, drained & thawed"
   }
 }

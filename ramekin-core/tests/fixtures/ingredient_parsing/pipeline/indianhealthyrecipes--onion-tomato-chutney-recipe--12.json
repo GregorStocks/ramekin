@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon turmeric  ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turmeric",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "turmeric",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

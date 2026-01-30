@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp freshly ground black pepper ((crack a bit larger in grinder if possible))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground black pepper (crack a bit larger in grinder if possible)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly ground black pepper (crack a bit larger in grinder if possible)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

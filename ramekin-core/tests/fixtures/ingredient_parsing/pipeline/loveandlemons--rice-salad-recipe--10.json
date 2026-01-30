@@ -1,10 +1,8 @@
 {
   "raw": "Roasted Chickpeas (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Roasted Chickpeas",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Roasted Chickpeas",
+    "measurements": [],
+    "note": "optional"
   }
 }

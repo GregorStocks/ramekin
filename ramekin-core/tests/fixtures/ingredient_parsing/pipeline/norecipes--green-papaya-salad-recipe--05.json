@@ -1,15 +1,13 @@
 {
   "raw": "2  Thai bird chilies ((to taste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai bird chilies",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Thai bird chilies",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "to taste"
   }
 }

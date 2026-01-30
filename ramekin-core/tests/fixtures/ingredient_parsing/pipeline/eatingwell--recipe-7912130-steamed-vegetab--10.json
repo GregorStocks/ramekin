@@ -1,23 +1,21 @@
 {
   "raw": ".25 cup finely chopped fried or baked tofu (1 oz.) or 1 scrambled egg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fried or baked tofu or 1 scrambled egg",
-      "measurements": [
-        {
-          "amount": ".25",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped fried or baked tofu or 1 scrambled egg",
+    "measurements": [
+      {
+        "amount": ".25",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

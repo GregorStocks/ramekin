@@ -1,15 +1,13 @@
 {
   "raw": "2  oranges (juiced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oranges (juiced)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oranges (juiced)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

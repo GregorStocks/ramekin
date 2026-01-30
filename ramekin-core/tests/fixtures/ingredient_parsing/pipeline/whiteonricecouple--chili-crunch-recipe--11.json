@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons soy sauce (, or to personal taste. We like it very savory so will add an extra teaspoon or two. )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce (, or to personal taste. We like it very savory so will add an extra teaspoon or two.",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soy sauce (, or to personal taste. We like it very savory so will add an extra teaspoon or two.",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

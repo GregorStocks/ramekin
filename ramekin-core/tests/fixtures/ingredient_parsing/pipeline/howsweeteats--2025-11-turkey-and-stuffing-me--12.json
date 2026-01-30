@@ -1,10 +1,8 @@
 {
   "raw": "mashed potatoes,  (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mashed potatoes",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "mashed potatoes",
+    "measurements": [],
+    "note": "for serving"
   }
 }

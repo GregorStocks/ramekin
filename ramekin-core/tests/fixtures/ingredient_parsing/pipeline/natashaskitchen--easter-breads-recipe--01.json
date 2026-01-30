@@ -1,23 +1,21 @@
 {
   "raw": "2  envelopes (1 1/2 Tbsp or 15 grams active dry yeast - I used Red Star brand)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "envelopes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "envelopes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

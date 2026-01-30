@@ -1,15 +1,13 @@
 {
   "raw": "250 grams chicken tenders",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken tenders",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken tenders",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

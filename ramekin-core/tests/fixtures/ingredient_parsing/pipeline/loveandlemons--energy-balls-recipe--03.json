@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup roasted almond butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted almond butter",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted almond butter",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

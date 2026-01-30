@@ -1,15 +1,13 @@
 {
   "raw": "1/2  medium banana (cut into chunks and frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "banana",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": "cut into chunks and frozen"
-    }
+  "expected": {
+    "item": "banana",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": "cut into chunks and frozen"
   }
 }

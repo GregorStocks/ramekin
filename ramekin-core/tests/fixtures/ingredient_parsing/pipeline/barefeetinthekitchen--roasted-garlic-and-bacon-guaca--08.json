@@ -1,15 +1,13 @@
 {
   "raw": "1  handful fresh cilantro (about 1/4 cup chopped small)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "handful"
-        }
-      ],
-      "note": "about 1/4 cup chopped small"
-    }
+  "expected": {
+    "item": "fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "handful"
+      }
+    ],
+    "note": "about 1/4 cup chopped small"
   }
 }

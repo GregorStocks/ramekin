@@ -1,15 +1,13 @@
 {
   "raw": "6 large eggs, preferably stored on their sides",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs, preferably stored on their sides",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs, preferably stored on their sides",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

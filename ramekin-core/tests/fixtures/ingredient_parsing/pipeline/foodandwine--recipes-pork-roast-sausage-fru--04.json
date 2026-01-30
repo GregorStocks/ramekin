@@ -1,15 +1,13 @@
 {
   "raw": "12 dried apricots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried apricots",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried apricots",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

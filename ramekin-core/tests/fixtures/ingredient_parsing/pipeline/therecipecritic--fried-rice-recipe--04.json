@@ -1,15 +1,13 @@
 {
   "raw": "3  lightly beaten eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly beaten eggs",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly beaten eggs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

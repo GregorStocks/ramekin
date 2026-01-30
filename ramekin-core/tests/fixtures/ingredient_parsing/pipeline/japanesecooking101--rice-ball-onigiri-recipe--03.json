@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Katsuobushi (dried bonito flakes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Katsuobushi",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "dried bonito flakes"
-    }
+  "expected": {
+    "item": "Katsuobushi",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "dried bonito flakes"
   }
 }

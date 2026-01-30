@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon molasses, such as Grandma's Original",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "molasses, such as Grandma's Original",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "molasses, such as Grandma's Original",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

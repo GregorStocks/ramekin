@@ -1,15 +1,13 @@
 {
   "raw": "1 lb pasta (I used penne)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pasta (I used penne)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pasta (I used penne)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "toasted coconut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted coconut",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted coconut",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon&nbsp;apple pie spice,&nbsp;optional and to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple pie spice",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional and to taste"
-    }
+  "expected": {
+    "item": "apple pie spice",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional and to taste"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon warm water (90°F to 110°F)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "90",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "90",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

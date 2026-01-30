@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup , plus 1 Tablespoon rice vinegar, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "0.25 cup , plus 1 Tablespoon rice vinegar, divided",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 1 Tablespoon rice vinegar, divided"
-    }
+  "expected": {
+    "item": "0.25 cup , plus 1 Tablespoon rice vinegar, divided",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 1 Tablespoon rice vinegar, divided"
   }
 }

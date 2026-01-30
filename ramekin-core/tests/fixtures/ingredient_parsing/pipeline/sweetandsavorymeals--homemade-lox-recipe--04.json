@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons coarsely ground multi-color peppercorns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely ground multi-color peppercorns",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely ground multi-color peppercorns",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

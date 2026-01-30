@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp sugar (or Mirin or preferred sweetener)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar (or Mirin or preferred sweetener)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar (or Mirin or preferred sweetener)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

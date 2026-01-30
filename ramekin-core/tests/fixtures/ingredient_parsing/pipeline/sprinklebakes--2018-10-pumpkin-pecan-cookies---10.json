@@ -1,19 +1,17 @@
 {
   "raw": "1 cup 123g chopped pecans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped pecans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "123",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped pecans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "123",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

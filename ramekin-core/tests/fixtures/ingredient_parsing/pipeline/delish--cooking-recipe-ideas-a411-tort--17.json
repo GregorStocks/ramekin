@@ -1,15 +1,13 @@
 {
   "raw": "4 small corn tortillas, sliced into thin strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn tortillas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced into thin strips"
-    }
+  "expected": {
+    "item": "corn tortillas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced into thin strips"
   }
 }

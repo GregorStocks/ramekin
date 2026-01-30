@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup almonds (, roughly chopped and lightly toasted in a dry frypan)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped and lightly toasted in a dry frypan"
-    }
+  "expected": {
+    "item": "almonds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped and lightly toasted in a dry frypan"
   }
 }

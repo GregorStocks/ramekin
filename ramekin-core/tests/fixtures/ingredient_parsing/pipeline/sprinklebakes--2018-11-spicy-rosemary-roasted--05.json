@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons fresh rosemary (finely minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh rosemary",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "fresh rosemary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "finely minced"
   }
 }

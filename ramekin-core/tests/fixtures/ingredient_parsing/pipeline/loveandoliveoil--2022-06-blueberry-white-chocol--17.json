@@ -1,15 +1,13 @@
 {
   "raw": "½ cup powdered sugar (preferably organic) (sifted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar (preferably organic) (sifted)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered sugar (preferably organic) (sifted)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

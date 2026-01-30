@@ -1,10 +1,8 @@
 {
   "raw": "cauliflower",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower",
+    "measurements": [],
+    "note": null
   }
 }

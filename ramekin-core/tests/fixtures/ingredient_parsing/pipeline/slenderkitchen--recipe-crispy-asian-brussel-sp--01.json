@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. fresh Brussels sprouts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Brussels sprouts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Brussels sprouts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

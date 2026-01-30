@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 thick slices ripe tomato (see note)2 oil-packed anchovy fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick slices ripe tomato (see note)2 oil-packed anchovy fillets",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick slices ripe tomato (see note)2 oil-packed anchovy fillets",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

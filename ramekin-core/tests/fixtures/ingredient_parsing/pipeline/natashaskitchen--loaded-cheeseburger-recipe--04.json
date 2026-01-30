@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp A1 Steak Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A1 Steak Sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "A1 Steak Sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

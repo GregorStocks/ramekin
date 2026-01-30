@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dry vermouth (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry vermouth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "dry vermouth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

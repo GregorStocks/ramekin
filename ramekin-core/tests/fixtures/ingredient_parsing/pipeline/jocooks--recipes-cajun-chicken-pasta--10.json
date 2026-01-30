@@ -1,15 +1,13 @@
 {
   "raw": "2 cups half and half (or heavy cream)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "half and half (or heavy cream)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "half and half (or heavy cream)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

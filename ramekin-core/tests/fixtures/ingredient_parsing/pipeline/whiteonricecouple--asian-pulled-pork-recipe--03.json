@@ -1,10 +1,8 @@
 {
   "raw": "fresh cracked black pepper ( , to season pork)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cracked black pepper ( , to season pork)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cracked black pepper ( , to season pork)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. elbow macaroni pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "elbow macaroni pasta",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "elbow macaroni pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

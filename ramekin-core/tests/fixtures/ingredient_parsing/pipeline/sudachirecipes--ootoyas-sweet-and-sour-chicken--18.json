@@ -1,15 +1,13 @@
 {
   "raw": "50 g lotus root (renkon) ((renkon) optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lotus root (renkon) (renkon) optional)",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lotus root (renkon) (renkon) optional)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoons plain breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain breadcrumbs",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain breadcrumbs",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

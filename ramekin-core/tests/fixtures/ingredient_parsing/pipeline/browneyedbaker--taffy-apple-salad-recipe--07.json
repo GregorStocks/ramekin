@@ -1,15 +1,13 @@
 {
   "raw": "2  Granny Smith apples (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Granny Smith apples",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "Granny Smith apples",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

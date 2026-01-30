@@ -1,15 +1,13 @@
 {
   "raw": "2 cups coarsely shredded Gruyère",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely shredded Gruyère",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely shredded Gruyère",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

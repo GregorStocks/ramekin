@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cup (83g) all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "83",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "83",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

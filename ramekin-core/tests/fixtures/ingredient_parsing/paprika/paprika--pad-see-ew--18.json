@@ -1,19 +1,17 @@
 {
   "raw": "1 teaspoon (5g) cornstarch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

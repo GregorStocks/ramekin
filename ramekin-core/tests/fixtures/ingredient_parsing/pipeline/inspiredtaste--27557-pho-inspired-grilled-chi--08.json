@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon neutral flavored oil, such as grape seed or canola",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neutral flavored oil, such as grape seed or canola",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "neutral flavored oil, such as grape seed or canola",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "14 oz. dried somen noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried somen noodles",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried somen noodles",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

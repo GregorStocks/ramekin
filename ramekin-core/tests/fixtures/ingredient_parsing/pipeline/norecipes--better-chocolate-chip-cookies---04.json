@@ -1,19 +1,17 @@
 {
   "raw": "250 grams coconut sugar ((~ 1 1/4 cups))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut sugar",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        },
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut sugar",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

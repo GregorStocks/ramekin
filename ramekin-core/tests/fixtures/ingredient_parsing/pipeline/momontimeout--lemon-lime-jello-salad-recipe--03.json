@@ -1,19 +1,17 @@
 {
   "raw": ".25 oz unflavored gelatin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unflavored gelatin",
-      "measurements": [
-        {
-          "amount": ".25",
-          "unit": "oz"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unflavored gelatin",
+    "measurements": [
+      {
+        "amount": ".25",
+        "unit": "oz"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

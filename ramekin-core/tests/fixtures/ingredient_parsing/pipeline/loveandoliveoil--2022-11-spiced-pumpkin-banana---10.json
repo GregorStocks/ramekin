@@ -1,15 +1,13 @@
 {
   "raw": "¾ cup pumpkin puree",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin puree",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin puree",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

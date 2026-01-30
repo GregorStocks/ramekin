@@ -1,15 +1,13 @@
 {
   "raw": "2 soft buns (I used potato rolls)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soft buns (I used potato rolls)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soft buns (I used potato rolls)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup non-iodized table salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "non-iodized table salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "non-iodized table salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

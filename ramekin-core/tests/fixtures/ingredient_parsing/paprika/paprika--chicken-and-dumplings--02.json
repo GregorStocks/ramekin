@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds bone-in, skin-on chicken thighs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in, skin-on chicken thighs",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in, skin-on chicken thighs",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

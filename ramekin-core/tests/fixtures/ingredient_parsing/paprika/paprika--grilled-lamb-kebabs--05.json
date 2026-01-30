@@ -1,15 +1,13 @@
 {
   "raw": "5 tablespoons fresh whole rosemary leaves, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh whole rosemary leaves",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh whole rosemary leaves",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped"
   }
 }

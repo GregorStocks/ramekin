@@ -1,15 +1,13 @@
 {
   "raw": "½ cup  pure pumpkin (such as Libby’s)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure pumpkin (such as Libby’s)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure pumpkin (such as Libby’s)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

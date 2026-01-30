@@ -1,15 +1,13 @@
 {
   "raw": "½ cup Greek yogurt (plain)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek yogurt (plain)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Greek yogurt (plain)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

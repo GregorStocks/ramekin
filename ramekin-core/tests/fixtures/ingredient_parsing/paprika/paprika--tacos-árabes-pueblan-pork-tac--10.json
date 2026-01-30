@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon dried Mexican oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried Mexican oregano",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried Mexican oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

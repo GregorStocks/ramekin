@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces fresh Granny Smith apple juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Granny Smith apple juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Granny Smith apple juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

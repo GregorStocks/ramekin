@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ pounds boneless, skinless chicken thighs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken thighs",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless, skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 jar (10 to 12 ounces) apricot preserves, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apricot preserves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "10 to 12",
-          "unit": "oz"
-        },
-        {
-          "amount": "283 to 340",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "apricot preserves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "10 to 12",
+        "unit": "oz"
+      },
+      {
+        "amount": "283 to 340",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

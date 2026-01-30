@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons vanilla simple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla simple syrup",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla simple syrup",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

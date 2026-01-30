@@ -1,15 +1,13 @@
 {
   "raw": "1 13-ounce bag Mission® Strips Tortilla Chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mission® Strips Tortilla Chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "13-ounce bag"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mission® Strips Tortilla Chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "13-ounce bag"
+      }
+    ],
+    "note": null
   }
 }

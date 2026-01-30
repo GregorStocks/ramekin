@@ -1,15 +1,13 @@
 {
   "raw": "200 grams bulk sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bulk sausage",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bulk sausage",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

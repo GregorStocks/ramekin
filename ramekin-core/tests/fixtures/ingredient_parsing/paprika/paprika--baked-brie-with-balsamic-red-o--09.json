@@ -1,19 +1,17 @@
 {
   "raw": "2 small or 1 large red onion, halved and thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        },
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "halved and thinly sliced"
-    }
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "halved and thinly sliced"
   }
 }

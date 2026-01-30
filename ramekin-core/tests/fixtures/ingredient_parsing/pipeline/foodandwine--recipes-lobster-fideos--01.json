@@ -1,15 +1,13 @@
 {
   "raw": "Six 1 1/4-pound lobsters",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 1/4-pound lobsters",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1 1/4-pound lobsters",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon fresh mint leaves (, thinly sliced (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mint leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "thinly sliced (optional"
-    }
+  "expected": {
+    "item": "fresh mint leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "thinly sliced (optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons freshly ground dried green peppercorn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground dried green peppercorn",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly ground dried green peppercorn",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

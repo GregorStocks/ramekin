@@ -1,15 +1,13 @@
 {
   "raw": "3 cups Guinness beer (or other Stout)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Guinness beer (or other Stout)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Guinness beer (or other Stout)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

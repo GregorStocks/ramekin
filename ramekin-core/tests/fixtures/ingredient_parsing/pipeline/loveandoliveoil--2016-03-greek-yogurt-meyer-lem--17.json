@@ -1,15 +1,13 @@
 {
   "raw": "pinch fine sea salt (omit if using salted butter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine sea salt (omit if using salted butter)",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine sea salt (omit if using salted butter)",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

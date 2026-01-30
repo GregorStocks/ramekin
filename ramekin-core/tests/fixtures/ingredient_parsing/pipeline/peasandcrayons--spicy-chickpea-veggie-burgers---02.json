@@ -1,19 +1,17 @@
 {
   "raw": "15 oz canned chickpeas (drained + rinsed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned chickpeas",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "drained + rinsed"
-    }
+  "expected": {
+    "item": "canned chickpeas",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "drained + rinsed"
   }
 }

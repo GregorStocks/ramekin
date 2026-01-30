@@ -1,15 +1,13 @@
 {
   "raw": "Handful of tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

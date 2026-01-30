@@ -1,19 +1,17 @@
 {
   "raw": "1 (13.5-ounce) can full-fat coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat coconut milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "13.5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full-fat coconut milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "13.5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

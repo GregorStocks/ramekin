@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp coarse sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse sea salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarse sea salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

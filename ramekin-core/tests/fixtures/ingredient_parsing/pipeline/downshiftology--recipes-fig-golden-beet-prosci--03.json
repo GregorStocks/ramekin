@@ -1,15 +1,13 @@
 {
   "raw": "8 slices prosciutto",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prosciutto",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prosciutto",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

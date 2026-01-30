@@ -1,15 +1,13 @@
 {
   "raw": "1/2  cup  pizza sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pizza sauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pizza sauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

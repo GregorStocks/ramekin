@@ -1,19 +1,17 @@
 {
   "raw": "1 and 3/4 cups (219g) all-purpose flour (spooned &amp;amp; leveled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour (spooned & leveled)",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "219",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour (spooned & leveled)",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "219",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

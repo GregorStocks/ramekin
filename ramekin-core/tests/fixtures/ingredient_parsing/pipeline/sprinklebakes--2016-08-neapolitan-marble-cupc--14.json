@@ -1,19 +1,17 @@
 {
   "raw": "2-3 ounces mixed sprinkles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed sprinkles",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "oz"
-        },
-        {
-          "amount": "57-85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed sprinkles",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "oz"
+      },
+      {
+        "amount": "57-85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

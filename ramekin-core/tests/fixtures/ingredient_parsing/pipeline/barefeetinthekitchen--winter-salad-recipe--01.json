@@ -1,23 +1,21 @@
 {
   "raw": "2 (6) ounce chicken cutlets, or thin boneless chicken breasts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken cutlets, or thin boneless chicken breasts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken cutlets, or thin boneless chicken breasts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP Mrs Dash Italian Seasoning (plus extra to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mrs Dash Italian Seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus extra to taste"
-    }
+  "expected": {
+    "item": "Mrs Dash Italian Seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus extra to taste"
   }
 }

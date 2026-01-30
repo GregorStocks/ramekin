@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Herbs de Provence (or Italian herb blend)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Herbs de Provence (or Italian herb blend)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Herbs de Provence (or Italian herb blend)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

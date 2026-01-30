@@ -1,15 +1,13 @@
 {
   "raw": "15 red peppers quartered and deseeded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red peppers quartered and deseeded",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red peppers quartered and deseeded",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

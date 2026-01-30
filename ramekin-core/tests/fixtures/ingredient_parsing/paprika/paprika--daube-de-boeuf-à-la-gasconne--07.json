@@ -1,23 +1,21 @@
 {
   "raw": "2 large carrots (8 ounces; 225g total), peeled and cut crosswise into 1/2-inch thick rounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and cut crosswise into 1/2-inch thick rounds"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and cut crosswise into 1/2-inch thick rounds"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups bruschetta sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bruschetta sauce",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bruschetta sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

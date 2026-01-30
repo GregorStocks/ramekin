@@ -1,15 +1,13 @@
 {
   "raw": "32  Shumai wrappers ((or 24 wonton wrappers))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shumai wrappers (or 24 wonton wrappers)",
-      "measurements": [
-        {
-          "amount": "32",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Shumai wrappers (or 24 wonton wrappers)",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

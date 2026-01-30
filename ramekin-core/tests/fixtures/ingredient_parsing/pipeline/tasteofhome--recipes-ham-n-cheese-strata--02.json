@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fully cooked ham, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fully cooked ham",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "fully cooked ham",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "diced"
   }
 }

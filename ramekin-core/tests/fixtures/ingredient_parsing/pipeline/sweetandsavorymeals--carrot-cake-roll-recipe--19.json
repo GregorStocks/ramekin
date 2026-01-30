@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup raisins (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raisins",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "raisins",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

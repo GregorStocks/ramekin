@@ -1,10 +1,8 @@
 {
   "raw": "tortillas, as needed, warmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortillas, as needed, warmed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "tortillas, as needed, warmed",
+    "measurements": [],
+    "note": null
   }
 }

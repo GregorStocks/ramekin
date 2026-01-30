@@ -1,15 +1,13 @@
 {
   "raw": "2-3 pounds sweet potatoes, peeled and cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and cut into chunks"
-    }
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and cut into chunks"
   }
 }

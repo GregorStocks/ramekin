@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. ground pork sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pork sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground pork sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

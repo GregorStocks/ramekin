@@ -1,15 +1,13 @@
 {
   "raw": "Soft bristle art brushes (3-4)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Soft bristle art brushes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Soft bristle art brushes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

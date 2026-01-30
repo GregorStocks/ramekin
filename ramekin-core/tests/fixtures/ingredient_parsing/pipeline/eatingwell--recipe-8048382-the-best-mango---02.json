@@ -1,15 +1,13 @@
 {
   "raw": "2 cups frozen mango chunks, thawed slightly (see Tip)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen mango chunks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed slightly (see Tip)"
-    }
+  "expected": {
+    "item": "frozen mango chunks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed slightly (see Tip)"
   }
 }

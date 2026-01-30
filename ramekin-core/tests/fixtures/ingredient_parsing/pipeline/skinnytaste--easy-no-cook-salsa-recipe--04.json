@@ -1,19 +1,17 @@
 {
   "raw": "14.5 ounce can diced tomatoes (not with basil I use Tuttorosso)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can diced tomatoes (not with basil I use Tuttorosso)",
-      "measurements": [
-        {
-          "amount": "14.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "411",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can diced tomatoes (not with basil I use Tuttorosso)",
+    "measurements": [
+      {
+        "amount": "14.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "411",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

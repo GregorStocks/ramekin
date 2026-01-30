@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp coconut ((grated or ¼ cup coconut milk or 12 cashew nuts))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "grated or 1/4 cup coconut milk or 12 cashew nuts"
-    }
+  "expected": {
+    "item": "coconut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "grated or 1/4 cup coconut milk or 12 cashew nuts"
   }
 }

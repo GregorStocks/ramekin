@@ -1,15 +1,13 @@
 {
   "raw": "1 cup long grain rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long grain rice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long grain rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

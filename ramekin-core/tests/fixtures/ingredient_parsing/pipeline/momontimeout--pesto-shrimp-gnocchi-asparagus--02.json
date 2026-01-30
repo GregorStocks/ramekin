@@ -1,19 +1,17 @@
 {
   "raw": "16 oz  jumbo or large shrimp, (peeled and deveined)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jumbo or large shrimp",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and deveined"
-    }
+  "expected": {
+    "item": "jumbo or large shrimp",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and deveined"
   }
 }

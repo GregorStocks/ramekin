@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ham (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ham",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "ham",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced"
   }
 }

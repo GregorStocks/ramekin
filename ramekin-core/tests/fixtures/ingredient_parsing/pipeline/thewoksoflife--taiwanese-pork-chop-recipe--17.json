@@ -1,15 +1,13 @@
 {
   "raw": "1 small head napa cabbage ((washed and roughly chopped); can substitute any other leafy green))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head napa cabbage ; can substitute any other leafy green)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "washed and roughly chopped"
-    }
+  "expected": {
+    "item": "head napa cabbage ; can substitute any other leafy green)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "washed and roughly chopped"
   }
 }

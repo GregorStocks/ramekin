@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoons&nbsp;homemade pumpkin spice syrup or a store-bought pumpkin spice syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade pumpkin spice syrup or a store-bought pumpkin spice syrup",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade pumpkin spice syrup or a store-bought pumpkin spice syrup",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

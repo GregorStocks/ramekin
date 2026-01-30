@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds center-cut tenderloin of beef or chateaubriand, chilled in freezer for 20 minutes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "center-cut tenderloin of beef or chateaubriand",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "chilled in freezer for 20 minutes"
-    }
+  "expected": {
+    "item": "center-cut tenderloin of beef or chateaubriand",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "chilled in freezer for 20 minutes"
   }
 }

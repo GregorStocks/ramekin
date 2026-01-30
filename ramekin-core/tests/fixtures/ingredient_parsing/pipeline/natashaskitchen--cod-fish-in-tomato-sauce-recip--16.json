@@ -1,10 +1,8 @@
 {
   "raw": "a cheesecloth (or tea infuser, or spice ball for holding spices.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a cheesecloth (or tea infuser, or spice ball for holding spices.)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a cheesecloth (or tea infuser, or spice ball for holding spices.)",
+    "measurements": [],
+    "note": null
   }
 }

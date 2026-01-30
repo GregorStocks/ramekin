@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons of sugar + 1 tablespoon water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar + 1 tablespoon water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar + 1 tablespoon water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

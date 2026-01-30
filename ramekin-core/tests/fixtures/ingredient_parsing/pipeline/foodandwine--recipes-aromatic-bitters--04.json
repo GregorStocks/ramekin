@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon dried chopped dandelion root",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chopped dandelion root",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chopped dandelion root",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup 1 stick cold unsalted butter (cut into cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 stick cold unsalted butter (cut into cubes)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1 stick cold unsalted butter (cut into cubes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

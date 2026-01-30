@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Grand Marnier",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grand Marnier",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Grand Marnier",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

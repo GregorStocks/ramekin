@@ -1,10 +1,8 @@
 {
   "raw": "Unsalted butter, softened to room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Unsalted butter",
-      "measurements": [],
-      "note": "softened to room temperature"
-    }
+  "expected": {
+    "item": "Unsalted butter",
+    "measurements": [],
+    "note": "softened to room temperature"
   }
 }

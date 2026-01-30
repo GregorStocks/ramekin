@@ -1,10 +1,8 @@
 {
   "raw": "jam of choice or fresh berries partially crushed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jam of choice or fresh berries partially crushed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "jam of choice or fresh berries partially crushed",
+    "measurements": [],
+    "note": null
   }
 }

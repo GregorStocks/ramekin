@@ -1,10 +1,8 @@
 {
   "raw": "Chocolate shavings, for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chocolate shavings, for garnish",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Chocolate shavings, for garnish",
+    "measurements": [],
+    "note": "optional"
   }
 }

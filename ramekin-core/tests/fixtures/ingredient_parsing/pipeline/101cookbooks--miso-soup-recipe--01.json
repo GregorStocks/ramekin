@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces dried soba noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried soba noodles",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried soba noodles",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 cups crumbled buttery crackers, preferably Ritz",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled buttery crackers, preferably Ritz",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled buttery crackers, preferably Ritz",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

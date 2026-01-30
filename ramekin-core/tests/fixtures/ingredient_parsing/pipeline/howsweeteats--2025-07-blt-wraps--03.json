@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  tomatoes, (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

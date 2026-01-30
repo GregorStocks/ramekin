@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces best quality oil packed tuna, drained, in large chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "best quality oil packed tuna, drained, in large chunks",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "best quality oil packed tuna, drained, in large chunks",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

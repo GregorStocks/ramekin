@@ -1,10 +1,8 @@
 {
   "raw": "Crushed Frosted Flakes, for coating, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crushed Frosted Flakes, for coating",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Crushed Frosted Flakes, for coating",
+    "measurements": [],
+    "note": "optional"
   }
 }

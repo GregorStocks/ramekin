@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup chana dal (split chickpeas or Bengal gram), soaked for 4 to 8 hours",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chana dal (split chickpeas or Bengal gram), soaked for 4 to 8 hours",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chana dal (split chickpeas or Bengal gram), soaked for 4 to 8 hours",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

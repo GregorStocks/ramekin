@@ -1,15 +1,13 @@
 {
   "raw": "8  flour tortillas (or corn)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour tortillas (or corn)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flour tortillas (or corn)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

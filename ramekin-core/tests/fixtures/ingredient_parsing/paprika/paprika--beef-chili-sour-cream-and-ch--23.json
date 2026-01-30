@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons cold unsalted butter, cut into bits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold unsalted butter, cut into bits",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold unsalted butter, cut into bits",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

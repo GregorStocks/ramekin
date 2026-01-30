@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon coriander seeds or a heaped 1/2 teaspoon ground",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander seeds or a heaped 1/2 teaspoon ground",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coriander seeds or a heaped 1/2 teaspoon ground",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

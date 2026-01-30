@@ -1,15 +1,13 @@
 {
   "raw": "Vegetable oil ((about 8 cups))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vegetable oil",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Vegetable oil",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

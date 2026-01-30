@@ -1,10 +1,8 @@
 {
   "raw": "Tahini sauce recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tahini sauce recipe",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Tahini sauce recipe",
+    "measurements": [],
+    "note": null
   }
 }

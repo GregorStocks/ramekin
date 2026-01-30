@@ -1,10 +1,8 @@
 {
   "raw": "Shredded iceberg lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shredded iceberg lettuce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shredded iceberg lettuce",
+    "measurements": [],
+    "note": null
   }
 }

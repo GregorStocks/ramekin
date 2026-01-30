@@ -1,15 +1,13 @@
 {
   "raw": "1 cup guinness",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "guinness",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "guinness",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

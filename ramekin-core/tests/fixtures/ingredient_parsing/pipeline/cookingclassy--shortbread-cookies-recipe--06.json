@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. semi-sweet chocolate, (chopped (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-sweet chocolate",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped (optional"
-    }
+  "expected": {
+    "item": "semi-sweet chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped (optional"
   }
 }

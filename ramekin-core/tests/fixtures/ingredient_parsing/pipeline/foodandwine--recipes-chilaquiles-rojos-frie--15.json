@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces queso fresco, crumbled (about 2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "queso fresco",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "queso fresco",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "crumbled"
   }
 }

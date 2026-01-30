@@ -1,10 +1,8 @@
 {
   "raw": "fine grain sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine grain sea salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fine grain sea salt",
+    "measurements": [],
+    "note": null
   }
 }

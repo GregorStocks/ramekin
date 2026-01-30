@@ -1,15 +1,13 @@
 {
   "raw": "10-12  whole hazelnuts (lightly toasted and peeled (for making hazelnut spikes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole hazelnuts",
-      "measurements": [
-        {
-          "amount": "10-12",
-          "unit": null
-        }
-      ],
-      "note": "lightly toasted and peeled (for making hazelnut spikes"
-    }
+  "expected": {
+    "item": "whole hazelnuts",
+    "measurements": [
+      {
+        "amount": "10-12",
+        "unit": null
+      }
+    ],
+    "note": "lightly toasted and peeled (for making hazelnut spikes"
   }
 }

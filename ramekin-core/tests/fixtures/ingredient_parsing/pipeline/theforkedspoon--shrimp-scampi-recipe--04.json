@@ -1,15 +1,13 @@
 {
   "raw": "1.5 pounds shrimp (peeled with tails on)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled with tails on"
-    }
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled with tails on"
   }
 }

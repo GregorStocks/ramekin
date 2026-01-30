@@ -1,23 +1,21 @@
 {
   "raw": "11 oz KRAFT caramels (1 bag)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "KRAFT caramels",
-      "measurements": [
-        {
-          "amount": "11",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "312",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "KRAFT caramels",
+    "measurements": [
+      {
+        "amount": "11",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "312",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Gel food colors: red (burgundy, yellow, chestnut brown)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gel food colors: red (burgundy, yellow, chestnut brown)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Gel food colors: red (burgundy, yellow, chestnut brown)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 to 8 ears of corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ears of corn",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ears of corn",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

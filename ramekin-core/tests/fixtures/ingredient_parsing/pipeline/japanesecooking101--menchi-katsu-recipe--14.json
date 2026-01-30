@@ -1,10 +1,8 @@
 {
   "raw": "cabbage (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cabbage",
-      "measurements": [],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "cabbage",
+    "measurements": [],
+    "note": "shredded"
   }
 }

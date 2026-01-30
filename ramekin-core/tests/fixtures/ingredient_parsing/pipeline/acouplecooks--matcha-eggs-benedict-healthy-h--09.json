@@ -1,10 +1,8 @@
 {
   "raw": "~¼ cup warm water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "~1/4 cup warm water",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "~1/4 cup warm water",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 tablespoons (55 grams) salted butter, plus more if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more if needed"
-    }
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more if needed"
   }
 }

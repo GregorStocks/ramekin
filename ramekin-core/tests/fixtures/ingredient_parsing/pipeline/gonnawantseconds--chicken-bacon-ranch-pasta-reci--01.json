@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried penne pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried penne pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried penne pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  dried red chili pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried red chili pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried red chili pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

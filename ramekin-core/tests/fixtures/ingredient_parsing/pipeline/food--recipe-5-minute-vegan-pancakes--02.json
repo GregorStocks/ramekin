@@ -1,15 +1,13 @@
 {
   "raw": "1   tablespoon    sugar (I used organic cane sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar (I used organic cane sugar)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar (I used organic cane sugar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

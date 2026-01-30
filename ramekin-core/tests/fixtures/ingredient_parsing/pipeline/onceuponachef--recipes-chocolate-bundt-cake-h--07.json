@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup natural cocoa powder, (such as Hershey's)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "natural cocoa powder, (such as Hershey's)",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "natural cocoa powder, (such as Hershey's)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

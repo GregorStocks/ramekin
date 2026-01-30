@@ -1,10 +1,8 @@
 {
   "raw": "toasted sesame seeds, for serving  (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame seeds, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "toasted sesame seeds, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

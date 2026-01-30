@@ -1,19 +1,17 @@
 {
   "raw": "5 small scallions, thinly sliced (3/4 cup), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions, thinly sliced",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "small"
-        },
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "scallions, thinly sliced",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "small"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

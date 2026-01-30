@@ -1,23 +1,21 @@
 {
   "raw": "6 oz (about 8 cups)  baby spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "8",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby spinach",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "8",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

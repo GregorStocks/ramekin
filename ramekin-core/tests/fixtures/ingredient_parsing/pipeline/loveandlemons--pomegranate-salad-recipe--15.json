@@ -1,15 +1,13 @@
 {
   "raw": "Handful of mixed salad greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed salad greens",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed salad greens",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

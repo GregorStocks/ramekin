@@ -1,10 +1,8 @@
 {
   "raw": "fine sea salt (for finishing)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine sea salt (for finishing)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fine sea salt (for finishing)",
+    "measurements": [],
+    "note": null
   }
 }

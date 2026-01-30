@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons baking powder (I prefer aluminum free)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking powder (I prefer aluminum free)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking powder (I prefer aluminum free)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

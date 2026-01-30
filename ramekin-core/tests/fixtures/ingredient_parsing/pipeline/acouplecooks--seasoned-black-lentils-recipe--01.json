@@ -1,19 +1,17 @@
 {
   "raw": "1 pound black lentils (2 1/4 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black lentils",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "2 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black lentils",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

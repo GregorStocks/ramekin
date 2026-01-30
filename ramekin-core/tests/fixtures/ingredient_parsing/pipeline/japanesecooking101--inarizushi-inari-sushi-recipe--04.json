@@ -1,15 +1,13 @@
 {
   "raw": "8  Aburaage squares (or 4 rectangle)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aburaage squares (or 4 rectangle)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Aburaage squares (or 4 rectangle)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

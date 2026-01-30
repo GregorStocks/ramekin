@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  medium sweet potatoes, (peeled and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and chopped"
-    }
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and chopped"
   }
 }

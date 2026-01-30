@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons strawberry jam (or jelly, or topping if you prefer)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberry jam (or jelly, or topping if you prefer)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strawberry jam (or jelly, or topping if you prefer)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

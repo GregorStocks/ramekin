@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. bacon, cut into 1\" pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon, cut into 1\" pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon, cut into 1\" pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lb ground ham",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground ham",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground ham",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

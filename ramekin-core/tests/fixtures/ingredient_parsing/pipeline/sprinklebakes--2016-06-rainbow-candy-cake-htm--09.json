@@ -1,10 +1,8 @@
 {
   "raw": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
+    "measurements": [],
+    "note": null
   }
 }

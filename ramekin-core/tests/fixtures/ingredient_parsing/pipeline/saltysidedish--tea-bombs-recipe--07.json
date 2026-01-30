@@ -1,10 +1,8 @@
 {
   "raw": "candy thermometer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "candy thermometer",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "candy thermometer",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups  all-purpose flour, spooned into measuring cup and leveled-off",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour, spooned into measuring cup and leveled-off",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour, spooned into measuring cup and leveled-off",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

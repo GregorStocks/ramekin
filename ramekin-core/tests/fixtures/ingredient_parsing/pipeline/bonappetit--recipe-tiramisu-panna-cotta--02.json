@@ -1,15 +1,13 @@
 {
   "raw": "tsp.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": ")",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": ")",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

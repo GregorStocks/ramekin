@@ -1,15 +1,13 @@
 {
   "raw": "15 center-cut bacon slices, cut in half crosswise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "center-cut bacon slices, cut in half crosswise",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "center-cut bacon slices, cut in half crosswise",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

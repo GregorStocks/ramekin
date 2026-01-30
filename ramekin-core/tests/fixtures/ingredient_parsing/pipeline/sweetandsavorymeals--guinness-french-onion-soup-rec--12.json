@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon grainy mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grainy mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grainy mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

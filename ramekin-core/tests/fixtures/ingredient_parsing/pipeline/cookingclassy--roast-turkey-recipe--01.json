@@ -1,15 +1,13 @@
 {
   "raw": "10 - 14 lb. turkey* ((fresh or frozen and fully thawed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turkey*",
-      "measurements": [
-        {
-          "amount": "10-14",
-          "unit": "lb"
-        }
-      ],
-      "note": "fresh or frozen and fully thawed"
-    }
+  "expected": {
+    "item": "turkey*",
+    "measurements": [
+      {
+        "amount": "10-14",
+        "unit": "lb"
+      }
+    ],
+    "note": "fresh or frozen and fully thawed"
   }
 }

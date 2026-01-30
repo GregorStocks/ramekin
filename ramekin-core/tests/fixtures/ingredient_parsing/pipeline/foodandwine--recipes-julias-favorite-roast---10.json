@@ -1,10 +1,8 @@
 {
   "raw": "Celery leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Celery leaves",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Celery leaves",
+    "measurements": [],
+    "note": null
   }
 }

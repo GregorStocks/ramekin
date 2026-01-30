@@ -1,15 +1,13 @@
 {
   "raw": "1/4 c. loosely packed cilantro or parsley leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loosely packed cilantro or parsley leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loosely packed cilantro or parsley leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

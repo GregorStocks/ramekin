@@ -1,15 +1,13 @@
 {
   "raw": "½ pound spaghetti or bucatini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghetti or bucatini",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghetti or bucatini",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

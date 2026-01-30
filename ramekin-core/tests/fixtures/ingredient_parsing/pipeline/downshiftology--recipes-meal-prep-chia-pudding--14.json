@@ -1,10 +1,8 @@
 {
   "raw": "Nectarines",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nectarines",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Nectarines",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups half and half, (then a little more if needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "half and half, (then a little more if needed)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "half and half, (then a little more if needed)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

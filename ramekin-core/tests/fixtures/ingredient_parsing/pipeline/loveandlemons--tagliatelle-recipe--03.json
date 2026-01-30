@@ -1,19 +1,17 @@
 {
   "raw": "1½ cups (375 mL) chopped carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped carrots",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "375",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped carrots",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "375",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

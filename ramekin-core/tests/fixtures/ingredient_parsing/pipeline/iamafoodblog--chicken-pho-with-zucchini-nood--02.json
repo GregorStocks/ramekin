@@ -1,15 +1,13 @@
 {
   "raw": "2.5 quarts of water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "2.5",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

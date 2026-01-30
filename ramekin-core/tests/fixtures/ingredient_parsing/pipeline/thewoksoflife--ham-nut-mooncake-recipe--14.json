@@ -1,15 +1,13 @@
 {
   "raw": "60 grams sunflower seeds ((toasted))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sunflower seeds",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "sunflower seeds",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": "toasted"
   }
 }

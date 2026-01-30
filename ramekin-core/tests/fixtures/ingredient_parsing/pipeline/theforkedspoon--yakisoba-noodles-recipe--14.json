@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces shiitake mushrooms (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

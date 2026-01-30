@@ -1,15 +1,13 @@
 {
   "raw": "1½ pounds chicken breasts (or 3 large chicken breasts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts (or 3 large chicken breasts)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts (or 3 large chicken breasts)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4  sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sea salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sea salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

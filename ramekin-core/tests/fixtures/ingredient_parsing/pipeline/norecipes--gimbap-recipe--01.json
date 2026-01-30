@@ -1,15 +1,13 @@
 {
   "raw": "1  carrot ((julienned))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "julienned"
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "julienned"
   }
 }

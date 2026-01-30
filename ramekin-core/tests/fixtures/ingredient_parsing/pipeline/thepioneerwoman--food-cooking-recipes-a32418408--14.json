@@ -1,10 +1,8 @@
 {
   "raw": "Ancho chile powder, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ancho chile powder",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Ancho chile powder",
+    "measurements": [],
+    "note": "to taste"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces fresh jumbo lump crabmeat, drained and picked over",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh jumbo lump crabmeat",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "drained and picked over"
-    }
+  "expected": {
+    "item": "fresh jumbo lump crabmeat",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "drained and picked over"
   }
 }

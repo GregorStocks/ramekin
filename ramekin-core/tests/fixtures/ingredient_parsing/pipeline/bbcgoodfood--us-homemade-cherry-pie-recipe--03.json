@@ -1,15 +1,13 @@
 {
   "raw": "2 sticks of cold butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

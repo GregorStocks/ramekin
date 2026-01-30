@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cups semisweet chocolate  ((chips, chopped, etc). )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate .",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chips, chopped, etc"
-    }
+  "expected": {
+    "item": "semisweet chocolate .",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chips, chopped, etc"
   }
 }

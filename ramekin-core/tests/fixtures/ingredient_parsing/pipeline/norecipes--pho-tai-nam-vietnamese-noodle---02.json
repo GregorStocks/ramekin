@@ -1,15 +1,13 @@
 {
   "raw": "275 grams brisket",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brisket",
-      "measurements": [
-        {
-          "amount": "275",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brisket",
+    "measurements": [
+      {
+        "amount": "275",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

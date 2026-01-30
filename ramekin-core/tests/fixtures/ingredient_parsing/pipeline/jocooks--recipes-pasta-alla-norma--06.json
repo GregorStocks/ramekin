@@ -1,15 +1,13 @@
 {
   "raw": "1 cup tomato passata (or tomato puree)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato passata (or tomato puree)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato passata (or tomato puree)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

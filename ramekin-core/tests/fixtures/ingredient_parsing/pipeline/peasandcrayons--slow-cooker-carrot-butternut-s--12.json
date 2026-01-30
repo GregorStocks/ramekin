@@ -1,10 +1,8 @@
 {
   "raw": "fresh chives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chives",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh chives",
+    "measurements": [],
+    "note": null
   }
 }

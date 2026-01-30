@@ -1,15 +1,13 @@
 {
   "raw": "100 g ground walnuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground walnuts",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground walnuts",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 large or 3 smaller leeks, quartered lengthwise, cleaned of grit, and chopped small",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "or 3 smaller leeks, quartered lengthwise, cleaned of grit",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "and chopped small"
-    }
+  "expected": {
+    "item": "or 3 smaller leeks, quartered lengthwise, cleaned of grit",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "and chopped small"
   }
 }

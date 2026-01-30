@@ -1,15 +1,13 @@
 {
   "raw": "1 head cauliflower, cut into florets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower, cut into florets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower, cut into florets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

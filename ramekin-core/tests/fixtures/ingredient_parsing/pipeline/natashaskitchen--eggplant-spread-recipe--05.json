@@ -1,15 +1,13 @@
 {
   "raw": "3  medium tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

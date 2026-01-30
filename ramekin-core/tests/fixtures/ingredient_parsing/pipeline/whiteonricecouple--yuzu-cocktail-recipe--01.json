@@ -1,15 +1,13 @@
 {
   "raw": "1  whole Yuzu ((or @ 1 1/2 Tablespoons (3/4 oz. - 22ml) yuzu juice))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole Yuzu (or @ 1 1/2 Tablespoons (3/4 oz. - 22ml) yuzu juice)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole Yuzu (or @ 1 1/2 Tablespoons (3/4 oz. - 22ml) yuzu juice)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

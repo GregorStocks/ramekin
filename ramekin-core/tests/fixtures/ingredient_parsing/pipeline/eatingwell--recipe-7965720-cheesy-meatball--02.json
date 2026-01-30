@@ -1,23 +1,21 @@
 {
   "raw": "1 (24 ounce) jar lower-sodium marinara sauce, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lower-sodium marinara sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "lower-sodium marinara sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

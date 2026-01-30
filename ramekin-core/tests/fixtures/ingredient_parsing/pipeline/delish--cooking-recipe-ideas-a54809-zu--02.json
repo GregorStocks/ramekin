@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp. kosher salt, divided, plus more",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt, divided",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more"
-    }
+  "expected": {
+    "item": "kosher salt, divided",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more"
   }
 }

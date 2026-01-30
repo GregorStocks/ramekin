@@ -1,15 +1,13 @@
 {
   "raw": "4 fresh wiri wiri peppers (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh wiri wiri peppers (see note)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh wiri wiri peppers (see note)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

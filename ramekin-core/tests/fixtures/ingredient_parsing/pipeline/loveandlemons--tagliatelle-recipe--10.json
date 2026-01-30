@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces (125 g) tagliatelle pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tagliatelle pasta",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "125",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tagliatelle pasta",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "125",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

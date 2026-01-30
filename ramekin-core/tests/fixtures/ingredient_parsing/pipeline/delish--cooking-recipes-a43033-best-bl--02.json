@@ -1,15 +1,13 @@
 {
   "raw": "1 c. Simply Lemonade with Blueberry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Simply Lemonade with Blueberry",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Simply Lemonade with Blueberry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

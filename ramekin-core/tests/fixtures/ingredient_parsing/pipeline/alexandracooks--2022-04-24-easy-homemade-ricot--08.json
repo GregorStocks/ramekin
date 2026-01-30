@@ -1,10 +1,8 @@
 {
   "raw": "fresh basil, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh basil",
+    "measurements": [],
+    "note": "optional"
   }
 }

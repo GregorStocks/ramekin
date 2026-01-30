@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 cups chopped 56% semi-sweet chocolate (8 ounces; 226g)&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped 56% semi-sweet chocolate",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "226",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped 56% semi-sweet chocolate",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

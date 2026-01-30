@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp. Asian garlic chili paste (like sambal olek or Sriracha)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Asian garlic chili paste (like sambal olek or Sriracha)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Asian garlic chili paste (like sambal olek or Sriracha)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

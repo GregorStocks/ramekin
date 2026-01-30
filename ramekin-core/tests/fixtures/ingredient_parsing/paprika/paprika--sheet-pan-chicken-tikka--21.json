@@ -1,10 +1,8 @@
 {
   "raw": "Dollops of yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dollops of yogurt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Dollops of yogurt",
+    "measurements": [],
+    "note": null
   }
 }

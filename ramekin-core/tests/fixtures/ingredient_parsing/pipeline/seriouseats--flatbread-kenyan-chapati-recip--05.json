@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (120ml) warm whole milk (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm whole milk (see notes)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm whole milk (see notes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

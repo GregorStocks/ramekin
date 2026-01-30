@@ -1,15 +1,13 @@
 {
   "raw": "1 cup butter (or spread of choice, softened at room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "or spread of choice, softened at room temperature"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "or spread of choice, softened at room temperature"
   }
 }

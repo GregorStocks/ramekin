@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon red pepper flakes (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper flakes",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

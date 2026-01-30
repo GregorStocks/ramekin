@@ -1,10 +1,8 @@
 {
   "raw": "Warm pita bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Warm pita bread",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Warm pita bread",
+    "measurements": [],
+    "note": null
   }
 }

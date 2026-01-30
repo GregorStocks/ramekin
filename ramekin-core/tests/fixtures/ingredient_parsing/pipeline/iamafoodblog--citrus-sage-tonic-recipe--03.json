@@ -1,19 +1,17 @@
 {
   "raw": "2 large grapefruits, juiced (about 2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapefruits, juiced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapefruits, juiced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

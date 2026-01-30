@@ -1,15 +1,13 @@
 {
   "raw": "1  1/2 cups  uncooked Carolina&nbsp;Gold Rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked Carolina Gold Rice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked Carolina Gold Rice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

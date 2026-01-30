@@ -1,19 +1,17 @@
 {
   "raw": "2 strip steaks (1 1/2 inches thick), extra fat trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strip steaks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": null
-        }
-      ],
-      "note": "extra fat trimmed"
-    }
+  "expected": {
+    "item": "strip steaks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": "extra fat trimmed"
   }
 }

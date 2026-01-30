@@ -1,19 +1,17 @@
 {
   "raw": "1 (10-oz.) bag frozen corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen corn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

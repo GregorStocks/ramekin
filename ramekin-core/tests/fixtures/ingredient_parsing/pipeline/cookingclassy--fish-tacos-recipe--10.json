@@ -1,15 +1,13 @@
 {
   "raw": "8  corn tortillas**,  (warmed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn tortillas**,  (warmed)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn tortillas**,  (warmed)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

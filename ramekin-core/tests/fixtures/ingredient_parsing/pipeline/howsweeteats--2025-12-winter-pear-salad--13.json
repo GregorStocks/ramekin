@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon freshly grated orange zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated orange zest",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated orange zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

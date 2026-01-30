@@ -1,15 +1,13 @@
 {
   "raw": "10-12 blackberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blackberries",
-      "measurements": [
-        {
-          "amount": "10-12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blackberries",
+    "measurements": [
+      {
+        "amount": "10-12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

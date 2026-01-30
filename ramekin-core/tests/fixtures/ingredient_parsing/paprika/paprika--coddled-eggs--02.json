@@ -1,15 +1,13 @@
 {
   "raw": "4 large eggs, cold from refrigerator",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": "cold from refrigerator"
-    }
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "cold from refrigerator"
   }
 }

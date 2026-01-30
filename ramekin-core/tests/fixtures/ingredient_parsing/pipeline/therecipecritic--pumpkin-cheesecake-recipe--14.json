@@ -1,10 +1,8 @@
 {
   "raw": "caramel sauce (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramel sauce (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "caramel sauce (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

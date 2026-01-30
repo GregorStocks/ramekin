@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons strongly brewed coffee or espresso",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strongly brewed coffee or espresso",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strongly brewed coffee or espresso",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

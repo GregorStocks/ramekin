@@ -1,10 +1,8 @@
 {
   "raw": "cooking oil (neutral with high smoke point)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking oil (neutral with high smoke point)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking oil (neutral with high smoke point)",
+    "measurements": [],
+    "note": null
   }
 }

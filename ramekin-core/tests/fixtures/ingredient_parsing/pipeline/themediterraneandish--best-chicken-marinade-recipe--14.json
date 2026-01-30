@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lb boneless chicken breast cutlets (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless chicken breast cutlets (see notes)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless chicken breast cutlets (see notes)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

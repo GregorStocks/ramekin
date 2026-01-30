@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Sea Salt (, or Kosher Salt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sea Salt (, or Kosher Salt)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sea Salt (, or Kosher Salt)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup unsalted butter, chilled ((8 Tbsp))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chilled"
   }
 }

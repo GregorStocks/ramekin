@@ -1,23 +1,21 @@
 {
   "raw": "1/2 pound (8 ounces or 225 grams) pasta of you choice, such as a ziti or twisty shape",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pasta of you choice, such as a ziti or twisty shape",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pasta of you choice, such as a ziti or twisty shape",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

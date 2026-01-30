@@ -1,15 +1,13 @@
 {
   "raw": "8 tablespoons butter (unsalted, room temperature (1/2 cup or 1 stick))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "unsalted, room temperature (1/2 cup or 1 stick"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "unsalted, room temperature (1/2 cup or 1 stick"
   }
 }

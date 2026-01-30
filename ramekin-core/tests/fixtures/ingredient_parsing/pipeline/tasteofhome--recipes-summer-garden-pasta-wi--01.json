@@ -1,15 +1,13 @@
 {
   "raw": "3-1/4 cups uncooked mini penne pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked mini penne pasta",
-      "measurements": [
-        {
-          "amount": "3-1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked mini penne pasta",
+    "measurements": [
+      {
+        "amount": "3-1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

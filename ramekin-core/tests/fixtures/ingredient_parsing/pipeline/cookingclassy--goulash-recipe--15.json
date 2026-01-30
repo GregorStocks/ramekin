@@ -1,23 +1,21 @@
 {
   "raw": "1 2/3 cups (6.7 oz) macaroni pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "macaroni pasta",
-      "measurements": [
-        {
-          "amount": "1 2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "6.7",
-          "unit": "oz"
-        },
-        {
-          "amount": "190",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "macaroni pasta",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "6.7",
+        "unit": "oz"
+      },
+      {
+        "amount": "190",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

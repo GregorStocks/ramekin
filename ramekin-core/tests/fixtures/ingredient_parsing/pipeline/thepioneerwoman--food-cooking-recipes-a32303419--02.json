@@ -1,19 +1,17 @@
 {
   "raw": "1 oz. orange juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

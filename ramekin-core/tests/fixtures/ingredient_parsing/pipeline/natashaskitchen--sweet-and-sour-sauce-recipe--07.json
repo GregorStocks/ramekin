@@ -1,19 +1,17 @@
 {
   "raw": "4 to 5 Tbsp corn starch ((5 Tbsp makes a pretty thick sauce))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn starch",
-      "measurements": [
-        {
-          "amount": "4 to 5",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn starch",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

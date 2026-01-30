@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup vanilla or funfetti dry cake mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla or funfetti dry cake mix",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla or funfetti dry cake mix",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (110 grams) plain yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain yogurt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "110",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain yogurt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

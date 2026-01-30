@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp. salted butter&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

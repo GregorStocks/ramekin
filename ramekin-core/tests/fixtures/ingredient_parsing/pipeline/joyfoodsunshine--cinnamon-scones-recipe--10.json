@@ -1,15 +1,13 @@
 {
   "raw": "1 cup cinnamon chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

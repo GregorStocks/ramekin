@@ -1,15 +1,13 @@
 {
   "raw": "4 6-oz fish fillets of white fish such as Bronzino or Striped Bass",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6-oz fish fillets of white fish such as Bronzino or Striped Bass",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6-oz fish fillets of white fish such as Bronzino or Striped Bass",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

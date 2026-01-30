@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (100 grams) sugar, plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

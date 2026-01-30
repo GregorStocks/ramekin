@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch Nutmeg&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nutmeg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Nutmeg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

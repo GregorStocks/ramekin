@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons sesame oil (or peanut oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame oil (or peanut oil)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sesame oil (or peanut oil)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

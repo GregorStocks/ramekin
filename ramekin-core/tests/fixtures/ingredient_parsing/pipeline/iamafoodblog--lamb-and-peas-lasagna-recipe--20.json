@@ -1,10 +1,8 @@
 {
   "raw": "parmesan, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parmesan",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "parmesan",
+    "measurements": [],
+    "note": "to taste"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 sweet potatoes, (about 1 pound total), peeled and cut into ¾-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and cut into 3/4-inch cubes"
-    }
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and cut into 3/4-inch cubes"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup vodka, (I like Tito’s)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vodka, (I like Tito’s)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vodka, (I like Tito’s)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "lb. total)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "total)",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "total)",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

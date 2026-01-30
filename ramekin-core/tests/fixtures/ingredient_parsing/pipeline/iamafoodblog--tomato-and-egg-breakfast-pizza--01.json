@@ -1,15 +1,13 @@
 {
   "raw": "1 portion no-knead pizza dough or pizza dough of choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portion no-knead pizza dough or pizza dough of choice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "portion no-knead pizza dough or pizza dough of choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

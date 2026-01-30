@@ -1,15 +1,13 @@
 {
   "raw": "2 cups dry chickpeas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry chickpeas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry chickpeas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

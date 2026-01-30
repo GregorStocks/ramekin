@@ -1,15 +1,13 @@
 {
   "raw": "3 leeks, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leeks",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "leeks",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

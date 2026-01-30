@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Spanish olives (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Spanish olives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Spanish olives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

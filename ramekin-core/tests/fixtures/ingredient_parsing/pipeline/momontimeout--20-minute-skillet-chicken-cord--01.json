@@ -1,19 +1,17 @@
 {
   "raw": "6  small chicken cutlets or breast filets (1.5-2 lbs - large breasts can be cut in half)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken cutlets or breast filets",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "small"
-        },
-        {
-          "amount": "1.5-2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken cutlets or breast filets",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "small"
+      },
+      {
+        "amount": "1.5-2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

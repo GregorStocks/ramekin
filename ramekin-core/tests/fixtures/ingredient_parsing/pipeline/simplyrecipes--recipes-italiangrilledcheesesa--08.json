@@ -1,15 +1,13 @@
 {
   "raw": "1 cup hot pickled cauliflower, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot pickled cauliflower",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "hot pickled cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

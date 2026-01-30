@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup 127g unsweetened applesauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened applesauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "127",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened applesauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "127",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lb. fresh mozzarella cheese, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "fresh mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

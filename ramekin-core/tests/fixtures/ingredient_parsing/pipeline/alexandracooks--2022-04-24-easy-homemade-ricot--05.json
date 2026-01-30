@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (30 g) all-purpose flour, plus more for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for dusting"
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for dusting"
   }
 }

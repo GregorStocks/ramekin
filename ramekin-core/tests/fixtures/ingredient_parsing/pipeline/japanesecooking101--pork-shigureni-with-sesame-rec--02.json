@@ -1,19 +1,17 @@
 {
   "raw": "1 oz ginger root",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger root",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger root",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

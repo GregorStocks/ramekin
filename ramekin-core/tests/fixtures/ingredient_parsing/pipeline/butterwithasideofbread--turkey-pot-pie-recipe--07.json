@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tsp fresh rosemary, fine chop",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh rosemary, fine chop",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh rosemary, fine chop",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

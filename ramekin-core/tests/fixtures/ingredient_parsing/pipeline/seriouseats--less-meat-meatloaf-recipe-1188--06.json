@@ -1,27 +1,25 @@
 {
   "raw": "1 small carrot (2 ounces; 56 g), peeled and roughly chopped (about 1/2 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "56",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "peeled and roughly chopped"
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "peeled and roughly chopped"
   }
 }

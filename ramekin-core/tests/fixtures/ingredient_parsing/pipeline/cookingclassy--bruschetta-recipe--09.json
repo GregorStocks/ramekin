@@ -1,23 +1,21 @@
 {
   "raw": "1 (14.5 oz) loaf hearty french bread (such as La Brea), (sliced into 1/2-inch thick slices (about 12 slices))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf hearty french bread (such as La Brea)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "14.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "411",
-          "unit": "g"
-        }
-      ],
-      "note": "(sliced into 1/2-inch thick slices (about 12 slices)"
-    }
+  "expected": {
+    "item": "loaf hearty french bread (such as La Brea)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "14.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "411",
+        "unit": "g"
+      }
+    ],
+    "note": "(sliced into 1/2-inch thick slices (about 12 slices)"
   }
 }

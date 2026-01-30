@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp mini chocolate chips (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini chocolate chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "mini chocolate chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

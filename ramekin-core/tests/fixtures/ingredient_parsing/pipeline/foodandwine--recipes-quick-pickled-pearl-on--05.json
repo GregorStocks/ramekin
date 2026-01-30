@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons mustard seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mustard seeds",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mustard seeds",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

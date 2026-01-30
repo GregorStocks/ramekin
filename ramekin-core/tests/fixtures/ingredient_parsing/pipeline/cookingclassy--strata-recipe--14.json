@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups sharp white cheddar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sharp white cheddar",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sharp white cheddar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

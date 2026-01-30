@@ -1,15 +1,13 @@
 {
   "raw": "4  ripe oranges, like Navel",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe oranges, like Navel",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe oranges, like Navel",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

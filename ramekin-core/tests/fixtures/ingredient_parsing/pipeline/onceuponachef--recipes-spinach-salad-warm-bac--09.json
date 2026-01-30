@@ -1,23 +1,21 @@
 {
   "raw": "8 oz  white button or baby bella mushrooms, thinly sliced (about 2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white button or baby bella mushrooms",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "white button or baby bella mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

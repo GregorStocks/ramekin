@@ -1,10 +1,8 @@
 {
   "raw": "Christmas sprinkles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Christmas sprinkles",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Christmas sprinkles",
+    "measurements": [],
+    "note": null
   }
 }

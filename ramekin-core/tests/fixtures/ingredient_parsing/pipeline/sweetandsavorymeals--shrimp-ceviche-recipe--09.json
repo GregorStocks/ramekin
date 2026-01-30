@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup lime juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

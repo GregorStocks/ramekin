@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons very finely chopped scallions (green and white parts, see notes above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very finely chopped scallions (green and white parts, see notes above)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "very finely chopped scallions (green and white parts, see notes above)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

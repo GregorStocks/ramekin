@@ -1,15 +1,13 @@
 {
   "raw": "1 pound spiral-shaped pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spiral-shaped pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spiral-shaped pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

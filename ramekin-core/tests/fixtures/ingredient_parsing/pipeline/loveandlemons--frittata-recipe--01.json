@@ -1,15 +1,13 @@
 {
   "raw": "6  large eggs (use 8 eggs for a 12-inch skillet)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs (use 8 eggs for a 12-inch skillet)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs (use 8 eggs for a 12-inch skillet)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

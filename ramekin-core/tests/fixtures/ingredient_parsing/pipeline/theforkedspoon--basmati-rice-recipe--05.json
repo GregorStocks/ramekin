@@ -1,15 +1,13 @@
 {
   "raw": "1.5 cups water ((vegetable broth, chicken broth, or chicken stock))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (vegetable broth, chicken broth, or chicken stock)",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (vegetable broth, chicken broth, or chicken stock)",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

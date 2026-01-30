@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tablespoon chopped ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped ginger",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped ginger",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

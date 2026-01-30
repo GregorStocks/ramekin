@@ -1,15 +1,13 @@
 {
   "raw": "One recipe Chimichurri Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "recipe Chimichurri Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "recipe Chimichurri Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

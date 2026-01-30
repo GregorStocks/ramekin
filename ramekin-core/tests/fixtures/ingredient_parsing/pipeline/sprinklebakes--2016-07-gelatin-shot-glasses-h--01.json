@@ -1,10 +1,8 @@
 {
   "raw": "Neutral-tasting vegetable oil for greasing mold (I used canola)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Neutral-tasting vegetable oil for greasing mold (I used canola)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Neutral-tasting vegetable oil for greasing mold (I used canola)",
+    "measurements": [],
+    "note": null
   }
 }

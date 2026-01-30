@@ -1,15 +1,13 @@
 {
   "raw": "1 c. freshly grated Parmesan, plus more for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated Parmesan",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for sprinkling"
-    }
+  "expected": {
+    "item": "freshly grated Parmesan",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for sprinkling"
   }
 }

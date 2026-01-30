@@ -1,15 +1,13 @@
 {
   "raw": "2 red apples cored and thickly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red apples cored and thickly sliced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red apples cored and thickly sliced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups sliced red cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced red cabbage",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced red cabbage",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

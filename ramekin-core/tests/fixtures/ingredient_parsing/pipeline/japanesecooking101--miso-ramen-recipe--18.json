@@ -1,10 +1,8 @@
 {
   "raw": "soft boiled egg halves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soft boiled egg halves",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "soft boiled egg halves",
+    "measurements": [],
+    "note": null
   }
 }

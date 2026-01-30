@@ -1,15 +1,13 @@
 {
   "raw": "1 can tuna",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tuna",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tuna",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

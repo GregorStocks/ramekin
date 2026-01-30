@@ -1,15 +1,13 @@
 {
   "raw": "1 lb fresh strawberries* (washed with the tops removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh strawberries*",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "washed with the tops removed"
-    }
+  "expected": {
+    "item": "fresh strawberries*",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "washed with the tops removed"
   }
 }

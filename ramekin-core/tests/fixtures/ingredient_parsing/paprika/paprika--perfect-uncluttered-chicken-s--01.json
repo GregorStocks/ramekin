@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds uncooked chicken wings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked chicken wings",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked chicken wings",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

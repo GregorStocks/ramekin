@@ -1,15 +1,13 @@
 {
   "raw": "Pinch saffron threads (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "saffron threads",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "saffron threads",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
   }
 }

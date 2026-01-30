@@ -1,15 +1,13 @@
 {
   "raw": "2 cups of your favorite pasta (I used mini carrot farfalle**)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your favorite pasta (I used mini carrot farfalle**)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "your favorite pasta (I used mini carrot farfalle**)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

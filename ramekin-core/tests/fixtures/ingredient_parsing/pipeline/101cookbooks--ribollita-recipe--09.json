@@ -1,23 +1,21 @@
 {
   "raw": "4 cups / 22 oz / 620g cooked white beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked white beans",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "22",
-          "unit": "oz"
-        },
-        {
-          "amount": "620",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked white beans",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "22",
+        "unit": "oz"
+      },
+      {
+        "amount": "620",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

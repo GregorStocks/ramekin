@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp ground sesame seeds (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground sesame seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "ground sesame seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

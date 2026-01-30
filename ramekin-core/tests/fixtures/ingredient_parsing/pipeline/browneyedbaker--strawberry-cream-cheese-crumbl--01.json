@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons slivered almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slivered almonds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slivered almonds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

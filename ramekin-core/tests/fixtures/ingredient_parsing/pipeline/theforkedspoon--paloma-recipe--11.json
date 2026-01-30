@@ -1,10 +1,8 @@
 {
   "raw": "Grapefruit and lime wedges (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grapefruit and lime wedges",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Grapefruit and lime wedges",
+    "measurements": [],
+    "note": "for serving"
   }
 }

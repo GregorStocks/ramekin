@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces milk or semi-sweet chocolate, (broken into small pieces (see note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk or semi-sweet chocolate, (broken into small pieces (see note)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk or semi-sweet chocolate, (broken into small pieces (see note)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

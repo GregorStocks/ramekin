@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup frozen English peas, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen English peas",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen English peas",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed"
   }
 }

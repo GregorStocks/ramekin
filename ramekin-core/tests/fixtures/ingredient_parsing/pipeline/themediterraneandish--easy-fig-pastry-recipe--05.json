@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp good fig jam",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good fig jam",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "good fig jam",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

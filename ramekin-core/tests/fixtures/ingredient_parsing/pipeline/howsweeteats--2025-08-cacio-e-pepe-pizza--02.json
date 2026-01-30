@@ -1,15 +1,13 @@
 {
   "raw": "100 grams sourdough starter or fresh discard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sourdough starter or fresh discard",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sourdough starter or fresh discard",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

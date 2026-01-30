@@ -1,19 +1,17 @@
 {
   "raw": "8 oz cream cheese (regular or low fat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese (regular or low fat)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream cheese (regular or low fat)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

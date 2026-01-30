@@ -1,10 +1,8 @@
 {
   "raw": "Sweet potato mash:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sweet potato mash:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sweet potato mash:",
+    "measurements": [],
+    "note": null
   }
 }

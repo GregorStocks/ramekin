@@ -1,10 +1,8 @@
 {
   "raw": "Short Ribs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Short Ribs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Short Ribs",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1-2 cups Pico de Gallo ((see below for recipe))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pico de Gallo (see below for recipe)",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Pico de Gallo (see below for recipe)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

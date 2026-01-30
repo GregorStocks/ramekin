@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp raw pepitas ((pumpkin seeds))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw pepitas (pumpkin seeds)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw pepitas (pumpkin seeds)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

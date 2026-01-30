@@ -1,15 +1,13 @@
 {
   "raw": "4-5 pounds bone-in chicken legs and thighs (skin removed (optional), trimmed of excess fat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in chicken legs and thighs , trimmed of excess fat)",
-      "measurements": [
-        {
-          "amount": "4-5",
-          "unit": "lb"
-        }
-      ],
-      "note": "skin removed (optional"
-    }
+  "expected": {
+    "item": "bone-in chicken legs and thighs , trimmed of excess fat)",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": "lb"
+      }
+    ],
+    "note": "skin removed (optional"
   }
 }

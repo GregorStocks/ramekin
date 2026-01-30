@@ -1,15 +1,13 @@
 {
   "raw": "4 Tbsp Japanese Kewpie mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese Kewpie mayonnaise",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese Kewpie mayonnaise",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

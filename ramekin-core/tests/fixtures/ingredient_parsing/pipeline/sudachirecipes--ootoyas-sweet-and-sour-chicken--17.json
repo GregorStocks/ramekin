@@ -1,15 +1,13 @@
 {
   "raw": "100 g eggplant",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggplant",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggplant",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

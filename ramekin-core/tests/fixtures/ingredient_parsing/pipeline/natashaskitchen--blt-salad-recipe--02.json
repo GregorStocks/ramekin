@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 cups croutons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "croutons",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "croutons",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

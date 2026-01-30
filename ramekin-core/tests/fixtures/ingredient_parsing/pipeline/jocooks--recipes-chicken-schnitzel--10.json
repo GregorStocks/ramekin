@@ -1,10 +1,8 @@
 {
   "raw": "lemon wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon wedges",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon wedges",
+    "measurements": [],
+    "note": null
   }
 }

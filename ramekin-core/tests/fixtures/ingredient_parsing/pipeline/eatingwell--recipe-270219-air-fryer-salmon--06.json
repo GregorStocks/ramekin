@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons canola mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canola mayonnaise",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canola mayonnaise",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

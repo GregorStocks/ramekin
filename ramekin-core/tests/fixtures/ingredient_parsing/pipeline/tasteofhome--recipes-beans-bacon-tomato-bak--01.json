@@ -1,15 +1,13 @@
 {
   "raw": "8 bacon strips, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon strips, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon strips, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

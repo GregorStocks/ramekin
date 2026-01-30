@@ -1,15 +1,13 @@
 {
   "raw": "5 cups flour, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

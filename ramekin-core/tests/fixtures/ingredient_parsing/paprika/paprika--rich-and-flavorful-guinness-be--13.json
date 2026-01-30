@@ -1,23 +1,21 @@
 {
   "raw": "1 bouquet garni (about 4 sprigs thyme, 3 sprigs parsley, and 1 bay leaf, tied together with kitchen twine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bouquet garni",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": "sprig"
-        },
-        {
-          "amount": "3",
-          "unit": "sprig"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bouquet garni",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "sprig"
+      },
+      {
+        "amount": "3",
+        "unit": "sprig"
+      }
+    ],
+    "note": null
   }
 }

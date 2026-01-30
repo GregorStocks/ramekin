@@ -1,19 +1,17 @@
 {
   "raw": "1 (28-ounce) can whole tomatoes with juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole tomatoes with juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "28",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole tomatoes with juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

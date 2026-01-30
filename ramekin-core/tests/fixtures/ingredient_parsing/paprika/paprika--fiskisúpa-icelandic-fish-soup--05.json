@@ -1,19 +1,17 @@
 {
   "raw": "2 onions, chopped fine (2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped fine"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped fine"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Asian chili-garlic sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Asian chili-garlic sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Asian chili-garlic sauce",
+    "measurements": [],
+    "note": null
   }
 }

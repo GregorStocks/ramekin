@@ -1,23 +1,21 @@
 {
   "raw": "2 cups 343g/12 oz. ruby chocolate callets (or bars finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ruby chocolate callets",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "343",
-          "unit": "g"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        }
-      ],
-      "note": "or bars finely chopped"
-    }
+  "expected": {
+    "item": "ruby chocolate callets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "343",
+        "unit": "g"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": "or bars finely chopped"
   }
 }

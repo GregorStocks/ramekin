@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons water (30ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

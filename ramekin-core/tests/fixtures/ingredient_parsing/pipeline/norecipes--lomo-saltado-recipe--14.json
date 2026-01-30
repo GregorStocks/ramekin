@@ -1,15 +1,13 @@
 {
   "raw": "8 grams ginger ((finely minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "g"
+      }
+    ],
+    "note": "finely minced"
   }
 }

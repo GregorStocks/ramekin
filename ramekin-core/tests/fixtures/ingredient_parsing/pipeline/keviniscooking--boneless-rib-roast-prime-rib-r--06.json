@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp coarsely ground pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely ground pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely ground pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 (8-oz) container sour cream (1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "container sour cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "container sour cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

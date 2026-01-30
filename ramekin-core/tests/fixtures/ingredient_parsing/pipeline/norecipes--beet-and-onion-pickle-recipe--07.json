@@ -1,15 +1,13 @@
 {
   "raw": "handful  cilantro (of chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "of chopped"
-    }
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "of chopped"
   }
 }

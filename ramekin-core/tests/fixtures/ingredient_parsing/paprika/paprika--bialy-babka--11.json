@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 pounds (680 grams) yellow onions, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onions",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

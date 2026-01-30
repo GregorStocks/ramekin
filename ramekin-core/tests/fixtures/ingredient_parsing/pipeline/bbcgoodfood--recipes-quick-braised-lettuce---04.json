@@ -1,15 +1,13 @@
 {
   "raw": "3 Baby Gem lettuces finely shredded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Baby Gem lettuces finely shredded",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Baby Gem lettuces finely shredded",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

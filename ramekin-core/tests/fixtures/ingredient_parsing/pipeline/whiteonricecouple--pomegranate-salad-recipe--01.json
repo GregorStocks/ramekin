@@ -1,15 +1,13 @@
 {
   "raw": "1 head lettuce (, washed, drained, torn)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": "washed, drained, torn"
-    }
+  "expected": {
+    "item": "lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": "washed, drained, torn"
   }
 }

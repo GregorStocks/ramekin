@@ -1,15 +1,13 @@
 {
   "raw": "12 Italian sausages",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian sausages",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Italian sausages",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1.25 oz. frozen raspberries or blueberries  ((1/4 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen raspberries or blueberries",
-      "measurements": [
-        {
-          "amount": "1.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "35",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen raspberries or blueberries",
+    "measurements": [
+      {
+        "amount": "1.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 7-ounce can chopped green chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped green chiles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "7-ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped green chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "7-ounce can"
+      }
+    ],
+    "note": null
   }
 }

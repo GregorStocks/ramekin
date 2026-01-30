@@ -1,15 +1,13 @@
 {
   "raw": "2  small-medium sweet potatoes (parboiled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small-medium sweet potatoes (parboiled)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "small-medium sweet potatoes (parboiled)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

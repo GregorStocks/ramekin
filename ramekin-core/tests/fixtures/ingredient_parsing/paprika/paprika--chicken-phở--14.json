@@ -1,15 +1,13 @@
 {
   "raw": "1 pound mung bean sprouts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mung bean sprouts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mung bean sprouts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

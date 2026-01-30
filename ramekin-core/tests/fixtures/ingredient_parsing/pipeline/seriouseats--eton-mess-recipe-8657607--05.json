@@ -1,19 +1,17 @@
 {
   "raw": "7 ounces (200g)&nbsp; homemade meringue cookies or store bought",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade meringue cookies or store bought",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade meringue cookies or store bought",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

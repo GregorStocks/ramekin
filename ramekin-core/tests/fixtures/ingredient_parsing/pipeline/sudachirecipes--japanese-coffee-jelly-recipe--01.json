@@ -1,15 +1,13 @@
 {
   "raw": "15 g gelatin powder (or)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gelatin powder (or)",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gelatin powder (or)",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

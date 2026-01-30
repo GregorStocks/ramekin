@@ -1,19 +1,17 @@
 {
   "raw": "2.5 tsp (15g)  salt (, kosher / cooking salt (Note 3))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (, kosher / cooking salt (Note 3)",
-      "measurements": [
-        {
-          "amount": "2.5",
-          "unit": "tsp"
-        },
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (, kosher / cooking salt (Note 3)",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "tsp"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

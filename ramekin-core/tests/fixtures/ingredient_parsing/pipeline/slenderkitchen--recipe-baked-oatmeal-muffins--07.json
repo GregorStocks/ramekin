@@ -1,15 +1,13 @@
 {
   "raw": "2 ripe bananas, mashed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe bananas, mashed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe bananas, mashed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

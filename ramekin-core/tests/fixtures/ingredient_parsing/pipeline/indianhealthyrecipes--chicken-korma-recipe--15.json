@@ -1,15 +1,13 @@
 {
   "raw": "4  cloves ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "4  cloves ((optional))",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "clove"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "4  cloves ((optional))",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "clove"
+      }
+    ],
+    "note": "optional"
   }
 }

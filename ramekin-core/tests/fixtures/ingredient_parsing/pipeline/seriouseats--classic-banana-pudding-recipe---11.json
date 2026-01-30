@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (8g) confectioners sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "confectioners sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "8",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

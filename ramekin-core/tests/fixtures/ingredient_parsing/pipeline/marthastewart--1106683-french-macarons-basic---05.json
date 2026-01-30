@@ -1,10 +1,8 @@
 {
   "raw": "Jam or other filling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Jam or other filling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Jam or other filling",
+    "measurements": [],
+    "note": null
   }
 }

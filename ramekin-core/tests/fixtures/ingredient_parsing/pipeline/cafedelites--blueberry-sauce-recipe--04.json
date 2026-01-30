@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons lemon juice (or orange juice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice (or orange juice)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice (or orange juice)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

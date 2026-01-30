@@ -1,15 +1,13 @@
 {
   "raw": "2 large Eggs (, beaten)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Eggs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "beaten"
-    }
+  "expected": {
+    "item": "Eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "beaten"
   }
 }

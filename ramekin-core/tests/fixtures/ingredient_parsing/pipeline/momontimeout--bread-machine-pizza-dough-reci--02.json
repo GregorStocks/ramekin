@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp butter (softened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "softened"
   }
 }

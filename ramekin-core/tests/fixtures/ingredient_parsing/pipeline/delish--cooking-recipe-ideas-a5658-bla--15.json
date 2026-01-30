@@ -1,10 +1,8 @@
 {
   "raw": "Toasted hamburger buns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted hamburger buns",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Toasted hamburger buns",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups brown rice, cooked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown rice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "cooked"
-    }
+  "expected": {
+    "item": "brown rice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "cooked"
   }
 }

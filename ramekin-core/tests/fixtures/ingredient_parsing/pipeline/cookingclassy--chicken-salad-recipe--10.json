@@ -1,10 +1,8 @@
 {
   "raw": "Bread slices or lettuce leaves for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bread slices or lettuce leaves for serving",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Bread slices or lettuce leaves for serving",
+    "measurements": [],
+    "note": null
   }
 }

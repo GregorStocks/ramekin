@@ -1,19 +1,17 @@
 {
   "raw": "¾  tablespoon corn starch ((corn flour or arrowroot powder or 1 small boiled potato))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn starch",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn starch",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

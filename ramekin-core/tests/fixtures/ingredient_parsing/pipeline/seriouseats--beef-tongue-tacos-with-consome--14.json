@@ -1,10 +1,8 @@
 {
   "raw": "Finely diced white onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Finely diced white onion",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Finely diced white onion",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 onion slice, about 1/2-inch thick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion slice, about 1/2-inch thick",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion slice, about 1/2-inch thick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

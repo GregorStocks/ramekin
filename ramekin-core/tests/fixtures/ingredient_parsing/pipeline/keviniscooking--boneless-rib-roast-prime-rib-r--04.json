@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp bourbon ((See Note 2))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bourbon (See Note 2)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bourbon (See Note 2)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

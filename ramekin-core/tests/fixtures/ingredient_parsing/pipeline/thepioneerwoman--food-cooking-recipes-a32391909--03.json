@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp. olive oil, plus more for brushing and drizzling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for brushing and drizzling"
-    }
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for brushing and drizzling"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "15 grams sesame seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame seeds",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sesame seeds",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

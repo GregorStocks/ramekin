@@ -1,15 +1,13 @@
 {
   "raw": "60  jimmies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jimmies",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jimmies",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

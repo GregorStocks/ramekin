@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp vanilla sugar or 1 tbsp granulated sugar plus 1 tsp vanilla extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla sugar or 1 tbsp granulated sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 1 tsp vanilla extract"
-    }
+  "expected": {
+    "item": "vanilla sugar or 1 tbsp granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus 1 tsp vanilla extract"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Melted chocolate, for drizzling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Melted chocolate, for drizzling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Melted chocolate, for drizzling",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "5 oz ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

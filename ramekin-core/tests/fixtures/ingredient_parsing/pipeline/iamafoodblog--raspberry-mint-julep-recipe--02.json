@@ -1,15 +1,13 @@
 {
   "raw": "2 cups crushed ice, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed ice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "crushed ice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

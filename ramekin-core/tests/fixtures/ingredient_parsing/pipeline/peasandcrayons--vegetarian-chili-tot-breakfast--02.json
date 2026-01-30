@@ -1,15 +1,13 @@
 {
   "raw": "1-2 cups frozen tater tots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen tater tots",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen tater tots",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

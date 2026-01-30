@@ -1,10 +1,8 @@
 {
   "raw": "Crackers, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crackers",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Crackers",
+    "measurements": [],
+    "note": "for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound boneless skinless chicken breasts, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breasts",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "boneless skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "cubed"
   }
 }

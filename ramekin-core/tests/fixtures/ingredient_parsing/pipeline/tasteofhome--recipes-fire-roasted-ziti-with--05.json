@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded part-skim mozzarella cheese, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded part-skim mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "shredded part-skim mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2  dried red chili (break if you want)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried red chili (break if you want)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried red chili (break if you want)",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

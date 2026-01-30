@@ -1,15 +1,13 @@
 {
   "raw": "6 cups vegetable oil (for frying)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil (for frying)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil (for frying)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

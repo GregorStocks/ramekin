@@ -1,15 +1,13 @@
 {
   "raw": "4  organic black tea bags",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "organic black tea bags",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "organic black tea bags",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

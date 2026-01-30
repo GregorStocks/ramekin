@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup baking walnuts or pecans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking walnuts or pecans",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking walnuts or pecans",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

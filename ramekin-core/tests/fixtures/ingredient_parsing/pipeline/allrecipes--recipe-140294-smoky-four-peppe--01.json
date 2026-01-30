@@ -1,15 +1,13 @@
 {
   "raw": "8 ripe plum tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe plum tomatoes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe plum tomatoes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

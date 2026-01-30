@@ -1,15 +1,13 @@
 {
   "raw": "2 portions cooked Japanese short-grain rice (or Calrose)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portions cooked Japanese short-grain rice (or Calrose)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "portions cooked Japanese short-grain rice (or Calrose)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

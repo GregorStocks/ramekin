@@ -1,15 +1,13 @@
 {
   "raw": "4  cara cara oranges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cara cara oranges",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cara cara oranges",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

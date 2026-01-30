@@ -1,10 +1,8 @@
 {
   "raw": "Salmon Flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salmon Flakes",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Salmon Flakes",
+    "measurements": [],
+    "note": null
   }
 }

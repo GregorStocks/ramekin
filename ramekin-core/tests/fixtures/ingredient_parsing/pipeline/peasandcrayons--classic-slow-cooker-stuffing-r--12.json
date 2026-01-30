@@ -1,15 +1,13 @@
 {
   "raw": "1  14 oz pkg Pepperidge Farm Cubed Herb Seasoned Stuffing**",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pepperidge Farm Cubed Herb Seasoned Stuffing**",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "14 oz pkg"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Pepperidge Farm Cubed Herb Seasoned Stuffing**",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "14 oz pkg"
+      }
+    ],
+    "note": null
   }
 }

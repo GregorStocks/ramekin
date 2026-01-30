@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon kasuri methi ((fenugreek leaves))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kasuri methi (fenugreek leaves)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kasuri methi (fenugreek leaves)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp ketchup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ketchup",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ketchup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

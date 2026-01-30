@@ -1,15 +1,13 @@
 {
   "raw": "4 c. popped popcorn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "popped popcorn",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "popped popcorn",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

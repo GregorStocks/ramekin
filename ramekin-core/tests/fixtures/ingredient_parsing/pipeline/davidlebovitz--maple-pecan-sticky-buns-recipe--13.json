@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (45g) dark brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark brown sugar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "45",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "45",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 small beef chuck roast, about 2 pounds total",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef chuck roast, about 2 pounds total",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef chuck roast, about 2 pounds total",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

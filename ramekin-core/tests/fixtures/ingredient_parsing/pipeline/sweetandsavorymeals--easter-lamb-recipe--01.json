@@ -1,15 +1,13 @@
 {
   "raw": "2  whole legs of lamb",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole legs of lamb",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole legs of lamb",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Optional toppings: fresh berries, sliced bananas, nut butter, extra maple syrup or honey, etc.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional toppings: fresh berries, sliced bananas, nut butter, extra maple syrup or honey, etc.",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Optional toppings: fresh berries, sliced bananas, nut butter, extra maple syrup or honey, etc.",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 over easy egg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "over easy egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "over easy egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

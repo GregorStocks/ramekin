@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons cashew butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cashew butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cashew butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

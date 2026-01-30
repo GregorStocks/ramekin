@@ -1,19 +1,17 @@
 {
   "raw": "3 cups (700 ml) water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "700",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "700",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

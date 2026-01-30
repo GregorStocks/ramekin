@@ -1,10 +1,8 @@
 {
   "raw": "Same 6 garlic cloves roasted earlier with the artichoke (see above ingredients)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Same 6 garlic cloves roasted earlier with the artichoke (see above ingredients)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Same 6 garlic cloves roasted earlier with the artichoke (see above ingredients)",
+    "measurements": [],
+    "note": null
   }
 }

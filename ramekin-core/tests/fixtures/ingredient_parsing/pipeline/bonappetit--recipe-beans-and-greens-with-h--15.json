@@ -1,10 +1,8 @@
 {
   "raw": "Country-style bread (for serving; optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Country-style bread",
-      "measurements": [],
-      "note": "for serving; optional"
-    }
+  "expected": {
+    "item": "Country-style bread",
+    "measurements": [],
+    "note": "for serving; optional"
   }
 }

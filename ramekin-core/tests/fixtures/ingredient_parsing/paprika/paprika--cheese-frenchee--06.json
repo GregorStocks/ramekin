@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

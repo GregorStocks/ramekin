@@ -1,15 +1,13 @@
 {
   "raw": "1 package wonton, gyoza or dumpling wrappers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wonton, gyoza or dumpling wrappers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wonton, gyoza or dumpling wrappers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

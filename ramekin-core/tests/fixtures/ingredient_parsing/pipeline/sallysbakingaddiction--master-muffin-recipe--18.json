@@ -1,10 +1,8 @@
 {
   "raw": "add-ins of your choice (see Notes)*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "add-ins of your choice (see Notes)*",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "add-ins of your choice (see Notes)*",
+    "measurements": [],
+    "note": null
   }
 }

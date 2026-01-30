@@ -1,19 +1,17 @@
 {
   "raw": "1 ¼ cups vegetable oil (295ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "295",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "295",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 small head of bok choy (about 12 ounces), thinly sliced crosswise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head of bok choy",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced crosswise"
-    }
+  "expected": {
+    "item": "head of bok choy",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced crosswise"
   }
 }

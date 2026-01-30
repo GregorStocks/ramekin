@@ -1,15 +1,13 @@
 {
   "raw": "2  teaspoons Frank&amp;#39;s RedHot sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Frank's RedHot sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Frank's RedHot sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp light cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

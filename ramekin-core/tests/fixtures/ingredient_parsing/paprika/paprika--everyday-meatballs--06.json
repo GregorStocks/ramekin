@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons finely grated Parmesan or Romano cheese (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated Parmesan or Romano cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "finely grated Parmesan or Romano cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

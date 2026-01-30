@@ -1,15 +1,13 @@
 {
   "raw": "1 medium onion ((¼ cup chopped finely))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "1/4 cup chopped finely"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "1/4 cup chopped finely"
   }
 }

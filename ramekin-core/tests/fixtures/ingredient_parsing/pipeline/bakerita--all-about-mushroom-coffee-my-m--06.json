@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon plant-based collagen or any other adaptogens of your choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plant-based collagen or any other adaptogens of your choice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plant-based collagen or any other adaptogens of your choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

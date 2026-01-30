@@ -1,10 +1,8 @@
 {
   "raw": "Garlic bread and lemon wedges, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Garlic bread and lemon wedges",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Garlic bread and lemon wedges",
+    "measurements": [],
+    "note": "for serving"
   }
 }

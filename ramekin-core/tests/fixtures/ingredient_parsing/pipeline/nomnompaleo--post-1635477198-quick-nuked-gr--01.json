@@ -1,15 +1,13 @@
 {
   "raw": "1 pound green beans (trimmed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "green beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed"
   }
 }

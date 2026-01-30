@@ -1,19 +1,17 @@
 {
   "raw": "4 medium celery stalks, sliced into 1/4-inch rounds, divided (2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery stalks, sliced into 1/4-inch rounds",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "celery stalks, sliced into 1/4-inch rounds",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

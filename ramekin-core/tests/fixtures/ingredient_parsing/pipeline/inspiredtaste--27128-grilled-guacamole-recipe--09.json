@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 limes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "limes",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "limes",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

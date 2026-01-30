@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (30 grams) panko-style breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "panko-style breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "panko-style breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

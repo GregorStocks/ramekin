@@ -1,19 +1,17 @@
 {
   "raw": "15 to 20 flour tortillas (8 inches)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour tortillas",
-      "measurements": [
-        {
-          "amount": "15 to 20",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "15 to 20",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

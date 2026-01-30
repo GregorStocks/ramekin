@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon pepper, for the chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepper, for the chicken",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepper, for the chicken",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. dried Soba Noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried Soba Noodles",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried Soba Noodles",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

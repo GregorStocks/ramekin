@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces baby spinach, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "baby spinach",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

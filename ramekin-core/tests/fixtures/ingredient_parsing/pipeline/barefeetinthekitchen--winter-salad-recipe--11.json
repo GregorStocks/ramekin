@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup walnuts, plain or candied",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "walnuts, plain or candied",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "walnuts, plain or candied",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

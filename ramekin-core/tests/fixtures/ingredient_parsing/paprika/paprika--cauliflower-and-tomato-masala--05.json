@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon finely grated garlic (about 2 cloves)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated garlic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "2",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "2",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

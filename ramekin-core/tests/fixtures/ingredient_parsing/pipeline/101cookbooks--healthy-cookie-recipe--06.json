@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup coconut (finely shredded &amp;amp; unsweetened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely shredded & unsweetened"
-    }
+  "expected": {
+    "item": "coconut",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely shredded & unsweetened"
   }
 }

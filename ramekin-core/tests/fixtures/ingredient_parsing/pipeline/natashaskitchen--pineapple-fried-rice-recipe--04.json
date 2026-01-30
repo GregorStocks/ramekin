@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

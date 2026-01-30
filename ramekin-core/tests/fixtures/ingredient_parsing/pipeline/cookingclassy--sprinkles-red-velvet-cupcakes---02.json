@@ -1,15 +1,13 @@
 {
   "raw": "3 Tbsp cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa powder",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cocoa powder",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

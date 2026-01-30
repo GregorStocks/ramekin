@@ -1,15 +1,13 @@
 {
   "raw": "2  large cloves of garlic (pressed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves of garlic (pressed)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cloves of garlic (pressed)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

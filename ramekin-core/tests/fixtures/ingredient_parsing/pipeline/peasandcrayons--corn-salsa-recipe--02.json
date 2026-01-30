@@ -1,15 +1,13 @@
 {
   "raw": "2 cups diced tomatoes ((roma or vine ripened))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced tomatoes (roma or vine ripened)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced tomatoes (roma or vine ripened)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

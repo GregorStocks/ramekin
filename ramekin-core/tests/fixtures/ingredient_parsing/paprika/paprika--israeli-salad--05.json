@@ -1,10 +1,8 @@
 {
   "raw": "Juice of half a lemon, or more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice of half a lemon",
-      "measurements": [],
-      "note": "or more to taste"
-    }
+  "expected": {
+    "item": "Juice of half a lemon",
+    "measurements": [],
+    "note": "or more to taste"
   }
 }

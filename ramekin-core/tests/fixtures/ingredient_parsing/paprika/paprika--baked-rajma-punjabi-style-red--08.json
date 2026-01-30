@@ -1,19 +1,17 @@
 {
   "raw": "1 (28-ounce) can crushed, diced, chopped or whole tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed, diced",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "28",
-          "unit": null
-        }
-      ],
-      "note": "chopped or whole tomatoes"
-    }
+  "expected": {
+    "item": "crushed, diced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": null
+      }
+    ],
+    "note": "chopped or whole tomatoes"
   }
 }

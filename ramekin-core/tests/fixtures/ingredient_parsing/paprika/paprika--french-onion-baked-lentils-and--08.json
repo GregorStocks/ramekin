@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup dried lentils, any variety, but green (le puy) or brown (italian) are my favorites here",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried lentils, any variety, but green (le puy) or brown (italian) are my favorites here",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried lentils, any variety, but green (le puy) or brown (italian) are my favorites here",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

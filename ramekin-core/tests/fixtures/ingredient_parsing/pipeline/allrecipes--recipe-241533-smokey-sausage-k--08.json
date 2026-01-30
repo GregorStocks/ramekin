@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ground chipotle pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground chipotle pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground chipotle pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

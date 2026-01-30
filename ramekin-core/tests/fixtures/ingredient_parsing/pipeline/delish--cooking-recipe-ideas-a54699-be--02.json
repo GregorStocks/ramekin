@@ -1,19 +1,17 @@
 {
   "raw": "2 (8-oz.) blocks cream cheese, softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blocks cream cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "blocks cream cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "softened"
   }
 }

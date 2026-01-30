@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds oxtail",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oxtail",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oxtail",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

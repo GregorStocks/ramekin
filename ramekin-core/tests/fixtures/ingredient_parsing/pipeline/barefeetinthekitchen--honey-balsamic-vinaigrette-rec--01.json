@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup light olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light olive oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light olive oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "32 ounces milk, any percentage will do (4 cups; 910g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk, any percentage will do",
-      "measurements": [
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "910",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk, any percentage will do",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "910",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

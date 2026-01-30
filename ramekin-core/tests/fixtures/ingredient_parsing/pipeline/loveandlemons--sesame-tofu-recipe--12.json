@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Sriracha sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sriracha sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

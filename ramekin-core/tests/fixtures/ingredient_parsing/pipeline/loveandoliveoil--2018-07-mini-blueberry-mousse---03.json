@@ -1,15 +1,13 @@
 {
   "raw": "3 teaspoons lemon juice (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (8 tablespoons) unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

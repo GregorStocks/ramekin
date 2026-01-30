@@ -1,19 +1,17 @@
 {
   "raw": "1  (2-inch) piece of turmeric, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turmeric",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "piece"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "turmeric",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "piece"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

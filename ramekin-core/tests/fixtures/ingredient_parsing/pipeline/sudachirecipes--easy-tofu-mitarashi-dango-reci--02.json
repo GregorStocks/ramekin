@@ -1,15 +1,13 @@
 {
   "raw": "100 g glutinous rice flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "glutinous rice flour",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "glutinous rice flour",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

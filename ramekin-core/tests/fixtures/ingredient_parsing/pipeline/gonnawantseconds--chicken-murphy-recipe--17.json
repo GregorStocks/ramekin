@@ -1,15 +1,13 @@
 {
   "raw": "1 cup peppadew peppers (cut in half)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppadew peppers (cut in half)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peppadew peppers (cut in half)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": ".7 grams unsweetened cocoa powder ((~1/4 teaspoon))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened cocoa powder",
-      "measurements": [
-        {
-          "amount": ".7",
-          "unit": "g"
-        },
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened cocoa powder",
+    "measurements": [
+      {
+        "amount": ".7",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

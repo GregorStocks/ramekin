@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoon poha ((flattened rice))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poha (flattened rice)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "poha (flattened rice)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

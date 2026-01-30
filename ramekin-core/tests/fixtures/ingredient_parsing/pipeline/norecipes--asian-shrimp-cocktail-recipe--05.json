@@ -1,15 +1,13 @@
 {
   "raw": "1 whole plant cilantro ((leaves, stems and root))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole plant cilantro (leaves, stems and root)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole plant cilantro (leaves, stems and root)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

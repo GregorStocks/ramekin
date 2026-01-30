@@ -1,10 +1,8 @@
 {
   "raw": "salmon roe (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon roe",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "salmon roe",
+    "measurements": [],
+    "note": "optional"
   }
 }

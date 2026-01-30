@@ -1,15 +1,13 @@
 {
   "raw": "1 cup green grapes (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green grapes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "green grapes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved"
   }
 }

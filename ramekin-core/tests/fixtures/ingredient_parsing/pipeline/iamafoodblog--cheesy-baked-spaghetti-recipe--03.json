@@ -1,15 +1,13 @@
 {
   "raw": "1-2 cups shredded cheese, depending on how cheesy you’re feeling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheese, depending on how cheesy you’re feeling",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheese, depending on how cheesy you’re feeling",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

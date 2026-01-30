@@ -1,10 +1,8 @@
 {
   "raw": "steamed vegetables ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "steamed vegetables",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "steamed vegetables",
+    "measurements": [],
+    "note": "optional"
   }
 }

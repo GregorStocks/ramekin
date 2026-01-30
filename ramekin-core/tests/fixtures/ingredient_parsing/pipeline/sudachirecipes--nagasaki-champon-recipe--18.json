@@ -1,15 +1,13 @@
 {
   "raw": "2 portions ramen noodles (preferably thick type)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portions ramen noodles (preferably thick type)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "portions ramen noodles (preferably thick type)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

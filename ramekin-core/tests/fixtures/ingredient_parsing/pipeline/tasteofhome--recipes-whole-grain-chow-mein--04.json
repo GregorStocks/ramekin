@@ -1,19 +1,17 @@
 {
   "raw": "2 bunches baby bok choy, trimmed and cut into 1-inch pieces (about 2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby bok choy",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "bunch"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "trimmed and cut into 1-inch pieces"
-    }
+  "expected": {
+    "item": "baby bok choy",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunch"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "trimmed and cut into 1-inch pieces"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 pound mixture of ground chuck, pork and veal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixture of ground chuck, pork and veal",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixture of ground chuck, pork and veal",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

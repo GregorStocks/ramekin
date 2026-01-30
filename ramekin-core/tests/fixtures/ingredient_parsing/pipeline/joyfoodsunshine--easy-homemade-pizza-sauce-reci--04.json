@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons Italian seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Italian seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

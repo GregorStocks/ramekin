@@ -1,15 +1,13 @@
 {
   "raw": "1  lemon, (zested and juiced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon, (zested and juiced)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon, (zested and juiced)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

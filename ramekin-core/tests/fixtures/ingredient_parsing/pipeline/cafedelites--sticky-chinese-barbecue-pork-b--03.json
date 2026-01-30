@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Chinese Shaoxing wine (rice vinegar or a dry sherry can be used instead)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chinese Shaoxing wine (rice vinegar or a dry sherry can be used instead)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chinese Shaoxing wine (rice vinegar or a dry sherry can be used instead)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

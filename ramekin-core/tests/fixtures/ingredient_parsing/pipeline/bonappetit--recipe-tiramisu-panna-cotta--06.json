@@ -1,19 +1,17 @@
 {
   "raw": "¾ cup plus 2 Tbsp. plus 1 tsp. (179 g) sugar, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "¾ cup plus 2 Tbsp. plus 1 tsp. (179 g) sugar, divided",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "179",
-          "unit": "g"
-        }
-      ],
-      "note": "plus 2 Tbsp. plus 1 tsp. sugar, divided"
-    }
+  "expected": {
+    "item": "¾ cup plus 2 Tbsp. plus 1 tsp. (179 g) sugar, divided",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "179",
+        "unit": "g"
+      }
+    ],
+    "note": "plus 2 Tbsp. plus 1 tsp. sugar, divided"
   }
 }

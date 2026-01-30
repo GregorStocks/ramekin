@@ -1,10 +1,8 @@
 {
   "raw": "a pinch of baking soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a pinch of baking soda",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a pinch of baking soda",
+    "measurements": [],
+    "note": null
   }
 }

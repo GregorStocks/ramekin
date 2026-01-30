@@ -1,10 +1,8 @@
 {
   "raw": "about 14 fresh or freeze-dried  curry leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "about 14 fresh or freeze-dried  curry leaves",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "about 14 fresh or freeze-dried  curry leaves",
+    "measurements": [],
+    "note": null
   }
 }

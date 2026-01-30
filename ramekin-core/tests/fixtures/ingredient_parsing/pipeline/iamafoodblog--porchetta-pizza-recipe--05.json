@@ -1,15 +1,13 @@
 {
   "raw": "1 cup porchetta with crackling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "porchetta with crackling",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "porchetta with crackling",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

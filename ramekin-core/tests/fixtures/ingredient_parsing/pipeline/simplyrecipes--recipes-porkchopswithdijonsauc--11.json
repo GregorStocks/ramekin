@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chopped parsley (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chopped parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

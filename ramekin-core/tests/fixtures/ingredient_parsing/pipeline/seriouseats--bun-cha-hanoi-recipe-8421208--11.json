@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30ml) fish sauce (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce (see note)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fish sauce (see note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

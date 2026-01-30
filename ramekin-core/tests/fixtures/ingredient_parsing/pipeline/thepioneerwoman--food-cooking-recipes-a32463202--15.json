@@ -1,10 +1,8 @@
 {
   "raw": "Cooked spaghetti, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooked spaghetti",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Cooked spaghetti",
+    "measurements": [],
+    "note": "for serving"
   }
 }

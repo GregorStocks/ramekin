@@ -1,15 +1,13 @@
 {
   "raw": "1¼ cups water to blend dal ((adjust if needed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water to blend dal (adjust if needed)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water to blend dal (adjust if needed)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

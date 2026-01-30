@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces paneer cheese (cubed*)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paneer cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "cubed*"
-    }
+  "expected": {
+    "item": "paneer cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "cubed*"
   }
 }

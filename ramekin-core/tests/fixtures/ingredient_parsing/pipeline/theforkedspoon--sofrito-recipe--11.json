@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon fresh oregano leaves (packed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh oregano leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "packed"
-    }
+  "expected": {
+    "item": "fresh oregano leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "packed"
   }
 }

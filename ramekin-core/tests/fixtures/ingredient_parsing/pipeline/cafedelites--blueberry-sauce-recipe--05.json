@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons cornstarch (corn flour mixed with 2 tablespoons water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "corn flour mixed with 2 tablespoons water"
-    }
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "corn flour mixed with 2 tablespoons water"
   }
 }

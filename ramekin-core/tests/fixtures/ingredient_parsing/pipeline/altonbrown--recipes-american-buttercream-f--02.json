@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons full-fat sour cream, cold",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat sour cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "cold"
-    }
+  "expected": {
+    "item": "full-fat sour cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "cold"
   }
 }

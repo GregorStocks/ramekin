@@ -1,10 +1,8 @@
 {
   "raw": "red pepper flakes,  (or Aleppo pepper)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper flakes,  (or Aleppo pepper)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "red pepper flakes,  (or Aleppo pepper)",
+    "measurements": [],
+    "note": null
   }
 }

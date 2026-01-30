@@ -1,10 +1,8 @@
 {
   "raw": "Vegetable oil and eggs called for on back of cake mix box",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vegetable oil and eggs called for on back of cake mix box",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Vegetable oil and eggs called for on back of cake mix box",
+    "measurements": [],
+    "note": null
   }
 }

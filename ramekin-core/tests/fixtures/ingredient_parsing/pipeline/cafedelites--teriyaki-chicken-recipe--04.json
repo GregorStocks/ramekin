@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons light brown sugar (or white granulated sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar (or white granulated sugar)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar (or white granulated sugar)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

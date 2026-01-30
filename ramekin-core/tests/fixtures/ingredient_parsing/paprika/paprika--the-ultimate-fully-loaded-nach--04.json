@@ -1,19 +1,17 @@
 {
   "raw": "2 cups refried beans (1/2 recipe), thinned with water to a just-pourable consistency",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refried beans , thinned with water to a just-pourable consistency",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "refried beans , thinned with water to a just-pourable consistency",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

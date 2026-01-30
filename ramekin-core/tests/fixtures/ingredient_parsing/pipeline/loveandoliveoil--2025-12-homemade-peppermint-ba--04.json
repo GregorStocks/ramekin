@@ -1,19 +1,17 @@
 {
   "raw": "½ oz cocoa butter (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "cocoa butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
   }
 }

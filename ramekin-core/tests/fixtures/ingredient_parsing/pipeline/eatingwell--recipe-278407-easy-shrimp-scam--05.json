@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons white wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

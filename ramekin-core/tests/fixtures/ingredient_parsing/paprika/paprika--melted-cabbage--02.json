@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60 ml) neutral cooking oil such as canola oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neutral cooking oil such as canola oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "neutral cooking oil such as canola oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided"
   }
 }

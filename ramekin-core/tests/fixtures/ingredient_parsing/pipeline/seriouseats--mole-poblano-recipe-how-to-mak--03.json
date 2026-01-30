@@ -1,15 +1,13 @@
 {
   "raw": "6 dried pasilla chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried pasilla chiles",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried pasilla chiles",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

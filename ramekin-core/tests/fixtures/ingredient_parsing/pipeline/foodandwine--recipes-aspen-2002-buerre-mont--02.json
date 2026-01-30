@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons to 1 pound of butter, cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 1 pound of butter, cut into chunks",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 1 pound of butter, cut into chunks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

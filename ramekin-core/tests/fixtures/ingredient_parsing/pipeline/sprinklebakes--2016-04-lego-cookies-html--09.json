@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lbs. ready-made rolled green fondant",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ready-made rolled green fondant",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ready-made rolled green fondant",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

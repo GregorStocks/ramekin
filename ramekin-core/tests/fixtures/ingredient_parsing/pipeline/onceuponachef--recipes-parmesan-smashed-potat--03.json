@@ -1,15 +1,13 @@
 {
   "raw": "½ cup grated Parmigiano-Reggiano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated Parmigiano-Reggiano",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated Parmigiano-Reggiano",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

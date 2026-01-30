@@ -1,15 +1,13 @@
 {
   "raw": "9  large eggs (room temp)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs (room temp)",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs (room temp)",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

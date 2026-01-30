@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tsp (between 2.5 and 3 g)&nbsp; ground cumin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "(between 2.5 and 3 g)  ground cumin",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "(between 2.5 and 3 g)  ground cumin",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

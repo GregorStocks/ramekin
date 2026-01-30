@@ -1,15 +1,13 @@
 {
   "raw": "1 chicken, 3 to 4 pounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken, 3 to 4 pounds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken, 3 to 4 pounds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

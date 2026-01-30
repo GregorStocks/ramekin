@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons extra virgin olive oil (plus additional for tossing with the noodles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra virgin olive oil (plus additional for tossing with the noodles)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "extra virgin olive oil (plus additional for tossing with the noodles)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

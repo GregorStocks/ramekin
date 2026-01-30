@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp vinegar + 1/2 tsp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vinegar + 1/2 tsp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vinegar + 1/2 tsp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 large Russet potatoes (peeled and cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Russet potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and cubed"
-    }
+  "expected": {
+    "item": "Russet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and cubed"
   }
 }

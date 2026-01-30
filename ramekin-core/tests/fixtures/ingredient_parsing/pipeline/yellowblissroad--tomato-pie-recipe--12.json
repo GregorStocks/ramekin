@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Panko bread crumbs (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Panko bread crumbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Panko bread crumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp butter or ghee (melted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter or ghee",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "butter or ghee",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted"
   }
 }

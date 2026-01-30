@@ -1,15 +1,13 @@
 {
   "raw": "1 sprig fresh cilantro (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "sprig"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "sprig"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 cups old-fashioned rolled oats (use certified gluten-free oats for gluten-free granola)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "old-fashioned rolled oats (use certified gluten-free oats for gluten-free granola)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "old-fashioned rolled oats (use certified gluten-free oats for gluten-free granola)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

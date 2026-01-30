@@ -1,10 +1,8 @@
 {
   "raw": "splash of milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "splash of milk",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "splash of milk",
+    "measurements": [],
+    "note": null
   }
 }

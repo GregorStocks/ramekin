@@ -1,15 +1,13 @@
 {
   "raw": "2&nbsp; tablespoons rice vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

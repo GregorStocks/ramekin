@@ -1,15 +1,13 @@
 {
   "raw": "1  28 oz can fire-roasted tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fire-roasted tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "28 oz can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fire-roasted tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "28 oz can"
+      }
+    ],
+    "note": null
   }
 }

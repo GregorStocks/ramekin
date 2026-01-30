@@ -1,15 +1,13 @@
 {
   "raw": "3 stalks celery, cut into 1/2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery, cut into 1/2-inch pieces",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "stalk"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "celery, cut into 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "stalk"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Cake crumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cake crumbs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cake crumbs",
+    "measurements": [],
+    "note": null
   }
 }

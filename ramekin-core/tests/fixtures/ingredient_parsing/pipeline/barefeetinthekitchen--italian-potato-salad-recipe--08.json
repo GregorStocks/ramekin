@@ -1,19 +1,17 @@
 {
   "raw": "8-12 ounces salami (thinly sliced, quartered bite-size, about 2 cups worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salami",
-      "measurements": [
-        {
-          "amount": "8-12",
-          "unit": "oz"
-        },
-        {
-          "amount": "227-340",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced, quartered bite-size, about 2 cups worth"
-    }
+  "expected": {
+    "item": "salami",
+    "measurements": [
+      {
+        "amount": "8-12",
+        "unit": "oz"
+      },
+      {
+        "amount": "227-340",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced, quartered bite-size, about 2 cups worth"
   }
 }

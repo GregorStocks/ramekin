@@ -1,15 +1,13 @@
 {
   "raw": "1 egg beaten (for egg wash (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg beaten",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "for egg wash (optional"
-    }
+  "expected": {
+    "item": "egg beaten",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "for egg wash (optional"
   }
 }

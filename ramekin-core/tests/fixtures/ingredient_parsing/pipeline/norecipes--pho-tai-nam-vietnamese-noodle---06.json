@@ -1,15 +1,13 @@
 {
   "raw": "3 grams star anise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "star anise",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "star anise",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

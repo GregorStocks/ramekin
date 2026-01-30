@@ -1,15 +1,13 @@
 {
   "raw": "16 fresh flat-leaf parsley leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh flat-leaf parsley leaves",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh flat-leaf parsley leaves",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

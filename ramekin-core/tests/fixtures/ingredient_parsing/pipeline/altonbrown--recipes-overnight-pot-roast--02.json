@@ -1,15 +1,13 @@
 {
   "raw": "7 teaspoons kosher salt, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

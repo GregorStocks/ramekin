@@ -1,10 +1,8 @@
 {
   "raw": "whipped cream to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipped cream to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "whipped cream to serve",
+    "measurements": [],
+    "note": null
   }
 }

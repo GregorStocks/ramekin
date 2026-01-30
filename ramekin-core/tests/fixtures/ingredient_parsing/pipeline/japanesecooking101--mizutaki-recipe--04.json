@@ -1,15 +1,13 @@
 {
   "raw": "8  shrimps",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimps",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shrimps",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

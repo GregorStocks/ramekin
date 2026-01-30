@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60g) chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp sugar (any kind)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar (any kind)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar (any kind)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

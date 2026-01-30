@@ -1,15 +1,13 @@
 {
   "raw": "1  container refrigerated biscuits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "container refrigerated biscuits",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "container refrigerated biscuits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

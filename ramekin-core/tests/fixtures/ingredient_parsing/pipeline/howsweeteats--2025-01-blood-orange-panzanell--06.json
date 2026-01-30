@@ -1,15 +1,13 @@
 {
   "raw": "2 cup torn radicchio lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "torn radicchio lettuce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "torn radicchio lettuce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

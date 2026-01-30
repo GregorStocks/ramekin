@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup (packed, about 66 grams) grated cheese, your preference, we get good results with feta cheese (no need to grate), or fresh farmer's cheese (if using fresh farmer's cheese, you may want to add another 1/2 teaspoon of salt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated cheese, your preference, we get good results with feta cheese (no need to grate), or fresh farmer's cheese (if using fresh farmer's cheese, you may want to add another 1/2 teaspoon of salt)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "packed, about 66 grams"
-    }
+  "expected": {
+    "item": "grated cheese, your preference, we get good results with feta cheese (no need to grate), or fresh farmer's cheese (if using fresh farmer's cheese, you may want to add another 1/2 teaspoon of salt)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "packed, about 66 grams"
   }
 }

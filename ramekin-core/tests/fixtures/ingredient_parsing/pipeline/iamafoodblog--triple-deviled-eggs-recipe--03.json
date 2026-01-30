@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon tobiko (small fish eggs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tobiko",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tobiko",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

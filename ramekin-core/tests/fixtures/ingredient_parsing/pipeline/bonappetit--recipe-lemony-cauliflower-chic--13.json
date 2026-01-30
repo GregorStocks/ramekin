@@ -1,10 +1,8 @@
 {
   "raw": "Zest and juice of 2 lemons (zest reserved for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Zest and juice of 2 lemons",
-      "measurements": [],
-      "note": "zest reserved for serving"
-    }
+  "expected": {
+    "item": "Zest and juice of 2 lemons",
+    "measurements": [],
+    "note": "zest reserved for serving"
   }
 }

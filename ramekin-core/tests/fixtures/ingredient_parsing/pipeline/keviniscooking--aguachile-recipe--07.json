@@ -1,15 +1,13 @@
 {
   "raw": "½ cup cilantro (tightly packed (small bunch))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "tightly packed (small bunch"
-    }
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "tightly packed (small bunch"
   }
 }

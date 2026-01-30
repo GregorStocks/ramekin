@@ -1,19 +1,17 @@
 {
   "raw": "8 oz fresh spinach, washed, dried, and stemmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh spinach, washed, dried, and stemmed",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh spinach, washed, dried, and stemmed",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

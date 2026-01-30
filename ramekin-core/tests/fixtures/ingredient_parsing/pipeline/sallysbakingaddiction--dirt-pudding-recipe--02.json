@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (42g) unsweetened natural or Dutch-process cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened natural or Dutch-process cocoa powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "42",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened natural or Dutch-process cocoa powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "42",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "½ tsp salt (0.8-1.0% of meat weight)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "0.8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "0.8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

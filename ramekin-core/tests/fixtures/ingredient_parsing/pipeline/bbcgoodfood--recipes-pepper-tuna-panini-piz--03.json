@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp tomato purée",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato purée",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato purée",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

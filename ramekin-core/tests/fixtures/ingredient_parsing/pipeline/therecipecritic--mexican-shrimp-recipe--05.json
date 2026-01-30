@@ -1,19 +1,17 @@
 {
   "raw": "1 (1-ounce) package Taco Seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Taco Seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Taco Seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Hot sauce ((vinegar based, like Franks Original, or Tapatio))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot sauce (vinegar based, like Franks Original, or Tapatio)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Hot sauce (vinegar based, like Franks Original, or Tapatio)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

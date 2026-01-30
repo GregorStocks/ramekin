@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup ghee or clarified butter (melted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee or clarified butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "ghee or clarified butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup moong dal ((skinless petite yellow lentils) (or any other dal))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "moong dal (skinless petite yellow lentils) (or any other dal)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "moong dal (skinless petite yellow lentils) (or any other dal)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

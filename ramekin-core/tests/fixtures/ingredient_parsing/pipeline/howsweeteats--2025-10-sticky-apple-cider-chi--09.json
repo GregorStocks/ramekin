@@ -1,15 +1,13 @@
 {
   "raw": "2  apples, (cut into matchsticks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apples, (cut into matchsticks)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apples, (cut into matchsticks)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

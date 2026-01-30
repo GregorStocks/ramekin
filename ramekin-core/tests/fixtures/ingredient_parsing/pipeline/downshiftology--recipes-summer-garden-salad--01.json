@@ -1,15 +1,13 @@
 {
   "raw": "4 cups mixed salad greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed salad greens",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed salad greens",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

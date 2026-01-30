@@ -1,15 +1,13 @@
 {
   "raw": "50 grams sweet onions ((~1/4 onion, minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet onions",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": "~1/4 onion, minced"
-    }
+  "expected": {
+    "item": "sweet onions",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": "~1/4 onion, minced"
   }
 }

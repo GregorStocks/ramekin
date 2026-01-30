@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons salted peanuts (crushed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted peanuts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "crushed"
-    }
+  "expected": {
+    "item": "salted peanuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "crushed"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pint cherry tomatoes, halved, about 2 cups",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes, halved, about 2 cups",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry tomatoes, halved, about 2 cups",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Japanese yellow mustard if you wish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese yellow mustard if you wish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese yellow mustard if you wish",
+    "measurements": [],
+    "note": null
   }
 }

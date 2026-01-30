@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoon Cajun seasoning (divided and adjusted to suit your own personal taste/heat preference)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cajun seasoning",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided and adjusted to suit your own personal taste/heat preference"
-    }
+  "expected": {
+    "item": "Cajun seasoning",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided and adjusted to suit your own personal taste/heat preference"
   }
 }

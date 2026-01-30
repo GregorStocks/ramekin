@@ -1,10 +1,8 @@
 {
   "raw": "Champagne Vinaigrette",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Champagne Vinaigrette",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Champagne Vinaigrette",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon pureed canned chipotle in adobo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pureed canned chipotle in adobo",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pureed canned chipotle in adobo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

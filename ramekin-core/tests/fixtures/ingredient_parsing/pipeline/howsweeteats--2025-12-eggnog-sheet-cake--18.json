@@ -1,10 +1,8 @@
 {
   "raw": "white sparkle sugar, (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white sparkle sugar, (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "white sparkle sugar, (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

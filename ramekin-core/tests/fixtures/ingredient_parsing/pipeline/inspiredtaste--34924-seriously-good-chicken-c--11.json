@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces fresh mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

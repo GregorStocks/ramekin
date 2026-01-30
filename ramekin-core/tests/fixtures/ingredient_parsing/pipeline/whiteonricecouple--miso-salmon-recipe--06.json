@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon sesame oil (, optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame oil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

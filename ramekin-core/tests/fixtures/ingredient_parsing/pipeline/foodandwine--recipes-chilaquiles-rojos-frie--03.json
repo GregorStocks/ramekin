@@ -1,15 +1,13 @@
 {
   "raw": "2 dried chiles de árbol, stemmed and seeded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chiles de árbol, stemmed and seeded",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chiles de árbol, stemmed and seeded",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

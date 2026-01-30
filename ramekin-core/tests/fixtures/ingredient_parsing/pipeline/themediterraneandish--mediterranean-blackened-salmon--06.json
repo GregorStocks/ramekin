@@ -1,15 +1,13 @@
 {
   "raw": "Large handful fresh parsley, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful fresh parsley",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "handful fresh parsley",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": "chopped"
   }
 }

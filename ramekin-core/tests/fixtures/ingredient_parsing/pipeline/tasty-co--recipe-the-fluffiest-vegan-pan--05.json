@@ -1,15 +1,13 @@
 {
   "raw": "1 cup non-dairy milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "non-dairy milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "non-dairy milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

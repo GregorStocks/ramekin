@@ -1,15 +1,13 @@
 {
   "raw": "pinch up to a 1/4  teaspoon black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "up to a 1/4  teaspoon black pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "up to a 1/4  teaspoon black pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

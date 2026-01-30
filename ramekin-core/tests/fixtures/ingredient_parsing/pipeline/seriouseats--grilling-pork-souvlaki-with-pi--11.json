@@ -1,15 +1,13 @@
 {
   "raw": "2 cups of Greek yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek yogurt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Greek yogurt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

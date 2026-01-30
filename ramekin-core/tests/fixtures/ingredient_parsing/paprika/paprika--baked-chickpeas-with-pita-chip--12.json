@@ -1,15 +1,13 @@
 {
   "raw": "4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups vegetable broth (for cooked chickpeas)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable broth , 1 1/2 cups vegetable broth (for cooked chickpeas)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "for dried but soaked chickpeas"
-    }
+  "expected": {
+    "item": "vegetable broth , 1 1/2 cups vegetable broth (for cooked chickpeas)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "for dried but soaked chickpeas"
   }
 }

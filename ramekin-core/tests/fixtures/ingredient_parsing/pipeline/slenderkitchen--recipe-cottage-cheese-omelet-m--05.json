@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup broccoli, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

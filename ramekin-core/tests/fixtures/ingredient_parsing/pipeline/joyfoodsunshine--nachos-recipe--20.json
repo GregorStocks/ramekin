@@ -1,10 +1,8 @@
 {
   "raw": "salsa (guacamole, sour cream, etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salsa (guacamole, sour cream, etc.)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "salsa (guacamole, sour cream, etc.)",
+    "measurements": [],
+    "note": null
   }
 }

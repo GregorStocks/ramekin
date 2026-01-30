@@ -1,23 +1,21 @@
 {
   "raw": "12 oz chil sauce (1 bottle )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chil sauce",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "bottle"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chil sauce",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "bottle"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "60 g fried tofu pouch (aburaage) (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fried tofu pouch (aburaage) (thinly sliced)",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fried tofu pouch (aburaage) (thinly sliced)",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

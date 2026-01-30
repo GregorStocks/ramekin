@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup bagel chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bagel chips",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bagel chips",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

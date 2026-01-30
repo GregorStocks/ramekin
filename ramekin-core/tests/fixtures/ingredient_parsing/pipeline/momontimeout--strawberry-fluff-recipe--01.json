@@ -1,23 +1,21 @@
 {
   "raw": "8 oz Cool Whip (can use lite)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cool Whip",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": null,
-          "unit": "can"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cool Whip",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

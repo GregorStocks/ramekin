@@ -1,15 +1,13 @@
 {
   "raw": "dash orange bitters",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange bitters",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange bitters",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1  package (50 g Marich dark chocolate salted caramels)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1  package (50 g Marich dark chocolate salted caramels)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1  package (50 g Marich dark chocolate salted caramels)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

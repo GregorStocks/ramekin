@@ -1,15 +1,13 @@
 {
   "raw": "2 &nbsp;5-oz cans quality Albacore tuna, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quality Albacore tuna",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "5-oz cans"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "quality Albacore tuna",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "5-oz cans"
+      }
+    ],
+    "note": "drained"
   }
 }

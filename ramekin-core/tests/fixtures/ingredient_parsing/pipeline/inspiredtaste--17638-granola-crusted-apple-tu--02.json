@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon mayonnaise, see our homemade mayonnaise recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise, see our homemade mayonnaise recipe",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise, see our homemade mayonnaise recipe",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

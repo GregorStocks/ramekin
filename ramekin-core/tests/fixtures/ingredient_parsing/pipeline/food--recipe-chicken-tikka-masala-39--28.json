@@ -1,15 +1,13 @@
 {
   "raw": "2   tablespoons    desiccated coconut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "desiccated coconut",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "desiccated coconut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

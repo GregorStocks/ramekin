@@ -1,15 +1,13 @@
 {
   "raw": "1 carrot, peeled and chopped fine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and chopped fine"
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled and chopped fine"
   }
 }

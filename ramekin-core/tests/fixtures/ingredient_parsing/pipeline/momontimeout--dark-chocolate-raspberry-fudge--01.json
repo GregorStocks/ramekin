@@ -1,23 +1,21 @@
 {
   "raw": "20 oz dark chocolate chips ((60% Cacoa))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark chocolate chips",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": null
-        },
-        {
-          "amount": "567",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark chocolate chips",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      },
+      {
+        "amount": "567",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

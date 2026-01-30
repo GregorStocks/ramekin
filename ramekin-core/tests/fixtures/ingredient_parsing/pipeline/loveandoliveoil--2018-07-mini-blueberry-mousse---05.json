@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons water (plus more for blooming gelatin)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for blooming gelatin"
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for blooming gelatin"
   }
 }

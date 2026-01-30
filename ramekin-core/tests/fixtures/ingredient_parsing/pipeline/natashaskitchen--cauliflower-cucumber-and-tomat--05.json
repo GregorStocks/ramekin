@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp ranch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ranch",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ranch",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

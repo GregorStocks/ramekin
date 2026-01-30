@@ -1,23 +1,21 @@
 {
   "raw": "½  onion ((3.5 oz, 100 g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        },
-        {
-          "amount": "3.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      },
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

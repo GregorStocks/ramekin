@@ -1,19 +1,17 @@
 {
   "raw": "3 to 5 ounces baby arugula greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby arugula greens",
-      "measurements": [
-        {
-          "amount": "3 to 5",
-          "unit": "oz"
-        },
-        {
-          "amount": "85 to 142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby arugula greens",
+    "measurements": [
+      {
+        "amount": "3 to 5",
+        "unit": "oz"
+      },
+      {
+        "amount": "85 to 142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup fresh salsa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh salsa",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh salsa",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

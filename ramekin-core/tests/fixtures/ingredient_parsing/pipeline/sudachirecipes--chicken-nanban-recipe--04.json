@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp cornstarch (or potato starch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch (or potato starch)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch (or potato starch)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

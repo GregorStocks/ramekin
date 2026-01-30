@@ -1,15 +1,13 @@
 {
   "raw": "1 medium onion, cut into big chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion, cut into big chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion, cut into big chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

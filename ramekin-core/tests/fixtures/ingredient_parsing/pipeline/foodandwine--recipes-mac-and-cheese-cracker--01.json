@@ -1,15 +1,13 @@
 {
   "raw": "1 pound&nbsp;radiatore pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "radiatore pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "radiatore pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

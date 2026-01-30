@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp. pine nuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pine nuts",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

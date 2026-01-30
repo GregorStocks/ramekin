@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces smoked salmon, cut into 2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked salmon, cut into 2-inch pieces",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked salmon, cut into 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Handful torn or small basil leaves for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "torn or small basil leaves for serving",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "torn or small basil leaves for serving",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

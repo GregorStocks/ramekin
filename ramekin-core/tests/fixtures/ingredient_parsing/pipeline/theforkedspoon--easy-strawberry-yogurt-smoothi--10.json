@@ -1,10 +1,8 @@
 {
   "raw": "cocoa nibs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa nibs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cocoa nibs",
+    "measurements": [],
+    "note": null
   }
 }

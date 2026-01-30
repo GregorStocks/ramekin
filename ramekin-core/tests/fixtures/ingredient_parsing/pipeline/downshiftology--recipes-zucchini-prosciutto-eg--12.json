@@ -1,10 +1,8 @@
 {
   "raw": "olive oil to coat the muffin tin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil to coat the muffin tin",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil to coat the muffin tin",
+    "measurements": [],
+    "note": null
   }
 }

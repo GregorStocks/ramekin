@@ -1,19 +1,17 @@
 {
   "raw": "5 oz. baby arugula, baby spinach, or spring greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby arugula, baby spinach, or spring greens",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby arugula, baby spinach, or spring greens",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Edible flowers for garnish, if desired (we used nasturtium flowers from our garden, only because we had them onhand)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Edible flowers for garnish, if desired (we used nasturtium flowers from our garden, only because we had them onhand)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Edible flowers for garnish, if desired (we used nasturtium flowers from our garden, only because we had them onhand)",
+    "measurements": [],
+    "note": null
   }
 }

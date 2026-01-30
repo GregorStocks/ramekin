@@ -1,23 +1,21 @@
 {
   "raw": "1 small yellow onion (6 ounces; 170 g), chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2&nbsp;tablespoons roughly chopped peanuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roughly chopped peanuts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roughly chopped peanuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

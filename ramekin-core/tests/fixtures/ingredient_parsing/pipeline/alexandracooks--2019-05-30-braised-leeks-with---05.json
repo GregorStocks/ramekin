@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons butter, cut into bits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter, cut into bits",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter, cut into bits",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

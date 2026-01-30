@@ -1,10 +1,8 @@
 {
   "raw": "A small handful of marjoram, oregano or thyme, for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A small handful of marjoram, oregano or thyme, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "A small handful of marjoram, oregano or thyme, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

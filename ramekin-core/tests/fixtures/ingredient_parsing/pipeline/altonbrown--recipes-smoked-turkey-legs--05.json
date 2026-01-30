@@ -1,15 +1,13 @@
 {
   "raw": "6  turkey legs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turkey legs",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turkey legs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "green vegetables or salad to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green vegetables or salad to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "green vegetables or salad to serve",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 to 8 chicken thighs (about 3 pounds, bone-in, skin-on, trimmed of excess fat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken thighs",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": null
-        }
-      ],
-      "note": "about 3 pounds, bone-in, skin-on, trimmed of excess fat"
-    }
+  "expected": {
+    "item": "chicken thighs",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": null
+      }
+    ],
+    "note": "about 3 pounds, bone-in, skin-on, trimmed of excess fat"
   }
 }

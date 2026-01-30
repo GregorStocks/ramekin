@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons cacao powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cacao powder",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cacao powder",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

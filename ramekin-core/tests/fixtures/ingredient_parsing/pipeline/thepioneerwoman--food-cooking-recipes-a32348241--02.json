@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. medium pasta shells",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium pasta shells",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium pasta shells",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

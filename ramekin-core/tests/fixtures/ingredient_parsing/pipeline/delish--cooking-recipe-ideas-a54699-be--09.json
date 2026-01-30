@@ -1,15 +1,13 @@
 {
   "raw": "1/4 c. blueberry preserves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blueberry preserves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blueberry preserves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

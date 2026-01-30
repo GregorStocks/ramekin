@@ -1,15 +1,13 @@
 {
   "raw": "2  fluffy pita breads",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fluffy pita breads",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fluffy pita breads",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

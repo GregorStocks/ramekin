@@ -1,10 +1,8 @@
 {
   "raw": "Confectioners&amp;#39; sugar, (for dusting)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Confectioners' sugar, (for dusting)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Confectioners' sugar, (for dusting)",
+    "measurements": [],
+    "note": null
   }
 }

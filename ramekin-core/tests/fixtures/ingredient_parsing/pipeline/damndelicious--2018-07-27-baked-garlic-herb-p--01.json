@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds fingerling potatoes (halved lengthwise)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fingerling potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved lengthwise"
-    }
+  "expected": {
+    "item": "fingerling potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved lengthwise"
   }
 }

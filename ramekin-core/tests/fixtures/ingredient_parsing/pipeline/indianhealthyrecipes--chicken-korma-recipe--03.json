@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons curd ((plain yogurt or coconut milk))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curd (plain yogurt or coconut milk)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "curd (plain yogurt or coconut milk)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

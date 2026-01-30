@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup mayonnaise ((I like Kewpie brand))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise (I like Kewpie brand)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise (I like Kewpie brand)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

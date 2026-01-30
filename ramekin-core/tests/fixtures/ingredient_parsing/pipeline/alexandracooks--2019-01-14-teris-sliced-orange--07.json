@@ -1,19 +1,17 @@
 {
   "raw": "2 to 4 ounces arugula",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arugula",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "oz"
-        },
-        {
-          "amount": "57 to 113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arugula",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "oz"
+      },
+      {
+        "amount": "57 to 113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

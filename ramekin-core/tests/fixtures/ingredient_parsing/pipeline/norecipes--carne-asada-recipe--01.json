@@ -1,15 +1,13 @@
 {
   "raw": "1  skirt steak ((or 2 hanger steaks))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skirt steak (or 2 hanger steaks)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skirt steak (or 2 hanger steaks)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

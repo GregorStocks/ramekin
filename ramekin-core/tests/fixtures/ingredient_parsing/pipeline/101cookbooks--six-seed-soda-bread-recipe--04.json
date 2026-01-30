@@ -1,23 +1,21 @@
 {
   "raw": "2 cups / 9 oz / 250 g unbleached all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached all-purpose flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

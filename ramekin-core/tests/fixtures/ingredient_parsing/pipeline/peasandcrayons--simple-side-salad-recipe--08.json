@@ -1,15 +1,13 @@
 {
   "raw": "3 TBSP quality olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quality olive oil",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quality olive oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

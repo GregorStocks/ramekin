@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons finely chopped fresh herbs such as rosemary, thyme, oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fresh herbs such as rosemary, thyme, oregano",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped fresh herbs such as rosemary, thyme, oregano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

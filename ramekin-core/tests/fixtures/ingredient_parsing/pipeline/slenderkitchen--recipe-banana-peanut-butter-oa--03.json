@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chopped dates",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped dates",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped dates",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons soy sauce ( or Worcestershire sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce ( or Worcestershire sauce)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soy sauce ( or Worcestershire sauce)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

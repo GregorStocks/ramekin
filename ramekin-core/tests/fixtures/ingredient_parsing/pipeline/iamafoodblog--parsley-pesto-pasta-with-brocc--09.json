@@ -1,15 +1,13 @@
 {
   "raw": "2 cups broccoli, cooked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cooked"
-    }
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "cooked"
   }
 }

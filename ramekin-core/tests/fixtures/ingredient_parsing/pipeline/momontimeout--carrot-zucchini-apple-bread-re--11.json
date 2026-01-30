@@ -1,15 +1,13 @@
 {
   "raw": "pinch ground cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cloves",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cloves",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

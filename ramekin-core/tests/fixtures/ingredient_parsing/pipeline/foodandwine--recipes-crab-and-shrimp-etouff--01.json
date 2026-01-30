@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds shell-on raw medium shrimp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shell-on raw medium shrimp",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shell-on raw medium shrimp",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

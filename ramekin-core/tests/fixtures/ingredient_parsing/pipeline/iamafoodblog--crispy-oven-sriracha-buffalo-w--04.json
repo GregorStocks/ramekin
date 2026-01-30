@@ -1,15 +1,13 @@
 {
   "raw": "1 recipe wing sauce (below)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "recipe wing sauce (below)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "recipe wing sauce (below)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

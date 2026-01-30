@@ -1,15 +1,13 @@
 {
   "raw": "1 10- ounce package vanilla baking chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "10- ounce package vanilla baking chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "10- ounce package vanilla baking chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons lime zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime zest",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime zest",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound shrimp, peeled and de-veined",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and de-veined"
-    }
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and de-veined"
   }
 }

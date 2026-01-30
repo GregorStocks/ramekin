@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped fresh parsley (packed, more for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "packed, more for garnish"
-    }
+  "expected": {
+    "item": "chopped fresh parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "packed, more for garnish"
   }
 }

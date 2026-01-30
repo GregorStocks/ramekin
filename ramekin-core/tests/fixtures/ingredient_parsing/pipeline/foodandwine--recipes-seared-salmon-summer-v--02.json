@@ -1,15 +1,13 @@
 {
   "raw": "1 cup thinly sliced red onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced red onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced red onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

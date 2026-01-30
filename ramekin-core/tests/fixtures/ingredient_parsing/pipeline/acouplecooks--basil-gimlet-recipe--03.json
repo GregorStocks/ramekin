@@ -1,23 +1,21 @@
 {
   "raw": "1/2 ounce (1 tablespoon) lime juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

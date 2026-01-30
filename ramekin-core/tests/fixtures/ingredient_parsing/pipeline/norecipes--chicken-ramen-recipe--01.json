@@ -1,15 +1,13 @@
 {
   "raw": "900 grams chicken bones",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken bones",
-      "measurements": [
-        {
-          "amount": "900",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken bones",
+    "measurements": [
+      {
+        "amount": "900",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

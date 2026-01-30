@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup yellow mustard (or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow mustard",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "yellow mustard",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "or to taste"
   }
 }

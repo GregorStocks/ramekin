@@ -1,19 +1,17 @@
 {
   "raw": "1kg / 2lb   marrow bones ((leg, knuckle), cut to reveal marrow)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marrow bones (leg, knuckle), cut to reveal marrow)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "kg"
-        },
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marrow bones (leg, knuckle), cut to reveal marrow)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "kg"
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 large carrots, peeled and diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and diced"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and diced"
   }
 }

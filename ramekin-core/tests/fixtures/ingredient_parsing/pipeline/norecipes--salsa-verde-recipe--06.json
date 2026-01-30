@@ -1,15 +1,13 @@
 {
   "raw": "10 sprigs cilantro ((minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "sprig"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "sprig"
+      }
+    ],
+    "note": "minced"
   }
 }

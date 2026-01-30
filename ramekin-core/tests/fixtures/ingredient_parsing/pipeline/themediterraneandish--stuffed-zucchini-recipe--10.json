@@ -1,15 +1,13 @@
 {
   "raw": "Scant 1 tsp garlic powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "scant tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant tsp"
+      }
+    ],
+    "note": null
   }
 }

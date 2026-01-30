@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup Extra virgin olive oil&nbsp; (I used Private Reserve Greek olive oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra virgin olive oil  (I used Private Reserve Greek olive oil)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Extra virgin olive oil  (I used Private Reserve Greek olive oil)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

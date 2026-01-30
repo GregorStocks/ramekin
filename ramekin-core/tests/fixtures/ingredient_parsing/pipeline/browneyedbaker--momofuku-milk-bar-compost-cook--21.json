@@ -1,15 +1,13 @@
 {
   "raw": "2½ teaspoons ground coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground coffee",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground coffee",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 tablespoons coarse ground black pepper, such as McCormick, or freshly ground pepper, if necessary, plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse ground black pepper, such as McCormick, or freshly ground pepper, if necessary",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "coarse ground black pepper, such as McCormick, or freshly ground pepper, if necessary",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3  small carrots (shaved with a vegetable peeler)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots (shaved with a vegetable peeler)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots (shaved with a vegetable peeler)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

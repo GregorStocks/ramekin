@@ -1,19 +1,17 @@
 {
   "raw": "15 ounce can of chili beans (undrained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can of chili beans",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "undrained"
-    }
+  "expected": {
+    "item": "can of chili beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "undrained"
   }
 }

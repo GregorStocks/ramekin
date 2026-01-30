@@ -1,10 +1,8 @@
 {
   "raw": "Caesar Mayo or regular mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Caesar Mayo or regular mayonnaise",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Caesar Mayo or regular mayonnaise",
+    "measurements": [],
+    "note": null
   }
 }

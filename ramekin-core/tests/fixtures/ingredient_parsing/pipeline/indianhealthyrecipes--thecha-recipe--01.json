@@ -1,19 +1,17 @@
 {
   "raw": "1 teaspoon (5 ml)  oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "5",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8 flour tortillas, or more if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour tortillas",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "or more if needed"
-    }
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "or more if needed"
   }
 }

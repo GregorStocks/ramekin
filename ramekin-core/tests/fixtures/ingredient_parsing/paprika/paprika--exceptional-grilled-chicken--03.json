@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons granulated or brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated or brown sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated or brown sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

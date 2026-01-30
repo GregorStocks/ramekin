@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp ghee or cooking oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee or cooking oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ghee or cooking oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

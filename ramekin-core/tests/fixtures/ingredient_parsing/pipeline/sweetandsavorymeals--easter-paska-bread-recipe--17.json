@@ -1,15 +1,13 @@
 {
   "raw": "1  egg yolk (for brushing)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolk (for brushing)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg yolk (for brushing)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

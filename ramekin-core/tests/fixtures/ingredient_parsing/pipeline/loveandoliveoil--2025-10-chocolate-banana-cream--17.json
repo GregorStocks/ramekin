@@ -1,15 +1,13 @@
 {
   "raw": "2 large bananas (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bananas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "bananas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "sliced"
   }
 }

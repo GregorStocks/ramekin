@@ -1,10 +1,8 @@
 {
   "raw": "sour cream and sliced green onions to finish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream and sliced green onions to finish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream and sliced green onions to finish",
+    "measurements": [],
+    "note": null
   }
 }

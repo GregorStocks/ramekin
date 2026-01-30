@@ -1,15 +1,13 @@
 {
   "raw": "1 lb shrimp (I used 31-40 ct, raw, peeled, tail-on - deveined)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "I used 31-40 ct, raw, peeled, tail-on - deveined"
-    }
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "I used 31-40 ct, raw, peeled, tail-on - deveined"
   }
 }

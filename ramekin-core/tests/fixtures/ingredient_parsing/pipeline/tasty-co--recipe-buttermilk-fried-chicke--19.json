@@ -1,15 +1,13 @@
 {
   "raw": "1 head butter lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

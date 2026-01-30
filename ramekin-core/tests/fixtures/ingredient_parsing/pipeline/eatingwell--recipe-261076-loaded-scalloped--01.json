@@ -1,19 +1,17 @@
 {
   "raw": "2.5 pounds Yukon Gold potatoes, cut into 1/4-inch slices (about 8 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon Gold potatoes, cut into 1/4-inch slices",
-      "measurements": [
-        {
-          "amount": "2.5",
-          "unit": "lb"
-        },
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Yukon Gold potatoes, cut into 1/4-inch slices",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "lb"
+      },
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp. Calabrian chile paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Calabrian chile paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Calabrian chile paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

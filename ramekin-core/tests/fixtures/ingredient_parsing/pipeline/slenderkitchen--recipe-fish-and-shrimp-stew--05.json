@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

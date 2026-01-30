@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup 95g uncooked quinoa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked quinoa",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "95",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked quinoa",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "95",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

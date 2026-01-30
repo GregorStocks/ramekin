@@ -1,15 +1,13 @@
 {
   "raw": "½ cup freshly grated parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

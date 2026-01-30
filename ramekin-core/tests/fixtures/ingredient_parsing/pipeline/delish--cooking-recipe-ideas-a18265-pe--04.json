@@ -1,19 +1,17 @@
 {
   "raw": "4 tbsp. (1/2 stick) unsalted butter, cut into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into pieces",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "1/2",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter, cut into pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "1/2",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

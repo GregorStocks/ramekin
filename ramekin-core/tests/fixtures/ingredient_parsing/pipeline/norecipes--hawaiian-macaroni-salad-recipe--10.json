@@ -1,15 +1,13 @@
 {
   "raw": "90 grams ham ((diced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ham",
-      "measurements": [
-        {
-          "amount": "90",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "ham",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup crushed pineapple (drained (about half of a 20-ounce can))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed pineapple",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained (about half of a 20-ounce can"
-    }
+  "expected": {
+    "item": "crushed pineapple",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained (about half of a 20-ounce can"
   }
 }

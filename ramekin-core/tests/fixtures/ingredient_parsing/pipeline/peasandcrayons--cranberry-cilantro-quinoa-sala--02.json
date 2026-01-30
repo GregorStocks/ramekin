@@ -1,15 +1,13 @@
 {
   "raw": "1.5 cups water or veggie broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water or veggie broth",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water or veggie broth",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

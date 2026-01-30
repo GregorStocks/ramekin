@@ -1,15 +1,13 @@
 {
   "raw": "One 1-lb challah or raisin challah",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1-lb challah or raisin challah",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1-lb challah or raisin challah",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

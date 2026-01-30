@@ -1,15 +1,13 @@
 {
   "raw": "0.5 pound bulk spicy pork sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bulk spicy pork sausage",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bulk spicy pork sausage",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

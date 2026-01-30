@@ -1,15 +1,13 @@
 {
   "raw": "1 5- pound pork shoulder roast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "5- pound pork shoulder roast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "5- pound pork shoulder roast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

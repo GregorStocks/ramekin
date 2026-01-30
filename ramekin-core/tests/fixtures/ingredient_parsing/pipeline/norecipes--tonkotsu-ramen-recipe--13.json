@@ -1,15 +1,13 @@
 {
   "raw": "2 cloves garlic (finely grated (not pressed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "clove"
-        }
-      ],
-      "note": "finely grated (not pressed"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "clove"
+      }
+    ],
+    "note": "finely grated (not pressed"
   }
 }

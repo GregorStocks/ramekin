@@ -1,15 +1,13 @@
 {
   "raw": "3  medium zucchini squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini squash",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "zucchini squash",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 medium-size yellow onion, finely chopped (about 3/4 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-size yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "medium-size yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

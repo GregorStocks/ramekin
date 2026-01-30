@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp coconut flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

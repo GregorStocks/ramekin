@@ -1,10 +1,8 @@
 {
   "raw": "Toppings: cheddar cheese ((chives, green onions, bacon, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toppings: cheddar cheese (chives, green onions, bacon, etc.)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Toppings: cheddar cheese (chives, green onions, bacon, etc.)",
+    "measurements": [],
+    "note": null
   }
 }

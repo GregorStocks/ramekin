@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac14; teaspoon ground cinnamon, plus more for dusting if you&amp;#8217;d like",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cinnamon",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more for dusting if you’d like"
-    }
+  "expected": {
+    "item": "ground cinnamon",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for dusting if you’d like"
   }
 }

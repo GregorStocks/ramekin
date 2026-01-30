@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Caesar dressing, see our homemade dressing recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Caesar dressing, see our homemade dressing recipe",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Caesar dressing, see our homemade dressing recipe",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  Carrots (grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "Carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "grated"
   }
 }

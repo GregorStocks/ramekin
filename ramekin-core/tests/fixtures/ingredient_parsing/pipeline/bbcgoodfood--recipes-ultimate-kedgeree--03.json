@@ -1,15 +1,13 @@
 {
   "raw": "350g undyed  smoked haddock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "undyed  smoked haddock",
-      "measurements": [
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "undyed  smoked haddock",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

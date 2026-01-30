@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces canned crushed pineapple (well drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned crushed pineapple",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "well drained"
-    }
+  "expected": {
+    "item": "canned crushed pineapple",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "well drained"
   }
 }

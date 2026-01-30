@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces frozen spinach, thawed and drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen spinach",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed and drained"
-    }
+  "expected": {
+    "item": "frozen spinach",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed and drained"
   }
 }

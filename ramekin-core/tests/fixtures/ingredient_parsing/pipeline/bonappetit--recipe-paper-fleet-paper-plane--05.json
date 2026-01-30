@@ -1,10 +1,8 @@
 {
   "raw": "Lemon twists (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lemon twists",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Lemon twists",
+    "measurements": [],
+    "note": "for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup dried apricots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried apricots",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried apricots",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
+    "measurements": [],
+    "note": null
   }
 }

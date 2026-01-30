@@ -1,10 +1,8 @@
 {
   "raw": "Simple syrup, oleo-saccharum, to taste (optional, see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Simple syrup, oleo-saccharum, to taste",
-      "measurements": [],
-      "note": "optional, see notes"
-    }
+  "expected": {
+    "item": "Simple syrup, oleo-saccharum, to taste",
+    "measurements": [],
+    "note": "optional, see notes"
   }
 }

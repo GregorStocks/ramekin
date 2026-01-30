@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) stone-ground mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stone-ground mustard",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stone-ground mustard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

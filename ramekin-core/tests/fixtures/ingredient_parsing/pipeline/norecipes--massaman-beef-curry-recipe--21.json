@@ -1,19 +1,17 @@
 {
   "raw": "70 grams roasted peanuts ((~1/2 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted peanuts",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted peanuts",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

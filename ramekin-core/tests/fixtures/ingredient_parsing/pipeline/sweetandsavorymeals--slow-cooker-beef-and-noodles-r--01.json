@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds stew beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stew beef",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stew beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

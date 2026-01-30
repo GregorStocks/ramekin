@@ -1,10 +1,8 @@
 {
   "raw": "crunchy, buttery, almond crumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crunchy, buttery, almond crumbs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "crunchy, buttery, almond crumbs",
+    "measurements": [],
+    "note": null
   }
 }

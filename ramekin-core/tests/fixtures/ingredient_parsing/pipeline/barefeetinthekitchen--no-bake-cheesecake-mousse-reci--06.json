@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup caramel sauce (&nbsp;warm enough to pour, but not hot)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramel sauce ( warm enough to pour, but not hot)",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caramel sauce ( warm enough to pour, but not hot)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

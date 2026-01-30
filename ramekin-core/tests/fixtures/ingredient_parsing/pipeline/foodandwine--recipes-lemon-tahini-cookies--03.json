@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup well-stirred smooth tahini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "well-stirred smooth tahini",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "well-stirred smooth tahini",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

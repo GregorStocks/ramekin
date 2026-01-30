@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sliced fresh strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced fresh strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced fresh strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

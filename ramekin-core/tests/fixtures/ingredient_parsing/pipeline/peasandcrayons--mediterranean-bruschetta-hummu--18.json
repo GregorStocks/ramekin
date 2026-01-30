@@ -1,10 +1,8 @@
 {
   "raw": "sliced bell pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced bell pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced bell pepper",
+    "measurements": [],
+    "note": null
   }
 }

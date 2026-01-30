@@ -1,19 +1,17 @@
 {
   "raw": "4 oz vegan semi-sweet chocolate, chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegan semi-sweet chocolate, chunks",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegan semi-sweet chocolate, chunks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

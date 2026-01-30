@@ -1,10 +1,8 @@
 {
   "raw": "leafy green, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leafy green",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "leafy green",
+    "measurements": [],
+    "note": "for serving"
   }
 }

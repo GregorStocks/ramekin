@@ -1,15 +1,13 @@
 {
   "raw": "2 poblano peppers, stem, seeds and ribs removed, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poblano peppers, stem, seeds and ribs removed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "poblano peppers, stem, seeds and ribs removed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

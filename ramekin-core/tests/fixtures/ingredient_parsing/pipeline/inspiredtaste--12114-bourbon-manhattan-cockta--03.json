@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 dashes aromatic bitters, we use Angostura",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "aromatic bitters, we use Angostura",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "aromatic bitters, we use Angostura",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

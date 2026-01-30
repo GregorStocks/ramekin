@@ -1,15 +1,13 @@
 {
   "raw": "6  dashes Tabasco",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tabasco",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tabasco",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

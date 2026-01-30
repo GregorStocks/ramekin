@@ -1,15 +1,13 @@
 {
   "raw": "2 cups loose-packed fresh herbs - basil & mint, torn if leaves are big",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loose-packed fresh herbs - basil & mint, torn if leaves are big",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loose-packed fresh herbs - basil & mint, torn if leaves are big",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

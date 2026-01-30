@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pint cherry tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pint"
+      }
+    ],
+    "note": null
   }
 }

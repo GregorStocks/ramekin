@@ -1,15 +1,13 @@
 {
   "raw": "½ lb shishito peppers, (rinsed and dried thoroughly)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shishito peppers",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "rinsed and dried thoroughly"
-    }
+  "expected": {
+    "item": "shishito peppers",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "rinsed and dried thoroughly"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "16 to 20 ounces frozen potstickers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen potstickers",
-      "measurements": [
-        {
-          "amount": "16 to 20",
-          "unit": "oz"
-        },
-        {
-          "amount": "454 to 567",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen potstickers",
+    "measurements": [
+      {
+        "amount": "16 to 20",
+        "unit": "oz"
+      },
+      {
+        "amount": "454 to 567",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Water",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

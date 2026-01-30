@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup water (plus extra for thinning if needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (plus extra for thinning if needed)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (plus extra for thinning if needed)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

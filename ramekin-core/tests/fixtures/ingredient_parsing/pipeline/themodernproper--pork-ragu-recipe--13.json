@@ -1,15 +1,13 @@
 {
   "raw": "2 sprigs fresh Italian parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Italian parsley",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "sprig"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Italian parsley",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sprig"
+      }
+    ],
+    "note": null
   }
 }

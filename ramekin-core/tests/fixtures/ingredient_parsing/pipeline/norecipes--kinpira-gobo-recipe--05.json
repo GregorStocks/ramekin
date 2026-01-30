@@ -1,15 +1,13 @@
 {
   "raw": "80 grams carrot ((1 small , peeled))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": "1 small , peeled"
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "g"
+      }
+    ],
+    "note": "1 small , peeled"
   }
 }

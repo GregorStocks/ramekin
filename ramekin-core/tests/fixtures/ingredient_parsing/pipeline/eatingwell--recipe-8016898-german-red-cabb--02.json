@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup red-wine vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red-wine vinegar",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red-wine vinegar",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

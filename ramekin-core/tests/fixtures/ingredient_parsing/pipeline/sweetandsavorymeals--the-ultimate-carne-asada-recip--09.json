@@ -1,15 +1,13 @@
 {
   "raw": "1 cup finely chopped fresh cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fresh cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

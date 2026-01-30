@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chicken stock or dashi (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock or dashi",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chicken stock or dashi",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

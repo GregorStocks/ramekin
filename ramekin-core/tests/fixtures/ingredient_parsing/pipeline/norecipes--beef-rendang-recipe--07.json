@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons chili pepper flakes ((to taste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili pepper flakes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "chili pepper flakes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

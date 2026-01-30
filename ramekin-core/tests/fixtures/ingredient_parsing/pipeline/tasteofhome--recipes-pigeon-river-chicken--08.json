@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons cayenne pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cayenne pepper",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cayenne pepper",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

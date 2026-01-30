@@ -1,19 +1,17 @@
 {
   "raw": "¾ ounce rye, preferably Old Overholt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rye, preferably Old Overholt",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "21",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rye, preferably Old Overholt",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "21",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

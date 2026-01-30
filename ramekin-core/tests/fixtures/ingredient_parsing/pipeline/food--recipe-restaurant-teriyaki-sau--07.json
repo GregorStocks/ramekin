@@ -1,15 +1,13 @@
 {
   "raw": "2   tablespoons    cornstarch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

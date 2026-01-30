@@ -1,15 +1,13 @@
 {
   "raw": "2 1/4 teaspoons instant dry yeast (one packet)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant dry yeast (one packet)",
-      "measurements": [
-        {
-          "amount": "2 1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant dry yeast (one packet)",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

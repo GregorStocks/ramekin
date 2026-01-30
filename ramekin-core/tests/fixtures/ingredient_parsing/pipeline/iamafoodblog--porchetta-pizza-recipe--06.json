@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons parmesan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parmesan",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parmesan",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

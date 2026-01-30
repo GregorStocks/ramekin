@@ -1,23 +1,21 @@
 {
   "raw": "1  Can (10 Ounces Red Enchilada Sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1  Can (10 Ounces Red Enchilada Sauce)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1  Can (10 Ounces Red Enchilada Sauce)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

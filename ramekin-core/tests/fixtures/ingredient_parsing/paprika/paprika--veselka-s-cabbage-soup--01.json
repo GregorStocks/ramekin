@@ -1,15 +1,13 @@
 {
   "raw": "1 pound pork butt, cut into small cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork butt, cut into small cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork butt, cut into small cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 rabbit",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rabbit",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rabbit",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

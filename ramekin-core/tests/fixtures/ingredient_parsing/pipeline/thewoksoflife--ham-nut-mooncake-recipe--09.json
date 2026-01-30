@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons ham juice ((from steaming the ham––see instructions below))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ham juice (from steaming the ham--see instructions below)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ham juice (from steaming the ham--see instructions below)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

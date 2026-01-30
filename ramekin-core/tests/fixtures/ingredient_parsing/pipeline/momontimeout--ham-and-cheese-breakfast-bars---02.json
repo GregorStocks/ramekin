@@ -1,19 +1,17 @@
 {
   "raw": "8 oz reduced-fat cheddar cheese (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-fat cheddar cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "reduced-fat cheddar cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "shredded"
   }
 }

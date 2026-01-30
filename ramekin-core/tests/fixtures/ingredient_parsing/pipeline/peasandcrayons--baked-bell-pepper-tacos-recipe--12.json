@@ -1,10 +1,8 @@
 {
   "raw": "sour cream or plain Greek yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream or plain Greek yogurt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream or plain Greek yogurt",
+    "measurements": [],
+    "note": null
   }
 }

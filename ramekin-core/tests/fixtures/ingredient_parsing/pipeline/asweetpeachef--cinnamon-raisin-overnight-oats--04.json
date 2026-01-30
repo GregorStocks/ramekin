@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp raisins (can also used dried cherries or cranberries)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raisins",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "can also used dried cherries or cranberries"
-    }
+  "expected": {
+    "item": "raisins",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "can also used dried cherries or cranberries"
   }
 }

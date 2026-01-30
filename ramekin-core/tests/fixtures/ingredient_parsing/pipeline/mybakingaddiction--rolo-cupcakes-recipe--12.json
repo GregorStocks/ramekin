@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup caramel syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramel syrup",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caramel syrup",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

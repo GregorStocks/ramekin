@@ -1,15 +1,13 @@
 {
   "raw": "2 large ripe heirloom tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe heirloom tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe heirloom tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

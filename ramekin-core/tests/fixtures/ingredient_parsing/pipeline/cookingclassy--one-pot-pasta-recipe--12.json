@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chopped fresh basil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh basil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh basil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

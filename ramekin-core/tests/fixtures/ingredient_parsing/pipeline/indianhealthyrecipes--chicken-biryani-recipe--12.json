@@ -1,15 +1,13 @@
 {
   "raw": "1 inch cinnamon ((dalchini))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inch cinnamon (dalchini)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "inch cinnamon (dalchini)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

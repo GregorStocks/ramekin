@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60 ml) mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  egg (relatively large)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg (relatively large)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg (relatively large)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1   cup    flour (whichever kind you prefer)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour (whichever kind you prefer)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flour (whichever kind you prefer)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

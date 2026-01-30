@@ -1,23 +1,21 @@
 {
   "raw": "2 cups all-purpose flour (about 8 1/2 ounces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "241",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "8 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "241",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

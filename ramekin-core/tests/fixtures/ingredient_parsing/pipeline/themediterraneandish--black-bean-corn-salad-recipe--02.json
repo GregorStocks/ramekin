@@ -1,15 +1,13 @@
 {
   "raw": "1  medium poblano chile",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poblano chile",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "poblano chile",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

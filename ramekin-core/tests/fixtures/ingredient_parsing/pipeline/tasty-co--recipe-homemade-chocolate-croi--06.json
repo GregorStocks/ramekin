@@ -1,15 +1,13 @@
 {
   "raw": "1 packet instant dry yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packet instant dry yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packet instant dry yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 English cucumber, quartered lengthwise and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "quartered lengthwise and chopped"
-    }
+  "expected": {
+    "item": "English cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "quartered lengthwise and chopped"
   }
 }

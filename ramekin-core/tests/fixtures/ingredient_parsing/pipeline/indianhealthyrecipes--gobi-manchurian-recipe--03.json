@@ -1,19 +1,17 @@
 {
   "raw": "½ cup (65 grams)  all-purpose flour (( prefer organic or at least unbleached))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour ( prefer organic or at least unbleached)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "65",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour ( prefer organic or at least unbleached)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "65",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

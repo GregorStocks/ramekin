@@ -1,15 +1,13 @@
 {
   "raw": "65g sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "65",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "65",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

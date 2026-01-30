@@ -1,10 +1,8 @@
 {
   "raw": "Salt and red pepper flakes, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salt and red pepper flakes",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Salt and red pepper flakes",
+    "measurements": [],
+    "note": "to taste"
   }
 }

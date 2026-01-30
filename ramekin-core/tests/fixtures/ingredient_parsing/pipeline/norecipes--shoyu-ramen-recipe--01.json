@@ -1,15 +1,13 @@
 {
   "raw": "225 grams ground chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground chicken",
-      "measurements": [
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground chicken",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

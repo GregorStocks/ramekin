@@ -1,15 +1,13 @@
 {
   "raw": "1 Sheet puff pastry, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sheet puff pastry",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "Sheet puff pastry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "thawed"
   }
 }

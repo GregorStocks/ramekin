@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. pappardelle, bucatini, or rigatoni",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pappardelle, bucatini, or rigatoni",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pappardelle, bucatini, or rigatoni",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

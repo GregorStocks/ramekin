@@ -1,15 +1,13 @@
 {
   "raw": "dash crushed red pepper (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "crushed red pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": "optional"
   }
 }

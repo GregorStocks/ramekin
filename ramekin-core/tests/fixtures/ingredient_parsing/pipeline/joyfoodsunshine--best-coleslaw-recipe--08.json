@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon celery seed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery seed",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "celery seed",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

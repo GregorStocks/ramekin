@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups frisée (French curly endive), torn into-bite size pieces (about 2 ounces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frisée (French curly endive), torn into-bite size pieces (about 2 ounces)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frisée (French curly endive), torn into-bite size pieces (about 2 ounces)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

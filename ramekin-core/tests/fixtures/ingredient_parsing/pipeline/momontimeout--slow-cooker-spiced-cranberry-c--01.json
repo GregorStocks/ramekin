@@ -1,15 +1,13 @@
 {
   "raw": "3 cups fresh cranberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cranberries",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cranberries",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

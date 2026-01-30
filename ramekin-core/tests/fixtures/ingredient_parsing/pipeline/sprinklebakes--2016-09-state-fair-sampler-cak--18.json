@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup 75g maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "75",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

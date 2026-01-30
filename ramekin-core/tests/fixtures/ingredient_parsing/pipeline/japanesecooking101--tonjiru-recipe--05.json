@@ -1,15 +1,13 @@
 {
   "raw": "1/2 block Konnyaku",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "block Konnyaku",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "block Konnyaku",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

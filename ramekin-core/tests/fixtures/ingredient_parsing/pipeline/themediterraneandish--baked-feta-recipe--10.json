@@ -1,10 +1,8 @@
 {
   "raw": "Crusty bread or pita chips to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crusty bread or pita chips to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Crusty bread or pita chips to serve",
+    "measurements": [],
+    "note": null
   }
 }

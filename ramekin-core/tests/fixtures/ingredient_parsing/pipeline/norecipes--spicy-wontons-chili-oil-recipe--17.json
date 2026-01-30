@@ -1,10 +1,8 @@
 {
   "raw": "cilantro ((leaves, for garnish))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro",
-      "measurements": [],
-      "note": "leaves, for garnish"
-    }
+  "expected": {
+    "item": "cilantro",
+    "measurements": [],
+    "note": "leaves, for garnish"
   }
 }

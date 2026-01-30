@@ -1,15 +1,13 @@
 {
   "raw": "2¼ cups whole milk (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "2 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

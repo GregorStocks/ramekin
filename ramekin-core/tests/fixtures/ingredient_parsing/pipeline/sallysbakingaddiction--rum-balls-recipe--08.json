@@ -1,23 +1,21 @@
 {
   "raw": "1 cup desiccated unsweetened coconut (100g) OR finely chopped pecans (130g) (see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "desiccated unsweetened coconut OR finely chopped pecans (see Note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        },
-        {
-          "amount": "130",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "desiccated unsweetened coconut OR finely chopped pecans (see Note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      },
+      {
+        "amount": "130",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

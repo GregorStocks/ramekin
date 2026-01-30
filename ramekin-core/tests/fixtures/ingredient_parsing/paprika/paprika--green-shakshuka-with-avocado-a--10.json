@@ -1,15 +1,13 @@
 {
   "raw": "1 avocado, sliced, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado, sliced",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "avocado, sliced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "for serving"
   }
 }

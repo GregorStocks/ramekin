@@ -1,15 +1,13 @@
 {
   "raw": "1 scallion, ends trimmed and sliced thinly on a bias for garnish, trimmings reserved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallion, ends trimmed and sliced thinly on a bias for garnish, trimmings reserved",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scallion, ends trimmed and sliced thinly on a bias for garnish, trimmings reserved",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

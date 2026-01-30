@@ -1,15 +1,13 @@
 {
   "raw": "140 ml inverted sugar syrup ((which you bought or made in Part I))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inverted sugar syrup (which you bought or made in Part I)",
-      "measurements": [
-        {
-          "amount": "140",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "inverted sugar syrup (which you bought or made in Part I)",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

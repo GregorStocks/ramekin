@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons thinly sliced shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced shallots",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced shallots",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

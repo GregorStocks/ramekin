@@ -1,19 +1,17 @@
 {
   "raw": "2 cups minus 1 tablespoon (250 grams) all-purpose or bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minus 1 tablespoon all-purpose or bread flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minus 1 tablespoon all-purpose or bread flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

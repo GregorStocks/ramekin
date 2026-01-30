@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoon simple syrup (, or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "simple syrup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "simple syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

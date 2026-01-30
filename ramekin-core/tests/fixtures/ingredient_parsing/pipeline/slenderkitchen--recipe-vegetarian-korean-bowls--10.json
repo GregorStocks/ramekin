@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. vegetarian crumbles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetarian crumbles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetarian crumbles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

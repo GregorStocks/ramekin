@@ -1,23 +1,21 @@
 {
   "raw": "1 quart (32 ounces) full-fat plain yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat plain yogurt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "quart"
-        },
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full-fat plain yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      },
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

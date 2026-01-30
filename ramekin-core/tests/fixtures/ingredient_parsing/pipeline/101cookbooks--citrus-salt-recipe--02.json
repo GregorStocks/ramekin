@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon citrus zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "citrus zest",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "citrus zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

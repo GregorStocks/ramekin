@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cups jasmine rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jasmine rice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jasmine rice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

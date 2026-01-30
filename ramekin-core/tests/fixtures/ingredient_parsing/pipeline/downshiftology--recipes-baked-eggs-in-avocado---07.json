@@ -1,10 +1,8 @@
 {
   "raw": "chives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chives",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chives",
+    "measurements": [],
+    "note": null
   }
 }

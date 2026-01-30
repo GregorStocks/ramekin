@@ -1,10 +1,8 @@
 {
   "raw": "sliced pepper jack or cheddar cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced pepper jack or cheddar cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced pepper jack or cheddar cheese",
+    "measurements": [],
+    "note": null
   }
 }

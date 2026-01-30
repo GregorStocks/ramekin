@@ -1,15 +1,13 @@
 {
   "raw": "6 strips roasted seaweed for sushi (nori) (nori)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strips roasted seaweed for sushi (nori) (nori)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strips roasted seaweed for sushi (nori) (nori)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

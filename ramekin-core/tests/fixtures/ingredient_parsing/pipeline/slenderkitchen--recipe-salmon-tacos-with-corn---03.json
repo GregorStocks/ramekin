@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp brown sugar (or honey, optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or honey, optional"
-    }
+  "expected": {
+    "item": "brown sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or honey, optional"
   }
 }

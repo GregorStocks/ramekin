@@ -1,23 +1,21 @@
 {
   "raw": "1 can white hominy, drained ((15 ounces) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white hominy",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "drained )"
-    }
+  "expected": {
+    "item": "white hominy",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "drained )"
   }
 }

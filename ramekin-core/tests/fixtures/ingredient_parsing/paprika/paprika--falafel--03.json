@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 garlic cloves, peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

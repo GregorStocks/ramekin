@@ -1,23 +1,21 @@
 {
   "raw": "1 package (12 ounces) fully cooked roasted garlic chicken sausage links or flavor of your choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fully cooked roasted garlic chicken sausage links or flavor of your choice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fully cooked roasted garlic chicken sausage links or flavor of your choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

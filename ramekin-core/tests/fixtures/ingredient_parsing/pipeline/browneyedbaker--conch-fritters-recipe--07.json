@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeño (finely minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "jalapeño",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely minced"
   }
 }

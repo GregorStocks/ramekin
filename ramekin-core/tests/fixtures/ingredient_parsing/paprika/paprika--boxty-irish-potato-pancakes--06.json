@@ -1,23 +1,21 @@
 {
   "raw": "4 scallions (about 2 ounces; 56 g), thinly sliced, plus more for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions , thinly sliced",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "56",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for garnish"
-    }
+  "expected": {
+    "item": "scallions , thinly sliced",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for garnish"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "12 segments mandarin orange (mikan) (canned or fresh)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "segments mandarin orange (mikan) (canned or fresh)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "segments mandarin orange (mikan) (canned or fresh)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

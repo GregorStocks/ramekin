@@ -1,15 +1,13 @@
 {
   "raw": "4  radishes, (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "radishes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "radishes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

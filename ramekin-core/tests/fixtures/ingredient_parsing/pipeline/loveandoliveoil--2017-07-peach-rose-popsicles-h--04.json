@@ -1,15 +1,13 @@
 {
   "raw": "1 cup rosé wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rosé wine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rosé wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

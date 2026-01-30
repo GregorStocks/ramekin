@@ -1,23 +1,21 @@
 {
   "raw": "1/2 ounce (15ml) fresh Lime Juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Lime Juice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Lime Juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

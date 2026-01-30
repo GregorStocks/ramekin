@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces (227g) uncooked rice vermicelli noodles (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked rice vermicelli noodles (see note)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked rice vermicelli noodles (see note)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

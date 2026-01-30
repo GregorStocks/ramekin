@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons peanut oil (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peanut oil",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "peanut oil",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

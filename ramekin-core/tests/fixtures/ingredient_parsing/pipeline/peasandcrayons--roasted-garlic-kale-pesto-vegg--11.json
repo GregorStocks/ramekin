@@ -1,19 +1,17 @@
 {
   "raw": "8 oz pasta ((choose one with ridges + grooves))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pasta (choose one with ridges + grooves)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pasta (choose one with ridges + grooves)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

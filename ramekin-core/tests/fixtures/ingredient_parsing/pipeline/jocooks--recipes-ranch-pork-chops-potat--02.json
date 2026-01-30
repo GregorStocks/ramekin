@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds baby potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

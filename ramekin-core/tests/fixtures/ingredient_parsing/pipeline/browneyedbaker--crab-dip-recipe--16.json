@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

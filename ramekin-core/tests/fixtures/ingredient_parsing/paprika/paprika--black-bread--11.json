@@ -1,15 +1,13 @@
 {
   "raw": "3 cups unbleached, all-purpose or bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached, all-purpose or bread flour",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unbleached, all-purpose or bread flour",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

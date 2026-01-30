@@ -1,15 +1,13 @@
 {
   "raw": "1 stick butter, 1 stick, softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter, 1 stick",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "butter, 1 stick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "softened"
   }
 }

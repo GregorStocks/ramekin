@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ground round",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground round",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground round",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

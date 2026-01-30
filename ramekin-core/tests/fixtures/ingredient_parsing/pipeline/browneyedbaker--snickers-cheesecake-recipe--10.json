@@ -1,10 +1,8 @@
 {
   "raw": "Chopped Snickers bars",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped Snickers bars",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped Snickers bars",
+    "measurements": [],
+    "note": null
   }
 }

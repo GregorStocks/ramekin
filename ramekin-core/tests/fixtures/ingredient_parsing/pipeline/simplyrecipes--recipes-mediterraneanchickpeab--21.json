@@ -1,15 +1,13 @@
 {
   "raw": "1 pint cherry or grape tomatoes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry or grape tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "cherry or grape tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": "halved"
   }
 }

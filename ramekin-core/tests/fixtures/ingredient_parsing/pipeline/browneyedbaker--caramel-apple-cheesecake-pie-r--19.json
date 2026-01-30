@@ -1,10 +1,8 @@
 {
   "raw": "Salted caramel sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salted caramel sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Salted caramel sauce",
+    "measurements": [],
+    "note": null
   }
 }

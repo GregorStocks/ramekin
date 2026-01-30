@@ -1,15 +1,13 @@
 {
   "raw": "1 cup grape tomatoes, (whole)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grape tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "whole"
-    }
+  "expected": {
+    "item": "grape tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "whole"
   }
 }

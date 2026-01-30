@@ -1,15 +1,13 @@
 {
   "raw": "9 marinated sundried tomatoes halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinated sundried tomatoes halved",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinated sundried tomatoes halved",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

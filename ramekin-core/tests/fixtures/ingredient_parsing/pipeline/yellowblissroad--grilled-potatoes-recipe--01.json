@@ -1,19 +1,17 @@
 {
   "raw": "3 pounds of Yukon gold potatoes (about 8 medium sized potatoes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        },
-        {
-          "amount": "8",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      },
+      {
+        "amount": "8",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

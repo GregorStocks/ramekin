@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup coconut oil (melted and cooloed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted and cooloed"
-    }
+  "expected": {
+    "item": "coconut oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted and cooloed"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces sliced pepperoni",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced pepperoni",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced pepperoni",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

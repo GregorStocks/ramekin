@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cups old fashioned oats",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "old fashioned oats",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "old fashioned oats",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

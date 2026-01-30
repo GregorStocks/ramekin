@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces cream cheese, (preferably Philadelphia brand)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese, (preferably Philadelphia brand)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream cheese, (preferably Philadelphia brand)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

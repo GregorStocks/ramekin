@@ -1,15 +1,13 @@
 {
   "raw": "1⁄2 tsp peppermint extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "⁄2 tsp peppermint extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "⁄2 tsp peppermint extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

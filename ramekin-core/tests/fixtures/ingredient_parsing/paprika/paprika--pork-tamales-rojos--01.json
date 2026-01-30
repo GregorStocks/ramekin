@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon lard or vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lard or vegetable oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lard or vegetable oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "15 oz can chopped tomatoes with juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can chopped tomatoes with juice",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can chopped tomatoes with juice",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

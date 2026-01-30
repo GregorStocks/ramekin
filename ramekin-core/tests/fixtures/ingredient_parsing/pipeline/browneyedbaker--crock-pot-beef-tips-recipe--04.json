@@ -1,15 +1,13 @@
 {
   "raw": "4 cups beef stock (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef stock",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "beef stock",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces (340 g) full-fat Philadelphia cream cheese, softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat Philadelphia cream cheese",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "full-fat Philadelphia cream cheese",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "softened"
   }
 }

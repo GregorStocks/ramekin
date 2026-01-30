@@ -1,27 +1,25 @@
 {
   "raw": "4.3333334922791 cups whole-wheat flour (1 pound, 6 ounces), divided, plus more as needed for feeding",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-wheat flour , divided",
-      "measurements": [
-        {
-          "amount": "4.3333334922791",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more as needed for feeding"
-    }
+  "expected": {
+    "item": "whole-wheat flour , divided",
+    "measurements": [
+      {
+        "amount": "4.3333334922791",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more as needed for feeding"
   }
 }

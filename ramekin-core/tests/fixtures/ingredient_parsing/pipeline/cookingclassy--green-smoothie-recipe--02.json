@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp sliced almonds or 1 Tbsp almond butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced almonds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1 Tbsp almond butter"
-    }
+  "expected": {
+    "item": "sliced almonds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1 Tbsp almond butter"
   }
 }

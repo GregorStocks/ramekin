@@ -1,15 +1,13 @@
 {
   "raw": "0.5 gallon fresh apple cider",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh apple cider",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "gallon"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh apple cider",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "gallon"
+      }
+    ],
+    "note": null
   }
 }

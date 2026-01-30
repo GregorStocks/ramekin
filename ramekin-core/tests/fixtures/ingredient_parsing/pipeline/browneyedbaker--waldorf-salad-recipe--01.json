@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cubed apples (peeled and cored)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cubed apples",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "peeled and cored"
-    }
+  "expected": {
+    "item": "cubed apples",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "peeled and cored"
   }
 }

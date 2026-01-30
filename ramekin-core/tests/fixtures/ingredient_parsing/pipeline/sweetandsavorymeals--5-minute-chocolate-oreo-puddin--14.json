@@ -1,10 +1,8 @@
 {
   "raw": "Oreo cookies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oreo cookies",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Oreo cookies",
+    "measurements": [],
+    "note": null
   }
 }

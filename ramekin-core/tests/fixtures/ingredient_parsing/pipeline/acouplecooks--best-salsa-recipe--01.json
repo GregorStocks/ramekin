@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds fresh tomatoes (6 medium)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "6",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "6",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

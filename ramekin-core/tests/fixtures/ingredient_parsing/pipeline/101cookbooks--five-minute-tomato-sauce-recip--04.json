@@ -1,15 +1,13 @@
 {
   "raw": "3  medium cloves of garlic, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves of garlic",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "cloves of garlic",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

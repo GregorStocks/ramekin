@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon Grillkrydda (or all spice or all purpose seasoning)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grillkrydda (or all spice or all purpose seasoning)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Grillkrydda (or all spice or all purpose seasoning)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2  sweet onion (like vidalia or other large sweet onion)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet onion (like vidalia or other large sweet onion)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet onion (like vidalia or other large sweet onion)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

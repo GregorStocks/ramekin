@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (8 ounces/227g)&nbsp;homemade hot fudge (or use store-bought), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade hot fudge (or use store-bought)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "homemade hot fudge (or use store-bought)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "divided"
   }
 }

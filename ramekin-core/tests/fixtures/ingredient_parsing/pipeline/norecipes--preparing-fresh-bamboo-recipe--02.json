@@ -1,10 +1,8 @@
 {
   "raw": "Rice bran ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rice bran",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Rice bran",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons fresh ginger (minced (or paste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "minced (or paste"
-    }
+  "expected": {
+    "item": "fresh ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "minced (or paste"
   }
 }

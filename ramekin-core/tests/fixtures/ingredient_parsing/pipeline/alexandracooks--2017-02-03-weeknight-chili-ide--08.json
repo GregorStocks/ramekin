@@ -1,15 +1,13 @@
 {
   "raw": "2&nbsp;tablespoons tomato paste or ketchup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato paste or ketchup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato paste or ketchup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

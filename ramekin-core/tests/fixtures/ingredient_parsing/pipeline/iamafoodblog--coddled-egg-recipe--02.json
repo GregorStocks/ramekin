@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup of your favourite smooth mashed potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your favourite smooth mashed potatoes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "your favourite smooth mashed potatoes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

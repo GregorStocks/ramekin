@@ -1,19 +1,17 @@
 {
   "raw": "¾ kg (1.5 lbs.)  chicken (skinless thighs or legs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken (skinless thighs or legs)",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "kg"
-        },
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken (skinless thighs or legs)",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "kg"
+      },
+      {
+        "amount": "1.5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

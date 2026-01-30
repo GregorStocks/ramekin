@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup pine nuts, toasted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pine nuts",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "toasted"
   }
 }

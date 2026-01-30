@@ -1,15 +1,13 @@
 {
   "raw": "1   lb    boneless round steak or 1   lb   charcoal chuck steak, cut into thin 3-inch strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless round steak",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "or 1   lb   charcoal chuck steak, cut into thin 3-inch strips"
-    }
+  "expected": {
+    "item": "boneless round steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "or 1   lb   charcoal chuck steak, cut into thin 3-inch strips"
   }
 }

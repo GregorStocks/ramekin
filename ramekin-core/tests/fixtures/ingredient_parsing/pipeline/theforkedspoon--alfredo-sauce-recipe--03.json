@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon flour (optional, see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional, see notes"
-    }
+  "expected": {
+    "item": "flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional, see notes"
   }
 }

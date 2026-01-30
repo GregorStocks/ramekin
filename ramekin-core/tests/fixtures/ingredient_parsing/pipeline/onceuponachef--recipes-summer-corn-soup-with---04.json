@@ -1,15 +1,13 @@
 {
   "raw": "6 ears fresh corn (white or yellow are both fine, but yellow makes for a prettier soup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ears fresh corn (white or yellow are both fine, but yellow makes for a prettier soup)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ears fresh corn (white or yellow are both fine, but yellow makes for a prettier soup)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lemon, sliced into thin rounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "sliced into thin rounds"
-    }
+  "expected": {
+    "item": "lemon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "sliced into thin rounds"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup light corn syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light corn syrup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light corn syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

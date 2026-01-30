@@ -1,15 +1,13 @@
 {
   "raw": "4 small garlic cloves, smashed and roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        }
-      ],
-      "note": "smashed and roughly chopped"
-    }
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      }
+    ],
+    "note": "smashed and roughly chopped"
   }
 }

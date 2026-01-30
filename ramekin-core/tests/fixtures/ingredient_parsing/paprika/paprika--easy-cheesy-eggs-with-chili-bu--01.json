@@ -1,10 +1,8 @@
 {
   "raw": "Chili Butter:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chili Butter:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chili Butter:",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 thick slices country or sourdough bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick slices country or sourdough bread",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick slices country or sourdough bread",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

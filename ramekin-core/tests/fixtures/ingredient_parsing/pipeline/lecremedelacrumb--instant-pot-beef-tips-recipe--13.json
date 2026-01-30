@@ -1,15 +1,13 @@
 {
   "raw": "4 cups cooked white or brown rice OR mashed potatoes OR cooked egg noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked white or brown rice OR mashed potatoes OR cooked egg noodles",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked white or brown rice OR mashed potatoes OR cooked egg noodles",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "6 medium cloves garlic (about 25g), finely minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves garlic",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "medium"
-        },
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "cloves garlic",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "medium"
+      },
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": "finely minced"
   }
 }

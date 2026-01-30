@@ -1,15 +1,13 @@
 {
   "raw": "2 cups arborio rice (do not wash)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arborio rice (do not wash)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arborio rice (do not wash)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

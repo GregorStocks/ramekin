@@ -1,19 +1,17 @@
 {
   "raw": "1 oz. elderflower liqeur (such as St-Germain)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "elderflower liqeur (such as St-Germain)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "elderflower liqeur (such as St-Germain)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

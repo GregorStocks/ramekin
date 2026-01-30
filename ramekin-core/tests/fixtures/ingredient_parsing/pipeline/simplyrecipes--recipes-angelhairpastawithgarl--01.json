@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces angel hair pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "angel hair pasta",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "angel hair pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup panko breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "panko breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "panko breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

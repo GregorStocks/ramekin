@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons cultured unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cultured unsalted butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cultured unsalted butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

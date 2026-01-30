@@ -1,15 +1,13 @@
 {
   "raw": "1 cup micro greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "micro greens",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "micro greens",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

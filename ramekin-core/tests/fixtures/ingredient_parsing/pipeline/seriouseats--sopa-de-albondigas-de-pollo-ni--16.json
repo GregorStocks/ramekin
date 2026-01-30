@@ -1,15 +1,13 @@
 {
   "raw": "2 cups corn masa mix, such as Maseca",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn masa mix, such as Maseca",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn masa mix, such as Maseca",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

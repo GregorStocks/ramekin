@@ -1,10 +1,8 @@
 {
   "raw": "Potatoes or crusty bread for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Potatoes or crusty bread for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Potatoes or crusty bread for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

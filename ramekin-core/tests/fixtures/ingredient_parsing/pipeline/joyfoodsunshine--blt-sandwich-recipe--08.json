@@ -1,15 +1,13 @@
 {
   "raw": "2 pieces romaine lettuce (or red leaf, etc)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "romaine lettuce (or red leaf, etc)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "piece"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "romaine lettuce (or red leaf, etc)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "piece"
+      }
+    ],
+    "note": null
   }
 }

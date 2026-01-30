@@ -1,23 +1,21 @@
 {
   "raw": "2 cups grape tomatoes (about 10 oz), halved if you like",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grape tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "halved if you like"
-    }
+  "expected": {
+    "item": "grape tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "halved if you like"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup torn lettuce leaves ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "torn lettuce leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "torn lettuce leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

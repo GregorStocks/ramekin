@@ -1,10 +1,8 @@
 {
   "raw": "Mix-ins, like leftover meat, cooked vegetables, cheese, or herbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mix-ins, like leftover meat, cooked vegetables, cheese, or herbs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mix-ins, like leftover meat, cooked vegetables, cheese, or herbs",
+    "measurements": [],
+    "note": null
   }
 }

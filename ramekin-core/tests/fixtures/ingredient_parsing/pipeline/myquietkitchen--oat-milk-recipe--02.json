@@ -1,15 +1,13 @@
 {
   "raw": "1 capsule vegan digestive enzymes  (tap for recommendation: should contain amylase and glucoamylase. Amount is approx. ⅛ tsp powder.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "capsule vegan digestive enzymes  (tap for recommendation: should contain amylase and glucoamylase. Amount is approx. 1/8 tsp powder.)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "capsule vegan digestive enzymes  (tap for recommendation: should contain amylase and glucoamylase. Amount is approx. 1/8 tsp powder.)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

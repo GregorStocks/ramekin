@@ -1,15 +1,13 @@
 {
   "raw": "1 large head of romaine lettuce, torn into bite-size pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head of romaine lettuce, torn into bite-size pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head of romaine lettuce, torn into bite-size pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Slivered almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Slivered almonds",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Slivered almonds",
+    "measurements": [],
+    "note": null
   }
 }

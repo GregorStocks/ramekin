@@ -1,10 +1,8 @@
 {
   "raw": "SEMI-INSTANT PANCAKES:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "SEMI-INSTANT PANCAKES:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "SEMI-INSTANT PANCAKES:",
+    "measurements": [],
+    "note": null
   }
 }

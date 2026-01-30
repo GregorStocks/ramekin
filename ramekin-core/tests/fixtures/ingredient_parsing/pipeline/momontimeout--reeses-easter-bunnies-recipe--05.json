@@ -1,10 +1,8 @@
 {
   "raw": "pink sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pink sugar",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "pink sugar",
+    "measurements": [],
+    "note": null
   }
 }

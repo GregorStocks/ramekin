@@ -1,15 +1,13 @@
 {
   "raw": "0.75 teaspoon salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

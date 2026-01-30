@@ -1,15 +1,13 @@
 {
   "raw": "6 pimento-stuffed green olives, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pimento-stuffed green olives",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "pimento-stuffed green olives",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

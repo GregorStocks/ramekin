@@ -1,15 +1,13 @@
 {
   "raw": "1 medium cucumber or 2 mini cucumbers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cucumber or 2 mini cucumbers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cucumber or 2 mini cucumbers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

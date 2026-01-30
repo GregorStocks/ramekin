@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup full-fat sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat sour cream",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full-fat sour cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

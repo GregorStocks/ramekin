@@ -1,19 +1,17 @@
 {
   "raw": "4 cups (960 ml)  water to pressure cook the dal ( (more to cook in pot))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water to pressure cook the dal ( (more to cook in pot)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "960",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water to pressure cook the dal ( (more to cook in pot)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "960",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

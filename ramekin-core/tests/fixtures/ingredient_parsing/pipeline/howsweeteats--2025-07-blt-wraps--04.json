@@ -1,15 +1,13 @@
 {
   "raw": "4  burrito-size tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "burrito-size tortillas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "burrito-size tortillas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

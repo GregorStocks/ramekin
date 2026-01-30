@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons canned pumpkin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned pumpkin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned pumpkin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

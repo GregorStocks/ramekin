@@ -1,15 +1,13 @@
 {
   "raw": "1  whole chicken (cut into pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chicken (cut into pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole chicken (cut into pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

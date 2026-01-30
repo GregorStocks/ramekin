@@ -1,15 +1,13 @@
 {
   "raw": "5-6  big handfuls of baked tortilla chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "big handfuls of baked tortilla chips",
-      "measurements": [
-        {
-          "amount": "5-6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "big handfuls of baked tortilla chips",
+    "measurements": [
+      {
+        "amount": "5-6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

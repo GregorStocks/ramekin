@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons dry onion soup mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry onion soup mix",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry onion soup mix",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

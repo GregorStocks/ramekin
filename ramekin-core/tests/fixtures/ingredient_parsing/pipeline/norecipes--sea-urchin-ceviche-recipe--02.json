@@ -1,15 +1,13 @@
 {
   "raw": "2  tomatoes (ripe)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes (ripe)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes (ripe)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

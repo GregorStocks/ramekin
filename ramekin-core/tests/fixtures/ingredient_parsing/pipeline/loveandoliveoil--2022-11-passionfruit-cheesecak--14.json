@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons cool water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cool water",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cool water",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

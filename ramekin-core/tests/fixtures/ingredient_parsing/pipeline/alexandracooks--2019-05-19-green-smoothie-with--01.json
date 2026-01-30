@@ -1,15 +1,13 @@
 {
   "raw": "1 banana, sliced and frozen (unfrozen is fine, too)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "banana, sliced and frozen",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "unfrozen is fine, too"
-    }
+  "expected": {
+    "item": "banana, sliced and frozen",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "unfrozen is fine, too"
   }
 }

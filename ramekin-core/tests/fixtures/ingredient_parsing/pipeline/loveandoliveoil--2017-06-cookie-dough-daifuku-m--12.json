@@ -1,10 +1,8 @@
 {
   "raw": "potato starch, for rolling (you can also use cornstarch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato starch, for rolling (you can also use cornstarch)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "potato starch, for rolling (you can also use cornstarch)",
+    "measurements": [],
+    "note": null
   }
 }

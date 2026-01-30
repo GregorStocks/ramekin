@@ -1,19 +1,17 @@
 {
   "raw": "1 to 2 large yellow onions, chopped, (3 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onions",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "large"
-        },
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

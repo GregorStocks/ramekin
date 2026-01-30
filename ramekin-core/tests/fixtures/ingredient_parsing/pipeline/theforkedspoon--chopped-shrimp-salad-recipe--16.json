@@ -1,15 +1,13 @@
 {
   "raw": "1/2  small red onion (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "small"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "small"
+      }
+    ],
+    "note": "diced"
   }
 }

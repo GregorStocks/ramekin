@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon vanilla bean paste (replace with additional extract if you don’t have)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla bean paste (replace with additional extract if you don’t have)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla bean paste (replace with additional extract if you don’t have)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

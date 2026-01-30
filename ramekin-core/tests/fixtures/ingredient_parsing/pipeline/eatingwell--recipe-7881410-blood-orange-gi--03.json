@@ -1,19 +1,17 @@
 {
   "raw": "1.5 ounces gin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gin",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gin",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

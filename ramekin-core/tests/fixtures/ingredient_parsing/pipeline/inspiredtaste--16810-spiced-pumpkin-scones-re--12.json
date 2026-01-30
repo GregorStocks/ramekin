@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon molasses (we use Blackstrap Unsulphured Molasses)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "molasses (we use Blackstrap Unsulphured Molasses)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "molasses (we use Blackstrap Unsulphured Molasses)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

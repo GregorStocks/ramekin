@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Shaoxing wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shaoxing wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Shaoxing wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

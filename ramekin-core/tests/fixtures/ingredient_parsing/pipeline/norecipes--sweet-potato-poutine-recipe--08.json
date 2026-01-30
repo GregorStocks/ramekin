@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon port",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "port",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "port",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

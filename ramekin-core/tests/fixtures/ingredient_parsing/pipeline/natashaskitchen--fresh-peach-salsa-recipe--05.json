@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lbs peaches (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peaches",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "peaches",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "diced"
   }
 }

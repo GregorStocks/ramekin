@@ -1,15 +1,13 @@
 {
   "raw": "3  medium shallots or new red onions, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots or new red onions",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "shallots or new red onions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

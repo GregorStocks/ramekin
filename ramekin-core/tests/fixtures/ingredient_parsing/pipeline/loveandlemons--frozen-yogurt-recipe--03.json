@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cups cane sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cane sugar",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cane sugar",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

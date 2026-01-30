@@ -1,19 +1,17 @@
 {
   "raw": "8 cups (1.9 L) unsalted chicken broth, homemade or store-bought",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted chicken broth, homemade or store-bought",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        },
-        {
-          "amount": "1.9",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted chicken broth, homemade or store-bought",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      },
+      {
+        "amount": "1.9",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

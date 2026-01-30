@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons unsalted butter, cut into pats, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into pats",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "unsalted butter, cut into pats",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

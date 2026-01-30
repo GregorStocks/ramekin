@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup feta cheese ((or more to your liking), crumbled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "feta cheese , crumbled)",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more to your liking"
-    }
+  "expected": {
+    "item": "feta cheese , crumbled)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more to your liking"
   }
 }

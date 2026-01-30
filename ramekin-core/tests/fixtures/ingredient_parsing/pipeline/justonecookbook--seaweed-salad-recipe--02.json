@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp miso ((I use koji miso or awase miso; you can use your favorite type))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miso (I use koji miso or awase miso; you can use your favorite type)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "miso (I use koji miso or awase miso; you can use your favorite type)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

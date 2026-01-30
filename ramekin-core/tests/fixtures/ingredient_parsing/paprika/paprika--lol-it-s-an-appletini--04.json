@@ -1,19 +1,17 @@
 {
   "raw": "7 ounces London dry gin, such as Beefeater or Tanqueray",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "London dry gin, such as Beefeater or Tanqueray",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "London dry gin, such as Beefeater or Tanqueray",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

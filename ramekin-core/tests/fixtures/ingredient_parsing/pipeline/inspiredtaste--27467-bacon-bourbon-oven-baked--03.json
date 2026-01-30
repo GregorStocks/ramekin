@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 tablespoons spice rub, optional (use your favorite)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spice rub",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional (use your favorite)"
-    }
+  "expected": {
+    "item": "spice rub",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional (use your favorite)"
   }
 }

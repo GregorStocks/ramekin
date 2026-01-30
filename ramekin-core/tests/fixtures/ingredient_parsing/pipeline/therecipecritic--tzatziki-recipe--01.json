@@ -1,19 +1,17 @@
 {
   "raw": "2 cups finely grated cucumber  (about 1 medium cucumber )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated cucumber",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated cucumber",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

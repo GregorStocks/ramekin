@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. processed cheese (Velveeta), cut into cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "processed cheese (Velveeta), cut into cubes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "processed cheese (Velveeta), cut into cubes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

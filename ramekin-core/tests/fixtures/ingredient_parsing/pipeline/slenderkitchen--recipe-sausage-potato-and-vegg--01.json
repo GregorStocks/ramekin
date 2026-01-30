@@ -1,15 +1,13 @@
 {
   "raw": "4 chicken sausages, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken sausages",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "chicken sausages",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

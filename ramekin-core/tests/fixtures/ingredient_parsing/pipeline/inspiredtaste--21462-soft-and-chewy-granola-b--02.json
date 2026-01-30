@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (80g) whole almonds, coarsely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "whole almonds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "80",
+        "unit": "g"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

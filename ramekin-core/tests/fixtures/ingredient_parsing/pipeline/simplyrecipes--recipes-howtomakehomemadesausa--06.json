@@ -1,15 +1,13 @@
 {
   "raw": "6 grams cracked black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cracked black pepper",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cracked black pepper",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

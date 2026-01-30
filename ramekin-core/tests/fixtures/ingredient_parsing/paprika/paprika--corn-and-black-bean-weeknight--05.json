@@ -1,10 +1,8 @@
 {
   "raw": "Nonstick spray or 2 teaspoons oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nonstick spray",
-      "measurements": [],
-      "note": "or 2 teaspoons oil"
-    }
+  "expected": {
+    "item": "Nonstick spray",
+    "measurements": [],
+    "note": "or 2 teaspoons oil"
   }
 }

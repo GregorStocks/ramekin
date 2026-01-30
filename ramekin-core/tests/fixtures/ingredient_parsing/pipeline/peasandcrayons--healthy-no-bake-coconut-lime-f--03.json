@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup dried cherries (or extra dates if desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried cherries (or extra dates if desired)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried cherries (or extra dates if desired)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

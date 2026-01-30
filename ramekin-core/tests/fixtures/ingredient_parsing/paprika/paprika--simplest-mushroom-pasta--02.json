@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried pasta, any shape you like",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried pasta, any shape you like",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried pasta, any shape you like",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

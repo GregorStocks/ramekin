@@ -1,19 +1,17 @@
 {
   "raw": "1 3/4 teaspoons (10 g) baking soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking soda",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking soda",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

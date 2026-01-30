@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds bottom round roast or chuck roast, cut into 2-inch chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bottom round roast or chuck roast, cut into 2-inch chunks",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bottom round roast or chuck roast, cut into 2-inch chunks",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

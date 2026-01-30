@@ -1,10 +1,8 @@
 {
   "raw": "Cayenne",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cayenne",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cayenne",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 tsp. paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paprika",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "paprika",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

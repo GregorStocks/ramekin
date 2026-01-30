@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds salmon, (cut into chunks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon, (cut into chunks)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salmon, (cut into chunks)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

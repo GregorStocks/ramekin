@@ -1,23 +1,21 @@
 {
   "raw": "42 oz cherry pie filling (2 cans)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry pie filling",
-      "measurements": [
-        {
-          "amount": "42",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "1191",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry pie filling",
+    "measurements": [
+      {
+        "amount": "42",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "1191",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

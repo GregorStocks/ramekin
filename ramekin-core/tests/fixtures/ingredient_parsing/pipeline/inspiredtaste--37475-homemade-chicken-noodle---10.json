@@ -1,19 +1,17 @@
 {
   "raw": "8 cups chicken stock or broth, low sodium, or use homemade stock (1.89L)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock or broth, low sodium, or use homemade stock",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        },
-        {
-          "amount": "1.89",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken stock or broth, low sodium, or use homemade stock",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      },
+      {
+        "amount": "1.89",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

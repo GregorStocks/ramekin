@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons (10 g) vanilla extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla extract",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla extract",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

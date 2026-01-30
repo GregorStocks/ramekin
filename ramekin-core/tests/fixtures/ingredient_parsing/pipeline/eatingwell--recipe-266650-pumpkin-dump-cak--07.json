@@ -1,23 +1,21 @@
 {
   "raw": "1 (8 ounce) package reduced-fat cream cheese, softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-fat cream cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "reduced-fat cream cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "softened"
   }
 }

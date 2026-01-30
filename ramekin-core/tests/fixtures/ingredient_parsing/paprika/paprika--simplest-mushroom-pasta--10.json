@@ -1,15 +1,13 @@
 {
   "raw": "Handful chopped chives or parsley, to finish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped chives or parsley, to finish",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chopped chives or parsley, to finish",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "optional"
   }
 }

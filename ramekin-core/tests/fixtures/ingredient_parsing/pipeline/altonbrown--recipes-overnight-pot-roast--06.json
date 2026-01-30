@@ -1,19 +1,17 @@
 {
   "raw": "1 (14-ounce) bag frozen pearl onions, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen pearl onions",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "frozen pearl onions",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": "divided"
   }
 }

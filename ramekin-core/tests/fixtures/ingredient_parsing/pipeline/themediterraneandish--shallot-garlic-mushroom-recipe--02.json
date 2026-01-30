@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp/ 23 g Ghee (clarified butter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tbsp/ 23 g Ghee (clarified butter)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tbsp/ 23 g Ghee (clarified butter)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 jalapeno peppers, seeded and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno peppers",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "seeded and chopped"
-    }
+  "expected": {
+    "item": "jalapeno peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "seeded and chopped"
   }
 }

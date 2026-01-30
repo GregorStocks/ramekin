@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup rice wine vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice wine vinegar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice wine vinegar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

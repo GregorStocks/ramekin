@@ -1,15 +1,13 @@
 {
   "raw": "360 grams cooked rice ((use leftover rice))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked rice (use leftover rice)",
-      "measurements": [
-        {
-          "amount": "360",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked rice (use leftover rice)",
+    "measurements": [
+      {
+        "amount": "360",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

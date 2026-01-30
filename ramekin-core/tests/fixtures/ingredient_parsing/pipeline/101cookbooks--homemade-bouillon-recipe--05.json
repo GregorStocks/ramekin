@@ -1,19 +1,17 @@
 {
   "raw": "3.5 ounces / 100g celery root (celeriac), peeled and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery root (celeriac)",
-      "measurements": [
-        {
-          "amount": "3.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and chopped"
-    }
+  "expected": {
+    "item": "celery root (celeriac)",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and chopped"
   }
 }

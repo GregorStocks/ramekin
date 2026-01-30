@@ -1,15 +1,13 @@
 {
   "raw": "1 jalapeño, sliced into rounds (use more or less, depending on how spicy you prefer it)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño, sliced into rounds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "use more or less, depending on how spicy you prefer it"
-    }
+  "expected": {
+    "item": "jalapeño, sliced into rounds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "use more or less, depending on how spicy you prefer it"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1.25 lbs. crimini mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crimini mushrooms",
-      "measurements": [
-        {
-          "amount": "1.25",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crimini mushrooms",
+    "measurements": [
+      {
+        "amount": "1.25",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

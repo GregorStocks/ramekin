@@ -1,19 +1,17 @@
 {
   "raw": "20 oz. 1 1/4 lb. package vanilla almond bark",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 1/4 lb. package vanilla almond bark",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "oz"
-        },
-        {
-          "amount": "567",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1 1/4 lb. package vanilla almond bark",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      },
+      {
+        "amount": "567",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

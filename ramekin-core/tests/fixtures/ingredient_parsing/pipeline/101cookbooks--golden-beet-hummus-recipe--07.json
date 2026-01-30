@@ -1,15 +1,13 @@
 {
   "raw": "1/3 - 1/2 cup ice water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice water",
-      "measurements": [
-        {
-          "amount": "1/3-1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice water",
+    "measurements": [
+      {
+        "amount": "1/3-1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

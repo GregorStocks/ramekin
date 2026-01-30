@@ -1,15 +1,13 @@
 {
   "raw": "1 cup low-fat buttermilk, chilled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat buttermilk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "low-fat buttermilk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
   }
 }

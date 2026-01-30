@@ -1,15 +1,13 @@
 {
   "raw": "2 packs coconut cream powder ((or 1 can coconut milk))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packs coconut cream powder (or 1 can coconut milk)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packs coconut cream powder (or 1 can coconut milk)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

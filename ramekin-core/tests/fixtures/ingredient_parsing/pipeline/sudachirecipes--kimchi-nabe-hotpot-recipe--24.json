@@ -1,15 +1,13 @@
 {
   "raw": "2 portions cooked ramen noodles (or udon noodles (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portions cooked ramen noodles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "or udon noodles (optional"
-    }
+  "expected": {
+    "item": "portions cooked ramen noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "or udon noodles (optional"
   }
 }

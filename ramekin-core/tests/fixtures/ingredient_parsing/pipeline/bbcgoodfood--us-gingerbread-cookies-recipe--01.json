@@ -1,15 +1,13 @@
 {
   "raw": "1 stick plus 1 tbsp unsalted butter softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 stick plus 1 tbsp unsalted butter softened",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        }
-      ],
-      "note": "plus 1 tbsp unsalted butter softened"
-    }
+  "expected": {
+    "item": "1 stick plus 1 tbsp unsalted butter softened",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "plus 1 tbsp unsalted butter softened"
   }
 }

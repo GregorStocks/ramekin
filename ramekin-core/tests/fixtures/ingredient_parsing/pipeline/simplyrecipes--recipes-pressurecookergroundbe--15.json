@@ -1,15 +1,13 @@
 {
   "raw": "2 green onions, sliced thinly, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions, sliced thinly, to serve",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green onions, sliced thinly, to serve",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

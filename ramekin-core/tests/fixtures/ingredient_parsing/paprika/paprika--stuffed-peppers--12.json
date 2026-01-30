@@ -1,15 +1,13 @@
 {
   "raw": "1 cup winter squash (butternut, acorn, etc)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "winter squash (butternut, acorn, etc)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "winter squash (butternut, acorn, etc)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

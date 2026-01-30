@@ -1,15 +1,13 @@
 {
   "raw": "2  ham hocks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ham hocks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ham hocks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

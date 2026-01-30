@@ -1,10 +1,8 @@
 {
   "raw": "Toasted jumbo marshmallows",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted jumbo marshmallows",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Toasted jumbo marshmallows",
+    "measurements": [],
+    "note": null
   }
 }

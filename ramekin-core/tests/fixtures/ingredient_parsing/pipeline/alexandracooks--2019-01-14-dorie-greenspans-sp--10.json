@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon za’atar or dried oregano crumbled between your fingers after measuring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "za’atar or dried oregano crumbled between your fingers after measuring",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "za’atar or dried oregano crumbled between your fingers after measuring",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

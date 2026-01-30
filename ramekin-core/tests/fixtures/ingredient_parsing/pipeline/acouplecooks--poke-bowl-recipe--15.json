@@ -1,10 +1,8 @@
 {
   "raw": "Rice vinegar and kosher salt, for seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rice vinegar and kosher salt, for seasoning",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Rice vinegar and kosher salt, for seasoning",
+    "measurements": [],
+    "note": null
   }
 }

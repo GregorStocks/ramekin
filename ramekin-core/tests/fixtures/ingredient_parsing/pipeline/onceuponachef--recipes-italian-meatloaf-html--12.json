@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup Italian-style bread crumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian-style bread crumbs",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Italian-style bread crumbs",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

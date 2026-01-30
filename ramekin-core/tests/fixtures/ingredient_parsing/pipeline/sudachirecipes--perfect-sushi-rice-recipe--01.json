@@ -1,15 +1,13 @@
 {
   "raw": "300 g uncooked Japanese rice (I used koshihikari)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked Japanese rice (I used koshihikari)",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked Japanese rice (I used koshihikari)",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

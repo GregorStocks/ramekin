@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. mezze rigatoni",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mezze rigatoni",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mezze rigatoni",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

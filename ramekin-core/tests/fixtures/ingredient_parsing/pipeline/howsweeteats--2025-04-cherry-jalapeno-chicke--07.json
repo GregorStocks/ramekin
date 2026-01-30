@@ -1,15 +1,13 @@
 {
   "raw": "1 cup dried tart cherries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried tart cherries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried tart cherries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

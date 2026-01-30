@@ -1,10 +1,8 @@
 {
   "raw": "fine sea salt + fresly cracked black pepper (, to taste )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine sea salt + fresly cracked black pepper",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "fine sea salt + fresly cracked black pepper",
+    "measurements": [],
+    "note": "to taste"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Additional spices (optional): Cinnamon, star anise, black cardamoms, coriander seeds, fennel seeds or cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Additional spices : Cinnamon, star anise, black cardamoms, coriander seeds, fennel seeds or cloves",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Additional spices : Cinnamon, star anise, black cardamoms, coriander seeds, fennel seeds or cloves",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons vegetable, canola, or grapeseed oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable, canola, or grapeseed oil",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "vegetable, canola, or grapeseed oil",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

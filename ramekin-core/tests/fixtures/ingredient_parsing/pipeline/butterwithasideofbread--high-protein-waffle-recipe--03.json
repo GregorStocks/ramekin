@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cottage cheese (any variety)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cottage cheese (any variety)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cottage cheese (any variety)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

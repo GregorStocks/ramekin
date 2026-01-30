@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp green onion (finely chopped, plus more to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely chopped, plus more to garnish"
-    }
+  "expected": {
+    "item": "green onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "finely chopped, plus more to garnish"
   }
 }

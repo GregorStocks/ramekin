@@ -1,23 +1,21 @@
 {
   "raw": "1 tube (13.8 ounces) refrigerated pizza crust",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tube refrigerated pizza crust",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "13.8",
-          "unit": "oz"
-        },
-        {
-          "amount": "391",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tube refrigerated pizza crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "13.8",
+        "unit": "oz"
+      },
+      {
+        "amount": "391",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

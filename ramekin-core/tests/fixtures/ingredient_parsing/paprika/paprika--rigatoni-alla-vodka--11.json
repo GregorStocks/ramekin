@@ -1,15 +1,13 @@
 {
   "raw": "1/2 to 1 cup heavy cream, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "1/2 to 1",
-          "unit": "cup"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "cup"
+      }
+    ],
+    "note": "to taste"
   }
 }

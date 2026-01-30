@@ -1,15 +1,13 @@
 {
   "raw": "1⁄8 teaspoon cayenne pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "⁄8 teaspoon cayenne pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "⁄8 teaspoon cayenne pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

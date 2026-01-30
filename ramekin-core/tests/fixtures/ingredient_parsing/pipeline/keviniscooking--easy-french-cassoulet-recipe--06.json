@@ -1,15 +1,13 @@
 {
   "raw": "1 lb turkey sausage ((See Note 1))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turkey sausage (See Note 1)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turkey sausage (See Note 1)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

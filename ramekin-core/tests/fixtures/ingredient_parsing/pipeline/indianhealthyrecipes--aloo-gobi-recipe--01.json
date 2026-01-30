@@ -1,19 +1,17 @@
 {
   "raw": "1½ cup (2 medium)  potatoes ((cubed to ¾ x ¾ inch))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "cubed to 3/4 x 3/4 inch"
-    }
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "cubed to 3/4 x 3/4 inch"
   }
 }

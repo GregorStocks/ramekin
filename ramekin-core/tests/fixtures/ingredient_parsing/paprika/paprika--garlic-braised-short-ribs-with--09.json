@@ -1,15 +1,13 @@
 {
   "raw": "2 cups dry red wine (about half a bottle)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry red wine (about half a bottle)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry red wine (about half a bottle)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

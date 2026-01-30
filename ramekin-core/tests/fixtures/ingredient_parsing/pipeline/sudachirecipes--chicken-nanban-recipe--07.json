@@ -1,15 +1,13 @@
 {
   "raw": "1  small pickled gherkin (or fresh cucumber)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickled gherkin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "or fresh cucumber"
-    }
+  "expected": {
+    "item": "pickled gherkin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "or fresh cucumber"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  red Thai chili peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red Thai chili peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red Thai chili peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

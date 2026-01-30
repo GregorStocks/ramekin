@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon&nbsp;sea salt, or more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sea salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or more to taste"
-    }
+  "expected": {
+    "item": "sea salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or more to taste"
   }
 }

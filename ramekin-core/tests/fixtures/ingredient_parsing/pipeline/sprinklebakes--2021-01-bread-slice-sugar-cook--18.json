@@ -1,10 +1,8 @@
 {
   "raw": "rainbow nonpareils",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rainbow nonpareils",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "rainbow nonpareils",
+    "measurements": [],
+    "note": null
   }
 }

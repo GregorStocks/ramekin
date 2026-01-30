@@ -1,10 +1,8 @@
 {
   "raw": "About 4 cups homemade or storebought chicken or vegetable broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "About 4 cups homemade or storebought chicken or vegetable broth",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "About 4 cups homemade or storebought chicken or vegetable broth",
+    "measurements": [],
+    "note": null
   }
 }

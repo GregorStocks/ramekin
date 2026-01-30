@@ -1,15 +1,13 @@
 {
   "raw": "Scant 1 tsp allspice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "allspice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "scant tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "allspice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant tsp"
+      }
+    ],
+    "note": null
   }
 }

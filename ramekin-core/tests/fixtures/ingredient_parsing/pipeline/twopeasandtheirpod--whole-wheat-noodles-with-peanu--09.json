@@ -1,10 +1,8 @@
 {
   "raw": "Broccoli",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Broccoli",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Broccoli",
+    "measurements": [],
+    "note": null
   }
 }

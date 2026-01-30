@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons dry marsala or cider vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry marsala or cider vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry marsala or cider vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

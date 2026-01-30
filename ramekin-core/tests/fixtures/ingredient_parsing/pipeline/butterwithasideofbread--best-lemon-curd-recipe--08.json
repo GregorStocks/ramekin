@@ -1,15 +1,13 @@
 {
   "raw": "1 cup lemon juice (from juicing 4 lemons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice (from juicing 4 lemons)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice (from juicing 4 lemons)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

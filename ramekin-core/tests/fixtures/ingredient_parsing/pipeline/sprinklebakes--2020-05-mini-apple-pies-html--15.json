@@ -1,10 +1,8 @@
 {
   "raw": "Egg wash (1 egg beaten with 1 tbsp. water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Egg wash",
-      "measurements": [],
-      "note": "1 egg beaten with 1 tbsp. water"
-    }
+  "expected": {
+    "item": "Egg wash",
+    "measurements": [],
+    "note": "1 egg beaten with 1 tbsp. water"
   }
 }

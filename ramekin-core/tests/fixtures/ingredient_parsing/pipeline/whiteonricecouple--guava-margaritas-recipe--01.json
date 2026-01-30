@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces Guava Juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Guava Juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Guava Juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

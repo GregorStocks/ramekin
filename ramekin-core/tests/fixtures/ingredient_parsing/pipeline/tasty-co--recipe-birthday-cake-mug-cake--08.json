@@ -1,10 +1,8 @@
 {
   "raw": "whipped topping, for topping, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipped topping, for topping",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "whipped topping, for topping",
+    "measurements": [],
+    "note": "optional"
   }
 }

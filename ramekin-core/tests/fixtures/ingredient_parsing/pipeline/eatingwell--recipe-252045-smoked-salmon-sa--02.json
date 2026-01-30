@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces green beans, preferably thin haricots verts, trimmed and halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green beans, preferably thin haricots verts",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed and halved"
-    }
+  "expected": {
+    "item": "green beans, preferably thin haricots verts",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed and halved"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Heinz chili sauce (substitute with Buffalo sauce or  hot sauce to suit your heat preference)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Heinz chili sauce (substitute with Buffalo sauce or  hot sauce to suit your heat preference)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Heinz chili sauce (substitute with Buffalo sauce or  hot sauce to suit your heat preference)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

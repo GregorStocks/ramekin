@@ -1,19 +1,17 @@
 {
   "raw": "1 teaspoon (5 ml) Dijon or whole-grain mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dijon or whole-grain mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dijon or whole-grain mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "5",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

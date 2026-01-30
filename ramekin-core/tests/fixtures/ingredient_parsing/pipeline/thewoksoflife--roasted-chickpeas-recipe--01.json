@@ -1,19 +1,17 @@
 {
   "raw": "30 oz. chickpeas ((two 15 oz. cans, 850g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "oz"
-        },
-        {
-          "amount": "850",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "oz"
+      },
+      {
+        "amount": "850",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

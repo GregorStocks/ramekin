@@ -1,19 +1,17 @@
 {
   "raw": "225 grams (1/2 pound) cored and finely shredded cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cored and finely shredded cabbage",
-      "measurements": [
-        {
-          "amount": "225",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cored and finely shredded cabbage",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

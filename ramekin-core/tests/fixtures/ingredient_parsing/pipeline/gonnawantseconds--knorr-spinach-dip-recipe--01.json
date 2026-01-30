@@ -1,19 +1,17 @@
 {
   "raw": "1 (10-ounce) box frozen spinach, (thawed and well-drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "box"
-        },
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "thawed and well-drained"
-    }
+  "expected": {
+    "item": "frozen spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "box"
+      },
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "thawed and well-drained"
   }
 }

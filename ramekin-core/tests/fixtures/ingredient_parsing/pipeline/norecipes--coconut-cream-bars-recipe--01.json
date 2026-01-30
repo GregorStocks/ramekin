@@ -1,19 +1,17 @@
 {
   "raw": "100 grams dried unsweetened shredded coconut ((~2 cups))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried unsweetened shredded coconut",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried unsweetened shredded coconut",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

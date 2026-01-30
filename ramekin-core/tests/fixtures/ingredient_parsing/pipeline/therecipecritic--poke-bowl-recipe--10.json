@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup shredde carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredde carrots",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredde carrots",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

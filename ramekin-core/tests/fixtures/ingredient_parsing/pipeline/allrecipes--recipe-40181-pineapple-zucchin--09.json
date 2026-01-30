@@ -1,15 +1,13 @@
 {
   "raw": "3 cups shredded zucchini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded zucchini",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded zucchini",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

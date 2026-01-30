@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons diced onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Juice from 1 lemon (or 2 tablespoons aged balsamic vinegar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice from 1 lemon (or 2 tablespoons aged balsamic vinegar)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Juice from 1 lemon (or 2 tablespoons aged balsamic vinegar)",
+    "measurements": [],
+    "note": null
   }
 }

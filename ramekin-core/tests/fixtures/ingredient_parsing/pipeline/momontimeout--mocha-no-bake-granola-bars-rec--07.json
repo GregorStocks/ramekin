@@ -1,15 +1,13 @@
 {
   "raw": "2 cups quick oats",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quick oats",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quick oats",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

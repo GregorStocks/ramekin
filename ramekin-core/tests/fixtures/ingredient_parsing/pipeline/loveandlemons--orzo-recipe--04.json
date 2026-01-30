@@ -1,15 +1,13 @@
 {
   "raw": "½ tablespoon extra-virgin olive oil, more for drizzling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra-virgin olive oil, more for drizzling",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "extra-virgin olive oil, more for drizzling",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

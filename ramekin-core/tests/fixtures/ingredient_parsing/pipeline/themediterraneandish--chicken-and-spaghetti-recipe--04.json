@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp dry oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry oregano",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

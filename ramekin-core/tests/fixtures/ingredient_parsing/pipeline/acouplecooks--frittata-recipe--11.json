@@ -1,10 +1,8 @@
 {
   "raw": "Optional: fresh basil leaves, for the garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional: fresh basil leaves, for the garnish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Optional: fresh basil leaves, for the garnish",
+    "measurements": [],
+    "note": null
   }
 }

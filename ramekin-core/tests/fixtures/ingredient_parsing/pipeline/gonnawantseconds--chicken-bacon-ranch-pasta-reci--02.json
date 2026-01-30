@@ -1,19 +1,17 @@
 {
   "raw": "2 (15-ounce) cans alfredo sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "alfredo sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "alfredo sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

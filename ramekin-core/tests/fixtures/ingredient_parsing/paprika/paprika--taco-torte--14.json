@@ -1,19 +1,17 @@
 {
   "raw": "6 medium-size (8-inch) flour tortillas (although corn should work too)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-size flour tortillas (although corn should work too)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium-size flour tortillas (although corn should work too)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

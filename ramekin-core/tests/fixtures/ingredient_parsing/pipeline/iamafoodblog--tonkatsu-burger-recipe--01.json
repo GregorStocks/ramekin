@@ -1,15 +1,13 @@
 {
   "raw": "4 thin boneless pork chops, lightly pounded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin boneless pork chops, lightly pounded",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin boneless pork chops, lightly pounded",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

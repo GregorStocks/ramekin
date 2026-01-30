@@ -1,19 +1,17 @@
 {
   "raw": "1/3 cup (35g) Panko breadcrumbs, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Panko breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "35",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "Panko breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

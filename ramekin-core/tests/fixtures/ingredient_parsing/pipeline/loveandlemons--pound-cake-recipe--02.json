@@ -1,15 +1,13 @@
 {
   "raw": "½ cup almond flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

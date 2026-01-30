@@ -1,19 +1,17 @@
 {
   "raw": "1/3 cup water (78ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "78",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "78",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

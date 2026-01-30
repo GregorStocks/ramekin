@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup sweetened condensed milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweetened condensed milk",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweetened condensed milk",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

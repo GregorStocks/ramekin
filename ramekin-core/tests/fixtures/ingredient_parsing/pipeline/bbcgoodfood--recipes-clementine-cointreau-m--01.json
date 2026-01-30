@@ -1,19 +1,17 @@
 {
   "raw": "4 large   clementines (500g/1lb total weight)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clementines",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        },
-        {
-          "amount": "500",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "clementines",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      },
+      {
+        "amount": "500",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

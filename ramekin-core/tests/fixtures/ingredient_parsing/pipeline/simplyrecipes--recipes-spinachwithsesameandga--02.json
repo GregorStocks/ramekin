@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons toasted (dark) sesame oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted (dark) sesame oil",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted (dark) sesame oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

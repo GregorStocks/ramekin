@@ -1,19 +1,17 @@
 {
   "raw": "2  TCHO chocolate bars (70 grams each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "TCHO chocolate bars",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "70",
-          "unit": "g each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "TCHO chocolate bars",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "70",
+        "unit": "g each"
+      }
+    ],
+    "note": null
   }
 }

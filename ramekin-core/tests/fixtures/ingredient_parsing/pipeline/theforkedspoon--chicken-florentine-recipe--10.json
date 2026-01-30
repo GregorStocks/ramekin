@@ -1,19 +1,17 @@
 {
   "raw": "10 ounces cremini mushrooms (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cremini mushrooms",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

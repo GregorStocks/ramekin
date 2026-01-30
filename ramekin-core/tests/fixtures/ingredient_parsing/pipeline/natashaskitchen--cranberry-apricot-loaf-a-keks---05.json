@@ -1,15 +1,13 @@
 {
   "raw": "1  stick (8 Tbsp unsalted butter, melted (but not hot))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1  stick (8 Tbsp unsalted butter, melted (but not hot))",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        }
-      ],
-      "note": "8 Tbsp unsalted butter, melted (but not hot"
-    }
+  "expected": {
+    "item": "1  stick (8 Tbsp unsalted butter, melted (but not hot))",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "8 Tbsp unsalted butter, melted (but not hot"
   }
 }

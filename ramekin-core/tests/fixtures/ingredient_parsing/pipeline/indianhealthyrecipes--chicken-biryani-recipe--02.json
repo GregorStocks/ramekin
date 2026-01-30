@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons plain yogurt ((curd or dahi))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain yogurt (curd or dahi)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain yogurt (curd or dahi)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

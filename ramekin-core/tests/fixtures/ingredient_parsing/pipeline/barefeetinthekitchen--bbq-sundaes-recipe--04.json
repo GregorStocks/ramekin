@@ -1,15 +1,13 @@
 {
   "raw": "1 cup warm or room temperature Sweet And Spicy Barbecue Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm or room temperature Sweet And Spicy Barbecue Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm or room temperature Sweet And Spicy Barbecue Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

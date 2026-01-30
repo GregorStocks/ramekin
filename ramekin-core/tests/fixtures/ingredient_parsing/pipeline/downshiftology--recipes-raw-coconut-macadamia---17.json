@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp shredded coconut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded coconut",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded coconut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

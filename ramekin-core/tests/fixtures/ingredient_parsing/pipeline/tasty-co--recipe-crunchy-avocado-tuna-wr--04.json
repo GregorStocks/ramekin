@@ -1,15 +1,13 @@
 {
   "raw": "2 ribs celery, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ribs celery",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "ribs celery",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "finely chopped"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Pesto:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pesto:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pesto:",
+    "measurements": [],
+    "note": null
   }
 }

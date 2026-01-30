@@ -1,10 +1,8 @@
 {
   "raw": "oil spray (, for coating)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil spray (, for coating)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "oil spray (, for coating)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 stick salted butter, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

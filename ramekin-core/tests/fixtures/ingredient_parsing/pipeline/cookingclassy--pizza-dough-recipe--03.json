@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups warm water, (heated to 110 - 115 degrees for active dry yeast, 120 - 130 degrees for instant yeast)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120-130",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120-130",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

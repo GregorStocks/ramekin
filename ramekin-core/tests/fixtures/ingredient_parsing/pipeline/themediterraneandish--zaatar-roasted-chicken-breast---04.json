@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp toasted shaved almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted shaved almonds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted shaved almonds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "50 grams dried currants",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried currants",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried currants",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

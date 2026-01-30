@@ -1,15 +1,13 @@
 {
   "raw": "2 cups&nbsp;milk, warmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk, warmed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk, warmed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

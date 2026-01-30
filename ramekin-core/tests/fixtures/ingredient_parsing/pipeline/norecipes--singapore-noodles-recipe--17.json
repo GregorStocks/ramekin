@@ -1,15 +1,13 @@
 {
   "raw": "85 grams green bell pepper ((1/2 pepper, sliced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green bell pepper",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "1/2 pepper, sliced"
-    }
+  "expected": {
+    "item": "green bell pepper",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "1/2 pepper, sliced"
   }
 }

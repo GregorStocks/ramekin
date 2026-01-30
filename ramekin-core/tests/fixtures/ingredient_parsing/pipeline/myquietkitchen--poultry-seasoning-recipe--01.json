@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon ground sage (if using rubbed sage you may want a bit more)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground sage (if using rubbed sage you may want a bit more)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground sage (if using rubbed sage you may want a bit more)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

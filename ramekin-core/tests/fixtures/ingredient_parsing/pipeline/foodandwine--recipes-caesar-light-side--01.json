@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup low-fat or nonfat Greek-style yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat or nonfat Greek-style yogurt",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-fat or nonfat Greek-style yogurt",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 teaspoon very finely minced garlic (about 1/2 medium clove)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very finely minced garlic",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "very finely minced garlic",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

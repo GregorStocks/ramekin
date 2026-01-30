@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon maple sugar (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "maple sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

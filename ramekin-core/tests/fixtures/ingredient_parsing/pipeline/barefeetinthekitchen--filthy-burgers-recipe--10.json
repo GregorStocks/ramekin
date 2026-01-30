@@ -1,10 +1,8 @@
 {
   "raw": "favorite&nbsp;barbecue sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "favorite barbecue sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "favorite barbecue sauce",
+    "measurements": [],
+    "note": null
   }
 }

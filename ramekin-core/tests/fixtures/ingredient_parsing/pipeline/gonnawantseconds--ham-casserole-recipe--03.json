@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces dried egg noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried egg noodles",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried egg noodles",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

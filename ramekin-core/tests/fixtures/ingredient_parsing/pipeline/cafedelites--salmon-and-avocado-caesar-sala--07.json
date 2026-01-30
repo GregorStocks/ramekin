@@ -1,15 +1,13 @@
 {
   "raw": "2 large eggs (poached or boiled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs (poached or boiled)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs (poached or boiled)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  carrot (thinly cut)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot (thinly cut)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrot (thinly cut)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

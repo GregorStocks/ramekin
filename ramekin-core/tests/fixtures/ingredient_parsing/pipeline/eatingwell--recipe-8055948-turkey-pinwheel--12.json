@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces thinly sliced lower-sodium deli oven-roasted turkey breast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced lower-sodium deli oven-roasted turkey breast",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced lower-sodium deli oven-roasted turkey breast",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

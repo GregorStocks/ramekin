@@ -1,15 +1,13 @@
 {
   "raw": "2 refrigerated pie crusts, softened as directed on package (we used Pillsbury)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refrigerated pie crusts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "softened as directed on package (we used Pillsbury)"
-    }
+  "expected": {
+    "item": "refrigerated pie crusts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "softened as directed on package (we used Pillsbury)"
   }
 }

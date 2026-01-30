@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup cornstarch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

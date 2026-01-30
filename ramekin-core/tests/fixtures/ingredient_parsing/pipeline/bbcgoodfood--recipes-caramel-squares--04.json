@@ -1,15 +1,13 @@
 {
   "raw": "85g blanched almond toasted then finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blanched almond toasted then finely chopped",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blanched almond toasted then finely chopped",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

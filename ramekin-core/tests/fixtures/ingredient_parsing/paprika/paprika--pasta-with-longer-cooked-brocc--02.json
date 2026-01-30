@@ -1,15 +1,13 @@
 {
   "raw": "5 tablespoons olive oil, plus more to finish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to finish"
-    }
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more to finish"
   }
 }

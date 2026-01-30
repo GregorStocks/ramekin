@@ -1,10 +1,8 @@
 {
   "raw": "hoisin sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hoisin sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "hoisin sauce",
+    "measurements": [],
+    "note": null
   }
 }

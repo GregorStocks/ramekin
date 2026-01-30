@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon garam masala (optional but traditional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garam masala",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional but traditional"
-    }
+  "expected": {
+    "item": "garam masala",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional but traditional"
   }
 }

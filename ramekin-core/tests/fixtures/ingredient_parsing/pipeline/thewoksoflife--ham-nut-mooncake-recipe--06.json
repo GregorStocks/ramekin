@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon lye water ((available at your Chinese grocery store))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lye water (available at your Chinese grocery store)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lye water (available at your Chinese grocery store)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

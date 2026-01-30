@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons tahini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tahini",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tahini",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

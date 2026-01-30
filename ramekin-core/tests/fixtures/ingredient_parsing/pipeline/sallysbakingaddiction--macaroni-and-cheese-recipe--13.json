@@ -1,15 +1,13 @@
 {
   "raw": "optional: 1/2 cup (40g) shredded parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional: 1/2 cup shredded parmesan cheese",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "optional: 1/2 cup shredded parmesan cheese",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

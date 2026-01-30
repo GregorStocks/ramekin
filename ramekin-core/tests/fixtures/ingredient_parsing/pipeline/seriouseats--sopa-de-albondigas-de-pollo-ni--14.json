@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons achiote paste or powdered annato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "achiote paste or powdered annato",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "achiote paste or powdered annato",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

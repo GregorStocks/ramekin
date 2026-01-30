@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup basmati rice (or other long-grain rice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basmati rice (or other long-grain rice)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basmati rice (or other long-grain rice)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

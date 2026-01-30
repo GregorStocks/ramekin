@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup quality extra virgin olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quality extra virgin olive oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quality extra virgin olive oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

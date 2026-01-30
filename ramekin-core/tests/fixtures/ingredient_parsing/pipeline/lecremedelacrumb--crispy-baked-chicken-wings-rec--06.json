@@ -1,15 +1,13 @@
 {
   "raw": "1 cup buffalo sauce (or other wing sauce, as desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buffalo sauce (or other wing sauce, as desired)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buffalo sauce (or other wing sauce, as desired)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

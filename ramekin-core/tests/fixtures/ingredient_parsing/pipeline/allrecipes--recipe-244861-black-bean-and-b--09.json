@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces shredded Cheddar cheese, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded Cheddar cheese",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "shredded Cheddar cheese",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

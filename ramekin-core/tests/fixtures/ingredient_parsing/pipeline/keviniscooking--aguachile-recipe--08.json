@@ -1,15 +1,13 @@
 {
   "raw": "1  medium cucumber (peeled, seeds removed and cut into half rings)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled, seeds removed and cut into half rings"
-    }
+  "expected": {
+    "item": "cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled, seeds removed and cut into half rings"
   }
 }

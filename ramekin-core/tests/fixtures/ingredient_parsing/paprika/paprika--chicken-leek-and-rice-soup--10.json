@@ -1,10 +1,8 @@
 {
   "raw": "Big handful chopped fresh herbs (parsley, chives, and dill are favorites here)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Big handful chopped fresh herbs (parsley, chives, and dill are favorites here)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Big handful chopped fresh herbs (parsley, chives, and dill are favorites here)",
+    "measurements": [],
+    "note": null
   }
 }

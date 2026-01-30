@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chicken stock or seltzer (which both of our mothers swear by for making the balls extra light)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock or seltzer (which both of our mothers swear by for making the balls extra light)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken stock or seltzer (which both of our mothers swear by for making the balls extra light)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "dash of cumin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cumin",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cumin",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

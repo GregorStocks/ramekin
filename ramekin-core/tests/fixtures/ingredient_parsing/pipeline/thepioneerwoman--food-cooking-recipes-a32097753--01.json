@@ -1,19 +1,17 @@
 {
   "raw": "3 c. fresh Bing or other sweet cherries, pitted&nbsp;(about 1 pound)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Bing or other sweet cherries, pitted",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Bing or other sweet cherries, pitted",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

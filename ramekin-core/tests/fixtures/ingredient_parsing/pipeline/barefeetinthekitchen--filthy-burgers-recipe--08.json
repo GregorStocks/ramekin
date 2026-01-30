@@ -1,10 +1,8 @@
 {
   "raw": "For serving:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For serving:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "For serving:",
+    "measurements": [],
+    "note": null
   }
 }

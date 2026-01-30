@@ -1,10 +1,8 @@
 {
   "raw": "Plain yogurt, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Plain yogurt",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Plain yogurt",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

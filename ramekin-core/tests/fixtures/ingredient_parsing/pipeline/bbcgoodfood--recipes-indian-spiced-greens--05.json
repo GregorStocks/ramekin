@@ -1,15 +1,13 @@
 {
   "raw": "large piece of ginger grated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "piece of ginger grated",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "piece of ginger grated",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

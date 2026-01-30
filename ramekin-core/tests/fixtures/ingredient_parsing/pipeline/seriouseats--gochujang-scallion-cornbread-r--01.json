@@ -1,23 +1,21 @@
 {
   "raw": "142 g cornmeal (5 ounces; 1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornmeal",
-      "measurements": [
-        {
-          "amount": "142",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornmeal",
+    "measurements": [
+      {
+        "amount": "142",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

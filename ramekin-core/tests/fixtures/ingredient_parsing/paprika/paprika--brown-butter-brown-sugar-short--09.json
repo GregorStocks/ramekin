@@ -1,10 +1,8 @@
 {
   "raw": "ICING (OPTIONAL):",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ICING :",
-      "measurements": [],
-      "note": "OPTIONAL"
-    }
+  "expected": {
+    "item": "ICING :",
+    "measurements": [],
+    "note": "OPTIONAL"
   }
 }

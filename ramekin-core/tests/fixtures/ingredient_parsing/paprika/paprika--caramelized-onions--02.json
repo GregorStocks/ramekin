@@ -1,15 +1,13 @@
 {
   "raw": "4 medium yellow onions, halved and sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onions",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": "halved and sliced"
-    }
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": "halved and sliced"
   }
 }

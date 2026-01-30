@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup hot water (120 ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot water",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

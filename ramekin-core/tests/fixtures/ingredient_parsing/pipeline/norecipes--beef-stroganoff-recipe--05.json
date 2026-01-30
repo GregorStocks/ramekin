@@ -1,19 +1,17 @@
 {
   "raw": "226 grams mushrooms ((about 10 large mushrooms))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushrooms",
-      "measurements": [
-        {
-          "amount": "226",
-          "unit": "g"
-        },
-        {
-          "amount": "10",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mushrooms",
+    "measurements": [
+      {
+        "amount": "226",
+        "unit": "g"
+      },
+      {
+        "amount": "10",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

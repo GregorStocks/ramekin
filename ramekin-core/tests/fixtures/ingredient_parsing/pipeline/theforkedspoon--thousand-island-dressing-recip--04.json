@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon lemon juice or vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice or vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice or vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

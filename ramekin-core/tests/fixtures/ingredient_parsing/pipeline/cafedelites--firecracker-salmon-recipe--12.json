@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon paprika (mild, smoky or spicy)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paprika (mild, smoky or spicy)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "paprika (mild, smoky or spicy)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

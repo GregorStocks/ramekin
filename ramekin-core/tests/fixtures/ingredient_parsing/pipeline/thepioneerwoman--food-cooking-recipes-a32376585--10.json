@@ -1,19 +1,17 @@
 {
   "raw": "2 pork tenderloins (about 2 1/2 pounds total)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork tenderloins",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork tenderloins",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

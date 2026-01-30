@@ -1,15 +1,13 @@
 {
   "raw": "50 g butter (room temperature (1/4 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": "room temperature (1/4 cup"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": "room temperature (1/4 cup"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "12 oz Wild Alaskan salmon ((cut into four 3-inch portions))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Wild Alaskan salmon (cut into four 3-inch portions)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Wild Alaskan salmon (cut into four 3-inch portions)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

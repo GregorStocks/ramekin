@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp virtually fat-free fromage frais",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "virtually fat-free fromage frais",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "virtually fat-free fromage frais",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

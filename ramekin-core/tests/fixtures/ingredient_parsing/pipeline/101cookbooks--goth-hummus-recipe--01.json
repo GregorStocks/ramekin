@@ -1,15 +1,13 @@
 {
   "raw": "4 cups cooked black garbanzos, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked black garbanzos",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "cooked black garbanzos",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

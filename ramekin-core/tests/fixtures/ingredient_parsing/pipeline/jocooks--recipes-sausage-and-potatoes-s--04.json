@@ -1,15 +1,13 @@
 {
   "raw": "2 medium red onions (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "red onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "quartered"
   }
 }

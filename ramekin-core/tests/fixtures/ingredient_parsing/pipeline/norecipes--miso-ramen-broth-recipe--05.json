@@ -1,15 +1,13 @@
 {
   "raw": "25 grams ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

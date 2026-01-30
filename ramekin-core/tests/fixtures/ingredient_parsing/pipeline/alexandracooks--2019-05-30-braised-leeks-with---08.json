@@ -1,15 +1,13 @@
 {
   "raw": "5 peppercorns, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppercorns",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "peppercorns",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

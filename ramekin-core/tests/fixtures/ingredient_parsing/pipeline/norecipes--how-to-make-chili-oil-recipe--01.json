@@ -1,15 +1,13 @@
 {
   "raw": "30 grams chili pepper flakes ((I used Korean Gochugaru))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili pepper flakes (I used Korean Gochugaru)",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili pepper flakes (I used Korean Gochugaru)",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

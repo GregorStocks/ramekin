@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup cilantro (chopped, about 1-2 tablespoons worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped, about 1-2 tablespoons worth"
-    }
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped, about 1-2 tablespoons worth"
   }
 }

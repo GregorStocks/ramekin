@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons red chili flakes (, or to personal taste. For medium spicy, you can start with 1 Tablespoon first, then add more. )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chili flakes (, or to personal taste. For medium spicy, you can start with 1 Tablespoon first, then add more.",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red chili flakes (, or to personal taste. For medium spicy, you can start with 1 Tablespoon first, then add more.",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

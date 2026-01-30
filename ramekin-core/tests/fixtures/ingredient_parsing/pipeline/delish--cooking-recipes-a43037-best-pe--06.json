@@ -1,15 +1,13 @@
 {
   "raw": "1 c. cold seltzer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold seltzer",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold seltzer",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

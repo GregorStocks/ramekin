@@ -1,15 +1,13 @@
 {
   "raw": "100 grams jinhua ham ((京华火腿))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jinhua ham (京华火腿)",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jinhua ham (京华火腿)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

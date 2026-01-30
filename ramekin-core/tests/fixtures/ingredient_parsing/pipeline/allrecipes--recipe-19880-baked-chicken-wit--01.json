@@ -1,15 +1,13 @@
 {
   "raw": "8 skinless, boneless chicken breast halves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless, boneless chicken breast halves",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless, boneless chicken breast halves",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

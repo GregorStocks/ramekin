@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup warm milk (110° to 115°F)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm milk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "110",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm milk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped green pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped green pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped green pepper",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

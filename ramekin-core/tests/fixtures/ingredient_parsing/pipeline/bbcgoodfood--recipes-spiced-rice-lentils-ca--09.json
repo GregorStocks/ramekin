@@ -1,10 +1,8 @@
 {
   "raw": "few toasted  cashew nuts, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "few toasted  cashew nuts, to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "few toasted  cashew nuts, to serve",
+    "measurements": [],
+    "note": null
   }
 }

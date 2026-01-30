@@ -1,19 +1,17 @@
 {
   "raw": "1 teaspoon (3g) active-dry or instant yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "active-dry or instant yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "3",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "active-dry or instant yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "3",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

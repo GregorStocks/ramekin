@@ -1,15 +1,13 @@
 {
   "raw": "1 medium clove garlic, lightly smashed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clove garlic, lightly smashed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "clove garlic, lightly smashed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

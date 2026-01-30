@@ -1,15 +1,13 @@
 {
   "raw": "140 grams zucchini ((1 small, julienned))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": "1 small, julienned"
-    }
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": "1 small, julienned"
   }
 }

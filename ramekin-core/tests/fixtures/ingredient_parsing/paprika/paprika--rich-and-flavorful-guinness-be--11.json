@@ -1,19 +1,17 @@
 {
   "raw": "1 ounce (30 g) bittersweet chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet chocolate",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

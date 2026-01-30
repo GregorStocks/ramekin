@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac14;th small red onion, very thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "/4th small red onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "very thinly sliced"
-    }
+  "expected": {
+    "item": "/4th small red onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "very thinly sliced"
   }
 }

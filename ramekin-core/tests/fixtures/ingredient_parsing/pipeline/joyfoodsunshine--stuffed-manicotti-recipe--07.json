@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Italian parsley ((finely chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "Italian parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

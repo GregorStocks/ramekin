@@ -1,23 +1,21 @@
 {
   "raw": "1  small package (3.4 oz, instant vanilla pudding)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "package",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "3.4",
-          "unit": "oz"
-        },
-        {
-          "amount": "96",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "package",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "3.4",
+        "unit": "oz"
+      },
+      {
+        "amount": "96",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

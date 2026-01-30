@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp hoisin sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hoisin sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hoisin sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

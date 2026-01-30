@@ -1,15 +1,13 @@
 {
   "raw": "one small handful of raw pine nuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful of raw pine nuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "handful of raw pine nuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

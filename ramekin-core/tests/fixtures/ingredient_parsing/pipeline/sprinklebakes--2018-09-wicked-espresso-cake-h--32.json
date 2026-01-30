@@ -1,19 +1,17 @@
 {
   "raw": "10 ounces semisweet chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

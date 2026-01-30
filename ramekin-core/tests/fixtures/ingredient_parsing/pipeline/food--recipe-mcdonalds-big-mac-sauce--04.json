@@ -1,15 +1,13 @@
 {
   "raw": "1/2  tablespoon    sweet relish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet relish",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet relish",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

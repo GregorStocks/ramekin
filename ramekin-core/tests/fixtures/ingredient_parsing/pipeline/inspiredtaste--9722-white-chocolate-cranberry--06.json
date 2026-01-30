@@ -1,10 +1,8 @@
 {
   "raw": "Zest of one medium orange",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Zest of one medium orange",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Zest of one medium orange",
+    "measurements": [],
+    "note": null
   }
 }

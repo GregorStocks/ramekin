@@ -1,19 +1,17 @@
 {
   "raw": "6 - 7 ounces chocolate chips or dark chocolate bar chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate chips or dark chocolate bar chopped",
-      "measurements": [
-        {
-          "amount": "6-7",
-          "unit": "oz"
-        },
-        {
-          "amount": "170-198",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate chips or dark chocolate bar chopped",
+    "measurements": [
+      {
+        "amount": "6-7",
+        "unit": "oz"
+      },
+      {
+        "amount": "170-198",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

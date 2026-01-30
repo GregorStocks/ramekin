@@ -1,15 +1,13 @@
 {
   "raw": "Handful of lettuce leaves, arugula or watercress",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lettuce leaves, arugula or watercress",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lettuce leaves, arugula or watercress",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

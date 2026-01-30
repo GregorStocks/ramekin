@@ -1,19 +1,17 @@
 {
   "raw": "1&nbsp;small onion, finely chopped (about 1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

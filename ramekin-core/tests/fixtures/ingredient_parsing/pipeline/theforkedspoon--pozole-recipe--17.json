@@ -1,10 +1,8 @@
 {
   "raw": "Chopped cilantro (recommended)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped cilantro (recommended)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped cilantro (recommended)",
+    "measurements": [],
+    "note": null
   }
 }

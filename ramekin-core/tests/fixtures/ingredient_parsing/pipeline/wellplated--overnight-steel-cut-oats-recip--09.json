@@ -1,10 +1,8 @@
 {
   "raw": "Citrus zest (I love orange zest with honey and cinnamon!)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Citrus zest (I love orange zest with honey and cinnamon!)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Citrus zest (I love orange zest with honey and cinnamon!)",
+    "measurements": [],
+    "note": null
   }
 }

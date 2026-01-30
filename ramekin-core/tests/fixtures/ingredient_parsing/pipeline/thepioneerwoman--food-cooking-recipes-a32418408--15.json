@@ -1,10 +1,8 @@
 {
   "raw": "Sour cream and hot sauce, for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sour cream and hot sauce, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sour cream and hot sauce, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 T. sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "T. sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "T. sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

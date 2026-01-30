@@ -1,15 +1,13 @@
 {
   "raw": "80g Bob&amp;#8217;s Red Mill Potato Starch, or another starch like&nbsp;tapioca starch or&nbsp;arrowroot starch, or a combination",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bob’s Red Mill Potato Starch, or another starch like tapioca starch or arrowroot starch, or a combination",
-      "measurements": [
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bob’s Red Mill Potato Starch, or another starch like tapioca starch or arrowroot starch, or a combination",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

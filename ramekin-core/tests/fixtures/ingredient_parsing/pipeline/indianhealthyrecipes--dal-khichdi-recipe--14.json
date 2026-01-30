@@ -1,15 +1,13 @@
 {
   "raw": "½ tablespoon ghee (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee (for topping)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ghee (for topping)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

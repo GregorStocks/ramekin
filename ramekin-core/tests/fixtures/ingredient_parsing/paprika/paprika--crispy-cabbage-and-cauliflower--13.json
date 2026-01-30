@@ -1,10 +1,8 @@
 {
   "raw": "Harissa*, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Harissa*",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Harissa*",
+    "measurements": [],
+    "note": "to taste"
   }
 }

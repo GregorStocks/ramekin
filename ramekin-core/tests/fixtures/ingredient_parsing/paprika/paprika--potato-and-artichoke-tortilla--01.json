@@ -1,10 +1,8 @@
 {
   "raw": "About 4 tablespoons olive oil, plus more if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "About 4 tablespoons olive oil",
-      "measurements": [],
-      "note": "plus more if needed"
-    }
+  "expected": {
+    "item": "About 4 tablespoons olive oil",
+    "measurements": [],
+    "note": "plus more if needed"
   }
 }

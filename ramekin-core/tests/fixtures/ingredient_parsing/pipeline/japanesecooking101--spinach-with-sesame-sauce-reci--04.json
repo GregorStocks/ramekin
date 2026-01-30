@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp roasted sesame seeds (ground)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted sesame seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "ground"
-    }
+  "expected": {
+    "item": "roasted sesame seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "ground"
   }
 }

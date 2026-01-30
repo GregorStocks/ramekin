@@ -1,15 +1,13 @@
 {
   "raw": "6 cups cake flour (sifted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cake flour",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": "sifted"
-    }
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": "sifted"
   }
 }

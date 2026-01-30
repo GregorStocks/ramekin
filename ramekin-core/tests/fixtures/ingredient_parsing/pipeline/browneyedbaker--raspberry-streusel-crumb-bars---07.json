@@ -1,23 +1,21 @@
 {
   "raw": "½ cup pecans, chopped fine ((2 ounces ))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecans",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped fine"
-    }
+  "expected": {
+    "item": "pecans",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped fine"
   }
 }

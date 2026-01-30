@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons nutritional yeast (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nutritional yeast",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "nutritional yeast",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

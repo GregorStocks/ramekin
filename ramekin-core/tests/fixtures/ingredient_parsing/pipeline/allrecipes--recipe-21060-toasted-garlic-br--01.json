@@ -1,19 +1,17 @@
 {
   "raw": "1 (1 pound) loaf Italian bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf Italian bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loaf Italian bread",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

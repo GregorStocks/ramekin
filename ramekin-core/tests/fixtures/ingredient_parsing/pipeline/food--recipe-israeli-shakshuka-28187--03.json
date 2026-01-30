@@ -1,15 +1,13 @@
 {
   "raw": "2       red bell peppers, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "red bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

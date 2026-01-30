@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons hot water  (, this dissolves the sugar and makes sauce less salty )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot water  (, this dissolves the sugar and makes sauce less salty",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot water  (, this dissolves the sugar and makes sauce less salty",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

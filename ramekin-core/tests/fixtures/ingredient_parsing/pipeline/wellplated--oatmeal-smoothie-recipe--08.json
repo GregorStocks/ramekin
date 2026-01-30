@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon kosher salt (don’t skip this, as it makes the oatmeal pop!)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt (don’t skip this, as it makes the oatmeal pop!)",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt (don’t skip this, as it makes the oatmeal pop!)",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

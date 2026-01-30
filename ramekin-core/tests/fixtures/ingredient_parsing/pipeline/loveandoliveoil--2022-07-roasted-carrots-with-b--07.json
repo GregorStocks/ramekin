@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons pine nuts (lightly toasted (plus more for topping, if desired))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pine nuts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "lightly toasted (plus more for topping, if desired"
-    }
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "lightly toasted (plus more for topping, if desired"
   }
 }

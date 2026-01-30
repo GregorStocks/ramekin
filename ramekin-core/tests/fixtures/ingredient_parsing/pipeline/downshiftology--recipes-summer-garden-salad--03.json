@@ -1,15 +1,13 @@
 {
   "raw": "10  grapes (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapes",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "grapes",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "halved"
   }
 }

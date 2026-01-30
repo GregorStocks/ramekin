@@ -1,15 +1,13 @@
 {
   "raw": "142ml single cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "single cream",
-      "measurements": [
-        {
-          "amount": "142",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "single cream",
+    "measurements": [
+      {
+        "amount": "142",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

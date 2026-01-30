@@ -1,15 +1,13 @@
 {
   "raw": "1  vanilla bean, split along the length (or 1 teaspoon vanilla extract)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla bean, split along the length (or 1 teaspoon vanilla extract)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla bean, split along the length (or 1 teaspoon vanilla extract)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

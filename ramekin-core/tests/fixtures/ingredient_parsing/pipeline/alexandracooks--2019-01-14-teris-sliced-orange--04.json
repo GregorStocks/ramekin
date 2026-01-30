@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 oranges (count on 1 orange per person)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oranges (count on 1 orange per person)",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oranges (count on 1 orange per person)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

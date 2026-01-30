@@ -1,15 +1,13 @@
 {
   "raw": "½ to 1 teaspoon Kashmiri red chili powder (or paste (less spicy variety) (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kashmiri red chili powder (or paste (less spicy variety) (optional)",
-      "measurements": [
-        {
-          "amount": "1/2 to 1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kashmiri red chili powder (or paste (less spicy variety) (optional)",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

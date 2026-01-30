@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fresh baby carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh baby carrots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh baby carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons fresh thyme or herbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme or herbs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh thyme or herbs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

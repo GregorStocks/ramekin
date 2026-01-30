@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Italian seasoning (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "Italian seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

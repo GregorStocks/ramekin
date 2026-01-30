@@ -1,10 +1,8 @@
 {
   "raw": "Japanese chili powder (shichimi togarashi) (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese chili powder (shichimi togarashi) (optional)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese chili powder (shichimi togarashi) (optional)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 quarts whole milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

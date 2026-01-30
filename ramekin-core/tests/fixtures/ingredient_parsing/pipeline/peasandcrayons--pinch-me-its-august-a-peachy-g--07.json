@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP orange juice for sweetness ((or to taste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange juice for sweetness",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "orange juice for sweetness",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

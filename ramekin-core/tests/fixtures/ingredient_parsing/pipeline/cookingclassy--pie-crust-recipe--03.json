@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp (scant) salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "(scant) salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "(scant) salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

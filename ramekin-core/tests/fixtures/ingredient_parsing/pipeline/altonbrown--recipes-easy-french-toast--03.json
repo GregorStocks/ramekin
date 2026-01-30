@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons honey, warmed in microwave for 20 seconds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey, warmed in microwave for 20 seconds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey, warmed in microwave for 20 seconds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

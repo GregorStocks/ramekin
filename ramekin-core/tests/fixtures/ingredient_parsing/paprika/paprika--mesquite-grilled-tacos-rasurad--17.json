@@ -1,10 +1,8 @@
 {
   "raw": "Ribs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ribs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ribs",
+    "measurements": [],
+    "note": null
   }
 }

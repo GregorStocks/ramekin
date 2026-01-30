@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup 65g unsweet cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweet cocoa powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "65",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweet cocoa powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "65",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

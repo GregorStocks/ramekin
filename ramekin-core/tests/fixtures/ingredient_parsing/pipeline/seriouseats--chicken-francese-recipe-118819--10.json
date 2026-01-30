@@ -1,19 +1,17 @@
 {
   "raw": "1 medium shallot (about 65 g), finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "65",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "65",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

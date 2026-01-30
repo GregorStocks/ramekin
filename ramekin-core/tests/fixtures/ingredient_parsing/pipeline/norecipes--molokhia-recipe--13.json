@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Egyptian short-grain rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Egyptian short-grain rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Egyptian short-grain rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

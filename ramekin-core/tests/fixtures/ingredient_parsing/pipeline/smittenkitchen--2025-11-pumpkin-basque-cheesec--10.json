@@ -1,15 +1,13 @@
 {
   "raw": "1 ¼ cups canned pumpkin puree (less than a 15-ounce/425-gram can)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned pumpkin puree (less than a 15-ounce/425-gram can)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned pumpkin puree (less than a 15-ounce/425-gram can)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

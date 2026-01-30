@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon dried minced onion, or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried minced onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "dried minced onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

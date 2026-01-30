@@ -1,15 +1,13 @@
 {
   "raw": "2 pints small tomatoes, such as cherry, grape or Sungold",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small tomatoes, such as cherry, grape or Sungold",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "small tomatoes, such as cherry, grape or Sungold",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pint"
+      }
+    ],
+    "note": null
   }
 }

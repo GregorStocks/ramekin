@@ -1,23 +1,21 @@
 {
   "raw": "1 cup dried red lentils (about 7 ounces; 200 g), picked over and rinsed (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried red lentils",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": "picked over and rinsed (see notes)"
-    }
+  "expected": {
+    "item": "dried red lentils",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": "picked over and rinsed (see notes)"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "ground white pepper (sprinkle at the end, optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground white pepper",
-      "measurements": [],
-      "note": "sprinkle at the end, optional"
-    }
+  "expected": {
+    "item": "ground white pepper",
+    "measurements": [],
+    "note": "sprinkle at the end, optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups leftover finely shredded rotisserie chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover finely shredded rotisserie chicken",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover finely shredded rotisserie chicken",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces Monterey Jack cheese, shredded, about 3 cups (340g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Monterey Jack cheese, shredded, about 3 cups",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Monterey Jack cheese, shredded, about 3 cups",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

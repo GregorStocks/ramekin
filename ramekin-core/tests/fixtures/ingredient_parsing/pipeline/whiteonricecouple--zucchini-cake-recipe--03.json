@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 teaspoons (8ml) baking powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking powder",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "8",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking powder",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "8",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

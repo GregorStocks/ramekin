@@ -1,19 +1,17 @@
 {
   "raw": "1 ounce chocolate syrup, plus more to drizzle in the glass",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate syrup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more to drizzle in the glass"
-    }
+  "expected": {
+    "item": "chocolate syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more to drizzle in the glass"
   }
 }

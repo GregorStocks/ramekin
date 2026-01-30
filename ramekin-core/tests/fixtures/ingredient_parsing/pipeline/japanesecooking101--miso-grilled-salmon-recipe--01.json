@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cups Miso paste (white)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Miso paste (white)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Miso paste (white)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Private Reserve Greek extra virgin olive oil, a generous drizzle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Private Reserve Greek extra virgin olive oil, a generous drizzle",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Private Reserve Greek extra virgin olive oil, a generous drizzle",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8 large shallots/spring onions ( cut into 2-inch length pieces (whiter ends only. Reserve the darker green parts for final garnish.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots/spring onions ( cut into 2-inch length pieces (whiter ends only. Reserve the darker green parts for final garnish.)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shallots/spring onions ( cut into 2-inch length pieces (whiter ends only. Reserve the darker green parts for final garnish.)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

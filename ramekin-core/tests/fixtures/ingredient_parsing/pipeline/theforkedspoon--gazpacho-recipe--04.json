@@ -1,15 +1,13 @@
 {
   "raw": "1  English cucumber (peeled, seeded, and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled, seeded, and chopped"
-    }
+  "expected": {
+    "item": "English cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled, seeded, and chopped"
   }
 }

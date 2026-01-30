@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon nigella seed, black sesame seeds* or pepitas (green pumpkin seeds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nigella seed, black sesame seeds* or pepitas (green pumpkin seeds)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "nigella seed, black sesame seeds* or pepitas (green pumpkin seeds)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

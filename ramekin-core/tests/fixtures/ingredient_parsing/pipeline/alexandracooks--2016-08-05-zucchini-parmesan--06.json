@@ -1,10 +1,8 @@
 {
   "raw": "your favorite tomato sauce (recipe for red pepper tomato sauce is below, or whatever tomato sauce you love)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your favorite tomato sauce (recipe for red pepper tomato sauce is below, or whatever tomato sauce you love)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "your favorite tomato sauce (recipe for red pepper tomato sauce is below, or whatever tomato sauce you love)",
+    "measurements": [],
+    "note": null
   }
 }

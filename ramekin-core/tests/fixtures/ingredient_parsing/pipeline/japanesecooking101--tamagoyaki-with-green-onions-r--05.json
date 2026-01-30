@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp Mirin (or 1/4 tsp sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mirin (or 1/4 tsp sugar)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mirin (or 1/4 tsp sugar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

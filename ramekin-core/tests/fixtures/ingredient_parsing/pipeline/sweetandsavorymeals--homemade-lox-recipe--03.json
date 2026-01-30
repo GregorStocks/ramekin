@@ -1,15 +1,13 @@
 {
   "raw": "1 cup kosher salt (or sea salt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt (or sea salt)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt (or sea salt)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

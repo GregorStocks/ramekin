@@ -1,19 +1,17 @@
 {
   "raw": "20 oz crushed pineapple (well drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed pineapple",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "oz"
-        },
-        {
-          "amount": "567",
-          "unit": "g"
-        }
-      ],
-      "note": "well drained"
-    }
+  "expected": {
+    "item": "crushed pineapple",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      },
+      {
+        "amount": "567",
+        "unit": "g"
+      }
+    ],
+    "note": "well drained"
   }
 }

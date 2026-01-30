@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups brown basmati rice, well rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown basmati rice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "well rinsed"
-    }
+  "expected": {
+    "item": "brown basmati rice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "well rinsed"
   }
 }

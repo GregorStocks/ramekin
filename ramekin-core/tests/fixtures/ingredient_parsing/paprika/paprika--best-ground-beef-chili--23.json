@@ -1,10 +1,8 @@
 {
   "raw": "Coarsely chopped cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Coarsely chopped cilantro",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Coarsely chopped cilantro",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Chinese wine (Shaoxing - or dry sherry)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chinese wine (Shaoxing - or dry sherry)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chinese wine (Shaoxing - or dry sherry)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

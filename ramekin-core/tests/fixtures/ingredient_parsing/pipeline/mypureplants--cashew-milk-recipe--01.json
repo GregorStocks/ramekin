@@ -1,15 +1,13 @@
 {
   "raw": "½ - 1 cup Cashew nuts (see notes to choose amount)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cashew nuts (see notes to choose amount)",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cashew nuts (see notes to choose amount)",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

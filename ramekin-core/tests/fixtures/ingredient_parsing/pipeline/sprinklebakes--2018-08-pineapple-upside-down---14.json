@@ -1,19 +1,17 @@
 {
   "raw": "8  fresh pineapple slices (1/2-inch thickness)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh pineapple slices",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh pineapple slices",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

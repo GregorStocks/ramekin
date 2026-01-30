@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp fresh ginger (peeled and grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "peeled and grated"
-    }
+  "expected": {
+    "item": "fresh ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "peeled and grated"
   }
 }

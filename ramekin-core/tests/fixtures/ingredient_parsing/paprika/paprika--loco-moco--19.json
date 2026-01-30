@@ -1,15 +1,13 @@
 {
   "raw": "4 crispy fried eggs for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crispy fried eggs for serving",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crispy fried eggs for serving",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

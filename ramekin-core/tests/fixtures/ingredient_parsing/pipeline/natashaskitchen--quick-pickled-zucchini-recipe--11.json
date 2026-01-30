@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp salt (we used sea salt, non-iodized)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (we used sea salt, non-iodized)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (we used sea salt, non-iodized)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

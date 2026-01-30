@@ -1,10 +1,8 @@
 {
   "raw": "A 3-inch piece of ginger, peeled and sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A 3-inch piece of ginger",
-      "measurements": [],
-      "note": "peeled and sliced"
-    }
+  "expected": {
+    "item": "A 3-inch piece of ginger",
+    "measurements": [],
+    "note": "peeled and sliced"
   }
 }

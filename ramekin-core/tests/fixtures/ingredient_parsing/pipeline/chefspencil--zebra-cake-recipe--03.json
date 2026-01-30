@@ -1,15 +1,13 @@
 {
   "raw": "10 g gelatin sheets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gelatin sheets",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gelatin sheets",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

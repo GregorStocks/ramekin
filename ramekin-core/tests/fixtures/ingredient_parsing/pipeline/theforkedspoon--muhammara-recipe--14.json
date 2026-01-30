@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoon pomegranate molasses (plus more for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate molasses",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "pomegranate molasses",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

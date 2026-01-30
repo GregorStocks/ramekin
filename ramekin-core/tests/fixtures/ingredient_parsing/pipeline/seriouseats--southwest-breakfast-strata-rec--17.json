@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces (113 g) Monterey Jack cheese or pepper jack cheese, shredded (about 1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Monterey Jack cheese or pepper jack cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "Monterey Jack cheese or pepper jack cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded"
   }
 }

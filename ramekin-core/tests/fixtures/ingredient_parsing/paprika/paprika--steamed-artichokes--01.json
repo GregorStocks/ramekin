@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 full-sized fresh artichokes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-sized fresh artichokes",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full-sized fresh artichokes",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

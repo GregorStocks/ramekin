@@ -1,10 +1,8 @@
 {
   "raw": "Pico de gallo and chopped fresh cilantro, for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pico de gallo and chopped fresh cilantro, for topping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pico de gallo and chopped fresh cilantro, for topping",
+    "measurements": [],
+    "note": null
   }
 }

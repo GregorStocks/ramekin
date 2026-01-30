@@ -1,15 +1,13 @@
 {
   "raw": "1 steak of choice (most people choose round steak and then pound it, I used chuck and didn’t pound)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "steak of choice (most people choose round steak and then pound it, I used chuck and didn’t pound)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "steak of choice (most people choose round steak and then pound it, I used chuck and didn’t pound)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

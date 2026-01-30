@@ -1,15 +1,13 @@
 {
   "raw": "½  green bell pepper (cored, thinly sliced into 4 rounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green bell pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "cored, thinly sliced into 4 rounds"
-    }
+  "expected": {
+    "item": "green bell pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "cored, thinly sliced into 4 rounds"
   }
 }

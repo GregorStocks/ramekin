@@ -1,15 +1,13 @@
 {
   "raw": "1 pound spaghettini or spaghetti",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghettini or spaghetti",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghettini or spaghetti",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

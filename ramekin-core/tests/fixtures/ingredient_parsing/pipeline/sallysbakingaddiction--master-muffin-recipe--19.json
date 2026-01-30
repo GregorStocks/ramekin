@@ -1,10 +1,8 @@
 {
   "raw": "optional if not using crumb topping: 2 Tablespoons coarse sugar, for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional if not using crumb topping: 2 Tablespoons coarse sugar, for sprinkling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "optional if not using crumb topping: 2 Tablespoons coarse sugar, for sprinkling",
+    "measurements": [],
+    "note": null
   }
 }

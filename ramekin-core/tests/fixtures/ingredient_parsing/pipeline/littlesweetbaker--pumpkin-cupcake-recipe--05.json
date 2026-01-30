@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp pumpkin pie spice (or cinnamon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin pie spice (or cinnamon)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin pie spice (or cinnamon)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

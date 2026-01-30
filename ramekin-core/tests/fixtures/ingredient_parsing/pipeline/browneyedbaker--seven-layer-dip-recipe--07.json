@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces cheddar or Monterey Jack cheese (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cheddar or Monterey Jack cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "cheddar or Monterey Jack cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "shredded"
   }
 }

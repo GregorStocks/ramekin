@@ -1,15 +1,13 @@
 {
   "raw": "1/2 medium red onion or 4 scallions, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion or 4 scallions",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "red onion or 4 scallions",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

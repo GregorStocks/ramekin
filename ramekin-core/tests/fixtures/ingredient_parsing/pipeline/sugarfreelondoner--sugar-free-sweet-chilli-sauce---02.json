@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp ginger (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "chopped"
   }
 }

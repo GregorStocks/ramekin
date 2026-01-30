@@ -1,10 +1,8 @@
 {
   "raw": "Seasoning of your choice (I used a generous sprinkle of za&amp;#8217;atar and sumac)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Seasoning of your choice (I used a generous sprinkle of za’atar and sumac)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Seasoning of your choice (I used a generous sprinkle of za’atar and sumac)",
+    "measurements": [],
+    "note": null
   }
 }

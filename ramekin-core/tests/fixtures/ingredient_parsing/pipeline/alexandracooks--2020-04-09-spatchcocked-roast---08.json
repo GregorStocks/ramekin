@@ -1,15 +1,13 @@
 {
   "raw": "1 chicken, roughly 3 pounds, backbone removed with scissors, see video",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken, roughly 3 pounds, backbone removed with scissors, see video",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken, roughly 3 pounds, backbone removed with scissors, see video",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

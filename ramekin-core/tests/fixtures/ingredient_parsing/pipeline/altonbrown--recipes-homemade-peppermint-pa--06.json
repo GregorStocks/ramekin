@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup cornstarch, for rolling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch, for rolling",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch, for rolling",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

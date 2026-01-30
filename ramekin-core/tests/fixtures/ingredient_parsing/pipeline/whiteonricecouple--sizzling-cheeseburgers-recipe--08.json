@@ -1,10 +1,8 @@
 {
   "raw": "salt (, to personal taste )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (, to personal taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (, to personal taste",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup mayonnaise, try our homemade mayonnaise recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise, try our homemade mayonnaise recipe",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise, try our homemade mayonnaise recipe",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

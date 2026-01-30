@@ -1,15 +1,13 @@
 {
   "raw": "4 cups flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flour",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

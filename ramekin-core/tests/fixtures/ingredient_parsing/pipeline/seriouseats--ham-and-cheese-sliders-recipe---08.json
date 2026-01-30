@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons 45 ml) honey or hot honey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "45 ml) honey or hot honey",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "45 ml) honey or hot honey",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup roasted nuts of choice ((pecans, almonds, cashews, etc. - chop larger nuts if desired))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted nuts of choice (pecans, almonds, cashews, etc. - chop larger nuts if desired)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted nuts of choice (pecans, almonds, cashews, etc. - chop larger nuts if desired)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

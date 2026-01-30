@@ -1,19 +1,17 @@
 {
   "raw": "14.3 oz package Oreos",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "package Oreos",
-      "measurements": [
-        {
-          "amount": "14.3",
-          "unit": "oz"
-        },
-        {
-          "amount": "405",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "package Oreos",
+    "measurements": [
+      {
+        "amount": "14.3",
+        "unit": "oz"
+      },
+      {
+        "amount": "405",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

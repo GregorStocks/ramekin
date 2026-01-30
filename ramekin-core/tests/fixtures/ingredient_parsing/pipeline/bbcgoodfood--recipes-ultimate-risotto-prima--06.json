@@ -1,15 +1,13 @@
 {
   "raw": "1.3l good quality chicken or vegetable stock, preferably homemade",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good quality chicken or vegetable stock, preferably homemade",
-      "measurements": [
-        {
-          "amount": "1.3",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "good quality chicken or vegetable stock, preferably homemade",
+    "measurements": [
+      {
+        "amount": "1.3",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

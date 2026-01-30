@@ -1,15 +1,13 @@
 {
   "raw": "4  stalks celery (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "stalk"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "celery",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "stalk"
+      }
+    ],
+    "note": "chopped"
   }
 }

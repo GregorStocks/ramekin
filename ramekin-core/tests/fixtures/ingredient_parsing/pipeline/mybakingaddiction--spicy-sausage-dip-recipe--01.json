@@ -1,19 +1,17 @@
 {
   "raw": "1 pound 16 ounces pork sausage (mild, medium, or hot)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "16 ounces pork sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": null,
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "16 ounces pork sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": null,
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

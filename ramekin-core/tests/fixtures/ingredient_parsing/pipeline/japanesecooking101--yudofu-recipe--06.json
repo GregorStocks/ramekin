@@ -1,10 +1,8 @@
 {
   "raw": "Shichimi",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shichimi",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shichimi",
+    "measurements": [],
+    "note": null
   }
 }

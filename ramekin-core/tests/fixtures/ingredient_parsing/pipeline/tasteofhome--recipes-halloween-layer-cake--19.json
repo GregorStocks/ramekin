@@ -1,15 +1,13 @@
 {
   "raw": "8 drops yellow food coloring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow food coloring",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "drop"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow food coloring",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "drop"
+      }
+    ],
+    "note": null
   }
 }

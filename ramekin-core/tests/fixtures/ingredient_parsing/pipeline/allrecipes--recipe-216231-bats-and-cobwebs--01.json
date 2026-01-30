@@ -1,23 +1,21 @@
 {
   "raw": "1 (8 ounce) package farfalle (bow tie) pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "farfalle (bow tie) pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "farfalle (bow tie) pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

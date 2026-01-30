@@ -1,15 +1,13 @@
 {
   "raw": "1 pound 80/20 ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "80/20 ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "80/20 ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 ounces dry gin (such as Hendrick's or Tanqueray, or vodka)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry gin (such as Hendrick's or Tanqueray, or vodka)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry gin (such as Hendrick's or Tanqueray, or vodka)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

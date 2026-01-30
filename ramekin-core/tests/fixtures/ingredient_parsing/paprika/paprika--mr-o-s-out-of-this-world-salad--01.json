@@ -1,19 +1,17 @@
 {
   "raw": "4 oz crimini mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crimini mushrooms",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crimini mushrooms",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

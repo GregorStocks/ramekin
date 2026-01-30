@@ -1,15 +1,13 @@
 {
   "raw": "2  medium Hass avocados (ripe)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hass avocados (ripe)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Hass avocados (ripe)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

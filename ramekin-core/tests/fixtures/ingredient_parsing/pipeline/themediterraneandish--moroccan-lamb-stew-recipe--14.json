@@ -1,15 +1,13 @@
 {
   "raw": "6 plum tomatoes from a can, cut in halves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plum tomatoes from a can, cut in halves",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plum tomatoes from a can, cut in halves",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

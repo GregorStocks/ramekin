@@ -1,10 +1,8 @@
 {
   "raw": "Grated Parmigiano-Reggiano cheese, for topping (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grated Parmigiano-Reggiano cheese, for topping",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Grated Parmigiano-Reggiano cheese, for topping",
+    "measurements": [],
+    "note": "optional"
   }
 }

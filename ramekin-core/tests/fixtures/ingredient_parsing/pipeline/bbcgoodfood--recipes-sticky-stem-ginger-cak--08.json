@@ -1,15 +1,13 @@
 {
   "raw": "115g black treacle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black treacle",
-      "measurements": [
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black treacle",
+    "measurements": [
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

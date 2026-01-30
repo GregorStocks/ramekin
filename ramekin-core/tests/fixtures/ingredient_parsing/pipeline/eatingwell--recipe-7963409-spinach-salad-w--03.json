@@ -1,15 +1,13 @@
 {
   "raw": "1 small avocado, peeled and cut into 1/2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "peeled and cut into 1/2-inch pieces"
-    }
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch pieces"
   }
 }

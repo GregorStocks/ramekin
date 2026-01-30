@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken wings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken wings",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken wings",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

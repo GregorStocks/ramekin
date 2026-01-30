@@ -1,10 +1,8 @@
 {
   "raw": "I have made crepes with extra light olive oil in leu of butter with good results",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "I have made crepes with extra light olive oil in leu of butter with good results",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "I have made crepes with extra light olive oil in leu of butter with good results",
+    "measurements": [],
+    "note": null
   }
 }

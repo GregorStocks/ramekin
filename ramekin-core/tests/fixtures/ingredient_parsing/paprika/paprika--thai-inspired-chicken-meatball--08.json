@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons vegetable or coconut oil, plus more as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable or coconut oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more as needed"
-    }
+  "expected": {
+    "item": "vegetable or coconut oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more as needed"
   }
 }

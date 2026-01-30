@@ -1,15 +1,13 @@
 {
   "raw": "5 Tablespoons + 1 teaspoon chili powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "+ 1 teaspoon chili powder",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "+ 1 teaspoon chili powder",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

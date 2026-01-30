@@ -1,15 +1,13 @@
 {
   "raw": "6 to 8  curry leaves  ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curry leaves",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "curry leaves",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

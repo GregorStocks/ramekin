@@ -1,15 +1,13 @@
 {
   "raw": "1 large white onion (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces cheddar and/or Monterey Jack cheese, grated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cheddar and/or Monterey Jack cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "cheddar and/or Monterey Jack cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "grated"
   }
 }

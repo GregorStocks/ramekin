@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons fish sauce ((10ml)  or soy sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce or soy sauce)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fish sauce or soy sauce)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "10",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

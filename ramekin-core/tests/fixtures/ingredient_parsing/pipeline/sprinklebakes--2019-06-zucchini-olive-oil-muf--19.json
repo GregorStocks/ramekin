@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons milk or cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk or cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk or cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

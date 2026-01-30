@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp Oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1l milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

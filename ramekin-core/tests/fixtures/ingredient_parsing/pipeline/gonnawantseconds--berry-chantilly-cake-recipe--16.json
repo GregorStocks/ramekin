@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Grand Marnier",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grand Marnier",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Grand Marnier",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

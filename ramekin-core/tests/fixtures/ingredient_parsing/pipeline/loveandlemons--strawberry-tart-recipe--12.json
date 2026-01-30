@@ -1,15 +1,13 @@
 {
   "raw": "2 cups coconut whipped cream (recipe above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut whipped cream (recipe above)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut whipped cream (recipe above)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

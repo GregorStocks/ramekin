@@ -1,15 +1,13 @@
 {
   "raw": "1 pound shrimp (small or medium sized shrimp, thawed, peeled, deveined, with the tails off)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "small or medium sized shrimp, thawed, peeled, deveined, with the tails off"
-    }
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "small or medium sized shrimp, thawed, peeled, deveined, with the tails off"
   }
 }

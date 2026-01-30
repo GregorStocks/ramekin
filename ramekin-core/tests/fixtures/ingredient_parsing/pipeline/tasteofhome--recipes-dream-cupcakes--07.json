@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup sweetened shredded coconut, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweetened shredded coconut",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sweetened shredded coconut",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

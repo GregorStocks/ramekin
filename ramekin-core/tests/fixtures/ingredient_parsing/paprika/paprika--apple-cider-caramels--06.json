@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (110 grams) packed light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed light brown sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "110",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed light brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

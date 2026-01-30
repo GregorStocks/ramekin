@@ -1,15 +1,13 @@
 {
   "raw": "3 red peppers, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red peppers",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "red peppers",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

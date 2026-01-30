@@ -1,15 +1,13 @@
 {
   "raw": "4 to 5  curry leaves ((or 1 bay leaf))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curry leaves (or 1 bay leaf)",
-      "measurements": [
-        {
-          "amount": "4 to 5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "curry leaves (or 1 bay leaf)",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

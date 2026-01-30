@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons superfine (castor) sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "superfine (castor) sugar",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "superfine (castor) sugar",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Nonstick cooking spray (I use Coconut Oil Spray from Trader Joe's)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nonstick cooking spray (I use Coconut Oil Spray from Trader Joe's)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Nonstick cooking spray (I use Coconut Oil Spray from Trader Joe's)",
+    "measurements": [],
+    "note": null
   }
 }

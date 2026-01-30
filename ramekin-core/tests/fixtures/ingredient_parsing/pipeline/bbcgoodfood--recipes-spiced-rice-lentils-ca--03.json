@@ -1,15 +1,13 @@
 {
   "raw": "2 carrots chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots chopped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots chopped",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 teaspoons powdered gelatin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered gelatin",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered gelatin",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

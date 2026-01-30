@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped broccoli (crowns and stems)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped broccoli (crowns and stems)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped broccoli (crowns and stems)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

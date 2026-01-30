@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cups frozen pearl onions, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen pearl onions",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen pearl onions",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed"
   }
 }

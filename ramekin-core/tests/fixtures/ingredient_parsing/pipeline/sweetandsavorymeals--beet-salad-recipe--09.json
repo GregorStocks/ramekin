@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons orange juice (freshly squeezed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "freshly squeezed"
-    }
+  "expected": {
+    "item": "orange juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "freshly squeezed"
   }
 }

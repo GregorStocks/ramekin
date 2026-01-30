@@ -1,10 +1,8 @@
 {
   "raw": "Crumbled feta cheese to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crumbled feta cheese to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Crumbled feta cheese to taste",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "lemon slices (, optional for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon slices",
-      "measurements": [],
-      "note": "optional for garnish"
-    }
+  "expected": {
+    "item": "lemon slices",
+    "measurements": [],
+    "note": "optional for garnish"
   }
 }

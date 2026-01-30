@@ -1,15 +1,13 @@
 {
   "raw": "1 ⅓ cups milk, more if the batter is too thick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk, more if the batter is too thick",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk, more if the batter is too thick",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

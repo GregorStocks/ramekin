@@ -1,23 +1,21 @@
 {
   "raw": "2 large links (about 8 ounces) of sweet Italian sausage [see Note]",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "links of sweet Italian sausage [see Note]",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "links of sweet Italian sausage [see Note]",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

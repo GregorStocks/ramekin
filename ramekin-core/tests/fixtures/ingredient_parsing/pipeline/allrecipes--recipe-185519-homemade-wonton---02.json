@@ -1,15 +1,13 @@
 {
   "raw": "6 fresh mushrooms, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mushrooms",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 cups leftover chili",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover chili",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover chili",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

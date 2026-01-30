@@ -1,10 +1,8 @@
 {
   "raw": "Cooked chickpeas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooked chickpeas",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cooked chickpeas",
+    "measurements": [],
+    "note": null
   }
 }

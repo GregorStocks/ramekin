@@ -1,10 +1,8 @@
 {
   "raw": "PHILADELPHIA Spicy Jalapeño cream cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "PHILADELPHIA Spicy Jalapeño cream cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "PHILADELPHIA Spicy Jalapeño cream cheese",
+    "measurements": [],
+    "note": null
   }
 }

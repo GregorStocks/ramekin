@@ -1,15 +1,13 @@
 {
   "raw": "24 gummy worms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gummy worms",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gummy worms",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

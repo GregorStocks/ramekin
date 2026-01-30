@@ -1,15 +1,13 @@
 {
   "raw": "4  medium-size ripe avocados",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-size ripe avocados",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium-size ripe avocados",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

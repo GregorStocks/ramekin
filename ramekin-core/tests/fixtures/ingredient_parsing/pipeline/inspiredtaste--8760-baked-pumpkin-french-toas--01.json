@@ -1,19 +1,17 @@
 {
   "raw": "6 (1-inch) slices French Loaf, cut into cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "French Loaf, cut into cubes",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "slice"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "French Loaf, cut into cubes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slice"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

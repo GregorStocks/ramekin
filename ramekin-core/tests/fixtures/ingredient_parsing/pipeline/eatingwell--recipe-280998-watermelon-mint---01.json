@@ -1,15 +1,13 @@
 {
   "raw": "2 fresh mint leaves, plus more for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mint leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "plus more for garnish"
-    }
+  "expected": {
+    "item": "fresh mint leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "plus more for garnish"
   }
 }

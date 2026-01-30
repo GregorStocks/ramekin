@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp white sesame seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white sesame seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white sesame seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 small orange (, cut into thin pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange (, cut into thin pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange (, cut into thin pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

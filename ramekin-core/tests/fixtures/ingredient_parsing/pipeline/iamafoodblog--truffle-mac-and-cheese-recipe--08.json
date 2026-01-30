@@ -1,10 +1,8 @@
 {
   "raw": "freshly ground pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly ground pepper",
+    "measurements": [],
+    "note": null
   }
 }

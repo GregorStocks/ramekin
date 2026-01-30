@@ -1,15 +1,13 @@
 {
   "raw": "2-inch piece ginger, peeled and minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-inch piece ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled and minced"
-    }
+  "expected": {
+    "item": "-inch piece ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and minced"
   }
 }

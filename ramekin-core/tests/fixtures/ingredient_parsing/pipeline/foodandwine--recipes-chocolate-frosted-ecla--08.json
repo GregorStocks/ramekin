@@ -1,15 +1,13 @@
 {
   "raw": "1/4 vanilla bean, seeds scraped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla bean, seeds scraped",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla bean, seeds scraped",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

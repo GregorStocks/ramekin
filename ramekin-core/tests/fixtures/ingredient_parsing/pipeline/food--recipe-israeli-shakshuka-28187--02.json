@@ -1,15 +1,13 @@
 {
   "raw": "4      extra large ripe tomatoes, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra large ripe tomatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "extra large ripe tomatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

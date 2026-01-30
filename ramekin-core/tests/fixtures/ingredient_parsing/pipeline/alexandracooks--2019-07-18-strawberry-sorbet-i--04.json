@@ -1,15 +1,13 @@
 {
   "raw": "Pinch of sea salt, such as Maldon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sea salt, such as Maldon",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sea salt, such as Maldon",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

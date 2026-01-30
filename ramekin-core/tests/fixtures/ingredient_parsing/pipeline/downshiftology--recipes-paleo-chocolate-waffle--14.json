@@ -1,10 +1,8 @@
 {
   "raw": "fresh blueberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh blueberries",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh blueberries",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 cups  leftover cooked white rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover cooked white rice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover cooked white rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

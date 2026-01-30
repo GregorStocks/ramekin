@@ -1,10 +1,8 @@
 {
   "raw": "A few tablespoons of extra-virgin olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A few tablespoons of extra-virgin olive oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A few tablespoons of extra-virgin olive oil",
+    "measurements": [],
+    "note": null
   }
 }

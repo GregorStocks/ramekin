@@ -1,19 +1,17 @@
 {
   "raw": "2  large or 3 medium carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

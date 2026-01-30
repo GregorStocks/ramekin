@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp sazon seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sazon seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sazon seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "15 cups cubed watermelon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cubed watermelon",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cubed watermelon",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

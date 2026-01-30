@@ -1,19 +1,17 @@
 {
   "raw": "8 (35 grams)  green chilies  ((Indian/ Thai/ serrano peppers, slightly slit or pricked with a fork))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chilies  (Indian/ Thai/ serrano peppers, slightly slit or pricked with a fork)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "35",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green chilies  (Indian/ Thai/ serrano peppers, slightly slit or pricked with a fork)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

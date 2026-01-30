@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon low-fat mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat mayonnaise",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-fat mayonnaise",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

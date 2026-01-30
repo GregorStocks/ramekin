@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon instant espresso granules (dissolved in 1 tablespoon hot water, optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant espresso granules",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "dissolved in 1 tablespoon hot water, optional"
-    }
+  "expected": {
+    "item": "instant espresso granules",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "dissolved in 1 tablespoon hot water, optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup frozen mango, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen mango",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "frozen mango",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

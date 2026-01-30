@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons Butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

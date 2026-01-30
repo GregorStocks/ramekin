@@ -1,10 +1,8 @@
 {
   "raw": "fresh mint (, optional for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mint",
-      "measurements": [],
-      "note": "optional for garnish"
-    }
+  "expected": {
+    "item": "fresh mint",
+    "measurements": [],
+    "note": "optional for garnish"
   }
 }

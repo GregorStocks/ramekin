@@ -1,15 +1,13 @@
 {
   "raw": "2 dashes black walnut bitters",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black walnut bitters",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black walnut bitters",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

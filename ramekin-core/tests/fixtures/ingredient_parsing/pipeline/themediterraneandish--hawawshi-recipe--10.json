@@ -1,15 +1,13 @@
 {
   "raw": "6  loaves of pita bread (you need the kind with pockets)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaves of pita bread (you need the kind with pockets)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loaves of pita bread (you need the kind with pockets)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

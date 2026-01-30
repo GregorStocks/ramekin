@@ -1,15 +1,13 @@
 {
   "raw": "2 cups onion ((white or yellow))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion (white or yellow)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion (white or yellow)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

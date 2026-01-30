@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp beef suet (fat) (or beef tallow, lard, cooking oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef suet (fat) (or beef tallow, lard, cooking oil)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef suet (fat) (or beef tallow, lard, cooking oil)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

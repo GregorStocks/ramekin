@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds apples - peeled, cored, and thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apples - peeled, cored",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": "and thinly sliced"
-    }
+  "expected": {
+    "item": "apples - peeled, cored",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": "and thinly sliced"
   }
 }

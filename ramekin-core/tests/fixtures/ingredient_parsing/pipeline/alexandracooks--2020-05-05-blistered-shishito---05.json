@@ -1,10 +1,8 @@
 {
   "raw": "Aleppo pepper, if you have it, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aleppo pepper, if you have it, see notes above",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Aleppo pepper, if you have it, see notes above",
+    "measurements": [],
+    "note": null
   }
 }

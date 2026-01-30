@@ -1,10 +1,8 @@
 {
   "raw": "Roasted Garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Roasted Garlic",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Roasted Garlic",
+    "measurements": [],
+    "note": null
   }
 }

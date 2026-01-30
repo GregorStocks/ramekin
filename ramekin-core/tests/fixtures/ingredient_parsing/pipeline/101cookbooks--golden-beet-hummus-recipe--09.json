@@ -1,15 +1,13 @@
 {
   "raw": "pinch of saffron (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "saffron",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "saffron",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
   }
 }

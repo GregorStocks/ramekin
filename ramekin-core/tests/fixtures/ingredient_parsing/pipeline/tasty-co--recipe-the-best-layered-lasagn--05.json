@@ -1,15 +1,13 @@
 {
   "raw": "½ cup celery stalk, minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery stalk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "celery stalk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "minced"
   }
 }

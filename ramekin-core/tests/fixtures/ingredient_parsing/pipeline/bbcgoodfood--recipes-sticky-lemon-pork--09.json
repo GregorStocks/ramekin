@@ -1,10 +1,8 @@
 {
   "raw": "peeled zest and juice lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peeled zest and juice lemon",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "peeled zest and juice lemon",
+    "measurements": [],
+    "note": null
   }
 }

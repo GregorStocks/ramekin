@@ -1,15 +1,13 @@
 {
   "raw": "1  shallot or ¼ red onion, (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot or 1/4 red onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "shallot or 1/4 red onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

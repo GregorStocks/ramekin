@@ -1,23 +1,21 @@
 {
   "raw": "8 cups fresh blackberries ((2-36 ounce containers))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh blackberries",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        },
-        {
-          "amount": "2-36",
-          "unit": "oz"
-        },
-        {
-          "amount": "57-1021",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh blackberries",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      },
+      {
+        "amount": "2-36",
+        "unit": "oz"
+      },
+      {
+        "amount": "57-1021",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

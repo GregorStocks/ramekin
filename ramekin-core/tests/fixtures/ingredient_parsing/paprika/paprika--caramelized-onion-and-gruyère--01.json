@@ -1,10 +1,8 @@
 {
   "raw": "Yield: 10 3-inch (big!) biscuits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yield: 10 3-inch (big!) biscuits",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Yield: 10 3-inch (big!) biscuits",
+    "measurements": [],
+    "note": null
   }
 }

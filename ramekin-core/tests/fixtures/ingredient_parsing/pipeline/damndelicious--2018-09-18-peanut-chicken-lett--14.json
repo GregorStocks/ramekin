@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons creamy peanut butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "creamy peanut butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "creamy peanut butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cups tomato sauce ((pureed stewed tomatoes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato sauce (pureed stewed tomatoes)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato sauce (pureed stewed tomatoes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

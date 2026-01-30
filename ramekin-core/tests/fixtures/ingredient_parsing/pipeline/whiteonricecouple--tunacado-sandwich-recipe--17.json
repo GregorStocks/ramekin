@@ -1,15 +1,13 @@
 {
   "raw": "8 slices sourdough bread (or bread of choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sourdough bread (or bread of choice)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sourdough bread (or bread of choice)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "FRENCH TOAST",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "FRENCH TOAST",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "FRENCH TOAST",
+    "measurements": [],
+    "note": null
   }
 }

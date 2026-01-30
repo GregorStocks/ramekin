@@ -1,15 +1,13 @@
 {
   "raw": "2 cups red wine, preferably hearty but really, anything you like to drink",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red wine, preferably hearty but really, anything you like to drink",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red wine, preferably hearty but really, anything you like to drink",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "300 g boneless chicken thigh (skin-on preferred, or breast possible)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless chicken thigh (skin-on preferred, or breast possible)",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless chicken thigh (skin-on preferred, or breast possible)",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

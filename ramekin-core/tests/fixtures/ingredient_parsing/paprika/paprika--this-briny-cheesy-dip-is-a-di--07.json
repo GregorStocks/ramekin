@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (120 ml) crème fraîche, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crème fraîche",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "crème fraîche",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

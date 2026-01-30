@@ -1,10 +1,8 @@
 {
   "raw": "Neutral oil for the knife",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Neutral oil for the knife",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Neutral oil for the knife",
+    "measurements": [],
+    "note": null
   }
 }

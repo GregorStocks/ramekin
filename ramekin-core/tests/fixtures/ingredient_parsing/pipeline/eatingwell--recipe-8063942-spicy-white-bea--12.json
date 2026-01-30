@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup unsalted roasted almonds, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted roasted almonds",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "unsalted roasted almonds",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

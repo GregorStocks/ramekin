@@ -1,15 +1,13 @@
 {
   "raw": "1 heaped tablespoon minced garlic, 4 cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced garlic, 4 cloves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaped tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced garlic, 4 cloves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped tbsp"
+      }
+    ],
+    "note": null
   }
 }

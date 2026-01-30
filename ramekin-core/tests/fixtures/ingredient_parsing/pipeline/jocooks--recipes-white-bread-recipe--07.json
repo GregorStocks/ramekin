@@ -1,15 +1,13 @@
 {
   "raw": "4 ½ cups all-purpose flour (up to 5 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour (up to 5 cups)",
-      "measurements": [
-        {
-          "amount": "4 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour (up to 5 cups)",
+    "measurements": [
+      {
+        "amount": "4 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

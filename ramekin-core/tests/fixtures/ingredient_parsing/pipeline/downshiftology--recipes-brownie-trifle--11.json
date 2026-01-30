@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoon  maple syrup, honey or other sweetener",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup, honey or other sweetener",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup, honey or other sweetener",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

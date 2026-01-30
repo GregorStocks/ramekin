@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons orange liqueur ((such as Grand Marnier or Cointreau))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange liqueur (such as Grand Marnier or Cointreau)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange liqueur (such as Grand Marnier or Cointreau)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

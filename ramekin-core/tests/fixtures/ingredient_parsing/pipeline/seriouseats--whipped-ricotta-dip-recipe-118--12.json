@@ -1,10 +1,8 @@
 {
   "raw": "Crudités, toasted bread, and/or crackers, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crudités, toasted bread, and/or crackers",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Crudités, toasted bread, and/or crackers",
+    "measurements": [],
+    "note": "for serving"
   }
 }

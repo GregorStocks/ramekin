@@ -1,15 +1,13 @@
 {
   "raw": "1 cup milk (or cream or half-and-half)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk (or cream or half-and-half)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk (or cream or half-and-half)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

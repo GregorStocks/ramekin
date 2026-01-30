@@ -1,15 +1,13 @@
 {
   "raw": "1 lb small-medium tomatoes, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small-medium tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "small-medium tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped"
   }
 }

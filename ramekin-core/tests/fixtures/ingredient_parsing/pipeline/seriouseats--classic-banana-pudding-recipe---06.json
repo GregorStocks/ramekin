@@ -1,19 +1,17 @@
 {
   "raw": "Yolks from 8 large eggs, straight from the fridge (5 ounces; 140g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yolks from 8 large eggs, straight from the fridge",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Yolks from 8 large eggs, straight from the fridge",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

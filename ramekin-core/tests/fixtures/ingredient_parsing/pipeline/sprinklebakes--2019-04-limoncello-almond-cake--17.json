@@ -1,10 +1,8 @@
 {
   "raw": "Limoncello or vodka",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Limoncello or vodka",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Limoncello or vodka",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces mozzarella cheese, torn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese, torn",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mozzarella cheese, torn",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

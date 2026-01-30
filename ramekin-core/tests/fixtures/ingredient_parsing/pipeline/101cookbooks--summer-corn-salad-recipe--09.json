@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Mexican oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican oregano",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

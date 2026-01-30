@@ -1,15 +1,13 @@
 {
   "raw": "4 slices bacon ((or 2 Tablespoons olive oil for vegetarian))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon (or 2 Tablespoons olive oil for vegetarian)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon (or 2 Tablespoons olive oil for vegetarian)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

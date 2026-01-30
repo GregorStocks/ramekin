@@ -1,10 +1,8 @@
 {
   "raw": "Dressing:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dressing:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Dressing:",
+    "measurements": [],
+    "note": null
   }
 }

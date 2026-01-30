@@ -1,15 +1,13 @@
 {
   "raw": "1  medium/large head of lettuce (** chopped, rinsed, dried)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium/large head of lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "** chopped, rinsed, dried"
-    }
+  "expected": {
+    "item": "medium/large head of lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "** chopped, rinsed, dried"
   }
 }

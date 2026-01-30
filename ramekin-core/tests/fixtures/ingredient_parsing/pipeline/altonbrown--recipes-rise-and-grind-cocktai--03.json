@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 fluid ounces rye whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rye whiskey",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rye whiskey",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

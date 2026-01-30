@@ -1,15 +1,13 @@
 {
   "raw": "2  eggs (room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "room temperature"
   }
 }

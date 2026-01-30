@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) whole-grain mustard, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-grain mustard",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "whole-grain mustard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided"
   }
 }

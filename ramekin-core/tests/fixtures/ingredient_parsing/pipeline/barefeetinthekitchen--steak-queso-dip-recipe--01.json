@@ -1,15 +1,13 @@
 {
   "raw": "½ pound sliced white American cheese (roughly torn or chopped into 1\" pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced white American cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "roughly torn or chopped into 1\" pieces"
-    }
+  "expected": {
+    "item": "sliced white American cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "roughly torn or chopped into 1\" pieces"
   }
 }

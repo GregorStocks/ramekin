@@ -1,15 +1,13 @@
 {
   "raw": "100 g enoki mushrooms (or mushroom of your choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "enoki mushrooms (or mushroom of your choice)",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "enoki mushrooms (or mushroom of your choice)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cup brown lentils, picked over and well-rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown lentils",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "picked over and well-rinsed"
-    }
+  "expected": {
+    "item": "brown lentils",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "picked over and well-rinsed"
   }
 }

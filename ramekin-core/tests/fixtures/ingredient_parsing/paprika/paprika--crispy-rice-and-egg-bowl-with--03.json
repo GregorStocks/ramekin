@@ -1,10 +1,8 @@
 {
   "raw": "Neutral oil (such as grapeseed, safflower, or sunflower)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Neutral oil (such as grapeseed, safflower, or sunflower)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Neutral oil (such as grapeseed, safflower, or sunflower)",
+    "measurements": [],
+    "note": null
   }
 }

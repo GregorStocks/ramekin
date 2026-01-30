@@ -1,15 +1,13 @@
 {
   "raw": "3kg  small tomatoes from the vine, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small tomatoes from the vine",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "kg"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "small tomatoes from the vine",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "kg"
+      }
+    ],
+    "note": "halved"
   }
 }

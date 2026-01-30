@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup diced pickle, I use sweet bread and butter pickles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced pickle, I use sweet bread and butter pickles",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced pickle, I use sweet bread and butter pickles",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

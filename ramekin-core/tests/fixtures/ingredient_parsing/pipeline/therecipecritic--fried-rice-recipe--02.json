@@ -1,19 +1,17 @@
 {
   "raw": "1 cup chopped white onion (about 1 small onion)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped white onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

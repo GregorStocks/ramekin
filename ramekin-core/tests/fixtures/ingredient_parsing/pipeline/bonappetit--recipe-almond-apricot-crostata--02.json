@@ -1,19 +1,17 @@
 {
   "raw": "3 cups (375 g) all-purpose flour, plus more for surface",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "375",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for surface"
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "375",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for surface"
   }
 }

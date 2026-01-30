@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch dashi granules",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dashi granules",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dashi granules",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

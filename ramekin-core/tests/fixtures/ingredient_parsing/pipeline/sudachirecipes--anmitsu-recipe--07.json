@@ -1,15 +1,13 @@
 {
   "raw": "65 g glutinous rice flour (shiratamako)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "glutinous rice flour (shiratamako)",
-      "measurements": [
-        {
-          "amount": "65",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "glutinous rice flour (shiratamako)",
+    "measurements": [
+      {
+        "amount": "65",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

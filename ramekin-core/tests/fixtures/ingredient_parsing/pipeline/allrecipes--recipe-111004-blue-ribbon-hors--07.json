@@ -1,15 +1,13 @@
 {
   "raw": "5 tablespoons pickling salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickling salt",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pickling salt",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

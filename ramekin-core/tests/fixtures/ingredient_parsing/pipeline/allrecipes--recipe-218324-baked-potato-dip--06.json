@@ -1,23 +1,21 @@
 {
   "raw": "0.66666668653488 (3 ounce) can real bacon bits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "real bacon bits",
-      "measurements": [
-        {
-          "amount": "0.66666668653488",
-          "unit": "can"
-        },
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "real bacon bits",
+    "measurements": [
+      {
+        "amount": "0.66666668653488",
+        "unit": "can"
+      },
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

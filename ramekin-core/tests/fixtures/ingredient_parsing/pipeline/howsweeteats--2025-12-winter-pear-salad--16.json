@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon allspice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "allspice",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "allspice",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

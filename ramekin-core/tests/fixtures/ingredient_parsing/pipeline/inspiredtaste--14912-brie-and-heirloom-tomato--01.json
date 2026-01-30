@@ -1,15 +1,13 @@
 {
   "raw": "4 to 6 thick cut slices rustic bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick cut slices rustic bread",
-      "measurements": [
-        {
-          "amount": "4 to 6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick cut slices rustic bread",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

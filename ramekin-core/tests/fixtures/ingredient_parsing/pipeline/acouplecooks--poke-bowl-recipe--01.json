@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 pounds ahi tuna, sushi or sashimi grade (3 steaks, 6 to 8 ounces each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ahi tuna, sushi or sashimi grade",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "3",
-          "unit": null
-        },
-        {
-          "amount": "6 to 8",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ahi tuna, sushi or sashimi grade",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "6 to 8",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

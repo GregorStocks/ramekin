@@ -1,15 +1,13 @@
 {
   "raw": "8  shrimp (deshelled, deveined with tails removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp (deshelled, deveined with tails removed)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shrimp (deshelled, deveined with tails removed)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

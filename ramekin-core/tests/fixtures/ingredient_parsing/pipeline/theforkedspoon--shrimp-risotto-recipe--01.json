@@ -1,10 +1,8 @@
 {
   "raw": "Shells from at least 2 pounds of raw shrimp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shells from at least 2 pounds of raw shrimp",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shells from at least 2 pounds of raw shrimp",
+    "measurements": [],
+    "note": null
   }
 }

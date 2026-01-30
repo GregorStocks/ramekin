@@ -1,15 +1,13 @@
 {
   "raw": "1 pound mixed wild mushrooms, such as cremini, porcini and stemmed shiitakes, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed wild mushrooms, such as cremini, porcini and stemmed shiitakes, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed wild mushrooms, such as cremini, porcini and stemmed shiitakes, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

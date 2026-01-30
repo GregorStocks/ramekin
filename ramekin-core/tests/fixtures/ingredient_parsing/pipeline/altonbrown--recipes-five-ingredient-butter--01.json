@@ -1,15 +1,13 @@
 {
   "raw": "4 sticks unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

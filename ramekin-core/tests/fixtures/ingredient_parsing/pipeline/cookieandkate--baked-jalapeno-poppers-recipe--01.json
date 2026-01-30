@@ -1,15 +1,13 @@
 {
   "raw": "12 large jalapeño peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño peppers",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeño peppers",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

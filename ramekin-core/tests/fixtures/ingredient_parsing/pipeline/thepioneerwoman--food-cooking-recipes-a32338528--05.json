@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lb. large shrimp, peeled, deveined, rinsed and patted dry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large shrimp, peeled, deveined",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "rinsed and patted dry"
-    }
+  "expected": {
+    "item": "large shrimp, peeled, deveined",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "rinsed and patted dry"
   }
 }

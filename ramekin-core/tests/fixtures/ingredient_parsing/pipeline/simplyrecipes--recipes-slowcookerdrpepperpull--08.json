@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup BBQ sauce, any favorite variety",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "BBQ sauce, any favorite variety",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "BBQ sauce, any favorite variety",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

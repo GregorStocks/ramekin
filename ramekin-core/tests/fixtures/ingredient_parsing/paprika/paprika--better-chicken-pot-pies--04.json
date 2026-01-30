@@ -1,19 +1,17 @@
 {
   "raw": "6 tablespoons (90 grams) sour cream or Greek-style yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream or Greek-style yogurt",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "90",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream or Greek-style yogurt",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "90",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

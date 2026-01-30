@@ -1,15 +1,13 @@
 {
   "raw": "1 2/3 cups granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1 2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

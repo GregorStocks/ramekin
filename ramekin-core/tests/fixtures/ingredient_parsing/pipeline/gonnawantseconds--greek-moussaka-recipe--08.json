@@ -1,15 +1,13 @@
 {
   "raw": "1/4 Teaspoon Nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nutmeg",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Nutmeg",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

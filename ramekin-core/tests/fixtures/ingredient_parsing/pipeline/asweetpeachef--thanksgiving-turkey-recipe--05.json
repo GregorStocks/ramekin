@@ -1,15 +1,13 @@
 {
   "raw": "1  granny smith apple (no need to remove core, cut into eighths)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granny smith apple (no need to remove core, cut into eighths)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granny smith apple (no need to remove core, cut into eighths)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

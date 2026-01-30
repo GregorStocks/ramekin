@@ -1,15 +1,13 @@
 {
   "raw": "2 Cups Half and Half",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Half and Half",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Half and Half",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

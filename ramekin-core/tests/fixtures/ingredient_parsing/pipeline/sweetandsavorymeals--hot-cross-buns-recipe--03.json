@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup warm milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm milk",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm milk",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "nice sea salt and pepper to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nice sea salt and pepper to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "nice sea salt and pepper to taste",
+    "measurements": [],
+    "note": null
   }
 }

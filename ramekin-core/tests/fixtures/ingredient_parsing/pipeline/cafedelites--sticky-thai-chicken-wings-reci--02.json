@@ -1,15 +1,13 @@
 {
   "raw": "1/2 - 1 tablespoon sea salt flakes (adjust to your taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sea salt flakes (adjust to your taste)",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sea salt flakes (adjust to your taste)",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

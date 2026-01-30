@@ -1,15 +1,13 @@
 {
   "raw": "1 pound egg noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg noodles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg noodles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

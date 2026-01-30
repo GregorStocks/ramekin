@@ -1,15 +1,13 @@
 {
   "raw": "juice of 3 large   lemons (about 200ml/7fl oz)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "juice of 3 large   lemons",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "juice of 3 large   lemons",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

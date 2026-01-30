@@ -1,19 +1,17 @@
 {
   "raw": "2 cans (10 ounces each) enchilada sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "enchilada sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "10",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "enchilada sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "10",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

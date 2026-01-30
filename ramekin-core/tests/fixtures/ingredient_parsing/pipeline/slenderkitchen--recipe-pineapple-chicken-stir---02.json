@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp coconut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

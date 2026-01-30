@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch cinnamon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

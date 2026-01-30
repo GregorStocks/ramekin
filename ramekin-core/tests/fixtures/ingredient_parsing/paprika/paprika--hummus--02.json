@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon baking soda (for dried chickpeas only)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking soda",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "for dried chickpeas only"
-    }
+  "expected": {
+    "item": "baking soda",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "for dried chickpeas only"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons mild molasses",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mild molasses",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mild molasses",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

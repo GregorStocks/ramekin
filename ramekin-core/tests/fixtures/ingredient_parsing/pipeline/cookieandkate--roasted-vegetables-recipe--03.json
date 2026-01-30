@@ -1,15 +1,13 @@
 {
   "raw": "1 crown of broccoli, cut into bite-sized florets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crown of broccoli, cut into bite-sized florets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crown of broccoli, cut into bite-sized florets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

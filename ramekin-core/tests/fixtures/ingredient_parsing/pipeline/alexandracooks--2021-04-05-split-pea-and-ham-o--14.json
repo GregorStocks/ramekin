@@ -1,15 +1,13 @@
 {
   "raw": "2 cups diced ham, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced ham",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "diced ham",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

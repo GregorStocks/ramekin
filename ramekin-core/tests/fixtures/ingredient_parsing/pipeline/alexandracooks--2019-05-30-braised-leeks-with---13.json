@@ -1,10 +1,8 @@
 {
   "raw": "optional herbs: finely chopped parsley or chives, to taste (this is mostly for color)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional herbs: finely chopped parsley or chives",
-      "measurements": [],
-      "note": "to taste (this is mostly for color)"
-    }
+  "expected": {
+    "item": "optional herbs: finely chopped parsley or chives",
+    "measurements": [],
+    "note": "to taste (this is mostly for color)"
   }
 }

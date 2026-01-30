@@ -1,27 +1,25 @@
 {
   "raw": "2 large (6 ounces total) carrots, peeled and cut into 1/2-inch cubes (1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and cut into 1/2-inch cubes"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch cubes"
   }
 }

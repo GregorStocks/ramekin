@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (about 5 g) flat-leaf parsley leaves and tender stems, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flat-leaf parsley leaves and tender stems",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "5",
-          "unit": "g"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "flat-leaf parsley leaves and tender stems",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "20  black confetti sprinkles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black confetti sprinkles",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black confetti sprinkles",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

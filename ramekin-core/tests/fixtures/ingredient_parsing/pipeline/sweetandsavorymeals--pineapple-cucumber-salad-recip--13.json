@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup sweet Asian chili sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet Asian chili sauce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet Asian chili sauce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

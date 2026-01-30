@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried green split peas, rinsed and picked over",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried green split peas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "rinsed and picked over"
-    }
+  "expected": {
+    "item": "dried green split peas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "rinsed and picked over"
   }
 }

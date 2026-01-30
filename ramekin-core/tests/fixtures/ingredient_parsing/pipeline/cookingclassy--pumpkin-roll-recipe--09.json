@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup canned pumpkin ((at room temperature if refrigerated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned pumpkin",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "at room temperature if refrigerated"
-    }
+  "expected": {
+    "item": "canned pumpkin",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "at room temperature if refrigerated"
   }
 }

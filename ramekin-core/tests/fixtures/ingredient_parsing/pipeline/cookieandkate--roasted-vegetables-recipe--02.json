@@ -1,15 +1,13 @@
 {
   "raw": "2 carrots, peeled and cut on the diagonal so each piece is about ½″ thick at the widest part",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled and cut on the diagonal so each piece is about 1/2″ thick at the widest part"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and cut on the diagonal so each piece is about 1/2″ thick at the widest part"
   }
 }

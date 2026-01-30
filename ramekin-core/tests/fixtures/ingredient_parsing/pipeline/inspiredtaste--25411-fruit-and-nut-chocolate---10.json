@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (350 grams) chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate chips",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate chips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

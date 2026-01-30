@@ -1,15 +1,13 @@
 {
   "raw": "1 small onion or 5 to 6 shallots, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion or 5 to 6 shallots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "onion or 5 to 6 shallots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced"
   }
 }

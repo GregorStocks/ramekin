@@ -1,15 +1,13 @@
 {
   "raw": "6 romaine leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "romaine leaves",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "romaine leaves",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

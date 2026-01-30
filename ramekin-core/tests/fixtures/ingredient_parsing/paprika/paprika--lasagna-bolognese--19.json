@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoons water, if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water, if needed",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water, if needed",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "6 large (7 oz each) bone-in skin-on chicken thighs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in skin-on chicken thighs",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        },
-        {
-          "amount": "7",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in skin-on chicken thighs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      },
+      {
+        "amount": "7",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "cinnamon and sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon and sugar",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon and sugar",
+    "measurements": [],
+    "note": null
   }
 }

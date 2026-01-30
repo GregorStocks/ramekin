@@ -1,15 +1,13 @@
 {
   "raw": "2 bell peppers (yellow and/or red), chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bell peppers (yellow and/or red)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "bell peppers (yellow and/or red)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

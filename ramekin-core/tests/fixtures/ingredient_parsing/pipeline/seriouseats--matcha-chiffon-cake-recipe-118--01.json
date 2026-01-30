@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces (113 g) egg whites from 4 large eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg whites from 4 large eggs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg whites from 4 large eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

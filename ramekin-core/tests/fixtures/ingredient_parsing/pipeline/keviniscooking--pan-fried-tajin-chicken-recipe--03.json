@@ -1,15 +1,13 @@
 {
   "raw": "2  limes and zest (separated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "limes and zest (separated)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "limes and zest (separated)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

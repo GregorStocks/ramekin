@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons chili powder, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "chili powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ripe plums (I used sugar plums, but any sweet red plum will work here)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe plums (I used sugar plums, but any sweet red plum will work here)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe plums (I used sugar plums, but any sweet red plum will work here)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

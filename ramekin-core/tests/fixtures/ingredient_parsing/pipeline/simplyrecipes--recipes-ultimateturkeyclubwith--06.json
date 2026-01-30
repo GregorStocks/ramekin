@@ -1,19 +1,17 @@
 {
   "raw": "1 loaf (18 slices) white sandwich bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf white sandwich bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "18",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loaf white sandwich bread",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "18",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

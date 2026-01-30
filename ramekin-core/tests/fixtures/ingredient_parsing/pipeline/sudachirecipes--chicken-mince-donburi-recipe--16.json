@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp toasted white sesame seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted white sesame seeds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted white sesame seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

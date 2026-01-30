@@ -1,15 +1,13 @@
 {
   "raw": "2  celery stalks (cut into large chunks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery stalks (cut into large chunks)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "celery stalks (cut into large chunks)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

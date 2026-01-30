@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup horseradish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "horseradish",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "horseradish",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

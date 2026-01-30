@@ -1,15 +1,13 @@
 {
   "raw": "17 fluid ounces filtered water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "filtered water",
-      "measurements": [
-        {
-          "amount": "17",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "filtered water",
+    "measurements": [
+      {
+        "amount": "17",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

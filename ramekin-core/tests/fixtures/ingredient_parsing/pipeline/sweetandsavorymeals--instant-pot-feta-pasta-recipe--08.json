@@ -1,19 +1,17 @@
 {
   "raw": "12 oz mini cherry tomatoes (red in different colors)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini cherry tomatoes (red in different colors)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mini cherry tomatoes (red in different colors)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

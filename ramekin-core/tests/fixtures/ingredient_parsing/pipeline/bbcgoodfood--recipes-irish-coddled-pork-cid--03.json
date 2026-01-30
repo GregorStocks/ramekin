@@ -1,15 +1,13 @@
 {
   "raw": "4 rashers smoked bacon cut into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rashers smoked bacon cut into pieces",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rashers smoked bacon cut into pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

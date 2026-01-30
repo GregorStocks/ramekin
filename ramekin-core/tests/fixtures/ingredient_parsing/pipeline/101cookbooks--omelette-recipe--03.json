@@ -1,10 +1,8 @@
 {
   "raw": "a few tablespoons of chopped chives or herbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a few tablespoons of chopped chives or herbs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a few tablespoons of chopped chives or herbs",
+    "measurements": [],
+    "note": null
   }
 }

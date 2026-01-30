@@ -1,19 +1,17 @@
 {
   "raw": "16 oz bottle barbecue sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bottle barbecue sauce",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bottle barbecue sauce",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

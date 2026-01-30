@@ -1,15 +1,13 @@
 {
   "raw": "2 cups low-fat buttermilk, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat buttermilk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "low-fat buttermilk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

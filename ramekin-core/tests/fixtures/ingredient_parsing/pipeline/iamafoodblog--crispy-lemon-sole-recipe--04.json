@@ -1,15 +1,13 @@
 {
   "raw": "2 sole fillets, skinned",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sole fillets, skinned",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sole fillets, skinned",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "250g Charlotte potato (or another waxy variety), quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Charlotte potato (or another waxy variety)",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "Charlotte potato (or another waxy variety)",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": "quartered"
   }
 }

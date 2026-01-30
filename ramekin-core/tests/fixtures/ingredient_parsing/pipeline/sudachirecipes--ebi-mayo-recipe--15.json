@@ -1,15 +1,13 @@
 {
   "raw": "2 pinches salt (for cleaning)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (for cleaning)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (for cleaning)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

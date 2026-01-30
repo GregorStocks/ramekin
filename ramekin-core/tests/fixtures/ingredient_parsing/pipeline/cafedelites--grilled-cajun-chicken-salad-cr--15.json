@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons whole egg mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole egg mayonnaise",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole egg mayonnaise",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

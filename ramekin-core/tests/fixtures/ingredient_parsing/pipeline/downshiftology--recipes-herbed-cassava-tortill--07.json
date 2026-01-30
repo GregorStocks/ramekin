@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp avocado oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "avocado oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

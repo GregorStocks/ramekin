@@ -1,15 +1,13 @@
 {
   "raw": "8  pineapple chunks (fresh is best but canned will work too)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple chunks",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "fresh is best but canned will work too"
-    }
+  "expected": {
+    "item": "pineapple chunks",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "fresh is best but canned will work too"
   }
 }

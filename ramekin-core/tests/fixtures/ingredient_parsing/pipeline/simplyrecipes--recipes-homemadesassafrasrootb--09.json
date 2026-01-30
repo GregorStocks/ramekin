@@ -1,15 +1,13 @@
 {
   "raw": "2 quarts soda water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soda water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soda water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

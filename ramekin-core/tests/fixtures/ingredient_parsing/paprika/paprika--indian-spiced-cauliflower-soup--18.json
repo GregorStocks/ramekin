@@ -1,10 +1,8 @@
 {
   "raw": "A couple spoonfuls heavy cream or dollops of yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A couple spoonfuls heavy cream or dollops of yogurt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A couple spoonfuls heavy cream or dollops of yogurt",
+    "measurements": [],
+    "note": null
   }
 }

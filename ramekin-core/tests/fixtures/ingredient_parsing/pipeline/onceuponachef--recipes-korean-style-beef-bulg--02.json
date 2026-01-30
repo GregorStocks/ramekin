@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Asian/toasted sesame oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Asian/toasted sesame oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Asian/toasted sesame oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

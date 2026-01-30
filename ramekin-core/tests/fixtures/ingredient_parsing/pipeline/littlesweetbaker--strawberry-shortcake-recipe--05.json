@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (250ml) cold milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups fresh Corn Kernels ((from about 3 ears))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Corn Kernels (from about 3 ears)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Corn Kernels (from about 3 ears)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

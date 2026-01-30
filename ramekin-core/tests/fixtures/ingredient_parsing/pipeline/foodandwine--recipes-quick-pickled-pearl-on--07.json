@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon black peppercorns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black peppercorns",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black peppercorns",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

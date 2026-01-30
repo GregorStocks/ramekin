@@ -1,10 +1,8 @@
 {
   "raw": "oil for deep-frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil for deep-frying",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "oil for deep-frying",
+    "measurements": [],
+    "note": null
   }
 }

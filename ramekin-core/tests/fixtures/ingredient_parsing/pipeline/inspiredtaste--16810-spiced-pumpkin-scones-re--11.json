@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (115 grams) pumpkin puree,&nbsp;see&nbsp;our homemade pumpkin puree recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin puree, see our homemade pumpkin puree recipe",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin puree, see our homemade pumpkin puree recipe",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

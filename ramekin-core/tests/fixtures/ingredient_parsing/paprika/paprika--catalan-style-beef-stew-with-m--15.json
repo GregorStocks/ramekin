@@ -1,10 +1,8 @@
 {
   "raw": "Picada",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Picada",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Picada",
+    "measurements": [],
+    "note": null
   }
 }

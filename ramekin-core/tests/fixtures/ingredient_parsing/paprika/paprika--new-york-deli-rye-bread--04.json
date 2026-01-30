@@ -1,19 +1,17 @@
 {
   "raw": "1/2 teaspoon (1.6 grams) instant yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant yeast",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "1.6",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "1.6",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

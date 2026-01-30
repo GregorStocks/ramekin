@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp goji berries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "goji berries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "goji berries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "28 oz marinara sauce (store-bought like Rao’s or homemade)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinara sauce (store-bought like Rao’s or homemade)",
-      "measurements": [
-        {
-          "amount": "28",
-          "unit": "oz"
-        },
-        {
-          "amount": "794",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinara sauce (store-bought like Rao’s or homemade)",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "oz"
+      },
+      {
+        "amount": "794",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

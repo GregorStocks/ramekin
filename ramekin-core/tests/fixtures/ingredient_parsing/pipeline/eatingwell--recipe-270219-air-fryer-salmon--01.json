@@ -1,10 +1,8 @@
 {
   "raw": "Cooking spray",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooking spray",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cooking spray",
+    "measurements": [],
+    "note": null
   }
 }

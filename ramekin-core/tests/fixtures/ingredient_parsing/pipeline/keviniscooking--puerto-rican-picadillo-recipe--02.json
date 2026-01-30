@@ -1,19 +1,17 @@
 {
   "raw": "8 oz sofrito ((See Note 1))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sofrito (See Note 1)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sofrito (See Note 1)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 small yellow onion, diced (4 ounces; 115g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

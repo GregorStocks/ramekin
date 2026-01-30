@@ -1,15 +1,13 @@
 {
   "raw": "2 ears corn, husked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ears corn, husked",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ears corn, husked",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

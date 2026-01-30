@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh blueberries or frozen blueberries that have been thawed and drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh blueberries or frozen blueberries that have been thawed and drained",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh blueberries or frozen blueberries that have been thawed and drained",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

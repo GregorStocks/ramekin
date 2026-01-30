@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup capers, rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "capers",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "rinsed"
-    }
+  "expected": {
+    "item": "capers",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2  skinless salmon filets, (about 1 inch in thickness each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless salmon filets",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless salmon filets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

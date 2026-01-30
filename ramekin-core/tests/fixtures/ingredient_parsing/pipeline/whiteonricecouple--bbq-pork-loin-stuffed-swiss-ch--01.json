@@ -1,15 +1,13 @@
 {
   "raw": "4 pound Pork Loin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pork Loin",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Pork Loin",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

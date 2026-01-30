@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup chunky peanut butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chunky peanut butter",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chunky peanut butter",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

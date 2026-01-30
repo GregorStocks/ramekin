@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch asafoetida ((hing))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asafoetida (hing)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "asafoetida (hing)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

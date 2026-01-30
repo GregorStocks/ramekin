@@ -1,15 +1,13 @@
 {
   "raw": "1 cup matchstick french fries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "matchstick french fries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "matchstick french fries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

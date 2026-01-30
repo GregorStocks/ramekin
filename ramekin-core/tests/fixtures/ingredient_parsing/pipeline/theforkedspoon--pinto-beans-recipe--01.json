@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried pinto beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried pinto beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried pinto beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

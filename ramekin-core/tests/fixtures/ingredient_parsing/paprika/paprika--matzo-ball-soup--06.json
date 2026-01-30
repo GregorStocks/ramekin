@@ -1,15 +1,13 @@
 {
   "raw": "1 head garlic, cut horizontally in half",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic, cut horizontally in half",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic, cut horizontally in half",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

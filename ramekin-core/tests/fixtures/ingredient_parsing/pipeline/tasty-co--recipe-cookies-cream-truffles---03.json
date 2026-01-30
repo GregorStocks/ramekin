@@ -1,19 +1,17 @@
 {
   "raw": "12 oz white chocolate, melted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white chocolate",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "white chocolate",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
   }
 }

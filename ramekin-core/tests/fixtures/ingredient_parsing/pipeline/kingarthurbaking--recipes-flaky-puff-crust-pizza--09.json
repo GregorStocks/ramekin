@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (25g) Parmesan cheese, grated; plus more for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmesan cheese, grated;",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for sprinkling"
-    }
+  "expected": {
+    "item": "Parmesan cheese, grated;",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for sprinkling"
   }
 }

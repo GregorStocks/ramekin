@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp keto caramel sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "keto caramel sauce",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "keto caramel sauce",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

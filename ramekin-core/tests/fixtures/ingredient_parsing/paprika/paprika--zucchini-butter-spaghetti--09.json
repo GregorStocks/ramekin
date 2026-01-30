@@ -1,15 +1,13 @@
 {
   "raw": "Handful fresh basil leaves, cut into thin ribbons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil leaves, cut into thin ribbons",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh basil leaves, cut into thin ribbons",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

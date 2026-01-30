@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup fresh orange juice (approx. 2 large oranges)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh orange juice (approx. 2 large oranges)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh orange juice (approx. 2 large oranges)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

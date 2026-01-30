@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons butter (for frying)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter (for frying)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter (for frying)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

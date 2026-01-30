@@ -1,15 +1,13 @@
 {
   "raw": "3 plum tomatoes, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plum tomatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "plum tomatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

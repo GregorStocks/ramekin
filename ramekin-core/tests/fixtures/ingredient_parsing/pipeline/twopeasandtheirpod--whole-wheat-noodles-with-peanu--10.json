@@ -1,10 +1,8 @@
 {
   "raw": "Red Pepper Strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red Pepper Strips",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Red Pepper Strips",
+    "measurements": [],
+    "note": null
   }
 }

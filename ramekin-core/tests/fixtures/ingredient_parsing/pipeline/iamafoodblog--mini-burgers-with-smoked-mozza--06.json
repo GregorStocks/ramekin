@@ -1,15 +1,13 @@
 {
   "raw": "12 slider buns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slider buns",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slider buns",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

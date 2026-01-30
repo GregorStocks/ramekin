@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp apricot jam",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apricot jam",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apricot jam",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons finely chopped fresh rosemary or 2 teaspoons dried rosemary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fresh rosemary",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 2 teaspoons dried rosemary"
-    }
+  "expected": {
+    "item": "finely chopped fresh rosemary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 2 teaspoons dried rosemary"
   }
 }

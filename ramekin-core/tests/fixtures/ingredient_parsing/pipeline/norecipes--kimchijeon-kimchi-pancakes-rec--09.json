@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

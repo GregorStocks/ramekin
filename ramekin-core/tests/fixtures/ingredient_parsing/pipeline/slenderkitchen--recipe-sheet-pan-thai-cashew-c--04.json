@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp honey (or replace with Stevia for lower carb)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey (or replace with Stevia for lower carb)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey (or replace with Stevia for lower carb)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

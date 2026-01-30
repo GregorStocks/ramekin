@@ -1,10 +1,8 @@
 {
   "raw": "Mexican Crema",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican Crema",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican Crema",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (215 g) grated Parmigiano Reggiano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated Parmigiano Reggiano",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "215",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated Parmigiano Reggiano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "215",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

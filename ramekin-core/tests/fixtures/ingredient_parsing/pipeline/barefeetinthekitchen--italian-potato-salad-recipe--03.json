@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons coarse-ground or whole grain mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse-ground or whole grain mustard",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarse-ground or whole grain mustard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

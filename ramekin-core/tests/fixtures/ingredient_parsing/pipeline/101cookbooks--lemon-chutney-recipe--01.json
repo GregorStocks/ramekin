@@ -1,23 +1,21 @@
 {
   "raw": "1/4 cup / 1 oz / 30g finely chopped shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped shallots",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped shallots",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

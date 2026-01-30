@@ -1,10 +1,8 @@
 {
   "raw": "Warm marinara sauce, optional, see our homemade marinara recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Warm marinara sauce, optional, see our homemade marinara recipe",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Warm marinara sauce, optional, see our homemade marinara recipe",
+    "measurements": [],
+    "note": null
   }
 }

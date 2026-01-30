@@ -1,15 +1,13 @@
 {
   "raw": "10 to 12 fresh mint leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mint leaves",
-      "measurements": [
-        {
-          "amount": "10 to 12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh mint leaves",
+    "measurements": [
+      {
+        "amount": "10 to 12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

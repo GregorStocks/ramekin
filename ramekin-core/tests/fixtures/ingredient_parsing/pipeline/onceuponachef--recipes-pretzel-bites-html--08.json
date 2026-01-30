@@ -1,10 +1,8 @@
 {
   "raw": "About 1 teaspoon  coarse or kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "About 1 teaspoon  coarse or kosher salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "About 1 teaspoon  coarse or kosher salt",
+    "measurements": [],
+    "note": null
   }
 }

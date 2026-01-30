@@ -1,10 +1,8 @@
 {
   "raw": "eggs, however many you need",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs, however many you need",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs, however many you need",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups sourdough bread cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sourdough bread cubes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sourdough bread cubes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

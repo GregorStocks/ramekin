@@ -1,19 +1,17 @@
 {
   "raw": "1/2 ounce freeze-dried strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freeze-dried strawberries",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freeze-dried strawberries",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

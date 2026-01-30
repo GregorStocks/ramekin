@@ -1,15 +1,13 @@
 {
   "raw": "4 cups romaine lettuce (cos lettuce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "romaine lettuce (cos lettuce)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "romaine lettuce (cos lettuce)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

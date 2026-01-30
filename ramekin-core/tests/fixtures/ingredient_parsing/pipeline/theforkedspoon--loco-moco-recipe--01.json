@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ground beef (80/20 ground chuck recommended)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "80/20 ground chuck recommended"
-    }
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "80/20 ground chuck recommended"
   }
 }

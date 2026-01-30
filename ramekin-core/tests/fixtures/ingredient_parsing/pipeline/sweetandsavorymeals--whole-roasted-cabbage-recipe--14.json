@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon freshly chopped rosemary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly chopped rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly chopped rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

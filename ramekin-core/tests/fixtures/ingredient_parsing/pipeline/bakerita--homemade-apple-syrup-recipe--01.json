@@ -1,15 +1,13 @@
 {
   "raw": "2 cups pure apple juice or apple cider, look for 100% apples, no additives or sweeteners",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure apple juice or apple cider, look for 100% apples, no additives or sweeteners",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure apple juice or apple cider, look for 100% apples, no additives or sweeteners",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

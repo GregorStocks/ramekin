@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP crumbled feta cheese ((skip for vegan))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled feta cheese (skip for vegan)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled feta cheese (skip for vegan)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

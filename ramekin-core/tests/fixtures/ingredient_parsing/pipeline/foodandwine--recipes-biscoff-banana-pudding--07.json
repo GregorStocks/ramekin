@@ -1,19 +1,17 @@
 {
   "raw": "1 (11-ounce) package vanilla wafers, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla wafers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "11",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "vanilla wafers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "11",
+        "unit": null
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp chile powder (chili) (use mild or medium depending on your heat level (16g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chile powder (chili) (use mild or medium depending on your heat level (16g)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chile powder (chili) (use mild or medium depending on your heat level (16g)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

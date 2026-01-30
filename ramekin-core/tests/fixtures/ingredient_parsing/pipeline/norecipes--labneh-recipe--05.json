@@ -1,10 +1,8 @@
 {
   "raw": "sumac (for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sumac",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "sumac",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

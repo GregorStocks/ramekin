@@ -1,10 +1,8 @@
 {
   "raw": "sour cream to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream to taste",
+    "measurements": [],
+    "note": null
   }
 }

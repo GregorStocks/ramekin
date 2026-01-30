@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup cacao powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cacao powder",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cacao powder",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

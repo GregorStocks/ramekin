@@ -1,23 +1,21 @@
 {
   "raw": "8 oz of Philly cream cheese (1 package), room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Philly cream cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "Philly cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "room temperature"
   }
 }

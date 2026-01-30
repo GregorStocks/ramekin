@@ -1,15 +1,13 @@
 {
   "raw": "1   lb    boneless chicken breast, cut into 1-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless chicken breast, cut into 1-inch cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless chicken breast, cut into 1-inch cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

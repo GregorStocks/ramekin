@@ -1,15 +1,13 @@
 {
   "raw": "½ - 1 teaspoon gochugaru",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gochugaru",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gochugaru",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

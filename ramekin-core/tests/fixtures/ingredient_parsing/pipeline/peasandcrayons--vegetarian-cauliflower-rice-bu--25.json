@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeño pepper ((seeds and stem removed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño pepper (seeds and stem removed)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeño pepper (seeds and stem removed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

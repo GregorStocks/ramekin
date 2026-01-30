@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup drained canned diced tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "drained canned diced tomatoes",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "drained canned diced tomatoes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

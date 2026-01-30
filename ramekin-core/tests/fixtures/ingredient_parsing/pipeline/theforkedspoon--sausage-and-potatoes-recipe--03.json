@@ -1,15 +1,13 @@
 {
   "raw": "2  red bell peppers (seeded and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "seeded and chopped"
-    }
+  "expected": {
+    "item": "red bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "seeded and chopped"
   }
 }

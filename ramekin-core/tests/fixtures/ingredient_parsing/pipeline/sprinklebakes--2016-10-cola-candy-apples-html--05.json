@@ -1,15 +1,13 @@
 {
   "raw": "1 cup 7.5 oz. cola/soda pop (such as Coca-Cola)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "7.5 oz. cola/soda pop (such as Coca-Cola)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "7.5 oz. cola/soda pop (such as Coca-Cola)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

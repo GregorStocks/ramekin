@@ -1,15 +1,13 @@
 {
   "raw": "100g dark 'continental' chocolate (at least 65% cocoa solids)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark 'continental' chocolate (at least 65% cocoa solids)",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark 'continental' chocolate (at least 65% cocoa solids)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

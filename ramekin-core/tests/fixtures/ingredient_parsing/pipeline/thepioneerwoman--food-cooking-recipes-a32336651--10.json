@@ -1,15 +1,13 @@
 {
   "raw": "24 fresh basil leaves, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil leaves",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh basil leaves",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

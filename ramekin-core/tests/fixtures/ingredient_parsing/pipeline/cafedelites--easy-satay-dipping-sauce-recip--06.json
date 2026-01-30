@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons fish sauce (optional - replace with soy sauce if desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional - replace with soy sauce if desired"
-    }
+  "expected": {
+    "item": "fish sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional - replace with soy sauce if desired"
   }
 }

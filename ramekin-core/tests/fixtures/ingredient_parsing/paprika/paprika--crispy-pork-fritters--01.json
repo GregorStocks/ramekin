@@ -1,23 +1,21 @@
 {
   "raw": "1 cup all-purpose flour (4.5 ounces; 127 g), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "127",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "4.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "127",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

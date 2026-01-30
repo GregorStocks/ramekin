@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces jumbo lump crab meat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jumbo lump crab meat",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jumbo lump crab meat",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

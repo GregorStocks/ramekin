@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (2 sticks) unsalted butter, room temperature, cut into",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, room temperature, cut into",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter, room temperature, cut into",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

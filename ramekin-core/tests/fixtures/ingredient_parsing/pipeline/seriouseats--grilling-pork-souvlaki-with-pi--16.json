@@ -1,10 +1,8 @@
 {
   "raw": "Pocketless Pita",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pocketless Pita",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pocketless Pita",
+    "measurements": [],
+    "note": null
   }
 }

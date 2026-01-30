@@ -1,15 +1,13 @@
 {
   "raw": "1 can  chili beans, (undrained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        }
-      ],
-      "note": "undrained"
-    }
+  "expected": {
+    "item": "chili beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": "undrained"
   }
 }

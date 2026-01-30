@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup mayonnaise, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

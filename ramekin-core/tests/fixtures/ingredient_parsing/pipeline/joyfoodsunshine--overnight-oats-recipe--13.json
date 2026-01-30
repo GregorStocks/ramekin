@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon jam of choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jam of choice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jam of choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

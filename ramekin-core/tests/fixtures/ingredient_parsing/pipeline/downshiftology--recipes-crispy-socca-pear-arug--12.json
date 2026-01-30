@@ -1,10 +1,8 @@
 {
   "raw": "shaved parmesan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shaved parmesan",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "shaved parmesan",
+    "measurements": [],
+    "note": null
   }
 }

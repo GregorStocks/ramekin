@@ -1,15 +1,13 @@
 {
   "raw": "Dash of red pepper flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper flakes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red pepper flakes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

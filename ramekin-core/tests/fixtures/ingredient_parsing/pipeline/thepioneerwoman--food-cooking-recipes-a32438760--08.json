@@ -1,15 +1,13 @@
 {
   "raw": "14 lasagna noodles (not no-boil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lasagna noodles (not no-boil)",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lasagna noodles (not no-boil)",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

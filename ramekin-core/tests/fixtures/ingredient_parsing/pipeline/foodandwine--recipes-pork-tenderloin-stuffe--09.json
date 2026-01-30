@@ -1,15 +1,13 @@
 {
   "raw": "One 1-pound pork tenderloin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1-pound pork tenderloin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1-pound pork tenderloin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup coarsely chopped lemongrass, from 2 medium stalks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely chopped lemongrass, from 2 medium stalks",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely chopped lemongrass, from 2 medium stalks",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

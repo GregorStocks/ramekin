@@ -1,15 +1,13 @@
 {
   "raw": "9  egg yolks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolks",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg yolks",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

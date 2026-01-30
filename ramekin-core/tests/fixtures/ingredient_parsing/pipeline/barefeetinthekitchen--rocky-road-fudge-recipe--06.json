@@ -1,15 +1,13 @@
 {
   "raw": "1 cup salted peanuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted peanuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted peanuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

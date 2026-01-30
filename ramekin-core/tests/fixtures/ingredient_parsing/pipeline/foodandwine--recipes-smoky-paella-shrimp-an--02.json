@@ -1,15 +1,13 @@
 {
   "raw": "1 pound large shrimp, shelled and deveined",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large shrimp, shelled and deveined",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "large shrimp, shelled and deveined",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

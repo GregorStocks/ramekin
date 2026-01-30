@@ -1,10 +1,8 @@
 {
   "raw": "extra crumbled feta cheese (I'm guilty of this one! Yum!)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra crumbled feta cheese (I'm guilty of this one! Yum!)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "extra crumbled feta cheese (I'm guilty of this one! Yum!)",
+    "measurements": [],
+    "note": null
   }
 }

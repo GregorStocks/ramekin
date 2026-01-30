@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons dried yeast (instant or rapid rise)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried yeast (instant or rapid rise)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried yeast (instant or rapid rise)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

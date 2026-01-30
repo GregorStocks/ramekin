@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp chilli powder (I used mild)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chilli powder (I used mild)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chilli powder (I used mild)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

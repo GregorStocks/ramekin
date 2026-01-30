@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces green chilies (undrained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chilies",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "undrained"
-    }
+  "expected": {
+    "item": "green chilies",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "undrained"
   }
 }

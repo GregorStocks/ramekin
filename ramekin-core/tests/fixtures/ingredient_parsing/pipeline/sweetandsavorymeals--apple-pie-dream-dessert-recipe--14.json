@@ -1,19 +1,17 @@
 {
   "raw": "8 oz container frozen whipped topping (thawed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "container frozen whipped topping",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "container frozen whipped topping",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed"
   }
 }

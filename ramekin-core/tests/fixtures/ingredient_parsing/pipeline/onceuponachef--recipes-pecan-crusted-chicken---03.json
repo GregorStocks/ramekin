@@ -1,15 +1,13 @@
 {
   "raw": "2¼ teaspoons salt, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "2 1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

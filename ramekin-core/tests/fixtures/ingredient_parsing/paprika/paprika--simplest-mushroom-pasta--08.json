@@ -1,10 +1,8 @@
 {
   "raw": "Glug of dry marsala or white wine (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Glug of dry marsala or white wine",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Glug of dry marsala or white wine",
+    "measurements": [],
+    "note": "optional"
   }
 }

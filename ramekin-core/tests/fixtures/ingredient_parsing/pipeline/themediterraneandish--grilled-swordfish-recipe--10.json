@@ -1,10 +1,8 @@
 {
   "raw": "Crushed red pepper, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crushed red pepper",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Crushed red pepper",
+    "measurements": [],
+    "note": "optional"
   }
 }

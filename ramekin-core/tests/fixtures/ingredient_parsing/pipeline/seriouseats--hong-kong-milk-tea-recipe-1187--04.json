@@ -1,10 +1,8 @@
 {
   "raw": "Granulated sugar, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Granulated sugar",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Granulated sugar",
+    "measurements": [],
+    "note": "to taste"
   }
 }

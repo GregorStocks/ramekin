@@ -1,15 +1,13 @@
 {
   "raw": "1 packet active dry yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packet active dry yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packet active dry yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

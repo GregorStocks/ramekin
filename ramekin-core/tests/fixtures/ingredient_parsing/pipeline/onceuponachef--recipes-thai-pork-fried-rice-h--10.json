@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups cooked broccoli florets (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked broccoli florets (see note)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked broccoli florets (see note)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

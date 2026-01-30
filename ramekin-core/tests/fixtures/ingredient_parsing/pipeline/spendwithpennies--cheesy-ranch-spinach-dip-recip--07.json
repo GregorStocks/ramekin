@@ -1,15 +1,13 @@
 {
   "raw": "1 packet Hidden Valley Ranch Mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packet Hidden Valley Ranch Mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packet Hidden Valley Ranch Mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

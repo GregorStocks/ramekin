@@ -1,15 +1,13 @@
 {
   "raw": "3 cups unsweetened applesauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened applesauce",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened applesauce",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

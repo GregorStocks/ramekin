@@ -1,15 +1,13 @@
 {
   "raw": "1 cup unsweetened almond milk or milk of choice, plus more as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened almond milk or milk of choice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more as needed"
-    }
+  "expected": {
+    "item": "unsweetened almond milk or milk of choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more as needed"
   }
 }

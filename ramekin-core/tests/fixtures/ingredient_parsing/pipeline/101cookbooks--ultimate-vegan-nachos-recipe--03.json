@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sweet potato vegan nacho cheese ((recipe below))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potato vegan nacho cheese (recipe below)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet potato vegan nacho cheese (recipe below)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

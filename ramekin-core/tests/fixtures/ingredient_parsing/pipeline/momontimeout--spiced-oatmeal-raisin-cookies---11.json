@@ -1,15 +1,13 @@
 {
   "raw": "1/2 to 1 tsp ground cloves (I go with 1 full tsp)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cloves (I go with 1 full tsp)",
-      "measurements": [
-        {
-          "amount": "1/2 to 1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cloves (I go with 1 full tsp)",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

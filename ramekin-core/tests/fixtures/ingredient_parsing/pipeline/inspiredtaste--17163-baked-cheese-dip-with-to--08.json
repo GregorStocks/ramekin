@@ -1,15 +1,13 @@
 {
   "raw": "1 baguette, sliced and toasted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baguette",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced and toasted"
-    }
+  "expected": {
+    "item": "baguette",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced and toasted"
   }
 }

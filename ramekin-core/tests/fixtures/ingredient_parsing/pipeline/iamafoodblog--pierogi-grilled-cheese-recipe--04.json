@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon bacon bits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon bits",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon bits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

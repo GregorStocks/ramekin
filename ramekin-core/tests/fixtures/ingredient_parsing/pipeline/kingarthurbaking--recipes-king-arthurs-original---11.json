@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups (255g) semisweet chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "255",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "255",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

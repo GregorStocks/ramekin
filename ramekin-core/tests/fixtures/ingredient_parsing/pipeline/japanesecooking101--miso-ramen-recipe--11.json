@@ -1,15 +1,13 @@
 {
   "raw": "1/4 tsp chili bean paste such as Tobanjan or any chili paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili bean paste such as Tobanjan or any chili paste",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili bean paste such as Tobanjan or any chili paste",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

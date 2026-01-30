@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup flax meal or wheat germ",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flax meal or wheat germ",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flax meal or wheat germ",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

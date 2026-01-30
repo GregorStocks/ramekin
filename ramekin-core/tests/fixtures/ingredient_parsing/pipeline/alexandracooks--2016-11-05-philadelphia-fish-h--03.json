@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups fresh lemon juice (6 to 8 lemons), strained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lemon juice , strained",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "6 to 8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lemon juice , strained",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "6 to 8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 to 2 pounds flank steak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 2 pounds flank steak",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 2 pounds flank steak",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

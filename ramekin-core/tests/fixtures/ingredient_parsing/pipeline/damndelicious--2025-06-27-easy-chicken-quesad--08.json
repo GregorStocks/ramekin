@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pico de gallo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pico de gallo",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pico de gallo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

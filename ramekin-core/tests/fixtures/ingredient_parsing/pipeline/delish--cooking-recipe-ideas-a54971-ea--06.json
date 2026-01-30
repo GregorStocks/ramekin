@@ -1,15 +1,13 @@
 {
   "raw": "2 c. low-sodium beef broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium beef broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium beef broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

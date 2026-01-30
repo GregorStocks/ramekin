@@ -1,10 +1,8 @@
 {
   "raw": "Tortilla chips or Fried Green Plantain Chips (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tortilla chips or Fried Green Plantain Chips",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Tortilla chips or Fried Green Plantain Chips",
+    "measurements": [],
+    "note": "for serving"
   }
 }

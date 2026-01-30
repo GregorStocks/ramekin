@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons onion salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

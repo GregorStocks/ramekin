@@ -1,15 +1,13 @@
 {
   "raw": "½  English cucumber (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English cucumber",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "English cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

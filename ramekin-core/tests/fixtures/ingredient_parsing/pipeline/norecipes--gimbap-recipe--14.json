@@ -1,15 +1,13 @@
 {
   "raw": "4 cups cooked short-grain rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked short-grain rice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked short-grain rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

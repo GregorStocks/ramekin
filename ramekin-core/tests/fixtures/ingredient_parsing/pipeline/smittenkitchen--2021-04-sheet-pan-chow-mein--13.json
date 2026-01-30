@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons soy sauce, tamari, or coconut aminos",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce, tamari, or coconut aminos",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soy sauce, tamari, or coconut aminos",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

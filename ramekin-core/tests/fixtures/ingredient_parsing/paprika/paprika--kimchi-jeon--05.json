@@ -1,15 +1,13 @@
 {
   "raw": "7ml unseasoned rice vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unseasoned rice vinegar",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unseasoned rice vinegar",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

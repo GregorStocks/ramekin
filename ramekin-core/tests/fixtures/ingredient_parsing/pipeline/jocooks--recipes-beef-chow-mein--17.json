@@ -1,15 +1,13 @@
 {
   "raw": "2  green onions (cut into 1 inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions (cut into 1 inch pieces)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green onions (cut into 1 inch pieces)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

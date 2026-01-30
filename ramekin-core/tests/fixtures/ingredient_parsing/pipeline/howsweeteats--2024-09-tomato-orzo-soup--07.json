@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cups uncooked orzo pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked orzo pasta",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked orzo pasta",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

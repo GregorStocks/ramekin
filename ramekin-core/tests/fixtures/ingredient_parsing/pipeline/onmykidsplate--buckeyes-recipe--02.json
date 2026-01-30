@@ -1,15 +1,13 @@
 {
   "raw": "1 cup peanut butter (creamy no stir version)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peanut butter (creamy no stir version)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peanut butter (creamy no stir version)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon peppermint extract (or, if using oil-based flavoring, a few drops to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppermint extract",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or, if using oil-based flavoring, a few drops to taste"
-    }
+  "expected": {
+    "item": "peppermint extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or, if using oil-based flavoring, a few drops to taste"
   }
 }

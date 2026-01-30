@@ -1,19 +1,17 @@
 {
   "raw": "8 oz lobster tail, 2 tails",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lobster tail, 2 tails",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lobster tail, 2 tails",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

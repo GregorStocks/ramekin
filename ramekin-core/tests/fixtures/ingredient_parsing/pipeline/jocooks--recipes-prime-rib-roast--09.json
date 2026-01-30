@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds prime rib",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prime rib",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prime rib",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

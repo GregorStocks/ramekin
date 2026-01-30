@@ -1,15 +1,13 @@
 {
   "raw": "2 king oyster mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "king oyster mushrooms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "king oyster mushrooms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

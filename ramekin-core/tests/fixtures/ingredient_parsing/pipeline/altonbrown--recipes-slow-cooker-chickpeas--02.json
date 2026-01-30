@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried chickpeas, sorted and rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chickpeas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "sorted and rinsed"
-    }
+  "expected": {
+    "item": "dried chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sorted and rinsed"
   }
 }

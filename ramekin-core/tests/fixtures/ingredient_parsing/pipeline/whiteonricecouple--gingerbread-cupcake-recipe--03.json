@@ -1,15 +1,13 @@
 {
   "raw": "3  Eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Eggs",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Eggs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Small pinch cayenne",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pinch cayenne",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pinch cayenne",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

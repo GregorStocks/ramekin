@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon peppermint",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppermint",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peppermint",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

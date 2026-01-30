@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup parmesan, (plus more for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parmesan",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "parmesan",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound skinless, boneless chicken thighs, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless, boneless chicken thighs, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless, boneless chicken thighs, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

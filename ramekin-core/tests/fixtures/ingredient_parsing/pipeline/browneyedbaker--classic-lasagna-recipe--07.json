@@ -1,15 +1,13 @@
 {
   "raw": "6 cups your favorite meat sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your favorite meat sauce",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "your favorite meat sauce",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

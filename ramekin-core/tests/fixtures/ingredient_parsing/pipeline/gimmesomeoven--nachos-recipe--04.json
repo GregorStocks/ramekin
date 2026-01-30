@@ -1,15 +1,13 @@
 {
   "raw": "1 large avocado, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

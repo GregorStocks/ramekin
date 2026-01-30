@@ -1,15 +1,13 @@
 {
   "raw": "1 large red bell pepper, ribs and seeds removed, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell pepper, ribs and seeds removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "red bell pepper, ribs and seeds removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

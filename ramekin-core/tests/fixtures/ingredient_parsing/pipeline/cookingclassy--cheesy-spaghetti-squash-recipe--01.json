@@ -1,23 +1,21 @@
 {
   "raw": "6 - 6.5 lbs spaghetti squash ((3 medium or 2 large), halved, scoop out seeds and membranes*)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghetti squash , halved, scoop out seeds and membranes*)",
-      "measurements": [
-        {
-          "amount": "6-6.5",
-          "unit": "lb"
-        },
-        {
-          "amount": "3",
-          "unit": "medium"
-        },
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghetti squash , halved, scoop out seeds and membranes*)",
+    "measurements": [
+      {
+        "amount": "6-6.5",
+        "unit": "lb"
+      },
+      {
+        "amount": "3",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

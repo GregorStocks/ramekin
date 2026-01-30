@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cooked yellow or green split peas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked yellow or green split peas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked yellow or green split peas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

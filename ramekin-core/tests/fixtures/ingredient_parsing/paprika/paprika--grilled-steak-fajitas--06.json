@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds skirt steak, trimmed and cut crosswise into 6 equal pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skirt steak",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed and cut crosswise into 6 equal pieces"
-    }
+  "expected": {
+    "item": "skirt steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed and cut crosswise into 6 equal pieces"
   }
 }

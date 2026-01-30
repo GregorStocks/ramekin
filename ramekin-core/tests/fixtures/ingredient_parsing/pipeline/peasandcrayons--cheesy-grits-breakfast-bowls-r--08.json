@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP milk (plus extra if desired to thin)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk (plus extra if desired to thin)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk (plus extra if desired to thin)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

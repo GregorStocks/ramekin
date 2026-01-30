@@ -1,15 +1,13 @@
 {
   "raw": "2 3.4 oz pkg lemon instant pudding",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon instant pudding",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "3.4 oz pkg"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon instant pudding",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "3.4 oz pkg"
+      }
+    ],
+    "note": null
   }
 }

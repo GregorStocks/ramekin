@@ -1,15 +1,13 @@
 {
   "raw": "2 small sprigs thyme, leaves picked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sprigs thyme, leaves picked",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sprigs thyme, leaves picked",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

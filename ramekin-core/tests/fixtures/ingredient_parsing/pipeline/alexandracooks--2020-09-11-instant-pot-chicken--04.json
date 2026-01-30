@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chipotles in adobo sauce, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chipotles in adobo sauce, see notes above",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chipotles in adobo sauce, see notes above",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

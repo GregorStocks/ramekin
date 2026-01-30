@@ -1,19 +1,17 @@
 {
   "raw": "1  pkg golden oreos ((36 cookies))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden oreos",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "36",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "golden oreos",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "36",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

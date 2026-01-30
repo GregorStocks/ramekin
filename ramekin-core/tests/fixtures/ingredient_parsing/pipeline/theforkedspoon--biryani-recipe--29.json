@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoon melted butter or ghee ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted butter or ghee",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "melted butter or ghee",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

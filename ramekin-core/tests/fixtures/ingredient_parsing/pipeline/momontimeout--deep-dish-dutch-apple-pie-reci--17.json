@@ -1,15 +1,13 @@
 {
   "raw": "6 tbsp cold butter (cut into small piece)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold butter (cut into small piece)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold butter (cut into small piece)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

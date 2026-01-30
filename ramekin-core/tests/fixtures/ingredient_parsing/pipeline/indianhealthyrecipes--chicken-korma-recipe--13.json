@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoon oil or ghee ((use as per your preference))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil or ghee (use as per your preference)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil or ghee (use as per your preference)",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

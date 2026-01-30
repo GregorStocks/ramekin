@@ -1,15 +1,13 @@
 {
   "raw": "4  anchovy fillets (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anchovy fillets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "anchovy fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

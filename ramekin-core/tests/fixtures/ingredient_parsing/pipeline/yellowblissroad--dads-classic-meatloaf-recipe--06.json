@@ -1,15 +1,13 @@
 {
   "raw": "1 cup crushed crackers (quick cook oats or breadcrumbs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed crackers (quick cook oats or breadcrumbs)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed crackers (quick cook oats or breadcrumbs)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

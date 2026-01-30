@@ -1,10 +1,8 @@
 {
   "raw": "Turkey carcass and bones from 14-pound turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Turkey carcass and bones from 14-pound turkey",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Turkey carcass and bones from 14-pound turkey",
+    "measurements": [],
+    "note": null
   }
 }

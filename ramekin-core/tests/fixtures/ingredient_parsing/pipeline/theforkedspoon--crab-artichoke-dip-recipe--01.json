@@ -1,15 +1,13 @@
 {
   "raw": "3 small bread bowls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread bowls",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread bowls",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

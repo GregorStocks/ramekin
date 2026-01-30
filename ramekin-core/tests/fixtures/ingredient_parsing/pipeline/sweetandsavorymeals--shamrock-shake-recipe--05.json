@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon mint green food coloring (or more)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint green food coloring",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or more"
-    }
+  "expected": {
+    "item": "mint green food coloring",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or more"
   }
 }

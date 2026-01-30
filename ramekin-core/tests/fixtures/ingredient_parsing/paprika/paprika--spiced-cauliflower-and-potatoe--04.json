@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon cumin seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cumin seeds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cumin seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

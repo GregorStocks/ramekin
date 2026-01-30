@@ -1,15 +1,13 @@
 {
   "raw": "600g pork fillet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork fillet",
-      "measurements": [
-        {
-          "amount": "600",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork fillet",
+    "measurements": [
+      {
+        "amount": "600",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

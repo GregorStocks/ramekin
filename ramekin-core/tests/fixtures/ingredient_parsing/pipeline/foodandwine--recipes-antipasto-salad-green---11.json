@@ -1,19 +1,17 @@
 {
   "raw": "1 small head of iceberg lettuce, halved, cored and finely shredded (4 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head of iceberg lettuce, halved",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "cored and finely shredded"
-    }
+  "expected": {
+    "item": "head of iceberg lettuce, halved",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "cored and finely shredded"
   }
 }

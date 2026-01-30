@@ -1,15 +1,13 @@
 {
   "raw": "4  whole chestnuts ((peeled))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chestnuts",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "whole chestnuts",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

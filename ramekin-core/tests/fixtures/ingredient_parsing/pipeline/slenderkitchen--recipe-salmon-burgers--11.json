@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp olive oil (for cooking in a skillet)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil (for cooking in a skillet)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil (for cooking in a skillet)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

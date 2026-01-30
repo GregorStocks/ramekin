@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sliced mushrooms (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sliced mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

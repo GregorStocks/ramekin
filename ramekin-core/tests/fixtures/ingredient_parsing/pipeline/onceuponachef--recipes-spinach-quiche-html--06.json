@@ -1,15 +1,13 @@
 {
   "raw": "Pinch ground nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground nutmeg",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground nutmeg",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

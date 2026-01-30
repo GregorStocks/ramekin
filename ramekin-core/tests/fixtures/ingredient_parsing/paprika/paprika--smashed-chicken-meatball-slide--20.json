@@ -1,10 +1,8 @@
 {
   "raw": "Slider buns, such as potato or Hawaiian rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Slider buns, such as potato or Hawaiian rolls",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Slider buns, such as potato or Hawaiian rolls",
+    "measurements": [],
+    "note": null
   }
 }

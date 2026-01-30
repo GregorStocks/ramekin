@@ -1,10 +1,8 @@
 {
   "raw": "Gel food coloring (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gel food coloring",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Gel food coloring",
+    "measurements": [],
+    "note": "optional"
   }
 }

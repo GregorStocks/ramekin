@@ -1,19 +1,17 @@
 {
   "raw": "1 ½ ounces semi-sweet chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-sweet chocolate",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semi-sweet chocolate",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

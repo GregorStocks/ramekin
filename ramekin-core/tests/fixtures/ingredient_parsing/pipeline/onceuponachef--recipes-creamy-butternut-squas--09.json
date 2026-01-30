@@ -1,10 +1,8 @@
 {
   "raw": "Finely chopped fresh herbs, (for serving (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Finely chopped fresh herbs",
-      "measurements": [],
-      "note": "for serving (optional"
-    }
+  "expected": {
+    "item": "Finely chopped fresh herbs",
+    "measurements": [],
+    "note": "for serving (optional"
   }
 }

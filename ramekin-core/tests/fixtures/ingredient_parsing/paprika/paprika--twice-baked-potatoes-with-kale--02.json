@@ -1,15 +1,13 @@
 {
   "raw": "1 bundle lacinato kale (aka dinosaur, tuscan or black kale), swiss chard or spinach (10 ounces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bundle lacinato kale (aka dinosaur, tuscan or black kale), swiss chard or spinach (10 ounces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bundle lacinato kale (aka dinosaur, tuscan or black kale), swiss chard or spinach (10 ounces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

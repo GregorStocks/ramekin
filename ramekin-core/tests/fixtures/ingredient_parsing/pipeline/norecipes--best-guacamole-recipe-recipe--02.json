@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon sweet onion ((grated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "sweet onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "grated"
   }
 }

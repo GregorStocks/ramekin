@@ -1,19 +1,17 @@
 {
   "raw": "7 oz dried Soba (buckwheat noodle)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried Soba (buckwheat noodle)",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried Soba (buckwheat noodle)",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

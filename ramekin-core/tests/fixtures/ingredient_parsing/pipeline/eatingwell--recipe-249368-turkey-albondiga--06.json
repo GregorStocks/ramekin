@@ -1,15 +1,13 @@
 {
   "raw": "0.75 teaspoon freshly ground pepper, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground pepper",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "freshly ground pepper",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

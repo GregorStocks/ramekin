@@ -1,19 +1,17 @@
 {
   "raw": "2 quarts (8 cups) beef, chicken, or vegetable (mushroom is excellent here) stock, the more robust the better",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef, chicken, or vegetable (mushroom is excellent here) stock, the more robust the better",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "quart"
-        },
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef, chicken, or vegetable (mushroom is excellent here) stock, the more robust the better",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quart"
+      },
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "TOPPINGS, OPTIONAL:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "TOPPINGS",
-      "measurements": [],
-      "note": "OPTIONAL:"
-    }
+  "expected": {
+    "item": "TOPPINGS",
+    "measurements": [],
+    "note": "OPTIONAL:"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Lemon wedges (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lemon wedges (to garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Lemon wedges (to garnish)",
+    "measurements": [],
+    "note": null
   }
 }

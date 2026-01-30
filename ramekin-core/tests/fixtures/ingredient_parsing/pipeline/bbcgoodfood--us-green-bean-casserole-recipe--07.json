@@ -1,15 +1,13 @@
 {
   "raw": "1-2 cups crispy onions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crispy onions",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crispy onions",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

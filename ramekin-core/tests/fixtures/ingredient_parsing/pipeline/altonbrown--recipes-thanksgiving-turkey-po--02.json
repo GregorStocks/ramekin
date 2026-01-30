@@ -1,15 +1,13 @@
 {
   "raw": "9 tablespoons unsalted butter, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

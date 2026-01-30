@@ -1,15 +1,13 @@
 {
   "raw": "1 lb boneless skinless chicken cutlets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken cutlets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skinless chicken cutlets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

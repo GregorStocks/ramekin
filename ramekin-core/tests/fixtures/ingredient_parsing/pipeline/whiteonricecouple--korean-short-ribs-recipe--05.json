@@ -1,15 +1,13 @@
 {
   "raw": "2-3 Tablespoons Soy Sauce ((depending upon the saltiness of your preferred soy))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Soy Sauce (depending upon the saltiness of your preferred soy)",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Soy Sauce (depending upon the saltiness of your preferred soy)",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

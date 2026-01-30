@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon hazelnut liqueur (or 2 teaspoons vanilla extract)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hazelnut liqueur (or 2 teaspoons vanilla extract)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hazelnut liqueur (or 2 teaspoons vanilla extract)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

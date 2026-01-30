@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon pure orange extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure orange extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure orange extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

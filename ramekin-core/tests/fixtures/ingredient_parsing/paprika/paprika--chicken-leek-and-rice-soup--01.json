@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons olive oil or unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil or unsalted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil or unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

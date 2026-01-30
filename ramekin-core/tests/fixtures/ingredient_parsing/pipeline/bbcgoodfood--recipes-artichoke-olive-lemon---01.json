@@ -1,15 +1,13 @@
 {
   "raw": "400g spaghetti",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghetti",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghetti",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

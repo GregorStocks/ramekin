@@ -1,15 +1,13 @@
 {
   "raw": "2 layers sliced sharp white cheddar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "layers sliced sharp white cheddar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "layers sliced sharp white cheddar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

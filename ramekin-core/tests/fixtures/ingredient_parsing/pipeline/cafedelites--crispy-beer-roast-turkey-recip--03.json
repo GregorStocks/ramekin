@@ -1,15 +1,13 @@
 {
   "raw": "8 cloves garlic, crushed (- Smash them with the flat side of a knife and the heel of your hand. DO NOT mince them.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "clove"
-        }
-      ],
-      "note": "crushed (- Smash them with the flat side of a knife and the heel of your hand. DO NOT mince them.)"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "clove"
+      }
+    ],
+    "note": "crushed (- Smash them with the flat side of a knife and the heel of your hand. DO NOT mince them.)"
   }
 }

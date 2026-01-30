@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon blood orange zest (very finely grated/chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blood orange zest",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "very finely grated/chopped"
-    }
+  "expected": {
+    "item": "blood orange zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "very finely grated/chopped"
   }
 }

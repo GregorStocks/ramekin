@@ -1,19 +1,17 @@
 {
   "raw": "12 oz sweet pie crust",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet pie crust",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet pie crust",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

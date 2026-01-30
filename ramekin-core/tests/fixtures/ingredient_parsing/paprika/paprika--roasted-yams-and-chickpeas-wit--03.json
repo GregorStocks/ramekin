@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon crushed red-pepper flakes (Espelette are called for; I used mild Aleppo)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red-pepper flakes (Espelette are called for; I used mild Aleppo)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed red-pepper flakes (Espelette are called for; I used mild Aleppo)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

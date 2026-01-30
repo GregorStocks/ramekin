@@ -1,23 +1,21 @@
 {
   "raw": "2 cups warm water (105-115 degrees) ((474g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "105-115",
-          "unit": null
-        },
-        {
-          "amount": "474",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "105-115",
+        "unit": null
+      },
+      {
+        "amount": "474",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

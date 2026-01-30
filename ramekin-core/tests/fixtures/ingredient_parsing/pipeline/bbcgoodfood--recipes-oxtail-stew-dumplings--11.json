@@ -1,15 +1,13 @@
 {
   "raw": "1 beef stock cube",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef stock cube",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef stock cube",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

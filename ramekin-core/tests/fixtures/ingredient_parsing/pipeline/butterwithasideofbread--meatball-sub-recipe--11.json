@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Marinara sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Marinara sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Marinara sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

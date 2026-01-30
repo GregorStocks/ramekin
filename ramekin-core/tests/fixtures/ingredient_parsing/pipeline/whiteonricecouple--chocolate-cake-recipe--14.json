@@ -1,19 +1,17 @@
 {
   "raw": "1 cup Buttermilk ((240ml) *see note 1 for alternate)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Buttermilk *see note 1 for alternate)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Buttermilk *see note 1 for alternate)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups Hillshire Farm® Smoked Sausage, sliced into 1-inch rounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hillshire Farm® Smoked Sausage",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced into 1-inch rounds"
-    }
+  "expected": {
+    "item": "Hillshire Farm® Smoked Sausage",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced into 1-inch rounds"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp la-yu (Japanese chili oil) ((optional, for a spicy kick))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "la-yu (Japanese chili oil) (optional, for a spicy kick)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "la-yu (Japanese chili oil) (optional, for a spicy kick)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

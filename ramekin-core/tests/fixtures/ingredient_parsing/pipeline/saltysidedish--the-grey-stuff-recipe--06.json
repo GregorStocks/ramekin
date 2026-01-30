@@ -1,10 +1,8 @@
 {
   "raw": "black sprinkles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black sprinkles",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "black sprinkles",
+    "measurements": [],
+    "note": null
   }
 }

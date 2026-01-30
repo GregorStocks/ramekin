@@ -1,10 +1,8 @@
 {
   "raw": "Burger accompaniments, as you like",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Burger accompaniments, as you like",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Burger accompaniments, as you like",
+    "measurements": [],
+    "note": null
   }
 }

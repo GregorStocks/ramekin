@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon chipotle powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chipotle powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chipotle powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

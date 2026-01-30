@@ -1,10 +1,8 @@
 {
   "raw": "Chili powder, for the rim",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chili powder, for the rim",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chili powder, for the rim",
+    "measurements": [],
+    "note": null
   }
 }

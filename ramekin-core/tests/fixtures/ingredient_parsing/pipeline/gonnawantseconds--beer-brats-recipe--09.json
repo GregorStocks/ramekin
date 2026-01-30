@@ -1,15 +1,13 @@
 {
   "raw": "10  sourdough rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sourdough rolls",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sourdough rolls",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

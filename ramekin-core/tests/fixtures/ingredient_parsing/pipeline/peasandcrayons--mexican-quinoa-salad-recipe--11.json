@@ -1,15 +1,13 @@
 {
   "raw": "1 TBSP lime juice (plus extra to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus extra to taste"
-    }
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus extra to taste"
   }
 }

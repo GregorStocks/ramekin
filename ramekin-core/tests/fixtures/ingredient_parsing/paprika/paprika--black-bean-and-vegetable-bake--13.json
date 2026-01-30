@@ -1,15 +1,13 @@
 {
   "raw": "1 cup corn kernels, fresh (from 1 ear), canned and drained, or frozen (no need to thaw)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn kernels, fresh (from 1 ear), canned and drained",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "or frozen (no need to thaw)"
-    }
+  "expected": {
+    "item": "corn kernels, fresh (from 1 ear), canned and drained",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "or frozen (no need to thaw)"
   }
 }

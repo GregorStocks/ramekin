@@ -1,15 +1,13 @@
 {
   "raw": "5       carrots, peeled and cut into 2-inch slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "peeled and cut into 2-inch slices"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "peeled and cut into 2-inch slices"
   }
 }

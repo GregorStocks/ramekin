@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped nuts (I used walnut)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped nuts (I used walnut)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped nuts (I used walnut)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

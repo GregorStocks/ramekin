@@ -1,15 +1,13 @@
 {
   "raw": "1-2 Tablespoons honey ((to taste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

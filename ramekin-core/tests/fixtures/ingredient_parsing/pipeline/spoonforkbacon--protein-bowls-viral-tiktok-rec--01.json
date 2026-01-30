@@ -1,23 +1,21 @@
 {
   "raw": "12 ounces diced sweet potatoes ((1 medium sweet potato))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced sweet potatoes",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced sweet potatoes",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

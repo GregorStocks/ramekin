@@ -1,15 +1,13 @@
 {
   "raw": "2 anchovy fillets (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anchovy fillets",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "anchovy fillets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

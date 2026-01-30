@@ -1,15 +1,13 @@
 {
   "raw": "1 egg yolk from 1 large egg (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolk from 1 large egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "egg yolk from 1 large egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

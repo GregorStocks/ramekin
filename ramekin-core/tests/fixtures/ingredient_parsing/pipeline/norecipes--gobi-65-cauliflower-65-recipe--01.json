@@ -1,19 +1,17 @@
 {
   "raw": "500 grams cauliflower ((1 head, florets separated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

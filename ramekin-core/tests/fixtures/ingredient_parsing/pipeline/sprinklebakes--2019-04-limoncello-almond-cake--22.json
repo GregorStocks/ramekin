@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup limoncello liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "limoncello liqueur",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "limoncello liqueur",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

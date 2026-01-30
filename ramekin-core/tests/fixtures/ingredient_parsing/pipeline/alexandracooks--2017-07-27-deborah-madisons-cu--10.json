@@ -1,19 +1,17 @@
 {
   "raw": "1&nbsp;can unsweetened coconut milk (1 and 1/2 to 2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened coconut milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened coconut milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

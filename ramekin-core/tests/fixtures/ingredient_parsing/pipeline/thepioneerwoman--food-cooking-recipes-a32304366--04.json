@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. red grapes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red grapes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "red grapes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved"
   }
 }

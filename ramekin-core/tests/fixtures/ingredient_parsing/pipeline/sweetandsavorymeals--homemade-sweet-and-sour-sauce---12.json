@@ -1,15 +1,13 @@
 {
   "raw": "1-2  drops red gel food coloring (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red gel food coloring",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "drop"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "red gel food coloring",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "drop"
+      }
+    ],
+    "note": "optional"
   }
 }

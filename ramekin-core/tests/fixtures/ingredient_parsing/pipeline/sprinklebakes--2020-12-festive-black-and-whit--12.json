@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons light corn syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light corn syrup",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light corn syrup",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

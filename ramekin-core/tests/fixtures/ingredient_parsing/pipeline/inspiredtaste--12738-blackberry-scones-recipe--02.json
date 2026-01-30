@@ -1,19 +1,17 @@
 {
   "raw": "⅓ cup sugar, plus more for scone tops (66g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "66",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for scone tops"
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "66",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for scone tops"
   }
 }

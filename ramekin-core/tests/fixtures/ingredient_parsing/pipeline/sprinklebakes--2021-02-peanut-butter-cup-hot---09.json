@@ -1,10 +1,8 @@
 {
   "raw": "Instant peanut butter cup hot cocoa mix (from recipe above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Instant peanut butter cup hot cocoa mix (from recipe above)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Instant peanut butter cup hot cocoa mix (from recipe above)",
+    "measurements": [],
+    "note": null
   }
 }

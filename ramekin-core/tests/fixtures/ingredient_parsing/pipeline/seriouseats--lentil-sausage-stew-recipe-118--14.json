@@ -1,19 +1,17 @@
 {
   "raw": "6 cups (1.4 L) homemade chicken stock or store-bought low-sodium chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade chicken stock or store-bought low-sodium chicken broth",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        },
-        {
-          "amount": "1.4",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade chicken stock or store-bought low-sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      },
+      {
+        "amount": "1.4",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

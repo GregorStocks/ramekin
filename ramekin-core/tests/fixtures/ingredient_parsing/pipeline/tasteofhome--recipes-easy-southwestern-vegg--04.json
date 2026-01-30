@@ -1,15 +1,13 @@
 {
   "raw": "1 cup cooked brown rice, cooled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked brown rice, cooled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked brown rice, cooled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

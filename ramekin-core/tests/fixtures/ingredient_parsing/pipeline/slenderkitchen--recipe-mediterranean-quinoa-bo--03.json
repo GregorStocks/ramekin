@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup hummus",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hummus",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hummus",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "3 oz pork (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "pork",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

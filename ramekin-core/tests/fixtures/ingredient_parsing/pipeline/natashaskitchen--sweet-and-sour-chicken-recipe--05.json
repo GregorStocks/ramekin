@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup extra light olive oil (canola or vegetable oil to saute, plus more as needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra light olive oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "canola or vegetable oil to saute, plus more as needed"
-    }
+  "expected": {
+    "item": "extra light olive oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "canola or vegetable oil to saute, plus more as needed"
   }
 }

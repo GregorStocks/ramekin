@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp tomato ketchup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato ketchup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato ketchup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

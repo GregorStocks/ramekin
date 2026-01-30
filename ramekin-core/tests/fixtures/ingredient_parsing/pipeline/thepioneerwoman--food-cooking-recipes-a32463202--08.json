@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. green beans, trimmed&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green beans",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "green beans",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed"
   }
 }

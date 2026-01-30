@@ -1,19 +1,17 @@
 {
   "raw": "1 cup warm water (110&amp;deg; to 115&amp;deg;)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "110",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

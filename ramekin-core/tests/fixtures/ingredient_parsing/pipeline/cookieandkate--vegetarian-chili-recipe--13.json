@@ -1,19 +1,17 @@
 {
   "raw": "2 cans (15 ounces each) black beans, rinsed and drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": "oz each"
-        }
-      ],
-      "note": "rinsed and drained"
-    }
+  "expected": {
+    "item": "black beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": "oz each"
+      }
+    ],
+    "note": "rinsed and drained"
   }
 }

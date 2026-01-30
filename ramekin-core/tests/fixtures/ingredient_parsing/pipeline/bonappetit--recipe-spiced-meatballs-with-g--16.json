@@ -1,10 +1,8 @@
 {
   "raw": "Mint leaves (for serving; optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mint leaves",
-      "measurements": [],
-      "note": "for serving; optional"
-    }
+  "expected": {
+    "item": "Mint leaves",
+    "measurements": [],
+    "note": "for serving; optional"
   }
 }

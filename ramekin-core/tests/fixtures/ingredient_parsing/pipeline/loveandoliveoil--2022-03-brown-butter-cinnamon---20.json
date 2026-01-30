@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon vanilla paste or extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla paste or extract",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla paste or extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

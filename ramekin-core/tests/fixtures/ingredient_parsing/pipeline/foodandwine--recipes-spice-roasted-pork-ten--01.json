@@ -1,19 +1,17 @@
 {
   "raw": "4 pork tenderloins (about 4 pounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork tenderloins",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork tenderloins",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

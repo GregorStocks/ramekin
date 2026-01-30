@@ -1,15 +1,13 @@
 {
   "raw": "18 black olives preferably Niçoise, pitted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black olives preferably Niçoise, pitted",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black olives preferably Niçoise, pitted",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

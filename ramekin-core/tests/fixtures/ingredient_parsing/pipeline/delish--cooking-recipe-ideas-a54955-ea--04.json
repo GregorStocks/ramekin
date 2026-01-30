@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp. rice wine vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice wine vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice wine vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

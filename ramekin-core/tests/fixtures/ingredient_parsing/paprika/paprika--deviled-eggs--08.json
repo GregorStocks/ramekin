@@ -1,10 +1,8 @@
 {
   "raw": "Garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
+    "measurements": [],
+    "note": null
   }
 }

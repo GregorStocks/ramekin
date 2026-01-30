@@ -1,15 +1,13 @@
 {
   "raw": "4-6  stalks/ribs celery ((2 cups minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stalks/ribs celery",
-      "measurements": [
-        {
-          "amount": "4-6",
-          "unit": null
-        }
-      ],
-      "note": "2 cups minced"
-    }
+  "expected": {
+    "item": "stalks/ribs celery",
+    "measurements": [
+      {
+        "amount": "4-6",
+        "unit": null
+      }
+    ],
+    "note": "2 cups minced"
   }
 }

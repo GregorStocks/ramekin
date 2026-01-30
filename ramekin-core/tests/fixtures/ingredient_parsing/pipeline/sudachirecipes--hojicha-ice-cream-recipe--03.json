@@ -1,15 +1,13 @@
 {
   "raw": "2  pasteurized egg yolk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pasteurized egg yolk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pasteurized egg yolk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

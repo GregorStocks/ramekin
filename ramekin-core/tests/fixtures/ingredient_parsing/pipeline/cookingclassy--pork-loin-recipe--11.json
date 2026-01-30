@@ -1,10 +1,8 @@
 {
   "raw": "Pan drippings from roasting pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pan drippings from roasting pan",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pan drippings from roasting pan",
+    "measurements": [],
+    "note": null
   }
 }

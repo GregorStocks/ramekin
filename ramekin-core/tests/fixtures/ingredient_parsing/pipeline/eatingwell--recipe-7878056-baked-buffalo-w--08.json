@@ -1,10 +1,8 @@
 {
   "raw": "Blue cheese or ranch dressing, carrot and celery sticks for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Blue cheese or ranch dressing",
-      "measurements": [],
-      "note": "carrot and celery sticks for serving"
-    }
+  "expected": {
+    "item": "Blue cheese or ranch dressing",
+    "measurements": [],
+    "note": "carrot and celery sticks for serving"
   }
 }

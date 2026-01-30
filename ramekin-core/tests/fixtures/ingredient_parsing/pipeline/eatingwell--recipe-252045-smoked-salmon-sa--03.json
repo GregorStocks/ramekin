@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons reduced-fat mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-fat mayonnaise",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-fat mayonnaise",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

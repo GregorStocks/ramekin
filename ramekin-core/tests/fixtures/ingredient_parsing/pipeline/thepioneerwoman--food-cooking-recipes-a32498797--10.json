@@ -1,15 +1,13 @@
 {
   "raw": "1/4 c. salted butter, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

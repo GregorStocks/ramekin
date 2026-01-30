@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces cream cheese, cut into small cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese, cut into small cubes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream cheese, cut into small cubes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

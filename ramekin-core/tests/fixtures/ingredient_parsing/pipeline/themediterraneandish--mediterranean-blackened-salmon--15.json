@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp cayenne pepper (Optional. Increase amount if you&amp;#8217;re looking for spicy fish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cayenne pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "Optional. Increase amount if you’re looking for spicy fish"
-    }
+  "expected": {
+    "item": "cayenne pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "Optional. Increase amount if you’re looking for spicy fish"
   }
 }

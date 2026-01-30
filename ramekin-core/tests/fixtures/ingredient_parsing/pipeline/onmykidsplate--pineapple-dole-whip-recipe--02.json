@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pineapple (frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "frozen"
-    }
+  "expected": {
+    "item": "pineapple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "frozen"
   }
 }

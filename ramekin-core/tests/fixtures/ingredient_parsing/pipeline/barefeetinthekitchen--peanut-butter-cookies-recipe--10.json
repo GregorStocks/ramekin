@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces chocolate chunks (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate chunks",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chocolate chunks",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
   }
 }

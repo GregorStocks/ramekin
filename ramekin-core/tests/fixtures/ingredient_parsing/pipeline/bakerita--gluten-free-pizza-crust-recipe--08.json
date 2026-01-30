@@ -1,15 +1,13 @@
 {
   "raw": "10g&nbsp;sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sea salt",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sea salt",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

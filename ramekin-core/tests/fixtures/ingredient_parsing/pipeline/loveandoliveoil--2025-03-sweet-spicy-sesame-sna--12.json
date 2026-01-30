@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tablespoons gochugaru pepper flakes* (or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gochugaru pepper flakes*",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "gochugaru pepper flakes*",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

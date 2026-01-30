@@ -1,15 +1,13 @@
 {
   "raw": "Thinly sliced jalapeno (1 used 1/2 a big one)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thinly sliced jalapeno",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thinly sliced jalapeno",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

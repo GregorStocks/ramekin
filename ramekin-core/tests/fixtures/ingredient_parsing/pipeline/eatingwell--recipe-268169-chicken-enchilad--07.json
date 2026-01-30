@@ -1,15 +1,13 @@
 {
   "raw": "6 corn tortillas, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn tortillas",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "corn tortillas",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

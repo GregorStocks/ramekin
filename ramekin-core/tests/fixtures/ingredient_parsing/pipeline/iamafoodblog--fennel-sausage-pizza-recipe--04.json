@@ -1,10 +1,8 @@
 {
   "raw": "fresh bufala mozzarella",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh bufala mozzarella",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh bufala mozzarella",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "2 pounds (908g) sweet potatoes, peeled (about 5 small/medium)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "908",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "908",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp onion, minced (or grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion, minced",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or grated"
-    }
+  "expected": {
+    "item": "onion, minced",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or grated"
   }
 }

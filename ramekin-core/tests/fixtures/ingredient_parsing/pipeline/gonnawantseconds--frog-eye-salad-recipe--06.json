@@ -1,19 +1,17 @@
 {
   "raw": "1 (20-ounce) can pineapple tidbits,  (drained with juice discarded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple tidbits",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": "drained with juice discarded"
-    }
+  "expected": {
+    "item": "pineapple tidbits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": "drained with juice discarded"
   }
 }

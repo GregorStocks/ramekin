@@ -1,19 +1,17 @@
 {
   "raw": "6 cups (1.4 L) unsalted chicken or vegetable broth, homemade or store-bought",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted chicken or vegetable broth, homemade or store-bought",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        },
-        {
-          "amount": "1.4",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted chicken or vegetable broth, homemade or store-bought",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      },
+      {
+        "amount": "1.4",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

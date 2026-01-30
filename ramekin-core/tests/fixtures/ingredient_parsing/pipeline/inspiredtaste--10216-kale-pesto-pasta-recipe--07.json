@@ -1,15 +1,13 @@
 {
   "raw": "1 pound pasta, any shape",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pasta, any shape",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pasta, any shape",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15 ml) real vanilla extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "real vanilla extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "real vanilla extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 fluid ounces white rum",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white rum",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white rum",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

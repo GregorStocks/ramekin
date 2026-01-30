@@ -1,15 +1,13 @@
 {
   "raw": "4 cups dashi stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dashi stock",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dashi stock",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

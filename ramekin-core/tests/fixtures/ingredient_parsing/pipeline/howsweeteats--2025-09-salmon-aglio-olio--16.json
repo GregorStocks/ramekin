@@ -1,10 +1,8 @@
 {
   "raw": "chopped fresh parsley, (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley, (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh parsley, (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

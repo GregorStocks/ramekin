@@ -1,15 +1,13 @@
 {
   "raw": "Homemade Pie Crust or All Butter Pie Crust (both recipes make 2 crusts, 1 for bottom and 1 for top)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Homemade Pie Crust or All Butter Pie Crust",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Homemade Pie Crust or All Butter Pie Crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 to 5 cups grated peeled sweet potato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated peeled sweet potato",
-      "measurements": [
-        {
-          "amount": "4 to 5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated peeled sweet potato",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

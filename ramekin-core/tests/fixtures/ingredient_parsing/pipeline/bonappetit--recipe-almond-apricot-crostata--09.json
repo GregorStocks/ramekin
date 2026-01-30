@@ -1,15 +1,13 @@
 {
   "raw": "¾ cup apricot jam",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apricot jam",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apricot jam",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

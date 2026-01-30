@@ -1,15 +1,13 @@
 {
   "raw": "1 pound cherries (about 3 cups pitted and halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "about 3 cups pitted and halved"
-    }
+  "expected": {
+    "item": "cherries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "about 3 cups pitted and halved"
   }
 }

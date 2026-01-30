@@ -1,23 +1,21 @@
 {
   "raw": "1 can (20 ounces) pineapple chunks (drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "20",
-          "unit": "oz"
-        },
-        {
-          "amount": "567",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "pineapple chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "20",
+        "unit": "oz"
+      },
+      {
+        "amount": "567",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

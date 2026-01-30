@@ -1,15 +1,13 @@
 {
   "raw": "1 unroll-and-bake sheet of pie crust",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unroll-and-bake sheet of pie crust",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unroll-and-bake sheet of pie crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

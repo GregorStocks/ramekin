@@ -1,15 +1,13 @@
 {
   "raw": "8 bags caffeinated tea, or 4 tablespoons looseleaf tea (black, green, or white)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caffeinated tea,",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "bag"
-        }
-      ],
-      "note": "or 4 tablespoons looseleaf tea (black, green, or white)"
-    }
+  "expected": {
+    "item": "caffeinated tea,",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "bag"
+      }
+    ],
+    "note": "or 4 tablespoons looseleaf tea (black, green, or white)"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds fresh asparagus",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh asparagus",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh asparagus",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

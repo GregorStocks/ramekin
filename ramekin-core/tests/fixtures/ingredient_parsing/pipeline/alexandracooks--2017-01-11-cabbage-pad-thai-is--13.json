@@ -1,15 +1,13 @@
 {
   "raw": "5&nbsp;cups thinly sliced cabbage (about half a small head)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced cabbage (about half a small head)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced cabbage (about half a small head)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

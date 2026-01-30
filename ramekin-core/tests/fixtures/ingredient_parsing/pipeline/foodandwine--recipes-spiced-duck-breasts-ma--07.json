@@ -1,15 +1,13 @@
 {
   "raw": "1 cup fresh orange juice, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh orange juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "fresh orange juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

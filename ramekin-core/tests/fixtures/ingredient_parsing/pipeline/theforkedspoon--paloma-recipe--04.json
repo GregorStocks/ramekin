@@ -1,10 +1,8 @@
 {
   "raw": "Chili Salt ((or just kosher salt))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chili Salt (or just kosher salt)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chili Salt (or just kosher salt)",
+    "measurements": [],
+    "note": null
   }
 }

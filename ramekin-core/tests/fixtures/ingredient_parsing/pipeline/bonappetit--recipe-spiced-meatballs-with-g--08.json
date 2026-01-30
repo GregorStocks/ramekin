@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp. smoked paprika, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked paprika",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "smoked paprika",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

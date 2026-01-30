@@ -1,15 +1,13 @@
 {
   "raw": "75 g sashimi grade tuna (cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sashimi grade tuna",
-      "measurements": [
-        {
-          "amount": "75",
-          "unit": "g"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "sashimi grade tuna",
+    "measurements": [
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": "cubed"
   }
 }

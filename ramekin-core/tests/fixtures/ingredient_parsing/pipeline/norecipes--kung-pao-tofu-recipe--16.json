@@ -1,15 +1,13 @@
 {
   "raw": "10 grams fresh ginger ((minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ginger",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "fresh ginger",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": "minced"
   }
 }

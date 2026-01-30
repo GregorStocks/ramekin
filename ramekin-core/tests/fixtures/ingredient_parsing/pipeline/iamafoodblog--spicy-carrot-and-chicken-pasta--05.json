@@ -1,15 +1,13 @@
 {
   "raw": "1 small zucchini, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "diced"
   }
 }

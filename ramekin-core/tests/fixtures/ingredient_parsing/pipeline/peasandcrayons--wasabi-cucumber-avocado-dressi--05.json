@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP wasabi powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wasabi powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wasabi powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

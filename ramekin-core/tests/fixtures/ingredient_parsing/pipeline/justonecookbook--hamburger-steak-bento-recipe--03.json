@@ -1,10 +1,8 @@
 {
   "raw": "broccoli ((pre-blanched))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli",
-      "measurements": [],
-      "note": "pre-blanched"
-    }
+  "expected": {
+    "item": "broccoli",
+    "measurements": [],
+    "note": "pre-blanched"
   }
 }

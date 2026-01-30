@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chopped fresh parsley leaves, PLUS more for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "PLUS more for garnish"
-    }
+  "expected": {
+    "item": "chopped fresh parsley leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "PLUS more for garnish"
   }
 }

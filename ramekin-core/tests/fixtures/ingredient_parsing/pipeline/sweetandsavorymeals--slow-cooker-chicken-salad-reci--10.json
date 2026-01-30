@@ -1,15 +1,13 @@
 {
   "raw": "1  red apple (diced into small cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red apple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced into small cubes"
-    }
+  "expected": {
+    "item": "red apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced into small cubes"
   }
 }

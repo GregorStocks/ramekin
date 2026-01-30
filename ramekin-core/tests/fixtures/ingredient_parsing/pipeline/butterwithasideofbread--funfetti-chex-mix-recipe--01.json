@@ -1,15 +1,13 @@
 {
   "raw": "4 cups chex cereal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chex cereal",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chex cereal",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

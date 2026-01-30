@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon brown sugar (, or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "brown sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

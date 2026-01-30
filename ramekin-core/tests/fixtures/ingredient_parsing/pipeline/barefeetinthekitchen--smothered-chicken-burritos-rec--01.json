@@ -1,10 +1,8 @@
 {
   "raw": "Chicken filling ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chicken filling ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chicken filling ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

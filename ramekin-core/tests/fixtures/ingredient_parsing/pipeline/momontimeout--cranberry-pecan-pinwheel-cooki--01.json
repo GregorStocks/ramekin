@@ -1,15 +1,13 @@
 {
   "raw": "1 cup fresh cranberries (rinsed and drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cranberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "rinsed and drained"
-    }
+  "expected": {
+    "item": "fresh cranberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed and drained"
   }
 }

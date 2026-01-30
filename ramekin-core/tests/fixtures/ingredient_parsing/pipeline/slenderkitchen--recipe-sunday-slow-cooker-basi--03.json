@@ -1,15 +1,13 @@
 {
   "raw": "3 cups unsweetened almond milk (or skim milk)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened almond milk (or skim milk)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened almond milk (or skim milk)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds collard greens, stemmed and torn (about 32 loosely packed cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "collard greens, stemmed and torn",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "about 32 loosely packed cups"
-    }
+  "expected": {
+    "item": "collard greens, stemmed and torn",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "about 32 loosely packed cups"
   }
 }

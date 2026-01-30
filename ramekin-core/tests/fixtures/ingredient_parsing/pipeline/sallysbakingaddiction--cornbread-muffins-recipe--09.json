@@ -1,19 +1,17 @@
 {
   "raw": "2 Tablespoons (43g) honey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken tenderloins",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken tenderloins",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken tenderloins",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

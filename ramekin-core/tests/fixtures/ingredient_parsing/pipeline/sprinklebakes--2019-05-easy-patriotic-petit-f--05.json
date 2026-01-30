@@ -1,10 +1,8 @@
 {
   "raw": "Edible gold glitter (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Edible gold glitter",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Edible gold glitter",
+    "measurements": [],
+    "note": "optional"
   }
 }

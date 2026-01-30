@@ -1,10 +1,8 @@
 {
   "raw": "Warm tortillas, corn or flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Warm tortillas, corn or flour",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Warm tortillas, corn or flour",
+    "measurements": [],
+    "note": null
   }
 }

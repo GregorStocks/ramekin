@@ -1,15 +1,13 @@
 {
   "raw": "1 inch piece of Ginger (, julienned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inch piece of Ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "julienned"
-    }
+  "expected": {
+    "item": "inch piece of Ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "julienned"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cloves garlic (, finely minced )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "clove"
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "clove"
+      }
+    ],
+    "note": "finely minced"
   }
 }

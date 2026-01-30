@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup cacao butter (melted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cacao butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "cacao butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
   }
 }

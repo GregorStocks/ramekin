@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs cod fillets (cut into 3-inch pieces (drain well, and pat dry with paper towels))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cod fillets (cut into 3-inch pieces (drain well, and pat dry with paper towels)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cod fillets (cut into 3-inch pieces (drain well, and pat dry with paper towels)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

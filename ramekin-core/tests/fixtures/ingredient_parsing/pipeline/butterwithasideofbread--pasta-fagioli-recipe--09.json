@@ -1,19 +1,17 @@
 {
   "raw": "15 oz petite diced tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "petite diced tomatoes",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "petite diced tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

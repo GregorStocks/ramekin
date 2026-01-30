@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon sunflower lecithin (helps emulsify oil and water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sunflower lecithin (helps emulsify oil and water)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sunflower lecithin (helps emulsify oil and water)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

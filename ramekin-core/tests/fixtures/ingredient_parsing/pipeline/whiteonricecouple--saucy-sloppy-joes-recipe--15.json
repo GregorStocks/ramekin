@@ -1,10 +1,8 @@
 {
   "raw": "Pickles (, optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pickles",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Pickles",
+    "measurements": [],
+    "note": "optional"
   }
 }

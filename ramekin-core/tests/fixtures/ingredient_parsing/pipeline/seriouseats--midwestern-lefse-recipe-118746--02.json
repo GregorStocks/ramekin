@@ -1,19 +1,17 @@
 {
   "raw": "70 g (5 tablespoons) unsalted butter, cut into tablespoons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into tablespoons",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter, cut into tablespoons",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "300ml dry white wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry white wine",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry white wine",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

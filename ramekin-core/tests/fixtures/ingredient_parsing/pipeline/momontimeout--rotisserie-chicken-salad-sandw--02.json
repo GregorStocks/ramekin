@@ -1,15 +1,13 @@
 {
   "raw": "1 cup diced apple (I use Gala)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced apple (I use Gala)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced apple (I use Gala)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

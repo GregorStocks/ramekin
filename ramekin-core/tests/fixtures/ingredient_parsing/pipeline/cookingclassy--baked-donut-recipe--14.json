@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 Tbsp (20ml) milk, (then more as needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "20",
-          "unit": "ml"
-        }
-      ],
-      "note": "then more as needed"
-    }
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "20",
+        "unit": "ml"
+      }
+    ],
+    "note": "then more as needed"
   }
 }

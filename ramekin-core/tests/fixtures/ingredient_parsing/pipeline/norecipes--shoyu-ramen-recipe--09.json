@@ -1,15 +1,13 @@
 {
   "raw": "4 grams dried shiitake mushroom",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried shiitake mushroom",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried shiitake mushroom",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

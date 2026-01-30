@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons pure maple syrup (or granulated sugar or honey)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure maple syrup (or granulated sugar or honey)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure maple syrup (or granulated sugar or honey)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

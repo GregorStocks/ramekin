@@ -1,15 +1,13 @@
 {
   "raw": "6  poached eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poached eggs",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "poached eggs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

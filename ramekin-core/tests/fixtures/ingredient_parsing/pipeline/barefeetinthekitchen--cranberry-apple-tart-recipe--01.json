@@ -1,23 +1,21 @@
 {
   "raw": "½  bag of Bob&amp;#39;s Red Mill Pie Crust (12 ounces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bob's Red Mill Pie Crust",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bag"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bob's Red Mill Pie Crust",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bag"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

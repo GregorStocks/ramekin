@@ -1,10 +1,8 @@
 {
   "raw": "Chopped fresh cilantro, sour cream and/or salsa for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped fresh cilantro, sour cream and/or salsa for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Chopped fresh cilantro, sour cream and/or salsa for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

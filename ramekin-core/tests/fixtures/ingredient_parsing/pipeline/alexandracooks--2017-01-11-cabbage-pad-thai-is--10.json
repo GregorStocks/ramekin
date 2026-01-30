@@ -1,19 +1,17 @@
 {
   "raw": "1&nbsp;jalapeño, seeds removed, minced (about 2 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño, seeds removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "jalapeño, seeds removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "minced"
   }
 }

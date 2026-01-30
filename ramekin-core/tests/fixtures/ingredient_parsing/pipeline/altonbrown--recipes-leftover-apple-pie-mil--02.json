@@ -1,15 +1,13 @@
 {
   "raw": "2 scoops vanilla ice cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scoops vanilla ice cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scoops vanilla ice cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

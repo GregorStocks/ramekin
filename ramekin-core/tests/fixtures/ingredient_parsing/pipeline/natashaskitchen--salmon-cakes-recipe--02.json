@@ -1,10 +1,8 @@
 {
   "raw": "Garlic Salt - I use Lawry's brand",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Garlic Salt - I use Lawry's brand",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Garlic Salt - I use Lawry's brand",
+    "measurements": [],
+    "note": null
   }
 }

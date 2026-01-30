@@ -1,15 +1,13 @@
 {
   "raw": "2  green onions (sliced very thin, about 1/4 cup worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced very thin, about 1/4 cup worth"
-    }
+  "expected": {
+    "item": "green onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced very thin, about 1/4 cup worth"
   }
 }

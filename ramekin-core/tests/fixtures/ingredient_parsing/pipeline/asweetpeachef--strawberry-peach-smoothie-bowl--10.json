@@ -1,10 +1,8 @@
 {
   "raw": "additional sliced peaches",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "additional sliced peaches",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "additional sliced peaches",
+    "measurements": [],
+    "note": null
   }
 }

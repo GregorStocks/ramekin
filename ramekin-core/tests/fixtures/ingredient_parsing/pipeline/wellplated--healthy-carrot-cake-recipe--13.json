@@ -1,15 +1,13 @@
 {
   "raw": "1 cup crushed pineapple (drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed pineapple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "crushed pineapple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
   }
 }

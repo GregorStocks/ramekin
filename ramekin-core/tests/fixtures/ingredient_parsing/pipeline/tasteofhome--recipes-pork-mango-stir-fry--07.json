@@ -1,15 +1,13 @@
 {
   "raw": "1 medium sweet red pepper, cut into thin strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet red pepper, cut into thin strips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet red pepper, cut into thin strips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

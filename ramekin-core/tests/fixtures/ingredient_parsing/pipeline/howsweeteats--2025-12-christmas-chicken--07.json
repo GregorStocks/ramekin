@@ -1,15 +1,13 @@
 {
   "raw": "4 to 5 pound whole chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chicken",
-      "measurements": [
-        {
-          "amount": "4 to 5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole chicken",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

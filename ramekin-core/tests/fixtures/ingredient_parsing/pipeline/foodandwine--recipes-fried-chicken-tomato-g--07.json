@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons potato starch (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato starch",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "potato starch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

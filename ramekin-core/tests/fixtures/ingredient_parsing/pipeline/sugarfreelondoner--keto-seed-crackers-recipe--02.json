@@ -1,19 +1,17 @@
 {
   "raw": "1/2  cup / 65g pumpkin seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin seeds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "65",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "65",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

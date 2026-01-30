@@ -1,15 +1,13 @@
 {
   "raw": "1 small fennel bulb, cored and small diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fennel bulb",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "cored and small diced"
-    }
+  "expected": {
+    "item": "fennel bulb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "cored and small diced"
   }
 }

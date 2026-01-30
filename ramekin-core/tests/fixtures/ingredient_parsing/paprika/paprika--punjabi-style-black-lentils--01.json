@@ -1,10 +1,8 @@
 {
   "raw": "BASE:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "BASE:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "BASE:",
+    "measurements": [],
+    "note": null
   }
 }

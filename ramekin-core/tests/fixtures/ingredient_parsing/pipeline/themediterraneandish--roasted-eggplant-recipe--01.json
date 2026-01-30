@@ -1,15 +1,13 @@
 {
   "raw": "1 large eggplant, sliced into 3/4-inch to 1-inch rounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggplant",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "sliced into 3/4-inch to 1-inch rounds"
-    }
+  "expected": {
+    "item": "eggplant",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "sliced into 3/4-inch to 1-inch rounds"
   }
 }

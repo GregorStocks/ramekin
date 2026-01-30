@@ -1,10 +1,8 @@
 {
   "raw": "Additional Condiments/Toppings like sliced tomato (lettuce, red onion, mayonnaise, ketchup, pickles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Additional Condiments/Toppings like sliced tomato (lettuce, red onion, mayonnaise, ketchup, pickles)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Additional Condiments/Toppings like sliced tomato (lettuce, red onion, mayonnaise, ketchup, pickles)",
+    "measurements": [],
+    "note": null
   }
 }

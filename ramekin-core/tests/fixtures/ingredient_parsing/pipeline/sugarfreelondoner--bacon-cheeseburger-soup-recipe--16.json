@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup chopped fresh cherry tomatoes (38g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "38",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "38",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

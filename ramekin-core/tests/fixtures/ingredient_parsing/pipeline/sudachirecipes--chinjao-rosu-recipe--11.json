@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp sake (or dry sherry, white wine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sake (or dry sherry, white wine)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sake (or dry sherry, white wine)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

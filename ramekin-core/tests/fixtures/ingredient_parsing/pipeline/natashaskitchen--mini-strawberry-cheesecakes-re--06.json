@@ -1,15 +1,13 @@
 {
   "raw": "1 cup heavy whipping cream (chilled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy whipping cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
   }
 }

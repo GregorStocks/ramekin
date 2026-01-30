@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup almond meal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond meal",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond meal",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

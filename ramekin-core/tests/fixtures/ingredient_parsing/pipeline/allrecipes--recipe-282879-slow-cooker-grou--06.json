@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon dehydrated onion flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dehydrated onion flakes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dehydrated onion flakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp Sake (rice wine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sake (rice wine)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sake (rice wine)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

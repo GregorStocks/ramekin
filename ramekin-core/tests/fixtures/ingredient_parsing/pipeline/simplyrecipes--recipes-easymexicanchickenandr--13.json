@@ -1,10 +1,8 @@
 {
   "raw": "Corn or flour tortillas, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Corn or flour tortillas, to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Corn or flour tortillas, to serve",
+    "measurements": [],
+    "note": null
   }
 }

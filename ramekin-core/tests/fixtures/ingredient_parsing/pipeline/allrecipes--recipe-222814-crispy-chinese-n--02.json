@@ -1,15 +1,13 @@
 {
   "raw": "2 cups vegetable oil, or as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or as needed"
-    }
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or as needed"
   }
 }

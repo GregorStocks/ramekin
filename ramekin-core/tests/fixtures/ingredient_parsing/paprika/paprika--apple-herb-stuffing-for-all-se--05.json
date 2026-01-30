@@ -1,19 +1,17 @@
 {
   "raw": "1 large or 2 small stalks celery, diced small",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stalks celery",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "diced small"
-    }
+  "expected": {
+    "item": "stalks celery",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "diced small"
   }
 }

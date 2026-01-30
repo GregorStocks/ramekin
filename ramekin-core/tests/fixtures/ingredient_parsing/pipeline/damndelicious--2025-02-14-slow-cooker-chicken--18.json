@@ -1,10 +1,8 @@
 {
   "raw": "Tortilla strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tortilla strips",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Tortilla strips",
+    "measurements": [],
+    "note": null
   }
 }

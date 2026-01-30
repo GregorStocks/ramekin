@@ -1,19 +1,17 @@
 {
   "raw": "2 large green bell pepper, finely chopped (about 1 1/4 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green bell pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "green bell pepper",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "90 g Shiratamako",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shiratamako",
-      "measurements": [
-        {
-          "amount": "90",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Shiratamako",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

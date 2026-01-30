@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons black pepper (ground)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "ground"
-    }
+  "expected": {
+    "item": "black pepper",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "ground"
   }
 }

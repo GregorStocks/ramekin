@@ -1,15 +1,13 @@
 {
   "raw": "1  large red pepper (julienned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "julienned"
-    }
+  "expected": {
+    "item": "red pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "julienned"
   }
 }

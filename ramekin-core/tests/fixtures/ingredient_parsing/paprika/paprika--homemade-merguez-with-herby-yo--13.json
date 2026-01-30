@@ -1,10 +1,8 @@
 {
   "raw": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof) plus a few roughly chopped, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof)",
-      "measurements": [],
-      "note": "plus a few roughly chopped, to serve"
-    }
+  "expected": {
+    "item": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof)",
+    "measurements": [],
+    "note": "plus a few roughly chopped, to serve"
   }
 }

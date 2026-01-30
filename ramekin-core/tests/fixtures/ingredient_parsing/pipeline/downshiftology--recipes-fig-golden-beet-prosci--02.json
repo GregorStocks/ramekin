@@ -1,15 +1,13 @@
 {
   "raw": "12  figs (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "figs",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "figs",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "halved"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Black beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Black beans",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Black beans",
+    "measurements": [],
+    "note": null
   }
 }

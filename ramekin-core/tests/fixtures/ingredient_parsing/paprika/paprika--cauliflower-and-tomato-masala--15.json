@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cup green peas, frozen is fine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green peas",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "frozen is fine"
-    }
+  "expected": {
+    "item": "green peas",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "frozen is fine"
   }
 }

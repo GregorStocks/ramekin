@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

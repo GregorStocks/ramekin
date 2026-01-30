@@ -1,10 +1,8 @@
 {
   "raw": "BRAISE",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "BRAISE",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "BRAISE",
+    "measurements": [],
+    "note": null
   }
 }

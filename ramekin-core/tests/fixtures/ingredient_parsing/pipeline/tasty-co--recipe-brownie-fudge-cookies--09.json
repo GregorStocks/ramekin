@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup dark chocolate chip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark chocolate chip",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark chocolate chip",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

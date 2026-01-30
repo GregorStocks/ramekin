@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons fine sea salt or pickling salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine sea salt or pickling salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine sea salt or pickling salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

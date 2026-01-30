@@ -1,15 +1,13 @@
 {
   "raw": "handful of ice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½  white onion (finely diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "finely diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1kg salad potatoes such as Charlotte or Nicola",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salad potatoes such as Charlotte or Nicola",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "kg"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salad potatoes such as Charlotte or Nicola",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "kg"
+      }
+    ],
+    "note": null
   }
 }

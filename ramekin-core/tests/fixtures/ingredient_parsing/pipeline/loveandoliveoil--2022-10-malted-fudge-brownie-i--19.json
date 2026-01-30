@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons malted milk powder (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "malted milk powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "malted milk powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

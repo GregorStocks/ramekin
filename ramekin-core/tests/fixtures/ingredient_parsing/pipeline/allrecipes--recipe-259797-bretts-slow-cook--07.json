@@ -1,23 +1,21 @@
 {
   "raw": "1 (8 ounce) package crisp cooked bacon, crumbled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crisp cooked bacon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "crisp cooked bacon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "crumbled"
   }
 }

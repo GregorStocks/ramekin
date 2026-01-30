@@ -1,15 +1,13 @@
 {
   "raw": "3 fresh thyme sprigs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme sprigs",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh thyme sprigs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

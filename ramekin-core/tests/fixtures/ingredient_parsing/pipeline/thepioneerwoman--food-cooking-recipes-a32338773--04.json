@@ -1,15 +1,13 @@
 {
   "raw": "2 large Roma tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Roma tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Roma tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 packages (3-0z each) Ramen noodles, any variety, seasoning packet discarded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ramen noodles, any variety, seasoning packet discarded",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Ramen noodles, any variety, seasoning packet discarded",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "package"
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

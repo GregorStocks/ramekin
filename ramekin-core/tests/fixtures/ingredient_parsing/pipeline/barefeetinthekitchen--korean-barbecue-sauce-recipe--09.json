@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup grated fresh ginger root (about a 4-inch piece)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated fresh ginger root (about a 4-inch piece)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated fresh ginger root (about a 4-inch piece)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Bouquet garni: 5 flat-leaf parsley sprigs, 1 thyme sprig, and 1 fresh bay leaf, tied securely with butcher’s twine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bouquet garni: 5 flat-leaf parsley sprigs, 1 thyme sprig, and 1 fresh bay leaf, tied securely with butcher’s twine",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Bouquet garni: 5 flat-leaf parsley sprigs, 1 thyme sprig, and 1 fresh bay leaf, tied securely with butcher’s twine",
+    "measurements": [],
+    "note": null
   }
 }

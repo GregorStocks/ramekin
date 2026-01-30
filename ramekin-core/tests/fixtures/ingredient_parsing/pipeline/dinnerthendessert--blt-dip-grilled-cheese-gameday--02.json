@@ -1,15 +1,13 @@
 {
   "raw": "12 slices buttermilk bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk bread",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buttermilk bread",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

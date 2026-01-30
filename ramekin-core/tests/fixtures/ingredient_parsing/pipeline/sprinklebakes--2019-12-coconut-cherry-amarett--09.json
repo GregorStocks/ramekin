@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons amaretto liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "amaretto liqueur",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "amaretto liqueur",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

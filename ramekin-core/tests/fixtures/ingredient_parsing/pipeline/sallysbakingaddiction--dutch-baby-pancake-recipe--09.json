@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons confectioners&amp;#8217; sugar, for sifting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners’ sugar, for sifting",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "confectioners’ sugar, for sifting",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

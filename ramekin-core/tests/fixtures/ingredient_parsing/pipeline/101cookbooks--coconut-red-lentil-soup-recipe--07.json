@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons butter, (ghee, olive oil or coconut oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter, (ghee, olive oil or coconut oil)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter, (ghee, olive oil or coconut oil)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

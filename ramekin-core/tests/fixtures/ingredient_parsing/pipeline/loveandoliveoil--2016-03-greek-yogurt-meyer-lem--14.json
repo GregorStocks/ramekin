@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Meyer lemon juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Meyer lemon juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Meyer lemon juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup raw unsalted almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw unsalted almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw unsalted almonds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

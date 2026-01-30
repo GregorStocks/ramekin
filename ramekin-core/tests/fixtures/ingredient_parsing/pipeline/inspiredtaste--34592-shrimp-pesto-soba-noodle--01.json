@@ -1,19 +1,17 @@
 {
   "raw": "6&nbsp;ounces soba noodles or noodles of choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soba noodles or noodles of choice",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soba noodles or noodles of choice",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

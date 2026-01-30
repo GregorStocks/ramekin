@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Kabocha (peel and cut into 1-1.5 inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kabocha (peel and cut into 1-1.5 inch cubes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kabocha (peel and cut into 1-1.5 inch cubes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

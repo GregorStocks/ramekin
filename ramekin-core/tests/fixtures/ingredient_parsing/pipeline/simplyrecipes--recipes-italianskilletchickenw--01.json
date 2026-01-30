@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds boneless skinless chicken tenders, tenderloin, or thinly sliced chicken breasts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken tenders, tenderloin",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "or thinly sliced chicken breasts"
-    }
+  "expected": {
+    "item": "boneless skinless chicken tenders, tenderloin",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "or thinly sliced chicken breasts"
   }
 }

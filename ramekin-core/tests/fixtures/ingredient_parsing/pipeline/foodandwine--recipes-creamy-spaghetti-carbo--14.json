@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons thinly sliced fresh chives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced fresh chives",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced fresh chives",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

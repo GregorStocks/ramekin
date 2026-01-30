@@ -1,19 +1,17 @@
 {
   "raw": "150ml freshly squeezed orange juice (about 12 large oranges)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly squeezed orange juice",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "ml"
-        },
-        {
-          "amount": "12",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly squeezed orange juice",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "ml"
+      },
+      {
+        "amount": "12",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

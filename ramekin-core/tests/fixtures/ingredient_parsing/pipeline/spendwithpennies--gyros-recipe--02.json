@@ -1,15 +1,13 @@
 {
   "raw": "2 slices pita bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pita bread",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pita bread",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

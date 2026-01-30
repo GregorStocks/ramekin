@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Greek yogurt (full-fat is recommended)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek yogurt (full-fat is recommended)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Greek yogurt (full-fat is recommended)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

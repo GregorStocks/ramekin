@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup ready-made green fondant",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ready-made green fondant",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ready-made green fondant",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

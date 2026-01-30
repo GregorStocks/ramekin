@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Mexican hot sauce, plus more to taste, such as Tapatío",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican hot sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to taste, such as Tapatío"
-    }
+  "expected": {
+    "item": "Mexican hot sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more to taste, such as Tapatío"
   }
 }

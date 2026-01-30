@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup drained canned chickpeas (coarsely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "drained canned chickpeas",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "drained canned chickpeas",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

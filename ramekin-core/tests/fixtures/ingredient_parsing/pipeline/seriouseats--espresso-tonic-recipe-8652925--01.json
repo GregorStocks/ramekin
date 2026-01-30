@@ -1,19 +1,17 @@
 {
   "raw": "4 fluid ounces tonic water (120ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tonic water",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "fl oz"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tonic water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "fl oz"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  drop pink food color",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pink food color",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "drop"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pink food color",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "drop"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 or more scallions, slivered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "or more scallions, slivered",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "or more scallions, slivered",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

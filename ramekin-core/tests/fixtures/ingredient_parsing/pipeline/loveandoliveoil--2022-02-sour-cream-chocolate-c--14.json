@@ -1,23 +1,21 @@
 {
   "raw": "2 oz good quality dark chocolate (60-70%) (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good quality dark chocolate",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": null
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "good quality dark chocolate",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

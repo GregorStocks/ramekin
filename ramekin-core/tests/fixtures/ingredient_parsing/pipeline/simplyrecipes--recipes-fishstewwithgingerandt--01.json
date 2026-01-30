@@ -1,23 +1,21 @@
 {
   "raw": "4 small (15 ounces, 443 g) red potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red potatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        },
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "443",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      },
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "443",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

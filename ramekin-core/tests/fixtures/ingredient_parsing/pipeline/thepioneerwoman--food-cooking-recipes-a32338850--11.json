@@ -1,15 +1,13 @@
 {
   "raw": "1 c. fresh cilantro leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

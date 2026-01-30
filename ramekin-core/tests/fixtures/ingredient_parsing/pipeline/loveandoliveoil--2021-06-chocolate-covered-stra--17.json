@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup heavy cream (cold)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "cold"
-    }
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold"
   }
 }

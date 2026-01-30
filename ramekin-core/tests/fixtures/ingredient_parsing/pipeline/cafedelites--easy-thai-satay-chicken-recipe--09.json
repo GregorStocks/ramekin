@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons peanut oil (for frying)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peanut oil (for frying)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peanut oil (for frying)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

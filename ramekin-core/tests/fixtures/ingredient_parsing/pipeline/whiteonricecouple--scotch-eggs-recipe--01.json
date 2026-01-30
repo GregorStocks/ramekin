@@ -1,15 +1,13 @@
 {
   "raw": "1 pound uncooked bulk sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked bulk sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked bulk sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

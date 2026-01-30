@@ -1,15 +1,13 @@
 {
   "raw": "1 cup reduced-sodium chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium chicken broth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

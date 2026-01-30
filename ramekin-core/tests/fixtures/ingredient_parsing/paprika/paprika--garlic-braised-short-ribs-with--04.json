@@ -1,15 +1,13 @@
 {
   "raw": "2 large heads garlic, halved crosswise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heads garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "halved crosswise"
-    }
+  "expected": {
+    "item": "heads garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "halved crosswise"
   }
 }

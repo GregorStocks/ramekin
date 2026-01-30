@@ -1,19 +1,17 @@
 {
   "raw": "1 1/4 cups (295 ml)  heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "295",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "295",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

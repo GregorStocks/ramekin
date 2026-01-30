@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 tablespoons sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

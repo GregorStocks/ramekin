@@ -1,10 +1,8 @@
 {
   "raw": "ginger root",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger root",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger root",
+    "measurements": [],
+    "note": null
   }
 }

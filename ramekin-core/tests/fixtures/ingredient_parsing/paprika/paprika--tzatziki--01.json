@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (554 grams) plain, unsweetened Greek yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain, unsweetened Greek yogurt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "554",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain, unsweetened Greek yogurt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "554",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

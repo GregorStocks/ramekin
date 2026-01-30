@@ -1,15 +1,13 @@
 {
   "raw": "2  Cornish game hens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cornish game hens",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cornish game hens",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

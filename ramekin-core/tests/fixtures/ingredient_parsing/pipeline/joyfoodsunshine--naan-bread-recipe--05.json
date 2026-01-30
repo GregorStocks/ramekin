@@ -1,15 +1,13 @@
 {
   "raw": "½ cup full-fat Greek yogurt ((room temperature))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat Greek yogurt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "full-fat Greek yogurt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "room temperature"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 teaspoons (.17 oz.) instant yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant yeast",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": ".17",
-          "unit": "oz"
-        },
-        {
-          "amount": "5",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": ".17",
+        "unit": "oz"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

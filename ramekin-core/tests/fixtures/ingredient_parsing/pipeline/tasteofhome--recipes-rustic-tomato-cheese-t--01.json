@@ -1,19 +1,17 @@
 {
   "raw": "7 sheets phyllo dough (14 inches x 9 inches)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets phyllo dough",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": null
-        },
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheets phyllo dough",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": null
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

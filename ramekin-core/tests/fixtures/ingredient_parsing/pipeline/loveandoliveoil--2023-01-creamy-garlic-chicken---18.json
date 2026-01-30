@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon lemon juice (more or less to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "more or less to taste"
-    }
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "more or less to taste"
   }
 }

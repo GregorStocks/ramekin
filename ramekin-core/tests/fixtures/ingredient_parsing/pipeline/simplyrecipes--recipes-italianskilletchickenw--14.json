@@ -1,15 +1,13 @@
 {
   "raw": "2 large handfuls spinach, about 2 packed cups",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handfuls spinach",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "about 2 packed cups"
-    }
+  "expected": {
+    "item": "handfuls spinach",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "about 2 packed cups"
   }
 }

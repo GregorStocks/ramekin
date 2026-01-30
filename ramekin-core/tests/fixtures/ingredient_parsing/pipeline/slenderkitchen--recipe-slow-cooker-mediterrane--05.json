@@ -1,15 +1,13 @@
 {
   "raw": "1 cup roasted red peppers, chopped (or peppadew peppers)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted red peppers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped (or peppadew peppers)"
-    }
+  "expected": {
+    "item": "roasted red peppers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped (or peppadew peppers)"
   }
 }

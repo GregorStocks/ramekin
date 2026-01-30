@@ -1,15 +1,13 @@
 {
   "raw": "100g bag wild rocket",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bag wild rocket",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bag wild rocket",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "2 ounces cake yeast or 3 packets (6¾ teaspoons) active dry yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cake yeast or 3 packets active dry yeast",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "6 3/4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cake yeast or 3 packets active dry yeast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "6 3/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

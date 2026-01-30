@@ -1,15 +1,13 @@
 {
   "raw": "1 lb blueberrie",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blueberrie",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blueberrie",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

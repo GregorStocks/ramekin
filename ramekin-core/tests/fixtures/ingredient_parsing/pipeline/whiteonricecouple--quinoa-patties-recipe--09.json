@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon fresh cracked black pepper ( , or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cracked black pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "fresh cracked black pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

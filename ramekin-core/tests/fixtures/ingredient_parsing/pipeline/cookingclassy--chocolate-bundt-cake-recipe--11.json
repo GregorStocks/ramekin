@@ -1,19 +1,17 @@
 {
   "raw": "4 oz. bittersweet chocolate (or semi-sweet chocolate)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet chocolate (or semi-sweet chocolate)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet chocolate (or semi-sweet chocolate)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

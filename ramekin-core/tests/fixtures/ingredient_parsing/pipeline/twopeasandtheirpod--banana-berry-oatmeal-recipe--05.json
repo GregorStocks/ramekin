@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons vanilla soy milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla soy milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla soy milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

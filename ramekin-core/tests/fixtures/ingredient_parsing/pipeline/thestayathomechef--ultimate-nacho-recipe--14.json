@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup sliced green onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced green onion",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced green onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

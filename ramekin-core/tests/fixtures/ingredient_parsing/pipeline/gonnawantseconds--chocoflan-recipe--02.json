@@ -1,15 +1,13 @@
 {
   "raw": "1/2 Cup Plus 2 Tablespoons All-Purpose Flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/2 Cup Plus 2 Tablespoons All-Purpose Flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "Plus 2 Tablespoons All-Purpose Flour"
-    }
+  "expected": {
+    "item": "1/2 Cup Plus 2 Tablespoons All-Purpose Flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "Plus 2 Tablespoons All-Purpose Flour"
   }
 }

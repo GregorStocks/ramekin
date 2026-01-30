@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon fine salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

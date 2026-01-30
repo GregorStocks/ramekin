@@ -1,15 +1,13 @@
 {
   "raw": "1 poblano pepper, diced (or yellow chile pepper)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poblano pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced (or yellow chile pepper)"
-    }
+  "expected": {
+    "item": "poblano pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced (or yellow chile pepper)"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "21 oz can blueberry pie filling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can blueberry pie filling",
-      "measurements": [
-        {
-          "amount": "21",
-          "unit": "oz"
-        },
-        {
-          "amount": "595",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can blueberry pie filling",
+    "measurements": [
+      {
+        "amount": "21",
+        "unit": "oz"
+      },
+      {
+        "amount": "595",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup dark rum, (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark rum",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "dark rum",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

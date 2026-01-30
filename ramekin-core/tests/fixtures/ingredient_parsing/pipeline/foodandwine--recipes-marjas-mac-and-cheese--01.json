@@ -1,15 +1,13 @@
 {
   "raw": "0.75 pound elbow macaroni",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "elbow macaroni",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "elbow macaroni",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

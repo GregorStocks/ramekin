@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

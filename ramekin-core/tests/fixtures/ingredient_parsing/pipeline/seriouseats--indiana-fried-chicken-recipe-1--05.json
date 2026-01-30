@@ -1,23 +1,21 @@
 {
   "raw": "2 cups all-purpose flour (9 ounces; 255g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "255",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "255",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

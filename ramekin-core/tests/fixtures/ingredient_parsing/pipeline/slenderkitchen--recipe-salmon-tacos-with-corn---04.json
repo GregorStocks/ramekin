@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp blackening seasoning (pr taco seasoning or Cajun seasoning)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blackening seasoning (pr taco seasoning or Cajun seasoning)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blackening seasoning (pr taco seasoning or Cajun seasoning)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

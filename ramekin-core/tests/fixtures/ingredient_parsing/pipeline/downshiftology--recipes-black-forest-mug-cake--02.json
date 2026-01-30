@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp kirsch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kirsch",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kirsch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "candied hazelnuts (optional, for decoration)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "candied hazelnuts",
-      "measurements": [],
-      "note": "optional, for decoration"
-    }
+  "expected": {
+    "item": "candied hazelnuts",
+    "measurements": [],
+    "note": "optional, for decoration"
   }
 }

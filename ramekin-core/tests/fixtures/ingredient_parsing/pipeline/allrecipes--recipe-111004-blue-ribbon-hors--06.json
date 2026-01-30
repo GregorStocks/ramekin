@@ -1,15 +1,13 @@
 {
   "raw": "1 bunch dill sprigs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dill sprigs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dill sprigs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

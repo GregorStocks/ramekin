@@ -1,19 +1,17 @@
 {
   "raw": "2 heaping tablespoons (45 g) miso paste, whisked into 1 cup warm water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miso paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "heaping tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "g"
-        }
-      ],
-      "note": "whisked into 1 cup warm water"
-    }
+  "expected": {
+    "item": "miso paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heaping tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "g"
+      }
+    ],
+    "note": "whisked into 1 cup warm water"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 cups apple juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple juice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Canola Oil to fry eggplant",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Canola Oil to fry eggplant",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Canola Oil to fry eggplant",
+    "measurements": [],
+    "note": null
   }
 }

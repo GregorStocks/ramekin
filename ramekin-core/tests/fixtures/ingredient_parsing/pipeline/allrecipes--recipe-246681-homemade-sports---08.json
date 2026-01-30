@@ -1,15 +1,13 @@
 {
   "raw": "2 medium limes, juiced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "limes, juiced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "limes, juiced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

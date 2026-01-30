@@ -1,23 +1,21 @@
 {
   "raw": "1 1/4 cups / 300 ml warm water (105-115F)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "105",
-          "unit": null
-        },
-        {
-          "amount": "300",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "105",
+        "unit": null
+      },
+      {
+        "amount": "300",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

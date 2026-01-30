@@ -1,15 +1,13 @@
 {
   "raw": "1 cup marinara sauce (such as Rao’s)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinara sauce (such as Rao’s)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinara sauce (such as Rao’s)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

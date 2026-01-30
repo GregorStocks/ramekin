@@ -1,15 +1,13 @@
 {
   "raw": "1 cup torn butter lettuce, ribs removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "torn butter lettuce, ribs removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "torn butter lettuce, ribs removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

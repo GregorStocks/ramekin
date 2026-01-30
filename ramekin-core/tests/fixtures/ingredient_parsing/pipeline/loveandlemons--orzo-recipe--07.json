@@ -1,10 +1,8 @@
 {
   "raw": "Juice and zest of 1 lemon, plus 4 small wedges for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice and zest of 1 lemon",
-      "measurements": [],
-      "note": "plus 4 small wedges for serving"
-    }
+  "expected": {
+    "item": "Juice and zest of 1 lemon",
+    "measurements": [],
+    "note": "plus 4 small wedges for serving"
   }
 }

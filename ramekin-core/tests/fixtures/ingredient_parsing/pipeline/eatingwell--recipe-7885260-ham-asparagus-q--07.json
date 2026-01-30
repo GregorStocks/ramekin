@@ -1,15 +1,13 @@
 {
   "raw": ".25 cup whole milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": ".25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": ".25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

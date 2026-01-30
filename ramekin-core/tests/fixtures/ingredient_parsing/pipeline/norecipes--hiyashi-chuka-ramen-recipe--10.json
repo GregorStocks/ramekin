@@ -1,15 +1,13 @@
 {
   "raw": "240 grams fresh ramen noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ramen noodles",
-      "measurements": [
-        {
-          "amount": "240",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh ramen noodles",
+    "measurements": [
+      {
+        "amount": "240",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

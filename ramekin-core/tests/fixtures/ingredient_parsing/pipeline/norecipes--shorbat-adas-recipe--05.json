@@ -1,15 +1,13 @@
 {
   "raw": "6 cups vegetable stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable stock",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable stock",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2  head of roasted garlic ((approx. 6 cloves))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted garlic (approx. 6 cloves)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted garlic (approx. 6 cloves)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

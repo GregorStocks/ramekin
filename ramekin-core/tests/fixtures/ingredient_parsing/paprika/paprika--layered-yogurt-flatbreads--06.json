@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons melted, unsalted butter, olive oil, coconut oil, or ghee (for assembly)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted, unsalted butter, olive oil, coconut oil, or ghee (for assembly)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted, unsalted butter, olive oil, coconut oil, or ghee (for assembly)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

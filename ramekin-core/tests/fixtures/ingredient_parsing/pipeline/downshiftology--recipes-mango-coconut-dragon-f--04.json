@@ -1,15 +1,13 @@
 {
   "raw": "1  Pitaya Plus pack",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pitaya",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "Plus pack"
-    }
+  "expected": {
+    "item": "Pitaya",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "Plus pack"
   }
 }

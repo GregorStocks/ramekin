@@ -1,19 +1,17 @@
 {
   "raw": "6 cups / 1.5 L water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        },
-        {
-          "amount": "1.5",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      },
+      {
+        "amount": "1.5",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

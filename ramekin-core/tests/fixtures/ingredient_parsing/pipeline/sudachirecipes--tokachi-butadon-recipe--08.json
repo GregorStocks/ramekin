@@ -1,15 +1,13 @@
 {
   "raw": "300 g slab skinless pork belly (or pork shoulder/butt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slab skinless pork belly (or pork shoulder/butt)",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slab skinless pork belly (or pork shoulder/butt)",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

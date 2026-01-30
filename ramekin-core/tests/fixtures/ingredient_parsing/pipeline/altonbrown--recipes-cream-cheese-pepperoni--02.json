@@ -1,15 +1,13 @@
 {
   "raw": "1 cup lager-style beer&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lager-style beer",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lager-style beer",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

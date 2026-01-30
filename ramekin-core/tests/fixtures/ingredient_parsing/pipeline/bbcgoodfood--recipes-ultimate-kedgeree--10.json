@@ -1,15 +1,13 @@
 {
   "raw": "4 cardamom pods split",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cardamom pods split",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cardamom pods split",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

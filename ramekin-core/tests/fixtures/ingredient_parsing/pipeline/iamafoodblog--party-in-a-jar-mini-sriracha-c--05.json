@@ -1,10 +1,8 @@
 {
   "raw": "enough chicken stock concentrate for 2 cups of liquid*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "enough chicken stock concentrate for 2 cups of liquid*",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "enough chicken stock concentrate for 2 cups of liquid*",
+    "measurements": [],
+    "note": null
   }
 }

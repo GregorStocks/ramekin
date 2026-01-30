@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon five spice powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "five spice powder",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "five spice powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

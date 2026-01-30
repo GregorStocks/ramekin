@@ -1,15 +1,13 @@
 {
   "raw": "1 cup shelled edamame (thawed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shelled edamame",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "shelled edamame",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed"
   }
 }

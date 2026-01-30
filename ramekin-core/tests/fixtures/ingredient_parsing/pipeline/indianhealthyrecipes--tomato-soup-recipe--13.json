@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon cream ((or 25 cashew nuts))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream (or 25 cashew nuts)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream (or 25 cashew nuts)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons butter (plus additional for cooking the pancakes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter (plus additional for cooking the pancakes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter (plus additional for cooking the pancakes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

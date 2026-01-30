@@ -1,10 +1,8 @@
 {
   "raw": "powdered sugar (, for dusting the cream puffs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar (, for dusting the cream puffs)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered sugar (, for dusting the cream puffs)",
+    "measurements": [],
+    "note": null
   }
 }

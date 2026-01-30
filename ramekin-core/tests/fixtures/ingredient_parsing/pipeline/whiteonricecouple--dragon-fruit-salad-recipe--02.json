@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped fresh fruit of choice ((apple, grape, stone fruit, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh fruit of choice (apple, grape, stone fruit, etc.)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh fruit of choice (apple, grape, stone fruit, etc.)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

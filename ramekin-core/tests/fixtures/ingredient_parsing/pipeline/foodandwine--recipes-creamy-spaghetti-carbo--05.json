@@ -1,23 +1,21 @@
 {
   "raw": "5 1/2 ounces pecorino Romano cheese, grated (about 1 1/3 cups), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecorino Romano cheese, grated",
-      "measurements": [
-        {
-          "amount": "5 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "156",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "pecorino Romano cheese, grated",
+    "measurements": [
+      {
+        "amount": "5 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "156",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

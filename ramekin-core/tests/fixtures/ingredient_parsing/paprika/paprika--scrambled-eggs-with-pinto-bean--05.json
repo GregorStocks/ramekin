@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup jarred sliced jalapeños, chopped coarse",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jarred sliced jalapeños",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped coarse"
-    }
+  "expected": {
+    "item": "jarred sliced jalapeños",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped coarse"
   }
 }

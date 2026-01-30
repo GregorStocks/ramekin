@@ -1,10 +1,8 @@
 {
   "raw": "Baby arugula",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Baby arugula",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Baby arugula",
+    "measurements": [],
+    "note": null
   }
 }

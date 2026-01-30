@@ -1,15 +1,13 @@
 {
   "raw": "2 unwaxed lemons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unwaxed lemons",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unwaxed lemons",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

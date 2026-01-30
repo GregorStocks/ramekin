@@ -1,15 +1,13 @@
 {
   "raw": "1 medium&nbsp;apple, cored and sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "cored and sliced"
-    }
+  "expected": {
+    "item": "apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "cored and sliced"
   }
 }

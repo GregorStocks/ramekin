@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons salt (adjust to your tastes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (adjust to your tastes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (adjust to your tastes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

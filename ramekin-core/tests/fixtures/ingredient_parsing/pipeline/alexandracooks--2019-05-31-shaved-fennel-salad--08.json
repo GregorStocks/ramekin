@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons fresh lemon juice, plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lemon juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "fresh lemon juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

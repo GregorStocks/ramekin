@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces finely grated Romano cheese or other hard pecorino",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated Romano cheese or other hard pecorino",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated Romano cheese or other hard pecorino",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

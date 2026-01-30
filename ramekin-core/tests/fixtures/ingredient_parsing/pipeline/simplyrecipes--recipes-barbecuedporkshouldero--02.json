@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp white sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

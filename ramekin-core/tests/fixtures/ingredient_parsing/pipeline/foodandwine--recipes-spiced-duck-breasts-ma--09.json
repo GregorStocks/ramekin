@@ -1,15 +1,13 @@
 {
   "raw": "2 mandarin oranges, peeled and separated into segments",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mandarin oranges",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled and separated into segments"
-    }
+  "expected": {
+    "item": "mandarin oranges",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and separated into segments"
   }
 }

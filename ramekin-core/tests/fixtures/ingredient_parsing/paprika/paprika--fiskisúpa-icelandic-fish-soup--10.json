@@ -1,19 +1,17 @@
 {
   "raw": "2 (8-ounce) bottles clam juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clam juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "bottle"
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "clam juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bottle"
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1/2 cup / 2.25 oz / 65 g flaky sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky sea salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "65",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flaky sea salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "65",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

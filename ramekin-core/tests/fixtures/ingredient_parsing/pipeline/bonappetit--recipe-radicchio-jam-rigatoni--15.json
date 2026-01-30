@@ -1,23 +1,21 @@
 {
   "raw": "2 oz. Parmesan, finely grated (about 1½ cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmesan",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "finely grated"
-    }
+  "expected": {
+    "item": "Parmesan",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "finely grated"
   }
 }

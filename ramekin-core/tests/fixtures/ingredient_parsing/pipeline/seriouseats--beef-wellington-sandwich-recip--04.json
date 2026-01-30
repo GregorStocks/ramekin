@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 g) prepared horseradish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared horseradish",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared horseradish",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

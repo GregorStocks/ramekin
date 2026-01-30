@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Baileys Irish Cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Baileys Irish Cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Baileys Irish Cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

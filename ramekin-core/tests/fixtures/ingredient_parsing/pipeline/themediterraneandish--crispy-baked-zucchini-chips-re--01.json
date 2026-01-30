@@ -1,15 +1,13 @@
 {
   "raw": "1 tzatziki sauce recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tzatziki sauce recipe",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tzatziki sauce recipe",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

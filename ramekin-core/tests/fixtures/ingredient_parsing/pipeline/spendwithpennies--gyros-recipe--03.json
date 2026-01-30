@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons crumbled feta cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled feta cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled feta cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

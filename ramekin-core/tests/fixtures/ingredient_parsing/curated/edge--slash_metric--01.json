@@ -1,19 +1,17 @@
 {
   "raw": "3.5 ounces / 100g celery root, peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery root",
-      "measurements": [
-        {
-          "amount": "3.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "celery root",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled"
   }
 }

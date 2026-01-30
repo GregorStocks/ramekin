@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds carrots (about 5 medium sized carrots), peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "5",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled"
   }
 }

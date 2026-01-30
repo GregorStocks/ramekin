@@ -1,15 +1,13 @@
 {
   "raw": "2 cups canned whole peeled tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned whole peeled tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned whole peeled tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

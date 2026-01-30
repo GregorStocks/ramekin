@@ -1,10 +1,8 @@
 {
   "raw": "moss green food color",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "moss green food color",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "moss green food color",
+    "measurements": [],
+    "note": null
   }
 }

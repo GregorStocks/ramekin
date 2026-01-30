@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. canned chopped green chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned chopped green chiles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned chopped green chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

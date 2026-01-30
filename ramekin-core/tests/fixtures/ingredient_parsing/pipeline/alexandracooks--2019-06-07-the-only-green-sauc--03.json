@@ -1,15 +1,13 @@
 {
   "raw": "Juice of 1 lemon or lime (about 2 tablespoons), plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice of 1 lemon or lime",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "Juice of 1 lemon or lime",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

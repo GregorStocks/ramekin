@@ -1,15 +1,13 @@
 {
   "raw": "1 cup multicolored cherry tomatoes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "multicolored cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "multicolored cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved"
   }
 }

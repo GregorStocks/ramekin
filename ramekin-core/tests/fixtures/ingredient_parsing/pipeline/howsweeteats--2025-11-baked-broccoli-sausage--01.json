@@ -1,15 +1,13 @@
 {
   "raw": "1 pound sweet italian sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet italian sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet italian sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

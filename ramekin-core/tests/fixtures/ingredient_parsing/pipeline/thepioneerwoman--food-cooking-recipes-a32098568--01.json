@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp. salted butter, melted, plus more for the pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter, melted",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for the pan"
-    }
+  "expected": {
+    "item": "salted butter, melted",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for the pan"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "10 tablespoons ice water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice water",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice water",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

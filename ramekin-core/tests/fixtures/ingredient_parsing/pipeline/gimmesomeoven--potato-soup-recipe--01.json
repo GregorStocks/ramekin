@@ -1,15 +1,13 @@
 {
   "raw": "5 slices bacon, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "slice"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "slice"
+      }
+    ],
+    "note": "diced"
   }
 }

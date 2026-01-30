@@ -1,15 +1,13 @@
 {
   "raw": "¼  onion (rinse after mincing to reduce sharpness)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion (rinse after mincing to reduce sharpness)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion (rinse after mincing to reduce sharpness)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

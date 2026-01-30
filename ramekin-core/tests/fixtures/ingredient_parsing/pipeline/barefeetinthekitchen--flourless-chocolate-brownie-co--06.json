@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup bittersweet or semi-sweet chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet or semi-sweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet or semi-sweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

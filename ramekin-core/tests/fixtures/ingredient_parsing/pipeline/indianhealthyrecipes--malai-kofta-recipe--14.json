@@ -1,15 +1,13 @@
 {
   "raw": "15  cashew nuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cashew nuts",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cashew nuts",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

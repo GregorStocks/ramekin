@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces room-temperature unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "room-temperature unsalted butter",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "room-temperature unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

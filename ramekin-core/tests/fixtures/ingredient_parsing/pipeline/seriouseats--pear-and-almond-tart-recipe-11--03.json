@@ -1,23 +1,21 @@
 {
   "raw": "85g unsalted butter, room temperature (3 ounces; 6 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        },
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "room temperature"
   }
 }

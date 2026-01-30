@@ -1,31 +1,29 @@
 {
   "raw": "1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        },
-        {
-          "amount": "3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "21",
-          "unit": "g"
-        }
-      ],
-      "note": "plus 2 tablespoons unroasted walnuts, divided"
-    }
+  "expected": {
+    "item": "1 cup (4 ounces; 113 g), plus 2 tablespoons (3/4 ounce; 21 g) unroasted walnuts, divided",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      },
+      {
+        "amount": "3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "21",
+        "unit": "g"
+      }
+    ],
+    "note": "plus 2 tablespoons unroasted walnuts, divided"
   }
 }

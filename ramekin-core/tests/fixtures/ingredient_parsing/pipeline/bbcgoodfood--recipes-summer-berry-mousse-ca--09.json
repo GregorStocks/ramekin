@@ -1,15 +1,13 @@
 {
   "raw": "400g raspberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raspberries",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raspberries",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

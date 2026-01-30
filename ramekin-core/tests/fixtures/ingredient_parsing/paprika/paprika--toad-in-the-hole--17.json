@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (454 g) pork sausages",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork sausages",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork sausages",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

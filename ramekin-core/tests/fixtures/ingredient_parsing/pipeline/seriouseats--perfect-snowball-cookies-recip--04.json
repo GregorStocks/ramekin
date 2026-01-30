@@ -1,19 +1,17 @@
 {
   "raw": "1/4 teaspoon (1g) salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "1",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "1",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

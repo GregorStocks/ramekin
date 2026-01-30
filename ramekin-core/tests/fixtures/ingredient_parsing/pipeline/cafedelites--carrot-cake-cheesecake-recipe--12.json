@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup natural granulated sweetener (or sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "natural granulated sweetener (or sugar)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "natural granulated sweetener (or sugar)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

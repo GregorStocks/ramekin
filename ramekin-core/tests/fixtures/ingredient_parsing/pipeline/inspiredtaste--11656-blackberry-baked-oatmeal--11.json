@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces fresh blackberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh blackberries",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh blackberries",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

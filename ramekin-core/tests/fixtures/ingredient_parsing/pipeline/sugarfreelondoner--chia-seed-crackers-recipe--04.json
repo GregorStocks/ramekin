@@ -1,15 +1,13 @@
 {
   "raw": "Good pinch of flaked sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaked sea salt",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "good pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flaked sea salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "good pinch"
+      }
+    ],
+    "note": null
   }
 }

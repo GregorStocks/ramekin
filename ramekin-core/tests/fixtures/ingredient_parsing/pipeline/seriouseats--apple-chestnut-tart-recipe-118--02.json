@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15 ml) heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

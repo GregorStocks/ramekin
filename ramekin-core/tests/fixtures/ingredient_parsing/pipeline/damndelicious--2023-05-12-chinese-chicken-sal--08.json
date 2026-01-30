@@ -1,15 +1,13 @@
 {
   "raw": "2 cups crispy wonton strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crispy wonton strips",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crispy wonton strips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

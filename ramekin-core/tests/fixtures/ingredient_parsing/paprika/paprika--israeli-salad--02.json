@@ -1,15 +1,13 @@
 {
   "raw": "1 pound seedless (English) or Persian cucumbers, unpeeled, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seedless (English) or Persian cucumbers, unpeeled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "seedless (English) or Persian cucumbers, unpeeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "cubed"
   }
 }

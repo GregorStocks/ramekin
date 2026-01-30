@@ -1,15 +1,13 @@
 {
   "raw": "6  baking apples, (preferably Fuji or Gala)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking apples, (preferably Fuji or Gala)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking apples, (preferably Fuji or Gala)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

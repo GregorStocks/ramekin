@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups pesto (homemade or store-bought)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pesto (homemade or store-bought)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pesto (homemade or store-bought)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

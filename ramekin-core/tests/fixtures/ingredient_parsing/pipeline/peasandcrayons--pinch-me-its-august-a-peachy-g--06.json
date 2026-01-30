@@ -1,15 +1,13 @@
 {
   "raw": "1/2-1 cup ice ((depending on desired thickness))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice (depending on desired thickness)",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice (depending on desired thickness)",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

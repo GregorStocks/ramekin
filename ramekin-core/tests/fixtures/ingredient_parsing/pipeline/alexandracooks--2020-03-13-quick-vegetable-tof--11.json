@@ -1,19 +1,17 @@
 {
   "raw": "2 to 4 ounces kale",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kale",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "oz"
-        },
-        {
-          "amount": "57 to 113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kale",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "oz"
+      },
+      {
+        "amount": "57 to 113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

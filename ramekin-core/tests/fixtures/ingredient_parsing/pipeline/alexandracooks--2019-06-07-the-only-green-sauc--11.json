@@ -1,15 +1,13 @@
 {
   "raw": "good bread, sliced thickly",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "good"
-        }
-      ],
-      "note": "sliced thickly"
-    }
+  "expected": {
+    "item": "bread",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "good"
+      }
+    ],
+    "note": "sliced thickly"
   }
 }

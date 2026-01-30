@@ -1,15 +1,13 @@
 {
   "raw": "4 cups whole wheat flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole wheat flour",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole wheat flour",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "5 grams chili peppers ((to taste, roughly chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili peppers",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "g"
-        }
-      ],
-      "note": "to taste, roughly chopped"
-    }
+  "expected": {
+    "item": "chili peppers",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": "to taste, roughly chopped"
   }
 }

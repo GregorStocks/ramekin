@@ -1,15 +1,13 @@
 {
   "raw": "4 whole garlic cloves, skins removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole garlic cloves, skins removed",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole garlic cloves, skins removed",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

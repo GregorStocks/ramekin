@@ -1,19 +1,17 @@
 {
   "raw": "4 cups thinly sliced red cabbage (1 small head)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced red cabbage",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced red cabbage",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

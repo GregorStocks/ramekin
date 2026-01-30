@@ -1,15 +1,13 @@
 {
   "raw": "2 pinches ground cinnamon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cinnamon",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cinnamon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

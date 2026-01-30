@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons olive oil or 1 tablespoon olive oil and 1 tablespoon butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1 tablespoon olive oil and 1 tablespoon butter"
-    }
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1 tablespoon olive oil and 1 tablespoon butter"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "150 g carrot (roughly cut into bitesize pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot (roughly cut into bitesize pieces)",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrot (roughly cut into bitesize pieces)",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

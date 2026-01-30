@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup finely chopped celery",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped celery",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped celery",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

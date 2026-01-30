@@ -1,15 +1,13 @@
 {
   "raw": "Four&nbsp;1-inch thick slices good bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1-inch thick slices good bread",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1-inch thick slices good bread",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1  dram bottle (1/2 tsp. cola flavoring oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dram bottle",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dram bottle",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

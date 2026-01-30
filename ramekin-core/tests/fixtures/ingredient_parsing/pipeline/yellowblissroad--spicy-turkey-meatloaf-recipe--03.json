@@ -1,15 +1,13 @@
 {
   "raw": "1 4-ounce can green chiles (drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chiles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "4-ounce can"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "green chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "4-ounce can"
+      }
+    ],
+    "note": "drained"
   }
 }

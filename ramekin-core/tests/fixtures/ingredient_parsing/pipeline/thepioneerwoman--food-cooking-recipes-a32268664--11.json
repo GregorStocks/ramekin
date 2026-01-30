@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. baby bell peppers, thinly sliced into rings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby bell peppers",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced into rings"
-    }
+  "expected": {
+    "item": "baby bell peppers",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced into rings"
   }
 }

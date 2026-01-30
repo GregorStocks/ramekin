@@ -1,15 +1,13 @@
 {
   "raw": "2 medium parsnips, peeled and cut into quarter-moons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsnips",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and cut into quarter-moons"
-    }
+  "expected": {
+    "item": "parsnips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and cut into quarter-moons"
   }
 }

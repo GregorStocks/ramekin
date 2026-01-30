@@ -1,15 +1,13 @@
 {
   "raw": "1 cup soft crumbled goat cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soft crumbled goat cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soft crumbled goat cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

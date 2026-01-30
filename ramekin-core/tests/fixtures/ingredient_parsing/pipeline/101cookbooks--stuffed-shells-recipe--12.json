@@ -1,15 +1,13 @@
 {
   "raw": "1  bunch of chives, (minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "chives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "minced"
   }
 }

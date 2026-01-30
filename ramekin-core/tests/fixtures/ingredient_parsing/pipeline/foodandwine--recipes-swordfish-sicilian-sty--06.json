@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds swordfish steaks, cut 1/2 inch thick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "swordfish steaks, cut 1/2 inch thick",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "swordfish steaks, cut 1/2 inch thick",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

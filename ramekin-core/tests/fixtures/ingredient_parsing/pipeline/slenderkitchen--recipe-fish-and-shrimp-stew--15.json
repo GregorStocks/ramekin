@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. raw shrimp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw shrimp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

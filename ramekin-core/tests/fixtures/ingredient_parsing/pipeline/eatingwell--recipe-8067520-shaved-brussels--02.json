@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup finely shredded hard goat cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely shredded hard goat cheese",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely shredded hard goat cheese",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

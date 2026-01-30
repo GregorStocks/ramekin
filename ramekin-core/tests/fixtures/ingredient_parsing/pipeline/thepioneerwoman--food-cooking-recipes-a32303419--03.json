@@ -1,19 +1,17 @@
 {
   "raw": "1 oz. blood orange juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blood orange juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blood orange juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 tablespoons (10 grams) ground cinnamon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cinnamon",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cinnamon",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

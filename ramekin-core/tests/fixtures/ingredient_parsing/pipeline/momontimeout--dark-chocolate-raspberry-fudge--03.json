@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup seedless raspberry jam",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seedless raspberry jam",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seedless raspberry jam",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

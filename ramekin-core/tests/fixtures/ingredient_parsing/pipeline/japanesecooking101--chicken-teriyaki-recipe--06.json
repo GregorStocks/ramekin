@@ -1,15 +1,13 @@
 {
   "raw": "2  green onions (cut diagonally)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions (cut diagonally)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green onions (cut diagonally)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

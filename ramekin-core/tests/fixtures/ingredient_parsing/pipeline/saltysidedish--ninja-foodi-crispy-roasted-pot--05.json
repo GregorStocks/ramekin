@@ -1,10 +1,8 @@
 {
   "raw": "onion powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion powder",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "onion powder",
+    "measurements": [],
+    "note": null
   }
 }

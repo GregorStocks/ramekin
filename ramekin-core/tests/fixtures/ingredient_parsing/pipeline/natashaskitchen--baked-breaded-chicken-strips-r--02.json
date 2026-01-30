@@ -1,10 +1,8 @@
 {
   "raw": "Sea Salt &amp;amp; Pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sea Salt & Pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sea Salt & Pepper",
+    "measurements": [],
+    "note": null
   }
 }

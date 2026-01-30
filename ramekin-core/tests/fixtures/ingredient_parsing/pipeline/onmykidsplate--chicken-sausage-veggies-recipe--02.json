@@ -1,15 +1,13 @@
 {
   "raw": "2 heads broccoli (approximately two cups chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "head"
-        }
-      ],
-      "note": "approximately two cups chopped"
-    }
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "head"
+      }
+    ],
+    "note": "approximately two cups chopped"
   }
 }

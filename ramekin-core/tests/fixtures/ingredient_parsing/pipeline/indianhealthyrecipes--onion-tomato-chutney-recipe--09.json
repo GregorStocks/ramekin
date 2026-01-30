@@ -1,19 +1,17 @@
 {
   "raw": "6 to 8 (12 grams)  dried red chilies  ((read notes, I use Byadgi, or use ¾ to 1 tsp mild red chili powder))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried red chilies (read notes, I use Byadgi, or use 3/4 to 1 tsp mild red chili powder)",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried red chilies (read notes, I use Byadgi, or use 3/4 to 1 tsp mild red chili powder)",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

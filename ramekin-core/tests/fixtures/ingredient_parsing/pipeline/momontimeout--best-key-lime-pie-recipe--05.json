@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup light sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light sour cream",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light sour cream",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Gold star sprinkles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gold star sprinkles",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Gold star sprinkles",
+    "measurements": [],
+    "note": null
   }
 }

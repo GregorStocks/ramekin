@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 cups queso blanco",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "queso blanco",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "queso blanco",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

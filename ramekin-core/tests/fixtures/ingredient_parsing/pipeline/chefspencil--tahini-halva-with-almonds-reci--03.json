@@ -1,15 +1,13 @@
 {
   "raw": "200 gr almonds (skinned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gr almonds (skinned)",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gr almonds (skinned)",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

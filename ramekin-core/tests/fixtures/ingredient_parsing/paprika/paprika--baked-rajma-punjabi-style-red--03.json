@@ -1,15 +1,13 @@
 {
   "raw": "1 fresh green chile",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh green chile",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh green chile",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces prosciutto (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prosciutto",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "prosciutto",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

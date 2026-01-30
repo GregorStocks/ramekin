@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon flax seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flax seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flax seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

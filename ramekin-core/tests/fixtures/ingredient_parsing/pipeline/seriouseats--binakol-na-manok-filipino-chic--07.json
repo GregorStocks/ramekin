@@ -1,19 +1,17 @@
 {
   "raw": "8 1/2 cups (2L) unsweetened coconut water, such as Harmless Harvest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened coconut water, such as Harmless Harvest",
-      "measurements": [
-        {
-          "amount": "8 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened coconut water, such as Harmless Harvest",
+    "measurements": [
+      {
+        "amount": "8 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

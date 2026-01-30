@@ -1,15 +1,13 @@
 {
   "raw": "1 medium sweet red pepper, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet red pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "sweet red pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
   }
 }

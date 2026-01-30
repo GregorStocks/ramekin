@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (15 g) minced flat-leaf parsley, plus more for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced flat-leaf parsley",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for garnish"
-    }
+  "expected": {
+    "item": "minced flat-leaf parsley",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for garnish"
   }
 }

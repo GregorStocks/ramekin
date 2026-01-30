@@ -1,15 +1,13 @@
 {
   "raw": "4&nbsp; cups&nbsp; powdered sugar (sifted&nbsp;)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "sifted"
-    }
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "sifted"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup soy milk (- unsweetened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy milk (- unsweetened)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soy milk (- unsweetened)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

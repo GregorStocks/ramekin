@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons freshly grated lemon zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated lemon zest",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated lemon zest",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

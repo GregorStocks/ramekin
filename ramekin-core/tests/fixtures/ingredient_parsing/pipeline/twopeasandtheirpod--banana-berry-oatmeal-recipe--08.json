@@ -1,15 +1,13 @@
 {
   "raw": "Banana (slices)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Banana",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Banana",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

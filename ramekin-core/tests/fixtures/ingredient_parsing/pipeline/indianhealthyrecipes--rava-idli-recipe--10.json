@@ -1,15 +1,13 @@
 {
   "raw": "⅓ teaspoon sea salt  ((or use as needed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sea salt",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or use as needed"
-    }
+  "expected": {
+    "item": "sea salt",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or use as needed"
   }
 }

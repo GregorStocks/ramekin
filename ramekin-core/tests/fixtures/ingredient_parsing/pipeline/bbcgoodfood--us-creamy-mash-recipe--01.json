@@ -1,15 +1,13 @@
 {
   "raw": "3.3 lbs floury potatoes cut into even chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "floury potatoes cut into even chunks",
-      "measurements": [
-        {
-          "amount": "3.3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "floury potatoes cut into even chunks",
+    "measurements": [
+      {
+        "amount": "3.3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

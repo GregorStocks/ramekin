@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup pepitas (pumpkin&nbsp;seeds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepitas (pumpkin seeds)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepitas (pumpkin seeds)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

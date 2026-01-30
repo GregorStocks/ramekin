@@ -1,19 +1,17 @@
 {
   "raw": "1 lb. split peas (about 2 heaping cups), rinsed, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "split peas , rinsed, see notes above",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "split peas , rinsed, see notes above",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

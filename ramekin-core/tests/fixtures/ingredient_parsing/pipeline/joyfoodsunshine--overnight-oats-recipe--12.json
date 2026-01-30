@@ -1,15 +1,13 @@
 {
   "raw": "½ cup fresh berries (strawberries, raspberries, blueberries, etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh berries",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "strawberries, raspberries, blueberries, etc."
-    }
+  "expected": {
+    "item": "fresh berries",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "strawberries, raspberries, blueberries, etc."
   }
 }

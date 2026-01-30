@@ -1,23 +1,21 @@
 {
   "raw": "10 oz marshmallows (1 bag)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marshmallows",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marshmallows",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

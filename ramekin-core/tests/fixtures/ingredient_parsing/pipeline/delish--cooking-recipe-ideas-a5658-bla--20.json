@@ -1,10 +1,8 @@
 {
   "raw": "Vegan or regular mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vegan or regular mayonnaise",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Vegan or regular mayonnaise",
+    "measurements": [],
+    "note": null
   }
 }

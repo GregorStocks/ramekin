@@ -1,15 +1,13 @@
 {
   "raw": "1 lb hot italian sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot italian sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot italian sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

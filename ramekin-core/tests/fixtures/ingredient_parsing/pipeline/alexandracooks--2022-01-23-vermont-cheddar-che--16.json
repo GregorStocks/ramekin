@@ -1,15 +1,13 @@
 {
   "raw": "dashes hot sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot sauce",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

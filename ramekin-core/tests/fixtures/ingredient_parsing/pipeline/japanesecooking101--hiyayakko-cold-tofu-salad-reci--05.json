@@ -1,10 +1,8 @@
 {
   "raw": "soy sauce (or optionally Ponzu Sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce",
-      "measurements": [],
-      "note": "or optionally Ponzu Sauce"
-    }
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [],
+    "note": "or optionally Ponzu Sauce"
   }
 }

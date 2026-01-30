@@ -1,10 +1,8 @@
 {
   "raw": "avocado, and sliced radishes (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado, and sliced radishes",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "avocado, and sliced radishes",
+    "measurements": [],
+    "note": "for serving"
   }
 }

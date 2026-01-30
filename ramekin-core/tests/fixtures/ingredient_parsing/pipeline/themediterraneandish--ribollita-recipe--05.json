@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  carrots (peeled and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": "peeled and chopped"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": "peeled and chopped"
   }
 }

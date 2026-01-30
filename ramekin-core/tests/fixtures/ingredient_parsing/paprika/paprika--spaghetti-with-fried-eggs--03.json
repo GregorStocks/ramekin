@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons extra virgin olive oil or lard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra virgin olive oil or lard",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "extra virgin olive oil or lard",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

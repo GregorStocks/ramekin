@@ -1,15 +1,13 @@
 {
   "raw": "1 can full fat coconut milk (refrigerate & scoop the solid part)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full fat coconut milk (refrigerate & scoop the solid part)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full fat coconut milk (refrigerate & scoop the solid part)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

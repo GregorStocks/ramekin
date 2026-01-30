@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups 300 ml heavy cream, whipped to firm peaks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "300 ml heavy cream, whipped to firm peaks",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "300 ml heavy cream, whipped to firm peaks",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

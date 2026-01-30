@@ -1,23 +1,21 @@
 {
   "raw": "15 ounces red enchilada sauce (1 can)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red enchilada sauce",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red enchilada sauce",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

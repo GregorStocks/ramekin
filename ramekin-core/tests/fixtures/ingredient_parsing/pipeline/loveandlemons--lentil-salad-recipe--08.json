@@ -1,10 +1,8 @@
 {
   "raw": "Cilantro Lime Dressing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cilantro Lime Dressing",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cilantro Lime Dressing",
+    "measurements": [],
+    "note": null
   }
 }

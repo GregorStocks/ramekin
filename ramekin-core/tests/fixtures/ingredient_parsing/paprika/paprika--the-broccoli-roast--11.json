@@ -1,10 +1,8 @@
 {
   "raw": "Cider vinegar dip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cider vinegar dip",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cider vinegar dip",
+    "measurements": [],
+    "note": null
   }
 }

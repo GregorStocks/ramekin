@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Butter (, at room temp.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Butter (, at room temp.)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Butter (, at room temp.)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

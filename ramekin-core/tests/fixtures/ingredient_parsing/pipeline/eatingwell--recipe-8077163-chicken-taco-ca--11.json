@@ -1,15 +1,13 @@
 {
   "raw": "1.5 tablespoons reduced-sodium taco seasoning mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium taco seasoning mix",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium taco seasoning mix",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

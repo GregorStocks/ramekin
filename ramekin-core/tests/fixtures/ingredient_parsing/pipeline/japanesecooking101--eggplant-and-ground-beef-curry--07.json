@@ -1,15 +1,13 @@
 {
   "raw": "1  large egg plant (or 4 Japanese eggplants, 1&amp;quot; cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg plant",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "or 4 Japanese eggplants, 1\" cubed"
-    }
+  "expected": {
+    "item": "egg plant",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "or 4 Japanese eggplants, 1\" cubed"
   }
 }

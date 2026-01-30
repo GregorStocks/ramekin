@@ -1,15 +1,13 @@
 {
   "raw": "4  blood oranges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blood oranges",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blood oranges",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

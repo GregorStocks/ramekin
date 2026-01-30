@@ -1,15 +1,13 @@
 {
   "raw": "4 whole chicken legs (thighs and drumsticks attached)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chicken legs (thighs and drumsticks attached)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole chicken legs (thighs and drumsticks attached)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

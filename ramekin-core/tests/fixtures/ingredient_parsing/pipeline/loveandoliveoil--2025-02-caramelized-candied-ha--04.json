@@ -1,15 +1,13 @@
 {
   "raw": "1 cup hazelnuts* (lightly toasted and peeled and halved or very coarsely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hazelnuts*",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "lightly toasted and peeled and halved or very coarsely chopped"
-    }
+  "expected": {
+    "item": "hazelnuts*",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "lightly toasted and peeled and halved or very coarsely chopped"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "230 grams ground pork ((75/25 meat to fat ratio))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pork",
-      "measurements": [
-        {
-          "amount": "230",
-          "unit": "g"
-        },
-        {
-          "amount": "75/25",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground pork",
+    "measurements": [
+      {
+        "amount": "230",
+        "unit": "g"
+      },
+      {
+        "amount": "75/25",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

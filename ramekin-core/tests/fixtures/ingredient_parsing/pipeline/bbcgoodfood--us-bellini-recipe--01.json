@@ -1,15 +1,13 @@
 {
   "raw": "2 cups peach purée or nectar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peach purée or nectar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peach purée or nectar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

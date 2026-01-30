@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons green-olive tapenade from a jar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green-olive tapenade from a jar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green-olive tapenade from a jar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

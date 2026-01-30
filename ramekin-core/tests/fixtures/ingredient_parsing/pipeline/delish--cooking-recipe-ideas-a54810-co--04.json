@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. Butter, softened to room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "softened to room temperature"
-    }
+  "expected": {
+    "item": "Butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "softened to room temperature"
   }
 }

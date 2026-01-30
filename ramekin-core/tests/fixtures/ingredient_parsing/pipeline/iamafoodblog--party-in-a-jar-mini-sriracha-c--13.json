@@ -1,10 +1,8 @@
 {
   "raw": "lightly beaten egg with 1 teaspoon water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly beaten egg with 1 teaspoon water",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly beaten egg with 1 teaspoon water",
+    "measurements": [],
+    "note": null
   }
 }

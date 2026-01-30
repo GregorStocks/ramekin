@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups pineapple mint puree",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple mint puree",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pineapple mint puree",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

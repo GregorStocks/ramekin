@@ -1,15 +1,13 @@
 {
   "raw": "12-15 thin slices pancetta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin slices pancetta",
-      "measurements": [
-        {
-          "amount": "12-15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin slices pancetta",
+    "measurements": [
+      {
+        "amount": "12-15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

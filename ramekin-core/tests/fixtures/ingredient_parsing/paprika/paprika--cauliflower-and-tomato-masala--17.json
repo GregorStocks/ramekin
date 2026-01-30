@@ -1,10 +1,8 @@
 {
   "raw": "Rice or flatbreads, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rice or flatbreads, to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Rice or flatbreads, to serve",
+    "measurements": [],
+    "note": null
   }
 }

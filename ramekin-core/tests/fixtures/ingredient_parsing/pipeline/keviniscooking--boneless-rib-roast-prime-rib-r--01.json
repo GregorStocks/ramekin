@@ -1,15 +1,13 @@
 {
   "raw": "8 lb boneless beef rib roast (visible fat trimmed to 1/2-inch (See Note 1))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless beef rib roast",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "lb"
-        }
-      ],
-      "note": "visible fat trimmed to 1/2-inch (See Note 1"
-    }
+  "expected": {
+    "item": "boneless beef rib roast",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "lb"
+      }
+    ],
+    "note": "visible fat trimmed to 1/2-inch (See Note 1"
   }
 }

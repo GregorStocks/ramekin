@@ -1,15 +1,13 @@
 {
   "raw": "1  large shallot, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

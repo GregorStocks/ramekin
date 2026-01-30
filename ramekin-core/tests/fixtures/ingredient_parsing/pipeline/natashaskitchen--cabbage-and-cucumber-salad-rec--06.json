@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tbsp vinegar or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vinegar or to taste",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vinegar or to taste",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

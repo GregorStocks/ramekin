@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon sumac (see notes above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sumac (see notes above)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sumac (see notes above)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

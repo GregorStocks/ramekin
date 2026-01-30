@@ -1,19 +1,17 @@
 {
   "raw": "2  TCHO chocolate squares (.28 oz. each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "TCHO chocolate squares",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": ".28",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "TCHO chocolate squares",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": ".28",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

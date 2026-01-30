@@ -1,10 +1,8 @@
 {
   "raw": "Gold edible stars",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gold edible stars",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Gold edible stars",
+    "measurements": [],
+    "note": null
   }
 }

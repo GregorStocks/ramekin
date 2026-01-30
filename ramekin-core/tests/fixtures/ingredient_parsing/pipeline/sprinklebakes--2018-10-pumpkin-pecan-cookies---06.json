@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup 147g pumpkin pie filling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin pie filling",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "147",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin pie filling",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "147",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

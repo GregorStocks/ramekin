@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons Diamond brand kosher salt (use half of any other brand)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Diamond brand kosher salt (use half of any other brand)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Diamond brand kosher salt (use half of any other brand)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "quail eggs, as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quail eggs",
-      "measurements": [],
-      "note": "as needed"
-    }
+  "expected": {
+    "item": "quail eggs",
+    "measurements": [],
+    "note": "as needed"
   }
 }

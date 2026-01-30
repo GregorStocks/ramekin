@@ -1,15 +1,13 @@
 {
   "raw": "3  Fennel bulbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fennel bulbs",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Fennel bulbs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

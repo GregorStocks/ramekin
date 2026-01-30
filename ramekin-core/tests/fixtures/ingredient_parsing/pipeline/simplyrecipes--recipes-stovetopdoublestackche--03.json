@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon pickle relish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickle relish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pickle relish",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

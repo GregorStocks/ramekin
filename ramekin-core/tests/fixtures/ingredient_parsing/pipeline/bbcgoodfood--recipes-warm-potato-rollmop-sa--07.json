@@ -1,15 +1,13 @@
 {
   "raw": "4 Rollmops",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rollmops",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Rollmops",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

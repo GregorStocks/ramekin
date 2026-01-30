@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup citrus juice (such as lemon or Yuzu)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "citrus juice (such as lemon or Yuzu)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "citrus juice (such as lemon or Yuzu)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

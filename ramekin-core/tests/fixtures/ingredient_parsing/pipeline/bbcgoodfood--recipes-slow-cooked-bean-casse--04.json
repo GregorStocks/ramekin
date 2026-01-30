@@ -1,15 +1,13 @@
 {
   "raw": "large bouquet garni",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bouquet garni",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bouquet garni",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

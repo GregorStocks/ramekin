@@ -1,15 +1,13 @@
 {
   "raw": "1 bottle Mio Black Cherry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mio Black Cherry",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bottle"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mio Black Cherry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bottle"
+      }
+    ],
+    "note": null
   }
 }

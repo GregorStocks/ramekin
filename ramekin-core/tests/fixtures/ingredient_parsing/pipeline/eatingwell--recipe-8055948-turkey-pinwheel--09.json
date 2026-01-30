@@ -1,15 +1,13 @@
 {
   "raw": "1.33 cups alfalfa sprouts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "alfalfa sprouts",
-      "measurements": [
-        {
-          "amount": "1.33",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "alfalfa sprouts",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

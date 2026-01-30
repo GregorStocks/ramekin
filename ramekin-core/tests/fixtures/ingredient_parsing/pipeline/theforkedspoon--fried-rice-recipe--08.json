@@ -1,15 +1,13 @@
 {
   "raw": "4 cups cooked white rice (preferably cold, day-old rice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked white rice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "preferably cold, day-old rice"
-    }
+  "expected": {
+    "item": "cooked white rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "preferably cold, day-old rice"
   }
 }

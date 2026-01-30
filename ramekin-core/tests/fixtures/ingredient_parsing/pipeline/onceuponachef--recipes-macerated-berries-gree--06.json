@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup cold heavy whipping cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold heavy whipping cream",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

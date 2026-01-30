@@ -1,15 +1,13 @@
 {
   "raw": ".75 cup chopped ham",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped ham",
-      "measurements": [
-        {
-          "amount": ".75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped ham",
+    "measurements": [
+      {
+        "amount": ".75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

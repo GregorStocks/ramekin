@@ -1,10 +1,8 @@
 {
   "raw": "Hot water, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot water",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Hot water",
+    "measurements": [],
+    "note": "for serving"
   }
 }

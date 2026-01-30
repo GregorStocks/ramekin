@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup cocoa powder (sifted if lumpy)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa powder",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "sifted if lumpy"
-    }
+  "expected": {
+    "item": "cocoa powder",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "sifted if lumpy"
   }
 }

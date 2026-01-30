@@ -1,27 +1,25 @@
 {
   "raw": "8 oz chicken breasts (1 large or 2 small)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "2",
-          "unit": "small"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "2",
+        "unit": "small"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

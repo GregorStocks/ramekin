@@ -1,15 +1,13 @@
 {
   "raw": "2 egg whites, whipped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg whites, whipped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg whites, whipped",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

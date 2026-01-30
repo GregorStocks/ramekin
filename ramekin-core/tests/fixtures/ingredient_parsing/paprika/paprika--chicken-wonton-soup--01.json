@@ -1,10 +1,8 @@
 {
   "raw": "WONTONS",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "WONTONS",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "WONTONS",
+    "measurements": [],
+    "note": null
   }
 }

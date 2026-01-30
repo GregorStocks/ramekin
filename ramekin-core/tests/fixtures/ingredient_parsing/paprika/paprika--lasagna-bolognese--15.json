@@ -1,10 +1,8 @@
 {
   "raw": "Pasta:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pasta:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pasta:",
+    "measurements": [],
+    "note": null
   }
 }

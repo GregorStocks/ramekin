@@ -1,15 +1,13 @@
 {
   "raw": "40 g Oriental spinach (or other types of spinach)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oriental spinach (or other types of spinach)",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Oriental spinach (or other types of spinach)",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

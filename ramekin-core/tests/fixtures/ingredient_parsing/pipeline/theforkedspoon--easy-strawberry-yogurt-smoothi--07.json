@@ -1,10 +1,8 @@
 {
   "raw": "additional milk or yogurt (as needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "additional milk or yogurt",
-      "measurements": [],
-      "note": "as needed"
-    }
+  "expected": {
+    "item": "additional milk or yogurt",
+    "measurements": [],
+    "note": "as needed"
   }
 }

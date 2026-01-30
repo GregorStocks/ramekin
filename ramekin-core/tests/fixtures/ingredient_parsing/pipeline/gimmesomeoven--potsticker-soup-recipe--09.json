@@ -1,15 +1,13 @@
 {
   "raw": "3 baby bok choy, ends trimmed off and leaves separated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby bok choy",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "ends trimmed off and leaves separated"
-    }
+  "expected": {
+    "item": "baby bok choy",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "ends trimmed off and leaves separated"
   }
 }

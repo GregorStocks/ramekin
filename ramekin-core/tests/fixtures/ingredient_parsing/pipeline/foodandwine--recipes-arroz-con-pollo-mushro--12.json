@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound oyster or cremini mushrooms, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oyster or cremini mushrooms, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oyster or cremini mushrooms, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

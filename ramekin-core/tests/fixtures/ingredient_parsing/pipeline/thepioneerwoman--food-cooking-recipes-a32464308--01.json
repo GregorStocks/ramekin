@@ -1,15 +1,13 @@
 {
   "raw": "6 6-inch corn tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6-inch corn tortillas",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6-inch corn tortillas",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1½ lb. fresh ramen noodles or 16 oz. dried spaghetti",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ramen noodles",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "or 16 oz. dried spaghetti"
-    }
+  "expected": {
+    "item": "fresh ramen noodles",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "or 16 oz. dried spaghetti"
   }
 }

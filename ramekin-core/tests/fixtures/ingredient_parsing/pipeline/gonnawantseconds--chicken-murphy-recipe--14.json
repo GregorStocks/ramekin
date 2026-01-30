@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup peppadew pepper brine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppadew pepper brine",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peppadew pepper brine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon finely grated orange zest from 1 medium orange",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated orange zest from 1 medium orange",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated orange zest from 1 medium orange",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

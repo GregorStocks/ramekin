@@ -1,19 +1,17 @@
 {
   "raw": "24 oz full-fat cream cheese (room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat cream cheese",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "full-fat cream cheese",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "room temperature"
   }
 }

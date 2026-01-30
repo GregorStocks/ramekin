@@ -1,10 +1,8 @@
 {
   "raw": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
+    "measurements": [],
+    "note": null
   }
 }

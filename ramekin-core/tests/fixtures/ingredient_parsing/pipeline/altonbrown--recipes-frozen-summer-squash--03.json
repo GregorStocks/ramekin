@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds ice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

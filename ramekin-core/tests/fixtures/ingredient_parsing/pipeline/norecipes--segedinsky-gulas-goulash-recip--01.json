@@ -1,15 +1,13 @@
 {
   "raw": "1200 grams pork shoulder ((cut into 2-inch chunks))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork shoulder (cut into 2-inch chunks)",
-      "measurements": [
-        {
-          "amount": "1200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork shoulder (cut into 2-inch chunks)",
+    "measurements": [
+      {
+        "amount": "1200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

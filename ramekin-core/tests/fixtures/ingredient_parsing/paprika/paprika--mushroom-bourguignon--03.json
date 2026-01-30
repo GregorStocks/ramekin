@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds portobello mushrooms, in 1/4-inch slices (save the stems for another use) (you can use cremini instead, as well)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portobello mushrooms, in 1/4-inch slices (save the stems for another use) (you can use cremini instead, as well)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "portobello mushrooms, in 1/4-inch slices (save the stems for another use) (you can use cremini instead, as well)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

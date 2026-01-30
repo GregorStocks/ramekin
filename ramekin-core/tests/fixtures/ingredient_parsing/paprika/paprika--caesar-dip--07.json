@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces (225 g) plain, full-fat cream cheese, softened (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain, full-fat cream cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": "softened (see notes)"
-    }
+  "expected": {
+    "item": "plain, full-fat cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "softened (see notes)"
   }
 }

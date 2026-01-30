@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (250 grams) ricotta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ricotta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ricotta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lime, sliced into wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "sliced into wedges"
-    }
+  "expected": {
+    "item": "lime",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "sliced into wedges"
   }
 }

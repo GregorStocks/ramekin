@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sun dried tomatoes (chopped (not in oil))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sun dried tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped (not in oil"
-    }
+  "expected": {
+    "item": "sun dried tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped (not in oil"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 green pepper finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green pepper finely chopped",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green pepper finely chopped",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

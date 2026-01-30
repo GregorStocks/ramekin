@@ -1,15 +1,13 @@
 {
   "raw": "3 spring onions trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spring onions trimmed",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spring onions trimmed",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

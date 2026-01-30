@@ -1,15 +1,13 @@
 {
   "raw": "1 8–10-oz. package Halloumi cheese, patted dry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "8-10-oz. package Halloumi cheese, patted dry",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "8-10-oz. package Halloumi cheese, patted dry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

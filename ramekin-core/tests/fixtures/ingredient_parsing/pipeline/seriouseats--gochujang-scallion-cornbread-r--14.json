@@ -1,19 +1,17 @@
 {
   "raw": "4 medium scallions, white and light green parts, finely chopped (1/2 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions, white and light green parts",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "scallions, white and light green parts",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

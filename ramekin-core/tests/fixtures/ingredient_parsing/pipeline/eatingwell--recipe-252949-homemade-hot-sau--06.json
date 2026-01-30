@@ -1,19 +1,17 @@
 {
   "raw": "1 pound tomatoes, diced (about 3 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 pieces salmon fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon fillets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "piece"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salmon fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "piece"
+      }
+    ],
+    "note": null
   }
 }

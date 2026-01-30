@@ -1,23 +1,21 @@
 {
   "raw": "2 ounces Dutch cocoa powder, such as Cacao Barry Extra Brute (about 2/3 cup, spooned; 55g); see note",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dutch cocoa powder, such as Cacao Barry Extra Brute ; see note",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dutch cocoa powder, such as Cacao Barry Extra Brute ; see note",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

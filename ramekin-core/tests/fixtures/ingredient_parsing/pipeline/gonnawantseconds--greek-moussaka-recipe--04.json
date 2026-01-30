@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Minced Garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Minced Garlic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Minced Garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lb hot Sweet And Tangy Pulled Pork",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot Sweet And Tangy Pulled Pork",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot Sweet And Tangy Pulled Pork",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

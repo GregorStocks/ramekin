@@ -1,10 +1,8 @@
 {
   "raw": "Smoked hot sauce, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Smoked hot sauce",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Smoked hot sauce",
+    "measurements": [],
+    "note": "for serving"
   }
 }

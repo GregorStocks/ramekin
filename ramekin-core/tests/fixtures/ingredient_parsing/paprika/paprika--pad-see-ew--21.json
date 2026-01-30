@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (45ml) Thai oyster sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai oyster sauce",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai oyster sauce",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

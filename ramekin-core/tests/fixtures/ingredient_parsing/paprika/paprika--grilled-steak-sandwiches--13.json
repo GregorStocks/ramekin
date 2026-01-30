@@ -1,15 +1,13 @@
 {
   "raw": "4 ciabatta sandwich rolls, halved lengthwise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ciabatta sandwich rolls",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "halved lengthwise"
-    }
+  "expected": {
+    "item": "ciabatta sandwich rolls",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "halved lengthwise"
   }
 }

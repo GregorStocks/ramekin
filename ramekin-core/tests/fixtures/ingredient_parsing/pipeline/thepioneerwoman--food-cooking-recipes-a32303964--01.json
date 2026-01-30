@@ -1,19 +1,17 @@
 {
   "raw": "2 (750-ml) bottles of dry red wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry red wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "bottle"
-        },
-        {
-          "amount": "750",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry red wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bottle"
+      },
+      {
+        "amount": "750",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "16 ounce lo mein noodles (or any other Asian style noodles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lo mein noodles (or any other Asian style noodles)",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lo mein noodles (or any other Asian style noodles)",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

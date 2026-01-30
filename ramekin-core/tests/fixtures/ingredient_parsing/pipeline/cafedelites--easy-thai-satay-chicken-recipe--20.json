@@ -1,15 +1,13 @@
 {
   "raw": "1 handful cilantro (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro (to garnish)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cilantro (to garnish)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

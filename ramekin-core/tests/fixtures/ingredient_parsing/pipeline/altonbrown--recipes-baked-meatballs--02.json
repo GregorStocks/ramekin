@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces ground lamb shoulder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground lamb shoulder",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground lamb shoulder",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

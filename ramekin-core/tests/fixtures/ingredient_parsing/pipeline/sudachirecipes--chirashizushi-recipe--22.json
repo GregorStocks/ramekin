@@ -1,15 +1,13 @@
 {
   "raw": "15 g marinated salmon roe (ikura)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinated salmon roe (ikura)",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinated salmon roe (ikura)",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

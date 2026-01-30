@@ -1,15 +1,13 @@
 {
   "raw": "6 cups cooked jasmine rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked jasmine rice",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked jasmine rice",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

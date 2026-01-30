@@ -1,15 +1,13 @@
 {
   "raw": "1 medium rutabaga",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rutabaga",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rutabaga",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

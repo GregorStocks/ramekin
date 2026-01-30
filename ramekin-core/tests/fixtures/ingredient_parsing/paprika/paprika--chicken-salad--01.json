@@ -1,15 +1,13 @@
 {
   "raw": "1 poached chicken, 3 1/2 pounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poached chicken, 3 1/2 pounds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "poached chicken, 3 1/2 pounds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

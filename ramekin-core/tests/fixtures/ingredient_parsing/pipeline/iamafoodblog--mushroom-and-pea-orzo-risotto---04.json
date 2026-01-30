@@ -1,15 +1,13 @@
 {
   "raw": "1 cup of orzo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orzo",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orzo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

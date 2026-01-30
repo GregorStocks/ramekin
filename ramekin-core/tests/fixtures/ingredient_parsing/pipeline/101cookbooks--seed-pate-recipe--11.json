@@ -1,10 +1,8 @@
 {
   "raw": "fine grain salt to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine grain salt to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fine grain salt to taste",
+    "measurements": [],
+    "note": null
   }
 }

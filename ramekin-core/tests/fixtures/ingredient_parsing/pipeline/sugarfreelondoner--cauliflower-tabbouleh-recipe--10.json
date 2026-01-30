@@ -1,15 +1,13 @@
 {
   "raw": "1/2 - 1 tsp flaked sea salt, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaked sea salt",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "flaked sea salt",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

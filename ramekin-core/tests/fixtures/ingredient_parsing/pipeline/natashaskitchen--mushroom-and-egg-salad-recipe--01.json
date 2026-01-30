@@ -1,10 +1,8 @@
 {
   "raw": "Olive oil to sauté",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Olive oil to sauté",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Olive oil to sauté",
+    "measurements": [],
+    "note": null
   }
 }

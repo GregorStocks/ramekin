@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (1/2 stick) butter, melted and cooled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1/2",
-          "unit": "stick"
-        }
-      ],
-      "note": "melted and cooled"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1/2",
+        "unit": "stick"
+      }
+    ],
+    "note": "melted and cooled"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Parmigiano Reggiano, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmigiano Reggiano",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Parmigiano Reggiano",
+    "measurements": [],
+    "note": "to taste"
   }
 }

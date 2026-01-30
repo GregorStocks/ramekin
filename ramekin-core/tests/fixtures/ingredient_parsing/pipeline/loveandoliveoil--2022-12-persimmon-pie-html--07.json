@@ -1,15 +1,13 @@
 {
   "raw": "8  large ripe Fuyu* persimmons (enough to make 2 cups of puree)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe Fuyu* persimmons (enough to make 2 cups of puree)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe Fuyu* persimmons (enough to make 2 cups of puree)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

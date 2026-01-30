@@ -1,23 +1,21 @@
 {
   "raw": "236 g water (8 1/3 ounces; about 1 cup), at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "236",
-          "unit": "g"
-        },
-        {
-          "amount": "8 1/3",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "236",
+        "unit": "g"
+      },
+      {
+        "amount": "8 1/3",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

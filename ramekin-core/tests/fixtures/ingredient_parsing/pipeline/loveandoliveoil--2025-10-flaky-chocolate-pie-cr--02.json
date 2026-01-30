@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons dark or Dutch processed cocoa powder (sifted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark or Dutch processed cocoa powder",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "sifted"
-    }
+  "expected": {
+    "item": "dark or Dutch processed cocoa powder",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "sifted"
   }
 }

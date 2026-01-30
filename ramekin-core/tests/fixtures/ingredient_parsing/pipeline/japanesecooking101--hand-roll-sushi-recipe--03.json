@@ -1,15 +1,13 @@
 {
   "raw": "2  cans tuna (drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tuna",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "tuna",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      }
+    ],
+    "note": "drained"
   }
 }

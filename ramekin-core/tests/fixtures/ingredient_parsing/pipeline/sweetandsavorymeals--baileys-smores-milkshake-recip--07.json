@@ -1,10 +1,8 @@
 {
   "raw": "Chocolate fudge",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chocolate fudge",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chocolate fudge",
+    "measurements": [],
+    "note": null
   }
 }

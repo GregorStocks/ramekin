@@ -1,19 +1,17 @@
 {
   "raw": "4 oz mozzarella cheese ((1 1/2 cups shredded))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "1 1/2 cups shredded"
-    }
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "1 1/2 cups shredded"
   }
 }

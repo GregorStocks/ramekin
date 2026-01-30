@@ -1,10 +1,8 @@
 {
   "raw": "kernels from 1 ear of fresh corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kernels from 1 ear of fresh corn",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "kernels from 1 ear of fresh corn",
+    "measurements": [],
+    "note": null
   }
 }

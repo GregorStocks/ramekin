@@ -1,15 +1,13 @@
 {
   "raw": "12 strips bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strips bacon",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strips bacon",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

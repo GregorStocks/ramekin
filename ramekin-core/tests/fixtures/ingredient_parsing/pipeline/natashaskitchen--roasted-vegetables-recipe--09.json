@@ -1,10 +1,8 @@
 {
   "raw": "Extra light olive oil (or avocado oil, or vegetable oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra light olive oil (or avocado oil, or vegetable oil)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Extra light olive oil (or avocado oil, or vegetable oil)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 cups warm 2% milk (110&amp;deg; to 115&amp;deg;)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm 2% milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "110",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm 2% milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

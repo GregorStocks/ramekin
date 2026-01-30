@@ -1,15 +1,13 @@
 {
   "raw": "1 bunch scallions, whites thinly sliced, greens cut into 2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions, whites thinly sliced, greens cut into 2-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scallions, whites thinly sliced, greens cut into 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

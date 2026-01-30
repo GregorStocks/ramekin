@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp mini dark chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini dark chocolate chips",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mini dark chocolate chips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

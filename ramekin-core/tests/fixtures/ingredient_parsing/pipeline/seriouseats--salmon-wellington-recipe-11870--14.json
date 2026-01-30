@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15 ml) Madeira or dry sherry (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Madeira or dry sherry",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Madeira or dry sherry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": "optional"
   }
 }

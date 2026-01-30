@@ -1,15 +1,13 @@
 {
   "raw": "8 skin-on, bone-in chicken thighs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skin-on, bone-in chicken thighs",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skin-on, bone-in chicken thighs",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

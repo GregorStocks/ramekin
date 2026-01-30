@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb uncooked store-bought organic pizza dough",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked store-bought organic pizza dough",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked store-bought organic pizza dough",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4  mandarins",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mandarins",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mandarins",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

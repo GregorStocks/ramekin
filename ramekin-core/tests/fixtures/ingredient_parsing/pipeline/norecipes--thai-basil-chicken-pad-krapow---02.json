@@ -1,19 +1,17 @@
 {
   "raw": "250 grams boneless skin-on chicken thighs ((2-3 large thighs))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skin-on chicken thighs",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        },
-        {
-          "amount": "2-3",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skin-on chicken thighs",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      },
+      {
+        "amount": "2-3",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

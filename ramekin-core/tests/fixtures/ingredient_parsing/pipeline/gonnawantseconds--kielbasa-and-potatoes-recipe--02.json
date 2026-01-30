@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds baby gold potatoes (quartered )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby gold potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "baby gold potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "quartered"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "a few tablespoons finely minced parsley or more to taste, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a few tablespoons finely minced parsley or more to taste",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "a few tablespoons finely minced parsley or more to taste",
+    "measurements": [],
+    "note": "optional"
   }
 }

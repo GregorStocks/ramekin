@@ -1,15 +1,13 @@
 {
   "raw": "12 butter lettuce leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter lettuce leaves",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter lettuce leaves",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

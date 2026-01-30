@@ -1,15 +1,13 @@
 {
   "raw": "1  lemon, (juiced and zest freshly grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "juiced and zest freshly grated"
-    }
+  "expected": {
+    "item": "lemon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "juiced and zest freshly grated"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "200 grams calamari steak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "calamari steak",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "calamari steak",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

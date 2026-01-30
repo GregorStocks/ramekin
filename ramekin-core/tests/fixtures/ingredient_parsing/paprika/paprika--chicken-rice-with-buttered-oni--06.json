@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups uncooked white rice, any variety",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked white rice, any variety",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked white rice, any variety",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

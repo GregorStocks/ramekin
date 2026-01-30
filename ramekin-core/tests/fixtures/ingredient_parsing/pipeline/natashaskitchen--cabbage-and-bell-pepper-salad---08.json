@@ -1,15 +1,13 @@
 {
   "raw": "1  Тbsp sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Тbsp sour cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Тbsp sour cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

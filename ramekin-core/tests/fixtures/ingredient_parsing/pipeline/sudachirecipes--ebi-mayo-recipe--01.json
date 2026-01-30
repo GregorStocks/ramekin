@@ -1,15 +1,13 @@
 {
   "raw": "70 g cake flour (lower protein content for lighter batter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cake flour (lower protein content for lighter batter)",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cake flour (lower protein content for lighter batter)",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

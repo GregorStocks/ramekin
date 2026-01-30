@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (120ml) coffee (cooled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coffee (cooled)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coffee (cooled)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

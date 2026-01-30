@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon pepper (or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

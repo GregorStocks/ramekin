@@ -1,23 +1,21 @@
 {
   "raw": "7 ounces plain or toasted sugar (1 cup; 195g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain or toasted sugar",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "195",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain or toasted sugar",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "195",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

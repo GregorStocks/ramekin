@@ -1,15 +1,13 @@
 {
   "raw": "Small basil leaves, for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil leaves, for topping",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basil leaves, for topping",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

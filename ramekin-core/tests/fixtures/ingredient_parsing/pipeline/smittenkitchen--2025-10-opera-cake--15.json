@@ -1,19 +1,17 @@
 {
   "raw": "10 tablespoons (150 ml) hot espresso",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot espresso",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "150",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot espresso",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "150",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

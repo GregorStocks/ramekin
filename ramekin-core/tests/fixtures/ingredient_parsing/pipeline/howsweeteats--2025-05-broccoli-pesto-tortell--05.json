@@ -1,15 +1,13 @@
 {
   "raw": "½  lemon, (juice freshly squeezed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "juice freshly squeezed"
-    }
+  "expected": {
+    "item": "lemon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "juice freshly squeezed"
   }
 }

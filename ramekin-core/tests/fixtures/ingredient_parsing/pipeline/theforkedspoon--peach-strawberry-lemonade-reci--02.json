@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh strawberries (stems removed and halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh strawberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "stems removed and halved"
-    }
+  "expected": {
+    "item": "fresh strawberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "stems removed and halved"
   }
 }

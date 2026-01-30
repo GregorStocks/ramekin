@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup 60 ml whole milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "60 ml whole milk",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "60 ml whole milk",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

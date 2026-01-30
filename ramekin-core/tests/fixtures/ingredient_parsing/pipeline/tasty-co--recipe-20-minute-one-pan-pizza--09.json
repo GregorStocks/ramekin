@@ -1,15 +1,13 @@
 {
   "raw": "½ cup pepperoni slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepperoni slices",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepperoni slices",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

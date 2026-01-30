@@ -1,15 +1,13 @@
 {
   "raw": "¼  cup light brown sugar ((or honey, dark brown sugar, maple syrup, coconut sugar, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar (or honey, dark brown sugar, maple syrup, coconut sugar, etc.)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar (or honey, dark brown sugar, maple syrup, coconut sugar, etc.)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

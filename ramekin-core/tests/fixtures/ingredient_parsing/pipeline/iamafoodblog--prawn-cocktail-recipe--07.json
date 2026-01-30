@@ -1,15 +1,13 @@
 {
   "raw": "1/4 of head of iceberg lettuce, finely shredded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "of head of iceberg lettuce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": "finely shredded"
-    }
+  "expected": {
+    "item": "of head of iceberg lettuce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": "finely shredded"
   }
 }

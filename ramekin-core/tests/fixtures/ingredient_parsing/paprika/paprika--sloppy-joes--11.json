@@ -1,15 +1,13 @@
 {
   "raw": "12 kaiser rolls or hamburger buns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kaiser rolls or hamburger buns",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kaiser rolls or hamburger buns",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

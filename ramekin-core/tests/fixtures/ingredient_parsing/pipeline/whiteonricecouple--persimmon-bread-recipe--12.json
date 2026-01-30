@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped toasted nuts (, optional (walnuts or pecans are our favorite choices))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped toasted nuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional (walnuts or pecans are our favorite choices"
-    }
+  "expected": {
+    "item": "chopped toasted nuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional (walnuts or pecans are our favorite choices"
   }
 }

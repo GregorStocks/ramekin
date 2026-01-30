@@ -1,15 +1,13 @@
 {
   "raw": "1/2 bunch Chopped fresh parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped fresh parsley",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped fresh parsley",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

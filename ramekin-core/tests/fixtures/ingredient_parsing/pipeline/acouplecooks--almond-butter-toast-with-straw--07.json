@@ -1,10 +1,8 @@
 {
   "raw": "Sliced bananas or green apples",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sliced bananas or green apples",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sliced bananas or green apples",
+    "measurements": [],
+    "note": null
   }
 }

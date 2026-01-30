@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon unsalted butter, melted, plus 2 tablespoons cold butter for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, melted",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "unsalted butter, melted",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

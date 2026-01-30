@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons chopped garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped garlic",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped garlic",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

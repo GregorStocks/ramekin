@@ -1,10 +1,8 @@
 {
   "raw": "Chopped cashews",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped cashews",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped cashews",
+    "measurements": [],
+    "note": null
   }
 }

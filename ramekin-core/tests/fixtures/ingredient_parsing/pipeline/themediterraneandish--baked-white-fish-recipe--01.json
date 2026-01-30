@@ -1,19 +1,17 @@
 {
   "raw": "1 ½ lb white fish fillet such as cod or halibut, ((1 to 1 ½ in thickness))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white fish fillet such as cod or halibut",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1 to 1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white fish fillet such as cod or halibut",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1 to 1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

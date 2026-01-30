@@ -1,10 +1,8 @@
 {
   "raw": "tartar sauce/crab cake sauce (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tartar sauce/crab cake sauce",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "tartar sauce/crab cake sauce",
+    "measurements": [],
+    "note": "for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Medium Cauliflower Head",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cauliflower Head",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cauliflower Head",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

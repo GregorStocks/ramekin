@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon finely chopped sage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped sage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped sage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

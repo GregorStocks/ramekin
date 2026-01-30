@@ -1,15 +1,13 @@
 {
   "raw": "2  green onions ((green parts only), chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions (green parts only)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "chopped)"
-    }
+  "expected": {
+    "item": "green onions (green parts only)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "chopped)"
   }
 }

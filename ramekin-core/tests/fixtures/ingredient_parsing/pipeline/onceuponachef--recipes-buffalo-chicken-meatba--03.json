@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Frank&amp;#39;s Red Hot sauce ((or similar brand))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Frank's Red Hot sauce (or similar brand)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Frank's Red Hot sauce (or similar brand)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4  ripe bananas  (~ 1 1/2 cups mashed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe bananas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe bananas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

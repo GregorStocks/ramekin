@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ridged or curly pasta, such as fusilli or gemelli",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ridged or curly pasta, such as fusilli or gemelli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ridged or curly pasta, such as fusilli or gemelli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

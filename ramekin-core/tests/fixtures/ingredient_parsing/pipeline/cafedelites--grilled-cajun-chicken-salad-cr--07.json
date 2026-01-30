@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch freshly ground black pepper (adjust to your taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground black pepper (adjust to your taste)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly ground black pepper (adjust to your taste)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

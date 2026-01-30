@@ -1,15 +1,13 @@
 {
   "raw": "18  OREO Cookies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "OREO Cookies",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "OREO Cookies",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

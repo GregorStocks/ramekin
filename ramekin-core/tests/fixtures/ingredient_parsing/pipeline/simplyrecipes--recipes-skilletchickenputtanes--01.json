@@ -1,23 +1,21 @@
 {
   "raw": "1 can (28 ounces) whole peeled tomatoes, with their juices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole peeled tomatoes, with their juices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "28",
-          "unit": "oz"
-        },
-        {
-          "amount": "794",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole peeled tomatoes, with their juices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": "oz"
+      },
+      {
+        "amount": "794",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

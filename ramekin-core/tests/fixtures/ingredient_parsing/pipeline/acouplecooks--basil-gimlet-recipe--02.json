@@ -1,23 +1,21 @@
 {
   "raw": "2 ounces (4 tablespoons) gin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

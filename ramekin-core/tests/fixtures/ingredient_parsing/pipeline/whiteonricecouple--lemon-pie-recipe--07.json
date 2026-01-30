@@ -1,15 +1,13 @@
 {
   "raw": "1 cup meyer lemon juice (* use 3/4 cup if using regular lemon juice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "meyer lemon juice (* use 3/4 cup if using regular lemon juice)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "meyer lemon juice (* use 3/4 cup if using regular lemon juice)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

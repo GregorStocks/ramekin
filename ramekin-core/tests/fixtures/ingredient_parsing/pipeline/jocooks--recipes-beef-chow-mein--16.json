@@ -1,15 +1,13 @@
 {
   "raw": "1 medium bell pepper (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bell pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced"
   }
 }

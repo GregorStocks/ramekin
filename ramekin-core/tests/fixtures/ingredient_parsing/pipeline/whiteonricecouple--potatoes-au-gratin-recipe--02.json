@@ -1,15 +1,13 @@
 {
   "raw": "2 cloves Garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

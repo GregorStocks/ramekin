@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup cilantro, basil or parsley leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro, basil or parsley leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cilantro, basil or parsley leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup red seedless grapes (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red seedless grapes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "red seedless grapes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "quartered"
   }
 }

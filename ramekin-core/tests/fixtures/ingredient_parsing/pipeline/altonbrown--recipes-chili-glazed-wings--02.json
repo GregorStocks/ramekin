@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sweet Thai chili sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet Thai chili sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet Thai chili sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

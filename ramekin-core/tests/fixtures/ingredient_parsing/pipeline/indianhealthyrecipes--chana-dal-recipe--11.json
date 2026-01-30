@@ -1,15 +1,13 @@
 {
   "raw": "1  black cardamom  ((omit if you don’t like))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black cardamom  (omit if you don’t like)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black cardamom  (omit if you don’t like)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 (1-inch-thick) sirloin steak, about 1 pound",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sirloin steak, about 1 pound",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sirloin steak, about 1 pound",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

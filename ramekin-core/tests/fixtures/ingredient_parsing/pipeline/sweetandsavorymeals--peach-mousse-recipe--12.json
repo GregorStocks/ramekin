@@ -1,10 +1,8 @@
 {
   "raw": "fresh peaches",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh peaches",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh peaches",
+    "measurements": [],
+    "note": null
   }
 }

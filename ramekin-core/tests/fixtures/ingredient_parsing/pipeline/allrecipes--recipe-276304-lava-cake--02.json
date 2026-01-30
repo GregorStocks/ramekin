@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup butter, cut into 8 pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter, cut into 8 pieces",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter, cut into 8 pieces",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

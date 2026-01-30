@@ -1,15 +1,13 @@
 {
   "raw": "50g butter cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter cubed",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter cubed",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

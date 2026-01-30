@@ -1,15 +1,13 @@
 {
   "raw": "1½ tablespoon oil ((any or neutral oils like avocado/grapeseed/ refined coconut or use mustard oil))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil (any or neutral oils like avocado/grapeseed/ refined coconut or use mustard oil)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil (any or neutral oils like avocado/grapeseed/ refined coconut or use mustard oil)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

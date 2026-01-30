@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds sweet potatoes, peeled and sliced thin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and sliced thin"
-    }
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and sliced thin"
   }
 }

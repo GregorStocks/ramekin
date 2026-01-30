@@ -1,15 +1,13 @@
 {
   "raw": "2 cups blueberries (fresh)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blueberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "fresh"
-    }
+  "expected": {
+    "item": "blueberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "fresh"
   }
 }

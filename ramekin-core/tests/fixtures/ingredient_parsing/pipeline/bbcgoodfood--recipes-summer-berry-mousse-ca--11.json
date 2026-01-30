@@ -1,15 +1,13 @@
 {
   "raw": "250g mixture of  strawberries (chopped) and raspberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixture of  strawberries and raspberries",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "mixture of  strawberries and raspberries",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

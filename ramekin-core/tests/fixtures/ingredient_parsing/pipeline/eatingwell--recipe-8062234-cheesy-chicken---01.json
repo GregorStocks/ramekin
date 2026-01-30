@@ -1,23 +1,21 @@
 {
   "raw": "12 ounces whole-wheat penne (about 4 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-wheat penne",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-wheat penne",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

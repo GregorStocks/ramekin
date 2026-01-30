@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp sunflower oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sunflower oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sunflower oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 small bay leaf",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bay leaf",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bay leaf",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

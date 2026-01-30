@@ -1,15 +1,13 @@
 {
   "raw": "½ cup lightly packed light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly packed light brown sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly packed light brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

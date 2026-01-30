@@ -1,15 +1,13 @@
 {
   "raw": "300 ml beef bouillon (or other bouillon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef bouillon (or other bouillon)",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef bouillon (or other bouillon)",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

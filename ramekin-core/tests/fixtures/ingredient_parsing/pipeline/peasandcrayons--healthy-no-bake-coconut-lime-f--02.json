@@ -1,19 +1,17 @@
 {
   "raw": "8 oz mejool dates (pitted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mejool dates (pitted)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mejool dates (pitted)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

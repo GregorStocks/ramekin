@@ -1,10 +1,8 @@
 {
   "raw": "diced or thinly sliced bell pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced or thinly sliced bell pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "diced or thinly sliced bell pepper",
+    "measurements": [],
+    "note": null
   }
 }

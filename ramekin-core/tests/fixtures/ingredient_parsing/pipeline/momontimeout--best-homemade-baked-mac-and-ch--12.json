@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup  Parmesan cheese (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "Parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded"
   }
 }

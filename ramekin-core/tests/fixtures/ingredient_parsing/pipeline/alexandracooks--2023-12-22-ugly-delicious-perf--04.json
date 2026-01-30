@@ -1,19 +1,17 @@
 {
   "raw": "2 sticks (227 g) salted butter (unsalted is fine if it&amp;#8217;s all you have), melted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter (unsalted is fine if it’s all you have)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stick"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "salted butter (unsalted is fine if it’s all you have)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stick"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
   }
 }

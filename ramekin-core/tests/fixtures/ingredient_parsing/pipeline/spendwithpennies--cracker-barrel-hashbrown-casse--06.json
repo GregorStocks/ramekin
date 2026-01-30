@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded Colby cheese (divided, or cheddar cheese)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded Colby cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided, or cheddar cheese"
-    }
+  "expected": {
+    "item": "shredded Colby cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided, or cheddar cheese"
   }
 }

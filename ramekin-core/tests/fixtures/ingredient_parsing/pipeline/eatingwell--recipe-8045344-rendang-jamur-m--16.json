@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons coconut palm sugar (see Notes) or dark brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut palm sugar (see Notes) or dark brown sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut palm sugar (see Notes) or dark brown sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

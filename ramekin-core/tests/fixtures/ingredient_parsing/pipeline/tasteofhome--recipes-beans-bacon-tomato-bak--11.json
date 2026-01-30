@@ -1,23 +1,21 @@
 {
   "raw": "8 cups frozen lima beans (about 42 ounces), thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen lima beans",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        },
-        {
-          "amount": "42",
-          "unit": "oz"
-        },
-        {
-          "amount": "1191",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen lima beans",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      },
+      {
+        "amount": "42",
+        "unit": "oz"
+      },
+      {
+        "amount": "1191",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed"
   }
 }

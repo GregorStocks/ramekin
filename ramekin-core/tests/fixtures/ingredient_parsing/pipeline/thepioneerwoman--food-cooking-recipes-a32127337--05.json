@@ -1,10 +1,8 @@
 {
   "raw": "Red candy melts, melted&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red candy melts",
-      "measurements": [],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "Red candy melts",
+    "measurements": [],
+    "note": "melted"
   }
 }

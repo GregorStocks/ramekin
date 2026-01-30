@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoon Red Chilli sauce ((or 2 tbsps hot &amp;amp; sweet sauce, adjust to taste, maggi/chings brand))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red Chilli sauce",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 2 tbsps hot & sweet sauce, adjust to taste, maggi/chings brand"
-    }
+  "expected": {
+    "item": "Red Chilli sauce",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 2 tbsps hot & sweet sauce, adjust to taste, maggi/chings brand"
   }
 }

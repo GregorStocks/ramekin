@@ -1,23 +1,21 @@
 {
   "raw": "3-4 ounces (90-120ml) Club Soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Club Soda",
-      "measurements": [
-        {
-          "amount": "3-4",
-          "unit": "oz"
-        },
-        {
-          "amount": "90",
-          "unit": null
-        },
-        {
-          "amount": "85-113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Club Soda",
+    "measurements": [
+      {
+        "amount": "3-4",
+        "unit": "oz"
+      },
+      {
+        "amount": "90",
+        "unit": null
+      },
+      {
+        "amount": "85-113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

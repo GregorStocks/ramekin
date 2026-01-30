@@ -1,15 +1,13 @@
 {
   "raw": "1 cup crushed cornflakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed cornflakes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed cornflakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  fresh and ripe pineapple (cut into twelve wedges)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh and ripe pineapple (cut into twelve wedges)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh and ripe pineapple (cut into twelve wedges)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

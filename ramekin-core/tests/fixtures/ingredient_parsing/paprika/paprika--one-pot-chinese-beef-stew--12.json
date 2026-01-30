@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (45 ml) Shaoxing wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shaoxing wine",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Shaoxing wine",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 medium sweet onion, halved crosswise, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet onion, halved crosswise",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "sweet onion, halved crosswise",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "divided"
   }
 }

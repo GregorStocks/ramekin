@@ -1,15 +1,13 @@
 {
   "raw": "1½ pounds boneless skinless chicken breasts or thighs (chopped into 1-inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breasts or thighs",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "chopped into 1-inch cubes"
-    }
+  "expected": {
+    "item": "boneless skinless chicken breasts or thighs",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped into 1-inch cubes"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces canned mild green chiles (1 can)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned mild green chiles",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned mild green chiles",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

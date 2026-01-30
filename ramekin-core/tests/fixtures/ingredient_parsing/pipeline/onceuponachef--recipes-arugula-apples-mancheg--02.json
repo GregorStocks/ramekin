@@ -1,15 +1,13 @@
 {
   "raw": "1  crisp apple, (such as Fuji or Honeycrisp)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crisp apple, (such as Fuji or Honeycrisp)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crisp apple, (such as Fuji or Honeycrisp)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

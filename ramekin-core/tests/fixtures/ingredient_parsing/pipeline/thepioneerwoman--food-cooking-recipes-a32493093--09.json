@@ -1,15 +1,13 @@
 {
   "raw": "2 c. cooked brown rice (thawed if frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked brown rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed if frozen"
-    }
+  "expected": {
+    "item": "cooked brown rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed if frozen"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP Sriracha (adjust to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "adjust to taste"
-    }
+  "expected": {
+    "item": "Sriracha",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "adjust to taste"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 slices thick bacon (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick bacon",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "thick bacon",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slice"
+      }
+    ],
+    "note": "diced"
   }
 }

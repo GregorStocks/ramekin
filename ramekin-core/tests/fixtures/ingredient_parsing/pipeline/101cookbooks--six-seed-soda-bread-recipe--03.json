@@ -1,23 +1,21 @@
 {
   "raw": "1 3/4 cup / 9 oz / 250 g spelt flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spelt flour",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spelt flour",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "200 g dry spaghetti (1.6-1.8mm thickness recommended)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry spaghetti",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        },
-        {
-          "amount": "1.6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry spaghetti",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      },
+      {
+        "amount": "1.6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

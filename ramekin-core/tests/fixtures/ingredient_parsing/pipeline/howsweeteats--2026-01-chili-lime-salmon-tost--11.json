@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded lettuce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded lettuce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6  green onions (thinly sliced, to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced, to garnish"
-    }
+  "expected": {
+    "item": "green onions",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced, to garnish"
   }
 }

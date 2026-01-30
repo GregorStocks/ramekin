@@ -1,19 +1,17 @@
 {
   "raw": "2  small or 1 large broccoli crown (chopped into mini florets)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli crown",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        },
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "chopped into mini florets"
-    }
+  "expected": {
+    "item": "broccoli crown",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "chopped into mini florets"
   }
 }

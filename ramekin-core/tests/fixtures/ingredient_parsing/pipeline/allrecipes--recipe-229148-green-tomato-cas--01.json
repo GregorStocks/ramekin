@@ -1,15 +1,13 @@
 {
   "raw": "6 green tomatoes, cut into 1-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green tomatoes, cut into 1-inch cubes",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green tomatoes, cut into 1-inch cubes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

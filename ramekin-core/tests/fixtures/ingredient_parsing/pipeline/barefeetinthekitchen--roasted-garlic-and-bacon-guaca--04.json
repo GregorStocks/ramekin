@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sweet yellow onion (minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet yellow onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "sweet yellow onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "minced"
   }
 }

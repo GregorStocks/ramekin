@@ -1,15 +1,13 @@
 {
   "raw": "1  dragon fruit (, chilled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dragon fruit",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "dragon fruit",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "chilled"
   }
 }

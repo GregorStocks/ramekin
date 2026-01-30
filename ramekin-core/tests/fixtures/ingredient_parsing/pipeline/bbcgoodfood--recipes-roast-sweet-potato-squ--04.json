@@ -1,15 +1,13 @@
 {
   "raw": "1 red chilli",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chilli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red chilli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

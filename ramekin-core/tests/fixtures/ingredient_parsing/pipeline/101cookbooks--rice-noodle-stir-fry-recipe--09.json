@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces mushrooms, chopped in 1/2-inch pieces (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushrooms, chopped in 1/2-inch pieces",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "mushrooms, chopped in 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
   }
 }

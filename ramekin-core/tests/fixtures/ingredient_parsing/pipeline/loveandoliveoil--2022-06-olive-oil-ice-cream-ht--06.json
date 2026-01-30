@@ -1,15 +1,13 @@
 {
   "raw": "1  piece lemon peel (about the size of a quarter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon peel (about the size of a quarter)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "piece"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon peel (about the size of a quarter)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "piece"
+      }
+    ],
+    "note": null
   }
 }

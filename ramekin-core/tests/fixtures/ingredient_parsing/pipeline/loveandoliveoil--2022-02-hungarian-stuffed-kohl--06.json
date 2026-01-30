@@ -1,15 +1,13 @@
 {
   "raw": "4 cups chicken stock (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "chicken stock",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

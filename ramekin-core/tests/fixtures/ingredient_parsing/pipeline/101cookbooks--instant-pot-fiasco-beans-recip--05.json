@@ -1,15 +1,13 @@
 {
   "raw": "5  medium sage leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sage leaves",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sage leaves",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

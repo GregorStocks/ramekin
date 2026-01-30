@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp cognac",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cognac",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cognac",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

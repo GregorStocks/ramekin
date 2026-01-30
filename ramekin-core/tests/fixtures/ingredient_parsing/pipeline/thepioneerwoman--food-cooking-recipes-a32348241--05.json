@@ -1,15 +1,13 @@
 {
   "raw": "8 radishes, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "radishes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "radishes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 3-ounce link andouille sausage, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "3-ounce link andouille sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "3-ounce link andouille sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

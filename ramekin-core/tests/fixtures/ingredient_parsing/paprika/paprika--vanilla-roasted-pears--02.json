@@ -1,15 +1,13 @@
 {
   "raw": "1/2 vanilla bean",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla bean",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla bean",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

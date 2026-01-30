@@ -1,15 +1,13 @@
 {
   "raw": "4 cups vegetables ((bell peppers, broccoli, zucchini, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetables (bell peppers, broccoli, zucchini, etc.)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetables (bell peppers, broccoli, zucchini, etc.)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

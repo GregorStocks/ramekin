@@ -1,15 +1,13 @@
 {
   "raw": "3–4 cups reduced-sodium chicken broth ((or vegetable broth for a vegetarian soup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium chicken broth (or vegetable broth for a vegetarian soup)",
-      "measurements": [
-        {
-          "amount": "3-4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium chicken broth (or vegetable broth for a vegetarian soup)",
+    "measurements": [
+      {
+        "amount": "3-4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

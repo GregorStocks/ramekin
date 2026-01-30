@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon grapefruit extract (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapefruit extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "grapefruit extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 Tablespoons Bourbon ((22 ml) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bourbon",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "22",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bourbon",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "22",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

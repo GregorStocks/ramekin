@@ -1,15 +1,13 @@
 {
   "raw": "200 grams shallots ((4 large roughly chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": "4 large roughly chopped"
-    }
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": "4 large roughly chopped"
   }
 }

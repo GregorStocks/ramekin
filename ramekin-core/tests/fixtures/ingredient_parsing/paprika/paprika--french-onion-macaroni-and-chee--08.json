@@ -1,15 +1,13 @@
 {
   "raw": "1 baguette, cut into 1/2-inch slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baguette, cut into 1/2-inch slices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baguette, cut into 1/2-inch slices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

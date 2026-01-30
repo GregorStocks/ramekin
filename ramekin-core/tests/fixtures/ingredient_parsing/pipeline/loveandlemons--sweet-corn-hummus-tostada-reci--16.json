@@ -1,10 +1,8 @@
 {
   "raw": "a few sprigs of baby kale or arugula",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a few sprigs of baby kale or arugula",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a few sprigs of baby kale or arugula",
+    "measurements": [],
+    "note": null
   }
 }

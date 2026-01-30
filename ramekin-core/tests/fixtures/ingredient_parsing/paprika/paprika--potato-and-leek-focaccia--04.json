@@ -1,15 +1,13 @@
 {
   "raw": "3 1/2 cups/448 grams all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cups/448 grams all-purpose flour",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cups/448 grams all-purpose flour",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

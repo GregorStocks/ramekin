@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon garlic ((finely grated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "finely grated"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": "finely grated"
   }
 }

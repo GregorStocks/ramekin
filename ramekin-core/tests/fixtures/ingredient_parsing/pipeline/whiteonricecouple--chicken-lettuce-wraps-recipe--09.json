@@ -1,19 +1,17 @@
 {
   "raw": "1/2 teaspoon rice vinegar ((3ml) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice vinegar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "3",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice vinegar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "3",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

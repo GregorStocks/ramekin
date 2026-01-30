@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (454 g) fresh chorizo sausage, casings removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chorizo sausage, casings removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh chorizo sausage, casings removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

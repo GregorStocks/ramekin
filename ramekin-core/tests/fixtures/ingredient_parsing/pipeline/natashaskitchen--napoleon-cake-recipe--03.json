@@ -1,19 +1,17 @@
 {
   "raw": "1 cup light brown sugar (or 1/2 brown sugar, 1/2 white sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

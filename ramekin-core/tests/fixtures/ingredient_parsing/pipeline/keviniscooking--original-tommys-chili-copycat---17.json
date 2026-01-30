@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup masa harina",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "masa harina",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "masa harina",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

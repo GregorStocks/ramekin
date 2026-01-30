@@ -1,15 +1,13 @@
 {
   "raw": "2 cups homemade cream of chicken soup (store-bought will also work)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade cream of chicken soup (store-bought will also work)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade cream of chicken soup (store-bought will also work)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

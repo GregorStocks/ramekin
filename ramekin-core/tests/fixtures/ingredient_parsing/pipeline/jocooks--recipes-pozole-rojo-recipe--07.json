@@ -1,15 +1,13 @@
 {
   "raw": "5  guajillo chiles (dried)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "guajillo chiles",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "dried"
-    }
+  "expected": {
+    "item": "guajillo chiles",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "dried"
   }
 }

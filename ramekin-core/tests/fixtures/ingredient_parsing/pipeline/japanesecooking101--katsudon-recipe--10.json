@@ -1,10 +1,8 @@
 {
   "raw": "Nori roasted seaweed (shredded (optional) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nori roasted seaweed",
-      "measurements": [],
-      "note": "shredded (optional"
-    }
+  "expected": {
+    "item": "Nori roasted seaweed",
+    "measurements": [],
+    "note": "shredded (optional"
   }
 }

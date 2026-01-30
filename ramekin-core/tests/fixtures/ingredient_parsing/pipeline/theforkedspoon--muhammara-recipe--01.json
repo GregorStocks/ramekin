@@ -1,15 +1,13 @@
 {
   "raw": "4 cups fresh pomegranate juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh pomegranate juice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh pomegranate juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

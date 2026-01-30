@@ -1,19 +1,17 @@
 {
   "raw": "2½ cups water for cooker ((3 cups for pot &amp;amp; 1¾ cups + 2 tbsp for Instapot))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water for cooker",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water for cooker",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

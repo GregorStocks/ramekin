@@ -1,19 +1,17 @@
 {
   "raw": "2 sprigs  fresh rosemary ((large))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh rosemary",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "sprig"
-        },
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh rosemary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sprig"
+      },
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

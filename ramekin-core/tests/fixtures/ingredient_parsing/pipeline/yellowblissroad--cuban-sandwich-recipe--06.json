@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces Swiss cheese (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Swiss cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "Swiss cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup cacao nibs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cacao nibs",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cacao nibs",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

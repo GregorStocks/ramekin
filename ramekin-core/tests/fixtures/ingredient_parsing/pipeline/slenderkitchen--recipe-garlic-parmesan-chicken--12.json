@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup low sodium chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low sodium chicken broth",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

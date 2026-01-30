@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons brown sugar (I use dark)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown sugar (I use dark)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown sugar (I use dark)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon herbes de Provence",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "herbes de Provence",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "herbes de Provence",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

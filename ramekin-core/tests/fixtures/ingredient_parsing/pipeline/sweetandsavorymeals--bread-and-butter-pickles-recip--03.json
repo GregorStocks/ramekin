@@ -1,15 +1,13 @@
 {
   "raw": "2  chili peppers (sliced into rings)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced into rings"
-    }
+  "expected": {
+    "item": "chili peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced into rings"
   }
 }

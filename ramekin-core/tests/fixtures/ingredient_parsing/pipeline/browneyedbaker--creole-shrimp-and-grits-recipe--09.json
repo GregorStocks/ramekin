@@ -1,15 +1,13 @@
 {
   "raw": "1½ teaspoons Creole seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Creole seasoning",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Creole seasoning",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

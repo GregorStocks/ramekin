@@ -1,19 +1,17 @@
 {
   "raw": "2 to 3&amp;nbsp;oz. club soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "club soda",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "oz"
-        },
-        {
-          "amount": "57 to 85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "club soda",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "oz"
+      },
+      {
+        "amount": "57 to 85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

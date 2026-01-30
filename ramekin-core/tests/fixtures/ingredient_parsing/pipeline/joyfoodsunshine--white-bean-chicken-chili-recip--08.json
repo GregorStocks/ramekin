@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces white cheddar cheese (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white cheddar cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "white cheddar cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

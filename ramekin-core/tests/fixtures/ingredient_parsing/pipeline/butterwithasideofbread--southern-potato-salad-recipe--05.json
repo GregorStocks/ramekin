@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon finely diced dill pickles or relish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely diced dill pickles or relish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely diced dill pickles or relish",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

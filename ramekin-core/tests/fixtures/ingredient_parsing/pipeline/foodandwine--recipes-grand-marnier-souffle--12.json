@@ -1,10 +1,8 @@
 {
   "raw": "Powdered sugar, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Powdered sugar",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Powdered sugar",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pinches salt to taste (if using unsalted butter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt to taste (if using unsalted butter)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt to taste (if using unsalted butter)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

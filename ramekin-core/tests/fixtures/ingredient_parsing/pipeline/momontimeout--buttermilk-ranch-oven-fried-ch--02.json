@@ -1,19 +1,17 @@
 {
   "raw": "1 oz envelope ranch salad dressing and seasoning mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "envelope ranch salad dressing and seasoning mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "envelope ranch salad dressing and seasoning mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

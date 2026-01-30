@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon herbs de Provence (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "herbs de Provence",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "herbs de Provence",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

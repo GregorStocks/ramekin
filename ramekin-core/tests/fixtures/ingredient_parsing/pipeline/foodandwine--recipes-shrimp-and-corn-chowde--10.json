@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Annatto oil (recipe follows)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Annatto oil (recipe follows)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Annatto oil (recipe follows)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

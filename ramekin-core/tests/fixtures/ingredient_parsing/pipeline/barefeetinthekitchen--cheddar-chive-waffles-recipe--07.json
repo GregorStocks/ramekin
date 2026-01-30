@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 cups  sharp cheddar, grated  ((about 6 ounces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sharp cheddar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "sharp cheddar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "grated"
   }
 }

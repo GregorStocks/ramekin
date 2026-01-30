@@ -1,15 +1,13 @@
 {
   "raw": "9 inch pie crust (homemade or store-bought)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inch pie crust (homemade or store-bought)",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "inch pie crust (homemade or store-bought)",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Handful of thyme sprigs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thyme sprigs",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thyme sprigs",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

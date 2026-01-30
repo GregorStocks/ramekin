@@ -1,15 +1,13 @@
 {
   "raw": "85 grams onion ((1/2 medium, sliced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "1/2 medium, sliced"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "1/2 medium, sliced"
   }
 }

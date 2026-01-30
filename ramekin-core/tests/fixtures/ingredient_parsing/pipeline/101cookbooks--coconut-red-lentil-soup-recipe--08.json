@@ -1,15 +1,13 @@
 {
   "raw": "8  green onions or scallions, (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions or scallions",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "green onions or scallions",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

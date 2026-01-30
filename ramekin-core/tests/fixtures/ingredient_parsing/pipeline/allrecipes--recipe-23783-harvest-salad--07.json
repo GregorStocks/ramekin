@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup crumbled blue cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled blue cheese",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled blue cheese",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

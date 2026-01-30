@@ -1,15 +1,13 @@
 {
   "raw": "2- to 3- pound boneless chuck roast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "- to 3- pound boneless chuck roast",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "- to 3- pound boneless chuck roast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

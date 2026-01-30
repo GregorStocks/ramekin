@@ -1,15 +1,13 @@
 {
   "raw": "1  small shallot (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "diced"
   }
 }

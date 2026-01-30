@@ -1,10 +1,8 @@
 {
   "raw": "kosher salt and freshly ground pepper (to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt and freshly ground pepper",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "kosher salt and freshly ground pepper",
+    "measurements": [],
+    "note": "to taste"
   }
 }

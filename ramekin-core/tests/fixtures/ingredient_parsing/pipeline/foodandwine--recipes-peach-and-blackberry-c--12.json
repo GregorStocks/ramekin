@@ -1,15 +1,13 @@
 {
   "raw": "1 stick plus 1 tablespoon cold unsalted butter, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 stick plus 1 tablespoon cold unsalted butter, cubed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        }
-      ],
-      "note": "plus 1 tablespoon cold unsalted butter, cubed"
-    }
+  "expected": {
+    "item": "1 stick plus 1 tablespoon cold unsalted butter, cubed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "plus 1 tablespoon cold unsalted butter, cubed"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "a few pinches of light muscovado sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a few pinches of light muscovado sugar",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a few pinches of light muscovado sugar",
+    "measurements": [],
+    "note": null
   }
 }

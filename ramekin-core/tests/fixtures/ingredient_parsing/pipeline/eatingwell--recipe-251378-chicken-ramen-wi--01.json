@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup reduced-sodium soy sauce or tamari",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium soy sauce or tamari",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium soy sauce or tamari",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

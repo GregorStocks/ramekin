@@ -1,10 +1,8 @@
 {
   "raw": "shredded parmesan cheese, for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded parmesan cheese, for topping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded parmesan cheese, for topping",
+    "measurements": [],
+    "note": null
   }
 }

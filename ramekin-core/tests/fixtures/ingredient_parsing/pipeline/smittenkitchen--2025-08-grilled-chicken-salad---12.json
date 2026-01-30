@@ -1,15 +1,13 @@
 {
   "raw": "2 ears corn on the cob, shucked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ears corn on the cob, shucked",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ears corn on the cob, shucked",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups pineapple juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pineapple juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

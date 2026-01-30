@@ -1,15 +1,13 @@
 {
   "raw": "Pinch of freshly ground black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground black pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly ground black pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

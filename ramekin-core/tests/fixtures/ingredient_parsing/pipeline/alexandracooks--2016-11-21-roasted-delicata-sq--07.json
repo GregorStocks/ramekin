@@ -1,15 +1,13 @@
 {
   "raw": "1 small bunch cilantro, coarsely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunch cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "bunch cilantro",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

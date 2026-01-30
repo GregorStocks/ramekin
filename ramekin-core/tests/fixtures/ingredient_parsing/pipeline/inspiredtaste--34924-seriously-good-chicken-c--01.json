@@ -1,15 +1,13 @@
 {
   "raw": "2 boneless, skinless chicken breasts, about 6 ounces each",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken breasts, about 6 ounces each",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless, skinless chicken breasts, about 6 ounces each",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

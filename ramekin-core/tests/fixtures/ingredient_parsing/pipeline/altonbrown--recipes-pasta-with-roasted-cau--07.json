@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces penne or rigatoni pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "penne or rigatoni pasta",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "penne or rigatoni pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

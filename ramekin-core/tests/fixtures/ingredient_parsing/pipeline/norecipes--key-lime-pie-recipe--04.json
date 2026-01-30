@@ -1,19 +1,17 @@
 {
   "raw": "2 cups heavy cream (45% butterfat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "45",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "45",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

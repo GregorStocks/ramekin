@@ -1,15 +1,13 @@
 {
   "raw": "2  avocados (mashed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocados (mashed)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "avocados (mashed)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

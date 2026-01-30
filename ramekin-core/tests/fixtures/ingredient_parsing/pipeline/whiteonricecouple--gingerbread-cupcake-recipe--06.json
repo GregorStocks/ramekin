@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Baking Powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Baking Powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Baking Powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

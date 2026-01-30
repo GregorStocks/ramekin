@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;cup quinoa (I like red for visual appeal)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quinoa (I like red for visual appeal)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quinoa (I like red for visual appeal)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

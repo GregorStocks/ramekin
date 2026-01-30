@@ -1,10 +1,8 @@
 {
   "raw": "Berries/Powdered Sugar/Syrup (toppings)&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Berries/Powdered Sugar/Syrup (toppings)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Berries/Powdered Sugar/Syrup (toppings)",
+    "measurements": [],
+    "note": null
   }
 }

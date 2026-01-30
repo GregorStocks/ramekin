@@ -1,15 +1,13 @@
 {
   "raw": "20 g ginger (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "125 grams onions ((1/2 medium onion diced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "125",
-          "unit": "g"
-        }
-      ],
-      "note": "1/2 medium onion diced"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "125",
+        "unit": "g"
+      }
+    ],
+    "note": "1/2 medium onion diced"
   }
 }

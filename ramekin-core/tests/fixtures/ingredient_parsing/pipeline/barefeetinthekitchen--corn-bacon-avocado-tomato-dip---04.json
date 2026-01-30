@@ -1,19 +1,17 @@
 {
   "raw": "1 1/4 cups fresh corn (about 2 ears worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh corn",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh corn",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

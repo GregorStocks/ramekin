@@ -1,15 +1,13 @@
 {
   "raw": "50 g rehydrated kombu ((kelp))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rehydrated kombu (kelp)",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rehydrated kombu (kelp)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

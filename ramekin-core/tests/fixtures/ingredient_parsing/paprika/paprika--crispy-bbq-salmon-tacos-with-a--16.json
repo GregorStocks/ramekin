@@ -1,10 +1,8 @@
 {
   "raw": "Mango Salsa:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mango Salsa:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mango Salsa:",
+    "measurements": [],
+    "note": null
   }
 }

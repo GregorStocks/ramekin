@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups orzo (uncooked )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orzo",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "uncooked"
-    }
+  "expected": {
+    "item": "orzo",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "uncooked"
   }
 }

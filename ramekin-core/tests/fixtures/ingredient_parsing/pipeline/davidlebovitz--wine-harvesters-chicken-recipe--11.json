@@ -1,19 +1,17 @@
 {
   "raw": "Two 1-inch (3cm) strips fresh orange zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1-inch strips fresh orange zest",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1-inch strips fresh orange zest",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  whole vanilla bean",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole vanilla bean",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole vanilla bean",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon red pepper flakes (reduce or omit if sensitive to spice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper flakes (reduce or omit if sensitive to spice)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red pepper flakes (reduce or omit if sensitive to spice)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

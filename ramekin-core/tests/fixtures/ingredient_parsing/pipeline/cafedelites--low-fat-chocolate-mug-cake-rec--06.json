@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon reduced fat butter (melted, or coconut oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced fat butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "melted, or coconut oil"
-    }
+  "expected": {
+    "item": "reduced fat butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "melted, or coconut oil"
   }
 }

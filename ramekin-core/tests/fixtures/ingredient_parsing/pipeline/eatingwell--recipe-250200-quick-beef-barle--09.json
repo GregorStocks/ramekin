@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup quick-cooking barley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quick-cooking barley",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quick-cooking barley",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

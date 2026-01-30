@@ -1,15 +1,13 @@
 {
   "raw": "3 cups of chocolate crispy rice cereal (like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate crispy rice cereal (like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate crispy rice cereal (like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

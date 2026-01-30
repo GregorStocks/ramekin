@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoon fine sea salt (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine sea salt (see notes)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine sea salt (see notes)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

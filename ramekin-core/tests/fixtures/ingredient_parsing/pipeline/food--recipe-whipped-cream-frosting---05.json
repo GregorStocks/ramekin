@@ -1,15 +1,13 @@
 {
   "raw": "1   tablespoon    instant coffee, dissolved in the cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant coffee, dissolved in the cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant coffee, dissolved in the cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

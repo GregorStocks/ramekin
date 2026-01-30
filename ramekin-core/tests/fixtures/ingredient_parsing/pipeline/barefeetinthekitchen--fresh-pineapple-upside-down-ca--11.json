@@ -1,15 +1,13 @@
 {
   "raw": "½ cup unsweetened pineapple juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened pineapple juice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened pineapple juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

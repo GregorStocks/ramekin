@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup light corn syrup or brown rice syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light corn syrup or brown rice syrup",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light corn syrup or brown rice syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

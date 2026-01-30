@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp to 1 tsp sumac",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 1 tsp sumac",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 1 tsp sumac",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

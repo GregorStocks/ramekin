@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (110 g) turbinado or packed light-brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turbinado or packed light-brown sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "110",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turbinado or packed light-brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

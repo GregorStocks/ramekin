@@ -1,19 +1,17 @@
 {
   "raw": "2 medium (½ to ¾ cup)  tomatoes ((deseeded &amp;amp; chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        },
-        {
-          "amount": "1/2 to 3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "deseeded & chopped"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "1/2 to 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "deseeded & chopped"
   }
 }

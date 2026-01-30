@@ -1,15 +1,13 @@
 {
   "raw": "1 heaped tbsp  chopped curly parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped curly parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaped tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped curly parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped tbsp"
+      }
+    ],
+    "note": null
   }
 }

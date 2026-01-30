@@ -1,15 +1,13 @@
 {
   "raw": "175g dark brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark brown sugar",
-      "measurements": [
-        {
-          "amount": "175",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "175",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons fruit pectin (such as Sure-Jell®)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fruit pectin (such as Sure-Jell®)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fruit pectin (such as Sure-Jell®)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

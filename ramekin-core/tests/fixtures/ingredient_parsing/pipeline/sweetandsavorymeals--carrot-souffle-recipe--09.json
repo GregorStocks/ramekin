@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon cream of tartar (optional but best to use - or 1 teaspoon lemon juicee)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream of tartar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional but best to use - or 1 teaspoon lemon juicee"
-    }
+  "expected": {
+    "item": "cream of tartar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional but best to use - or 1 teaspoon lemon juicee"
   }
 }

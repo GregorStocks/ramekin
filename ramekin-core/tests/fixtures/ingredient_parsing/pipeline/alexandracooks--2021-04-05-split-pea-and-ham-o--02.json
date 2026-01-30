@@ -1,15 +1,13 @@
 {
   "raw": "4 cups diced onions, from 2 medium to large",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced onions, from 2 medium to large",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced onions, from 2 medium to large",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

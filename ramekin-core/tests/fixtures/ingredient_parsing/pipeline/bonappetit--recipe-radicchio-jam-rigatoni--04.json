@@ -1,10 +1,8 @@
 {
   "raw": "through root ends, thinly sliced crosswise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "through root ends",
-      "measurements": [],
-      "note": "thinly sliced crosswise"
-    }
+  "expected": {
+    "item": "through root ends",
+    "measurements": [],
+    "note": "thinly sliced crosswise"
   }
 }

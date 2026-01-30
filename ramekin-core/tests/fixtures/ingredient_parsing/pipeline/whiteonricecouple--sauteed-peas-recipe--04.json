@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon soy sauce ( or Tamari Gluten Free Soy Sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce ( or Tamari Gluten Free Soy Sauce)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soy sauce ( or Tamari Gluten Free Soy Sauce)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

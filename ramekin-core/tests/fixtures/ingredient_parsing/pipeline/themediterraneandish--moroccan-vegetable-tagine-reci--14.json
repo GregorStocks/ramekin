@@ -1,15 +1,13 @@
 {
   "raw": "1 quart low-sodium vegetable broth (or broth of your choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium vegetable broth (or broth of your choice)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium vegetable broth (or broth of your choice)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

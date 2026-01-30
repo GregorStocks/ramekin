@@ -1,15 +1,13 @@
 {
   "raw": "1 cup marinara sauce, store-bought or see our homemade marinara sauce recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinara sauce, store-bought or see our homemade marinara sauce recipe",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinara sauce, store-bought or see our homemade marinara sauce recipe",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

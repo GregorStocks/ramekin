@@ -1,10 +1,8 @@
 {
   "raw": "Ranch dressing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ranch dressing",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ranch dressing",
+    "measurements": [],
+    "note": null
   }
 }

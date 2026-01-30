@@ -1,10 +1,8 @@
 {
   "raw": "sour cream or crème fraîche (, for garnish - optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream or crème fraîche",
-      "measurements": [],
-      "note": "for garnish - optional"
-    }
+  "expected": {
+    "item": "sour cream or crème fraîche",
+    "measurements": [],
+    "note": "for garnish - optional"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "jasmine rice, (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jasmine rice",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "jasmine rice",
+    "measurements": [],
+    "note": "optional"
   }
 }

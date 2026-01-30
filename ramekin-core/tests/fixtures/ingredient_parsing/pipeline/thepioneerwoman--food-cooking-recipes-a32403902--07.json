@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. thin asparagus, trimmed and cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin asparagus",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed and cut into 1-inch pieces"
-    }
+  "expected": {
+    "item": "thin asparagus",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed and cut into 1-inch pieces"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "¼ ounce instant yeast (2 ¼ tsp)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant yeast",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "2 1/4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

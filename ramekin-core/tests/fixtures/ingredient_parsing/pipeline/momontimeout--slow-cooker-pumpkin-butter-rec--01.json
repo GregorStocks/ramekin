@@ -1,15 +1,13 @@
 {
   "raw": "4 cups of pumpkin puree (make your own!)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin puree (make your own!)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin puree (make your own!)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

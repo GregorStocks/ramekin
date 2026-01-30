@@ -1,15 +1,13 @@
 {
   "raw": "small  handful  of spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful  of spinach",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "handful  of spinach",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

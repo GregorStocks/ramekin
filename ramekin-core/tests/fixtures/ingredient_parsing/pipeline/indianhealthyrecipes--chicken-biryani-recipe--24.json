@@ -1,19 +1,17 @@
 {
   "raw": "3 cups water ((3½ cups for pot) (refer notes, more if needed ))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (refer notes, more if needed",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "3 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (refer notes, more if needed",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "3 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

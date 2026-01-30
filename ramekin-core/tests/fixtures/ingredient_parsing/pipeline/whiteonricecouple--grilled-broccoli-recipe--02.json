@@ -1,15 +1,13 @@
 {
   "raw": "1-2  lemons (, sliced into 1/2-inch thick circles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemons",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": null
-        }
-      ],
-      "note": "sliced into 1/2-inch thick circles"
-    }
+  "expected": {
+    "item": "lemons",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": null
+      }
+    ],
+    "note": "sliced into 1/2-inch thick circles"
   }
 }

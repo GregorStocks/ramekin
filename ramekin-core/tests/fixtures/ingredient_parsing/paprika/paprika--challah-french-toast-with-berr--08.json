@@ -1,10 +1,8 @@
 {
   "raw": "WHIPPED COTTAGE CHEESE",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "WHIPPED COTTAGE CHEESE",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "WHIPPED COTTAGE CHEESE",
+    "measurements": [],
+    "note": null
   }
 }

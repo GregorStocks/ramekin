@@ -1,19 +1,17 @@
 {
   "raw": "30 pitted Medjool dates (about 2-inches each), soaked in warm water for 5 minutes, then drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted Medjool dates , soaked in warm water for 5 minutes",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "then drained"
-    }
+  "expected": {
+    "item": "pitted Medjool dates , soaked in warm water for 5 minutes",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "then drained"
   }
 }

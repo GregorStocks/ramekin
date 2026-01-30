@@ -1,15 +1,13 @@
 {
   "raw": "4 cloves garlic, sliced (reserve half for later in recipe)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "clove"
-        }
-      ],
-      "note": "sliced (reserve half for later in recipe)"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "clove"
+      }
+    ],
+    "note": "sliced (reserve half for later in recipe)"
   }
 }

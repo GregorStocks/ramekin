@@ -1,10 +1,8 @@
 {
   "raw": "Heavy cream**, (for serving (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Heavy cream**",
-      "measurements": [],
-      "note": "for serving (optional"
-    }
+  "expected": {
+    "item": "Heavy cream**",
+    "measurements": [],
+    "note": "for serving (optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 to 1½ teaspoon garam masala ((adjust to taste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/2 teaspoon garam masala",
-      "measurements": [
-        {
-          "amount": "1 to 1",
-          "unit": null
-        }
-      ],
-      "note": "adjust to taste"
-    }
+  "expected": {
+    "item": "1/2 teaspoon garam masala",
+    "measurements": [
+      {
+        "amount": "1 to 1",
+        "unit": null
+      }
+    ],
+    "note": "adjust to taste"
   }
 }

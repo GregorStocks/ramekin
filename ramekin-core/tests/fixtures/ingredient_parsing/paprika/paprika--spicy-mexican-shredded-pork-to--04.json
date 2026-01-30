@@ -1,15 +1,13 @@
 {
   "raw": "2 medium onions, 1 quartered and 1 chopped fine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "1 quartered and 1 chopped fine"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "1 quartered and 1 chopped fine"
   }
 }

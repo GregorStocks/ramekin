@@ -1,23 +1,21 @@
 {
   "raw": "1/2 cup (packed) fresh basil (about 1/2 ounce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": "packed"
-    }
+  "expected": {
+    "item": "fresh basil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": "packed"
   }
 }

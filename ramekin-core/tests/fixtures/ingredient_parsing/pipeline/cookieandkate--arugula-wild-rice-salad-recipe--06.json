@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac12; cup dried tart cherries or cranberries, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried tart cherries or cranberries",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "dried tart cherries or cranberries",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

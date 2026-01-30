@@ -1,15 +1,13 @@
 {
   "raw": "1 gallon whole milk (preferably organic, room temp*)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk (preferably organic, room temp*)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "gallon"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole milk (preferably organic, room temp*)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "gallon"
+      }
+    ],
+    "note": null
   }
 }

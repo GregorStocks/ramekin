@@ -1,15 +1,13 @@
 {
   "raw": "3 cups low-sodium vegetable broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium vegetable broth",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium vegetable broth",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

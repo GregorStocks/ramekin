@@ -1,15 +1,13 @@
 {
   "raw": "4 cups diced tomato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced tomato",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced tomato",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

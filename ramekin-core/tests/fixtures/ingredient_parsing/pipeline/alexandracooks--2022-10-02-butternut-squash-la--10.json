@@ -1,15 +1,13 @@
 {
   "raw": "1 quart of the butternut squash sauce&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "the butternut squash sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "the butternut squash sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

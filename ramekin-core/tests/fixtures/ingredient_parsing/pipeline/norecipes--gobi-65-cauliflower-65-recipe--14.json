@@ -1,15 +1,13 @@
 {
   "raw": "1 pod star anise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pod star anise",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pod star anise",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

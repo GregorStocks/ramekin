@@ -1,19 +1,17 @@
 {
   "raw": "1 head bibb or butter lettuce (10 cup-shaped leaves)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bibb or butter lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        },
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bibb or butter lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      },
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

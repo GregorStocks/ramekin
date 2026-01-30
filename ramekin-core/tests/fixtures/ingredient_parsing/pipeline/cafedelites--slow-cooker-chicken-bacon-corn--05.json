@@ -1,19 +1,17 @@
 {
   "raw": "30 ounces corn kernels (fresh, frozen or canned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn kernels",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "oz"
-        },
-        {
-          "amount": "850",
-          "unit": "g"
-        }
-      ],
-      "note": "fresh, frozen or canned"
-    }
+  "expected": {
+    "item": "corn kernels",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "oz"
+      },
+      {
+        "amount": "850",
+        "unit": "g"
+      }
+    ],
+    "note": "fresh, frozen or canned"
   }
 }

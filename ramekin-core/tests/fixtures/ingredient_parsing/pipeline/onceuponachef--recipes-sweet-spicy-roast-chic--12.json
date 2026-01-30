@@ -1,15 +1,13 @@
 {
   "raw": "4 pounds bone-in chicken pieces (thighs, drumsticks and breasts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in chicken pieces (thighs, drumsticks and breasts)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in chicken pieces (thighs, drumsticks and breasts)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

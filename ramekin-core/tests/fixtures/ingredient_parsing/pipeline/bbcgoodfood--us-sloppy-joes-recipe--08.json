@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp malt vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "malt vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "malt vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

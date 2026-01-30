@@ -1,19 +1,17 @@
 {
   "raw": "1½ ounces fine-quality semisweet chocolate (chips are fine, too)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine-quality semisweet chocolate (chips are fine, too)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine-quality semisweet chocolate (chips are fine, too)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

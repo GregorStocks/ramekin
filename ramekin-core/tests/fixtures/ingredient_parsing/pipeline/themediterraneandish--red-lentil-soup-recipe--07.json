@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp rosemary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

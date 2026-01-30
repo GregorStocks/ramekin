@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. pecans, toasted and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecans",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted and chopped"
-    }
+  "expected": {
+    "item": "pecans",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "toasted and chopped"
   }
 }

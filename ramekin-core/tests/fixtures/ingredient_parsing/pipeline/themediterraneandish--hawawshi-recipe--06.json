@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs lean ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground beef",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean ground beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

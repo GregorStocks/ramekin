@@ -1,10 +1,8 @@
 {
   "raw": "vegetable oil ( for oiling bbq grate)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil ( for oiling bbq grate)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil ( for oiling bbq grate)",
+    "measurements": [],
+    "note": null
   }
 }

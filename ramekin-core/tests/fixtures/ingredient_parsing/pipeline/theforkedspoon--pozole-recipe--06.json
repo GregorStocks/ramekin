@@ -1,23 +1,21 @@
 {
   "raw": "3 (25 ounce) cans Hominy",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hominy",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "can"
-        },
-        {
-          "amount": "25",
-          "unit": "oz"
-        },
-        {
-          "amount": "709",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Hominy",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "can"
+      },
+      {
+        "amount": "25",
+        "unit": "oz"
+      },
+      {
+        "amount": "709",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

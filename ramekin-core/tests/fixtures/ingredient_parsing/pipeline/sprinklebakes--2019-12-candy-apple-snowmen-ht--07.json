@@ -1,15 +1,13 @@
 {
   "raw": "4  mini ice cream cones",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini ice cream cones",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mini ice cream cones",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

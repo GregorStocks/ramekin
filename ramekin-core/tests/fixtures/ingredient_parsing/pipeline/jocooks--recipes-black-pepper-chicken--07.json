@@ -1,15 +1,13 @@
 {
   "raw": "1 large red bell pepper (cut into 1 small ½ inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell pepper (cut into 1 small 1/2 inch pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red bell pepper (cut into 1 small 1/2 inch pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

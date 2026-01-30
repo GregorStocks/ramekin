@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 teaspoons chili garlic sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili garlic sauce",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili garlic sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

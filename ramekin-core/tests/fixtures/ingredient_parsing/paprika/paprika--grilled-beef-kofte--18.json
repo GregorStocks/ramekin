@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ pounds 80 percent lean ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "80 percent lean ground beef",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "80 percent lean ground beef",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

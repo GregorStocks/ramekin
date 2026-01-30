@@ -1,15 +1,13 @@
 {
   "raw": "1  romaine lettuce heart (cut into 1 inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "romaine lettuce heart (cut into 1 inch pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "romaine lettuce heart (cut into 1 inch pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

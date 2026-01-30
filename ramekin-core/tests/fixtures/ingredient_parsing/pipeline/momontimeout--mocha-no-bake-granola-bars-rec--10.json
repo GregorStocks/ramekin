@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup mini semisweet chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini semisweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mini semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

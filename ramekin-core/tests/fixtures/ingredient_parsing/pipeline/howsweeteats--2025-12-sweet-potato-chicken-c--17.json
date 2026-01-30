@@ -1,10 +1,8 @@
 {
   "raw": "for topping: grated cheddar (green onions, chives, sour cream, fritos, tortilla chips, cilantro)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "for topping: grated cheddar (green onions, chives, sour cream, fritos, tortilla chips, cilantro)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "for topping: grated cheddar (green onions, chives, sour cream, fritos, tortilla chips, cilantro)",
+    "measurements": [],
+    "note": null
   }
 }

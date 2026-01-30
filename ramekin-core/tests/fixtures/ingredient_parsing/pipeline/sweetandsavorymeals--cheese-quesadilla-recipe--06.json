@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeno or chili (cut into rounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno or chili (cut into rounds)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeno or chili (cut into rounds)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

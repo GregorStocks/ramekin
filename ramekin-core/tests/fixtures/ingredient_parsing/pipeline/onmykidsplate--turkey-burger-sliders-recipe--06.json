@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

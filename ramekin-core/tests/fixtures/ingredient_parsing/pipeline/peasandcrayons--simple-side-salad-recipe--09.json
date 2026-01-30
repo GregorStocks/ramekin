@@ -1,15 +1,13 @@
 {
   "raw": "1 TBSP white wine vinegar (or red wine vinegar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white wine vinegar (or red wine vinegar)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white wine vinegar (or red wine vinegar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

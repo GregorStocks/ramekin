@@ -1,15 +1,13 @@
 {
   "raw": "1 pound uncooked and chopped shrimp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked and chopped shrimp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked and chopped shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

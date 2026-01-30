@@ -1,15 +1,13 @@
 {
   "raw": "1 pound pork fat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork fat",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork fat",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

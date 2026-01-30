@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Italian seasoning blend",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian seasoning blend",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Italian seasoning blend",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

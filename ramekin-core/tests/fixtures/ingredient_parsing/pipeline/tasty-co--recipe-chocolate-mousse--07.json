@@ -1,15 +1,13 @@
 {
   "raw": "2 tubes tube cookie, to garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tubes tube cookie, to garnish",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tubes tube cookie, to garnish",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

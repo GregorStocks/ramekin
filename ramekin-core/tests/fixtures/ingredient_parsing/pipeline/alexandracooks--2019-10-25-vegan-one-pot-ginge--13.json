@@ -1,10 +1,8 @@
 {
   "raw": "hot sauce, such as Sriracha, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce, such as Sriracha",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "hot sauce, such as Sriracha",
+    "measurements": [],
+    "note": "for serving"
   }
 }

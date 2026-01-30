@@ -1,15 +1,13 @@
 {
   "raw": "4       black peppercorns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black peppercorns",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black peppercorns",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

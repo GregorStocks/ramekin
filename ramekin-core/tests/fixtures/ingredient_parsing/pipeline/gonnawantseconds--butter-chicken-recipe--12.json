@@ -1,15 +1,13 @@
 {
   "raw": "1 Cup Tomato Puree",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tomato Puree",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tomato Puree",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

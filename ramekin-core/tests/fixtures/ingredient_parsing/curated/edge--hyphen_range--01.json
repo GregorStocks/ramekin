@@ -1,15 +1,13 @@
 {
   "raw": "1 - 2 cooked potatoes, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked potatoes",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": null
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "cooked potatoes",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": null
+      }
+    ],
+    "note": "cubed"
   }
 }

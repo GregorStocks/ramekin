@@ -1,10 +1,8 @@
 {
   "raw": "Juice and grated peel of 1 medium grapefruit",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice and grated peel of 1 medium grapefruit",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Juice and grated peel of 1 medium grapefruit",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ lb orecchiette pasta or similar short pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orecchiette pasta or similar short pasta",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orecchiette pasta or similar short pasta",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

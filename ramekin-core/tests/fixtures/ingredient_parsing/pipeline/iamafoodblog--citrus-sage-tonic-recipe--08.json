@@ -1,10 +1,8 @@
 {
   "raw": "gin, to serve, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gin, to serve",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "gin, to serve",
+    "measurements": [],
+    "note": "optional"
   }
 }

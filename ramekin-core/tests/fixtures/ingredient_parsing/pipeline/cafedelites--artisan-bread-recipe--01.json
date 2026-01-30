@@ -1,15 +1,13 @@
 {
   "raw": "3 cups bread flour (or plain/all purpose)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread flour (or plain/all purpose)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread flour (or plain/all purpose)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

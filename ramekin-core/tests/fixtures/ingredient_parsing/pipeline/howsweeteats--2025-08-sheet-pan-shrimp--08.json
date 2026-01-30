@@ -1,15 +1,13 @@
 {
   "raw": "1 pound peeled and deveined raw jumbo shrimp (thawed if frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peeled and deveined raw jumbo shrimp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "thawed if frozen"
-    }
+  "expected": {
+    "item": "peeled and deveined raw jumbo shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "thawed if frozen"
   }
 }

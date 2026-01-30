@@ -1,15 +1,13 @@
 {
   "raw": "2 cups frozen O&amp;#x27;Brien hash brown potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen O'Brien hash brown potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen O'Brien hash brown potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

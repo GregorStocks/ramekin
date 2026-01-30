@@ -1,10 +1,8 @@
 {
   "raw": "yellow food coloring (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow food coloring",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "yellow food coloring",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 teaspoons caraway seeds, plus more for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caraway seeds",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more for topping"
-    }
+  "expected": {
+    "item": "caraway seeds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for topping"
   }
 }

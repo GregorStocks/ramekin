@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch salt (to season)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (to season)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (to season)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

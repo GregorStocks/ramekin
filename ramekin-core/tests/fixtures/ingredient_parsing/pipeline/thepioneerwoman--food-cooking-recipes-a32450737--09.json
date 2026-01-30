@@ -1,19 +1,17 @@
 {
   "raw": "2 (15-oz.) cans cannellini beans, drained and rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cannellini beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": "drained and rinsed"
-    }
+  "expected": {
+    "item": "cannellini beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "drained and rinsed"
   }
 }

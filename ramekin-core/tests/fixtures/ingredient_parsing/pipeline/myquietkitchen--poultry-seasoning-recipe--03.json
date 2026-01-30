@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dried marjoram (or rosemary; see Notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried marjoram (or rosemary; see Notes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried marjoram (or rosemary; see Notes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

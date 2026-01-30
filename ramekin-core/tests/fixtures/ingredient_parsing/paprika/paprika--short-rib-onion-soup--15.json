@@ -1,19 +1,17 @@
 {
   "raw": "2 1/2 to 2 3/4 pounds (1.15 to 1.25kg) yellow onions, peeled and thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 2 3/4 pounds yellow onions",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": null
-        },
-        {
-          "amount": "1.15",
-          "unit": null
-        }
-      ],
-      "note": "peeled and thinly sliced"
-    }
+  "expected": {
+    "item": "to 2 3/4 pounds yellow onions",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": null
+      },
+      {
+        "amount": "1.15",
+        "unit": null
+      }
+    ],
+    "note": "peeled and thinly sliced"
   }
 }

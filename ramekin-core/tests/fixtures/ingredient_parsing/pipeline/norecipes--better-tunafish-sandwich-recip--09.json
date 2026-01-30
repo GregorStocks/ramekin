@@ -1,15 +1,13 @@
 {
   "raw": "40 grams red onion ((1/4 small onion, minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onion",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": "1/4 small onion, minced"
-    }
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": "1/4 small onion, minced"
   }
 }

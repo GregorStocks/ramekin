@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Crumbled feta cheese or goat cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crumbled feta cheese or goat cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Crumbled feta cheese or goat cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

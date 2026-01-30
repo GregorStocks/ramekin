@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken breasts (boneless and skinless, cut into 1 inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts (boneless and skinless, cut into 1 inch pieces)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts (boneless and skinless, cut into 1 inch pieces)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

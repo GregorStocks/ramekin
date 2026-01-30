@@ -1,15 +1,13 @@
 {
   "raw": "1- 15 Ounce Can Tomato Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "- 15 Ounce Can Tomato Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "- 15 Ounce Can Tomato Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

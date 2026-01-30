@@ -1,19 +1,17 @@
 {
   "raw": "1 (28-ounce) can crushed tomatoes, (including all liquid)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed tomatoes, (including all liquid)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "28",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed tomatoes, (including all liquid)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

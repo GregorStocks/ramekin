@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup soy sauce (( or 1/2 cup low sodium soy sauce))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

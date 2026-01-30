@@ -1,15 +1,13 @@
 {
   "raw": "1 pound boneless skinless&nbsp;chicken breasts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breasts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

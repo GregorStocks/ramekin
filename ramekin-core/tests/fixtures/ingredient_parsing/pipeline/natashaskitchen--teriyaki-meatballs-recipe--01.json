@@ -1,19 +1,17 @@
 {
   "raw": "16 oz lean ground turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground turkey",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean ground turkey",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

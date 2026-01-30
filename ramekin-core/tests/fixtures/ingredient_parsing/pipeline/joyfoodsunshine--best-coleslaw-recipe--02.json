@@ -1,15 +1,13 @@
 {
   "raw": "½ cup mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup minced parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced parsley",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced parsley",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

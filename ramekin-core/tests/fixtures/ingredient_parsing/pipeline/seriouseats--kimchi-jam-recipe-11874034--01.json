@@ -1,19 +1,17 @@
 {
   "raw": "16 ounces (454 g) Napa cabbage kimchi, homemade or store-bought, coarsely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Napa cabbage kimchi, homemade or store-bought",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "Napa cabbage kimchi, homemade or store-bought",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

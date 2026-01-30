@@ -1,10 +1,8 @@
 {
   "raw": "Lime wheels (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lime wheels",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Lime wheels",
+    "measurements": [],
+    "note": "for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons parsley (chopped, for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped, for garnish"
-    }
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped, for garnish"
   }
 }

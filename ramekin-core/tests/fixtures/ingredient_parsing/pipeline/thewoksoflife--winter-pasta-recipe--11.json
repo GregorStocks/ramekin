@@ -1,15 +1,13 @@
 {
   "raw": "½ cup toasted walnuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted walnuts",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted walnuts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

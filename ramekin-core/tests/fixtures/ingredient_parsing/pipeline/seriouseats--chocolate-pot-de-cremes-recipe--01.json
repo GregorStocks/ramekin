@@ -1,19 +1,17 @@
 {
   "raw": "4 1/2 ounces (128g) bittersweet chocolate, about 70% cacao, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet chocolate, about 70% cacao",
-      "measurements": [
-        {
-          "amount": "4 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "128",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "bittersweet chocolate, about 70% cacao",
+    "measurements": [
+      {
+        "amount": "4 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "128",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

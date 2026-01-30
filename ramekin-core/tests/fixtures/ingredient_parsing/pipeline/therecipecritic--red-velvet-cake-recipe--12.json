@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons liquid red food color",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "liquid red food color",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "liquid red food color",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

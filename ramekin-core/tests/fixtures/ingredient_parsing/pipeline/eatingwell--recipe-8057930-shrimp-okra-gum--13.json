@@ -1,10 +1,8 @@
 {
   "raw": "Hot sauce, preferably Louisiana or Crystal (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot sauce, preferably Louisiana or Crystal",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Hot sauce, preferably Louisiana or Crystal",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Pepper, (to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pepper",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Pepper",
+    "measurements": [],
+    "note": "to taste"
   }
 }

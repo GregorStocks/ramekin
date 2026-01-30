@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sesame seeds (more for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame seeds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "more for serving"
-    }
+  "expected": {
+    "item": "sesame seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "more for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "35 ml cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream",
-      "measurements": [
-        {
-          "amount": "35",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream",
+    "measurements": [
+      {
+        "amount": "35",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

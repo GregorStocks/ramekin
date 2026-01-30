@@ -1,15 +1,13 @@
 {
   "raw": "4 scallions, thinly sliced, whites and green parts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions, thinly sliced, whites and green parts",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scallions, thinly sliced, whites and green parts",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

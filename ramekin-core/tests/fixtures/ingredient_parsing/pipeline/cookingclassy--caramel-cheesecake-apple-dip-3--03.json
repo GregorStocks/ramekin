@@ -1,15 +1,13 @@
 {
   "raw": "1  store bought graham cracker pie crust, (crumbled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "store bought graham cracker pie crust",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "store bought graham cracker pie crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "crumbled"
   }
 }

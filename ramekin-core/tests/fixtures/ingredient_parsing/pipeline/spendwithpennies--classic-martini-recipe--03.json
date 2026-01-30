@@ -1,15 +1,13 @@
 {
   "raw": "2 large pimento stuffed olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pimento stuffed olives",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pimento stuffed olives",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

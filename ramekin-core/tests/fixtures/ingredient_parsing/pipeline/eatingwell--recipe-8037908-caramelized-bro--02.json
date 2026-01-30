@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fresh broccolini, trimmed and cut into 2- to 3-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh broccolini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed and cut into 2- to 3-inch pieces"
-    }
+  "expected": {
+    "item": "fresh broccolini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed and cut into 2- to 3-inch pieces"
   }
 }

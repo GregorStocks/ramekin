@@ -1,15 +1,13 @@
 {
   "raw": "1  8-ounce can diced pineapples with juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced pineapples with juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "8-ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced pineapples with juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "8-ounce can"
+      }
+    ],
+    "note": null
   }
 }

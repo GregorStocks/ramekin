@@ -1,15 +1,13 @@
 {
   "raw": "4 center-cut bacon strips, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "center-cut bacon strips",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "center-cut bacon strips",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

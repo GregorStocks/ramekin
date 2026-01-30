@@ -1,35 +1,33 @@
 //! CLI commands for ingredient parsing test management.
 //!
 //! Provides commands to generate and update ingredient parsing test fixtures.
-//! Test fixtures show output after each pipeline step (parse_ingredients, enrich_metric_weights).
 
 use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
 use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
-use ramekin_core::metric_weights::{add_metric_weight_alternative, EnrichmentStats};
+use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 use std::fs::{self, File};
 use std::io::Read;
 use std::path::{Path, PathBuf};
 use zip::ZipArchive;
 
-/// A test case for ingredient parsing (new format with step_outputs)
+/// A test case for ingredient parsing
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct TestCase {
     raw: String,
-    step_outputs: HashMap<String, StepOutput>,
+    expected: Expected,
 }
 
-/// Output from a single step
+/// Expected output from parsing
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-struct StepOutput {
+struct Expected {
     item: String,
     measurements: Vec<Measurement>,
     note: Option<String>,
 }
 
-impl From<ParsedIngredient> for StepOutput {
+impl From<ParsedIngredient> for Expected {
     fn from(ing: ParsedIngredient) -> Self {
         Self {
             item: ing.item,
@@ -39,42 +37,18 @@ impl From<ParsedIngredient> for StepOutput {
     }
 }
 
-impl From<StepOutput> for ParsedIngredient {
-    fn from(output: StepOutput) -> Self {
-        Self {
-            item: output.item,
-            measurements: output.measurements,
-            note: output.note,
-            raw: None,
-        }
-    }
-}
-
-/// Legacy test case format for migration
-#[derive(Debug, Clone, Deserialize)]
-struct LegacyTestCase {
-    raw: String,
-    #[allow(dead_code)]
-    expected: StepOutput,
-}
-
 /// Default path to the fixtures directory
 fn default_fixtures_dir() -> PathBuf {
     PathBuf::from("ramekin-core/tests/fixtures/ingredient_parsing")
 }
 
-/// Run all pipeline steps on a raw ingredient string.
-/// The parse_ingredients step now includes metric weight enrichment.
-fn run_pipeline(raw: &str) -> HashMap<String, StepOutput> {
-    let mut outputs = HashMap::new();
-
-    // parse_ingredients step (includes metric weight enrichment)
+/// Run the ingredient parsing pipeline on a raw ingredient string.
+/// Includes metric weight conversion (oz → g).
+fn run_pipeline(raw: &str) -> Expected {
     let parsed = parse_ingredient(raw);
-    let mut stats = EnrichmentStats::default();
-    let enriched = add_metric_weight_alternative(parsed, &mut stats);
-    outputs.insert("parse_ingredients".to_string(), StepOutput::from(enriched));
-
-    outputs
+    let mut stats = MetricConversionStats::default();
+    let result = add_metric_weight_alternative(parsed, &mut stats);
+    Expected::from(result)
 }
 
 /// Generate test fixtures from the latest pipeline run.
@@ -130,10 +104,10 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
                 continue;
             }
 
-            // Run the full pipeline to get outputs for all steps
-            let step_outputs = run_pipeline(&raw);
+            // Run the pipeline to get expected output
+            let expected = run_pipeline(&raw);
 
-            let test_case = TestCase { raw, step_outputs };
+            let test_case = TestCase { raw, expected };
 
             let filename = format!("{}--{}--{:02}.json", site, recipe_slug, idx + 1);
             let filepath = pipeline_dir.join(&filename);
@@ -156,19 +130,26 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
     Ok(())
 }
 
+/// Legacy test case format with step_outputs (for migration)
+#[derive(Debug, Deserialize)]
+struct LegacyTestCase {
+    raw: String,
+    #[allow(dead_code)]
+    step_outputs: std::collections::HashMap<String, Expected>,
+}
+
 /// Update all test fixtures to match current parser output.
 ///
 /// Runs the pipeline on each test case's `raw` input and updates
-/// the `step_outputs` field to match the actual output.
-/// Also migrates legacy format (expected) to new format (step_outputs).
+/// the `expected` field to match the actual output.
+/// Also migrates from legacy step_outputs format to expected format.
 pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
         .unwrap_or_else(default_fixtures_dir);
 
     let mut updated = 0;
-    let mut migrated = 0;
-    let mut unchanged = 0;
+    let unchanged = 0;
 
     // Process curated, pipeline, and paprika directories
     for subdir in ["curated", "pipeline", "paprika"] {
@@ -184,45 +165,32 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
             if path.extension().map(|e| e == "json").unwrap_or(false) {
                 let content = fs::read_to_string(&path)?;
 
-                // Try to parse as new format first
-                let (raw, old_outputs) =
-                    if let Ok(test_case) = serde_json::from_str::<TestCase>(&content) {
-                        (test_case.raw, Some(test_case.step_outputs))
-                    } else if let Ok(legacy) = serde_json::from_str::<LegacyTestCase>(&content) {
-                        // Migrate from legacy format
-                        migrated += 1;
-                        (legacy.raw, None)
-                    } else {
-                        println!("Skipping invalid file: {}", path.display());
-                        continue;
-                    };
-
-                // Run pipeline to get current outputs
-                let new_outputs = run_pipeline(&raw);
-
-                // Check if outputs changed
-                let changed = old_outputs.as_ref() != Some(&new_outputs);
-
-                if changed {
-                    let test_case = TestCase {
-                        raw,
-                        step_outputs: new_outputs,
-                    };
-                    let json = serde_json::to_string_pretty(&test_case)?;
-                    fs::write(&path, json)?;
-                    updated += 1;
-                    println!("Updated: {}", path.display());
+                // Extract raw from either format
+                let raw = if let Ok(test_case) = serde_json::from_str::<TestCase>(&content) {
+                    test_case.raw
+                } else if let Ok(legacy) = serde_json::from_str::<LegacyTestCase>(&content) {
+                    legacy.raw
                 } else {
-                    unchanged += 1;
-                }
+                    println!("Skipping invalid file: {}", path.display());
+                    continue;
+                };
+
+                // Run pipeline to get current expected output
+                let new_expected = run_pipeline(&raw);
+
+                // Always write in new format
+                let updated_case = TestCase {
+                    raw,
+                    expected: new_expected,
+                };
+                let json = serde_json::to_string_pretty(&updated_case)?;
+                fs::write(&path, json)?;
+                updated += 1;
             }
         }
     }
 
-    println!(
-        "\nSummary: {} updated, {} migrated, {} unchanged",
-        updated, migrated, unchanged
-    );
+    println!("\nSummary: {} updated, {} unchanged", updated, unchanged);
 
     Ok(())
 }
@@ -379,10 +347,10 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
                 continue;
             }
 
-            // Run the full pipeline to get outputs for all steps
-            let step_outputs = run_pipeline(&raw);
+            // Run the pipeline to get expected output
+            let expected = run_pipeline(&raw);
 
-            let test_case = TestCase { raw, step_outputs };
+            let test_case = TestCase { raw, expected };
 
             let filename = format!("paprika--{}--{:02}.json", recipe_slug, idx + 1);
             let filepath = paprika_dir.join(&filename);

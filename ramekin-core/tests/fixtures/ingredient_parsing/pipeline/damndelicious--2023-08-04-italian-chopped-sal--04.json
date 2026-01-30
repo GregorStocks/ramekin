@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces dry Italian salami (cut into matchsticks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry Italian salami (cut into matchsticks)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry Italian salami (cut into matchsticks)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

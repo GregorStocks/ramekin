@@ -1,10 +1,8 @@
 {
   "raw": "tea bags",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tea bags",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "tea bags",
+    "measurements": [],
+    "note": null
   }
 }

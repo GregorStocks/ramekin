@@ -1,19 +1,17 @@
 {
   "raw": "1.5 cups almond flour (150g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond flour",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        },
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond flour",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cup"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

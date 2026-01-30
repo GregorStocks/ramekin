@@ -1,23 +1,21 @@
 {
   "raw": "2½ lb. (1.1 kg) skin-on bone-in chicken thighs (6–8 thighs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skin-on bone-in chicken thighs",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1.1",
-          "unit": "kg"
-        },
-        {
-          "amount": "6-8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skin-on bone-in chicken thighs",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1.1",
+        "unit": "kg"
+      },
+      {
+        "amount": "6-8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

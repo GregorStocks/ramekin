@@ -1,15 +1,13 @@
 {
   "raw": "4 slices multigrain bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "multigrain bread",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "multigrain bread",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

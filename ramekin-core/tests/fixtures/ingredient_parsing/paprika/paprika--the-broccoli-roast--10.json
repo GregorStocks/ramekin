@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon coarse or kosher salt, and more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse or kosher salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "and more to taste"
-    }
+  "expected": {
+    "item": "coarse or kosher salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "and more to taste"
   }
 }

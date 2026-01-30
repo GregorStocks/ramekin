@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp Extra Flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra Flour",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Extra Flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

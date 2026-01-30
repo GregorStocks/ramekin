@@ -1,15 +1,13 @@
 {
   "raw": "6 cups vanilla ice cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla ice cream",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla ice cream",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

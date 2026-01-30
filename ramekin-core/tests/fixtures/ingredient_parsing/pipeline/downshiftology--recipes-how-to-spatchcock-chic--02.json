@@ -1,15 +1,13 @@
 {
   "raw": "good quality kitchen shears",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quality kitchen shears",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "good"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quality kitchen shears",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "good"
+      }
+    ],
+    "note": null
   }
 }

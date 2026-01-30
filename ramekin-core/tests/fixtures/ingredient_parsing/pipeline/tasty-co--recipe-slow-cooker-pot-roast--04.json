@@ -1,19 +1,17 @@
 {
   "raw": "1 oz dried onion soup mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried onion soup mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried onion soup mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

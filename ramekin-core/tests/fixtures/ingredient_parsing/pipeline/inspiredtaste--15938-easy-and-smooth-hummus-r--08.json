@@ -1,19 +1,17 @@
 {
   "raw": "2 to 3 tablespoons cold water or aquafaba (45ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold water or aquafaba",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold water or aquafaba",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

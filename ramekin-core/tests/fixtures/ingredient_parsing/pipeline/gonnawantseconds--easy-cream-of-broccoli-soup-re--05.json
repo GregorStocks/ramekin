@@ -1,15 +1,13 @@
 {
   "raw": "2 Cups Chicken Broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chicken Broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chicken Broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

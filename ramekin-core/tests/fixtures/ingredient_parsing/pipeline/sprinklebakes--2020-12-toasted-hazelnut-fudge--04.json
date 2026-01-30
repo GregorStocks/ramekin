@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup 108 grams chocolate-hazelnut spread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "108 grams chocolate-hazelnut spread",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "108 grams chocolate-hazelnut spread",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

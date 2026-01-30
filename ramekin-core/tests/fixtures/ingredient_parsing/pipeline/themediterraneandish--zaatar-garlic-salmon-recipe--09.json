@@ -1,15 +1,13 @@
 {
   "raw": "1 lb salmon fillet, no skin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon fillet, no skin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salmon fillet, no skin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

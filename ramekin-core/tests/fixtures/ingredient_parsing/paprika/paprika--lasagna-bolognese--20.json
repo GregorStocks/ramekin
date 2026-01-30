@@ -1,10 +1,8 @@
 {
   "raw": "Bechamel sauce:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bechamel sauce:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Bechamel sauce:",
+    "measurements": [],
+    "note": null
   }
 }

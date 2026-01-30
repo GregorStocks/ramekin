@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cashew milk (almond milk or coconut milk)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cashew milk (almond milk or coconut milk)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cashew milk (almond milk or coconut milk)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

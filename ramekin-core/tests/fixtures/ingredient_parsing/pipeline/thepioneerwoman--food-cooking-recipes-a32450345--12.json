@@ -1,15 +1,13 @@
 {
   "raw": "2 rounds refrigerated pie dough",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rounds refrigerated pie dough",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rounds refrigerated pie dough",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

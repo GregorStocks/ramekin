@@ -1,15 +1,13 @@
 {
   "raw": "500 ml dashi stock (cooled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dashi stock (cooled)",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dashi stock (cooled)",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

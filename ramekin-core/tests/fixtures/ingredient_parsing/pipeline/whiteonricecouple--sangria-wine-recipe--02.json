@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chopped fruit ((apples, peaches, nectarines, melon, berries))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fruit (apples, peaches, nectarines, melon, berries)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fruit (apples, peaches, nectarines, melon, berries)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

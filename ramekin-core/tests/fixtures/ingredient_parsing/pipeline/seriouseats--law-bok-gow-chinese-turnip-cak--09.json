@@ -1,10 +1,8 @@
 {
   "raw": "Toasted sesame oil, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted sesame oil",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Toasted sesame oil",
+    "measurements": [],
+    "note": "for serving"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Whole milk or half and half, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Whole milk or half and half",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Whole milk or half and half",
+    "measurements": [],
+    "note": "for serving"
   }
 }

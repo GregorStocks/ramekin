@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs sweet cherries pitted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet cherries pitted",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet cherries pitted",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

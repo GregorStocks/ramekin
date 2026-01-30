@@ -1,15 +1,13 @@
 {
   "raw": "1  large egg (chilled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "chilled"
   }
 }

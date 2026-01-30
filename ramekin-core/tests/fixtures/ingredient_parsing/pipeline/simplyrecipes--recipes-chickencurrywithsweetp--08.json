@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons virgin coconut oil or neutral oil, such as canola",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "virgin coconut oil or neutral oil, such as canola",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "virgin coconut oil or neutral oil, such as canola",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

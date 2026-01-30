@@ -1,15 +1,13 @@
 {
   "raw": "10  large egg whites",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg whites",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg whites",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

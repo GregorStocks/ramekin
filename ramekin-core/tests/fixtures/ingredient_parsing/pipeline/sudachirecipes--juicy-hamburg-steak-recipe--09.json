@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch nutmeg powder (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nutmeg powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "nutmeg powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound sliced bacon, preferably artisanal (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced bacon, preferably artisanal",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sliced bacon, preferably artisanal",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "optional"
   }
 }

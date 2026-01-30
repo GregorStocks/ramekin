@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup butter crackers (crushed (such as Ritz))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter crackers",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "crushed (such as Ritz"
-    }
+  "expected": {
+    "item": "butter crackers",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "crushed (such as Ritz"
   }
 }

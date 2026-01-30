@@ -1,15 +1,13 @@
 {
   "raw": "225 grams cipollini onions ((or pearl , trimmed and peeled))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cipollini onions",
-      "measurements": [
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": "or pearl , trimmed and peeled"
-    }
+  "expected": {
+    "item": "cipollini onions",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "or pearl , trimmed and peeled"
   }
 }

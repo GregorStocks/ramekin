@@ -1,15 +1,13 @@
 {
   "raw": "1  prepared angel food cake",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared angel food cake",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared angel food cake",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

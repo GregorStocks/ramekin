@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons freshly squeezed lemon juice, plus more as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly squeezed lemon juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more as needed"
-    }
+  "expected": {
+    "item": "freshly squeezed lemon juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more as needed"
   }
 }

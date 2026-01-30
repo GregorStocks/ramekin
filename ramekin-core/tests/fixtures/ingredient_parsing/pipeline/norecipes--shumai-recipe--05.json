@@ -1,15 +1,13 @@
 {
   "raw": "50 grams pork fat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork fat",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork fat",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

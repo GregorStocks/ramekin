@@ -1,10 +1,8 @@
 {
   "raw": "Topping Ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Topping Ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Topping Ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

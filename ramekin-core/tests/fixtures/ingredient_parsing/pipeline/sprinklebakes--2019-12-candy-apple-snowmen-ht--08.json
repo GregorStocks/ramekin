@@ -1,15 +1,13 @@
 {
   "raw": "12  Silly Sour Spaghetti strands",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Silly Sour Spaghetti strands",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Silly Sour Spaghetti strands",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

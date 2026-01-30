@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup toasted sesame seeds, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame seeds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "toasted sesame seeds",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

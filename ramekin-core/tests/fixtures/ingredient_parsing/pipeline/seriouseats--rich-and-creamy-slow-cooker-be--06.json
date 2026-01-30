@@ -1,23 +1,21 @@
 {
   "raw": "1 (10.5 ounce can) low-sodium beef broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium beef broth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "10.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "298",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium beef broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "10.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "298",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

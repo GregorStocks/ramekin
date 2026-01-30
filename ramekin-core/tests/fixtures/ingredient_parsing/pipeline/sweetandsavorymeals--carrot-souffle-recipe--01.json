@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 pounds carrots (peeled and thinly sliced or chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and thinly sliced or chopped"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and thinly sliced or chopped"
   }
 }

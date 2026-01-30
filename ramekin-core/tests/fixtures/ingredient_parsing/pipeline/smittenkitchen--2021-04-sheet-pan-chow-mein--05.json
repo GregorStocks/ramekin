@@ -1,10 +1,8 @@
 {
   "raw": "Olive oil or a neutral oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Olive oil or a neutral oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Olive oil or a neutral oil",
+    "measurements": [],
+    "note": null
   }
 }

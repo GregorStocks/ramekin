@@ -1,27 +1,25 @@
 {
   "raw": "10 ounces fresh tomatoes (285g; about 3 medium), seeded and chopped (1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh tomatoes",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "285",
-          "unit": "g"
-        },
-        {
-          "amount": "3",
-          "unit": "medium"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "seeded and chopped"
-    }
+  "expected": {
+    "item": "fresh tomatoes",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "285",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "medium"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "seeded and chopped"
   }
 }

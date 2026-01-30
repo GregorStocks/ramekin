@@ -1,10 +1,8 @@
 {
   "raw": "MERINGUE TOPPING:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "MERINGUE TOPPING:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "MERINGUE TOPPING:",
+    "measurements": [],
+    "note": null
   }
 }

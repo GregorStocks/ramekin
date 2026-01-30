@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds tomatoes ((fresh, cut into 2” pieces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": "fresh, cut into 2” pieces"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": "fresh, cut into 2” pieces"
   }
 }

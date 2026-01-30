@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon garam masala  ((+ ½ tsp more if you want at the finishing stage))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garam masala  (+ 1/2 tsp more if you want at the finishing stage)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garam masala  (+ 1/2 tsp more if you want at the finishing stage)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

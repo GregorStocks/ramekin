@@ -1,15 +1,13 @@
 {
   "raw": "1 pickle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickle",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pickle",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

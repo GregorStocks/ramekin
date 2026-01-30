@@ -1,15 +1,13 @@
 {
   "raw": "½ to ¾ cups water to blend rice ((refer notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water to blend rice (refer notes)",
-      "measurements": [
-        {
-          "amount": "1/2 to 3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water to blend rice (refer notes)",
+    "measurements": [
+      {
+        "amount": "1/2 to 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

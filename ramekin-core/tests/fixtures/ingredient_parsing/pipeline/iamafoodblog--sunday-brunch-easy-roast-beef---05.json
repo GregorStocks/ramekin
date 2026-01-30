@@ -1,10 +1,8 @@
 {
   "raw": "mustard, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mustard",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "mustard",
+    "measurements": [],
+    "note": "to taste"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Fresh fruit or jam (sour cream, powdered sugar; whatever you like!)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh fruit or jam (sour cream, powdered sugar; whatever you like!)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fresh fruit or jam (sour cream, powdered sugar; whatever you like!)",
+    "measurements": [],
+    "note": null
   }
 }

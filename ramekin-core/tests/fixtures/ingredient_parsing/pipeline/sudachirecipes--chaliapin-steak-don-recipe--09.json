@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp finely chopped green onions (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped green onions (to garnish)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped green onions (to garnish)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

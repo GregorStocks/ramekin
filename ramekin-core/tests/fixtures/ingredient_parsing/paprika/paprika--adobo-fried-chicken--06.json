@@ -1,15 +1,13 @@
 {
   "raw": "2 fresh Thai bird or habanero chiles, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Thai bird or habanero chiles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "fresh Thai bird or habanero chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

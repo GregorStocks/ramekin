@@ -1,15 +1,13 @@
 {
   "raw": "½ to ¾ teaspoon roasted cumin powder ((jeera powder) (updated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted cumin powder (jeera powder) (updated)",
-      "measurements": [
-        {
-          "amount": "1/2 to 3/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted cumin powder (jeera powder) (updated)",
+    "measurements": [
+      {
+        "amount": "1/2 to 3/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

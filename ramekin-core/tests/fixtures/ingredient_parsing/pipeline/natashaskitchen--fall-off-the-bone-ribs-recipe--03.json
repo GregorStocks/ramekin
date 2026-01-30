@@ -1,15 +1,13 @@
 {
   "raw": "1  medium head of pressed garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head of pressed garlic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head of pressed garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

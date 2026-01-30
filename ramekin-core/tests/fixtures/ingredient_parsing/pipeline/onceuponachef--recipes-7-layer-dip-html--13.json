@@ -1,19 +1,17 @@
 {
   "raw": "1 (8-oz) block sharp Cheddar, shredded (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "block sharp Cheddar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "shredded (see note)"
-    }
+  "expected": {
+    "item": "block sharp Cheddar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "shredded (see note)"
   }
 }

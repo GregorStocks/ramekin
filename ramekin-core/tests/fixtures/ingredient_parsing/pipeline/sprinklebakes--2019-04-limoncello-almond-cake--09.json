@@ -1,10 +1,8 @@
 {
   "raw": "Lemon yellow gel food color",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lemon yellow gel food color",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Lemon yellow gel food color",
+    "measurements": [],
+    "note": null
   }
 }

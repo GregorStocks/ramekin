@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoons unsalted butter, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  orange, rind only, scraped clean of pith&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange, rind only, scraped clean of pith",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange, rind only, scraped clean of pith",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Cover the frosting with a damp towel to prevent it from crusting.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cover the frosting with a damp towel to prevent it from crusting.",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cover the frosting with a damp towel to prevent it from crusting.",
+    "measurements": [],
+    "note": null
   }
 }

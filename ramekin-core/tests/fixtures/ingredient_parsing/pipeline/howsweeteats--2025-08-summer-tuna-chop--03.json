@@ -1,15 +1,13 @@
 {
   "raw": "½ cup diced hearts of palm",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced hearts of palm",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced hearts of palm",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

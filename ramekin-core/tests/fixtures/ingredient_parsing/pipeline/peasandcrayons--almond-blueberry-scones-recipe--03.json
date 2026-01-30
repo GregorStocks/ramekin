@@ -1,15 +1,13 @@
 {
   "raw": "1 TBSP aluminum-free baking powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "aluminum-free baking powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "aluminum-free baking powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

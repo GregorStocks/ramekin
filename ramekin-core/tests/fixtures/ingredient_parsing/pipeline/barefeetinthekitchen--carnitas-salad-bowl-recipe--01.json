@@ -1,15 +1,13 @@
 {
   "raw": "2-3 cups crunchy lettuce (chopped small)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crunchy lettuce",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped small"
-    }
+  "expected": {
+    "item": "crunchy lettuce",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped small"
   }
 }

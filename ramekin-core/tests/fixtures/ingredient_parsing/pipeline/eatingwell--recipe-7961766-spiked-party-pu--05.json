@@ -1,15 +1,13 @@
 {
   "raw": "4 cups 100%-juice cranberry-raspberry juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "100%-juice cranberry-raspberry juice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "100%-juice cranberry-raspberry juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

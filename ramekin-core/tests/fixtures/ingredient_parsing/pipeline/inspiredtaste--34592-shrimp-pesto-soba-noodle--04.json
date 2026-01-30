@@ -1,10 +1,8 @@
 {
   "raw": "Half of a lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Half of a lemon",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Half of a lemon",
+    "measurements": [],
+    "note": null
   }
 }

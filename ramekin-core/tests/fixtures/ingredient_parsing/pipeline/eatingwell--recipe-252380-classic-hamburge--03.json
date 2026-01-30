@@ -1,15 +1,13 @@
 {
   "raw": "3 teaspoons ketchup, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ketchup",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "ketchup",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

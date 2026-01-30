@@ -1,10 +1,8 @@
 {
   "raw": "Table salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Table salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Table salt",
+    "measurements": [],
+    "note": null
   }
 }

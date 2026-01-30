@@ -1,15 +1,13 @@
 {
   "raw": "1 small sugar pumpkin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar pumpkin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar pumpkin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

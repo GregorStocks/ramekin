@@ -1,10 +1,8 @@
 {
   "raw": "SHORTBREAD:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "SHORTBREAD:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "SHORTBREAD:",
+    "measurements": [],
+    "note": null
   }
 }

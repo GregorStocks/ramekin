@@ -1,15 +1,13 @@
 {
   "raw": "5 tablespoons black cocoa powder or cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black cocoa powder or cocoa powder",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black cocoa powder or cocoa powder",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

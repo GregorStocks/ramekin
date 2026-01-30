@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp. adobo sauce (from a can of chipotles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "adobo sauce (from a can of chipotles)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "adobo sauce (from a can of chipotles)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

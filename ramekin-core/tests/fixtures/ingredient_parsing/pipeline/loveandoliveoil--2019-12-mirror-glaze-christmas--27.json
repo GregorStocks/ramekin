@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup corn syrup or glucose syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn syrup or glucose syrup",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn syrup or glucose syrup",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

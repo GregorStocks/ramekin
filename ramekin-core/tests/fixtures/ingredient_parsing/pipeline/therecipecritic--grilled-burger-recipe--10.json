@@ -1,10 +1,8 @@
 {
   "raw": "Pickles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pickles",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pickles",
+    "measurements": [],
+    "note": null
   }
 }

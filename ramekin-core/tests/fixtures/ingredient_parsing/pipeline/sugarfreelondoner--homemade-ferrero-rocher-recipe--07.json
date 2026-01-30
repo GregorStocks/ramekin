@@ -1,19 +1,17 @@
 {
   "raw": "1.25 oz dark chocolate (50g you won&amp;#39;t use all of it)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark chocolate",
-      "measurements": [
-        {
-          "amount": "1.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "1.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

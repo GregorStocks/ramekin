@@ -1,19 +1,17 @@
 {
   "raw": "5 ounce egg noodles (uncooked, (about 2 cups))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg noodles",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": "uncooked, (about 2 cups"
-    }
+  "expected": {
+    "item": "egg noodles",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": "uncooked, (about 2 cups"
   }
 }

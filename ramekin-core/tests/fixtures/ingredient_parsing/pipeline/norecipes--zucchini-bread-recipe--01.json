@@ -1,19 +1,17 @@
 {
   "raw": "325 grams zucchini ((about 2 medium zucchinis))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "325",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "325",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

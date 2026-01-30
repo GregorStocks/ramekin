@@ -1,15 +1,13 @@
 {
   "raw": "4 cups low sodium chicken stock or vegetable stock, see our easy chicken stock recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low sodium chicken stock or vegetable stock, see our easy chicken stock recipe",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low sodium chicken stock or vegetable stock, see our easy chicken stock recipe",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

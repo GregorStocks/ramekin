@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces lump crab meat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lump crab meat",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lump crab meat",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "100 g all-purpose flour (for the batter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour (for the batter)",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour (for the batter)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

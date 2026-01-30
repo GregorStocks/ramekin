@@ -1,10 +1,8 @@
 {
   "raw": "Flaky sea salt (such as Maldon), for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Flaky sea salt (such as Maldon)",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Flaky sea salt (such as Maldon)",
+    "measurements": [],
+    "note": "for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup plus 2 tbsp all-purpose flour plus extra for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "½ cup plus 2 tbsp all-purpose flour plus extra for dusting",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tbsp all-purpose flour plus extra for dusting"
-    }
+  "expected": {
+    "item": "½ cup plus 2 tbsp all-purpose flour plus extra for dusting",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tbsp all-purpose flour plus extra for dusting"
   }
 }

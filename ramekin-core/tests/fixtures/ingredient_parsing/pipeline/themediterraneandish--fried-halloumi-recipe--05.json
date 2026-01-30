@@ -1,10 +1,8 @@
 {
   "raw": "crushed red pepper flakes ((I used Aleppo pepper))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper flakes (I used Aleppo pepper)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed red pepper flakes (I used Aleppo pepper)",
+    "measurements": [],
+    "note": null
   }
 }

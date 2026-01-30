@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup basil pesto (plus 1/4 cup extra for serving. Use this recipe for homemade pesto or you can use store bought. )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil pesto",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 1/4 cup extra for serving. Use this recipe for homemade pesto or you can use store bought."
-    }
+  "expected": {
+    "item": "basil pesto",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 1/4 cup extra for serving. Use this recipe for homemade pesto or you can use store bought."
   }
 }

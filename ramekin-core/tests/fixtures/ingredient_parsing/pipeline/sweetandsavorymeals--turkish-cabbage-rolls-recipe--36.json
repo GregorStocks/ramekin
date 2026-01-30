@@ -1,10 +1,8 @@
 {
   "raw": "Chopped fresh parsley (dill, or mint)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped fresh parsley (dill, or mint)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped fresh parsley (dill, or mint)",
+    "measurements": [],
+    "note": null
   }
 }

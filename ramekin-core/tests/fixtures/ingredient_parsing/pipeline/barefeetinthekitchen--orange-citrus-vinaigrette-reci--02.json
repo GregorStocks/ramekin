@@ -1,15 +1,13 @@
 {
   "raw": "juice of 1 medium lemon (about 2 1/2 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "juice of 1 medium lemon",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "juice of 1 medium lemon",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

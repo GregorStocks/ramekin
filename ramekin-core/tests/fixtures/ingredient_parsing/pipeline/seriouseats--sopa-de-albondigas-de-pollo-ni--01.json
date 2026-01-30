@@ -1,19 +1,17 @@
 {
   "raw": "1 (4-pound) chicken, rinsed and cut into 8 pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "rinsed and cut into 8 pieces"
-    }
+  "expected": {
+    "item": "chicken",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "rinsed and cut into 8 pieces"
   }
 }

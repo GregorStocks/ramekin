@@ -1,15 +1,13 @@
 {
   "raw": "1 shot espresso",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shot espresso",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shot espresso",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

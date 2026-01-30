@@ -1,15 +1,13 @@
 {
   "raw": "1  banana (peeled and cut into large chunks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "banana",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and cut into large chunks"
-    }
+  "expected": {
+    "item": "banana",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled and cut into large chunks"
   }
 }

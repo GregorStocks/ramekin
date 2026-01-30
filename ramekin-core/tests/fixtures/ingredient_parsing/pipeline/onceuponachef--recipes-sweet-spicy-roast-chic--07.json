@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons honey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

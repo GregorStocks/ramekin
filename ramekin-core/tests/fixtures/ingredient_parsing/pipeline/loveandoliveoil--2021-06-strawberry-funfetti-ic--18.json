@@ -1,10 +1,8 @@
 {
   "raw": "whipped topping and fresh strawberries (optional, for decoration)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipped topping and fresh strawberries",
-      "measurements": [],
-      "note": "optional, for decoration"
-    }
+  "expected": {
+    "item": "whipped topping and fresh strawberries",
+    "measurements": [],
+    "note": "optional, for decoration"
   }
 }

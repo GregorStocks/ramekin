@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Italian parsley leaves, washed and dried",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian parsley leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "washed and dried"
-    }
+  "expected": {
+    "item": "Italian parsley leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "washed and dried"
   }
 }

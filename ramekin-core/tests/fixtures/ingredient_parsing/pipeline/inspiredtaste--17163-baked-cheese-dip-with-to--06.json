@@ -1,15 +1,13 @@
 {
   "raw": "1 cup basil leaves, chopped, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil leaves, chopped",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "basil leaves, chopped",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

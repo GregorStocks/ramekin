@@ -1,19 +1,17 @@
 {
   "raw": "1 batch Homemade Microwave Lemon Curd (about 2 cups), chilled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "batch Homemade Microwave Lemon Curd",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "batch Homemade Microwave Lemon Curd",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
   }
 }

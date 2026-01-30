@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb. two US sticks unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "two US sticks unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "two US sticks unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1.5 lb Yukon Golds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon Golds",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Yukon Golds",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

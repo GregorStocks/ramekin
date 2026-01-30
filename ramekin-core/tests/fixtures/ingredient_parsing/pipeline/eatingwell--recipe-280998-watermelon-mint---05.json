@@ -1,15 +1,13 @@
 {
   "raw": "Small slice watermelon for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slice watermelon for garnish",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slice watermelon for garnish",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

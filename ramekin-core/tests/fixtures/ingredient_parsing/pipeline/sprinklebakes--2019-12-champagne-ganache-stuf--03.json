@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons champagne or sparkling wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "champagne or sparkling wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "champagne or sparkling wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "20 basil leaves, more for the dressing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil leaves, more for the dressing",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basil leaves, more for the dressing",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

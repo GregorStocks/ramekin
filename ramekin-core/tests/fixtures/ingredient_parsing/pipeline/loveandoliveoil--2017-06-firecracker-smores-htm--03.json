@@ -1,15 +1,13 @@
 {
   "raw": "8 jumbo or s&amp;#8217;mores marshmallows",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jumbo or s’mores marshmallows",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jumbo or s’mores marshmallows",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

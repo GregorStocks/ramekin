@@ -1,15 +1,13 @@
 {
   "raw": "1 sheet of store-bought puff pastry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheet of store-bought puff pastry",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheet of store-bought puff pastry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

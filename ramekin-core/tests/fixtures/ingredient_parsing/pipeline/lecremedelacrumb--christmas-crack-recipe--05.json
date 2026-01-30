@@ -1,15 +1,13 @@
 {
   "raw": "1 cup toffee bits (from one 8-ounce bag)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toffee bits (from one 8-ounce bag)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toffee bits (from one 8-ounce bag)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

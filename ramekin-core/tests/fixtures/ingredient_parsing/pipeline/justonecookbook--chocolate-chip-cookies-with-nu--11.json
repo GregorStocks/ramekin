@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp plain yogurt ((I used Greek yogurt))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain yogurt (I used Greek yogurt)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain yogurt (I used Greek yogurt)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

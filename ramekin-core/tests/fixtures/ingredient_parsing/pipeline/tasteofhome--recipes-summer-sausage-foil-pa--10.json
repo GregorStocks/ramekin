@@ -1,15 +1,13 @@
 {
   "raw": "2 medium tomatoes, cut into wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes, cut into wedges",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes, cut into wedges",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

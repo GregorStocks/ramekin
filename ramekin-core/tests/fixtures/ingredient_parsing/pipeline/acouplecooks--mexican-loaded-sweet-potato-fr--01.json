@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds sweet potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

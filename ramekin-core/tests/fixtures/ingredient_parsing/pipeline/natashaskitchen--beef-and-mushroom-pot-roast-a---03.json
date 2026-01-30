@@ -1,15 +1,13 @@
 {
   "raw": "1 lb fresh mushrooms (thickly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "thickly sliced"
-    }
+  "expected": {
+    "item": "fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "thickly sliced"
   }
 }

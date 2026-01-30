@@ -1,15 +1,13 @@
 {
   "raw": "1 jar prepared tomatillo (green) salsa ((16 ounces) about 1 1/2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared tomatillo (green) salsa (16 ounces) about 1 1/2 cups)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared tomatillo (green) salsa (16 ounces) about 1 1/2 cups)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      }
+    ],
+    "note": null
   }
 }

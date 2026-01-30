@@ -1,15 +1,13 @@
 {
   "raw": "1 cup all purpose flour (make sure to spoon and level, don&amp;#039;t scoop)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all purpose flour (make sure to spoon and level, don't scoop)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all purpose flour (make sure to spoon and level, don't scoop)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

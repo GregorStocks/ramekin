@@ -1,15 +1,13 @@
 {
   "raw": "2-1/2 to 3 cups bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 3 cups bread flour",
-      "measurements": [
-        {
-          "amount": "2-1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 3 cups bread flour",
+    "measurements": [
+      {
+        "amount": "2-1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

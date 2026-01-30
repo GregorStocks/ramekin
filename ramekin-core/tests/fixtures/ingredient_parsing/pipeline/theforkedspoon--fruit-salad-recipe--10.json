@@ -1,15 +1,13 @@
 {
   "raw": "5  kiwi (peeled and quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kiwi",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "peeled and quartered"
-    }
+  "expected": {
+    "item": "kiwi",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "peeled and quartered"
   }
 }

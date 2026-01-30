@@ -1,10 +1,8 @@
 {
   "raw": "Tangy Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tangy Sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Tangy Sauce",
+    "measurements": [],
+    "note": null
   }
 }

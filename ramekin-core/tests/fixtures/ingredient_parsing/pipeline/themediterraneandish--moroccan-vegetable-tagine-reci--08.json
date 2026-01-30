@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp Harissa spice blend,",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Harissa spice blend,",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Harissa spice blend,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

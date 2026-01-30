@@ -1,15 +1,13 @@
 {
   "raw": "6  shishito peppers (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shishito peppers",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "shishito peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tablespoons lemon juice, optional, depending on thickness of your cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice, optional, depending on thickness of your cream",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice, optional, depending on thickness of your cream",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

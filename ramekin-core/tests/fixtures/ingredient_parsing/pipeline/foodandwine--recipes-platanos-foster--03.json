@@ -1,15 +1,13 @@
 {
   "raw": "2 extra ripe (black skin) plantains, peeled, cut in half crosswise then lengthwise into 4 pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra ripe (black skin) plantains, peeled, cut in half crosswise then lengthwise into 4 pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "extra ripe (black skin) plantains, peeled, cut in half crosswise then lengthwise into 4 pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

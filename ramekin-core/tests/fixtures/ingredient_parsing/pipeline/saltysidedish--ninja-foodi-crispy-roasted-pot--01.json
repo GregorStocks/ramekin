@@ -1,15 +1,13 @@
 {
   "raw": "1 pound thinly sliced baby red potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced baby red potatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced baby red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

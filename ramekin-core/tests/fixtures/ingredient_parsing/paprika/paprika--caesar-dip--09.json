@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60 ml) sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

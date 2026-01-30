@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons melted butter + extra for cooking",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted butter + extra for cooking",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted butter + extra for cooking",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

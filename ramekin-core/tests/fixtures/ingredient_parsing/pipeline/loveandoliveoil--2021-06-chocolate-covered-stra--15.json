@@ -1,15 +1,13 @@
 {
   "raw": "1 cup fresh strawberries (washed and hulled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "washed and hulled"
-    }
+  "expected": {
+    "item": "fresh strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "washed and hulled"
   }
 }

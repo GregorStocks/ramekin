@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons (reserved) bacon grease or butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "(reserved) bacon grease or butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "(reserved) bacon grease or butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

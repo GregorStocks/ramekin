@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup Spanish green olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Spanish green olives",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Spanish green olives",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

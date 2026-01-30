@@ -1,19 +1,17 @@
 {
   "raw": "7 oz ladyfinger cookies (from 1 package (24 cookies))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ladyfinger cookies (from 1 package (24 cookies)",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ladyfinger cookies (from 1 package (24 cookies)",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

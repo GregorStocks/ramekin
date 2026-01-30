@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons red curry paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red curry paste",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red curry paste",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

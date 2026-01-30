@@ -1,10 +1,8 @@
 {
   "raw": "Sushi Rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sushi Rice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sushi Rice",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds Chicken Thighs (, Drumsticks or Breasts (bone in, skin on *see head note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chicken Thighs (, Drumsticks or Breasts (bone in, skin on *see head note)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chicken Thighs (, Drumsticks or Breasts (bone in, skin on *see head note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

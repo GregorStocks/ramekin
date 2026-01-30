@@ -1,15 +1,13 @@
 {
   "raw": "2 cups potato chips, crushed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato chips",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "crushed"
-    }
+  "expected": {
+    "item": "potato chips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "crushed"
   }
 }

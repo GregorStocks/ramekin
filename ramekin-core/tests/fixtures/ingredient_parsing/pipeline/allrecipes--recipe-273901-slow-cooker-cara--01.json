@@ -1,15 +1,13 @@
 {
   "raw": "4 tart apples, peeled and sliced, or more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tart apples, peeled and sliced",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "or more to taste"
-    }
+  "expected": {
+    "item": "tart apples, peeled and sliced",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "or more to taste"
   }
 }

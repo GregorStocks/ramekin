@@ -1,15 +1,13 @@
 {
   "raw": "2 g kanten agar powder ((each sachet is usually 4g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kanten agar powder (each sachet is usually 4g)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kanten agar powder (each sachet is usually 4g)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

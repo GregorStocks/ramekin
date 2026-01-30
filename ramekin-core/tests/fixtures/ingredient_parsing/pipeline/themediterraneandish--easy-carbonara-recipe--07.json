@@ -1,15 +1,13 @@
 {
   "raw": "1 lb linguine pasta (you can also use spaghetti or fettuccine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "linguine pasta (you can also use spaghetti or fettuccine)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "linguine pasta (you can also use spaghetti or fettuccine)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

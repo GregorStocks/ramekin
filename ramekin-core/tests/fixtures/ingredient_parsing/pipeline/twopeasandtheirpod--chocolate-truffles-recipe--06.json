@@ -1,10 +1,8 @@
 {
   "raw": "Toffee (chopped into small pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toffee",
-      "measurements": [],
-      "note": "chopped into small pieces"
-    }
+  "expected": {
+    "item": "Toffee",
+    "measurements": [],
+    "note": "chopped into small pieces"
   }
 }

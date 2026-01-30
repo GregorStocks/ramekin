@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon ground chipotle powder (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground chipotle powder (see note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground chipotle powder (see note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

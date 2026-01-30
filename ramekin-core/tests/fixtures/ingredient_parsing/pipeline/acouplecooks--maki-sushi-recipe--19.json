@@ -1,10 +1,8 @@
 {
   "raw": "To serve: soy sauce, wasabi, Spicy Mayo (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "To serve: soy sauce, wasabi, Spicy Mayo",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "To serve: soy sauce, wasabi, Spicy Mayo",
+    "measurements": [],
+    "note": "optional"
   }
 }

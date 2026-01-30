@@ -1,23 +1,21 @@
 {
   "raw": "8 cloves (50g) garlic, chopped (1/4 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "clove"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "clove"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

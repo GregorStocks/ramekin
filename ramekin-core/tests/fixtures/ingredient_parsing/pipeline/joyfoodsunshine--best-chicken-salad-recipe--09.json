@@ -1,15 +1,13 @@
 {
   "raw": "½  cup red bell pepper ((finely diced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "red bell pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely diced"
   }
 }

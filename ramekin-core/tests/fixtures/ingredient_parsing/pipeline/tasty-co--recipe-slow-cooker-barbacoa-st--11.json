@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup apple cider vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple cider vinegar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple cider vinegar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

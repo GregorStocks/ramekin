@@ -1,15 +1,13 @@
 {
   "raw": "1 cup canned peaches (drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned peaches",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "canned peaches",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
   }
 }

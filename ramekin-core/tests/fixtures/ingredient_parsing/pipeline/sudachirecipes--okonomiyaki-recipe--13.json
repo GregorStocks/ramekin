@@ -1,15 +1,13 @@
 {
   "raw": "150 g green cabbage (or spring/pointed cabbage)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cabbage (or spring/pointed cabbage)",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green cabbage (or spring/pointed cabbage)",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

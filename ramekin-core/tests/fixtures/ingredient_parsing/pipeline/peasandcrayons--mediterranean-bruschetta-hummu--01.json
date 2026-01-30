@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup diced seedless english cucumber",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced seedless english cucumber",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced seedless english cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

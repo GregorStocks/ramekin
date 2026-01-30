@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons hot water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

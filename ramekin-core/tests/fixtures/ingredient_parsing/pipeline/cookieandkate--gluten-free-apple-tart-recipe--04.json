@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac14; cup melted butter or coconut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted butter or coconut oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted butter or coconut oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

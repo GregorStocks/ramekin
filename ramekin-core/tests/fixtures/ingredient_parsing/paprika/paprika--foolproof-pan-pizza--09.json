@@ -1,15 +1,13 @@
 {
   "raw": "Small handful torn fresh basil leaves (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful torn fresh basil leaves",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "handful torn fresh basil leaves",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": "optional"
   }
 }

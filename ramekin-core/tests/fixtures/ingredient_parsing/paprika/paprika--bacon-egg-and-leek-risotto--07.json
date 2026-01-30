@@ -1,15 +1,13 @@
 {
   "raw": "2 cups arborio, carnaroli, or another short-grained Italian rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arborio, carnaroli, or another short-grained Italian rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arborio, carnaroli, or another short-grained Italian rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

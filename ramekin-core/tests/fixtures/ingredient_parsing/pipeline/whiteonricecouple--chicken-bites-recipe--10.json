@@ -1,15 +1,13 @@
 {
   "raw": "3 Tablespoons grated parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated parmesan cheese",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated parmesan cheese",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

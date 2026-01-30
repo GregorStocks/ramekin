@@ -1,10 +1,8 @@
 {
   "raw": "sweet potato filling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potato filling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet potato filling",
+    "measurements": [],
+    "note": null
   }
 }

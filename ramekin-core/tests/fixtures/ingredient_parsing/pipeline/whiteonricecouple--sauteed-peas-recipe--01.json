@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh peas ( or frozen peas)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh peas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or frozen peas"
-    }
+  "expected": {
+    "item": "fresh peas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or frozen peas"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tbsp light brown soft sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown soft sugar",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown soft sugar",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

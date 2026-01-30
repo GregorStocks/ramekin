@@ -1,15 +1,13 @@
 {
   "raw": "10 cups cold water (or enough water to come 1-inch below MAX fill line)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold water (or enough water to come 1-inch below MAX fill line)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold water (or enough water to come 1-inch below MAX fill line)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

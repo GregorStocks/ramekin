@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup muscovado sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "muscovado sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "muscovado sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

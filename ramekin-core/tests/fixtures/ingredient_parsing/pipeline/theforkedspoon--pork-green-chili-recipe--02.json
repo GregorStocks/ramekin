@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds spicy ground pork",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spicy ground pork",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spicy ground pork",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

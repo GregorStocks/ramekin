@@ -1,23 +1,21 @@
 {
   "raw": "4 tablespoons unsalted butter (2 ounces; 56 g), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "56",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

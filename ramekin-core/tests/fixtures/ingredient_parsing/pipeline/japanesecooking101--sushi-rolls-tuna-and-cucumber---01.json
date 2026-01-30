@@ -1,15 +1,13 @@
 {
   "raw": "Nori roasted seaweed (8&amp;quot; X 7 1/2&amp;quot;  (21 cm x 19cm))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nori roasted seaweed",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Nori roasted seaweed",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

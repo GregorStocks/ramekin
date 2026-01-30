@@ -1,23 +1,21 @@
 {
   "raw": "12 ounces (340 g) broccoli florets, cut into 1 1/2- to 2-inch pieces (about 4 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli florets, cut into 1 1/2- to 2-inch pieces",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        },
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli florets, cut into 1 1/2- to 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

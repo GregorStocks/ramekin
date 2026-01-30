@@ -1,15 +1,13 @@
 {
   "raw": "5 cups oil for frying (or as needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil for frying",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        }
-      ],
-      "note": "or as needed"
-    }
+  "expected": {
+    "item": "oil for frying",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      }
+    ],
+    "note": "or as needed"
   }
 }

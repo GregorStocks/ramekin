@@ -1,10 +1,8 @@
 {
   "raw": "gel or powdered food coloring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gel or powdered food coloring",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "gel or powdered food coloring",
+    "measurements": [],
+    "note": null
   }
 }

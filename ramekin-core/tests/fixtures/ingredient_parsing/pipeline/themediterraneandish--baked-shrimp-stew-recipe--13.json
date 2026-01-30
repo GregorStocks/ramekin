@@ -1,15 +1,13 @@
 {
   "raw": "&nbsp;2 ½ lb large shrimp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large shrimp",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "large shrimp",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

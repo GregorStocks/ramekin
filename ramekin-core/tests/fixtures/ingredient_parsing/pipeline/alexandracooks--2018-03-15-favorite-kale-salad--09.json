@@ -1,10 +1,8 @@
 {
   "raw": "grated Parmigiano Reggiano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated Parmigiano Reggiano",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "grated Parmigiano Reggiano",
+    "measurements": [],
+    "note": null
   }
 }

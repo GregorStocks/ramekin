@@ -1,19 +1,17 @@
 {
   "raw": "4 Ounces Bittersweet Chocolate (Chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bittersweet Chocolate",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "Chopped"
-    }
+  "expected": {
+    "item": "Bittersweet Chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "Chopped"
   }
 }

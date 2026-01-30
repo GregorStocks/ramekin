@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp Peppermint Chocolate Creamer (or water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Peppermint Chocolate Creamer (or water)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Peppermint Chocolate Creamer (or water)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

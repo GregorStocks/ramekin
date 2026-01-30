@@ -1,15 +1,13 @@
 {
   "raw": "4 leeks, thinly sliced, to yield 4 to 6 cups",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leeks, thinly sliced, to yield 4 to 6 cups",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leeks, thinly sliced, to yield 4 to 6 cups",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

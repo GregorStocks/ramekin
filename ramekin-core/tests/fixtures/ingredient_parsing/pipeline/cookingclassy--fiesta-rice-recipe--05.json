@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp ground cumin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cumin",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cumin",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

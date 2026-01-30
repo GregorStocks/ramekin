@@ -1,23 +1,21 @@
 {
   "raw": "2 cups (8 oz) extra sharp cheddar, (shredded (I like to use Cracker Barrel))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra sharp cheddar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "shredded (I like to use Cracker Barrel"
-    }
+  "expected": {
+    "item": "extra sharp cheddar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "shredded (I like to use Cracker Barrel"
   }
 }

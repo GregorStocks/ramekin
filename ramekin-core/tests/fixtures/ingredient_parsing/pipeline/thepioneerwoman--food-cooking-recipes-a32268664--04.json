@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. sherry or dry white wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sherry or dry white wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sherry or dry white wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

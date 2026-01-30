@@ -1,15 +1,13 @@
 {
   "raw": "28 caramels",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramels",
-      "measurements": [
-        {
-          "amount": "28",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caramels",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

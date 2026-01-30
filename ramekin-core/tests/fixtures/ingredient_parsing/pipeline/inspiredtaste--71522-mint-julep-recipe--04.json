@@ -1,10 +1,8 @@
 {
   "raw": "Crushed ice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crushed ice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Crushed ice",
+    "measurements": [],
+    "note": null
   }
 }

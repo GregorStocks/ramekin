@@ -1,15 +1,13 @@
 {
   "raw": "4 medium/large leeks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium/large leeks",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium/large leeks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

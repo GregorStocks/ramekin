@@ -1,15 +1,13 @@
 {
   "raw": "12 small dinner rolls, split",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dinner rolls, split",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dinner rolls, split",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

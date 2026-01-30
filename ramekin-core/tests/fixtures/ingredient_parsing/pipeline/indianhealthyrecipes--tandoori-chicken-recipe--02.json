@@ -1,15 +1,13 @@
 {
   "raw": "½ cup Greek yogurt ((hung curd))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek yogurt (hung curd)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Greek yogurt (hung curd)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

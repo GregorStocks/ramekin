@@ -1,15 +1,13 @@
 {
   "raw": "1 cup full-fat sour cream (plus more as needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat sour cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more as needed"
-    }
+  "expected": {
+    "item": "full-fat sour cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more as needed"
   }
 }

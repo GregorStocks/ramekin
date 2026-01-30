@@ -1,19 +1,17 @@
 {
   "raw": "1 cup bottled clam juice (235ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bottled clam juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "235",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bottled clam juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "235",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

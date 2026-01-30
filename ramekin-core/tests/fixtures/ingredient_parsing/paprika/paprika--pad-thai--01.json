@@ -1,19 +1,17 @@
 {
   "raw": "125 g / 4oz Chang’s Pad Thai dried rice sticks (Note 1)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chang’s Pad Thai dried rice sticks (Note 1)",
-      "measurements": [
-        {
-          "amount": "125",
-          "unit": "g"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chang’s Pad Thai dried rice sticks (Note 1)",
+    "measurements": [
+      {
+        "amount": "125",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

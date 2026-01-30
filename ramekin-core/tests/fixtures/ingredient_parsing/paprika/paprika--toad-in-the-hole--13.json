@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 cups low-sodium beef stock (12 ounces; 360 g), homemade or store-bought, see notes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium beef stock , homemade or store-bought, see notes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "360",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium beef stock , homemade or store-bought, see notes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "360",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Fresh herbs such as chives or parsley, chopped for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh herbs such as chives or parsley",
-      "measurements": [],
-      "note": "chopped for serving"
-    }
+  "expected": {
+    "item": "Fresh herbs such as chives or parsley",
+    "measurements": [],
+    "note": "chopped for serving"
   }
 }

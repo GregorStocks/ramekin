@@ -1,19 +1,17 @@
 {
   "raw": "1 small head (500 grams)  cauliflower (/gobi (250 grams cleaned florets))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head cauliflower",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "500",
-          "unit": "g"
-        }
-      ],
-      "note": "/gobi (250 grams cleaned florets"
-    }
+  "expected": {
+    "item": "head cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": "/gobi (250 grams cleaned florets"
   }
 }

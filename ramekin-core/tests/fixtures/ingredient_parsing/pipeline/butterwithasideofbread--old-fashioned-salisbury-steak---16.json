@@ -1,19 +1,17 @@
 {
   "raw": "¼ cup red wine (2 fl. oz | 60 ml )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red wine",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red wine",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

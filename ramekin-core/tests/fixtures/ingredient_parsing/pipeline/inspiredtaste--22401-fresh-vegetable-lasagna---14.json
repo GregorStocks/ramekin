@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces (230g) low-moisture mozzarella cheese, shredded, about 2 cups",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-moisture mozzarella cheese, shredded, about 2 cups",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "230",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-moisture mozzarella cheese, shredded, about 2 cups",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "230",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

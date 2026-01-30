@@ -1,19 +1,17 @@
 {
   "raw": "15 oz ricotta cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ricotta cheese",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ricotta cheese",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

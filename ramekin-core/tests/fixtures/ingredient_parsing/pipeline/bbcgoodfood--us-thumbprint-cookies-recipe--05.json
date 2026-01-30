@@ -1,15 +1,13 @@
 {
   "raw": "1⅓ sticks butter cut into cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter cut into cubes",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter cut into cubes",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

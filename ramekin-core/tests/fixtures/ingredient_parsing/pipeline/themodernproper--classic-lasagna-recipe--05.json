@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup tomato paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato paste",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato paste",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

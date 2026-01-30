@@ -1,15 +1,13 @@
 {
   "raw": "2  sticks (226g unsalted butter, softened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2  sticks (226g unsalted butter, softened)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stick"
-        }
-      ],
-      "note": "226g unsalted butter, softened"
-    }
+  "expected": {
+    "item": "2  sticks (226g unsalted butter, softened)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stick"
+      }
+    ],
+    "note": "226g unsalted butter, softened"
   }
 }

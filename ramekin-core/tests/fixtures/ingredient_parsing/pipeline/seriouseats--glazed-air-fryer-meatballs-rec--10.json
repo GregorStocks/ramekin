@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (240 ml) pomegranate juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pomegranate juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

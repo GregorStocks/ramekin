@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons sun dried tomato oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sun dried tomato oil",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sun dried tomato oil",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

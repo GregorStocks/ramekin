@@ -1,10 +1,8 @@
 {
   "raw": "Applesauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Applesauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Applesauce",
+    "measurements": [],
+    "note": null
   }
 }

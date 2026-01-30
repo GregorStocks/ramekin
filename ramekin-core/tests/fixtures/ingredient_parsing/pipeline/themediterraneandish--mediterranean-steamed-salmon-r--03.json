@@ -1,15 +1,13 @@
 {
   "raw": "1 lb skin-on salmon fillet (such as wild Alaskan), cut into 4 portions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skin-on salmon fillet (such as wild Alaskan), cut into 4 portions",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skin-on salmon fillet (such as wild Alaskan), cut into 4 portions",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

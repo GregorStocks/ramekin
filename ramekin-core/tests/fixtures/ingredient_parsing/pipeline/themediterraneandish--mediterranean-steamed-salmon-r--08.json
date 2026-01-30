@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp/ 1.33 g Aleppo pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tsp/ 1.33 g Aleppo pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tsp/ 1.33 g Aleppo pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

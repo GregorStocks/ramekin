@@ -1,15 +1,13 @@
 {
   "raw": "2 whole chicken legs (thigh and drumstick), skin removed and saved, meat cut into 1 inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chicken legs (thigh and drumstick), skin removed and saved, meat cut into 1 inch pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole chicken legs (thigh and drumstick), skin removed and saved, meat cut into 1 inch pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

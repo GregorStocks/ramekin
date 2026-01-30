@@ -1,15 +1,13 @@
 {
   "raw": "40 grams sliced almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced almonds",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced almonds",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

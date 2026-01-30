@@ -1,23 +1,21 @@
 {
   "raw": "2 - 3 ounces firm tofu (2 handfuls), chopped into 1/3-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm tofu",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "handful"
-        },
-        {
-          "amount": "57-85",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped into 1/3-inch cubes"
-    }
+  "expected": {
+    "item": "firm tofu",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "handful"
+      },
+      {
+        "amount": "57-85",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped into 1/3-inch cubes"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  clementines or 1 orange (peeled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clementines or 1 orange",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "clementines or 1 orange",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

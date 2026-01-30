@@ -1,19 +1,17 @@
 {
   "raw": "1/2 ounce (14 g) dried porcini mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried porcini mushrooms",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried porcini mushrooms",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

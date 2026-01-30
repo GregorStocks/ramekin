@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs. of mixed mushrooms (oyster, crimini, button, shiitake, and/or enoki), roughly chopped or quartered (you want bite-sized pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed mushrooms (oyster, crimini, button, shiitake, and/or enoki)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "roughly chopped or quartered (you want bite-sized pieces)"
-    }
+  "expected": {
+    "item": "mixed mushrooms (oyster, crimini, button, shiitake, and/or enoki)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "roughly chopped or quartered (you want bite-sized pieces)"
   }
 }

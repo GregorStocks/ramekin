@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh berries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh berries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh berries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

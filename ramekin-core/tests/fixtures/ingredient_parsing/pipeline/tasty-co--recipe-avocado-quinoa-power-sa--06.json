@@ -1,15 +1,13 @@
 {
   "raw": "4 roma tomatoes, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roma tomatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "roma tomatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

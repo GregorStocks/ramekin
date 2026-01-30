@@ -1,15 +1,13 @@
 {
   "raw": "100 grams cashews ((toasted))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cashews",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "cashews",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "toasted"
   }
 }

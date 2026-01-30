@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons red food colouring (or 1 tablespoons beetroot juice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red food colouring (or 1 tablespoons beetroot juice)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red food colouring (or 1 tablespoons beetroot juice)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

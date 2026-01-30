@@ -1,15 +1,13 @@
 {
   "raw": "2-4 Tablespoons Sake (, optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sake",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sake",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

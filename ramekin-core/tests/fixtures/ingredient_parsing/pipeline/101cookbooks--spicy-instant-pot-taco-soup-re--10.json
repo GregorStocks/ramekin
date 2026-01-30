@@ -1,15 +1,13 @@
 {
   "raw": "1 14- ounce can crushed tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "14- ounce can crushed tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "14- ounce can crushed tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

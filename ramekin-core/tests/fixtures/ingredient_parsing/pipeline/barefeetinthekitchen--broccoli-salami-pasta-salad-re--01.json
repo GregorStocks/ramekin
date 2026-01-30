@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces small bite-size pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small bite-size pasta",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "small bite-size pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp freshly ground nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground nutmeg",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly ground nutmeg",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

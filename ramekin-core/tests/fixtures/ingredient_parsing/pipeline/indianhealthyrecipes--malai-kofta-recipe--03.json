@@ -1,15 +1,13 @@
 {
   "raw": "2½ tablespoons corn starch ((same as white refined corn flour))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn starch (same as white refined corn flour)",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn starch (same as white refined corn flour)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

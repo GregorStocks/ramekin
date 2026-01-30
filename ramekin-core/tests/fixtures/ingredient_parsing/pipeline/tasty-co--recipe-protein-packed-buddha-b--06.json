@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chickpeas, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded low-moisture part-skim mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded low-moisture part-skim mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded low-moisture part-skim mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

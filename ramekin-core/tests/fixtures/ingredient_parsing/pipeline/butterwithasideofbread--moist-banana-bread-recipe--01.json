@@ -1,15 +1,13 @@
 {
   "raw": "3 large ripe bananas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe bananas",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe bananas",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

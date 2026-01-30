@@ -1,19 +1,17 @@
 {
   "raw": "14 oz new york strip steak, or other good-quality steak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "new york strip steak, or other good-quality steak",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "new york strip steak, or other good-quality steak",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

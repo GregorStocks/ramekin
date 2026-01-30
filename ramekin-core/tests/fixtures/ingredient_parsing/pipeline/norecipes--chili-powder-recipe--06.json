@@ -1,19 +1,17 @@
 {
   "raw": ".5 grams smoked paprika ((~1/4 teaspoon))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked paprika",
-      "measurements": [
-        {
-          "amount": ".5",
-          "unit": "g"
-        },
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked paprika",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

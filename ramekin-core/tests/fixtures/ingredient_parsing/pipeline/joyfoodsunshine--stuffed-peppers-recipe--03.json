@@ -1,15 +1,13 @@
 {
   "raw": "1- pound ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "- pound ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "- pound ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon cultured unsalted butter ((melted and cooled slightly))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cultured unsalted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted and cooled slightly"
-    }
+  "expected": {
+    "item": "cultured unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted and cooled slightly"
   }
 }

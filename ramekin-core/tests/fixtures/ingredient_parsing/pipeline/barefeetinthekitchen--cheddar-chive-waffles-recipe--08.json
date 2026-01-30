@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup fresh chives, minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chives",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "fresh chives",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "minced"
   }
 }

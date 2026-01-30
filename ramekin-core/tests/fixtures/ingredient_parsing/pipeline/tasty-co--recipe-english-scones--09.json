@@ -1,10 +1,8 @@
 {
   "raw": "clotted cream, as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clotted cream",
-      "measurements": [],
-      "note": "as needed"
-    }
+  "expected": {
+    "item": "clotted cream",
+    "measurements": [],
+    "note": "as needed"
   }
 }

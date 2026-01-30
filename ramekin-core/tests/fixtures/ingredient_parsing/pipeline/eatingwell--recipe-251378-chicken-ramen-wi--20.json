@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons reduced-sodium soy sauce or tamari",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium soy sauce or tamari",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium soy sauce or tamari",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

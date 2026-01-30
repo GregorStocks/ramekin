@@ -1,15 +1,13 @@
 {
   "raw": "1.5 cups fresh or thawed frozen corn kernels",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or thawed frozen corn kernels",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or thawed frozen corn kernels",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

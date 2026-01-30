@@ -1,15 +1,13 @@
 {
   "raw": "handful pistachios nuts, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pistachios nuts",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "pistachios nuts",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

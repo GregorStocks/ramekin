@@ -1,10 +1,8 @@
 {
   "raw": "Peanut dressing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Peanut dressing",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Peanut dressing",
+    "measurements": [],
+    "note": null
   }
 }

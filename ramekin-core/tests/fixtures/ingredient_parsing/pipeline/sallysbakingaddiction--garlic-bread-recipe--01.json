@@ -1,19 +1,17 @@
 {
   "raw": "12-ounce (340g) loaf of crusty bread, sliced in half horizontally",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounce loaf of crusty bread",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced in half horizontally"
-    }
+  "expected": {
+    "item": "-ounce loaf of crusty bread",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced in half horizontally"
   }
 }

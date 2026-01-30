@@ -1,19 +1,17 @@
 {
   "raw": "1 pint (454g) strawberries, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

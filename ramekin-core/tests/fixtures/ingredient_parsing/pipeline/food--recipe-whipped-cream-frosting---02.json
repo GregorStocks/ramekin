@@ -1,15 +1,13 @@
 {
   "raw": "1   cup   sifted icing sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sifted icing sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sifted icing sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

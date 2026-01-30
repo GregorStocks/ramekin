@@ -1,15 +1,13 @@
 {
   "raw": "1  medium cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cabbage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

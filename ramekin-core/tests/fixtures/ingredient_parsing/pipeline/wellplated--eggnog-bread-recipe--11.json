@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon rum (or brandy or bourbon (or&nbsp;substitute an additional tablespoon eggnog))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rum (or brandy or bourbon (or substitute an additional tablespoon eggnog)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rum (or brandy or bourbon (or substitute an additional tablespoon eggnog)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

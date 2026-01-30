@@ -1,15 +1,13 @@
 {
   "raw": "1 jalapeño, minced (remove seeds and ribs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "minced (remove seeds and ribs)"
-    }
+  "expected": {
+    "item": "jalapeño",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "minced (remove seeds and ribs)"
   }
 }

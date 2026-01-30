@@ -1,10 +1,8 @@
 {
   "raw": "shredded mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded mozzarella cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded mozzarella cheese",
+    "measurements": [],
+    "note": null
   }
 }

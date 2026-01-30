@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons worcestershire sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "worcestershire sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "worcestershire sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

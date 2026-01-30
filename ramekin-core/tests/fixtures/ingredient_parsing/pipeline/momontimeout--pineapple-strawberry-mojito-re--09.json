@@ -1,10 +1,8 @@
 {
   "raw": "soda water (club soda, lemon-lime soda)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soda water (club soda, lemon-lime soda)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "soda water (club soda, lemon-lime soda)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "25 grams dried guajillo chiles ((4 chilies))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried guajillo chiles",
-      "measurements": [
-        {
-          "amount": "25",
-          "unit": "g"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried guajillo chiles",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

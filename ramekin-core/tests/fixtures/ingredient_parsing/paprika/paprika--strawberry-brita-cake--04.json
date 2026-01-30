@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups (300 grams) granulated sugar, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

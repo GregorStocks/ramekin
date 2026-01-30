@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup cooking sherry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking sherry",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking sherry",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

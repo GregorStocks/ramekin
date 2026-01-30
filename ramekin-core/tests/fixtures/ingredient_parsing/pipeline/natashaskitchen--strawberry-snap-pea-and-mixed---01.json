@@ -1,19 +1,17 @@
 {
   "raw": "5 oz of 50/50 blend salad greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "50/50 blend salad greens",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "50/50 blend salad greens",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

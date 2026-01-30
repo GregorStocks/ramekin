@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons toasted sesame seeds, to finish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame seeds, to finish",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted sesame seeds, to finish",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

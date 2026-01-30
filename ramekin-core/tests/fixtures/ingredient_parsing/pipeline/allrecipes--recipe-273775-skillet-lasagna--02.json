@@ -1,23 +1,21 @@
 {
   "raw": "0.5 (28 ounce) jar spaghetti sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghetti sauce",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "jar"
-        },
-        {
-          "amount": "28",
-          "unit": "oz"
-        },
-        {
-          "amount": "794",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghetti sauce",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "jar"
+      },
+      {
+        "amount": "28",
+        "unit": "oz"
+      },
+      {
+        "amount": "794",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

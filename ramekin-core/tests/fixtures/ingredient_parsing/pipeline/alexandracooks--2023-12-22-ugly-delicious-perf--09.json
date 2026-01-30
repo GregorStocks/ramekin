@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon (o.25 g) freshly grated or pre-ground nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "(o.25 g) freshly grated or pre-ground nutmeg",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "(o.25 g) freshly grated or pre-ground nutmeg",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

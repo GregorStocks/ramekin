@@ -1,15 +1,13 @@
 {
   "raw": "½ cup Nicoise or Kalamata olives, pitted, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nicoise or Kalamata olives, pitted",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Nicoise or Kalamata olives, pitted",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

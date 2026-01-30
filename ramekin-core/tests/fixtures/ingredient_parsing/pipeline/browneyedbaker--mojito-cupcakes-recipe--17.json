@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons white rum",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white rum",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white rum",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

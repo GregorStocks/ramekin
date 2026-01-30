@@ -1,15 +1,13 @@
 {
   "raw": "5 cups lightly salted homemade vegetable stock or store-bought low-sodium vegetable broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly salted homemade vegetable stock or store-bought low-sodium vegetable broth",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly salted homemade vegetable stock or store-bought low-sodium vegetable broth",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

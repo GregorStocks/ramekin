@@ -1,10 +1,8 @@
 {
   "raw": "non stick baking spray",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "non stick baking spray",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "non stick baking spray",
+    "measurements": [],
+    "note": null
   }
 }

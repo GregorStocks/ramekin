@@ -1,10 +1,8 @@
 {
   "raw": "Savory Greek Yogurt Dip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Savory Greek Yogurt Dip",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Savory Greek Yogurt Dip",
+    "measurements": [],
+    "note": null
   }
 }

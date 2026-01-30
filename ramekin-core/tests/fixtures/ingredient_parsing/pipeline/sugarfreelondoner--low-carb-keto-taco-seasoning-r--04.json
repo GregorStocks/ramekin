@@ -1,19 +1,17 @@
 {
   "raw": "1 tsp flaked sea salt (6g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaked sea salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "6",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flaked sea salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "6",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

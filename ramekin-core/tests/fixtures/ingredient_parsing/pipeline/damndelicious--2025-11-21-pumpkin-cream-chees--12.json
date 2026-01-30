@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons rolled oats (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rolled oats",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "rolled oats",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

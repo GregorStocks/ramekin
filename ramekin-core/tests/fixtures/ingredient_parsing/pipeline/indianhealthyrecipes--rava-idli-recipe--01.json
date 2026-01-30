@@ -1,15 +1,13 @@
 {
   "raw": "1 cup semolina ((bombay rava/ suji/ chiroti rava))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semolina (bombay rava/ suji/ chiroti rava)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semolina (bombay rava/ suji/ chiroti rava)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

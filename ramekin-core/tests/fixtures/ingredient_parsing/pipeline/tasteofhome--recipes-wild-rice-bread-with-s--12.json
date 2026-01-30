@@ -1,15 +1,13 @@
 {
   "raw": "1 large egg white, lightly beaten",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg white",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "lightly beaten"
-    }
+  "expected": {
+    "item": "egg white",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "lightly beaten"
   }
 }

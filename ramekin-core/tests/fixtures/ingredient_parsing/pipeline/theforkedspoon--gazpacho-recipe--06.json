@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeño (for heat (optional) *)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño *)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "for heat (optional"
-    }
+  "expected": {
+    "item": "jalapeño *)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "for heat (optional"
   }
 }

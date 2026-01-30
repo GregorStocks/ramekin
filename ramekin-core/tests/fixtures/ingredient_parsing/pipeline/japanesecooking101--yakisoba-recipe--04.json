@@ -1,15 +1,13 @@
 {
   "raw": "2 cup bean sprouts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bean sprouts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bean sprouts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

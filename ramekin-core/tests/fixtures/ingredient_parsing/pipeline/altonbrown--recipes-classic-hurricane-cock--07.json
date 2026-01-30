@@ -1,15 +1,13 @@
 {
   "raw": "3 dashes Peychaud's Bitters",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Peychaud's Bitters",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Peychaud's Bitters",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

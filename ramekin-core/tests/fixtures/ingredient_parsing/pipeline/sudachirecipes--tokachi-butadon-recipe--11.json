@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp cooking oil (canola, rice bran, etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking oil (canola, rice bran, etc.)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking oil (canola, rice bran, etc.)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

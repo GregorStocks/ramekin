@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces thick-cut bacon (226 g; about 5 slices), chopped&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick-cut bacon",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "226",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": "slice"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "slice"
+      }
+    ],
+    "note": "chopped"
   }
 }

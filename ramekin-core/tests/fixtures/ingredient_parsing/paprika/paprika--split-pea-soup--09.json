@@ -1,15 +1,13 @@
 {
   "raw": "2 quarts vegetable stock or broth.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable stock or broth.",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable stock or broth.",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp triple sec",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "triple sec",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "triple sec",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

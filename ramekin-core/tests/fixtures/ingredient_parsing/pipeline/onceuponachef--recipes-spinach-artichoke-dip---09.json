@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded extra sharp Cheddar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded extra sharp Cheddar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded extra sharp Cheddar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

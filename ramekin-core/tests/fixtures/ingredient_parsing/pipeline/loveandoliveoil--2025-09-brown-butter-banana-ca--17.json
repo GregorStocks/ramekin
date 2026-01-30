@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons glucose syrup (or substitute corn syrup or golden syrup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "glucose syrup (or substitute corn syrup or golden syrup)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "glucose syrup (or substitute corn syrup or golden syrup)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

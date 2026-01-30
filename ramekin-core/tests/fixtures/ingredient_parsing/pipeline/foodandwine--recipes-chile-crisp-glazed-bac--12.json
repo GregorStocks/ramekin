@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pound slab bacon, cut into 1-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slab bacon, cut into 1-inch cubes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slab bacon, cut into 1-inch cubes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Sliced cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sliced cabbage",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sliced cabbage",
+    "measurements": [],
+    "note": null
   }
 }

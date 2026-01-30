@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup green olives (Castelvetrano), chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green olives (Castelvetrano)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "green olives (Castelvetrano)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

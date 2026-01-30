@@ -1,15 +1,13 @@
 {
   "raw": "2 sticks unsalted butter (cold, cubed, 1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stick"
-        }
-      ],
-      "note": "cold, cubed, 1 cup"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stick"
+      }
+    ],
+    "note": "cold, cubed, 1 cup"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup cinnamon roasted pecans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon roasted pecans",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon roasted pecans",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

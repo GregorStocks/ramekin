@@ -1,15 +1,13 @@
 {
   "raw": "5 pears peeled and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pears peeled and chopped",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pears peeled and chopped",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

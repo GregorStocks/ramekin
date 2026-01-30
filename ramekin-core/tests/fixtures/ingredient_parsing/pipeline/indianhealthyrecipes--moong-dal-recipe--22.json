@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon red chilli powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chilli powder",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red chilli powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

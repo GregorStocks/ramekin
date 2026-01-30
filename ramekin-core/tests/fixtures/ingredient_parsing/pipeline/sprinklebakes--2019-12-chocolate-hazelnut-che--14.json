@@ -1,19 +1,17 @@
 {
   "raw": "2 oz. chocolate shavings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate shavings",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate shavings",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

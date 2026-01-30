@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 garlic cloves, slivered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves, slivered",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic cloves, slivered",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

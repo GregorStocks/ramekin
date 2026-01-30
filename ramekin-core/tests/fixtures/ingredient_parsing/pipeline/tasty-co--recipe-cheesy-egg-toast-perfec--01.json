@@ -1,15 +1,13 @@
 {
   "raw": "1 slice bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

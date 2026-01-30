@@ -1,15 +1,13 @@
 {
   "raw": "1 Parmesan rind (optional; see Tip)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmesan rind",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional; see Tip"
-    }
+  "expected": {
+    "item": "Parmesan rind",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional; see Tip"
   }
 }

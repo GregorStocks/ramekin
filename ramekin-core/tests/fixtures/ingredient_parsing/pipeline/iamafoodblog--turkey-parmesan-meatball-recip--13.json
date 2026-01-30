@@ -1,10 +1,8 @@
 {
   "raw": "sliced fresh mozzarella to top",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced fresh mozzarella to top",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced fresh mozzarella to top",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "chopped bacon (or vegan bacon bits)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped bacon (or vegan bacon bits)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped bacon (or vegan bacon bits)",
+    "measurements": [],
+    "note": null
   }
 }

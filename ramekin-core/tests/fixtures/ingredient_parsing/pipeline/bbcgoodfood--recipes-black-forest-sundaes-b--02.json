@@ -1,15 +1,13 @@
 {
   "raw": "140g caster sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caster sugar",
-      "measurements": [
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caster sugar",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

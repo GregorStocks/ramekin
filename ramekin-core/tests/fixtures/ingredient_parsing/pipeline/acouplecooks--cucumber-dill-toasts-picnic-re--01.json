@@ -1,15 +1,13 @@
 {
   "raw": "24 baguette slices or rye cocktail bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baguette slices or rye cocktail bread",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baguette slices or rye cocktail bread",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

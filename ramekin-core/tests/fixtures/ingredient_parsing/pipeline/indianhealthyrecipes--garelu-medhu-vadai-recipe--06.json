@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  green chilies ((chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chilies",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "green chilies",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

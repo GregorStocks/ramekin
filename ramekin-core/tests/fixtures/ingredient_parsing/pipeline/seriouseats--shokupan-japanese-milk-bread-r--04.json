@@ -1,19 +1,17 @@
 {
   "raw": "42g (3 tablespoons) cold unsalted butter, cut into 1/2-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold unsalted butter, cut into 1/2-inch cubes",
-      "measurements": [
-        {
-          "amount": "42",
-          "unit": "g"
-        },
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold unsalted butter, cut into 1/2-inch cubes",
+    "measurements": [
+      {
+        "amount": "42",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

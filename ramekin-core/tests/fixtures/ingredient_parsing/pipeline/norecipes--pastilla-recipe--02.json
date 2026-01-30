@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup blanched slivered almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blanched slivered almonds",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blanched slivered almonds",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 qts. water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "qts. water",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "qts. water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

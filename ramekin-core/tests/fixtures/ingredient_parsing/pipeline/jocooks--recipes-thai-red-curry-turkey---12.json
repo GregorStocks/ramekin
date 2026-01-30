@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons lemongrass paste (or 2 stalks of lemongrass)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemongrass paste (or 2 stalks of lemongrass)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemongrass paste (or 2 stalks of lemongrass)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

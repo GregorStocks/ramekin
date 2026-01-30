@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup pomegranate arils (seeds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate arils (seeds)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pomegranate arils (seeds)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

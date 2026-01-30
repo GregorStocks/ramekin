@@ -1,10 +1,8 @@
 {
   "raw": "To finish (all optional):",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "To finish :",
-      "measurements": [],
-      "note": "all optional"
-    }
+  "expected": {
+    "item": "To finish :",
+    "measurements": [],
+    "note": "all optional"
   }
 }

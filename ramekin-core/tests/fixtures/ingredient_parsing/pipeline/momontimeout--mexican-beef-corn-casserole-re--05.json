@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp Country Crock® Spread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Country Crock® Spread",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Country Crock® Spread",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

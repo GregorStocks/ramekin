@@ -1,23 +1,21 @@
 {
   "raw": "8 ounces (about 8 slices) bacon, cut into ¼-inch pieces (see tip below)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon, cut into 1/4-inch pieces (see tip below)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "8",
-          "unit": "slice"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon, cut into 1/4-inch pieces (see tip below)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "8",
+        "unit": "slice"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

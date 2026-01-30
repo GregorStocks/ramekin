@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon pure honey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure honey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure honey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

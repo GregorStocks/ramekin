@@ -1,10 +1,8 @@
 {
   "raw": "Ingredients List",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ingredients List",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ingredients List",
+    "measurements": [],
+    "note": null
   }
 }

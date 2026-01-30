@@ -1,10 +1,8 @@
 {
   "raw": "mint green food coloring (preferably gel food coloring)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint green food coloring (preferably gel food coloring)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "mint green food coloring (preferably gel food coloring)",
+    "measurements": [],
+    "note": null
   }
 }

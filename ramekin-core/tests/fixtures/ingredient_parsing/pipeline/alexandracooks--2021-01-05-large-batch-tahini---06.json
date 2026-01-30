@@ -1,15 +1,13 @@
 {
   "raw": "1/2 to 1 teaspoon crushed red pepper flakes or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper flakes or to taste",
-      "measurements": [
-        {
-          "amount": "1/2 to 1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed red pepper flakes or to taste",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

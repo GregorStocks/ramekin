@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons thinly sliced jalapeño pepper, seeded if desired",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced jalapeño pepper, seeded if desired",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced jalapeño pepper, seeded if desired",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

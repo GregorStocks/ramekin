@@ -1,19 +1,17 @@
 {
   "raw": "2 (14-ounce) cans sweetened condensed milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweetened condensed milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweetened condensed milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

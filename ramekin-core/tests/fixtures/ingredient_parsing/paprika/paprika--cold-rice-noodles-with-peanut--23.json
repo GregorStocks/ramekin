@@ -1,15 +1,13 @@
 {
   "raw": "Small handful basil or mint or cilantro sprigs, or your favorite of the three (torn or roughly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful basil or mint or cilantro sprigs, or your favorite of the three",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": "torn or roughly chopped"
-    }
+  "expected": {
+    "item": "handful basil or mint or cilantro sprigs, or your favorite of the three",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": "torn or roughly chopped"
   }
 }

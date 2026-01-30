@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. green beans, cut into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green beans, cut into pieces",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green beans, cut into pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

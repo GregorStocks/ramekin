@@ -1,15 +1,13 @@
 {
   "raw": "1 12-ounce bag tortilla chips, the thicker the better",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortilla chips, the thicker the better",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "12-ounce bag"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tortilla chips, the thicker the better",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "12-ounce bag"
+      }
+    ],
+    "note": null
   }
 }

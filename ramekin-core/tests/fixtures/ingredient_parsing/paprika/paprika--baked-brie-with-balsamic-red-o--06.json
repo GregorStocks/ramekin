@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons plain yogurt or sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain yogurt or sour cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain yogurt or sour cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  long sprigs fresh rosemary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long sprigs fresh rosemary",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long sprigs fresh rosemary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp fresh chopped parsley (more for later)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chopped parsley (more for later)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh chopped parsley (more for later)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

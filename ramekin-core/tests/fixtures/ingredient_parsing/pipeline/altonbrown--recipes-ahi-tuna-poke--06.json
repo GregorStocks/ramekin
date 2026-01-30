@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon dry-roasted macadamia nuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry-roasted macadamia nuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry-roasted macadamia nuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

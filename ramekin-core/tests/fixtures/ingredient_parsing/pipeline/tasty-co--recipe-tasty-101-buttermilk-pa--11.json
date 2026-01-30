@@ -1,10 +1,8 @@
 {
   "raw": "chocolate chip, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate chip",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chocolate chip",
+    "measurements": [],
+    "note": "optional"
   }
 }

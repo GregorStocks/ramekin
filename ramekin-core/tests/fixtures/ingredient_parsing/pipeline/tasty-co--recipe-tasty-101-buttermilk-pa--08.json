@@ -1,15 +1,13 @@
 {
   "raw": "2 eggs, whites and yolks seperated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs, whites and yolks seperated",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs, whites and yolks seperated",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

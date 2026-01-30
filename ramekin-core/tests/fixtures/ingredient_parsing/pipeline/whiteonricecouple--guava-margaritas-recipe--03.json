@@ -1,19 +1,17 @@
 {
   "raw": "3/4 ounce fresh Lime Juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Lime Juice",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "21",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Lime Juice",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "21",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

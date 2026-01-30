@@ -1,19 +1,17 @@
 {
   "raw": "3 cups (710 ml) whole milk, (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "710",
-          "unit": "ml"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "710",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided"
   }
 }

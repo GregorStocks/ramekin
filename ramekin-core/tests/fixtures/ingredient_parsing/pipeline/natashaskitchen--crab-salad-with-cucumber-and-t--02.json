@@ -1,15 +1,13 @@
 {
   "raw": "1  English One long cucumber (diced small)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English One long cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced small"
-    }
+  "expected": {
+    "item": "English One long cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced small"
   }
 }

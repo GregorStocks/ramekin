@@ -1,19 +1,17 @@
 {
   "raw": "4 peaches (about 1 1/2 pounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peaches",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peaches",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

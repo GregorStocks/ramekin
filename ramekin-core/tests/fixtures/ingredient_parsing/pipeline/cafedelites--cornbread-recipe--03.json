@@ -1,15 +1,13 @@
 {
   "raw": "1 cup yellow cornmeal (or polenta)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow cornmeal (or polenta)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow cornmeal (or polenta)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

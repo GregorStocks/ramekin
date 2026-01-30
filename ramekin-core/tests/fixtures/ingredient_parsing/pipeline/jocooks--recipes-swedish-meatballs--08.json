@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon nutmeg (ground)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nutmeg",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "ground"
-    }
+  "expected": {
+    "item": "nutmeg",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "ground"
   }
 }

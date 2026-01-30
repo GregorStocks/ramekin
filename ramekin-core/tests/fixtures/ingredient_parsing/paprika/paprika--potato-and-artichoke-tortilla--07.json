@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chick stock or broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chick stock or broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chick stock or broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

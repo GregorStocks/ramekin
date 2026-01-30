@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cup (100 grams) fine- or medium-grind cornmeal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine- or medium-grind cornmeal",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine- or medium-grind cornmeal",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

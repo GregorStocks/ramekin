@@ -1,15 +1,13 @@
 {
   "raw": "2  canned chipotle in adobo sauce seeded and finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned chipotle in adobo sauce seeded and finely chopped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned chipotle in adobo sauce seeded and finely chopped",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

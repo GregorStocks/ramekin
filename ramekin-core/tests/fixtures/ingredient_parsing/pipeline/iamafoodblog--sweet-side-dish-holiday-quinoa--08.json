@@ -1,15 +1,13 @@
 {
   "raw": "2 pears, cored and diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pears",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "cored and diced"
-    }
+  "expected": {
+    "item": "pears",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "cored and diced"
   }
 }

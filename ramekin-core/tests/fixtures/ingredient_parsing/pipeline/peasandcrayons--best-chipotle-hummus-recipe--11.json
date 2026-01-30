@@ -1,10 +1,8 @@
 {
   "raw": "extra chickpeas as a fun garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra chickpeas as a fun garnish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "extra chickpeas as a fun garnish",
+    "measurements": [],
+    "note": null
   }
 }

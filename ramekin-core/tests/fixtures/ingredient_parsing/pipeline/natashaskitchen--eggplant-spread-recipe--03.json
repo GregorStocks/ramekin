@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  medium carrots (grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "medium"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "medium"
+      }
+    ],
+    "note": "grated"
   }
 }

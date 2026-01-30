@@ -1,15 +1,13 @@
 {
   "raw": "4  cups/ 32oz. unsalted butter (softened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cups/ 32oz. unsalted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "cups/ 32oz. unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "softened"
   }
 }

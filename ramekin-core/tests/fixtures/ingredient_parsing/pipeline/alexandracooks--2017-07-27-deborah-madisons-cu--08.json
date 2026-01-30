@@ -1,15 +1,13 @@
 {
   "raw": "1/2&nbsp;teaspoon hot or mild paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot or mild paprika",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot or mild paprika",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

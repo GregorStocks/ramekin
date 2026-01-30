@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons salt, for the chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt, for the chicken",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt, for the chicken",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

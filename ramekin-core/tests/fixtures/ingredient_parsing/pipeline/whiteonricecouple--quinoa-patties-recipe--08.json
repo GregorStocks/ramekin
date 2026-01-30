@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Kosher salt (, or to taste (I liberally seasoned the quinoa mix))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or to taste (I liberally seasoned the quinoa mix"
-    }
+  "expected": {
+    "item": "Kosher salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or to taste (I liberally seasoned the quinoa mix"
   }
 }

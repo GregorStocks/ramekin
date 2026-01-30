@@ -1,15 +1,13 @@
 {
   "raw": "500 g cherry tomatoes (optional as a serving idea)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "g"
-        }
-      ],
-      "note": "optional as a serving idea"
-    }
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": "optional as a serving idea"
   }
 }

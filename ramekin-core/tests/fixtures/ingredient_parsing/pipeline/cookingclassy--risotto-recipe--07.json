@@ -1,10 +1,8 @@
 {
   "raw": "Hot water, (as needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot water",
-      "measurements": [],
-      "note": "as needed"
-    }
+  "expected": {
+    "item": "Hot water",
+    "measurements": [],
+    "note": "as needed"
   }
 }

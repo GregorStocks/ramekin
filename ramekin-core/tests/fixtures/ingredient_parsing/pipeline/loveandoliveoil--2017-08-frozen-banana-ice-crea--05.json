@@ -1,19 +1,17 @@
 {
   "raw": "1 ripe banana, mashed (1/2 cup mashed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe banana, mashed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe banana, mashed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

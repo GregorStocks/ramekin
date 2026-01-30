@@ -1,19 +1,17 @@
 {
   "raw": "8 oz grape tomatoes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grape tomatoes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "grape tomatoes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "halved"
   }
 }

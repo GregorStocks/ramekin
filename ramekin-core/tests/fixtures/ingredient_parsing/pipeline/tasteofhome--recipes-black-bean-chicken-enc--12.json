@@ -1,10 +1,8 @@
 {
   "raw": "Chopped fresh tomatoes and cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped fresh tomatoes and cilantro",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped fresh tomatoes and cilantro",
+    "measurements": [],
+    "note": null
   }
 }

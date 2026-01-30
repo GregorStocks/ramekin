@@ -1,10 +1,8 @@
 {
   "raw": "Oranges, thinly sliced for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oranges",
-      "measurements": [],
-      "note": "thinly sliced for garnish"
-    }
+  "expected": {
+    "item": "Oranges",
+    "measurements": [],
+    "note": "thinly sliced for garnish"
   }
 }

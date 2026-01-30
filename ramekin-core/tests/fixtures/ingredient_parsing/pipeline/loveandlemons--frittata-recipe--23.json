@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces mixed mushrooms (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed mushrooms",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "mixed mushrooms",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

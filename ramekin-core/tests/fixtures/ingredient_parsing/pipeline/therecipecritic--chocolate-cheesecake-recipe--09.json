@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup whipping cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipping cream",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whipping cream",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

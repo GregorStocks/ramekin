@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon freshly grated Nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated Nutmeg",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated Nutmeg",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ground beef (preferably ground round) or ground turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef or ground turkey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "preferably ground round"
-    }
+  "expected": {
+    "item": "ground beef or ground turkey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "preferably ground round"
   }
 }

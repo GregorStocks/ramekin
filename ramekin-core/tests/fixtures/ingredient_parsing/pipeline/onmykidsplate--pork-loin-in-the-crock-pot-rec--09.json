@@ -1,15 +1,13 @@
 {
   "raw": "2 cups broth (I prefer chicken broth but any broth works.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broth (I prefer chicken broth but any broth works.)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broth (I prefer chicken broth but any broth works.)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

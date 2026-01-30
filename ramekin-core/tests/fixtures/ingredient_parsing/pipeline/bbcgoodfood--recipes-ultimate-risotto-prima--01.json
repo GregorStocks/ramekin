@@ -1,15 +1,13 @@
 {
   "raw": "200g shelled  broad beans 800g/1lb 12oz in the pod)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shelled  broad beans 800g/1lb 12oz in the pod)",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shelled  broad beans 800g/1lb 12oz in the pod)",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

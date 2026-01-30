@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp Thai sweet chilli sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai sweet chilli sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai sweet chilli sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

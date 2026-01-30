@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried pinto beans, see notes above, or three 15-oz cans pinto beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried pinto beans, see notes above, or three 15-oz cans pinto beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried pinto beans, see notes above, or three 15-oz cans pinto beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

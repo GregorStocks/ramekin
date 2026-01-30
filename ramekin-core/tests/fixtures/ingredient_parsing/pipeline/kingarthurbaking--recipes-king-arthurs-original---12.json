@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (113g) half-and-half*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "half-and-half*",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "half-and-half*",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

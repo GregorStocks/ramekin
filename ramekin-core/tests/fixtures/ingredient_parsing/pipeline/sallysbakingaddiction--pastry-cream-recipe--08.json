@@ -1,15 +1,13 @@
 {
   "raw": "small pinch salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pinch salt",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pinch salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

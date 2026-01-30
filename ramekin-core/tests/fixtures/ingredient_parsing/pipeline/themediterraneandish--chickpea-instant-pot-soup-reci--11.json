@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Aleppo pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aleppo pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Aleppo pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

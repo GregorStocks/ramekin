@@ -1,19 +1,17 @@
 {
   "raw": "9 oz frozen creamed spinach (thawed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen creamed spinach",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "255",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen creamed spinach",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "255",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed"
   }
 }

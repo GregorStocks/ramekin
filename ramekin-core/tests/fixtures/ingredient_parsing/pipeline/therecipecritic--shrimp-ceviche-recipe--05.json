@@ -1,15 +1,13 @@
 {
   "raw": "1  diced jalapeno pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced jalapeno pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced jalapeno pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp sweet pink fish powder (sakura denbu) (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet pink fish powder (sakura denbu) (optional)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet pink fish powder (sakura denbu) (optional)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

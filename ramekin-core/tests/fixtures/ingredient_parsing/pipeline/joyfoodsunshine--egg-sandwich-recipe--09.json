@@ -1,15 +1,13 @@
 {
   "raw": "6  English muffins",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English muffins",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "English muffins",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

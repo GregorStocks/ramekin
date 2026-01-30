@@ -1,15 +1,13 @@
 {
   "raw": "1½ tbsp cooking oil (neutral, high-heat, e.g., canola or rice bran)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking oil (neutral, high-heat, e.g., canola or rice bran)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking oil (neutral, high-heat, e.g., canola or rice bran)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

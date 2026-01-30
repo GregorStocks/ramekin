@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon active dry yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "active dry yeast",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

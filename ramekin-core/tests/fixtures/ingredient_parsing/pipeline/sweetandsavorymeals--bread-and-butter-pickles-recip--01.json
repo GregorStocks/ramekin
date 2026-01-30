@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 lbs fresh cucumbers (sliced into rings)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cucumbers",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced into rings"
-    }
+  "expected": {
+    "item": "fresh cucumbers",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced into rings"
   }
 }

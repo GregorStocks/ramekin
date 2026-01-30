@@ -1,15 +1,13 @@
 {
   "raw": "30 g imitation crab (crab sticks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "imitation crab (crab sticks)",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "imitation crab (crab sticks)",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

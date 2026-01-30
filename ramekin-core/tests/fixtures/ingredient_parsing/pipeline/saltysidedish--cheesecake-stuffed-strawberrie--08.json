@@ -1,10 +1,8 @@
 {
   "raw": "red (white and blue sprinkles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red (white and blue sprinkles)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "red (white and blue sprinkles)",
+    "measurements": [],
+    "note": null
   }
 }

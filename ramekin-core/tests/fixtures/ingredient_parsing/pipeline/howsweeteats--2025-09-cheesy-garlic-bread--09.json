@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ cups shredded provolone or mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded provolone or mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded provolone or mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

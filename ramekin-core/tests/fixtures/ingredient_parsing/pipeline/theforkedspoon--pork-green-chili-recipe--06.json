@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh tomatillos ((approximately 8-10) husk removed and chopped into quarters)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh tomatillos husk removed and chopped into quarters)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "approximately 8-10"
-    }
+  "expected": {
+    "item": "fresh tomatillos husk removed and chopped into quarters)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "approximately 8-10"
   }
 }

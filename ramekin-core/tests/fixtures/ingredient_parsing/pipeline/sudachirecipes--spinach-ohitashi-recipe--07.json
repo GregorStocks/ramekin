@@ -1,10 +1,8 @@
 {
   "raw": "ice-cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice-cold water",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "ice-cold water",
+    "measurements": [],
+    "note": null
   }
 }

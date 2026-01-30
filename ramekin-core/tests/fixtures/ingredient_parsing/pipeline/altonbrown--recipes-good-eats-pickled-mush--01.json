@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup water, plus more for blanching",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for blanching"
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for blanching"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces / 225 g 70% chocolate, well chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "70% chocolate",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": "well chopped"
-    }
+  "expected": {
+    "item": "70% chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "well chopped"
   }
 }

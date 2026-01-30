@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons oil, for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil, for frying",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil, for frying",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

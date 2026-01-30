@@ -1,15 +1,13 @@
 {
   "raw": "20  fun size Snickers bars (coarsely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fun size Snickers bars",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "fun size Snickers bars",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds petit yukon gold potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "petit yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "petit yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

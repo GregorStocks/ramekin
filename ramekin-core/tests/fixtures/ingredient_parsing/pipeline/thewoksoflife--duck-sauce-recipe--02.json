@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ tablespoons hot water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot water",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot water",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

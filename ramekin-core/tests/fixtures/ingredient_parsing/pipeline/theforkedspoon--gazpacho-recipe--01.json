@@ -1,15 +1,13 @@
 {
   "raw": "3  pounds vine-ripened tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vine-ripened tomatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vine-ripened tomatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

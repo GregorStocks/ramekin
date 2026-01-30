@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Steamed rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Steamed rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Steamed rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

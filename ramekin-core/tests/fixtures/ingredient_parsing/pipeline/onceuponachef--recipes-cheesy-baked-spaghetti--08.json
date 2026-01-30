@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons finely grated Parmigiano-Reggiano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated Parmigiano-Reggiano",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated Parmigiano-Reggiano",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

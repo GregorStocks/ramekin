@@ -1,10 +1,8 @@
 {
   "raw": "tortilla chips, as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortilla chips",
-      "measurements": [],
-      "note": "as needed"
-    }
+  "expected": {
+    "item": "tortilla chips",
+    "measurements": [],
+    "note": "as needed"
   }
 }

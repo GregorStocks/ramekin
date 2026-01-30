@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds daikon radish, peeled and finely grated on a box grater",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "daikon radish",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and finely grated on a box grater"
-    }
+  "expected": {
+    "item": "daikon radish",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and finely grated on a box grater"
   }
 }

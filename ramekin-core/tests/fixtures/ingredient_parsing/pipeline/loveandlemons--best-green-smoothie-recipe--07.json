@@ -1,15 +1,13 @@
 {
   "raw": "¾ cup Almond Breeze Almondmilk Cashewmilk, more as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Almond Breeze Almondmilk Cashewmilk",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "more as needed"
-    }
+  "expected": {
+    "item": "Almond Breeze Almondmilk Cashewmilk",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "more as needed"
   }
 }

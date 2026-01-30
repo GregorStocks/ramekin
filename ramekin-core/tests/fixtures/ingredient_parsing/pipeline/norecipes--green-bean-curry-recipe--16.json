@@ -1,15 +1,13 @@
 {
   "raw": "450 grams green beans ((trimmed and cut into 1-inch pieces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green beans",
-      "measurements": [
-        {
-          "amount": "450",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed and cut into 1-inch pieces"
-    }
+  "expected": {
+    "item": "green beans",
+    "measurements": [
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed and cut into 1-inch pieces"
   }
 }

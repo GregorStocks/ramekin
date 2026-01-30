@@ -1,10 +1,8 @@
 {
   "raw": "An olive oil spray come in handy for this recipe if you have one handy",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "An olive oil spray come in handy for this recipe if you have one handy",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "An olive oil spray come in handy for this recipe if you have one handy",
+    "measurements": [],
+    "note": null
   }
 }

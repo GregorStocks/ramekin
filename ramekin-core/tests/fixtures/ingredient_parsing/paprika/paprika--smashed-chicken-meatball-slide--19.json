@@ -1,10 +1,8 @@
 {
   "raw": "Butter to toast buns; oil to cook meatballs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Butter to toast buns; oil to cook meatballs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Butter to toast buns; oil to cook meatballs",
+    "measurements": [],
+    "note": null
   }
 }

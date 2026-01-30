@@ -1,10 +1,8 @@
 {
   "raw": "Salt and Pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salt and Pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Salt and Pepper",
+    "measurements": [],
+    "note": null
   }
 }

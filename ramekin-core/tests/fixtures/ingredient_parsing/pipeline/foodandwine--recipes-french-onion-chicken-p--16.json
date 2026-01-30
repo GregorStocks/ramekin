@@ -1,15 +1,13 @@
 {
   "raw": "0.75 teaspoon chopped fresh rosemary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh rosemary",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh rosemary",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

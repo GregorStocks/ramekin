@@ -1,15 +1,13 @@
 {
   "raw": "100 g salmon fillet (skinless, boneless preferred, or well-drained canned salmon in a pinch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon fillet",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "skinless, boneless preferred, or well-drained canned salmon in a pinch"
-    }
+  "expected": {
+    "item": "salmon fillet",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "skinless, boneless preferred, or well-drained canned salmon in a pinch"
   }
 }

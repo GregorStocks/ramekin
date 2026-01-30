@@ -1,15 +1,13 @@
 {
   "raw": "1 pound brussels sprouts, trimmed, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brussels sprouts, trimmed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "brussels sprouts, trimmed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved"
   }
 }

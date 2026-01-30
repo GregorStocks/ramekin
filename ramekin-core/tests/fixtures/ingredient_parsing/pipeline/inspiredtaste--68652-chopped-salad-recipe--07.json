@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon whole grain mustard or Dijon mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole grain mustard or Dijon mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole grain mustard or Dijon mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

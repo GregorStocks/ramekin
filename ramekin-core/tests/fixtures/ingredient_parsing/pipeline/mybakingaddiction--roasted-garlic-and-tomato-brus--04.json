@@ -1,15 +1,13 @@
 {
   "raw": "1 medium tomato, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound lasagna pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lasagna pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lasagna pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

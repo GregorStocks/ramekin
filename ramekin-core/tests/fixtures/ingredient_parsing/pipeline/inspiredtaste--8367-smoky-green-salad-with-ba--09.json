@@ -1,15 +1,13 @@
 {
   "raw": "4 poached eggs, see how we poach eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poached eggs, see how we poach eggs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "poached eggs, see how we poach eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

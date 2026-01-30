@@ -1,15 +1,13 @@
 {
   "raw": "3  figs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "figs",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "figs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

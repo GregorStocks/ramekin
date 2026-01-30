@@ -1,10 +1,8 @@
 {
   "raw": "Freshly baked Pillsbury biscuits or rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Freshly baked Pillsbury biscuits or rolls",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Freshly baked Pillsbury biscuits or rolls",
+    "measurements": [],
+    "note": null
   }
 }

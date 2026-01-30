@@ -1,15 +1,13 @@
 {
   "raw": "4 cups leftover turkey, cubed or shredded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover turkey",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "cubed or shredded"
-    }
+  "expected": {
+    "item": "leftover turkey",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "cubed or shredded"
   }
 }

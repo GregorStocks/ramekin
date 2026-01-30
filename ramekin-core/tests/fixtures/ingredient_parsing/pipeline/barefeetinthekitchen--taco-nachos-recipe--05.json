@@ -1,15 +1,13 @@
 {
   "raw": "2-3 cups shredded cheese or your choice (I used a Mexican cheese blend, Monterrey jack and pepperjack on our separate plates)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheese or your choice (I used a Mexican cheese blend, Monterrey jack and pepperjack on our separate plates)",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheese or your choice (I used a Mexican cheese blend, Monterrey jack and pepperjack on our separate plates)",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

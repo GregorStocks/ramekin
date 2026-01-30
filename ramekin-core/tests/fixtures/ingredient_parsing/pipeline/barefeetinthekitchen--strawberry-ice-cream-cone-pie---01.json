@@ -1,10 +1,8 @@
 {
   "raw": "Ice Cream Ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ice Cream Ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ice Cream Ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

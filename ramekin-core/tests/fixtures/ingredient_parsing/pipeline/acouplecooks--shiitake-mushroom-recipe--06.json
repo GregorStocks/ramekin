@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sesame oil (standard, not toasted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "standard, not toasted"
-    }
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "standard, not toasted"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "5  fresh raspberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh raspberries",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh raspberries",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

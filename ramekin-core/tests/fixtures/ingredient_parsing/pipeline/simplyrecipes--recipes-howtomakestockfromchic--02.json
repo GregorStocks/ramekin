@@ -1,15 +1,13 @@
 {
   "raw": "2 large carrots, cut in half",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots, cut in half",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots, cut in half",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

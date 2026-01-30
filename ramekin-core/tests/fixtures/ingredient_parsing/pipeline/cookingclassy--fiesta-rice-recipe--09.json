@@ -1,15 +1,13 @@
 {
   "raw": "2  medium roma tomatoes,  (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roma tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "roma tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
   }
 }

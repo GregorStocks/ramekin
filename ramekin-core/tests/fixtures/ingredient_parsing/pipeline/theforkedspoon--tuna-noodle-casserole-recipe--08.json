@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces white or crimini mushrooms (roughly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white or crimini mushrooms",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "white or crimini mushrooms",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

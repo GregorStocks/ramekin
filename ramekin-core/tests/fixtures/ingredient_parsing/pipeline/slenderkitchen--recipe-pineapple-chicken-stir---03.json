@@ -1,15 +1,13 @@
 {
   "raw": "1.5 lbs boneless skinless chicken breast, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breast",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped"
   }
 }

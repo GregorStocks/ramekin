@@ -1,19 +1,17 @@
 {
   "raw": "8&nbsp;ounces boneless skinless chicken breast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breast",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

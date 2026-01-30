@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon vinegar ((anything acidic will work))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vinegar (anything acidic will work)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vinegar (anything acidic will work)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 ball fresh mozzarella",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ball fresh mozzarella",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ball fresh mozzarella",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

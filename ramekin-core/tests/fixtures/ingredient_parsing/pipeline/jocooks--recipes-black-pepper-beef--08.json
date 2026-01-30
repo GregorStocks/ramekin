@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Sichuan peppercon (ground)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sichuan peppercon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "ground"
-    }
+  "expected": {
+    "item": "Sichuan peppercon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "ground"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4-1/2 teaspoons butter, melted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "4-1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "4-1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "melted"
   }
 }

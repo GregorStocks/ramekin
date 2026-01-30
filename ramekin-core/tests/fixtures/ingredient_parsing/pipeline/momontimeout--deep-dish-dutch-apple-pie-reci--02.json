@@ -1,15 +1,13 @@
 {
   "raw": "8 tbsp butter (cold and cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "cold and cubed"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "cold and cubed"
   }
 }

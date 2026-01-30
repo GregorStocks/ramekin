@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces shredded Gruyère cheese, shredded (1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded Gruyère cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "shredded Gruyère cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "shredded"
   }
 }

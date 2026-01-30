@@ -1,23 +1,21 @@
 {
   "raw": "1 (10 3/4  ounce) can   cream of mushroom soup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream of mushroom soup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "10 3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "305",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream of mushroom soup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "10 3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "305",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

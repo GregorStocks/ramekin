@@ -1,15 +1,13 @@
 {
   "raw": "1 cup peeled diced potato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peeled diced potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peeled diced potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 (4-oz.) cans chopped green chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped green chiles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped green chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

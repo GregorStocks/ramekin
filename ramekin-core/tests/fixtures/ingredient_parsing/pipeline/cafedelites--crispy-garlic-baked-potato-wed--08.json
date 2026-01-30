@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup parmesan cheese (finely grated or shredded, divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parmesan cheese",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely grated or shredded, divided"
-    }
+  "expected": {
+    "item": "parmesan cheese",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely grated or shredded, divided"
   }
 }

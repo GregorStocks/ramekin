@@ -1,19 +1,17 @@
 {
   "raw": "2 large aloe leaves ((about 1 pound))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "aloe leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "aloe leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

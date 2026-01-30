@@ -1,23 +1,21 @@
 {
   "raw": "½ kg (1.1 lbs)  chicken ((skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or mix of all))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "kg"
-        },
-        {
-          "amount": "1.1",
-          "unit": "lb"
-        },
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "kg"
+      },
+      {
+        "amount": "1.1",
+        "unit": "lb"
+      },
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

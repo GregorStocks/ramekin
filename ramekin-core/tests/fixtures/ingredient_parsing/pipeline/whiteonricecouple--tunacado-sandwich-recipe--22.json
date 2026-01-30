@@ -1,15 +1,13 @@
 {
   "raw": "4 slices melting cheese like cheddar  ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melting cheese like cheddar",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "melting cheese like cheddar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slice"
+      }
+    ],
+    "note": "optional"
   }
 }

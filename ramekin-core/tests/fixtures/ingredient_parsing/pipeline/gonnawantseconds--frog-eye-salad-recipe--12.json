@@ -1,10 +1,8 @@
 {
   "raw": "Reddi wip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Reddi wip",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Reddi wip",
+    "measurements": [],
+    "note": null
   }
 }

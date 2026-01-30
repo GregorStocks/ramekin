@@ -1,15 +1,13 @@
 {
   "raw": "Dash salt and pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt and pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt and pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

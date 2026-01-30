@@ -1,15 +1,13 @@
 {
   "raw": "8-12 chicken drumsticks and/or thighs, on the bone with skin on",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken drumsticks and/or thighs, on the bone with skin on",
-      "measurements": [
-        {
-          "amount": "8-12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken drumsticks and/or thighs, on the bone with skin on",
+    "measurements": [
+      {
+        "amount": "8-12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

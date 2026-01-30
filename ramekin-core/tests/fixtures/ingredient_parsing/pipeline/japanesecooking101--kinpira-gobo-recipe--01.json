@@ -1,15 +1,13 @@
 {
   "raw": "1  Gobo (burdock root, Sasagaki cut)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gobo (burdock root, Sasagaki cut)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Gobo (burdock root, Sasagaki cut)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

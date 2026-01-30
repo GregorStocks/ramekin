@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold water",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold water",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Chinese rice vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chinese rice vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chinese rice vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

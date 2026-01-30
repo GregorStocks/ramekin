@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ground beef (extra lean)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef (extra lean)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef (extra lean)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

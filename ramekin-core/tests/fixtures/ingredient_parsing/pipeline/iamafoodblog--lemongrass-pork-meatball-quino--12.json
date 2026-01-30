@@ -1,15 +1,13 @@
 {
   "raw": "1 Thai chili, if desired",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai chili, if desired",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai chili, if desired",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

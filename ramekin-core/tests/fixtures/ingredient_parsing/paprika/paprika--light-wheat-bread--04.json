@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 teaspoons (.38 oz.) salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": ".38",
-          "unit": "oz"
-        },
-        {
-          "amount": "11",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": ".38",
+        "unit": "oz"
+      },
+      {
+        "amount": "11",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

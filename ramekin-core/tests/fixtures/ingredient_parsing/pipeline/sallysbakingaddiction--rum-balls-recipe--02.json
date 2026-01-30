@@ -1,19 +1,17 @@
 {
   "raw": "38 Biscoff cookies (300g) or Nilla Wafers (*see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Biscoff cookies or Nilla Wafers (*see Note)",
-      "measurements": [
-        {
-          "amount": "38",
-          "unit": null
-        },
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Biscoff cookies or Nilla Wafers (*see Note)",
+    "measurements": [
+      {
+        "amount": "38",
+        "unit": null
+      },
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

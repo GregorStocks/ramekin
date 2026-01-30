@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (20 grams) sesame seeds, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame seeds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sesame seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
   }
 }

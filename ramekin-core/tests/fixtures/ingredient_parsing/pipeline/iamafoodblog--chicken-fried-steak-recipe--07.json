@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons duck fat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "duck fat",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "duck fat",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

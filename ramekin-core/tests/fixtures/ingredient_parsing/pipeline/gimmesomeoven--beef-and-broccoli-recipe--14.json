@@ -1,19 +1,17 @@
 {
   "raw": "1 (12-ounce) bag broccoli florets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli florets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli florets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "140 grams chickpea flour ((~ 1 1/2 cups))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpea flour",
-      "measurements": [
-        {
-          "amount": "140",
-          "unit": "g"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chickpea flour",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

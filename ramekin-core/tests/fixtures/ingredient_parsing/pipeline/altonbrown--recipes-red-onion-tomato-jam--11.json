@@ -1,15 +1,13 @@
 {
   "raw": "8 to 10  thinly sliced basil leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced basil leaves",
-      "measurements": [
-        {
-          "amount": "8 to 10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced basil leaves",
+    "measurements": [
+      {
+        "amount": "8 to 10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

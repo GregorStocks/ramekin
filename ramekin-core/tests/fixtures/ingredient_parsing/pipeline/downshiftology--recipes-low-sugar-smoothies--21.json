@@ -1,15 +1,13 @@
 {
   "raw": "1  kiwi fruit",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kiwi fruit",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kiwi fruit",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

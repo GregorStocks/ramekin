@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 Tbsp chopped fresh thyme (or 1 1/2 tsp dried)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh thyme",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1 1/2 tsp dried"
-    }
+  "expected": {
+    "item": "chopped fresh thyme",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1 1/2 tsp dried"
   }
 }

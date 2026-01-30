@@ -1,15 +1,13 @@
 {
   "raw": "1/2 to 1 teaspoon of freshly ground black pepper (to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground black pepper",
-      "measurements": [
-        {
-          "amount": "1/2 to 1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "freshly ground black pepper",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

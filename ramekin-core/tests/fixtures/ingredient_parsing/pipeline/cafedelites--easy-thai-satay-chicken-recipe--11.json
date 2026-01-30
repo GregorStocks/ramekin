@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup creamy peanut butter (all natural preferable)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "creamy peanut butter (all natural preferable)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "creamy peanut butter (all natural preferable)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

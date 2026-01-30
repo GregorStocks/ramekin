@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup sliced water chestnuts, drained and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced water chestnuts",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained and chopped"
-    }
+  "expected": {
+    "item": "sliced water chestnuts",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained and chopped"
   }
 }

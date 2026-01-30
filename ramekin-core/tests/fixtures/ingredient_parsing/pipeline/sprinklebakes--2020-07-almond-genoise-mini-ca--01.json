@@ -1,15 +1,13 @@
 {
   "raw": "2  whole eggs (at room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole eggs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "whole eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "at room temperature"
   }
 }

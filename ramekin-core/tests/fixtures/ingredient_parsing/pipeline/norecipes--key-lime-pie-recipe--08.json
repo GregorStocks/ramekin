@@ -1,19 +1,17 @@
 {
   "raw": "1 cup whipping cream (35% butterfat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipping cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "35",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whipping cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "35",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

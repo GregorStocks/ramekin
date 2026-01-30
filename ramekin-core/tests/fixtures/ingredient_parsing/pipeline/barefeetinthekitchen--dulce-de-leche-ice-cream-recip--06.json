@@ -1,10 +1,8 @@
 {
   "raw": "Optional: 2 cups worth of Caramel Turtle Bark&nbsp;or the add-in of your choice (chopped very small)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional: 2 cups worth of Caramel Turtle Bark or the add-in of your choice",
-      "measurements": [],
-      "note": "chopped very small"
-    }
+  "expected": {
+    "item": "Optional: 2 cups worth of Caramel Turtle Bark or the add-in of your choice",
+    "measurements": [],
+    "note": "chopped very small"
   }
 }

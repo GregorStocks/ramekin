@@ -1,15 +1,13 @@
 {
   "raw": "Four thyme sprigs, plus more fresh leaves for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thyme sprigs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "plus more fresh leaves for garnish"
-    }
+  "expected": {
+    "item": "thyme sprigs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "plus more fresh leaves for garnish"
   }
 }

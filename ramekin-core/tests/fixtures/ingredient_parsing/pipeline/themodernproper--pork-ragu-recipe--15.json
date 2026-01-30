@@ -1,10 +1,8 @@
 {
   "raw": "Cooked pappardelle, for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooked pappardelle, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Cooked pappardelle, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

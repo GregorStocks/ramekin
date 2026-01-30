@@ -1,10 +1,8 @@
 {
   "raw": "Soda water, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Soda water",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Soda water",
+    "measurements": [],
+    "note": "for serving"
   }
 }

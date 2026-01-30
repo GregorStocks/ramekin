@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons Asian fish sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Asian fish sauce",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Asian fish sauce",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

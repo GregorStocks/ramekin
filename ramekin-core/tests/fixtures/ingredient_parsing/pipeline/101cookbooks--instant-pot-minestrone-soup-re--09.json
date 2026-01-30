@@ -1,15 +1,13 @@
 {
   "raw": "1 3- inch chunk of Parmesan rind, ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "3- inch chunk of Parmesan rind",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "3- inch chunk of Parmesan rind",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

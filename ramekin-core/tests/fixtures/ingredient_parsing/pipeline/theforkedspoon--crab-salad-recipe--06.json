@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup sour cream (or plain Greek yogurt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream (or plain Greek yogurt)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream (or plain Greek yogurt)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

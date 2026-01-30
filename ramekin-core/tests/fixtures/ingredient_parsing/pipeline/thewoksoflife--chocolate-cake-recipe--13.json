@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces semisweet or bittersweet chocolate ((baking chocolate or chocolate chips are both fine))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet or bittersweet chocolate (baking chocolate or chocolate chips are both fine)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semisweet or bittersweet chocolate (baking chocolate or chocolate chips are both fine)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

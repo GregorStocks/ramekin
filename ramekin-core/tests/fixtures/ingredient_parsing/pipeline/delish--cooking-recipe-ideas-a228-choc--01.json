@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. chocolate syrup, plus more for drizzling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate syrup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for drizzling"
-    }
+  "expected": {
+    "item": "chocolate syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for drizzling"
   }
 }

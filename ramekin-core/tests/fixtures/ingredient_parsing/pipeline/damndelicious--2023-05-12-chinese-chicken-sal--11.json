@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons orange marmalade",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange marmalade",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange marmalade",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

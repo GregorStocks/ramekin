@@ -1,15 +1,13 @@
 {
   "raw": "4 small thin-sliced skinless, boneless chicken breasts (about 1½",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin-sliced skinless, boneless chicken breasts (about 1 1/2",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin-sliced skinless, boneless chicken breasts (about 1 1/2",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

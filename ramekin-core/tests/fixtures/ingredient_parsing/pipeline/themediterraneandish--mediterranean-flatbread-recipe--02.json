@@ -1,10 +1,8 @@
 {
   "raw": "Cornmeal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cornmeal",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cornmeal",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 teaspoon (3 grams) instant yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "3",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "3",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

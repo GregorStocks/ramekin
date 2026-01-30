@@ -1,15 +1,13 @@
 {
   "raw": "4 cups tomato juice (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato juice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "tomato juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

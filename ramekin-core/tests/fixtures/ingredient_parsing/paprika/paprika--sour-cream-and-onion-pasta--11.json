@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups crushed kettle-style potato chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed kettle-style potato chips",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed kettle-style potato chips",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

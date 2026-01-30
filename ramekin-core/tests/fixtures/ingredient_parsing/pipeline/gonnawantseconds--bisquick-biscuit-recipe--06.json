@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons melted unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted unsalted butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted unsalted butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

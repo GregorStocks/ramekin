@@ -1,19 +1,17 @@
 {
   "raw": "6 (6- to 7-inch) canoe-cut marrow bones",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canoe-cut marrow bones",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canoe-cut marrow bones",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

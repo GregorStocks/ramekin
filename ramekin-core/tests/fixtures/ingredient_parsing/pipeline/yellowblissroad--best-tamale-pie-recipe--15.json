@@ -1,10 +1,8 @@
 {
   "raw": "fresh chopped chives or parsley for garnish if desired",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chopped chives or parsley for garnish if desired",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh chopped chives or parsley for garnish if desired",
+    "measurements": [],
+    "note": null
   }
 }

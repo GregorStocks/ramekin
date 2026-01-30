@@ -1,10 +1,8 @@
 {
   "raw": "vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [],
+    "note": null
   }
 }

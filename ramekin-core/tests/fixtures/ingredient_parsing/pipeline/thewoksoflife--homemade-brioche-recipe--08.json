@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons sugar ((10g, dissolved in 1 tablespoon/15 ml water))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

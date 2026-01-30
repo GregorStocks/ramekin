@@ -1,10 +1,8 @@
 {
   "raw": "Shredded coconut (consider toasting on low heat it in a dry skillet)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shredded coconut (consider toasting on low heat it in a dry skillet)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shredded coconut (consider toasting on low heat it in a dry skillet)",
+    "measurements": [],
+    "note": null
   }
 }

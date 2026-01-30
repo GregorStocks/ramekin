@@ -1,23 +1,21 @@
 {
   "raw": "226g Scottish or quick-cooking oats (8 ounces; 2 1/2 cups), see notes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Scottish or quick-cooking oats , see notes",
-      "measurements": [
-        {
-          "amount": "226",
-          "unit": "g"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Scottish or quick-cooking oats , see notes",
+    "measurements": [
+      {
+        "amount": "226",
+        "unit": "g"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

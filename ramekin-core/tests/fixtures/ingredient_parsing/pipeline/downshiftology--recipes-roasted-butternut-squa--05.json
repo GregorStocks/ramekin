@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sprouts ((I used onion sprouts))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sprouts (I used onion sprouts)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sprouts (I used onion sprouts)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

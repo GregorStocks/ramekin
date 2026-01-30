@@ -1,19 +1,17 @@
 {
   "raw": "¼ (5-oz) can albacore tuna (preferably packed in olive oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "albacore tuna",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "can"
-        },
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "preferably packed in olive oil"
-    }
+  "expected": {
+    "item": "albacore tuna",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "can"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "preferably packed in olive oil"
   }
 }

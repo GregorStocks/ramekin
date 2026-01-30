@@ -1,15 +1,13 @@
 {
   "raw": "2 cups leftover stuffing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover stuffing",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover stuffing",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon finely chopped parsley, plus more to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped parsley",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to serve"
-    }
+  "expected": {
+    "item": "finely chopped parsley",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more to serve"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp sake ((or substitute Chinese rice wine, dry sherry, or water))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sake (or substitute Chinese rice wine, dry sherry, or water)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sake (or substitute Chinese rice wine, dry sherry, or water)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  lemon, juiced ((approx. 2 TBSP lemon juice))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon, juiced (approx. 2 TBSP lemon juice)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon, juiced (approx. 2 TBSP lemon juice)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

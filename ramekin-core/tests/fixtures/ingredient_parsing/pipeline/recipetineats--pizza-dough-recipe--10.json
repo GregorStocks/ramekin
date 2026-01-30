@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup pizza sauce (per pizza)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pizza sauce (per pizza)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pizza sauce (per pizza)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4  Yukon gold potatoes ((or other type of waxy potato), diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon gold potatoes (or other type of waxy potato)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "diced)"
-    }
+  "expected": {
+    "item": "Yukon gold potatoes (or other type of waxy potato)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "diced)"
   }
 }

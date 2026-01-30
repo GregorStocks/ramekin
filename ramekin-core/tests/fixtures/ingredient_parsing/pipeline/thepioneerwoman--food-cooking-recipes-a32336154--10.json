@@ -1,10 +1,8 @@
 {
   "raw": "Lettuce leaves, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lettuce leaves",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Lettuce leaves",
+    "measurements": [],
+    "note": "for serving"
   }
 }

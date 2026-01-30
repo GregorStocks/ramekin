@@ -1,10 +1,8 @@
 {
   "raw": "mini chocolate chips  (and/or regular chocolate chips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini chocolate chips  (and/or regular chocolate chips)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "mini chocolate chips  (and/or regular chocolate chips)",
+    "measurements": [],
+    "note": null
   }
 }

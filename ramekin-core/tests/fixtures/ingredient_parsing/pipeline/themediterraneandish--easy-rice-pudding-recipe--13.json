@@ -1,10 +1,8 @@
 {
   "raw": "Crushed pistachios and/or walnuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crushed pistachios and/or walnuts",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Crushed pistachios and/or walnuts",
+    "measurements": [],
+    "note": null
   }
 }

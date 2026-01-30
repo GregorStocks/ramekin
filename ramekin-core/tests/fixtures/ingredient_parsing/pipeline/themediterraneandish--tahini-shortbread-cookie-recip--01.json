@@ -1,23 +1,21 @@
 {
   "raw": "1 3/4 sticks (7 oz) unsalted butter, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "stick"
-        },
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "stick"
+      },
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

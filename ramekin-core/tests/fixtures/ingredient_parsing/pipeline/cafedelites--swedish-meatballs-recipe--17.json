@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup plain flour (all purpose flour)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain flour (all purpose flour)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain flour (all purpose flour)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

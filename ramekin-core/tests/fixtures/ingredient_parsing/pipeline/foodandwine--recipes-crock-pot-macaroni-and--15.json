@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons minced parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced parsley",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced parsley",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

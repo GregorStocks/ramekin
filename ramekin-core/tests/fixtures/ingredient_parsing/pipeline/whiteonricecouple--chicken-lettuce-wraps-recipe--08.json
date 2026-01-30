@@ -1,19 +1,17 @@
 {
   "raw": "2 Tablespoons hoisin sauce ((30ml) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hoisin sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hoisin sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

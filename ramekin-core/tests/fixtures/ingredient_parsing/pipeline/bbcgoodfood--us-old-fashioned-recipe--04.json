@@ -1,19 +1,17 @@
 {
   "raw": "2 oz bourbon or rye whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bourbon or rye whiskey",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bourbon or rye whiskey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

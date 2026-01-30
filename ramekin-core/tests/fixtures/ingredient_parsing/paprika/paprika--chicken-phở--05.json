@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds chicken bones or chicken wings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken bones or chicken wings",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken bones or chicken wings",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

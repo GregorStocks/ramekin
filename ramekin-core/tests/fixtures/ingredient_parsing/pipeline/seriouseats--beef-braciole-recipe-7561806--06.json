@@ -1,19 +1,17 @@
 {
   "raw": "1 medium garlic clove (5g), minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic clove",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "5",
-          "unit": "g"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "garlic clove",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": "minced"
   }
 }

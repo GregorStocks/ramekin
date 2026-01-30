@@ -1,19 +1,17 @@
 {
   "raw": "8 heads broccoli ((10-12 cups broccoli florets))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "head"
-        },
-        {
-          "amount": "10-12",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "head"
+      },
+      {
+        "amount": "10-12",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

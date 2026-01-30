@@ -1,15 +1,13 @@
 {
   "raw": "2 servings soba noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "servings soba noodles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "servings soba noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

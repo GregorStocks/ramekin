@@ -1,10 +1,8 @@
 {
   "raw": "salt and pepper, to taste ((I added 1/4 tsp of each))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt and pepper",
-      "measurements": [],
-      "note": "to taste (I added 1/4 tsp of each)"
-    }
+  "expected": {
+    "item": "salt and pepper",
+    "measurements": [],
+    "note": "to taste (I added 1/4 tsp of each)"
   }
 }

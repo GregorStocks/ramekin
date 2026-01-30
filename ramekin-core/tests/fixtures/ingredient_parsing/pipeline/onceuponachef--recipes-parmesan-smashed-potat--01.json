@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds baby red potatoes, sliced in half (they should all be about the same size so they cook evenly)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby red potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced in half (they should all be about the same size so they cook evenly)"
-    }
+  "expected": {
+    "item": "baby red potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced in half (they should all be about the same size so they cook evenly)"
   }
 }

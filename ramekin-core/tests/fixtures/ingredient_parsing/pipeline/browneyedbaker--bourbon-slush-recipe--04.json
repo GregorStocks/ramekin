@@ -1,19 +1,17 @@
 {
   "raw": "12 ounce canned frozen lemonade concentrate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned frozen lemonade concentrate",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned frozen lemonade concentrate",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

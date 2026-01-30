@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds mixed mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed mushrooms",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed mushrooms",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

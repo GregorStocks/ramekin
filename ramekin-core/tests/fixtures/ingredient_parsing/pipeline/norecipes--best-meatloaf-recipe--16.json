@@ -1,15 +1,13 @@
 {
   "raw": "5 sprigs fresh thyme ((stems removed, leaves minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "sprig"
-        }
-      ],
-      "note": "stems removed, leaves minced"
-    }
+  "expected": {
+    "item": "fresh thyme",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "sprig"
+      }
+    ],
+    "note": "stems removed, leaves minced"
   }
 }

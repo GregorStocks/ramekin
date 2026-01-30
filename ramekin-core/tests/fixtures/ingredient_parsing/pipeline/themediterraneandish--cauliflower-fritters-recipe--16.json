@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp Aleppo pepper,  ((or ¼ tsp red pepper flakes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aleppo pepper,  (or 1/4 tsp red pepper flakes)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Aleppo pepper,  (or 1/4 tsp red pepper flakes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon each salt and pepper*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "each salt and pepper*",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "each salt and pepper*",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

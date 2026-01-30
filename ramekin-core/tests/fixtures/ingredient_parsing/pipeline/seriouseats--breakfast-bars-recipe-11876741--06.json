@@ -1,19 +1,17 @@
 {
   "raw": "5 medium pitted Medjool dates, roughly chopped (about 1/2 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted Medjool dates",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "medium"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "pitted Medjool dates",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "medium"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

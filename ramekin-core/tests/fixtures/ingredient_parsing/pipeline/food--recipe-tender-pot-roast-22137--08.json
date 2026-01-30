@@ -1,15 +1,13 @@
 {
   "raw": "2   cups    chicken stock (or a combination) or 2   cups    beef stock (or a combination)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock (or a combination)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or 2   cups    beef stock (or a combination)"
-    }
+  "expected": {
+    "item": "chicken stock (or a combination)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or 2   cups    beef stock (or a combination)"
   }
 }

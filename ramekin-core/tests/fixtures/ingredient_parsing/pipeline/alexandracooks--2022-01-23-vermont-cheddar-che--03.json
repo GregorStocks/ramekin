@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 cups diced celery, from 1 small head",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced celery, from 1 small head",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced celery, from 1 small head",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

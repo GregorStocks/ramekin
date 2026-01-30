@@ -1,15 +1,13 @@
 {
   "raw": "Handful fresh parsley, about ½ cup packed, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh parsley, about 1/2 cup packed",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh parsley, about 1/2 cup packed",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "chopped"
   }
 }

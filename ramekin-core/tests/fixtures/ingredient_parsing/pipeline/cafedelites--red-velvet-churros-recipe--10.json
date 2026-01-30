@@ -1,15 +1,13 @@
 {
   "raw": "1  egg (large, at room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "large, at room temperature"
-    }
+  "expected": {
+    "item": "egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "large, at room temperature"
   }
 }

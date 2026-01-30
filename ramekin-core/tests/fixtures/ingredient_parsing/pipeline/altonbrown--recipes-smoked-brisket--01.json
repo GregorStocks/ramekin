@@ -1,19 +1,17 @@
 {
   "raw": "1 (10- to 12-pound) whole packer beef brisket",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole packer beef brisket",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole packer beef brisket",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

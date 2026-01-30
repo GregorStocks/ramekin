@@ -1,15 +1,13 @@
 {
   "raw": "3 TBSP unsweetened cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened cocoa powder",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened cocoa powder",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

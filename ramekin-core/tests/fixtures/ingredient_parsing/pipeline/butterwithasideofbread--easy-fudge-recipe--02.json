@@ -1,15 +1,13 @@
 {
   "raw": "1 3.4 oz box cook &amp;amp; serve chocolate pudding mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cook & serve chocolate pudding mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "3.4 oz box"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cook & serve chocolate pudding mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "3.4 oz box"
+      }
+    ],
+    "note": null
   }
 }

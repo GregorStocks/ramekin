@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp white balsamic vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white balsamic vinegar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white balsamic vinegar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

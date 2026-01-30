@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (90g) cocoa powder (, sifted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "90",
-          "unit": "g"
-        }
-      ],
-      "note": "sifted"
-    }
+  "expected": {
+    "item": "cocoa powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "90",
+        "unit": "g"
+      }
+    ],
+    "note": "sifted"
   }
 }

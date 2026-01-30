@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup whole blanched almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole blanched almonds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole blanched almonds",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

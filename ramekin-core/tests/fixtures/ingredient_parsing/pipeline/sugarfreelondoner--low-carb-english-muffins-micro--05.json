@@ -1,19 +1,17 @@
 {
   "raw": "1/2 tbsp almond milk (or other nut milk, 7g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond milk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond milk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

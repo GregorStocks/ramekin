@@ -1,19 +1,17 @@
 {
   "raw": "1 small jicama (about 1 pound), peeled and diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jicama",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and diced"
-    }
+  "expected": {
+    "item": "jicama",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and diced"
   }
 }

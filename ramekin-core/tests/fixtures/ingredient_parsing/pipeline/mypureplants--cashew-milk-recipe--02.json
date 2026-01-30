@@ -1,15 +1,13 @@
 {
   "raw": "4 cup Fresh water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh water",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Fresh water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

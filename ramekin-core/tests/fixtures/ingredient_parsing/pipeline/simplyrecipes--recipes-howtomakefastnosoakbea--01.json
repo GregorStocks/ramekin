@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried beans (see below for cooking times for specific beans)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried beans (see below for cooking times for specific beans)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried beans (see below for cooking times for specific beans)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

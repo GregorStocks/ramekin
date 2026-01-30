@@ -1,15 +1,13 @@
 {
   "raw": "1 apple, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

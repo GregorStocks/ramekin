@@ -1,19 +1,17 @@
 {
   "raw": "2 heaping tablespoons (10g) basil, fresh and minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "heaping tbsp"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": "fresh and minced"
-    }
+  "expected": {
+    "item": "basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heaping tbsp"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": "fresh and minced"
   }
 }

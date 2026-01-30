@@ -1,10 +1,8 @@
 {
   "raw": "oil or butter for sautéing ((I typically reach for the butter))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil or butter for sautéing (I typically reach for the butter)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "oil or butter for sautéing (I typically reach for the butter)",
+    "measurements": [],
+    "note": null
   }
 }

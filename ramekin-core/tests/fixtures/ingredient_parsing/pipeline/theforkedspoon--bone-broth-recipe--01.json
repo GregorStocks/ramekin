@@ -1,15 +1,13 @@
 {
   "raw": "10 pounds beef bones",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef bones",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef bones",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

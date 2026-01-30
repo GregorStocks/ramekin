@@ -1,15 +1,13 @@
 {
   "raw": "1 jalapeño pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeño pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

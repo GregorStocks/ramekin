@@ -1,10 +1,8 @@
 {
   "raw": "About 1/4 oz/9 g chopped fresh dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "About 1/4 oz/9 g chopped fresh dill",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "About 1/4 oz/9 g chopped fresh dill",
+    "measurements": [],
+    "note": null
   }
 }

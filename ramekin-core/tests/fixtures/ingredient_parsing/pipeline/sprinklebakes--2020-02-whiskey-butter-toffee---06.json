@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon flaky sea salt (plus more for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky sea salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more for garnish"
-    }
+  "expected": {
+    "item": "flaky sea salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for garnish"
   }
 }

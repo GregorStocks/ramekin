@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon cracked pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cracked pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cracked pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

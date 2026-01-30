@@ -1,15 +1,13 @@
 {
   "raw": "1/2 medium cucumber, peeled and roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cucumber",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and roughly chopped"
-    }
+  "expected": {
+    "item": "cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and roughly chopped"
   }
 }

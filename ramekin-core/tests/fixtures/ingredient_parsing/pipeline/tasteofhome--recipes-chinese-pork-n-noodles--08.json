@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup halved fresh snow peas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "halved fresh snow peas",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "halved fresh snow peas",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

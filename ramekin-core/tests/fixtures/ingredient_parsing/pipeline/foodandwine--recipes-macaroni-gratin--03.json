@@ -1,15 +1,13 @@
 {
   "raw": "2 trays of ice cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "trays of ice cubes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "trays of ice cubes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

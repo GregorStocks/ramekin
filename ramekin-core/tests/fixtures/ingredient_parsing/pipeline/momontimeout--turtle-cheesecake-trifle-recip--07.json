@@ -1,19 +1,17 @@
 {
   "raw": "10 oz caramel ice cream topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramel ice cream topping",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caramel ice cream topping",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

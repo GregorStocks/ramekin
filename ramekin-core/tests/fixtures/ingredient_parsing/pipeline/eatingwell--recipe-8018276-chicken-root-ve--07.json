@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chopped fresh oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh oregano",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

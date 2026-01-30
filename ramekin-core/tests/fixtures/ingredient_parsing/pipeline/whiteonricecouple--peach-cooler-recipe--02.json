@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup fresh Orange Juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Orange Juice",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Orange Juice",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

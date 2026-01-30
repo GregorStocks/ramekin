@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Nutmeg (for dusting)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nutmeg (for dusting)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Nutmeg (for dusting)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

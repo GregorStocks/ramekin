@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons apple cider vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple cider vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple cider vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

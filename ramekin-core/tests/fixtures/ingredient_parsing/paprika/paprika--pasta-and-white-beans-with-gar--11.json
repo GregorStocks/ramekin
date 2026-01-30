@@ -1,15 +1,13 @@
 {
   "raw": "1 pound short tube pasta (see suggestions above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "short tube pasta (see suggestions above)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "short tube pasta (see suggestions above)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon yellow mustard (or dijon mustard)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow mustard (or dijon mustard)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow mustard (or dijon mustard)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

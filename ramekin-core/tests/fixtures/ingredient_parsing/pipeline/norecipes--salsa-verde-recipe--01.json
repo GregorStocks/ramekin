@@ -1,15 +1,13 @@
 {
   "raw": "5 medium tomatillos",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatillos",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatillos",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

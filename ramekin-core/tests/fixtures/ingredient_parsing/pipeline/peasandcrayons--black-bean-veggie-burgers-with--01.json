@@ -1,15 +1,13 @@
 {
   "raw": "1  flax egg (or one large egg)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flax egg (or one large egg)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flax egg (or one large egg)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

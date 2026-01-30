@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chives (chopped, plus more for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chives",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped, plus more for serving"
-    }
+  "expected": {
+    "item": "chives",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped, plus more for serving"
   }
 }

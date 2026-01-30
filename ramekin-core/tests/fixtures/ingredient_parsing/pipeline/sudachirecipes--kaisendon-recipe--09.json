@@ -1,15 +1,13 @@
 {
   "raw": "200 g seafood of your choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seafood of your choice",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seafood of your choice",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

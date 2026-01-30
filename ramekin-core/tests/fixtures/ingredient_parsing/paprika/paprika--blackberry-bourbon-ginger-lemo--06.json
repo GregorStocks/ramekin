@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces bourbon (preferably Evan Williams Black)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bourbon (preferably Evan Williams Black)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bourbon (preferably Evan Williams Black)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

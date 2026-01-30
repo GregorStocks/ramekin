@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon kosher salt (I’m using Diamond, use half of other brands)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt (I’m using Diamond, use half of other brands)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt (I’m using Diamond, use half of other brands)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

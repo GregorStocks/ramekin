@@ -1,15 +1,13 @@
 {
   "raw": "3  red chilies ((chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chilies",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "red chilies",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

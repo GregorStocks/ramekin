@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup sliced thin-skinned cucumber like English or hothouse",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced thin-skinned cucumber like English or hothouse",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced thin-skinned cucumber like English or hothouse",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

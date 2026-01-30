@@ -1,15 +1,13 @@
 {
   "raw": "1/2  cup    cocoa, sifted in with in the icing sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "sifted in with in the icing sugar"
-    }
+  "expected": {
+    "item": "cocoa",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "sifted in with in the icing sugar"
   }
 }

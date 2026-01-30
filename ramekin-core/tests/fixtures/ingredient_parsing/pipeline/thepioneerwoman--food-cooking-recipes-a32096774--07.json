@@ -1,15 +1,13 @@
 {
   "raw": "1 6-ounce container raspberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6-ounce container raspberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6-ounce container raspberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

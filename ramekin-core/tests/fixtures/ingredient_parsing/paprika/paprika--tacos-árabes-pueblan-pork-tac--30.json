@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons lime juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

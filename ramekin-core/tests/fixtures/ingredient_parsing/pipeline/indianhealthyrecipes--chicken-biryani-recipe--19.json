@@ -1,15 +1,13 @@
 {
   "raw": "¼ to ½ cup mint leaves (chopped fine (about 15 leaves))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint leaves",
-      "measurements": [
-        {
-          "amount": "1/4 to 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped fine (about 15 leaves"
-    }
+  "expected": {
+    "item": "mint leaves",
+    "measurements": [
+      {
+        "amount": "1/4 to 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped fine (about 15 leaves"
   }
 }

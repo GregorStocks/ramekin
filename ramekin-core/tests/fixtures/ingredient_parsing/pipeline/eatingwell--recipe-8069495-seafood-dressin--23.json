@@ -1,15 +1,13 @@
 {
   "raw": "1 pound large peeled, deveined raw shrimp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large peeled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "deveined raw shrimp"
-    }
+  "expected": {
+    "item": "large peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "deveined raw shrimp"
   }
 }

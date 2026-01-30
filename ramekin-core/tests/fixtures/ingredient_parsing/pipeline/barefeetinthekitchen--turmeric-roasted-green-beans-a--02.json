@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fresh green beans (trimmed and halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh green beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed and halved"
-    }
+  "expected": {
+    "item": "fresh green beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed and halved"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons vanilla bean paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla bean paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla bean paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

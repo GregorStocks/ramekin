@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dry white beans (haricot lingot beans, flageolet beans, Great Northern beans, or cannellini beans.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry white beans (haricot lingot beans, flageolet beans, Great Northern beans, or cannellini beans.)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry white beans (haricot lingot beans, flageolet beans, Great Northern beans, or cannellini beans.)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "3 tablespoons (2 ounces) golden syrup or light corn syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden syrup or light corn syrup",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "golden syrup or light corn syrup",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

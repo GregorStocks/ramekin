@@ -1,15 +1,13 @@
 {
   "raw": "4 cups bread flour plus extra for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread flour",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus extra for dusting"
-    }
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus extra for dusting"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "21 oz strawberry pie filling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberry pie filling",
-      "measurements": [
-        {
-          "amount": "21",
-          "unit": "oz"
-        },
-        {
-          "amount": "595",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strawberry pie filling",
+    "measurements": [
+      {
+        "amount": "21",
+        "unit": "oz"
+      },
+      {
+        "amount": "595",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "pizza sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pizza sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "pizza sauce",
+    "measurements": [],
+    "note": null
   }
 }

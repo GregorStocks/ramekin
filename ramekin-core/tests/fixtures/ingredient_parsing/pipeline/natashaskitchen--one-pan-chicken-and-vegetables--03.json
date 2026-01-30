@@ -1,15 +1,13 @@
 {
   "raw": "1 cup unseasoned bread crumbs (I used panko crumbs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unseasoned bread crumbs (I used panko crumbs)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unseasoned bread crumbs (I used panko crumbs)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup strong brewed coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strong brewed coffee",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strong brewed coffee",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

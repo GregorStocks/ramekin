@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2&nbsp;cups fresh breadcrumbs&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

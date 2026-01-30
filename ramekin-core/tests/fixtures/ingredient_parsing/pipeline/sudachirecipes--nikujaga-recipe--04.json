@@ -1,15 +1,13 @@
 {
   "raw": "200 g thinly sliced pork belly (or thinly sliced beef)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced pork belly",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": "or thinly sliced beef"
-    }
+  "expected": {
+    "item": "thinly sliced pork belly",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": "or thinly sliced beef"
   }
 }

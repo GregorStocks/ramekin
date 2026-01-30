@@ -1,15 +1,13 @@
 {
   "raw": "5 tbsp Challenge butter (softened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Challenge butter",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "Challenge butter",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "softened"
   }
 }

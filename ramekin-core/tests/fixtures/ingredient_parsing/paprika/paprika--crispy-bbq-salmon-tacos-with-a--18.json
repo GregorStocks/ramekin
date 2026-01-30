@@ -1,15 +1,13 @@
 {
   "raw": "1 avocado cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado cubed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "avocado cubed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

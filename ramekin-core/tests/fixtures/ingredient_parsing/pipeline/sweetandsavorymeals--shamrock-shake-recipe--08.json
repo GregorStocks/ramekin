@@ -1,10 +1,8 @@
 {
   "raw": "Green sanding",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Green sanding",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Green sanding",
+    "measurements": [],
+    "note": null
   }
 }

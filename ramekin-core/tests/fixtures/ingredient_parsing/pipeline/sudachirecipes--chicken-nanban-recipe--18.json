@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp rice vinegar (or apple cider vinegar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice vinegar (or apple cider vinegar)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice vinegar (or apple cider vinegar)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

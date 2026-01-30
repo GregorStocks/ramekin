@@ -1,15 +1,13 @@
 {
   "raw": "4 whole star anise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole star anise",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole star anise",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

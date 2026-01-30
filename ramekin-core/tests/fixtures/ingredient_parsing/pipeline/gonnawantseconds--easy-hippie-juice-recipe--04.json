@@ -1,15 +1,13 @@
 {
   "raw": "4 scoops Country Time pink lemonade mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scoops Country Time pink lemonade mix",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scoops Country Time pink lemonade mix",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4  small zucchinis (sliced lengthwise)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchinis",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced lengthwise"
-    }
+  "expected": {
+    "item": "zucchinis",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced lengthwise"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "7 ounces extra-firm tofu (drained and cut into 4 (1/2-inch thick) slices)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra-firm tofu slices)",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": "drained and cut into 4 (1/2-inch thick"
-    }
+  "expected": {
+    "item": "extra-firm tofu slices)",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": "drained and cut into 4 (1/2-inch thick"
   }
 }

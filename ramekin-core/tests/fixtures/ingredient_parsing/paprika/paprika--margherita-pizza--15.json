@@ -1,15 +1,13 @@
 {
   "raw": "Two glugs of olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "glugs of olive oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "glugs of olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

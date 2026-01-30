@@ -1,15 +1,13 @@
 {
   "raw": "3 cups shredded carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded carrots",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded carrots",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

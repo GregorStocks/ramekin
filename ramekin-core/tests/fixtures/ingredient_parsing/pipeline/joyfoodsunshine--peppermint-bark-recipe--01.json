@@ -1,19 +1,17 @@
 {
   "raw": "8 oz semisweet chocolate ((bars, chips, discs, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate (bars, chips, discs, etc.)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semisweet chocolate (bars, chips, discs, etc.)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

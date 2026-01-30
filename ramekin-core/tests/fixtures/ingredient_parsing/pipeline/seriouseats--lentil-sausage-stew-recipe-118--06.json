@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) tomato paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

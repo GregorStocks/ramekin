@@ -1,10 +1,8 @@
 {
   "raw": "Finely sliced red chilli*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Finely sliced red chilli*",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Finely sliced red chilli*",
+    "measurements": [],
+    "note": null
   }
 }

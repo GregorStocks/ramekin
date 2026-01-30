@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon fresh lime juice (plus lime wedges for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus lime wedges for serving"
-    }
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus lime wedges for serving"
   }
 }

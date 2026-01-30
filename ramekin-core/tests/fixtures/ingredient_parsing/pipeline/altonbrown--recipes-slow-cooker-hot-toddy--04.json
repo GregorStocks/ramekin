@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 cups Scotch whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Scotch whiskey",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Scotch whiskey",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

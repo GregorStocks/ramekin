@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pearl onions, peeled (thawed if frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pearl onions, peeled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed if frozen"
-    }
+  "expected": {
+    "item": "pearl onions, peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed if frozen"
   }
 }

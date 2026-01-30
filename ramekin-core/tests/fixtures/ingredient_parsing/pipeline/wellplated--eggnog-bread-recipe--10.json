@@ -1,15 +1,13 @@
 {
   "raw": "1 cup prepared&nbsp;eggnog ((I used Trader Joe's light eggnog))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared eggnog (I used Trader Joe's light eggnog)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared eggnog (I used Trader Joe's light eggnog)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lb green cabbage ((1/2 medium head or 6 cups finely sliced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cabbage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "1/2 medium head or 6 cups finely sliced"
-    }
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "1/2 medium head or 6 cups finely sliced"
   }
 }

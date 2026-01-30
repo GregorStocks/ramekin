@@ -1,10 +1,8 @@
 {
   "raw": "Drizzle of agave nectar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Drizzle of agave nectar",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Drizzle of agave nectar",
+    "measurements": [],
+    "note": null
   }
 }

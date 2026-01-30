@@ -1,15 +1,13 @@
 {
   "raw": "1 cup ice cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

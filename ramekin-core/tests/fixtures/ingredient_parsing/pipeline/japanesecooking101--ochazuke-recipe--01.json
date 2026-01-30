@@ -1,10 +1,8 @@
 {
   "raw": "Japanese rice crackers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese rice crackers",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese rice crackers",
+    "measurements": [],
+    "note": null
   }
 }

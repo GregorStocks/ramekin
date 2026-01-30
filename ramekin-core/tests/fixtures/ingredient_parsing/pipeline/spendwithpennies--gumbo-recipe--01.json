@@ -1,15 +1,13 @@
 {
   "raw": "½ cup vegetable oil (plus 2 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil (plus 2 tablespoons)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil (plus 2 tablespoons)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

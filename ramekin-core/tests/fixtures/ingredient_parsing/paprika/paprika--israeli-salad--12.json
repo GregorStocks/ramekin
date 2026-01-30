@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon za’atar or sumac",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "za’atar or sumac",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "za’atar or sumac",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

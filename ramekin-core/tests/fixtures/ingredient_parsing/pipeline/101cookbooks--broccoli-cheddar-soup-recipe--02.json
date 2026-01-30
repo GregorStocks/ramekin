@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup melted butter or olive oil (I like 1/2 and 1/2)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted butter or olive oil (I like 1/2 and 1/2)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted butter or olive oil (I like 1/2 and 1/2)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

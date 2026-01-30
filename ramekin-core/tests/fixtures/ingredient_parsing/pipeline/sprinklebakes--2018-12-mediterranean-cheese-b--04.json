@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons 34 grams grated parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "34 grams grated parmesan cheese",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "34 grams grated parmesan cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

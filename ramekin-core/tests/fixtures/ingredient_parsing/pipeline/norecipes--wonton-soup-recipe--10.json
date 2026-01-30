@@ -1,15 +1,13 @@
 {
   "raw": "1 + 1/2 teaspoons potato starch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "+ 1/2 teaspoons potato starch",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "+ 1/2 teaspoons potato starch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

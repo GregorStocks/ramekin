@@ -1,15 +1,13 @@
 {
   "raw": "0.66666668653488 cup cold butter, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold butter",
-      "measurements": [
-        {
-          "amount": "0.66666668653488",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "cold butter",
+    "measurements": [
+      {
+        "amount": "0.66666668653488",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced"
   }
 }

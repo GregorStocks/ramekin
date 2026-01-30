@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup 20g semi-sweet chocolate morsels",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-sweet chocolate morsels",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semi-sweet chocolate morsels",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

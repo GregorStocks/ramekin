@@ -1,15 +1,13 @@
 {
   "raw": "juice of 1 large lime (about 2 teaspoons worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "juice of 1 large lime",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "juice of 1 large lime",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "10-12  bone-in skinless chicken thighs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in skinless chicken thighs",
-      "measurements": [
-        {
-          "amount": "10-12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "10-12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 (or 2) cups blueberries, frozen or fresh",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "(or 2) cups blueberries",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": null
-        }
-      ],
-      "note": "frozen or fresh"
-    }
+  "expected": {
+    "item": "(or 2) cups blueberries",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": "frozen or fresh"
   }
 }

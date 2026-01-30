@@ -1,15 +1,13 @@
 {
   "raw": "1 cup  coconut oil, butter or ghee (melted )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil, butter or ghee",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "coconut oil, butter or ghee",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
   }
 }

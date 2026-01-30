@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons cajun seasoning (or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cajun seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "cajun seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

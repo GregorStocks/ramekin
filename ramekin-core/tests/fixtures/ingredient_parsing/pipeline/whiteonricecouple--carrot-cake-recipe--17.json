@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons to 1/2 cup milk (, optional if you want a drizzle-able frosting)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 1/2 cup milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional if you want a drizzle-able frosting"
-    }
+  "expected": {
+    "item": "to 1/2 cup milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional if you want a drizzle-able frosting"
   }
 }

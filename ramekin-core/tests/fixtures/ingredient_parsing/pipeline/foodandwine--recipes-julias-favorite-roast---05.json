@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon thyme, savory, or mixed herbs, or 2 fresh thyme or savory sprigs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thyme, savory, or mixed herbs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 2 fresh thyme or savory sprigs"
-    }
+  "expected": {
+    "item": "thyme, savory, or mixed herbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 2 fresh thyme or savory sprigs"
   }
 }

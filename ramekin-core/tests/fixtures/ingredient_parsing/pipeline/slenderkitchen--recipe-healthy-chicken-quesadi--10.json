@@ -1,15 +1,13 @@
 {
   "raw": "4 flour tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour tortillas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

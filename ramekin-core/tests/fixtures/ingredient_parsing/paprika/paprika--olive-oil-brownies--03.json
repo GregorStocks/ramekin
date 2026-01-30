@@ -1,19 +1,17 @@
 {
   "raw": "1 3/4 cups (345 grams) granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "345",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "345",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

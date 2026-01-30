@@ -1,23 +1,21 @@
 {
   "raw": "2 Honeycrisp apples (454 g; 1 pound) , scrubbed, cored, and cut into 1/4-inch-thick slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Honeycrisp apples , scrubbed, cored, and cut into 1/4-inch-thick slices",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Honeycrisp apples , scrubbed, cored, and cut into 1/4-inch-thick slices",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

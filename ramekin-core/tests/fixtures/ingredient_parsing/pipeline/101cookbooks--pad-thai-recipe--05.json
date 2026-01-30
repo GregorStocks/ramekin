@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons vegetarian \"fish\" sauce or soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetarian \"fish\" sauce or soy sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetarian \"fish\" sauce or soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

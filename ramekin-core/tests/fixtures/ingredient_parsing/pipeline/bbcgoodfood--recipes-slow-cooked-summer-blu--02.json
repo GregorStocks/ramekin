@@ -1,15 +1,13 @@
 {
   "raw": "15 ripe  plum tomatoes quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe  plum tomatoes quartered",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe  plum tomatoes quartered",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

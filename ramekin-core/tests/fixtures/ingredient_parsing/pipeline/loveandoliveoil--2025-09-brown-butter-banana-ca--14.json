@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons Dutch process cocoa powder (sifted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dutch process cocoa powder",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "sifted"
-    }
+  "expected": {
+    "item": "Dutch process cocoa powder",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "sifted"
   }
 }

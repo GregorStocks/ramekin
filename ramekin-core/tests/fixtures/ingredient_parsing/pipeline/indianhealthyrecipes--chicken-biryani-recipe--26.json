@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon fried onions ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fried onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fried onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

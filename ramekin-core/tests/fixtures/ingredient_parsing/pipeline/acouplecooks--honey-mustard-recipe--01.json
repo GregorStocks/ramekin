@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup yellow mustard (or Dijon mustard for spicy)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow mustard (or Dijon mustard for spicy)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow mustard (or Dijon mustard for spicy)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

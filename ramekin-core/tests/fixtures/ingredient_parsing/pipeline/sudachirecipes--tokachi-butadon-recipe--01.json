@@ -1,15 +1,13 @@
 {
   "raw": "10 cm Japanese leek (naganegi) (white part)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cm Japanese leek (naganegi) (white part)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cm Japanese leek (naganegi) (white part)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

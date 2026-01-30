@@ -1,15 +1,13 @@
 {
   "raw": "½ cup Guinness stout",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Guinness stout",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Guinness stout",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

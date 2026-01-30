@@ -1,15 +1,13 @@
 {
   "raw": "4 leaves Bibb lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leaves Bibb lettuce",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leaves Bibb lettuce",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

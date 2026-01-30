@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp pomegranate molasses (or organic blackstrap molasses)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate molasses (or organic blackstrap molasses)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pomegranate molasses (or organic blackstrap molasses)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

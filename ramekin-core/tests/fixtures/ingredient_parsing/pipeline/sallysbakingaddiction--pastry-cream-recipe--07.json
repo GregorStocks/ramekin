@@ -1,10 +1,8 @@
 {
   "raw": "seeds scraped from 1/2 vanilla bean (or extra 1/2 teaspoon vanilla extract)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seeds scraped from 1/2 vanilla bean (or extra 1/2 teaspoon vanilla extract)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "seeds scraped from 1/2 vanilla bean (or extra 1/2 teaspoon vanilla extract)",
+    "measurements": [],
+    "note": null
   }
 }

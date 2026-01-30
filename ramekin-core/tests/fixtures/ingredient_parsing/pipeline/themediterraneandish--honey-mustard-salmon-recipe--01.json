@@ -1,15 +1,13 @@
 {
   "raw": "2 lb salmon fillet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon fillet",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salmon fillet",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "fish sauce vinaigrette, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce vinaigrette",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "fish sauce vinaigrette",
+    "measurements": [],
+    "note": "to taste"
   }
 }

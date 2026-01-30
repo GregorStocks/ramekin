@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons plus 1 teaspoon salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2 tablespoons plus 1 teaspoon salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 1 teaspoon salt"
-    }
+  "expected": {
+    "item": "2 tablespoons plus 1 teaspoon salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus 1 teaspoon salt"
   }
 }

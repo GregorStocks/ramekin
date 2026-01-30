@@ -1,15 +1,13 @@
 {
   "raw": "4 Tablespoons raspberry jam",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raspberry jam",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raspberry jam",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "12 oz. (3 cups) dry macaroni pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry macaroni pasta",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry macaroni pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

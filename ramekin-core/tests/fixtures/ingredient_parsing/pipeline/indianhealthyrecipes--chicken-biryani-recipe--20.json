@@ -1,15 +1,13 @@
 {
   "raw": "1  green chili ((slit or chopped))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chili",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "slit or chopped"
-    }
+  "expected": {
+    "item": "green chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "slit or chopped"
   }
 }

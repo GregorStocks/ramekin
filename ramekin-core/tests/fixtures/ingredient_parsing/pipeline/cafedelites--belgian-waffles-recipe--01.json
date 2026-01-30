@@ -1,15 +1,13 @@
 {
   "raw": "2 cups flour (all purpose or plain)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour (all purpose or plain)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flour (all purpose or plain)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

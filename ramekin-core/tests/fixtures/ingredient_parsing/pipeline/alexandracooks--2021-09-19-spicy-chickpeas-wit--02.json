@@ -1,15 +1,13 @@
 {
   "raw": "1/2 small yellow or white onion, finely chopped, about 1/2 cup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow or white onion, finely chopped, about 1/2 cup",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow or white onion, finely chopped, about 1/2 cup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

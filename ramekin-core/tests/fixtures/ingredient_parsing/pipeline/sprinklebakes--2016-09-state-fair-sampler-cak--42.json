@@ -1,10 +1,8 @@
 {
   "raw": "In the bowl of an electric mixer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "In the bowl of an electric mixer",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "In the bowl of an electric mixer",
+    "measurements": [],
+    "note": null
   }
 }

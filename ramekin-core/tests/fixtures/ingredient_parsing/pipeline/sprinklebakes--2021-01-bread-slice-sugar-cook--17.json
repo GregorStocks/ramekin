@@ -1,10 +1,8 @@
 {
   "raw": "yellow sixlets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow sixlets",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow sixlets",
+    "measurements": [],
+    "note": null
   }
 }

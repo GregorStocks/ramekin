@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces cherry tomatoes (cut in half)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomatoes (cut in half)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry tomatoes (cut in half)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

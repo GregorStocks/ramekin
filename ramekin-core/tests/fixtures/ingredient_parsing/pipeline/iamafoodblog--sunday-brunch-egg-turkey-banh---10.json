@@ -1,15 +1,13 @@
 {
   "raw": "2” piece of daikon, julienned",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "” piece of daikon",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "julienned"
-    }
+  "expected": {
+    "item": "” piece of daikon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "julienned"
   }
 }

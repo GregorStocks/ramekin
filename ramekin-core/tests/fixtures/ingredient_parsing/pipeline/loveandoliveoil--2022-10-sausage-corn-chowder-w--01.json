@@ -1,15 +1,13 @@
 {
   "raw": "1 cup raw pepitas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw pepitas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw pepitas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cups pumpkin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

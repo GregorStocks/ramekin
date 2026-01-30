@@ -1,15 +1,13 @@
 {
   "raw": "bunch basil leaves, removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil leaves, removed",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basil leaves, removed",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

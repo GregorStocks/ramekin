@@ -1,15 +1,13 @@
 {
   "raw": "1  English cucumber (seeded and cut into half moon pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English cucumber (seeded and cut into half moon pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "English cucumber (seeded and cut into half moon pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

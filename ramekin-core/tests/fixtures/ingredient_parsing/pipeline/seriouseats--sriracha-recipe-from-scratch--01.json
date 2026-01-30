@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 lbs red jalalpeños, stems snipped off, leaving green tops intact",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red jalalpeños, stems snipped off, leaving green tops intact",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red jalalpeños, stems snipped off, leaving green tops intact",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

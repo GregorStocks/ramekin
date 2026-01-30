@@ -1,15 +1,13 @@
 {
   "raw": "3/4 teaspoon dried oregano or 1 1/2 tablespoons fresh oregano leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried oregano",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1 1/2 tablespoons fresh oregano leaves"
-    }
+  "expected": {
+    "item": "dried oregano",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 1 1/2 tablespoons fresh oregano leaves"
   }
 }

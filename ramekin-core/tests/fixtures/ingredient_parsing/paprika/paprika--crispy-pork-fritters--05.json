@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 teaspoons (21 g) unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "21",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "21",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

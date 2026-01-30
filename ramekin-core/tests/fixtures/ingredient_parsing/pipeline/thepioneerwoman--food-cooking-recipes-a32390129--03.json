@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. fresh lime juice (from about 6 limes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime juice (from about 6 limes)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lime juice (from about 6 limes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

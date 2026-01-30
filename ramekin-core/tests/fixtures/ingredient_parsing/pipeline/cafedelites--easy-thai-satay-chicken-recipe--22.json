@@ -1,15 +1,13 @@
 {
   "raw": "1  red chillies (sliced to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chillies",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced to garnish"
-    }
+  "expected": {
+    "item": "red chillies",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced to garnish"
   }
 }

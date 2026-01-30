@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces good chocolate (chopped into small pieces- (I used 70% Bittersweet Chocolate))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good chocolate",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped into small pieces- (I used 70% Bittersweet Chocolate"
-    }
+  "expected": {
+    "item": "good chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped into small pieces- (I used 70% Bittersweet Chocolate"
   }
 }

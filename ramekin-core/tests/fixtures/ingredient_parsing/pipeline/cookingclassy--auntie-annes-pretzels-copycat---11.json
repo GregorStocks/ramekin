@@ -1,10 +1,8 @@
 {
   "raw": "Dipping sauce for serving (, optional*)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dipping sauce for serving",
-      "measurements": [],
-      "note": "optional*"
-    }
+  "expected": {
+    "item": "Dipping sauce for serving",
+    "measurements": [],
+    "note": "optional*"
   }
 }

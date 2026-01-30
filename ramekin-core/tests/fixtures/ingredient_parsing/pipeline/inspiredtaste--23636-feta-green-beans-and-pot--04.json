@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon finely chopped spring onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped spring onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped spring onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

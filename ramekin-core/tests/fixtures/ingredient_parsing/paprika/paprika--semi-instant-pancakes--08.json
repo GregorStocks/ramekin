@@ -1,15 +1,13 @@
 {
   "raw": "283 grams semi-instant pancake mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-instant pancake mix",
-      "measurements": [
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semi-instant pancake mix",
+    "measurements": [
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

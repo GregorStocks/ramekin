@@ -1,19 +1,17 @@
 {
   "raw": "4 c. shredded mozzarella cheese (about 1 1/2 pounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

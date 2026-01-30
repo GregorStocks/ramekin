@@ -1,15 +1,13 @@
 {
   "raw": "3 cups lukewarm milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lukewarm milk",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lukewarm milk",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

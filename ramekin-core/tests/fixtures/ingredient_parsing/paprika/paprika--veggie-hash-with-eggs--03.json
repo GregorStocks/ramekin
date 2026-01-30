@@ -1,15 +1,13 @@
 {
   "raw": "3 medium parsnips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsnips",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsnips",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

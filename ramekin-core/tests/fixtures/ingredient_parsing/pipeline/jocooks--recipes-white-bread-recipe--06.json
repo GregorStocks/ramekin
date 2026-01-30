@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons butter (unsalted, at room temperature, cut into cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "unsalted, at room temperature, cut into cubes"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "unsalted, at room temperature, cut into cubes"
   }
 }

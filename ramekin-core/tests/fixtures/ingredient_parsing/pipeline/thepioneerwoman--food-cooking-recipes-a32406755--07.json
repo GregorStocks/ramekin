@@ -1,15 +1,13 @@
 {
   "raw": "4 c. freshly grated cheddar or cheddar-jack cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated cheddar or cheddar-jack cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated cheddar or cheddar-jack cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

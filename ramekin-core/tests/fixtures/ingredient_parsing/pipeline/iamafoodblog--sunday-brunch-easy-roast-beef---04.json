@@ -1,15 +1,13 @@
 {
   "raw": "1 sheet puff, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheet puff",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "sheet puff",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "thawed"
   }
 }

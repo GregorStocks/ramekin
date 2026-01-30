@@ -1,15 +1,13 @@
 {
   "raw": "1 cup hot fudge sauce (homemade or store-bought)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot fudge sauce (homemade or store-bought)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot fudge sauce (homemade or store-bought)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

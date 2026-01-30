@@ -1,15 +1,13 @@
 {
   "raw": "24 Rolos for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rolos for garnish",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Rolos for garnish",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

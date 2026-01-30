@@ -1,19 +1,17 @@
 {
   "raw": "6 oz. spinach ((6 cups packed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spinach",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "6 cups packed"
-    }
+  "expected": {
+    "item": "spinach",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "6 cups packed"
   }
 }

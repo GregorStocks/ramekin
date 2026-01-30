@@ -1,15 +1,13 @@
 {
   "raw": "1/2 onion, peeled, thickly sliced, root to tip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion, peeled, thickly sliced, root to tip",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion, peeled, thickly sliced, root to tip",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

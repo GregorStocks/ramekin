@@ -1,15 +1,13 @@
 {
   "raw": "6 pita pockets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pita pockets",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pita pockets",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

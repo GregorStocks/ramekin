@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup quick-cooking oatmeal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quick-cooking oatmeal",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quick-cooking oatmeal",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

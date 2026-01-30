@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces Prosciutto (optional), sliced into thin ribbons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Prosciutto , sliced into thin ribbons",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Prosciutto , sliced into thin ribbons",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
   }
 }

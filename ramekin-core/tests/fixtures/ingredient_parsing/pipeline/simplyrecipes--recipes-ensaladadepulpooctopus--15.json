@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chopped, seeded tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped, seeded tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped, seeded tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

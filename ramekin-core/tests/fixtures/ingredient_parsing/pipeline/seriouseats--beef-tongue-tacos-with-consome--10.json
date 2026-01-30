@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon whole cumin seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole cumin seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole cumin seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

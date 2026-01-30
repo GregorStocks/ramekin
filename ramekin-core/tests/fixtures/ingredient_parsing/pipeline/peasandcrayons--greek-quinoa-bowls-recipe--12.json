@@ -1,10 +1,8 @@
 {
   "raw": "Olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Olives",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Olives",
+    "measurements": [],
+    "note": null
   }
 }

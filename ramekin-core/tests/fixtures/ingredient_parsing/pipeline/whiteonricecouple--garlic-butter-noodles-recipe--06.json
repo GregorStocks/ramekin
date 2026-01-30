@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon oyster sauce (or hoisin or any bbq sauce )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oyster sauce (or hoisin or any bbq sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oyster sauce (or hoisin or any bbq sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

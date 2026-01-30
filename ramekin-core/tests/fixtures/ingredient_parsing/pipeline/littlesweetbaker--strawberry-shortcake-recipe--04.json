@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (57g) cold salted butter (cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold salted butter",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "cold salted butter",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "cubed"
   }
 }

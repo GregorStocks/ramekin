@@ -1,10 +1,8 @@
 {
   "raw": "dressing to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dressing to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "dressing to taste",
+    "measurements": [],
+    "note": null
   }
 }

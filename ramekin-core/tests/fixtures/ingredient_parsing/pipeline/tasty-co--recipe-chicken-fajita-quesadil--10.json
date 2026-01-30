@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded cheese, mexican blend",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheese, mexican blend",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheese, mexican blend",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

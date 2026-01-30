@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoons mayo or another dressing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayo or another dressing",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayo or another dressing",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

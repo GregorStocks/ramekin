@@ -1,10 +1,8 @@
 {
   "raw": "Thai basil, 3 - 5 sprigs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai basil, 3 - 5 sprigs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai basil, 3 - 5 sprigs",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound petite gold potatoes, (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "petite gold potatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "petite gold potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "quartered"
   }
 }

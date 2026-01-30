@@ -1,10 +1,8 @@
 {
   "raw": "Pecans or walnuts (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pecans or walnuts",
-      "measurements": [],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "Pecans or walnuts",
+    "measurements": [],
+    "note": "finely chopped"
   }
 }

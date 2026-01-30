@@ -1,15 +1,13 @@
 {
   "raw": "15 grams cilantro ((~2 tablespoons, minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": "~2 tablespoons, minced"
-    }
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": "~2 tablespoons, minced"
   }
 }

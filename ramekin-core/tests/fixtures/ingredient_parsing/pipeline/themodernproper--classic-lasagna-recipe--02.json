@@ -1,15 +1,13 @@
 {
   "raw": "1 pound ground beef, (we also like a mix of ½ beef and ½ mild italian sausage)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef, (we also like a mix of 1/2 beef and 1/2 mild italian sausage)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef, (we also like a mix of 1/2 beef and 1/2 mild italian sausage)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

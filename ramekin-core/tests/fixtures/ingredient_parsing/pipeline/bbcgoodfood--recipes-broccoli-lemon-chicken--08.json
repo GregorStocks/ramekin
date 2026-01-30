@@ -1,10 +1,8 @@
 {
   "raw": "the zest of half a lemon and the juice of a whole one",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "the zest of half a lemon and the juice of a whole one",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "the zest of half a lemon and the juice of a whole one",
+    "measurements": [],
+    "note": null
   }
 }

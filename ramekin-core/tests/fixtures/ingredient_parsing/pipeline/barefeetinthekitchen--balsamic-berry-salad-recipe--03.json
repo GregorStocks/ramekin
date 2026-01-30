@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons traditional or white balsamic vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "traditional or white balsamic vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "traditional or white balsamic vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

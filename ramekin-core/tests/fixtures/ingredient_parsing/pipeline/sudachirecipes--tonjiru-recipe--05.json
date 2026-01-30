@@ -1,15 +1,13 @@
 {
   "raw": "20 g fresh shiitake mushroom (stems removed and thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh shiitake mushroom",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": "stems removed and thinly sliced"
-    }
+  "expected": {
+    "item": "fresh shiitake mushroom",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": "stems removed and thinly sliced"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Healthy pinch each sea salt and black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Healthy pinch each sea salt and black pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Healthy pinch each sea salt and black pepper",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp arrowroot powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arrowroot powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arrowroot powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. pomegranate seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate seeds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pomegranate seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

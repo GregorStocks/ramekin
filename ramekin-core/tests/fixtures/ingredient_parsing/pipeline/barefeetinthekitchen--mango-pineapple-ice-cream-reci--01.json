@@ -1,15 +1,13 @@
 {
   "raw": "1 14-ounce can pineapple tidbits, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple tidbits",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "14-ounce can"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "pineapple tidbits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "14-ounce can"
+      }
+    ],
+    "note": "drained"
   }
 }

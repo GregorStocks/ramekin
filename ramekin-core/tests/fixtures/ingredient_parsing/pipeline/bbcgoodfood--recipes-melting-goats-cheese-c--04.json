@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp sherry vinegar plus extra for dressing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sherry vinegar",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus extra for dressing"
-    }
+  "expected": {
+    "item": "sherry vinegar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus extra for dressing"
   }
 }

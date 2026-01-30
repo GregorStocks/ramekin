@@ -1,15 +1,13 @@
 {
   "raw": "1 large egg [or two, according to commenters]",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg [or two, according to commenters]",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg [or two, according to commenters]",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

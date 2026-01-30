@@ -1,15 +1,13 @@
 {
   "raw": "2 cups basmati rice ((aged rice only))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basmati rice (aged rice only)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basmati rice (aged rice only)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

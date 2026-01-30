@@ -1,19 +1,17 @@
 {
   "raw": "7 ounces / 200g fennel bulb, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fennel bulb",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fennel bulb",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

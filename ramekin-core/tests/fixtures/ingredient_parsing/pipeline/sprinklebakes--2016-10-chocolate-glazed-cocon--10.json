@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons gluten free dark cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gluten free dark cocoa powder",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gluten free dark cocoa powder",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

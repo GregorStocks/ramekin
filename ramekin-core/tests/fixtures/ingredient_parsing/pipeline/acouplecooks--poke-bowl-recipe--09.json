@@ -1,15 +1,13 @@
 {
   "raw": "Small squeeze sriracha",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "squeeze sriracha",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "squeeze sriracha",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

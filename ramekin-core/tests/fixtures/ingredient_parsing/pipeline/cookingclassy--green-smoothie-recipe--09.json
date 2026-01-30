@@ -1,15 +1,13 @@
 {
   "raw": "1/4 tsp cinnamon + 1/8 tsp vanilla extract (- for blueberry version)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon + 1/8 tsp vanilla extract (- for blueberry version)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon + 1/8 tsp vanilla extract (- for blueberry version)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

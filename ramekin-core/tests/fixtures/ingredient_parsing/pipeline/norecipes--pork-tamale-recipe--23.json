@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon ground coriander seed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground coriander seed",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground coriander seed",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

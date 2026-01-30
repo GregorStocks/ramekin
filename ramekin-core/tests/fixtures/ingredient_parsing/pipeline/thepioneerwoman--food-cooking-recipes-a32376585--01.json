@@ -1,15 +1,13 @@
 {
   "raw": "1/4 c. mirin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mirin",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mirin",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

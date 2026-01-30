@@ -1,10 +1,8 @@
 {
   "raw": "Optional: additional lightly crushed peanut brittle for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional: additional lightly crushed peanut brittle for topping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Optional: additional lightly crushed peanut brittle for topping",
+    "measurements": [],
+    "note": null
   }
 }

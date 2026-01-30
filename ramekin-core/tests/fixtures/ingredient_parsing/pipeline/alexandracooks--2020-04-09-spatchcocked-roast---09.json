@@ -1,10 +1,8 @@
 {
   "raw": "Aleppo pepper, optional, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aleppo pepper, optional, see notes above",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Aleppo pepper, optional, see notes above",
+    "measurements": [],
+    "note": null
   }
 }

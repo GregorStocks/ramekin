@@ -1,15 +1,13 @@
 {
   "raw": "2 1/4 cups all-purpose, unbleached Flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose, unbleached Flour",
-      "measurements": [
-        {
-          "amount": "2 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose, unbleached Flour",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

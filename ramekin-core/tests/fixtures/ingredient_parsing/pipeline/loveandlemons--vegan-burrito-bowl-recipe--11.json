@@ -1,10 +1,8 @@
 {
   "raw": "Extra-virgin olive oil, for drizzling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra-virgin olive oil, for drizzling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Extra-virgin olive oil, for drizzling",
+    "measurements": [],
+    "note": null
   }
 }

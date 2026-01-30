@@ -1,23 +1,21 @@
 {
   "raw": "1/2 cup (1 ounce or 30 grams) finely grated parmesan or pecorino cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated parmesan or pecorino cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated parmesan or pecorino cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

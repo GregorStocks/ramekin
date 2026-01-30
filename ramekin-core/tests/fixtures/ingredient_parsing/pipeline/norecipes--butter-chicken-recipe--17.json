@@ -1,15 +1,13 @@
 {
   "raw": "2  fresh chili peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chili peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh chili peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp dashi stock ((liquid, not powder) or water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dashi stock (liquid, not powder) or water)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dashi stock (liquid, not powder) or water)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

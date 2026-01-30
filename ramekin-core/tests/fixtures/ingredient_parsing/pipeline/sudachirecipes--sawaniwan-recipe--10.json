@@ -1,10 +1,8 @@
 {
   "raw": "ground black pepper (garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground black pepper (garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "ground black pepper (garnish)",
+    "measurements": [],
+    "note": null
   }
 }

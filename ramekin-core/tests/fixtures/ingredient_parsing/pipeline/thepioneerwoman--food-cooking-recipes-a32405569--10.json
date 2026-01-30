@@ -1,15 +1,13 @@
 {
   "raw": "6 c. low-sodium chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium chicken broth",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

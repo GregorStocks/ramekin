@@ -1,10 +1,8 @@
 {
   "raw": "Splash of vanilla",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Splash of vanilla",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Splash of vanilla",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 bulb fennel (about 8 ounces; 226 g), bulb cut into 1/4-inch dice, fronds reserved for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bulb fennel , bulb cut into 1/4-inch dice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "226",
-          "unit": "g"
-        }
-      ],
-      "note": "fronds reserved for garnish"
-    }
+  "expected": {
+    "item": "bulb fennel , bulb cut into 1/4-inch dice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      }
+    ],
+    "note": "fronds reserved for garnish"
   }
 }

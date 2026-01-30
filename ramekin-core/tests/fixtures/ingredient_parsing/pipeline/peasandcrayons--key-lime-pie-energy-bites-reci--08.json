@@ -1,15 +1,13 @@
 {
   "raw": "1-2 TBSP honey or maple syrup to sweeten (if desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey or maple syrup to sweeten (if desired)",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey or maple syrup to sweeten (if desired)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

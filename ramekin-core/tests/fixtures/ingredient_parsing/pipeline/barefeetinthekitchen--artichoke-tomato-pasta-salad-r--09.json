@@ -1,10 +1,8 @@
 {
   "raw": "feta cheese to sprinkle on top (or the alternative cheese of your preference)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "feta cheese to sprinkle on top (or the alternative cheese of your preference)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "feta cheese to sprinkle on top (or the alternative cheese of your preference)",
+    "measurements": [],
+    "note": null
   }
 }

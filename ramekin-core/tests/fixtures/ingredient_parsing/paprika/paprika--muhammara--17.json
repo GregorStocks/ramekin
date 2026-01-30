@@ -1,10 +1,8 @@
 {
   "raw": "Pita bread for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pita bread for serving",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pita bread for serving",
+    "measurements": [],
+    "note": null
   }
 }

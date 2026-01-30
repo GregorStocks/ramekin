@@ -1,15 +1,13 @@
 {
   "raw": "4 Tbsp Light Olive oil (to saute)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Light Olive oil (to saute)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Light Olive oil (to saute)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

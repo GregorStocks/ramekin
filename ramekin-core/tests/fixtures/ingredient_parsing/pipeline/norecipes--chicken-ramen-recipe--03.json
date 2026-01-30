@@ -1,15 +1,13 @@
 {
   "raw": "1 small leek ((cut into 4 pieces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leek (cut into 4 pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leek (cut into 4 pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

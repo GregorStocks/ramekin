@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces frozen (no need to thaw) or fresh green peas (about 1¾ cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen (no need to thaw) or fresh green peas (about 1 3/4 cups)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen (no need to thaw) or fresh green peas (about 1 3/4 cups)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Extra sprigs fresh oregano, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra sprigs fresh oregano",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Extra sprigs fresh oregano",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

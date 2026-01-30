@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup raisins, (golden raisins, or dried cranberries (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raisins",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "golden raisins, or dried cranberries (optional"
-    }
+  "expected": {
+    "item": "raisins",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "golden raisins, or dried cranberries (optional"
   }
 }

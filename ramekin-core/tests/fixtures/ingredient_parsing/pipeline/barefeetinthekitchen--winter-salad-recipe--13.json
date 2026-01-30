@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sultana or plain raisins",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sultana or plain raisins",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sultana or plain raisins",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

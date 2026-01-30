@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp horseradish sauce ((See Note 2))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "horseradish sauce (See Note 2)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "horseradish sauce (See Note 2)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

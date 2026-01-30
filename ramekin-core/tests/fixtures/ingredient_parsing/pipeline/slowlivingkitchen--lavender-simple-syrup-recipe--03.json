@@ -1,15 +1,13 @@
 {
   "raw": "Three tablespoons of dried lavender buds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried lavender buds",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried lavender buds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

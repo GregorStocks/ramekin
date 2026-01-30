@@ -1,15 +1,13 @@
 {
   "raw": "½ cup bbq sauce (store bought)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bbq sauce (store bought)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bbq sauce (store bought)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

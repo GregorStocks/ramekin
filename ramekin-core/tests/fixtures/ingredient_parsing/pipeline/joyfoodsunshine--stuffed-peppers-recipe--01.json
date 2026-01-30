@@ -1,15 +1,13 @@
 {
   "raw": "2 cups white rice (cooked (about 1 cup uncooked))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cooked (about 1 cup uncooked"
-    }
+  "expected": {
+    "item": "white rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "cooked (about 1 cup uncooked"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup sliced cherry tomatoes and/or pico de gallo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced cherry tomatoes and/or pico de gallo",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced cherry tomatoes and/or pico de gallo",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons fresh basil, finely sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely sliced"
-    }
+  "expected": {
+    "item": "fresh basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "finely sliced"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "optional toppings such as: shredded cheese, green onions, chives, salsa, avocado, ketchup, etc.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional toppings such as: shredded cheese, green onions, chives, salsa, avocado, ketchup, etc.",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "optional toppings such as: shredded cheese, green onions, chives, salsa, avocado, ketchup, etc.",
+    "measurements": [],
+    "note": null
   }
 }

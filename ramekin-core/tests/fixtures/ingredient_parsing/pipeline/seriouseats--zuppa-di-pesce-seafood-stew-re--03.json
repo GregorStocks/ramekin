@@ -1,23 +1,21 @@
 {
   "raw": "1/2 medium yellow onion (4 ounces; 113 g), cut into 1/4-inch dice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onion , cut into 1/4-inch dice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow onion , cut into 1/4-inch dice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

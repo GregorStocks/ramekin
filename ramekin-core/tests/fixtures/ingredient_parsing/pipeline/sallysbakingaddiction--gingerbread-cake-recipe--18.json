@@ -1,10 +1,8 @@
 {
   "raw": "optional: sprinkles and/or sugared cranberries for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional: sprinkles and/or sugared cranberries for garnish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "optional: sprinkles and/or sugared cranberries for garnish",
+    "measurements": [],
+    "note": null
   }
 }

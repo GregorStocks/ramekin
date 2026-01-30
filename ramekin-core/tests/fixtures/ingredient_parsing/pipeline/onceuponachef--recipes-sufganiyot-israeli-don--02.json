@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon instant/rapid-rise or active dry yeast (note that this is more than 1 packet)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant/rapid-rise or active dry yeast (note that this is more than 1 packet)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant/rapid-rise or active dry yeast (note that this is more than 1 packet)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "7 oz. 200g chestnut spread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chestnut spread",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chestnut spread",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "5 medium ripe tomatoes, diced or chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe tomatoes",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "medium"
-        }
-      ],
-      "note": "diced or chopped"
-    }
+  "expected": {
+    "item": "ripe tomatoes",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced or chopped"
   }
 }

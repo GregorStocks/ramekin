@@ -1,15 +1,13 @@
 {
   "raw": "2 bunches spring onion washed and sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spring onion washed and sliced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spring onion washed and sliced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound white button mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white button mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white button mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

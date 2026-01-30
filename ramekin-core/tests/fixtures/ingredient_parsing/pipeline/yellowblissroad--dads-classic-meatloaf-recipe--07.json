@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Porterhouse seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Porterhouse seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Porterhouse seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

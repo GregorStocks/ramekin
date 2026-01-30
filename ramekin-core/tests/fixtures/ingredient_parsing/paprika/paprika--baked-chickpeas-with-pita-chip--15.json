@@ -1,10 +1,8 @@
 {
   "raw": "Fresh pitas for pita chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh pitas for pita chips",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fresh pitas for pita chips",
+    "measurements": [],
+    "note": null
   }
 }

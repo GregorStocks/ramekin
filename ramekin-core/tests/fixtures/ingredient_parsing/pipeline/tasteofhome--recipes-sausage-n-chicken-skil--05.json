@@ -1,15 +1,13 @@
 {
   "raw": "1/4 pound smoked turkey kielbasa, cut into 1/4-inch slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked turkey kielbasa, cut into 1/4-inch slices",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked turkey kielbasa, cut into 1/4-inch slices",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

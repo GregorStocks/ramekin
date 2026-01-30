@@ -1,15 +1,13 @@
 {
   "raw": "1 lb/ 453.59 g pizza dough (whole wheat dough, if you prefer) at room temperature (see note if you want to make dough from scratch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lb/ 453.59 g pizza dough at room temperature (see note if you want to make dough from scratch)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "whole wheat dough, if you prefer"
-    }
+  "expected": {
+    "item": "lb/ 453.59 g pizza dough at room temperature (see note if you want to make dough from scratch)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "whole wheat dough, if you prefer"
   }
 }

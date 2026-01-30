@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces wax beans or green beans, trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wax beans or green beans",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "wax beans or green beans",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "trimmed"
   }
 }

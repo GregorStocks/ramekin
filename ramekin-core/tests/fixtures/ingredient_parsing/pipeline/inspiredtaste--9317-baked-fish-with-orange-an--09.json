@@ -1,15 +1,13 @@
 {
   "raw": "4 thin orange slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin orange slices",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin orange slices",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

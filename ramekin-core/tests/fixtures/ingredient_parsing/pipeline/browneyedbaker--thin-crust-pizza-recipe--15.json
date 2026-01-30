@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces mozzarella cheese (shredded (about 2 cups shredded))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "shredded (about 2 cups shredded"
-    }
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "shredded (about 2 cups shredded"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups kiwi chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kiwi chunks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kiwi chunks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

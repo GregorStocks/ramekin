@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon bourbon, amaretto, or brandy (optional (increase vanilla to 1 tablespoon if omitting))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bourbon, amaretto, or brandy",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional (increase vanilla to 1 tablespoon if omitting"
-    }
+  "expected": {
+    "item": "bourbon, amaretto, or brandy",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional (increase vanilla to 1 tablespoon if omitting"
   }
 }

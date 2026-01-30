@@ -1,10 +1,8 @@
 {
   "raw": "Jellied cranberry sauce:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Jellied cranberry sauce:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Jellied cranberry sauce:",
+    "measurements": [],
+    "note": null
   }
 }

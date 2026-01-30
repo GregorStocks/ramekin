@@ -1,15 +1,13 @@
 {
   "raw": "2  cans chickpeas, (rinsed and drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        }
-      ],
-      "note": "rinsed and drained"
-    }
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      }
+    ],
+    "note": "rinsed and drained"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  carrot (finely grated (or 4 tiny awkward ones from the garden))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "finely grated (or 4 tiny awkward ones from the garden"
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely grated (or 4 tiny awkward ones from the garden"
   }
 }

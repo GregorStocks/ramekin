@@ -1,23 +1,21 @@
 {
   "raw": "1 (2-inch) piece fresh ginger, minced (about 4 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "piece"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "fresh ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "piece"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "minced"
   }
 }

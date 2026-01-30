@@ -1,15 +1,13 @@
 {
   "raw": "2 small carrots, peeled and grated on large holes of box grater",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "peeled and grated on large holes of box grater"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "peeled and grated on large holes of box grater"
   }
 }

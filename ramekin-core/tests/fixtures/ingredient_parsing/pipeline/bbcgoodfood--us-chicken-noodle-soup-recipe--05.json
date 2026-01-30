@@ -1,19 +1,17 @@
 {
   "raw": "2 oz rice or wheat noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice or wheat noodles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice or wheat noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

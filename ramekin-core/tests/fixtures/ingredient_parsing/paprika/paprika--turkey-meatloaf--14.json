@@ -1,15 +1,13 @@
 {
   "raw": "1 heaped tbsp ketchup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ketchup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaped tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ketchup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped tbsp"
+      }
+    ],
+    "note": null
   }
 }

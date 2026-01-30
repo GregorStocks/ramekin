@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon coarse salt, we use kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse salt, we use kosher salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarse salt, we use kosher salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

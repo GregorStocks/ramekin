@@ -1,10 +1,8 @@
 {
   "raw": "salsa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salsa",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "salsa",
+    "measurements": [],
+    "note": null
   }
 }

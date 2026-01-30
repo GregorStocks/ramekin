@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (75g) finely chopped tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped tomatoes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "75",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped tomatoes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

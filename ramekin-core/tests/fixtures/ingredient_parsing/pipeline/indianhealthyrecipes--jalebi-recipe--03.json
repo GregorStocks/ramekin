@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon turmeric (or use natural food color)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turmeric (or use natural food color)",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turmeric (or use natural food color)",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

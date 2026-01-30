@@ -1,15 +1,13 @@
 {
   "raw": "225g golden caster sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden caster sugar",
-      "measurements": [
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "golden caster sugar",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

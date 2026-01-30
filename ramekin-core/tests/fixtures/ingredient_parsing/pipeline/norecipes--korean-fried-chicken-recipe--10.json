@@ -1,10 +1,8 @@
 {
   "raw": "gochugaru ((ground Korean chili pepper to taste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gochugaru",
-      "measurements": [],
-      "note": "ground Korean chili pepper to taste"
-    }
+  "expected": {
+    "item": "gochugaru",
+    "measurements": [],
+    "note": "ground Korean chili pepper to taste"
   }
 }

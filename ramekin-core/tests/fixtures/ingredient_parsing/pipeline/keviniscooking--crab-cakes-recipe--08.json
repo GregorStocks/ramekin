@@ -1,15 +1,13 @@
 {
   "raw": "20  Ritz crackers (or Saltines)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ritz crackers (or Saltines)",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Ritz crackers (or Saltines)",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

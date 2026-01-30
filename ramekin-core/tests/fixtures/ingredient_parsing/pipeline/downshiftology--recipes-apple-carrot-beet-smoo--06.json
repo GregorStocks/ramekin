@@ -1,15 +1,13 @@
 {
   "raw": "1 cup cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

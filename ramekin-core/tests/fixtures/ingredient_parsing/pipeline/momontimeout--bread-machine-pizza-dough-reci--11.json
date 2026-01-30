@@ -1,15 +1,13 @@
 {
   "raw": "2 tsp yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yeast",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yeast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

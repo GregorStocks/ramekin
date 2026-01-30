@@ -1,10 +1,8 @@
 {
   "raw": "chili-garlic or other hot sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili-garlic or other hot sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chili-garlic or other hot sauce",
+    "measurements": [],
+    "note": null
   }
 }

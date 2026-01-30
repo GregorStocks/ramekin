@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ pounds potatoes (cooked and riced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "cooked and riced"
-    }
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "cooked and riced"
   }
 }

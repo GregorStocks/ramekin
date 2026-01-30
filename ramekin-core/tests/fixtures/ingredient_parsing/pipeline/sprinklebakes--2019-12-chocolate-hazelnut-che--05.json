@@ -1,15 +1,13 @@
 {
   "raw": "2 cups 12 oz. package semisweet chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "12 oz. package semisweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "12 oz. package semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

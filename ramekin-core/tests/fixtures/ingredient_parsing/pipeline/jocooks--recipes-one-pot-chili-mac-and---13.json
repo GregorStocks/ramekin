@@ -1,15 +1,13 @@
 {
   "raw": "4 cups chicken broth (low sodium, or beef broth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth (low sodium, or beef broth)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth (low sodium, or beef broth)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

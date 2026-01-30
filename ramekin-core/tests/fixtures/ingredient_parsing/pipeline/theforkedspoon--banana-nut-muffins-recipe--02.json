@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp + 2 tsp baking powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "+ 2 tsp baking powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "+ 2 tsp baking powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Extras - dried parsley or even dried chives in place is fresh... it’s great both ways!",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extras - dried parsley or even dried chives in place is fresh... it’s great both ways!",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Extras - dried parsley or even dried chives in place is fresh... it’s great both ways!",
+    "measurements": [],
+    "note": null
   }
 }

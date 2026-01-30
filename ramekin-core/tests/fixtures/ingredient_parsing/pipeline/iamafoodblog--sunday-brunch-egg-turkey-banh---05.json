@@ -1,10 +1,8 @@
 {
   "raw": "cucumber spears",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cucumber spears",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cucumber spears",
+    "measurements": [],
+    "note": null
   }
 }

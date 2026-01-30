@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp ground corinader",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground corinader",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground corinader",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

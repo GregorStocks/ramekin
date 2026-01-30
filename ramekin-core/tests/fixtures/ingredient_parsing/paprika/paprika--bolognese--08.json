@@ -1,23 +1,21 @@
 {
   "raw": "1 pound ground beef (80/20 or 85/15)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "80/20",
-          "unit": null
-        },
-        {
-          "amount": "85/15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "80/20",
+        "unit": null
+      },
+      {
+        "amount": "85/15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

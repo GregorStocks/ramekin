@@ -1,19 +1,17 @@
 {
   "raw": "6 to 8 ounces fresh or frozen blueberries, generous 1 cup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh or frozen blueberries, generous 1 cup",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": "oz"
-        },
-        {
-          "amount": "170 to 227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh or frozen blueberries, generous 1 cup",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": "oz"
+      },
+      {
+        "amount": "170 to 227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

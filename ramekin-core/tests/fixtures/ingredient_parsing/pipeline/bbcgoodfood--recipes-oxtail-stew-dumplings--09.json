@@ -1,10 +1,8 @@
 {
   "raw": "bay leaves and thyme sprigs, tied together",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bay leaves and thyme sprigs, tied together",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "bay leaves and thyme sprigs, tied together",
+    "measurements": [],
+    "note": null
   }
 }

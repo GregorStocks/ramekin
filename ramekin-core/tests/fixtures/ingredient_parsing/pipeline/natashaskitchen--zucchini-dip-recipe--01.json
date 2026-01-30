@@ -1,19 +1,17 @@
 {
   "raw": "4  or 5 small/medium zucchini/squash (about 2 1/2 lbs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small/medium zucchini/squash",
-      "measurements": [
-        {
-          "amount": "4 or 5",
-          "unit": null
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "small/medium zucchini/squash",
+    "measurements": [
+      {
+        "amount": "4 or 5",
+        "unit": null
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

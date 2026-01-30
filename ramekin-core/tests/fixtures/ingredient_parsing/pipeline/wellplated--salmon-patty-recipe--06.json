@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon white vinegar or lemon juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white vinegar or lemon juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white vinegar or lemon juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

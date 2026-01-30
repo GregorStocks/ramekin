@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons rum, brandy, whiskey, or a combination thereof",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rum, brandy, whiskey, or a combination thereof",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rum, brandy, whiskey, or a combination thereof",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons Spice Islands® Pumpkin Pie Spice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Spice Islands® Pumpkin Pie Spice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Spice Islands® Pumpkin Pie Spice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

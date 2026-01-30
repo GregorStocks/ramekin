@@ -1,15 +1,13 @@
 {
   "raw": "2 cups thinly shredded cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly shredded cabbage",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly shredded cabbage",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons oil, grapeseed or olive",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil, grapeseed or olive",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil, grapeseed or olive",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

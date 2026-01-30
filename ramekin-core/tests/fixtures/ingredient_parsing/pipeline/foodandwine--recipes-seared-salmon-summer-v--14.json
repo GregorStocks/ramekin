@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh corn kernels",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh corn kernels",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh corn kernels",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

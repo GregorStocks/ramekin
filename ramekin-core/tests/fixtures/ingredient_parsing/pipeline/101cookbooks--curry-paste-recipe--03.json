@@ -1,15 +1,13 @@
 {
   "raw": "10  large dried chiles (I used 5 California + 5 new Mexico chiles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chiles (I used 5 California + 5 new Mexico chiles)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chiles (I used 5 California + 5 new Mexico chiles)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

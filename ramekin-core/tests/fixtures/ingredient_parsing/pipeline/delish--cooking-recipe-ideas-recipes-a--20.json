@@ -1,10 +1,8 @@
 {
   "raw": "Sesame seeds, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sesame seeds",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Sesame seeds",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

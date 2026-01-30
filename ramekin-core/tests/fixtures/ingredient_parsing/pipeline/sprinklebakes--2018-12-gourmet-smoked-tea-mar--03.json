@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups 284 grams powdered sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "284 grams powdered sugar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "284 grams powdered sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

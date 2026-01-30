@@ -1,15 +1,13 @@
 {
   "raw": "12 to 16 warm soft corn tortillas, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm soft corn tortillas",
-      "measurements": [
-        {
-          "amount": "12 to 16",
-          "unit": null
-        }
-      ],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "warm soft corn tortillas",
+    "measurements": [
+      {
+        "amount": "12 to 16",
+        "unit": null
+      }
+    ],
+    "note": "for serving"
   }
 }

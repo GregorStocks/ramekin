@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds lemons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemons",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemons",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

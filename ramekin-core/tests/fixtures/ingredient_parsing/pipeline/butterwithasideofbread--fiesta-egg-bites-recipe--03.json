@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup diced sweet peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced sweet peppers",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced sweet peppers",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

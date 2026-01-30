@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces Canadian bacon (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Canadian bacon",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "Canadian bacon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

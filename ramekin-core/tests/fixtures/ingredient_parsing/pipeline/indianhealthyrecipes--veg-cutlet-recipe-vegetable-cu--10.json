@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoon bread crumbs (or ½ cup thick poha powdered or roasted besan (read notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread crumbs",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1/2 cup thick poha powdered or roasted besan (read notes"
-    }
+  "expected": {
+    "item": "bread crumbs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1/2 cup thick poha powdered or roasted besan (read notes"
   }
 }

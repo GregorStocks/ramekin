@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (14g) cider vinegar or white vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cider vinegar or white vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cider vinegar or white vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

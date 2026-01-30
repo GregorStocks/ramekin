@@ -1,10 +1,8 @@
 {
   "raw": "Fresh lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh lettuce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fresh lettuce",
+    "measurements": [],
+    "note": null
   }
 }

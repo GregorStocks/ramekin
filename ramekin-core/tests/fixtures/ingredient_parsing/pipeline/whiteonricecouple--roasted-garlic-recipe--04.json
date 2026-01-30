@@ -1,10 +1,8 @@
 {
   "raw": "fresh cracked Black Pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cracked Black Pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cracked Black Pepper",
+    "measurements": [],
+    "note": null
   }
 }

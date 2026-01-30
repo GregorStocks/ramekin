@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dry rosemary (or fresh, finely minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or fresh, finely minced"
-    }
+  "expected": {
+    "item": "dry rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or fresh, finely minced"
   }
 }

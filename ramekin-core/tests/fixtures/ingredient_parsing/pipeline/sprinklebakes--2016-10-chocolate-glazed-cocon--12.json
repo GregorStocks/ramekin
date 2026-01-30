@@ -1,10 +1,8 @@
 {
   "raw": "Sprinkles (cacao nibs, or other desired toppings)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sprinkles (cacao nibs, or other desired toppings)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sprinkles (cacao nibs, or other desired toppings)",
+    "measurements": [],
+    "note": null
   }
 }

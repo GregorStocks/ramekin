@@ -1,15 +1,13 @@
 {
   "raw": "8-12 whole cloves of garlic, peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole cloves of garlic",
-      "measurements": [
-        {
-          "amount": "8-12",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "whole cloves of garlic",
+    "measurements": [
+      {
+        "amount": "8-12",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

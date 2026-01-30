@@ -1,15 +1,13 @@
 {
   "raw": "1 cup stone-ground grits or polenta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stone-ground grits or polenta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stone-ground grits or polenta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

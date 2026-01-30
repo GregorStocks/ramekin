@@ -1,19 +1,17 @@
 {
   "raw": "1 cup thinly sliced celery hearts (3 to 4 stalks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced celery hearts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "3 to 4",
-          "unit": "stalk"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced celery hearts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "3 to 4",
+        "unit": "stalk"
+      }
+    ],
+    "note": null
   }
 }

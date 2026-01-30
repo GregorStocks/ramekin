@@ -1,10 +1,8 @@
 {
   "raw": "Salt and freshly ground black pepper (don’t skimp)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salt and freshly ground black pepper (don’t skimp)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Salt and freshly ground black pepper (don’t skimp)",
+    "measurements": [],
+    "note": null
   }
 }

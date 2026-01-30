@@ -1,10 +1,8 @@
 {
   "raw": "all of the overnight sponge",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all of the overnight sponge",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "all of the overnight sponge",
+    "measurements": [],
+    "note": null
   }
 }

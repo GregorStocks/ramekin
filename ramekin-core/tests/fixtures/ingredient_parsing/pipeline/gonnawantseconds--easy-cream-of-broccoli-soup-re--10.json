@@ -1,15 +1,13 @@
 {
   "raw": "1/2 Teaspoon Black Pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Black Pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Black Pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

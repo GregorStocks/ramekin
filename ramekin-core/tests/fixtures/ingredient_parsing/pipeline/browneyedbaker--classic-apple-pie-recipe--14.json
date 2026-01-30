@@ -1,15 +1,13 @@
 {
   "raw": "1½ pounds Granny Smith apples (about 3 medium apples, peeled, cored and sliced&nbsp;¼-inch thick)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Granny Smith apples",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "about 3 medium apples, peeled, cored and sliced 1/4-inch thick"
-    }
+  "expected": {
+    "item": "Granny Smith apples",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "about 3 medium apples, peeled, cored and sliced 1/4-inch thick"
   }
 }

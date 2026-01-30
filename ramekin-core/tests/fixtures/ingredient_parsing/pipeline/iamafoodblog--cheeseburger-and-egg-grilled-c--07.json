@@ -1,15 +1,13 @@
 {
   "raw": "1 cup shredded cheese of choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheese of choice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheese of choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

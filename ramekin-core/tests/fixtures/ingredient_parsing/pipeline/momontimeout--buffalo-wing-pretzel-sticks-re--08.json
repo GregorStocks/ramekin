@@ -1,10 +1,8 @@
 {
   "raw": "blue cheese dressing for dipping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blue cheese dressing for dipping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "blue cheese dressing for dipping",
+    "measurements": [],
+    "note": null
   }
 }

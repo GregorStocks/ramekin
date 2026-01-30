@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. nacho cheese sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nacho cheese sauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "nacho cheese sauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1/4 cup white miso paste (2 3/4 ounces; 245 g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white miso paste",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "2 3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "245",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white miso paste",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2 3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "245",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

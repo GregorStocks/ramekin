@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup unsalted shelled peanuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted shelled peanuts",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted shelled peanuts",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

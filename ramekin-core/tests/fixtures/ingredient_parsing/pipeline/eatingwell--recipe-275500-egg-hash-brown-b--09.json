@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Mexican-style hot sauce (such as Cholula)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican-style hot sauce (such as Cholula)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican-style hot sauce (such as Cholula)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

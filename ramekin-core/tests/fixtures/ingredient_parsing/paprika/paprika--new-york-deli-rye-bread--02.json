@@ -1,23 +1,21 @@
 {
   "raw": "3/4 cup (4 ounces, 117 grams) bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread flour",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "117",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "117",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

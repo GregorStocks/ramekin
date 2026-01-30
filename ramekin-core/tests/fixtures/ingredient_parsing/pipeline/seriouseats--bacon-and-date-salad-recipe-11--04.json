@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15 ml) maple syrup&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

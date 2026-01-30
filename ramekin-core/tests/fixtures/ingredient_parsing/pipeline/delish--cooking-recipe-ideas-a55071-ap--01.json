@@ -1,15 +1,13 @@
 {
   "raw": "3 1/2 lb. assorted apples (such as Gala, Empire, Cameo, Macoun, and/or Honeycrisp), peeled, quartered, cored",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "assorted apples (such as Gala, Empire, Cameo, Macoun, and/or Honeycrisp), peeled, quartered",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "cored"
-    }
+  "expected": {
+    "item": "assorted apples (such as Gala, Empire, Cameo, Macoun, and/or Honeycrisp), peeled, quartered",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "cored"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 (8 ounce) package caprino (goat's milk) cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caprino (goat's milk) cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caprino (goat's milk) cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

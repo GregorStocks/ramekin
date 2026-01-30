@@ -1,15 +1,13 @@
 {
   "raw": "1 fluid ounce Gin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Gin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

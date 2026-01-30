@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons pregrated Parmesan cheese, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pregrated Parmesan cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "pregrated Parmesan cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

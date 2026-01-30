@@ -1,15 +1,13 @@
 {
   "raw": "500g carton fromage frais",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carton fromage frais",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carton fromage frais",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

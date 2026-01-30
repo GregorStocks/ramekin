@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons (10 mL) capers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "capers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "capers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "10",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Toasted bread or grilled cheese for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted bread or grilled cheese for serving",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Toasted bread or grilled cheese for serving",
+    "measurements": [],
+    "note": null
   }
 }

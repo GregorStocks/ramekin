@@ -1,19 +1,17 @@
 {
   "raw": "3/4 cup (170g) unsalted butter*, (cut into 1-Tbsp pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter*, (cut into 1-Tbsp pieces)",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter*, (cut into 1-Tbsp pieces)",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

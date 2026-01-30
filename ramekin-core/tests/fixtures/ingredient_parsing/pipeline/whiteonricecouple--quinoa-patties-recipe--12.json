@@ -1,15 +1,13 @@
 {
   "raw": "1 pound green tomatoes or red tomatoes (, roughly cut)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green tomatoes or red tomatoes (, roughly cut)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green tomatoes or red tomatoes (, roughly cut)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

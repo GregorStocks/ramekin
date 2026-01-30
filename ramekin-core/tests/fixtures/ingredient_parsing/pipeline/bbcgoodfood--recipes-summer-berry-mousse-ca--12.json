@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp  orange juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

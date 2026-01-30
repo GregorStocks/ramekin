@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons brown rice syrup or corn syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown rice syrup or corn syrup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown rice syrup or corn syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

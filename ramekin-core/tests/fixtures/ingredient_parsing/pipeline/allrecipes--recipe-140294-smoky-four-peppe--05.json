@@ -1,15 +1,13 @@
 {
   "raw": "4 Anaheim chile peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Anaheim chile peppers",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Anaheim chile peppers",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

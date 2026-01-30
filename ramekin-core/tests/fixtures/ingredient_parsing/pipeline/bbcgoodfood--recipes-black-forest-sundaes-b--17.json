@@ -1,15 +1,13 @@
 {
   "raw": "200g dark chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark chocolate",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

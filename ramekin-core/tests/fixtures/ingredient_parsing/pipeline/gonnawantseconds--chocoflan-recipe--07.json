@@ -1,15 +1,13 @@
 {
   "raw": "6 Tablespoons Unsalted Butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Unsalted Butter",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Unsalted Butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,4 +1,4 @@
-//! Metric weight enrichment module.
+//! Metric weight conversion module.
 //!
 //! Provides deterministic conversion of imperial weight measurements to metric.
 //! Currently only handles oz → grams conversion.
@@ -7,9 +7,9 @@ use crate::ingredient_parser::{Measurement, ParsedIngredient};
 
 const GRAMS_PER_OZ: f64 = 28.3495;
 
-/// Statistics about metric weight enrichment.
+/// Statistics about metric weight conversion.
 #[derive(Debug, Default, Clone)]
-pub struct EnrichmentStats {
+pub struct MetricConversionStats {
     pub converted: usize,
     pub skipped_no_oz: usize,
     pub skipped_already_metric: usize,
@@ -22,7 +22,7 @@ pub struct EnrichmentStats {
 /// Returns the ingredient with the metric alternative added to measurements.
 pub fn add_metric_weight_alternative(
     mut ingredient: ParsedIngredient,
-    stats: &mut EnrichmentStats,
+    stats: &mut MetricConversionStats,
 ) -> ParsedIngredient {
     // Check if any measurement already has metric weight
     if has_metric_weight(&ingredient.measurements) {
@@ -281,7 +281,7 @@ mod tests {
             raw: Some("8 oz butter".to_string()),
         };
 
-        let mut stats = EnrichmentStats::default();
+        let mut stats = MetricConversionStats::default();
         let result = add_metric_weight_alternative(ingredient, &mut stats);
 
         assert_eq!(result.measurements.len(), 2);
@@ -304,7 +304,7 @@ mod tests {
             raw: Some("2 cups flour".to_string()),
         };
 
-        let mut stats = EnrichmentStats::default();
+        let mut stats = MetricConversionStats::default();
         let result = add_metric_weight_alternative(ingredient, &mut stats);
 
         assert_eq!(result.measurements.len(), 1);
@@ -329,7 +329,7 @@ mod tests {
             raw: Some("8 oz (227g) butter".to_string()),
         };
 
-        let mut stats = EnrichmentStats::default();
+        let mut stats = MetricConversionStats::default();
         let result = add_metric_weight_alternative(ingredient, &mut stats);
 
         assert_eq!(result.measurements.len(), 2);
@@ -348,7 +348,7 @@ mod tests {
             raw: Some("6-8 oz chicken".to_string()),
         };
 
-        let mut stats = EnrichmentStats::default();
+        let mut stats = MetricConversionStats::default();
         let result = add_metric_weight_alternative(ingredient, &mut stats);
 
         assert_eq!(result.measurements.len(), 2);

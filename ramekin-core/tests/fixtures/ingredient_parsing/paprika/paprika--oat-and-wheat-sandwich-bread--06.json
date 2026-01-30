@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (55 grams grams) vegetable or olive oil, plus a little more to coat bowl",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable or olive oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": "plus a little more to coat bowl"
-    }
+  "expected": {
+    "item": "vegetable or olive oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": "plus a little more to coat bowl"
   }
 }

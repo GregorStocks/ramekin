@@ -1,15 +1,13 @@
 {
   "raw": "4 cups masa harina para tamales",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "masa harina para tamales",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "masa harina para tamales",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

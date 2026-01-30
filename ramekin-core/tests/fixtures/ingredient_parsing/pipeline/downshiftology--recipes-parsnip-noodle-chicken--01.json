@@ -1,15 +1,13 @@
 {
   "raw": "1  recipe Vegan Alfredo Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "recipe Vegan Alfredo Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "recipe Vegan Alfredo Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

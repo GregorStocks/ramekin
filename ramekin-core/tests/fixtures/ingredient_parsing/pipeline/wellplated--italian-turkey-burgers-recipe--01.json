@@ -1,15 +1,13 @@
 {
   "raw": "1 pound 99% lean ground turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "99% lean ground turkey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "99% lean ground turkey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

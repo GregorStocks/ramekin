@@ -1,10 +1,8 @@
 {
   "raw": "Torn romaine lettuce, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Torn romaine lettuce",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Torn romaine lettuce",
+    "measurements": [],
+    "note": "for serving"
   }
 }

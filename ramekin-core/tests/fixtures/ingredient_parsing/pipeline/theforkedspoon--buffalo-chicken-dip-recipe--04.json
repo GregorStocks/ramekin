@@ -1,15 +1,13 @@
 {
   "raw": "1 cup hot sauce ((I used Frank's RedHot), plus more as needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce (I used Frank's RedHot)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more as needed)"
-    }
+  "expected": {
+    "item": "hot sauce (I used Frank's RedHot)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more as needed)"
   }
 }

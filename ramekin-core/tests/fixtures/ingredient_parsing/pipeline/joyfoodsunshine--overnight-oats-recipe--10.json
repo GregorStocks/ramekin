@@ -1,15 +1,13 @@
 {
   "raw": "½ cup diced apples",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced apples",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced apples",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

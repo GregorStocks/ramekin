@@ -1,10 +1,8 @@
 {
   "raw": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles*",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles*",
+    "measurements": [],
+    "note": null
   }
 }

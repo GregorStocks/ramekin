@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon natural cane sugar / brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "natural cane sugar / brown sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "natural cane sugar / brown sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

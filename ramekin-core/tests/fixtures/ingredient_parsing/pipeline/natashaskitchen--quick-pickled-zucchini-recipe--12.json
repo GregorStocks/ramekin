@@ -1,15 +1,13 @@
 {
   "raw": "1/2 gallon jar with lid or heat-proof bowl with tightly fitting lid",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jar with lid or heat-proof bowl with tightly fitting lid",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "gallon"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jar with lid or heat-proof bowl with tightly fitting lid",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "gallon"
+      }
+    ],
+    "note": null
   }
 }

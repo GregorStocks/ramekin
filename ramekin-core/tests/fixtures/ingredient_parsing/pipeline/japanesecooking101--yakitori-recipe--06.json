@@ -1,15 +1,13 @@
 {
   "raw": "2  long white onions (or 5-6 green onions)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long white onions (or 5-6 green onions)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long white onions (or 5-6 green onions)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

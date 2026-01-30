@@ -1,19 +1,17 @@
 {
   "raw": "2 oz 50-60% semisweet chocolate (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "50-60% semisweet chocolate",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "50-60% semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

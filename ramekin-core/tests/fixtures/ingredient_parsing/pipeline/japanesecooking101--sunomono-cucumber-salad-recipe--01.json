@@ -1,15 +1,13 @@
 {
   "raw": "3  Japanese cucumbers (or 4 Persian)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese cucumbers (or 4 Persian)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese cucumbers (or 4 Persian)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

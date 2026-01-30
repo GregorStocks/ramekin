@@ -1,15 +1,13 @@
 {
   "raw": "2 lb fresh tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Shredded cheese ((for cheese naan) – Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shredded cheese (for cheese naan) - Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shredded cheese (for cheese naan) - Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6)",
+    "measurements": [],
+    "note": null
   }
 }

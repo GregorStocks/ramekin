@@ -1,15 +1,13 @@
 {
   "raw": "1/2 fluid ounce Orange liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Orange liqueur",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Orange liqueur",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

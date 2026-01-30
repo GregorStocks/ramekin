@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces fresh pasta sheets, cut into lasagna strips OR",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh pasta sheets, cut into lasagna strips OR",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh pasta sheets, cut into lasagna strips OR",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

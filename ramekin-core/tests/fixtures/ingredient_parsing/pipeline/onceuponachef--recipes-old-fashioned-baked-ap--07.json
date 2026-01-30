@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups apple cider or apple juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple cider or apple juice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple cider or apple juice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Toasted pine nuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted pine nuts",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Toasted pine nuts",
+    "measurements": [],
+    "note": null
   }
 }

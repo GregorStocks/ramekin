@@ -1,19 +1,17 @@
 {
   "raw": "1/2  envelope (about 1 1/2 teaspoons unflavored powdered gelatin)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "envelope",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "envelope",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 large tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortillas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tortillas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

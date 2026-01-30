@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces fresh baby spinach ((or arugula))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh baby spinach (or arugula)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh baby spinach (or arugula)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

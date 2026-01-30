@@ -1,15 +1,13 @@
 {
   "raw": "2l strong-flavoured beef stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strong-flavoured beef stock",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strong-flavoured beef stock",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

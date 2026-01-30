@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup dried cranberries (craisins)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried cranberries (craisins)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried cranberries (craisins)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Smoked paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Smoked paprika",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Smoked paprika",
+    "measurements": [],
+    "note": null
   }
 }

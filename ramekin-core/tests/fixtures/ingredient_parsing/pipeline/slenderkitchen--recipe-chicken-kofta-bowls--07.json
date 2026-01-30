@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp dried mint (spearmint not peppermint)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried mint (spearmint not peppermint)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried mint (spearmint not peppermint)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (240g/ml) chicken broth (I use reduced-sodium)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth (I use reduced-sodium)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth (I use reduced-sodium)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

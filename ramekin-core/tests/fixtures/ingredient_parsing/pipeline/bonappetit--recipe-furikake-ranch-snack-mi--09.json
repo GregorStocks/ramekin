@@ -1,15 +1,13 @@
 {
   "raw": "2 cups mini windowpane pretzels (such as Snyder’s of Hanover Butter Snaps)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini windowpane pretzels (such as Snyder’s of Hanover Butter Snaps)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mini windowpane pretzels (such as Snyder’s of Hanover Butter Snaps)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

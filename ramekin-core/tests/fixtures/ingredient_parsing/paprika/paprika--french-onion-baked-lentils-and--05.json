@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons dry sherry, vermouth, or white wine (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry sherry, vermouth, or white wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "dry sherry, vermouth, or white wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

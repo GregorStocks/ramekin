@@ -1,15 +1,13 @@
 {
   "raw": "4 to 6 tablespoons milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk",
-      "measurements": [
-        {
-          "amount": "4 to 6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

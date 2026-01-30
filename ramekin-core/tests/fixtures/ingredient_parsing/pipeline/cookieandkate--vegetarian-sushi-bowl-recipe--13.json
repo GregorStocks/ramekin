@@ -1,10 +1,8 @@
 {
   "raw": "Recommended garnishes: sesame seeds (preferably black) and pickled ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Recommended garnishes: sesame seeds (preferably black) and pickled ginger",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Recommended garnishes: sesame seeds (preferably black) and pickled ginger",
+    "measurements": [],
+    "note": null
   }
 }

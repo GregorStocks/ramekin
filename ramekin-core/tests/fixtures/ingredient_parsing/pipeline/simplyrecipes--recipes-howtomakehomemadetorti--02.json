@@ -1,10 +1,8 @@
 {
   "raw": "Corn tortillas (each tortilla will make 6 chips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Corn tortillas (each tortilla will make 6 chips)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Corn tortillas (each tortilla will make 6 chips)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup low-sodium tomato juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium tomato juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium tomato juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

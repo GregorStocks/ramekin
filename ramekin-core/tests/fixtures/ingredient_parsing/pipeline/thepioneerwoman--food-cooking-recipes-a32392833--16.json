@@ -1,10 +1,8 @@
 {
   "raw": "Sour cream, guacamole and tortilla chips, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sour cream, guacamole and tortilla chips",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Sour cream, guacamole and tortilla chips",
+    "measurements": [],
+    "note": "for serving"
   }
 }

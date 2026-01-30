@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. packed brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed brown sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

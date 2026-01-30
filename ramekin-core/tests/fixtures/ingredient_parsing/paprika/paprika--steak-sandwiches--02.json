@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons smooth Dijon mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smooth Dijon mustard",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smooth Dijon mustard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

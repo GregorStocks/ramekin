@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons pisco",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pisco",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pisco",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

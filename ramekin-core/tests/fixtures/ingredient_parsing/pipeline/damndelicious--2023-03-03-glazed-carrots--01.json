@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds medium carrots (scrubbed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "scrubbed"
-    }
+  "expected": {
+    "item": "medium carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "scrubbed"
   }
 }

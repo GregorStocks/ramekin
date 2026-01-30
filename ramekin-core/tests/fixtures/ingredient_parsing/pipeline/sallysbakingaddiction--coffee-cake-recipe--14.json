@@ -1,19 +1,17 @@
 {
   "raw": "2 Tablespoons (30ml) milk (any kind, dairy or nondairy, is fine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk (any kind, dairy or nondairy, is fine)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk (any kind, dairy or nondairy, is fine)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

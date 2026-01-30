@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup water ((plus 1 to 2 tbsp) (adjust as needed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (plus 1 to 2 tbsp) (adjust as needed)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (plus 1 to 2 tbsp) (adjust as needed)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

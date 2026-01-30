@@ -1,15 +1,13 @@
 {
   "raw": "2-4 bundles of vermicelli",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bundles of vermicelli",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bundles of vermicelli",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

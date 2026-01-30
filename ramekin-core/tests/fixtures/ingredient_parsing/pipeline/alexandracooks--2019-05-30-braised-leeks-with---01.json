@@ -1,15 +1,13 @@
 {
   "raw": "4 to 5 large leeks, white and light green parts only",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leeks, white and light green parts only",
-      "measurements": [
-        {
-          "amount": "4 to 5",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leeks, white and light green parts only",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Pinch sugar, plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

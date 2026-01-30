@@ -1,10 +1,8 @@
 {
   "raw": "Tortilla chips, (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tortilla chips",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Tortilla chips",
+    "measurements": [],
+    "note": "for serving"
   }
 }

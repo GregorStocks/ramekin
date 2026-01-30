@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces almond paste (NOT marzipan or almond cake filling)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond paste (NOT marzipan or almond cake filling)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond paste (NOT marzipan or almond cake filling)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

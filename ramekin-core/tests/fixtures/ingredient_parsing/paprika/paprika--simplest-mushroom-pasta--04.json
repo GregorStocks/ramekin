@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons salted or unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted or unsalted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted or unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

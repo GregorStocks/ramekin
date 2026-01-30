@@ -1,10 +1,8 @@
 {
   "raw": "Nut butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Nut butter",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Nut butter",
+    "measurements": [],
+    "note": null
   }
 }

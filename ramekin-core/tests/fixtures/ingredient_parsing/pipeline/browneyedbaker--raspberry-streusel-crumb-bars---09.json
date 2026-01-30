@@ -1,23 +1,21 @@
 {
   "raw": "¾ cup  fresh raspberries ((3½ ounces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh raspberries",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "3 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "99",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh raspberries",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "3 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "99",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

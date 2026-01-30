@@ -1,15 +1,13 @@
 {
   "raw": "4 to 6 cups hickory or apple chips or wood chunks, soaked in water to cover for 1 hour, then drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hickory or apple chips or wood chunks, soaked in water to cover for 1 hour",
-      "measurements": [
-        {
-          "amount": "4 to 6",
-          "unit": "cup"
-        }
-      ],
-      "note": "then drained"
-    }
+  "expected": {
+    "item": "hickory or apple chips or wood chunks, soaked in water to cover for 1 hour",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": "cup"
+      }
+    ],
+    "note": "then drained"
   }
 }

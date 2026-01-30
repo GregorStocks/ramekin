@@ -1,15 +1,13 @@
 {
   "raw": "400g can plum tomato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can plum tomato",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can plum tomato",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup peanut butter, natural",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peanut butter, natural",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peanut butter, natural",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

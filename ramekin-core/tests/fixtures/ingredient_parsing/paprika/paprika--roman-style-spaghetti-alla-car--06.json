@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup plus 1 tablespoon finely minced fresh parsley leaves and tender stems, divided, plus more for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plus 1 tablespoon finely minced fresh parsley leaves and tender stems, divided",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for garnish"
-    }
+  "expected": {
+    "item": "plus 1 tablespoon finely minced fresh parsley leaves and tender stems, divided",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for garnish"
   }
 }

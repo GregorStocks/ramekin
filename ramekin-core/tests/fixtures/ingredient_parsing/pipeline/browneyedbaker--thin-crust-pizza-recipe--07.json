@@ -1,19 +1,17 @@
 {
   "raw": "28 ounce can whole peeled tomatoes, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can whole peeled tomatoes",
-      "measurements": [
-        {
-          "amount": "28",
-          "unit": "oz"
-        },
-        {
-          "amount": "794",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "can whole peeled tomatoes",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "oz"
+      },
+      {
+        "amount": "794",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

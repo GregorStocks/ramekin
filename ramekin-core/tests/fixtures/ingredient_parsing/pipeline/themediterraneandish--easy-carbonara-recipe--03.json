@@ -1,10 +1,8 @@
 {
   "raw": "Kosher salt and ground pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher salt and ground pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Kosher salt and ground pepper",
+    "measurements": [],
+    "note": null
   }
 }

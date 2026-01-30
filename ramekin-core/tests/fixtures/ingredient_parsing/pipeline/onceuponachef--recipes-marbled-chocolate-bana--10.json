@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces  semisweet chocolate, chopped (a heaping ½ cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped (a heaping 1/2 cup)"
-    }
+  "expected": {
+    "item": "semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped (a heaping 1/2 cup)"
   }
 }

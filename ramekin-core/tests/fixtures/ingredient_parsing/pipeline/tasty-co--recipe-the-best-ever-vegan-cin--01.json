@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons vegan butter, to coat the foil pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegan butter, to coat the foil pan",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegan butter, to coat the foil pan",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

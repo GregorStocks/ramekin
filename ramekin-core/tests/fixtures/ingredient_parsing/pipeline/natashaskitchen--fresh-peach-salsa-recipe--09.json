@@ -1,15 +1,13 @@
 {
   "raw": "1/4 tsp freshly ground black pepper or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground black pepper or to taste",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly ground black pepper or to taste",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

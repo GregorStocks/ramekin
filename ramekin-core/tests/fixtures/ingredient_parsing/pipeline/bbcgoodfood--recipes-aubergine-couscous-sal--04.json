@@ -1,15 +1,13 @@
 {
   "raw": "225ml hot vegetable stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot vegetable stock",
-      "measurements": [
-        {
-          "amount": "225",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot vegetable stock",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

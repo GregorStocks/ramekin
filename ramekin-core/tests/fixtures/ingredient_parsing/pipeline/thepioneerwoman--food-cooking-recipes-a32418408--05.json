@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. large shrimp, peeled, deveined and cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large shrimp, peeled, deveined and cut into chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "large shrimp, peeled, deveined and cut into chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

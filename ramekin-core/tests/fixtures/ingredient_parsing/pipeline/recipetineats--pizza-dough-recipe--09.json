@@ -1,19 +1,17 @@
 {
   "raw": "130g / 1 1/3 cups  mozzarella cheese, freshly grated (per pizza, (Note 8))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese, freshly grated (per pizza, (Note 8)",
-      "measurements": [
-        {
-          "amount": "130",
-          "unit": "g"
-        },
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mozzarella cheese, freshly grated (per pizza, (Note 8)",
+    "measurements": [
+      {
+        "amount": "130",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

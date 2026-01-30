@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces semisweet chocolate (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Peanut Oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Peanut Oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Peanut Oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

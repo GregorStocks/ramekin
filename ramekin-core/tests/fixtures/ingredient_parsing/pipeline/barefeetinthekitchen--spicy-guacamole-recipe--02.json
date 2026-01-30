@@ -1,15 +1,13 @@
 {
   "raw": "1  small yellow onion (diced small, 1/2 cups worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "diced small, 1/2 cups worth"
-    }
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "diced small, 1/2 cups worth"
   }
 }

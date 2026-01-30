@@ -1,15 +1,13 @@
 {
   "raw": "18 grams green chili peppers (seeds removed, finely minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green chili peppers",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": "g"
-        }
-      ],
-      "note": "seeds removed, finely minced"
-    }
+  "expected": {
+    "item": "green chili peppers",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "g"
+      }
+    ],
+    "note": "seeds removed, finely minced"
   }
 }

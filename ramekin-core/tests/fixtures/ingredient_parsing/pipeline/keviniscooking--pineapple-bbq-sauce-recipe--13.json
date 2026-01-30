@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chili garlic paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili garlic paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili garlic paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

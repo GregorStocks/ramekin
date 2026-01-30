@@ -1,15 +1,13 @@
 {
   "raw": "700 g slab skinless pork belly (with a good balance of fat and lean meat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slab skinless pork belly (with a good balance of fat and lean meat)",
-      "measurements": [
-        {
-          "amount": "700",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slab skinless pork belly (with a good balance of fat and lean meat)",
+    "measurements": [
+      {
+        "amount": "700",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

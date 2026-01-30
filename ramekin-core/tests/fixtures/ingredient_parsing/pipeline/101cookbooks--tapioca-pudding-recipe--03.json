@@ -1,15 +1,13 @@
 {
   "raw": "2  extra-large egg yolks, lightly beaten",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "extra-large"
-        }
-      ],
-      "note": "lightly beaten"
-    }
+  "expected": {
+    "item": "egg yolks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "extra-large"
+      }
+    ],
+    "note": "lightly beaten"
   }
 }

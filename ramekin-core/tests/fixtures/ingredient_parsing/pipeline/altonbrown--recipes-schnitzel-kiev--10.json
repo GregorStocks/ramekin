@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 cups 100% olive oil, not extra-virgin, for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "100% olive oil, not extra-virgin, for frying",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "100% olive oil, not extra-virgin, for frying",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

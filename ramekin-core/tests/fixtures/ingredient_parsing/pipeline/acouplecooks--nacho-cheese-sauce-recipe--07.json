@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Mexican hot sauce (we like Cholula), plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican hot sauce (we like Cholula)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "Mexican hot sauce (we like Cholula)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

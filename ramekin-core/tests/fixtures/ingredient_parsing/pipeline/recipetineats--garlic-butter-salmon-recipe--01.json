@@ -1,19 +1,17 @@
 {
   "raw": "4  salmon fillets ((180g/6oz each), skinless and boneless)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salmon fillets , skinless and boneless)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "180",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salmon fillets , skinless and boneless)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "180",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

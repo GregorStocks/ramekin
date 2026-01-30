@@ -1,15 +1,13 @@
 {
   "raw": "5 tbsp/85 g tahini paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tbsp/85 g tahini paste",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tbsp/85 g tahini paste",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

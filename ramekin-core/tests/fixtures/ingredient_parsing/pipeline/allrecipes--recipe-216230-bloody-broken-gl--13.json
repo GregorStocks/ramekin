@@ -1,15 +1,13 @@
 {
   "raw": "15 drops red food coloring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red food coloring",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "drop"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red food coloring",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "drop"
+      }
+    ],
+    "note": null
   }
 }

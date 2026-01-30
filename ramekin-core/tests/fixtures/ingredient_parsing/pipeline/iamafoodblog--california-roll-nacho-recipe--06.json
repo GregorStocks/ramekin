@@ -1,15 +1,13 @@
 {
   "raw": "1/2 -3/4 cups shredded cheddar cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-3/4 cups shredded cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-3/4 cups shredded cheddar cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

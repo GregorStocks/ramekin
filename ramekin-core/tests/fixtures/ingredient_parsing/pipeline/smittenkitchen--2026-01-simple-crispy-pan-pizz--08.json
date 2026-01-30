@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup grated pecorino romano or parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated pecorino romano or parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated pecorino romano or parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

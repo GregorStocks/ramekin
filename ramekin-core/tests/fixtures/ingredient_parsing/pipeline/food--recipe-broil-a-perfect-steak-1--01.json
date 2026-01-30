@@ -1,15 +1,13 @@
 {
   "raw": "2       steaks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "steaks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "steaks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "A large cookie sheet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A large cookie sheet",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A large cookie sheet",
+    "measurements": [],
+    "note": null
   }
 }

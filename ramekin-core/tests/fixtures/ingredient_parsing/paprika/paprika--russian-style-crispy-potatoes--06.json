@@ -1,10 +1,8 @@
 {
   "raw": "MUSHROOMS:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "MUSHROOMS:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "MUSHROOMS:",
+    "measurements": [],
+    "note": null
   }
 }

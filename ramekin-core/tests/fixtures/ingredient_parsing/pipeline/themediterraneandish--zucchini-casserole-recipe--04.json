@@ -1,15 +1,13 @@
 {
   "raw": "1 lb lean ground beef, (97% lean or ground turkey)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "97% lean or ground turkey"
-    }
+  "expected": {
+    "item": "lean ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "97% lean or ground turkey"
   }
 }

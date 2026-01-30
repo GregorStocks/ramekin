@@ -1,15 +1,13 @@
 {
   "raw": "1 ¼ cups granulated sugar, plus more for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for sprinkling"
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for sprinkling"
   }
 }

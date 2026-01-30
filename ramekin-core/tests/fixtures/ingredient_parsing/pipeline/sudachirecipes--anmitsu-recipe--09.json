@@ -1,15 +1,13 @@
 {
   "raw": "300 g red bean paste (anko)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bean paste (anko)",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red bean paste (anko)",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

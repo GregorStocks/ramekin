@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp chocolate shavings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate shavings",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate shavings",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

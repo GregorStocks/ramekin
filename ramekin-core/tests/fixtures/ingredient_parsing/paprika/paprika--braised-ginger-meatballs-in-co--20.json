@@ -1,10 +1,8 @@
 {
   "raw": "A few handfuls of baby spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A few handfuls of baby spinach",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A few handfuls of baby spinach",
+    "measurements": [],
+    "note": null
   }
 }

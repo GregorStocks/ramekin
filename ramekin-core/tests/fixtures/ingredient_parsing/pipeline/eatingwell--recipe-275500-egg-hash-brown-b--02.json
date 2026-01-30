@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons canola oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canola oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "canola oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

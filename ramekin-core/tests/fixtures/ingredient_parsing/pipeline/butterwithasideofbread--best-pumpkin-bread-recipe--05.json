@@ -1,15 +1,13 @@
 {
   "raw": "6 tbsp cold butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold butter",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

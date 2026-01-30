@@ -1,15 +1,13 @@
 {
   "raw": "1 large delicata squash, halved, seeds removed, and sliced into 1/2-inch thick pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "delicata squash, halved, seeds removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "and sliced into 1/2-inch thick pieces"
-    }
+  "expected": {
+    "item": "delicata squash, halved, seeds removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "and sliced into 1/2-inch thick pieces"
   }
 }

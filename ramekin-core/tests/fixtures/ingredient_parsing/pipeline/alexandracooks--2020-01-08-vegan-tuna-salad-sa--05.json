@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon maple syrup or agave nectar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup or agave nectar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup or agave nectar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

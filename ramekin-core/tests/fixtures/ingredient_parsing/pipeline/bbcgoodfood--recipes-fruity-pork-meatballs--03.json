@@ -1,15 +1,13 @@
 {
   "raw": "300g vegetable stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable stock",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable stock",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

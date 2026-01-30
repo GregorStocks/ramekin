@@ -1,15 +1,13 @@
 {
   "raw": "½ cup mint leaves (bruised)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint leaves (bruised)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mint leaves (bruised)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

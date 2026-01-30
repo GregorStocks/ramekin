@@ -1,23 +1,21 @@
 {
   "raw": "1/2 of 1 medium white onion (about 4 ounces; 113 g), roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "of 1 medium white onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "of 1 medium white onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

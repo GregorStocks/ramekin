@@ -1,15 +1,13 @@
 {
   "raw": "1 cup wheat flour ((atta))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wheat flour (atta)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wheat flour (atta)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

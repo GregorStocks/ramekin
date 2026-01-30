@@ -1,10 +1,8 @@
 {
   "raw": "Cream cheese filling:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cream cheese filling:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cream cheese filling:",
+    "measurements": [],
+    "note": null
   }
 }

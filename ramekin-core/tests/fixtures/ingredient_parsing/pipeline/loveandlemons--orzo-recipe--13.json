@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons panko bread crumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "panko bread crumbs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "panko bread crumbs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

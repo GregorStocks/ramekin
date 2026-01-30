@@ -1,15 +1,13 @@
 {
   "raw": "Two pinches fine sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine sea salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine sea salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

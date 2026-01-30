@@ -1,15 +1,13 @@
 {
   "raw": "1  large sweet potato (cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "sweet potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "cubed"
   }
 }

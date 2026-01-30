@@ -1,19 +1,17 @@
 {
   "raw": "1 cup 116g pecan halves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecan halves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "116",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pecan halves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "116",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

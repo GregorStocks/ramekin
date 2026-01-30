@@ -1,15 +1,13 @@
 {
   "raw": "Pinch crushed chili flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed chili flakes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed chili flakes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

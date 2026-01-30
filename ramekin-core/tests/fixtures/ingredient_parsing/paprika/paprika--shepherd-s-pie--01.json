@@ -1,10 +1,8 @@
 {
   "raw": "For the potatoes:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For the potatoes:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "For the potatoes:",
+    "measurements": [],
+    "note": null
   }
 }

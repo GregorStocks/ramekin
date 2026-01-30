@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp. togarashi chile seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "togarashi chile seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "togarashi chile seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

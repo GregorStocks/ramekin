@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. cold vegetable shortening",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold vegetable shortening",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold vegetable shortening",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

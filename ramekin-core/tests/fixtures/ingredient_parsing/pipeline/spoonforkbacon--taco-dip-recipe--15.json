@@ -1,15 +1,13 @@
 {
   "raw": "2  roma tomatoes (seeded and diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roma tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "seeded and diced"
-    }
+  "expected": {
+    "item": "roma tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "seeded and diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3  white long onions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white long onions",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white long onions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

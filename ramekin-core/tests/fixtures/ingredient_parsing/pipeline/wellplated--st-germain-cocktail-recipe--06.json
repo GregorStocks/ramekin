@@ -1,10 +1,8 @@
 {
   "raw": "Ice (for cocktail shaker)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ice (for cocktail shaker)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ice (for cocktail shaker)",
+    "measurements": [],
+    "note": null
   }
 }

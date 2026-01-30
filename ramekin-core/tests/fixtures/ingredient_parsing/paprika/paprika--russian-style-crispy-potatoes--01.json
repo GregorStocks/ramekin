@@ -1,10 +1,8 @@
 {
   "raw": "POTATOES:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "POTATOES:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "POTATOES:",
+    "measurements": [],
+    "note": null
   }
 }

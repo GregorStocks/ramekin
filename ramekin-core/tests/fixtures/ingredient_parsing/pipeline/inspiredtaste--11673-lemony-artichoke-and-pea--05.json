@@ -1,23 +1,21 @@
 {
   "raw": "1 (14 ounce) can quartered artichoke hearts, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quartered artichoke hearts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "quartered artichoke hearts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

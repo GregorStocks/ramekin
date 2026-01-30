@@ -1,15 +1,13 @@
 {
   "raw": "8 cardamom pods",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cardamom pods",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cardamom pods",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

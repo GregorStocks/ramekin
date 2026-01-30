@@ -1,10 +1,8 @@
 {
   "raw": "Seasoned tomato slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Seasoned tomato slices",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Seasoned tomato slices",
+    "measurements": [],
+    "note": null
   }
 }

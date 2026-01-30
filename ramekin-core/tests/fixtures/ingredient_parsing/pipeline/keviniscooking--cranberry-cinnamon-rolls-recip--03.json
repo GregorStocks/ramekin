@@ -1,15 +1,13 @@
 {
   "raw": "1  orange (juice and zest)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange (juice and zest)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange (juice and zest)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

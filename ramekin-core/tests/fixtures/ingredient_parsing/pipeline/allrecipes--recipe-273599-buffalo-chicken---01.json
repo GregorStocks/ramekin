@@ -1,15 +1,13 @@
 {
   "raw": "2 cups rigatoni pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rigatoni pasta",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rigatoni pasta",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

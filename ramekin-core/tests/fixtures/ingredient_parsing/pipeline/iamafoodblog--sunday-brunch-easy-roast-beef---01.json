@@ -1,15 +1,13 @@
 {
   "raw": "12- 18 slices thinly sliced roast beef or protein of choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "- 18 slices thinly sliced roast beef or protein of choice",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "- 18 slices thinly sliced roast beef or protein of choice",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

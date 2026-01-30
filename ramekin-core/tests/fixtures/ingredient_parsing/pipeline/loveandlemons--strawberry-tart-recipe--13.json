@@ -1,15 +1,13 @@
 {
   "raw": "4 cups strawberries, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberries",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved"
   }
 }

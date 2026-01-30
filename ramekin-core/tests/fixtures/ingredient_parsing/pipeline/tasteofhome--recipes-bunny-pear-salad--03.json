@@ -1,15 +1,13 @@
 {
   "raw": "12 dried currants or raisins",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried currants or raisins",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried currants or raisins",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

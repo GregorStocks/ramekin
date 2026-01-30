@@ -1,23 +1,21 @@
 {
   "raw": "2 cups baby spinach (about 2.5 ounces),",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby spinach ,",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "71",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby spinach ,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "71",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon peppermint oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppermint oil",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peppermint oil",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

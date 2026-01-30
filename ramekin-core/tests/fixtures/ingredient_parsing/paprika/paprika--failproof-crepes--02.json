@@ -1,19 +1,17 @@
 {
   "raw": "1 1/4 cup (295 ml) milk (and sometimes a splash more)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk (and sometimes a splash more)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "295",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk (and sometimes a splash more)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "295",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

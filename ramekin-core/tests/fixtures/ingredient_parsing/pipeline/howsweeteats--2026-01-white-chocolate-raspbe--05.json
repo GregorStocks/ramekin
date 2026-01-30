@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup hemp hearts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hemp hearts",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hemp hearts",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

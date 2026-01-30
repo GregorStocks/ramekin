@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;head cabbage, about 2.5 lbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cabbage, about 2.5 lbs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cabbage, about 2.5 lbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

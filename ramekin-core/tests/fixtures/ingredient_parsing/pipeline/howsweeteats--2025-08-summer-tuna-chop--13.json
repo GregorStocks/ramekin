@@ -1,10 +1,8 @@
 {
   "raw": "for serving: arugula greens, crostini, crackers, pita, lettuce wraps, etc",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "for serving: arugula greens, crostini, crackers, pita, lettuce wraps, etc",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "for serving: arugula greens, crostini, crackers, pita, lettuce wraps, etc",
+    "measurements": [],
+    "note": null
   }
 }

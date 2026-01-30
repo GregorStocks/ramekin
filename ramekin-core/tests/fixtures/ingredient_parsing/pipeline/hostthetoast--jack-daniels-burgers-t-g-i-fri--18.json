@@ -1,15 +1,13 @@
 {
   "raw": "6 large leaves lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leaves lettuce",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leaves lettuce",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

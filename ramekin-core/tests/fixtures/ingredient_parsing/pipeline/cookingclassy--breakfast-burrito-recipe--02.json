@@ -1,19 +1,17 @@
 {
   "raw": "8 oz. chorizo sausage*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chorizo sausage*",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chorizo sausage*",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

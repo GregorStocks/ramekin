@@ -1,15 +1,13 @@
 {
   "raw": "1 lb spicy Italian sausage, (casings removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spicy Italian sausage, (casings removed)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spicy Italian sausage, (casings removed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

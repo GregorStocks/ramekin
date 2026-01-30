@@ -1,19 +1,17 @@
 {
   "raw": "&amp;frac12; ounce honey syrup (see step 1)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey syrup (see step 1)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey syrup (see step 1)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

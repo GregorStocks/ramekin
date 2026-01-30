@@ -1,10 +1,8 @@
 {
   "raw": "fresh thyme leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme leaves",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh thyme leaves",
+    "measurements": [],
+    "note": null
   }
 }

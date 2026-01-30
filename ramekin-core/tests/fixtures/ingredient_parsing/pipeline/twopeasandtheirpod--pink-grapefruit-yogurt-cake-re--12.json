@@ -1,15 +1,13 @@
 {
   "raw": "2 T granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "T granulated sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "T granulated sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

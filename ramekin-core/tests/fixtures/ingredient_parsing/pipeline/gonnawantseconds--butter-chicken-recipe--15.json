@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoon Finely Ground Cashew",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Finely Ground Cashew",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Finely Ground Cashew",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

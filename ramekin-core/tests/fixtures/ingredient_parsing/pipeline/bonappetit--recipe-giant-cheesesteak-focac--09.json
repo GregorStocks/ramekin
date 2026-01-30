@@ -1,15 +1,13 @@
 {
   "raw": "5 Tbsp. (or more) vegetable oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil, divided",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or more"
-    }
+  "expected": {
+    "item": "vegetable oil, divided",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or more"
   }
 }

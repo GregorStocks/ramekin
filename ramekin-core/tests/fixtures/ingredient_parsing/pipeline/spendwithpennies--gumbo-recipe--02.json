@@ -1,15 +1,13 @@
 {
   "raw": "4  boneless skinless chicken thighs (cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken thighs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "boneless skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "cubed"
   }
 }

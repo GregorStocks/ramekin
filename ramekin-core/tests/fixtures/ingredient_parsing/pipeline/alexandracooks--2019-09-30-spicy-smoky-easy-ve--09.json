@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chipotle chili powder + 2 tablespoons traditional chili powder, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chipotle chili powder + 2 tablespoons traditional chili powder, see notes above",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chipotle chili powder + 2 tablespoons traditional chili powder, see notes above",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

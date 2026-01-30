@@ -1,10 +1,8 @@
 {
   "raw": "canned plum tomatoes, crushed, or your favourite tomato sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned plum tomatoes, crushed, or your favourite tomato sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "canned plum tomatoes, crushed, or your favourite tomato sauce",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "5 tablespoons cake flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cake flour",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Tabasco, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tabasco",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Tabasco",
+    "measurements": [],
+    "note": "to taste"
   }
 }

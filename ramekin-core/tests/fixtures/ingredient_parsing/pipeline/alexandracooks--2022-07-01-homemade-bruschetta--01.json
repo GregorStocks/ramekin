@@ -1,15 +1,13 @@
 {
   "raw": "1.5 lbs. tomatoes, such as Roma or hot house cluster or beefsteak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes, such as Roma or hot house cluster or beefsteak",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes, such as Roma or hot house cluster or beefsteak",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

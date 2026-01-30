@@ -1,15 +1,13 @@
 {
   "raw": "small piece of fresh ginger root sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "piece of fresh ginger root sliced",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "piece of fresh ginger root sliced",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

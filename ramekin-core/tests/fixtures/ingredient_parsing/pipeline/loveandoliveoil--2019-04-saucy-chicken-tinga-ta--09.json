@@ -1,15 +1,13 @@
 {
   "raw": "16-20 corn tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn tortillas",
-      "measurements": [
-        {
-          "amount": "16-20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn tortillas",
+    "measurements": [
+      {
+        "amount": "16-20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

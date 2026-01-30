@@ -1,23 +1,21 @@
 {
   "raw": "½ cup chopped candied ginger ((3.5 ounces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped candied ginger",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "3.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "99",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped candied ginger",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "99",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

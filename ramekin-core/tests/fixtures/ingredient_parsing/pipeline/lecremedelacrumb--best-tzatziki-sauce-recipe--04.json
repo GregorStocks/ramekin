@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon finely chopped fresh baby dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fresh baby dill",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped fresh baby dill",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

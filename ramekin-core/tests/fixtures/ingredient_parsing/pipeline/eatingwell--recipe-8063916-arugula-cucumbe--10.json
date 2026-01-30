@@ -1,19 +1,17 @@
 {
   "raw": "2 (6.7-ounce) packages no-salt-added tuna fillets in water, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "no-salt-added tuna fillets in water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "6.7",
-          "unit": null
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "no-salt-added tuna fillets in water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "package"
+      },
+      {
+        "amount": "6.7",
+        "unit": null
+      }
+    ],
+    "note": "drained"
   }
 }

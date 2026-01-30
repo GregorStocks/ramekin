@@ -1,15 +1,13 @@
 {
   "raw": "1 Turkish or 1/2 California bay leaf",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Turkish or 1/2 California bay leaf",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Turkish or 1/2 California bay leaf",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

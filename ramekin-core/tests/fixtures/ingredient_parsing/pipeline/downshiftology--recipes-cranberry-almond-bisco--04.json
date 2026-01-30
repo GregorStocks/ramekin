@@ -1,10 +1,8 @@
 {
   "raw": "zest from one lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zest from one lemon",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "zest from one lemon",
+    "measurements": [],
+    "note": null
   }
 }

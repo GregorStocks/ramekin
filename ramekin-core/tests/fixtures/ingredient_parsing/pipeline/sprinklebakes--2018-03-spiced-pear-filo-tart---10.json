@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons pomegranate arils",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate arils",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pomegranate arils",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

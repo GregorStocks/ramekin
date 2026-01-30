@@ -1,15 +1,13 @@
 {
   "raw": "1/2 to ¾ pound bucatini, linguini, or pappardelle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bucatini, linguini, or pappardelle",
-      "measurements": [
-        {
-          "amount": "1/2 to 3/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bucatini, linguini, or pappardelle",
+    "measurements": [
+      {
+        "amount": "1/2 to 3/4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

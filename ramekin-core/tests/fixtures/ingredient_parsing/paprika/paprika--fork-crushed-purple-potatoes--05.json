@@ -1,10 +1,8 @@
 {
   "raw": "Fleur de sel to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fleur de sel to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fleur de sel to taste",
+    "measurements": [],
+    "note": null
   }
 }

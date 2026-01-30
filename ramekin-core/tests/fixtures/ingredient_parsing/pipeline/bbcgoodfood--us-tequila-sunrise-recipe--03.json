@@ -1,19 +1,17 @@
 {
   "raw": "1½ oz tequila",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tequila",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tequila",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

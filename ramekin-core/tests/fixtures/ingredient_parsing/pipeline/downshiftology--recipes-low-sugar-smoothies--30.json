@@ -1,15 +1,13 @@
 {
   "raw": "1/2  cup  blanched then frozen zucchini  (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blanched then frozen zucchini",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "blanched then frozen zucchini",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

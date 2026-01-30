@@ -1,15 +1,13 @@
 {
   "raw": "1 lb lean ground beef or lean ground lamb",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground beef or lean ground lamb",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean ground beef or lean ground lamb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

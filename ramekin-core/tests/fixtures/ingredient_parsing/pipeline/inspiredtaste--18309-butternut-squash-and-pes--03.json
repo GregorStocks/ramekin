@@ -1,15 +1,13 @@
 {
   "raw": "Half of a medium butternut squash, seeds removed and diced (3 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Half of a medium butternut squash",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "seeds removed and diced"
-    }
+  "expected": {
+    "item": "Half of a medium butternut squash",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "seeds removed and diced"
   }
 }

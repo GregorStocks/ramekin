@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups tequila blanco or reposado",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tequila blanco or reposado",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tequila blanco or reposado",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

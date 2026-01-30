@@ -1,15 +1,13 @@
 {
   "raw": "1  white nectarine (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white nectarine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "white nectarine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 ounces* espresso (or very strong coffee), cooled slightly",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ounces* espresso (or very strong coffee), cooled slightly",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ounces* espresso (or very strong coffee), cooled slightly",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

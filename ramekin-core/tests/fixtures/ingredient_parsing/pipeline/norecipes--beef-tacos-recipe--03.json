@@ -1,15 +1,13 @@
 {
   "raw": "450 grams lean ground beef",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground beef",
-      "measurements": [
-        {
-          "amount": "450",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean ground beef",
+    "measurements": [
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

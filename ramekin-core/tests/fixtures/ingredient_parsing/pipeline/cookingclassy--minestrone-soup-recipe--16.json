@@ -1,10 +1,8 @@
 {
   "raw": "Red pepper flakes, (to taste (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red pepper flakes",
-      "measurements": [],
-      "note": "to taste (optional"
-    }
+  "expected": {
+    "item": "Red pepper flakes",
+    "measurements": [],
+    "note": "to taste (optional"
   }
 }

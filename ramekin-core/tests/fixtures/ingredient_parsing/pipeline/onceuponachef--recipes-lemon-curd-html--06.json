@@ -1,19 +1,17 @@
 {
   "raw": "1 stick (½ cup)  unsalted butter, cut into 8 pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into 8 pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter, cut into 8 pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

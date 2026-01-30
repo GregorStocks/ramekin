@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp olive oil ((to grill the eggplant))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil (to grill the eggplant)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil (to grill the eggplant)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

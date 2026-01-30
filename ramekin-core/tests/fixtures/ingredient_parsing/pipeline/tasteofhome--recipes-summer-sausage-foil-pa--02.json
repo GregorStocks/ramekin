@@ -1,15 +1,13 @@
 {
   "raw": "4 medium potatoes, peeled and cut into 1/2-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and cut into 1/2-inch cubes"
-    }
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch cubes"
   }
 }

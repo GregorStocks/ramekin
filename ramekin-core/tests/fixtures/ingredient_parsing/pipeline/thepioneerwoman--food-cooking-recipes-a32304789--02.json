@@ -1,15 +1,13 @@
 {
   "raw": "1 8-ounce bottle pomegranate juice, chilled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "8-ounce bottle"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "pomegranate juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "8-ounce bottle"
+      }
+    ],
+    "note": "chilled"
   }
 }

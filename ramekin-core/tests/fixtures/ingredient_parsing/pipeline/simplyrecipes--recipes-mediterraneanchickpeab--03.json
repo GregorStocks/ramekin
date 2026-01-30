@@ -1,15 +1,13 @@
 {
   "raw": "Juice 1/2 to 1 lemon (1 to 2 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice 1/2 to 1 lemon",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Juice 1/2 to 1 lemon",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

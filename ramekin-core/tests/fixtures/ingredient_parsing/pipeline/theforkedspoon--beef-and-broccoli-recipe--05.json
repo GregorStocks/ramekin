@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons vegetable oil (such as canola oil or peanut oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil (such as canola oil or peanut oil)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil (such as canola oil or peanut oil)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

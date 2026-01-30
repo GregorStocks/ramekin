@@ -1,27 +1,25 @@
 {
   "raw": "1 medium-size yellow onion (8 ounces; 227 g), finely chopped (about 1 1/2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-size yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "medium-size yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

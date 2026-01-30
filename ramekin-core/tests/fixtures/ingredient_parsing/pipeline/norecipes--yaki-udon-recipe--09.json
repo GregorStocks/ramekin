@@ -1,15 +1,13 @@
 {
   "raw": "60 grams carrot ((~1/2 carrot, julienned))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": "~1/2 carrot, julienned"
-    }
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": "~1/2 carrot, julienned"
   }
 }

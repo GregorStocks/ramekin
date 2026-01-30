@@ -1,19 +1,17 @@
 {
   "raw": "1 (14.75 ounce each) can creamed corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "creamed corn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14.75",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "creamed corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14.75",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

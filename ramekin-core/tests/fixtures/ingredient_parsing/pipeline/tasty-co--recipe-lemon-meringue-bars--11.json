@@ -1,15 +1,13 @@
 {
   "raw": "1 egg white",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg white",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg white",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

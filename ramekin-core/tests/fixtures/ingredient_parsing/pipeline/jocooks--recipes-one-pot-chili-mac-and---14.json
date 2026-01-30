@@ -1,19 +1,17 @@
 {
   "raw": "10 ounces elbow pasta (uncooked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "elbow pasta",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "uncooked"
-    }
+  "expected": {
+    "item": "elbow pasta",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "uncooked"
   }
 }

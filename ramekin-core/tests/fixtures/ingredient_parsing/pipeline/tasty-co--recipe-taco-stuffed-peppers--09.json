@@ -1,19 +1,17 @@
 {
   "raw": "16 oz medium chunky salsa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium chunky salsa",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium chunky salsa",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

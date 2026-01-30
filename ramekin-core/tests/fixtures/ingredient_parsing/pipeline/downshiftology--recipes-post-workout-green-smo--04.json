@@ -1,15 +1,13 @@
 {
   "raw": "1  green apple",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green apple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

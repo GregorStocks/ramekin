@@ -1,15 +1,13 @@
 {
   "raw": "½ cup crunchy peanut butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crunchy peanut butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crunchy peanut butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

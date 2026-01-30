@@ -1,10 +1,8 @@
 {
   "raw": "Whole cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Whole cloves",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Whole cloves",
+    "measurements": [],
+    "note": null
   }
 }

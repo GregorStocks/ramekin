@@ -1,10 +1,8 @@
 {
   "raw": "shortening, for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shortening, for frying",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "shortening, for frying",
+    "measurements": [],
+    "note": null
   }
 }

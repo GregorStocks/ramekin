@@ -1,19 +1,17 @@
 {
   "raw": "Two 6-rib pork loin roasts (8 1/2 pounds total)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6-rib pork loin roasts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "8 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6-rib pork loin roasts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "8 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

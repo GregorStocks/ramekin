@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons coconut oil, solid, plus more for greasing the pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil, solid",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for greasing the pan"
-    }
+  "expected": {
+    "item": "coconut oil, solid",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for greasing the pan"
   }
 }

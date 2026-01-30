@@ -1,15 +1,13 @@
 {
   "raw": "1 cup white distilled vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white distilled vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white distilled vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

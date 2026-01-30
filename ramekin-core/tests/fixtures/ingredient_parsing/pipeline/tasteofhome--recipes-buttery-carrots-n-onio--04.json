@@ -1,15 +1,13 @@
 {
   "raw": "3 medium onions, sliced and separated into rings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": "sliced and separated into rings"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced and separated into rings"
   }
 }

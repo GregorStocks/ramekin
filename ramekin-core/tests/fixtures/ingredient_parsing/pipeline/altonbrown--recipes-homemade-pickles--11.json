@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon pickling spice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickling spice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pickling spice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

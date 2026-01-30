@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons butter, salted or unsalted, room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter, salted or unsalted",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "butter, salted or unsalted",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "room temperature"
   }
 }

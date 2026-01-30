@@ -1,19 +1,17 @@
 {
   "raw": "8 oz good-quality chocolate, semi-sweet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good-quality chocolate, semi-sweet",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "good-quality chocolate, semi-sweet",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

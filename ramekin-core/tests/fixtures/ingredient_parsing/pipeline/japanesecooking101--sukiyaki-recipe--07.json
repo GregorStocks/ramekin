@@ -1,15 +1,13 @@
 {
   "raw": "2  long onions (cut diagonally)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long onions (cut diagonally)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long onions (cut diagonally)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

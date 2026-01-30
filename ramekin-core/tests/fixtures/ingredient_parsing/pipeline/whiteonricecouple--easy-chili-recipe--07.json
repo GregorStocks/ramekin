@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons chili powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

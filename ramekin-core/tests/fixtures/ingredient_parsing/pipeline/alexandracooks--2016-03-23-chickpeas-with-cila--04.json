@@ -1,19 +1,17 @@
 {
   "raw": "4 oz. cilantro (a large bunch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro (a large bunch)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cilantro (a large bunch)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

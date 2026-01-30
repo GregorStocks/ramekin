@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Eno or fruit salt (or ¼ tsp Soda bicarbonate)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Eno or fruit salt (or 1/4 tsp Soda bicarbonate)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Eno or fruit salt (or 1/4 tsp Soda bicarbonate)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

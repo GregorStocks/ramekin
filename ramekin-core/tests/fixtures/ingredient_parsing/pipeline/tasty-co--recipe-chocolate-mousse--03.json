@@ -1,19 +1,17 @@
 {
   "raw": "2 oz chocolate, milk or dark, broken into small pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate, milk or dark, broken into small pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate, milk or dark, broken into small pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

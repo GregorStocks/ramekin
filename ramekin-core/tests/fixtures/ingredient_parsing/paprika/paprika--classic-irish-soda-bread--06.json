@@ -1,19 +1,17 @@
 {
   "raw": "1 ½ teaspoons (8g) cream of tartar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream of tartar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream of tartar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "8",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

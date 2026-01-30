@@ -1,19 +1,17 @@
 {
   "raw": "450 grams large shrimp ((about 18 16/20 shrimp))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large shrimp",
-      "measurements": [
-        {
-          "amount": "450",
-          "unit": "g"
-        },
-        {
-          "amount": "18 16/20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "large shrimp",
+    "measurements": [
+      {
+        "amount": "450",
+        "unit": "g"
+      },
+      {
+        "amount": "18 16/20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

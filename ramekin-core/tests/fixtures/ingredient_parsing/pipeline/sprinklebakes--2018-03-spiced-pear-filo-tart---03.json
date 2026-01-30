@@ -1,15 +1,13 @@
 {
   "raw": "10  sheets filo dough (thawed (13×18-inches each))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets filo dough",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "thawed (13×18-inches each"
-    }
+  "expected": {
+    "item": "sheets filo dough",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "thawed (13×18-inches each"
   }
 }

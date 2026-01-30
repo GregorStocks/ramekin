@@ -1,15 +1,13 @@
 {
   "raw": "1/2 Tbsp Mrs. Dash (our favorite salt-free seasoning)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mrs. Dash (our favorite salt-free seasoning)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mrs. Dash (our favorite salt-free seasoning)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

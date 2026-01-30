@@ -1,15 +1,13 @@
 {
   "raw": "4  bowls of steamed rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bowls of steamed rice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bowls of steamed rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

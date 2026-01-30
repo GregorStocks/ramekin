@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces smoked salmon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked salmon",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked salmon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

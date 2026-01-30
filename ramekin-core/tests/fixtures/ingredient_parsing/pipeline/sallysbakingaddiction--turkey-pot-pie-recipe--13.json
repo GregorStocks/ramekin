@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (480ml) chicken broth/stock or turkey broth/stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth/stock or turkey broth/stock",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "480",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth/stock or turkey broth/stock",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "480",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  small garlic clove (, for Garlic Butter option (Note 5))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic clove (, for Garlic Butter option (Note 5)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic clove (, for Garlic Butter option (Note 5)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

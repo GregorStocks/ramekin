@@ -1,15 +1,13 @@
 {
   "raw": "1/2  Onion (, minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "Onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "minced"
   }
 }

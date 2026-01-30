@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp dry sherry or Shaoxing cooking wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry sherry or Shaoxing cooking wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry sherry or Shaoxing cooking wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

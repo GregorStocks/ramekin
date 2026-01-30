@@ -1,15 +1,13 @@
 {
   "raw": "2 cups grated zucchini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated zucchini",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated zucchini",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

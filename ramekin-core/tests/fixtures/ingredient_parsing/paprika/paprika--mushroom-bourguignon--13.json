@@ -1,10 +1,8 @@
 {
   "raw": "Egg noodles, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Egg noodles",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Egg noodles",
+    "measurements": [],
+    "note": "for serving"
   }
 }

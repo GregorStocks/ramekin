@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds ripe quality tomatoes, cored and roughly chopped (about 3 large)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe quality tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "cored and roughly chopped"
-    }
+  "expected": {
+    "item": "ripe quality tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "cored and roughly chopped"
   }
 }

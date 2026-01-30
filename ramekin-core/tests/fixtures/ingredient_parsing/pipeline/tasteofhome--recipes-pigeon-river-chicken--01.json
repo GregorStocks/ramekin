@@ -1,15 +1,13 @@
 {
   "raw": "2 cups plain yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain yogurt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain yogurt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 head fresh lettuce leaves (, (butter leaf, iceberg, or other similar lettuce, for wrapping))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lettuce leaves (, (butter leaf, iceberg, or other similar lettuce, for wrapping)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lettuce leaves (, (butter leaf, iceberg, or other similar lettuce, for wrapping)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

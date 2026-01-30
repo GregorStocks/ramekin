@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dried basil ( or your favorite herb)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried basil ( or your favorite herb)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried basil ( or your favorite herb)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

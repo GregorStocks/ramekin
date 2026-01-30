@@ -1,10 +1,8 @@
 {
   "raw": "red chilis",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chilis",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "red chilis",
+    "measurements": [],
+    "note": null
   }
 }

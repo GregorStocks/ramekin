@@ -1,15 +1,13 @@
 {
   "raw": "6  medium yellow potatoes (unpeeled and sliced into 3/4\" to 1\" thick pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow potatoes",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "medium"
-        }
-      ],
-      "note": "unpeeled and sliced into 3/4\" to 1\" thick pieces"
-    }
+  "expected": {
+    "item": "yellow potatoes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "medium"
+      }
+    ],
+    "note": "unpeeled and sliced into 3/4\" to 1\" thick pieces"
   }
 }

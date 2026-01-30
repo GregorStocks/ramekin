@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup roasted lightly salted almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted lightly salted almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted lightly salted almonds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

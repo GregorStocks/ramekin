@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "A couple parmesan rinds, if you have (optional, see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A couple parmesan rinds, if you have",
-      "measurements": [],
-      "note": "optional, see Note"
-    }
+  "expected": {
+    "item": "A couple parmesan rinds, if you have",
+    "measurements": [],
+    "note": "optional, see Note"
   }
 }

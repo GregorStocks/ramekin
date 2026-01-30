@@ -1,10 +1,8 @@
 {
   "raw": "Coconut flakes (for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Coconut flakes",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Coconut flakes",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

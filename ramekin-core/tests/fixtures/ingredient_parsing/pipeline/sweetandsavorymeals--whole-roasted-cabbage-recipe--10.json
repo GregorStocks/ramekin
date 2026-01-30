@@ -1,15 +1,13 @@
 {
   "raw": "2  medium carrots (peeled and cut into large chunks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and cut into large chunks"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and cut into large chunks"
   }
 }

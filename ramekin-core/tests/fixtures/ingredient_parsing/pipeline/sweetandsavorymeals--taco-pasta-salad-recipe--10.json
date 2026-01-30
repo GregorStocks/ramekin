@@ -1,15 +1,13 @@
 {
   "raw": "2 cups crushed Doritos",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed Doritos",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed Doritos",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

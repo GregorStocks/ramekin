@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cup (55 grams) unsweetened cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened cocoa powder",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened cocoa powder",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

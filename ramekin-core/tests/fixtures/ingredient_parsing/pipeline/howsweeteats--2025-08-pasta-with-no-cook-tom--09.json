@@ -1,15 +1,13 @@
 {
   "raw": "1 pound bucatini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bucatini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bucatini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

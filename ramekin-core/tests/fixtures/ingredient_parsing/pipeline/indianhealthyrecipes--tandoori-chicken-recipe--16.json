@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoon oil ((any or neutral oil or use mustard oil))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil (any or neutral oil or use mustard oil)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil (any or neutral oil or use mustard oil)",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

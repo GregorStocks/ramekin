@@ -1,15 +1,13 @@
 {
   "raw": "1  brown onion (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "brown onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

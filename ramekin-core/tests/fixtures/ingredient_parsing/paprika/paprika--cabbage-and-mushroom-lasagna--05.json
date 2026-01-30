@@ -1,10 +1,8 @@
 {
   "raw": "Salt and ground black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Salt and ground black pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Salt and ground black pepper",
+    "measurements": [],
+    "note": null
   }
 }

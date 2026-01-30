@@ -1,15 +1,13 @@
 {
   "raw": "3 spring onions, 1 cut into pieces and 2 sliced into 1/4-inch rounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spring onions",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "1 cut into pieces and 2 sliced into 1/4-inch rounds"
-    }
+  "expected": {
+    "item": "spring onions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "1 cut into pieces and 2 sliced into 1/4-inch rounds"
   }
 }

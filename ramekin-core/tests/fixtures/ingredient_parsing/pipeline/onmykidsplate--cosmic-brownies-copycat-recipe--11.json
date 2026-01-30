@@ -1,23 +1,21 @@
 {
   "raw": "3 ounces milk chocolate chips (about 1/2 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk chocolate chips",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk chocolate chips",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

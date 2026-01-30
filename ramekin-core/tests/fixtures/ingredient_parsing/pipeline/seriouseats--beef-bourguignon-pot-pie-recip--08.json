@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) double-concentrated tomato paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "double-concentrated tomato paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "double-concentrated tomato paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

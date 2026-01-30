@@ -1,10 +1,8 @@
 {
   "raw": "Hot sesame oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot sesame oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Hot sesame oil",
+    "measurements": [],
+    "note": null
   }
 }

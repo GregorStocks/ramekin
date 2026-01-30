@@ -1,10 +1,8 @@
 {
   "raw": "onion (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [],
+    "note": "chopped"
   }
 }

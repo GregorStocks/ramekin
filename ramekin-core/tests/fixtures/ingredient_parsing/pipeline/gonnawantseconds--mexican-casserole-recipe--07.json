@@ -1,15 +1,13 @@
 {
   "raw": "3 cups Jack cheese, divided (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Jack cheese, divided",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "Jack cheese, divided",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded"
   }
 }

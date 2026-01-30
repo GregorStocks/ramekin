@@ -1,15 +1,13 @@
 {
   "raw": "2 Ripe pears, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ripe pears",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "Ripe pears",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

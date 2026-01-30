@@ -1,15 +1,13 @@
 {
   "raw": "3  jalapeño chiles, cored, seeded and finely diced (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño chiles, cored",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "seeded and finely diced (see note)"
-    }
+  "expected": {
+    "item": "jalapeño chiles, cored",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "seeded and finely diced (see note)"
   }
 }

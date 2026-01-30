@@ -1,10 +1,8 @@
 {
   "raw": "Hummus",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hummus",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Hummus",
+    "measurements": [],
+    "note": null
   }
 }

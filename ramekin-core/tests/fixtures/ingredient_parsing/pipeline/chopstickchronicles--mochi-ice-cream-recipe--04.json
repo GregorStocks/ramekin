@@ -1,15 +1,13 @@
 {
   "raw": "80 g Katakuriko(potato starch)  (or corn starch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Katakuriko(potato starch)  (or corn starch)",
-      "measurements": [
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Katakuriko(potato starch)  (or corn starch)",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

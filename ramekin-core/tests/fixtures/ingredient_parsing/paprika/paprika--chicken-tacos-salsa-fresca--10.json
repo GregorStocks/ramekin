@@ -1,15 +1,13 @@
 {
   "raw": "1 habanero or jalapeño pepper, stemmed, seeded and minced, or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "habanero or jalapeño pepper, stemmed, seeded and minced",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "habanero or jalapeño pepper, stemmed, seeded and minced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "or to taste"
   }
 }

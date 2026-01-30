@@ -1,19 +1,17 @@
 {
   "raw": "1 oz. Sweet Vermouth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sweet Vermouth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sweet Vermouth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 slices stale sourdough bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stale sourdough bread",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stale sourdough bread",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

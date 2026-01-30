@@ -1,10 +1,8 @@
 {
   "raw": "Parsley garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parsley garnish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Parsley garnish",
+    "measurements": [],
+    "note": null
   }
 }

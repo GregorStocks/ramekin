@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fresh Mexican chorizo or vegan Mexican chorizo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Mexican chorizo or vegan Mexican chorizo",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Mexican chorizo or vegan Mexican chorizo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "10 Tbsp Kvas Concentrate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kvas Concentrate",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kvas Concentrate",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

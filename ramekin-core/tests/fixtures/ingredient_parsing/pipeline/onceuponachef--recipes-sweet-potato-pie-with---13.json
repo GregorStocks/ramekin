@@ -1,15 +1,13 @@
 {
   "raw": "1 9-in deep-dish frozen pie crust (no need to thaw) or homemade pie crust",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "9-in deep-dish frozen pie crust (no need to thaw) or homemade pie crust",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "9-in deep-dish frozen pie crust (no need to thaw) or homemade pie crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

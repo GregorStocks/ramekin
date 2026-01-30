@@ -1,15 +1,13 @@
 {
   "raw": "450 grams chicken wing tips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken wing tips",
-      "measurements": [
-        {
-          "amount": "450",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken wing tips",
+    "measurements": [
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

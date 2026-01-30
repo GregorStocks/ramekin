@@ -1,15 +1,13 @@
 {
   "raw": "4 cups hot cooked rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot cooked rice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot cooked rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

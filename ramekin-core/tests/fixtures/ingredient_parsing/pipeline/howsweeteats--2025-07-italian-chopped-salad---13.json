@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup chopped roasted red peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped roasted red peppers",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped roasted red peppers",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

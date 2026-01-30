@@ -1,15 +1,13 @@
 {
   "raw": "3  cinnamon sticks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon sticks",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon sticks",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

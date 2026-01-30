@@ -1,10 +1,8 @@
 {
   "raw": "shaved Manchego to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shaved Manchego to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "shaved Manchego to taste",
+    "measurements": [],
+    "note": null
   }
 }

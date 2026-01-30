@@ -1,15 +1,13 @@
 {
   "raw": "4 sprigs fresh thyme or rosemary (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme or rosemary",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "sprig"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh thyme or rosemary",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "sprig"
+      }
+    ],
+    "note": "optional"
   }
 }

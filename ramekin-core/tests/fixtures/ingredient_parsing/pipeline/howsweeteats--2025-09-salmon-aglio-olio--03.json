@@ -1,19 +1,17 @@
 {
   "raw": "32 ounces chicken or vegetable stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken or vegetable stock",
-      "measurements": [
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken or vegetable stock",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

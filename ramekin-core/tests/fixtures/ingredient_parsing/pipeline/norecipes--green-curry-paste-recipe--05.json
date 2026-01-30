@@ -1,15 +1,13 @@
 {
   "raw": "16 grams galangal (finely minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "galangal",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "g"
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "galangal",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "g"
+      }
+    ],
+    "note": "finely minced"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "3 thin slices American cheese or cheddar (about 2 oz. total)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin slices American cheese or cheddar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin slices American cheese or cheddar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

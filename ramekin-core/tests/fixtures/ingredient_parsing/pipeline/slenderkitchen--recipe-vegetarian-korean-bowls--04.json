@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup reduced sodium soy sauce (GF if needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced sodium soy sauce (GF if needed)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced sodium soy sauce (GF if needed)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

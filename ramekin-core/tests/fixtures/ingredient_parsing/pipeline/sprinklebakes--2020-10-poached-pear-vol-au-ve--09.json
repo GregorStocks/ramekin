@@ -1,15 +1,13 @@
 {
   "raw": "6  small firm but ripe pears",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm but ripe pears",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "firm but ripe pears",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

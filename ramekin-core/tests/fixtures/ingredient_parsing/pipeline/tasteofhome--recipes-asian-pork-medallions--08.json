@@ -1,19 +1,17 @@
 {
   "raw": "1 pork tenderloin (1 pound), cut into 1/2-in. slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork tenderloin , cut into 1/2-in. slices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork tenderloin , cut into 1/2-in. slices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "15 ounces canned beans ((black, pinto, cannellini, etc…), drained and rinsed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned beans (black, pinto, cannellini, etc…)",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "drained and rinsed)"
-    }
+  "expected": {
+    "item": "canned beans (black, pinto, cannellini, etc…)",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "drained and rinsed)"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "avocado oil for brushing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado oil for brushing",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "avocado oil for brushing",
+    "measurements": [],
+    "note": null
   }
 }

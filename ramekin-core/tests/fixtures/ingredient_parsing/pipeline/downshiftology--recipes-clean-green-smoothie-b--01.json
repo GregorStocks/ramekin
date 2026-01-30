@@ -1,15 +1,13 @@
 {
   "raw": "2 cups of spinach ((or other leafy green))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spinach (or other leafy green)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spinach (or other leafy green)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

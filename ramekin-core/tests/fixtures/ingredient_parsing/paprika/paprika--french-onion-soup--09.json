@@ -1,19 +1,17 @@
 {
   "raw": "One (3/4- to 1-inch) thick slice of bread for each bowl of soup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick slice of bread for each bowl of soup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick slice of bread for each bowl of soup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

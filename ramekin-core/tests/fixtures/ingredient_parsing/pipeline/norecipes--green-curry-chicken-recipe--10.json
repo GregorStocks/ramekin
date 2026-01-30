@@ -1,15 +1,13 @@
 {
   "raw": "80 grams baby corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby corn",
-      "measurements": [
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby corn",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

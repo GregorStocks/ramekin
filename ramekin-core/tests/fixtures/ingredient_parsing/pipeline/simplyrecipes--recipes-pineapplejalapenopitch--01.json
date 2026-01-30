@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Kosher or other high-quality salt, for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher or other high-quality salt, for garnish",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Kosher or other high-quality salt, for garnish",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

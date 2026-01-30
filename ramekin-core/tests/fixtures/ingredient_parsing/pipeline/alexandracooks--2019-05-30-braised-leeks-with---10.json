@@ -1,15 +1,13 @@
 {
   "raw": "12-oz pasta, such as pappardelle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-oz pasta, such as pappardelle",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-oz pasta, such as pappardelle",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

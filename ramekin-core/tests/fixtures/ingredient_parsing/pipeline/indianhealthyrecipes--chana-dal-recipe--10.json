@@ -1,15 +1,13 @@
 {
   "raw": "2 inch cinnamon piece  ((Ceylon/cassia, read notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inch cinnamon piece  (Ceylon/cassia, read notes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "inch cinnamon piece  (Ceylon/cassia, read notes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

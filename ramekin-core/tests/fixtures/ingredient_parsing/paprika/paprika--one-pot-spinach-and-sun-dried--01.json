@@ -1,23 +1,21 @@
 {
   "raw": "1 (8 ounce) jar oil-packed sun-dried tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil-packed sun-dried tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil-packed sun-dried tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

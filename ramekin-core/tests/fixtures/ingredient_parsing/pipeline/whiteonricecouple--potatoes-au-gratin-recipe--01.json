@@ -1,15 +1,13 @@
 {
   "raw": "4 pounds Potatoes (,  scrubbed clean (preferably gold potatoes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Potatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": "scrubbed clean (preferably gold potatoes"
-    }
+  "expected": {
+    "item": "Potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": "scrubbed clean (preferably gold potatoes"
   }
 }

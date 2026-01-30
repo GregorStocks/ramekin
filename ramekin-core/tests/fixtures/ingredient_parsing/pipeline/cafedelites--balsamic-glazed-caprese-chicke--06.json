@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon olive oil (or a light spray of cooking oil spray)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil (or a light spray of cooking oil spray)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil (or a light spray of cooking oil spray)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

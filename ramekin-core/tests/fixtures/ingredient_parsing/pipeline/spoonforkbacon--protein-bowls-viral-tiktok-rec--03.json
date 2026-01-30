@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon minced thyme",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced thyme",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced thyme",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

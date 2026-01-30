@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon Shaoxing wine (or dry sherry) ()",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shaoxing wine (or dry sherry) ()",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Shaoxing wine (or dry sherry) ()",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

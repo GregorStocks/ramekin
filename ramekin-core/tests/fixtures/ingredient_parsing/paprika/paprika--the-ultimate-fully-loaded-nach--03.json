@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups nacho cheese sauce (1 full recipe), flavored with 2 minced pickled jalapeños as per the recipe note",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nacho cheese sauce",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "flavored with 2 minced pickled jalapeños as per the recipe note"
-    }
+  "expected": {
+    "item": "nacho cheese sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "flavored with 2 minced pickled jalapeños as per the recipe note"
   }
 }

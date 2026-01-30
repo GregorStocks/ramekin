@@ -1,15 +1,13 @@
 {
   "raw": "1 c. Marsala wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Marsala wine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Marsala wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Corn tortillas, toasted, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Corn tortillas, toasted",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Corn tortillas, toasted",
+    "measurements": [],
+    "note": "for serving"
   }
 }

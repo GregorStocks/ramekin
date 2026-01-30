@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp chashu marinade",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chashu marinade",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chashu marinade",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

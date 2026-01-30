@@ -1,10 +1,8 @@
 {
   "raw": "Olive oil and butter as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Olive oil and butter as needed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Olive oil and butter as needed",
+    "measurements": [],
+    "note": null
   }
 }

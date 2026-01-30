@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups long-grain white rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long-grain white rice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long-grain white rice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

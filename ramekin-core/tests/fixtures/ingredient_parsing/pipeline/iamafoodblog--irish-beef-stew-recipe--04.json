@@ -1,15 +1,13 @@
 {
   "raw": "6 cremini mushrooms, quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cremini mushrooms",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "quartered"
   }
 }

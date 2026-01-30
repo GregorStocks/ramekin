@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon fine grain sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fine grain sea salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fine grain sea salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

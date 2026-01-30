@@ -1,15 +1,13 @@
 {
   "raw": "3 1/4 cups filtered water, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "filtered water",
-      "measurements": [
-        {
-          "amount": "3 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "filtered water",
+    "measurements": [
+      {
+        "amount": "3 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

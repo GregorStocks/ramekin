@@ -1,23 +1,21 @@
 {
   "raw": "1 celery rib (2 ounces; 57g), thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery rib",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "celery rib",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

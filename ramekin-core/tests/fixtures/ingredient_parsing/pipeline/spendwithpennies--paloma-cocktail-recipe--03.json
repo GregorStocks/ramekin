@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces grapefruit soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapefruit soda",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapefruit soda",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

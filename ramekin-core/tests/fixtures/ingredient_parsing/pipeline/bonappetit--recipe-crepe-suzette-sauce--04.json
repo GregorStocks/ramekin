@@ -1,15 +1,13 @@
 {
   "raw": "6 Tbsp. chilled unsalted butter, cut into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chilled unsalted butter, cut into pieces",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chilled unsalted butter, cut into pieces",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

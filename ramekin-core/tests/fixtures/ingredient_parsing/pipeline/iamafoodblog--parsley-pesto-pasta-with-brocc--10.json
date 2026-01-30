@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces of your favourite pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your favourite pasta",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "your favourite pasta",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Handful toasted pine nuts, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted pine nuts",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "toasted pine nuts",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "optional"
   }
 }

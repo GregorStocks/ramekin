@@ -1,15 +1,13 @@
 {
   "raw": "12 hard shell tacos",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hard shell tacos",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hard shell tacos",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

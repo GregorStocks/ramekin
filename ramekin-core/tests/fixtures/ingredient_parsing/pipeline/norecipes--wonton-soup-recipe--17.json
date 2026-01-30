@@ -1,15 +1,13 @@
 {
   "raw": "280 grams thin Chinese wonton noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin Chinese wonton noodles",
-      "measurements": [
-        {
-          "amount": "280",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin Chinese wonton noodles",
+    "measurements": [
+      {
+        "amount": "280",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

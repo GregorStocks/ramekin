@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dry mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

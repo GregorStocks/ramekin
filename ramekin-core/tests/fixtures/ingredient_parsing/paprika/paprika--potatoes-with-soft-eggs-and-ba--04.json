@@ -1,15 +1,13 @@
 {
   "raw": "1/4 pound frisee (French curly endive) or another sturdy lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frisee (French curly endive) or another sturdy lettuce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frisee (French curly endive) or another sturdy lettuce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

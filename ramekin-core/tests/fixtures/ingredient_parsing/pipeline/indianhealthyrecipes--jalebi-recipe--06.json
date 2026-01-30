@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon baking soda  ((or 1 large pinch for fermented batter))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking soda  (or 1 large pinch for fermented batter)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking soda  (or 1 large pinch for fermented batter)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

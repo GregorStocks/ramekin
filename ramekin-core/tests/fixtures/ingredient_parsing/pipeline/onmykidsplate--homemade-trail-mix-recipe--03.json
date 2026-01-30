@@ -1,15 +1,13 @@
 {
   "raw": "¼  chocolate drops",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate drops",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate drops",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

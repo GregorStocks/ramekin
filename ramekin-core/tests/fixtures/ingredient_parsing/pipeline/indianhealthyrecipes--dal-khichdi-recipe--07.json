@@ -1,15 +1,13 @@
 {
   "raw": "½ cup tomatoes (deseeded &amp;amp; fine chopped or pureed (1 medium))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "deseeded & fine chopped or pureed (1 medium"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "deseeded & fine chopped or pureed (1 medium"
   }
 }

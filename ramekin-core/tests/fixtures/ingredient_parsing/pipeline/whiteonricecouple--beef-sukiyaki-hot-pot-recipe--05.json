@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Vegetable Oil (, or beef fat trimmings)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vegetable Oil (, or beef fat trimmings)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Vegetable Oil (, or beef fat trimmings)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

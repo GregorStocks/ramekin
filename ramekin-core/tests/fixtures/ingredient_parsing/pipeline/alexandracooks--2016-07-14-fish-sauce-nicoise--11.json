@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;lemon, halved, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon, halved",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "lemon, halved",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

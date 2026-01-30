@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (280 grams) vanilla yogurt,&nbsp;we used Yoplait Greek yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla yogurt, we used Yoplait Greek yogurt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "280",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla yogurt, we used Yoplait Greek yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "280",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

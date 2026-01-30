@@ -1,19 +1,17 @@
 {
   "raw": "1 large baking potato (1 pound), peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "baking potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup dry green lentils",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry green lentils",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry green lentils",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

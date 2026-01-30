@@ -1,10 +1,8 @@
 {
   "raw": "superfine or granulated sugar (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "superfine or granulated sugar (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "superfine or granulated sugar (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

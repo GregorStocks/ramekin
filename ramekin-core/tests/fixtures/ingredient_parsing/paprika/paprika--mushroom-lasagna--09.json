@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ground nutmeg (I use less, because this seems like a lot)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground nutmeg (I use less, because this seems like a lot)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground nutmeg (I use less, because this seems like a lot)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

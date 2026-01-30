@@ -1,15 +1,13 @@
 {
   "raw": "1/2-3/4 cup shredded gruyère",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded gruyère",
-      "measurements": [
-        {
-          "amount": "1/2-3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded gruyère",
+    "measurements": [
+      {
+        "amount": "1/2-3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

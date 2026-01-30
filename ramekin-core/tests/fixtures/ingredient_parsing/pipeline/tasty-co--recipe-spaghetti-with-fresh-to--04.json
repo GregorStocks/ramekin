@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cherry tomato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry tomato",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cherry tomato",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

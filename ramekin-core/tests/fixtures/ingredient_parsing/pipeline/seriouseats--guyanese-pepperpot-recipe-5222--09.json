@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (450g) bone-in beef chuck, cut into roughly 2-inch pieces (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in beef chuck, cut into roughly 2-inch pieces (see note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "450",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in beef chuck, cut into roughly 2-inch pieces (see note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

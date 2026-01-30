@@ -1,10 +1,8 @@
 {
   "raw": "tortilla chips or wonton chips (for topping, omit to be gluten-free)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortilla chips or wonton chips (for topping, omit to be gluten-free)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "tortilla chips or wonton chips (for topping, omit to be gluten-free)",
+    "measurements": [],
+    "note": null
   }
 }

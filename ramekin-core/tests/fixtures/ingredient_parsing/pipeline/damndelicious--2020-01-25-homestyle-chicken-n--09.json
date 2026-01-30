@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 pounds bone-in, skinless chicken breasts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in, skinless chicken breasts",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in, skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

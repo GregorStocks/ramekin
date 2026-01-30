@@ -1,19 +1,17 @@
 {
   "raw": "6 Ounces Cream Cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cream Cheese",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cream Cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

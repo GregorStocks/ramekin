@@ -1,19 +1,17 @@
 {
   "raw": "16 cups (320 g) basil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "cup"
-        },
-        {
-          "amount": "320",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basil",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "cup"
+      },
+      {
+        "amount": "320",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

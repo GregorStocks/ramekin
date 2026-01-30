@@ -1,15 +1,13 @@
 {
   "raw": "2 c. salted dry-roasted peanuts&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted dry-roasted peanuts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted dry-roasted peanuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

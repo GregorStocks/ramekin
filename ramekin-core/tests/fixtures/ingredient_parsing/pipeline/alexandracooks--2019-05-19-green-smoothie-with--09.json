@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon hemp seeds, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hemp seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "hemp seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

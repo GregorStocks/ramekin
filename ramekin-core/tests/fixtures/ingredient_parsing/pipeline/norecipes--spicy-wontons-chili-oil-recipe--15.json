@@ -1,15 +1,13 @@
 {
   "raw": "40  wonton wrappers ((depends on the size of the wrapper))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wonton wrappers (depends on the size of the wrapper)",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wonton wrappers (depends on the size of the wrapper)",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp light or dark muscovado sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light or dark muscovado sugar",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light or dark muscovado sugar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Brown mini M&amp;amp;Ms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brown mini M&Ms",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Brown mini M&Ms",
+    "measurements": [],
+    "note": null
   }
 }

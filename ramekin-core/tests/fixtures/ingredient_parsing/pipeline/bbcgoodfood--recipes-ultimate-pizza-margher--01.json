@@ -1,15 +1,13 @@
 {
   "raw": "350g strong white flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strong white flour",
-      "measurements": [
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strong white flour",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

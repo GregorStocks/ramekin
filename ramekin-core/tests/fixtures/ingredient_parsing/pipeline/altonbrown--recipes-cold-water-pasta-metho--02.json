@@ -1,19 +1,17 @@
 {
   "raw": "1 (16-ounce) box dry pasta, farfalle, rigatoni, penne, etc.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry pasta, farfalle, rigatoni, penne, etc.",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "box"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry pasta, farfalle, rigatoni, penne, etc.",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "box"
+      },
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

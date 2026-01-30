@@ -1,15 +1,13 @@
 {
   "raw": "1  shallot (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "halved"
   }
 }

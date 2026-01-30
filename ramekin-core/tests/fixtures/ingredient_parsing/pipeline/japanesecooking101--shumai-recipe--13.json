@@ -1,15 +1,13 @@
 {
   "raw": "12-15  green peas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green peas",
-      "measurements": [
-        {
-          "amount": "12-15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green peas",
+    "measurements": [
+      {
+        "amount": "12-15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

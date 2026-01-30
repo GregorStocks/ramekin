@@ -1,10 +1,8 @@
 {
   "raw": "Dry rub",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dry rub",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Dry rub",
+    "measurements": [],
+    "note": null
   }
 }

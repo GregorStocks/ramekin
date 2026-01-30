@@ -1,15 +1,13 @@
 {
   "raw": "1 2/3 cup coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut milk",
-      "measurements": [
-        {
-          "amount": "1 2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut milk",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

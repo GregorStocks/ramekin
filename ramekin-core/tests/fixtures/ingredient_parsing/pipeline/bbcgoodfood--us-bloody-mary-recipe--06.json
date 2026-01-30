@@ -1,10 +1,8 @@
 {
   "raw": "few shakes of Tabasco (chipotle Tabasco is nice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "few shakes of Tabasco (chipotle Tabasco is nice)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "few shakes of Tabasco (chipotle Tabasco is nice)",
+    "measurements": [],
+    "note": null
   }
 }

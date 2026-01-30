@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons raw or demerara sugar, for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw or demerara sugar, for topping",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw or demerara sugar, for topping",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cooked black beans ((See Note 1))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked black beans (See Note 1)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked black beans (See Note 1)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

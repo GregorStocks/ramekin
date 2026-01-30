@@ -1,10 +1,8 @@
 {
   "raw": "Shredded Lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shredded Lettuce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shredded Lettuce",
+    "measurements": [],
+    "note": null
   }
 }

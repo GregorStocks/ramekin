@@ -1,10 +1,8 @@
 {
   "raw": "ASSEMBLY",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ASSEMBLY",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "ASSEMBLY",
+    "measurements": [],
+    "note": null
   }
 }

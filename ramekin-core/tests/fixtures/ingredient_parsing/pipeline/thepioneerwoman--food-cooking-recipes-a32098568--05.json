@@ -1,23 +1,21 @@
 {
   "raw": "2 c. fresh Bing or other sweet cherries, pitted (about 12 ounces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Bing or other sweet cherries, pitted",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh Bing or other sweet cherries, pitted",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

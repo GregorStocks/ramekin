@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ground pepper (I start with a teaspoon and taste, adding more if necessary)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pepper (I start with a teaspoon and taste, adding more if necessary)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground pepper (I start with a teaspoon and taste, adding more if necessary)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

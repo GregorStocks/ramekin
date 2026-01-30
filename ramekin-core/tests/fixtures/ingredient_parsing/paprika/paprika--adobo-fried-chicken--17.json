@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken pieces with skin, thighs and/or drumsticks, plus wings if desired (do not use breasts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken pieces with skin, thighs and/or drumsticks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "plus wings if desired (do not use breasts)"
-    }
+  "expected": {
+    "item": "chicken pieces with skin, thighs and/or drumsticks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "plus wings if desired (do not use breasts)"
   }
 }

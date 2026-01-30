@@ -1,19 +1,17 @@
 {
   "raw": "16 Oz. fresh mozzarella cheese, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "fresh mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

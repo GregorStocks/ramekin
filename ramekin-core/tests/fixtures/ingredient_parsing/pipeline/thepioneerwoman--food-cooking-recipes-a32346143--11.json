@@ -1,10 +1,8 @@
 {
   "raw": "Canola oil, for brushing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Canola oil, for brushing",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Canola oil, for brushing",
+    "measurements": [],
+    "note": null
   }
 }

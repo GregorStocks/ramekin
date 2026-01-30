@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon onion powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion powder",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

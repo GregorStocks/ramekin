@@ -1,10 +1,8 @@
 {
   "raw": "Protein powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Protein powder",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Protein powder",
+    "measurements": [],
+    "note": null
   }
 }

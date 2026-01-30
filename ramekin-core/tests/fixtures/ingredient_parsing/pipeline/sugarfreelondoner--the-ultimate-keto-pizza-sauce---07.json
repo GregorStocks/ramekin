@@ -1,15 +1,13 @@
 {
   "raw": "1  small onion (finely chopped (50g) or 1 tsp onion powder)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion or 1 tsp onion powder)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "finely chopped (50g"
-    }
+  "expected": {
+    "item": "onion or 1 tsp onion powder)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "finely chopped (50g"
   }
 }

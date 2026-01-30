@@ -1,10 +1,8 @@
 {
   "raw": "olive oil, for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil, for frying",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil, for frying",
+    "measurements": [],
+    "note": null
   }
 }

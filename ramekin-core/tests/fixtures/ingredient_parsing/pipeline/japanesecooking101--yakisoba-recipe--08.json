@@ -1,10 +1,8 @@
 {
   "raw": "Aonori",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aonori",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Aonori",
+    "measurements": [],
+    "note": null
   }
 }

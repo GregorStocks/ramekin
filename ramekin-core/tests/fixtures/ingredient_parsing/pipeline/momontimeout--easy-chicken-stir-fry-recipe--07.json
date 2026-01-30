@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup baby carrots (sliced )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby carrots",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "baby carrots",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced"
   }
 }

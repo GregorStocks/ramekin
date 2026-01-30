@@ -1,15 +1,13 @@
 {
   "raw": "2 cups rice (using 240ml cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice (using 240ml cup)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice (using 240ml cup)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

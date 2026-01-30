@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sriracha, (plus more for drizzling)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sriracha",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for drizzling"
-    }
+  "expected": {
+    "item": "sriracha",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for drizzling"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chia seeds, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chia seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chia seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

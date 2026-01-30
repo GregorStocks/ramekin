@@ -1,15 +1,13 @@
 {
   "raw": "200 grams boneless skinless chicken breast ((thinly sliced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breast",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

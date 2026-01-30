@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Japanese soy sauce (koikuchi shoyu)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese soy sauce (koikuchi shoyu)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese soy sauce (koikuchi shoyu)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon honey (or granulated sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey (or granulated sugar)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey (or granulated sugar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

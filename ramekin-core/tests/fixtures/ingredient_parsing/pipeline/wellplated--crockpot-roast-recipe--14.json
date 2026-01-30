@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons cornstarch (plus 2 tablespoons water to create a slurry)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch (plus 2 tablespoons water to create a slurry)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch (plus 2 tablespoons water to create a slurry)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

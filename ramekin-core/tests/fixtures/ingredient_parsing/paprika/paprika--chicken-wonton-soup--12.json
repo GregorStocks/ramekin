@@ -1,15 +1,13 @@
 {
   "raw": "8 cups prepared chicken stock or broth, storebought or homemade",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared chicken stock or broth, storebought or homemade",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared chicken stock or broth, storebought or homemade",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

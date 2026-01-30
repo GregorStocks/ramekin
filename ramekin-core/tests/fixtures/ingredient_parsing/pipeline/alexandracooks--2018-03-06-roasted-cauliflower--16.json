@@ -1,10 +1,8 @@
 {
   "raw": "naan, pita, or other bread for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "naan, pita",
-      "measurements": [],
-      "note": "or other bread for serving"
-    }
+  "expected": {
+    "item": "naan, pita",
+    "measurements": [],
+    "note": "or other bread for serving"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounce can tomato sauce&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can tomato sauce",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can tomato sauce",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

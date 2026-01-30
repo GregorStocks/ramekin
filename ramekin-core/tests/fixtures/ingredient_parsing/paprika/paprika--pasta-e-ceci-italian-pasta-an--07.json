@@ -1,15 +1,13 @@
 {
   "raw": "1 packed cup canned whole tomatoes, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned whole tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "packed cup"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "canned whole tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "packed cup"
+      }
+    ],
+    "note": "drained"
   }
 }

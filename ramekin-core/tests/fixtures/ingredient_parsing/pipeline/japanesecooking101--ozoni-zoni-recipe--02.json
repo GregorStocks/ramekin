@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Daikon radish (thin and skinny slices)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Daikon radish (thin and skinny slices)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Daikon radish (thin and skinny slices)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

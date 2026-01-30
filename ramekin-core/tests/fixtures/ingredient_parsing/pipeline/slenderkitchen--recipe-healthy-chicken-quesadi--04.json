@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup canned corn, rinsed and drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned corn",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "rinsed and drained"
-    }
+  "expected": {
+    "item": "canned corn",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed and drained"
   }
 }

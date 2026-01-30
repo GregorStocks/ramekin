@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound bacon (cut into 1/2\" pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon (cut into 1/2\" pieces)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon (cut into 1/2\" pieces)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

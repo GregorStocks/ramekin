@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Grand Marnier or other orange liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grand Marnier or other orange liqueur",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Grand Marnier or other orange liqueur",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

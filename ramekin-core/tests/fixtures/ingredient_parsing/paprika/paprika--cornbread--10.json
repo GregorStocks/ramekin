@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (155 grams) cornmeal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornmeal",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "155",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornmeal",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "155",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

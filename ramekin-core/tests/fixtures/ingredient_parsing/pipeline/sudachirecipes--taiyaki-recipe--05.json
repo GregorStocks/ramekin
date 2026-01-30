@@ -1,15 +1,13 @@
 {
   "raw": "20 g light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

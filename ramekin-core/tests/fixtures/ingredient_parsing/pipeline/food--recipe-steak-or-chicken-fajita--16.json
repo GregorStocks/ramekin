@@ -1,10 +1,8 @@
 {
   "raw": "chopped tomato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped tomato",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped tomato",
+    "measurements": [],
+    "note": null
   }
 }

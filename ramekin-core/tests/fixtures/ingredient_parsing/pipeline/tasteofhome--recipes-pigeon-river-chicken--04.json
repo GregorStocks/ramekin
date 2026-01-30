@@ -1,19 +1,17 @@
 {
   "raw": "2 broiler/fryer chickens (3 to 4 pounds each), cut up",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broiler/fryer chickens , cut up",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "3 to 4",
-          "unit": "lb each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broiler/fryer chickens , cut up",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "3 to 4",
+        "unit": "lb each"
+      }
+    ],
+    "note": null
   }
 }

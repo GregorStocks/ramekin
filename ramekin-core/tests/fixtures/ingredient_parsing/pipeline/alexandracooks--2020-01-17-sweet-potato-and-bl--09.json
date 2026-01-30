@@ -1,10 +1,8 @@
 {
   "raw": "a cup or more of finely minced cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a cup or more of finely minced cilantro",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a cup or more of finely minced cilantro",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 parsley sprigs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley sprigs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsley sprigs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

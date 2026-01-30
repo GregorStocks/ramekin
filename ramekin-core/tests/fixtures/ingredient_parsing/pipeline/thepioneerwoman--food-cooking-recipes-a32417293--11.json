@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. shredded coleslaw mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded coleslaw mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded coleslaw mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

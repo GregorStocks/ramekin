@@ -1,10 +1,8 @@
 {
   "raw": "Wasabi",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Wasabi",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Wasabi",
+    "measurements": [],
+    "note": null
   }
 }

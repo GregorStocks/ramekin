@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups Rye Sour Starter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rye Sour Starter",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Rye Sour Starter",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon coconut oil or your cooking oil of choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil or your cooking oil of choice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut oil or your cooking oil of choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

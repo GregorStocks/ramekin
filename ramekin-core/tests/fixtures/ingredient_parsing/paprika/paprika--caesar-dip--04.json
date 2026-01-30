@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60 ml) lemon juice from 1 whole lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice from 1 whole lemon",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice from 1 whole lemon",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

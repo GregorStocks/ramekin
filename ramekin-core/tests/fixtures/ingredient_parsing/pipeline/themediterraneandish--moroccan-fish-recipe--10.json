@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tsp Ras El Hanout, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ras El Hanout",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "Ras El Hanout",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

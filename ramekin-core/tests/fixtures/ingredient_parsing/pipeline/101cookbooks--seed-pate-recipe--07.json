@@ -1,15 +1,13 @@
 {
   "raw": "4  sprigs fresh dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh dill",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "sprig"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh dill",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "sprig"
+      }
+    ],
+    "note": null
   }
 }

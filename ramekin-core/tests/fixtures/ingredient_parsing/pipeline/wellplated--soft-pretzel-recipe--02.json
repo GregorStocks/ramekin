@@ -1,27 +1,25 @@
 {
   "raw": "1 packet active dry yeast  ((1/4 ounce or 2 1/4 teaspoons))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packet active dry yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "2 1/4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packet active dry yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

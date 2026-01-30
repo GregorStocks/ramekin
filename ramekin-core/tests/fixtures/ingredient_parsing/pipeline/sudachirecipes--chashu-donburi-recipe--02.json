@@ -1,15 +1,13 @@
 {
   "raw": "50 g Japanese leek (naganegi) (green part)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese leek (naganegi) (green part)",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese leek (naganegi) (green part)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

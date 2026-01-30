@@ -1,15 +1,13 @@
 {
   "raw": "15-ounce can chickpeas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounce can chickpeas",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-ounce can chickpeas",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

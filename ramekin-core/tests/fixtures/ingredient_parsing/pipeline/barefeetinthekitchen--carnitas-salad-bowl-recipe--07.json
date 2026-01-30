@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup pulled pork carnitas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pulled pork carnitas",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pulled pork carnitas",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

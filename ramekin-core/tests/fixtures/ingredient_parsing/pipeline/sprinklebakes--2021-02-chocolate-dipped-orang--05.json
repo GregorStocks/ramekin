@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon salt (fine grain)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (fine grain)",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (fine grain)",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

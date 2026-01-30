@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup toasted and cooled pecan halves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted and cooled pecan halves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted and cooled pecan halves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

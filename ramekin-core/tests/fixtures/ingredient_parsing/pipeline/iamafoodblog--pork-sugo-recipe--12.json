@@ -1,15 +1,13 @@
 {
   "raw": "2 quarts chicken stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken stock",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

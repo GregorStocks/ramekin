@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pearl couscous",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pearl couscous",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pearl couscous",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

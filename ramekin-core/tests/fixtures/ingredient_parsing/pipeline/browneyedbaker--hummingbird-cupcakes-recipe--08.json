@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup walnuts or pecans (toasted and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "walnuts or pecans",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted and chopped"
-    }
+  "expected": {
+    "item": "walnuts or pecans",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "toasted and chopped"
   }
 }

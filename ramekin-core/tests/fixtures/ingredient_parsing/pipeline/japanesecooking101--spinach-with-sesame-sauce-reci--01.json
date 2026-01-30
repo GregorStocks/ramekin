@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spinach",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spinach",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

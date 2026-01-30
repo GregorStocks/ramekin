@@ -1,15 +1,13 @@
 {
   "raw": "2  medium carrots or equiv. winter squash, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots or equiv. winter squash",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "carrots or equiv. winter squash",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
   }
 }

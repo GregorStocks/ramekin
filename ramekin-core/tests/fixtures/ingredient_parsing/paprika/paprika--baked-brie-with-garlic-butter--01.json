@@ -1,15 +1,13 @@
 {
   "raw": "1 pound mushrooms, any kind",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushrooms, any kind",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mushrooms, any kind",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

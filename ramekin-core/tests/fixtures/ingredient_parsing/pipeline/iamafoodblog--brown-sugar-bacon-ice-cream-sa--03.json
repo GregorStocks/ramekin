@@ -1,10 +1,8 @@
 {
   "raw": "wafers or cookies of your choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wafers or cookies of your choice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "wafers or cookies of your choice",
+    "measurements": [],
+    "note": null
   }
 }

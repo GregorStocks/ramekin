@@ -1,15 +1,13 @@
 {
   "raw": "3-4 slices bacon, chopped and cooked until crisp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "3-4",
-          "unit": "slice"
-        }
-      ],
-      "note": "chopped and cooked until crisp"
-    }
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "3-4",
+        "unit": "slice"
+      }
+    ],
+    "note": "chopped and cooked until crisp"
   }
 }

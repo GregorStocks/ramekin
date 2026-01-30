@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp Kahlúa or other coffee liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kahlúa or other coffee liqueur",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kahlúa or other coffee liqueur",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

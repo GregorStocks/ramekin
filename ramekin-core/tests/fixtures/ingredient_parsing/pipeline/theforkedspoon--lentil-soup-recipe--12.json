@@ -1,15 +1,13 @@
 {
   "raw": "2 cups dry lentils (rinsed in cold water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry lentils",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "rinsed in cold water"
-    }
+  "expected": {
+    "item": "dry lentils",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed in cold water"
   }
 }

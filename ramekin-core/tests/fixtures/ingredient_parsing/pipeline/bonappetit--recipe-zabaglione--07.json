@@ -1,10 +1,8 @@
 {
   "raw": "fruit (such as oranges, strawberries, and/or figs; for serving; optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fruit",
-      "measurements": [],
-      "note": "such as oranges, strawberries, and/or figs; for serving; optional"
-    }
+  "expected": {
+    "item": "fruit",
+    "measurements": [],
+    "note": "such as oranges, strawberries, and/or figs; for serving; optional"
   }
 }

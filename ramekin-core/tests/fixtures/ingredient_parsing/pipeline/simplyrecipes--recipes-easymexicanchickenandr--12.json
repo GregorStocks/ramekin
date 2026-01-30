@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 limes, quartered, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "limes, quartered",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "limes, quartered",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": "for garnish"
   }
 }

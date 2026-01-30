@@ -1,15 +1,13 @@
 {
   "raw": "½  cup water ((to use for consistency))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (to use for consistency)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (to use for consistency)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

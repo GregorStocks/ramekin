@@ -1,10 +1,8 @@
 {
   "raw": "greek yogurt,  (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "greek yogurt,  (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "greek yogurt,  (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

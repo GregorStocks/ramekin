@@ -1,10 +1,8 @@
 {
   "raw": "Neutral oil for roasting (I use safflower)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Neutral oil for roasting (I use safflower)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Neutral oil for roasting (I use safflower)",
+    "measurements": [],
+    "note": null
   }
 }

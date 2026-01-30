@@ -1,19 +1,17 @@
 {
   "raw": "1 (15-ounce) can chopped tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

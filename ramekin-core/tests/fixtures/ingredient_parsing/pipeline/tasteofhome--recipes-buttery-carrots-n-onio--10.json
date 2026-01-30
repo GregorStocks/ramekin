@@ -1,15 +1,13 @@
 {
   "raw": "Dash pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

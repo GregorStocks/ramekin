@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon rice cooking wine or sake",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice cooking wine or sake",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice cooking wine or sake",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

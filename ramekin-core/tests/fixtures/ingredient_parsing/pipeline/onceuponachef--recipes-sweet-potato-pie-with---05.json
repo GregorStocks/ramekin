@@ -1,15 +1,13 @@
 {
   "raw": "3 large egg yolks, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolks",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "egg yolks",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

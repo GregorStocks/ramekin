@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2  serrano chiles ((blend with the dressing))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "serrano chiles (blend with the dressing)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "serrano chiles (blend with the dressing)",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Buttercream orbs (see blog post for details)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Buttercream orbs (see blog post for details)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Buttercream orbs (see blog post for details)",
+    "measurements": [],
+    "note": null
   }
 }

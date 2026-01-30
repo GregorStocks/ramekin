@@ -1,15 +1,13 @@
 {
   "raw": "50g plain flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain flour",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain flour",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

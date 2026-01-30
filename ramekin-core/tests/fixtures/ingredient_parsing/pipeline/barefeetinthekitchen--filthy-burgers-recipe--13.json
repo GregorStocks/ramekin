@@ -1,10 +1,8 @@
 {
   "raw": "sliced pickles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced pickles",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced pickles",
+    "measurements": [],
+    "note": null
   }
 }

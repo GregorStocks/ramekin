@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon Italian seasoning (dried rosemary, oregano, thyme, basil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian seasoning",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "dried rosemary, oregano, thyme, basil"
-    }
+  "expected": {
+    "item": "Italian seasoning",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "dried rosemary, oregano, thyme, basil"
   }
 }

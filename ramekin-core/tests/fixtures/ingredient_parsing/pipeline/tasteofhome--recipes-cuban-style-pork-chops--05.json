@@ -1,23 +1,21 @@
 {
   "raw": "4 slices deli ham (about 3 ounces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "deli ham",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        },
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "deli ham",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slice"
+      },
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

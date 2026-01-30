@@ -1,19 +1,17 @@
 {
   "raw": "15 oz Can Apricot Halves in light syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Can Apricot Halves in light syrup",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Can Apricot Halves in light syrup",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

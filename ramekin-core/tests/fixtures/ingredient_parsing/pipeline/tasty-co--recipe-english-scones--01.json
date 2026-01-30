@@ -1,15 +1,13 @@
 {
   "raw": "3 ½ cups self-raising flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "self-raising flour",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "self-raising flour",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

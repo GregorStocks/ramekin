@@ -1,15 +1,13 @@
 {
   "raw": "4  Japanese rice cake (kiri mochi)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese rice cake (kiri mochi)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese rice cake (kiri mochi)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

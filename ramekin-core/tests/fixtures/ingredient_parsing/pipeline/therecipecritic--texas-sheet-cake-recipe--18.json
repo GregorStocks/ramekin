@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped pecans or walnuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped pecans or walnuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped pecans or walnuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Southern Hash Browns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Southern Hash Browns",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Southern Hash Browns",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

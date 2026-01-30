@@ -1,19 +1,17 @@
 {
   "raw": "3/4 cups (180ml) heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "180",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "180",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lb lean ground beef (the leaner the better)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground beef (the leaner the better)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean ground beef (the leaner the better)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

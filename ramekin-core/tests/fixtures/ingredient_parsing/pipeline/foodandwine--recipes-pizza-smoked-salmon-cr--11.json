@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound thinly sliced smoked salmon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced smoked salmon",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced smoked salmon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

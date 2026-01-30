@@ -1,15 +1,13 @@
 {
   "raw": "90 grams shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots",
-      "measurements": [
-        {
-          "amount": "90",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

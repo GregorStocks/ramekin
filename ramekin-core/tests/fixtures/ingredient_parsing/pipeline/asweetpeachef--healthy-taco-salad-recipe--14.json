@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. unsweetened almond milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened almond milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened almond milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

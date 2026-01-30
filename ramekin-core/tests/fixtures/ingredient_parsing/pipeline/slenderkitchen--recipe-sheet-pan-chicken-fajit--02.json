@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp fajita seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fajita seasoning",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fajita seasoning",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

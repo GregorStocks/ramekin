@@ -1,15 +1,13 @@
 {
   "raw": "½ cup water (to soak rava (+ 2 to 3 tbsps to adjust the consistency))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (to soak rava (+ 2 to 3 tbsps to adjust the consistency)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (to soak rava (+ 2 to 3 tbsps to adjust the consistency)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

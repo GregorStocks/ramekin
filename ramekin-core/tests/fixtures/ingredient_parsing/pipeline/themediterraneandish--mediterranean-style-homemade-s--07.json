@@ -1,15 +1,13 @@
 {
   "raw": "1 jalapeno pepper, finely chopped (optional if you want to add spice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno pepper, finely chopped",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional if you want to add spice"
-    }
+  "expected": {
+    "item": "jalapeno pepper, finely chopped",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional if you want to add spice"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ginger paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger paste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

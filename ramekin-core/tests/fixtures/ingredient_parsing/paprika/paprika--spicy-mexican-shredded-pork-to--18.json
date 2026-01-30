@@ -1,10 +1,8 @@
 {
   "raw": "queso fresco or feta cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "queso fresco or feta cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "queso fresco or feta cheese",
+    "measurements": [],
+    "note": null
   }
 }

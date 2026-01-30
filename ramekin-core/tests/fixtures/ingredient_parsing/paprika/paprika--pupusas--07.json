@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces Monterey Jack cheese, cut into 8 pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Monterey Jack cheese, cut into 8 pieces",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Monterey Jack cheese, cut into 8 pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "10 branches fresh thyme ((or 2 teaspoons dried thyme))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "branches fresh thyme",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "or 2 teaspoons dried thyme"
-    }
+  "expected": {
+    "item": "branches fresh thyme",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "or 2 teaspoons dried thyme"
   }
 }

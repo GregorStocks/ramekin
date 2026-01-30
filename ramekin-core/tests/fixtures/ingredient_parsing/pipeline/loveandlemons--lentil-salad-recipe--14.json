@@ -1,15 +1,13 @@
 {
   "raw": "4 cups spinach (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spinach",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "spinach",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

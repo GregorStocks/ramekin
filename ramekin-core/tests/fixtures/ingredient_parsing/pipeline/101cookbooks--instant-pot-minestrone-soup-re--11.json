@@ -1,15 +1,13 @@
 {
   "raw": "1  medium bunch kale or chard, (de-stemmed and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunch kale or chard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "de-stemmed and chopped"
-    }
+  "expected": {
+    "item": "bunch kale or chard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "de-stemmed and chopped"
   }
 }

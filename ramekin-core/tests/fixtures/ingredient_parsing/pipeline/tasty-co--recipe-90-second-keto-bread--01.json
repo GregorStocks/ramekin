@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons almond flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond flour",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond flour",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

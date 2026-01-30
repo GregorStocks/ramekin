@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup to 1 cup white rum (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 1 cup white rum (see notes)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 1 cup white rum (see notes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

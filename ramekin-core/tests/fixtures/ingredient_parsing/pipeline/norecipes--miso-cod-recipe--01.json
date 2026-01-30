@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ginger juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

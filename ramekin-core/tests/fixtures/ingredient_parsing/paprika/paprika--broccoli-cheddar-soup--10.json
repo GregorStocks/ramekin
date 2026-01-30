@@ -1,27 +1,25 @@
 {
   "raw": "1 large carrot (about 6 ounces) or 2 slim ones, chopped tiny (1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot or 2 slim ones",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped tiny"
-    }
+  "expected": {
+    "item": "carrot or 2 slim ones",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped tiny"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (250ml) whipping cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipping cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whipping cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

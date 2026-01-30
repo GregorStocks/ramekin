@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac14; cup reduced-sodium soy sauce or tamari (regular soy sauce is too salty!)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium soy sauce or tamari (regular soy sauce is too salty!)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium soy sauce or tamari (regular soy sauce is too salty!)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

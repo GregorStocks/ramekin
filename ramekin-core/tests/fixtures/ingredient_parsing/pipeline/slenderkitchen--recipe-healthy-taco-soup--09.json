@@ -1,19 +1,17 @@
 {
   "raw": "1.25 oz. taco seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "taco seasoning",
-      "measurements": [
-        {
-          "amount": "1.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "35",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "taco seasoning",
+    "measurements": [
+      {
+        "amount": "1.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

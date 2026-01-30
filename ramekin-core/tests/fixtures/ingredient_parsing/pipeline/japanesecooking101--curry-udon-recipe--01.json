@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Japanese Curry (leftover)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese Curry (leftover)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese Curry (leftover)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

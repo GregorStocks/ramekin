@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cups yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yogurt",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yogurt",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

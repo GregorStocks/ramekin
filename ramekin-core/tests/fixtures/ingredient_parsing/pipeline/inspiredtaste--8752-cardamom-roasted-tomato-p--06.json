@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces dried pasta like pappardelle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried pasta like pappardelle",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried pasta like pappardelle",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

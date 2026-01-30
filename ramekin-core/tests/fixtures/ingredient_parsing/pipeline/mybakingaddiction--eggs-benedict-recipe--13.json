@@ -1,10 +1,8 @@
 {
   "raw": "Smoked salmon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Smoked salmon",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Smoked salmon",
+    "measurements": [],
+    "note": null
   }
 }

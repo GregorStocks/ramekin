@@ -1,23 +1,21 @@
 {
   "raw": "1 medium potato (about 6 ounces), peeled and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and chopped"
-    }
+  "expected": {
+    "item": "potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and chopped"
   }
 }

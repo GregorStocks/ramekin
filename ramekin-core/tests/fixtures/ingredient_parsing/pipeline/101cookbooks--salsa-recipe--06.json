@@ -1,15 +1,13 @@
 {
   "raw": "1  medium dried guajillo chile pepper, soaked in boiling water until softened, and then drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried guajillo chile pepper, soaked in boiling water until softened",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "and then drained"
-    }
+  "expected": {
+    "item": "dried guajillo chile pepper, soaked in boiling water until softened",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "and then drained"
   }
 }

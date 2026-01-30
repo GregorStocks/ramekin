@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon coconut oil (liquified)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil (liquified)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut oil (liquified)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

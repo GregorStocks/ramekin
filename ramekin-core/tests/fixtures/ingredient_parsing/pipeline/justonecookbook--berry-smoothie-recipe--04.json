@@ -1,23 +1,21 @@
 {
   "raw": "¼ cup non-fat Greek yogurt ((4 Tbsp; can be any type of yogurt))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "non-fat Greek yogurt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": null,
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "non-fat Greek yogurt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

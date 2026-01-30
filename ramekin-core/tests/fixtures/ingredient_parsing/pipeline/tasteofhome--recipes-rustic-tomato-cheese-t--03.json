@@ -1,15 +1,13 @@
 {
   "raw": "7 tablespoons crumbled goat cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled goat cheese",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled goat cheese",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

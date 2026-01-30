@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons creme fraiche, plain yogurt, or sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "creme fraiche, plain yogurt, or sour cream",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "creme fraiche, plain yogurt, or sour cream",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon gochujang ((Korean sweet chili paste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gochujang (Korean sweet chili paste)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gochujang (Korean sweet chili paste)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Brown sugar, maple syrup, honey, or other sweetener",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brown sugar, maple syrup, honey, or other sweetener",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Brown sugar, maple syrup, honey, or other sweetener",
+    "measurements": [],
+    "note": null
   }
 }

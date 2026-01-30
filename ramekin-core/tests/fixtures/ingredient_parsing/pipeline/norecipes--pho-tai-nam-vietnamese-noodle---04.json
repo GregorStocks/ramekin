@@ -1,19 +1,17 @@
 {
   "raw": "175 grams onion ((1/2 large onion))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "175",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "175",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

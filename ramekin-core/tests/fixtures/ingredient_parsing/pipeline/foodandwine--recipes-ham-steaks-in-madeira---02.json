@@ -1,15 +1,13 @@
 {
   "raw": "3 1/2 tablespoons salted butter, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "olive oil (and parsley for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil",
-      "measurements": [],
-      "note": "and parsley for garnish"
-    }
+  "expected": {
+    "item": "olive oil",
+    "measurements": [],
+    "note": "and parsley for garnish"
   }
 }

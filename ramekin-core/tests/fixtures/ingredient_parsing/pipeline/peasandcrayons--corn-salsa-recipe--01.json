@@ -1,15 +1,13 @@
 {
   "raw": "2 cups sweet yellow corn kernels",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet yellow corn kernels",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet yellow corn kernels",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

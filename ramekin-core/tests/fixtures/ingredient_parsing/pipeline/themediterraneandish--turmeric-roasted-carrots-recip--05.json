@@ -1,10 +1,8 @@
 {
   "raw": "Spices  of your choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Spices  of your choice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Spices  of your choice",
+    "measurements": [],
+    "note": null
   }
 }

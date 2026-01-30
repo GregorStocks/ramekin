@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. white American cheese slices, torn into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white American cheese slices, torn into pieces",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white American cheese slices, torn into pieces",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

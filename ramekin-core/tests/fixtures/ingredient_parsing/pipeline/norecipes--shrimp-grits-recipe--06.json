@@ -1,15 +1,13 @@
 {
   "raw": "300 grams shrimp ((peeled and deveined))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and deveined"
-    }
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and deveined"
   }
 }

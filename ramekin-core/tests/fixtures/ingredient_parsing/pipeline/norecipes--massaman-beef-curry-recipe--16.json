@@ -1,15 +1,13 @@
 {
   "raw": "580 grams beef chuck ((cut into 1.5-inch cubes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef chuck (cut into 1.5-inch cubes)",
-      "measurements": [
-        {
-          "amount": "580",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef chuck (cut into 1.5-inch cubes)",
+    "measurements": [
+      {
+        "amount": "580",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4-5  thick slices ginger root",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick slices ginger root",
-      "measurements": [
-        {
-          "amount": "4-5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick slices ginger root",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

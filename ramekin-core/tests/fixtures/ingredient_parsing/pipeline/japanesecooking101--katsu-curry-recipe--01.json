@@ -1,10 +1,8 @@
 {
   "raw": "Curry and Rice recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Curry and Rice recipe",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Curry and Rice recipe",
+    "measurements": [],
+    "note": null
   }
 }

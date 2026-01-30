@@ -1,15 +1,13 @@
 {
   "raw": "5  vine-ripened tomatoes, (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vine-ripened tomatoes",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "vine-ripened tomatoes",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "16 ounces top sirloin, cleaned and trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "top sirloin",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "cleaned and trimmed"
-    }
+  "expected": {
+    "item": "top sirloin",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "cleaned and trimmed"
   }
 }

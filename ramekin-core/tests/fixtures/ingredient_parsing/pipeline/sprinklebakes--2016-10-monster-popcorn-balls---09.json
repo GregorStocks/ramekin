@@ -1,15 +1,13 @@
 {
   "raw": "2-4  long pieces of dried papaya",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long pieces of dried papaya",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long pieces of dried papaya",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

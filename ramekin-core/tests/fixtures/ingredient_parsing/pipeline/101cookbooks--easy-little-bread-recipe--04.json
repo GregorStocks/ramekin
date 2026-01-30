@@ -1,23 +1,21 @@
 {
   "raw": "1 cup / 4.5 oz / 125 g unbleached all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "125",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "4.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "125",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

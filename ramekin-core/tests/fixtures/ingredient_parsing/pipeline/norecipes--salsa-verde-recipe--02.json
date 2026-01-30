@@ -1,15 +1,13 @@
 {
   "raw": "1 medium serrano chili",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "serrano chili",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "serrano chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

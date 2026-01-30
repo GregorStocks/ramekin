@@ -1,15 +1,13 @@
 {
   "raw": "3 cups Cantal cheese, or substitute good-quality grated sharp cheddar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cantal cheese",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "or substitute good-quality grated sharp cheddar"
-    }
+  "expected": {
+    "item": "Cantal cheese",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "or substitute good-quality grated sharp cheddar"
   }
 }

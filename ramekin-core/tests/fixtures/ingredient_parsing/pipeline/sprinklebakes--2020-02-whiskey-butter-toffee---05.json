@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 tablespoons bourbon whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bourbon whiskey",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bourbon whiskey",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

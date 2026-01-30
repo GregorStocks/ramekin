@@ -1,10 +1,8 @@
 {
   "raw": "A heaped 1/4 teaspoon fine sea or table salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A heaped 1/4 teaspoon fine sea or table salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A heaped 1/4 teaspoon fine sea or table salt",
+    "measurements": [],
+    "note": null
   }
 }

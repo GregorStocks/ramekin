@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp cooking oil (neutural flavor )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking oil (neutural flavor",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking oil (neutural flavor",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

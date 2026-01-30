@@ -1,19 +1,17 @@
 {
   "raw": "1 medium zucchini, halved and sliced (1/4 inch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": "halved and sliced"
-    }
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": "halved and sliced"
   }
 }

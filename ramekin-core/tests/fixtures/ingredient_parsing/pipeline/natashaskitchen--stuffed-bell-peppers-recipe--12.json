@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp Vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

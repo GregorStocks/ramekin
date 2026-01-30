@@ -1,19 +1,17 @@
 {
   "raw": "8 (5- to 7-ounce) bone-in chicken thighs, trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in chicken thighs",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "bone-in chicken thighs",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "trimmed"
   }
 }

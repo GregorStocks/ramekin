@@ -1,10 +1,8 @@
 {
   "raw": "Steamed jasmine rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Steamed jasmine rice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Steamed jasmine rice",
+    "measurements": [],
+    "note": null
   }
 }

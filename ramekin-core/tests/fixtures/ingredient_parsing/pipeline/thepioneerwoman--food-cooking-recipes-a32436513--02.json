@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. spaghetti or angel hair pasta&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghetti or angel hair pasta",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghetti or angel hair pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

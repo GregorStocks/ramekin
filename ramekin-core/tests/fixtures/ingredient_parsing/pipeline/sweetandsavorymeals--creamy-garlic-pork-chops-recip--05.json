@@ -1,19 +1,17 @@
 {
   "raw": "8 oz baby Bella mushrooms (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby Bella mushrooms",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "baby Bella mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced"
   }
 }

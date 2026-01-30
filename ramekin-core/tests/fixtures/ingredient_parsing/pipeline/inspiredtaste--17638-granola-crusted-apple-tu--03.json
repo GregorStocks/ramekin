@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons brown mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown mustard",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown mustard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

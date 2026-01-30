@@ -1,19 +1,17 @@
 {
   "raw": "1 loaf (1 pound) frozen bread dough, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf frozen bread dough",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "loaf frozen bread dough",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "thawed"
   }
 }

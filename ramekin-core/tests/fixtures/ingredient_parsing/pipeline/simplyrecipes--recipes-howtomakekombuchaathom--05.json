@@ -1,15 +1,13 @@
 {
   "raw": "1 scoby",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scoby",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scoby",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

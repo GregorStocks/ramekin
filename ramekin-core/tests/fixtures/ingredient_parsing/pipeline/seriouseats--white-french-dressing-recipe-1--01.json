@@ -1,23 +1,21 @@
 {
   "raw": "1/2 small sweet onion (about 2 ounces; 60 g), roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "small"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "sweet onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

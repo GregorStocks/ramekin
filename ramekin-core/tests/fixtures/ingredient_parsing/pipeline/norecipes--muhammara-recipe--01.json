@@ -1,15 +1,13 @@
 {
   "raw": "1 cup unseasoned breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unseasoned breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unseasoned breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

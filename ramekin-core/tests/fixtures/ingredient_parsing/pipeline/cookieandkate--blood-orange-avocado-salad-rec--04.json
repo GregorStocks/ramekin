@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons fresh lime juice (about 1 medium lime)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 cups shredded red cabbage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded red cabbage",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded red cabbage",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

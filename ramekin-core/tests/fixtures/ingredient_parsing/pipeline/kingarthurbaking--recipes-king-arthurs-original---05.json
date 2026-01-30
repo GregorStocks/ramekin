@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon espresso powder, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "espresso powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "espresso powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

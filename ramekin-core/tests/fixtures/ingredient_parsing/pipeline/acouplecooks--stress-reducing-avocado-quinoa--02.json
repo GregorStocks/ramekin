@@ -1,15 +1,13 @@
 {
   "raw": "1 small head cauliflower",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head cauliflower",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/4 oz. hibiscus rose syrup (such as Pink House Academy)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hibiscus rose syrup (such as Pink House Academy)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hibiscus rose syrup (such as Pink House Academy)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

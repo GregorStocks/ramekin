@@ -1,19 +1,17 @@
 {
   "raw": "7 oz milk chocolate broken into chunks, or use melts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk chocolate broken into chunks, or use melts",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk chocolate broken into chunks, or use melts",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

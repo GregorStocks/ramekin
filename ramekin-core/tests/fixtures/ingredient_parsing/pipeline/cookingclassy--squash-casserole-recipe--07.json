@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp dried chives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chives",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chives",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

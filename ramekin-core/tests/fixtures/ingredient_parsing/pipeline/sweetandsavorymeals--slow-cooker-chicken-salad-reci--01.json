@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 pounds chicken breasts (skinless and boneless)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts (skinless and boneless)",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts (skinless and boneless)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

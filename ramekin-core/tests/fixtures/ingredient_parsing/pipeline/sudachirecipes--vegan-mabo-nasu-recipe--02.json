@@ -1,15 +1,13 @@
 {
   "raw": "1 bowl cold water (for soaking)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bowl cold water (for soaking)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bowl cold water (for soaking)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

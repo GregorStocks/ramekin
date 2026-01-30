@@ -1,19 +1,17 @@
 {
   "raw": "16 medium red potatoes (about 4 pounds), quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red potatoes",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "medium"
-        },
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "red potatoes",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "medium"
+      },
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": "quartered"
   }
 }

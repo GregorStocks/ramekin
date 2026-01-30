@@ -1,10 +1,8 @@
 {
   "raw": "optional toppings: chili crisp, toasted sesame seeds, furikake seasoning, fried garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional toppings: chili crisp, toasted sesame seeds, furikake seasoning, fried garlic",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "optional toppings: chili crisp, toasted sesame seeds, furikake seasoning, fried garlic",
+    "measurements": [],
+    "note": null
   }
 }

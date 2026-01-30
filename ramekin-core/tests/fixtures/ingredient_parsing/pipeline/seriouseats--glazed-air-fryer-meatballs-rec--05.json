@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces (226 g) lean ground pork",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean ground pork",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "226",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean ground pork",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

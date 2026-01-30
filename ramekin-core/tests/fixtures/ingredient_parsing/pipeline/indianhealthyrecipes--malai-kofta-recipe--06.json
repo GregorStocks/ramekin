@@ -1,10 +1,8 @@
 {
   "raw": "salt as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt as needed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "salt as needed",
+    "measurements": [],
+    "note": null
   }
 }

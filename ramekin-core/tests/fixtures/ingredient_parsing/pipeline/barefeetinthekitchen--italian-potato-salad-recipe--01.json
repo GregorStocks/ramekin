@@ -1,15 +1,13 @@
 {
   "raw": "2 - 2 1/2 pounds potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/2 pounds potatoes",
-      "measurements": [
-        {
-          "amount": "2-2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1/2 pounds potatoes",
+    "measurements": [
+      {
+        "amount": "2-2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

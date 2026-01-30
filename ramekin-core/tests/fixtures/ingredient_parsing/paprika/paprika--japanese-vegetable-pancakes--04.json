@@ -1,15 +1,13 @@
 {
   "raw": "5 lacinato kale leaves, ribs removed, leaves cut into thin ribbons",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lacinato kale leaves, ribs removed, leaves cut into thin ribbons",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lacinato kale leaves, ribs removed, leaves cut into thin ribbons",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

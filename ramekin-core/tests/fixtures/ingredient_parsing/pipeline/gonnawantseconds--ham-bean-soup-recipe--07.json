@@ -1,15 +1,13 @@
 {
   "raw": "4  stalks celery, (1/4 inch diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "stalk"
-        }
-      ],
-      "note": "1/4 inch diced"
-    }
+  "expected": {
+    "item": "celery",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "stalk"
+      }
+    ],
+    "note": "1/4 inch diced"
   }
 }

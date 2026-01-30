@@ -1,19 +1,17 @@
 {
   "raw": "1 ounce crystallized ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crystallized ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crystallized ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

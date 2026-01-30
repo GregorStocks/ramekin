@@ -1,15 +1,13 @@
 {
   "raw": "1 lime, cut into 8 wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime, cut into 8 wedges",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime, cut into 8 wedges",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

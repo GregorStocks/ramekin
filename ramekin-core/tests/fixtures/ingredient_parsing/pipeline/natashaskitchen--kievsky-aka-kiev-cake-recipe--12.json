@@ -1,10 +1,8 @@
 {
   "raw": "Follow the link in the post",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Follow the link in the post",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Follow the link in the post",
+    "measurements": [],
+    "note": null
   }
 }

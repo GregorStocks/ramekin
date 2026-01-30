@@ -1,19 +1,17 @@
 {
   "raw": "¼ cup (1 ounce/28 grams) potato starch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato starch",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "potato starch",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

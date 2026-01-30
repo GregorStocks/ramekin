@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons (10 ml) Thai fish sauce such as Red Boat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai fish sauce such as Red Boat",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai fish sauce such as Red Boat",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "10",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

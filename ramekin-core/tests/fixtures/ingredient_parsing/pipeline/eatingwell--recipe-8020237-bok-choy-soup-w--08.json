@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chopped bok choy",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped bok choy",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped bok choy",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

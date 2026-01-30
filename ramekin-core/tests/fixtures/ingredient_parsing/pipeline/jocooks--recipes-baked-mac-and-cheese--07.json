@@ -1,15 +1,13 @@
 {
   "raw": "2 cups provolone cheese (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "provolone cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "provolone cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded"
   }
 }

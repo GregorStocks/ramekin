@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp garlic powder (or use 1 tsp of garlic salt instead of garlic powder and salt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic powder (or use 1 tsp of garlic salt instead of garlic powder and salt)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic powder (or use 1 tsp of garlic salt instead of garlic powder and salt)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

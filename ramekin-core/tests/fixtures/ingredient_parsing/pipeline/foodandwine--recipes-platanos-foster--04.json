@@ -1,15 +1,13 @@
 {
   "raw": "5 tablespoons plus 1 teaspoon coconut water, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "5 tablespoons plus 1 teaspoon coconut water, divided",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 1 teaspoon coconut water, divided"
-    }
+  "expected": {
+    "item": "5 tablespoons plus 1 teaspoon coconut water, divided",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus 1 teaspoon coconut water, divided"
   }
 }

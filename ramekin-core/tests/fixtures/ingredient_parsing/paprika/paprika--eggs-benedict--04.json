@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon cayenne or hot paprika, plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cayenne or hot paprika",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "cayenne or hot paprika",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

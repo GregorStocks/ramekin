@@ -1,15 +1,13 @@
 {
   "raw": "1  can crab meat (seasoned with lemon juice and salt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crab meat (seasoned with lemon juice and salt)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crab meat (seasoned with lemon juice and salt)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

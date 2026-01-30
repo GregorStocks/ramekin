@@ -1,10 +1,8 @@
 {
   "raw": "Red and green candied cherries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Red and green candied cherries",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Red and green candied cherries",
+    "measurements": [],
+    "note": null
   }
 }

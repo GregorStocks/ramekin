@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons ghee or unsalted grass fed butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee or unsalted grass fed butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ghee or unsalted grass fed butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

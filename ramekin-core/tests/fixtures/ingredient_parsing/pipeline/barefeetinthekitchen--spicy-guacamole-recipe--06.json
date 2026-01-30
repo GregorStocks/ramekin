@@ -1,10 +1,8 @@
 {
   "raw": "Optional: dash of cayenne pepper (adjust to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional: dash of cayenne pepper",
-      "measurements": [],
-      "note": "adjust to taste"
-    }
+  "expected": {
+    "item": "Optional: dash of cayenne pepper",
+    "measurements": [],
+    "note": "adjust to taste"
   }
 }

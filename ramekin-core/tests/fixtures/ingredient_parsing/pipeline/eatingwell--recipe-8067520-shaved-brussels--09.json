@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons cider vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cider vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cider vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

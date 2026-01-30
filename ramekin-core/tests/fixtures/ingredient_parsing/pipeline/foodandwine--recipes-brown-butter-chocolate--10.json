@@ -1,19 +1,17 @@
 {
   "raw": "3/4 cup bittersweet chocolate chips, morsels, or discs (about 60% cacao)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet chocolate chips, morsels, or discs",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet chocolate chips, morsels, or discs",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

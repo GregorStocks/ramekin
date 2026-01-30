@@ -1,15 +1,13 @@
 {
   "raw": "1 carrot stick, thinly sliced (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot stick, thinly sliced",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "carrot stick, thinly sliced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

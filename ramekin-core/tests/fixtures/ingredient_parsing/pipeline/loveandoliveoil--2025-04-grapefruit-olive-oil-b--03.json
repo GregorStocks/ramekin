@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons grapefruit zest (from 1 large grapefruit)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapefruit zest (from 1 large grapefruit)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapefruit zest (from 1 large grapefruit)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

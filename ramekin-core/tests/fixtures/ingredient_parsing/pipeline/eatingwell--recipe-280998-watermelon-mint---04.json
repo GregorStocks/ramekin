@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup club soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "club soda",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "club soda",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

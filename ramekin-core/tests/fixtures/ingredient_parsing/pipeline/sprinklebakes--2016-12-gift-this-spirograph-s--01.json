@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb. ready-made white fondant",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ready-made white fondant",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ready-made white fondant",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

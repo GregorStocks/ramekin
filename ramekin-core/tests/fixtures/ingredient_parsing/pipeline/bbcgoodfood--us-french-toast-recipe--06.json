@@ -1,15 +1,13 @@
 {
   "raw": "4 thick slices of brioche or white bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick slices of brioche or white bread",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick slices of brioche or white bread",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

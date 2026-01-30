@@ -1,15 +1,13 @@
 {
   "raw": "1 batch hatch chili",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "batch hatch chili",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "batch hatch chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

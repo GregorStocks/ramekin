@@ -1,15 +1,13 @@
 {
   "raw": "2 onions roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions roughly chopped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onions roughly chopped",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

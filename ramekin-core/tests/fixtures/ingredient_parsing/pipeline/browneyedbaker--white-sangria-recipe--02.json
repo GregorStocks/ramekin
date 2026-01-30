@@ -1,15 +1,13 @@
 {
   "raw": "1  large lemon (cut into ¼-inch-thick slices)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon (cut into 1/4-inch-thick slices)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon (cut into 1/4-inch-thick slices)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

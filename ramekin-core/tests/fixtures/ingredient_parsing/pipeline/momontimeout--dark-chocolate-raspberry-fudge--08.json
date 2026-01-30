@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp raspberry extract or liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raspberry extract or liqueur",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raspberry extract or liqueur",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

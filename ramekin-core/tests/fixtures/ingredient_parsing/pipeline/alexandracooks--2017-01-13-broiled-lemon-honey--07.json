@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;pinch flaky sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky sea salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flaky sea salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

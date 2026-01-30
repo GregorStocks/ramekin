@@ -1,23 +1,21 @@
 {
   "raw": "4 cups (32 oz) low-sodium beef broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium beef broth",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium beef broth",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

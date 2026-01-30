@@ -1,15 +1,13 @@
 {
   "raw": "1 cup fresh spinach or basil ((use what you have handy!))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh spinach or basil (use what you have handy!)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh spinach or basil (use what you have handy!)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

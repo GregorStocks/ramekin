@@ -1,15 +1,13 @@
 {
   "raw": "1   teaspoon    liquid smoke",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "liquid smoke",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "liquid smoke",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

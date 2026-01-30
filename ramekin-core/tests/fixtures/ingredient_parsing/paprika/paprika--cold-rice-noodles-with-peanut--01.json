@@ -1,10 +1,8 @@
 {
   "raw": "Serves 4 generously, 6 moderately",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Serves 4 generously, 6 moderately",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Serves 4 generously, 6 moderately",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8 large eggs (hard-boiled and cooled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs (hard-boiled and cooled)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs (hard-boiled and cooled)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

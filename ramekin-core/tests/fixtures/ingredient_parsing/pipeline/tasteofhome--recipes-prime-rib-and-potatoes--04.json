@@ -1,15 +1,13 @@
 {
   "raw": "2 large baking potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

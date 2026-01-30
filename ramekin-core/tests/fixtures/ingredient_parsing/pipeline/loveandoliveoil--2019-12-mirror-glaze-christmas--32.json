@@ -1,15 +1,13 @@
 {
   "raw": "6 pieces Rolo candies (unwrapped and dusted with gold luster, for decoration)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rolo candies (unwrapped and dusted with gold luster, for decoration)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "piece"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Rolo candies (unwrapped and dusted with gold luster, for decoration)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "piece"
+      }
+    ],
+    "note": null
   }
 }

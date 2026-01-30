@@ -1,15 +1,13 @@
 {
   "raw": "12 sandwich rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sandwich rolls",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sandwich rolls",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

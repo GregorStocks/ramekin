@@ -1,15 +1,13 @@
 {
   "raw": "1 pound cavatappi or elbow pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cavatappi or elbow pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cavatappi or elbow pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

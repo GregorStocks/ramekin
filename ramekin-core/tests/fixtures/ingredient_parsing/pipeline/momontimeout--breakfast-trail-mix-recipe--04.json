@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Honey Nut Cheerios (or your favorite cereal)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Honey Nut Cheerios (or your favorite cereal)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Honey Nut Cheerios (or your favorite cereal)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

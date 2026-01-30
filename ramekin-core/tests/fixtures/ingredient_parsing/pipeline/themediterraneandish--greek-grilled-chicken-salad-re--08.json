@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oregano",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

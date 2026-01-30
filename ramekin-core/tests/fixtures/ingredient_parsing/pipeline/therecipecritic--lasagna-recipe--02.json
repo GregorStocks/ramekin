@@ -1,15 +1,13 @@
 {
   "raw": "1  diced small onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced small onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced small onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

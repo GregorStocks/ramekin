@@ -1,27 +1,25 @@
 {
   "raw": "1 cup (250ml) coconut milk, evaporated milk, half and half (10% M.F.), or table cream (18% M.F.)  (see notes below**)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut milk, evaporated milk, half and half , or table cream (see notes below**)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "ml"
-        },
-        {
-          "amount": "10",
-          "unit": null
-        },
-        {
-          "amount": "18",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut milk, evaporated milk, half and half , or table cream (see notes below**)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "ml"
+      },
+      {
+        "amount": "10",
+        "unit": null
+      },
+      {
+        "amount": "18",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

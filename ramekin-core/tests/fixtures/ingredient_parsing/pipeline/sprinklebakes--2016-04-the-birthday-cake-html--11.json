@@ -1,19 +1,17 @@
 {
   "raw": "5 1/2 cups 690g confectioners’ sugar, sifted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners’ sugar",
-      "measurements": [
-        {
-          "amount": "5 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "690",
-          "unit": "g"
-        }
-      ],
-      "note": "sifted"
-    }
+  "expected": {
+    "item": "confectioners’ sugar",
+    "measurements": [
+      {
+        "amount": "5 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "690",
+        "unit": "g"
+      }
+    ],
+    "note": "sifted"
   }
 }

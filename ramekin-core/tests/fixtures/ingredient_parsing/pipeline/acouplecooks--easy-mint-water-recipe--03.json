@@ -1,23 +1,21 @@
 {
   "raw": "7 cups (64 ounces) cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold water",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "cup"
-        },
-        {
-          "amount": "64",
-          "unit": "oz"
-        },
-        {
-          "amount": "1814",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold water",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "cup"
+      },
+      {
+        "amount": "64",
+        "unit": "oz"
+      },
+      {
+        "amount": "1814",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Kosher Salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher Salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Kosher Salt",
+    "measurements": [],
+    "note": null
   }
 }

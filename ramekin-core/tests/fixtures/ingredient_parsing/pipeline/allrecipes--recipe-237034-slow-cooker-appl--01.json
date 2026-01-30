@@ -1,15 +1,13 @@
 {
   "raw": "4 Granny Smith apples - peeled, cored, and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Granny Smith apples - peeled, cored",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "and chopped"
-    }
+  "expected": {
+    "item": "Granny Smith apples - peeled, cored",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "and chopped"
   }
 }

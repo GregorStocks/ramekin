@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon kosher salt (, if using table salt, use a little less)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt (, if using table salt, use a little less)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt (, if using table salt, use a little less)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

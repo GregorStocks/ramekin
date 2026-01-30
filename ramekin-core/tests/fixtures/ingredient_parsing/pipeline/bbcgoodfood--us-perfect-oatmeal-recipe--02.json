@@ -1,15 +1,13 @@
 {
   "raw": "1⅓-1½ cups milk or water, or a mixture",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/3-1 1/2 cups milk or water, or a mixture",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1/3-1 1/2 cups milk or water, or a mixture",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

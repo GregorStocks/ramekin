@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60 ml) dry vermouth or dry white wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry vermouth or dry white wine",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry vermouth or dry white wine",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

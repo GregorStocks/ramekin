@@ -1,19 +1,17 @@
 {
   "raw": "1 sprig  curry leaves ( (or sub with 10 mint leaves or 2 to 3 tender stalks of coriander leaves))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curry leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "sprig"
-        },
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "curry leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "sprig"
+      },
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

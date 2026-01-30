@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp tartar sauce (*3)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tartar sauce (*3)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tartar sauce (*3)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

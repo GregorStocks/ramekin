@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Pearls Kalamata Pitted Greek Olives (plus more to your liking)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pearls Kalamata Pitted Greek Olives (plus more to your liking)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Pearls Kalamata Pitted Greek Olives (plus more to your liking)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

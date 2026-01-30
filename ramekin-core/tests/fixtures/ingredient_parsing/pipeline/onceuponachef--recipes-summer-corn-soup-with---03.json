@@ -1,15 +1,13 @@
 {
   "raw": "6 cups low-sodium chicken broth, best quality",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium chicken broth, best quality",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium chicken broth, best quality",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

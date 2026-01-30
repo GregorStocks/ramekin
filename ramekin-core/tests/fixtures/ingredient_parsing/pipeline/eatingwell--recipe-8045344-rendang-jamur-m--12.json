@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup tamarind water (see Notes) or 2 tablespoons lime juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tamarind water (see Notes)",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": "or 2 tablespoons lime juice"
-    }
+  "expected": {
+    "item": "tamarind water (see Notes)",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "or 2 tablespoons lime juice"
   }
 }

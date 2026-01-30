@@ -1,10 +1,8 @@
 {
   "raw": "garlic sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic sauce",
+    "measurements": [],
+    "note": null
   }
 }

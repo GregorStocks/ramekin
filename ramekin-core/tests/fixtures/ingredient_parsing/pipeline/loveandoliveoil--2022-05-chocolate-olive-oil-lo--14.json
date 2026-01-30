@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons milk or non-dairy milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk or non-dairy milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk or non-dairy milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

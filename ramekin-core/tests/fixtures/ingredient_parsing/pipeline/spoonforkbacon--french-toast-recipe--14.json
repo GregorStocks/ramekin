@@ -1,15 +1,13 @@
 {
   "raw": "1 1/3 cups toasted and crushed pistachios",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted and crushed pistachios",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted and crushed pistachios",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

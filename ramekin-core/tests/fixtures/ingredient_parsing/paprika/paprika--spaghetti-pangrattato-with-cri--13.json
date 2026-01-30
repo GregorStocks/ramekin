@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces dried spaghetti",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried spaghetti",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried spaghetti",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

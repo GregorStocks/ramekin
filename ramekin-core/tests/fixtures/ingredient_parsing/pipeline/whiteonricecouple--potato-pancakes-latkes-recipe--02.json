@@ -1,15 +1,13 @@
 {
   "raw": "1/2 large Sweet Onion (, diced into 1/4\" pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sweet Onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "large"
-        }
-      ],
-      "note": "diced into 1/4\" pieces"
-    }
+  "expected": {
+    "item": "Sweet Onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": "diced into 1/4\" pieces"
   }
 }

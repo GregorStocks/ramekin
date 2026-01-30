@@ -1,15 +1,13 @@
 {
   "raw": "1 c. raspberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raspberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raspberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

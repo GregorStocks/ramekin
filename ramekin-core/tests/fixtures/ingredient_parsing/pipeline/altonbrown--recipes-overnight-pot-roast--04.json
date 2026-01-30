@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces button mushrooms, washed and halved if large, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "button mushrooms, washed and halved if large",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "button mushrooms, washed and halved if large",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

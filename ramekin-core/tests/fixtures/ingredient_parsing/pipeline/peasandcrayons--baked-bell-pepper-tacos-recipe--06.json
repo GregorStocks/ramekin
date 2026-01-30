@@ -1,10 +1,8 @@
 {
   "raw": "cilantro and lime (as a tasty garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro and lime (as a tasty garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cilantro and lime (as a tasty garnish)",
+    "measurements": [],
+    "note": null
   }
 }

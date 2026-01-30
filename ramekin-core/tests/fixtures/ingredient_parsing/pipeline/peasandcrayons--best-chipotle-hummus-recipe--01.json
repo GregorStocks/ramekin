@@ -1,23 +1,21 @@
 {
   "raw": "1 can chickpeas (15.5 oz (liquid reserved))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "439",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "439",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

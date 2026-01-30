@@ -1,19 +1,17 @@
 {
   "raw": "1 large (1-lb) loaf of challah bread, cut into 1 to 1.5-inch thick slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf of challah bread, cut into 1 to 1.5-inch thick slices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loaf of challah bread, cut into 1 to 1.5-inch thick slices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

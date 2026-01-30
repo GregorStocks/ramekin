@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chopped green bell peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped green bell peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped green bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

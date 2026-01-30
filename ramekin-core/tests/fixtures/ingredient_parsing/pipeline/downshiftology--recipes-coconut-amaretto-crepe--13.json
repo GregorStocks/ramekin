@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp Ciroc Amaretto",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ciroc Amaretto",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Ciroc Amaretto",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

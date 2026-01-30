@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cup (95 g) all-purpose flour ((scoop and level to measure))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour (scoop and level to measure)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "95",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour (scoop and level to measure)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "95",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

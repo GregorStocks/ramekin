@@ -1,15 +1,13 @@
 {
   "raw": "¾ teaspoon  ground ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground ginger",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground ginger",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sourdough discard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sourdough discard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sourdough discard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

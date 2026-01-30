@@ -1,15 +1,13 @@
 {
   "raw": "6 slices deli ham",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "deli ham",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "deli ham",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

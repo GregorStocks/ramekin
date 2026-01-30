@@ -1,15 +1,13 @@
 {
   "raw": "1 ⅓ cups very warm water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very warm water",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "very warm water",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

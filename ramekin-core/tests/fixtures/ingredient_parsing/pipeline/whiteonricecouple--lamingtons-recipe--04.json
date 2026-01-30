@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (2 sticks - 227g) unsalted butter (, room temperature, plus additional for greasing pans)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "stick"
-        }
-      ],
-      "note": "room temperature, plus additional for greasing pans"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "stick"
+      }
+    ],
+    "note": "room temperature, plus additional for greasing pans"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup raw macadamia nuts (roughly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw macadamia nuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "raw macadamia nuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

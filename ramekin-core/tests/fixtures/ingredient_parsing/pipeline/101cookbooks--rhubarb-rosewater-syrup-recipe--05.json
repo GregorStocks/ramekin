@@ -1,15 +1,13 @@
 {
   "raw": "scant 2 teaspoons rosewater, or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rosewater",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "scant tsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "rosewater",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "scant tsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Crème fraîche and fresh raspberries, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crème fraîche and fresh raspberries",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Crème fraîche and fresh raspberries",
+    "measurements": [],
+    "note": "for serving"
   }
 }

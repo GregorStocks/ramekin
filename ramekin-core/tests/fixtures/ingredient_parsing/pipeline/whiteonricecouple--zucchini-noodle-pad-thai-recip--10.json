@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chopped cilantro ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped cilantro",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chopped cilantro",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 tsp (about 2 g)&nbsp;Aleppo-style pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aleppo-style pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "2",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Aleppo-style pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "2",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

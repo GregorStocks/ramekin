@@ -1,15 +1,13 @@
 {
   "raw": "¾ cup parmesan cheese (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parmesan cheese",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "parmesan cheese",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

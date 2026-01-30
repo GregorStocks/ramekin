@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces (170 g) lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 pound pasta (such as penne or rotini)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pasta (such as penne or rotini)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pasta (such as penne or rotini)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

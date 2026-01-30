@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups aged basmati rice ((or any non-sticky rice, refer notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "aged basmati rice (or any non-sticky rice, refer notes)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "aged basmati rice (or any non-sticky rice, refer notes)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

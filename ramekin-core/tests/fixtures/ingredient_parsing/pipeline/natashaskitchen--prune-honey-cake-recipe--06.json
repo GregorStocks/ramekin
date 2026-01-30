@@ -1,19 +1,17 @@
 {
   "raw": "32 oz sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

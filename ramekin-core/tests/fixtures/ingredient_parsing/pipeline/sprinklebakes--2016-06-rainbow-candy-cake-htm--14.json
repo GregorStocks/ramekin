@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon clear vanilla extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clear vanilla extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "clear vanilla extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

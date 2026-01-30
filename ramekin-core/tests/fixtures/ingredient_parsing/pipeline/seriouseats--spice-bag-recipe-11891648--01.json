@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (4 g) Sichuan peppercorns, freshly ground with a spice mill or mortar and pestle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sichuan peppercorns",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "4",
-          "unit": "g"
-        }
-      ],
-      "note": "freshly ground with a spice mill or mortar and pestle"
-    }
+  "expected": {
+    "item": "Sichuan peppercorns",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "4",
+        "unit": "g"
+      }
+    ],
+    "note": "freshly ground with a spice mill or mortar and pestle"
   }
 }

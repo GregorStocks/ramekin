@@ -1,15 +1,13 @@
 {
   "raw": "2 mint leaves, plus a sprig",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "plus a sprig"
-    }
+  "expected": {
+    "item": "mint leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "plus a sprig"
   }
 }

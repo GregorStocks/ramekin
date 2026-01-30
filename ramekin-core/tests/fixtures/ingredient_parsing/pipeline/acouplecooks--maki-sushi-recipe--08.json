@@ -1,15 +1,13 @@
 {
   "raw": "1 4-ounce can tuna, in water, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tuna, in water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "4-ounce can"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "tuna, in water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "4-ounce can"
+      }
+    ],
+    "note": "drained"
   }
 }

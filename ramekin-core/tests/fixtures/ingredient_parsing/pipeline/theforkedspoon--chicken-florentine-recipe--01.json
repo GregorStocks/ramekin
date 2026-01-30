@@ -1,15 +1,13 @@
 {
   "raw": "6  boneless skinless chicken breasts (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breasts (see notes)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skinless chicken breasts (see notes)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

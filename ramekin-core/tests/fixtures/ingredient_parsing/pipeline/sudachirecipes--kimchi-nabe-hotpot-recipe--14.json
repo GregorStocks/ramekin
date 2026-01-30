@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp yellow miso paste (awase) ((yellow))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow miso paste (awase) (yellow)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow miso paste (awase) (yellow)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup + 2 tablespoons  white wine vinegar, best quality such as Pompeian Gourmet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "+ 2 tablespoons  white wine vinegar, best quality such as Pompeian Gourmet",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "+ 2 tablespoons  white wine vinegar, best quality such as Pompeian Gourmet",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

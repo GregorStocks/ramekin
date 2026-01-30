@@ -1,10 +1,8 @@
 {
   "raw": "Important: 4 teaspoons granulated garlic powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Important: 4 teaspoons granulated garlic powder",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Important: 4 teaspoons granulated garlic powder",
+    "measurements": [],
+    "note": null
   }
 }

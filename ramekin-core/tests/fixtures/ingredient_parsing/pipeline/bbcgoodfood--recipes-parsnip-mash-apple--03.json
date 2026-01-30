@@ -1,15 +1,13 @@
 {
   "raw": "50g butter plus a little extra to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": "plus a little extra to serve"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": "plus a little extra to serve"
   }
 }

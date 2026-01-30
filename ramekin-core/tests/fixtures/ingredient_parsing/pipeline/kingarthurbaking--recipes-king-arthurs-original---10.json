@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon King Arthur Pure Vanilla Extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "King Arthur Pure Vanilla Extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "King Arthur Pure Vanilla Extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

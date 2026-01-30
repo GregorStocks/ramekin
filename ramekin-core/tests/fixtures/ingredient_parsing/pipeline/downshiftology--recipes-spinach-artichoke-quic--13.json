@@ -1,15 +1,13 @@
 {
   "raw": "2  spring onions or garlic scapes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spring onions or garlic scapes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spring onions or garlic scapes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

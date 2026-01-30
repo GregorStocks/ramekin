@@ -1,15 +1,13 @@
 {
   "raw": "2  green cardamoms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cardamoms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green cardamoms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

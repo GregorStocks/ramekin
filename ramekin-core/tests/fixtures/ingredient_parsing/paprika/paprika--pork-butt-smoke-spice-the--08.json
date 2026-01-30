@@ -1,10 +1,8 @@
 {
   "raw": "Southern Sop",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Southern Sop",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Southern Sop",
+    "measurements": [],
+    "note": null
   }
 }

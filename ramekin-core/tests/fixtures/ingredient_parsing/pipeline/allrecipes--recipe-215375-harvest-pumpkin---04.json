@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup Mazola® Vegetable Plus! Oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mazola® Vegetable Plus! Oil",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mazola® Vegetable Plus! Oil",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

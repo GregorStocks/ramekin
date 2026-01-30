@@ -1,23 +1,21 @@
 {
   "raw": "4 (12-ounce, 1-inch-thick) bone-in rib-cut pork chops",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in rib-cut pork chops",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in rib-cut pork chops",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

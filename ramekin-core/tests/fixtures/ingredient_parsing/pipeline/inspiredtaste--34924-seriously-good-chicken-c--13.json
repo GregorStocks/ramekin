@@ -1,15 +1,13 @@
 {
   "raw": "2 cups baby spinach leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby spinach leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby spinach leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

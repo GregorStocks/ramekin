@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons baking powder (make sure it's not expired or it won't rise)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking powder (make sure it's not expired or it won't rise)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking powder (make sure it's not expired or it won't rise)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

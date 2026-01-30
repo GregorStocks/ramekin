@@ -1,15 +1,13 @@
 {
   "raw": "Pinch cream of tartar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream of tartar",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream of tartar",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup tahini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tahini",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tahini",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

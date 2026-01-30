@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon red food colouring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red food colouring",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red food colouring",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

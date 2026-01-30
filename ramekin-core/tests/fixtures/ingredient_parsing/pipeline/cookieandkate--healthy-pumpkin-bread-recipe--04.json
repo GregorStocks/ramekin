@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pumpkin purée",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin purée",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin purée",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

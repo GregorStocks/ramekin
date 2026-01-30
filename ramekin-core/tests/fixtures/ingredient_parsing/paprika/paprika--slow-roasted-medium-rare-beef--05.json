@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds boneless beef short ribs, 1½ to 2 inches thick, 2 inches wide, and 4 to 5 inches long, trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless beef short ribs, 1 1/2 to 2 inches thick, 2 inches wide, and 4 to 5 inches long",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "boneless beef short ribs, 1 1/2 to 2 inches thick, 2 inches wide, and 4 to 5 inches long",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed"
   }
 }

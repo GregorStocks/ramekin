@@ -1,15 +1,13 @@
 {
   "raw": "4  green leaf lettuce leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green leaf lettuce leaves",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green leaf lettuce leaves",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

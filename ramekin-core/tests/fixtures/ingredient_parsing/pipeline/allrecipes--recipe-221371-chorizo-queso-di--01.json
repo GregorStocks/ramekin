@@ -1,19 +1,17 @@
 {
   "raw": "10 ounces bulk chorizo sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bulk chorizo sausage",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bulk chorizo sausage",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

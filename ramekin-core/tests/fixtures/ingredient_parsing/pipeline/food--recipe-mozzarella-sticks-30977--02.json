@@ -1,15 +1,13 @@
 {
   "raw": "1   cup    Italian style breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian style breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Italian style breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

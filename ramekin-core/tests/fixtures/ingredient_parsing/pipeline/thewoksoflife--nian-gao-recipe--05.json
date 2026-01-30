@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon allspice powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "allspice powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "allspice powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

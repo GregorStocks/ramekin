@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon toasted wheat germ, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted wheat germ",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "toasted wheat germ",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

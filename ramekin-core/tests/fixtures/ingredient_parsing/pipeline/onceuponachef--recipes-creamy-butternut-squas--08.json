@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup finely grated Parmigiano-Reggiano or Pecorino Romano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated Parmigiano-Reggiano or Pecorino Romano",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely grated Parmigiano-Reggiano or Pecorino Romano",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

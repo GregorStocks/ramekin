@@ -1,19 +1,17 @@
 {
   "raw": "3 oz lemon JELLO",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon JELLO",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon JELLO",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

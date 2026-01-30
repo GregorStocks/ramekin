@@ -1,15 +1,13 @@
 {
   "raw": "2  Thai red chiles  (thinly sliced (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai red chiles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced (optional"
-    }
+  "expected": {
+    "item": "Thai red chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced (optional"
   }
 }

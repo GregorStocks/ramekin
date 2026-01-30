@@ -1,10 +1,8 @@
 {
   "raw": "coase salt and pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coase salt and pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "coase salt and pepper",
+    "measurements": [],
+    "note": null
   }
 }

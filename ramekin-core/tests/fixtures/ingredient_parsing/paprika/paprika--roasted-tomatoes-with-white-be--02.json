@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (455 grams) very ripe cherry tomatoes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very ripe cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "455",
-          "unit": "g"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "very ripe cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": "halved"
   }
 }

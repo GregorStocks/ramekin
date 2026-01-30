@@ -1,15 +1,13 @@
 {
   "raw": "2 medium eggplants",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggplants",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggplants",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

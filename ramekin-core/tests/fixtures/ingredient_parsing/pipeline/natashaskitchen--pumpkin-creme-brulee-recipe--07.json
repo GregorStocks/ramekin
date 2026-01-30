@@ -1,10 +1,8 @@
 {
   "raw": "-A handheld torch.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-A handheld torch.",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "-A handheld torch.",
+    "measurements": [],
+    "note": null
   }
 }

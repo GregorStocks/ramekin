@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon honey, agave, or maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey, agave, or maple syrup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey, agave, or maple syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

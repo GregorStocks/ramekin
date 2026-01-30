@@ -1,15 +1,13 @@
 {
   "raw": "350 g cooked Japanese short-grain rice (or medium-grain Calrose)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked Japanese short-grain rice (or medium-grain Calrose)",
-      "measurements": [
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked Japanese short-grain rice (or medium-grain Calrose)",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

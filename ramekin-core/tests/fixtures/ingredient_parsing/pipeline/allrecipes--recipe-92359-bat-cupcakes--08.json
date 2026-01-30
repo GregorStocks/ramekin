@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon red gel icing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red gel icing",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red gel icing",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

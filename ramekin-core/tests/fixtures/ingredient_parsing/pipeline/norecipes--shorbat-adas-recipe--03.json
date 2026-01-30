@@ -1,15 +1,13 @@
 {
   "raw": "14 grams garlic ((~2 large cloves, finely minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": "~2 large cloves, finely minced"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": "~2 large cloves, finely minced"
   }
 }

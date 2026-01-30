@@ -1,10 +1,8 @@
 {
   "raw": "Vegetable oil, for brushing grill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vegetable oil, for brushing grill",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Vegetable oil, for brushing grill",
+    "measurements": [],
+    "note": null
   }
 }

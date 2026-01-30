@@ -1,15 +1,13 @@
 {
   "raw": "24  Oreo cookies (whole)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oreo cookies",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": "whole"
-    }
+  "expected": {
+    "item": "Oreo cookies",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": "whole"
   }
 }

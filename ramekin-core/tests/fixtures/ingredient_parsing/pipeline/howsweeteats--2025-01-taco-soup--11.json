@@ -1,19 +1,17 @@
 {
   "raw": "14 ounces crushed fire roasted tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed fire roasted tomatoes",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed fire roasted tomatoes",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

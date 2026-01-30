@@ -1,15 +1,13 @@
 {
   "raw": "1 cup creamy peanut butter (no sugar added; substitute sunflower butter for nut free)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "creamy peanut butter (no sugar added; substitute sunflower butter for nut free)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "creamy peanut butter (no sugar added; substitute sunflower butter for nut free)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

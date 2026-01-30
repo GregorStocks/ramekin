@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tablespoons agave nectar, or sweetener of choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "agave nectar, or sweetener of choice",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "agave nectar, or sweetener of choice",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

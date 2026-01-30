@@ -1,19 +1,17 @@
 {
   "raw": "6 tablespoons(90 ml) whole or low-fat milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole or low-fat milk",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "90",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole or low-fat milk",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "90",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

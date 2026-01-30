@@ -1,15 +1,13 @@
 {
   "raw": "7 tablespoons sel gris, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sel gris",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "sel gris",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

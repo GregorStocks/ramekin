@@ -1,15 +1,13 @@
 {
   "raw": "4 white or yellow corn tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white or yellow corn tortillas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white or yellow corn tortillas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

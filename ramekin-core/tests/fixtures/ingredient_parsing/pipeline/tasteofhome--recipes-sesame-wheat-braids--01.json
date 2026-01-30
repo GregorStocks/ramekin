@@ -1,19 +1,17 @@
 {
   "raw": "2 packages (1/4 ounce each) active dry yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "active dry yeast",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "1/4",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "package"
+      },
+      {
+        "amount": "1/4",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

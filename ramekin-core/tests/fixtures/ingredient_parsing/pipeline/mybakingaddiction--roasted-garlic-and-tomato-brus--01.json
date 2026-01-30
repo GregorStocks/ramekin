@@ -1,15 +1,13 @@
 {
   "raw": "1 garlic head, whole",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic head",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "whole"
-    }
+  "expected": {
+    "item": "garlic head",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "whole"
   }
 }

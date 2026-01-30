@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons hot sauce (I used Cholula hot sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce (I used Cholula hot sauce)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot sauce (I used Cholula hot sauce)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

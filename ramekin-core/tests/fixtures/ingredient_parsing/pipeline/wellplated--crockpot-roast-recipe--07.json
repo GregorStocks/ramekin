@@ -1,19 +1,17 @@
 {
   "raw": "1  (14-ounce) can beef broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef broth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

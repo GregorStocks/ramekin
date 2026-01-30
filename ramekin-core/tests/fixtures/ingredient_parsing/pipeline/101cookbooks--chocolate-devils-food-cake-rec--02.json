@@ -1,19 +1,17 @@
 {
   "raw": "1 cup / 100g cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cocoa powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

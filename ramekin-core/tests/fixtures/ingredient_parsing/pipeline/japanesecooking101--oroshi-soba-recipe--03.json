@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Tenkasu (fried Tempura bits)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tenkasu (fried Tempura bits)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tenkasu (fried Tempura bits)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

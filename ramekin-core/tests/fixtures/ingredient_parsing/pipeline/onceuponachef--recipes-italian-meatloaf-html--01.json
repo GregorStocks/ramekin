@@ -1,15 +1,13 @@
 {
   "raw": "1 small onion, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

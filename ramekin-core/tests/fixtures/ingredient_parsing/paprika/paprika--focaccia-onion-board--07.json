@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 teaspoons poppy seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poppy seeds",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "poppy seeds",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

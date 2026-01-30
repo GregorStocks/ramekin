@@ -1,19 +1,17 @@
 {
   "raw": "1 (2 pound) loaf processed cheese food (such as Velveeta®), cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf processed cheese food (such as Velveeta®)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "loaf processed cheese food (such as Velveeta®)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "cubed"
   }
 }

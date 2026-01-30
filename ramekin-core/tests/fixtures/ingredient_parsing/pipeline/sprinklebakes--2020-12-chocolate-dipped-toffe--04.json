@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup toffee bits (recommend Heath Bits o’ Brickle)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toffee bits (recommend Heath Bits o’ Brickle)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toffee bits (recommend Heath Bits o’ Brickle)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

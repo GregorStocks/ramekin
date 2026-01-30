@@ -1,15 +1,13 @@
 {
   "raw": "1  large bunch of basil, (leaves only, washed and dried)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunch of basil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "leaves only, washed and dried"
-    }
+  "expected": {
+    "item": "bunch of basil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "leaves only, washed and dried"
   }
 }

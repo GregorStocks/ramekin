@@ -1,10 +1,8 @@
 {
   "raw": "lemon wedges, (for spritzing)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon wedges, (for spritzing)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon wedges, (for spritzing)",
+    "measurements": [],
+    "note": null
   }
 }

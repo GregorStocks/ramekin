@@ -1,10 +1,8 @@
 {
   "raw": "stand mixer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stand mixer",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "stand mixer",
+    "measurements": [],
+    "note": null
   }
 }

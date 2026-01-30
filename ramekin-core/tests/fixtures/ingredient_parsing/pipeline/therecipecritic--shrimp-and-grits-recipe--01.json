@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces chopped uncooked bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped uncooked bacon",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped uncooked bacon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

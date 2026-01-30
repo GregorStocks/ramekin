@@ -1,15 +1,13 @@
 {
   "raw": "2 stalks Basil ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Basil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stalk"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stalk"
+      }
+    ],
+    "note": "optional"
   }
 }

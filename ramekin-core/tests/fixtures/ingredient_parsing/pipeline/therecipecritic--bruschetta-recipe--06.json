@@ -1,10 +1,8 @@
 {
   "raw": "balsamic glaze",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "balsamic glaze",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "balsamic glaze",
+    "measurements": [],
+    "note": null
   }
 }

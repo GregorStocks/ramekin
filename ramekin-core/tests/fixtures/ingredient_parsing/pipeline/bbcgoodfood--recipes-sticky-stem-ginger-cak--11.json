@@ -1,15 +1,13 @@
 {
   "raw": "85g drained stem ginger finely grated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "drained stem ginger finely grated",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "drained stem ginger finely grated",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

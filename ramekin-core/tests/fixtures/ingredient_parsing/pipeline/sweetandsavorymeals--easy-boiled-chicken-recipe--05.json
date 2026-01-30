@@ -1,15 +1,13 @@
 {
   "raw": "6  lemon slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon slices",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon slices",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

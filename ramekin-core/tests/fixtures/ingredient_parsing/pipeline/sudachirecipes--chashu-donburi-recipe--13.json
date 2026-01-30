@@ -1,15 +1,13 @@
 {
   "raw": "6 portions cooked Japanese short-grain rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portions cooked Japanese short-grain rice",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "portions cooked Japanese short-grain rice",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

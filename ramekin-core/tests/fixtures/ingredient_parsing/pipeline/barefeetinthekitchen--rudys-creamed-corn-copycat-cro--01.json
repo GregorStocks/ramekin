@@ -1,19 +1,17 @@
 {
   "raw": "32 ounces frozen corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen corn",
-      "measurements": [
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen corn",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

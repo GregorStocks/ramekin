@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon ground flaxseed + 3 tablespoons warm water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground flaxseed + 3 tablespoons warm water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground flaxseed + 3 tablespoons warm water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Arugula and prosciutto (add after the pizza comes out of the oven)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Arugula and prosciutto (add after the pizza comes out of the oven)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Arugula and prosciutto (add after the pizza comes out of the oven)",
+    "measurements": [],
+    "note": null
   }
 }

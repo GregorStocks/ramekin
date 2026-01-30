@@ -1,15 +1,13 @@
 {
   "raw": "20 ml cooking oil (neutral flavor like canola etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking oil (neutral flavor like canola etc.)",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking oil (neutral flavor like canola etc.)",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

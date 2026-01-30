@@ -1,10 +1,8 @@
 {
   "raw": "STIR FRY:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "STIR FRY:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "STIR FRY:",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "12 oz cranberries fresh or frozen (See Note 1)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cranberries fresh or frozen (See Note 1)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cranberries fresh or frozen (See Note 1)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

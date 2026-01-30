@@ -1,19 +1,17 @@
 {
   "raw": "12 (6-inch) pitas or flour tortillas, warmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitas or flour tortillas, warmed",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        },
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitas or flour tortillas, warmed",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      },
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

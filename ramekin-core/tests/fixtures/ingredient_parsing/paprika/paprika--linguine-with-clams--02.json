@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried linguine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried linguine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried linguine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

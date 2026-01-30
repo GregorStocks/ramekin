@@ -1,15 +1,13 @@
 {
   "raw": "200g can tuna drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can tuna drained",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can tuna drained",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

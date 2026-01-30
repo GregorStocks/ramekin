@@ -1,15 +1,13 @@
 {
   "raw": "4 cups fresh baby spinach, (stems removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh baby spinach, (stems removed)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh baby spinach, (stems removed)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

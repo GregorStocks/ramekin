@@ -1,19 +1,17 @@
 {
   "raw": "5 large cloves garlic, thinly sliced (about 3 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves garlic",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "large"
-        },
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "cloves garlic",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

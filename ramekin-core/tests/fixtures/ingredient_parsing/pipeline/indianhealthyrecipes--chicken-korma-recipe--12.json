@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup curd ((plain yogurt or coconut milk))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curd (plain yogurt or coconut milk)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "curd (plain yogurt or coconut milk)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

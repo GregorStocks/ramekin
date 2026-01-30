@@ -1,19 +1,17 @@
 {
   "raw": "14.5 oz. canned diced tomatoes with green chilies (not drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned diced tomatoes with green chilies",
-      "measurements": [
-        {
-          "amount": "14.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "411",
-          "unit": "g"
-        }
-      ],
-      "note": "not drained"
-    }
+  "expected": {
+    "item": "canned diced tomatoes with green chilies",
+    "measurements": [
+      {
+        "amount": "14.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "411",
+        "unit": "g"
+      }
+    ],
+    "note": "not drained"
   }
 }

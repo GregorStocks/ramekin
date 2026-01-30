@@ -1,15 +1,13 @@
 {
   "raw": "1 to 1 ½ tsp garam masala (or curry powder as needed (refer notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/2 tsp garam masala",
-      "measurements": [
-        {
-          "amount": "1 to 1",
-          "unit": null
-        }
-      ],
-      "note": "or curry powder as needed (refer notes"
-    }
+  "expected": {
+    "item": "1/2 tsp garam masala",
+    "measurements": [
+      {
+        "amount": "1 to 1",
+        "unit": null
+      }
+    ],
+    "note": "or curry powder as needed (refer notes"
   }
 }

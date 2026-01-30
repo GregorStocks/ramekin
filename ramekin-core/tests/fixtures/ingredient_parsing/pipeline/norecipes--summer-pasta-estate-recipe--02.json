@@ -1,19 +1,17 @@
 {
   "raw": "170 grams corn ((1 ear, kernels removed from cob))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn",
-      "measurements": [
-        {
-          "amount": "170",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn",
+    "measurements": [
+      {
+        "amount": "170",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

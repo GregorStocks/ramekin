@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Sriracha hot sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha hot sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sriracha hot sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

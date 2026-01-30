@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp vanilla extract (or lemon extract)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla extract (or lemon extract)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla extract (or lemon extract)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

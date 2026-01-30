@@ -1,19 +1,17 @@
 {
   "raw": "4 large yellow squash, sliced 1/4-inch thick (about 10 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow squash",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        },
-        {
-          "amount": "10",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced 1/4-inch thick"
-    }
+  "expected": {
+    "item": "yellow squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      },
+      {
+        "amount": "10",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced 1/4-inch thick"
   }
 }

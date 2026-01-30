@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon guar gum* (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "guar gum*",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "guar gum*",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

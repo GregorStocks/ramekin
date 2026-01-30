@@ -1,15 +1,13 @@
 {
   "raw": "2 cups red peppers, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "red peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

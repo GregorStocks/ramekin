@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons XO sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "XO sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "XO sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

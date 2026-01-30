@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces frozen corn,  (thawed, drained, and heated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen corn",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed, drained, and heated"
-    }
+  "expected": {
+    "item": "frozen corn",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed, drained, and heated"
   }
 }

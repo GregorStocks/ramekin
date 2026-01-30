@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup chives or green onion (finely sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chives or green onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely sliced"
-    }
+  "expected": {
+    "item": "chives or green onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely sliced"
   }
 }

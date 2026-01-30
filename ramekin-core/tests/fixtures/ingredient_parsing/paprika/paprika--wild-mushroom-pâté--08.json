@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon fresh thyme leaves (use half if dry)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme leaves (use half if dry)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh thyme leaves (use half if dry)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons roughly chopped sage, plus a few sage leaves left whole",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roughly chopped sage",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus a few sage leaves left whole"
-    }
+  "expected": {
+    "item": "roughly chopped sage",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus a few sage leaves left whole"
   }
 }

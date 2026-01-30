@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup 100 g granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "100 g granulated sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "100 g granulated sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

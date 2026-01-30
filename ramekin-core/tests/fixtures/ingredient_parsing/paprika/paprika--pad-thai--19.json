@@ -1,10 +1,8 @@
 {
   "raw": "Ground chilli or cayenne pepper (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ground chilli or cayenne pepper",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Ground chilli or cayenne pepper",
+    "measurements": [],
+    "note": "optional"
   }
 }

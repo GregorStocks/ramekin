@@ -1,10 +1,8 @@
 {
   "raw": "Fresh cilantro, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh cilantro",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Fresh cilantro",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups medium grain rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium grain rice",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium grain rice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

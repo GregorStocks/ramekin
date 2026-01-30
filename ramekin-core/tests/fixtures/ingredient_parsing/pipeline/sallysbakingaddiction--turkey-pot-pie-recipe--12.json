@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon finely chopped dried rosemary (or more thyme, or dried sage)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped dried rosemary",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or more thyme, or dried sage"
-    }
+  "expected": {
+    "item": "finely chopped dried rosemary",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or more thyme, or dried sage"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Fresh fruit, like raspberries, blue berries, bananas, apples, or pears",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh fruit, like raspberries, blue berries, bananas, apples, or pears",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fresh fruit, like raspberries, blue berries, bananas, apples, or pears",
+    "measurements": [],
+    "note": null
   }
 }

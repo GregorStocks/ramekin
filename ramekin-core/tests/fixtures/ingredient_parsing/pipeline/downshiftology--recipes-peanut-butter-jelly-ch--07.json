@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp chopped pistachios (for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped pistachios",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "chopped pistachios",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "for garnish"
   }
 }

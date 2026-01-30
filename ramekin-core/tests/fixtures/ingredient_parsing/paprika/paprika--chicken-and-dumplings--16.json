@@ -1,10 +1,8 @@
 {
   "raw": "Dumplings:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dumplings:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Dumplings:",
+    "measurements": [],
+    "note": null
   }
 }

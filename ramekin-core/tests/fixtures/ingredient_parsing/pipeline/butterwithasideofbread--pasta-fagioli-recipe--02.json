@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb diced prosciutto",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced prosciutto",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced prosciutto",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

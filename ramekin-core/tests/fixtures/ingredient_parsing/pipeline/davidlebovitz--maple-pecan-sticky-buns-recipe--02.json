@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cups (160ml) whole or lowfat milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole or lowfat milk",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "160",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole or lowfat milk",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "160",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

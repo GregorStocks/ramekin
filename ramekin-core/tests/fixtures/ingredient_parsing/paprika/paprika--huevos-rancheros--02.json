@@ -1,10 +1,8 @@
 {
   "raw": "Corn tortilla",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Corn tortilla",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Corn tortilla",
+    "measurements": [],
+    "note": null
   }
 }

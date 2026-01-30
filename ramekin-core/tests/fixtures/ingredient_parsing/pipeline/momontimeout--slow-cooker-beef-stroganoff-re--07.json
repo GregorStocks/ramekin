@@ -1,23 +1,21 @@
 {
   "raw": "10.5 oz beef consommé (1 can)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef consommé",
-      "measurements": [
-        {
-          "amount": "10.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "298",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef consommé",
+    "measurements": [
+      {
+        "amount": "10.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "298",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

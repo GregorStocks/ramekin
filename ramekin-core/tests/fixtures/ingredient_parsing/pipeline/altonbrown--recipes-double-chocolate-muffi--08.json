@@ -1,15 +1,13 @@
 {
   "raw": "8 fluid ounces buttermilk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

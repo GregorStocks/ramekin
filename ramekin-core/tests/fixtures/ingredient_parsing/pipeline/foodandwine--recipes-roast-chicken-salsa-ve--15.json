@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup coarsely chopped sage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely chopped sage",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely chopped sage",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

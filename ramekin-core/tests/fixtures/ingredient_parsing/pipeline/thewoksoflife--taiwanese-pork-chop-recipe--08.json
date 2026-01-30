@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons light soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light soy sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

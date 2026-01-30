@@ -1,19 +1,17 @@
 {
   "raw": "10 oz fresh spinach (*see note on substitutions for using frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh spinach",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "*see note on substitutions for using frozen"
-    }
+  "expected": {
+    "item": "fresh spinach",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "*see note on substitutions for using frozen"
   }
 }

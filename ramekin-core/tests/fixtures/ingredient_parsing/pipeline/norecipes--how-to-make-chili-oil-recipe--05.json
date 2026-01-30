@@ -1,15 +1,13 @@
 {
   "raw": "15 grams dried scallops ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried scallops",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "dried scallops",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
   }
 }

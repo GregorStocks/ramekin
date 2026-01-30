@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup superfine blanched almond flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "superfine blanched almond flour",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "superfine blanched almond flour",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

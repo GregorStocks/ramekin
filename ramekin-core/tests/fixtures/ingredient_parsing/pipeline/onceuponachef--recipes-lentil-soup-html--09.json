@@ -1,15 +1,13 @@
 {
   "raw": "1 cup French lentils (lentilles du Puy) or common brown or green lentils",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "French lentils (lentilles du Puy) or common brown or green lentils",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "French lentils (lentilles du Puy) or common brown or green lentils",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

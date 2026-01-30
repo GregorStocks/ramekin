@@ -1,15 +1,13 @@
 {
   "raw": "1/2 - 1 teaspoon Cholula hot sauce (or your favorite hot sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cholula hot sauce (or your favorite hot sauce)",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cholula hot sauce (or your favorite hot sauce)",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

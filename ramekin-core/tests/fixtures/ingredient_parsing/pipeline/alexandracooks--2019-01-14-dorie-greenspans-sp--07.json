@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup white wine or Prosecco",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white wine or Prosecco",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white wine or Prosecco",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

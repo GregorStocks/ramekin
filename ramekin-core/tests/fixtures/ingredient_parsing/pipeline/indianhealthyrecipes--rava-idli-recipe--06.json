@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon cashews (chopped (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cashews",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped (optional"
-    }
+  "expected": {
+    "item": "cashews",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped (optional"
   }
 }

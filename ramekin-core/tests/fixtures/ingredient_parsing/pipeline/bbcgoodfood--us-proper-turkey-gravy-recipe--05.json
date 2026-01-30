@@ -1,15 +1,13 @@
 {
   "raw": "5 tbsp white wine or water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white wine or water",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white wine or water",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

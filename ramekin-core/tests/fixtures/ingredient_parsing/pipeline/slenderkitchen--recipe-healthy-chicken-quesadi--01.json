@@ -1,15 +1,13 @@
 {
   "raw": "1 cup cooked boneless skinless chicken breast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked boneless skinless chicken breast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

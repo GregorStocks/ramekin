@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon sugar or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar or to taste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar or to taste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

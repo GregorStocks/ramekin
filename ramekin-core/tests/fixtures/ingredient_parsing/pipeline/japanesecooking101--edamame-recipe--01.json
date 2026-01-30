@@ -1,15 +1,13 @@
 {
   "raw": "1 bag Edamame (frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Edamame",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        }
-      ],
-      "note": "frozen"
-    }
+  "expected": {
+    "item": "Edamame",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      }
+    ],
+    "note": "frozen"
   }
 }

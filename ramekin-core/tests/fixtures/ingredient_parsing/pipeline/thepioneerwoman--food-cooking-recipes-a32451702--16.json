@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 c. fresh pineapple chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh pineapple chunks",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh pineapple chunks",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

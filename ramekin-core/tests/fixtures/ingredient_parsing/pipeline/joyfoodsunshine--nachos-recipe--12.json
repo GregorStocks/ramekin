@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces tortilla chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortilla chips",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tortilla chips",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

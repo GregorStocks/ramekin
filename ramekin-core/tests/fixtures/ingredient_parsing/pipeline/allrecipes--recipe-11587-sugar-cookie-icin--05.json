@@ -1,10 +1,8 @@
 {
   "raw": "assorted food coloring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "assorted food coloring",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "assorted food coloring",
+    "measurements": [],
+    "note": null
   }
 }

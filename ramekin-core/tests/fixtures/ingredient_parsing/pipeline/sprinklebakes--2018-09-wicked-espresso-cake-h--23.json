@@ -1,23 +1,21 @@
 {
   "raw": "1/4 cup 50g/2 oz. granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

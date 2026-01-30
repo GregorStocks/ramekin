@@ -1,23 +1,21 @@
 {
   "raw": "2 ounces blue cheese, crumbled (1/2 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blue cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "blue cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "crumbled"
   }
 }

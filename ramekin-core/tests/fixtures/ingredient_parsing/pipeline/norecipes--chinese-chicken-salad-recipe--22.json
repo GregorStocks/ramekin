@@ -1,15 +1,13 @@
 {
   "raw": "30 grams cilantro ((leaves picked from stems))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro (leaves picked from stems)",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cilantro (leaves picked from stems)",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

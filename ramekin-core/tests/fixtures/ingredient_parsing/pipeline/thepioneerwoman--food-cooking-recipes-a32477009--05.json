@@ -1,15 +1,13 @@
 {
   "raw": "1 pt. multicolored grape tomatoes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "multicolored grape tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "multicolored grape tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": "halved"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "15 ounce canned diced tomatoes, drained (about 1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned diced tomatoes",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "canned diced tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

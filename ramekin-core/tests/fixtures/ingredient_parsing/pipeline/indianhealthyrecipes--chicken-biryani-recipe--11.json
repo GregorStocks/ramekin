@@ -1,15 +1,13 @@
 {
   "raw": "6  cloves ((lavang))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "(lavang)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "(lavang)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

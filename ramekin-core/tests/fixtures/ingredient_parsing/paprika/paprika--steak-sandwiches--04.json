@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sour cream (to make this dairy-free, just use additional mayo)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream (to make this dairy-free, just use additional mayo)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream (to make this dairy-free, just use additional mayo)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

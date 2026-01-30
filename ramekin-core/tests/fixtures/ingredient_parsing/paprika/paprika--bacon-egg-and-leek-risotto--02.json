@@ -1,23 +1,21 @@
 {
   "raw": "1 cup (4 ounces) finely chopped bacon (from about 4 slices) or pancetta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped bacon (from about 4 slices) or pancetta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped bacon (from about 4 slices) or pancetta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

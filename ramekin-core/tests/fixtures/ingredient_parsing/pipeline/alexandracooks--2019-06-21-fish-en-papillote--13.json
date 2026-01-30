@@ -1,10 +1,8 @@
 {
   "raw": "sliced basil, parsley or tarragon, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced basil, parsley or tarragon",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sliced basil, parsley or tarragon",
+    "measurements": [],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 medium head of cauliflower, (cut into florets)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head of cauliflower, (cut into florets)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head of cauliflower, (cut into florets)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

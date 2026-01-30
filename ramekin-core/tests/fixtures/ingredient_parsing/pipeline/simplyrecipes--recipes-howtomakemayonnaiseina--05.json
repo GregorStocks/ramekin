@@ -1,15 +1,13 @@
 {
   "raw": "1 cup neutral oil (like vegetable, grapeseed, or canola)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neutral oil (like vegetable, grapeseed, or canola)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "neutral oil (like vegetable, grapeseed, or canola)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

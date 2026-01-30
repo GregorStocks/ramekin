@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons black or white sesame seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black or white sesame seeds",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black or white sesame seeds",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

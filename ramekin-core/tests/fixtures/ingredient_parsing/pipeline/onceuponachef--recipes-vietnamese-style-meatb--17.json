@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup lime juice, from 2 to 3 limes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice, from 2 to 3 limes",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime juice, from 2 to 3 limes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

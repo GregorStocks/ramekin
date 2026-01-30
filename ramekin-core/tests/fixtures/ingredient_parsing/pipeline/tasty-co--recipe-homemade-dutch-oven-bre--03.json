@@ -1,15 +1,13 @@
 {
   "raw": "4 cups all-purpose flour, lightly packed and leveled off, plus more for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour, lightly packed and leveled off",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for dusting"
-    }
+  "expected": {
+    "item": "all-purpose flour, lightly packed and leveled off",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for dusting"
   }
 }

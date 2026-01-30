@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons melted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

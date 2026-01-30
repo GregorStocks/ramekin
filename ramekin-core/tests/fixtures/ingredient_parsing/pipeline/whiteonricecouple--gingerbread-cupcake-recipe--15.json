@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Powdered Sugar ( or to personal taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Powdered Sugar ( or to personal taste)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Powdered Sugar ( or to personal taste)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

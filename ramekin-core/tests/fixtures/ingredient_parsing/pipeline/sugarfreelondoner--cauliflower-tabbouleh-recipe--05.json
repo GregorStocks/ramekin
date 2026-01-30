@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup / 10g fresh mint (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mint",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "fresh mint",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

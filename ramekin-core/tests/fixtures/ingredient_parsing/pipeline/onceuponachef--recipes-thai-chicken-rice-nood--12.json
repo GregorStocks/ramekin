@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded cooked chicken, from a rotisserie chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cooked chicken, from a rotisserie chicken",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cooked chicken, from a rotisserie chicken",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

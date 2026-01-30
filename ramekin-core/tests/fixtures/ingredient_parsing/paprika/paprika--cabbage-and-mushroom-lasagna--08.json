@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (455 grams) assorted (shiitake, oyster, porcini, chanterelles, etc.) or just cremini mushrooms, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "assorted (shiitake, oyster, porcini, chanterelles, etc.) or just cremini mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "455",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "assorted (shiitake, oyster, porcini, chanterelles, etc.) or just cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

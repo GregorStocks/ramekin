@@ -1,15 +1,13 @@
 {
   "raw": "1 shallot or 1⁄2 a small onion, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot or 1⁄2 a small onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "shallot or 1⁄2 a small onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely chopped"
   }
 }

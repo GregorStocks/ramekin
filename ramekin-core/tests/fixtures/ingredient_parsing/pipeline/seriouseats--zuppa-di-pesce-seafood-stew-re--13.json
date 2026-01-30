@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (454 g) squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole, patted dry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole, patted dry",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole, patted dry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

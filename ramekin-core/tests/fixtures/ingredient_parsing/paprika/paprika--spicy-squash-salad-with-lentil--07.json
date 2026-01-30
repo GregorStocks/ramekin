@@ -1,15 +1,13 @@
 {
   "raw": "4 cups baby arugula (I skipped this)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby arugula (I skipped this)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby arugula (I skipped this)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup shelled pistachios",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shelled pistachios",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shelled pistachios",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

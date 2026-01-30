@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon mung bean starch ((9g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mung bean starch",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "9",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mung bean starch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "9",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

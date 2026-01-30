@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons shredded cheddar cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheddar cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheddar cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/16 teaspoon baking soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking soda",
-      "measurements": [
-        {
-          "amount": "1/16",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking soda",
+    "measurements": [
+      {
+        "amount": "1/16",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

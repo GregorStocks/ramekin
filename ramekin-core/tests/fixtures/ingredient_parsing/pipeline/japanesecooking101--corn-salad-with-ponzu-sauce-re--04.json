@@ -1,10 +1,8 @@
 {
   "raw": "Shichimi red pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shichimi red pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shichimi red pepper",
+    "measurements": [],
+    "note": null
   }
 }

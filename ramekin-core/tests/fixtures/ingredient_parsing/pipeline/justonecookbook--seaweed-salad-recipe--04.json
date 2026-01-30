@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp rice vinegar (unseasoned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice vinegar (unseasoned)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice vinegar (unseasoned)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

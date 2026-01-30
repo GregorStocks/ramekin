@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup plus 3 tablespoons extra-virgin olive oil, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plus 3 tablespoons extra-virgin olive oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "plus 3 tablespoons extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

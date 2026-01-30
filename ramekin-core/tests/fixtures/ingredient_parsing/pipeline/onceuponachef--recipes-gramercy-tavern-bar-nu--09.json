@@ -1,15 +1,13 @@
 {
   "raw": "3½ cups  raw unsalted nuts (I use equal parts cashews and pecans, but you can use any combination of cashews, pecans, and almonds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw unsalted nuts (I use equal parts cashews and pecans, but you can use any combination of cashews, pecans, and almonds)",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw unsalted nuts (I use equal parts cashews and pecans, but you can use any combination of cashews, pecans, and almonds)",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup frozen peas (defrosted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen peas (defrosted)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen peas (defrosted)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "For the Noodles:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For the Noodles:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "For the Noodles:",
+    "measurements": [],
+    "note": null
   }
 }

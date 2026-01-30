@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces mozzarella cheese, shredded, about 2 cups (226g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella cheese, shredded, about 2 cups",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "226",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mozzarella cheese, shredded, about 2 cups",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

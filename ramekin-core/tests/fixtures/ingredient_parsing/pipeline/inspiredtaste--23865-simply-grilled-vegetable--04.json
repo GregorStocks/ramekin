@@ -1,15 +1,13 @@
 {
   "raw": "3/4 pound dry pasta such as cavatappi, fusilli or penne",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry pasta such as cavatappi, fusilli or penne",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry pasta such as cavatappi, fusilli or penne",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

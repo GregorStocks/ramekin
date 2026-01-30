@@ -1,15 +1,13 @@
 {
   "raw": "1 cup semisweet chocolate chips ((or dark chocolate))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate chips (or dark chocolate)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semisweet chocolate chips (or dark chocolate)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15 grams) smooth Dijon mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smooth Dijon mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smooth Dijon mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

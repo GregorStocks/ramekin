@@ -1,10 +1,8 @@
 {
   "raw": "Carrot Strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Carrot Strips",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Carrot Strips",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups dry white wine, such as sauvignon blanc",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry white wine, such as sauvignon blanc",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry white wine, such as sauvignon blanc",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

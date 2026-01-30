@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chopped fresh parsley or other fresh herb of your choice, such as tarragon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley or other fresh herb of your choice, such as tarragon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh parsley or other fresh herb of your choice, such as tarragon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

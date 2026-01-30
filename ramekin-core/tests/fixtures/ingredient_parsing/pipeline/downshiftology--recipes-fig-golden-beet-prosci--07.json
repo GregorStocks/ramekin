@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp champagne vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "champagne vinegar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "champagne vinegar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

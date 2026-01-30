@@ -1,15 +1,13 @@
 {
   "raw": "2½ tablespoons maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

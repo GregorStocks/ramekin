@@ -1,10 +1,8 @@
 {
   "raw": "tempura bits or rice krispies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tempura bits or rice krispies",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "tempura bits or rice krispies",
+    "measurements": [],
+    "note": null
   }
 }

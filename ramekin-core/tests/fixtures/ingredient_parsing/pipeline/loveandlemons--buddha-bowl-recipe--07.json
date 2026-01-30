@@ -1,15 +1,13 @@
 {
   "raw": "8  kale leaves (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kale leaves",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "kale leaves",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 c. strawberries, hulled and quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "hulled and quartered"
-    }
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "hulled and quartered"
   }
 }

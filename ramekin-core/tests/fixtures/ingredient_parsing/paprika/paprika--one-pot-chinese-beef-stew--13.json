@@ -1,23 +1,21 @@
 {
   "raw": "1 ounce dark brown sugar or rock sugar (28 g; about 2 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark brown sugar or rock sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark brown sugar or rock sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups buttermilk or whole milk (at room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk or whole milk",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "buttermilk or whole milk",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

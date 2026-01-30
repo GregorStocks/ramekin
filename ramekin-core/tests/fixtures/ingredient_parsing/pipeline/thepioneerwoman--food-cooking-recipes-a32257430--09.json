@@ -1,15 +1,13 @@
 {
   "raw": "1 c. thin pretzel sticks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin pretzel sticks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thin pretzel sticks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

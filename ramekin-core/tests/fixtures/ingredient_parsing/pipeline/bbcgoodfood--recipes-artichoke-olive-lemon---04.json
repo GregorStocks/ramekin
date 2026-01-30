@@ -1,15 +1,13 @@
 {
   "raw": "50g freshly grated   parmesan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated   parmesan",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated   parmesan",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

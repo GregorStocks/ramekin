@@ -1,15 +1,13 @@
 {
   "raw": "2 cups red lentils, rinsed and drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red lentils",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "rinsed and drained"
-    }
+  "expected": {
+    "item": "red lentils",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed and drained"
   }
 }

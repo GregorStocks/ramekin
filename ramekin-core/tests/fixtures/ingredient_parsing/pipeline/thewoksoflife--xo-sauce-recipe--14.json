@@ -1,15 +1,13 @@
 {
   "raw": "½ cup dried chili flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chili flakes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chili flakes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "A large handful fresh parsley (about 28 g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A large handful fresh parsley",
-      "measurements": [
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "A large handful fresh parsley",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

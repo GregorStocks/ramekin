@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons honey (optional, but adds extra sweetness if needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional, but adds extra sweetness if needed"
-    }
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional, but adds extra sweetness if needed"
   }
 }

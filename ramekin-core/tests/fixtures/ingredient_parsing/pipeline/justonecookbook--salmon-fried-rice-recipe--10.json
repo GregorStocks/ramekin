@@ -1,15 +1,13 @@
 {
   "raw": "⅛ tsp white pepper powder ((to taste))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white pepper powder",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "white pepper powder",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

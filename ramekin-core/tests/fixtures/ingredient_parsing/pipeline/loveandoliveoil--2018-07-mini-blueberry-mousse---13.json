@@ -1,15 +1,13 @@
 {
   "raw": "3  sheets leaf gelatin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets leaf gelatin",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheets leaf gelatin",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 pound smoked ham (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked ham",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "smoked ham",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped"
   }
 }

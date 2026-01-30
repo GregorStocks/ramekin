@@ -1,15 +1,13 @@
 {
   "raw": "6  pork chops (either boneless or bone-in will work)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork chops (either boneless or bone-in will work)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork chops (either boneless or bone-in will work)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

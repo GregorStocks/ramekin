@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon finely minced shallot, (from 1 small shallot)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely minced shallot, (from 1 small shallot)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely minced shallot, (from 1 small shallot)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

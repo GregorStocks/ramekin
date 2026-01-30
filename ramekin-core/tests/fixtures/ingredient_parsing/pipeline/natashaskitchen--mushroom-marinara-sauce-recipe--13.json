@@ -1,10 +1,8 @@
 {
   "raw": "A dutch oven or large heavy-bottomed pot",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A dutch oven or large heavy-bottomed pot",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A dutch oven or large heavy-bottomed pot",
+    "measurements": [],
+    "note": null
   }
 }

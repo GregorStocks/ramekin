@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 lbs fresh ripe apricots (pitted and sliced into 1/2\" thick slices)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh ripe apricots",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "pitted and sliced into 1/2\" thick slices"
-    }
+  "expected": {
+    "item": "fresh ripe apricots",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "pitted and sliced into 1/2\" thick slices"
   }
 }

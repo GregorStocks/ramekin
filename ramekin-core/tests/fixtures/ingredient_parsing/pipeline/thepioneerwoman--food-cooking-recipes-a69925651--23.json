@@ -1,10 +1,8 @@
 {
   "raw": "Kosher salt, for the pasta water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher salt, for the pasta water",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Kosher salt, for the pasta water",
+    "measurements": [],
+    "note": null
   }
 }

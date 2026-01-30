@@ -1,15 +1,13 @@
 {
   "raw": "1 lb fresh white mushrooms (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh white mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "fresh white mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "5 lbs chicken drumsticks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken drumsticks",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken drumsticks",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

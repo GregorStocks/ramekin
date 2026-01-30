@@ -1,19 +1,17 @@
 {
   "raw": "16 oz dried navy beans (any small white bean will work)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried navy beans (any small white bean will work)",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried navy beans (any small white bean will work)",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

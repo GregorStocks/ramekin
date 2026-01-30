@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup brown sugar ((or granulated sugar))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown sugar (or granulated sugar)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown sugar (or granulated sugar)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 cups hot Baked Beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot Baked Beans",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot Baked Beans",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

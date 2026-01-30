@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp mirin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mirin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mirin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

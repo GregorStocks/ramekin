@@ -1,15 +1,13 @@
 {
   "raw": "3 large globe artichokes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "globe artichokes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "globe artichokes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons pure chili pepper powder (e.g. ancho)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure chili pepper powder (e.g. ancho)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure chili pepper powder (e.g. ancho)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "¾ ounce Laird’s Straight Apple Brandy bottled-in-bond",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Laird’s Straight Apple Brandy bottled-in-bond",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "21",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Laird’s Straight Apple Brandy bottled-in-bond",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "21",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

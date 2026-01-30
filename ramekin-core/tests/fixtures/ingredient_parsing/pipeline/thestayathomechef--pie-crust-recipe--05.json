@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup vegetable shortening (cold)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable shortening",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cold"
-    }
+  "expected": {
+    "item": "vegetable shortening",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold"
   }
 }

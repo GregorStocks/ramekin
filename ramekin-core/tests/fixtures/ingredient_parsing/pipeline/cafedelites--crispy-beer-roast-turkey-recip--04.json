@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon vegetable stock powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable stock powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable stock powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

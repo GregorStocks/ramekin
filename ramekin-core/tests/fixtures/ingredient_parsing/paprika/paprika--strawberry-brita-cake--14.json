@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (25 grams) granulated sugar, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

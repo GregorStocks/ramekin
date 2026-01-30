@@ -1,15 +1,13 @@
 {
   "raw": "6  short ribs (fat removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "short ribs (fat removed)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "short ribs (fat removed)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

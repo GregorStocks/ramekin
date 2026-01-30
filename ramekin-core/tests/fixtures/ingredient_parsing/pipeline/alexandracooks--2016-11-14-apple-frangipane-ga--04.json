@@ -1,19 +1,17 @@
 {
   "raw": "2 sticks (16 tablespoons | 8 oz | 227g ) unsalted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stick"
-        },
-        {
-          "amount": "16",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stick"
+      },
+      {
+        "amount": "16",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

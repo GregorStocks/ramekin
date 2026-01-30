@@ -1,19 +1,17 @@
 {
   "raw": "1  leek, chopped (1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leek",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "leek",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

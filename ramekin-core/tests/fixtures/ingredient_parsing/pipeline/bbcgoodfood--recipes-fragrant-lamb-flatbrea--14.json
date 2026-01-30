@@ -1,15 +1,13 @@
 {
   "raw": "150ml warm water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

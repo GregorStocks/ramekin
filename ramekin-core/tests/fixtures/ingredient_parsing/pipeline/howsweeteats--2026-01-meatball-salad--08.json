@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2  of your favorite meatballs, (or as many as you want, obvi)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "of your favorite meatballs, (or as many as you want, obvi)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "of your favorite meatballs, (or as many as you want, obvi)",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

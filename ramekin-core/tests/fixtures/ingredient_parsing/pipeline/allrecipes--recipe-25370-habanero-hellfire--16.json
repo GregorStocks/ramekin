@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons beef bouillon granules",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef bouillon granules",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef bouillon granules",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

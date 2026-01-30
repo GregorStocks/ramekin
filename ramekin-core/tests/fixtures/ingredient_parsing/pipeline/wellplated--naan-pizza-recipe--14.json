@@ -1,10 +1,8 @@
 {
   "raw": "Ricotta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ricotta",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ricotta",
+    "measurements": [],
+    "note": null
   }
 }

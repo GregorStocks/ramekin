@@ -1,23 +1,21 @@
 {
   "raw": "2 Tablespoons Gin or Vodka ((1 ounce) , optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gin or Vodka",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": "optional)"
-    }
+  "expected": {
+    "item": "Gin or Vodka",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "optional)"
   }
 }

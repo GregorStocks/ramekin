@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup pepitas or green pumpkin seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepitas or green pumpkin seeds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepitas or green pumpkin seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

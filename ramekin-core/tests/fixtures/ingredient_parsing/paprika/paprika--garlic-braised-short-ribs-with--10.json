@@ -1,15 +1,13 @@
 {
   "raw": "2 cups beef stock or bone broth (use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch), plus more as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef stock or bone broth (use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more as needed"
-    }
+  "expected": {
+    "item": "beef stock or bone broth (use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more as needed"
   }
 }

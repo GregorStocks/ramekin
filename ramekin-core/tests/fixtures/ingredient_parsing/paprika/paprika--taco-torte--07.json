@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 teaspoons chili powder (adjusted to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili powder",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "adjusted to taste"
-    }
+  "expected": {
+    "item": "chili powder",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "adjusted to taste"
   }
 }

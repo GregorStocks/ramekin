@@ -1,15 +1,13 @@
 {
   "raw": "1 cup beef broth or stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef broth or stock",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef broth or stock",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

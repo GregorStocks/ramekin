@@ -1,10 +1,8 @@
 {
   "raw": "Brie cheese (thinly sliced, rind removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brie cheese",
-      "measurements": [],
-      "note": "thinly sliced, rind removed"
-    }
+  "expected": {
+    "item": "Brie cheese",
+    "measurements": [],
+    "note": "thinly sliced, rind removed"
   }
 }

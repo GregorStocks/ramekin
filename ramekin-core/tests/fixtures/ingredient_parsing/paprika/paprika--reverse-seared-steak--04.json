@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15g) unsalted butter (if finishing on the stovetop; optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "g"
-        }
-      ],
-      "note": "if finishing on the stovetop; optional"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": "if finishing on the stovetop; optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 extra-large eggs, hard-cooked, peeled, and chunked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggs, hard-cooked, peeled, and chunked",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "extra-large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggs, hard-cooked, peeled, and chunked",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "extra-large"
+      }
+    ],
+    "note": null
   }
 }

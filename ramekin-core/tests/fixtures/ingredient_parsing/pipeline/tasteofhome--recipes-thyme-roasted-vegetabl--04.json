@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound medium fresh mushrooms, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium fresh mushrooms",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "medium fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved"
   }
 }

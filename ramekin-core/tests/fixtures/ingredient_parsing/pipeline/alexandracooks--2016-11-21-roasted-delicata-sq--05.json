@@ -1,15 +1,13 @@
 {
   "raw": "1/2 jalapeno or more to taste, finely diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno or more to taste",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "jalapeno or more to taste",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "finely diced"
   }
 }

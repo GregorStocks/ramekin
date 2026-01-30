@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon no-salt-added tomato paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "no-salt-added tomato paste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "no-salt-added tomato paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

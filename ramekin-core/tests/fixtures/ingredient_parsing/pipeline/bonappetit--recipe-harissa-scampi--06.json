@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp. harissa paste (such as New York Shuk)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "harissa paste (such as New York Shuk)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "harissa paste (such as New York Shuk)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces hot freshly brewed coffee (that&amp;#8217;s &amp;frac34; cup/use your favorite roast)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot freshly brewed coffee (that’s 3/4 cup/use your favorite roast)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot freshly brewed coffee (that’s 3/4 cup/use your favorite roast)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

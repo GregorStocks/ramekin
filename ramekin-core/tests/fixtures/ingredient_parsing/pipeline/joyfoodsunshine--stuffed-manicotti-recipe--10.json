@@ -1,23 +1,21 @@
 {
   "raw": "24 ounces marinara sauce ((about 3 cups))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinara sauce",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinara sauce",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

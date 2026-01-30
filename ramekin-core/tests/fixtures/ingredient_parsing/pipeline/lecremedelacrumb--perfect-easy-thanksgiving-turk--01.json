@@ -1,15 +1,13 @@
 {
   "raw": "12-20 pound turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turkey",
-      "measurements": [
-        {
-          "amount": "12-20",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turkey",
+    "measurements": [
+      {
+        "amount": "12-20",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

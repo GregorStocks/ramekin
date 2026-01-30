@@ -1,15 +1,13 @@
 {
   "raw": "6 medium leeks (white portions only), halved lengthwise, cleaned and cut into 1-inch lengths",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leeks (white portions only), halved lengthwise",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "medium"
-        }
-      ],
-      "note": "cleaned and cut into 1-inch lengths"
-    }
+  "expected": {
+    "item": "leeks (white portions only), halved lengthwise",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "medium"
+      }
+    ],
+    "note": "cleaned and cut into 1-inch lengths"
   }
 }

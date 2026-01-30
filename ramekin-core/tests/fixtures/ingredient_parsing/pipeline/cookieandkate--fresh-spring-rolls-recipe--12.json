@@ -1,15 +1,13 @@
 {
   "raw": "8 sheets rice paper (spring roll wrappers)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets rice paper (spring roll wrappers)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheets rice paper (spring roll wrappers)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

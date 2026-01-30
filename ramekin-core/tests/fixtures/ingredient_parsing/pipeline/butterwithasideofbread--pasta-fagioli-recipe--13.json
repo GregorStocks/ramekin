@@ -1,15 +1,13 @@
 {
   "raw": "1 lb ditalini pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ditalini pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ditalini pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

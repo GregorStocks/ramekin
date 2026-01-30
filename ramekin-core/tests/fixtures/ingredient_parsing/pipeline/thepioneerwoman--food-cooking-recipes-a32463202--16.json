@@ -1,15 +1,13 @@
 {
   "raw": "1 c. salted roasted peanuts, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted roasted peanuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "salted roasted peanuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

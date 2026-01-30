@@ -1,10 +1,8 @@
 {
   "raw": "chopped scallion, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped scallion",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "chopped scallion",
+    "measurements": [],
+    "note": "for serving"
   }
 }

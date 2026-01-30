@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces cremini mushrooms (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cremini mushrooms",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "halved"
   }
 }

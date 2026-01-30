@@ -1,15 +1,13 @@
 {
   "raw": "½ cup low sodium beef stock (or chicken stock/broth, FOR OVEN METHOD ONLY)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low sodium beef stock (or chicken stock/broth, FOR OVEN METHOD ONLY)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low sodium beef stock (or chicken stock/broth, FOR OVEN METHOD ONLY)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

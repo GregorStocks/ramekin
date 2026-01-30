@@ -1,15 +1,13 @@
 {
   "raw": "2 cup old fashioned rolled oats",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "old fashioned rolled oats",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "old fashioned rolled oats",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

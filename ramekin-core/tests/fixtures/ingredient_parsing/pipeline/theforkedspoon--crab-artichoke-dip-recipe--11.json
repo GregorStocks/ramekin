@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon red chili flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chili flakes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red chili flakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

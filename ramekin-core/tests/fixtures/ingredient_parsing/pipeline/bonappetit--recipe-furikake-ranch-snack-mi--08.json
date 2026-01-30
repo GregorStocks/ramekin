@@ -1,15 +1,13 @@
 {
   "raw": "3 cups Bugles corn chips or oyster crackers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bugles corn chips or oyster crackers",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bugles corn chips or oyster crackers",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

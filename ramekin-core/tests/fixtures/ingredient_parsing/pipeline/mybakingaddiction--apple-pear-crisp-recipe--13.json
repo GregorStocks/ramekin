@@ -1,15 +1,13 @@
 {
   "raw": "½ cup pecan chips (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecan chips",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "pecan chips",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

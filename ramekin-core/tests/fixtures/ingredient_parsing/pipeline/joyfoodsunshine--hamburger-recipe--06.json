@@ -1,10 +1,8 @@
 {
   "raw": "Mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mustard",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Mustard",
+    "measurements": [],
+    "note": null
   }
 }

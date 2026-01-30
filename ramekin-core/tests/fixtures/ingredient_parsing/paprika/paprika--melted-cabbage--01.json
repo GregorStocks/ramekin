@@ -1,19 +1,17 @@
 {
   "raw": "One 2-pound (907 g) head green cabbage, any bruised outermost leaves removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2-pound head green cabbage, any bruised outermost leaves removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "2-pound head green cabbage, any bruised outermost leaves removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

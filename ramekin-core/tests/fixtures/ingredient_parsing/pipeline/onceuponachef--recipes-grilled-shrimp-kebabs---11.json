@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds jumbo shrimp (21-25 per pound), peeled and de-veined (leave tails on if desired), thawed if frozen",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jumbo shrimp , peeled and de-veined (leave tails on if desired)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "21-25",
-          "unit": null
-        }
-      ],
-      "note": "thawed if frozen"
-    }
+  "expected": {
+    "item": "jumbo shrimp , peeled and de-veined (leave tails on if desired)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "21-25",
+        "unit": null
+      }
+    ],
+    "note": "thawed if frozen"
   }
 }

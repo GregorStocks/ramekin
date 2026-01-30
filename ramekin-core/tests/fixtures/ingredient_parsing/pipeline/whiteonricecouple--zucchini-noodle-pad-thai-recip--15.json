@@ -1,19 +1,17 @@
 {
   "raw": "1 teaspoon packed brown sugar ((5ml) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed brown sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed brown sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "5",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

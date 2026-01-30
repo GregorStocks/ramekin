@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup butter, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "cubed"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 balls buffalo mozzarella (about 140g each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "balls buffalo mozzarella",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "140",
-          "unit": "g each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "balls buffalo mozzarella",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "140",
+        "unit": "g each"
+      }
+    ],
+    "note": null
   }
 }

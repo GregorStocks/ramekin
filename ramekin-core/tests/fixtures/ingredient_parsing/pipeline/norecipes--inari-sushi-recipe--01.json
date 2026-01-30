@@ -1,15 +1,13 @@
 {
   "raw": "6  aburaage ((thin fried tofu))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "aburaage (thin fried tofu)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "aburaage (thin fried tofu)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

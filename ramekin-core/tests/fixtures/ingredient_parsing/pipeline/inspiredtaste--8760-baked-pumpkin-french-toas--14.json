@@ -1,10 +1,8 @@
 {
   "raw": "Real maple syrup for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Real maple syrup for serving",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Real maple syrup for serving",
+    "measurements": [],
+    "note": null
   }
 }

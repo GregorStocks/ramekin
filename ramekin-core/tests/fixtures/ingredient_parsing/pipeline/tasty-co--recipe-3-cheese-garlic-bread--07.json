@@ -1,19 +1,17 @@
 {
   "raw": "1 baguette, 8 inch (20 cm)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baguette, 8 inch",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baguette, 8 inch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

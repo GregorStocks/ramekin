@@ -1,15 +1,13 @@
 {
   "raw": "⅛ tsp cinnamon powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon powder",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon powder",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

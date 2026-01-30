@@ -1,10 +1,8 @@
 {
   "raw": "crumbled blue cheese, (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled blue cheese, (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled blue cheese, (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

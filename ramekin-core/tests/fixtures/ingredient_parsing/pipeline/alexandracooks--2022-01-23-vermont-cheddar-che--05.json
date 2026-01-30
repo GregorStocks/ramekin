@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 cups diced red bell pepper, from 2 peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced red bell pepper, from 2 peppers",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced red bell pepper, from 2 peppers",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 pounds ice cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice cubes",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice cubes",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

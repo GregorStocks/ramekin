@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs lean pork tenderloin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lean pork tenderloin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lean pork tenderloin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

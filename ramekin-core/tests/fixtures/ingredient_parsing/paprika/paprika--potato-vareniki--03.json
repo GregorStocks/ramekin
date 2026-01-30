@@ -1,15 +1,13 @@
 {
   "raw": "1 cup plus 2 tablespoons milk, any variety",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 cup plus 2 tablespoons milk, any variety",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tablespoons milk, any variety"
-    }
+  "expected": {
+    "item": "1 cup plus 2 tablespoons milk, any variety",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons milk, any variety"
   }
 }

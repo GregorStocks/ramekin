@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons lemon zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon zest",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon zest",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

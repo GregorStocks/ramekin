@@ -1,15 +1,13 @@
 {
   "raw": "1 heaping cup frozen mixed berries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen mixed berries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaping cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen mixed berries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaping cup"
+      }
+    ],
+    "note": null
   }
 }

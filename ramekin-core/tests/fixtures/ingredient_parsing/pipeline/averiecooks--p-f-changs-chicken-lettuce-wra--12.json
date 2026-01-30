@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  green onions (sliced into thin rounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": "sliced into thin rounds"
-    }
+  "expected": {
+    "item": "green onions",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": "sliced into thin rounds"
   }
 }

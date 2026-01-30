@@ -1,23 +1,21 @@
 {
   "raw": "2 (15 ounce) cans no-salt-added black beans, rinsed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "no-salt-added black beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "rinsed"
-    }
+  "expected": {
+    "item": "no-salt-added black beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "rinsed"
   }
 }

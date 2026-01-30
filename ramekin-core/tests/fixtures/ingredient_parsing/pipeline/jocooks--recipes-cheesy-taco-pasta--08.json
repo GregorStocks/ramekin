@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces pasta (like rotini or penne, dry)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pasta (like rotini or penne, dry)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pasta (like rotini or penne, dry)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

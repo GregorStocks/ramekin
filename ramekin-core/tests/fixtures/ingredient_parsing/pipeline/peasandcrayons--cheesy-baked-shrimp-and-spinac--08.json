@@ -1,19 +1,17 @@
 {
   "raw": "8 oz Havarti cheese (freshly grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Havarti cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "freshly grated"
-    }
+  "expected": {
+    "item": "Havarti cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "freshly grated"
   }
 }

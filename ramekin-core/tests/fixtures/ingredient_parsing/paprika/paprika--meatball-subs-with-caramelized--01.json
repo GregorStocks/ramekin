@@ -1,10 +1,8 @@
 {
   "raw": "Meatballs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Meatballs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Meatballs",
+    "measurements": [],
+    "note": null
   }
 }

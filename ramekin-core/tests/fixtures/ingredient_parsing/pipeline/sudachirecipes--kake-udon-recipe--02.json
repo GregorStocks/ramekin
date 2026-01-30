@@ -1,15 +1,13 @@
 {
   "raw": "10 g dried kelp (kombu)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried kelp (kombu)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried kelp (kombu)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

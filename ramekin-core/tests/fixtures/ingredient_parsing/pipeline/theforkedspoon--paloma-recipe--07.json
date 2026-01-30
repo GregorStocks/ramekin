@@ -1,15 +1,13 @@
 {
   "raw": "2 fluid ounces fresh grapefruit juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh grapefruit juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh grapefruit juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

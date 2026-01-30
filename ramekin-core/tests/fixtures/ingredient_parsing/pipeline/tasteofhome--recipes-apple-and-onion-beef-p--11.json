@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon browning sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "browning sauce",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "browning sauce",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

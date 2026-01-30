@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (240ml) nondairy milk* (or dairy milk), at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nondairy milk* (or dairy milk)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": "ml"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "nondairy milk* (or dairy milk)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "ml"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

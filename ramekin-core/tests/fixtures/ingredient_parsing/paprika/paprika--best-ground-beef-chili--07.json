@@ -1,23 +1,21 @@
 {
   "raw": "1 ounce tortilla chips, crushed (1/4 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortilla chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": "crushed"
-    }
+  "expected": {
+    "item": "tortilla chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "crushed"
   }
 }

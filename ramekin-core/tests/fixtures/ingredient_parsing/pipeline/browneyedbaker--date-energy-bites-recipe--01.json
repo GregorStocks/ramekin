@@ -1,15 +1,13 @@
 {
   "raw": "14  pitted dates",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted dates",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitted dates",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

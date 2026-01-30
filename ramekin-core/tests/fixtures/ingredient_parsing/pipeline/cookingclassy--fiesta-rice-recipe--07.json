@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 cups leftover cooked brown rice, (chilled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover cooked brown rice",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "leftover cooked brown rice",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
   }
 }

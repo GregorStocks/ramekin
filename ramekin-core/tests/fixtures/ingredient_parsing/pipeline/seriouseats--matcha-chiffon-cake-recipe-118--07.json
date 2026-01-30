@@ -1,19 +1,17 @@
 {
   "raw": "56 g egg yolks (2 ounces) from 4 large eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolks from 4 large eggs",
-      "measurements": [
-        {
-          "amount": "56",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg yolks from 4 large eggs",
+    "measurements": [
+      {
+        "amount": "56",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

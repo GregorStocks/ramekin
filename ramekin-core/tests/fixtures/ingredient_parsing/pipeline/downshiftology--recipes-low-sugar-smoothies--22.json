@@ -1,15 +1,13 @@
 {
   "raw": "1/4   avocado",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

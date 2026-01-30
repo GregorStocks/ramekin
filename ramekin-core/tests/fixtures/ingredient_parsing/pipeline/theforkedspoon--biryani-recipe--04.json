@@ -1,15 +1,13 @@
 {
   "raw": "5 whole green cardamom",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole green cardamom",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole green cardamom",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

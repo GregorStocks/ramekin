@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup freshly squeezed lemon juice (2 lemons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly squeezed lemon juice",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly squeezed lemon juice",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

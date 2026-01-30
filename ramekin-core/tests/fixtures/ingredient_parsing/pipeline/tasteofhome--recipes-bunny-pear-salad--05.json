@@ -1,15 +1,13 @@
 {
   "raw": "4 baby carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby carrots",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby carrots",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

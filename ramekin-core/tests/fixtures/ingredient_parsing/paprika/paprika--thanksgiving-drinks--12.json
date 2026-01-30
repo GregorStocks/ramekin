@@ -1,19 +1,17 @@
 {
   "raw": "¼ ounce cranberry jelly",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cranberry jelly",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cranberry jelly",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

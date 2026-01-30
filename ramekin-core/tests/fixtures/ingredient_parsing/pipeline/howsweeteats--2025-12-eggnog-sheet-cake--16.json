@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons eggnog",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggnog",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggnog",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

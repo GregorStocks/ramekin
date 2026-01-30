@@ -1,15 +1,13 @@
 {
   "raw": "2 cups seasoned, (cooked vegetables or greens)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seasoned",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cooked vegetables or greens"
-    }
+  "expected": {
+    "item": "seasoned",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "cooked vegetables or greens"
   }
 }

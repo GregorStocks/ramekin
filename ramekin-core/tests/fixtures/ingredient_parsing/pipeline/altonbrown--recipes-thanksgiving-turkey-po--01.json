@@ -1,15 +1,13 @@
 {
   "raw": "5 slices hearty white bread, cut into 1/2-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hearty white bread, cut into 1/2-inch cubes",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hearty white bread, cut into 1/2-inch cubes",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

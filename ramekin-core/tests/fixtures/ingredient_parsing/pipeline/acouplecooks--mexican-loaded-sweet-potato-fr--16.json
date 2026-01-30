@@ -1,15 +1,13 @@
 {
   "raw": "½ cup feta crumbles (optional, omit for dairy-free or vegan)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "feta crumbles",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional, omit for dairy-free or vegan"
-    }
+  "expected": {
+    "item": "feta crumbles",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional, omit for dairy-free or vegan"
   }
 }

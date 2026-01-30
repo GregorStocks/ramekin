@@ -1,10 +1,8 @@
 {
   "raw": "Sriracha, for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sriracha, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

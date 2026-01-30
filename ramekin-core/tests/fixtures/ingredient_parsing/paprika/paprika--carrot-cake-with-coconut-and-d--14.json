@@ -1,10 +1,8 @@
 {
   "raw": "FROSTING",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "FROSTING",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "FROSTING",
+    "measurements": [],
+    "note": null
   }
 }

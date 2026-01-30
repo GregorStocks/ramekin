@@ -1,10 +1,8 @@
 {
   "raw": "Few gratings fresh lemon zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Few gratings fresh lemon zest",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Few gratings fresh lemon zest",
+    "measurements": [],
+    "note": null
   }
 }

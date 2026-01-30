@@ -1,19 +1,17 @@
 {
   "raw": "40 grams raw cashew nuts ((about 1/4 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw cashew nuts",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": "g"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw cashew nuts",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

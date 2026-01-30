@@ -1,15 +1,13 @@
 {
   "raw": "1-2 cups croutons ((freshly made or store bought))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "croutons",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "cup"
-        }
-      ],
-      "note": "freshly made or store bought"
-    }
+  "expected": {
+    "item": "croutons",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cup"
+      }
+    ],
+    "note": "freshly made or store bought"
   }
 }

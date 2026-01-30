@@ -1,10 +1,8 @@
 {
   "raw": "Tangy Corn Salsa , for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tangy Corn Salsa",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Tangy Corn Salsa",
+    "measurements": [],
+    "note": "for serving"
   }
 }

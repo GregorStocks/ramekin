@@ -1,23 +1,21 @@
 {
   "raw": "2 cups (480ml) grated carrots (, about 2-3 large carrots worth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "480",
-          "unit": "ml"
-        },
-        {
-          "amount": "2-3",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "480",
+        "unit": "ml"
+      },
+      {
+        "amount": "2-3",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

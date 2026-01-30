@@ -1,10 +1,8 @@
 {
   "raw": "Boston lettuce or other",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Boston lettuce or other",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Boston lettuce or other",
+    "measurements": [],
+    "note": null
   }
 }

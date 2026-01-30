@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP Vanilla",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vanilla",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Vanilla",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

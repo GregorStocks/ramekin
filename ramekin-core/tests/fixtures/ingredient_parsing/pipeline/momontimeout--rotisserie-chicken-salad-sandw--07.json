@@ -1,10 +1,8 @@
 {
   "raw": "bread (your choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread (your choice)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "bread (your choice)",
+    "measurements": [],
+    "note": null
   }
 }

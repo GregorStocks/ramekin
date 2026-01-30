@@ -1,15 +1,13 @@
 {
   "raw": "1 28-ounce can tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "28-ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "28-ounce can"
+      }
+    ],
+    "note": null
   }
 }

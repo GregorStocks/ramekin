@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 cups canola or peanut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canola or peanut oil",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canola or peanut oil",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

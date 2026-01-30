@@ -1,23 +1,21 @@
 {
   "raw": "13 tablespoons (185 grams or 6 1/2 ounces) cold unsalted butter, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold unsalted butter",
-      "measurements": [
-        {
-          "amount": "13",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "185",
-          "unit": "g"
-        },
-        {
-          "amount": "6 1/2",
-          "unit": "oz"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "cold unsalted butter",
+    "measurements": [
+      {
+        "amount": "13",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "185",
+        "unit": "g"
+      },
+      {
+        "amount": "6 1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": "diced"
   }
 }

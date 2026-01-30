@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fresh basket cheese (drained and cut into bite-size pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basket cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "drained and cut into bite-size pieces"
-    }
+  "expected": {
+    "item": "fresh basket cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "drained and cut into bite-size pieces"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups 500 ml heavy cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "500 ml heavy cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "500 ml heavy cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons distilled white vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "distilled white vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "distilled white vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

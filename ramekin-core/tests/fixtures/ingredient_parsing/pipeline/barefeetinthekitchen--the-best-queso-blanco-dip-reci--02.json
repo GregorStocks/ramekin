@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped green chile (frozen or canned will work fine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped green chile",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "frozen or canned will work fine"
-    }
+  "expected": {
+    "item": "chopped green chile",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "frozen or canned will work fine"
   }
 }

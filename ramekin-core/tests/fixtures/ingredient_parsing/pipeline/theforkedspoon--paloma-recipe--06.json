@@ -1,15 +1,13 @@
 {
   "raw": "2 fluid ounces tequila",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tequila",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tequila",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

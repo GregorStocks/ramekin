@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces fresh blueberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh blueberries",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh blueberries",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

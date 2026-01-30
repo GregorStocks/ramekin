@@ -1,15 +1,13 @@
 {
   "raw": "3 cups cooked diced chicken breasts, (cold)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked diced chicken breasts",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "cold"
-    }
+  "expected": {
+    "item": "cooked diced chicken breasts",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold"
   }
 }

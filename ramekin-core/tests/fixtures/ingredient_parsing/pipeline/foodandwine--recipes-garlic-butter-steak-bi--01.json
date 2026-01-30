@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds beef strip steak (1-inch thick), cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef strip steak , cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef strip steak , cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

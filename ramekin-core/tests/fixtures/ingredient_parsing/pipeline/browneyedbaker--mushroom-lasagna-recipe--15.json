@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup minced fresh parsley (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced fresh parsley",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "minced fresh parsley",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

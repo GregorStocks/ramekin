@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup raspberry preserves  (or your favorite flavor)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raspberry preserves  (or your favorite flavor)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raspberry preserves  (or your favorite flavor)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

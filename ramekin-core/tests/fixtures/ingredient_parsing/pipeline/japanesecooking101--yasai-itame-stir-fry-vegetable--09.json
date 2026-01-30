@@ -1,15 +1,13 @@
 {
   "raw": "1/2  green pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

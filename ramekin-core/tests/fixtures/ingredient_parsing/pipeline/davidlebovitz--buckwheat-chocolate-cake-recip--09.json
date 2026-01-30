@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (35g) buckwheat flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buckwheat flour",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "35",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buckwheat flour",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

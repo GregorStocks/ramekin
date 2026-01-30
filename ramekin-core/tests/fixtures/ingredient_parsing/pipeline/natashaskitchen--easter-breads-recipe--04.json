@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup 8 Tbsp unsalted butter, softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "8 Tbsp unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "8 Tbsp unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "softened"
   }
 }

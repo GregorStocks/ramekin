@@ -1,15 +1,13 @@
 {
   "raw": "4-5 cloves Garlic (, crushed or minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Garlic",
-      "measurements": [
-        {
-          "amount": "4-5",
-          "unit": "clove"
-        }
-      ],
-      "note": "crushed or minced"
-    }
+  "expected": {
+    "item": "Garlic",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": "clove"
+      }
+    ],
+    "note": "crushed or minced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 heaping teaspoon Dijon mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dijon mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaping tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dijon mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaping tsp"
+      }
+    ],
+    "note": null
   }
 }

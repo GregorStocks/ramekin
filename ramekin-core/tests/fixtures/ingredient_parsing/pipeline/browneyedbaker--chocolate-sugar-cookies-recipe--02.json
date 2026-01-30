@@ -1,15 +1,13 @@
 {
   "raw": "1¼ cups Dutch-process cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dutch-process cocoa powder",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dutch-process cocoa powder",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

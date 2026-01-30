@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons lard or solid vegetable shortening, melted and cooled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lard or solid vegetable shortening",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted and cooled"
-    }
+  "expected": {
+    "item": "lard or solid vegetable shortening",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted and cooled"
   }
 }

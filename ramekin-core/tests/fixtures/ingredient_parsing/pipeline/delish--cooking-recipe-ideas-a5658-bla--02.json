@@ -1,19 +1,17 @@
 {
   "raw": "1 (3.5-oz.) package shiitake mushrooms, roughly chopped&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "3.5",
-          "unit": null
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "3.5",
+        "unit": null
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

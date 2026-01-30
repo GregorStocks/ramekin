@@ -1,15 +1,13 @@
 {
   "raw": "2  navel oranges (peeled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "navel oranges",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "navel oranges",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

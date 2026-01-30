@@ -1,19 +1,17 @@
 {
   "raw": "200g bar dark chocolate (70% cocoa solids)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bar dark chocolate",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        },
-        {
-          "amount": "70",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bar dark chocolate",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      },
+      {
+        "amount": "70",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

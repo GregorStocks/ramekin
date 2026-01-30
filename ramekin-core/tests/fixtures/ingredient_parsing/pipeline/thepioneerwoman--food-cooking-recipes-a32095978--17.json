@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. macadamia nuts, toasted and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "macadamia nuts",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted and chopped"
-    }
+  "expected": {
+    "item": "macadamia nuts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "toasted and chopped"
   }
 }

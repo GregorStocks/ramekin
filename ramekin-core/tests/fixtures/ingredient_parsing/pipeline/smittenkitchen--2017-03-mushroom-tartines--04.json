@@ -1,10 +1,8 @@
 {
   "raw": "A few gratings fresh nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A few gratings fresh nutmeg",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A few gratings fresh nutmeg",
+    "measurements": [],
+    "note": null
   }
 }

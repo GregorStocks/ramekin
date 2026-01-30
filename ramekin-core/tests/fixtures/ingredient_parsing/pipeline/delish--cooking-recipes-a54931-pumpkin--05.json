@@ -1,10 +1,8 @@
 {
   "raw": "Pumpkin pie spice, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pumpkin pie spice",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Pumpkin pie spice",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

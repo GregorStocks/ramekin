@@ -1,15 +1,13 @@
 {
   "raw": "3-ingredient Mediterranean Salad",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ingredient Mediterranean Salad",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-ingredient Mediterranean Salad",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

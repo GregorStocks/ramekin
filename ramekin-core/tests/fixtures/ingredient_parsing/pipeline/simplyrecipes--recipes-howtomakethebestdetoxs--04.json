@@ -1,15 +1,13 @@
 {
   "raw": "1 cup frozen strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

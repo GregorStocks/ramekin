@@ -1,15 +1,13 @@
 {
   "raw": "7g table salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "table salt",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "table salt",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

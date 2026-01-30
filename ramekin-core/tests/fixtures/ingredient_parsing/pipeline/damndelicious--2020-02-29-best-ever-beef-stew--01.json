@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds top sirloin steak (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "top sirloin steak",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "top sirloin steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 package square wonton wrappers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "square wonton wrappers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "square wonton wrappers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Dash of cayenne (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cayenne",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "cayenne",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": "optional"
   }
 }

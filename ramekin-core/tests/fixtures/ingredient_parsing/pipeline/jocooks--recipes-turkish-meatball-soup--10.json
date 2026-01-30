@@ -1,15 +1,13 @@
 {
   "raw": "1 medium red bell pepper (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "red bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

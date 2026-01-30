@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons sake ((or water))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sake (or water)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sake (or water)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup Argo® OR Kingsford's® Corn Starch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Argo® OR Kingsford's® Corn Starch",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Argo® OR Kingsford's® Corn Starch",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

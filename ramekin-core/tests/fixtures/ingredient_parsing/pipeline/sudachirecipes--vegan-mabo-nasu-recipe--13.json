@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp sake",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sake",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sake",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

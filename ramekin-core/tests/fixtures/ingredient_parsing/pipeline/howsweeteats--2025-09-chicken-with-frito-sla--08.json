@@ -1,23 +1,21 @@
 {
   "raw": "1 (9oz)  bag chili cheese fritos",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili cheese fritos",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "255",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chili cheese fritos",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "255",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

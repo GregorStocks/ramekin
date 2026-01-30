@@ -1,10 +1,8 @@
 {
   "raw": "Lemon twist or peel (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lemon twist or peel",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Lemon twist or peel",
+    "measurements": [],
+    "note": "for serving"
   }
 }

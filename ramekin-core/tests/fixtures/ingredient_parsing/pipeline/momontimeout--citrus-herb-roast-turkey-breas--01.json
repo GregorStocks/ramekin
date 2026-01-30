@@ -1,15 +1,13 @@
 {
   "raw": "3 to 4 pound turkey half-breast, skin intact (or 6 to 7 pound turkey breast, halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turkey half-breast, skin intact",
-      "measurements": [
-        {
-          "amount": "3 to 4",
-          "unit": "lb"
-        }
-      ],
-      "note": "or 6 to 7 pound turkey breast, halved"
-    }
+  "expected": {
+    "item": "turkey half-breast, skin intact",
+    "measurements": [
+      {
+        "amount": "3 to 4",
+        "unit": "lb"
+      }
+    ],
+    "note": "or 6 to 7 pound turkey breast, halved"
   }
 }

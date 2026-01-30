@@ -1,19 +1,17 @@
 {
   "raw": "1/2 pound (2 sticks) unsalted butter, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "2",
-          "unit": "stick"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "2",
+        "unit": "stick"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

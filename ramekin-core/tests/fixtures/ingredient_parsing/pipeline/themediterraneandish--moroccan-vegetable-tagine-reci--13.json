@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup heaping chopped dried apricot",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heaping chopped dried apricot",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heaping chopped dried apricot",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

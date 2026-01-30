@@ -1,15 +1,13 @@
 {
   "raw": "4  pitas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

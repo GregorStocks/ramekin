@@ -1,15 +1,13 @@
 {
   "raw": "small pinch each of ground cinnamon, ginger, and cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pinch each of ground cinnamon, ginger, and cloves",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pinch each of ground cinnamon, ginger, and cloves",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

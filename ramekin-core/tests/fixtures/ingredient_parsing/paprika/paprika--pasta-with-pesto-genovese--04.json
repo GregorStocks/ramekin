@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (35 grams) toasted pine nuts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted pine nuts",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "35",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted pine nuts",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

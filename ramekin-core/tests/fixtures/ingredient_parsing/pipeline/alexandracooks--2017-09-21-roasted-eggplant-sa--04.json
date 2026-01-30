@@ -1,19 +1,17 @@
 {
   "raw": "10 to 12&nbsp;ounces&nbsp;greens, such as Swiss chard, kale, or mustard greens, leaves removed from stems and finely chopped (you should have about 8 oz. greens post trimming)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "greens, such as Swiss chard, kale, or mustard greens",
-      "measurements": [
-        {
-          "amount": "10 to 12",
-          "unit": "oz"
-        },
-        {
-          "amount": "283 to 340",
-          "unit": "g"
-        }
-      ],
-      "note": "leaves removed from stems and finely chopped (you should have about 8 oz. greens post trimming)"
-    }
+  "expected": {
+    "item": "greens, such as Swiss chard, kale, or mustard greens",
+    "measurements": [
+      {
+        "amount": "10 to 12",
+        "unit": "oz"
+      },
+      {
+        "amount": "283 to 340",
+        "unit": "g"
+      }
+    ],
+    "note": "leaves removed from stems and finely chopped (you should have about 8 oz. greens post trimming)"
   }
 }

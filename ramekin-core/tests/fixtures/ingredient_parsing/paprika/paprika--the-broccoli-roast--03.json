@@ -1,10 +1,8 @@
 {
   "raw": "Grated aged cheddar (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grated aged cheddar",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Grated aged cheddar",
+    "measurements": [],
+    "note": "optional"
   }
 }

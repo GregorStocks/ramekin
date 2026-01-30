@@ -1,10 +1,8 @@
 {
   "raw": "food processor",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "food processor",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "food processor",
+    "measurements": [],
+    "note": null
   }
 }

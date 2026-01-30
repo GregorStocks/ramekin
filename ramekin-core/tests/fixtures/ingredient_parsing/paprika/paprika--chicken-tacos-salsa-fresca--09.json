@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon minced raw garlic, or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced raw garlic",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "minced raw garlic",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

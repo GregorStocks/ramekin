@@ -1,19 +1,17 @@
 {
   "raw": "1 large head cauliflower (3 pounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head cauliflower",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

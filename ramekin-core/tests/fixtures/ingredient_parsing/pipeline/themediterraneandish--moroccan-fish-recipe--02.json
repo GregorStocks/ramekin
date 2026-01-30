@@ -1,15 +1,13 @@
 {
   "raw": "8 garlic cloves, divided (4 minced cloves and 4 sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves, divided",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "4 minced cloves and 4 sliced"
-    }
+  "expected": {
+    "item": "garlic cloves, divided",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "4 minced cloves and 4 sliced"
   }
 }

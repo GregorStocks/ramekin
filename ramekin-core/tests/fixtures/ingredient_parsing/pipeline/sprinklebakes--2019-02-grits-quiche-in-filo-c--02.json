@@ -1,15 +1,13 @@
 {
   "raw": "18  sheets phyllo dough",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets phyllo dough",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheets phyllo dough",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

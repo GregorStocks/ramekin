@@ -1,23 +1,21 @@
 {
   "raw": "2 teaspoons red wine vinegar (1/3 ounce; 10 g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red wine vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "1/3",
-          "unit": "oz"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red wine vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "1/3",
+        "unit": "oz"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

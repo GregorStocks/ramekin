@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon caraway seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caraway seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caraway seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

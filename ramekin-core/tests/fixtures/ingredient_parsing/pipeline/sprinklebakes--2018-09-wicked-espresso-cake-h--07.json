@@ -1,23 +1,21 @@
 {
   "raw": "2 cups 400g/13.95 oz. granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "400",
-          "unit": "g"
-        },
-        {
-          "amount": "13.95",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "400",
+        "unit": "g"
+      },
+      {
+        "amount": "13.95",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

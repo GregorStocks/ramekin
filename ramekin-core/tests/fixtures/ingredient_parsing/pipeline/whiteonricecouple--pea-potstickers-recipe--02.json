@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup low fat ricotta cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low fat ricotta cheese",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low fat ricotta cheese",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

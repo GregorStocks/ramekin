@@ -1,15 +1,13 @@
 {
   "raw": "1 cup dry white wine, like pinot grigio or sauvignon blanc",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry white wine, like pinot grigio or sauvignon blanc",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry white wine, like pinot grigio or sauvignon blanc",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

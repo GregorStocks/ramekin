@@ -1,19 +1,17 @@
 {
   "raw": "12 oz jarred roasted red peppers, (drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jarred roasted red peppers",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "jarred roasted red peppers",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

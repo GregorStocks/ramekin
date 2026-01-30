@@ -1,15 +1,13 @@
 {
   "raw": "1 cup ditalini pasta  (or other small pasta)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ditalini pasta  (or other small pasta)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ditalini pasta  (or other small pasta)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

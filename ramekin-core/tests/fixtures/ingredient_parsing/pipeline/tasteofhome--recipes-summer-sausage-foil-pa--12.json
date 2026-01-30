@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup prepared Italian salad dressing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared Italian salad dressing",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared Italian salad dressing",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

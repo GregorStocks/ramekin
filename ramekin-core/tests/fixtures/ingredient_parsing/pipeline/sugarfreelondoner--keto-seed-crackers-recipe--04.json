@@ -1,19 +1,17 @@
 {
   "raw": "3 tbsp / 24g chia seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chia seeds",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "24",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chia seeds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "24",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

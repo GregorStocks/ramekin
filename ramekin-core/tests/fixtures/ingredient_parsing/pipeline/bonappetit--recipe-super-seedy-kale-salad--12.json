@@ -1,15 +1,13 @@
 {
   "raw": "3 Tbsp. raw shelled pumpkin seeds (pepitas)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw shelled pumpkin seeds (pepitas)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw shelled pumpkin seeds (pepitas)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

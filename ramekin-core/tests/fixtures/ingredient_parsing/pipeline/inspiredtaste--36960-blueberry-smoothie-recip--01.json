@@ -1,23 +1,21 @@
 {
   "raw": "1 cup (5 to 6 ounces) blueberries, frozen preferred, see notes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blueberries, frozen preferred, see notes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "5 to 6",
-          "unit": "oz"
-        },
-        {
-          "amount": "142 to 170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blueberries, frozen preferred, see notes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "5 to 6",
+        "unit": "oz"
+      },
+      {
+        "amount": "142 to 170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

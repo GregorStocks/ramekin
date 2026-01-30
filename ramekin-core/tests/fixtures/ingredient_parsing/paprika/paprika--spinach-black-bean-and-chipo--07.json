@@ -1,19 +1,17 @@
 {
   "raw": "2 (8-inch) flour tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flour tortillas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

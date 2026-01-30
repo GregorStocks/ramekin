@@ -1,19 +1,17 @@
 {
   "raw": "12 ounce white mushrooms (cut in half)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white mushrooms (cut in half)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white mushrooms (cut in half)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup kalamata olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kalamata olives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kalamata olives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Fat from the homemade chicken stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fat from the homemade chicken stock",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fat from the homemade chicken stock",
+    "measurements": [],
+    "note": null
   }
 }

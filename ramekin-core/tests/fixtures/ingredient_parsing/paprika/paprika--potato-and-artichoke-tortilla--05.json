@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup sliced piquillo peppers or roasted red bell peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced piquillo peppers or roasted red bell peppers",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced piquillo peppers or roasted red bell peppers",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

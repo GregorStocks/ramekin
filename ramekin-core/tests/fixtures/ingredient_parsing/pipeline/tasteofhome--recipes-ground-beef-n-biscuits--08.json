@@ -1,19 +1,17 @@
 {
   "raw": "2 cans (8 ounces each) tomato sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "8",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "8",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

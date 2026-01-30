@@ -1,15 +1,13 @@
 {
   "raw": "1  egg (whisked with 1 teaspoon water until frothy, for egg wash (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "whisked with 1 teaspoon water until frothy, for egg wash (optional"
-    }
+  "expected": {
+    "item": "egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "whisked with 1 teaspoon water until frothy, for egg wash (optional"
   }
 }

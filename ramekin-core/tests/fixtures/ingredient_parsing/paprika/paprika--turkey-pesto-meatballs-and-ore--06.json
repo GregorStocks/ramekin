@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons grated parmesan, plus more to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated parmesan",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to serve"
-    }
+  "expected": {
+    "item": "grated parmesan",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more to serve"
   }
 }

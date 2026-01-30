@@ -1,10 +1,8 @@
 {
   "raw": "Totally optional: &amp;frac12; cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit, fresh banana slices&amp;#8230;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Totally optional: 1/2 cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit",
-      "measurements": [],
-      "note": "fresh banana slices…"
-    }
+  "expected": {
+    "item": "Totally optional: 1/2 cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit",
+    "measurements": [],
+    "note": "fresh banana slices…"
   }
 }

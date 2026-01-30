@@ -1,15 +1,13 @@
 {
   "raw": "45 chocolate sandwich cookies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate sandwich cookies",
-      "measurements": [
-        {
-          "amount": "45",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate sandwich cookies",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

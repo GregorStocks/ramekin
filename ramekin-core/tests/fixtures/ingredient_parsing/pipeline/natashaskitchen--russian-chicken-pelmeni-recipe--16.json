@@ -1,10 +1,8 @@
 {
   "raw": "Sour cream (vinegar, ketchup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sour cream (vinegar, ketchup)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sour cream (vinegar, ketchup)",
+    "measurements": [],
+    "note": null
   }
 }

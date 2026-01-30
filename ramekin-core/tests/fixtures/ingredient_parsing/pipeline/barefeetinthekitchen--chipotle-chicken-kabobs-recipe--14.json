@@ -1,10 +1,8 @@
 {
   "raw": "Optional topping: fresh cilantro (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional topping: fresh cilantro",
-      "measurements": [],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "Optional topping: fresh cilantro",
+    "measurements": [],
+    "note": "chopped"
   }
 }

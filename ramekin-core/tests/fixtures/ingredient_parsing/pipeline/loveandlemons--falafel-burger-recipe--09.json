@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons coriander",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coriander",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

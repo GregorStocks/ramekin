@@ -1,15 +1,13 @@
 {
   "raw": "⅛ tsp dashi granules (use kombu dashi granules for plant-based diets)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dashi granules (use kombu dashi granules for plant-based diets)",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dashi granules (use kombu dashi granules for plant-based diets)",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

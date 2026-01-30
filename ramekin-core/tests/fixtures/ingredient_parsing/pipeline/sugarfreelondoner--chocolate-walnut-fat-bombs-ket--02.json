@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup coconut oil (55g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

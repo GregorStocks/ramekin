@@ -1,19 +1,17 @@
 {
   "raw": "3-5 oz fresh baby spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh baby spinach",
-      "measurements": [
-        {
-          "amount": "3-5",
-          "unit": "oz"
-        },
-        {
-          "amount": "85-142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh baby spinach",
+    "measurements": [
+      {
+        "amount": "3-5",
+        "unit": "oz"
+      },
+      {
+        "amount": "85-142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

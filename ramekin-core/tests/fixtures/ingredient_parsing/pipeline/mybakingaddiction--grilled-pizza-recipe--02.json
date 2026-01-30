@@ -1,15 +1,13 @@
 {
   "raw": "1 envelope Fleischmann's® Pizza Crust Yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "envelope Fleischmann's® Pizza Crust Yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "envelope Fleischmann's® Pizza Crust Yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

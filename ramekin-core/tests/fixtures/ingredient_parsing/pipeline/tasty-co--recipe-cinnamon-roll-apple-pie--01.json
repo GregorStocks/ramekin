@@ -1,15 +1,13 @@
 {
   "raw": "5 granny smith apples, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granny smith apples",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "granny smith apples",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

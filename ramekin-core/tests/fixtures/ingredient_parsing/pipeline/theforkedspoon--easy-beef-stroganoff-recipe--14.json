@@ -1,10 +1,8 @@
 {
   "raw": "chopped parsley or chives (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped parsley or chives (to garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped parsley or chives (to garnish)",
+    "measurements": [],
+    "note": null
   }
 }

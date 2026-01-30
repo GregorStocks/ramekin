@@ -1,15 +1,13 @@
 {
   "raw": "2½ cups chicken broth (low-sodium, or vegetable broth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth (low-sodium, or vegetable broth)",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth (low-sodium, or vegetable broth)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

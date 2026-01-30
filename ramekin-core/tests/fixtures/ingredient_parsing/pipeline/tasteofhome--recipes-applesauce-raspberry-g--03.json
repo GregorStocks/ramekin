@@ -1,19 +1,17 @@
 {
   "raw": "2 packages (3 ounces each) raspberry gelatin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raspberry gelatin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "3",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raspberry gelatin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "package"
+      },
+      {
+        "amount": "3",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

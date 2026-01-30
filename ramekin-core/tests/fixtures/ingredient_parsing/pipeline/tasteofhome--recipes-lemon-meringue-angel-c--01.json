@@ -1,15 +1,13 @@
 {
   "raw": "12 large egg whites, room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg whites",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "large"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "egg whites",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "large"
+      }
+    ],
+    "note": "room temperature"
   }
 }

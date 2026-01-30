@@ -1,15 +1,13 @@
 {
   "raw": "1 cup colby jack cheese shredded (or more if desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "colby jack cheese shredded",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more if desired"
-    }
+  "expected": {
+    "item": "colby jack cheese shredded",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more if desired"
   }
 }

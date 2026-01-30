@@ -1,10 +1,8 @@
 {
   "raw": "optional - dash of peach bitters&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional - dash of peach bitters",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "optional - dash of peach bitters",
+    "measurements": [],
+    "note": null
   }
 }

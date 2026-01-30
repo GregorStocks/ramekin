@@ -1,19 +1,17 @@
 {
   "raw": "3  medium beets (1 lb)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beets",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beets",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

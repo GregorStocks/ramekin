@@ -1,19 +1,17 @@
 {
   "raw": "20 ounces cheese tortellini, (cooked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cheese tortellini",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "oz"
-        },
-        {
-          "amount": "567",
-          "unit": "g"
-        }
-      ],
-      "note": "cooked"
-    }
+  "expected": {
+    "item": "cheese tortellini",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      },
+      {
+        "amount": "567",
+        "unit": "g"
+      }
+    ],
+    "note": "cooked"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup vodka (chilled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vodka",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "vodka",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
   }
 }

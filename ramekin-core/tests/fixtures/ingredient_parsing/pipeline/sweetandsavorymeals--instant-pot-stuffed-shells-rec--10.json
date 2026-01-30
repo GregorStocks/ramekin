@@ -1,19 +1,17 @@
 {
   "raw": "24 oz marinara sauce (or homemade)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "marinara sauce (or homemade)",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "marinara sauce (or homemade)",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

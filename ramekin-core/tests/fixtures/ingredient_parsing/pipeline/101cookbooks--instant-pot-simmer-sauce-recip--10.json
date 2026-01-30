@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon sweet paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet paprika",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet paprika",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

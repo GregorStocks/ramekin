@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup buffalo wing sauce (I used Frank's)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buffalo wing sauce (I used Frank's)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buffalo wing sauce (I used Frank's)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

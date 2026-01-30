@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup finely chopped white onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped white onion",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped white onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

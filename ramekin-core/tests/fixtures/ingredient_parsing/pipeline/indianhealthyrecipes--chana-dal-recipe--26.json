@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon asafoetida ( (hing, optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asafoetida",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "(hing, optional"
-    }
+  "expected": {
+    "item": "asafoetida",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "(hing, optional"
   }
 }

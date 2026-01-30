@@ -1,15 +1,13 @@
 {
   "raw": "2 cups black beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

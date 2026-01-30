@@ -1,10 +1,8 @@
 {
   "raw": "Shredded cheddar cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shredded cheddar cheese",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shredded cheddar cheese",
+    "measurements": [],
+    "note": null
   }
 }

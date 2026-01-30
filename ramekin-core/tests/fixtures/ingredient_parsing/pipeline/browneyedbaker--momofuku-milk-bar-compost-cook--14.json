@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons &nbsp;glucose",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "glucose",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "glucose",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

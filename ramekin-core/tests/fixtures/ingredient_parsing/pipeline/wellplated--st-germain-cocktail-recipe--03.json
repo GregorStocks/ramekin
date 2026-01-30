@@ -1,19 +1,17 @@
 {
   "raw": "3/4 ounce freshly squeezed lemon juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly squeezed lemon juice",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "21",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly squeezed lemon juice",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "21",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

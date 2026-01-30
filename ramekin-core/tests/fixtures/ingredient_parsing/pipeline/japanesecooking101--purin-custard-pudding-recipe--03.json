@@ -1,15 +1,13 @@
 {
   "raw": "2 cups plus 1 Tbsp milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2 cups plus 1 Tbsp milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 1 Tbsp milk"
-    }
+  "expected": {
+    "item": "2 cups plus 1 Tbsp milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 1 Tbsp milk"
   }
 }

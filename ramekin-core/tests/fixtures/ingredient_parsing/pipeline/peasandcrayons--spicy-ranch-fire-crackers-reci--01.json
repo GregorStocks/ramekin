@@ -1,19 +1,17 @@
 {
   "raw": "11 oz mini Saltine crackers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini Saltine crackers",
-      "measurements": [
-        {
-          "amount": "11",
-          "unit": "oz"
-        },
-        {
-          "amount": "312",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mini Saltine crackers",
+    "measurements": [
+      {
+        "amount": "11",
+        "unit": "oz"
+      },
+      {
+        "amount": "312",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

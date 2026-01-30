@@ -1,19 +1,17 @@
 {
   "raw": "4 (5-ounce) cans tuna in water (drained and roughly chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tuna in water",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "can"
-        },
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "drained and roughly chopped"
-    }
+  "expected": {
+    "item": "tuna in water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "can"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "drained and roughly chopped"
   }
 }

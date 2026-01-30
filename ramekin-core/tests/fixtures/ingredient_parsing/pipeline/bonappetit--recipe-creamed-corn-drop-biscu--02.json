@@ -1,19 +1,17 @@
 {
   "raw": "80 g (½ cup) medium yellow cornmeal",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium yellow cornmeal",
-      "measurements": [
-        {
-          "amount": "80",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium yellow cornmeal",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

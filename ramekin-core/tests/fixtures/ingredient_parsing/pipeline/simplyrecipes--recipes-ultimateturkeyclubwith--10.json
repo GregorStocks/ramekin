@@ -1,15 +1,13 @@
 {
   "raw": "1 head romaine lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "romaine lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "romaine lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

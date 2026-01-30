@@ -1,19 +1,17 @@
 {
   "raw": "0.25 cup granulated sugar (53 grams)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        },
-        {
-          "amount": "53",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      },
+      {
+        "amount": "53",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

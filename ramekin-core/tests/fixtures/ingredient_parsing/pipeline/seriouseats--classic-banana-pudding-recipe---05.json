@@ -1,23 +1,21 @@
 {
   "raw": "1 teaspoon Diamond Crystal kosher salt, divided; for table salt, use half as much by volumeYolks from 8 large eggs, straight from the fridge (5 ounces; 140g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Diamond Crystal kosher salt, divided; for table salt, use half as much by volumeYolks from 8 large eggs, straight from the fridge",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Diamond Crystal kosher salt, divided; for table salt, use half as much by volumeYolks from 8 large eggs, straight from the fridge",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp cayenne (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cayenne",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "cayenne",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

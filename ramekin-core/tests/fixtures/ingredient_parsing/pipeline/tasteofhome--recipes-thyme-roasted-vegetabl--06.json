@@ -1,15 +1,13 @@
 {
   "raw": "1 large sweet yellow pepper, cut into 1-1/2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet yellow pepper, cut into 1-1/2-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet yellow pepper, cut into 1-1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

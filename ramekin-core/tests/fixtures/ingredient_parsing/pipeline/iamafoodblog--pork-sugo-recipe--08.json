@@ -1,15 +1,13 @@
 {
   "raw": "2 sprigs rosemary, stripped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rosemary, stripped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "sprig"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rosemary, stripped",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sprig"
+      }
+    ],
+    "note": null
   }
 }

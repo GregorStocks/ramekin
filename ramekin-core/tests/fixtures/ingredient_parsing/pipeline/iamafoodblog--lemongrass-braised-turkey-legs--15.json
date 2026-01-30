@@ -1,10 +1,8 @@
 {
   "raw": "salt and freshly ground pepper, if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt and freshly ground pepper, if needed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "salt and freshly ground pepper, if needed",
+    "measurements": [],
+    "note": null
   }
 }

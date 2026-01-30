@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons date syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "date syrup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "date syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

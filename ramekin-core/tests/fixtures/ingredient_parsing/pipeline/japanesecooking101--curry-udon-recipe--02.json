@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Dashi (fish broth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dashi (fish broth)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dashi (fish broth)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

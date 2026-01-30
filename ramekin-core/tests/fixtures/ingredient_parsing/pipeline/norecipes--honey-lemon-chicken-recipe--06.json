@@ -1,15 +1,13 @@
 {
   "raw": "700 grams boneless skin-on chicken thighs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skin-on chicken thighs",
-      "measurements": [
-        {
-          "amount": "700",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skin-on chicken thighs",
+    "measurements": [
+      {
+        "amount": "700",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 c. shredded pepper jack cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded pepper jack cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded pepper jack cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

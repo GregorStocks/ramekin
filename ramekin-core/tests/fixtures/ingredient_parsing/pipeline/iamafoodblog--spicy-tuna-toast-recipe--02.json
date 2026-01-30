@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon roughly chopped cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roughly chopped cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roughly chopped cilantro",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

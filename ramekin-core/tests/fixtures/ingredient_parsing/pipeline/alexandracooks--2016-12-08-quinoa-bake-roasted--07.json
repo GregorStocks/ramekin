@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;cup milk, any milk fat you like (I use whole)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk, any milk fat you like",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "I use whole"
-    }
+  "expected": {
+    "item": "milk, any milk fat you like",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "I use whole"
   }
 }

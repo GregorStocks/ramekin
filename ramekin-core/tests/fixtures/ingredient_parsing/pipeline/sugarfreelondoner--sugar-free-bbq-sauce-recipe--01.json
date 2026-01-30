@@ -1,19 +1,17 @@
 {
   "raw": "1 cup tomato passata  (250ml)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato passata",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato passata",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

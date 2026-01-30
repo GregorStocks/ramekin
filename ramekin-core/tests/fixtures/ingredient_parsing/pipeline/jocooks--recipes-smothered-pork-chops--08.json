@@ -1,15 +1,13 @@
 {
   "raw": "4  pork chops (bone-in, at least 1-inch thick)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork chops (bone-in, at least 1-inch thick)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork chops (bone-in, at least 1-inch thick)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

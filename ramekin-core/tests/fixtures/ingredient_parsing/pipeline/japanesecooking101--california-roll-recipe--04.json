@@ -1,15 +1,13 @@
 {
   "raw": "1  avocado (cut into 1/2\" sticks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado (cut into 1/2\" sticks)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "avocado (cut into 1/2\" sticks)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

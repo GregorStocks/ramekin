@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup curry paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curry paste",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "curry paste",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

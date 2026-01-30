@@ -1,10 +1,8 @@
 {
   "raw": "A handful of fresh dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A handful of fresh dill",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A handful of fresh dill",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 (10.75 ounce) can condensed cream of chicken soup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "condensed cream of chicken soup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "10.75",
-          "unit": "oz"
-        },
-        {
-          "amount": "305",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "condensed cream of chicken soup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "10.75",
+        "unit": "oz"
+      },
+      {
+        "amount": "305",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

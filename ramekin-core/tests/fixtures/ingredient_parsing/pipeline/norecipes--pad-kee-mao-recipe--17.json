@@ -1,15 +1,13 @@
 {
   "raw": "2  bird chillies ((optional, finely minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bird chillies",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "optional, finely minced"
-    }
+  "expected": {
+    "item": "bird chillies",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "optional, finely minced"
   }
 }

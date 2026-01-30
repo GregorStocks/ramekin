@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup evaporated milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "evaporated milk",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "evaporated milk",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

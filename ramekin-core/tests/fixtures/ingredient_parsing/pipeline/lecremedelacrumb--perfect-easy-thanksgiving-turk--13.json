@@ -1,10 +1,8 @@
 {
   "raw": "gravy or cranberry sauce (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gravy or cranberry sauce",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "gravy or cranberry sauce",
+    "measurements": [],
+    "note": "for serving"
   }
 }

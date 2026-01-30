@@ -1,19 +1,17 @@
 {
   "raw": "1 recipe British-style chips or 12 ounces (340 g) frozen bagged steak fries, prepared according to package directions, see notes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "recipe British-style chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "or 12 ounces frozen bagged steak fries, prepared according to package directions, see notes"
-    }
+  "expected": {
+    "item": "recipe British-style chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "or 12 ounces frozen bagged steak fries, prepared according to package directions, see notes"
   }
 }

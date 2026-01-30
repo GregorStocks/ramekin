@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dried mint",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried mint",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried mint",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "food coloring (as desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "food coloring (as desired)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "food coloring (as desired)",
+    "measurements": [],
+    "note": null
   }
 }

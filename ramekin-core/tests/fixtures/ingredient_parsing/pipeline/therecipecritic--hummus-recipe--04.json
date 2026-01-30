@@ -1,10 +1,8 @@
 {
   "raw": "Juice of half a lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice of half a lemon",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Juice of half a lemon",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  avocado (sliced thin)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced thin"
-    }
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced thin"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  medium white onion, cut into six wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white onion, cut into six wedges",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white onion, cut into six wedges",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

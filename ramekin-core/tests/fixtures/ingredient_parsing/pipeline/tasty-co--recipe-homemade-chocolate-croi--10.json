@@ -1,15 +1,13 @@
 {
   "raw": "2 bars sweetened chocolate bar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bars sweetened chocolate bar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bars sweetened chocolate bar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

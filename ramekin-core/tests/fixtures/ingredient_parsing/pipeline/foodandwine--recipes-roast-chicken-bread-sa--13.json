@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound day-old, open-crumb, chewy, rustic bread loaf (not sourdough), cut into large (2-inch) chunks (about 2 1/2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "day-old, open-crumb, chewy, rustic bread loaf (not sourdough), cut into large (2-inch) chunks (about 2 1/2 cups)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "day-old, open-crumb, chewy, rustic bread loaf (not sourdough), cut into large (2-inch) chunks (about 2 1/2 cups)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

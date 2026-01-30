@@ -1,15 +1,13 @@
 {
   "raw": "4  skin off salmon fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skin off salmon fillets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skin off salmon fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

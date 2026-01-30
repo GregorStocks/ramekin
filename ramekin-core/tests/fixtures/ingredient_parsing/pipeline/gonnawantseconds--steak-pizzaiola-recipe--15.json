@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup basil leaves (julienned)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "julienned"
-    }
+  "expected": {
+    "item": "basil leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "julienned"
   }
 }

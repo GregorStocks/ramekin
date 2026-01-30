@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Diamond kosher salt (use 2 tablespoons if any other brand)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Diamond kosher salt (use 2 tablespoons if any other brand)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Diamond kosher salt (use 2 tablespoons if any other brand)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

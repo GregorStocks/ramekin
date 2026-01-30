@@ -1,10 +1,8 @@
 {
   "raw": "Cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cocoa powder",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cocoa powder",
+    "measurements": [],
+    "note": null
   }
 }

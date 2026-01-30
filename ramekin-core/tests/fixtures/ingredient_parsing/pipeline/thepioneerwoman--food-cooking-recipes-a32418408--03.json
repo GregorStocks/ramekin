@@ -1,15 +1,13 @@
 {
   "raw": "1 5-ounce package baby spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "5-ounce package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "5-ounce package"
+      }
+    ],
+    "note": null
   }
 }

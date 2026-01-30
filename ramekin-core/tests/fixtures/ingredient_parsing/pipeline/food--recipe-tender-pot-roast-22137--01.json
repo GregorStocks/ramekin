@@ -1,15 +1,13 @@
 {
   "raw": "3 -4   lbs    chuck roast, trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-4   lbs    chuck roast",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "-4   lbs    chuck roast",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "trimmed"
   }
 }

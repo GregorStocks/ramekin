@@ -1,15 +1,13 @@
 {
   "raw": "50 g Japanese leek (naganegi) (thinly sliced diagonally)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese leek (naganegi) (thinly sliced diagonally)",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese leek (naganegi) (thinly sliced diagonally)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

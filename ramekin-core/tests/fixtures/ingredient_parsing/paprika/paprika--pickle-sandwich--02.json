@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon mayonnaise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

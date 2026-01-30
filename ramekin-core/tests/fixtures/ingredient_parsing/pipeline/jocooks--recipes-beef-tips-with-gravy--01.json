@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

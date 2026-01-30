@@ -1,19 +1,17 @@
 {
   "raw": "8 oz package cream cheese (soft at room temp)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "package cream cheese (soft at room temp)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "package cream cheese (soft at room temp)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "¼ ounce crème de framboise [raspberry liqueuer] (preferably Giffard)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crème de framboise [raspberry liqueuer] (preferably Giffard)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crème de framboise [raspberry liqueuer] (preferably Giffard)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

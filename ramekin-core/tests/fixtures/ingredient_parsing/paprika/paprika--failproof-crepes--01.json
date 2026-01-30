@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (45 grams) unsalted butter, plus more for buttering pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for buttering pan"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for buttering pan"
   }
 }

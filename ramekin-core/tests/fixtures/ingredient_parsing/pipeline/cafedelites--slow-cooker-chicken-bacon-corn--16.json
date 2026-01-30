@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup bacon (diced, trimmed of fat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced, trimmed of fat"
-    }
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced, trimmed of fat"
   }
 }

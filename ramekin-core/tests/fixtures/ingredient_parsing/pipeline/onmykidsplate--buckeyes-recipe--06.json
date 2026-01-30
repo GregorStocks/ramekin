@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons coconut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut oil",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

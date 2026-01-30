@@ -1,23 +1,21 @@
 {
   "raw": "½ oz dried seaweed salad mix ((about 1 handful))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried seaweed salad mix",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "handful"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried seaweed salad mix",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "handful"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

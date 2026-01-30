@@ -1,15 +1,13 @@
 {
   "raw": "1 acorn squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "acorn squash",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "acorn squash",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

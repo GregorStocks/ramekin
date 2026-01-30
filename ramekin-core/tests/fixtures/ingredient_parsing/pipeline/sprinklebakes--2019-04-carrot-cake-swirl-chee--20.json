@@ -1,10 +1,8 @@
 {
   "raw": "Icing Ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Icing Ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Icing Ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

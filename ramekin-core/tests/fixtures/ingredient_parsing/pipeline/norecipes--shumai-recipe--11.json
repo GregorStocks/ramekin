@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon ginger juice ((ginger grated and juice squeezed out))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "ginger grated and juice squeezed out"
-    }
+  "expected": {
+    "item": "ginger juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "ginger grated and juice squeezed out"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  orange (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "orange",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "quartered"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "balsamic glaze, (for drizzling)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "balsamic glaze, (for drizzling)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "balsamic glaze, (for drizzling)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups powdered sugar (also known as icing sugar, or confectioner's sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar (also known as icing sugar, or confectioner's sugar)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered sugar (also known as icing sugar, or confectioner's sugar)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

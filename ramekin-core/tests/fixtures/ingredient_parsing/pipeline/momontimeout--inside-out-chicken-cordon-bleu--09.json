@@ -1,15 +1,13 @@
 {
   "raw": "4 to 8 slices Swiss cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Swiss cheese",
-      "measurements": [
-        {
-          "amount": "4 to 8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Swiss cheese",
+    "measurements": [
+      {
+        "amount": "4 to 8",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

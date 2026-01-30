@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon amchur (dried mango) powder or juice of half a lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "amchur powder or juice of half a lemon",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "dried mango"
-    }
+  "expected": {
+    "item": "amchur powder or juice of half a lemon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "dried mango"
   }
 }

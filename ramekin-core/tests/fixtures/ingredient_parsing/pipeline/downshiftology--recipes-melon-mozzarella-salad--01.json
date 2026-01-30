@@ -1,15 +1,13 @@
 {
   "raw": "1  cantaloupe melon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cantaloupe melon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cantaloupe melon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

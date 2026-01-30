@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup plain breadcrumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

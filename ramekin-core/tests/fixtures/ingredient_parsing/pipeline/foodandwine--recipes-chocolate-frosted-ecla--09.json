@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup plus 2 tablespoons sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/2 cup plus 2 tablespoons sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tablespoons sugar"
-    }
+  "expected": {
+    "item": "1/2 cup plus 2 tablespoons sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons sugar"
   }
 }

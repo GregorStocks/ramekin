@@ -1,15 +1,13 @@
 {
   "raw": "4-6 lb bone-in pork shoulder roast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in pork shoulder roast",
-      "measurements": [
-        {
-          "amount": "4-6",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in pork shoulder roast",
+    "measurements": [
+      {
+        "amount": "4-6",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

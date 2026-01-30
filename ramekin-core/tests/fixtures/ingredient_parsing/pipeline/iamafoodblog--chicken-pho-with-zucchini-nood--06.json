@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon whole cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole cloves",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole cloves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

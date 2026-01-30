@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons unsalted butter (softened (softer than room temp, but not melted))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "softened (softer than room temp, but not melted"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "softened (softer than room temp, but not melted"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup gorgonzola cheese (crumbled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gorgonzola cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "gorgonzola cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "crumbled"
   }
 }

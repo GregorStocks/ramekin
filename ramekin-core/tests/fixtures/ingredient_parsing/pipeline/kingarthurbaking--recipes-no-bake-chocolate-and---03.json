@@ -1,15 +1,13 @@
 {
   "raw": "heaping 1/4 teaspoon table salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "table salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "heaping tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "table salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "heaping tsp"
+      }
+    ],
+    "note": null
   }
 }

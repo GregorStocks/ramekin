@@ -1,15 +1,13 @@
 {
   "raw": "4  large peppermint candy canes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppermint candy canes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peppermint candy canes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

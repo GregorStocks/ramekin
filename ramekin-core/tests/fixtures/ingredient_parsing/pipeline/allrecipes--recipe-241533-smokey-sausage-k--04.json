@@ -1,23 +1,21 @@
 {
   "raw": "1 (19 ounce) can chickpeas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "19",
-          "unit": "oz"
-        },
-        {
-          "amount": "539",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "19",
+        "unit": "oz"
+      },
+      {
+        "amount": "539",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

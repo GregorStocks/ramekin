@@ -1,10 +1,8 @@
 {
   "raw": "olive oil spray",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil spray",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil spray",
+    "measurements": [],
+    "note": null
   }
 }

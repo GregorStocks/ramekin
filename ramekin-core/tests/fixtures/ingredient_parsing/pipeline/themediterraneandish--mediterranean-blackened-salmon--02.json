@@ -1,15 +1,13 @@
 {
   "raw": "1 large pomegranate, arils (seeds) of",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate, arils (seeds) of",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pomegranate, arils (seeds) of",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

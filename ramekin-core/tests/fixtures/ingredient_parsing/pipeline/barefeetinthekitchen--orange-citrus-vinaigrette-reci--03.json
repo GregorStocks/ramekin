@@ -1,15 +1,13 @@
 {
   "raw": "juice of 1 medium orange (about 5 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "juice of 1 medium orange",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "juice of 1 medium orange",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup frozen peas and carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen peas and carrots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen peas and carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

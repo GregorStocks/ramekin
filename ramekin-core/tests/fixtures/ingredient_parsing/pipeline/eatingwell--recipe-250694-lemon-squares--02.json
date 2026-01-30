@@ -1,15 +1,13 @@
 {
   "raw": "0.33300000429153 cup confectioners&amp;amp;#8217; sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners&#8217; sugar",
-      "measurements": [
-        {
-          "amount": "0.33300000429153",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "confectioners&#8217; sugar",
+    "measurements": [
+      {
+        "amount": "0.33300000429153",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons spring onion greens (chopped for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spring onion greens",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped for garnish"
-    }
+  "expected": {
+    "item": "spring onion greens",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped for garnish"
   }
 }

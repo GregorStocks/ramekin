@@ -1,15 +1,13 @@
 {
   "raw": "1  Orange Peel",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Orange Peel",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Orange Peel",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Espresso ( or Strong Coffee (240ml) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Espresso ( or Strong Coffee (240ml)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Espresso ( or Strong Coffee (240ml)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pieces of 1-inch fresh ginger root (peeled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1-inch fresh ginger root",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "piece"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "1-inch fresh ginger root",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "piece"
+      }
+    ],
+    "note": "peeled"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 can (10-3/4 ounces) condensed cream of broccoli soup, undiluted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "condensed cream of broccoli soup, undiluted",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "10-3/4",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "condensed cream of broccoli soup, undiluted",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "10-3/4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup baking soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking soda",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking soda",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

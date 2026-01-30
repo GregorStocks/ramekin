@@ -1,15 +1,13 @@
 {
   "raw": "1 1½\" piece ginger, peeled, very finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 1/2\" piece ginger, peeled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "very finely chopped"
-    }
+  "expected": {
+    "item": "1 1/2\" piece ginger, peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "very finely chopped"
   }
 }

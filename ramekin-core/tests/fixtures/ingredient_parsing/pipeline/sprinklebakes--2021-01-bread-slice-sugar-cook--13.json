@@ -1,10 +1,8 @@
 {
   "raw": "yellow food color",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow food color",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow food color",
+    "measurements": [],
+    "note": null
   }
 }

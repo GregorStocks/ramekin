@@ -1,19 +1,17 @@
 {
   "raw": "1 1/4 teaspoons (8g) table salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "table salt",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "table salt",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "8",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

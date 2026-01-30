@@ -1,19 +1,17 @@
 {
   "raw": "2/3 cup (63g) unsweetened cocoa powder ((not Dutch process, scoop and level to measure))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened cocoa powder (not Dutch process, scoop and level to measure)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "63",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened cocoa powder (not Dutch process, scoop and level to measure)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "63",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

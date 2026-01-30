@@ -1,15 +1,13 @@
 {
   "raw": "2 baking potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons reduced-fat sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-fat sour cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-fat sour cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 heaping cup (about 160g) canned quartered artichoke hearts, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned quartered artichoke hearts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaping cup"
-        },
-        {
-          "amount": "160",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "canned quartered artichoke hearts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaping cup"
+      },
+      {
+        "amount": "160",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

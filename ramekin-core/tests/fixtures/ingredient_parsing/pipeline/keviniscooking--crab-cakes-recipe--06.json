@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp Old Bay Seasoning ((See Note 1))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Old Bay Seasoning (See Note 1)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Old Bay Seasoning (See Note 1)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

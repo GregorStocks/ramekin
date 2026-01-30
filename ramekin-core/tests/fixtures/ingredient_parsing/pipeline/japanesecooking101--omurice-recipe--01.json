@@ -1,15 +1,13 @@
 {
   "raw": "1  chicken thigh",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken thigh",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken thigh",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

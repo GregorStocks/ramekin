@@ -1,19 +1,17 @@
 {
   "raw": "1 oz maraschino cherry juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maraschino cherry juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maraschino cherry juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

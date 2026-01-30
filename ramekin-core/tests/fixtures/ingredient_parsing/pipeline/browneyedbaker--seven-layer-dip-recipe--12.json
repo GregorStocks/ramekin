@@ -1,19 +1,17 @@
 {
   "raw": "2.25 ounce can sliced black olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can sliced black olives",
-      "measurements": [
-        {
-          "amount": "2.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "64",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can sliced black olives",
+    "measurements": [
+      {
+        "amount": "2.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "64",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

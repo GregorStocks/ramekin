@@ -1,10 +1,8 @@
 {
   "raw": "Smoked paprika to sprinkle over the top.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Smoked paprika to sprinkle over the top.",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Smoked paprika to sprinkle over the top.",
+    "measurements": [],
+    "note": null
   }
 }

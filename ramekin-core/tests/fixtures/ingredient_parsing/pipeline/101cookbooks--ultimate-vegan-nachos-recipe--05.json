@@ -1,10 +1,8 @@
 {
   "raw": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
+    "measurements": [],
+    "note": null
   }
 }

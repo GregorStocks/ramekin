@@ -1,19 +1,17 @@
 {
   "raw": "6 ounce pancetta (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pancetta",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "pancetta",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

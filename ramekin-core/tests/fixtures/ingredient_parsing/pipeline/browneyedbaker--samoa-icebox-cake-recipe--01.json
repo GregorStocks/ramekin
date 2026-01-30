@@ -1,15 +1,13 @@
 {
   "raw": "24  full-size graham crackers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-size graham crackers",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full-size graham crackers",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

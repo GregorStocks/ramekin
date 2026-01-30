@@ -1,15 +1,13 @@
 {
   "raw": "1  hard boiled egg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hard boiled egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hard boiled egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

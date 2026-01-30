@@ -1,15 +1,13 @@
 {
   "raw": "1 anchovy fillet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anchovy fillet",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "anchovy fillet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

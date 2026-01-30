@@ -1,15 +1,13 @@
 {
   "raw": "3 c. toasted corn cereal squares (such as Chex)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted corn cereal squares (such as Chex)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted corn cereal squares (such as Chex)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

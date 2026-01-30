@@ -1,15 +1,13 @@
 {
   "raw": "1 &amp;#8211; 1.5 lbs. strawberries, washed, hulled, and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberries, washed, hulled",
-      "measurements": [
-        {
-          "amount": "1-1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": "and chopped"
-    }
+  "expected": {
+    "item": "strawberries, washed, hulled",
+    "measurements": [
+      {
+        "amount": "1-1.5",
+        "unit": "lb"
+      }
+    ],
+    "note": "and chopped"
   }
 }

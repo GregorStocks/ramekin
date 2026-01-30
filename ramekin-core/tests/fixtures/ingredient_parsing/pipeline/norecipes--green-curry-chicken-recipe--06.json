@@ -1,15 +1,13 @@
 {
   "raw": "5  kaffir lime leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kaffir lime leaves",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kaffir lime leaves",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

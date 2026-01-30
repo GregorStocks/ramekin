@@ -1,15 +1,13 @@
 {
   "raw": "4 1/2 lbs boneless Beef bottom round roast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless Beef bottom round roast",
-      "measurements": [
-        {
-          "amount": "4 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless Beef bottom round roast",
+    "measurements": [
+      {
+        "amount": "4 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

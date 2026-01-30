@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (455g) zucchini (, grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "455",
-          "unit": "g"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": "grated"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup mashed potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mashed potatoes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mashed potatoes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

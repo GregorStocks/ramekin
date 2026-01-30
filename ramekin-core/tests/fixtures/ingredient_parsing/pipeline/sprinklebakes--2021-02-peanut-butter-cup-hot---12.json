@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Reese&amp;#039;s peanut butter chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Reese's peanut butter chips",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Reese's peanut butter chips",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lb asparagus",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asparagus",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "asparagus",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

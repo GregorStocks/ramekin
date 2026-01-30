@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chicken stock, see our homemade chicken stock recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock, see our homemade chicken stock recipe",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken stock, see our homemade chicken stock recipe",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

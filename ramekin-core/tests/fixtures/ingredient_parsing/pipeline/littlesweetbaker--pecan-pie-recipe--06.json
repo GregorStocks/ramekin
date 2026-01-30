@@ -1,19 +1,17 @@
 {
   "raw": "2 Tbsp (30ml) melted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

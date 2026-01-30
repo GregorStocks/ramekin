@@ -1,15 +1,13 @@
 {
   "raw": "2- to 3-inch piece fresh ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "- to 3-inch piece fresh ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "- to 3-inch piece fresh ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

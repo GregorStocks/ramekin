@@ -1,19 +1,17 @@
 {
   "raw": "4 cups chopped Romaine lettuce (about 1 romaine heart)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped Romaine lettuce",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped Romaine lettuce",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

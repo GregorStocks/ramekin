@@ -1,15 +1,13 @@
 {
   "raw": "4 medium-sized chicken breasts (boneless and skinless)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-sized chicken breasts (boneless and skinless)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium-sized chicken breasts (boneless and skinless)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup almonds, toasted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "almonds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "toasted"
   }
 }

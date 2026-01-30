@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup sour cream, chilled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chilled"
-    }
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
   }
 }

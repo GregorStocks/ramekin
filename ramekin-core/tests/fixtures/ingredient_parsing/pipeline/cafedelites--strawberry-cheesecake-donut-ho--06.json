@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons olive oil (or canola or melted coconut oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or canola or melted coconut oil"
-    }
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or canola or melted coconut oil"
   }
 }

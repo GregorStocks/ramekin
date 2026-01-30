@@ -1,15 +1,13 @@
 {
   "raw": "1 ball pizza dough",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ball pizza dough",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ball pizza dough",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

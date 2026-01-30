@@ -1,10 +1,8 @@
 {
   "raw": "Lettuce or endive leaves, or bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lettuce or endive leaves, or bread",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Lettuce or endive leaves, or bread",
+    "measurements": [],
+    "note": null
   }
 }

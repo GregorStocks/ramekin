@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup chopped red bell pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped red bell pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped red bell pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

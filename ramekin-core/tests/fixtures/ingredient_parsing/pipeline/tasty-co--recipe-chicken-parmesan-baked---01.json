@@ -1,15 +1,13 @@
 {
   "raw": "1 lb ziti pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ziti pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ziti pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

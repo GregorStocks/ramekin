@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp cornstarch (for cleaning)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornstarch (for cleaning)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornstarch (for cleaning)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

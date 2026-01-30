@@ -1,15 +1,13 @@
 {
   "raw": "10 to 12 cups chopped romaine lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped romaine lettuce",
-      "measurements": [
-        {
-          "amount": "10 to 12",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped romaine lettuce",
+    "measurements": [
+      {
+        "amount": "10 to 12",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

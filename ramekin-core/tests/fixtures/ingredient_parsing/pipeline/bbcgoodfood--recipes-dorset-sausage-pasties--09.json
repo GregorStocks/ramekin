@@ -1,10 +1,8 @@
 {
   "raw": "x packs  shortcrust pastry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "x packs  shortcrust pastry",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "x packs  shortcrust pastry",
+    "measurements": [],
+    "note": null
   }
 }

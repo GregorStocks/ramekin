@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 cups quick-cooking rolled oats",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quick-cooking rolled oats",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quick-cooking rolled oats",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

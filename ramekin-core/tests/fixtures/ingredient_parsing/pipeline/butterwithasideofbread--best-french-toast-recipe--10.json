@@ -1,15 +1,13 @@
 {
   "raw": "1 loaf Sliced Soft Bread&nbsp; (Brioche is our fave! )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf Sliced Soft Bread  (Brioche is our fave!",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loaf Sliced Soft Bread  (Brioche is our fave!",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  medium boneless skinless chicken breasts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breasts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

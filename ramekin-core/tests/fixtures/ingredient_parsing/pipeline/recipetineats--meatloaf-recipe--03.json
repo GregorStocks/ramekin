@@ -1,19 +1,17 @@
 {
   "raw": "1 kg / 2 lb   ground beef (mince) (, preferably not lean)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef (mince) (, preferably not lean)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "kg"
-        },
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef (mince) (, preferably not lean)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "kg"
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

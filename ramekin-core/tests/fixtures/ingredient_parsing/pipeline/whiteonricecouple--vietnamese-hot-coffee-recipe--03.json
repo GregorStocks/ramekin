@@ -1,10 +1,8 @@
 {
   "raw": "Hot Water ((almost to a boil))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot Water (almost to a boil)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Hot Water (almost to a boil)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 pounds fingerlings, or small red or yukon gold potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fingerlings, or small red or yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fingerlings, or small red or yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

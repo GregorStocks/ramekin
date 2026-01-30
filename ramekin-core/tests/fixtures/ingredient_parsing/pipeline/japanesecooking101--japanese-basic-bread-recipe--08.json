@@ -1,15 +1,13 @@
 {
   "raw": "30 g butter (room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "room temperature"
   }
 }

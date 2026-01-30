@@ -1,19 +1,17 @@
 {
   "raw": "8 Ounces Dried Garbanzo Beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dried Garbanzo Beans",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dried Garbanzo Beans",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

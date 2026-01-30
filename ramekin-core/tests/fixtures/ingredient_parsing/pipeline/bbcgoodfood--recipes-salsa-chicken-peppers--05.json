@@ -1,15 +1,13 @@
 {
   "raw": "200g chopped cooked chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped cooked chicken",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped cooked chicken",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

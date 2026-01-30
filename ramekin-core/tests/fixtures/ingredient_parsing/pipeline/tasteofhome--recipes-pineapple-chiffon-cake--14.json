@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoons unsweetened pineapple juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened pineapple juice",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened pineapple juice",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

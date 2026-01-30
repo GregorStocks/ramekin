@@ -1,10 +1,8 @@
 {
   "raw": "coconut chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut chips",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut chips",
+    "measurements": [],
+    "note": null
   }
 }

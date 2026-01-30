@@ -1,15 +1,13 @@
 {
   "raw": "3 c. cubed seedless watermelon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cubed seedless watermelon",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cubed seedless watermelon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

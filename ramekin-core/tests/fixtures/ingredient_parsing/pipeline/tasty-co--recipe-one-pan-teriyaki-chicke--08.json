@@ -1,15 +1,13 @@
 {
   "raw": "1 cup broccoli floret",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli floret",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli floret",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

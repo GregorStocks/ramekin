@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup natural yoghurt (60g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "natural yoghurt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "natural yoghurt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

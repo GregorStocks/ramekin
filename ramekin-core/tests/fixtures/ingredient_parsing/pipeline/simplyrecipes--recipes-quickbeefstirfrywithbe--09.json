@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped cilantro, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped cilantro",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chopped cilantro",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

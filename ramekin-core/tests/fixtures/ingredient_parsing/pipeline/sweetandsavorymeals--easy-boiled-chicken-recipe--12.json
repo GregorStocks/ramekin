@@ -1,15 +1,13 @@
 {
   "raw": "1  bunch parsley with root on",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley with root on",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsley with root on",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

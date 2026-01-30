@@ -1,15 +1,13 @@
 {
   "raw": "1 pomegranate, seeded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pomegranate, seeded",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pomegranate, seeded",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

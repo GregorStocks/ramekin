@@ -1,15 +1,13 @@
 {
   "raw": "0.625 teaspoon kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt",
-      "measurements": [
-        {
-          "amount": "0.625",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": "0.625",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "furikake (rice seasoning)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "furikake (rice seasoning)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "furikake (rice seasoning)",
+    "measurements": [],
+    "note": null
   }
 }

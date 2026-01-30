@@ -1,10 +1,8 @@
 {
   "raw": "Sour cream, for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sour cream, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sour cream, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

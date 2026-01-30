@@ -1,15 +1,13 @@
 {
   "raw": "2 cups mascarpone cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mascarpone cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mascarpone cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

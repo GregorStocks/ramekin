@@ -1,15 +1,13 @@
 {
   "raw": "4 medium baking potatoes, cut into 1/2 inch slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baking potatoes, cut into 1/2 inch slices",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baking potatoes, cut into 1/2 inch slices",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons all-purpose flour  (or brown rice flour)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour  (or brown rice flour)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour  (or brown rice flour)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2  cup  full fat coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full fat coconut milk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "full fat coconut milk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

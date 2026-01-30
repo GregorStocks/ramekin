@@ -1,15 +1,13 @@
 {
   "raw": "1/2  cup green peppers (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green peppers",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "green peppers",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "3 grams cumin seeds ((~1 teaspoon))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cumin seeds",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cumin seeds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

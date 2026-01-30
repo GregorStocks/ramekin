@@ -1,15 +1,13 @@
 {
   "raw": "1 28-oz can of peeled whole San Marzano tomatoes, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "of peeled whole San Marzano tomatoes, see notes above",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "28-oz can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "of peeled whole San Marzano tomatoes, see notes above",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "28-oz can"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 boneless beef chuck roast (3 to 3-1/2 pounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless beef chuck roast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless beef chuck roast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

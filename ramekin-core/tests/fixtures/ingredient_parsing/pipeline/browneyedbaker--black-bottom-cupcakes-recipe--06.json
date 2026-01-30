@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup miniature chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miniature chocolate chips",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "miniature chocolate chips",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

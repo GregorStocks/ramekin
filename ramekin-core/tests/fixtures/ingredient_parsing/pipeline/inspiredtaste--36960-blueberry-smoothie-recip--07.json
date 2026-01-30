@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon cacao nibs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cacao nibs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cacao nibs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

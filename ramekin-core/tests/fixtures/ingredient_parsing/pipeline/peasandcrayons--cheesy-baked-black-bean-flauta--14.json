@@ -1,15 +1,13 @@
 {
   "raw": "2-4 TBSP Greek yogurt or sour cream (for topping guac)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek yogurt or sour cream (for topping guac)",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Greek yogurt or sour cream (for topping guac)",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

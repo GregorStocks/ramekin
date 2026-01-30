@@ -1,15 +1,13 @@
 {
   "raw": "1 lb chicken wing sections",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken wing sections",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken wing sections",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

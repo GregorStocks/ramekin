@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chopped parsley ((optional), or 2 tsp dried parsley or basil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped parsley , or 2 tsp dried parsley or basil)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chopped parsley , or 2 tsp dried parsley or basil)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

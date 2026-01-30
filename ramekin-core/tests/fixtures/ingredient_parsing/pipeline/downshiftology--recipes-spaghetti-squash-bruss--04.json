@@ -1,15 +1,13 @@
 {
   "raw": "1 pound Brussels sprouts (shaved or thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brussels sprouts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "shaved or thinly sliced"
-    }
+  "expected": {
+    "item": "Brussels sprouts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "shaved or thinly sliced"
   }
 }

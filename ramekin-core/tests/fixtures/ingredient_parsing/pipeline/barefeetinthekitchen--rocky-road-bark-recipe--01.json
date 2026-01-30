@@ -1,15 +1,13 @@
 {
   "raw": "2 10 ounce bags semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "10 ounce bags"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "10 ounce bags"
+      }
+    ],
+    "note": null
   }
 }

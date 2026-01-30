@@ -1,15 +1,13 @@
 {
   "raw": "2 cups frozen edamame",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen edamame",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen edamame",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Hollandaise:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hollandaise:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Hollandaise:",
+    "measurements": [],
+    "note": null
   }
 }

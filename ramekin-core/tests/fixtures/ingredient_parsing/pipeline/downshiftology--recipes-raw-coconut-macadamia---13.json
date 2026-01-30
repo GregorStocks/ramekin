@@ -1,15 +1,13 @@
 {
   "raw": "1  mango (peeled and sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mango",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and sliced"
-    }
+  "expected": {
+    "item": "mango",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled and sliced"
   }
 }

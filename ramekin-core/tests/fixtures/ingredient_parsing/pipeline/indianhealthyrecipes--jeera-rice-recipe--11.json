@@ -1,15 +1,13 @@
 {
   "raw": "1 strand mace ((javitri) (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strand mace (javitri) (optional)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strand mace (javitri) (optional)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

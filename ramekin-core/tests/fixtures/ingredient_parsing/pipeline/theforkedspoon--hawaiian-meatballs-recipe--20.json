@@ -1,10 +1,8 @@
 {
   "raw": "fresh micro greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh micro greens",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh micro greens",
+    "measurements": [],
+    "note": null
   }
 }

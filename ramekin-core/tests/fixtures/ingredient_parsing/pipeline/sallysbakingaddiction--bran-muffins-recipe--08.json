@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (170g) honey or pure maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey or pure maple syrup",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey or pure maple syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

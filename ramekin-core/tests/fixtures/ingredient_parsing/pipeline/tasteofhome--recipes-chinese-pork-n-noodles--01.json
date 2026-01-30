@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces uncooked angel hair pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked angel hair pasta",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked angel hair pasta",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

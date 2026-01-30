@@ -1,15 +1,13 @@
 {
   "raw": "2-3 cups bolognese or meat sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bolognese or meat sauce",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bolognese or meat sauce",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

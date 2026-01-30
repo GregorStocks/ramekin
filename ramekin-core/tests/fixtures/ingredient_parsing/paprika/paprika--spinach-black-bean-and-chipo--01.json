@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "40",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus 2 teaspoons vegetable oil, divided"
-    }
+  "expected": {
+    "item": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "40",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus 2 teaspoons vegetable oil, divided"
   }
 }

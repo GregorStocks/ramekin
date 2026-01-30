@@ -1,15 +1,13 @@
 {
   "raw": "3 c. shredded coleslaw mix&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded coleslaw mix",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded coleslaw mix",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

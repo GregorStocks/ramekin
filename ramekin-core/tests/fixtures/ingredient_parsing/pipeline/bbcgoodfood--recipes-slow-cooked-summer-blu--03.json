@@ -1,15 +1,13 @@
 {
   "raw": "2 heads of  garlic broken down into individual unpeeled cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic broken down into individual unpeeled cloves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic broken down into individual unpeeled cloves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

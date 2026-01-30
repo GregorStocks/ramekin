@@ -1,15 +1,13 @@
 {
   "raw": "3 shallots, or 1 small onion, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallots, or 1 small onion",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "shallots, or 1 small onion",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

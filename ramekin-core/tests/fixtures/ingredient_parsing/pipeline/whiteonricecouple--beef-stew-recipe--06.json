@@ -1,15 +1,13 @@
 {
   "raw": "1 pound potatoes (, cut into bite sized pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potatoes (, cut into bite sized pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "potatoes (, cut into bite sized pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

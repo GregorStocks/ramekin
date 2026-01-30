@@ -1,15 +1,13 @@
 {
   "raw": "3 1/2 to 4 pounds manila (my first choice), cherrystone, or little neck clams",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 4 pounds manila (my first choice), cherrystone, or little neck clams",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 4 pounds manila (my first choice), cherrystone, or little neck clams",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

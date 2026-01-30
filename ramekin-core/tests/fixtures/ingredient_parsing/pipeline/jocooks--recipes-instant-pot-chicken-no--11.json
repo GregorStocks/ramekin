@@ -1,15 +1,13 @@
 {
   "raw": "4 cups chicken broth (or vegetable broth, no sodium added)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth (or vegetable broth, no sodium added)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth (or vegetable broth, no sodium added)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

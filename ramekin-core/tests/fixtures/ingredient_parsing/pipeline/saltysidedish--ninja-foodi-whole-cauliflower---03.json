@@ -1,10 +1,8 @@
 {
   "raw": "Seasoning - like garlic salt or Everything Bagel Seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Seasoning - like garlic salt or Everything Bagel Seasoning",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Seasoning - like garlic salt or Everything Bagel Seasoning",
+    "measurements": [],
+    "note": null
   }
 }

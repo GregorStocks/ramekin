@@ -1,10 +1,8 @@
 {
   "raw": "oil or butter for the pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil or butter for the pan",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "oil or butter for the pan",
+    "measurements": [],
+    "note": null
   }
 }

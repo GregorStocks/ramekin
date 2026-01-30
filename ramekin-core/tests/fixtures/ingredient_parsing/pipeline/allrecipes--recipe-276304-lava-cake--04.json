@@ -1,15 +1,13 @@
 {
   "raw": "0.33333334326744 cup white sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white sugar",
-      "measurements": [
-        {
-          "amount": "0.33333334326744",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white sugar",
+    "measurements": [
+      {
+        "amount": "0.33333334326744",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

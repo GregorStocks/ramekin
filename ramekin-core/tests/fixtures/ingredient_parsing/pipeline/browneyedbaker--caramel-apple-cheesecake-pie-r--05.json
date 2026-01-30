@@ -1,15 +1,13 @@
 {
   "raw": "¾ cup salted caramel sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted caramel sauce",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted caramel sauce",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

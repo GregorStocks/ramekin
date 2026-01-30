@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup blackberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blackberries",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blackberries",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

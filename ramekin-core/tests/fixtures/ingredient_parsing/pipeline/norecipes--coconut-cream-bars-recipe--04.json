@@ -1,15 +1,13 @@
 {
   "raw": "150 grams bittersweet chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet chocolate",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

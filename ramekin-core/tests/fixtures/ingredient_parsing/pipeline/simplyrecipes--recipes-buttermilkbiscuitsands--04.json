@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons vegetable shortening (see Baking Tips below)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable shortening (see Baking Tips below)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable shortening (see Baking Tips below)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

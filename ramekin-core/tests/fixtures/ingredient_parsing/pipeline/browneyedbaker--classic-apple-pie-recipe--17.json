@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon granulated sugar (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granulated sugar (for topping)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granulated sugar (for topping)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

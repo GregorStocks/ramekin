@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 tbsp jalapeno pepper (finely diced (leave seeds in if you want spicier salsa))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno pepper",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely diced (leave seeds in if you want spicier salsa"
-    }
+  "expected": {
+    "item": "jalapeno pepper",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "finely diced (leave seeds in if you want spicier salsa"
   }
 }

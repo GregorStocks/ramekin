@@ -1,15 +1,13 @@
 {
   "raw": "2 7.5-ounce cans unsalted pink salmon (with skin and bones)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted pink salmon (with skin and bones)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "7.5-ounce cans"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted pink salmon (with skin and bones)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "7.5-ounce cans"
+      }
+    ],
+    "note": null
   }
 }

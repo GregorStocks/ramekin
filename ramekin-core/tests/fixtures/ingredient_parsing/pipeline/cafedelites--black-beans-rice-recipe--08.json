@@ -1,15 +1,13 @@
 {
   "raw": "3-4 tablespoons  lime juice ((adjust to your tastes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice (adjust to your tastes)",
-      "measurements": [
-        {
-          "amount": "3-4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime juice (adjust to your tastes)",
+    "measurements": [
+      {
+        "amount": "3-4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

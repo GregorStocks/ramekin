@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons salted butter (melted and cooled slightly)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted and cooled slightly"
-    }
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted and cooled slightly"
   }
 }

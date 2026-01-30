@@ -1,10 +1,8 @@
 {
   "raw": "Hawaiian rolls, (cut into cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hawaiian rolls, (cut into cubes)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Hawaiian rolls, (cut into cubes)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp lemon juice (approx. 1 lemon, freshly squeezed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "approx. 1 lemon, freshly squeezed"
-    }
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "approx. 1 lemon, freshly squeezed"
   }
 }

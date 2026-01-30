@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. ground turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground turkey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground turkey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

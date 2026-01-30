@@ -1,10 +1,8 @@
 {
   "raw": "Carolina Red",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Carolina Red",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Carolina Red",
+    "measurements": [],
+    "note": null
   }
 }

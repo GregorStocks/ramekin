@@ -1,19 +1,17 @@
 {
   "raw": "8-ounce (225-gram) block feta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounce block feta",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "225",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-ounce block feta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "225",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

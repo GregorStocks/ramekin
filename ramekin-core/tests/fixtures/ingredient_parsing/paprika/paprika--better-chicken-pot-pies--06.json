@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60 ml) very cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very cold water",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "very cold water",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

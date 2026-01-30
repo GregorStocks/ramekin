@@ -1,15 +1,13 @@
 {
   "raw": "115g dark muscovado sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark muscovado sugar",
-      "measurements": [
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark muscovado sugar",
+    "measurements": [
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

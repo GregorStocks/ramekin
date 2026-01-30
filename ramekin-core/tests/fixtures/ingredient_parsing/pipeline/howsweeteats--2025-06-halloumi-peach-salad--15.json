@@ -1,10 +1,8 @@
 {
   "raw": "quick pickled onions, (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quick pickled onions, (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "quick pickled onions, (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

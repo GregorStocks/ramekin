@@ -1,19 +1,17 @@
 {
   "raw": "8 tablespoons (115g) butter, melted and cooled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": "melted and cooled"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": "melted and cooled"
   }
 }

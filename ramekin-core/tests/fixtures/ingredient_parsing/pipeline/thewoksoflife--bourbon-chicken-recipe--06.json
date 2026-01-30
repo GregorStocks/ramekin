@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dark soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark soy sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lemon, thinly sliced (or 1 preserved lemon, cut up into small pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon, thinly sliced (or 1 preserved lemon, cut up into small pieces)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon, thinly sliced (or 1 preserved lemon, cut up into small pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

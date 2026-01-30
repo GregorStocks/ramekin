@@ -1,10 +1,8 @@
 {
   "raw": "Tinga",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tinga",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Tinga",
+    "measurements": [],
+    "note": null
   }
 }

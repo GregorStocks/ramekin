@@ -1,19 +1,17 @@
 {
   "raw": "200 g Jinhua ham ((7 ounces, you can also use country ham or another type of cured ham in a pinch))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Jinhua ham",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        },
-        {
-          "amount": "7",
-          "unit": "oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Jinhua ham",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      },
+      {
+        "amount": "7",
+        "unit": "oz"
+      }
+    ],
+    "note": null
   }
 }

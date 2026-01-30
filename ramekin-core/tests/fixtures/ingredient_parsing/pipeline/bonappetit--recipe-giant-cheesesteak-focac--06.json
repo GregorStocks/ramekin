@@ -1,15 +1,13 @@
 {
   "raw": "2 lb. thinly sliced boneless rib-eye or skirt steak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced boneless rib-eye or skirt steak",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced boneless rib-eye or skirt steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

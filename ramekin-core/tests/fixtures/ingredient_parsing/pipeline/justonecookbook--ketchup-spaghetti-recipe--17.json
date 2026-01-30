@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp Parmigiano-Reggiano or Parmesan cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmigiano-Reggiano or Parmesan cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Parmigiano-Reggiano or Parmesan cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

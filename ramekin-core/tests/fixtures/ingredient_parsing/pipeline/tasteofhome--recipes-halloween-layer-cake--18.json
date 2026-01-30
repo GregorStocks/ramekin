@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons 2% milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2% milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "2% milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

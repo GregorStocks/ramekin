@@ -1,15 +1,13 @@
 {
   "raw": "1 cup sweet corn (can be canned and drained, or from 4 fresh corncobs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet corn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "can be canned and drained, or from 4 fresh corncobs"
-    }
+  "expected": {
+    "item": "sweet corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "can be canned and drained, or from 4 fresh corncobs"
   }
 }

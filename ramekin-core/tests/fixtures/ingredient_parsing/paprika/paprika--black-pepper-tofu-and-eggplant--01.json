@@ -1,15 +1,13 @@
 {
   "raw": "14-ounce package extra-firm tofu",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounce package extra-firm tofu",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-ounce package extra-firm tofu",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

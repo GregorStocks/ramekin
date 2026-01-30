@@ -1,15 +1,13 @@
 {
   "raw": "6 slices peach (canned or fresh)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peach",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "slice"
-        }
-      ],
-      "note": "canned or fresh"
-    }
+  "expected": {
+    "item": "peach",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slice"
+      }
+    ],
+    "note": "canned or fresh"
   }
 }

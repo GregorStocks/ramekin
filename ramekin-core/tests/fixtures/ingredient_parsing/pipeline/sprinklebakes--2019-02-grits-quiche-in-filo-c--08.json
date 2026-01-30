@@ -1,19 +1,17 @@
 {
   "raw": "1 cup 160g uncooked regular grits (not quick cooking)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked regular grits (not quick cooking)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "160",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked regular grits (not quick cooking)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "160",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

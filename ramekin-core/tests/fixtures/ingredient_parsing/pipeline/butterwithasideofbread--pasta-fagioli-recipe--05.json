@@ -1,15 +1,13 @@
 {
   "raw": "2 TBSP fresh parsley ((or 1 Tbsp dried))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh parsley",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1 Tbsp dried"
-    }
+  "expected": {
+    "item": "fresh parsley",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1 Tbsp dried"
   }
 }

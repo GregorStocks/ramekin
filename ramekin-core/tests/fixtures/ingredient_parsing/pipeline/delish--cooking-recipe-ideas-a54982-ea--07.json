@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. reduced-sodium soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced-sodium soy sauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced-sodium soy sauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

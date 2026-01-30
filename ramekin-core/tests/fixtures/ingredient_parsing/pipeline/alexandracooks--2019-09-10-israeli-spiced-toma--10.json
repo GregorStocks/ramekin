@@ -1,10 +1,8 @@
 {
   "raw": "flaky sea salt, such as Maldon, and freshly ground black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky sea salt, such as Maldon",
-      "measurements": [],
-      "note": "and freshly ground black pepper"
-    }
+  "expected": {
+    "item": "flaky sea salt, such as Maldon",
+    "measurements": [],
+    "note": "and freshly ground black pepper"
   }
 }

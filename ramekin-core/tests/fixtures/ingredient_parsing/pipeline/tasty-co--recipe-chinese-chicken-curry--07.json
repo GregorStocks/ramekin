@@ -1,15 +1,13 @@
 {
   "raw": "1 cup potato, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

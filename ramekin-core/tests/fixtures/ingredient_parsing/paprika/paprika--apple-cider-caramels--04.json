@@ -1,23 +1,21 @@
 {
   "raw": "8 tablespoons (115 grams or 1 stick) unsalted butter, cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into chunks",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter, cut into chunks",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

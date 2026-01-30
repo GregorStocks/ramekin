@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp sesame seeds (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sesame seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

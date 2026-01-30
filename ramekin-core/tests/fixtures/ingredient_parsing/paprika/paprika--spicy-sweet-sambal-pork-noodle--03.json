@@ -1,15 +1,13 @@
 {
   "raw": "1 2\" piece fresh ginger, peeled, cut into thin matchsticks or finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2\" piece fresh ginger, peeled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "cut into thin matchsticks or finely chopped"
-    }
+  "expected": {
+    "item": "2\" piece fresh ginger, peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "cut into thin matchsticks or finely chopped"
   }
 }

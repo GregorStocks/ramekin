@@ -1,23 +1,21 @@
 {
   "raw": "1 pint (16 ounces) vanilla ice cream, softened slightly",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla ice cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        },
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "softened slightly"
-    }
+  "expected": {
+    "item": "vanilla ice cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      },
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "softened slightly"
   }
 }

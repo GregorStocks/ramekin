@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon optional dried herbs ((thyme, basil, dill, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "optional dried herbs (thyme, basil, dill, etc.)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "optional dried herbs (thyme, basil, dill, etc.)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

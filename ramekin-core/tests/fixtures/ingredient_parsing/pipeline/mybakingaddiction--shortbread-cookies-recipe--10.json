@@ -1,10 +1,8 @@
 {
   "raw": "Sanding sugar for rolling, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sanding sugar for rolling",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sanding sugar for rolling",
+    "measurements": [],
+    "note": "optional"
   }
 }

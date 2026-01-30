@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons minced chives or green onion greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced chives or green onion greens",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced chives or green onion greens",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

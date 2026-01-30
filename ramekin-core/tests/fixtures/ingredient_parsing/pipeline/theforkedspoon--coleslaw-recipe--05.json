@@ -1,15 +1,13 @@
 {
   "raw": "1/2 large lemon (juiced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon (juiced)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon (juiced)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Chickpeas:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chickpeas:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chickpeas:",
+    "measurements": [],
+    "note": null
   }
 }

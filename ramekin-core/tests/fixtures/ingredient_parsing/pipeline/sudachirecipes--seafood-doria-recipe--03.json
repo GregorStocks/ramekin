@@ -1,15 +1,13 @@
 {
   "raw": "200 g shrimp or mixed seafood (cut into bitesize pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp or mixed seafood (cut into bitesize pieces)",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shrimp or mixed seafood (cut into bitesize pieces)",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

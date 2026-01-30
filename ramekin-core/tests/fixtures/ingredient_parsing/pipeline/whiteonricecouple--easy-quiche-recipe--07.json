@@ -1,15 +1,13 @@
 {
   "raw": "3 slices cooked bacon (, chopped&nbsp; or 1/2 cup diced ham)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked bacon",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": "chopped  or 1/2 cup diced ham"
-    }
+  "expected": {
+    "item": "cooked bacon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "slice"
+      }
+    ],
+    "note": "chopped  or 1/2 cup diced ham"
   }
 }

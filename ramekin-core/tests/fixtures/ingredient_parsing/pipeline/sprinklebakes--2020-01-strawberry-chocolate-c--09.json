@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces 1 bag mini chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 bag mini chocolate chips",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1 bag mini chocolate chips",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

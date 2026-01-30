@@ -1,15 +1,13 @@
 {
   "raw": "4 Links smoked chicken sausages",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Links smoked chicken sausages",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Links smoked chicken sausages",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

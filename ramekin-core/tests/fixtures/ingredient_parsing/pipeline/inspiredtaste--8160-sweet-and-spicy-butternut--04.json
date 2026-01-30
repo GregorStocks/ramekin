@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Sriracha chili sauce or more to make it spicier",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha chili sauce or more to make it spicier",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sriracha chili sauce or more to make it spicier",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

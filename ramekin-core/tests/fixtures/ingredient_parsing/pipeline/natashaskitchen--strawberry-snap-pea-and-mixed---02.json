@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Sugar Snap Peas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sugar Snap Peas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sugar Snap Peas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

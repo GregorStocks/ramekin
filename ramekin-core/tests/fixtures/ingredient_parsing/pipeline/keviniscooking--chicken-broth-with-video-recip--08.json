@@ -1,15 +1,13 @@
 {
   "raw": "1/2  bunch thyme (whole)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thyme",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bunch"
-        }
-      ],
-      "note": "whole"
-    }
+  "expected": {
+    "item": "thyme",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bunch"
+      }
+    ],
+    "note": "whole"
   }
 }

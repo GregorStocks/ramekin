@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups plus 2 tbsp chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1½ cups plus 2 tbsp chicken broth",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tbsp chicken broth"
-    }
+  "expected": {
+    "item": "1½ cups plus 2 tbsp chicken broth",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tbsp chicken broth"
   }
 }

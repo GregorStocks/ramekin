@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup slivered almonds, toasted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slivered almonds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "slivered almonds",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "toasted"
   }
 }

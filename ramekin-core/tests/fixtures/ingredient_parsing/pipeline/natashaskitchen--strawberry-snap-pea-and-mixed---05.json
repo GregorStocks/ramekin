@@ -1,10 +1,8 @@
 {
   "raw": "Pomegranate Vinaigrette Dressing by Simply Dressed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pomegranate Vinaigrette Dressing by Simply Dressed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pomegranate Vinaigrette Dressing by Simply Dressed",
+    "measurements": [],
+    "note": null
   }
 }

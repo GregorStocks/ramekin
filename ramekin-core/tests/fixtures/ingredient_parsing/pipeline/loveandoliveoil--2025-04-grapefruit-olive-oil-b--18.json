@@ -1,15 +1,13 @@
 {
   "raw": "4-5 tablespoons grapefruit cordial",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapefruit cordial",
-      "measurements": [
-        {
-          "amount": "4-5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapefruit cordial",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

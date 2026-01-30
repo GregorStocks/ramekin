@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces Gin ( (preferably Hendricks or Tanqueray Rangpur or similar))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Gin ( (preferably Hendricks or Tanqueray Rangpur or similar)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Gin ( (preferably Hendricks or Tanqueray Rangpur or similar)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

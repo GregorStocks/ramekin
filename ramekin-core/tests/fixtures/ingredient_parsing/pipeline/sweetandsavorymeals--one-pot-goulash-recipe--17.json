@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces elbow macaroni (uncooked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "elbow macaroni",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "uncooked"
-    }
+  "expected": {
+    "item": "elbow macaroni",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "uncooked"
   }
 }

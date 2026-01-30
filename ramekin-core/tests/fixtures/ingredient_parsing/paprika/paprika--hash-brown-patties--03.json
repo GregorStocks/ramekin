@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon potato starch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato starch",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "potato starch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

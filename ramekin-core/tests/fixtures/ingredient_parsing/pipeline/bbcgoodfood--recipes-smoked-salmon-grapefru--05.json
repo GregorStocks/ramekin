@@ -1,15 +1,13 @@
 {
   "raw": "large handful coriander seed sprigs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful coriander seed sprigs",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "handful coriander seed sprigs",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

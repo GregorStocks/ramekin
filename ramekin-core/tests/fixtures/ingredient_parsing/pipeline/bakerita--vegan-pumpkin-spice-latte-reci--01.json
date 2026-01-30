@@ -1,15 +1,13 @@
 {
   "raw": "2 shots&nbsp;espresso&nbsp;or freshly-brewed coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shots espresso or freshly-brewed coffee",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shots espresso or freshly-brewed coffee",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

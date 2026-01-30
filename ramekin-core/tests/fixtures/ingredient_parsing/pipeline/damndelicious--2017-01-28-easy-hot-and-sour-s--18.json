@@ -1,19 +1,17 @@
 {
   "raw": "1 (12-ounce) package wonton wrappers (cut into strips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wonton wrappers (cut into strips)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wonton wrappers (cut into strips)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons peeled and chopped fresh ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peeled and chopped fresh ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peeled and chopped fresh ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

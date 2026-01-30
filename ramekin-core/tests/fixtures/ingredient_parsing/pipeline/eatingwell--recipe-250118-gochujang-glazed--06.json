@@ -1,23 +1,21 @@
 {
   "raw": "2 whole mackerel (about 1 1/2 pounds each) or 4 whole rainbow trout (about 5 ounces each), cleaned and butterflied, tails left on (see Notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole mackerel or 4 whole rainbow trout , cleaned and butterflied, tails left on (see Notes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "lb each"
-        },
-        {
-          "amount": "5",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole mackerel or 4 whole rainbow trout , cleaned and butterflied, tails left on (see Notes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "lb each"
+      },
+      {
+        "amount": "5",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

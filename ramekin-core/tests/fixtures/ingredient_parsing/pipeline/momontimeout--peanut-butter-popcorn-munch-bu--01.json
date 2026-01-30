@@ -1,23 +1,21 @@
 {
   "raw": "3 oz microwave butter popcorn (1 bag)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "microwave butter popcorn",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "microwave butter popcorn",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

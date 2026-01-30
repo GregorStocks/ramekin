@@ -1,15 +1,13 @@
 {
   "raw": "2 c. low-sodium vegetable or chicken broth, plus more if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium vegetable or chicken broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more if needed"
-    }
+  "expected": {
+    "item": "low-sodium vegetable or chicken broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more if needed"
   }
 }

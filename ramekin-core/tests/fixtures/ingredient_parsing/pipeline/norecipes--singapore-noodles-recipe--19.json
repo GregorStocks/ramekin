@@ -1,15 +1,13 @@
 {
   "raw": "110 grams bean sprouts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bean sprouts",
-      "measurements": [
-        {
-          "amount": "110",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bean sprouts",
+    "measurements": [
+      {
+        "amount": "110",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

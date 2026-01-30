@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces flank steak ((or London boil or chuck roast))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flank steak (or London boil or chuck roast)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flank steak (or London boil or chuck roast)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

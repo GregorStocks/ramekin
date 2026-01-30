@@ -1,15 +1,13 @@
 {
   "raw": "1 cup or more of water (will likely only need if beans weren’t pre-soaked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "or more of water (will likely only need if beans weren’t pre-soaked)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "or more of water (will likely only need if beans weren’t pre-soaked)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

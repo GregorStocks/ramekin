@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup fresh mint, about 10 leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mint, about 10 leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh mint, about 10 leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Sichuan peppercorn powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sichuan peppercorn powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sichuan peppercorn powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

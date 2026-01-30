@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp freshly cracked black pepper ($0.03)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly cracked black pepper ($0.03)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly cracked black pepper ($0.03)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

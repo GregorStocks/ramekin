@@ -1,10 +1,8 @@
 {
   "raw": "water (for soaking)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (for soaking)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "water (for soaking)",
+    "measurements": [],
+    "note": null
   }
 }

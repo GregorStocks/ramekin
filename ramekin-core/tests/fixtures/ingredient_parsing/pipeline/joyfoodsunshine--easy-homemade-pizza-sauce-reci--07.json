@@ -1,15 +1,13 @@
 {
   "raw": "½ Tablespoon garlic salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

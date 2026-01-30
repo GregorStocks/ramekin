@@ -1,15 +1,13 @@
 {
   "raw": "8 graham crackers, broken in half",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "graham crackers, broken in half",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "graham crackers, broken in half",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

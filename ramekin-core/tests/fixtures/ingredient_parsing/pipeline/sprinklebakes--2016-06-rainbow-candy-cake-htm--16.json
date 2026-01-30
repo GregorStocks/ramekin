@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons rainbow sprinkles (jimmies)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rainbow sprinkles (jimmies)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rainbow sprinkles (jimmies)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

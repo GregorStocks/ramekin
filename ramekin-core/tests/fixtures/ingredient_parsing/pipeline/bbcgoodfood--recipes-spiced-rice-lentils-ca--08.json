@@ -1,15 +1,13 @@
 {
   "raw": "100g frozen pea",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen pea",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen pea",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

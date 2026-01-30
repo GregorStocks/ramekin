@@ -1,10 +1,8 @@
 {
   "raw": "For the garnish: Sesame seeds, microgreens or sprouts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For the garnish: Sesame seeds, microgreens or sprouts",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "For the garnish: Sesame seeds, microgreens or sprouts",
+    "measurements": [],
+    "note": null
   }
 }

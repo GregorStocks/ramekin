@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup orange sugar, see above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange sugar, see above",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange sugar, see above",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

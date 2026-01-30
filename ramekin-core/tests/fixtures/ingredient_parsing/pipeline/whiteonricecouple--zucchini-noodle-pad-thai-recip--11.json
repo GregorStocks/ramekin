@@ -1,10 +1,8 @@
 {
   "raw": "Few lime wedges for serving ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Few lime wedges for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Few lime wedges for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

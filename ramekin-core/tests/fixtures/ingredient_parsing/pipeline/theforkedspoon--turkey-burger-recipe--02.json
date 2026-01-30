@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon freshly minced parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly minced parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly minced parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

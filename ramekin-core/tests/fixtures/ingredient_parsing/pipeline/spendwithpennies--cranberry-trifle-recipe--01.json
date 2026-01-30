@@ -1,23 +1,21 @@
 {
   "raw": "24 ounces fresh cranberries (2 packages)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cranberries",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cranberries",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "package"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  scoop  collagen powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scoop  collagen powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scoop  collagen powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

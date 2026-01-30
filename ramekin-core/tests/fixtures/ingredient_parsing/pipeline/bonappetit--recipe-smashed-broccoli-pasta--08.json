@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp. crushed red pepper flakes, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper flakes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "crushed red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

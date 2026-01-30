@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (30 ml) neutral cooking oil such as canola oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neutral cooking oil such as canola oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "neutral cooking oil such as canola oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

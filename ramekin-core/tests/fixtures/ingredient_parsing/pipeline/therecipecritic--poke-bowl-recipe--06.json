@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup light mayo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light mayo",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light mayo",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

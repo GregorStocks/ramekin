@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon unbleached all-purpose flour (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

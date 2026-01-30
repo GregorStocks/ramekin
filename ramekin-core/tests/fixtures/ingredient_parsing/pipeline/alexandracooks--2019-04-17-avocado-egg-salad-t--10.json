@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 stalks finely diced celery, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely diced celery",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "stalk"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "finely diced celery",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "stalk"
+      }
+    ],
+    "note": "optional"
   }
 }

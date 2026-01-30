@@ -1,15 +1,13 @@
 {
   "raw": "8 fresh asparagus spears for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh asparagus spears for garnish",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh asparagus spears for garnish",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "~ 4 to 8 oz. dairy-free milk of choice, I like using almond or oat milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "~ 4 to 8 oz. dairy-free milk of choice, I like using almond or oat milk",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "~ 4 to 8 oz. dairy-free milk of choice, I like using almond or oat milk",
+    "measurements": [],
+    "note": null
   }
 }

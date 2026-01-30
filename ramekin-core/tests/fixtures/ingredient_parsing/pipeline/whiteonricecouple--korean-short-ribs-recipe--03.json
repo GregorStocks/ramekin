@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Oil (, high flash point oil is best like grapeseed oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oil (, high flash point oil is best like grapeseed oil)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Oil (, high flash point oil is best like grapeseed oil)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

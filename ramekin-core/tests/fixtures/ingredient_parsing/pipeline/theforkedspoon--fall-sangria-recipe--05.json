@@ -1,15 +1,13 @@
 {
   "raw": "1 cup pear liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pear liqueur",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pear liqueur",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

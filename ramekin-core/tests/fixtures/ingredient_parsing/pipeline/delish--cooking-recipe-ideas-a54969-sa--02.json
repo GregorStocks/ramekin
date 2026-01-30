@@ -1,15 +1,13 @@
 {
   "raw": "2 c. Bisquick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bisquick",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bisquick",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

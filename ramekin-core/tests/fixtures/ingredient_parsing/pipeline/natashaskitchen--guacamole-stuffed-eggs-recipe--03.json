@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp fresh lime juice (juice of 1/2 lime)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh lime juice (juice of 1/2 lime)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh lime juice (juice of 1/2 lime)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

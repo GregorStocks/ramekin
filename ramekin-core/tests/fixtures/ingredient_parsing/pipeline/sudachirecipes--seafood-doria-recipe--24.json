@@ -1,10 +1,8 @@
 {
   "raw": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
+    "measurements": [],
+    "note": null
   }
 }

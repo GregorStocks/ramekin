@@ -1,15 +1,13 @@
 {
   "raw": "3½ cups chicken or vegetable stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken or vegetable stock",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken or vegetable stock",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "6 cups (about 2 large) russet potato (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "russet potato",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "russet potato",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "diced"
   }
 }

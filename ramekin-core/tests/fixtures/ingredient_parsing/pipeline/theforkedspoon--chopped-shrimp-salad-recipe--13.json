@@ -1,15 +1,13 @@
 {
   "raw": "2  heads Romaine lettuce (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Romaine lettuce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "head"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "Romaine lettuce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "head"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

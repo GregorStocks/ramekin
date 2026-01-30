@@ -1,10 +1,8 @@
 {
   "raw": "Unsalted butter, for greasing the pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Unsalted butter, for greasing the pan",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Unsalted butter, for greasing the pan",
+    "measurements": [],
+    "note": null
   }
 }

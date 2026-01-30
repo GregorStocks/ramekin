@@ -1,19 +1,17 @@
 {
   "raw": "1-1/3 cups very warm water (120° to 130°F)*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very warm water *",
-      "measurements": [
-        {
-          "amount": "1-1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "very warm water *",
+    "measurements": [
+      {
+        "amount": "1-1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2-3 pounds pork tenderloin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork tenderloin",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork tenderloin",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2  bunch parsley (whole)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bunch"
-        }
-      ],
-      "note": "whole"
-    }
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bunch"
+      }
+    ],
+    "note": "whole"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "0.33333334326744 cup low-fat milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat milk",
-      "measurements": [
-        {
-          "amount": "0.33333334326744",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-fat milk",
+    "measurements": [
+      {
+        "amount": "0.33333334326744",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

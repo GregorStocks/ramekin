@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces fresh mozzarella (cut into 1/4-inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella (cut into 1/4-inch cubes)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh mozzarella (cut into 1/4-inch cubes)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

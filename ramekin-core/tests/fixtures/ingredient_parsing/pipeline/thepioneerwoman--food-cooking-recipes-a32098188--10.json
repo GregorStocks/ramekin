@@ -1,10 +1,8 @@
 {
   "raw": "Grated&nbsp;zest of 1 orange",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grated zest of 1 orange",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Grated zest of 1 orange",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 1/2 Tbsp light olive oil (or vegetable oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light olive oil (or vegetable oil)",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light olive oil (or vegetable oil)",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

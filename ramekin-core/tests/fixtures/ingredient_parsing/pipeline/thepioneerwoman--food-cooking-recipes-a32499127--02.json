@@ -1,15 +1,13 @@
 {
   "raw": "6 ears of corn, shucked and cut into 4 pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ears of corn, shucked and cut into 4 pieces",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ears of corn, shucked and cut into 4 pieces",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

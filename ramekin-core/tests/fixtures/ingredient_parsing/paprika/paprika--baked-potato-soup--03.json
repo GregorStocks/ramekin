@@ -1,15 +1,13 @@
 {
   "raw": "2 medium leeks, white and light green parts halved lengthwise, washed, and chopped small",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leeks, white and light green parts halved lengthwise, washed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "and chopped small"
-    }
+  "expected": {
+    "item": "leeks, white and light green parts halved lengthwise, washed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "and chopped small"
   }
 }

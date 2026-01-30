@@ -1,15 +1,13 @@
 {
   "raw": "½ pound rice flour ((about half a bag))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice flour (about half a bag)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice flour (about half a bag)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

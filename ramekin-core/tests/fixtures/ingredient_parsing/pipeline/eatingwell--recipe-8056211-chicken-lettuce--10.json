@@ -1,19 +1,17 @@
 {
   "raw": "1 (5-ounce) package sliced shiitake mushrooms, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "sliced shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

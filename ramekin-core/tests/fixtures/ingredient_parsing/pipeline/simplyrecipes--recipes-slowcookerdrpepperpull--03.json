@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds boneless pork shoulder or pork butt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless pork shoulder or pork butt",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless pork shoulder or pork butt",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

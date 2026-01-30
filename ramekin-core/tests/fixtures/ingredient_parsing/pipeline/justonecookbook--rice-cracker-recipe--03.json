@@ -1,10 +1,8 @@
 {
   "raw": "Diamond Crystal kosher salt ((I used Himalayan Pink Salt))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Diamond Crystal kosher salt (I used Himalayan Pink Salt)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Diamond Crystal kosher salt (I used Himalayan Pink Salt)",
+    "measurements": [],
+    "note": null
   }
 }

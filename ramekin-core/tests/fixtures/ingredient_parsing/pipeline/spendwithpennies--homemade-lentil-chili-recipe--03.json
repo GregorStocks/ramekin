@@ -1,15 +1,13 @@
 {
   "raw": "1 cup diced green bell pepper (or red bell pepper)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced green bell pepper (or red bell pepper)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced green bell pepper (or red bell pepper)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

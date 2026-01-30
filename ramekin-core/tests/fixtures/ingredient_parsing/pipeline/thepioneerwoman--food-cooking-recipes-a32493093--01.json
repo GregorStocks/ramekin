@@ -1,15 +1,13 @@
 {
   "raw": "6 large red, orange and/or yellow bell peppers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red, orange and/or yellow bell peppers",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red, orange and/or yellow bell peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

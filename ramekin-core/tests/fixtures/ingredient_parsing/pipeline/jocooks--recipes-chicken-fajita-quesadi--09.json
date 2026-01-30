@@ -1,15 +1,13 @@
 {
   "raw": "8  tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tortillas",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tortillas",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "lemon pepper (to season)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon pepper (to season)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon pepper (to season)",
+    "measurements": [],
+    "note": null
   }
 }

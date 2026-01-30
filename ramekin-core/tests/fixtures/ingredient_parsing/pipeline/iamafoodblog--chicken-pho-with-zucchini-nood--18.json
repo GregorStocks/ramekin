@@ -1,10 +1,8 @@
 {
   "raw": "sriracha",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sriracha",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sriracha",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Brussels Sprouts and Bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brussels Sprouts and Bacon",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Brussels Sprouts and Bacon",
+    "measurements": [],
+    "note": null
   }
 }

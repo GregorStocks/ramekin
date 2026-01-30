@@ -1,10 +1,8 @@
 {
   "raw": "Takoyaki sauce (or Okonomiyaki sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Takoyaki sauce (or Okonomiyaki sauce)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Takoyaki sauce (or Okonomiyaki sauce)",
+    "measurements": [],
+    "note": null
   }
 }

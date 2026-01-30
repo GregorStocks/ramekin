@@ -1,10 +1,8 @@
 {
   "raw": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1¼ cups confectioners&amp;#39; sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners' sugar",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "confectioners' sugar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

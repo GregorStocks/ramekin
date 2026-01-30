@@ -1,15 +1,13 @@
 {
   "raw": ".25 cup prosecco",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prosecco",
-      "measurements": [
-        {
-          "amount": ".25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prosecco",
+    "measurements": [
+      {
+        "amount": ".25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

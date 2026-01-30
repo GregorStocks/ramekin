@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons minced mixed fresh herbs such as rosemary, thyme and sage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced mixed fresh herbs such as rosemary, thyme and sage",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced mixed fresh herbs such as rosemary, thyme and sage",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

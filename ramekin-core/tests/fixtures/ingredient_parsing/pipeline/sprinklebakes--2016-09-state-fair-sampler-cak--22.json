@@ -1,15 +1,13 @@
 {
   "raw": "1 cup 8 oz. water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "8 oz. water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "8 oz. water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

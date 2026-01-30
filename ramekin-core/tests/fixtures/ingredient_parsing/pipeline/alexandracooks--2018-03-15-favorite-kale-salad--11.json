@@ -1,10 +1,8 @@
 {
   "raw": "shallot vinaigrette to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot vinaigrette to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "shallot vinaigrette to taste",
+    "measurements": [],
+    "note": null
   }
 }

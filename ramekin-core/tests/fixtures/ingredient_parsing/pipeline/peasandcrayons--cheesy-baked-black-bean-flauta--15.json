@@ -1,10 +1,8 @@
 {
   "raw": "OPTIONAL EXTRAS: cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "OPTIONAL EXTRAS: cilantro",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "OPTIONAL EXTRAS: cilantro",
+    "measurements": [],
+    "note": null
   }
 }

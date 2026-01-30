@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup thinly sliced bell pepper, cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced bell pepper, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced bell pepper, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

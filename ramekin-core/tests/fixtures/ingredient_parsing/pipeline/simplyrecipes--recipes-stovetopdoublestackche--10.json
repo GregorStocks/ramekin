@@ -1,15 +1,13 @@
 {
   "raw": "4 hamburger buns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hamburger buns",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hamburger buns",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

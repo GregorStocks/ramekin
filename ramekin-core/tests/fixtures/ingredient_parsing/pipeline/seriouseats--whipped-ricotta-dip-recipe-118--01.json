@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup (60 ml) extra-virgin olive oil, divided, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra-virgin olive oil, divided",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "extra-virgin olive oil, divided",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

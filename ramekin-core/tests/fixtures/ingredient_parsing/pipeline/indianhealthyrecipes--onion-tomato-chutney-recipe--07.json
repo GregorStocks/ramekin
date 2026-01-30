@@ -1,23 +1,21 @@
 {
   "raw": "½ tablespoon (6 grams)  chana dal  ((Bengal gram or 2 tbsp peanuts))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chana dal",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "6",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chana dal",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "6",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

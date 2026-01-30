@@ -1,15 +1,13 @@
 {
   "raw": "1 lb yellow potatoes cut into 1in chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow potatoes cut into 1in chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow potatoes cut into 1in chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

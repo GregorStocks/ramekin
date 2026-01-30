@@ -1,19 +1,17 @@
 {
   "raw": "4 flounder fillets (about 1 pound), halved crosswise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flounder fillets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved crosswise"
-    }
+  "expected": {
+    "item": "flounder fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved crosswise"
   }
 }

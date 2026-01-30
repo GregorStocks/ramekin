@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons almond butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

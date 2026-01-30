@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup chocolate sprinkles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate sprinkles",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate sprinkles",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

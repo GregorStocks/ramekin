@@ -1,15 +1,13 @@
 {
   "raw": "1/4 tsp smoked paprika  ((or regular paprika))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked paprika  (or regular paprika)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked paprika  (or regular paprika)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

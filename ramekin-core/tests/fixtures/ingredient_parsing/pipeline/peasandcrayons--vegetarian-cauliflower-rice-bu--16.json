@@ -1,10 +1,8 @@
 {
   "raw": "guacamole (or sliced avocado)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "guacamole",
-      "measurements": [],
-      "note": "or sliced avocado"
-    }
+  "expected": {
+    "item": "guacamole",
+    "measurements": [],
+    "note": "or sliced avocado"
   }
 }

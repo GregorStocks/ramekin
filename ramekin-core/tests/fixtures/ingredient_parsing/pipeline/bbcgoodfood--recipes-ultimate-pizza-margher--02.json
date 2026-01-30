@@ -1,15 +1,13 @@
 {
   "raw": "25g coarse semolina plus extra for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse semolina",
-      "measurements": [
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": "plus extra for sprinkling"
-    }
+  "expected": {
+    "item": "coarse semolina",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": "plus extra for sprinkling"
   }
 }

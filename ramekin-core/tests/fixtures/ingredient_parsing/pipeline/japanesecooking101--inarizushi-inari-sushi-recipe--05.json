@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Dashi (or liquid from rehydrating Shiitake mushroom)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dashi (or liquid from rehydrating Shiitake mushroom)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dashi (or liquid from rehydrating Shiitake mushroom)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

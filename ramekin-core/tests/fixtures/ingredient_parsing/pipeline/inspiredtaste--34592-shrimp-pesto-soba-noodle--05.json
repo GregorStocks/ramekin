@@ -1,15 +1,13 @@
 {
   "raw": "4 to 6 tablespoons basil pesto, recipe below",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil pesto, recipe below",
-      "measurements": [
-        {
-          "amount": "4 to 6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basil pesto, recipe below",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

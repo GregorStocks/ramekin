@@ -1,19 +1,17 @@
 {
   "raw": "150g / 5oz   ginger (, sliced down the centre)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": "oz"
-        }
-      ],
-      "note": "sliced down the centre"
-    }
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "oz"
+      }
+    ],
+    "note": "sliced down the centre"
   }
 }

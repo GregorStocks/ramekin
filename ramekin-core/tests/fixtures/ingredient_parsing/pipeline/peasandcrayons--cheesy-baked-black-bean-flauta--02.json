@@ -1,15 +1,13 @@
 {
   "raw": "1 cup corn ((steamed or canned))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn (steamed or canned)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn (steamed or canned)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3  dried shiitake mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

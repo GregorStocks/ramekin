@@ -1,15 +1,13 @@
 {
   "raw": "2  vanilla beans (scraped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla beans (scraped)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla beans (scraped)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

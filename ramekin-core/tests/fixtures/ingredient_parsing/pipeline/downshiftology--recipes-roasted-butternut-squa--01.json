@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 pounds butternut squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butternut squash",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butternut squash",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

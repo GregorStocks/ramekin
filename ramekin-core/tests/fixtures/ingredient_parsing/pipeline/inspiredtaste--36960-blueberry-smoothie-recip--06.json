@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon hulled hemp seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hulled hemp seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hulled hemp seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

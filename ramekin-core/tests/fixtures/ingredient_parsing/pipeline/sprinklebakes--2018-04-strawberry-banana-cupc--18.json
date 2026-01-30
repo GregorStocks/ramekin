@@ -1,10 +1,8 @@
 {
   "raw": "Milk or cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Milk or cream",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Milk or cream",
+    "measurements": [],
+    "note": null
   }
 }

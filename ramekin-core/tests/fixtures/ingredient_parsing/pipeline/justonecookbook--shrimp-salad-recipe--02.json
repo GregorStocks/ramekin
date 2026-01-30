@@ -1,15 +1,13 @@
 {
   "raw": "½ Tbsp potato starch or cornstarch ((to clean the shrimp))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato starch or cornstarch (to clean the shrimp)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "potato starch or cornstarch (to clean the shrimp)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

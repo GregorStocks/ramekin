@@ -1,15 +1,13 @@
 {
   "raw": "3-4 pound bone-in pork shoulder ((see notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in pork shoulder (see notes)",
-      "measurements": [
-        {
-          "amount": "3-4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in pork shoulder (see notes)",
+    "measurements": [
+      {
+        "amount": "3-4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

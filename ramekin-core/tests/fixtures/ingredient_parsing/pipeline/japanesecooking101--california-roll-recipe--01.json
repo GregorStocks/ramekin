@@ -1,15 +1,13 @@
 {
   "raw": "1 recipe Sushi Rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "recipe Sushi Rice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "recipe Sushi Rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "green peas (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green peas (to garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "green peas (to garnish)",
+    "measurements": [],
+    "note": null
   }
 }

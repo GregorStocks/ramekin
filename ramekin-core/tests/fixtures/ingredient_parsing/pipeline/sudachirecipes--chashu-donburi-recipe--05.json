@@ -1,15 +1,13 @@
 {
   "raw": "100 g onion (roughly cut)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion (roughly cut)",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion (roughly cut)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

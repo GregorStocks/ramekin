@@ -1,19 +1,17 @@
 {
   "raw": "1 heaping cup (about 150g) chopped sweet potato (no need to peel)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped sweet potato (no need to peel)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaping cup"
-        },
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped sweet potato (no need to peel)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaping cup"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

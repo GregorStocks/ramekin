@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces canned tomato paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned tomato paste",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned tomato paste",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

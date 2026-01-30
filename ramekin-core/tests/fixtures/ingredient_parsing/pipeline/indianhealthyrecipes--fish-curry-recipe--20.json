@@ -1,15 +1,13 @@
 {
   "raw": "1¼ to 1½ cup water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 1 1/2 cup water",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 1 1/2 cup water",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 pound ground beef (453.3 g )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "453.3",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "453.3",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

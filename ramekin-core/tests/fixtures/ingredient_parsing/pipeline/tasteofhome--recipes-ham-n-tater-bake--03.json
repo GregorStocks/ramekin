@@ -1,15 +1,13 @@
 {
   "raw": "1-1/2 cups diced fully cooked ham",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced fully cooked ham",
-      "measurements": [
-        {
-          "amount": "1-1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced fully cooked ham",
+    "measurements": [
+      {
+        "amount": "1-1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

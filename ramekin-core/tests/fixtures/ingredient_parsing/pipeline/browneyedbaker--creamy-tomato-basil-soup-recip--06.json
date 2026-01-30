@@ -1,19 +1,17 @@
 {
   "raw": "56 ounces canned whole tomatoes packed in juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned whole tomatoes packed in juice",
-      "measurements": [
-        {
-          "amount": "56",
-          "unit": "oz"
-        },
-        {
-          "amount": "1588",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned whole tomatoes packed in juice",
+    "measurements": [
+      {
+        "amount": "56",
+        "unit": "oz"
+      },
+      {
+        "amount": "1588",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

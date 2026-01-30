@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons minced peeled fresh ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced peeled fresh ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced peeled fresh ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

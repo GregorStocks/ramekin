@@ -1,10 +1,8 @@
 {
   "raw": "a tiny pinch of fine grain sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a tiny pinch of fine grain sea salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a tiny pinch of fine grain sea salt",
+    "measurements": [],
+    "note": null
   }
 }

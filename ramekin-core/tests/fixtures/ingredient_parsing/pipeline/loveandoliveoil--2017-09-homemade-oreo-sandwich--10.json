@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon vanilla extract (or, for creme de menthe flavor, replace with 4-5 drops of flavoring oil and food coloring as desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla extract (or, for creme de menthe flavor, replace with 4-5 drops of flavoring oil and food coloring as desired)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla extract (or, for creme de menthe flavor, replace with 4-5 drops of flavoring oil and food coloring as desired)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

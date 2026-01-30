@@ -1,10 +1,8 @@
 {
   "raw": "carrot sticks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot sticks",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "carrot sticks",
+    "measurements": [],
+    "note": null
   }
 }

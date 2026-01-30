@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups water ((luke warm))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (luke warm)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (luke warm)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

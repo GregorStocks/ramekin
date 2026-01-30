@@ -1,15 +1,13 @@
 {
   "raw": "3 to 4  mini cucumbers, (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini cucumbers",
-      "measurements": [
-        {
-          "amount": "3 to 4",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "mini cucumbers",
+    "measurements": [
+      {
+        "amount": "3 to 4",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp Pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

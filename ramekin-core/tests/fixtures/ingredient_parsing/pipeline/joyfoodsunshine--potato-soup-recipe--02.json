@@ -1,10 +1,8 @@
 {
   "raw": "reserved bacon grease",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reserved bacon grease",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "reserved bacon grease",
+    "measurements": [],
+    "note": null
   }
 }

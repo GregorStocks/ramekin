@@ -1,10 +1,8 @@
 {
   "raw": "Sea salt (for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sea salt",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Sea salt",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 inch Kombu dried sea kelp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inch Kombu dried sea kelp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "inch Kombu dried sea kelp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

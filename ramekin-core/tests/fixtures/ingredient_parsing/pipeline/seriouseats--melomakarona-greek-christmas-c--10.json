@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (8 g) pumpkin pie spice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin pie spice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin pie spice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "8",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

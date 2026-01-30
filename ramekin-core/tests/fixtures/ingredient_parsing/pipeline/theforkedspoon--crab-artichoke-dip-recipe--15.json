@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Frank&amp;#39;s Red Hot Sauce (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Frank's Red Hot Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Frank's Red Hot Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

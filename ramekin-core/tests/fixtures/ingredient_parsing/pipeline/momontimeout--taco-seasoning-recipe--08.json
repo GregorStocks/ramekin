@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp crushed red pepper (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "crushed red pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Juice from 1 lemon (3 tablespoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Juice from 1 lemon",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Juice from 1 lemon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

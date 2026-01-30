@@ -1,15 +1,13 @@
 {
   "raw": "2  garlic cloves (minced (or 1 tsp garlic powder))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "minced (or 1 tsp garlic powder"
-    }
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "minced (or 1 tsp garlic powder"
   }
 }

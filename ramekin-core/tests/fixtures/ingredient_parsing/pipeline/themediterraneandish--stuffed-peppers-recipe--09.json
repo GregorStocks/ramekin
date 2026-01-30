@@ -1,15 +1,13 @@
 {
   "raw": "1 cup white rice (soaked in water for 2o to 30 minutes, then drained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white rice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "soaked in water for 2o to 30 minutes, then drained"
-    }
+  "expected": {
+    "item": "white rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "soaked in water for 2o to 30 minutes, then drained"
   }
 }

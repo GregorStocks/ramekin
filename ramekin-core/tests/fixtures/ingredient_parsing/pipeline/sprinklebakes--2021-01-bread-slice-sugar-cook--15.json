@@ -1,10 +1,8 @@
 {
   "raw": "lemon starburst candies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon starburst candies",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon starburst candies",
+    "measurements": [],
+    "note": null
   }
 }

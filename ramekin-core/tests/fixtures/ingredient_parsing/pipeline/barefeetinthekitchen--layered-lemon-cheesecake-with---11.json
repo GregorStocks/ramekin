@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon lemon zest (finely minced, this was the zest from 1 large lemon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon zest",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely minced, this was the zest from 1 large lemon"
-    }
+  "expected": {
+    "item": "lemon zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "finely minced, this was the zest from 1 large lemon"
   }
 }

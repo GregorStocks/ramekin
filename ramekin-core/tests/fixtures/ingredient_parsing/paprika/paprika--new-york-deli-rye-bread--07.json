@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 cups (12.5 ounces, 354 grams) water, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "12.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "354",
-          "unit": "g"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "12.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "354",
+        "unit": "g"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

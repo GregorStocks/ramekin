@@ -1,15 +1,13 @@
 {
   "raw": "1  red bell pepper (seeded and sliced thin)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "seeded and sliced thin"
-    }
+  "expected": {
+    "item": "red bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "seeded and sliced thin"
   }
 }

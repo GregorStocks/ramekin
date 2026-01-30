@@ -1,15 +1,13 @@
 {
   "raw": "2 ½ cups buttermilk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

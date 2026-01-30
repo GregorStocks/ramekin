@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb pork (thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "pork",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

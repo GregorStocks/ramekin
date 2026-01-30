@@ -1,15 +1,13 @@
 {
   "raw": "1.5 inches fresh ginger ((sliced into 8 coins))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inches fresh ginger",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": null
-        }
-      ],
-      "note": "sliced into 8 coins"
-    }
+  "expected": {
+    "item": "inches fresh ginger",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": null
+      }
+    ],
+    "note": "sliced into 8 coins"
   }
 }

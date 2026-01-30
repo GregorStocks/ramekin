@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces whole-wheat farfalle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-wheat farfalle",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-wheat farfalle",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

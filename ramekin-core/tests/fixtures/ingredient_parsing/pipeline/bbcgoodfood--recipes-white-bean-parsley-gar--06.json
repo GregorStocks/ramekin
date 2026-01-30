@@ -1,15 +1,13 @@
 {
   "raw": "large handful flat-leaf parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful flat-leaf parsley",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "handful flat-leaf parsley",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

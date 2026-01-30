@@ -1,10 +1,8 @@
 {
   "raw": "grated daikon radish (daikon oroshi)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated daikon radish (daikon oroshi)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "grated daikon radish (daikon oroshi)",
+    "measurements": [],
+    "note": null
   }
 }

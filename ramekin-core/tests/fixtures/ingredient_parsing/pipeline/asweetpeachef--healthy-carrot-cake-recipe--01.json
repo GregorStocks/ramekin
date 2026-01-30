@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups whole wheat pastry flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole wheat pastry flour",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole wheat pastry flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoon clarified unsalted butter (see Note) or 2 tablespoon unsalted butter and 1 tablespoon peanut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "clarified unsalted butter (see Note)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 2 tablespoon unsalted butter and 1 tablespoon peanut oil"
-    }
+  "expected": {
+    "item": "clarified unsalted butter (see Note)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 2 tablespoon unsalted butter and 1 tablespoon peanut oil"
   }
 }

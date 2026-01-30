@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ground Aleppo pepper (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground Aleppo pepper (see notes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground Aleppo pepper (see notes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

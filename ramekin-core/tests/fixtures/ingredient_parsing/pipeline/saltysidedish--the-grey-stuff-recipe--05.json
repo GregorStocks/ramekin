@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons dry instant chocolate pudding",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry instant chocolate pudding",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry instant chocolate pudding",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Herby yogurt:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Herby yogurt:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Herby yogurt:",
+    "measurements": [],
+    "note": null
   }
 }

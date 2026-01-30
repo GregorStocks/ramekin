@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon fennel pollen",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fennel pollen",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fennel pollen",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

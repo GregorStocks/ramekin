@@ -1,10 +1,8 @@
 {
   "raw": "and/or",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "and/or",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "and/or",
+    "measurements": [],
+    "note": null
   }
 }

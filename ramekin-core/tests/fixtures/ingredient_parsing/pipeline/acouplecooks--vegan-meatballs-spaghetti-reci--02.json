@@ -1,19 +1,17 @@
 {
   "raw": "1 pound medium red potatoes (about 2 medium potatoes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium red potatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

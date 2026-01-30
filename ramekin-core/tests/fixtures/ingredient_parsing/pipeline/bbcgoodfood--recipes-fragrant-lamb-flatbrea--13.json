@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp easy blend yeast from a 7g sachet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "easy blend yeast from a 7g sachet",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "easy blend yeast from a 7g sachet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

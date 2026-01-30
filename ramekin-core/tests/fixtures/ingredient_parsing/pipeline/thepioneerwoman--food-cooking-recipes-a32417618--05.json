@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. carrots, halved lengthwise and cut into 1 1/2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved lengthwise and cut into 1 1/2-inch pieces"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved lengthwise and cut into 1 1/2-inch pieces"
   }
 }

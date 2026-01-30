@@ -1,10 +1,8 @@
 {
   "raw": "Maple syrup, for drizzling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Maple syrup, for drizzling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Maple syrup, for drizzling",
+    "measurements": [],
+    "note": null
   }
 }

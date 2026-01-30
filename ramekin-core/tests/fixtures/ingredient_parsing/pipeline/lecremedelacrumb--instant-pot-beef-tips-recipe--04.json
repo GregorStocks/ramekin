@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chopped beef ( (stew meat or top sirloin cut into 1-inch pieces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped beef ( (stew meat or top sirloin cut into 1-inch pieces)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped beef ( (stew meat or top sirloin cut into 1-inch pieces)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

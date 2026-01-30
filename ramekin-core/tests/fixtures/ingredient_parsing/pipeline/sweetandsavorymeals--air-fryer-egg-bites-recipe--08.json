@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup red bell peppers (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell peppers",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "red bell peppers",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

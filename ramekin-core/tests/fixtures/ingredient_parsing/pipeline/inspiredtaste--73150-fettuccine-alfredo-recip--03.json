@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces Parmigiano Reggiano cheese, finely grated (60g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmigiano Reggiano cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": "finely grated"
-    }
+  "expected": {
+    "item": "Parmigiano Reggiano cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": "finely grated"
   }
 }

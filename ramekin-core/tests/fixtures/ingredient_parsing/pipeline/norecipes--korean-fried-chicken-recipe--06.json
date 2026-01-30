@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup soju ((Korean liquor))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soju (Korean liquor)",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soju (Korean liquor)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

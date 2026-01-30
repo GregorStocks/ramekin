@@ -1,15 +1,13 @@
 {
   "raw": ".333 cup dry vermouth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry vermouth",
-      "measurements": [
-        {
-          "amount": ".333",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry vermouth",
+    "measurements": [
+      {
+        "amount": ".333",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

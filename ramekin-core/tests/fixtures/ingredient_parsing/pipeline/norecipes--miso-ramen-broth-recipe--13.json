@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Saikyo miso ((aka Shiromiso))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Saikyo miso (aka Shiromiso)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Saikyo miso (aka Shiromiso)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

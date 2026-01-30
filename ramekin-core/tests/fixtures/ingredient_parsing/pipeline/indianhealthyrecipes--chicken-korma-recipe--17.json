@@ -1,15 +1,13 @@
 {
   "raw": "1  cardamom ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cardamom",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "cardamom",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

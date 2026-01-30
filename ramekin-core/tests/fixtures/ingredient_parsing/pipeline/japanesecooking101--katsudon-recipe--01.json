@@ -1,15 +1,13 @@
 {
   "raw": "1  Tonkatsu",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tonkatsu",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tonkatsu",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

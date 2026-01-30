@@ -1,23 +1,21 @@
 {
   "raw": "1 package (24 ounces) refrigerated mashed potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refrigerated mashed potatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "refrigerated mashed potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

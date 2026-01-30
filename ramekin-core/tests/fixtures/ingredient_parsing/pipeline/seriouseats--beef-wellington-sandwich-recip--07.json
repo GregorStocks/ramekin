@@ -1,19 +1,17 @@
 {
   "raw": "16 ounces (454 g) cremini or button mushrooms, stemmed and cut into 1/4-inch slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cremini or button mushrooms, stemmed and cut into 1/4-inch slices",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cremini or button mushrooms, stemmed and cut into 1/4-inch slices",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

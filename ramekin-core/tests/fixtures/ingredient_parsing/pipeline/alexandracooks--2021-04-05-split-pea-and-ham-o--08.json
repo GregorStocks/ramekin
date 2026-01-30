@@ -1,15 +1,13 @@
 {
   "raw": "1 ham bone, if you have it, or 1 ham hock, see notes above if making without",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ham bone, if you have it, or 1 ham hock, see notes above if making without",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ham bone, if you have it, or 1 ham hock, see notes above if making without",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

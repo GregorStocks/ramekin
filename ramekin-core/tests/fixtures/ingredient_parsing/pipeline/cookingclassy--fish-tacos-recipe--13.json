@@ -1,15 +1,13 @@
 {
   "raw": "3 Tbsp chopped cilantro leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped cilantro leaves",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped cilantro leaves",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

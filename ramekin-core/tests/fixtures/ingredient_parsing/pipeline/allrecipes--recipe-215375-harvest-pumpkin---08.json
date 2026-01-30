@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Argo® Baking Powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Argo® Baking Powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Argo® Baking Powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

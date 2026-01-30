@@ -1,23 +1,21 @@
 {
   "raw": "1 bunch of cilantro stems (1 1/2 ounces; 40 g), thoroughly washed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro stems",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": "thoroughly washed"
-    }
+  "expected": {
+    "item": "cilantro stems",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": "thoroughly washed"
   }
 }

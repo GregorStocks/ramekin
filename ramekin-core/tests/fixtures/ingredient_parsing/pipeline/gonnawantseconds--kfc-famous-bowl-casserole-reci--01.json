@@ -1,15 +1,13 @@
 {
   "raw": "6 cups prepared mashed potatoes (homemade or store bought)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared mashed potatoes (homemade or store bought)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared mashed potatoes (homemade or store bought)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces coarsely grated fontina or mozzarella",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely grated fontina or mozzarella",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely grated fontina or mozzarella",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

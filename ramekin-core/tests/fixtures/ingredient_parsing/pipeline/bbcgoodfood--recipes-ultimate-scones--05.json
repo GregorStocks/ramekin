@@ -1,15 +1,13 @@
 {
   "raw": "125ml buttermilk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk",
-      "measurements": [
-        {
-          "amount": "125",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "125",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

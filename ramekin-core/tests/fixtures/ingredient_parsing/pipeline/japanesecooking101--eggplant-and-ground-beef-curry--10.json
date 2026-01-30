@@ -1,15 +1,13 @@
 {
   "raw": "4 servings Steamed Rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "servings Steamed Rice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "servings Steamed Rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

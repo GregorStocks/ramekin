@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon  olive oil from the sun-dried tomatoes jar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil from the sun-dried tomatoes jar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil from the sun-dried tomatoes jar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

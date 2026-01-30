@@ -1,23 +1,21 @@
 {
   "raw": "2 large ribs celery, finely chopped (about 6 ounces; 170g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ribs celery",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "ribs celery",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

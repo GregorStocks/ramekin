@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups shredded whole milk mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded whole milk mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded whole milk mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

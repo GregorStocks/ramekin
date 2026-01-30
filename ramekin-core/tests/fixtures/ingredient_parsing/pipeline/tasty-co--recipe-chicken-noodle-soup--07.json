@@ -1,15 +1,13 @@
 {
   "raw": "4 cans chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

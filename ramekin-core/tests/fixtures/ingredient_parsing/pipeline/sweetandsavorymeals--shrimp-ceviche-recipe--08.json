@@ -1,15 +1,13 @@
 {
   "raw": "2  large mangos (seeded and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mangos",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "seeded and chopped"
-    }
+  "expected": {
+    "item": "mangos",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "seeded and chopped"
   }
 }

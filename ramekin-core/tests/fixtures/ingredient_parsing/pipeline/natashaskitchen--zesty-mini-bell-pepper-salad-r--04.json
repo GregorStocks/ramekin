@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 Tbsp white vinegar or Fresh lemon juice (I preferred the vinegar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white vinegar or Fresh lemon juice (I preferred the vinegar)",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white vinegar or Fresh lemon juice (I preferred the vinegar)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

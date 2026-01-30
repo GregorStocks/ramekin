@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (240g) King Arthur Unbleached All-Purpose Flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "King Arthur Unbleached All-Purpose Flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "King Arthur Unbleached All-Purpose Flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

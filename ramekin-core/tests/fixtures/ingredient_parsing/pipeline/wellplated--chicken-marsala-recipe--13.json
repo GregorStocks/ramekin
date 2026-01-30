@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons chopped fresh thyme ( or 2 tablespoons chopped fresh parsley)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh thyme",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 2 tablespoons chopped fresh parsley"
-    }
+  "expected": {
+    "item": "chopped fresh thyme",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 2 tablespoons chopped fresh parsley"
   }
 }

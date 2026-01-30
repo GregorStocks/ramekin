@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup fresh crab",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh crab",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh crab",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

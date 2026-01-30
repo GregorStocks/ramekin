@@ -1,15 +1,13 @@
 {
   "raw": "3 ½ tbsp light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown sugar",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

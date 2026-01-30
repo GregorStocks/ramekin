@@ -1,10 +1,8 @@
 {
   "raw": "cream cheese frosting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese frosting",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cream cheese frosting",
+    "measurements": [],
+    "note": null
   }
 }

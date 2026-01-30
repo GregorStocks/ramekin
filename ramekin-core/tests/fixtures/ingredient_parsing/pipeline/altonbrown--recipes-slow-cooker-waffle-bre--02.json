@@ -1,19 +1,17 @@
 {
   "raw": "4 3/4 ounces whole-wheat pastry flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-wheat pastry flour",
-      "measurements": [
-        {
-          "amount": "4 3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "135",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-wheat pastry flour",
+    "measurements": [
+      {
+        "amount": "4 3/4",
+        "unit": "oz"
+      },
+      {
+        "amount": "135",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

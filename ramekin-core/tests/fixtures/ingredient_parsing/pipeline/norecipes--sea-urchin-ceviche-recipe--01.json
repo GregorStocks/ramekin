@@ -1,15 +1,13 @@
 {
   "raw": "1 flat uni ((sea urchin))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flat uni (sea urchin)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flat uni (sea urchin)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 c. self-rising flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "self-rising flour",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "self-rising flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

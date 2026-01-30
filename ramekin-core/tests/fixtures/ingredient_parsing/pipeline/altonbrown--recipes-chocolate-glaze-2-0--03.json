@@ -1,15 +1,13 @@
 {
   "raw": "5 teaspoons brewed coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brewed coffee",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brewed coffee",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

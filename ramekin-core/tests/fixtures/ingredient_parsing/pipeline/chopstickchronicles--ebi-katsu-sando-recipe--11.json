@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp butter/margalin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter/margalin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter/margalin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

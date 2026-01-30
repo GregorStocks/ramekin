@@ -1,15 +1,13 @@
 {
   "raw": "2 cups dark brown sugar (or brown rock sugar&nbsp;)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark brown sugar (or brown rock sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark brown sugar (or brown rock sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

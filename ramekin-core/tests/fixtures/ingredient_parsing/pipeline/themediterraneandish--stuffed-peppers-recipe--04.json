@@ -1,10 +1,8 @@
 {
   "raw": "Kosher salt + black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher salt + black pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Kosher salt + black pepper",
+    "measurements": [],
+    "note": null
   }
 }

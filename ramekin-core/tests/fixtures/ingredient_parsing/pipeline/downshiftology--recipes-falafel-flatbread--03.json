@@ -1,15 +1,13 @@
 {
   "raw": "1 cup parsley (roughly chopped (about a one large bunch))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped (about a one large bunch"
-    }
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped (about a one large bunch"
   }
 }

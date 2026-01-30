@@ -1,15 +1,13 @@
 {
   "raw": "½ cup sunflower seed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sunflower seed",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sunflower seed",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons Buffalo-style hot sauce (such as Frank's RedHot)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "quick-pickled daikon and carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quick-pickled daikon and carrots",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "quick-pickled daikon and carrots",
+    "measurements": [],
+    "note": null
   }
 }

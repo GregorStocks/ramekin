@@ -1,19 +1,17 @@
 {
   "raw": "3 cinnamon sticks (about 3 inches each), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon sticks",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "cinnamon sticks",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "divided"
   }
 }

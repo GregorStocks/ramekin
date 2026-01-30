@@ -1,15 +1,13 @@
 {
   "raw": "400 g fresh shrimps",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh shrimps",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh shrimps",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

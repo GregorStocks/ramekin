@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds Yukon gold potatoes ((about 6 small/medium potatoes, peeled and diced to ½” cubes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "about 6 small/medium potatoes, peeled and diced to 1/2” cubes"
-    }
+  "expected": {
+    "item": "Yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "about 6 small/medium potatoes, peeled and diced to 1/2” cubes"
   }
 }

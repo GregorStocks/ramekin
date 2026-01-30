@@ -1,15 +1,13 @@
 {
   "raw": "1 medium orange, peel intact",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange, peel intact",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange, peel intact",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

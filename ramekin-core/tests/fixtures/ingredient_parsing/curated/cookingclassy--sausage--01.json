@@ -1,15 +1,13 @@
 {
   "raw": "1 lb Italian Sausage ((casings removed if necessary))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian Sausage (casings removed if necessary)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Italian Sausage (casings removed if necessary)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

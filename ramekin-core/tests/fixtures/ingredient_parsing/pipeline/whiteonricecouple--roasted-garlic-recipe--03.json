@@ -1,10 +1,8 @@
 {
   "raw": "Flakey Salt (, such as kosher salt, Murray River salt, Maldon salt)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Flakey Salt (, such as kosher salt, Murray River salt, Maldon salt)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Flakey Salt (, such as kosher salt, Murray River salt, Maldon salt)",
+    "measurements": [],
+    "note": null
   }
 }

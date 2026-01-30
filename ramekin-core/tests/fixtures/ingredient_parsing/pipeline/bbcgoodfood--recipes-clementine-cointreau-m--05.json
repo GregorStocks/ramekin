@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp Cointreau",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cointreau",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cointreau",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

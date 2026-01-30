@@ -1,10 +1,8 @@
 {
   "raw": "Finely shredded Romano or Parmesan cheese (, for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Finely shredded Romano or Parmesan cheese",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Finely shredded Romano or Parmesan cheese",
+    "measurements": [],
+    "note": "for serving"
   }
 }

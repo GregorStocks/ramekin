@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp cooking oil (neutral)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking oil (neutral)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking oil (neutral)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

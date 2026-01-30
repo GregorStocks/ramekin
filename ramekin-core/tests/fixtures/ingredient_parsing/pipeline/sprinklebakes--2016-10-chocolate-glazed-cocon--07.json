@@ -1,10 +1,8 @@
 {
   "raw": "Or Spectrum coconut oil (melted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Or Spectrum coconut oil",
-      "measurements": [],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "Or Spectrum coconut oil",
+    "measurements": [],
+    "note": "melted"
   }
 }

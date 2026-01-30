@@ -1,23 +1,21 @@
 {
   "raw": "70g maple syrup (2 1/2 ounces; about 1/4 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple syrup",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

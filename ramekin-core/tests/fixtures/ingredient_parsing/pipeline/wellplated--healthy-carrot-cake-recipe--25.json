@@ -1,10 +1,8 @@
 {
   "raw": "toasted chopped pecans (or walnuts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted chopped pecans (or walnuts)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted chopped pecans (or walnuts)",
+    "measurements": [],
+    "note": null
   }
 }

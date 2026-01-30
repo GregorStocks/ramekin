@@ -1,15 +1,13 @@
 {
   "raw": "2 cups BLT Dip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "BLT Dip",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "BLT Dip",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

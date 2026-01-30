@@ -1,10 +1,8 @@
 {
   "raw": "maraschino cherry to garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maraschino cherry to garnish",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "maraschino cherry to garnish",
+    "measurements": [],
+    "note": "optional"
   }
 }

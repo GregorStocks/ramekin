@@ -1,15 +1,13 @@
 {
   "raw": "1/8-1/4 tsp hot sauce ((like Frank&amp;#039;s Red Hot or Crystal))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce (like Frank's Red Hot or Crystal)",
-      "measurements": [
-        {
-          "amount": "1/8-1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot sauce (like Frank's Red Hot or Crystal)",
+    "measurements": [
+      {
+        "amount": "1/8-1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

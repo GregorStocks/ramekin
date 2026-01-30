@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups coarsely ground coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely ground coffee",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely ground coffee",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

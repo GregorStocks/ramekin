@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon besan (or gram flour or rice flour or corn flour)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "besan (or gram flour or rice flour or corn flour)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "besan (or gram flour or rice flour or corn flour)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

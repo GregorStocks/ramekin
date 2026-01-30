@@ -1,19 +1,17 @@
 {
   "raw": "1-2 teaspoons (5-10ml) truffled olive oil, (optional) (or to taste (plus more for drizzling))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "truffled olive oil (or to taste (plus more for drizzling)",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "truffled olive oil (or to taste (plus more for drizzling)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

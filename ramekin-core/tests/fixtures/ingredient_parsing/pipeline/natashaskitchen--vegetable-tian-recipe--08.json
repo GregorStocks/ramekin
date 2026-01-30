@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp thyme",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thyme",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thyme",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

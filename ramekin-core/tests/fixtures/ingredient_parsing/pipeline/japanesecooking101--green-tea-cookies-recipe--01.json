@@ -1,15 +1,13 @@
 {
   "raw": "5 Tbsp butter (room temperature )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "room temperature"
   }
 }

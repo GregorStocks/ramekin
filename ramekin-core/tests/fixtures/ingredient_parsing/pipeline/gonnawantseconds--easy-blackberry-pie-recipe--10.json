@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tablespoons coarse sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse sugar",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarse sugar",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

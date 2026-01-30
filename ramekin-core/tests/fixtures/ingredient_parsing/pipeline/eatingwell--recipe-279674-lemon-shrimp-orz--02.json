@@ -1,19 +1,17 @@
 {
   "raw": "1 pound peeled and deveined raw shrimp (21-25 per pound), cut into bite-size pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peeled and deveined raw shrimp , cut into bite-size pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "21-25",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peeled and deveined raw shrimp , cut into bite-size pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "21-25",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

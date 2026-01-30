@@ -1,15 +1,13 @@
 {
   "raw": "4  watermelon radishes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "watermelon radishes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "watermelon radishes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 medium jalapeños, seeds and membranes removed but reserved, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeños, seeds and membranes removed but reserved",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "jalapeños, seeds and membranes removed but reserved",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

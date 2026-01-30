@@ -1,15 +1,13 @@
 {
   "raw": "4-6 slices leftover roasted turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover roasted turkey",
-      "measurements": [
-        {
-          "amount": "4-6",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover roasted turkey",
+    "measurements": [
+      {
+        "amount": "4-6",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

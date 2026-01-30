@@ -1,15 +1,13 @@
 {
   "raw": "6 cups dry bread cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry bread cubes",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry bread cubes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup rice vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice vinegar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rice vinegar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

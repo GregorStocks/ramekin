@@ -1,15 +1,13 @@
 {
   "raw": "5  chicken drumsticks (or chicken thighs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken drumsticks (or chicken thighs)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken drumsticks (or chicken thighs)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

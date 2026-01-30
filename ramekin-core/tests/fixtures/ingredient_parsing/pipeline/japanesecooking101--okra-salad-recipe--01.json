@@ -1,15 +1,13 @@
 {
   "raw": "15  okra",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "okra",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "okra",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

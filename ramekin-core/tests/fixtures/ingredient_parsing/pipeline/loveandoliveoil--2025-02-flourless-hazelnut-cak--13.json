@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon glucose or light corn syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "glucose or light corn syrup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "glucose or light corn syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

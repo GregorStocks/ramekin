@@ -1,23 +1,21 @@
 {
   "raw": "0.25 cup (2 ounces) spiced rum",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spiced rum",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spiced rum",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

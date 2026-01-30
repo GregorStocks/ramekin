@@ -1,15 +1,13 @@
 {
   "raw": "1 cup frozen green beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen green beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen green beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

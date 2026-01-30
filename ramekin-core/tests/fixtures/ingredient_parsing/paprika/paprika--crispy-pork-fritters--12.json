@@ -1,15 +1,13 @@
 {
   "raw": "2 cups panko breadcrumbs, pulsed a in a food processor or blender to a finer texture",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "panko breadcrumbs, pulsed a in a food processor or blender to a finer texture",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "panko breadcrumbs, pulsed a in a food processor or blender to a finer texture",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

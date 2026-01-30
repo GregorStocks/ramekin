@@ -1,15 +1,13 @@
 {
   "raw": "30 g garlic chive(s)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic chive(s)",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic chive(s)",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

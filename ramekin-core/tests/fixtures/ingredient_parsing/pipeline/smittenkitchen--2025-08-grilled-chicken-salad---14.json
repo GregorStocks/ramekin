@@ -1,15 +1,13 @@
 {
   "raw": "1 firm-ripe avocado, sliced thin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm-ripe avocado",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced thin"
-    }
+  "expected": {
+    "item": "firm-ripe avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced thin"
   }
 }

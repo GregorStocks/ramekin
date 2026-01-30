@@ -1,15 +1,13 @@
 {
   "raw": "1  cup  frozen blackberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen blackberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen blackberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

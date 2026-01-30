@@ -1,10 +1,8 @@
 {
   "raw": "Chipotle Sour Cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chipotle Sour Cream",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chipotle Sour Cream",
+    "measurements": [],
+    "note": null
   }
 }

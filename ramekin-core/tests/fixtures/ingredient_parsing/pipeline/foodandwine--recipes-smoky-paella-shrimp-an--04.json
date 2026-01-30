@@ -1,15 +1,13 @@
 {
   "raw": "1 cup arborio or Valencia rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arborio or Valencia rice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arborio or Valencia rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

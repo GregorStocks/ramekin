@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups plus 4 tablespoons/395 g unsalted butter (room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 1/2 cups plus 4 tablespoons/395 g unsalted butter (room temperature)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "room temperature"
-    }
+  "expected": {
+    "item": "1 1/2 cups plus 4 tablespoons/395 g unsalted butter (room temperature)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "room temperature"
   }
 }

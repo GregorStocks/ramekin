@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds Rhode Island Greening or Granny Smith apples, peeled, quartered, and cut into 1/4-inch-thick slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rhode Island Greening or Granny Smith apples, peeled, quartered, and cut into 1/4-inch-thick slices",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Rhode Island Greening or Granny Smith apples, peeled, quartered, and cut into 1/4-inch-thick slices",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

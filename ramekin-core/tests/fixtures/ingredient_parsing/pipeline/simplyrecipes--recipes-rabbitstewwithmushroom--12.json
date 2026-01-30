@@ -1,15 +1,13 @@
 {
   "raw": "1 large parsnip, peeled and chopped into large pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsnip",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and chopped into large pieces"
-    }
+  "expected": {
+    "item": "parsnip",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and chopped into large pieces"
   }
 }

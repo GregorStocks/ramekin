@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Italian salad dressing mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian salad dressing mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Italian salad dressing mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

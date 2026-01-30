@@ -1,10 +1,8 @@
 {
   "raw": "Sanding sugar or granulated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sanding sugar or granulated",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sanding sugar or granulated",
+    "measurements": [],
+    "note": null
   }
 }

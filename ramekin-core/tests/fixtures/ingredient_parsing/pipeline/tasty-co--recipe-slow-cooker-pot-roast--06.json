@@ -1,15 +1,13 @@
 {
   "raw": "3 gold potatoes, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gold potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "gold potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

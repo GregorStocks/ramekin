@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp massaman curry paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "massaman curry paste",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "massaman curry paste",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

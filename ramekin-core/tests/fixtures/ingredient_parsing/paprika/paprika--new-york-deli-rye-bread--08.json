@@ -1,10 +1,8 @@
 {
   "raw": "Flour Mixture:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Flour Mixture:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Flour Mixture:",
+    "measurements": [],
+    "note": null
   }
 }

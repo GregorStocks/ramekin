@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon coconut sugar ((brown sugar or palm sugar can be substituted))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut sugar (brown sugar or palm sugar can be substituted)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut sugar (brown sugar or palm sugar can be substituted)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

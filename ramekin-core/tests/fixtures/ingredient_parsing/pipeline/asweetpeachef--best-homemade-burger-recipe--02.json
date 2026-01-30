@@ -1,15 +1,13 @@
 {
   "raw": "4  whole wheat hamburger buns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole wheat hamburger buns",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole wheat hamburger buns",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

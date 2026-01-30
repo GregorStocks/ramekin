@@ -1,15 +1,13 @@
 {
   "raw": "1 c. frozen fire-roasted corn, thawed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen fire-roasted corn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen fire-roasted corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed"
   }
 }

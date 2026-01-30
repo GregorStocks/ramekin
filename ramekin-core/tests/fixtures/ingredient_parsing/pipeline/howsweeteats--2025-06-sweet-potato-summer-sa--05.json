@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup sweet corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet corn",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet corn",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

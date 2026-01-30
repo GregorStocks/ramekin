@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ground cumin, (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cumin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "ground cumin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

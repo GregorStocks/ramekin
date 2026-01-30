@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons oil ((or 2 tbsp butter))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil (or 2 tbsp butter)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil (or 2 tbsp butter)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

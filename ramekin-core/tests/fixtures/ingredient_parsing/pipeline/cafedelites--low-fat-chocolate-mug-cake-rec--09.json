@@ -1,15 +1,13 @@
 {
   "raw": "3/4 tablespoon mini chocolate chips (milk or dark, divided - optional. See notes.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini chocolate chips",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "milk or dark, divided - optional. See notes."
-    }
+  "expected": {
+    "item": "mini chocolate chips",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "milk or dark, divided - optional. See notes."
   }
 }

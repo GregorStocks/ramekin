@@ -1,15 +1,13 @@
 {
   "raw": "1 head broccoli (cut into small florets)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli (cut into small florets)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli (cut into small florets)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

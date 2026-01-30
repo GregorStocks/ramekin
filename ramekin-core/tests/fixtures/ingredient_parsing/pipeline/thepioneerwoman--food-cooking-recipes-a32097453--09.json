@@ -1,19 +1,17 @@
 {
   "raw": "2 1/2 pounds peaches (7 to 8), peeled and sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peaches",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "7 to 8",
-          "unit": null
-        }
-      ],
-      "note": "peeled and sliced"
-    }
+  "expected": {
+    "item": "peaches",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "7 to 8",
+        "unit": null
+      }
+    ],
+    "note": "peeled and sliced"
   }
 }

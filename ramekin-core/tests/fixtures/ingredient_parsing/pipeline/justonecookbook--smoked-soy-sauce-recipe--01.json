@@ -1,10 +1,8 @@
 {
   "raw": "soy sauce ((amount specified in the instructions))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soy sauce (amount specified in the instructions)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "soy sauce (amount specified in the instructions)",
+    "measurements": [],
+    "note": null
   }
 }

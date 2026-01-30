@@ -1,15 +1,13 @@
 {
   "raw": "1 pound short pasta, such as penne, casarecce, or pipe rigate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "short pasta, such as penne, casarecce, or pipe rigate",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "short pasta, such as penne, casarecce, or pipe rigate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

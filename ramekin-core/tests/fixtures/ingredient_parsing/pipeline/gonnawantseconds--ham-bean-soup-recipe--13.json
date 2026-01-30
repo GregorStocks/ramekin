@@ -1,15 +1,13 @@
 {
   "raw": "1 large  ham bone or 2 ham hocks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ham bone or 2 ham hocks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ham bone or 2 ham hocks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

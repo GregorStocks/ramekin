@@ -1,10 +1,8 @@
 {
   "raw": "a handful of sprouts or pea shoots or delicate greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a handful of sprouts or pea shoots or delicate greens",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a handful of sprouts or pea shoots or delicate greens",
+    "measurements": [],
+    "note": null
   }
 }

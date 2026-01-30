@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup light flavored olive oil (or the cooking oil of your choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light flavored olive oil (or the cooking oil of your choice)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light flavored olive oil (or the cooking oil of your choice)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

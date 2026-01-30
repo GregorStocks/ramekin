@@ -1,10 +1,8 @@
 {
   "raw": "Whipped cream and grated chocolate, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Whipped cream and grated chocolate",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Whipped cream and grated chocolate",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

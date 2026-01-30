@@ -1,10 +1,8 @@
 {
   "raw": "splash of lime seltzer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "splash of lime seltzer",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "splash of lime seltzer",
+    "measurements": [],
+    "note": null
   }
 }

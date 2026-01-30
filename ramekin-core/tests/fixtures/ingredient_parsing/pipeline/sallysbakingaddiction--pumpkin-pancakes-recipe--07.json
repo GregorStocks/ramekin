@@ -1,19 +1,17 @@
 {
   "raw": "1 and 1/4 cups (285g) pumpkin puree (canned or fresh)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin puree",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "285",
-          "unit": "g"
-        }
-      ],
-      "note": "canned or fresh"
-    }
+  "expected": {
+    "item": "pumpkin puree",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "285",
+        "unit": "g"
+      }
+    ],
+    "note": "canned or fresh"
   }
 }

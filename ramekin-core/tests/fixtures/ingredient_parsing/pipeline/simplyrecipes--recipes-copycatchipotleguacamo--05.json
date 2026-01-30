@@ -1,15 +1,13 @@
 {
   "raw": "1/2 large jalapeño, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "large"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "jalapeño",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons plus 1/2 cup olive oil, not extra-virgin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "2 tablespoons plus 1/2 cup olive oil, not extra-virgin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 1/2 cup olive oil, not extra-virgin"
-    }
+  "expected": {
+    "item": "2 tablespoons plus 1/2 cup olive oil, not extra-virgin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus 1/2 cup olive oil, not extra-virgin"
   }
 }

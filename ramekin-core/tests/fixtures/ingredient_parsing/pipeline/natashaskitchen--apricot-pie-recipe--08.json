@@ -1,15 +1,13 @@
 {
   "raw": "1  egg whisked together with 1 Tbsp cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg whisked together with 1 Tbsp cold water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg whisked together with 1 Tbsp cold water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

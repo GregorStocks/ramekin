@@ -1,15 +1,13 @@
 {
   "raw": "1 pound dried chickpeas, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chickpeas, see notes above",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chickpeas, see notes above",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

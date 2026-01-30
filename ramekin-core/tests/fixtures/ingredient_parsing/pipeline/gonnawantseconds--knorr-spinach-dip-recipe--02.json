@@ -1,15 +1,13 @@
 {
   "raw": "1 envelope Knorr Vegetable recipe mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "envelope Knorr Vegetable recipe mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "envelope Knorr Vegetable recipe mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

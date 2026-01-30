@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Meyer lemon zest (from 1 lemon (save the rest of the zest for the mousse layer later))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Meyer lemon zest (from 1 lemon (save the rest of the zest for the mousse layer later)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Meyer lemon zest (from 1 lemon (save the rest of the zest for the mousse layer later)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (280g) bittersweet or semisweet chocolate chunks (or chocolate chips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bittersweet or semisweet chocolate chunks (or chocolate chips)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "280",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bittersweet or semisweet chocolate chunks (or chocolate chips)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "280",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

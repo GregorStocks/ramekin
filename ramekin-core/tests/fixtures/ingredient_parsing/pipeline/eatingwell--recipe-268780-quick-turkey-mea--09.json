@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup chopped fresh parsley or basil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley or basil",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh parsley or basil",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

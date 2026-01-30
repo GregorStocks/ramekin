@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup white miso",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white miso",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white miso",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

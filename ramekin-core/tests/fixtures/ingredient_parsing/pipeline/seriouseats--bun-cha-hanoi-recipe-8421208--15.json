@@ -1,19 +1,17 @@
 {
   "raw": "2 medium cloves garlic, roughly chopped (1 tablespoon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        },
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "cloves garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

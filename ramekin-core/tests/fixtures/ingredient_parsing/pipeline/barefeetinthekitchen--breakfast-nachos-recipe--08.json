@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup shredded Mexican cheese blend or the cheese of your choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded Mexican cheese blend or the cheese of your choice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded Mexican cheese blend or the cheese of your choice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

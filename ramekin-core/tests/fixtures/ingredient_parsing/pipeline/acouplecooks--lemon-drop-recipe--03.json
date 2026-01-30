@@ -1,19 +1,17 @@
 {
   "raw": "1/2 ounce Cointreau or Triple Sec",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cointreau or Triple Sec",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cointreau or Triple Sec",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

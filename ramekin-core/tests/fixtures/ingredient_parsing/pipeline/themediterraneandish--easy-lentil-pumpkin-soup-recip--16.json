@@ -1,10 +1,8 @@
 {
   "raw": "Jalapeno slices for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Jalapeno slices for garnish",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Jalapeno slices for garnish",
+    "measurements": [],
+    "note": "optional"
   }
 }

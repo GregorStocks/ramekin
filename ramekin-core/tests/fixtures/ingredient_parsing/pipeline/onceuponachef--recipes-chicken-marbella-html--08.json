@@ -1,15 +1,13 @@
 {
   "raw": "½ cup pitted prunes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted prunes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitted prunes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

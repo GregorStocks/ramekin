@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup whole almonds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole almonds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole almonds",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

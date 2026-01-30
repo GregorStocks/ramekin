@@ -1,15 +1,13 @@
 {
   "raw": "1 small red or white onion,",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red or white onion,",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red or white onion,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

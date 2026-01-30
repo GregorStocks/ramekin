@@ -1,15 +1,13 @@
 {
   "raw": "3 slices crusty Italian bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crusty Italian bread",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crusty Italian bread",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

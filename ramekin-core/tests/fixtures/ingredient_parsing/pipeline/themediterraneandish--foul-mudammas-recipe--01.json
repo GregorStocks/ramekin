@@ -1,15 +1,13 @@
 {
   "raw": "2  cans plain fava beans,",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plain fava beans,",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plain fava beans,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

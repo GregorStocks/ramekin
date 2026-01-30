@@ -1,15 +1,13 @@
 {
   "raw": "1  star anise ((chakri phool ))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "star anise (chakri phool",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "star anise (chakri phool",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

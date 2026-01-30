@@ -1,19 +1,17 @@
 {
   "raw": "3 cups (90g) fresh spinach (optional; see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh spinach",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "90",
-          "unit": "g"
-        }
-      ],
-      "note": "optional; see note"
-    }
+  "expected": {
+    "item": "fresh spinach",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "90",
+        "unit": "g"
+      }
+    ],
+    "note": "optional; see note"
   }
 }

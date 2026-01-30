@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup toasted hazelnuts (chopped optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted hazelnuts",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped optional"
-    }
+  "expected": {
+    "item": "toasted hazelnuts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped optional"
   }
 }

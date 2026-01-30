@@ -1,10 +1,8 @@
 {
   "raw": "Vegetable oil, (for frying)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vegetable oil, (for frying)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Vegetable oil, (for frying)",
+    "measurements": [],
+    "note": null
   }
 }

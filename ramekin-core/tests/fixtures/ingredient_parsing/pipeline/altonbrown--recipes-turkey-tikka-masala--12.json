@@ -1,15 +1,13 @@
 {
   "raw": "2  turkey thighs, boned and skinned",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turkey thighs, boned and skinned",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turkey thighs, boned and skinned",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

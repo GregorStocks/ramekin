@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cooked chickpeas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked chickpeas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked chickpeas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

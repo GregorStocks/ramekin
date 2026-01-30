@@ -1,15 +1,13 @@
 {
   "raw": "Pinch ground white pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground white pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground white pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

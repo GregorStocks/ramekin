@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces frozen lima beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen lima beans",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen lima beans",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

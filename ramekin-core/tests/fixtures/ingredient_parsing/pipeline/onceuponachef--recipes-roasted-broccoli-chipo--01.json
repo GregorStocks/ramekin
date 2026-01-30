@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds broccoli crowns (be sure they are dry)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli crowns (be sure they are dry)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli crowns (be sure they are dry)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

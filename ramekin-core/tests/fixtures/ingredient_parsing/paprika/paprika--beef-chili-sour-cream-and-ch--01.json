@@ -1,10 +1,8 @@
 {
   "raw": "Chili:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chili:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chili:",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "PLUS&nbsp;all your favorite veggie burger add-ons!",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "PLUS all your favorite veggie burger add-ons!",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "PLUS all your favorite veggie burger add-ons!",
+    "measurements": [],
+    "note": null
   }
 }

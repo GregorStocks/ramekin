@@ -1,15 +1,13 @@
 {
   "raw": "1 cup apple butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

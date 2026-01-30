@@ -1,15 +1,13 @@
 {
   "raw": "small bunch of fresh coriander roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunch of fresh coriander roughly chopped",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bunch of fresh coriander roughly chopped",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

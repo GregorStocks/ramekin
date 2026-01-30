@@ -1,15 +1,13 @@
 {
   "raw": "2 celery sticks, cut into small chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery sticks, cut into small chunks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "celery sticks, cut into small chunks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

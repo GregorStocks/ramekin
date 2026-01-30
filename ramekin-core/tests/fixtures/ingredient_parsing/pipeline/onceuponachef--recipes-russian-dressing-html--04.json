@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup plus 2 tablespoons  dill relish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "¼ cup plus 2 tablespoons  dill relish",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tablespoons  dill relish"
-    }
+  "expected": {
+    "item": "¼ cup plus 2 tablespoons  dill relish",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons  dill relish"
   }
 }

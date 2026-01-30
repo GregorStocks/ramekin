@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (85 grams) coarsely grated fontina cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely grated fontina cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely grated fontina cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "400 g kabocha squash ((before peeling))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kabocha squash (before peeling)",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kabocha squash (before peeling)",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

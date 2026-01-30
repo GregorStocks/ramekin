@@ -1,10 +1,8 @@
 {
   "raw": "a small handful of mixed salad greens",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a small handful of mixed salad greens",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a small handful of mixed salad greens",
+    "measurements": [],
+    "note": null
   }
 }

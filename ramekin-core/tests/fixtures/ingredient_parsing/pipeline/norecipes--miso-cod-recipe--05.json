@@ -1,15 +1,13 @@
 {
   "raw": "2 pieces Sablefish ((a.k.a. Black Cod))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sablefish (a.k.a. Black Cod)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "piece"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sablefish (a.k.a. Black Cod)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "piece"
+      }
+    ],
+    "note": null
   }
 }

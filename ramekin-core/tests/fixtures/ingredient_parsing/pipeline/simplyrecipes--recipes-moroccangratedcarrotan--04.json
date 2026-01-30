@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon paprika (sweet, not hot)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paprika (sweet, not hot)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "paprika (sweet, not hot)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 (15.25 ounce) can whole kernel sweet corn (such as Green Giant® Niblets®), undrained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole kernel sweet corn (such as Green Giant® Niblets®)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "432",
-          "unit": "g"
-        }
-      ],
-      "note": "undrained"
-    }
+  "expected": {
+    "item": "whole kernel sweet corn (such as Green Giant® Niblets®)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "432",
+        "unit": "g"
+      }
+    ],
+    "note": "undrained"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "32 ounces (904g) full-fat brick cream cheese, softened to&nbsp;room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "full-fat brick cream cheese",
-      "measurements": [
-        {
-          "amount": "32",
-          "unit": "oz"
-        },
-        {
-          "amount": "904",
-          "unit": "g"
-        }
-      ],
-      "note": "softened to room temperature"
-    }
+  "expected": {
+    "item": "full-fat brick cream cheese",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "oz"
+      },
+      {
+        "amount": "904",
+        "unit": "g"
+      }
+    ],
+    "note": "softened to room temperature"
   }
 }

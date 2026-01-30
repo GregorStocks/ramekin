@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Jack Daniels Whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Jack Daniels Whiskey",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Jack Daniels Whiskey",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

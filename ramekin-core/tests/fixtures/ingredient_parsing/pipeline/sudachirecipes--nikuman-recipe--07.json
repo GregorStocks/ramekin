@@ -1,15 +1,13 @@
 {
   "raw": "50 ml water (lukewarm)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (lukewarm)",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (lukewarm)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

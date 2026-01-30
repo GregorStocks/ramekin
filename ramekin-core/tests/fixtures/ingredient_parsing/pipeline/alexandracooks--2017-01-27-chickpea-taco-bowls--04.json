@@ -1,15 +1,13 @@
 {
   "raw": "2 cups diced onions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "150 ml water (for cooking)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (for cooking)",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (for cooking)",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

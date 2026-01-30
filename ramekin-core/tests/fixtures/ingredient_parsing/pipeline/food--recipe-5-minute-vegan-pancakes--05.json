@@ -1,15 +1,13 @@
 {
   "raw": "1   cup    soymilk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soymilk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soymilk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

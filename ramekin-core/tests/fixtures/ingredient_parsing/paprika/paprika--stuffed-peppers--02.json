@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp cooking fat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking fat",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking fat",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

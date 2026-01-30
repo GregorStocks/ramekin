@@ -1,10 +1,8 @@
 {
   "raw": "A few dashes of Worcestershire sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A few dashes of Worcestershire sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A few dashes of Worcestershire sauce",
+    "measurements": [],
+    "note": null
   }
 }

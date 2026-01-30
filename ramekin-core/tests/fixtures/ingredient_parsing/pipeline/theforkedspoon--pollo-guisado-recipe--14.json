@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon powdered chicken bouillon (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered chicken bouillon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "powdered chicken bouillon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

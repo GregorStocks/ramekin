@@ -1,15 +1,13 @@
 {
   "raw": "1 cup stuffed green olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stuffed green olives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stuffed green olives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

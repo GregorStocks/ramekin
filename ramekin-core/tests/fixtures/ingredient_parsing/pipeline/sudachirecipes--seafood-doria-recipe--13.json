@@ -1,15 +1,13 @@
 {
   "raw": "⅛ tsp cumin powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cumin powder",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cumin powder",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp powered sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powered sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "powered sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

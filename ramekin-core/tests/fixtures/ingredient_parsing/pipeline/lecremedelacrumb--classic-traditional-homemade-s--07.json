@@ -1,15 +1,13 @@
 {
   "raw": "2-3 cups chicken broth (If you like more dry stuffing, use 2 cups broth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken broth (If you like more dry stuffing, use 2 cups broth)",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken broth (If you like more dry stuffing, use 2 cups broth)",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

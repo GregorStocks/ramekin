@@ -1,15 +1,13 @@
 {
   "raw": "1 Cup Mozzarella (Shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mozzarella",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "Shredded"
-    }
+  "expected": {
+    "item": "Mozzarella",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "Shredded"
   }
 }

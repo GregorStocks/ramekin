@@ -1,10 +1,8 @@
 {
   "raw": "Extra Virgin Olive Oil (I used Private Reserve Greek olive oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra Virgin Olive Oil (I used Private Reserve Greek olive oil)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Extra Virgin Olive Oil (I used Private Reserve Greek olive oil)",
+    "measurements": [],
+    "note": null
   }
 }

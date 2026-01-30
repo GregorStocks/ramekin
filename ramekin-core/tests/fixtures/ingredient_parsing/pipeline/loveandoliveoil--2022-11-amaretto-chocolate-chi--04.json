@@ -1,19 +1,17 @@
 {
   "raw": "4 oz almond paste (crumbled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond paste",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "almond paste",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "crumbled"
   }
 }

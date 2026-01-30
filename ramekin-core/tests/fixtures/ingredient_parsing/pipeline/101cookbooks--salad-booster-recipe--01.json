@@ -1,15 +1,13 @@
 {
   "raw": "2  sheets nori seaweed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets nori seaweed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheets nori seaweed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

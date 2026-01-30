@@ -1,15 +1,13 @@
 {
   "raw": "140g golden caster sugar (preferably vanilla infused)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden caster sugar (preferably vanilla infused)",
-      "measurements": [
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "golden caster sugar (preferably vanilla infused)",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

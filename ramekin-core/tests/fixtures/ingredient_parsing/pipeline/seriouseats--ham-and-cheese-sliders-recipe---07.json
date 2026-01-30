@@ -1,23 +1,21 @@
 {
   "raw": "4 slices Swiss cheese (about 3/4 ounce; 21 g each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Swiss cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        },
-        {
-          "amount": "3/4",
-          "unit": "oz each"
-        },
-        {
-          "amount": "21",
-          "unit": "g each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Swiss cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slice"
+      },
+      {
+        "amount": "3/4",
+        "unit": "oz each"
+      },
+      {
+        "amount": "21",
+        "unit": "g each"
+      }
+    ],
+    "note": null
   }
 }

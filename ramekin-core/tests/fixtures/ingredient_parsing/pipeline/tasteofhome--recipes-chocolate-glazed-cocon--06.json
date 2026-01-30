@@ -1,19 +1,17 @@
 {
   "raw": "3 packages (8 ounces each) cream cheese, softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz each"
-        }
-      ],
-      "note": "softened"
-    }
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "oz each"
+      }
+    ],
+    "note": "softened"
   }
 }

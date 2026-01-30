@@ -1,10 +1,8 @@
 {
   "raw": "fresh cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh cilantro",
+    "measurements": [],
+    "note": null
   }
 }

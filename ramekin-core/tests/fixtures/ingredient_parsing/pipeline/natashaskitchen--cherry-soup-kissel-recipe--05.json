@@ -1,15 +1,13 @@
 {
   "raw": "4 Tbsp Potato Starch in 1/4 cup cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Potato Starch in 1/4 cup cold water",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Potato Starch in 1/4 cup cold water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

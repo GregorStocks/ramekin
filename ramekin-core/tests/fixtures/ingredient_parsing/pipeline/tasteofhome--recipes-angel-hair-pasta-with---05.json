@@ -1,15 +1,13 @@
 {
   "raw": "1 cup chopped sweet yellow, red or green pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped sweet yellow, red or green pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped sweet yellow, red or green pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

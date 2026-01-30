@@ -1,15 +1,13 @@
 {
   "raw": "1 cup mini white chocolate chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mini white chocolate chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mini white chocolate chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

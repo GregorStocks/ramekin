@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon kosher salt (decrease to 1/2 teaspoon if using salted butter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt (decrease to 1/2 teaspoon if using salted butter)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt (decrease to 1/2 teaspoon if using salted butter)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

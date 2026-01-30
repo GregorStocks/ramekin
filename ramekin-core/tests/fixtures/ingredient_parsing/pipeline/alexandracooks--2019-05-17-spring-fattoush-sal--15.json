@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb. snap or snow peas, strings removed, sliced thinly on the bias",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "snap or snow peas, strings removed",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced thinly on the bias"
-    }
+  "expected": {
+    "item": "snap or snow peas, strings removed",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced thinly on the bias"
   }
 }

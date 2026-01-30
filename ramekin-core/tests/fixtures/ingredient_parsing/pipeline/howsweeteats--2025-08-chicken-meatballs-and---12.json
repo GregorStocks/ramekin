@@ -1,15 +1,13 @@
 {
   "raw": "½ cup pesto",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pesto",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pesto",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

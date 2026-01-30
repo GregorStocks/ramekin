@@ -1,10 +1,8 @@
 {
   "raw": "Harissa spice blend",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Harissa spice blend",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Harissa spice blend",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup halved mini mozzarella balls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "halved mini mozzarella balls",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "halved mini mozzarella balls",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

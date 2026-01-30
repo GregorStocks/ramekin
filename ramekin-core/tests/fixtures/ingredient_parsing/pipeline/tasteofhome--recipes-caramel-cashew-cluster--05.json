@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons heavy whipping cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy whipping cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

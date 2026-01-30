@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons finely chopped laver seaweed (also sold in sheets as nori; optional, see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped laver seaweed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "also sold in sheets as nori; optional, see notes"
-    }
+  "expected": {
+    "item": "finely chopped laver seaweed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "also sold in sheets as nori; optional, see notes"
   }
 }

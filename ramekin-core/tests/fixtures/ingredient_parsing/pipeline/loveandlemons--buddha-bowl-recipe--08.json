@@ -1,15 +1,13 @@
 {
   "raw": "2 cups cooked brown rice or quinoa",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked brown rice or quinoa",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked brown rice or quinoa",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

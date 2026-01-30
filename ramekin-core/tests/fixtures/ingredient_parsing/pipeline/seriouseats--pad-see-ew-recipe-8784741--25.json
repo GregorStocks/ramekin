@@ -1,19 +1,17 @@
 {
   "raw": "10 cloves garlic (50g), smashed and roughly chopped, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic , smashed and roughly chopped",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "clove"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "garlic , smashed and roughly chopped",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "clove"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

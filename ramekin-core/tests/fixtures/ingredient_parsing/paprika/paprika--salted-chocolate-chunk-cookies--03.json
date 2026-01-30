@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons (25 grams) turbinado sugar (aka Sugar in the Raw; you can use more brown or white if you don’t have this, but the subtle crunch it adds is delightful)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turbinado sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": "aka Sugar in the Raw; you can use more brown or white if you don’t have this, but the subtle crunch it adds is delightful"
-    }
+  "expected": {
+    "item": "turbinado sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": "aka Sugar in the Raw; you can use more brown or white if you don’t have this, but the subtle crunch it adds is delightful"
   }
 }

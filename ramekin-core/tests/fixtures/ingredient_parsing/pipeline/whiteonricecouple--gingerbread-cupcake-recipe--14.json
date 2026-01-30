@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup pure Maple Syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure Maple Syrup",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure Maple Syrup",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

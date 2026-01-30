@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (250g) all-purpose flour (spooned &amp;amp; leveled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour (spooned & leveled)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour (spooned & leveled)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

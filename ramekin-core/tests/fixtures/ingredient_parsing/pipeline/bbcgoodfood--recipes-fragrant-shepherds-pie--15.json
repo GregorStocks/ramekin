@@ -1,15 +1,13 @@
 {
   "raw": "1 ¼kg sweet potatoes peeled and cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/4kg sweet potatoes peeled and cut into chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1/4kg sweet potatoes peeled and cut into chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

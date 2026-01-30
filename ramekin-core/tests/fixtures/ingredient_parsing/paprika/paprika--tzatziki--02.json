@@ -1,19 +1,17 @@
 {
   "raw": "1 hothouse, English or seedless cucumber, unpeeled (about 1 pound)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hothouse, English or seedless cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "unpeeled"
-    }
+  "expected": {
+    "item": "hothouse, English or seedless cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "unpeeled"
   }
 }

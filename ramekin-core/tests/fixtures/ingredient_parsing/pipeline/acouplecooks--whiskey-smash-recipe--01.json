@@ -1,23 +1,21 @@
 {
   "raw": "2 ounces (4 tablespoons) whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whiskey",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whiskey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

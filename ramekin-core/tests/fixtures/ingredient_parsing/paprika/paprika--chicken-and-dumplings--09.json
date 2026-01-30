@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup dry sherry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry sherry",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry sherry",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

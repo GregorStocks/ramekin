@@ -1,15 +1,13 @@
 {
   "raw": "4 cups filtered water, for soaking",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "filtered water, for soaking",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "filtered water, for soaking",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

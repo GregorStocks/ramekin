@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces store-bought pizza dough",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "store-bought pizza dough",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "store-bought pizza dough",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

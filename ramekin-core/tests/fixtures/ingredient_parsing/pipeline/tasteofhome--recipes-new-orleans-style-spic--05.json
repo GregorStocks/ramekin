@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons seafood seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seafood seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seafood seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

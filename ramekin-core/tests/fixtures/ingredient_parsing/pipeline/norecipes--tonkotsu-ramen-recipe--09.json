@@ -1,15 +1,13 @@
 {
   "raw": "5 cloves garlic (grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "clove"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "clove"
+      }
+    ],
+    "note": "grated"
   }
 }

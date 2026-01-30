@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch cracked pepper (to season)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cracked pepper (to season)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cracked pepper (to season)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

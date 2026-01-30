@@ -1,15 +1,13 @@
 {
   "raw": "1/2 Tbsp grated orange zest (zest from 1/2 orange)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated orange zest (zest from 1/2 orange)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated orange zest (zest from 1/2 orange)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

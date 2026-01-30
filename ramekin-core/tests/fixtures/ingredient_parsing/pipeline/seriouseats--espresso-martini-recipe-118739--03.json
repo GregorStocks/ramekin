@@ -1,23 +1,21 @@
 {
   "raw": "1 ounce (30 ml) coffee liqueur, such as Kahlua or Mr. Black",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coffee liqueur, such as Kahlua or Mr. Black",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coffee liqueur, such as Kahlua or Mr. Black",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "additives like luster dust or food grade dried flowers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "additives like luster dust or food grade dried flowers",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "additives like luster dust or food grade dried flowers",
+    "measurements": [],
+    "note": null
   }
 }

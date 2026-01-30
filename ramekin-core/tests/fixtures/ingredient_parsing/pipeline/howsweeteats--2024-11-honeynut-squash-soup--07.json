@@ -1,15 +1,13 @@
 {
   "raw": "4 to 5 cups honeynut squash cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honeynut squash cubes",
-      "measurements": [
-        {
-          "amount": "4 to 5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honeynut squash cubes",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

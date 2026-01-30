@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. penne",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "penne",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "penne",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

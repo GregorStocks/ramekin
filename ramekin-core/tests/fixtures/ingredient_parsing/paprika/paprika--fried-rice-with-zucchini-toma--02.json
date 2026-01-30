@@ -1,15 +1,13 @@
 {
   "raw": "1 medium-large sweet onion, diced or 1/2 a large onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-large sweet onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced or 1/2 a large onion"
-    }
+  "expected": {
+    "item": "medium-large sweet onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced or 1/2 a large onion"
   }
 }

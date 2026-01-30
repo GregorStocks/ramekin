@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Kashmiri red chili powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kashmiri red chili powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kashmiri red chili powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

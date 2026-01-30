@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp Green onion for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Green onion for garnish",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Green onion for garnish",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 batch prepared sushi rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "batch prepared sushi rice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "batch prepared sushi rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

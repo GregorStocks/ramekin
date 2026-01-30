@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp fresh tarragon (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh tarragon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh tarragon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped"
   }
 }

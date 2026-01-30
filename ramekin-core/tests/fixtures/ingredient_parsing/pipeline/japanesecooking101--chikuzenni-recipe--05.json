@@ -1,15 +1,13 @@
 {
   "raw": "1  Takenoko (Bamboo Shoot, boiled, cut into pieces 1\" thick 2\" long)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Takenoko (Bamboo Shoot, boiled, cut into pieces 1\" thick 2\" long)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Takenoko (Bamboo Shoot, boiled, cut into pieces 1\" thick 2\" long)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

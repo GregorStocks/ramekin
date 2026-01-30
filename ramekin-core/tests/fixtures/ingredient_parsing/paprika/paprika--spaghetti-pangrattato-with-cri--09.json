@@ -1,15 +1,13 @@
 {
   "raw": "1 glug of olive oil per egg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "glug of olive oil per egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "glug of olive oil per egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

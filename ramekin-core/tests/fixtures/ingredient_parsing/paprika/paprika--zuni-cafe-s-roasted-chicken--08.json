@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons Champagne vinegar or white wine vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Champagne vinegar or white wine vinegar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Champagne vinegar or white wine vinegar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

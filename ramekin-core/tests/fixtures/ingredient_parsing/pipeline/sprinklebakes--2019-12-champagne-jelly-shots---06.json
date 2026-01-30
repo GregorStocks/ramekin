@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons white nonpareils",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white nonpareils",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white nonpareils",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

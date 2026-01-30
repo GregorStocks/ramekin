@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup neutral oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neutral oil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "neutral oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

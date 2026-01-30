@@ -1,19 +1,17 @@
 {
   "raw": "10 oz Reese's Peanut Butter Chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Reese's Peanut Butter Chips",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Reese's Peanut Butter Chips",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

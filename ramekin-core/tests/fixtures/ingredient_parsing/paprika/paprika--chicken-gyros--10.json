@@ -1,19 +1,17 @@
 {
   "raw": "10 boneless, skinless chicken thighs (about 3 pounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken thighs",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless, skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

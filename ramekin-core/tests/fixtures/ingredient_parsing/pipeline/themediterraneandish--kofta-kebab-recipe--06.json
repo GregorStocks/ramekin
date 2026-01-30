@@ -1,15 +1,13 @@
 {
   "raw": "1 slice of bread (toasted until browned and soaked in water until fully tender)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "slice"
-        }
-      ],
-      "note": "toasted until browned and soaked in water until fully tender"
-    }
+  "expected": {
+    "item": "bread",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "slice"
+      }
+    ],
+    "note": "toasted until browned and soaked in water until fully tender"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 pints blackberries (1 1/2 pounds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blackberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pint"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blackberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pint"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

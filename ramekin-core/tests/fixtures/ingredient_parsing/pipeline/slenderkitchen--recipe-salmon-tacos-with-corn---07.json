@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup poblano pepper, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poblano pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "poblano pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

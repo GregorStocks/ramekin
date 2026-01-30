@@ -1,15 +1,13 @@
 {
   "raw": "2 servings cooked Japanese short-grain rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "servings cooked Japanese short-grain rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "servings cooked Japanese short-grain rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

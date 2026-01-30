@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp garlic powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

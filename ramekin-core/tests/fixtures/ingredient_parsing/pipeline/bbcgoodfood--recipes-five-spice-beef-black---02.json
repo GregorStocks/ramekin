@@ -1,19 +1,17 @@
 {
   "raw": "1 large sirloin steak (about 300g/10oz)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sirloin steak",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "300",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sirloin steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "300",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2  bunch Kikuna or Shungiku (edible chrysanthemum leaves)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kikuna or Shungiku (edible chrysanthemum leaves)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kikuna or Shungiku (edible chrysanthemum leaves)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

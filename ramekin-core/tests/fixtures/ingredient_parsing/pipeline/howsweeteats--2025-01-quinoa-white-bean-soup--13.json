@@ -1,19 +1,17 @@
 {
   "raw": "1  parmesan cheese rind, (about 2 inches in size)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parmesan cheese rind",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parmesan cheese rind",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

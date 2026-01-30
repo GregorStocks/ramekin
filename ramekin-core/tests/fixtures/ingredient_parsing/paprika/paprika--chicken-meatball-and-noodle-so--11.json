@@ -1,10 +1,8 @@
 {
   "raw": "INGREDIENT SECTION",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "INGREDIENT SECTION",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "INGREDIENT SECTION",
+    "measurements": [],
+    "note": null
   }
 }

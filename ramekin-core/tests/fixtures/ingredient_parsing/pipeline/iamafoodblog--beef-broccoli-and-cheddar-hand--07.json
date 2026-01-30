@@ -1,15 +1,13 @@
 {
   "raw": "1 cup broccoli, cut into small pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli, cut into small pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli, cut into small pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

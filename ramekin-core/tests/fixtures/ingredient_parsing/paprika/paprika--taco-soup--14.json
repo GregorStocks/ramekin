@@ -1,23 +1,21 @@
 {
   "raw": "1/2 cup crushed tortilla chips (1 ounce; 30g), plus whole chips for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed tortilla chips",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": "plus whole chips for topping"
-    }
+  "expected": {
+    "item": "crushed tortilla chips",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "plus whole chips for topping"
   }
 }

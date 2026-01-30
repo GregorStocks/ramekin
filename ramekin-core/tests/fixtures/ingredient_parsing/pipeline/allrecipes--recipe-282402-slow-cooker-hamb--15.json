@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chopped fresh parsley, or to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "chopped fresh parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

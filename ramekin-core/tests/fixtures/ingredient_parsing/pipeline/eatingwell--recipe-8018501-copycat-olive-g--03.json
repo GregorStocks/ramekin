@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup sliced celery",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced celery",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced celery",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

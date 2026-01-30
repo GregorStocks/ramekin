@@ -1,15 +1,13 @@
 {
   "raw": "jar  roasted pepper drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted pepper drained",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "jar"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted pepper drained",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "jar"
+      }
+    ],
+    "note": null
   }
 }

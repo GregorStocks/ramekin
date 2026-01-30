@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons harissa paste* (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "harissa paste* (see note)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "harissa paste* (see note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

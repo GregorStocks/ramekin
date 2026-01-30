@@ -1,10 +1,8 @@
 {
   "raw": "semi-sweet chocolate, for dipping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-sweet chocolate, for dipping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "semi-sweet chocolate, for dipping",
+    "measurements": [],
+    "note": null
   }
 }

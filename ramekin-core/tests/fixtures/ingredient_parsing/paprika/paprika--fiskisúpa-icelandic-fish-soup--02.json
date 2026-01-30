@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds skinless cod fillets (1 to 1½ inches thick), cut into 2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless cod fillets , cut into 2-inch pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1 to 1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless cod fillets , cut into 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1 to 1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

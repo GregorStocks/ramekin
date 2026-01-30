@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tablespoons fish sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish sauce",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fish sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "3 1/2 pounds (1.6 kg) russet potatoes (about 4 large), peeled and cut into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "russet potatoes",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1.6",
-          "unit": "kg"
-        },
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and cut into 1-inch pieces"
-    }
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1.6",
+        "unit": "kg"
+      },
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and cut into 1-inch pieces"
   }
 }

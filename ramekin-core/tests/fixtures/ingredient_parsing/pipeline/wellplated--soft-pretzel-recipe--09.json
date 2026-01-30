@@ -1,10 +1,8 @@
 {
   "raw": "Pretzel salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pretzel salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pretzel salt",
+    "measurements": [],
+    "note": null
   }
 }

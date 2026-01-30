@@ -1,15 +1,13 @@
 {
   "raw": "1 ⅓ lb boneless, skinless chicken breast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken breast",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless, skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "¼-½ tsp salt (to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1/4-1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1/4-1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

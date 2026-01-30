@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sherry vinegar, red wine vinegar or white wine vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sherry vinegar, red wine vinegar or white wine vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sherry vinegar, red wine vinegar or white wine vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

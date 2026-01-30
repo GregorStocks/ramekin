@@ -1,23 +1,21 @@
 {
   "raw": "1 (28 ounce) can no-salt-added whole peeled or diced tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "no-salt-added whole peeled or diced tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "28",
-          "unit": "oz"
-        },
-        {
-          "amount": "794",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "no-salt-added whole peeled or diced tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": "oz"
+      },
+      {
+        "amount": "794",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

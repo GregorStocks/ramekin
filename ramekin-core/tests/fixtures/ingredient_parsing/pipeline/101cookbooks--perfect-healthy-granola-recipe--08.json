@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup aquafaba*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "aquafaba*",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "aquafaba*",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

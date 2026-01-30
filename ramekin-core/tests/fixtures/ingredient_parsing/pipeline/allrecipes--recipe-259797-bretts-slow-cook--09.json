@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup shredded Cheddar cheese, plus more for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded Cheddar cheese",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for garnish"
-    }
+  "expected": {
+    "item": "shredded Cheddar cheese",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for garnish"
   }
 }

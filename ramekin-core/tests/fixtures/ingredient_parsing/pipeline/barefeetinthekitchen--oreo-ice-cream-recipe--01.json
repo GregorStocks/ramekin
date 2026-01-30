@@ -1,15 +1,13 @@
 {
   "raw": "24-36  Oreos or chocolate sandwich cookies",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oreos or chocolate sandwich cookies",
-      "measurements": [
-        {
-          "amount": "24-36",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Oreos or chocolate sandwich cookies",
+    "measurements": [
+      {
+        "amount": "24-36",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Pure maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pure maple syrup",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pure maple syrup",
+    "measurements": [],
+    "note": null
   }
 }

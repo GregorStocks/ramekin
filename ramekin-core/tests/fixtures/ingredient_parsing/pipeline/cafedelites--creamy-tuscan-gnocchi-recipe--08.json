@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon dried Italian herbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried Italian herbs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried Italian herbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

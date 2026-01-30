@@ -1,15 +1,13 @@
 {
   "raw": "12 slices smoked mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

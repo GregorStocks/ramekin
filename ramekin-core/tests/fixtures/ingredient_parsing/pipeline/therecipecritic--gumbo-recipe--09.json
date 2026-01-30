@@ -1,19 +1,17 @@
 {
   "raw": "2 tablespoons minced garlic (about 6 cloves)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "6",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "6",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

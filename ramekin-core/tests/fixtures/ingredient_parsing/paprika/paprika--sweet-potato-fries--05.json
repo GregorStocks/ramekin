@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp crushed rosemary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

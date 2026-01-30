@@ -1,15 +1,13 @@
 {
   "raw": "1/2 block cream cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "block cream cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "block cream cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

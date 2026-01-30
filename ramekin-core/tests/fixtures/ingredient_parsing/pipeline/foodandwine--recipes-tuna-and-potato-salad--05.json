@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons crème fraîche",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crème fraîche",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crème fraîche",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

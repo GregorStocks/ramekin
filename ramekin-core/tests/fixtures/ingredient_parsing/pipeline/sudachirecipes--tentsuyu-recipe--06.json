@@ -1,10 +1,8 @@
 {
   "raw": "spicy grated daikon radish (momiji oroshi)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spicy grated daikon radish (momiji oroshi)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "spicy grated daikon radish (momiji oroshi)",
+    "measurements": [],
+    "note": null
   }
 }

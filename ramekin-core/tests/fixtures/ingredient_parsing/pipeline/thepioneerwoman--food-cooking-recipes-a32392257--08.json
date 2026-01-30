@@ -1,15 +1,13 @@
 {
   "raw": "6 6-ounce skinless salmon fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6-ounce skinless salmon fillets",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6-ounce skinless salmon fillets",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

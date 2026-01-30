@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fat free chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fat free chicken broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fat free chicken broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

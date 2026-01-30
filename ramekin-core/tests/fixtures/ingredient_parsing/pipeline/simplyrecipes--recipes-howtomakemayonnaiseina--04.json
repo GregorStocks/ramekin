@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon water, if using only an egg yolk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water, if using only an egg yolk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water, if using only an egg yolk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Turmeric Tahini Sauce (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Turmeric Tahini Sauce",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Turmeric Tahini Sauce",
+    "measurements": [],
+    "note": "for serving"
   }
 }

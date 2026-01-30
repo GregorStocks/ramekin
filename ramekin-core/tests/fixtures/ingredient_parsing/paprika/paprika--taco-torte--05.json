@@ -1,15 +1,13 @@
 {
   "raw": "1 fresh chile pepper, chopped small (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chile pepper, chopped small",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "fresh chile pepper, chopped small",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

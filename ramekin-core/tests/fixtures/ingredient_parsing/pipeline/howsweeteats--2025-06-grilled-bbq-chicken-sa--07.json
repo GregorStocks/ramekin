@@ -1,15 +1,13 @@
 {
   "raw": "4 to 6  brioche buns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brioche buns",
-      "measurements": [
-        {
-          "amount": "4 to 6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brioche buns",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp prepared yellow mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared yellow mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared yellow mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

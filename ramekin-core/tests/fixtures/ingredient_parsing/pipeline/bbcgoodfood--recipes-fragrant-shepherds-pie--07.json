@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp hot  chilli powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot  chilli powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot  chilli powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

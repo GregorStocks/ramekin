@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup wheat flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wheat flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wheat flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

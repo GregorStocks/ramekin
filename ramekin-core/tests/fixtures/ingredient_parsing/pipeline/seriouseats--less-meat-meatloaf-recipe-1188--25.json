@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 teaspoons gochujang (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gochujang",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "gochujang",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

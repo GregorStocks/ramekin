@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon ground cinnamon, for sugar topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cinnamon, for sugar topping",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cinnamon, for sugar topping",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

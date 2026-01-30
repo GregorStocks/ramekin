@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded hash browns",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded hash browns",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded hash browns",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

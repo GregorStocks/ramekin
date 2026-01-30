@@ -1,15 +1,13 @@
 {
   "raw": "200g young leaf spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "young leaf spinach",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "young leaf spinach",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

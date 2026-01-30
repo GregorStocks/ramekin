@@ -1,15 +1,13 @@
 {
   "raw": "1.5 pounds chicken bones",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken bones",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken bones",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

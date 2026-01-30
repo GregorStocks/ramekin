@@ -1,10 +1,8 @@
 {
   "raw": "Optional toppings: smashed avocado, sliced cheddar cheese, ketchup, mustard, sliced tomatoes, lettuce, dill pickles, bacon, sautéed onions, etc.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional toppings: smashed avocado, sliced cheddar cheese, ketchup, mustard, sliced tomatoes, lettuce, dill pickles, bacon, sautéed onions, etc.",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Optional toppings: smashed avocado, sliced cheddar cheese, ketchup, mustard, sliced tomatoes, lettuce, dill pickles, bacon, sautéed onions, etc.",
+    "measurements": [],
+    "note": null
   }
 }

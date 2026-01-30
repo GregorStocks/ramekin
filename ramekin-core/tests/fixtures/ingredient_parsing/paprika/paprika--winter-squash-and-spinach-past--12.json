@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces (140 grams) baby spinach, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "baby spinach",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

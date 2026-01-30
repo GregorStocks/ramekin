@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces Irish whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Irish whiskey",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Irish whiskey",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

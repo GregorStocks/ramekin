@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 pounds (3 large) yellow onions, diced into just shy of 1/2″ pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onions",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "diced into just shy of 1/2″ pieces"
-    }
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "diced into just shy of 1/2″ pieces"
   }
 }

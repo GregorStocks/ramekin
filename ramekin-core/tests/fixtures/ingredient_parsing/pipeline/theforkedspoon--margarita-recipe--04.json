@@ -1,15 +1,13 @@
 {
   "raw": "1/2 fluid ounce Agave syrup (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Agave syrup",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Agave syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "fl oz"
+      }
+    ],
+    "note": "optional"
   }
 }

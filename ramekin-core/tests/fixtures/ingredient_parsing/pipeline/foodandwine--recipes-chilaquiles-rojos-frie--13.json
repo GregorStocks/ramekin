@@ -1,15 +1,13 @@
 {
   "raw": "12 cups thick corn tortilla chips (such as Montes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick corn tortilla chips (such as Montes)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick corn tortilla chips (such as Montes)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "3/4 cup (170 grams) milk, whole or lowfat, or buttermilk, well-shaken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk, whole or lowfat, or buttermilk, well-shaken",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk, whole or lowfat, or buttermilk, well-shaken",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

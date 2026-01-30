@@ -1,10 +1,8 @@
 {
   "raw": "Leaves from 3 to 4 parsley sprigs, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Leaves from 3 to 4 parsley sprigs",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Leaves from 3 to 4 parsley sprigs",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

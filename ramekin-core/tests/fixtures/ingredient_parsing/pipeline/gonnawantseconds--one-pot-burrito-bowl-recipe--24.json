@@ -1,15 +1,13 @@
 {
   "raw": "medium tomatoes, (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "medium"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
   }
 }

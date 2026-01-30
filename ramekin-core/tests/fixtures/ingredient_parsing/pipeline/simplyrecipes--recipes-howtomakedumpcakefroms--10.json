@@ -1,10 +1,8 @@
 {
   "raw": "Vanilla ice cream, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vanilla ice cream, to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Vanilla ice cream, to serve",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 c. chopped tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

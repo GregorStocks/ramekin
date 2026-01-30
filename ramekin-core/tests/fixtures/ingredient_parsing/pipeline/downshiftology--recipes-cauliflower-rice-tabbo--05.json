@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh parsley (roughly chopped (approx 2 large bunches))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh parsley",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped (approx 2 large bunches"
-    }
+  "expected": {
+    "item": "fresh parsley",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped (approx 2 large bunches"
   }
 }

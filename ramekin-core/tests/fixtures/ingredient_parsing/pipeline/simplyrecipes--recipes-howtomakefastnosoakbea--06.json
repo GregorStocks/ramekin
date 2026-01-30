@@ -1,15 +1,13 @@
 {
   "raw": "1 bay leaf, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bay leaf",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "bay leaf",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

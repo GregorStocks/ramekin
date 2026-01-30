@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons room temperature butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "room temperature butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "room temperature butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

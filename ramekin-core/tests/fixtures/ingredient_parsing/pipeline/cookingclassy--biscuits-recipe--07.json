@@ -1,15 +1,13 @@
 {
   "raw": "1 cup buttermilk, (cold)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "cold"
-    }
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold"
   }
 }

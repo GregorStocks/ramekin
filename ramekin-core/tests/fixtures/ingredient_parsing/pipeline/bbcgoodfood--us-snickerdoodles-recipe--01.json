@@ -1,15 +1,13 @@
 {
   "raw": "1⅔ sticks unsalted butter softened",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter softened",
-      "measurements": [
-        {
-          "amount": "1 2/3",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter softened",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "stick"
+      }
+    ],
+    "note": null
   }
 }

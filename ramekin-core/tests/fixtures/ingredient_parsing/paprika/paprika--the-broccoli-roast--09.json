@@ -1,10 +1,8 @@
 {
   "raw": "Chipotle powder or ground red pepper (cayenne) to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chipotle powder or ground red pepper (cayenne) to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chipotle powder or ground red pepper (cayenne) to taste",
+    "measurements": [],
+    "note": null
   }
 }

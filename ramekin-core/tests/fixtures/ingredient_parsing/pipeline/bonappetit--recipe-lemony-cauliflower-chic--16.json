@@ -1,10 +1,8 @@
 {
   "raw": "Freshly grated Pecorino Romano, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Freshly grated Pecorino Romano",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Freshly grated Pecorino Romano",
+    "measurements": [],
+    "note": "to taste"
   }
 }

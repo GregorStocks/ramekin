@@ -1,15 +1,13 @@
 {
   "raw": "1 cup 6 oz. ruby chocolate callets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6 oz. ruby chocolate callets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6 oz. ruby chocolate callets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

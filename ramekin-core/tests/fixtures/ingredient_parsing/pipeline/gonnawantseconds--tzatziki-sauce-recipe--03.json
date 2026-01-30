@@ -1,15 +1,13 @@
 {
   "raw": "4 large cloves fresh garlic",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves fresh garlic",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cloves fresh garlic",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

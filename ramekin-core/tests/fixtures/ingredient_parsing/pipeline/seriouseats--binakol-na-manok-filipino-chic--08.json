@@ -1,19 +1,17 @@
 {
   "raw": "4 cups (0.9L) homemade or store-bought chicken stock&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade or store-bought chicken stock",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "0.9",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade or store-bought chicken stock",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "0.9",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

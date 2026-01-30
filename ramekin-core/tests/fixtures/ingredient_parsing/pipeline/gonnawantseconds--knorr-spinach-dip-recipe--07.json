@@ -1,15 +1,13 @@
 {
   "raw": "1  round loaf of bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "round loaf of bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "round loaf of bread",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

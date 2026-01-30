@@ -1,15 +1,13 @@
 {
   "raw": "2-3 large handfuls fresh spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handfuls fresh spinach",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "handfuls fresh spinach",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

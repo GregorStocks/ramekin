@@ -1,19 +1,17 @@
 {
   "raw": "2 cups  bean sprouts ((480ml) , about)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bean sprouts , about)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "480",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bean sprouts , about)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "480",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

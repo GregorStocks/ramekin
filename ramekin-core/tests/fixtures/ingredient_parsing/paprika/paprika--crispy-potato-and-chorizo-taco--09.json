@@ -1,10 +1,8 @@
 {
   "raw": "Homemade or store-bought salsa verde, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Homemade or store-bought salsa verde",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Homemade or store-bought salsa verde",
+    "measurements": [],
+    "note": "for serving"
   }
 }

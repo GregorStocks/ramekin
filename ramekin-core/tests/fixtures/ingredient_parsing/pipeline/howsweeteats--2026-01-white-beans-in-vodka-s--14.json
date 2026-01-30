@@ -1,15 +1,13 @@
 {
   "raw": "handful of fresh basil for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil for topping",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh basil for topping",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoons sunflower, safflower, or another high-heat friendly oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sunflower, safflower, or another high-heat friendly oil",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sunflower, safflower, or another high-heat friendly oil",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

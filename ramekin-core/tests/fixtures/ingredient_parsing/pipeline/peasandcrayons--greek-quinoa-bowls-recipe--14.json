@@ -1,10 +1,8 @@
 {
   "raw": "Sliced or chopped avocado",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sliced or chopped avocado",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sliced or chopped avocado",
+    "measurements": [],
+    "note": null
   }
 }

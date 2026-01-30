@@ -1,15 +1,13 @@
 {
   "raw": "2 ½ teaspoons cinnamon (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "cinnamon",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Butter or nonstick cooking spray (for the pans)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Butter or nonstick cooking spray (for the pans)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Butter or nonstick cooking spray (for the pans)",
+    "measurements": [],
+    "note": null
   }
 }

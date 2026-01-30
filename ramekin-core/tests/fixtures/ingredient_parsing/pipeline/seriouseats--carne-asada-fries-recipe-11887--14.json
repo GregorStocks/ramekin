@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces grated full-fat, low-moisture mozzarella or other melting cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated full-fat, low-moisture mozzarella or other melting cheese",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated full-fat, low-moisture mozzarella or other melting cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

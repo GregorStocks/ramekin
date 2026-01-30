@@ -1,10 +1,8 @@
 {
   "raw": "Chopped parsley and cooked egg noodles, mashed potatoes, steamed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped parsley and cooked egg noodles, mashed potatoes, steamed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped parsley and cooked egg noodles, mashed potatoes, steamed",
+    "measurements": [],
+    "note": null
   }
 }

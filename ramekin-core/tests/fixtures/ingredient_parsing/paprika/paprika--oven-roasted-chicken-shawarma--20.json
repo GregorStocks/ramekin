@@ -1,10 +1,8 @@
 {
   "raw": "Feta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Feta",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Feta",
+    "measurements": [],
+    "note": null
   }
 }

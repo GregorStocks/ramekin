@@ -1,15 +1,13 @@
 {
   "raw": "Pinches of flaky salt to finish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky salt to finish",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "flaky salt to finish",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

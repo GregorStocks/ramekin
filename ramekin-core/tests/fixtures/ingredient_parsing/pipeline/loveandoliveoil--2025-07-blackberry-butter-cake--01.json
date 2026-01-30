@@ -1,19 +1,17 @@
 {
   "raw": "7 ounces blackberries (washed and dried)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blackberries",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
-        },
-        {
-          "amount": "198",
-          "unit": "g"
-        }
-      ],
-      "note": "washed and dried"
-    }
+  "expected": {
+    "item": "blackberries",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      },
+      {
+        "amount": "198",
+        "unit": "g"
+      }
+    ],
+    "note": "washed and dried"
   }
 }

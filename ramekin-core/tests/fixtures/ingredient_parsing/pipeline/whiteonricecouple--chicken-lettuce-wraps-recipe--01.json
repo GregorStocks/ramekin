@@ -1,19 +1,17 @@
 {
   "raw": "2 Tablespoons grapeseed oil ((30m) or other cooking oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapeseed oil or other cooking oil)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapeseed oil or other cooking oil)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

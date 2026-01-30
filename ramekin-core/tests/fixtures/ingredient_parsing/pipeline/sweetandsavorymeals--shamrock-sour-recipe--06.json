@@ -1,15 +1,13 @@
 {
   "raw": "1  tiny drop of green food coloring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tiny drop of green food coloring",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tiny drop of green food coloring",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

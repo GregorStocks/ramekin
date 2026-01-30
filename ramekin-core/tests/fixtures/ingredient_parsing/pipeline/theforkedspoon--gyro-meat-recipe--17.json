@@ -1,15 +1,13 @@
 {
   "raw": "2 ripe tomatoes (quartered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "ripe tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "quartered"
   }
 }

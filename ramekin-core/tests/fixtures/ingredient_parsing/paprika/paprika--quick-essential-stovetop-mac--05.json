@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (125 ml) low-fat or whole milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat or whole milk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-fat or whole milk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "125",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

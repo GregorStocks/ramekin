@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp vegetable or  sunflower oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable or  sunflower oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable or  sunflower oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

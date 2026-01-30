@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces Chinese bacon ( lap yuk ), diced (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chinese bacon ( lap yuk",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": "diced (see note)"
-    }
+  "expected": {
+    "item": "Chinese bacon ( lap yuk",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": "diced (see note)"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups 480 ml water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "480 ml water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "480 ml water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

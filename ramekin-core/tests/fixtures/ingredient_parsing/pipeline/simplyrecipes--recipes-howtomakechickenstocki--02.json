@@ -1,15 +1,13 @@
 {
   "raw": "1 onion, halved or quartered, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion, halved or quartered",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "onion, halved or quartered",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1/2 tablespoon (4.6 grams) malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "4.6",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "4.6",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

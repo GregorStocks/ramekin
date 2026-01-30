@@ -1,15 +1,13 @@
 {
   "raw": "100 g mushroom of your choice (I used shimeji)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushroom of your choice (I used shimeji)",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mushroom of your choice (I used shimeji)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

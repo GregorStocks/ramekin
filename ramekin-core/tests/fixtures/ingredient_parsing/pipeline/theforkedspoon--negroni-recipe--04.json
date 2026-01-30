@@ -1,10 +1,8 @@
 {
   "raw": "orange peel (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange peel (to garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "orange peel (to garnish)",
+    "measurements": [],
+    "note": null
   }
 }

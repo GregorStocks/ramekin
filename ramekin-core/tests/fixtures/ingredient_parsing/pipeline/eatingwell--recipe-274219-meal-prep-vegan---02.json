@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups cooked quinoa , cooled to room temperature (see Associated Recipes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked quinoa",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cooled to room temperature (see Associated Recipes)"
-    }
+  "expected": {
+    "item": "cooked quinoa",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "cooled to room temperature (see Associated Recipes)"
   }
 }

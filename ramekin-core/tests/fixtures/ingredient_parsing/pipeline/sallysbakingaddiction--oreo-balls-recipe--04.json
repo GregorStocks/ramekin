@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon vegetable oil or coconut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil or coconut oil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil or coconut oil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

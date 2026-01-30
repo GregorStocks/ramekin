@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup blanched almonds (sliced or slivered)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blanched almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced or slivered"
-    }
+  "expected": {
+    "item": "blanched almonds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced or slivered"
   }
 }

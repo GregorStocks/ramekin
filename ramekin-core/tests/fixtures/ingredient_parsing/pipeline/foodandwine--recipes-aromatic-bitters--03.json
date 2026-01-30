@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon coriander seeds, toasted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "coriander seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "toasted"
   }
 }

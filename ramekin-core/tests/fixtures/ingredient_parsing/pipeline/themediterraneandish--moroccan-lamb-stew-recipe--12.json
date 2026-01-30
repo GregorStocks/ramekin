@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 tsp ras el hanout Moroccan spice blend (find it here)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ras el hanout Moroccan spice blend (find it here)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ras el hanout Moroccan spice blend (find it here)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

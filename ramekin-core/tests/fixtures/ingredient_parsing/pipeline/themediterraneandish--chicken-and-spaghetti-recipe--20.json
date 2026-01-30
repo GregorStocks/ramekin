@@ -1,15 +1,13 @@
 {
   "raw": "20 large basil leaves, roughly torn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basil leaves, roughly torn",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basil leaves, roughly torn",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cup very warm water (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "very warm water",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "very warm water",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

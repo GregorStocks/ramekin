@@ -1,15 +1,13 @@
 {
   "raw": "30 grams garlic ((~ 5 large cloves, peeled))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": "~ 5 large cloves, peeled"
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "~ 5 large cloves, peeled"
   }
 }

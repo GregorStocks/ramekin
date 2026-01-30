@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup uncooked sushi rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked sushi rice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked sushi rice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "¼ cup (1 small)  onion ( fine chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "fine chopped"
-    }
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "fine chopped"
   }
 }

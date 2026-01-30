@@ -1,15 +1,13 @@
 {
   "raw": "2 ripe mangoes, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe mangoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "ripe mangoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "cubed"
   }
 }

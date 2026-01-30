@@ -1,15 +1,13 @@
 {
   "raw": "1–2 tablespoons extra-virgin olive oil (for cooking the patties)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra-virgin olive oil (for cooking the patties)",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "extra-virgin olive oil (for cooking the patties)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

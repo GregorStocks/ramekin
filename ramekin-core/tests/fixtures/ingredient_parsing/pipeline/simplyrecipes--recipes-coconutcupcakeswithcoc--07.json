@@ -1,15 +1,13 @@
 {
   "raw": "1 cup of canned coconut milk (full fat is best)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned coconut milk (full fat is best)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned coconut milk (full fat is best)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

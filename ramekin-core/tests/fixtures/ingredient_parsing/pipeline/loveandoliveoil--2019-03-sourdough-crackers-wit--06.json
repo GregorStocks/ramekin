@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon dried herbs de Provence",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried herbs de Provence",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried herbs de Provence",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

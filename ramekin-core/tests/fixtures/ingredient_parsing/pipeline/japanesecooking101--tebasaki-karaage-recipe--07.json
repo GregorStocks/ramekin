@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp grated ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

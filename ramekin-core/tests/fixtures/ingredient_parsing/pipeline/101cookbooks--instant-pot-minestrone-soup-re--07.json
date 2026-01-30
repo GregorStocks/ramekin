@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups dried cannellini beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried cannellini beans",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried cannellini beans",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 slices bread (cut up into cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread (cut up into cubes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread (cut up into cubes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

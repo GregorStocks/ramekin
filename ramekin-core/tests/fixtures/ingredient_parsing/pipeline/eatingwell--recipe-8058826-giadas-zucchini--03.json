@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup freshly grated Parmigiano Reggiano cheese, plus more to garnish (see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated Parmigiano Reggiano cheese",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more to garnish (see Note)"
-    }
+  "expected": {
+    "item": "freshly grated Parmigiano Reggiano cheese",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more to garnish (see Note)"
   }
 }

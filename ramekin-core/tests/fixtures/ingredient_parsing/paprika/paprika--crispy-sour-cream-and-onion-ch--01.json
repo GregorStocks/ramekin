@@ -1,15 +1,13 @@
 {
   "raw": "4 boneless, skinless chicken breasts, halved horizontally (see Tip) and pounded 1/8-inch thick, or use 4 chicken cutlets (don’t split or pound)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken breasts, halved horizontally (see Tip) and pounded 1/8-inch thick, or use 4 chicken cutlets (don’t split or pound)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless, skinless chicken breasts, halved horizontally (see Tip) and pounded 1/8-inch thick, or use 4 chicken cutlets (don’t split or pound)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

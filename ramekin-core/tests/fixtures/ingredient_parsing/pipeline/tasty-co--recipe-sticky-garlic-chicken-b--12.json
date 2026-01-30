@@ -1,10 +1,8 @@
 {
   "raw": "spring onion, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spring onion",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "spring onion",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

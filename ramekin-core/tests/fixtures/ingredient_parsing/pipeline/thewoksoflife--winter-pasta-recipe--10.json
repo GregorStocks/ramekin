@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup half and half or heavy cream ((120 ml))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "half and half or heavy cream",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "half and half or heavy cream",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

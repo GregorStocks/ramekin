@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon sugar or agave nectar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar or agave nectar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar or agave nectar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

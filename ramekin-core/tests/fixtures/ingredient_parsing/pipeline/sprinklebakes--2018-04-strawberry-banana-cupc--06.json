@@ -1,19 +1,17 @@
 {
   "raw": "1  ripe banana (109g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe banana",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "109",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe banana",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "109",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

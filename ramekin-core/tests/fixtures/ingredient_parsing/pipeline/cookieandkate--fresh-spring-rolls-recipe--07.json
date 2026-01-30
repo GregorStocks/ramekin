@@ -1,15 +1,13 @@
 {
   "raw": "2 Persian (mini) cucumbers or 1 small cucumber, thinly sliced or sliced into strips with a julienne peeler",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Persian (mini) cucumbers or 1 small cucumber",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced or sliced into strips with a julienne peeler"
-    }
+  "expected": {
+    "item": "Persian (mini) cucumbers or 1 small cucumber",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced or sliced into strips with a julienne peeler"
   }
 }

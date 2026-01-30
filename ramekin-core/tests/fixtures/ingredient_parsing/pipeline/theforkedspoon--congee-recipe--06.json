@@ -1,10 +1,8 @@
 {
   "raw": "Fresh ginger (julienned, to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fresh ginger",
-      "measurements": [],
-      "note": "julienned, to garnish"
-    }
+  "expected": {
+    "item": "Fresh ginger",
+    "measurements": [],
+    "note": "julienned, to garnish"
   }
 }

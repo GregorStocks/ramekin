@@ -1,19 +1,17 @@
 {
   "raw": "10 &amp;#8211; 14 ounces artichoke hearts, see notes above, I love the grilled artichoke hearts from Trader Joe&amp;#8217;s",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "artichoke hearts, see notes above, I love the grilled artichoke hearts from Trader Joe’s",
-      "measurements": [
-        {
-          "amount": "10-14",
-          "unit": "oz"
-        },
-        {
-          "amount": "283-397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "artichoke hearts, see notes above, I love the grilled artichoke hearts from Trader Joe’s",
+    "measurements": [
+      {
+        "amount": "10-14",
+        "unit": "oz"
+      },
+      {
+        "amount": "283-397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

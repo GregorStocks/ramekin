@@ -1,15 +1,13 @@
 {
   "raw": "3 cups uncooked lasagna noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked lasagna noodles",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked lasagna noodles",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

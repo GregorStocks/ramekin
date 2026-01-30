@@ -1,15 +1,13 @@
 {
   "raw": "6 grams Thai basil (finely minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai basil",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "g"
-        }
-      ],
-      "note": "finely minced"
-    }
+  "expected": {
+    "item": "Thai basil",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "g"
+      }
+    ],
+    "note": "finely minced"
   }
 }

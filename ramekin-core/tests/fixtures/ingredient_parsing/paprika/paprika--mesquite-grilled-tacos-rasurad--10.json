@@ -1,15 +1,13 @@
 {
   "raw": "7 jalapeño chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño chiles",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeño chiles",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

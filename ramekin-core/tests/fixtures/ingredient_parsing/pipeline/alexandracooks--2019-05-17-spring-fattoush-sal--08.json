@@ -1,15 +1,13 @@
 {
   "raw": "2 rounds pita, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rounds pita, see notes above",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rounds pita, see notes above",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

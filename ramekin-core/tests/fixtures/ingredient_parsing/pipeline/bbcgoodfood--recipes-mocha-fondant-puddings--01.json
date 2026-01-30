@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp top-quality instant coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "top-quality instant coffee",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "top-quality instant coffee",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4.5 cups all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "4.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "4.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

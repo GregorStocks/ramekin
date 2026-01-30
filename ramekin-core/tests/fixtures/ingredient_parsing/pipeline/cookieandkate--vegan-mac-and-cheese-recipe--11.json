@@ -1,15 +1,13 @@
 {
   "raw": "Small pinch of red pepper flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pinch of red pepper flakes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pinch of red pepper flakes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

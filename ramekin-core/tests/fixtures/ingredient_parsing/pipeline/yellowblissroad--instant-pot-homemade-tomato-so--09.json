@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons low sodium soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low sodium soy sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low sodium soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

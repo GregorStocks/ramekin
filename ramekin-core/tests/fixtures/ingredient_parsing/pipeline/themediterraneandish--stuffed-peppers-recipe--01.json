@@ -1,10 +1,8 @@
 {
   "raw": "Greek extra virgin olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek extra virgin olive oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Greek extra virgin olive oil",
+    "measurements": [],
+    "note": null
   }
 }

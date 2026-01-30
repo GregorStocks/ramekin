@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chopped quassia bark chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped quassia bark chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped quassia bark chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

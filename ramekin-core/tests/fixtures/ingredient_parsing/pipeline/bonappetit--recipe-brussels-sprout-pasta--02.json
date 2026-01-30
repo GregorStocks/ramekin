@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. mezze rigatoni or other medium pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mezze rigatoni or other medium pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mezze rigatoni or other medium pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

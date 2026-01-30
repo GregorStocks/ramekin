@@ -1,19 +1,17 @@
 {
   "raw": "4 oz. Smirnoff vodka",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Smirnoff vodka",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Smirnoff vodka",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

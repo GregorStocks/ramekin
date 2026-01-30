@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. fresh strawberries (washed and patted dry with paper towels)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "washed and patted dry with paper towels"
-    }
+  "expected": {
+    "item": "fresh strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "washed and patted dry with paper towels"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped fresh cilantro, plus more for garnishing",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh cilantro",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for garnishing"
-    }
+  "expected": {
+    "item": "chopped fresh cilantro",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for garnishing"
   }
 }

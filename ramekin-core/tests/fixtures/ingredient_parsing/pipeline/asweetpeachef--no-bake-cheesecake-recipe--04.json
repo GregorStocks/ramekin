@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups raw cashews",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw cashews",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw cashews",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

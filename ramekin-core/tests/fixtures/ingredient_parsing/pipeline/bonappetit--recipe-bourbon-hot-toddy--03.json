@@ -1,19 +1,17 @@
 {
   "raw": "2 (3\"-long) lemon twists",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon twists",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon twists",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

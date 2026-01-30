@@ -1,15 +1,13 @@
 {
   "raw": "6 cups watermelon (cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "watermelon",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "watermelon",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": "cubed"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "10 ounces enchilada sauce (1 can, divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "enchilada sauce",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "1 can, divided"
-    }
+  "expected": {
+    "item": "enchilada sauce",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "1 can, divided"
   }
 }

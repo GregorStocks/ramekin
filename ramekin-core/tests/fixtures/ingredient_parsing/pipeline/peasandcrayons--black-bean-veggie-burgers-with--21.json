@@ -1,15 +1,13 @@
 {
   "raw": "1/2 tsp adobo sauce (extra to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "adobo sauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "extra to taste"
-    }
+  "expected": {
+    "item": "adobo sauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "extra to taste"
   }
 }

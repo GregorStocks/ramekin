@@ -1,19 +1,17 @@
 {
   "raw": "2 (about 3kg) oxtail jointed and cut into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oxtail jointed and cut into pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": "kg"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oxtail jointed and cut into pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": "kg"
+      }
+    ],
+    "note": null
   }
 }

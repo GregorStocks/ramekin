@@ -1,15 +1,13 @@
 {
   "raw": "1-2 teaspoons dried tarragon (or 1-2 tablespoons fresh chopped tarragon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried tarragon",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1-2 tablespoons fresh chopped tarragon"
-    }
+  "expected": {
+    "item": "dried tarragon",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 1-2 tablespoons fresh chopped tarragon"
   }
 }

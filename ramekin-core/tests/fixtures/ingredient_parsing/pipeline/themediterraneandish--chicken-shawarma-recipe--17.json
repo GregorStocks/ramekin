@@ -1,10 +1,8 @@
 {
   "raw": "Pickles or kalmata olives (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pickles or kalmata olives",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Pickles or kalmata olives",
+    "measurements": [],
+    "note": "optional"
   }
 }

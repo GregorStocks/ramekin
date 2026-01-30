@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon (15 ml) neutral oil, such as vegetable, plus more as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neutral oil, such as vegetable",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus more as needed"
-    }
+  "expected": {
+    "item": "neutral oil, such as vegetable",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus more as needed"
   }
 }

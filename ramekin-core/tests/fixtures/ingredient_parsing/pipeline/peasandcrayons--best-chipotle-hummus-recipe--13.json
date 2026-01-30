@@ -1,10 +1,8 @@
 {
   "raw": "hot honey for sweetness and spice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot honey for sweetness and spice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "hot honey for sweetness and spice",
+    "measurements": [],
+    "note": null
   }
 }

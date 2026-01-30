@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeño pepper (or serrano (more heat))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño pepper (or serrano (more heat)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeño pepper (or serrano (more heat)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

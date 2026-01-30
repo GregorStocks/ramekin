@@ -1,10 +1,8 @@
 {
   "raw": "Naan bread (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Naan bread",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Naan bread",
+    "measurements": [],
+    "note": "optional"
   }
 }

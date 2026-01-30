@@ -1,15 +1,13 @@
 {
   "raw": "2  celery sticks, (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery sticks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "celery sticks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

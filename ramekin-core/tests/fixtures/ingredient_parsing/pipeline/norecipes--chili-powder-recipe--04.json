@@ -1,19 +1,17 @@
 {
   "raw": "1 grams coriander seeds ((~1/2 teaspoon))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coriander seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

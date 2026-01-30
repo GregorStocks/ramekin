@@ -1,15 +1,13 @@
 {
   "raw": "1 pound cauliflower, cut into 1-2-inch florets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower, cut into 1-2-inch florets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower, cut into 1-2-inch florets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

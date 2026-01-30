@@ -1,15 +1,13 @@
 {
   "raw": "½ to 1 tablespoon garam masala ((or biryani masala) (Refer notes))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garam masala (or biryani masala) (Refer notes)",
-      "measurements": [
-        {
-          "amount": "1/2 to 1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garam masala (or biryani masala) (Refer notes)",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

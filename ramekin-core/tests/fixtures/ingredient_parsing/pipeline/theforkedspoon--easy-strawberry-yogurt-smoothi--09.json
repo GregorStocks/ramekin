@@ -1,10 +1,8 @@
 {
   "raw": "dried fruits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried fruits",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "dried fruits",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup buttermilk (or make your own)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttermilk (or make your own)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "buttermilk (or make your own)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

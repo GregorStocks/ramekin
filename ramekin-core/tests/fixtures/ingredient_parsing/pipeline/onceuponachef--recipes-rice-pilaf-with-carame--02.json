@@ -1,15 +1,13 @@
 {
   "raw": "3  medium onions: 2 thinly sliced into half-moons; 1 finely diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions: 2 thinly sliced into half-moons; 1 finely diced",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onions: 2 thinly sliced into half-moons; 1 finely diced",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

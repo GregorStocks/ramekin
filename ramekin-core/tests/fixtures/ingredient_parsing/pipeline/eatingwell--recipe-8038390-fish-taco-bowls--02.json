@@ -1,15 +1,13 @@
 {
   "raw": "1 small jalapeño pepper, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "jalapeño pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

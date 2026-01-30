@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons neural flavored oil, such as grape seed or canola",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "neural flavored oil, such as grape seed or canola",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "neural flavored oil, such as grape seed or canola",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

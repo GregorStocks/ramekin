@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon citric acid (or use 2 teaspoons lemon juice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "citric acid (or use 2 teaspoons lemon juice)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "citric acid (or use 2 teaspoons lemon juice)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

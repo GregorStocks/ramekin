@@ -1,15 +1,13 @@
 {
   "raw": "5 strips bacon (cooked and crumbled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strips bacon",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "cooked and crumbled"
-    }
+  "expected": {
+    "item": "strips bacon",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "cooked and crumbled"
   }
 }

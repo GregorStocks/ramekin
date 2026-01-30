@@ -1,15 +1,13 @@
 {
   "raw": "1 T olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "T olive oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "T olive oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

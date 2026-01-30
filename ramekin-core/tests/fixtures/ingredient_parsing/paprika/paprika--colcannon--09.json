@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon freshly ground black pepper, plus more for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly ground black pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more for garnish"
-    }
+  "expected": {
+    "item": "freshly ground black pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for garnish"
   }
 }

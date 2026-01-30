@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup packed chopped celery leaves ((or additional parsley leaves))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed chopped celery leaves (or additional parsley leaves)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed chopped celery leaves (or additional parsley leaves)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

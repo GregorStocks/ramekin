@@ -1,15 +1,13 @@
 {
   "raw": "50g ground almond",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground almond",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground almond",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  medium delicata squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "delicata squash",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "delicata squash",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

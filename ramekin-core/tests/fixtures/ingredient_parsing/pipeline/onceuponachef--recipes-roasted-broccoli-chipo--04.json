@@ -1,15 +1,13 @@
 {
   "raw": "2 chipotle peppers in adobo sauce, minced (use only 1 if you don't want the dish to be too spicy)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chipotle peppers in adobo sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "minced (use only 1 if you don't want the dish to be too spicy)"
-    }
+  "expected": {
+    "item": "chipotle peppers in adobo sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "minced (use only 1 if you don't want the dish to be too spicy)"
   }
 }

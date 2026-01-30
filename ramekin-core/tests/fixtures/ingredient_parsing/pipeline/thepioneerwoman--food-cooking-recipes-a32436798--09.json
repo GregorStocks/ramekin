@@ -1,15 +1,13 @@
 {
   "raw": "6 soft hoagie rolls, split",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soft hoagie rolls, split",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soft hoagie rolls, split",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

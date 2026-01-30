@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons finely grated orange zest plus 1 cup fresh orange juice, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely grated orange zest",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus 1 cup fresh orange juice, divided"
-    }
+  "expected": {
+    "item": "finely grated orange zest",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus 1 cup fresh orange juice, divided"
   }
 }

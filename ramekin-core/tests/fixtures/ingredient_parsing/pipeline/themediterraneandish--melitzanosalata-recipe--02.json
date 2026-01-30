@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2  large garlic cloves (minced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "large"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "large"
+      }
+    ],
+    "note": "minced"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 stick unsalted butter (4 ounces; 113g), cut into 1/2-inch pieces (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter , cut into 1/2-inch pieces (see notes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "stick"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted butter , cut into 1/2-inch pieces (see notes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

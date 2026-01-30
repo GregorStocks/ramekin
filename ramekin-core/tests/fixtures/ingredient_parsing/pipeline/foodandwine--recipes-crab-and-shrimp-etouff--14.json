@@ -1,10 +1,8 @@
 {
   "raw": "Hot cooked long-grain rice, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot cooked long-grain rice",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Hot cooked long-grain rice",
+    "measurements": [],
+    "note": "for serving"
   }
 }

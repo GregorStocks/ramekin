@@ -1,15 +1,13 @@
 {
   "raw": "2 fresh bay leaves or 1 dry bay leaf",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh bay leaves or 1 dry bay leaf",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh bay leaves or 1 dry bay leaf",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup popcorn kernels (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "popcorn kernels (see note)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "popcorn kernels (see note)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

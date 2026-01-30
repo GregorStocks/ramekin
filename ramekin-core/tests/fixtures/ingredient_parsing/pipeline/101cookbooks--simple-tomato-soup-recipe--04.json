@@ -1,15 +1,13 @@
 {
   "raw": "3 teaspoons curry powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curry powder",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "curry powder",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

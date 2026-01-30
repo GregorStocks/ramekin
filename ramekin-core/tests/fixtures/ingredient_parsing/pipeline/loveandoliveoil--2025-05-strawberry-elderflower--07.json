@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon vanilla bean paste (or the seeds of 1/2 a vanilla bean)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla bean paste (or the seeds of 1/2 a vanilla bean)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla bean paste (or the seeds of 1/2 a vanilla bean)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

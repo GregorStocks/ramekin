@@ -1,15 +1,13 @@
 {
   "raw": "¾ cup unsalted creamy almond butter ((see note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted creamy almond butter (see note)",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted creamy almond butter (see note)",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

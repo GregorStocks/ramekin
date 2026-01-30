@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 cups hot sauce (like Frank’s Hot Sauce)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot sauce (like Frank’s Hot Sauce)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot sauce (like Frank’s Hot Sauce)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp. (or more) gochugaru (coarse Korean red pepper powder) or",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gochugaru (coarse Korean red pepper powder) or",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or more"
-    }
+  "expected": {
+    "item": "gochugaru (coarse Korean red pepper powder) or",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or more"
   }
 }

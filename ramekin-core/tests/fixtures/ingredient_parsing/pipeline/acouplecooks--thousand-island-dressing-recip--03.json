@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon minced jarred red pepper (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced jarred red pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "minced jarred red pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

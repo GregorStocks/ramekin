@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon instant coffee granules",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant coffee granules",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant coffee granules",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

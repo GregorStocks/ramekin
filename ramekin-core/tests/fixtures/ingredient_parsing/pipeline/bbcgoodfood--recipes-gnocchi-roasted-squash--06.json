@@ -1,15 +1,13 @@
 {
   "raw": "100g vegetarian goat's cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetarian goat's cheese",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetarian goat's cheese",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "220g tub ricotta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tub ricotta",
-      "measurements": [
-        {
-          "amount": "220",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tub ricotta",
+    "measurements": [
+      {
+        "amount": "220",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

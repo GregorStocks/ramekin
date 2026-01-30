@@ -1,15 +1,13 @@
 {
   "raw": "5 tbsp all-purpose flour (for batter)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour (for batter)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour (for batter)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

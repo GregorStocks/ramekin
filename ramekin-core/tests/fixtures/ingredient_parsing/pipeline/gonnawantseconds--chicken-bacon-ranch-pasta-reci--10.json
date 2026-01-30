@@ -1,15 +1,13 @@
 {
   "raw": "3-4 cups cooked chicken (shredded or chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked chicken",
-      "measurements": [
-        {
-          "amount": "3-4",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded or chopped"
-    }
+  "expected": {
+    "item": "cooked chicken",
+    "measurements": [
+      {
+        "amount": "3-4",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded or chopped"
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "⅓ cup (80 ml) extra-virgin olive oil, plus 1 tablespoon (15 ml) for greasing pan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra-virgin olive oil",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "80",
-          "unit": "ml"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus 1 tablespoon for greasing pan"
-    }
+  "expected": {
+    "item": "extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "80",
+        "unit": "ml"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus 1 tablespoon for greasing pan"
   }
 }

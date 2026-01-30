@@ -1,10 +1,8 @@
 {
   "raw": "grated Cheddar or Monterey Jack to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated Cheddar or Monterey Jack to taste",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "grated Cheddar or Monterey Jack to taste",
+    "measurements": [],
+    "note": null
   }
 }

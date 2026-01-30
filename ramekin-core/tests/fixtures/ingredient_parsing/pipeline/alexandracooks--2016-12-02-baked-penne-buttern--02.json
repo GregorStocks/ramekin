@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;small bundle sage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bundle sage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bundle sage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

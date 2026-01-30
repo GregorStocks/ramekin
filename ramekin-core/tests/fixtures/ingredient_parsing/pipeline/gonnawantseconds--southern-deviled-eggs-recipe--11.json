@@ -1,10 +1,8 @@
 {
   "raw": "dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dill",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "dill",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces wide rice noodles or big square “rice flake” noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wide rice noodles or big square “rice flake” noodles",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wide rice noodles or big square “rice flake” noodles",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

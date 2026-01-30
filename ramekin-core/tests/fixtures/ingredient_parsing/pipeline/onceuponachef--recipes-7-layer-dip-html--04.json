@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons lime juice, (from 2 limes (divided))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "from 2 limes (divided"
-    }
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "from 2 limes (divided"
   }
 }

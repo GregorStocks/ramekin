@@ -1,15 +1,13 @@
 {
   "raw": "20  KRAFT caramel squares",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "KRAFT caramel squares",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "KRAFT caramel squares",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

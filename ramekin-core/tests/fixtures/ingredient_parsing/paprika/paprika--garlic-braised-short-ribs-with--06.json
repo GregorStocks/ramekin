@@ -1,15 +1,13 @@
 {
   "raw": "4 ribs celery (about 8 ounces, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ribs celery (about 8 ounces",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "ribs celery (about 8 ounces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

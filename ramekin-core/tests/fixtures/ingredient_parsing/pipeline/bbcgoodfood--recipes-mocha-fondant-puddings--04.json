@@ -1,15 +1,13 @@
 {
   "raw": "4 large free-range eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "free-range eggs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "free-range eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

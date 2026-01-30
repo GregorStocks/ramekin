@@ -1,15 +1,13 @@
 {
   "raw": "0.33 cup whole-milk plain yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-milk plain yogurt",
-      "measurements": [
-        {
-          "amount": "0.33",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-milk plain yogurt",
+    "measurements": [
+      {
+        "amount": "0.33",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

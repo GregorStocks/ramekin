@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons lemon juice (from about half a lemon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice (from about half a lemon)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice (from about half a lemon)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons grated or minced fresh ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated or minced fresh ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated or minced fresh ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

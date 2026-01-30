@@ -1,15 +1,13 @@
 {
   "raw": "2 lbs eggplant (peeled and diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggplant",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and diced"
-    }
+  "expected": {
+    "item": "eggplant",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and diced"
   }
 }

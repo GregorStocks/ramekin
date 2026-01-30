@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups lukewarm milk, any kind",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lukewarm milk, any kind",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lukewarm milk, any kind",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

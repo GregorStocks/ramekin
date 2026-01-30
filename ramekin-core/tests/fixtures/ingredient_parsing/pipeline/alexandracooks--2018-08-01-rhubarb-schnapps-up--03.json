@@ -1,15 +1,13 @@
 {
   "raw": "1 liter vodka, cheap is just fine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vodka, cheap is just fine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vodka, cheap is just fine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

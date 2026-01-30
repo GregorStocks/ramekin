@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup shredded coconut (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded coconut",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "shredded coconut",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

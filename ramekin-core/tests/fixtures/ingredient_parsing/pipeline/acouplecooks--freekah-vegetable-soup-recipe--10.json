@@ -1,15 +1,13 @@
 {
   "raw": "8 cups vegetable or chicken broth, plus more if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable or chicken broth",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more if needed"
-    }
+  "expected": {
+    "item": "vegetable or chicken broth",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more if needed"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (40 grams) light brown or granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light brown or granulated sugar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light brown or granulated sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup dry bread crumbs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry bread crumbs",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry bread crumbs",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

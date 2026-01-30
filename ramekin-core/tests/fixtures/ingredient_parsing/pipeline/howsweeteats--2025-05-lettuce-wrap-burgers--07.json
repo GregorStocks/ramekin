@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoons chopped fresh chives, (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh chives, (for topping)",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh chives, (for topping)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

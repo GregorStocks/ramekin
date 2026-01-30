@@ -1,23 +1,21 @@
 {
   "raw": "40 dried lily buds (about 1/2 ounce) (see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried lily buds (see Note)",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": null
-        },
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried lily buds (see Note)",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": null
+      },
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

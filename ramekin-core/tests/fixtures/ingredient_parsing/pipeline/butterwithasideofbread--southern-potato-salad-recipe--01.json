@@ -1,15 +1,13 @@
 {
   "raw": "3 lbs yukon gold potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

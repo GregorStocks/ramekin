@@ -1,19 +1,17 @@
 {
   "raw": "1 tablespoon plus 1 teaspoon (16 g) granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 tablespoon plus 1 teaspoon (16 g) granulated sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "16",
-          "unit": "g"
-        }
-      ],
-      "note": "plus 1 teaspoon granulated sugar"
-    }
+  "expected": {
+    "item": "1 tablespoon plus 1 teaspoon (16 g) granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "16",
+        "unit": "g"
+      }
+    ],
+    "note": "plus 1 teaspoon granulated sugar"
   }
 }

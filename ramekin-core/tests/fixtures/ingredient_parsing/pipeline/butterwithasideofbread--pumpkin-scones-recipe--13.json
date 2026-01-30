@@ -1,10 +1,8 @@
 {
   "raw": "pumpkin pie spice (dusted on top, if desired)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pumpkin pie spice (dusted on top, if desired)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "pumpkin pie spice (dusted on top, if desired)",
+    "measurements": [],
+    "note": null
   }
 }

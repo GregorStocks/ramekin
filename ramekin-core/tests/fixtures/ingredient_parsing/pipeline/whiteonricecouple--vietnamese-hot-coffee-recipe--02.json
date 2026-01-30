@@ -1,19 +1,17 @@
 {
   "raw": "2 Tablespoons (30ml) Sweetened Condensed Milk ( *See Note 1)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sweetened Condensed Milk ( *See Note 1)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sweetened Condensed Milk ( *See Note 1)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

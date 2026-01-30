@@ -1,15 +1,13 @@
 {
   "raw": "1/2 to 1 cup roughly chopped cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roughly chopped cilantro",
-      "measurements": [
-        {
-          "amount": "1/2 to 1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roughly chopped cilantro",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8  16-inch long pieces of Reynolds Wrap Heavy Duty Foil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "16-inch long pieces of Reynolds Wrap Heavy Duty Foil",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "16-inch long pieces of Reynolds Wrap Heavy Duty Foil",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

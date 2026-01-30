@@ -1,15 +1,13 @@
 {
   "raw": "1 medium green pepper, cut into strips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green pepper, cut into strips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green pepper, cut into strips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups (220 g; or more) powdered sugar, plus more for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "220 g; or more"
-    }
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "220 g; or more"
   }
 }

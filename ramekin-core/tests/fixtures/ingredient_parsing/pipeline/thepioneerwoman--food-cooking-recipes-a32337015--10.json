@@ -1,10 +1,8 @@
 {
   "raw": "Couple dashes hot sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Couple dashes hot sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Couple dashes hot sauce",
+    "measurements": [],
+    "note": null
   }
 }

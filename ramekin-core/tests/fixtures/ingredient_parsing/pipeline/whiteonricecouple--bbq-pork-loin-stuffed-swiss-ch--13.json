@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Pineapple (, diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pineapple",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "Pineapple",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
   }
 }

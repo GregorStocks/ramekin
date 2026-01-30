@@ -1,10 +1,8 @@
 {
   "raw": "Dried fruit, like dried cherries, cranberries, or figs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dried fruit, like dried cherries, cranberries, or figs",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Dried fruit, like dried cherries, cranberries, or figs",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "egg wash: 1 large egg beaten with 1 Tablespoon (15ml) milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg wash: 1 large egg beaten with 1 Tablespoon milk",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg wash: 1 large egg beaten with 1 Tablespoon milk",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

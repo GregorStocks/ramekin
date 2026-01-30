@@ -1,27 +1,25 @@
 {
   "raw": "1/4 cup (2 ounces, 55 grams or 1/4 of an 8-ounce brick) cream cheese, in chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese, in chunks",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        },
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream cheese, in chunks",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

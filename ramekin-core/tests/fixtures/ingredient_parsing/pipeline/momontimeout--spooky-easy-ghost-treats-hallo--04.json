@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tsp your choice of extract (I used orange)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "your choice of extract (I used orange)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "your choice of extract (I used orange)",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

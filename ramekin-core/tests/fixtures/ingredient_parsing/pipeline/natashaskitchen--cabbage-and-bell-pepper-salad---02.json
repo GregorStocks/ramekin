@@ -1,15 +1,13 @@
 {
   "raw": "1  yellow or orange or red bell pepper (or 5-6 mini peppers)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow or orange or red bell pepper (or 5-6 mini peppers)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow or orange or red bell pepper (or 5-6 mini peppers)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

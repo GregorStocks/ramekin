@@ -1,15 +1,13 @@
 {
   "raw": "4 cups cole slaw mix (shredded cabbage salad mix)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cole slaw mix",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded cabbage salad mix"
-    }
+  "expected": {
+    "item": "cole slaw mix",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded cabbage salad mix"
   }
 }

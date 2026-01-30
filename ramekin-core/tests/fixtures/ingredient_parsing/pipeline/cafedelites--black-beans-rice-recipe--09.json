@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons Cilantro (or parsley, finely chopped to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cilantro",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or parsley, finely chopped to garnish"
-    }
+  "expected": {
+    "item": "Cilantro",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or parsley, finely chopped to garnish"
   }
 }

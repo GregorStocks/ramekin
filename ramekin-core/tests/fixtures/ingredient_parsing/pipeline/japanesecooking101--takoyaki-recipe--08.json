@@ -1,10 +1,8 @@
 {
   "raw": "Boiled octopus* (cut into 1/2&amp;quot; (1 cm) cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Boiled octopus* (cut into 1/2\" (1 cm) cubes)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Boiled octopus* (cut into 1/2\" (1 cm) cubes)",
+    "measurements": [],
+    "note": null
   }
 }

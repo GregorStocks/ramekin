@@ -1,15 +1,13 @@
 {
   "raw": "1 lb 5 oz beef stew meat cut into large chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "5 oz beef stew meat cut into large chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "5 oz beef stew meat cut into large chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

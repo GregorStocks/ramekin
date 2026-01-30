@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons butter (for tossing the pasta)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter (for tossing the pasta)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter (for tossing the pasta)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp raw honey or maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw honey or maple syrup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw honey or maple syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

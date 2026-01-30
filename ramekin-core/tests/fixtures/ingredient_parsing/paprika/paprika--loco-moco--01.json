@@ -1,10 +1,8 @@
 {
   "raw": "For The Burger Patties:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For The Burger Patties:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "For The Burger Patties:",
+    "measurements": [],
+    "note": null
   }
 }

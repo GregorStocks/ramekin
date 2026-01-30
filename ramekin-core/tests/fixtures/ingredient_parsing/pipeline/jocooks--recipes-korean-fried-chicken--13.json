@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons gochujang",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gochujang",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gochujang",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

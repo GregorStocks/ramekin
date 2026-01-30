@@ -1,10 +1,8 @@
 {
   "raw": "chili threads (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili threads",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "chili threads",
+    "measurements": [],
+    "note": "optional"
   }
 }

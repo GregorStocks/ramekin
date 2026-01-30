@@ -1,15 +1,13 @@
 {
   "raw": "1 15-ounce can green enchilada sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green enchilada sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "15-ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green enchilada sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "15-ounce can"
+      }
+    ],
+    "note": null
   }
 }

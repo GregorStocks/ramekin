@@ -1,15 +1,13 @@
 {
   "raw": "85g blanched hazelnut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blanched hazelnut",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "blanched hazelnut",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

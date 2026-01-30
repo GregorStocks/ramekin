@@ -1,15 +1,13 @@
 {
   "raw": "1 ½ lb. large red cherries (washed and patted dry)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large red cherries",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "washed and patted dry"
-    }
+  "expected": {
+    "item": "large red cherries",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "washed and patted dry"
   }
 }

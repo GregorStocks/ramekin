@@ -1,15 +1,13 @@
 {
   "raw": "2 jalapeño peppers, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "jalapeño peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

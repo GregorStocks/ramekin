@@ -1,10 +1,8 @@
 {
   "raw": "heavy splash sparkling water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy splash sparkling water",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy splash sparkling water",
+    "measurements": [],
+    "note": null
   }
 }

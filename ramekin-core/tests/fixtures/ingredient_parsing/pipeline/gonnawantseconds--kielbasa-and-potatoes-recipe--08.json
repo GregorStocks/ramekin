@@ -1,15 +1,13 @@
 {
   "raw": "1 cup carrots, (cut into small cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots, (cut into small cubes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots, (cut into small cubes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

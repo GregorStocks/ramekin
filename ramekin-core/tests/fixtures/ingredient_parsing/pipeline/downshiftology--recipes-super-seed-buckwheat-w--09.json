@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cup coconut water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut water",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut water",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

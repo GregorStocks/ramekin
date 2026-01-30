@@ -1,10 +1,8 @@
 {
   "raw": "Hamburger pickle chips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hamburger pickle chips",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Hamburger pickle chips",
+    "measurements": [],
+    "note": null
   }
 }

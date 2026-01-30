@@ -1,15 +1,13 @@
 {
   "raw": "1 pound mild Italian pork sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mild Italian pork sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mild Italian pork sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon ground cumin or smoked paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cumin or smoked paprika",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cumin or smoked paprika",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

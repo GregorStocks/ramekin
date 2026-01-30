@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp avocado oil or olive oil (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "avocado oil or olive oil",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "avocado oil or olive oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

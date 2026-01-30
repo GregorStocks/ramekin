@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup small diced cucumber",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small diced cucumber",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "small diced cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

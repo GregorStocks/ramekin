@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 teaspoons apple cider vinegar or distilled white vinegar, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple cider vinegar or distilled white vinegar",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "apple cider vinegar or distilled white vinegar",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

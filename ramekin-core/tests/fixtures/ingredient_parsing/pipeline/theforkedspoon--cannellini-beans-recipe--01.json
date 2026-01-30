@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups dry cannellini beans  (soaked overnight)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry cannellini beans  (soaked overnight)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry cannellini beans  (soaked overnight)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

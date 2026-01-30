@@ -1,15 +1,13 @@
 {
   "raw": "4 cups reduced sodium beef broth (or vegetable or chicken broth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "reduced sodium beef broth (or vegetable or chicken broth)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "reduced sodium beef broth (or vegetable or chicken broth)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

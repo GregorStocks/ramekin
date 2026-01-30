@@ -1,15 +1,13 @@
 {
   "raw": "4 pinches table salt, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "table salt",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "pinch"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "table salt",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pinch"
+      }
+    ],
+    "note": "divided"
   }
 }

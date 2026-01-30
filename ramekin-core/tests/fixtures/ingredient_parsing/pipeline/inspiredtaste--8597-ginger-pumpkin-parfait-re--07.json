@@ -1,19 +1,17 @@
 {
   "raw": "1 ½ cups crushed gingersnaps, for layering (128g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed gingersnaps, for layering",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "128",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed gingersnaps, for layering",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "128",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "water (for boiling)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (for boiling)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "water (for boiling)",
+    "measurements": [],
+    "note": null
   }
 }

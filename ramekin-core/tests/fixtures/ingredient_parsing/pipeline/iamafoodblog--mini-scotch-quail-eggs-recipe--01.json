@@ -1,15 +1,13 @@
 {
   "raw": "12 quail eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quail eggs",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quail eggs",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

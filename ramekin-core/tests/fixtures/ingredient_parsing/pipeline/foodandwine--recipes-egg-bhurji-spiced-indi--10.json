@@ -1,15 +1,13 @@
 {
   "raw": ".5 teaspoon kashmiri chile powder or other red chile powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kashmiri chile powder or other red chile powder",
-      "measurements": [
-        {
-          "amount": ".5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kashmiri chile powder or other red chile powder",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "a drizzle of extra virgin olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a drizzle of extra virgin olive oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a drizzle of extra virgin olive oil",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "85 grams grits ((~1/2 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grits",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grits",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

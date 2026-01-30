@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup peppadew peppers in brine (drained and chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppadew peppers in brine",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained and chopped"
-    }
+  "expected": {
+    "item": "peppadew peppers in brine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained and chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon maple extract, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple extract",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "maple extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

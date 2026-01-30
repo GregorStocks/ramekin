@@ -1,15 +1,13 @@
 {
   "raw": "3 plum tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "plum tomatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "plum tomatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

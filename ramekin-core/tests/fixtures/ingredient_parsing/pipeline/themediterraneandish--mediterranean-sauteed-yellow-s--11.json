@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp za&amp;#8217;atar, more for later",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "za’atar, more for later",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "za’atar, more for later",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

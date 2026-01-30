@@ -1,15 +1,13 @@
 {
   "raw": "1¼ cups Aperol",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aperol",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Aperol",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

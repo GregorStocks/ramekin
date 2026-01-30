@@ -1,10 +1,8 @@
 {
   "raw": "parchment paper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parchment paper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "parchment paper",
+    "measurements": [],
+    "note": null
   }
 }

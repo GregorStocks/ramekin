@@ -1,15 +1,13 @@
 {
   "raw": "1 cup quick grits",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "quick grits",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "quick grits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 brownie squares",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brownie squares",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brownie squares",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

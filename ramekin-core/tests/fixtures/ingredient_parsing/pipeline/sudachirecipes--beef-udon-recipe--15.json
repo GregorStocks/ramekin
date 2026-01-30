@@ -1,15 +1,13 @@
 {
   "raw": "2 portions udon noodles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "portions udon noodles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "portions udon noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

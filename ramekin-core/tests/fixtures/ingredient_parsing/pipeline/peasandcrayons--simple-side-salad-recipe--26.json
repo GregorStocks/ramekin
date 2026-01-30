@@ -1,15 +1,13 @@
 {
   "raw": "½-1 TBSP red wine vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red wine vinegar",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red wine vinegar",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

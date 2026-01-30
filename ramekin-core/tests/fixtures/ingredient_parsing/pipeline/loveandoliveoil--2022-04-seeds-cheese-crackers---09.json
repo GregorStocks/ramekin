@@ -1,10 +1,8 @@
 {
   "raw": "flake sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flake sea salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "flake sea salt",
+    "measurements": [],
+    "note": null
   }
 }

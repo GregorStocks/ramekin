@@ -1,23 +1,21 @@
 {
   "raw": "11 tablespoons (155 grams or 5.5 ounces) unsalted butter, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "11",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "155",
-          "unit": "g"
-        },
-        {
-          "amount": "5.5",
-          "unit": "oz"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "11",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "155",
+        "unit": "g"
+      },
+      {
+        "amount": "5.5",
+        "unit": "oz"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

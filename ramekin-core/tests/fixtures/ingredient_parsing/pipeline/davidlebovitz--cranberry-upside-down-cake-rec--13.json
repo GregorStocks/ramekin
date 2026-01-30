@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (125ml) whole or low fat milk (at room temperature)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole or low fat milk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "ml"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "whole or low fat milk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "125",
+        "unit": "ml"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 ball burrata, torn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ball burrata, torn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ball burrata, torn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

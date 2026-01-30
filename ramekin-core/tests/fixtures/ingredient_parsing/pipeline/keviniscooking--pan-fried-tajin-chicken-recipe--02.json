@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp tajin seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tajin seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tajin seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

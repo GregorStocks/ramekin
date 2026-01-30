@@ -1,10 +1,8 @@
 {
   "raw": "fresh fruit, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh fruit",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "fresh fruit",
+    "measurements": [],
+    "note": "for serving"
   }
 }

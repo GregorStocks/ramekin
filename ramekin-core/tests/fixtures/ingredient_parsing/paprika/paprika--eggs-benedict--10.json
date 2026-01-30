@@ -1,15 +1,13 @@
 {
   "raw": "8 slices Canadian bacon or thick-cut ham (or 8 slices regular, thick-cut bacon)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Canadian bacon or thick-cut ham (or 8 slices regular, thick-cut bacon)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Canadian bacon or thick-cut ham (or 8 slices regular, thick-cut bacon)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

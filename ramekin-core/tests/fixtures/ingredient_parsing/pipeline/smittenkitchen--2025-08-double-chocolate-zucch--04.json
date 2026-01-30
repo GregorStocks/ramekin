@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (95 grams) packed dark brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed dark brown sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "95",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed dark brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "95",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

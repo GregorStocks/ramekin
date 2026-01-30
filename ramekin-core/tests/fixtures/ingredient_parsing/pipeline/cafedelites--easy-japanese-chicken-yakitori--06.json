@@ -1,15 +1,13 @@
 {
   "raw": "1 clove garlic (smashed with the back of your knife)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic (smashed with the back of your knife)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic (smashed with the back of your knife)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

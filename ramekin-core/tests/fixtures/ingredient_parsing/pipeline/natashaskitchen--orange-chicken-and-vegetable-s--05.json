@@ -1,15 +1,13 @@
 {
   "raw": "1  bunch asparagus spears (bases trimmed and cut into 1\" pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asparagus spears",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": "bases trimmed and cut into 1\" pieces"
-    }
+  "expected": {
+    "item": "asparagus spears",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "bases trimmed and cut into 1\" pieces"
   }
 }

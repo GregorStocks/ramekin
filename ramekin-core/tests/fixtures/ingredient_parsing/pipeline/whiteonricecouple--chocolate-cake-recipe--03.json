@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup Heavy Whipping Cream ((120 ml) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Heavy Whipping Cream",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Heavy Whipping Cream",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

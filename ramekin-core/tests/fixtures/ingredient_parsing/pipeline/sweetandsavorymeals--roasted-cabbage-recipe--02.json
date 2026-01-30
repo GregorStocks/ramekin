@@ -1,19 +1,17 @@
 {
   "raw": "1  large green cabbage (about 2 lbs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cabbage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

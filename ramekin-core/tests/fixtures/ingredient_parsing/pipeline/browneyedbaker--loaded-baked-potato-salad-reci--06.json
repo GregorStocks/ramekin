@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup chopped scallions (green part only)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped scallions (green part only)",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped scallions (green part only)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

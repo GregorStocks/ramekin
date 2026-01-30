@@ -1,10 +1,8 @@
 {
   "raw": "Anko",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Anko",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Anko",
+    "measurements": [],
+    "note": null
   }
 }

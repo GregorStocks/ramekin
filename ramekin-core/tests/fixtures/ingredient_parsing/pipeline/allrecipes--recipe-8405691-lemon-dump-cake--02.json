@@ -1,23 +1,21 @@
 {
   "raw": "1 (22 ounce) can lemon pie filling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon pie filling",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "22",
-          "unit": "oz"
-        },
-        {
-          "amount": "624",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon pie filling",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "22",
+        "unit": "oz"
+      },
+      {
+        "amount": "624",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

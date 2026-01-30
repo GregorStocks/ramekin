@@ -1,19 +1,17 @@
 {
   "raw": "1/8 teaspoon saffron threads (about 20 threads)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "saffron threads",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        },
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "saffron threads",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      },
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

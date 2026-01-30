@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon grated fresh nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated fresh nutmeg",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated fresh nutmeg",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

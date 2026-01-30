@@ -1,15 +1,13 @@
 {
   "raw": "1 cup cashews (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cashews",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "cashews",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

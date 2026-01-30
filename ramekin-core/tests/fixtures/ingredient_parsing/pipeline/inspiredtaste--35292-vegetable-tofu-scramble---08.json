@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon mushroom powder, optional, here&amp;#8217;s our recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushroom powder, optional, here’s our recipe",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mushroom powder, optional, here’s our recipe",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

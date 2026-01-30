@@ -1,15 +1,13 @@
 {
   "raw": "1  serrano chile, minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "serrano chile",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "serrano chile",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "minced"
   }
 }

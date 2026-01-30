@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces dark or bittersweet chocolate (60-70%), finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark or bittersweet chocolate",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": null
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "dark or bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Madras curry powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Madras curry powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Madras curry powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

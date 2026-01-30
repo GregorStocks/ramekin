@@ -1,15 +1,13 @@
 {
   "raw": "1 egg yolk, reserve white for meringue",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg yolk, reserve white for meringue",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg yolk, reserve white for meringue",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

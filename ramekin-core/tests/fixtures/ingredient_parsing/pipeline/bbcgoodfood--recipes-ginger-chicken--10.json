@@ -1,15 +1,13 @@
 {
   "raw": "400ml can reduced-fat coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can reduced-fat coconut milk",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can reduced-fat coconut milk",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

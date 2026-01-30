@@ -1,27 +1,25 @@
 {
   "raw": "2 oz. frozen strawberries ((about 2 large or 6 small))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen strawberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "6",
-          "unit": "small"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen strawberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "6",
+        "unit": "small"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup chopped fresh parsley (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "chopped fresh parsley",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

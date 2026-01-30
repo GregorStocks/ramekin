@@ -1,15 +1,13 @@
 {
   "raw": "1 whole vanilla bean (split and seeds removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole vanilla bean (split and seeds removed)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole vanilla bean (split and seeds removed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

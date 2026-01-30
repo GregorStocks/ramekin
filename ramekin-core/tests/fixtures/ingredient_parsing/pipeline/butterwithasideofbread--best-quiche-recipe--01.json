@@ -1,15 +1,13 @@
 {
   "raw": "2  deep dish 9” pie shells",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "deep dish 9” pie shells",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "deep dish 9” pie shells",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

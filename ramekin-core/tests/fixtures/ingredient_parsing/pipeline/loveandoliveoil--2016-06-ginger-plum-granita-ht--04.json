@@ -1,10 +1,8 @@
 {
   "raw": "a few pieces candied ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a few pieces candied ginger",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a few pieces candied ginger",
+    "measurements": [],
+    "note": null
   }
 }

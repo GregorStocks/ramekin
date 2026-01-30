@@ -1,10 +1,8 @@
 {
   "raw": "Sliced radish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sliced radish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sliced radish",
+    "measurements": [],
+    "note": null
   }
 }

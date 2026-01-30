@@ -1,15 +1,13 @@
 {
   "raw": "2 stalks celery, including leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery, including leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stalk"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "celery, including leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stalk"
+      }
+    ],
+    "note": null
   }
 }

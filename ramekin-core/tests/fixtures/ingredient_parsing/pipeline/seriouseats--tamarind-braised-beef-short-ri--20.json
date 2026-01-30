@@ -1,19 +1,17 @@
 {
   "raw": "1/4 cup minced cilantro leaves (10 g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced cilantro leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

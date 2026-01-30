@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Cointreau or other orange liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cointreau or other orange liqueur",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cointreau or other orange liqueur",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

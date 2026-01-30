@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds pork spareribs, cut crosswise into 2-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork spareribs, cut crosswise into 2-inch pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork spareribs, cut crosswise into 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

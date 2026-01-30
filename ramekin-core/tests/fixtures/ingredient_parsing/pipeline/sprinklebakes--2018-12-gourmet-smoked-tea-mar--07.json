@@ -1,15 +1,13 @@
 {
   "raw": "1 cup 200 grams sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "200 grams sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "200 grams sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

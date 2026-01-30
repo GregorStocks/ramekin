@@ -1,10 +1,8 @@
 {
   "raw": "to taste salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to taste salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "to taste salt",
+    "measurements": [],
+    "note": null
   }
 }

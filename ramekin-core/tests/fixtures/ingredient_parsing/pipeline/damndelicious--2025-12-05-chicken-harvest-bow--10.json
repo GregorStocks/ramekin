@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup roasted, salted almonds (coarsely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted, salted almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "roasted, salted almonds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

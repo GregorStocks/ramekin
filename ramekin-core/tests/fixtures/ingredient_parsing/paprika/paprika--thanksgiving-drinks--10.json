@@ -1,10 +1,8 @@
 {
   "raw": "Thanksgiving Sidecar:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thanksgiving Sidecar:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Thanksgiving Sidecar:",
+    "measurements": [],
+    "note": null
   }
 }

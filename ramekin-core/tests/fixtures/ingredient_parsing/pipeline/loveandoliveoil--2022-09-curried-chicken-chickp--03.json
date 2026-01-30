@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Vadouvan curry powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Vadouvan curry powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Vadouvan curry powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

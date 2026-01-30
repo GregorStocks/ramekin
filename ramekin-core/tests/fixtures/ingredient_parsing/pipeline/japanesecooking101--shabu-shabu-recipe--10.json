@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp Soy Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Soy Sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Soy Sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

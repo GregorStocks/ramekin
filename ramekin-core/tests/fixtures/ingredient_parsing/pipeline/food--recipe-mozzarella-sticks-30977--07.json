@@ -1,15 +1,13 @@
 {
   "raw": "1   cup   jarred pizza sauce or 1   cup    marinara sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jarred pizza sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "or 1   cup    marinara sauce"
-    }
+  "expected": {
+    "item": "jarred pizza sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "or 1   cup    marinara sauce"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "icing sugar for dusting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "icing sugar for dusting",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "icing sugar for dusting",
+    "measurements": [],
+    "note": null
   }
 }

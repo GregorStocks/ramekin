@@ -1,19 +1,17 @@
 {
   "raw": "2 teaspoons unflavored powdered gelatin (about 1 packet)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unflavored powdered gelatin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unflavored powdered gelatin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

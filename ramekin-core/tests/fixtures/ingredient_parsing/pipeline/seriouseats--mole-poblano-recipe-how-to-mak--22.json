@@ -1,15 +1,13 @@
 {
   "raw": "2 large tomatillos, husked, rinsed, and quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatillos, husked, rinsed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "and quartered"
-    }
+  "expected": {
+    "item": "tomatillos, husked, rinsed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "and quartered"
   }
 }

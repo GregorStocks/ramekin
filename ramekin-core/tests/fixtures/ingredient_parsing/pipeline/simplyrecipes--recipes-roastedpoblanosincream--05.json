@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Mexcian crema (Mexican sour cream) or crème fraîche",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexcian crema (Mexican sour cream) or crème fraîche",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexcian crema (Mexican sour cream) or crème fraîche",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

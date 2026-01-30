@@ -1,15 +1,13 @@
 {
   "raw": "100 g green cabbage (shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green cabbage",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "shredded"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 fresh Thai chiles, halved, or dried red chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh Thai chiles, halved",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "or dried red chiles"
-    }
+  "expected": {
+    "item": "fresh Thai chiles, halved",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "or dried red chiles"
   }
 }

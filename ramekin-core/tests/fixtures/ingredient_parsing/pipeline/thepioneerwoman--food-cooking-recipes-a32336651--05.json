@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 teaspoons adobo sauce (from canned chipotle peppers)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "adobo sauce (from canned chipotle peppers)",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "adobo sauce (from canned chipotle peppers)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

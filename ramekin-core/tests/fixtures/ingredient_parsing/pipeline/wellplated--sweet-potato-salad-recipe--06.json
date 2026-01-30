@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons whole-grain mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-grain mustard",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-grain mustard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

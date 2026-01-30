@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shredded good-quality medium or sharp Cheddar cheese, (such as Cabot (from one 8-oz block))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded good-quality medium or sharp Cheddar cheese, (such as Cabot (from one 8-oz block)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded good-quality medium or sharp Cheddar cheese, (such as Cabot (from one 8-oz block)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

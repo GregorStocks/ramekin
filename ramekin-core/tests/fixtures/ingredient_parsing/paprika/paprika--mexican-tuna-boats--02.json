@@ -1,19 +1,17 @@
 {
   "raw": "2 cans (5 oz each) tuna",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tuna",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "5",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tuna",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "5",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

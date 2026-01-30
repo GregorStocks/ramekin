@@ -1,15 +1,13 @@
 {
   "raw": "200g dried apricot chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried apricot chopped",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried apricot chopped",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

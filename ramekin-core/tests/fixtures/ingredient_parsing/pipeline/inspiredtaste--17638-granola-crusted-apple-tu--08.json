@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons granola (click to see our homemade granola recipe)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granola (click to see our homemade granola recipe)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granola (click to see our homemade granola recipe)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

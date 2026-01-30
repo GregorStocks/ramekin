@@ -1,15 +1,13 @@
 {
   "raw": "2lbs pork shoulder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork shoulder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork shoulder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

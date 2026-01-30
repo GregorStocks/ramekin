@@ -1,15 +1,13 @@
 {
   "raw": "12  pecan halves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecan halves",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pecan halves",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Maraschino cherries and and orange twist, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Maraschino cherries and and orange twist",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Maraschino cherries and and orange twist",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

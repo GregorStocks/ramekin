@@ -1,15 +1,13 @@
 {
   "raw": "6  green beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green beans",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green beans",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 3/4 cups All-Purpose Flour ((340g))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "All-Purpose Flour",
-      "measurements": [
-        {
-          "amount": "2 3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "All-Purpose Flour",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

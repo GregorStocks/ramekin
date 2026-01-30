@@ -1,10 +1,8 @@
 {
   "raw": "Garnishes: chopped cilantro, sliced avocado, tortilla chips, sour cream or crème fraîche, grated cheddar cheese, etc.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Garnishes: chopped cilantro, sliced avocado, tortilla chips, sour cream or crème fraîche, grated cheddar cheese, etc.",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Garnishes: chopped cilantro, sliced avocado, tortilla chips, sour cream or crème fraîche, grated cheddar cheese, etc.",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "5 thick-cut bacon slices, cooked until crisp then crumbled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick-cut bacon slices",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "cooked until crisp then crumbled"
-    }
+  "expected": {
+    "item": "thick-cut bacon slices",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "cooked until crisp then crumbled"
   }
 }

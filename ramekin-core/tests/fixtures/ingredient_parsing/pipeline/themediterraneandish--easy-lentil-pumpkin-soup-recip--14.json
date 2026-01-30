@@ -1,15 +1,13 @@
 {
   "raw": "1 Zhoug cilantro pesto recipe&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Zhoug cilantro pesto recipe",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Zhoug cilantro pesto recipe",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup shredded coconut (sweetened or unsweetened will work)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded coconut (sweetened or unsweetened will work)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded coconut (sweetened or unsweetened will work)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "15 ounce canned kidney beans (drained and rinsed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned kidney beans",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "drained and rinsed"
-    }
+  "expected": {
+    "item": "canned kidney beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "drained and rinsed"
   }
 }

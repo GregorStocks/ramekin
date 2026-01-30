@@ -1,15 +1,13 @@
 {
   "raw": "1  medium head romaine lettuce (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head romaine lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "head romaine lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
   }
 }

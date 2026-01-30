@@ -1,15 +1,13 @@
 {
   "raw": "400 gr granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gr granulated sugar",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gr granulated sugar",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

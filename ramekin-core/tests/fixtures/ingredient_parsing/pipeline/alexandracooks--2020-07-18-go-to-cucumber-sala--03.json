@@ -1,19 +1,17 @@
 {
   "raw": "1 bunch (about 6) scallions, ends trimmed, sliced thinly on the bias, whites and green parts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "scallions, ends trimmed, sliced thinly on the bias, whites and green parts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        },
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "scallions, ends trimmed, sliced thinly on the bias, whites and green parts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      },
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon  prepared horseradish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared horseradish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared horseradish",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

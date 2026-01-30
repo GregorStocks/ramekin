@@ -1,19 +1,17 @@
 {
   "raw": "8 (1/2-inch) slices day-old or stale country loaf, brioche, or challah bread",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "day-old or stale country loaf, brioche, or challah bread",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "slice"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "day-old or stale country loaf, brioche, or challah bread",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "slice"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

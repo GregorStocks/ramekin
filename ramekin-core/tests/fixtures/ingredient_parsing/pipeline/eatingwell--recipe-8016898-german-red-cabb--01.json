@@ -1,19 +1,17 @@
 {
   "raw": "1 small head red cabbage (about 2 pounds), shredded",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head red cabbage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "shredded"
-    }
+  "expected": {
+    "item": "head red cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "shredded"
   }
 }

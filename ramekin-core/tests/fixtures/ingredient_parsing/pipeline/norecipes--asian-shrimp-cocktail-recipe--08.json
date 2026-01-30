@@ -1,10 +1,8 @@
 {
   "raw": "lime peel",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime peel",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "lime peel",
+    "measurements": [],
+    "note": null
   }
 }

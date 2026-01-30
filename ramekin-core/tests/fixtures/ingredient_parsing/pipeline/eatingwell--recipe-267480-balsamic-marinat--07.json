@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons dried basil, crushed, or 2 tablespoons chopped fresh basil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried basil, crushed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 2 tablespoons chopped fresh basil"
-    }
+  "expected": {
+    "item": "dried basil, crushed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 2 tablespoons chopped fresh basil"
   }
 }

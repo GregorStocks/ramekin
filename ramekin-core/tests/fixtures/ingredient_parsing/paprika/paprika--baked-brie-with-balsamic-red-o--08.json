@@ -1,10 +1,8 @@
 {
   "raw": "Balsamic onions:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Balsamic onions:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Balsamic onions:",
+    "measurements": [],
+    "note": null
   }
 }

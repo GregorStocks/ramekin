@@ -1,19 +1,17 @@
 {
   "raw": "1/4 pound sharp Cheddar cheese, coarsely grated (about 1 1/2 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sharp Cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "lb"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "coarsely grated"
-    }
+  "expected": {
+    "item": "sharp Cheddar cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "lb"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely grated"
   }
 }

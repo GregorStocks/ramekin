@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 cups stemmed and chopped fresh kale",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stemmed and chopped fresh kale",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stemmed and chopped fresh kale",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

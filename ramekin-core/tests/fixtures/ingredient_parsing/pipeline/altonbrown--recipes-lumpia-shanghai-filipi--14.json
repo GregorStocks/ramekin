@@ -1,15 +1,13 @@
 {
   "raw": "40 6x6-inch spring roll wrappers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "6x6-inch spring roll wrappers",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "6x6-inch spring roll wrappers",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

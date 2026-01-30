@@ -1,15 +1,13 @@
 {
   "raw": "50 g ginger root (thickly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger root",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": "thickly sliced"
-    }
+  "expected": {
+    "item": "ginger root",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": "thickly sliced"
   }
 }

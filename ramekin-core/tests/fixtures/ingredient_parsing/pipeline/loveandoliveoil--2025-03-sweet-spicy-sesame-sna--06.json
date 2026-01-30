@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup sesame sticks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame sticks",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sesame sticks",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

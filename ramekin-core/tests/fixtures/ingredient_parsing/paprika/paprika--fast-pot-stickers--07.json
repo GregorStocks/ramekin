@@ -1,15 +1,13 @@
 {
   "raw": "48 dumpling wrappers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dumpling wrappers",
-      "measurements": [
-        {
-          "amount": "48",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dumpling wrappers",
+    "measurements": [
+      {
+        "amount": "48",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

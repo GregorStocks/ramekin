@@ -1,10 +1,8 @@
 {
   "raw": "Homemade Pizza Dough (or store-bought dough)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Homemade Pizza Dough (or store-bought dough)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Homemade Pizza Dough (or store-bought dough)",
+    "measurements": [],
+    "note": null
   }
 }

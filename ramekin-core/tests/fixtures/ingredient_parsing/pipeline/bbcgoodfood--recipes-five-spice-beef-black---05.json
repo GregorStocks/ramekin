@@ -1,15 +1,13 @@
 {
   "raw": "100g sachet black bean sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sachet black bean sauce",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sachet black bean sauce",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

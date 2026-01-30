@@ -1,15 +1,13 @@
 {
   "raw": "4 ripe Hass avocados",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe Hass avocados",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe Hass avocados",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

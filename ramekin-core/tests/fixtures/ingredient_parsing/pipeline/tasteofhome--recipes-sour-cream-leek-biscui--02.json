@@ -1,15 +1,13 @@
 {
   "raw": "1-1/2 cups finely chopped leeks (white portion only)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped leeks (white portion only)",
-      "measurements": [
-        {
-          "amount": "1-1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped leeks (white portion only)",
+    "measurements": [
+      {
+        "amount": "1-1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

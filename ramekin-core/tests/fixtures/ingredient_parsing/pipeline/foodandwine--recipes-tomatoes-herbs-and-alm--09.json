@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds mixed heirloom tomatoes, some sliced, some halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed heirloom tomatoes, some sliced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "some halved"
-    }
+  "expected": {
+    "item": "mixed heirloom tomatoes, some sliced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "some halved"
   }
 }

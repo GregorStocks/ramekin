@@ -1,10 +1,8 @@
 {
   "raw": "Marinade Ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Marinade Ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Marinade Ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

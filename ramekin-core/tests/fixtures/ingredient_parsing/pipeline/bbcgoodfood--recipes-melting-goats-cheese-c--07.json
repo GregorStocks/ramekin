@@ -1,15 +1,13 @@
 {
   "raw": "375g pack all-butter ready-rolled puff pastry defrosted if frozen",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pack all-butter ready-rolled puff pastry defrosted if frozen",
-      "measurements": [
-        {
-          "amount": "375",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pack all-butter ready-rolled puff pastry defrosted if frozen",
+    "measurements": [
+      {
+        "amount": "375",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

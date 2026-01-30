@@ -1,15 +1,13 @@
 {
   "raw": "12 slices cheddar cheese (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cheddar cheese",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "slice"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "cheddar cheese",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slice"
+      }
+    ],
+    "note": "optional"
   }
 }

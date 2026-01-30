@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound ground pork (mince)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pork (mince)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground pork (mince)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

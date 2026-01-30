@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces cotija cheese, cut into 2 pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cotija cheese, cut into 2 pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cotija cheese, cut into 2 pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups shiitake mushrooms (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced"
   }
 }

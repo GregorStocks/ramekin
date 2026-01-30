@@ -1,19 +1,17 @@
 {
   "raw": "3.5 oz good quality white chocolate (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good quality white chocolate",
-      "measurements": [
-        {
-          "amount": "3.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "99",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "good quality white chocolate",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "99",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

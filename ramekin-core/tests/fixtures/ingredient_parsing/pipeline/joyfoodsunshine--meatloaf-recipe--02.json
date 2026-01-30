@@ -1,19 +1,17 @@
 {
   "raw": "¼ cup bread crumbs ((1 slice of bread made into bread crumbs))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bread crumbs",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bread crumbs",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

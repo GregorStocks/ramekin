@@ -1,19 +1,17 @@
 {
   "raw": "4  extra large flour tortillas ((10 to 11-inch))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra large flour tortillas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "extra large flour tortillas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

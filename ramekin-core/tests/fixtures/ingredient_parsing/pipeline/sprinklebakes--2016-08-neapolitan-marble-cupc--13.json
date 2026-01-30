@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon strawberry extract (or 1/4 teaspoon strawberry flavoring oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberry extract",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1/4 teaspoon strawberry flavoring oil"
-    }
+  "expected": {
+    "item": "strawberry extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 1/4 teaspoon strawberry flavoring oil"
   }
 }

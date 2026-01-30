@@ -1,15 +1,13 @@
 {
   "raw": "3 slices ginger",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

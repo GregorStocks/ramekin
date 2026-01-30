@@ -1,15 +1,13 @@
 {
   "raw": "1 carrot, large dice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrot, large dice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrot, large dice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

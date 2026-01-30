@@ -1,15 +1,13 @@
 {
   "raw": "2-3 tablespoons lemon juice (adjust to your tastes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice (adjust to your tastes)",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice (adjust to your tastes)",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

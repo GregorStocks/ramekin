@@ -1,15 +1,13 @@
 {
   "raw": "25 grams Thai basil ((leaves picked from stems))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai basil (leaves picked from stems)",
-      "measurements": [
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai basil (leaves picked from stems)",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

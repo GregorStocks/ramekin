@@ -1,15 +1,13 @@
 {
   "raw": "1 pound low-moisture mozzarella (not fresh mozzarella), chilled and cut into 1/4-inch slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-moisture mozzarella , chilled and cut into 1/4-inch slices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "not fresh mozzarella"
-    }
+  "expected": {
+    "item": "low-moisture mozzarella , chilled and cut into 1/4-inch slices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "not fresh mozzarella"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4  makrut lime leaves, deveined and julienned",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "makrut lime leaves",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "deveined and julienned"
-    }
+  "expected": {
+    "item": "makrut lime leaves",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "deveined and julienned"
   }
 }

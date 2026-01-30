@@ -1,15 +1,13 @@
 {
   "raw": "4 g kanten agar powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kanten agar powder",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kanten agar powder",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

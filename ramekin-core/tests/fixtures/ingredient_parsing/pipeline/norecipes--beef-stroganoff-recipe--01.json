@@ -1,15 +1,13 @@
 {
   "raw": "413 grams hanger steak ((sliced into thin strips))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hanger steak",
-      "measurements": [
-        {
-          "amount": "413",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced into thin strips"
-    }
+  "expected": {
+    "item": "hanger steak",
+    "measurements": [
+      {
+        "amount": "413",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced into thin strips"
   }
 }

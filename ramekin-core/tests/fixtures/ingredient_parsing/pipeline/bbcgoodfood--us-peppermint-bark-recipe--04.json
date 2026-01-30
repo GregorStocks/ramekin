@@ -1,15 +1,13 @@
 {
   "raw": "5 small peppermint candy canes broken into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peppermint candy canes broken into chunks",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peppermint candy canes broken into chunks",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1.33 lbs shrimp, peeled and deveined",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp",
-      "measurements": [
-        {
-          "amount": "1.33",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and deveined"
-    }
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and deveined"
   }
 }

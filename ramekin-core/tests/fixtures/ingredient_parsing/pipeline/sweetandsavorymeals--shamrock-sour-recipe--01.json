@@ -1,10 +1,8 @@
 {
   "raw": "Green sprinkles (or green sanding sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Green sprinkles (or green sanding sugar)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Green sprinkles (or green sanding sugar)",
+    "measurements": [],
+    "note": null
   }
 }

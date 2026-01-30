@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup finely chopped red onion, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped red onion",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "finely chopped red onion",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

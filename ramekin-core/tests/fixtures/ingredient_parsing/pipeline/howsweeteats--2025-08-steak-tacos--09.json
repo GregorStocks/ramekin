@@ -1,15 +1,13 @@
 {
   "raw": "4  filet mignon steaks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "filet mignon steaks",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "filet mignon steaks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

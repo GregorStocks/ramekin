@@ -1,15 +1,13 @@
 {
   "raw": "1 medium cauliflower, about 1 1/2 pounds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cauliflower, about 1 1/2 pounds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cauliflower, about 1 1/2 pounds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

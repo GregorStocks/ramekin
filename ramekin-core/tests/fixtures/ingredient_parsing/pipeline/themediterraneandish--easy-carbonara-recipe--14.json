@@ -1,10 +1,8 @@
 {
   "raw": "Crusted red pepper flakes for serving (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crusted red pepper flakes for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Crusted red pepper flakes for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

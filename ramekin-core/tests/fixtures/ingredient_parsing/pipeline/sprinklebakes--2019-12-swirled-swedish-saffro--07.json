@@ -1,19 +1,17 @@
 {
   "raw": "4  capsules (.100 gram each powdered saffron)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "capsules",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": ".100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "capsules",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": ".100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

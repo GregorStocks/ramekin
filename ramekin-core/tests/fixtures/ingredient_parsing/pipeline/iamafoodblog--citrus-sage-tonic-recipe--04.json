@@ -1,19 +1,17 @@
 {
   "raw": "1 large lemon, juiced (about 1/4 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon, juiced",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon, juiced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

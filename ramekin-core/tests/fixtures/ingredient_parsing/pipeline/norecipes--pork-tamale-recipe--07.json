@@ -1,15 +1,13 @@
 {
   "raw": "60 grams dried guajillo chiles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried guajillo chiles",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried guajillo chiles",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

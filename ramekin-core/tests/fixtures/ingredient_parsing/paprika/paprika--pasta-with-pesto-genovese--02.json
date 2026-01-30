@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces (55 grams) aged parmesan or pecorino romano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "aged parmesan or pecorino romano",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "55",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "aged parmesan or pecorino romano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

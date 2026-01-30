@@ -1,10 +1,8 @@
 {
   "raw": "Up to 3/4 cup mix-ins of choice: chocolate chips (apricots, figs, dates, craisins, raisins, etc., chopped if large)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Up to 3/4 cup mix-ins of choice: chocolate chips",
-      "measurements": [],
-      "note": "apricots, figs, dates, craisins, raisins, etc., chopped if large"
-    }
+  "expected": {
+    "item": "Up to 3/4 cup mix-ins of choice: chocolate chips",
+    "measurements": [],
+    "note": "apricots, figs, dates, craisins, raisins, etc., chopped if large"
   }
 }

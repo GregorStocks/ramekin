@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken feet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken feet",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken feet",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

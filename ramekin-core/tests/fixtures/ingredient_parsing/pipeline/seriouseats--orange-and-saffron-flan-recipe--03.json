@@ -1,15 +1,13 @@
 {
   "raw": "1 large pinch saffron threads, see notes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pinch saffron threads, see notes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pinch saffron threads, see notes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

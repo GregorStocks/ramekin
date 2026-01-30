@@ -1,15 +1,13 @@
 {
   "raw": "15  Frozen Dumplings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Frozen Dumplings",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Frozen Dumplings",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

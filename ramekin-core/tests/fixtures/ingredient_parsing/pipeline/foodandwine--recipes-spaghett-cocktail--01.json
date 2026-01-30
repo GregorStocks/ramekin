@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces light beer, such as Miller High Life",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "light beer, such as Miller High Life",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "light beer, such as Miller High Life",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

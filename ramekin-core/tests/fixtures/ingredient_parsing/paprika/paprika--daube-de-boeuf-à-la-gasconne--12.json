@@ -1,19 +1,17 @@
 {
   "raw": "One 750ml bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "750",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "750",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

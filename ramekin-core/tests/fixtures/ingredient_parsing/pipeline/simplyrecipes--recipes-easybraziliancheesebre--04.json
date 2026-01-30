@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups (170 grams) tapioca flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tapioca flour",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tapioca flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

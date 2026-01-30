@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoons  Sriracha, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Sriracha",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "to taste"
   }
 }

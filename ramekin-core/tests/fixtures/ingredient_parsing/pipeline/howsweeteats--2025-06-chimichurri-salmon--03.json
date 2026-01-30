@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup fresh oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh oregano",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh oregano",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

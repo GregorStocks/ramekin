@@ -1,15 +1,13 @@
 {
   "raw": "300g self-raising flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "self-raising flour",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "self-raising flour",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

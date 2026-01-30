@@ -1,15 +1,13 @@
 {
   "raw": "4 large duck legs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "duck legs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "duck legs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

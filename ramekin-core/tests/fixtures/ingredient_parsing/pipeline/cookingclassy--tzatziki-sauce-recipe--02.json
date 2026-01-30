@@ -1,19 +1,17 @@
 {
   "raw": "10 oz.  English cucumber**, (peeled if desired, seeded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English cucumber**",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
-        },
-        {
-          "amount": "283",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled if desired, seeded"
-    }
+  "expected": {
+    "item": "English cucumber**",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled if desired, seeded"
   }
 }

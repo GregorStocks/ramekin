@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Sake (Japanese rice wine)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sake (Japanese rice wine)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Sake (Japanese rice wine)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

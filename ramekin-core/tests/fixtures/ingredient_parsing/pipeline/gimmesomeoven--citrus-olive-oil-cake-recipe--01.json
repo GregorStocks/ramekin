@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (220 grams) almond flour&nbsp;(please see note below)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond flour (please see note below)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "220",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "almond flour (please see note below)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "220",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

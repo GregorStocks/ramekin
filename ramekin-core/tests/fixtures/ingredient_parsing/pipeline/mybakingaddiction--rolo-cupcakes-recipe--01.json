@@ -1,23 +1,21 @@
 {
   "raw": "1 (18.25 ounce) package Devil’s Food Cake mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Devil’s Food Cake mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "18.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "517",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Devil’s Food Cake mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "18.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "517",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

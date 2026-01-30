@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp vanilla essence",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla essence",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla essence",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

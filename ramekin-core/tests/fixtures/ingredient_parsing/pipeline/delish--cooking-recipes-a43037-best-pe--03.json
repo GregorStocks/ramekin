@@ -1,15 +1,13 @@
 {
   "raw": "1/4 c. brandy",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brandy",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brandy",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

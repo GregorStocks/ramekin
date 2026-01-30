@@ -1,10 +1,8 @@
 {
   "raw": "orange slice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange slice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "orange slice",
+    "measurements": [],
+    "note": null
   }
 }

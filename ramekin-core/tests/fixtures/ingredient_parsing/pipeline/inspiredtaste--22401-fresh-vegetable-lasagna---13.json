@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces (60g) parmesan cheese, grated, about 2/3 cup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parmesan cheese, grated, about 2/3 cup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parmesan cheese, grated, about 2/3 cup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces (about 1 cup or 115 grams) gruyère or another Swiss-style cheese in 1/2-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gruyère or another Swiss-style cheese in 1/2-inch cubes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gruyère or another Swiss-style cheese in 1/2-inch cubes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

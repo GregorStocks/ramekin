@@ -1,15 +1,13 @@
 {
   "raw": "8  dried chili Guajilo (stems removed and seeded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried chili Guajilo (stems removed and seeded)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried chili Guajilo (stems removed and seeded)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

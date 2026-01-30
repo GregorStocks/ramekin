@@ -1,15 +1,13 @@
 {
   "raw": "3 mild chili peppers (Anaheim, poblanos, Fresno, or another variety)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mild chili peppers (Anaheim, poblanos, Fresno, or another variety)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mild chili peppers (Anaheim, poblanos, Fresno, or another variety)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons heavy cream or cashew cream (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream or cashew cream",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "heavy cream or cashew cream",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

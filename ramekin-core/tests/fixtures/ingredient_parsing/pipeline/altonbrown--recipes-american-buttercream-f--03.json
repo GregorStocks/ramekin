@@ -1,19 +1,17 @@
 {
   "raw": "18 tablespoons unsalted butter, cut into 1/2-inch pieces, at cool room temperature (about 65°F)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into 1/2-inch pieces",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "65",
-          "unit": null
-        }
-      ],
-      "note": "at cool room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter, cut into 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "65",
+        "unit": null
+      }
+    ],
+    "note": "at cool room temperature"
   }
 }

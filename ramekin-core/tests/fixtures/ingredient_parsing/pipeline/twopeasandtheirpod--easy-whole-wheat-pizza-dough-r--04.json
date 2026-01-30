@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 cups whole wheat flour (we use white whole wheat flour)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole wheat flour",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "we use white whole wheat flour"
-    }
+  "expected": {
+    "item": "whole wheat flour",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "we use white whole wheat flour"
   }
 }

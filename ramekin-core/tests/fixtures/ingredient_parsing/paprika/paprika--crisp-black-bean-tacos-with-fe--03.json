@@ -1,15 +1,13 @@
 {
   "raw": "5 teaspoons olive oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

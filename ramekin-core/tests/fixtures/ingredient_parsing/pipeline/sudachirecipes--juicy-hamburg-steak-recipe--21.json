@@ -1,10 +1,8 @@
 {
   "raw": "fried egg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fried egg",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "fried egg",
+    "measurements": [],
+    "note": null
   }
 }

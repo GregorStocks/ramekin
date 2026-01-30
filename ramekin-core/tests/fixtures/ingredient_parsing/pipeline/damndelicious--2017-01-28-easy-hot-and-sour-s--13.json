@@ -1,19 +1,17 @@
 {
   "raw": "1 (8-ounce) package firm tofu (drained and cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "firm tofu",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "drained and cubed"
-    }
+  "expected": {
+    "item": "firm tofu",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "drained and cubed"
   }
 }

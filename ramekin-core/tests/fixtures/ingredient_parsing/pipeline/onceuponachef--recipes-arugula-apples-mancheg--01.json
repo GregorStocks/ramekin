@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces arugula or baby arugula",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arugula or baby arugula",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arugula or baby arugula",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

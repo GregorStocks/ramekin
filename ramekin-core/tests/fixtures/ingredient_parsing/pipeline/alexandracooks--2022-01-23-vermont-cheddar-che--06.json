@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 cups diced, peeled red potato, from 4 to 5",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced, peeled red potato, from 4 to 5",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced, peeled red potato, from 4 to 5",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

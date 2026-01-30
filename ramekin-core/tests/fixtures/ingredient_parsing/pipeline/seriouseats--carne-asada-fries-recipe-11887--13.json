@@ -1,15 +1,13 @@
 {
   "raw": "1 pound frozen french fries, preferably shoestring, or homemade shoestring fries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen french fries, preferably shoestring, or homemade shoestring fries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen french fries, preferably shoestring, or homemade shoestring fries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

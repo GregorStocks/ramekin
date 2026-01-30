@@ -1,15 +1,13 @@
 {
   "raw": "1 15-ounce can cannellini beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cannellini beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "15-ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cannellini beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "15-ounce can"
+      }
+    ],
+    "note": null
   }
 }

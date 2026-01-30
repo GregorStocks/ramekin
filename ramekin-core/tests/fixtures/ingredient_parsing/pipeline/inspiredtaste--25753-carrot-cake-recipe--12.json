@@ -1,19 +1,17 @@
 {
   "raw": "½ cup raisins (70g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raisins",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raisins",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "70",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

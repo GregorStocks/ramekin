@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds beef chuck roast or stew meat (cut into ½-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef chuck roast or stew meat (cut into 1/2-inch pieces)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef chuck roast or stew meat (cut into 1/2-inch pieces)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "small knob  butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "knob  butter",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "knob  butter",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

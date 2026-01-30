@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup cold water (or half pineapple juice and half water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold water (or half pineapple juice and half water)",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold water (or half pineapple juice and half water)",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

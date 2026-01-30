@@ -1,15 +1,13 @@
 {
   "raw": "560 grams oxtail",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oxtail",
-      "measurements": [
-        {
-          "amount": "560",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oxtail",
+    "measurements": [
+      {
+        "amount": "560",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

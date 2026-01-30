@@ -1,15 +1,13 @@
 {
   "raw": "1 Pound Ground Beef or Ground  Lamb",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ground Beef or Ground  Lamb",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Ground Beef or Ground  Lamb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

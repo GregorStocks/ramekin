@@ -1,15 +1,13 @@
 {
   "raw": "2  whole carrots (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "whole carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

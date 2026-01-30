@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon dried thyme or summer savory",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried thyme or summer savory",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried thyme or summer savory",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

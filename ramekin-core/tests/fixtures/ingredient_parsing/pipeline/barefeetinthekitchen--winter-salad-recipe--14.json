@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup White Balsamic Vinaigrette",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "White Balsamic Vinaigrette",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "White Balsamic Vinaigrette",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

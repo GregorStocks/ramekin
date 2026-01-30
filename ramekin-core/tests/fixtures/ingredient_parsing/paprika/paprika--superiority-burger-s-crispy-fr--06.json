@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons grapeseed oil or other neutral oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapeseed oil or other neutral oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapeseed oil or other neutral oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

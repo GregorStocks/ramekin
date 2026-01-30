@@ -1,15 +1,13 @@
 {
   "raw": "1 bunch watercress or spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "watercress or spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "watercress or spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

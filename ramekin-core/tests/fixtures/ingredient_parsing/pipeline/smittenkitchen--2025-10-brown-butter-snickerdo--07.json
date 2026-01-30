@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 teaspoons kosher salt (Diamond brand, use half of others)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt (Diamond brand, use half of others)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt (Diamond brand, use half of others)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

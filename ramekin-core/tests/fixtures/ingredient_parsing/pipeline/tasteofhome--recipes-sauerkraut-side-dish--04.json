@@ -1,15 +1,13 @@
 {
   "raw": "3 medium tart apples, peeled and sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tart apples",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and sliced"
-    }
+  "expected": {
+    "item": "tart apples",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and sliced"
   }
 }

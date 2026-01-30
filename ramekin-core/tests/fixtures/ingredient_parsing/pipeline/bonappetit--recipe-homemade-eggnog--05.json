@@ -1,15 +1,13 @@
 {
   "raw": "2 cups dark rum",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark rum",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark rum",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

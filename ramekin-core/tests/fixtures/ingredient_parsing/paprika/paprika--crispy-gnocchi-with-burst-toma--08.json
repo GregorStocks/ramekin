@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup thinly sliced or torn basil leaves (optional), plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced or torn basil leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "thinly sliced or torn basil leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

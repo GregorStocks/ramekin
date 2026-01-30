@@ -1,15 +1,13 @@
 {
   "raw": "1 cup miniature marshmallows",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miniature marshmallows",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "miniature marshmallows",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

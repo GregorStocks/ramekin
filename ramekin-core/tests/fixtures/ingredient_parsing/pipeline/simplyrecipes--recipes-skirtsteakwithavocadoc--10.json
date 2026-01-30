@@ -1,15 +1,13 @@
 {
   "raw": "1 pound skirt steak",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skirt steak",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skirt steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

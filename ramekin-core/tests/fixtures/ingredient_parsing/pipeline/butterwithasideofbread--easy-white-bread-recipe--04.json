@@ -1,15 +1,13 @@
 {
   "raw": "3 Tablespoons butter or margarine (melted or very soft)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter or margarine",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted or very soft"
-    }
+  "expected": {
+    "item": "butter or margarine",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted or very soft"
   }
 }

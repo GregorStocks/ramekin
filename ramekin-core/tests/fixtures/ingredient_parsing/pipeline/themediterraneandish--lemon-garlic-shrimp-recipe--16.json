@@ -1,10 +1,8 @@
 {
   "raw": "Grated Parmesan cheese, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grated Parmesan cheese",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Grated Parmesan cheese",
+    "measurements": [],
+    "note": "to taste"
   }
 }

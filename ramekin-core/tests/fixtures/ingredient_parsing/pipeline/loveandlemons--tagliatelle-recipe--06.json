@@ -1,19 +1,17 @@
 {
   "raw": "¼ teaspoon (1 mL) red pepper flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper flakes",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "1",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "1",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

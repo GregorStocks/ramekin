@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon minced fresh chilies (or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced fresh chilies (or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced fresh chilies (or to personal taste (Serrano, Thai chilies, jalapeno, habanero, etc.)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

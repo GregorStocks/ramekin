@@ -1,19 +1,17 @@
 {
   "raw": "10 medium cloves garlic, minced (about 10 teaspoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cloves garlic",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "medium"
-        },
-        {
-          "amount": "10",
-          "unit": "tsp"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "cloves garlic",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "medium"
+      },
+      {
+        "amount": "10",
+        "unit": "tsp"
+      }
+    ],
+    "note": "minced"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "flaky sea salt, for sprinkling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky sea salt, for sprinkling",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "flaky sea salt, for sprinkling",
+    "measurements": [],
+    "note": null
   }
 }

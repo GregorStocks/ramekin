@@ -1,15 +1,13 @@
 {
   "raw": "2  jalapenos (seeded and finely diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapenos",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "seeded and finely diced"
-    }
+  "expected": {
+    "item": "jalapenos",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "seeded and finely diced"
   }
 }

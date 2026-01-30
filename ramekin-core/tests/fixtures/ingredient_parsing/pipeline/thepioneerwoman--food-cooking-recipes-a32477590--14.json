@@ -1,15 +1,13 @@
 {
   "raw": "6 brioche hamburger buns, toasted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brioche hamburger buns",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "toasted"
-    }
+  "expected": {
+    "item": "brioche hamburger buns",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "toasted"
   }
 }

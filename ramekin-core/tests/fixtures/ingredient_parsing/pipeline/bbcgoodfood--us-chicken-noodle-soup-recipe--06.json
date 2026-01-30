@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp sweet corn kernels (canned or frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet corn kernels",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "canned or frozen"
-    }
+  "expected": {
+    "item": "sweet corn kernels",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "canned or frozen"
   }
 }

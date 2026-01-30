@@ -1,15 +1,13 @@
 {
   "raw": "2  boiled eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boiled eggs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boiled eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

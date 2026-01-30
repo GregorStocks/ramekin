@@ -1,15 +1,13 @@
 {
   "raw": "70 grams cultured unsalted butter (melted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cultured unsalted butter",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "cultured unsalted butter",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
   }
 }

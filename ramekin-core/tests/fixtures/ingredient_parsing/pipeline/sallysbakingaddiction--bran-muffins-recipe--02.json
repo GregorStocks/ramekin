@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (52g) wheat bran",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wheat bran",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "52",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wheat bran",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "52",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

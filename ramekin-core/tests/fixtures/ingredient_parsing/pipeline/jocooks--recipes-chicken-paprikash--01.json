@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken thighs and drumsticks (bone-in skin-on )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken thighs and drumsticks (bone-in skin-on",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken thighs and drumsticks (bone-in skin-on",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  Green Onion (Sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Green Onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "Sliced"
-    }
+  "expected": {
+    "item": "Green Onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "Sliced"
   }
 }

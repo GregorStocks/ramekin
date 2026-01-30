@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons Ghiradelli Sweet Ground White Chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ghiradelli Sweet Ground White Chocolate",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Ghiradelli Sweet Ground White Chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

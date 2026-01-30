@@ -1,15 +1,13 @@
 {
   "raw": "1  package Natto",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Natto",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Natto",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

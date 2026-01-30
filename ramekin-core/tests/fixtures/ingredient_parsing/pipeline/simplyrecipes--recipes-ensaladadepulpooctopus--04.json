@@ -1,10 +1,8 @@
 {
   "raw": "Several large sprigs of fresh parsley",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Several large sprigs of fresh parsley",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Several large sprigs of fresh parsley",
+    "measurements": [],
+    "note": null
   }
 }

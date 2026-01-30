@@ -1,15 +1,13 @@
 {
   "raw": "6 small gherkins sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gherkins sliced",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gherkins sliced",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

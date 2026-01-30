@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup whiskey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whiskey",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whiskey",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

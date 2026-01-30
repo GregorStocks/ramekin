@@ -1,10 +1,8 @@
 {
   "raw": "Sumac and/or za’atar (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sumac and/or za’atar",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sumac and/or za’atar",
+    "measurements": [],
+    "note": "optional"
   }
 }

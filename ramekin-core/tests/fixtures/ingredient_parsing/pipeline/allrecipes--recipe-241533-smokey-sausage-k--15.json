@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Freshly ground black pepper, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Freshly ground black pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "Freshly ground black pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "for garnish"
   }
 }

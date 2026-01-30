@@ -1,15 +1,13 @@
 {
   "raw": "2 cups add ins ((veggies, meat, etc))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "add ins (veggies, meat, etc)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "add ins (veggies, meat, etc)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

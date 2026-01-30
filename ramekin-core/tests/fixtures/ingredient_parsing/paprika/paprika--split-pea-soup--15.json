@@ -1,15 +1,13 @@
 {
   "raw": "Two slices of crumbled crisp bacon (obviously would no longer be vegetarian)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

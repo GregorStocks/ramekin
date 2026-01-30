@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon pure vanilla",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure vanilla",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure vanilla",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

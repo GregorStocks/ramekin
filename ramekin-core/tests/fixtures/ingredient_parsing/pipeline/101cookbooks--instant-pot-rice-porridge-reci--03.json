@@ -1,15 +1,13 @@
 {
   "raw": "9 cups water or mushroom broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water or mushroom broth",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water or mushroom broth",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons minced parsley, or a mix of herbs you like with carrots such as chives and dill, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced parsley, or a mix of herbs you like with carrots such as chives and dill",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "minced parsley, or a mix of herbs you like with carrots such as chives and dill",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

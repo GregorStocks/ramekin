@@ -1,15 +1,13 @@
 {
   "raw": "1 large bunch cilantro (with the thicker stems removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunch cilantro (with the thicker stems removed)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bunch cilantro (with the thicker stems removed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

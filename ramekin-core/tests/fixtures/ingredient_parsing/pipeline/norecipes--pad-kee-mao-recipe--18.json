@@ -1,15 +1,13 @@
 {
   "raw": "70 grams tomatoes ((1/2 medium tomato, sliced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": "1/2 medium tomato, sliced"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      }
+    ],
+    "note": "1/2 medium tomato, sliced"
   }
 }

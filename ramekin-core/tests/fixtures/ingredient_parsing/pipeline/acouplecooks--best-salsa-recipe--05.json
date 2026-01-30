@@ -1,15 +1,13 @@
 {
   "raw": "1 large handful cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "handful cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "handful cilantro",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

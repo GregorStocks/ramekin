@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup finely minced red bell pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely minced red bell pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely minced red bell pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

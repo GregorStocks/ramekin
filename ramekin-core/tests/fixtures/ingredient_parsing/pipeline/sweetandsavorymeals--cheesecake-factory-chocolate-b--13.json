@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces Belgian dark chocolate (melted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Belgian dark chocolate",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "Belgian dark chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
   }
 }

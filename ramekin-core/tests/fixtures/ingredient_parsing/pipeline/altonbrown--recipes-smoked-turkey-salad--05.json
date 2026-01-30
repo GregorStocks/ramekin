@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon toasted and chopped pecans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted and chopped pecans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted and chopped pecans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

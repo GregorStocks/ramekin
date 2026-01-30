@@ -1,10 +1,8 @@
 {
   "raw": "Kosher salt (generous pinch to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kosher salt",
-      "measurements": [],
-      "note": "generous pinch to taste"
-    }
+  "expected": {
+    "item": "Kosher salt",
+    "measurements": [],
+    "note": "generous pinch to taste"
   }
 }

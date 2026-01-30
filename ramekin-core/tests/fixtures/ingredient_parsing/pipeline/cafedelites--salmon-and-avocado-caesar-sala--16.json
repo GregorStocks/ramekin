@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon lemon juice a lemon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice a lemon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon juice a lemon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

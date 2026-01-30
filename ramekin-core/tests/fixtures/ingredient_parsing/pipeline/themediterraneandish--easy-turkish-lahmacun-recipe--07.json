@@ -1,19 +1,17 @@
 {
   "raw": "1/2 oz fresh parsley leaves with some stem",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh parsley leaves with some stem",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh parsley leaves with some stem",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

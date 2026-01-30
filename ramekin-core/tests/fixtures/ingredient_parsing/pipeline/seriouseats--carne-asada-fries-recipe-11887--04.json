@@ -1,15 +1,13 @@
 {
   "raw": "4 chiltepin chiles (see note), plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chiltepin chiles (see note)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "chiltepin chiles (see note)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoon brown sugar (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown sugar (for topping)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown sugar (for topping)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

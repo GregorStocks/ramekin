@@ -1,19 +1,17 @@
 {
   "raw": "3 Tablespoons ketchup ((45ml) )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ketchup",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ketchup",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

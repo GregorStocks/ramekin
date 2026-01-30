@@ -1,15 +1,13 @@
 {
   "raw": "2  broccoli crowns, cut into florets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli crowns, cut into florets",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli crowns, cut into florets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

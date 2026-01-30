@@ -1,15 +1,13 @@
 {
   "raw": "1 batch corn tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "batch corn tortillas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "batch corn tortillas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 inches Daikon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inches Daikon",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "inches Daikon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

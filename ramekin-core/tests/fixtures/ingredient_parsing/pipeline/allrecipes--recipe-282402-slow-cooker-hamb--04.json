@@ -1,19 +1,17 @@
 {
   "raw": "0.5 (32 fluid ounce) container beef broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "container beef broth",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": null
-        },
-        {
-          "amount": "32",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "container beef broth",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": null
+      },
+      {
+        "amount": "32",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

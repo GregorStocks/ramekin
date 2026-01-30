@@ -1,15 +1,13 @@
 {
   "raw": "1 cup soju or sake",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "soju or sake",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "soju or sake",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

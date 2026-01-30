@@ -1,19 +1,17 @@
 {
   "raw": "3 grams (about 0.5 teaspoons) yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yeast",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "g"
-        },
-        {
-          "amount": "0.5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yeast",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "g"
+      },
+      {
+        "amount": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

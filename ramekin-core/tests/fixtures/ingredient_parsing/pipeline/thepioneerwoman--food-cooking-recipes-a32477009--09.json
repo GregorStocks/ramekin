@@ -1,15 +1,13 @@
 {
   "raw": "3 tbsp. chopped pitted green olives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped pitted green olives",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped pitted green olives",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

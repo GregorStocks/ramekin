@@ -1,15 +1,13 @@
 {
   "raw": "2 large onions, halved and sliced thin, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions, halved and sliced thin",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "onions, halved and sliced thin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "divided"
   }
 }

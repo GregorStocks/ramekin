@@ -1,15 +1,13 @@
 {
   "raw": "1 medium green apple, skin on, cored and diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green apple, skin on",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "cored and diced"
-    }
+  "expected": {
+    "item": "green apple, skin on",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "cored and diced"
   }
 }

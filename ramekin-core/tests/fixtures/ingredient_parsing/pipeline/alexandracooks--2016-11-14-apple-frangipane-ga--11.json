@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons Bourbon, rum, brandy or vanilla",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bourbon, rum, brandy or vanilla",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Bourbon, rum, brandy or vanilla",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

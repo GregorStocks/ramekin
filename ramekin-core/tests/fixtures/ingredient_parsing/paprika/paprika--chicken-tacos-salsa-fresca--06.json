@@ -1,15 +1,13 @@
 {
   "raw": "1 ancho or other mild dried chili, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ancho or other mild dried chili",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "ancho or other mild dried chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

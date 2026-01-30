@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup wheat flour (you can sub in all white)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "wheat flour (you can sub in all white)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "wheat flour (you can sub in all white)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

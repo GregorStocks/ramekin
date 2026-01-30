@@ -1,15 +1,13 @@
 {
   "raw": "1.5 cups broccoli, steamed and chopped (or defrosted frozen)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli, steamed and chopped",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": "or defrosted frozen"
-    }
+  "expected": {
+    "item": "broccoli, steamed and chopped",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cup"
+      }
+    ],
+    "note": "or defrosted frozen"
   }
 }

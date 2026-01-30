@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon minced shallot",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

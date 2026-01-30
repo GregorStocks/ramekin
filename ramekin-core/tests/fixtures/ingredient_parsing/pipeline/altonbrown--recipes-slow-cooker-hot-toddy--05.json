@@ -1,10 +1,8 @@
 {
   "raw": "Freshly grated nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Freshly grated nutmeg",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Freshly grated nutmeg",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped pecans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped pecans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped pecans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

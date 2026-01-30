@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 cups (about 200g) confectioner&amp;#39;s sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioner's sugar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "confectioner's sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

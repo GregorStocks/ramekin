@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Dutch-process cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dutch-process cocoa powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dutch-process cocoa powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

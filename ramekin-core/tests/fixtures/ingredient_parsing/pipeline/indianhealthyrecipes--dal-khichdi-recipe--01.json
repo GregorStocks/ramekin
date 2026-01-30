@@ -1,15 +1,13 @@
 {
   "raw": "1 to 2 tablespoons ghee ((clarified butter) or oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee (clarified butter) or oil)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ghee (clarified butter) or oil)",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 slices thick-cut bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick-cut bacon",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

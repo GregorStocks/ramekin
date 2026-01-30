@@ -1,19 +1,17 @@
 {
   "raw": "7 tablespoons / 100g vegetable oil*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable oil*",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable oil*",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

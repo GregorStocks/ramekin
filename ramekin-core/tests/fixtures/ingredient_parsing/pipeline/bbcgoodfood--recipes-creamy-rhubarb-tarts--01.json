@@ -1,15 +1,13 @@
 {
   "raw": "375g all-butter puff pastry",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-butter puff pastry",
-      "measurements": [
-        {
-          "amount": "375",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-butter puff pastry",
+    "measurements": [
+      {
+        "amount": "375",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

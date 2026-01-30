@@ -1,15 +1,13 @@
 {
   "raw": "1 cup steel-cut oats (certified gluten-free if necessary)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "steel-cut oats (certified gluten-free if necessary)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "steel-cut oats (certified gluten-free if necessary)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp instant coffee powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant coffee powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant coffee powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

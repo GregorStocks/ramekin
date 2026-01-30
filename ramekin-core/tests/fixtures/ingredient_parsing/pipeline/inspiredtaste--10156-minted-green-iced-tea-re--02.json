@@ -1,15 +1,13 @@
 {
   "raw": "2 cups water or more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water or more to taste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water or more to taste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  dried red chili pepper (split lengthways, deseeded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried red chili pepper (split lengthways, deseeded)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried red chili pepper (split lengthways, deseeded)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

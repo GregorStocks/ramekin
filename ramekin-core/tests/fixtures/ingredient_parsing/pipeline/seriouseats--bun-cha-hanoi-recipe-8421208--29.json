@@ -1,15 +1,13 @@
 {
   "raw": "1 bunch perilla (tiá tô), leaves picked",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "perilla (tiá tô), leaves picked",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "perilla (tiá tô), leaves picked",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

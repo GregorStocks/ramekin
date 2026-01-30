@@ -1,15 +1,13 @@
 {
   "raw": "1  heaping cup Cool Whip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cool Whip",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaping cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Cool Whip",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaping cup"
+      }
+    ],
+    "note": null
   }
 }

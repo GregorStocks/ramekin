@@ -1,15 +1,13 @@
 {
   "raw": "6 small garlic cloves, but who is counting, peeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves, but who is counting",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "small"
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "garlic cloves, but who is counting",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "small"
+      }
+    ],
+    "note": "peeled"
   }
 }

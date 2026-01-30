@@ -1,15 +1,13 @@
 {
   "raw": "600 grams pre-cooked frozen udon ((defrosted *see note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pre-cooked frozen udon (defrosted *see note)",
-      "measurements": [
-        {
-          "amount": "600",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pre-cooked frozen udon (defrosted *see note)",
+    "measurements": [
+      {
+        "amount": "600",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

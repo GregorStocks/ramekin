@@ -1,15 +1,13 @@
 {
   "raw": "12 cups popped kettle corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "popped kettle corn",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "popped kettle corn",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

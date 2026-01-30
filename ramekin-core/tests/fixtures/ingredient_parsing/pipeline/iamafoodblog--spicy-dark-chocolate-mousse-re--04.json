@@ -1,10 +1,8 @@
 {
   "raw": "a bowl of ice cubes with a bit of cold water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a bowl of ice cubes with a bit of cold water",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a bowl of ice cubes with a bit of cold water",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "1 bunch kale (about 5 oz)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kale",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        },
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "142",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kale",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      },
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

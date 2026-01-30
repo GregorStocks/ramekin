@@ -1,15 +1,13 @@
 {
   "raw": "2 medium carrots, cut in thin julienne",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots, cut in thin julienne",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots, cut in thin julienne",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

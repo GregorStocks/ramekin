@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon Fish Sauce ((this is a vital ingredient for wonderful flavor, please don't skip it))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fish Sauce (this is a vital ingredient for wonderful flavor, please don't skip it)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Fish Sauce (this is a vital ingredient for wonderful flavor, please don't skip it)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

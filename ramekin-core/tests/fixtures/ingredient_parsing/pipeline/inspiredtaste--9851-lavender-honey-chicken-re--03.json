@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons dried culinary lavender",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried culinary lavender",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried culinary lavender",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

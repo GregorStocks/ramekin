@@ -1,19 +1,17 @@
 {
   "raw": "1 ounce dark aged rum, preferably El Dorado 8",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark aged rum, preferably El Dorado 8",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark aged rum, preferably El Dorado 8",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

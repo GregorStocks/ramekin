@@ -1,15 +1,13 @@
 {
   "raw": "1&nbsp;tablespoon vinegar, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  green pepper (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "green pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

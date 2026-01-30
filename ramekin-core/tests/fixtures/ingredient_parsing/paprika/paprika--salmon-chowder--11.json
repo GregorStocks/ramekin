@@ -1,19 +1,17 @@
 {
   "raw": "3/4 to 1 pound boneless, skinless fish scraps, such as salmon, cod, or halibut, cut into 3/4-inch chunks (350-450g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless fish scraps, such as salmon, cod, or halibut, cut into 3/4-inch chunks",
-      "measurements": [
-        {
-          "amount": "3/4 to 1",
-          "unit": "lb"
-        },
-        {
-          "amount": "350",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless, skinless fish scraps, such as salmon, cod, or halibut, cut into 3/4-inch chunks",
+    "measurements": [
+      {
+        "amount": "3/4 to 1",
+        "unit": "lb"
+      },
+      {
+        "amount": "350",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

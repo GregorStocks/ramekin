@@ -1,15 +1,13 @@
 {
   "raw": "4 to 8 tablespoons ghee or olive oil, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee or olive oil",
-      "measurements": [
-        {
-          "amount": "4 to 8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "ghee or olive oil",
+    "measurements": [
+      {
+        "amount": "4 to 8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
   }
 }

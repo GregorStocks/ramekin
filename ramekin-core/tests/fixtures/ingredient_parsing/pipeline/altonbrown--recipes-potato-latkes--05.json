@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons dry instant mashed potatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry instant mashed potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry instant mashed potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

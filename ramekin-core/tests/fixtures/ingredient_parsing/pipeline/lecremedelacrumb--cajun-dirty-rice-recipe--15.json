@@ -1,15 +1,13 @@
 {
   "raw": "handful of curly parsley (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "curly parsley",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "curly parsley",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

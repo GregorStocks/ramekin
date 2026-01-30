@@ -1,15 +1,13 @@
 {
   "raw": "1 28-ounce can tomatoes, whole or crushed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "28-ounce can"
-        }
-      ],
-      "note": "whole or crushed"
-    }
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "28-ounce can"
+      }
+    ],
+    "note": "whole or crushed"
   }
 }

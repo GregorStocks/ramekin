@@ -1,15 +1,13 @@
 {
   "raw": "1  skin-on salmon fillet",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skin-on salmon fillet",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skin-on salmon fillet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  package itokonnyaku",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "itokonnyaku",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "itokonnyaku",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

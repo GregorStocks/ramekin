@@ -1,15 +1,13 @@
 {
   "raw": "1  beet (small shredded on a mandoline)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beet",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "small shredded on a mandoline"
-    }
+  "expected": {
+    "item": "beet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "small shredded on a mandoline"
   }
 }

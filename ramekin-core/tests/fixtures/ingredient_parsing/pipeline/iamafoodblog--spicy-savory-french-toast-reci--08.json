@@ -1,10 +1,8 @@
 {
   "raw": "sprinkle of salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sprinkle of salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sprinkle of salt",
+    "measurements": [],
+    "note": null
   }
 }

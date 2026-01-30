@@ -1,15 +1,13 @@
 {
   "raw": "1 pound beef top sirloin steak, cut into 3/4-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef top sirloin steak, cut into 3/4-inch cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef top sirloin steak, cut into 3/4-inch cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

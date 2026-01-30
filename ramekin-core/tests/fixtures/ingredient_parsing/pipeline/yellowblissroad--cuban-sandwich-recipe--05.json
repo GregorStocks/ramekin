@@ -1,15 +1,13 @@
 {
   "raw": "1 pound roasted pork (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted pork",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "roasted pork",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 to 8 tablespoons mild-tasting olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mild-tasting olive oil",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mild-tasting olive oil",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

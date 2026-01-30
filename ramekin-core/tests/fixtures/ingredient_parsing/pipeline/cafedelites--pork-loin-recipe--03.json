@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons paprika (mild or smoked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paprika (mild or smoked)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "paprika (mild or smoked)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

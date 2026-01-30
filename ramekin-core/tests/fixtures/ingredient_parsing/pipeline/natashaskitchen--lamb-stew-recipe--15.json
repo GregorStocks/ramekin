@@ -1,15 +1,13 @@
 {
   "raw": "4  medium carrots (10 oz, peeled and cut into 1/2\" thick pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": "10 oz, peeled and cut into 1/2\" thick pieces"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": "10 oz, peeled and cut into 1/2\" thick pieces"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  head romaine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "romaine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "romaine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
   }
 }

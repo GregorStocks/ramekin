@@ -1,15 +1,13 @@
 {
   "raw": "2 slices high-quality sandwich bread, such as shokupan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "high-quality sandwich bread, such as shokupan",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "high-quality sandwich bread, such as shokupan",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

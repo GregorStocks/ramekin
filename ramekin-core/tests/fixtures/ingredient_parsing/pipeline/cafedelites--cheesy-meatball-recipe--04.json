@@ -1,19 +1,17 @@
 {
   "raw": "17 oz ground pork (minced pork)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pork",
-      "measurements": [
-        {
-          "amount": "17",
-          "unit": "oz"
-        },
-        {
-          "amount": "482",
-          "unit": "g"
-        }
-      ],
-      "note": "minced pork"
-    }
+  "expected": {
+    "item": "ground pork",
+    "measurements": [
+      {
+        "amount": "17",
+        "unit": "oz"
+      },
+      {
+        "amount": "482",
+        "unit": "g"
+      }
+    ],
+    "note": "minced pork"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 potatoes cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potatoes cut into chunks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "potatoes cut into chunks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh strawberries (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh strawberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "fresh strawberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved"
   }
 }

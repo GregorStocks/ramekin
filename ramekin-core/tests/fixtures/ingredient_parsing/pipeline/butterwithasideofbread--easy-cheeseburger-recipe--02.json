@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Homemade BBQ seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Homemade BBQ seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Homemade BBQ seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

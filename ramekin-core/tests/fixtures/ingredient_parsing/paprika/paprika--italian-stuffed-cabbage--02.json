@@ -1,19 +1,17 @@
 {
   "raw": "7-ounce (200-gram) hunk of bread (see above), crusts cut away, torn into small scraps (you’ll have about 3 loose cups of scraps)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounce hunk of bread (see above), crusts cut away, torn into small scraps (you’ll have about 3 loose cups of scraps)",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": null
-        },
-        {
-          "amount": "200",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-ounce hunk of bread (see above), crusts cut away, torn into small scraps (you’ll have about 3 loose cups of scraps)",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": null
+      },
+      {
+        "amount": "200",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

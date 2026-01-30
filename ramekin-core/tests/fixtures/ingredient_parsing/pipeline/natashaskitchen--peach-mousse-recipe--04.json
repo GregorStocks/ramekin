@@ -1,15 +1,13 @@
 {
   "raw": "1 Tbsp unflavored gelatin (I used Knox brand)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unflavored gelatin (I used Knox brand)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unflavored gelatin (I used Knox brand)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

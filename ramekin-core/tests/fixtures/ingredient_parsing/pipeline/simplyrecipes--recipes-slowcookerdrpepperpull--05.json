@@ -1,15 +1,13 @@
 {
   "raw": "2 red onions, cut into slices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red onions, cut into slices",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red onions, cut into slices",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 grapefruit (a selection of yellow and pink if you want)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grapefruit (a selection of yellow and pink if you want)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grapefruit (a selection of yellow and pink if you want)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

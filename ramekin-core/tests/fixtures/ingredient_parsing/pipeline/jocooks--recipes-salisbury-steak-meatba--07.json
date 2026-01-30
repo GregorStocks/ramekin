@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon seasoning salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seasoning salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seasoning salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

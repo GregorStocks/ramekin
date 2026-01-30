@@ -1,15 +1,13 @@
 {
   "raw": "1 pound asparagus spears, trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "asparagus spears",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "asparagus spears",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed"
   }
 }

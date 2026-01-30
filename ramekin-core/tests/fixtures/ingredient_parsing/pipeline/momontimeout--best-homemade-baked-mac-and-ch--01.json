@@ -1,19 +1,17 @@
 {
   "raw": "16 oz elbow macaroni, cooked ((or other tubular pasta))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "elbow macaroni",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": "cooked (or other tubular pasta)"
-    }
+  "expected": {
+    "item": "elbow macaroni",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "cooked (or other tubular pasta)"
   }
 }

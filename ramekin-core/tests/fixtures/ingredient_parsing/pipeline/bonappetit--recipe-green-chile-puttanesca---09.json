@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup (or more) halved or sliced pickled jalapeños or guindilla",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "halved or sliced pickled jalapeños or guindilla",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more"
-    }
+  "expected": {
+    "item": "halved or sliced pickled jalapeños or guindilla",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more"
   }
 }

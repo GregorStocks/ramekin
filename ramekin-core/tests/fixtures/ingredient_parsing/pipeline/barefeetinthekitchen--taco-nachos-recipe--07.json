@@ -1,10 +1,8 @@
 {
   "raw": "Optional toppings: sour cream (jalapenos, green onions, salsa, guacamole)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional toppings: sour cream (jalapenos, green onions, salsa, guacamole)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Optional toppings: sour cream (jalapenos, green onions, salsa, guacamole)",
+    "measurements": [],
+    "note": null
   }
 }

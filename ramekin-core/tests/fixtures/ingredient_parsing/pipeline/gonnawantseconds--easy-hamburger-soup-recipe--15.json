@@ -1,19 +1,17 @@
 {
   "raw": "1 (16-ounce) package  frozen mixed vegetables",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen mixed vegetables",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen mixed vegetables",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

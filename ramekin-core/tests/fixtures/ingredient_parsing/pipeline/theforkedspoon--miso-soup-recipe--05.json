@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup miso paste (plus more if needed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miso paste (plus more if needed)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "miso paste (plus more if needed)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

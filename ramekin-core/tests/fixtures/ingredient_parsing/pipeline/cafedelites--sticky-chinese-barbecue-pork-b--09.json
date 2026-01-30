@@ -1,23 +1,21 @@
 {
   "raw": "6  pork belly spare ribs (about 2.2 pounds or 1kg)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pork belly spare ribs",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "2.2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1",
-          "unit": "kg"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pork belly spare ribs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": "2.2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1",
+        "unit": "kg"
+      }
+    ],
+    "note": null
   }
 }

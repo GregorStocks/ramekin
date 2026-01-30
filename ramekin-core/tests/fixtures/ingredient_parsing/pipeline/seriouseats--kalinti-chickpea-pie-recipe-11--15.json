@@ -1,10 +1,8 @@
 {
   "raw": "Ground cumin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ground cumin",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ground cumin",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "12 dinner rolls or Hawaiian sweet rolls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dinner rolls or Hawaiian sweet rolls",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dinner rolls or Hawaiian sweet rolls",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

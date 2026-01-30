@@ -1,15 +1,13 @@
 {
   "raw": "5 Persian cucumbers, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Persian cucumbers",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "Persian cucumbers",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

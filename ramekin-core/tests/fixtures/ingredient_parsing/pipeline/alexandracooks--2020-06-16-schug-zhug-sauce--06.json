@@ -1,15 +1,13 @@
 {
   "raw": "2 cups lightly packed flat-leaf parsley leaves and stems (rough stems removed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly packed flat-leaf parsley leaves and stems (rough stems removed)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly packed flat-leaf parsley leaves and stems (rough stems removed)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

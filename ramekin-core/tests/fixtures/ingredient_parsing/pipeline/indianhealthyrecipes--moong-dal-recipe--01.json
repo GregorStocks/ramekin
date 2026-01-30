@@ -1,15 +1,13 @@
 {
   "raw": "½ cup moong dal ((yellow mung lentils))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "moong dal (yellow mung lentils)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "moong dal (yellow mung lentils)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

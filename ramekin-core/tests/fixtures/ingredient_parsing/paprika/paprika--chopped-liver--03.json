@@ -1,19 +1,17 @@
 {
   "raw": "2 cups medium-diced yellow onion (2 onions)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-diced yellow onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "medium-diced yellow onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

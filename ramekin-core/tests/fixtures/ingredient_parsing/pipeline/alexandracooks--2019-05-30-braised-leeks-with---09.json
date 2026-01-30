@@ -1,15 +1,13 @@
 {
   "raw": "10 coriander seeds, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander seeds",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "coriander seeds",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "optional"
   }
 }

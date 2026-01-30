@@ -1,15 +1,13 @@
 {
   "raw": "1 bundle scallions, to be used here and to finish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bundle scallions, to be used here and to finish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bundle scallions, to be used here and to finish",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

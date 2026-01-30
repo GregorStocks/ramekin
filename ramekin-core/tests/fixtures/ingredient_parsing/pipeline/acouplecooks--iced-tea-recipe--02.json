@@ -1,15 +1,13 @@
 {
   "raw": "6 black tea bags",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black tea bags",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black tea bags",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

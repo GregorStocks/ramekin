@@ -1,15 +1,13 @@
 {
   "raw": "¾ cups boiling water or hot brewed coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boiling water or hot brewed coffee",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boiling water or hot brewed coffee",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

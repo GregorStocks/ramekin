@@ -1,19 +1,17 @@
 {
   "raw": "45 grams potato starch ((about 1/4 cup))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato starch",
-      "measurements": [
-        {
-          "amount": "45",
-          "unit": "g"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "potato starch",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

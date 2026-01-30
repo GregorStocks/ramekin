@@ -1,15 +1,13 @@
 {
   "raw": "1  dash salt (to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "dash"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "dash"
+      }
+    ],
+    "note": "to taste"
   }
 }

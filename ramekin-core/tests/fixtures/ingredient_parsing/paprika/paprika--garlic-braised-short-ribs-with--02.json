@@ -1,15 +1,13 @@
 {
   "raw": "5 pounds bone-in short ribs, at least 1 1/2 inches thick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in short ribs, at least 1 1/2 inches thick",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in short ribs, at least 1 1/2 inches thick",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

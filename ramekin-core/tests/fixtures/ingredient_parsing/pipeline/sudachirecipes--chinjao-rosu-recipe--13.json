@@ -1,15 +1,13 @@
 {
   "raw": "1  egg white (for velveting)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg white (for velveting)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg white (for velveting)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

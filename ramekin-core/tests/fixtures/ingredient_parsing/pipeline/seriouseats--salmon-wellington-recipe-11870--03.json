@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons minced fresh dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced fresh dill",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced fresh dill",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

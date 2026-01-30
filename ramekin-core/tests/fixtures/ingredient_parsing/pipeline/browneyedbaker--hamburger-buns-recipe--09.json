@@ -1,10 +1,8 @@
 {
   "raw": "Sesame or poppy seeds for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sesame or poppy seeds for garnish",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Sesame or poppy seeds for garnish",
+    "measurements": [],
+    "note": "optional"
   }
 }

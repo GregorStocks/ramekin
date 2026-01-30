@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken (with skin and bones, use at least 1 chicken breast)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken (with skin and bones, use at least 1 chicken breast)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken (with skin and bones, use at least 1 chicken breast)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

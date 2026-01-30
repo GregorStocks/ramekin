@@ -1,15 +1,13 @@
 {
   "raw": "50 g Japanese leek (naganegi) (cut into 5cm pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese leek (naganegi) (cut into 5cm pieces)",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese leek (naganegi) (cut into 5cm pieces)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup feta cheese, blue cheese, or fresh mozzarella cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "feta cheese, blue cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or fresh mozzarella cheese"
-    }
+  "expected": {
+    "item": "feta cheese, blue cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or fresh mozzarella cheese"
   }
 }

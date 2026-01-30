@@ -1,15 +1,13 @@
 {
   "raw": "1 -2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

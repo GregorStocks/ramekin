@@ -1,15 +1,13 @@
 {
   "raw": "1 pound parsnips",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsnips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsnips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

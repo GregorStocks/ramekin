@@ -1,15 +1,13 @@
 {
   "raw": "2 L Dr Pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Dr Pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Dr Pepper",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

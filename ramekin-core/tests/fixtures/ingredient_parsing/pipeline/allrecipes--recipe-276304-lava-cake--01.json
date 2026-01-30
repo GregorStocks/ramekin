@@ -1,23 +1,21 @@
 {
   "raw": "6.5 (1 ounce) squares semisweet chocolate, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "squares semisweet chocolate",
-      "measurements": [
-        {
-          "amount": "6.5",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "squares semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "6.5",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds milk chocolate candy coating, coarsely chopped, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk chocolate candy coating, coarsely chopped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "milk chocolate candy coating, coarsely chopped",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "divided"
   }
 }

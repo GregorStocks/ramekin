@@ -1,19 +1,17 @@
 {
   "raw": "8 pitted Castelvetrano olives, quartered (about 1/3 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted Castelvetrano olives",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "pitted Castelvetrano olives",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "quartered"
   }
 }

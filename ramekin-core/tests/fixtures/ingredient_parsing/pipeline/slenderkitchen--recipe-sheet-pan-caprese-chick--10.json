@@ -1,19 +1,17 @@
 {
   "raw": "4 oz fresh mozzarella (sliced into 8 pieces, make sure it is the fresh kind, used in Caprese salads for the videos/photos)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced into 8 pieces, make sure it is the fresh kind, used in Caprese salads for the videos/photos"
-    }
+  "expected": {
+    "item": "fresh mozzarella",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced into 8 pieces, make sure it is the fresh kind, used in Caprese salads for the videos/photos"
   }
 }

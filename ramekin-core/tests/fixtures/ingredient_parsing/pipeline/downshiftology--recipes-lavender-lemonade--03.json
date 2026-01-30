@@ -1,15 +1,13 @@
 {
   "raw": "1 cup honey  (or maple syrup / other sweeteners )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "honey  (or maple syrup / other sweeteners",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "honey  (or maple syrup / other sweeteners",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

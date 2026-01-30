@@ -1,10 +1,8 @@
 {
   "raw": "Canola oil, for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Canola oil, for frying",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Canola oil, for frying",
+    "measurements": [],
+    "note": null
   }
 }

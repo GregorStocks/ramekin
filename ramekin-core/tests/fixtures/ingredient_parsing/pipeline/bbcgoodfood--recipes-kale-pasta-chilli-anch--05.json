@@ -1,15 +1,13 @@
 {
   "raw": "4 anchovies finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "anchovies finely chopped",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "anchovies finely chopped",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "c. 3-4 cups Seasoned tofu (like chipotle-style sofritos)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "3-4 cups Seasoned tofu (like chipotle-style sofritos)",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "3-4 cups Seasoned tofu (like chipotle-style sofritos)",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

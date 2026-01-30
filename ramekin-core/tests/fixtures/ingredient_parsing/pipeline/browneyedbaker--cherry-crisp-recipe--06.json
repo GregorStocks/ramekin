@@ -1,15 +1,13 @@
 {
   "raw": "5 tablespoons cold unsalted butter (cut into ½-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold unsalted butter (cut into 1/2-inch pieces)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold unsalted butter (cut into 1/2-inch pieces)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

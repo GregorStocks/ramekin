@@ -1,19 +1,17 @@
 {
   "raw": "4 oz milk or semi-sweet chocolate chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk or semi-sweet chocolate chunks",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk or semi-sweet chocolate chunks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

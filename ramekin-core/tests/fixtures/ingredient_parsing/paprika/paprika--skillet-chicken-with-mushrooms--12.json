@@ -1,10 +1,8 @@
 {
   "raw": "Bread or cooked pasta, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Bread or cooked pasta",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Bread or cooked pasta",
+    "measurements": [],
+    "note": "for serving"
   }
 }

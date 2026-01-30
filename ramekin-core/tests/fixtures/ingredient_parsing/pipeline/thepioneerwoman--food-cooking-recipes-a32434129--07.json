@@ -1,15 +1,13 @@
 {
   "raw": "2 c. jarred marinara sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jarred marinara sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jarred marinara sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

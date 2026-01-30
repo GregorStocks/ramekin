@@ -1,19 +1,17 @@
 {
   "raw": "3 c. sourdough bread cubes (1-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sourdough bread cubes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sourdough bread cubes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

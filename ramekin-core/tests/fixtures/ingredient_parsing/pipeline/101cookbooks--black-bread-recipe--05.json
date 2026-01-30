@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons finely ground espresso beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely ground espresso beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely ground espresso beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

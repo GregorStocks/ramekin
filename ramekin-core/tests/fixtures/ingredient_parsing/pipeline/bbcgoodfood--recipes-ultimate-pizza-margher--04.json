@@ -1,15 +1,13 @@
 {
   "raw": "7g pkt fast-action dried  yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pkt fast-action dried  yeast",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pkt fast-action dried  yeast",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

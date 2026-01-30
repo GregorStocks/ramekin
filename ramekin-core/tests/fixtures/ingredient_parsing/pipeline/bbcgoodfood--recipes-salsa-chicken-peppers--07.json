@@ -1,15 +1,13 @@
 {
   "raw": "40g grated mature cheddar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated mature cheddar",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated mature cheddar",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

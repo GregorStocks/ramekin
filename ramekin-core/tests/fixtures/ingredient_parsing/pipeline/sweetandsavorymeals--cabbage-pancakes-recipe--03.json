@@ -1,15 +1,13 @@
 {
   "raw": "1/8 cup chopped dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped dill",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped dill",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

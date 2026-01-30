@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons ground flaxseed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground flaxseed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground flaxseed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

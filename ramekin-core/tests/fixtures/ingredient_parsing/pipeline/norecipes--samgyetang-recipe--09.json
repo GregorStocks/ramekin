@@ -1,15 +1,13 @@
 {
   "raw": "4 cups low-sodium chicken stock ((preferably homemade))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium chicken stock (preferably homemade)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium chicken stock (preferably homemade)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

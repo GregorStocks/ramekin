@@ -1,15 +1,13 @@
 {
   "raw": "6 Yukon gold potatoes (or any small potatoes), peeled, cubed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon gold potatoes (or any small potatoes), peeled",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "cubed"
-    }
+  "expected": {
+    "item": "Yukon gold potatoes (or any small potatoes), peeled",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "cubed"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup chopped asparagus (tender parts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped asparagus (tender parts)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped asparagus (tender parts)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

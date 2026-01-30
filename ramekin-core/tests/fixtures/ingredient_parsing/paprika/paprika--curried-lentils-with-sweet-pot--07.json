@@ -1,15 +1,13 @@
 {
   "raw": "1 jalapeño pepper, seeded if desired, then minced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeño pepper, seeded if desired",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "then minced"
-    }
+  "expected": {
+    "item": "jalapeño pepper, seeded if desired",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "then minced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup feta crumbles, plus more for sprinkling*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "feta crumbles",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for sprinkling*"
-    }
+  "expected": {
+    "item": "feta crumbles",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for sprinkling*"
   }
 }

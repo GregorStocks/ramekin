@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup sesame seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame seeds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sesame seeds",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

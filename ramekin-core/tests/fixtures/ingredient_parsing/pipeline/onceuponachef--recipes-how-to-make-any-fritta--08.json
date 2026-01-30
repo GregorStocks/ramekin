@@ -1,15 +1,13 @@
 {
   "raw": "1¼ cup shredded cheese, (such as Cheddar or Gruyere)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheese, (such as Cheddar or Gruyere)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheese, (such as Cheddar or Gruyere)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

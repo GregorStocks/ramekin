@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds Yukon Gold potatoes, unpeeled",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon Gold potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": "unpeeled"
-    }
+  "expected": {
+    "item": "Yukon Gold potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": "unpeeled"
   }
 }

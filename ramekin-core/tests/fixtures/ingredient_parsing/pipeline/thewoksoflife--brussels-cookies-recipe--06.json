@@ -1,15 +1,13 @@
 {
   "raw": "½ cup ground oat bran ((or steel cut oats, ground into a flour in a blender))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground oat bran",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or steel cut oats, ground into a flour in a blender"
-    }
+  "expected": {
+    "item": "ground oat bran",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or steel cut oats, ground into a flour in a blender"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "4 skinless boneless chicken thighs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless boneless chicken thighs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless boneless chicken thighs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

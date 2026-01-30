@@ -1,15 +1,13 @@
 {
   "raw": "1  apple (I recommend a softer red variety like Gala, very thinly sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "I recommend a softer red variety like Gala, very thinly sliced"
-    }
+  "expected": {
+    "item": "apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "I recommend a softer red variety like Gala, very thinly sliced"
   }
 }

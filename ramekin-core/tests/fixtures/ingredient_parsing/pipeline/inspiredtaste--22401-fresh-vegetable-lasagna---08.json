@@ -1,19 +1,17 @@
 {
   "raw": "One (12-ounce) jar roasted red peppers, drained and cut into 1/2-inch pieces, 1 heaping cup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted red peppers, drained and cut into 1/2-inch pieces, 1 heaping cup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted red peppers, drained and cut into 1/2-inch pieces, 1 heaping cup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

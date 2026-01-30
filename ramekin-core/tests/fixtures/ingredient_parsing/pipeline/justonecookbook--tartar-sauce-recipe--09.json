@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Japanese karashi hot mustard",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese karashi hot mustard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese karashi hot mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

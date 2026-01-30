@@ -1,10 +1,8 @@
 {
   "raw": "Caesar dressing:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Caesar dressing:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Caesar dressing:",
+    "measurements": [],
+    "note": null
   }
 }

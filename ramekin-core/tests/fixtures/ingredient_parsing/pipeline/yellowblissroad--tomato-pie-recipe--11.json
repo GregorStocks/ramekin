@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup fresh basil leaves (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh basil leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "fresh basil leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced"
   }
 }

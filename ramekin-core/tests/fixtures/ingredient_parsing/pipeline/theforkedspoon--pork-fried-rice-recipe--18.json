@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tablespoon Sriracha or Gochujang (optional, if you like your fried rice to be a bit spicy)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha or Gochujang",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional, if you like your fried rice to be a bit spicy"
-    }
+  "expected": {
+    "item": "Sriracha or Gochujang",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional, if you like your fried rice to be a bit spicy"
   }
 }

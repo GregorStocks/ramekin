@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup coarsely chopped cilantro leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarsely chopped cilantro leaves",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coarsely chopped cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

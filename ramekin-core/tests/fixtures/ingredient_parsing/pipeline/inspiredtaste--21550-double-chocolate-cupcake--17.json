@@ -1,19 +1,17 @@
 {
   "raw": "¼ to ⅓ cup sour cream (60–80g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "1/4 to 1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "1/4 to 1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

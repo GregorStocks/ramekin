@@ -1,10 +1,8 @@
 {
   "raw": "Shrimp Ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shrimp Ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Shrimp Ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  cup nonfat dry milk powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nonfat dry milk powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "nonfat dry milk powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 egg, lightly beaten with 1 tablespoon of water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "lightly beaten with 1 tablespoon of water"
-    }
+  "expected": {
+    "item": "egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "lightly beaten with 1 tablespoon of water"
   }
 }

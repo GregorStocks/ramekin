@@ -1,10 +1,8 @@
 {
   "raw": "coarse crystal sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse crystal sugar",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "coarse crystal sugar",
+    "measurements": [],
+    "note": null
   }
 }

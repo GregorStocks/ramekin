@@ -1,15 +1,13 @@
 {
   "raw": "8 bags black tea, such as Lipton",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black tea, such as Lipton",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "bag"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black tea, such as Lipton",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "bag"
+      }
+    ],
+    "note": null
   }
 }

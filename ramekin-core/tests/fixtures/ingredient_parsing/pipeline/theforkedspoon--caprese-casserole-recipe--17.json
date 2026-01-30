@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces mozzarella pearls (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mozzarella pearls",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "mozzarella pearls",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "halved"
   }
 }

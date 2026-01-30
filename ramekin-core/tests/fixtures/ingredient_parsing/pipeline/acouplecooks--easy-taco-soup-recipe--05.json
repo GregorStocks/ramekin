@@ -1,15 +1,13 @@
 {
   "raw": "15-ounce can pinto beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "-ounce can pinto beans",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "-ounce can pinto beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

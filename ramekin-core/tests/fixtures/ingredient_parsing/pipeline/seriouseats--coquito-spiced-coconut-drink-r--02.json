@@ -1,15 +1,13 @@
 {
   "raw": "8 cloves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "8 cloves",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "8 cloves",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

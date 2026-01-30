@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoons Asian chili garlic sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Asian chili garlic sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Asian chili garlic sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

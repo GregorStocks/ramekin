@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups lukewarm water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lukewarm water",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lukewarm water",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

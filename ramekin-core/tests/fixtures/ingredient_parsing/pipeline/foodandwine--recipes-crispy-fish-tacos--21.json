@@ -1,15 +1,13 @@
 {
   "raw": "1 cup Mexican crema",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mexican crema",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mexican crema",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 chicken breasts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

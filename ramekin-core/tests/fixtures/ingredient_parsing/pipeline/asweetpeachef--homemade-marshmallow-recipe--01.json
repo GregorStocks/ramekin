@@ -1,10 +1,8 @@
 {
   "raw": "Cooking spray or vegetable oil (enough to grease pan)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooking spray or vegetable oil (enough to grease pan)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cooking spray or vegetable oil (enough to grease pan)",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup kalamata olives, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kalamata olives",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "kalamata olives",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved"
   }
 }

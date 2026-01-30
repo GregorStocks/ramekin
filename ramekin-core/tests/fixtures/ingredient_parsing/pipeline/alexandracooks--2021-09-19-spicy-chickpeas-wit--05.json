@@ -1,10 +1,8 @@
 {
   "raw": "crushed red pepper flakes to taste (I use 1/2 teaspoon or less)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper flakes to taste",
-      "measurements": [],
-      "note": "I use 1/2 teaspoon or less"
-    }
+  "expected": {
+    "item": "crushed red pepper flakes to taste",
+    "measurements": [],
+    "note": "I use 1/2 teaspoon or less"
   }
 }

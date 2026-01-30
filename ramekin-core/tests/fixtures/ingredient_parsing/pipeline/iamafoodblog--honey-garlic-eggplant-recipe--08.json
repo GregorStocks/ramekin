@@ -1,10 +1,8 @@
 {
   "raw": "sliced green onions, for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced green onions",
-      "measurements": [],
-      "note": "for garnish"
-    }
+  "expected": {
+    "item": "sliced green onions",
+    "measurements": [],
+    "note": "for garnish"
   }
 }

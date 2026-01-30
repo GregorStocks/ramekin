@@ -1,23 +1,21 @@
 {
   "raw": "1 ounce dried whole Japones chiles (mild or medium)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried whole Japones chiles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": null,
-          "unit": "medium"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried whole Japones chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": null,
+        "unit": "medium"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

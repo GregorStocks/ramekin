@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon cane sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cane sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cane sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon dried cranberries or cherries (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried cranberries or cherries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "dried cranberries or cherries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

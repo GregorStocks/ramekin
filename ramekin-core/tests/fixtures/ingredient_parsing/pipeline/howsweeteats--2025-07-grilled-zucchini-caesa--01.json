@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3  medium zucchini, (cut into chunks)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "zucchini, (cut into chunks)",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "zucchini, (cut into chunks)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

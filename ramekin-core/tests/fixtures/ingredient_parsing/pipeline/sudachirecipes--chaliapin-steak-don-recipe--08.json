@@ -1,15 +1,13 @@
 {
   "raw": "4  perilla leaves (shiso) (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "perilla leaves (shiso) (optional)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "perilla leaves (shiso) (optional)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

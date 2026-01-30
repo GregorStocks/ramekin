@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup mayonnaise ((full-fat recommended))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mayonnaise (full-fat recommended)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mayonnaise (full-fat recommended)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

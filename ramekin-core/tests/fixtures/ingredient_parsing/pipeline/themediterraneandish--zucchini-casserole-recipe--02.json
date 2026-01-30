@@ -1,15 +1,13 @@
 {
   "raw": "1  yellow onion, (halved (chop half of the onion and slice the other into rings))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "halved (chop half of the onion and slice the other into rings"
-    }
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "halved (chop half of the onion and slice the other into rings"
   }
 }

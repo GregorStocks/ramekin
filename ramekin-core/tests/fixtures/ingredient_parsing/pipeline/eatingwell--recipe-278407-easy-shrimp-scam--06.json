@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons unsalted chicken stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted chicken stock",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted chicken stock",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

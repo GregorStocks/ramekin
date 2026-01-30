@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup tahini, (I used Soom Tahini, well-stirred)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tahini, (I used Soom Tahini, well-stirred)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tahini, (I used Soom Tahini, well-stirred)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

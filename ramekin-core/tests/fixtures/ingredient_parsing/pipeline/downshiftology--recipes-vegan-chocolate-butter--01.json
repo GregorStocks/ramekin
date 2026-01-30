@@ -1,15 +1,13 @@
 {
   "raw": "8 cups organic powdered sugar (or powdered coconut sugar, powdered succanat, etc)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "organic powdered sugar (or powdered coconut sugar, powdered succanat, etc)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "organic powdered sugar (or powdered coconut sugar, powdered succanat, etc)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "Handful chopped fresh cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh cilantro",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh cilantro",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
   }
 }

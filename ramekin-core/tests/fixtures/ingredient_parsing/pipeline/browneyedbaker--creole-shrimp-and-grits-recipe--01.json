@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds unpeeled medium-size raw shrimp  ((26/30 count))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unpeeled medium-size raw shrimp",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "26/30",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unpeeled medium-size raw shrimp",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "26/30",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

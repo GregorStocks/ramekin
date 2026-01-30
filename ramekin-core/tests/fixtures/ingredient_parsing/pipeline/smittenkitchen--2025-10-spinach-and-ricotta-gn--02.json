@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (215 grams) whole-milk ricotta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole-milk ricotta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "215",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole-milk ricotta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "215",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

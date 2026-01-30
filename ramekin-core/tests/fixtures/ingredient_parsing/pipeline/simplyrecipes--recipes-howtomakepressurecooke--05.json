@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup shredded cheese, such as cheddar, Monterey jack, or mozzarella",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheese, such as cheddar, Monterey jack, or mozzarella",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded cheese, such as cheddar, Monterey jack, or mozzarella",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

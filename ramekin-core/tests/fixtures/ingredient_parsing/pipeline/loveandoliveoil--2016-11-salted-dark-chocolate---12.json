@@ -1,10 +1,8 @@
 {
   "raw": "flake sea salt (such as Maldon), for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flake sea salt (such as Maldon), for topping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "flake sea salt (such as Maldon), for topping",
+    "measurements": [],
+    "note": null
   }
 }

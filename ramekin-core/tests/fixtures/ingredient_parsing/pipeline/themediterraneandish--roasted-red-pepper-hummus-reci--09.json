@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp toasted pine nuts, optional.",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted pine nuts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional."
-    }
+  "expected": {
+    "item": "toasted pine nuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional."
   }
 }

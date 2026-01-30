@@ -1,15 +1,13 @@
 {
   "raw": "3 Tablespoons Grape Seed Oil (, or other neutral tasting oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grape Seed Oil (, or other neutral tasting oil)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Grape Seed Oil (, or other neutral tasting oil)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

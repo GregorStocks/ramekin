@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon minced rosemary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

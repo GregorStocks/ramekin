@@ -1,15 +1,13 @@
 {
   "raw": "1  package ranch mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ranch mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ranch mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

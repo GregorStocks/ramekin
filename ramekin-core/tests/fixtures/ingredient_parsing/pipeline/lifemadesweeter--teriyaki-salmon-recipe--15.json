@@ -1,10 +1,8 @@
 {
   "raw": "green onions (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions",
-      "measurements": [],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "green onions",
+    "measurements": [],
+    "note": "sliced"
   }
 }

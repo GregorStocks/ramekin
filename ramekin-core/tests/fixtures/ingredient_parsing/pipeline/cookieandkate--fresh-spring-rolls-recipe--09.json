@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac14; cup thinly sliced green onions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced green onions",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced green onions",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

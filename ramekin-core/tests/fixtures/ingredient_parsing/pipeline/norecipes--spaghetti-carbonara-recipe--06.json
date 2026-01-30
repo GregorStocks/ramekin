@@ -1,15 +1,13 @@
 {
   "raw": "30 grams Pecorino Romano ((grated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pecorino Romano",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": "grated"
-    }
+  "expected": {
+    "item": "Pecorino Romano",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "grated"
   }
 }

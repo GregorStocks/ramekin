@@ -1,19 +1,17 @@
 {
   "raw": "2 packages (3.4 ounces each) instant pistachio pudding mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant pistachio pudding mix",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "3.4",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant pistachio pudding mix",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "package"
+      },
+      {
+        "amount": "3.4",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

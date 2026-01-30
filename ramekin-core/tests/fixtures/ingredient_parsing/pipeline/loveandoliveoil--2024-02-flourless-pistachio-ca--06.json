@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon orange zest (very finely garted)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange zest (very finely garted)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange zest (very finely garted)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

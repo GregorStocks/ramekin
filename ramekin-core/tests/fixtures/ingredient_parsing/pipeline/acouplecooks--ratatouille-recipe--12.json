@@ -1,10 +1,8 @@
 {
   "raw": "Pistou, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pistou",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Pistou",
+    "measurements": [],
+    "note": "for serving"
   }
 }

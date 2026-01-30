@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 onions, sliced thin (1½ cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onions",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced thin"
-    }
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced thin"
   }
 }

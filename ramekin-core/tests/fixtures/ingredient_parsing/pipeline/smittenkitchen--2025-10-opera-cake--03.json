@@ -1,23 +1,21 @@
 {
   "raw": "1 1/2 tablespoons (20 grams) plus 3/4 cup (150 grams) granulated sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1 1/2 tablespoons (20 grams) plus 3/4 cup (150 grams) granulated sugar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "20",
-          "unit": "g"
-        },
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": "plus 3/4 cup granulated sugar"
-    }
+  "expected": {
+    "item": "1 1/2 tablespoons (20 grams) plus 3/4 cup (150 grams) granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": "plus 3/4 cup granulated sugar"
   }
 }

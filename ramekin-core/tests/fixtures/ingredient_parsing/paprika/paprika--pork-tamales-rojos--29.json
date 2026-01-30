@@ -1,10 +1,8 @@
 {
   "raw": "A spice mill or mortar and pestle",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A spice mill or mortar and pestle",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A spice mill or mortar and pestle",
+    "measurements": [],
+    "note": null
   }
 }

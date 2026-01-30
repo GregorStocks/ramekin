@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 teaspoons chicken bouillon, divided&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken bouillon",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "chicken bouillon",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "divided"
   }
 }

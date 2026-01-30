@@ -1,15 +1,13 @@
 {
   "raw": "1 sprig rosemary (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "sprig"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "sprig"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

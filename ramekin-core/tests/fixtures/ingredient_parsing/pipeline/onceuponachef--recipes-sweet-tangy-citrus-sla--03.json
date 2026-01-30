@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup finely chopped shallots, from 1 to 2 shallots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped shallots, from 1 to 2 shallots",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped shallots, from 1 to 2 shallots",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

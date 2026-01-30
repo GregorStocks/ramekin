@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons coconut butter, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut butter, see notes above",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut butter, see notes above",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

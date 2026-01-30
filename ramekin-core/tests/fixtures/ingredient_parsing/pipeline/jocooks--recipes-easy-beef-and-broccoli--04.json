@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons cooking wine (such as Shaoxing)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooking wine (such as Shaoxing)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooking wine (such as Shaoxing)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

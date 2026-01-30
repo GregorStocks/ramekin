@@ -1,15 +1,13 @@
 {
   "raw": "6 coffee beans for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coffee beans for garnish",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coffee beans for garnish",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

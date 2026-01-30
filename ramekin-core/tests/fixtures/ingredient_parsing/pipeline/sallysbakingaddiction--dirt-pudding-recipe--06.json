@@ -1,19 +1,17 @@
 {
   "raw": "3 Tablespoons (43g) unsalted butter, softened to room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": "softened to room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": "softened to room temperature"
   }
 }

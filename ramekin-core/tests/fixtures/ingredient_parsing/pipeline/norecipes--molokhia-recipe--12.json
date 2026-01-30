@@ -1,15 +1,13 @@
 {
   "raw": "500 grams fresh molokhia",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh molokhia",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh molokhia",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

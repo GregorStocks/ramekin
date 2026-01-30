@@ -1,15 +1,13 @@
 {
   "raw": "1 cup vegetable broth or chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable broth or chicken broth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable broth or chicken broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

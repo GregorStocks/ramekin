@@ -1,15 +1,13 @@
 {
   "raw": "1 lb baby bella mushrooms, sliced (or other white or brown mushroom)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby bella mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced (or other white or brown mushroom)"
-    }
+  "expected": {
+    "item": "baby bella mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced (or other white or brown mushroom)"
   }
 }

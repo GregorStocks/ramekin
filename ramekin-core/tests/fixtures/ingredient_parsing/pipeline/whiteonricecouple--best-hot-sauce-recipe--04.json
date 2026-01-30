@@ -1,15 +1,13 @@
 {
   "raw": "3  Shallots (, medium size &nbsp;(minced))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shallots",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "medium size  (minced"
-    }
+  "expected": {
+    "item": "Shallots",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "medium size  (minced"
   }
 }

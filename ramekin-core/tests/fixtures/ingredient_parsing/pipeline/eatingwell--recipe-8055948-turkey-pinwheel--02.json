@@ -1,15 +1,13 @@
 {
   "raw": "1 cup baby spinach, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "baby spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

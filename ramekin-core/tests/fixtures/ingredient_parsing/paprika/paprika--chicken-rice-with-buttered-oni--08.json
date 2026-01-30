@@ -1,15 +1,13 @@
 {
   "raw": "1 3/4 to 2 cups chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 2 cups chicken broth",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 2 cups chicken broth",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon red-pepper flakes, plus more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red-pepper flakes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to taste"
-    }
+  "expected": {
+    "item": "red-pepper flakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more to taste"
   }
 }

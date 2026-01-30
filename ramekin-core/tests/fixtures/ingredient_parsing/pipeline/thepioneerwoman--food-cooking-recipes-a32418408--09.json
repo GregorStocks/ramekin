@@ -1,15 +1,13 @@
 {
   "raw": "1/2 c. salsa verde",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salsa verde",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salsa verde",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

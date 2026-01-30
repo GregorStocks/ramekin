@@ -1,15 +1,13 @@
 {
   "raw": "3 to 4 tablespoons crumbled blue cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crumbled blue cheese",
-      "measurements": [
-        {
-          "amount": "3 to 4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crumbled blue cheese",
+    "measurements": [
+      {
+        "amount": "3 to 4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

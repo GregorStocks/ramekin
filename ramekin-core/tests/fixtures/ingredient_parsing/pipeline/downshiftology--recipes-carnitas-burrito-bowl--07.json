@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup shredded cheese (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheese",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "shredded cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

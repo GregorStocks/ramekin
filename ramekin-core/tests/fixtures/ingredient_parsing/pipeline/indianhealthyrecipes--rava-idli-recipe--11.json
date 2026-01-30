@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoon coriander leaves (chopped finely)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coriander leaves",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "chopped finely"
-    }
+  "expected": {
+    "item": "coriander leaves",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped finely"
   }
 }

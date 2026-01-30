@@ -1,10 +1,8 @@
 {
   "raw": "buttered popcorn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "buttered popcorn",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "buttered popcorn",
+    "measurements": [],
+    "note": null
   }
 }

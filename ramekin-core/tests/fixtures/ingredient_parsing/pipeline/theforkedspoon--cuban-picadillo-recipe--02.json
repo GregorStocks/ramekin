@@ -1,19 +1,17 @@
 {
   "raw": "2  yellow Idaho potatoes ((about 1 cup) peeled and cut into 1-inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yellow Idaho potatoes peeled and cut into 1-inch cubes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "yellow Idaho potatoes peeled and cut into 1-inch cubes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

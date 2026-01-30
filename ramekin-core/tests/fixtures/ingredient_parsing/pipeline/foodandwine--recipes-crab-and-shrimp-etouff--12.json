@@ -1,15 +1,13 @@
 {
   "raw": ".5 pound fresh crabmeat, picked over",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh crabmeat, picked over",
-      "measurements": [
-        {
-          "amount": ".5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh crabmeat, picked over",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "270 grams red bell peppers ((2 small peppers))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red bell peppers",
-      "measurements": [
-        {
-          "amount": "270",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red bell peppers",
+    "measurements": [
+      {
+        "amount": "270",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

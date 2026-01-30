@@ -1,15 +1,13 @@
 {
   "raw": "200ml chicken stock",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken stock",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

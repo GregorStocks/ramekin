@@ -1,10 +1,8 @@
 {
   "raw": "Approximately 1/4 cup water or reserved chickpea cooking water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Approximately 1/4 cup water or reserved chickpea cooking water",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Approximately 1/4 cup water or reserved chickpea cooking water",
+    "measurements": [],
+    "note": null
   }
 }

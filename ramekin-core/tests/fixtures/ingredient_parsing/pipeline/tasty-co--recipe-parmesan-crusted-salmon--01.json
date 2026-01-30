@@ -1,19 +1,17 @@
 {
   "raw": "6 oz skinless salmon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless salmon",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless salmon",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

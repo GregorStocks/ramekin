@@ -1,15 +1,13 @@
 {
   "raw": "280 grams ground pork",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pork",
-      "measurements": [
-        {
-          "amount": "280",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground pork",
+    "measurements": [
+      {
+        "amount": "280",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

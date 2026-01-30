@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 quarts prepared chicken stock (recipe above)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "prepared chicken stock (recipe above)",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "prepared chicken stock (recipe above)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "quart"
+      }
+    ],
+    "note": null
   }
 }

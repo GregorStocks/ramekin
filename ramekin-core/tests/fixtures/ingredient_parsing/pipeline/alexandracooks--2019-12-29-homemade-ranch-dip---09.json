@@ -1,10 +1,8 @@
 {
   "raw": "endive, quartered through the core or cut into sixths",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "endive",
-      "measurements": [],
-      "note": "quartered through the core or cut into sixths"
-    }
+  "expected": {
+    "item": "endive",
+    "measurements": [],
+    "note": "quartered through the core or cut into sixths"
   }
 }

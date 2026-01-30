@@ -1,19 +1,17 @@
 {
   "raw": "1 (16-ounce) can refried beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refried beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "refried beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

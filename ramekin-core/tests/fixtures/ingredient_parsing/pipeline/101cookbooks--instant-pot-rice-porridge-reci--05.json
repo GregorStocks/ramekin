@@ -1,15 +1,13 @@
 {
   "raw": "1/4  pound+ chopped spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pound+ chopped spinach",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pound+ chopped spinach",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

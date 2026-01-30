@@ -1,15 +1,13 @@
 {
   "raw": "1 cup orzo pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orzo pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orzo pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

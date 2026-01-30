@@ -1,15 +1,13 @@
 {
   "raw": "2  cilantro roots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cilantro roots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cilantro roots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

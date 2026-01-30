@@ -1,19 +1,17 @@
 {
   "raw": "1 3/4 cups (335 grams) packed light brown sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed light brown sugar",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "335",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed light brown sugar",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "335",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

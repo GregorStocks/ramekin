@@ -1,10 +1,8 @@
 {
   "raw": "Cilantro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cilantro",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cilantro",
+    "measurements": [],
+    "note": null
   }
 }

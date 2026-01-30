@@ -1,15 +1,13 @@
 {
   "raw": "20 g canned sweet corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned sweet corn",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned sweet corn",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

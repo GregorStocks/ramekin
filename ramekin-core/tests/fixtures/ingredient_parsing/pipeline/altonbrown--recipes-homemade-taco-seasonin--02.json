@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon whole cumin seeds, freshly toasted and ground",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole cumin seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "freshly toasted and ground"
-    }
+  "expected": {
+    "item": "whole cumin seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "freshly toasted and ground"
   }
 }

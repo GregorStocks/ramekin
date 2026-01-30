@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds top round lamb",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "top round lamb",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "top round lamb",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

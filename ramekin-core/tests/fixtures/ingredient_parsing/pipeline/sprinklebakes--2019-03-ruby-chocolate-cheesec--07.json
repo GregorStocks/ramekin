@@ -1,15 +1,13 @@
 {
   "raw": "1 cup 240 ml heavy whipping cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "240 ml heavy whipping cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "240 ml heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2-4 leaves romaine lettuce (trimmed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leaves romaine lettuce",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": null
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "leaves romaine lettuce",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": null
+      }
+    ],
+    "note": "trimmed"
   }
 }

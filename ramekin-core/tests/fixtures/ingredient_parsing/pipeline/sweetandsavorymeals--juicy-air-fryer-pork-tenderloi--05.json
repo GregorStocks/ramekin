@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon Ranch seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ranch seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Ranch seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

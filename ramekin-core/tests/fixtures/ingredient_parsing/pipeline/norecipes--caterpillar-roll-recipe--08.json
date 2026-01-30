@@ -1,15 +1,13 @@
 {
   "raw": "1 pack unseasoned nori",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pack unseasoned nori",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pack unseasoned nori",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

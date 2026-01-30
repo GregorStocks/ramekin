@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon ginger garlic paste ((or ½ tbsps. each fine grated))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger garlic paste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1/2 tbsps. each fine grated"
-    }
+  "expected": {
+    "item": "ginger garlic paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1/2 tbsps. each fine grated"
   }
 }

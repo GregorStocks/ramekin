@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon pickled jalapeño juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pickled jalapeño juice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pickled jalapeño juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "3 large Granny Smith apples or other firm apple, peeled and cored",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Granny Smith apples or other firm apple",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and cored"
-    }
+  "expected": {
+    "item": "Granny Smith apples or other firm apple",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and cored"
   }
 }

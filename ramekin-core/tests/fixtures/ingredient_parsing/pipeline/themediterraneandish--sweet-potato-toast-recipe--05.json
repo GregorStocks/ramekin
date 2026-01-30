@@ -1,15 +1,13 @@
 {
   "raw": "Generous sprinkle Sumac&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sprinkle Sumac",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "generous"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sprinkle Sumac",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "generous"
+      }
+    ],
+    "note": null
   }
 }

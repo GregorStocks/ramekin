@@ -1,15 +1,13 @@
 {
   "raw": "2  bell peppers (cored and thinly sliced (red, yellow, orange, or any mix you like))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bell peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "cored and thinly sliced (red, yellow, orange, or any mix you like"
-    }
+  "expected": {
+    "item": "bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "cored and thinly sliced (red, yellow, orange, or any mix you like"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 cups grated mozzarella",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated mozzarella",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated mozzarella",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

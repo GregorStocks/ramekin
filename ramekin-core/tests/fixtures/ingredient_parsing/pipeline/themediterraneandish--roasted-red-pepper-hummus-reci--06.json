@@ -1,15 +1,13 @@
 {
   "raw": "&nbsp;1 to 2 tsp/ 2 to 4 g sumac",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tsp/ 2 to 4 g sumac",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tsp/ 2 to 4 g sumac",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

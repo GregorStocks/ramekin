@@ -1,10 +1,8 @@
 {
   "raw": "toasted sesame oil (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted sesame oil (to garnish)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted sesame oil (to garnish)",
+    "measurements": [],
+    "note": null
   }
 }

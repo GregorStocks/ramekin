@@ -1,10 +1,8 @@
 {
   "raw": "orange or yellow food coloring (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange or yellow food coloring",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "orange or yellow food coloring",
+    "measurements": [],
+    "note": "optional"
   }
 }

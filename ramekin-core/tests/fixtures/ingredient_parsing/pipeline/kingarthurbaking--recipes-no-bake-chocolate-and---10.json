@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon refined coconut oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refined coconut oil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "refined coconut oil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

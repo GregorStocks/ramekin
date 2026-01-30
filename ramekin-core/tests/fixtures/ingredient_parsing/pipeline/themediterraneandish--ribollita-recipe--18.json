@@ -1,10 +1,8 @@
 {
   "raw": "grated Parmesan cheese, (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated Parmesan cheese",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "grated Parmesan cheese",
+    "measurements": [],
+    "note": "optional"
   }
 }

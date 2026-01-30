@@ -1,23 +1,21 @@
 {
   "raw": "2 1/2 ounces (about 2 1/2 cups) arugula or a mix of arugula and baby spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arugula or a mix of arugula and baby spinach",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "71",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arugula or a mix of arugula and baby spinach",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "71",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

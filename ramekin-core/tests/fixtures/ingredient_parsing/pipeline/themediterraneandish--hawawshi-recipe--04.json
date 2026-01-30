@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeno (halved and seeded (leave some of the seed if you like heat))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "halved and seeded (leave some of the seed if you like heat"
-    }
+  "expected": {
+    "item": "jalapeno",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "halved and seeded (leave some of the seed if you like heat"
   }
 }

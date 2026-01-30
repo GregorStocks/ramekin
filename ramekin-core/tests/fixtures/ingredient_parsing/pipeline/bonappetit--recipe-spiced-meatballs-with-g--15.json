@@ -1,15 +1,13 @@
 {
   "raw": "½ cup golden raisins, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden raisins",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "golden raisins",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

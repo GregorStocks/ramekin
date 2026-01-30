@@ -1,15 +1,13 @@
 {
   "raw": "Heaping ⅓ cup dried blueberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried blueberries",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "heaping cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried blueberries",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "heaping cup"
+      }
+    ],
+    "note": null
   }
 }

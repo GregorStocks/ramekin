@@ -1,10 +1,8 @@
 {
   "raw": "Toasted almonds (walnuts, or pecans (add just before serving to maintain the most crunch))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted almonds (walnuts, or pecans (add just before serving to maintain the most crunch)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Toasted almonds (walnuts, or pecans (add just before serving to maintain the most crunch)",
+    "measurements": [],
+    "note": null
   }
 }

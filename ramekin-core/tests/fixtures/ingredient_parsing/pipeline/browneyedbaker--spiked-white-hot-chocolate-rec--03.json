@@ -1,15 +1,13 @@
 {
   "raw": "2  candy canes (crushed, plus more for garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "candy canes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "crushed, plus more for garnish"
-    }
+  "expected": {
+    "item": "candy canes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "crushed, plus more for garnish"
   }
 }

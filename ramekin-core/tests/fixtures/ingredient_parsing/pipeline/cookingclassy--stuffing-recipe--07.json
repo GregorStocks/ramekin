@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chopped yellow onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped yellow onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped yellow onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

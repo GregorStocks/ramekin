@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces Spanish chorizo, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Spanish chorizo",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "Spanish chorizo",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 large  eggplant (cut into 1-inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "eggplant (cut into 1-inch cubes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "eggplant (cut into 1-inch cubes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

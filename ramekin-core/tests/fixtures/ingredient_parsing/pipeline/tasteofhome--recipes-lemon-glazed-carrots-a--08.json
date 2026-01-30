@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon dill weed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dill weed",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dill weed",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

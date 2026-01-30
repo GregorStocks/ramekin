@@ -1,15 +1,13 @@
 {
   "raw": "1 Kirby cucumber—peeled, seeded and cut into matchsticks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kirby cucumber-peeled, seeded and cut into matchsticks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Kirby cucumber-peeled, seeded and cut into matchsticks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

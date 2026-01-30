@@ -1,15 +1,13 @@
 {
   "raw": "1 1/4 cups low-fat buttermilk plus about 2 tablespoons for tops",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-fat buttermilk",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus about 2 tablespoons for tops"
-    }
+  "expected": {
+    "item": "low-fat buttermilk",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus about 2 tablespoons for tops"
   }
 }

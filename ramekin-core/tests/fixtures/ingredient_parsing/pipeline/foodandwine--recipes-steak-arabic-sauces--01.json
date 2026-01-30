@@ -1,15 +1,13 @@
 {
   "raw": "2 cups packed parsley leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "packed parsley leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "packed parsley leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

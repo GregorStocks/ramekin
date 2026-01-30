@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons corn syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn syrup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

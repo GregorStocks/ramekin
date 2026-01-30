@@ -1,15 +1,13 @@
 {
   "raw": "1  bay leaf  ((tej patta))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bay leaf  (tej patta)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bay leaf  (tej patta)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

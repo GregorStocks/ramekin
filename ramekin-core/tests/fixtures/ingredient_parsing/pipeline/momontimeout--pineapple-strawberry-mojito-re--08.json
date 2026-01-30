@@ -1,19 +1,17 @@
 {
   "raw": "8  frozen strawberries (8 to 12)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen strawberries",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "8 to 12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen strawberries",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "8 to 12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

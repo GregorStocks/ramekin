@@ -1,19 +1,17 @@
 {
   "raw": "8 oz fresh mozzarella cheese (or Bocconcini, cut into 6x 1/2-inch slices)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella cheese (or Bocconcini, cut into 6x 1/2-inch slices)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh mozzarella cheese (or Bocconcini, cut into 6x 1/2-inch slices)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

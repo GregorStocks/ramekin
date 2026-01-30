@@ -1,15 +1,13 @@
 {
   "raw": "2 large bunches each rosemary and thyme",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunches each rosemary and thyme",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bunches each rosemary and thyme",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

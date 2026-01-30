@@ -1,15 +1,13 @@
 {
   "raw": "Pinch chili flakes, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili flakes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "chili flakes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "to taste"
   }
 }

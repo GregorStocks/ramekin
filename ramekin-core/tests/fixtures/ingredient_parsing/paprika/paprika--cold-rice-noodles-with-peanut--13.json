@@ -1,15 +1,13 @@
 {
   "raw": "1 one-and-a-half inch chunk ginger, peeled and sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "one-and-a-half inch chunk ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and sliced"
-    }
+  "expected": {
+    "item": "one-and-a-half inch chunk ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled and sliced"
   }
 }

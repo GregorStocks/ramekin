@@ -1,15 +1,13 @@
 {
   "raw": "4 8-oz. skin-on salmon fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "8-oz. skin-on salmon fillets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "8-oz. skin-on salmon fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

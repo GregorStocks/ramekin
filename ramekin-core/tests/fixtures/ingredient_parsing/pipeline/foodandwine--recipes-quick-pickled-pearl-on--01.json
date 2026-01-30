@@ -1,19 +1,17 @@
 {
   "raw": "16 white pearl onions (about 1 cup), root ends trimmed and scored with an X",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white pearl onions",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "root ends trimmed and scored with an X"
-    }
+  "expected": {
+    "item": "white pearl onions",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "root ends trimmed and scored with an X"
   }
 }

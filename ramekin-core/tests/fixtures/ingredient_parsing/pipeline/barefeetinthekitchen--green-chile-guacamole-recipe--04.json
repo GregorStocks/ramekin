@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup fresh cilantro leaves, chopped small, plus more for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cilantro leaves, chopped small",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for topping"
-    }
+  "expected": {
+    "item": "fresh cilantro leaves, chopped small",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for topping"
   }
 }

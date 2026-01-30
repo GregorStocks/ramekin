@@ -1,15 +1,13 @@
 {
   "raw": "4 mint sprigs, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mint sprigs",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "mint sprigs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "divided"
   }
 }

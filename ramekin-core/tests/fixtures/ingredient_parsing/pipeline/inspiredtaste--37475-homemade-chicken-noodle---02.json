@@ -1,19 +1,17 @@
 {
   "raw": "5 ounces egg noodles or pasta of choice (140g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "egg noodles or pasta of choice",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "140",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "egg noodles or pasta of choice",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2-4  small mandarin oranges, peeled and sectioned",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mandarin oranges",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": "small"
-        }
-      ],
-      "note": "peeled and sectioned"
-    }
+  "expected": {
+    "item": "mandarin oranges",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "small"
+      }
+    ],
+    "note": "peeled and sectioned"
   }
 }

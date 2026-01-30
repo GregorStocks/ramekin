@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces chocolate chips ((your choice milk, dark, semi-sweet))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate chips (your choice milk, dark, semi-sweet)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chocolate chips (your choice milk, dark, semi-sweet)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

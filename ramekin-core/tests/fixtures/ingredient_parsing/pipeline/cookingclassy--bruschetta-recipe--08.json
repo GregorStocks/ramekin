@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chopped basil ribbons ((chiffonade))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped basil ribbons (chiffonade)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped basil ribbons (chiffonade)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup pure vegetable shortening",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure vegetable shortening",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure vegetable shortening",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

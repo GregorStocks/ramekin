@@ -1,19 +1,17 @@
 {
   "raw": "8 ounce container&nbsp;Cool Whip",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "container Cool Whip",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "container Cool Whip",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

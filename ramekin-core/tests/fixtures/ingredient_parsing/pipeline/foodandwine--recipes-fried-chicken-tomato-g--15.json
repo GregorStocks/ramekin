@@ -1,15 +1,13 @@
 {
   "raw": "4 cups drained canned diced tomatoes (from three 14-ounce cans)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "drained canned diced tomatoes (from three 14-ounce cans)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "drained canned diced tomatoes (from three 14-ounce cans)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

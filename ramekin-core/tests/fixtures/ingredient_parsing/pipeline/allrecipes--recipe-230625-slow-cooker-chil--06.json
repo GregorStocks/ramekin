@@ -1,15 +1,13 @@
 {
   "raw": "2 cups beer",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beer",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beer",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

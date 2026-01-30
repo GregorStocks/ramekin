@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp oregano (Mexican is best)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oregano (Mexican is best)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oregano (Mexican is best)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

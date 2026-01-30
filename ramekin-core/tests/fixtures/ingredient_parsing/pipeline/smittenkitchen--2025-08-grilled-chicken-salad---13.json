@@ -1,15 +1,13 @@
 {
   "raw": "1 5-ounce package of leafy green lettuce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "of leafy green lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "5-ounce package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "of leafy green lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "5-ounce package"
+      }
+    ],
+    "note": null
   }
 }

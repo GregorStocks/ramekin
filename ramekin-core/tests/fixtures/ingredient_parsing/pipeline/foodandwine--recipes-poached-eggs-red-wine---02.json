@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup veal demiglace (such as D’Artagnan)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "veal demiglace (such as D’Artagnan)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "veal demiglace (such as D’Artagnan)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

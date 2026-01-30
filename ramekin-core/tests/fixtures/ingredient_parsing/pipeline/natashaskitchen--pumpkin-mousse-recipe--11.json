@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp rum (dark or golden, or vanilla extract)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rum (dark or golden, or vanilla extract)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rum (dark or golden, or vanilla extract)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

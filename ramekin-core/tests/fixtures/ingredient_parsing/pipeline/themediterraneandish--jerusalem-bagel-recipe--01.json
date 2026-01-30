@@ -1,15 +1,13 @@
 {
   "raw": "4 ½ cup all-purpose flour or white bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour or white bread flour",
-      "measurements": [
-        {
-          "amount": "4 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour or white bread flour",
+    "measurements": [
+      {
+        "amount": "4 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 lb sushi-grade ahi tuna",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sushi-grade ahi tuna",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sushi-grade ahi tuna",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

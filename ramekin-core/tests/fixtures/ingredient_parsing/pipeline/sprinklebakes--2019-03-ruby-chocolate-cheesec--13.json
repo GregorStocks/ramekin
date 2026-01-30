@@ -1,10 +1,8 @@
 {
   "raw": "Tiny drop of pink gel food color (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tiny drop of pink gel food color",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Tiny drop of pink gel food color",
+    "measurements": [],
+    "note": "optional"
   }
 }

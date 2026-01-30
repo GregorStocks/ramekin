@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons safflower or canola oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "safflower or canola oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "safflower or canola oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

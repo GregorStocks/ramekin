@@ -1,19 +1,17 @@
 {
   "raw": "2 ounce jar pimento (undrained)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jar pimento",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "undrained"
-    }
+  "expected": {
+    "item": "jar pimento",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "undrained"
   }
 }

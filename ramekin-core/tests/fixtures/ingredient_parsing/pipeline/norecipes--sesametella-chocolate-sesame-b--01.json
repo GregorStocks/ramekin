@@ -1,15 +1,13 @@
 {
   "raw": "100 grams milk chocolate",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk chocolate",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk chocolate",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

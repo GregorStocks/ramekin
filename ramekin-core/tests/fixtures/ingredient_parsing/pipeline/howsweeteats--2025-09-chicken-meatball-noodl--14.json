@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon poultry seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "poultry seasoning",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "poultry seasoning",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

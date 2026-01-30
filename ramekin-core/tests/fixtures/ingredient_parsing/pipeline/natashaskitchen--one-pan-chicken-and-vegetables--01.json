@@ -1,19 +1,17 @@
 {
   "raw": "1 oz Packet Hidden Valley® Original Ranch® Salad Dressing &amp;amp; Seasoning Mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Packet Hidden Valley® Original Ranch® Salad Dressing & Seasoning Mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Packet Hidden Valley® Original Ranch® Salad Dressing & Seasoning Mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

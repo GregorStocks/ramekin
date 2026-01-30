@@ -1,19 +1,17 @@
 {
   "raw": "15 ounce can diced tomatoes (drained (or 15 oz can tomato sauce))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can diced tomatoes",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "drained (or 15 oz can tomato sauce"
-    }
+  "expected": {
+    "item": "can diced tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "drained (or 15 oz can tomato sauce"
   }
 }

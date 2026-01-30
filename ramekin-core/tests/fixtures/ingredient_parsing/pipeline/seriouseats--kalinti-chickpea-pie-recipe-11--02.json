@@ -1,23 +1,21 @@
 {
   "raw": "2 cups finely milled chickpea flour (about 9 ounces; 250 g) (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely milled chickpea flour (see notes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely milled chickpea flour (see notes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

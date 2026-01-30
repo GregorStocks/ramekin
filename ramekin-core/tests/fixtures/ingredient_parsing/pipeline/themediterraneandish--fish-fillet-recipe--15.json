@@ -1,15 +1,13 @@
 {
   "raw": "2 lb cod fillet cut into large 4 to 6-ounce pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cod fillet cut into large 4 to 6-ounce pieces",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cod fillet cut into large 4 to 6-ounce pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup finely chopped fresh chives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped fresh chives",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped fresh chives",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

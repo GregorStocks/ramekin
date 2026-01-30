@@ -1,19 +1,17 @@
 {
   "raw": "2 tbsp cacao powder (10g, or cocoa powder)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cacao powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cacao powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

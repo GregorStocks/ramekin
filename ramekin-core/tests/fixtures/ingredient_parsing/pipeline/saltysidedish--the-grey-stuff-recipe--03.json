@@ -1,15 +1,13 @@
 {
   "raw": "16  Oreos (filing removed and discarded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oreos (filing removed and discarded)",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Oreos (filing removed and discarded)",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

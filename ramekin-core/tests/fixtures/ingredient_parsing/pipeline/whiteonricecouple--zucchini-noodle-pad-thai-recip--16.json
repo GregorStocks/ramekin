@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon cayenne pepper or 1 small red chili (, sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cayenne pepper or 1 small red chili",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "cayenne pepper or 1 small red chili",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "sliced"
   }
 }

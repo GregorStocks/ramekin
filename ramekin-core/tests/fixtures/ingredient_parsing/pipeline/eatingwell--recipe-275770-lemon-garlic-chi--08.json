@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon chopped fresh thyme, plus leaves for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh thyme",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus leaves for garnish"
-    }
+  "expected": {
+    "item": "chopped fresh thyme",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus leaves for garnish"
   }
 }

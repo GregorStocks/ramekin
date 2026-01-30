@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons miso, preferably a chunky, hearty miso (country, chickpea, etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "miso, preferably a chunky, hearty miso (country, chickpea, etc.)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "miso, preferably a chunky, hearty miso (country, chickpea, etc.)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

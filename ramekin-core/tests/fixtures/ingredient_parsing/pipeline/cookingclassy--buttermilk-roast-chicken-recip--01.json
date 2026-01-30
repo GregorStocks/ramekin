@@ -1,15 +1,13 @@
 {
   "raw": "4 to 4.5 lb whole chicken ((preferably organic or free range))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chicken (preferably organic or free range)",
-      "measurements": [
-        {
-          "amount": "4 to 4.5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole chicken (preferably organic or free range)",
+    "measurements": [
+      {
+        "amount": "4 to 4.5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

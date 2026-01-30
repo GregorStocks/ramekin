@@ -1,10 +1,8 @@
 {
   "raw": "top with toasted pecans or coconut if desired",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "top with toasted pecans or coconut if desired",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "top with toasted pecans or coconut if desired",
+    "measurements": [],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Cocktail Sauce Ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cocktail Sauce Ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cocktail Sauce Ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

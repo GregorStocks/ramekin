@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup milk ((cow, almond, soy, etc))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk (cow, almond, soy, etc)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk (cow, almond, soy, etc)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

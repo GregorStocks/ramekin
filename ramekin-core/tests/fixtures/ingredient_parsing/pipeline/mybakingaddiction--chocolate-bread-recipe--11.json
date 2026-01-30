@@ -1,15 +1,13 @@
 {
   "raw": "2 cups semisweet chocolate morsels (plus 2 tablespoons flour)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semisweet chocolate morsels (plus 2 tablespoons flour)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "semisweet chocolate morsels (plus 2 tablespoons flour)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2  serrano chile, seeds and all, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "serrano chile, seeds and all",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "serrano chile, seeds and all",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

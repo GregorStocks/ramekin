@@ -1,10 +1,8 @@
 {
   "raw": "drippings",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "drippings",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "drippings",
+    "measurements": [],
+    "note": null
   }
 }

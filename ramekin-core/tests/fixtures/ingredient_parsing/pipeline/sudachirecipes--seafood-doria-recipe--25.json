@@ -1,10 +1,8 @@
 {
   "raw": "hard cheese ((optional) parmesan, pecorino, etc.)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hard cheese parmesan, pecorino, etc.)",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "hard cheese parmesan, pecorino, etc.)",
+    "measurements": [],
+    "note": "optional"
   }
 }

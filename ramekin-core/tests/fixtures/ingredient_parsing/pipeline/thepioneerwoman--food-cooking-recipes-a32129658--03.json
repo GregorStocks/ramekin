@@ -1,15 +1,13 @@
 {
   "raw": "45 brown M&amp;amp;Ms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brown M&Ms",
-      "measurements": [
-        {
-          "amount": "45",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brown M&Ms",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

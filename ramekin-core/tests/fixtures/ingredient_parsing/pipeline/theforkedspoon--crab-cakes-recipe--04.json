@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon old bay seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "old bay seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "old bay seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

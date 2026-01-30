@@ -1,19 +1,17 @@
 {
   "raw": "1 (12-ounce) bag fresh cranberries (frozen cranberries may also be used)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh cranberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": "frozen cranberries may also be used"
-    }
+  "expected": {
+    "item": "fresh cranberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "frozen cranberries may also be used"
   }
 }

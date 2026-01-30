@@ -1,19 +1,17 @@
 {
   "raw": "½ ounce Grand Marnier",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Grand Marnier",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Grand Marnier",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

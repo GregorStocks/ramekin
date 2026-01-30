@@ -1,10 +1,8 @@
 {
   "raw": "powdered sugar for decoration",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sugar for decoration",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered sugar for decoration",
+    "measurements": [],
+    "note": null
   }
 }

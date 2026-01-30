@@ -1,19 +1,17 @@
 {
   "raw": "2 pounds (907 g) russet potatoes (see notes), divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "russet potatoes (see notes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "907",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "russet potatoes (see notes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
   }
 }

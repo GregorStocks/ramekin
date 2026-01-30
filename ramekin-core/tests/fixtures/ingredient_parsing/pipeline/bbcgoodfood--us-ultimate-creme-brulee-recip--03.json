@@ -1,15 +1,13 @@
 {
   "raw": "1  vanilla pod",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla pod",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla pod",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

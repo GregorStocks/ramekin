@@ -1,15 +1,13 @@
 {
   "raw": "3 cups green grapes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green grapes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "green grapes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

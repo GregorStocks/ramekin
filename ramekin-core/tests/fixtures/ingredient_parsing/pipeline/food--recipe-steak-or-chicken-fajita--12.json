@@ -1,15 +1,13 @@
 {
   "raw": "2   small    sweet peppers, of your choice  (green, red, or yellow)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet peppers, of your choice  (green, red, or yellow)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet peppers, of your choice  (green, red, or yellow)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

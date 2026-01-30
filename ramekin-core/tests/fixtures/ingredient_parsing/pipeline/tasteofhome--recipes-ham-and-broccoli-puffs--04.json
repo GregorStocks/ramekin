@@ -1,15 +1,13 @@
 {
   "raw": "1/4 pound thinly sliced deli ham, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced deli ham",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "thinly sliced deli ham",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "lb"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

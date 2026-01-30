@@ -1,15 +1,13 @@
 {
   "raw": "3.5 to 4 pounds chicken wings, separated if necessary",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken wings, separated if necessary",
-      "measurements": [
-        {
-          "amount": "3.5 to 4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken wings, separated if necessary",
+    "measurements": [
+      {
+        "amount": "3.5 to 4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

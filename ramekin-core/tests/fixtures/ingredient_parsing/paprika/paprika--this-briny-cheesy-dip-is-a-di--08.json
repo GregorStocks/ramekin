@@ -1,19 +1,17 @@
 {
   "raw": "3 ounces blue cheese, preferably gorgonzola dolce, crumbled (about 3/4 cup crumbled; see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blue cheese, preferably gorgonzola dolce, crumbled",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "about 3/4 cup crumbled; see notes"
-    }
+  "expected": {
+    "item": "blue cheese, preferably gorgonzola dolce, crumbled",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "about 3/4 cup crumbled; see notes"
   }
 }

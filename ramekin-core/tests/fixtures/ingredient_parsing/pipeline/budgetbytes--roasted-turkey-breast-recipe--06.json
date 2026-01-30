@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp dried thyme ($0.10)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried thyme ($0.10)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried thyme ($0.10)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 Tablespoons (30ml) olive oil or vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil or vegetable oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil or vegetable oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

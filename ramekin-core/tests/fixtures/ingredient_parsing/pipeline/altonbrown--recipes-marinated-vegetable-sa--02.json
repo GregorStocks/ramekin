@@ -1,15 +1,13 @@
 {
   "raw": "1 bunch thin asparagus, trimmed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thin asparagus",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": "trimmed"
-    }
+  "expected": {
+    "item": "thin asparagus",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "trimmed"
   }
 }

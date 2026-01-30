@@ -1,15 +1,13 @@
 {
   "raw": "2  spaghetti squash",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghetti squash",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghetti squash",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

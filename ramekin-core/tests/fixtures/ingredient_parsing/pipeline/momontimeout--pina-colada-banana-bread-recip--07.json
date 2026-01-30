@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp rum extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rum extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rum extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

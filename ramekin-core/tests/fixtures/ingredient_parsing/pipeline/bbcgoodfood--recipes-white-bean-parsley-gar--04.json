@@ -1,15 +1,13 @@
 {
   "raw": "2 x 400g cans  cannellini beans drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "x 400g cans  cannellini beans drained",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "x 400g cans  cannellini beans drained",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

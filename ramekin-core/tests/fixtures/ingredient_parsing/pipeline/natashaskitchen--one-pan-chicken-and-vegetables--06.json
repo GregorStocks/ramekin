@@ -1,19 +1,17 @@
 {
   "raw": "1 lb baby carrots or slender peeled carrots (1/2\" thick)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "baby carrots or slender peeled carrots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "baby carrots or slender peeled carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

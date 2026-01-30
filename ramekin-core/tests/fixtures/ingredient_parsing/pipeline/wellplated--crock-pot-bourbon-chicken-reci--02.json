@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup low sodium soy sauce (or tamari for a gluten-free alternative)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low sodium soy sauce (or tamari for a gluten-free alternative)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low sodium soy sauce (or tamari for a gluten-free alternative)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "24 ounces ground beef or ground turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground beef or ground turkey",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground beef or ground turkey",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

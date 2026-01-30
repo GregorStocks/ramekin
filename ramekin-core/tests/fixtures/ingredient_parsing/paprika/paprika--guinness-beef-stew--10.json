@@ -1,15 +1,13 @@
 {
   "raw": "1 ¼ cups Guinness Draught",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Guinness Draught",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Guinness Draught",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

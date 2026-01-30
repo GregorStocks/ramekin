@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup Parmesan, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmesan",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "Parmesan",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

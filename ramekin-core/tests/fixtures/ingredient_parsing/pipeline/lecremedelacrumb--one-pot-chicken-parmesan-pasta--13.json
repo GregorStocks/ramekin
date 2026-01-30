@@ -1,15 +1,13 @@
 {
   "raw": "½ cup Italian style breadcrumbs  (or regular bread crumbs + 1/2 teaspoon dried Italian seasoning)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Italian style breadcrumbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or regular bread crumbs + 1/2 teaspoon dried Italian seasoning"
-    }
+  "expected": {
+    "item": "Italian style breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or regular bread crumbs + 1/2 teaspoon dried Italian seasoning"
   }
 }

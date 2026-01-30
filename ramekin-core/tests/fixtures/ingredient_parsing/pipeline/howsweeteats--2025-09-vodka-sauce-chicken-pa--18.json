@@ -1,10 +1,8 @@
 {
   "raw": "crushed red pepper, (for topping)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crushed red pepper, (for topping)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "crushed red pepper, (for topping)",
+    "measurements": [],
+    "note": null
   }
 }

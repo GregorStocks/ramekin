@@ -1,19 +1,17 @@
 {
   "raw": "1 cup (250ml) mango puree (see notes below***)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mango puree (see notes below***)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "250",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mango puree (see notes below***)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

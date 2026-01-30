@@ -1,15 +1,13 @@
 {
   "raw": "1 cup white cheddar cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white cheddar cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 1/4 cups chopped yellow onion ((1 medium))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped yellow onion",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped yellow onion",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

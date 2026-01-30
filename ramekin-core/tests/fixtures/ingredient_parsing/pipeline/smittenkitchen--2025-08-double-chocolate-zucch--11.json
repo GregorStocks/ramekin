@@ -1,19 +1,17 @@
 {
   "raw": "1 1/3 cups (180 grams) all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "180",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "180",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

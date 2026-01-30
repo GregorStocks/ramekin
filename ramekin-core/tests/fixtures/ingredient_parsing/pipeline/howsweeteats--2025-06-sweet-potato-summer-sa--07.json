@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup roasted, (salted pepitas)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted, (salted pepitas)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted, (salted pepitas)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

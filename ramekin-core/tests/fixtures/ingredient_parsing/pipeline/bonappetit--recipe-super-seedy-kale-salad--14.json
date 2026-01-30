@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup golden raisins",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden raisins",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "golden raisins",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

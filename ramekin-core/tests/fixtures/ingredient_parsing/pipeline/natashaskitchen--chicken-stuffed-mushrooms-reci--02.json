@@ -1,15 +1,13 @@
 {
   "raw": "1  med/large yellow onion (finely diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "med/large yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "med/large yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely diced"
   }
 }

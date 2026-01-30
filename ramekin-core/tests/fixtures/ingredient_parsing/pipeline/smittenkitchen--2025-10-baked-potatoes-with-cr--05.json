@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces (115 grams) bacon (about 4 slices), diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        },
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "slice"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 tbsp / 30g coconut flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut flour",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut flour",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

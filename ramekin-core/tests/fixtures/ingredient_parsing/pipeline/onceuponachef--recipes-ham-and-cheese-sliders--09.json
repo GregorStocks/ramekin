@@ -1,15 +1,13 @@
 {
   "raw": "⅔ pound sliced Swiss cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced Swiss cheese",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced Swiss cheese",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

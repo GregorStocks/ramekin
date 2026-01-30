@@ -1,19 +1,17 @@
 {
   "raw": "1½ to 2 tablespoon ghee or oil ((30 ml))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 2 tablespoon ghee or oil",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": null
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 2 tablespoon ghee or oil",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": null
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

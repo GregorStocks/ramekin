@@ -1,19 +1,17 @@
 {
   "raw": "4 center-cut salmon fillets with skin (about 7 ounces each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "center-cut salmon fillets with skin",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "7",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "center-cut salmon fillets with skin",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "7",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

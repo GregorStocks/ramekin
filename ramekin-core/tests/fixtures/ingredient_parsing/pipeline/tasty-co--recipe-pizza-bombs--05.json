@@ -1,19 +1,17 @@
 {
   "raw": "8 oz ball of mozzarella cheese, cut into cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ball of mozzarella cheese, cut into cubes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ball of mozzarella cheese, cut into cubes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

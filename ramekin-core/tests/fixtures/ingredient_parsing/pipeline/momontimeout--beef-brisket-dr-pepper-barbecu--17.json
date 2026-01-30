@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp salt (smoked sea salt is great if you have it)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salt (smoked sea salt is great if you have it)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salt (smoked sea salt is great if you have it)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

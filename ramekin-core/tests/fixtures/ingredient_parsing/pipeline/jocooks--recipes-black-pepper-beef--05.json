@@ -1,15 +1,13 @@
 {
   "raw": "½ teaspoon white pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

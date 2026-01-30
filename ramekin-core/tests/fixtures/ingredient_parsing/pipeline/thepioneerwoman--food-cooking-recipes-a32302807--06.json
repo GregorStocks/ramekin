@@ -1,15 +1,13 @@
 {
   "raw": "1 c. freeze-dried strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freeze-dried strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freeze-dried strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

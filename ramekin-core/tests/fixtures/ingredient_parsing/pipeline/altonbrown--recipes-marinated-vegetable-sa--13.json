@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup Champagne vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Champagne vinegar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Champagne vinegar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

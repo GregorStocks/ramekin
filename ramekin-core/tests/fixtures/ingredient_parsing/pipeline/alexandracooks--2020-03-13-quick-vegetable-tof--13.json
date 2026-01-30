@@ -1,10 +1,8 @@
 {
   "raw": "rice (without the seasonings) or naan, for serving, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rice (without the seasonings) or naan, for serving",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "rice (without the seasonings) or naan, for serving",
+    "measurements": [],
+    "note": "optional"
   }
 }

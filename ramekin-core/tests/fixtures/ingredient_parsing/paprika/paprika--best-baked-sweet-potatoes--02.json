@@ -1,19 +1,17 @@
 {
   "raw": "4 small sweet potatoes (8 ounces each), unpeeled, each pricked lightly with fork in 3 places Salt and pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweet potatoes , unpeeled, each pricked lightly with fork in 3 places Salt and pepper",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        },
-        {
-          "amount": "8",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sweet potatoes , unpeeled, each pricked lightly with fork in 3 places Salt and pepper",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      },
+      {
+        "amount": "8",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
   }
 }

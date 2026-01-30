@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces dry pasta such as linguine or spaghetti",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry pasta such as linguine or spaghetti",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry pasta such as linguine or spaghetti",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

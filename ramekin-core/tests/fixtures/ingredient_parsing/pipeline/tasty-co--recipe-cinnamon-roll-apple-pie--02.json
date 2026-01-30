@@ -1,15 +1,13 @@
 {
   "raw": "2 cans cinnamon roll",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon roll",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon roll",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

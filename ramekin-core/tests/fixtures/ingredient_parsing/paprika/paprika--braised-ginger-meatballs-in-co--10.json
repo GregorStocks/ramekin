@@ -1,15 +1,13 @@
 {
   "raw": "One 13.5-oz can unsweetened coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened coconut milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "13.5-oz can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsweetened coconut milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "13.5-oz can"
+      }
+    ],
+    "note": null
   }
 }

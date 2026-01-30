@@ -1,15 +1,13 @@
 {
   "raw": "100g butter melted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter melted",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "butter melted",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "½ cup (95 grams)  masoor dal ( (red lentils))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "masoor dal ( (red lentils)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "95",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "masoor dal ( (red lentils)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "95",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

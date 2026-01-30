@@ -1,15 +1,13 @@
 {
   "raw": "2  un-baked pie crusts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "un-baked pie crusts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "un-baked pie crusts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 to 2 tablespoon ghee (or (1 tbsp oil or 2 tbsps butter))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ghee",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ghee",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 (16-ounce) package refrigerated riced cauliflower",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refrigerated riced cauliflower",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "refrigerated riced cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

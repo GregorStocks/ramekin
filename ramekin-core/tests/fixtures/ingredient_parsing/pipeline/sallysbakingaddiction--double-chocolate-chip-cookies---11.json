@@ -1,19 +1,17 @@
 {
   "raw": "1 and 1/4 cups (225g) semi-sweet&nbsp;chocolate chips, plus a few more for optional topping*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "semi-sweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": "plus a few more for optional topping*"
-    }
+  "expected": {
+    "item": "semi-sweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "plus a few more for optional topping*"
   }
 }

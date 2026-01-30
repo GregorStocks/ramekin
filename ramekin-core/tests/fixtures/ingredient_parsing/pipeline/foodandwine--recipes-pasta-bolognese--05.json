@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces pancetta, thickly sliced, finely diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pancetta, thickly sliced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "pancetta, thickly sliced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "finely diced"
   }
 }

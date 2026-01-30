@@ -1,15 +1,13 @@
 {
   "raw": "Pinch of grated&nbsp;nutmeg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated nutmeg",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated nutmeg",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 fully risen pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fully risen pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fully risen pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

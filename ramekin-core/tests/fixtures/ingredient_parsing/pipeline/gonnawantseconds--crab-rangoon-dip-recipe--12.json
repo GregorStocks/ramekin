@@ -1,15 +1,13 @@
 {
   "raw": "1  7 Ounce Jar Duck Sauce or Sweet and Sour Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Duck Sauce or Sweet and Sour Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "7 Ounce Jar"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Duck Sauce or Sweet and Sour Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "7 Ounce Jar"
+      }
+    ],
+    "note": null
   }
 }

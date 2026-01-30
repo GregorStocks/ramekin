@@ -1,15 +1,13 @@
 {
   "raw": "1  ripe peach (pitted and sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe peach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "pitted and sliced"
-    }
+  "expected": {
+    "item": "ripe peach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "pitted and sliced"
   }
 }

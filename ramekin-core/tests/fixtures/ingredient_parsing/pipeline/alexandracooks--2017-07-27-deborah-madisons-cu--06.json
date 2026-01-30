@@ -1,15 +1,13 @@
 {
   "raw": "1/2&nbsp;teaspoon cumin seeds or ground cumin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cumin seeds or ground cumin",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cumin seeds or ground cumin",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

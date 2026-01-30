@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons white balsamic vinegar or apple cider vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white balsamic vinegar or apple cider vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white balsamic vinegar or apple cider vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

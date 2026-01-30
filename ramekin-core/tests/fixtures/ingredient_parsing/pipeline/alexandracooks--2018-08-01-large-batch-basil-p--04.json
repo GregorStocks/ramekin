@@ -1,15 +1,13 @@
 {
   "raw": "3 to 3.5 teaspoons kosher salt (Diamond Crystal brand, see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kosher salt (Diamond Crystal brand, see notes)",
-      "measurements": [
-        {
-          "amount": "3 to 3.5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kosher salt (Diamond Crystal brand, see notes)",
+    "measurements": [
+      {
+        "amount": "3 to 3.5",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

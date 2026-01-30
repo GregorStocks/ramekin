@@ -1,15 +1,13 @@
 {
   "raw": "6 cups vegetable broth + splashes more, if needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable broth + splashes more, if needed",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vegetable broth + splashes more, if needed",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

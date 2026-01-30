@@ -1,10 +1,8 @@
 {
   "raw": "mixed fish sauce to taste, see below",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed fish sauce to taste, see below",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed fish sauce to taste, see below",
+    "measurements": [],
+    "note": null
   }
 }

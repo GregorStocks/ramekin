@@ -1,15 +1,13 @@
 {
   "raw": "4 tablespoons butter, as needed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "as needed"
-    }
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "as needed"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 large potato, peeled and diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and diced"
-    }
+  "expected": {
+    "item": "potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and diced"
   }
 }

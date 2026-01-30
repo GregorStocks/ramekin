@@ -1,15 +1,13 @@
 {
   "raw": "1 cup golden raisins (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "golden raisins",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "golden raisins",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

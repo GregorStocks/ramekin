@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons sugar (if making sweet shortcake-style biscuits)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar (if making sweet shortcake-style biscuits)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar (if making sweet shortcake-style biscuits)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

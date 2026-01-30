@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons freshly chopped basil (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly chopped basil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "freshly chopped basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

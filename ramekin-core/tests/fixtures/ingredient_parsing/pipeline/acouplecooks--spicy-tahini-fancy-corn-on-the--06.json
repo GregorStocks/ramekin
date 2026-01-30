@@ -1,10 +1,8 @@
 {
   "raw": "Sriracha hot sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sriracha hot sauce",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Sriracha hot sauce",
+    "measurements": [],
+    "note": null
   }
 }

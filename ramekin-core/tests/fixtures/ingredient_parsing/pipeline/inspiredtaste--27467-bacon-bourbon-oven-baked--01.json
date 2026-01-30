@@ -1,15 +1,13 @@
 {
   "raw": "2 to 2-1/2 pounds spare ribs or baby back pork ribs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "to 2-1/2 pounds spare ribs or baby back pork ribs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "to 2-1/2 pounds spare ribs or baby back pork ribs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

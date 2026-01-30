@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon finely chopped canned chipotle chile in adobo sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped canned chipotle chile in adobo sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped canned chipotle chile in adobo sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/3 cup cherry juice (store-bought or made from fresh)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry juice",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "store-bought or made from fresh"
-    }
+  "expected": {
+    "item": "cherry juice",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "store-bought or made from fresh"
   }
 }

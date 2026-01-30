@@ -1,15 +1,13 @@
 {
   "raw": "3 slices white (or wheat if that's what you have on hand sandwich bread, torn into small pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white (or wheat if that's what you have on hand sandwich bread, torn into small pieces)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white (or wheat if that's what you have on hand sandwich bread, torn into small pieces)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

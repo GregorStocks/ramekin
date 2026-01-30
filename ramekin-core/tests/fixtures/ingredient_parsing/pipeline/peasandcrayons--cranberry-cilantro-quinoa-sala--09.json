@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup chopped green or red onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped green or red onion",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped green or red onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

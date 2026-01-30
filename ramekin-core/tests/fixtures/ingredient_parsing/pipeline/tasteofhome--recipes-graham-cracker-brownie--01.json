@@ -1,19 +1,17 @@
 {
   "raw": "2 cups graham cracker crumbs (about 32 squares)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "graham cracker crumbs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "32",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "graham cracker crumbs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "32",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

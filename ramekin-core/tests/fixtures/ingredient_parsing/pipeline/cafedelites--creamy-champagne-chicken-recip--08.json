@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup milk (or heavy / thickened cream)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "milk (or heavy / thickened cream)",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "milk (or heavy / thickened cream)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

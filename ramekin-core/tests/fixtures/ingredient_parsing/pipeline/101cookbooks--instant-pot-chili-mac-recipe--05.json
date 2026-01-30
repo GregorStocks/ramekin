@@ -1,10 +1,8 @@
 {
   "raw": "a generous splash of cashew or coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a generous splash of cashew or coconut milk",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a generous splash of cashew or coconut milk",
+    "measurements": [],
+    "note": null
   }
 }

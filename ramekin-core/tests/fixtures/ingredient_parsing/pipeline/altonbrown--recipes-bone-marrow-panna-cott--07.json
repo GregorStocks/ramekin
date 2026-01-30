@@ -1,15 +1,13 @@
 {
   "raw": "1 cup cornflakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornflakes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cornflakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

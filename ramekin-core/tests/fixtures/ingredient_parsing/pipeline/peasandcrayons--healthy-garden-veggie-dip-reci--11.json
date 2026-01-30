@@ -1,10 +1,8 @@
 {
   "raw": "carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [],
+    "note": null
   }
 }

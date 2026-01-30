@@ -1,15 +1,13 @@
 {
   "raw": "1 cup original almond milk (or water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "original almond milk (or water)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "original almond milk (or water)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

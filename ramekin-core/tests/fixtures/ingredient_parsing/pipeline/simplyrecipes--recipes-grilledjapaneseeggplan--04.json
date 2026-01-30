@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup roasted sesame tahini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted sesame tahini",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roasted sesame tahini",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

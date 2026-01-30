@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons cocoa powder (for dusting)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cocoa powder (for dusting)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cocoa powder (for dusting)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

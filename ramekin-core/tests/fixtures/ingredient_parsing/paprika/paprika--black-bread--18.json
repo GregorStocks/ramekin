@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup cornmeal (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cornmeal",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "cornmeal",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

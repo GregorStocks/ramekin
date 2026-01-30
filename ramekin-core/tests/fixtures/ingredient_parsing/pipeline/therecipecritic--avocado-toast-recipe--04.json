@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons minced red onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced red onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced red onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

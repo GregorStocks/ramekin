@@ -1,23 +1,21 @@
 {
   "raw": "1 cup creamy peanut butter (9 ounces; 260 g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "creamy peanut butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "260",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "creamy peanut butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "260",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

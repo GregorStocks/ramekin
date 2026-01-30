@@ -1,10 +1,8 @@
 {
   "raw": "Enough water to cover the chicken",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Enough water to cover the chicken",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Enough water to cover the chicken",
+    "measurements": [],
+    "note": null
   }
 }

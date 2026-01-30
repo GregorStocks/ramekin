@@ -1,15 +1,13 @@
 {
   "raw": "7 inch Sponge Cake",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "inch Sponge Cake",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "inch Sponge Cake",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

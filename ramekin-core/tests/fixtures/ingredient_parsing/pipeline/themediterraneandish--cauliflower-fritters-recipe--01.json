@@ -1,10 +1,8 @@
 {
   "raw": "For the Mint Yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For the Mint Yogurt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "For the Mint Yogurt",
+    "measurements": [],
+    "note": null
   }
 }

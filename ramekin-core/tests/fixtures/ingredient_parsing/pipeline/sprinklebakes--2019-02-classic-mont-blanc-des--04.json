@@ -1,15 +1,13 @@
 {
   "raw": "1/4 teaspoon cream of tartar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream of tartar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cream of tartar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

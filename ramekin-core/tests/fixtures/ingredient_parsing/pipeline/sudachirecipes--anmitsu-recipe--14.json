@@ -1,10 +1,8 @@
 {
   "raw": "whipped cream ((or ice cream) optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipped cream (or ice cream) optional)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "whipped cream (or ice cream) optional)",
+    "measurements": [],
+    "note": null
   }
 }

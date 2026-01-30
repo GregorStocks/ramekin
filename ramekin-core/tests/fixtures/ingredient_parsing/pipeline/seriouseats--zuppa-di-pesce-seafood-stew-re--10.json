@@ -1,15 +1,13 @@
 {
   "raw": "1 pinch of saffron",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "saffron",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "saffron",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      }
+    ],
+    "note": null
   }
 }

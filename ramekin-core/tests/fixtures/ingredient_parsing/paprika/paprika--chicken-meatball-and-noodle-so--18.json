@@ -1,10 +1,8 @@
 {
   "raw": "Minced parsley and/or dill to finish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Minced parsley and/or dill to finish",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Minced parsley and/or dill to finish",
+    "measurements": [],
+    "note": null
   }
 }

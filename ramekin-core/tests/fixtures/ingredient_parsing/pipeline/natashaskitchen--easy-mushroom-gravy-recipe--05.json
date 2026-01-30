@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup chicken stock/broth (veggie or beef stock work also)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock/broth (veggie or beef stock work also)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken stock/broth (veggie or beef stock work also)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

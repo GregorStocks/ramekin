@@ -1,15 +1,13 @@
 {
   "raw": "3 pounds chicken breasts (boneless and skinless)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts (boneless and skinless)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts (boneless and skinless)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

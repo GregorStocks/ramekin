@@ -1,15 +1,13 @@
 {
   "raw": "1 7- ounce jar marshmallow crème",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "7- ounce jar marshmallow crème",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "7- ounce jar marshmallow crème",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

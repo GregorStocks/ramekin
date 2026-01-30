@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup canola oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canola oil",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canola oil",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

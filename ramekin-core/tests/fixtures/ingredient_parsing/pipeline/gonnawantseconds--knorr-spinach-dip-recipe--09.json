@@ -1,10 +1,8 @@
 {
   "raw": "sliced baguette",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced baguette",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced baguette",
+    "measurements": [],
+    "note": null
   }
 }

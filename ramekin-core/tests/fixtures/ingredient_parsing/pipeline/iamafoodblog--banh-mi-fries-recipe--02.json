@@ -1,10 +1,8 @@
 {
   "raw": "oil for deep frying – I like to use rice bran oil or grapeseed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil for deep frying - I like to use rice bran oil or grapeseed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "oil for deep frying - I like to use rice bran oil or grapeseed",
+    "measurements": [],
+    "note": null
   }
 }

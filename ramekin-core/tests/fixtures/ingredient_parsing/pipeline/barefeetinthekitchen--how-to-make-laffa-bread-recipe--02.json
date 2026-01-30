@@ -1,15 +1,13 @@
 {
   "raw": "1  package dry rapid rise yeast",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry rapid rise yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry rapid rise yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
   }
 }

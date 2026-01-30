@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup coconut milk (or nut milk)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut milk (or nut milk)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut milk (or nut milk)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

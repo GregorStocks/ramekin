@@ -1,15 +1,13 @@
 {
   "raw": "2/3  cup roasted beet, chopped bite-size",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted beet",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped bite-size"
-    }
+  "expected": {
+    "item": "roasted beet",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped bite-size"
   }
 }

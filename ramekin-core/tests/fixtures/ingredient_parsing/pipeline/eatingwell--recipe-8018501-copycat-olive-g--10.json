@@ -1,23 +1,21 @@
 {
   "raw": "1 (14 ounce) bone-in chicken breast, skin removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bone-in chicken breast, skin removed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "14",
-          "unit": "oz"
-        },
-        {
-          "amount": "397",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bone-in chicken breast, skin removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon lemon zest (from 1 medium lemon)&nbsp;&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon zest (from 1 medium lemon)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lemon zest (from 1 medium lemon)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

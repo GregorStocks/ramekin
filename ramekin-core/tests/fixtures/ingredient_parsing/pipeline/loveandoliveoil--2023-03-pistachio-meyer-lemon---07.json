@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons salted butter (cut into small cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter (cut into small cubes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted butter (cut into small cubes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

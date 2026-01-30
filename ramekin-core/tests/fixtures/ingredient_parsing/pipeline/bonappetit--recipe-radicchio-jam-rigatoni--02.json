@@ -1,10 +1,8 @@
 {
   "raw": "bacon), cut into ½\" pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon), cut into 1/2\" pieces",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon), cut into 1/2\" pieces",
+    "measurements": [],
+    "note": null
   }
 }

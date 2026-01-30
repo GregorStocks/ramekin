@@ -1,15 +1,13 @@
 {
   "raw": "1 small whole chicken (as close to 3 pounds as possible)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole chicken (as close to 3 pounds as possible)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole chicken (as close to 3 pounds as possible)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
   }
 }

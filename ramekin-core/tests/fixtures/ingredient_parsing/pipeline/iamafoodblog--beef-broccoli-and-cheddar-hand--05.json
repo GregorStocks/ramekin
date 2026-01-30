@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup beef broth (or water)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef broth (or water)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef broth (or water)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

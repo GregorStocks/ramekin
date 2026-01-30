@@ -1,15 +1,13 @@
 {
   "raw": "6 cups fish or chicken stock or canned low-sodium broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fish or chicken stock or canned low-sodium broth",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fish or chicken stock or canned low-sodium broth",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

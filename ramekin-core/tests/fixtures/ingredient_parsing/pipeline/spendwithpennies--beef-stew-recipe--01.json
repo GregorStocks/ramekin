@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds stewing beef (trimmed and cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stewing beef",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed and cubed"
-    }
+  "expected": {
+    "item": "stewing beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "trimmed and cubed"
   }
 }

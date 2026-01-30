@@ -1,15 +1,13 @@
 {
   "raw": "4  mango (peeled, cored, cubed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mango",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "peeled, cored, cubed"
-    }
+  "expected": {
+    "item": "mango",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "peeled, cored, cubed"
   }
 }

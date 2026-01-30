@@ -1,19 +1,17 @@
 {
   "raw": "2 (12- to 18-ounce) packages shelf-stable or refrigerated potato gnocchi",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shelf-stable or refrigerated potato gnocchi",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shelf-stable or refrigerated potato gnocchi",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "package"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

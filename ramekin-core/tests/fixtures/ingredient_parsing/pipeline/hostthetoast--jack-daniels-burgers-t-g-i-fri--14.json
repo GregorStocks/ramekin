@@ -1,19 +1,17 @@
 {
   "raw": "12 slices bacon (about 1/2 of a one pound package)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "slice"
-        },
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slice"
+      },
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

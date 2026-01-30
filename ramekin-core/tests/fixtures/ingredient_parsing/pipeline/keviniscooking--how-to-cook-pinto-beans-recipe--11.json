@@ -1,10 +1,8 @@
 {
   "raw": "Queso Fresca or shredded Oaxacan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Queso Fresca or shredded Oaxacan",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Queso Fresca or shredded Oaxacan",
+    "measurements": [],
+    "note": null
   }
 }

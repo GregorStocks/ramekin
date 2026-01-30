@@ -1,15 +1,13 @@
 {
   "raw": "550 grams boneless skin-on chicken thighs ((cut into bite-size pieces))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skin-on chicken thighs (cut into bite-size pieces)",
-      "measurements": [
-        {
-          "amount": "550",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skin-on chicken thighs (cut into bite-size pieces)",
+    "measurements": [
+      {
+        "amount": "550",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

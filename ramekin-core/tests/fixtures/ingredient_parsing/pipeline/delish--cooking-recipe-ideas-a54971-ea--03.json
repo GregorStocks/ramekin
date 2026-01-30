@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp. taco seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "taco seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "taco seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

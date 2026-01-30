@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons liqueur or eau-de-vie",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "liqueur or eau-de-vie",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "liqueur or eau-de-vie",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

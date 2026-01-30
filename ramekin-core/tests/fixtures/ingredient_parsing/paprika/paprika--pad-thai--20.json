@@ -1,10 +1,8 @@
 {
   "raw": "More beansprouts",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "More beansprouts",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "More beansprouts",
+    "measurements": [],
+    "note": null
   }
 }

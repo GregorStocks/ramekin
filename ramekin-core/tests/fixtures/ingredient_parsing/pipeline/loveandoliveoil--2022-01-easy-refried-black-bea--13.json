@@ -1,10 +1,8 @@
 {
   "raw": "Romaine or iceberg lettuce (finely shredded)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Romaine or iceberg lettuce",
-      "measurements": [],
-      "note": "finely shredded"
-    }
+  "expected": {
+    "item": "Romaine or iceberg lettuce",
+    "measurements": [],
+    "note": "finely shredded"
   }
 }

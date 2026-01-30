@@ -1,15 +1,13 @@
 {
   "raw": "1 cup vanilla wafers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vanilla wafers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "vanilla wafers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

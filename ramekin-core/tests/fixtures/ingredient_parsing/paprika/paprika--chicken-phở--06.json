@@ -1,15 +1,13 @@
 {
   "raw": "One fresh 3 1/2-pound chicken, quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh 3 1/2-pound chicken",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "fresh 3 1/2-pound chicken",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "quartered"
   }
 }

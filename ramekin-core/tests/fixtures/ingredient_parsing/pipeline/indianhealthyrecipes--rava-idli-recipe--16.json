@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon oil  (to grease idli plates)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oil  (to grease idli plates)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oil  (to grease idli plates)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

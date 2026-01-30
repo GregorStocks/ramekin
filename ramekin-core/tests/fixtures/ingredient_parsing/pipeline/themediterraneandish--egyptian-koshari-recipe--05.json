@@ -1,10 +1,8 @@
 {
   "raw": "Cooking oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cooking oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cooking oil",
+    "measurements": [],
+    "note": null
   }
 }

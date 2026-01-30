@@ -1,10 +1,8 @@
 {
   "raw": "a pinch of salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a pinch of salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a pinch of salt",
+    "measurements": [],
+    "note": null
   }
 }

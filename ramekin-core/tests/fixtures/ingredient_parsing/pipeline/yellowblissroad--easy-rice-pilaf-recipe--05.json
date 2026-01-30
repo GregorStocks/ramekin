@@ -1,15 +1,13 @@
 {
   "raw": "1 cup long grain white rice (Jasmine or basmati rice works too)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long grain white rice (Jasmine or basmati rice works too)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "long grain white rice (Jasmine or basmati rice works too)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

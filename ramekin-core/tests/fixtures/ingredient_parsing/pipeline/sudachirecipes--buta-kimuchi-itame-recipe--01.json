@@ -1,15 +1,13 @@
 {
   "raw": "200 g thinly sliced pork belly (shabu-shabu/sukiyaki slices, or pork shoulder)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced pork belly (shabu-shabu/sukiyaki slices, or pork shoulder)",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly sliced pork belly (shabu-shabu/sukiyaki slices, or pork shoulder)",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 oz Parmesan cheese, (shaved or grated)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": "shaved or grated"
-    }
+  "expected": {
+    "item": "Parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "shaved or grated"
   }
 }

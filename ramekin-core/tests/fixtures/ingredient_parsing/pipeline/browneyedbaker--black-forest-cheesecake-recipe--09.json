@@ -1,19 +1,17 @@
 {
   "raw": "24 ounces frozen dark sweet cherries (thawed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen dark sweet cherries",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "thawed"
-    }
+  "expected": {
+    "item": "frozen dark sweet cherries",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "thawed"
   }
 }

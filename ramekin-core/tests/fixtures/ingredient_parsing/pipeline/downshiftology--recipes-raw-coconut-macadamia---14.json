@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp raw honey or maple",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw honey or maple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw honey or maple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup torn basil leaves, Thai basil if you can find it",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "torn basil leaves, Thai basil if you can find it",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "torn basil leaves, Thai basil if you can find it",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

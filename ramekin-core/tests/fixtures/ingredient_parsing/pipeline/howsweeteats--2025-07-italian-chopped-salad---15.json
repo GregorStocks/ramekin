@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces smoked provolone cheese, (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked provolone cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "smoked provolone cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

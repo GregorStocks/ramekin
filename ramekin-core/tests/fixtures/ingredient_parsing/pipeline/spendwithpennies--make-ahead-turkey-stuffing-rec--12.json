@@ -1,15 +1,13 @@
 {
   "raw": "½ cup melted butter",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "melted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "melted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

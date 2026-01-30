@@ -1,23 +1,21 @@
 {
   "raw": "70 g unsalted butter (about 2 1/2 ounces; 5 tablespoons), cut into 1/4-inch slices, at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter , cut into 1/4-inch slices",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "unsalted butter , cut into 1/4-inch slices",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "at room temperature"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup, plus 3/4 cup BBQ sauce, (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/4 cup, plus 3/4 cup BBQ sauce, (divided)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "1/4 cup, plus 3/4 cup BBQ sauce, (divided)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Edible organic rose petals",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Edible organic rose petals",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Edible organic rose petals",
+    "measurements": [],
+    "note": null
   }
 }

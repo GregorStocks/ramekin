@@ -1,15 +1,13 @@
 {
   "raw": "2  limes, (freshly juiced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "limes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "freshly juiced"
-    }
+  "expected": {
+    "item": "limes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "freshly juiced"
   }
 }

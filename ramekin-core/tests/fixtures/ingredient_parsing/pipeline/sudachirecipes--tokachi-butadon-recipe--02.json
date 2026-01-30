@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp turbinado sugar (or light brown sugar)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turbinado sugar (or light brown sugar)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turbinado sugar (or light brown sugar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

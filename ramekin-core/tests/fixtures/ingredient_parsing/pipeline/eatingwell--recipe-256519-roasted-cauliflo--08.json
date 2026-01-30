@@ -1,19 +1,17 @@
 {
   "raw": "1 small head cauliflower, cut into small florets (about 6 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "head cauliflower, cut into small florets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "head cauliflower, cut into small florets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

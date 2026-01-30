@@ -1,15 +1,13 @@
 {
   "raw": "2 packages cream cheese, 8 oz each; room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        }
-      ],
-      "note": "8 oz each; room temperature"
-    }
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "package"
+      }
+    ],
+    "note": "8 oz each; room temperature"
   }
 }

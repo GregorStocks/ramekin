@@ -1,10 +1,8 @@
 {
   "raw": "lemon and lime zest for topping (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon and lime zest for topping",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "lemon and lime zest for topping",
+    "measurements": [],
+    "note": "optional"
   }
 }

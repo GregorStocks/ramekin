@@ -1,15 +1,13 @@
 {
   "raw": "1/2  a large frozen banana",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a large frozen banana",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "a large frozen banana",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

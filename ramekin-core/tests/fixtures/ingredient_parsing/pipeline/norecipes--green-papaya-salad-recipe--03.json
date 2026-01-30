@@ -1,19 +1,17 @@
 {
   "raw": "4 grams garlic ((~1 clove))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

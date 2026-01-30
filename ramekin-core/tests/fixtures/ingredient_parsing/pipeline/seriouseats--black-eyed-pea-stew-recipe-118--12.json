@@ -1,19 +1,17 @@
 {
   "raw": "3 cups (720 ml) low-sodium vegetable broth&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium vegetable broth",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "720",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "low-sodium vegetable broth",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      },
+      {
+        "amount": "720",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

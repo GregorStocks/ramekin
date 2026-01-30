@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup freshly squeezed Meyer lemon juice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly squeezed Meyer lemon juice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly squeezed Meyer lemon juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

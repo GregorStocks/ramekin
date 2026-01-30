@@ -1,15 +1,13 @@
 {
   "raw": "1 14 ounce can Thai coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai coconut milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "14 ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Thai coconut milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "14 ounce can"
+      }
+    ],
+    "note": null
   }
 }

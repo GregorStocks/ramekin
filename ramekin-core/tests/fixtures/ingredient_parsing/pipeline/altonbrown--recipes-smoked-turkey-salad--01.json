@@ -1,15 +1,13 @@
 {
   "raw": "2  smoked turkey legs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "smoked turkey legs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "smoked turkey legs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

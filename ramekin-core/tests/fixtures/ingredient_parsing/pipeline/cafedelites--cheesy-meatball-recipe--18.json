@@ -1,19 +1,17 @@
 {
   "raw": "24 oz tomato puree (or passata)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato puree (or passata)",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": "oz"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato puree (or passata)",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

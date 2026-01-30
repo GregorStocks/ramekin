@@ -1,10 +1,8 @@
 {
   "raw": "Tostadas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tostadas",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Tostadas",
+    "measurements": [],
+    "note": null
   }
 }

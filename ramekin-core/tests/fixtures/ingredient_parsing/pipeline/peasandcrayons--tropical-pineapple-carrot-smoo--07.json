@@ -1,10 +1,8 @@
 {
   "raw": "sweeten as desired",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sweeten as desired",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sweeten as desired",
+    "measurements": [],
+    "note": null
   }
 }

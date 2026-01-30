@@ -1,10 +1,8 @@
 {
   "raw": "Cherries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cherries",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cherries",
+    "measurements": [],
+    "note": null
   }
 }

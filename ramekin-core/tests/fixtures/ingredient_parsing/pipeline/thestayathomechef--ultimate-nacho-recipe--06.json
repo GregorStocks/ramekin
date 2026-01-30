@@ -1,15 +1,13 @@
 {
   "raw": "4 cups shredded cheddar cheese (divided)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded cheddar cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "shredded cheddar cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
   }
 }

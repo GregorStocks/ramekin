@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp powdered sweetener (or honey)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "powdered sweetener (or honey)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "powdered sweetener (or honey)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

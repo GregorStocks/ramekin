@@ -1,15 +1,13 @@
 {
   "raw": "4 teaspoons seasoned rice wine vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "seasoned rice wine vinegar",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "seasoned rice wine vinegar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

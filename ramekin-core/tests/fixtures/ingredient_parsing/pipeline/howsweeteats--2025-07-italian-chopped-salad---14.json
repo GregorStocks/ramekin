@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces fresh mozzarella pearls",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh mozzarella pearls",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh mozzarella pearls",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

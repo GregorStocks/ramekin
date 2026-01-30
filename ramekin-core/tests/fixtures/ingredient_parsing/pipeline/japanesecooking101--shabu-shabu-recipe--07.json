@@ -1,15 +1,13 @@
 {
   "raw": "6  Shiitake mushrooms",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

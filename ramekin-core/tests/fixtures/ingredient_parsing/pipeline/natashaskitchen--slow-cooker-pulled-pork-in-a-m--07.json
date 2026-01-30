@@ -1,19 +1,17 @@
 {
   "raw": "1 oz Onion Soup or Dip Mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Onion Soup or Dip Mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Onion Soup or Dip Mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

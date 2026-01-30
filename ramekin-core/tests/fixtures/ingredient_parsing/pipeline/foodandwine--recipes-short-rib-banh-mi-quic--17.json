@@ -1,15 +1,13 @@
 {
   "raw": "2 Kirby cucumbers, sliced 1/4 inch thick",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Kirby cucumbers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced 1/4 inch thick"
-    }
+  "expected": {
+    "item": "Kirby cucumbers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced 1/4 inch thick"
   }
 }

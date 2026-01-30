@@ -1,15 +1,13 @@
 {
   "raw": "1 pound rigatoni or other large pasta shape",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rigatoni or other large pasta shape",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rigatoni or other large pasta shape",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

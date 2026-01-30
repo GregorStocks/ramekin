@@ -1,15 +1,13 @@
 {
   "raw": "1 9- oz box Jiffy cake mix (you can also use 1/2 box of yellow or white cake mix)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "9- oz box Jiffy cake mix (you can also use 1/2 box of yellow or white cake mix)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "9- oz box Jiffy cake mix (you can also use 1/2 box of yellow or white cake mix)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

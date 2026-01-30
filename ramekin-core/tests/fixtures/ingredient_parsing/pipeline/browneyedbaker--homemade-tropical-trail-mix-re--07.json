@@ -1,15 +1,13 @@
 {
   "raw": "½ cup chopped dried papaya",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped dried papaya",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped dried papaya",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

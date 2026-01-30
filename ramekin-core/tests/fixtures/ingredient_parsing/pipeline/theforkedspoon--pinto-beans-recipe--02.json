@@ -1,15 +1,13 @@
 {
   "raw": "½ pound thick-cut bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thick-cut bacon",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons maple extract (I like Frontier brand)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple extract (I like Frontier brand)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple extract (I like Frontier brand)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

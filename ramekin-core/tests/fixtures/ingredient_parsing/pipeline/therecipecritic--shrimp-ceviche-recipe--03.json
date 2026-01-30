@@ -1,15 +1,13 @@
 {
   "raw": "2  chopped Roma tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped Roma tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped Roma tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

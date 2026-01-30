@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces pecorino cheese, chopped into mixed-sized rubble or 2/3 cup grated",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pecorino cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped into mixed-sized rubble or 2/3 cup grated"
-    }
+  "expected": {
+    "item": "pecorino cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped into mixed-sized rubble or 2/3 cup grated"
   }
 }

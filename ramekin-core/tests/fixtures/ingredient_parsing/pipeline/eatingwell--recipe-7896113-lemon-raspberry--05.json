@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons lemon juice plus 2 teaspoons, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lemon juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 2 teaspoons, divided"
-    }
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus 2 teaspoons, divided"
   }
 }

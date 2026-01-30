@@ -1,15 +1,13 @@
 {
   "raw": "400 grams whole stewed tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole stewed tomatoes",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole stewed tomatoes",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

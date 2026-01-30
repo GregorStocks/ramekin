@@ -1,19 +1,17 @@
 {
   "raw": "2 (20-ounce) cans apple pie filling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple pie filling",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple pie filling",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 cups (256 g) unbleached all-purpose or bread flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unbleached all-purpose or bread flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "256",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unbleached all-purpose or bread flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "256",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Diced white onion (recommended)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Diced white onion (recommended)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Diced white onion (recommended)",
+    "measurements": [],
+    "note": null
   }
 }

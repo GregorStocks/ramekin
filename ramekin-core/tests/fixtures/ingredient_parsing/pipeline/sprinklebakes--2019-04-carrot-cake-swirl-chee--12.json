@@ -1,10 +1,8 @@
 {
   "raw": "Cheesecake Ingredients:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cheesecake Ingredients:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cheesecake Ingredients:",
+    "measurements": [],
+    "note": null
   }
 }

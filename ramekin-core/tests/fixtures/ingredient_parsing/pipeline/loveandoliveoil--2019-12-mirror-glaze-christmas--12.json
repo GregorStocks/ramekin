@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons finely ground pecans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely ground pecans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely ground pecans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

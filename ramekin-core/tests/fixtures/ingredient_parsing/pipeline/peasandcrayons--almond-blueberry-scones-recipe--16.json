@@ -1,10 +1,8 @@
 {
   "raw": "turbinado sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turbinado sugar",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "turbinado sugar",
+    "measurements": [],
+    "note": null
   }
 }

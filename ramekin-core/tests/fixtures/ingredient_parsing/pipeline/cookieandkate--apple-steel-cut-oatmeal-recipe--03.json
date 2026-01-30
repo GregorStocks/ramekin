@@ -1,15 +1,13 @@
 {
   "raw": "3 medium-to-large apples (I used 2 Granny Smiths and 1 Honeycrisp), cored and sliced into 1-to-2&amp;#8243; chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-to-large apples (I used 2 Granny Smiths and 1 Honeycrisp)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "cored and sliced into 1-to-2″ chunks"
-    }
+  "expected": {
+    "item": "medium-to-large apples (I used 2 Granny Smiths and 1 Honeycrisp)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "cored and sliced into 1-to-2″ chunks"
   }
 }

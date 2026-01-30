@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup freshly brewed hot coffee",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly brewed hot coffee",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly brewed hot coffee",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "½ cup unsalted butter (cold, cut into 8 pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cold, cut into 8 pieces"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold, cut into 8 pieces"
   }
 }

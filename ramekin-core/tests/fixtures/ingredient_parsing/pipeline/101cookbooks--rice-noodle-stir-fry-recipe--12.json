@@ -1,10 +1,8 @@
 {
   "raw": "For serving: slivered market lime, Meyer lemon zest, or orange zest (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "For serving: slivered market lime, Meyer lemon zest, or orange zest",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "For serving: slivered market lime, Meyer lemon zest, or orange zest",
+    "measurements": [],
+    "note": "optional"
   }
 }

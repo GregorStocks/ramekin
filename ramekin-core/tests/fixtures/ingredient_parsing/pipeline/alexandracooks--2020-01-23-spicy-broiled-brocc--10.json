@@ -1,10 +1,8 @@
 {
   "raw": "flaky sea salt, such as Maldon, for finishing, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky sea salt, such as Maldon, for finishing",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "flaky sea salt, such as Maldon, for finishing",
+    "measurements": [],
+    "note": "optional"
   }
 }

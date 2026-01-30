@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces mushroom popcorn kernels",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mushroom popcorn kernels",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mushroom popcorn kernels",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

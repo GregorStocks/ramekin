@@ -1,15 +1,13 @@
 {
   "raw": "200 g cabbage kimchi (Napa/baechu)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cabbage kimchi (Napa/baechu)",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cabbage kimchi (Napa/baechu)",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

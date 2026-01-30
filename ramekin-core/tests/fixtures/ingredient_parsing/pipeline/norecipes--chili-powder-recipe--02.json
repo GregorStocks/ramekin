@@ -1,19 +1,17 @@
 {
   "raw": "10 grams dried ancho chiles ((~1 medium))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried ancho chiles",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried ancho chiles",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

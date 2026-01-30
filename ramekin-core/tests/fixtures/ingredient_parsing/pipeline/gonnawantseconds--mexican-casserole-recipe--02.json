@@ -1,15 +1,13 @@
 {
   "raw": "1 envelope taco seasoning",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "envelope taco seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "envelope taco seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

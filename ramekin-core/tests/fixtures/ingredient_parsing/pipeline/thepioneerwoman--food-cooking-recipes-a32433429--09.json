@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. small red potatoes, halved",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "small red potatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "small red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved"
   }
 }

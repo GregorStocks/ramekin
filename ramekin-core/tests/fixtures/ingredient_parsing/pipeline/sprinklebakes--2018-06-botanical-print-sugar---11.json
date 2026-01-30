@@ -1,19 +1,17 @@
 {
   "raw": "4  ornate frame candy molds (4×6-inches each)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ornate frame candy molds",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ornate frame candy molds",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "6 tablespoons instant espresso powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant espresso powder",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant espresso powder",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

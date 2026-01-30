@@ -1,19 +1,17 @@
 {
   "raw": "29 ounces diced tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced tomatoes",
-      "measurements": [
-        {
-          "amount": "29",
-          "unit": "oz"
-        },
-        {
-          "amount": "822",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced tomatoes",
+    "measurements": [
+      {
+        "amount": "29",
+        "unit": "oz"
+      },
+      {
+        "amount": "822",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

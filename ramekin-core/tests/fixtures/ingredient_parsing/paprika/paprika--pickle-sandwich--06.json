@@ -1,15 +1,13 @@
 {
   "raw": "1 half-sour pickle, thinly sliced lengthwise",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "half-sour pickle",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced lengthwise"
-    }
+  "expected": {
+    "item": "half-sour pickle",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced lengthwise"
   }
 }

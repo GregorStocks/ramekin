@@ -1,15 +1,13 @@
 {
   "raw": "1 pound cod fillets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cod fillets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cod fillets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

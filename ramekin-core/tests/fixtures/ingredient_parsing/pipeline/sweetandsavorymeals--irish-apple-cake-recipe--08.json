@@ -1,15 +1,13 @@
 {
   "raw": "1 cup unsalted butter (cold and diced into small pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "cold and diced into small pieces"
-    }
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold and diced into small pieces"
   }
 }

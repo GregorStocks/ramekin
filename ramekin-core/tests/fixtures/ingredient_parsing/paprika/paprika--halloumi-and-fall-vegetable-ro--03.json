@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons fresh thyme leaves, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh thyme leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh thyme leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "chopped"
   }
 }

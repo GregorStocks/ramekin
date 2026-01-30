@@ -1,15 +1,13 @@
 {
   "raw": "3/4 cup/150 grams dried French (Le Puy) lentils, washed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cup/150 grams dried French (Le Puy) lentils",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": null
-        }
-      ],
-      "note": "washed"
-    }
+  "expected": {
+    "item": "cup/150 grams dried French (Le Puy) lentils",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": null
+      }
+    ],
+    "note": "washed"
   }
 }

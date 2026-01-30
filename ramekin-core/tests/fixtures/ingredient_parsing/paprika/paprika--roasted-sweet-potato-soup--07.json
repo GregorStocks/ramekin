@@ -1,15 +1,13 @@
 {
   "raw": "2 sprigs sage (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sage",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "sprig"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "sage",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sprig"
+      }
+    ],
+    "note": "optional"
   }
 }

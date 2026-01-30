@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp freshly grated parmesan ((Note 2))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "freshly grated parmesan (Note 2)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "freshly grated parmesan (Note 2)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

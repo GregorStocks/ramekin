@@ -1,15 +1,13 @@
 {
   "raw": "dash  paprika",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paprika",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "paprika",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

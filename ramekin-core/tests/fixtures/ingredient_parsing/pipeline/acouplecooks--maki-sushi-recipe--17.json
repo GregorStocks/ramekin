@@ -1,15 +1,13 @@
 {
   "raw": "1/2 bunch watercress or spinach, ends trimmed (or baby watercress or spinach)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "watercress or spinach",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bunch"
-        }
-      ],
-      "note": "ends trimmed (or baby watercress or spinach)"
-    }
+  "expected": {
+    "item": "watercress or spinach",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bunch"
+      }
+    ],
+    "note": "ends trimmed (or baby watercress or spinach)"
   }
 }

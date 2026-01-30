@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces gin (Plymouth)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gin (Plymouth)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gin (Plymouth)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

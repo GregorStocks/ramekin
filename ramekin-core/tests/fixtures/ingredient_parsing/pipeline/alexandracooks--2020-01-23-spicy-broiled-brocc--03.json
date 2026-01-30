@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon sambal oelek or Sriracha",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sambal oelek or Sriracha",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sambal oelek or Sriracha",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

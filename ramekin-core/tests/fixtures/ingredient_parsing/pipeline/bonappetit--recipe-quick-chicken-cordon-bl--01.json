@@ -1,19 +1,17 @@
 {
   "raw": "4 skinless, boneless chicken breasts (about 1½ lb. total)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "skinless, boneless chicken breasts",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "skinless, boneless chicken breasts",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

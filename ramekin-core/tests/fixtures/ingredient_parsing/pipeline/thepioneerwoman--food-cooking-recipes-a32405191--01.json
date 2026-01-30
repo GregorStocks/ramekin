@@ -1,15 +1,13 @@
 {
   "raw": "1 1/2 c. stone-ground grits&nbsp;",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "stone-ground grits",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "stone-ground grits",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fusilli noodles (dry)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fusilli noodles (dry)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fusilli noodles (dry)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 cup dried cranberries (or other dried fruit (raisins, apricots, cherries, etc.))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried cranberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "or other dried fruit (raisins, apricots, cherries, etc."
-    }
+  "expected": {
+    "item": "dried cranberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "or other dried fruit (raisins, apricots, cherries, etc."
   }
 }

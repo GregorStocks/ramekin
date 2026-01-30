@@ -1,15 +1,13 @@
 {
   "raw": "2 pounds chicken thighs (boneless and skinless, cut into pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken thighs (boneless and skinless, cut into pieces)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken thighs (boneless and skinless, cut into pieces)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

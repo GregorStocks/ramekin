@@ -1,15 +1,13 @@
 {
   "raw": "1  jalapeno, diced ((seeds, stem, + veins removed))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jalapeno, diced (seeds, stem, + veins removed)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jalapeno, diced (seeds, stem, + veins removed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

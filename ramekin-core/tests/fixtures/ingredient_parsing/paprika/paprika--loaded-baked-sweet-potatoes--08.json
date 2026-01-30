@@ -1,10 +1,8 @@
 {
   "raw": "Minced chives",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Minced chives",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Minced chives",
+    "measurements": [],
+    "note": null
   }
 }

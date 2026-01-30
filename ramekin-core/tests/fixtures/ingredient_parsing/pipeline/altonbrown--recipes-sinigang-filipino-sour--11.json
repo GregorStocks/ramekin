@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon citric acid crystals",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "citric acid crystals",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "citric acid crystals",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

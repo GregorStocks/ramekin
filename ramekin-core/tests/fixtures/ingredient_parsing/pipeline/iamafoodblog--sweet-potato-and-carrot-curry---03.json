@@ -1,15 +1,13 @@
 {
   "raw": "2 cups vegetable broth, or more to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "vegetable broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more to taste"
-    }
+  "expected": {
+    "item": "vegetable broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more to taste"
   }
 }

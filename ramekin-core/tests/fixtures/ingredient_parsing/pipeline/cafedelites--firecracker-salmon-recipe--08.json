@@ -1,15 +1,13 @@
 {
   "raw": "1-2 teaspoons sriracha (adjust to suit your heat preference)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sriracha (adjust to suit your heat preference)",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sriracha (adjust to suit your heat preference)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

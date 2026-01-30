@@ -1,10 +1,8 @@
 {
   "raw": "Lump crab meat",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Lump crab meat",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Lump crab meat",
+    "measurements": [],
+    "note": null
   }
 }

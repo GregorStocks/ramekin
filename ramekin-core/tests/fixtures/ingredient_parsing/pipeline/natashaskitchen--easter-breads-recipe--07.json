@@ -1,15 +1,13 @@
 {
   "raw": "7 cups 875 grams unsifted, all-purpose four, measured correctly*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "875 grams unsifted, all-purpose four, measured correctly*",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "875 grams unsifted, all-purpose four, measured correctly*",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

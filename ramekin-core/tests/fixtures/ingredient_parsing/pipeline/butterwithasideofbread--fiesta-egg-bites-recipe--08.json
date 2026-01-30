@@ -1,15 +1,13 @@
 {
   "raw": "1 cup grated cheddar or taco blend cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated cheddar or taco blend cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated cheddar or taco blend cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

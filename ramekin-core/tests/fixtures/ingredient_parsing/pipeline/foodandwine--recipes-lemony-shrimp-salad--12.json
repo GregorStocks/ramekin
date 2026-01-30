@@ -1,15 +1,13 @@
 {
   "raw": "1 Hass avocado, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hass avocado",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "Hass avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
   }
 }

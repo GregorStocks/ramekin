@@ -1,15 +1,13 @@
 {
   "raw": "2 cups corn",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

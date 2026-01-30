@@ -1,10 +1,8 @@
 {
   "raw": "red chilis (sliced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chilis",
-      "measurements": [],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "red chilis",
+    "measurements": [],
+    "note": "sliced"
   }
 }

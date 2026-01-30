@@ -1,15 +1,13 @@
 {
   "raw": "8 brat or hot dog buns, split",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "brat or hot dog buns, split",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "brat or hot dog buns, split",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

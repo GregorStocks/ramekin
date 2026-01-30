@@ -1,15 +1,13 @@
 {
   "raw": "3 cups granola (without the fruit or nuts)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "granola (without the fruit or nuts)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "granola (without the fruit or nuts)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

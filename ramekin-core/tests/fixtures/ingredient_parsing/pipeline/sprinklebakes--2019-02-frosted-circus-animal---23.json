@@ -1,15 +1,13 @@
 {
   "raw": "1/2  batch American buttercream (recipe here)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "batch American buttercream (recipe here)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "batch American buttercream (recipe here)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

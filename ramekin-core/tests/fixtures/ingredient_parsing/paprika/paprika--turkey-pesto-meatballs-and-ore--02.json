@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (455 grams) ground turkey",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground turkey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "455",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground turkey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

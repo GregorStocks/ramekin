@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (45 ml) pure maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure maple syrup",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pure maple syrup",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

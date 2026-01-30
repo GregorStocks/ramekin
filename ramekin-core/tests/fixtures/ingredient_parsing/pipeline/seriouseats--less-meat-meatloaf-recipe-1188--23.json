@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (120 ml) cider vinegar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cider vinegar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cider vinegar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

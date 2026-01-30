@@ -1,15 +1,13 @@
 {
   "raw": "3  chicken breasts (boneless and skinless, cut into long strips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken breasts (boneless and skinless, cut into long strips)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken breasts (boneless and skinless, cut into long strips)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 (15-ounce) cans kidney beans, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kidney beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "kidney beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "drained"
   }
 }

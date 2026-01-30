@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces (115g) shredded Swiss cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shredded Swiss cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shredded Swiss cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

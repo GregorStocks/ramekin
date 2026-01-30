@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Tabasco sauce (or hot sauce of choice)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tabasco sauce (or hot sauce of choice)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tabasco sauce (or hot sauce of choice)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

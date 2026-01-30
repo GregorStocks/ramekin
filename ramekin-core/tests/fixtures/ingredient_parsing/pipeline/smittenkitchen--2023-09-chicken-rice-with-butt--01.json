@@ -1,19 +1,17 @@
 {
   "raw": "2 to 2 1/4 pounds bone-in, skin-on chicken thighs (4 to 6)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1/4 pounds bone-in, skin-on chicken thighs",
-      "measurements": [
-        {
-          "amount": "2 to 2",
-          "unit": null
-        },
-        {
-          "amount": "4 to 6",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1/4 pounds bone-in, skin-on chicken thighs",
+    "measurements": [
+      {
+        "amount": "2 to 2",
+        "unit": null
+      },
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

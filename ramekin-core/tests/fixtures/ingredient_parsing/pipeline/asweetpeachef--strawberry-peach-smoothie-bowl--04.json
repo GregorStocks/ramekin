@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup rolled oats (uncooked)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rolled oats",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "uncooked"
-    }
+  "expected": {
+    "item": "rolled oats",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "uncooked"
   }
 }

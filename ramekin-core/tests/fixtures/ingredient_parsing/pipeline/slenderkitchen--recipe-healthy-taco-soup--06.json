@@ -1,19 +1,17 @@
 {
   "raw": "14.5 oz. canned corn, drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned corn",
-      "measurements": [
-        {
-          "amount": "14.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "411",
-          "unit": "g"
-        }
-      ],
-      "note": "drained"
-    }
+  "expected": {
+    "item": "canned corn",
+    "measurements": [
+      {
+        "amount": "14.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "411",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
   }
 }

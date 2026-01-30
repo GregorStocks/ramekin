@@ -1,15 +1,13 @@
 {
   "raw": "large bunch coriander leaves only, roughly chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunch coriander leaves only",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": "roughly chopped"
-    }
+  "expected": {
+    "item": "bunch coriander leaves only",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": "roughly chopped"
   }
 }

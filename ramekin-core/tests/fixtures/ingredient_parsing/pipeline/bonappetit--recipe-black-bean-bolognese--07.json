@@ -1,15 +1,13 @@
 {
   "raw": "⅓ cup black bean garlic sauce (such as Kikkoman or Lee Kum Kee)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "black bean garlic sauce (such as Kikkoman or Lee Kum Kee)",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "black bean garlic sauce (such as Kikkoman or Lee Kum Kee)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

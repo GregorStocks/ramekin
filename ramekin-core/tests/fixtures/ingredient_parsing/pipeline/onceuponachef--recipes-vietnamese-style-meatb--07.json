@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons lime zest, from 2 limes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime zest, from 2 limes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime zest, from 2 limes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

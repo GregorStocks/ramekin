@@ -1,15 +1,13 @@
 {
   "raw": "1 pound broccoli, florets broken into bite-sized pieces and stems peeled and chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "florets broken into bite-sized pieces and stems peeled and chopped"
-    }
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "florets broken into bite-sized pieces and stems peeled and chopped"
   }
 }

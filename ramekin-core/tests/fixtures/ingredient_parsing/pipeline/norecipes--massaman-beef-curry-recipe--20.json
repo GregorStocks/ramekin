@@ -1,19 +1,17 @@
 {
   "raw": "45 grams coconut sugar ((~2 tablespoons))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut sugar",
-      "measurements": [
-        {
-          "amount": "45",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut sugar",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

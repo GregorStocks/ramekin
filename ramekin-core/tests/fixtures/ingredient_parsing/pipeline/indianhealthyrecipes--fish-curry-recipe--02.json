@@ -1,15 +1,13 @@
 {
   "raw": "½ tbsp ginger garlic paste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ginger garlic paste",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ginger garlic paste",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

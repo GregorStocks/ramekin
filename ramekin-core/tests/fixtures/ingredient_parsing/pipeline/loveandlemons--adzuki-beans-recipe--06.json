@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped fresh cilantro leaves (more for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh cilantro leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "more for serving"
-    }
+  "expected": {
+    "item": "chopped fresh cilantro leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "more for serving"
   }
 }

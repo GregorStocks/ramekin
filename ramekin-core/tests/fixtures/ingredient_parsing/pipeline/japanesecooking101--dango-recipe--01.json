@@ -1,15 +1,13 @@
 {
   "raw": "250 g Tofu",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tofu",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tofu",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

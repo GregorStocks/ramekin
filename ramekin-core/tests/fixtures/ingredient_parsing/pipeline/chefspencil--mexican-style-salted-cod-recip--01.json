@@ -1,15 +1,13 @@
 {
   "raw": "2.2 lb dried salted cod fish (bacalao)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried salted cod fish (bacalao)",
-      "measurements": [
-        {
-          "amount": "2.2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried salted cod fish (bacalao)",
+    "measurements": [
+      {
+        "amount": "2.2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

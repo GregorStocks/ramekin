@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Mirin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mirin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mirin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

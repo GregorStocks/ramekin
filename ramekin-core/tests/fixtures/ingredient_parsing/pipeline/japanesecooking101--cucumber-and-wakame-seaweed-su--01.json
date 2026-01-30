@@ -1,15 +1,13 @@
 {
   "raw": "2 Tbsp dried Wakame seaweed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried Wakame seaweed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried Wakame seaweed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

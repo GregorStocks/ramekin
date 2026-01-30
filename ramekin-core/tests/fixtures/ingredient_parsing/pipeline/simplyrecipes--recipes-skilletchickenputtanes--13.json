@@ -1,10 +1,8 @@
 {
   "raw": "Crusty bread, to serve (skip if serving gluten-free)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Crusty bread, to serve (skip if serving gluten-free)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Crusty bread, to serve (skip if serving gluten-free)",
+    "measurements": [],
+    "note": null
   }
 }

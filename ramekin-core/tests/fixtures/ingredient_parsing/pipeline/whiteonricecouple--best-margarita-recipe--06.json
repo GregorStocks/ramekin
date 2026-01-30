@@ -1,10 +1,8 @@
 {
   "raw": "flaky salt ( for the rim (optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "flaky salt",
-      "measurements": [],
-      "note": "for the rim (optional"
-    }
+  "expected": {
+    "item": "flaky salt",
+    "measurements": [],
+    "note": "for the rim (optional"
   }
 }

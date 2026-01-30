@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup apple cider",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple cider",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple cider",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

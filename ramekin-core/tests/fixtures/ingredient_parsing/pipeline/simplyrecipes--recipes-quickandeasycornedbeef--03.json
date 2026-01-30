@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup finely diced potatoes (from 1 small red or yellow potato)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely diced potatoes (from 1 small red or yellow potato)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely diced potatoes (from 1 small red or yellow potato)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

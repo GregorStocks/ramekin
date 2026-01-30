@@ -1,10 +1,8 @@
 {
   "raw": "toppings of your choice (see in post)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toppings of your choice (see in post)",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "toppings of your choice (see in post)",
+    "measurements": [],
+    "note": null
   }
 }

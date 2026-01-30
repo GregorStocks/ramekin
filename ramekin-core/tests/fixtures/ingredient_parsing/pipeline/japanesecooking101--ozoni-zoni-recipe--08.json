@@ -1,15 +1,13 @@
 {
   "raw": "8  Mochi",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mochi",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mochi",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

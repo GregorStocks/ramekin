@@ -1,19 +1,17 @@
 {
   "raw": "350g (2 3/4 cups) all-purpose flour, plus extra flour as needed for rolling",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "350",
-          "unit": "g"
-        },
-        {
-          "amount": "2 3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus extra flour as needed for rolling"
-    }
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      },
+      {
+        "amount": "2 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus extra flour as needed for rolling"
   }
 }

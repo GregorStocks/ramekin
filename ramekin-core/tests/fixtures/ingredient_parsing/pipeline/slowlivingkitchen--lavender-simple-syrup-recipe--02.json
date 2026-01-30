@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup sugar (white or brown)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sugar (white or brown)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sugar (white or brown)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

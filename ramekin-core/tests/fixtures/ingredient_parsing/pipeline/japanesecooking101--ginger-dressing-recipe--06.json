@@ -1,15 +1,13 @@
 {
   "raw": "1/2 - 1 clove garlic (or 1/4 tsp garlic powder)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic (or 1/4 tsp garlic powder)",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "garlic (or 1/4 tsp garlic powder)",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "clove"
+      }
+    ],
+    "note": null
   }
 }

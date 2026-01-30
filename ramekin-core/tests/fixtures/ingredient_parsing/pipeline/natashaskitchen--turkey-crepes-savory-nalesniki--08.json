@@ -1,15 +1,13 @@
 {
   "raw": "1/2 lb leftover turkey meat (dark and/or white meat)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "leftover turkey meat (dark and/or white meat)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "leftover turkey meat (dark and/or white meat)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

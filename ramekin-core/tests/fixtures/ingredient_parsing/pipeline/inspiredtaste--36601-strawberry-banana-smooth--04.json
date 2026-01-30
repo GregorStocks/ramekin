@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons nut butter like peanut or almond butter, see our homemade peanut butter recipe",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nut butter like peanut or almond butter, see our homemade peanut butter recipe",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "nut butter like peanut or almond butter, see our homemade peanut butter recipe",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

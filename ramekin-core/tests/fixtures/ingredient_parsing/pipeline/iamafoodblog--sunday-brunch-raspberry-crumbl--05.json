@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons cold butter, cut into small cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold butter, cut into small cubes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold butter, cut into small cubes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

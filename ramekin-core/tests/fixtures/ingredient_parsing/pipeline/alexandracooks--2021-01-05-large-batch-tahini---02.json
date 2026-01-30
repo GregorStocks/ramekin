@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup white balsamic vinegar, or other",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white balsamic vinegar, or other",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "white balsamic vinegar, or other",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 to 3 tablespoons olive oil (estimate 1 per serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "olive oil (estimate 1 per serving)",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "olive oil (estimate 1 per serving)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

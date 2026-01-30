@@ -1,15 +1,13 @@
 {
   "raw": "2  fresh red chiles, thinly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh red chiles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    }
+  "expected": {
+    "item": "fresh red chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
   }
 }

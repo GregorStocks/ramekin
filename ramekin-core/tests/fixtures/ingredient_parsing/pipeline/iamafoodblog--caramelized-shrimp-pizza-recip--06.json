@@ -1,15 +1,13 @@
 {
   "raw": "1 Thai chili, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Thai chili",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "Thai chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

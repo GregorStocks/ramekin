@@ -1,15 +1,13 @@
 {
   "raw": "2 boneless, skinless chicken breasts, sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless, skinless chicken breasts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    }
+  "expected": {
+    "item": "boneless, skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
   }
 }

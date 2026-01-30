@@ -1,10 +1,8 @@
 {
   "raw": "water to dilute the sauce if it's too salty ((optional))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water to dilute the sauce if it's too salty",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "water to dilute the sauce if it's too salty",
+    "measurements": [],
+    "note": "optional"
   }
 }

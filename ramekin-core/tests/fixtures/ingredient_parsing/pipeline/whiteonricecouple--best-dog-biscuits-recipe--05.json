@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup ground Flax Seed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground Flax Seed",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground Flax Seed",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

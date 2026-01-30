@@ -1,15 +1,13 @@
 {
   "raw": "1 pound broccoli florets",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "broccoli florets",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "broccoli florets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

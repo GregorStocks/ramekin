@@ -1,19 +1,17 @@
 {
   "raw": "1 (1 liter) bottle chilled club soda",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chilled club soda",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bottle"
-        },
-        {
-          "amount": "1",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chilled club soda",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bottle"
+      },
+      {
+        "amount": "1",
+        "unit": "l"
+      }
+    ],
+    "note": null
   }
 }

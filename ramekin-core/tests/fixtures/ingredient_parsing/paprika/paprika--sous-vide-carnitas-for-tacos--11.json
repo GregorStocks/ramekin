@@ -1,10 +1,8 @@
 {
   "raw": "Chopped white onion and fresh cilantro leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chopped white onion and fresh cilantro leaves",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Chopped white onion and fresh cilantro leaves",
+    "measurements": [],
+    "note": null
   }
 }

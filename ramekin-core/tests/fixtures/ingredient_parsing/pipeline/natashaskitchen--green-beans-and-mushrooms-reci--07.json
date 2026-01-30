@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp sesame oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

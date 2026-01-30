@@ -1,15 +1,13 @@
 {
   "raw": "2  naan breads",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "naan breads",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "naan breads",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

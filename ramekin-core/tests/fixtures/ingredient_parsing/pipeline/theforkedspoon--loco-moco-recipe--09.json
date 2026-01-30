@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoon Olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Olive oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

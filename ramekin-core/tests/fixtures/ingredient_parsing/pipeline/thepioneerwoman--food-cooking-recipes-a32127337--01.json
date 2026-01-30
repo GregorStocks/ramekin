@@ -1,15 +1,13 @@
 {
   "raw": "12 doughnut holes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "doughnut holes",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "doughnut holes",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 dashes orange bitters, such as Regan’s",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange bitters, such as Regan’s",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange bitters, such as Regan’s",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8 cups turkey or chicken stock (I either use homemade chicken or Better Than Bouillon’s turkey base)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turkey or chicken stock (I either use homemade chicken or Better Than Bouillon’s turkey base)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "turkey or chicken stock (I either use homemade chicken or Better Than Bouillon’s turkey base)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

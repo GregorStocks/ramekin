@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp red wine (dry type)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red wine (dry type)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red wine (dry type)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

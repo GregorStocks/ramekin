@@ -1,15 +1,13 @@
 {
   "raw": "1—2 teaspoons minced canned chipotle chile in adobo sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced canned chipotle chile in adobo sauce",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced canned chipotle chile in adobo sauce",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

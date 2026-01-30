@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon peanut or vegetable oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peanut or vegetable oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peanut or vegetable oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

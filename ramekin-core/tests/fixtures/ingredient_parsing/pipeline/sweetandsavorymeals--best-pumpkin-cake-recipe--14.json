@@ -1,15 +1,13 @@
 {
   "raw": "3 cups confectioners sugar (or more)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "confectioners sugar",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more"
-    }
+  "expected": {
+    "item": "confectioners sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more"
   }
 }

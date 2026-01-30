@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon mixed pickling spices",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mixed pickling spices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mixed pickling spices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

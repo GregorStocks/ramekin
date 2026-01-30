@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces (227 g) ham steak, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ham steak",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "ham steak",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

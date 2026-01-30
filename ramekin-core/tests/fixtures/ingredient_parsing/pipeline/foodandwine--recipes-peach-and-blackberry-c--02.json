@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh blackberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh blackberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh blackberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

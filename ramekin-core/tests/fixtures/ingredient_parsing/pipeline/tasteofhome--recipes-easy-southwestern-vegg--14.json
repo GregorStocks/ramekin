@@ -1,19 +1,17 @@
 {
   "raw": "6 whole wheat tortillas (8 inches), at room temperature",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole wheat tortillas",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "at room temperature"
-    }
+  "expected": {
+    "item": "whole wheat tortillas",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "at room temperature"
   }
 }

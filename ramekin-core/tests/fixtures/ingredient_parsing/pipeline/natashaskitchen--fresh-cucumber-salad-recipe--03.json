@@ -1,15 +1,13 @@
 {
   "raw": "2  heaping tbsp of fresh dill (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh dill",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "heaping tbsp"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh dill",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heaping tbsp"
+      }
+    ],
+    "note": "chopped"
   }
 }

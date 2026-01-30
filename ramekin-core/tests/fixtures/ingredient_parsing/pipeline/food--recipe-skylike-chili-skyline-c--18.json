@@ -1,10 +1,8 @@
 {
   "raw": "finely shredded cheddar cheese (certainly NOT optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely shredded cheddar cheese",
-      "measurements": [],
-      "note": "certainly NOT optional"
-    }
+  "expected": {
+    "item": "finely shredded cheddar cheese",
+    "measurements": [],
+    "note": "certainly NOT optional"
   }
 }

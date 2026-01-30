@@ -1,19 +1,17 @@
 {
   "raw": "2 cups dry red wine such as Chianti or zinfandel (about 3/4 bottle)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry red wine such as Chianti or zinfandel",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "3/4",
-          "unit": "bottle"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry red wine such as Chianti or zinfandel",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "3/4",
+        "unit": "bottle"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "0.33333334326744 cup caramel topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "caramel topping",
-      "measurements": [
-        {
-          "amount": "0.33333334326744",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "caramel topping",
+    "measurements": [
+      {
+        "amount": "0.33333334326744",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1-2 tablespoons coconut oil or unflavored vegetable shortening",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut oil or unflavored vegetable shortening",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut oil or unflavored vegetable shortening",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

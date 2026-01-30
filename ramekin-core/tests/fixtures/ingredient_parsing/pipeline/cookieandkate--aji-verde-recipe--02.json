@@ -1,19 +1,17 @@
 {
   "raw": "2 cups lightly packed fresh cilantro, mostly leaves but small stems are ok (from 1 big bunch of cilantro or 1 &amp;frac12; medium)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly packed fresh cilantro, mostly leaves but small stems are ok",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly packed fresh cilantro, mostly leaves but small stems are ok",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Pancakes:",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Pancakes:",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Pancakes:",
+    "measurements": [],
+    "note": null
   }
 }

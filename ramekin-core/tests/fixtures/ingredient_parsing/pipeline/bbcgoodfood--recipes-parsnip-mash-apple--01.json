@@ -1,15 +1,13 @@
 {
   "raw": "850g parsnip peeled and cut into small chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "parsnip peeled and cut into small chunks",
-      "measurements": [
-        {
-          "amount": "850",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "parsnip peeled and cut into small chunks",
+    "measurements": [
+      {
+        "amount": "850",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

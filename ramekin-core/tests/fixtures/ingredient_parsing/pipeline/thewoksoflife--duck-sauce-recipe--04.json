@@ -1,15 +1,13 @@
 {
   "raw": "1  salted pickled plum",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted pickled plum",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted pickled plum",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

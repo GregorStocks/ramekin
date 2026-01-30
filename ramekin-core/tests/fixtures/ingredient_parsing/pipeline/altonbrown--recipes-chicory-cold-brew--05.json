@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons dark agave syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark agave syrup",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark agave syrup",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

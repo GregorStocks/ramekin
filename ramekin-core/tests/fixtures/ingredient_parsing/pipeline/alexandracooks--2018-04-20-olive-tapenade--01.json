@@ -1,15 +1,13 @@
 {
   "raw": "2 cups pitted black olives, such as Kalamata, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pitted black olives, such as Kalamata, see notes above",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pitted black olives, such as Kalamata, see notes above",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

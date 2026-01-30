@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon fresh chopped dill ((or ¼ teaspoon dried))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chopped dill",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1/4 teaspoon dried"
-    }
+  "expected": {
+    "item": "fresh chopped dill",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 1/4 teaspoon dried"
   }
 }

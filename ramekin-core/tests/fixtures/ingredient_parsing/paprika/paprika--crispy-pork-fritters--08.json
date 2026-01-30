@@ -1,19 +1,17 @@
 {
   "raw": "1 pound (455 g) well-drained sauerkraut",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "well-drained sauerkraut",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "455",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "well-drained sauerkraut",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

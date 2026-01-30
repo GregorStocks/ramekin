@@ -1,10 +1,8 @@
 {
   "raw": "chili threads",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chili threads",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "chili threads",
+    "measurements": [],
+    "note": null
   }
 }

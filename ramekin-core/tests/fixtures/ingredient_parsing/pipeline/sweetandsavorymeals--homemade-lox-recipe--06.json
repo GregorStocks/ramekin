@@ -1,15 +1,13 @@
 {
   "raw": "2 cups fresh dill (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh dill",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "fresh dill",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

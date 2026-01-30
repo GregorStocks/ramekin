@@ -1,19 +1,17 @@
 {
   "raw": "25 grams tamarind pulp ((about 1 tablespoon))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tamarind pulp",
-      "measurements": [
-        {
-          "amount": "25",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tamarind pulp",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

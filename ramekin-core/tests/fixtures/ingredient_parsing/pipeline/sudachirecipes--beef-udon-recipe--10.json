@@ -1,15 +1,13 @@
 {
   "raw": "500 ml dashi stock ((from step 1) or instant dashi)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dashi stock (from step 1) or instant dashi)",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dashi stock (from step 1) or instant dashi)",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

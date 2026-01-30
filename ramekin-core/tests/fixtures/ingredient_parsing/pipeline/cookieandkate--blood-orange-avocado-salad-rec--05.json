@@ -1,10 +1,8 @@
 {
   "raw": "Flaky sea salt or kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Flaky sea salt or kosher salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Flaky sea salt or kosher salt",
+    "measurements": [],
+    "note": null
   }
 }

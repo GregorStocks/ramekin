@@ -1,15 +1,13 @@
 {
   "raw": "4  cinnamon quills",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cinnamon quills",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cinnamon quills",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2  cans cannelini beans (or great northern beans)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cannelini beans (or great northern beans)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cannelini beans (or great northern beans)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

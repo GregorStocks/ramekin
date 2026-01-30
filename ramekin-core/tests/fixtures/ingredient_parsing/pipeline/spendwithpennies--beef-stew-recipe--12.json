@@ -1,15 +1,13 @@
 {
   "raw": "4 ribs celery (cut into 1 inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ribs celery (cut into 1 inch pieces)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ribs celery (cut into 1 inch pieces)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

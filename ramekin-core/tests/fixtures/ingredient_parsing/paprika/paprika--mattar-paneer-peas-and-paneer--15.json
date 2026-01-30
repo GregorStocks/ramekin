@@ -1,10 +1,8 @@
 {
   "raw": "Rice or roti, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Rice or roti",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Rice or roti",
+    "measurements": [],
+    "note": "for serving"
   }
 }

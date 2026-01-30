@@ -1,19 +1,17 @@
 {
   "raw": "½ cup natural unsweetened cocoa powder, like&nbsp;Ghirardelli or Hershey&amp;#8217;s (40g)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "natural unsweetened cocoa powder, like Ghirardelli or Hershey’s",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "natural unsweetened cocoa powder, like Ghirardelli or Hershey’s",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

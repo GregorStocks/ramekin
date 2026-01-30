@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp preferred shredded melting cheese (Gouda, Emmental, and Gruyère, Cheddar, etc)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "preferred shredded melting cheese (Gouda, Emmental, and Gruyère, Cheddar, etc)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "preferred shredded melting cheese (Gouda, Emmental, and Gruyère, Cheddar, etc)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "2 ounces ‘nduja, see notes above",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "‘nduja, see notes above",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "‘nduja, see notes above",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

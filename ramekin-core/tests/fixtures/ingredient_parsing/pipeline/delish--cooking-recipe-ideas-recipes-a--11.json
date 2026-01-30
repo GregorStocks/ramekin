@@ -1,15 +1,13 @@
 {
   "raw": "1 c. minced tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "minced tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "minced tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

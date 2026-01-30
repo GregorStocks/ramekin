@@ -1,15 +1,13 @@
 {
   "raw": "20 grams holy basil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "holy basil",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "holy basil",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

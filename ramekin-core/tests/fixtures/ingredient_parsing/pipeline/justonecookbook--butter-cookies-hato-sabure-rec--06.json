@@ -1,15 +1,13 @@
 {
   "raw": "½ tsp pure vanilla extract ((optional; I did not add since the original Hato Sabure does not include it))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pure vanilla extract",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional; I did not add since the original Hato Sabure does not include it"
-    }
+  "expected": {
+    "item": "pure vanilla extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional; I did not add since the original Hato Sabure does not include it"
   }
 }

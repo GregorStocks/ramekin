@@ -1,10 +1,8 @@
 {
   "raw": "white pepper (as needed to season)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white pepper",
-      "measurements": [],
-      "note": "as needed to season"
-    }
+  "expected": {
+    "item": "white pepper",
+    "measurements": [],
+    "note": "as needed to season"
   }
 }

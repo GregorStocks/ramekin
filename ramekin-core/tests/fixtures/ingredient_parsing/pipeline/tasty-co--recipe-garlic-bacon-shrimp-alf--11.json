@@ -1,15 +1,13 @@
 {
   "raw": "½ cup fresh parlsey, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh parlsey",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "fresh parlsey",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
   }
 }

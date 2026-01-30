@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons ground oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground oregano",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground oregano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

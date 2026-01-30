@@ -1,10 +1,8 @@
 {
   "raw": "Greek yogurt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Greek yogurt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Greek yogurt",
+    "measurements": [],
+    "note": null
   }
 }

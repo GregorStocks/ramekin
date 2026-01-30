@@ -1,10 +1,8 @@
 {
   "raw": "a dash of ground cinnamon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a dash of ground cinnamon",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "a dash of ground cinnamon",
+    "measurements": [],
+    "note": null
   }
 }

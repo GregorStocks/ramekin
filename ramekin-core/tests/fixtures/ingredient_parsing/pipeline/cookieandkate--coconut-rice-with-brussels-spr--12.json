@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon tamari or soy sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tamari or soy sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tamari or soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

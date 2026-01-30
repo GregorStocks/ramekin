@@ -1,10 +1,8 @@
 {
   "raw": "Brown sugar or pure maple syrup",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Brown sugar or pure maple syrup",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Brown sugar or pure maple syrup",
+    "measurements": [],
+    "note": null
   }
 }

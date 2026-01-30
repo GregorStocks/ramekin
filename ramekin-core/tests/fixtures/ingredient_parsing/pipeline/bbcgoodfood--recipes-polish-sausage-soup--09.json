@@ -1,15 +1,13 @@
 {
   "raw": "3 carrots thickly sliced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots thickly sliced",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "carrots thickly sliced",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

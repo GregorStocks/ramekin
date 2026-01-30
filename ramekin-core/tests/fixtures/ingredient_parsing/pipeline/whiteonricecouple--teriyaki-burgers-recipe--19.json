@@ -1,15 +1,13 @@
 {
   "raw": "1 Tablespoon finely minced fresh cilantro leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely minced fresh cilantro leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely minced fresh cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

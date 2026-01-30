@@ -1,15 +1,13 @@
 {
   "raw": "2 cups gingersnap crumbs (from 1 [12-ounce] package)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "gingersnap crumbs (from 1 [12-ounce] package)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "gingersnap crumbs (from 1 [12-ounce] package)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

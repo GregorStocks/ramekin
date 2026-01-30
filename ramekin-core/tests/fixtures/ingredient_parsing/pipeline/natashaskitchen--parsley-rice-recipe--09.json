@@ -1,15 +1,13 @@
 {
   "raw": "1 cup dry rice (plus 1/2 tsp salt and 1 tbsp butter to cook)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry rice (plus 1/2 tsp salt and 1 tbsp butter to cook)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry rice (plus 1/2 tsp salt and 1 tbsp butter to cook)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

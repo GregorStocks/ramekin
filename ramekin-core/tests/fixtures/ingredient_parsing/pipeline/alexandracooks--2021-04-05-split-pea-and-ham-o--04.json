@@ -1,15 +1,13 @@
 {
   "raw": "1 to 1.5 cups diced celery",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced celery",
-      "measurements": [
-        {
-          "amount": "1 to 1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced celery",
+    "measurements": [
+      {
+        "amount": "1 to 1.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

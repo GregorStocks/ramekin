@@ -1,15 +1,13 @@
 {
   "raw": "1 slice hearty white sandwich bread, crust removed, torn into 1-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hearty white sandwich bread, crust removed, torn into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hearty white sandwich bread, crust removed, torn into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

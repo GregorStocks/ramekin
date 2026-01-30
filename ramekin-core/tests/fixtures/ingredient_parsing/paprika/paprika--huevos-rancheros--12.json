@@ -1,10 +1,8 @@
 {
   "raw": "Coteja",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Coteja",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Coteja",
+    "measurements": [],
+    "note": null
   }
 }

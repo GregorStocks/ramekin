@@ -1,19 +1,17 @@
 {
   "raw": "1 ½ cups beef broth (12 fl. oz | 375 ml )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "beef broth",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "12",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "beef broth",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "12",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

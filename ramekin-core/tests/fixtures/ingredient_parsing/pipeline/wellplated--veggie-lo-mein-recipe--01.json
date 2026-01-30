@@ -1,19 +1,17 @@
 {
   "raw": "6 ounces long noodles (such as whole grain spaghetti, whole grain fettuccine, soba noodles, or udon noodles)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "long noodles",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "such as whole grain spaghetti, whole grain fettuccine, soba noodles, or udon noodles"
-    }
+  "expected": {
+    "item": "long noodles",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "such as whole grain spaghetti, whole grain fettuccine, soba noodles, or udon noodles"
   }
 }

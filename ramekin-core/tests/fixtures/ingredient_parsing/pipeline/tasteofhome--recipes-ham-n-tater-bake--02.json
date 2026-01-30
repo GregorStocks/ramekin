@@ -1,15 +1,13 @@
 {
   "raw": "3 cups frozen chopped broccoli, thawed and drained",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen chopped broccoli",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed and drained"
-    }
+  "expected": {
+    "item": "frozen chopped broccoli",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed and drained"
   }
 }

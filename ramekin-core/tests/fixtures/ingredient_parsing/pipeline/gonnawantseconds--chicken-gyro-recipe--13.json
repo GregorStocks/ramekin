@@ -1,15 +1,13 @@
 {
   "raw": "1/2  a head of romaine lettuce (cut into strips)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "a head of romaine lettuce (cut into strips)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "a head of romaine lettuce (cut into strips)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

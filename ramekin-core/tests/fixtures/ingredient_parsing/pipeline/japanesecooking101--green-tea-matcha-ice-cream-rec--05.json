@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup and 2 Tbsp sugar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "and 2 Tbsp sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "and 2 Tbsp sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

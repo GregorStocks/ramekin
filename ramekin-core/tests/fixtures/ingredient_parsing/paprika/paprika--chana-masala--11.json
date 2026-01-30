@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon amchoor powder (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "amchoor powder (see note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "amchoor powder (see note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

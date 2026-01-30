@@ -1,10 +1,8 @@
 {
   "raw": "Parsley for garnish (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Parsley for garnish",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Parsley for garnish",
+    "measurements": [],
+    "note": "optional"
   }
 }

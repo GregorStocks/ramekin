@@ -1,19 +1,17 @@
 {
   "raw": "4 teaspoons (17 g) jaggery or dark brown sugar (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jaggery or dark brown sugar (see note)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tsp"
-        },
-        {
-          "amount": "17",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jaggery or dark brown sugar (see note)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "17",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

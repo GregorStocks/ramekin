@@ -1,15 +1,13 @@
 {
   "raw": "1 1/3 cups macaroni",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "macaroni",
-      "measurements": [
-        {
-          "amount": "1 1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "macaroni",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

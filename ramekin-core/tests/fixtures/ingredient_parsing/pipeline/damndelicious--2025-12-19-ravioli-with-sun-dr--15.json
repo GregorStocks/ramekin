@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons chopped fresh parsley leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh parsley leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped fresh parsley leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

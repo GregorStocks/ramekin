@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon almond extract (optional)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "almond extract",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "almond extract",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
   }
 }

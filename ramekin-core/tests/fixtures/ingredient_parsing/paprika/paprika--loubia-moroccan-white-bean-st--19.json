@@ -1,19 +1,17 @@
 {
   "raw": "1 quart (960 ml) homemade chicken or vegetable stock or store-bought low-sodium chicken or vegetable broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade chicken or vegetable stock or store-bought low-sodium chicken or vegetable broth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "quart"
-        },
-        {
-          "amount": "960",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade chicken or vegetable stock or store-bought low-sodium chicken or vegetable broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      },
+      {
+        "amount": "960",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

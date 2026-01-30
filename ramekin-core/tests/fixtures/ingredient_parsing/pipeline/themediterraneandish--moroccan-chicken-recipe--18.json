@@ -1,10 +1,8 @@
 {
   "raw": "Toasted slivered almonds, to your liking, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Toasted slivered almonds, to your liking",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Toasted slivered almonds, to your liking",
+    "measurements": [],
+    "note": "optional"
   }
 }

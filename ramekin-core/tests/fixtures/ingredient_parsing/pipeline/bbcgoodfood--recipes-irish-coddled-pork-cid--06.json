@@ -1,15 +1,13 @@
 {
   "raw": "1⁄2 small swede cut into chunks",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "⁄2 small swede cut into chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "⁄2 small swede cut into chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

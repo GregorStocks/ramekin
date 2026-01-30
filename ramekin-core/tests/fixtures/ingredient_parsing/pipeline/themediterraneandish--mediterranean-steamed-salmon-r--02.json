@@ -1,15 +1,13 @@
 {
   "raw": "4 green onions (spring onions), trimmed and sliced lengthwise, divided",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "green onions (spring onions), trimmed and sliced lengthwise",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    }
+  "expected": {
+    "item": "green onions (spring onions), trimmed and sliced lengthwise",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "divided"
   }
 }

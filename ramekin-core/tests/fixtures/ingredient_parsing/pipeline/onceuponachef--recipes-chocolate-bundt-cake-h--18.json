@@ -1,19 +1,17 @@
 {
   "raw": "1½ oz unsweetened chocolate, (coarsely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsweetened chocolate",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "43",
-          "unit": "g"
-        }
-      ],
-      "note": "coarsely chopped"
-    }
+  "expected": {
+    "item": "unsweetened chocolate",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      },
+      {
+        "amount": "43",
+        "unit": "g"
+      }
+    ],
+    "note": "coarsely chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 teaspoons of Chinese 5-spice powder*",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chinese 5-spice powder*",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chinese 5-spice powder*",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

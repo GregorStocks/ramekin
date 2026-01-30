@@ -1,19 +1,17 @@
 {
   "raw": "1/2&nbsp;cup&nbsp;heaping (50 g) grated Parmigiano Reggiano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heaping grated Parmigiano Reggiano",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heaping grated Parmigiano Reggiano",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup dark or dutch process cocoa powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark or dutch process cocoa powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark or dutch process cocoa powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 medium celery rib, finely diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "celery rib",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "finely diced"
-    }
+  "expected": {
+    "item": "celery rib",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "finely diced"
   }
 }

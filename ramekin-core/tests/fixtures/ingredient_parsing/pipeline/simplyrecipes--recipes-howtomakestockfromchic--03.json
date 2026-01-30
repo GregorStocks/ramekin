@@ -1,15 +1,13 @@
 {
   "raw": "1 onion, cut into wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "onion, cut into wedges",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "onion, cut into wedges",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

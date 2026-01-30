@@ -1,10 +1,8 @@
 {
   "raw": "cayenne pepper, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cayenne pepper",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "cayenne pepper",
+    "measurements": [],
+    "note": "to taste"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Homemade Tartar Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Homemade Tartar Sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Homemade Tartar Sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

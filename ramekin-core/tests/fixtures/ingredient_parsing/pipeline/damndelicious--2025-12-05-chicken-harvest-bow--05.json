@@ -1,19 +1,17 @@
 {
   "raw": "5 cups lightly packed shredded kale (about 1 bunch)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lightly packed shredded kale",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lightly packed shredded kale",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
   }
 }

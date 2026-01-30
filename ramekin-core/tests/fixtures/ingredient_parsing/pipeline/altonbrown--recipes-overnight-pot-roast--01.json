@@ -1,15 +1,13 @@
 {
   "raw": "3 1/2 pounds boneless chuck roast, cut into 3 to 4 pieces and any large pieces of fat removed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless chuck roast, cut into 3 to 4 pieces and any large pieces of fat removed",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless chuck roast, cut into 3 to 4 pieces and any large pieces of fat removed",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

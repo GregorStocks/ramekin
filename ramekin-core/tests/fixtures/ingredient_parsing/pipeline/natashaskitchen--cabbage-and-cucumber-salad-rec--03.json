@@ -1,15 +1,13 @@
 {
   "raw": "1  English cucumber or 4 small cucumbers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "English cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "or 4 small cucumbers"
-    }
+  "expected": {
+    "item": "English cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "or 4 small cucumbers"
   }
 }

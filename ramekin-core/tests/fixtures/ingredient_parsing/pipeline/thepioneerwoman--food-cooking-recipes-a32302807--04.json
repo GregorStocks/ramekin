@@ -1,15 +1,13 @@
 {
   "raw": "2 c. silver tequila",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "silver tequila",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "silver tequila",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

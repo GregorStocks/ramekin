@@ -1,10 +1,8 @@
 {
   "raw": "Hot sauce of your choice (to taste (Cholula, Frank’s RedHot, Sriracha, etc))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hot sauce of your choice",
-      "measurements": [],
-      "note": "to taste (Cholula, Frank’s RedHot, Sriracha, etc"
-    }
+  "expected": {
+    "item": "Hot sauce of your choice",
+    "measurements": [],
+    "note": "to taste (Cholula, Frank’s RedHot, Sriracha, etc"
   }
 }

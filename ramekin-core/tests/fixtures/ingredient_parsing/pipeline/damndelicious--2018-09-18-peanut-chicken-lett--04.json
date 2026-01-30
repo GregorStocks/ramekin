@@ -1,19 +1,17 @@
 {
   "raw": "3.5 ounces shiitake mushrooms (diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "3.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "99",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "99",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

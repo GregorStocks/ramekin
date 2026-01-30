@@ -1,19 +1,17 @@
 {
   "raw": "2 oz dried guajillo chili",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried guajillo chili",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried guajillo chili",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

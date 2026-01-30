@@ -1,15 +1,13 @@
 {
   "raw": "350g Carnaroli  rice (or Arborio or Vialone)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Carnaroli  rice (or Arborio or Vialone)",
-      "measurements": [
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Carnaroli  rice (or Arborio or Vialone)",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

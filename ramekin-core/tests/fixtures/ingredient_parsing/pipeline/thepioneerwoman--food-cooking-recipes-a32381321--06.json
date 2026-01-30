@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. white button mushrooms, quartered",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "white button mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "quartered"
-    }
+  "expected": {
+    "item": "white button mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "quartered"
   }
 }

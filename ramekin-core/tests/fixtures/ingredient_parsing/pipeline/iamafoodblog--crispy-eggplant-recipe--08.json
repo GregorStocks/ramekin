@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon Tabasco Original Red Sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tabasco Original Red Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Tabasco Original Red Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

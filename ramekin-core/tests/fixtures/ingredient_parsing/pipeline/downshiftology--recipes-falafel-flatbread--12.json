@@ -1,15 +1,13 @@
 {
   "raw": "1/2 cup chickpea flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chickpea flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chickpea flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

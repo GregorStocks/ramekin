@@ -1,15 +1,13 @@
 {
   "raw": "4 fluid ounces dark rum",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark rum",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dark rum",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,23 +1,21 @@
 {
   "raw": "6 oz dark chocolate (50-60%) (finely chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dark chocolate",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "50",
-          "unit": null
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "50",
+        "unit": null
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

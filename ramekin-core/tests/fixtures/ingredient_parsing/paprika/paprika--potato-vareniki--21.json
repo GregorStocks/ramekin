@@ -1,10 +1,8 @@
 {
   "raw": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
+    "measurements": [],
+    "note": null
   }
 }

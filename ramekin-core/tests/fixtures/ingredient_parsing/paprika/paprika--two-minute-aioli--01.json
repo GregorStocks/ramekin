@@ -1,15 +1,13 @@
 {
   "raw": "1 whole egg",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

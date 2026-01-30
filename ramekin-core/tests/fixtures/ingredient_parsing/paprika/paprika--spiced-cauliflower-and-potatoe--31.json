@@ -1,15 +1,13 @@
 {
   "raw": "1 medium tomato, peeled (ahem, Deb did not peel her tomato) and finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato, peeled (ahem",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "Deb did not peel her tomato) and finely chopped"
-    }
+  "expected": {
+    "item": "tomato, peeled (ahem",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "Deb did not peel her tomato) and finely chopped"
   }
 }

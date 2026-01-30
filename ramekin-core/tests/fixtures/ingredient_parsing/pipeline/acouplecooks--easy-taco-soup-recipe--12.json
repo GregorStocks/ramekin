@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon&nbsp;each&nbsp;dried oregano and cumin",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "each dried oregano and cumin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "each dried oregano and cumin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

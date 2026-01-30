@@ -1,15 +1,13 @@
 {
   "raw": "1  hand-full fresh basil (about 2 Tbsp chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hand-full fresh basil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "about 2 Tbsp chopped"
-    }
+  "expected": {
+    "item": "hand-full fresh basil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "about 2 Tbsp chopped"
   }
 }

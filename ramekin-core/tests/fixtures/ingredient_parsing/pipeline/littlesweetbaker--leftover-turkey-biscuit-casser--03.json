@@ -1,15 +1,13 @@
 {
   "raw": "1  can condensed cream of mushroom soup (or any kind of condensed cream soup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "condensed cream of mushroom soup (or any kind of condensed cream soup)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "condensed cream of mushroom soup (or any kind of condensed cream soup)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
   }
 }

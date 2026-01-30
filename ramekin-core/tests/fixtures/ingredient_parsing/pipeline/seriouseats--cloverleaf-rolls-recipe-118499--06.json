@@ -1,15 +1,13 @@
 {
   "raw": "8 unsalted butter, cut into 8 pieces, 6 tablespoons softened and 2 tablespoons reserved for melting",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted butter, cut into 8 pieces",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "6 tablespoons softened and 2 tablespoons reserved for melting"
-    }
+  "expected": {
+    "item": "unsalted butter, cut into 8 pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "6 tablespoons softened and 2 tablespoons reserved for melting"
   }
 }

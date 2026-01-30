@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon maple extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "maple extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "maple extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

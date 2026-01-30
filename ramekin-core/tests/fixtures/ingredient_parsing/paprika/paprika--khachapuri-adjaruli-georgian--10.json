@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces store-bought pizza dough, or homemade pizza dough completed through Step 2",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "store-bought pizza dough, or homemade pizza dough completed through Step 2",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "store-bought pizza dough, or homemade pizza dough completed through Step 2",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

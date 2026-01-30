@@ -1,15 +1,13 @@
 {
   "raw": "scant 1/2 cup  hot brewed coffee or hot water",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "hot brewed coffee or hot water",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "scant cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "hot brewed coffee or hot water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "scant cup"
+      }
+    ],
+    "note": null
   }
 }

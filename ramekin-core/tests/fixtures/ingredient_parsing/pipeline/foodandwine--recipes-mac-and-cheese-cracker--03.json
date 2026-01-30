@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon&nbsp;sodium citrate (see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sodium citrate (see Note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sodium citrate (see Note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

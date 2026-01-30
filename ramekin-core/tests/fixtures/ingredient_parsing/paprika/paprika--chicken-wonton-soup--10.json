@@ -1,10 +1,8 @@
 {
   "raw": "Cornstarch, to prevent sticking",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cornstarch, to prevent sticking",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Cornstarch, to prevent sticking",
+    "measurements": [],
+    "note": null
   }
 }

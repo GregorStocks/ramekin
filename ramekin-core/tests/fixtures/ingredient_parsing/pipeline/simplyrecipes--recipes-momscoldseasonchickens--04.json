@@ -1,15 +1,13 @@
 {
   "raw": "2 carrots, sliced in 1/4-inch slices (about the same amount as onion)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced in 1/4-inch slices (about the same amount as onion)"
-    }
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced in 1/4-inch slices (about the same amount as onion)"
   }
 }

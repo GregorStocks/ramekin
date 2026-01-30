@@ -1,15 +1,13 @@
 {
   "raw": "3 Cups Mozzarella Cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Mozzarella Cheese",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Mozzarella Cheese",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

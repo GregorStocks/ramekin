@@ -1,27 +1,25 @@
 {
   "raw": "12 small (4 to 5-inch) or 8 medium (7-inch) corn or flour tortillas",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn or flour tortillas",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "small"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "7",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "corn or flour tortillas",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "small"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "7",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

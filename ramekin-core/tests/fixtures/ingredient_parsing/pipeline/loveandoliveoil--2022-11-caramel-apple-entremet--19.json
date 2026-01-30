@@ -1,15 +1,13 @@
 {
   "raw": "2 sheets leaf gelatin* (gold strength) (cut into strips and softened in cold water for at least 5 minutes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets leaf gelatin* (gold strength) (cut into strips and softened in cold water for at least 5 minutes)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheets leaf gelatin* (gold strength) (cut into strips and softened in cold water for at least 5 minutes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

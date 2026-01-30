@@ -1,10 +1,8 @@
 {
   "raw": "cooked Japanese rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked Japanese rice",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked Japanese rice",
+    "measurements": [],
+    "note": null
   }
 }

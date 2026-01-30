@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon za'atar",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "za'atar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "za'atar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

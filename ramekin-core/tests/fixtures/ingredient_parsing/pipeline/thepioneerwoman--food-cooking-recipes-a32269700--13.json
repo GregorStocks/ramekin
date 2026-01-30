@@ -1,15 +1,13 @@
 {
   "raw": "3 c. chopped curly kale",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped curly kale",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped curly kale",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

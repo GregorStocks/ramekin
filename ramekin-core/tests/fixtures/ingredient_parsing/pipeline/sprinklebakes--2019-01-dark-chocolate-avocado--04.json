@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons matcha green tea powder",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "matcha green tea powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "matcha green tea powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

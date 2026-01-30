@@ -1,15 +1,13 @@
 {
   "raw": "1 cup coconut cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "4 ounces strong ginger or ginger-cayenne kombucha",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strong ginger or ginger-cayenne kombucha",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "strong ginger or ginger-cayenne kombucha",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

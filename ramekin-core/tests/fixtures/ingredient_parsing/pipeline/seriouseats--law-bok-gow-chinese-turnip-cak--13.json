@@ -1,10 +1,8 @@
 {
   "raw": "Hoisin sauce and Sriracha, for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Hoisin sauce and Sriracha",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Hoisin sauce and Sriracha",
+    "measurements": [],
+    "note": "for serving"
   }
 }

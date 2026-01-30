@@ -1,19 +1,17 @@
 {
   "raw": "15 ounces cherry or grape tomatoes (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cherry or grape tomatoes",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "cherry or grape tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "halved"
   }
 }

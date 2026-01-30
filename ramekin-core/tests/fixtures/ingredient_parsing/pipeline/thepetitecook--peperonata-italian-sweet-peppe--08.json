@@ -1,10 +1,8 @@
 {
   "raw": "sea salt and freshly-cracked black pepper",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sea salt and freshly-cracked black pepper",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "sea salt and freshly-cracked black pepper",
+    "measurements": [],
+    "note": null
   }
 }

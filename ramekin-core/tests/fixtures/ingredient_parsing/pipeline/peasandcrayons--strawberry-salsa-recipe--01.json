@@ -1,15 +1,13 @@
 {
   "raw": "1 pint ripe strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ripe strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ripe strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": null
   }
 }

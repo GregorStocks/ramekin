@@ -1,15 +1,13 @@
 {
   "raw": "4 cups kale (or spinach)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "kale (or spinach)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "kale (or spinach)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

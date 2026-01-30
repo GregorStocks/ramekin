@@ -1,15 +1,13 @@
 {
   "raw": "½ cup molasses ((unsulphured or light- not blackstrap))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "molasses (unsulphured or light- not blackstrap)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "molasses (unsulphured or light- not blackstrap)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

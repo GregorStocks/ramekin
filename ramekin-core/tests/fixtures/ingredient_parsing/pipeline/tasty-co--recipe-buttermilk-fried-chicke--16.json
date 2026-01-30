@@ -1,10 +1,8 @@
 {
   "raw": "peanut or vegetable oil, for frying",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peanut or vegetable oil, for frying",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "peanut or vegetable oil, for frying",
+    "measurements": [],
+    "note": null
   }
 }

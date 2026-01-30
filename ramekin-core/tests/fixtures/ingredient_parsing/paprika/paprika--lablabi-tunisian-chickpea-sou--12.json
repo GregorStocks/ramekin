@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon ground cumin, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cumin",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for serving"
-    }
+  "expected": {
+    "item": "ground cumin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for serving"
   }
 }

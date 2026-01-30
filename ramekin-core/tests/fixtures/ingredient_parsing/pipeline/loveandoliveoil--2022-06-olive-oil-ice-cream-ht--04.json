@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon fleur de sel or fine sea salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fleur de sel or fine sea salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fleur de sel or fine sea salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

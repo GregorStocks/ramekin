@@ -1,19 +1,17 @@
 {
   "raw": "12 oz yukon gold potatoes (peeled and cut into 1/2-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and cut into 1/2-inch pieces"
-    }
+  "expected": {
+    "item": "yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch pieces"
   }
 }

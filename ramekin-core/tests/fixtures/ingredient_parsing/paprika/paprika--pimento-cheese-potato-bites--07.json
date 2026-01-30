@@ -1,10 +1,8 @@
 {
   "raw": "Cayenne or hot sauce, to taste",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Cayenne or hot sauce",
-      "measurements": [],
-      "note": "to taste"
-    }
+  "expected": {
+    "item": "Cayenne or hot sauce",
+    "measurements": [],
+    "note": "to taste"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "One 28-ounce can whole tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whole tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "28-ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whole tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "28-ounce can"
+      }
+    ],
+    "note": null
   }
 }

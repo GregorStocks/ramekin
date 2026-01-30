@@ -1,10 +1,8 @@
 {
   "raw": "Fine sea or table salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Fine sea or table salt",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Fine sea or table salt",
+    "measurements": [],
+    "note": null
   }
 }

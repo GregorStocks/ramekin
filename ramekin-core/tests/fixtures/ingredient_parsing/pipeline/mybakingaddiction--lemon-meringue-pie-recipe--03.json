@@ -1,15 +1,13 @@
 {
   "raw": "2 cups meringue topping (see note below)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "meringue topping (see note below)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "meringue topping (see note below)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

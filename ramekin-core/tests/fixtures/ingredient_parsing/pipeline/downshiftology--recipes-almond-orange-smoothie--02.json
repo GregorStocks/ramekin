@@ -1,15 +1,13 @@
 {
   "raw": "2  cara cara oranges (peeled)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cara cara oranges",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    }
+  "expected": {
+    "item": "cara cara oranges",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
   }
 }

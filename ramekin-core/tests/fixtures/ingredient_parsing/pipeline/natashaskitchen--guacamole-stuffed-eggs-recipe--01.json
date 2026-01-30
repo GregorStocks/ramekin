@@ -1,15 +1,13 @@
 {
   "raw": "6  Large Boiled Eggs",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Boiled Eggs",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Boiled Eggs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "8-10 slices cooked &amp;amp; crumbled bacon",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cooked & crumbled bacon",
-      "measurements": [
-        {
-          "amount": "8-10",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cooked & crumbled bacon",
+    "measurements": [
+      {
+        "amount": "8-10",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

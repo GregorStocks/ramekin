@@ -1,15 +1,13 @@
 {
   "raw": "3/4 c. cold vegetable shortening, cut into pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cold vegetable shortening, cut into pieces",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cold vegetable shortening, cut into pieces",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

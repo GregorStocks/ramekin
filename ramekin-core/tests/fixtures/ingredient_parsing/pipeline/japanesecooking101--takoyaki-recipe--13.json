@@ -1,10 +1,8 @@
 {
   "raw": "Aonori (green dried seaweed)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Aonori",
-      "measurements": [],
-      "note": "green dried seaweed"
-    }
+  "expected": {
+    "item": "Aonori",
+    "measurements": [],
+    "note": "green dried seaweed"
   }
 }

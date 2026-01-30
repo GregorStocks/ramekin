@@ -1,15 +1,13 @@
 {
   "raw": "1 pound fusilli pasta (cooked to al dente (may also use rotini pasta or bowtie pasta))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fusilli pasta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "cooked to al dente (may also use rotini pasta or bowtie pasta"
-    }
+  "expected": {
+    "item": "fusilli pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "cooked to al dente (may also use rotini pasta or bowtie pasta"
   }
 }

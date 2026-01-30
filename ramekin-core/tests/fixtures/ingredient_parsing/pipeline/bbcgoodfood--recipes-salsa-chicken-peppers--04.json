@@ -1,15 +1,13 @@
 {
   "raw": "270g jar hot salsa (we used Discovery)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "jar hot salsa (we used Discovery)",
-      "measurements": [
-        {
-          "amount": "270",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "jar hot salsa (we used Discovery)",
+    "measurements": [
+      {
+        "amount": "270",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 sheets roasted seaweed for sushi (nori) (cut into long thirds)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sheets roasted seaweed for sushi (nori) (cut into long thirds)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sheets roasted seaweed for sushi (nori) (cut into long thirds)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

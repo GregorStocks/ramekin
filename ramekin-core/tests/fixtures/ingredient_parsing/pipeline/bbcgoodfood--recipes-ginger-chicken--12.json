@@ -1,15 +1,13 @@
 {
   "raw": "1 chicken stock cube",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken stock cube",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken stock cube",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

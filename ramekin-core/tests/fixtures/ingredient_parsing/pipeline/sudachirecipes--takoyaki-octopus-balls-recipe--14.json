@@ -1,15 +1,13 @@
 {
   "raw": "50 g finely chopped green onions",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely chopped green onions",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely chopped green onions",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

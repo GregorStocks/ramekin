@@ -1,10 +1,8 @@
 {
   "raw": "Harissa, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Harissa",
-      "measurements": [],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "Harissa",
+    "measurements": [],
+    "note": "optional"
   }
 }

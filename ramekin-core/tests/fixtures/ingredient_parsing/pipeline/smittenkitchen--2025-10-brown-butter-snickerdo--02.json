@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (45 grams) water (see Note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (see Note)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (see Note)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

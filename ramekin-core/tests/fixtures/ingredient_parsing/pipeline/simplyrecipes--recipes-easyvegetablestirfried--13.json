@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup low-sodium soy sauce, plus more for serving or 3 tablespoons regular soy sauce and 1 tablespoon water, plus more for serving",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "low-sodium soy sauce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for serving or 3 tablespoons regular soy sauce and 1 tablespoon water, plus more for serving"
-    }
+  "expected": {
+    "item": "low-sodium soy sauce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving or 3 tablespoons regular soy sauce and 1 tablespoon water, plus more for serving"
   }
 }

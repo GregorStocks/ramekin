@@ -1,15 +1,13 @@
 {
   "raw": "1 teaspoon turbinado sugar, not paleo, totally optional!",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "turbinado sugar, not paleo",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "totally optional!"
-    }
+  "expected": {
+    "item": "turbinado sugar, not paleo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "totally optional!"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/8 tsp red pepper flakes ((Note 3))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red pepper flakes (Note 3)",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "red pepper flakes (Note 3)",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

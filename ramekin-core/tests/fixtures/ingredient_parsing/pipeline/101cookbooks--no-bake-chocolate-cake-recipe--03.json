@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces / 225 g heavy cream, cashew cream, or full-fat coconut milk",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream, cashew cream, or full-fat coconut milk",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy cream, cashew cream, or full-fat coconut milk",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1.33 lbs boneless skinless chicken breast (4 pieces, lightly pounded to same thickness)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "boneless skinless chicken breast",
-      "measurements": [
-        {
-          "amount": "1.33",
-          "unit": "lb"
-        },
-        {
-          "amount": "4",
-          "unit": "piece"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "lb"
+      },
+      {
+        "amount": "4",
+        "unit": "piece"
+      }
+    ],
+    "note": null
   }
 }

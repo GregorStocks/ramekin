@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup cotija cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "cotija cheese",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "cotija cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

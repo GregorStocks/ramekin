@@ -1,15 +1,13 @@
 {
   "raw": "1  softened goat cheese log",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "softened goat cheese log",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "softened goat cheese log",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

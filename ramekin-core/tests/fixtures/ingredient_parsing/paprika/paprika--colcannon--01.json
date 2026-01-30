@@ -1,19 +1,17 @@
 {
   "raw": "2 1/2 pounds (1.14 kg) medium starch yellow potatoes (such as Yukon Golds), peeled and cut into 1- to 2-inch cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium starch yellow potatoes (such as Yukon Golds)",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1.14",
-          "unit": "kg"
-        }
-      ],
-      "note": "peeled and cut into 1- to 2-inch cubes"
-    }
+  "expected": {
+    "item": "medium starch yellow potatoes (such as Yukon Golds)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1.14",
+        "unit": "kg"
+      }
+    ],
+    "note": "peeled and cut into 1- to 2-inch cubes"
   }
 }

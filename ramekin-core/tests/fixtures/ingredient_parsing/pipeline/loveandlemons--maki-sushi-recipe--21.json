@@ -1,10 +1,8 @@
 {
   "raw": "Tamari (for serving)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Tamari",
-      "measurements": [],
-      "note": "for serving"
-    }
+  "expected": {
+    "item": "Tamari",
+    "measurements": [],
+    "note": "for serving"
   }
 }

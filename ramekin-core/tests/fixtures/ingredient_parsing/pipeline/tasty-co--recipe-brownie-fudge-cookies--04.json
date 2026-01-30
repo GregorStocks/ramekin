@@ -1,15 +1,13 @@
 {
   "raw": "⅔ cup chocolate, melted",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chocolate",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    }
+  "expected": {
+    "item": "chocolate",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
   }
 }

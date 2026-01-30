@@ -1,10 +1,8 @@
 {
   "raw": "strawberry jam and clotted cream, to serve",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "strawberry jam and clotted cream, to serve",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "strawberry jam and clotted cream, to serve",
+    "measurements": [],
+    "note": null
   }
 }

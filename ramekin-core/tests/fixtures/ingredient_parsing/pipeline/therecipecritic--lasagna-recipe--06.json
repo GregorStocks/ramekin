@@ -1,19 +1,17 @@
 {
   "raw": "2 (6.5-ounce) can tomato sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomato sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "6.5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomato sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "6.5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

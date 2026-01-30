@@ -1,10 +1,8 @@
 {
   "raw": "toasted pepitas or almonds, cilantro, avocado, salted yogurt (use non-dairy to keep it vegan), lime wedges",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toasted pepitas or almonds, cilantro, avocado, salted yogurt (use non-dairy to keep it vegan), lime wedges",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "toasted pepitas or almonds, cilantro, avocado, salted yogurt (use non-dairy to keep it vegan), lime wedges",
+    "measurements": [],
+    "note": null
   }
 }

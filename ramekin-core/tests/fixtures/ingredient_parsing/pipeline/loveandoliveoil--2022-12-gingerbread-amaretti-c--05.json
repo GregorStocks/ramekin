@@ -1,15 +1,13 @@
 {
   "raw": "1/8 teaspoon ground cloves or allspice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground cloves or allspice",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground cloves or allspice",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

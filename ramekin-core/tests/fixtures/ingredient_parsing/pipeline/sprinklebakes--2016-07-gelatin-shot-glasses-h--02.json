@@ -1,23 +1,21 @@
 {
   "raw": "1  box (3 ounces Berry Blue Jello)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "1  box (3 ounces Berry Blue Jello)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "box"
-        },
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "1  box (3 ounces Berry Blue Jello)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "box"
+      },
+      {
+        "amount": "3",
+        "unit": "oz"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 cups pico de gallo (store bought or homemade)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pico de gallo (store bought or homemade)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pico de gallo (store bought or homemade)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 branches fresh  bay leaves",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "branches fresh  bay leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "branches fresh  bay leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

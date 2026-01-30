@@ -1,19 +1,17 @@
 {
   "raw": "2 medium garlic cloves, minced (about 2 teaspoons)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        },
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "minced"
-    }
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "minced"
   }
 }

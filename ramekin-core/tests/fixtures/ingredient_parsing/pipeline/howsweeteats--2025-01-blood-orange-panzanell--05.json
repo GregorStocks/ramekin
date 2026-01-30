@@ -1,15 +1,13 @@
 {
   "raw": "4 cups chopped romaine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped romaine",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped romaine",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

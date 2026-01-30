@@ -1,10 +1,8 @@
 {
   "raw": "drizzle of olive oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "drizzle of olive oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "drizzle of olive oil",
+    "measurements": [],
+    "note": null
   }
 }

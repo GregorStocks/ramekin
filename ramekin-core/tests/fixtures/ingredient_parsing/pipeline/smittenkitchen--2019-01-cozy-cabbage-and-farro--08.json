@@ -1,15 +1,13 @@
 {
   "raw": "2/3 cup uncooked farro",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "uncooked farro",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "uncooked farro",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons homemade pumpkin pie spice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "homemade pumpkin pie spice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "homemade pumpkin pie spice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup thinly sliced fresh basil leaves, loosely packed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly sliced fresh basil leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "loosely packed"
-    }
+  "expected": {
+    "item": "thinly sliced fresh basil leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "loosely packed"
   }
 }

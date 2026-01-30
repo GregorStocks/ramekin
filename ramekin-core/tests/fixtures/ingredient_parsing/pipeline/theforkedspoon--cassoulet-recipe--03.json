@@ -1,15 +1,13 @@
 {
   "raw": "1  orange (zested)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "orange (zested)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "orange (zested)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

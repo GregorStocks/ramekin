@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon sesame oil (optional, adds a wonderful flavour)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sesame oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional, adds a wonderful flavour"
-    }
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional, adds a wonderful flavour"
   }
 }

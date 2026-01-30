@@ -1,10 +1,8 @@
 {
   "raw": "Optional: Spicy Mayo",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional: Spicy Mayo",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Optional: Spicy Mayo",
+    "measurements": [],
+    "note": null
   }
 }

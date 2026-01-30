@@ -1,10 +1,8 @@
 {
   "raw": "thinly cut roasted seaweed",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "thinly cut roasted seaweed",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "thinly cut roasted seaweed",
+    "measurements": [],
+    "note": null
   }
 }

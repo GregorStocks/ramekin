@@ -1,15 +1,13 @@
 {
   "raw": "1 cup unsalted chicken broth",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "unsalted chicken broth",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "unsalted chicken broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

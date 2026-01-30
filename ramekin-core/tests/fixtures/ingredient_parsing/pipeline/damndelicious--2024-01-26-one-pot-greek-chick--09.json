@@ -1,15 +1,13 @@
 {
   "raw": "1/2 teaspoon dried dill",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried dill",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dried dill",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

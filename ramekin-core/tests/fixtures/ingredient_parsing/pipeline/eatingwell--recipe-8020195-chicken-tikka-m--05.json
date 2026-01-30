@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons canola oil or other neutral oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canola oil or other neutral oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canola oil or other neutral oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

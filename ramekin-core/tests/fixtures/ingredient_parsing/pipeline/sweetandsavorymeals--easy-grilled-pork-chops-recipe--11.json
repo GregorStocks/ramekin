@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons extra virgin olive oil (or canola oil)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "extra virgin olive oil (or canola oil)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "extra virgin olive oil (or canola oil)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

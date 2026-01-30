@@ -1,19 +1,17 @@
 {
   "raw": "3 tablespoons (45 ml) chu hou sauce (see notes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chu hou sauce (see notes)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "45",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chu hou sauce (see notes)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

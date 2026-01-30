@@ -1,15 +1,13 @@
 {
   "raw": "2 Tablespoons BBQ sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "BBQ sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "BBQ sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

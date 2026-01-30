@@ -1,10 +1,8 @@
 {
   "raw": "ice cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice cubes",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "ice cubes",
+    "measurements": [],
+    "note": null
   }
 }

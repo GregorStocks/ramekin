@@ -1,19 +1,17 @@
 {
   "raw": "12 oz. rigatoni or other tubular pasta",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "rigatoni or other tubular pasta",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "rigatoni or other tubular pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

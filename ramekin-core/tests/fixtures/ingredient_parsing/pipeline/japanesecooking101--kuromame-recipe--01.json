@@ -1,19 +1,17 @@
 {
   "raw": "8.5 oz Japanese black beans",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese black beans",
-      "measurements": [
-        {
-          "amount": "8.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "241",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese black beans",
+    "measurements": [
+      {
+        "amount": "8.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "241",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

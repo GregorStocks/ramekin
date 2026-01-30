@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon chopped capers",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped capers",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped capers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

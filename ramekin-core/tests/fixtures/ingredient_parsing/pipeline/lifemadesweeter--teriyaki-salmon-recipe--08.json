@@ -1,15 +1,13 @@
 {
   "raw": "2 1/2 tablespoons arrowroot starch",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "arrowroot starch",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "arrowroot starch",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

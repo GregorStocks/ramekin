@@ -1,15 +1,13 @@
 {
   "raw": "¼ teaspoon red chili powder  ((optional, only if required))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "red chili powder",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional, only if required"
-    }
+  "expected": {
+    "item": "red chili powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional, only if required"
   }
 }

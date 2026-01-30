@@ -1,19 +1,17 @@
 {
   "raw": "4 cups (945 ml) apple cider",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "apple cider",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "945",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "apple cider",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cup"
+      },
+      {
+        "amount": "945",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

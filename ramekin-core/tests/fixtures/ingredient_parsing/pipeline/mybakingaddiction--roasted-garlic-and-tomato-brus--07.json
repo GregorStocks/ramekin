@@ -1,15 +1,13 @@
 {
   "raw": "½ cup Sargento® Artisan Blends® Shredded Parmesan Cheese, divided use",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Sargento® Artisan Blends® Shredded Parmesan Cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided use"
-    }
+  "expected": {
+    "item": "Sargento® Artisan Blends® Shredded Parmesan Cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided use"
   }
 }

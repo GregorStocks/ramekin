@@ -1,10 +1,8 @@
 {
   "raw": "Several large sprigs of fresh oregano",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Several large sprigs of fresh oregano",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Several large sprigs of fresh oregano",
+    "measurements": [],
+    "note": null
   }
 }

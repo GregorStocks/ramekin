@@ -1,15 +1,13 @@
 {
   "raw": "0.25 cup dry red wine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry red wine",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dry red wine",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

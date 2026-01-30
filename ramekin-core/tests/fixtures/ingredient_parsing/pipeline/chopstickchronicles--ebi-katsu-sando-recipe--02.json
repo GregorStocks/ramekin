@@ -1,15 +1,13 @@
 {
   "raw": "1 tbsp katakuriko potato starch  (*1)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "katakuriko potato starch  (*1)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "katakuriko potato starch  (*1)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

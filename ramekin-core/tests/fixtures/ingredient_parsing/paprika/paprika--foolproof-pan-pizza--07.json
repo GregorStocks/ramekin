@@ -1,19 +1,17 @@
 {
   "raw": "12 ounces grated full-fat, low moisture (dry) mozzarella cheese (see note)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated full-fat, low moisture (dry) mozzarella cheese (see note)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated full-fat, low moisture (dry) mozzarella cheese (see note)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

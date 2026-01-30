@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup blueberries, sliced strawberries, raspberries, or other chopped fruit of your choice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blueberries, sliced strawberries, raspberries",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or other chopped fruit of your choice"
-    }
+  "expected": {
+    "item": "blueberries, sliced strawberries, raspberries",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "or other chopped fruit of your choice"
   }
 }

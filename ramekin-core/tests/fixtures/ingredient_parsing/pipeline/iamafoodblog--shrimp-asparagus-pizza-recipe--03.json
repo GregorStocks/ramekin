@@ -1,15 +1,13 @@
 {
   "raw": "12 medium shrimp, peeled and deveined, tails left on if preferred",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shrimp, peeled and deveined, tails left on if preferred",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shrimp, peeled and deveined, tails left on if preferred",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "medium"
+      }
+    ],
+    "note": null
   }
 }

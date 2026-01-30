@@ -1,15 +1,13 @@
 {
   "raw": "0.75 cup matchstick carrots",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "matchstick carrots",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "matchstick carrots",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

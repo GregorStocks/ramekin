@@ -1,15 +1,13 @@
 {
   "raw": "8 cups ice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

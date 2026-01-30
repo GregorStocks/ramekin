@@ -1,15 +1,13 @@
 {
   "raw": "4  ears corn on the cob",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ears corn on the cob",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ears corn on the cob",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

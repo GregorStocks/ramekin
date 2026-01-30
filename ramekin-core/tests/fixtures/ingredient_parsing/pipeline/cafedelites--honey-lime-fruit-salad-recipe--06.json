@@ -1,19 +1,17 @@
 {
   "raw": "9 ounce pineapple (canned chunks or pieces, or 1/2 of a fresh pineapple, peeled and diced)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pineapple",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "255",
-          "unit": "g"
-        }
-      ],
-      "note": "canned chunks or pieces, or 1/2 of a fresh pineapple, peeled and diced"
-    }
+  "expected": {
+    "item": "pineapple",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "oz"
+      },
+      {
+        "amount": "255",
+        "unit": "g"
+      }
+    ],
+    "note": "canned chunks or pieces, or 1/2 of a fresh pineapple, peeled and diced"
   }
 }

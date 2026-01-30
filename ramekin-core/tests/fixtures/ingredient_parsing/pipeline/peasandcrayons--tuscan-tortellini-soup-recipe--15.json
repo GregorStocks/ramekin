@@ -1,15 +1,13 @@
 {
   "raw": "2 cups chopped spinach",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped spinach",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chopped spinach",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

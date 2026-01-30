@@ -1,15 +1,13 @@
 {
   "raw": "2  roasted red bell peppers (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roasted red bell peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "roasted red bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
   }
 }

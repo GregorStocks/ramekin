@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp mentsuyu (concentrated noodle soup base)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "mentsuyu (concentrated noodle soup base)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "mentsuyu (concentrated noodle soup base)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

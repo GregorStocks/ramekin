@@ -1,15 +1,13 @@
 {
   "raw": "2 to 4 tablespoons whipping cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "whipping cream",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "whipping cream",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

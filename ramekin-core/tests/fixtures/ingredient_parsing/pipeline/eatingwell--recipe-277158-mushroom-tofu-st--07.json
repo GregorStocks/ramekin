@@ -1,23 +1,21 @@
 {
   "raw": "1 (8 ounce) container baked tofu or smoked tofu, diced",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "container baked tofu or smoked tofu",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    }
+  "expected": {
+    "item": "container baked tofu or smoked tofu",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "500 ml water (if using espresso shots, reduce the water by 30ml for each shot used (see note))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "water (if using espresso shots, reduce the water by 30ml for each shot used (see note)",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "water (if using espresso shots, reduce the water by 30ml for each shot used (see note)",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

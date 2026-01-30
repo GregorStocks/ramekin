@@ -1,15 +1,13 @@
 {
   "raw": "1  shallot (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "shallot (to garnish)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "shallot (to garnish)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

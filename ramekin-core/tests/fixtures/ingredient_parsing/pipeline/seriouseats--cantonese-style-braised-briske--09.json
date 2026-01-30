@@ -1,19 +1,17 @@
 {
   "raw": "1 1/2 tablespoons (22 ml) oyster sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oyster sauce",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "22",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oyster sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "22",
+        "unit": "ml"
+      }
+    ],
+    "note": null
   }
 }

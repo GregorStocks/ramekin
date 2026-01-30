@@ -1,15 +1,13 @@
 {
   "raw": "280g basmati rice",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "basmati rice",
-      "measurements": [
-        {
-          "amount": "280",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "basmati rice",
+    "measurements": [
+      {
+        "amount": "280",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

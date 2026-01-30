@@ -1,15 +1,13 @@
 {
   "raw": "1 28-ounce can peeled plum tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peeled plum tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "28-ounce can"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peeled plum tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "28-ounce can"
+      }
+    ],
+    "note": null
   }
 }

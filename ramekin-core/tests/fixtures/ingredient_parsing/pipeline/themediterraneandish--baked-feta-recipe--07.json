@@ -1,10 +1,8 @@
 {
   "raw": "Extra Virgin Olive Oil",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Extra Virgin Olive Oil",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Extra Virgin Olive Oil",
+    "measurements": [],
+    "note": null
   }
 }

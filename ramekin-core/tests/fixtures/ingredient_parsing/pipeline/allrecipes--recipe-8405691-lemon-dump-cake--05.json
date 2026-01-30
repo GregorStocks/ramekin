@@ -1,15 +1,13 @@
 {
   "raw": "0.5 cup salted butter, cut into small pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "salted butter, cut into small pieces",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "salted butter, cut into small pieces",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

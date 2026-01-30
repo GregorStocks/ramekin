@@ -1,15 +1,13 @@
 {
   "raw": "2 teaspoons pimento, (chopped)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pimento",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "pimento",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "chopped"
   }
 }

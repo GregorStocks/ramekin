@@ -1,15 +1,13 @@
 {
   "raw": "2-5 dried red chilies, roughly chopped OR 1/4-1/2 teaspoon dried chili flakes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dried red chilies",
-      "measurements": [
-        {
-          "amount": "2-5",
-          "unit": null
-        }
-      ],
-      "note": "roughly chopped OR 1/4-1/2 teaspoon dried chili flakes"
-    }
+  "expected": {
+    "item": "dried red chilies",
+    "measurements": [
+      {
+        "amount": "2-5",
+        "unit": null
+      }
+    ],
+    "note": "roughly chopped OR 1/4-1/2 teaspoon dried chili flakes"
   }
 }

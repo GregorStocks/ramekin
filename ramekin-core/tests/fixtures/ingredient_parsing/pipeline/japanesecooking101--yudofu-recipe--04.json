@@ -1,10 +1,8 @@
 {
   "raw": "Ponzu",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Ponzu",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Ponzu",
+    "measurements": [],
+    "note": null
   }
 }

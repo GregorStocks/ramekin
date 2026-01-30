@@ -1,15 +1,13 @@
 {
   "raw": "24  Oreo cookies (crushed into crumbs)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Oreo cookies",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": "crushed into crumbs"
-    }
+  "expected": {
+    "item": "Oreo cookies",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": "crushed into crumbs"
   }
 }

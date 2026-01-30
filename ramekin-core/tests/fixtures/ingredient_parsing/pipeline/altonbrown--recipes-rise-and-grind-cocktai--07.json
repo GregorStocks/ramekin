@@ -1,15 +1,13 @@
 {
   "raw": "2 dashes coffee bitters",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coffee bitters",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coffee bitters",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "dash"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1  loaf sourdough bread cut into cubes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "loaf sourdough bread cut into cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "loaf sourdough bread cut into cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

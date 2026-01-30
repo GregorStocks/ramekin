@@ -1,19 +1,17 @@
 {
   "raw": "1 oz. good bourbon ((knob creek))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "good bourbon (knob creek)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "good bourbon (knob creek)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

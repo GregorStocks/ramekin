@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces (227g) raspberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raspberries",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raspberries",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

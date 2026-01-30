@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon corn syrup or Lyle’s Golden Syrup, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "corn syrup or Lyle’s Golden Syrup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "corn syrup or Lyle’s Golden Syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
   }
 }

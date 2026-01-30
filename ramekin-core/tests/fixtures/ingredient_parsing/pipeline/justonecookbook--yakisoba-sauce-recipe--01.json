@@ -1,15 +1,13 @@
 {
   "raw": "3 Tbsp oyster sauce",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "oyster sauce",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "oyster sauce",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

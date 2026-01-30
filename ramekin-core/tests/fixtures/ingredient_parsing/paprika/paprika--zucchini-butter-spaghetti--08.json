@@ -1,19 +1,17 @@
 {
   "raw": "1/2 cup (45 grams) grated parmesan",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "grated parmesan",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "45",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "grated parmesan",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "45",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

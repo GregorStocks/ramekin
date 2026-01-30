@@ -1,19 +1,17 @@
 {
   "raw": "20 ounce canned crushed pineapple",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "canned crushed pineapple",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "oz"
-        },
-        {
-          "amount": "567",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "canned crushed pineapple",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      },
+      {
+        "amount": "567",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

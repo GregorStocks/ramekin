@@ -1,15 +1,13 @@
 {
   "raw": "1/4 cup feta or blue cheese crumbles for serving, optional",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "feta or blue cheese crumbles for serving",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    }
+  "expected": {
+    "item": "feta or blue cheese crumbles for serving",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
   }
 }

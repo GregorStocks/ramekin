@@ -1,15 +1,13 @@
 {
   "raw": "8-10  snow peas (to garnish)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "snow peas (to garnish)",
-      "measurements": [
-        {
-          "amount": "8-10",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "snow peas (to garnish)",
+    "measurements": [
+      {
+        "amount": "8-10",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

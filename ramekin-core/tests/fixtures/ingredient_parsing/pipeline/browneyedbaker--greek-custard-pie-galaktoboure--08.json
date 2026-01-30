@@ -1,19 +1,17 @@
 {
   "raw": "1  package phyllo dough (about 12 to 16 sheets)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "phyllo dough",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "12 to 16",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "phyllo dough",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "12 to 16",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

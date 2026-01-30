@@ -1,15 +1,13 @@
 {
   "raw": "3 medium-large sweet potatoes ((approximately 2.5 pounds))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "medium-large sweet potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "approximately 2.5 pounds"
-    }
+  "expected": {
+    "item": "medium-large sweet potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "approximately 2.5 pounds"
   }
 }

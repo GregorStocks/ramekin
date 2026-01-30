@@ -1,15 +1,13 @@
 {
   "raw": "3 slices pepper jack cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pepper jack cheese",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pepper jack cheese",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "slice"
+      }
+    ],
+    "note": null
   }
 }

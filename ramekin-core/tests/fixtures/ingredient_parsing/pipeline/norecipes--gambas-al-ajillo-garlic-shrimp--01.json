@@ -1,15 +1,13 @@
 {
   "raw": "320 grams large shrimp",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "large shrimp",
-      "measurements": [
-        {
-          "amount": "320",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "large shrimp",
+    "measurements": [
+      {
+        "amount": "320",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

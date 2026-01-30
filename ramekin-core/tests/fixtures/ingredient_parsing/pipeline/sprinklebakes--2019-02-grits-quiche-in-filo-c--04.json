@@ -1,19 +1,17 @@
 {
   "raw": "16 oz. ground pork sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ground pork sausage",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "454",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ground pork sausage",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

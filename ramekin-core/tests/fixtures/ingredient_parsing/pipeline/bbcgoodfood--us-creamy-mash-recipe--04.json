@@ -1,15 +1,13 @@
 {
   "raw": "4 tbsp crème fraîche or sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "crème fraîche or sour cream",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "crème fraîche or sour cream",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

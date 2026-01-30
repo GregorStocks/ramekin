@@ -1,19 +1,17 @@
 {
   "raw": "6 medium peaches, ripe but ever-so-slightly firm (about 5 to 6 cups)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "peaches, ripe but ever-so-slightly firm",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "medium"
-        },
-        {
-          "amount": "5 to 6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "peaches, ripe but ever-so-slightly firm",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "medium"
+      },
+      {
+        "amount": "5 to 6",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

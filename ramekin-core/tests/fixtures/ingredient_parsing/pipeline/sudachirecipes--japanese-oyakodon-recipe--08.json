@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Chinese-style chicken bouillon powder (or regular chicken bouillon powder)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Chinese-style chicken bouillon powder (or regular chicken bouillon powder)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Chinese-style chicken bouillon powder (or regular chicken bouillon powder)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

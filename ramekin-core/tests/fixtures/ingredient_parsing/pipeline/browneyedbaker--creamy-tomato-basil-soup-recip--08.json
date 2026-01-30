@@ -1,15 +1,13 @@
 {
   "raw": "3  large slices good-quality sandwich bread (crusts removed, torn into 1-inch pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "slices good-quality sandwich bread (crusts removed, torn into 1-inch pieces)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "slices good-quality sandwich bread (crusts removed, torn into 1-inch pieces)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

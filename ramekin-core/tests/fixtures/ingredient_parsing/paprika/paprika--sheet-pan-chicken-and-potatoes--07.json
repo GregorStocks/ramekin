@@ -1,19 +1,17 @@
 {
   "raw": "4 small Yukon gold potatoes (about 1 pound), cut into 3/4-inch pieces",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Yukon gold potatoes , cut into 3/4-inch pieces",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Yukon gold potatoes , cut into 3/4-inch pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

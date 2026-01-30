@@ -1,15 +1,13 @@
 {
   "raw": "1/8 tsp paprika (or to taste)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "paprika",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or to taste"
-    }
+  "expected": {
+    "item": "paprika",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or to taste"
   }
 }

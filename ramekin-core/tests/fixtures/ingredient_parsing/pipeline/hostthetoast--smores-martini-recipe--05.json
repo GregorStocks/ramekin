@@ -1,19 +1,17 @@
 {
   "raw": "1 ounce heavy cream (or half-and-half)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "heavy cream (or half-and-half)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "heavy cream (or half-and-half)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

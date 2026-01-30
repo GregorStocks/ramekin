@@ -1,15 +1,13 @@
 {
   "raw": "2 pt. halved strawberries",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "halved strawberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "halved strawberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pint"
+      }
+    ],
+    "note": null
   }
 }

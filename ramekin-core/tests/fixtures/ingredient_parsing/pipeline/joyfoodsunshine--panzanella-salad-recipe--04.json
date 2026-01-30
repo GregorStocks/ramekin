@@ -1,15 +1,13 @@
 {
   "raw": "2  tomatoes (vine ripened)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "tomatoes (vine ripened)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "tomatoes (vine ripened)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

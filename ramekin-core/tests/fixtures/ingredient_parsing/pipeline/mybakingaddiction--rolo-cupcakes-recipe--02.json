@@ -1,23 +1,21 @@
 {
   "raw": "1 (5.9 ounce) package instant chocolate pudding mix",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "instant chocolate pudding mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "5.9",
-          "unit": "oz"
-        },
-        {
-          "amount": "167",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "instant chocolate pudding mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "5.9",
+        "unit": "oz"
+      },
+      {
+        "amount": "167",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

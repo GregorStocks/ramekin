@@ -1,15 +1,13 @@
 {
   "raw": "1 lb. linguine or fettuccine",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "linguine or fettuccine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "linguine or fettuccine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "&amp;frac14; cup chopped fresh cilantro, plus 1 tablespoon for garnish",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chopped fresh cilantro",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 1 tablespoon for garnish"
-    }
+  "expected": {
+    "item": "chopped fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 1 tablespoon for garnish"
   }
 }

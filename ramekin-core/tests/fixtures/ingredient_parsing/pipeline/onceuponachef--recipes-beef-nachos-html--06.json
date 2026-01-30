@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon lime juice, (from 1 lime)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "lime juice, (from 1 lime)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "lime juice, (from 1 lime)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces chilled mascarpone cheese",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chilled mascarpone cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chilled mascarpone cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

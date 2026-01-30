@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp Japanese black vinegar (kurozu)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Japanese black vinegar (kurozu)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Japanese black vinegar (kurozu)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

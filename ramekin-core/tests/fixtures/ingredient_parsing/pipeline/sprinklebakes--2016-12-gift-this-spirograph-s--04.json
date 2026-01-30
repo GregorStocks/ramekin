@@ -1,15 +1,13 @@
 {
   "raw": "3.5- inch cookie cutter or pastry ring",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "- inch cookie cutter or pastry ring",
-      "measurements": [
-        {
-          "amount": "3.5",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "- inch cookie cutter or pastry ring",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

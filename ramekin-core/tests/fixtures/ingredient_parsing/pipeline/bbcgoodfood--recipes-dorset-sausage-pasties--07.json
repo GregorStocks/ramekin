@@ -1,15 +1,13 @@
 {
   "raw": "50g frozen pea or petit pois",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "frozen pea or petit pois",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "frozen pea or petit pois",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

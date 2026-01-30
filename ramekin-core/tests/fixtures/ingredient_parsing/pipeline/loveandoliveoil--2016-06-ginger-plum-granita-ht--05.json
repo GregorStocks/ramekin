@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons&nbsp;Domaine de Canton ginger liqueur",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Domaine de Canton ginger liqueur",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Domaine de Canton ginger liqueur",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

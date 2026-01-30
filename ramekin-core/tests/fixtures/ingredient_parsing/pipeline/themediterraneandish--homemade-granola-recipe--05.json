@@ -1,15 +1,13 @@
 {
   "raw": "3 tablespoons raw sesame seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "raw sesame seeds",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "raw sesame seeds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

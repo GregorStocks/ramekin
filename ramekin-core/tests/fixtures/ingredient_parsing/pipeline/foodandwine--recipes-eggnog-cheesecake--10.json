@@ -1,15 +1,13 @@
 {
   "raw": "1 cup refrigerated eggnog",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "refrigerated eggnog",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "refrigerated eggnog",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

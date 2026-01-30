@@ -1,15 +1,13 @@
 {
   "raw": "¼ cup finely minced white onion",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "finely minced white onion",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "finely minced white onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

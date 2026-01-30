@@ -1,15 +1,13 @@
 {
   "raw": "1 lb linguine (reserve 1 cup cooking liquid)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "linguine (reserve 1 cup cooking liquid)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "linguine (reserve 1 cup cooking liquid)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

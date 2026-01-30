@@ -1,23 +1,21 @@
 {
   "raw": "4 ounces (113 g) blue cheese or goat cheese, crumbled (1 cup)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "blue cheese or goat cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "crumbled"
-    }
+  "expected": {
+    "item": "blue cheese or goat cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "crumbled"
   }
 }

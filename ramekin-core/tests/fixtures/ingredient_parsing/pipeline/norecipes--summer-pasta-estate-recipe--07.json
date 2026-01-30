@@ -1,15 +1,13 @@
 {
   "raw": "180 grams spaghettini",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "spaghettini",
-      "measurements": [
-        {
-          "amount": "180",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "spaghettini",
+    "measurements": [
+      {
+        "amount": "180",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

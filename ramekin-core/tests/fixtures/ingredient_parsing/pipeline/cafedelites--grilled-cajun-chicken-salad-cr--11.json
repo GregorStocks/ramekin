@@ -1,15 +1,13 @@
 {
   "raw": "2 cups Heirloom tomatoes (halved)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Heirloom tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    }
+  "expected": {
+    "item": "Heirloom tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cup"
+      }
+    ],
+    "note": "halved"
   }
 }

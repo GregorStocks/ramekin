@@ -1,19 +1,17 @@
 {
   "raw": "8 ounces sliced ham, preferably smoked or Black Forest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sliced ham, preferably smoked or Black Forest",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sliced ham, preferably smoked or Black Forest",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

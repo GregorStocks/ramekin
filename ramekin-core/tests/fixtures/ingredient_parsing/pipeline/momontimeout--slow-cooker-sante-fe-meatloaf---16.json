@@ -1,19 +1,17 @@
 {
   "raw": "2 oz diced green chiles (half of 4 oz can )",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "diced green chiles (half of 4 oz can",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "57",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "diced green chiles (half of 4 oz can",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

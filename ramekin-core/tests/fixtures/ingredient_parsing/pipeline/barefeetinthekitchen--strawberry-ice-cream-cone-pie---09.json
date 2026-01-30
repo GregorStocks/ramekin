@@ -1,15 +1,13 @@
 {
   "raw": "8  ice cream sugar cones (broken into pieces)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "ice cream sugar cones (broken into pieces)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "ice cream sugar cones (broken into pieces)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

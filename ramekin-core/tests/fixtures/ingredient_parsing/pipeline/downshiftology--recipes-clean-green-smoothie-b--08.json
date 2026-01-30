@@ -1,15 +1,13 @@
 {
   "raw": "2 tbsp sunflower seeds",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "sunflower seeds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "sunflower seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

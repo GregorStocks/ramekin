@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon coconut extract",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coconut extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "coconut extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

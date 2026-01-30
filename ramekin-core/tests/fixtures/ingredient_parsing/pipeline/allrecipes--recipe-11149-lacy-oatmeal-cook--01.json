@@ -1,10 +1,8 @@
 {
   "raw": "nonstick cooking sray",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "nonstick cooking sray",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "nonstick cooking sray",
+    "measurements": [],
+    "note": null
   }
 }

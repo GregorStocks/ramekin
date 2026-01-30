@@ -1,15 +1,13 @@
 {
   "raw": "1 cup toor dal ((split pigeon peas) (or ¾ cup toor dal + ¼ cup moong dal or masoor dal))",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "toor dal (split pigeon peas) (or 3/4 cup toor dal + 1/4 cup moong dal or masoor dal)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "toor dal (split pigeon peas) (or 3/4 cup toor dal + 1/4 cup moong dal or masoor dal)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
   }
 }

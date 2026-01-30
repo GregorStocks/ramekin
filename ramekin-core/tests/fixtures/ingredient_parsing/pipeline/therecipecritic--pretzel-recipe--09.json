@@ -1,10 +1,8 @@
 {
   "raw": "coarse salt for topping",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "coarse salt for topping",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "coarse salt for topping",
+    "measurements": [],
+    "note": null
   }
 }

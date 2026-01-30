@@ -1,15 +1,13 @@
 {
   "raw": "2 heads Romaine, finely chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Romaine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "head"
-        }
-      ],
-      "note": "finely chopped"
-    }
+  "expected": {
+    "item": "Romaine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "head"
+      }
+    ],
+    "note": "finely chopped"
   }
 }

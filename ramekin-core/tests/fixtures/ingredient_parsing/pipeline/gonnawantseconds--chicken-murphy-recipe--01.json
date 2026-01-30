@@ -1,15 +1,13 @@
 {
   "raw": "1 pound chicken (cut into 1 1/2 inch cubes)",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "chicken (cut into 1 1/2 inch cubes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "chicken (cut into 1 1/2 inch cubes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

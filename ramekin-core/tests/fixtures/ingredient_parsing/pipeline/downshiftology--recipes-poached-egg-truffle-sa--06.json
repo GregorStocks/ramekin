@@ -1,15 +1,13 @@
 {
   "raw": "1 tsp truffle salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "truffle salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "truffle salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

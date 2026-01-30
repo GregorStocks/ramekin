@@ -1,15 +1,13 @@
 {
   "raw": "2 tablespoons Meyer lemon zest",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Meyer lemon zest",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "Meyer lemon zest",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

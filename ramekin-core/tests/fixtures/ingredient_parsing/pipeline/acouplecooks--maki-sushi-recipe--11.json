@@ -1,15 +1,13 @@
 {
   "raw": "Large pinch kosher salt",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "pinch kosher salt",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "pinch kosher salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,19 +1,17 @@
 {
   "raw": "1 cup 150g dry roasted peanuts, chopped",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dry roasted peanuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    }
+  "expected": {
+    "item": "dry roasted peanuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
   }
 }

@@ -1,15 +1,13 @@
 {
   "raw": "1 tablespoon masa harina or all-purpose flour",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "masa harina or all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "masa harina or all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
   }
 }

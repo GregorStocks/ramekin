@@ -1,15 +1,13 @@
 {
   "raw": "1/2 pound fresh chorizo sausage",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "fresh chorizo sausage",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "fresh chorizo sausage",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
   }
 }

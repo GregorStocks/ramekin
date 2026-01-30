@@ -1,15 +1,13 @@
 {
   "raw": "2 dill pickles",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dill pickles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dill pickles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

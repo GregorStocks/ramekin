@@ -1,15 +1,13 @@
 {
   "raw": "⅛ tsp dashi granules",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "dashi granules",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "dashi granules",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
   }
 }

@@ -1,10 +1,8 @@
 {
   "raw": "Optional toppings like shredded cheese, diced onions, cilantro or sour cream",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "Optional toppings like shredded cheese, diced onions, cilantro or sour cream",
-      "measurements": [],
-      "note": null
-    }
+  "expected": {
+    "item": "Optional toppings like shredded cheese, diced onions, cilantro or sour cream",
+    "measurements": [],
+    "note": null
   }
 }

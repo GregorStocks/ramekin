@@ -1,15 +1,13 @@
 {
   "raw": "1 roma tomato",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "roma tomato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "roma tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
   }
 }

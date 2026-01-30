@@ -1,19 +1,17 @@
 {
   "raw": "15 ounce can diced tomatoes",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "can diced tomatoes",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "can diced tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": null
   }
 }

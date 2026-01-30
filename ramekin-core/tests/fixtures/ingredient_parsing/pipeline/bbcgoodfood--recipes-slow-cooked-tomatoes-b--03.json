@@ -1,15 +1,13 @@
 {
   "raw": "large bunch basil leaves only",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "bunch basil leaves only",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    }
+  "expected": {
+    "item": "bunch basil leaves only",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
   }
 }

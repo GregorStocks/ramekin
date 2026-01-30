@@ -1,15 +1,13 @@
 {
   "raw": "1½ cups 225 g all-purpose flour, plus extra for work surface",
-  "step_outputs": {
-    "parse_ingredients": {
-      "item": "225 g all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus extra for work surface"
-    }
+  "expected": {
+    "item": "225 g all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus extra for work surface"
   }
 }
