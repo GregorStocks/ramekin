@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Mashed Potatoes:",
-      "expected": {
-        "item": "For the Mashed Potatoes:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 pounds (1.6 kg) russet potatoes (about 4 large), peeled and cut into 1-inch pieces",
@@ -28,7 +24,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into 1-inch pieces"
+        "note": "peeled and cut into 1-inch pieces",
+        "section": "For the Mashed Potatoes"
       }
     },
     {
@@ -36,7 +33,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Mashed Potatoes"
       }
     },
     {
@@ -53,16 +51,13 @@
             "unit": "g"
           }
         ],
-        "note": "cubed"
+        "note": "cubed",
+        "section": "For the Mashed Potatoes"
       }
     },
     {
       "raw": "For the Meat Sauce:",
-      "expected": {
-        "item": "For the Meat Sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups (360 ml) homemade or store-bought low-sodium chicken stock",
@@ -78,7 +73,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -103,7 +99,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -124,7 +121,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -141,7 +139,8 @@
             "unit": "kg"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -162,7 +161,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -183,7 +183,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -204,7 +205,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -217,7 +219,8 @@
             "unit": "medium"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -234,7 +237,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -251,7 +255,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -264,7 +269,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -277,7 +283,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -294,7 +301,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -311,7 +319,8 @@
             "unit": "ml"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -328,7 +337,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -345,7 +355,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -353,7 +364,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -361,7 +373,8 @@
       "expected": {
         "item": "To Assemble:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -382,7 +395,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Meat Sauce"
       }
     },
     {
@@ -390,7 +404,8 @@
       "expected": {
         "item": "Grated Parmigiano-Reggiano cheese, for topping",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "section": "For the Meat Sauce"
       }
     }
   ]

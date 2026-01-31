@@ -144,6 +144,77 @@ export function getMeasurementUnit(
 }
 
 /**
+ * Update an ingredient's section.
+ */
+export function updateIngredientSection(
+  index: number,
+  value: string | undefined,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(index, "section", value || undefined);
+}
+
+/**
+ * Add a new ingredient with a section (for starting a new section).
+ */
+export function addIngredientWithSection(
+  ingredients: Ingredient[],
+  setIngredients: SetStoreFunction<Ingredient[]>,
+  section: string,
+) {
+  setIngredients(ingredients.length, {
+    item: "",
+    measurements: [{}],
+    section,
+  });
+}
+
+/**
+ * Move an ingredient from one position to another, updating sections as needed.
+ */
+export function moveIngredient(
+  fromIndex: number,
+  toIndex: number,
+  newSection: string | undefined,
+  ingredients: Ingredient[],
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  const updated = [...ingredients];
+  const [moved] = updated.splice(fromIndex, 1);
+  moved.section = newSection;
+  updated.splice(toIndex > fromIndex ? toIndex - 1 : toIndex, 0, moved);
+  setIngredients(updated);
+}
+
+/** Group ingredients by contiguous sections (preserving order). */
+export function groupIngredientsBySection(ingredients: Ingredient[]): Array<{
+  section: string | null;
+  ingredients: Ingredient[];
+  startIndex: number;
+}> {
+  const groups: Array<{
+    section: string | null;
+    ingredients: Ingredient[];
+    startIndex: number;
+  }> = [];
+  let currentIndex = 0;
+
+  for (const ing of ingredients) {
+    const section = ing.section ?? null;
+    const lastGroup = groups[groups.length - 1];
+
+    if (lastGroup && lastGroup.section === section) {
+      lastGroup.ingredients.push(ing);
+    } else {
+      groups.push({ section, ingredients: [ing], startIndex: currentIndex });
+    }
+    currentIndex++;
+  }
+
+  return groups;
+}
+
+/**
  * Extract error message from API response errors.
  * Handles both direct Response objects and objects with a response property
  * (like the generated client's ResponseError).

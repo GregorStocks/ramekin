@@ -60,11 +60,7 @@
     },
     {
       "raw": "FILLING:",
-      "expected": {
-        "item": "FILLING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 packages (8 ounces each) cream cheese, softened",
@@ -80,7 +76,8 @@
             "unit": "oz each"
           }
         ],
-        "note": "softened"
+        "note": "softened",
+        "section": "FILLING"
       }
     },
     {
@@ -97,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -110,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -123,7 +122,8 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "section": "FILLING"
       }
     },
     {
@@ -136,16 +136,13 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
       "raw": "GLAZE:",
-      "expected": {
-        "item": "GLAZE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup semisweet chocolate chips",
@@ -157,7 +154,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     },
     {
@@ -174,7 +172,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     },
     {
@@ -187,7 +186,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     },
     {
@@ -195,7 +195,8 @@
       "expected": {
         "item": "Optional: Toasted coconut flakes and chopped almonds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     }
   ]

@@ -4,7 +4,9 @@
 
 use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
-use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
+use ramekin_core::ingredient_parser::{
+    detect_section_header, parse_ingredient, parse_ingredients, Measurement, ParsedIngredient,
+};
 use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use ramekin_core::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
 use serde::{Deserialize, Serialize};
@@ -32,7 +34,12 @@ struct RecipeTestFile {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct IngredientTestCase {
     raw: String,
-    expected: Expected,
+    /// Expected output. None if this is a section header (filtered out).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    expected: Option<Expected>,
+    /// True if this raw line is a section header (not an ingredient).
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    is_section_header: bool,
 }
 
 /// Expected output from parsing
@@ -41,6 +48,8 @@ struct Expected {
     item: String,
     measurements: Vec<Measurement>,
     note: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    section: Option<String>,
 }
 
 impl From<ParsedIngredient> for Expected {
@@ -49,6 +58,7 @@ impl From<ParsedIngredient> for Expected {
             item: ing.item,
             measurements: ing.measurements,
             note: ing.note,
+            section: ing.section,
         }
     }
 }
@@ -58,7 +68,7 @@ fn default_fixtures_dir() -> PathBuf {
     PathBuf::from("ramekin-core/tests/fixtures/ingredient_parsing")
 }
 
-/// Run the ingredient parsing pipeline on a raw ingredient string.
+/// Run the ingredient parsing pipeline on a raw ingredient string (single line).
 /// Includes metric weight conversion (oz/lb → g) and volume-to-weight conversion.
 fn run_pipeline(raw: &str) -> Expected {
     let parsed = parse_ingredient(raw);
@@ -67,6 +77,34 @@ fn run_pipeline(raw: &str) -> Expected {
     let result = add_metric_weight_alternative(parsed, &mut weight_stats);
     let result = add_volume_to_weight_alternative(result, &mut volume_stats);
     Expected::from(result)
+}
+
+/// Result of batch processing ingredients, including the raw line for each output.
+struct BatchResult {
+    raw: String,
+    expected: Expected,
+}
+
+/// Run the ingredient parsing pipeline on a multi-line blob.
+/// This includes section header detection, filtering, and applying sections to subsequent ingredients.
+/// Returns both the raw line and expected output for each ingredient (section headers are filtered out).
+fn run_pipeline_batch(raw_lines: &[String]) -> Vec<BatchResult> {
+    let blob = raw_lines.join("\n");
+    let parsed = parse_ingredients(&blob);
+    parsed
+        .into_iter()
+        .map(|ing| {
+            let raw = ing.raw.clone().unwrap_or_default();
+            let mut weight_stats = MetricConversionStats::default();
+            let mut volume_stats = VolumeConversionStats::default();
+            let result = add_metric_weight_alternative(ing, &mut weight_stats);
+            let result = add_volume_to_weight_alternative(result, &mut volume_stats);
+            BatchResult {
+                raw,
+                expected: Expected::from(result),
+            }
+        })
+        .collect()
 }
 
 /// Generate test fixtures from the latest pipeline run.
@@ -125,7 +163,11 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
             }
 
             let expected = run_pipeline(&raw);
-            ingredients.push(IngredientTestCase { raw, expected });
+            ingredients.push(IngredientTestCase {
+                raw,
+                expected: Some(expected),
+                is_section_header: false,
+            });
         }
 
         if ingredients.is_empty() {
@@ -192,20 +234,58 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
             let json: serde_json::Value = serde_json::from_str(&content)?;
 
             if json.get("ingredients").is_some() {
-                // Recipe format (pipeline/paprika)
-                let mut recipe: RecipeTestFile = serde_json::from_value(json)?;
-                let mut file_changed = false;
+                // Recipe format (pipeline/paprika) - process as batch for section detection
+                let recipe: RecipeTestFile = serde_json::from_value(json)?;
 
-                for ing in &mut recipe.ingredients {
-                    let new_expected = run_pipeline(&ing.raw);
-                    if ing.expected != new_expected {
-                        ing.expected = new_expected;
-                        file_changed = true;
+                // Collect all raw lines and run batch processing
+                let raw_lines: Vec<String> =
+                    recipe.ingredients.iter().map(|i| i.raw.clone()).collect();
+                let batch_results = run_pipeline_batch(&raw_lines);
+
+                // Build new ingredients list, preserving section headers as markers
+                let mut new_ingredients = Vec::new();
+                let mut batch_iter = batch_results.into_iter().peekable();
+
+                for raw in &raw_lines {
+                    if detect_section_header(raw).is_some() {
+                        // This is a section header - mark it as such
+                        new_ingredients.push(IngredientTestCase {
+                            raw: raw.clone(),
+                            expected: None,
+                            is_section_header: true,
+                        });
+                    } else if let Some(result) = batch_iter.next() {
+                        // Regular ingredient - use the batch result
+                        new_ingredients.push(IngredientTestCase {
+                            raw: result.raw,
+                            expected: Some(result.expected),
+                            is_section_header: false,
+                        });
                     }
                 }
 
-                if file_changed {
-                    let json = serde_json::to_string_pretty(&recipe)? + "\n";
+                // Check if anything changed
+                let old_ingredients = &recipe.ingredients;
+                let len_changed = old_ingredients.len() != new_ingredients.len();
+                let content_changed =
+                    old_ingredients
+                        .iter()
+                        .zip(new_ingredients.iter())
+                        .any(|(old, new)| {
+                            old.raw != new.raw
+                                || old.expected != new.expected
+                                || old.is_section_header != new.is_section_header
+                        });
+                let changed = len_changed || content_changed;
+
+                if changed {
+                    let new_recipe = RecipeTestFile {
+                        source: recipe.source.clone(),
+                        recipe_slug: recipe.recipe_slug.clone(),
+                        ingredients: new_ingredients,
+                    };
+
+                    let json = serde_json::to_string_pretty(&new_recipe)? + "\n";
                     fs::write(&path, json)?;
                     updated += 1;
                 } else {
@@ -397,7 +477,11 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
             }
 
             let expected = run_pipeline(&raw);
-            ingredients.push(IngredientTestCase { raw, expected });
+            ingredients.push(IngredientTestCase {
+                raw,
+                expected: Some(expected),
+                is_section_header: false,
+            });
         }
 
         if ingredients.is_empty() {

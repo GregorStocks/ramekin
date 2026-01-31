@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "BASE:",
-      "expected": {
-        "item": "BASE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons oil, butter (regular or ghee)",
@@ -20,7 +16,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "BASE"
       }
     },
     {
@@ -33,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "section": "BASE"
       }
     },
     {
@@ -46,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "BASE"
       }
     },
     {
@@ -59,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "section": "BASE"
       }
     },
     {
@@ -72,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "section": "BASE"
       }
     },
     {
@@ -85,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "BASE"
       }
     },
     {
@@ -98,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "BASE"
       }
     },
     {
@@ -111,7 +114,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional but traditional"
+        "note": "optional but traditional",
+        "section": "BASE"
       }
     },
     {
@@ -119,7 +123,8 @@
       "expected": {
         "item": "Ground chile powder, to taste (I started with a 1/2 teaspoon, but I have to keep things weak for kids)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "BASE"
       }
     },
     {
@@ -132,7 +137,8 @@
             "unit": "cup"
           }
         ],
-        "note": "fresh or from a can"
+        "note": "fresh or from a can",
+        "section": "BASE"
       }
     },
     {
@@ -145,7 +151,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "section": "BASE"
       }
     },
     {
@@ -158,7 +165,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "BASE"
       }
     },
     {
@@ -171,16 +179,13 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "section": "BASE"
       }
     },
     {
       "raw": "TO FINISH:",
-      "expected": {
-        "item": "TO FINISH:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 teaspoons butter (salted is lovely here)",
@@ -192,7 +197,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -209,7 +215,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -222,7 +229,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     }
   ]

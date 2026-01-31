@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "CRISPY LAMB AND LENTILS:",
-      "expected": {
-        "item": "CRISPY LAMB AND LENTILS:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon vegetable oil",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
@@ -49,7 +47,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
@@ -62,7 +61,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
@@ -70,7 +70,8 @@
       "expected": {
         "item": "Red pepper flakes",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
@@ -83,7 +84,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
@@ -96,7 +98,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
@@ -109,16 +112,13 @@
             "unit": "cup"
           }
         ],
-        "note": "from a scant 1 cup dried"
+        "note": "from a scant 1 cup dried",
+        "section": "CRISPY LAMB AND LENTILS"
       }
     },
     {
       "raw": "SALAD:",
-      "expected": {
-        "item": "SALAD:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Handful of tomatoes",
@@ -130,7 +130,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     },
     {
@@ -143,7 +144,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     },
     {
@@ -151,7 +153,8 @@
       "expected": {
         "item": "Red onion",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     },
     {
@@ -159,7 +162,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     },
     {
@@ -167,16 +171,13 @@
       "expected": {
         "item": "Lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     },
     {
       "raw": "ASSEMBLY:",
-      "expected": {
-        "item": "ASSEMBLY:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 head bibb or butter lettuce (10 cup-shaped leaves)",
@@ -192,7 +193,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "ASSEMBLY"
       }
     },
     {
@@ -205,7 +207,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "ASSEMBLY"
       }
     }
   ]

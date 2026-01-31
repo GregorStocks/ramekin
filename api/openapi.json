@@ -1780,6 +1780,13 @@
               "null"
             ],
             "description": "Original unparsed text for debugging"
+          },
+          "section": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Section name for grouping (e.g., \"For the sauce\", \"For the dough\")"
           }
         }
       },

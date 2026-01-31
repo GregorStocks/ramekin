@@ -194,11 +194,7 @@
     },
     {
       "raw": "TO FINISH:",
-      "expected": {
-        "item": "TO FINISH:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 ounces baby spinach leaves (a few handfuls)",
@@ -214,7 +210,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -222,7 +219,8 @@
       "expected": {
         "item": "Toasted sesame oil and soy sauce",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "TO FINISH"
       }
     }
   ]

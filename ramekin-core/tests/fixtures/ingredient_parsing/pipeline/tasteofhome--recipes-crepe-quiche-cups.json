@@ -77,11 +77,7 @@
     },
     {
       "raw": "FILLING :",
-      "expected": {
-        "item": "FILLING :",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 pound bulk pork sausage",
@@ -97,7 +93,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -110,7 +107,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -123,7 +121,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -136,7 +135,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -149,7 +149,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -162,7 +163,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     }
   ]

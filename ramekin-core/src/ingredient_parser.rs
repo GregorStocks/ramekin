@@ -21,6 +21,8 @@ pub struct ParsedIngredient {
     pub measurements: Vec<Measurement>,
     pub note: Option<String>,
     pub raw: Option<String>,
+    /// Section name for grouping (e.g., "For the sauce", "For the dough")
+    pub section: Option<String>,
 }
 
 /// Common cooking units (lowercase for matching).
@@ -443,6 +445,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             measurements: vec![],
             note: None,
             raw: Some(raw.to_string()),
+            section: None,
         };
     }
 
@@ -781,6 +784,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             measurements: vec![],
             note: None,
             raw: Some(raw.to_string()),
+            section: None,
         };
     }
 
@@ -793,6 +797,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         measurements,
         note,
         raw: Some(raw.to_string()),
+        section: None,
     }
 }
 
@@ -1329,10 +1334,165 @@ fn normalize_unit_base(unit: &str) -> String {
     }
 }
 
+/// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:").
+/// Returns Some(section_name) if it's a header, None if it's a regular ingredient.
+pub fn detect_section_header(raw: &str) -> Option<String> {
+    let trimmed = raw.trim();
+
+    // Must end with colon
+    if !trimmed.ends_with(':') {
+        return None;
+    }
+
+    // Strip the colon to get the section name
+    let name = trimmed[..trimmed.len() - 1].trim();
+
+    // Must not be empty
+    if name.is_empty() {
+        return None;
+    }
+
+    // Try parsing it - if we get an amount, it's likely an ingredient, not a header
+    let parsed = parse_ingredient(raw);
+    if !parsed.measurements.is_empty()
+        && parsed.measurements[0].amount.is_some()
+        && parsed.measurements[0].unit.is_some()
+    {
+        // Has both amount and unit - probably an ingredient
+        return None;
+    }
+
+    // Check if it matches common header patterns
+    let name_lower = name.to_lowercase();
+
+    // "For the X" or "For X" patterns
+    if name_lower.starts_with("for the ") || name_lower.starts_with("for ") {
+        return Some(name.to_string());
+    }
+
+    // All-caps short names (FILLING, DRIZZLE, TOPPING, SAUCE, etc.)
+    // Must be reasonably short and mostly uppercase letters/spaces
+    if name.len() <= 40
+        && name
+            .chars()
+            .filter(|c| c.is_alphabetic())
+            .all(|c| c.is_uppercase())
+        && name.chars().any(|c| c.is_alphabetic())
+    {
+        return Some(name.to_string());
+    }
+
+    None
+}
+
 /// Parse multiple ingredient lines (separated by newlines).
+/// Detects section headers (lines ending with colon, no measurements) and
+/// applies the section name to subsequent ingredients.
 pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
-    blob.lines()
-        .filter(|line| !line.trim().is_empty())
-        .map(parse_ingredient)
-        .collect()
+    let mut current_section: Option<String> = None;
+    let mut results = Vec::new();
+
+    for line in blob.lines() {
+        let trimmed = line.trim();
+        if trimmed.is_empty() {
+            continue;
+        }
+
+        // Check if this line is a section header
+        if let Some(section_name) = detect_section_header(trimmed) {
+            current_section = Some(section_name);
+            continue; // Don't emit the header as an ingredient
+        }
+
+        // Parse the ingredient and apply current section
+        let mut ingredient = parse_ingredient(trimmed);
+        ingredient.section = current_section.clone();
+        results.push(ingredient);
+    }
+
+    results
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_detect_section_header_for_the_pattern() {
+        assert_eq!(
+            detect_section_header("For the sauce:"),
+            Some("For the sauce".to_string())
+        );
+        assert_eq!(
+            detect_section_header("For the dough:"),
+            Some("For the dough".to_string())
+        );
+        assert_eq!(
+            detect_section_header("For serving:"),
+            Some("For serving".to_string())
+        );
+    }
+
+    #[test]
+    fn test_detect_section_header_all_caps() {
+        assert_eq!(
+            detect_section_header("FILLING:"),
+            Some("FILLING".to_string())
+        );
+        assert_eq!(
+            detect_section_header("DRIZZLE:"),
+            Some("DRIZZLE".to_string())
+        );
+        assert_eq!(
+            detect_section_header("TOPPING:"),
+            Some("TOPPING".to_string())
+        );
+    }
+
+    #[test]
+    fn test_detect_section_header_not_header() {
+        // Regular ingredients should return None
+        assert_eq!(detect_section_header("1 cup flour"), None);
+        assert_eq!(detect_section_header("2 tablespoons oil"), None);
+        // Ingredient with colon in note should not be detected as header
+        assert_eq!(detect_section_header("butter: softened"), None);
+    }
+
+    #[test]
+    fn test_parse_ingredients_with_sections() {
+        let blob = "For the sauce:\n1 cup tomatoes\n2 tbsp oil\nFor the pasta:\n1 lb spaghetti";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 3);
+        assert_eq!(result[0].section, Some("For the sauce".to_string()));
+        assert_eq!(result[0].item, "tomatoes");
+        assert_eq!(result[1].section, Some("For the sauce".to_string()));
+        assert_eq!(result[1].item, "oil");
+        assert_eq!(result[2].section, Some("For the pasta".to_string()));
+        assert_eq!(result[2].item, "spaghetti");
+    }
+
+    #[test]
+    fn test_parse_ingredients_no_sections() {
+        let blob = "1 cup flour\n2 eggs\n1 tsp salt";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 3);
+        assert!(result[0].section.is_none());
+        assert!(result[1].section.is_none());
+        assert!(result[2].section.is_none());
+    }
+
+    #[test]
+    fn test_parse_ingredients_section_headers_removed() {
+        let blob = "FILLING:\n1 cup ricotta\nTOPPING:\n1/2 cup cheese";
+        let result = parse_ingredients(blob);
+
+        // Section headers should not appear as ingredients
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].item, "ricotta");
+        assert_eq!(result[0].section, Some("FILLING".to_string()));
+        assert_eq!(result[1].item, "cheese");
+        assert_eq!(result[1].section, Some("TOPPING".to_string()));
+    }
 }

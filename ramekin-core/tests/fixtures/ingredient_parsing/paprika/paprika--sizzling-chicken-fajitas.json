@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the chicken:",
-      "expected": {
-        "item": "For the chicken:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds boneless, skinless chicken thighs (though, frankly, a little more or less will be fine here)",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "though, frankly, a little more or less will be fine here"
+        "note": "though, frankly, a little more or less will be fine here",
+        "section": "For the chicken"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -89,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -102,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -115,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": "minced or pressed"
+        "note": "minced or pressed",
+        "section": "For the chicken"
       }
     },
     {
@@ -123,7 +127,8 @@
       "expected": {
         "item": "Few dashes hot sauce",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "section": "For the chicken"
       }
     },
     {
@@ -131,7 +136,8 @@
       "expected": {
         "item": "To assemble:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -148,7 +154,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -156,7 +163,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -169,7 +177,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -182,7 +191,8 @@
             "unit": "large"
           }
         ],
-        "note": "halved and sliced thin"
+        "note": "halved and sliced thin",
+        "section": "For the chicken"
       }
     },
     {
@@ -190,7 +200,8 @@
       "expected": {
         "item": "Coarse salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -198,7 +209,8 @@
       "expected": {
         "item": "Fixings (pick your favorites):",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -211,7 +223,8 @@
             "unit": "cup"
           }
         ],
-        "note": "1 15-ounce can, drained and rinsed"
+        "note": "1 15-ounce can, drained and rinsed",
+        "section": "For the chicken"
       }
     },
     {
@@ -219,7 +232,8 @@
       "expected": {
         "item": "Salsa (or pico de gallo)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -227,7 +241,8 @@
       "expected": {
         "item": "Sliced avocado (or guacamole)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -235,7 +250,8 @@
       "expected": {
         "item": "Shredded cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -243,7 +259,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -251,7 +268,8 @@
       "expected": {
         "item": "Minced white onion or pickled red onions",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -259,7 +277,8 @@
       "expected": {
         "item": "Chopped cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -267,7 +286,8 @@
       "expected": {
         "item": "Pickled jalalpenos",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -275,7 +295,8 @@
       "expected": {
         "item": "Hot sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -283,7 +304,8 @@
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     }
   ]

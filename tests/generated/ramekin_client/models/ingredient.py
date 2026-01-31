@@ -31,7 +31,8 @@ class Ingredient(BaseModel):
     measurements: List[Measurement] = Field(description="Measurements - first is primary, rest are alternatives (e.g., \"1 stick\" then \"113g\")")
     note: Optional[StrictStr] = Field(default=None, description="Preparation notes (e.g., \"chopped\", \"softened\", \"optional\")")
     raw: Optional[StrictStr] = Field(default=None, description="Original unparsed text for debugging")
-    __properties: ClassVar[List[str]] = ["item", "measurements", "note", "raw"]
+    section: Optional[StrictStr] = Field(default=None, description="Section name for grouping (e.g., \"For the sauce\", \"For the dough\")")
+    __properties: ClassVar[List[str]] = ["item", "measurements", "note", "raw", "section"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,11 @@ class Ingredient(BaseModel):
         if self.raw is None and "raw" in self.model_fields_set:
             _dict['raw'] = None
 
+        # set to None if section (nullable) is None
+        # and model_fields_set contains the field
+        if self.section is None and "section" in self.model_fields_set:
+            _dict['section'] = None
+
         return _dict
 
     @classmethod
@@ -104,7 +110,8 @@ class Ingredient(BaseModel):
             "item": obj.get("item"),
             "measurements": [Measurement.from_dict(_item) for _item in obj["measurements"]] if obj.get("measurements") is not None else None,
             "note": obj.get("note"),
-            "raw": obj.get("raw")
+            "raw": obj.get("raw"),
+            "section": obj.get("section")
         })
         return _obj
 

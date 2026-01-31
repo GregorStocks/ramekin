@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For 1.5 _kin_:",
-      "expected": {
-        "item": "For 1.5 _kin_:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "250 g warm water (104ºF, 40ºC; in the summertime when the kitchen is warm, use room temp or cold water; read about desired dough temperature in my blog post FAQs)",
@@ -20,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "104ºF, 40ºC; in the summertime when the kitchen is warm, use room temp or cold water; read about desired dough temperature in my blog post FAQs"
+        "note": "104ºF, 40ºC; in the summertime when the kitchen is warm, use room temp or cold water; read about desired dough temperature in my blog post FAQs",
+        "section": "For 1.5 _kin_"
       }
     },
     {
@@ -33,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For 1.5 _kin_"
       }
     },
     {
@@ -46,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For 1.5 _kin_"
       }
     },
     {
@@ -59,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For 1.5 _kin_"
       }
     },
     {
@@ -72,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For 1.5 _kin_"
       }
     },
     {
@@ -85,7 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For 1.5 _kin_"
       }
     },
     {
@@ -98,7 +100,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For 1.5 _kin_"
       }
     },
     {
@@ -111,16 +114,13 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature; for vegan, use Miyoko’s"
+        "note": "at room temperature; for vegan, use Miyoko’s",
+        "section": "For 1.5 _kin_"
       }
     },
     {
       "raw": "For Greasing:",
-      "expected": {
-        "item": "For Greasing:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "½ tsp neutral oil (for the bowl)",
@@ -132,7 +132,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For Greasing"
       }
     },
     {
@@ -145,7 +146,8 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature; for the pan; or use cooking oil spray"
+        "note": "at room temperature; for the pan; or use cooking oil spray",
+        "section": "For Greasing"
       }
     }
   ]

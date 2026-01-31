@@ -274,11 +274,7 @@
     },
     {
       "raw": "TO SERVE:",
-      "expected": {
-        "item": "TO SERVE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons lemon juice (from about 3/4 of a lemon)",
@@ -290,7 +286,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO SERVE"
       }
     },
     {
@@ -303,7 +300,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO SERVE"
       }
     },
     {
@@ -311,7 +309,8 @@
       "expected": {
         "item": "Toasted pita wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO SERVE"
       }
     },
     {
@@ -319,7 +318,8 @@
       "expected": {
         "item": "Harissa or another hot sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO SERVE"
       }
     }
   ]

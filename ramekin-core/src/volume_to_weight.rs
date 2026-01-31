@@ -116,6 +116,7 @@ mod tests {
             }],
             note: None,
             raw: Some("2 cups all-purpose flour".to_string()),
+            section: None,
         };
 
         let mut stats = VolumeConversionStats::default();
@@ -137,6 +138,7 @@ mod tests {
             }],
             note: None,
             raw: Some("2 tbsp sugar".to_string()),
+            section: None,
         };
 
         let mut stats = VolumeConversionStats::default();
@@ -158,6 +160,7 @@ mod tests {
             }],
             note: None,
             raw: Some("1/2 cup unsalted butter".to_string()),
+            section: None,
         };
 
         let mut stats = VolumeConversionStats::default();
@@ -179,6 +182,7 @@ mod tests {
             }],
             note: None,
             raw: Some("1 cup unicorn tears".to_string()),
+            section: None,
         };
 
         let mut stats = VolumeConversionStats::default();
@@ -204,6 +208,7 @@ mod tests {
             ],
             note: None,
             raw: Some("1 cup (125g) flour".to_string()),
+            section: None,
         };
 
         let mut stats = VolumeConversionStats::default();
@@ -224,6 +229,7 @@ mod tests {
             }],
             note: None,
             raw: Some("2 eggs".to_string()),
+            section: None,
         };
 
         let mut stats = VolumeConversionStats::default();
@@ -243,6 +249,7 @@ mod tests {
             }],
             note: None,
             raw: Some("1 cup softened butter".to_string()),
+            section: None,
         };
 
         let mut stats = VolumeConversionStats::default();

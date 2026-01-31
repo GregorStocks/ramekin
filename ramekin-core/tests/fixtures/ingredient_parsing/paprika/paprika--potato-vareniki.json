@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "SIMPLE POTATO FILLING:",
-      "expected": {
-        "item": "SIMPLE POTATO FILLING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (680 grams) yukon gold potatoes, peeled and diced (weight is for whole potatoes)",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "weight is for whole potatoes"
+        "note": "weight is for whole potatoes",
+        "section": "SIMPLE POTATO FILLING"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons milk, any variety"
+        "note": "plus 2 tablespoons milk, any variety",
+        "section": "SIMPLE POTATO FILLING"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SIMPLE POTATO FILLING"
       }
     },
     {
@@ -67,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SIMPLE POTATO FILLING"
       }
     },
     {
@@ -75,16 +75,13 @@
       "expected": {
         "item": "A few grinds of black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "SIMPLE POTATO FILLING"
       }
     },
     {
       "raw": "LUXURIOUS POTATO FILLING:",
-      "expected": {
-        "item": "LUXURIOUS POTATO FILLING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (680 grams) yukon gold potatoes, peeled and diced (weight is for whole potatoes)",
@@ -100,7 +97,8 @@
             "unit": "g"
           }
         ],
-        "note": "weight is for whole potatoes"
+        "note": "weight is for whole potatoes",
+        "section": "LUXURIOUS POTATO FILLING"
       }
     },
     {
@@ -108,7 +106,8 @@
       "expected": {
         "item": "Whole milk",
         "measurements": [],
-        "note": "as needed"
+        "note": "as needed",
+        "section": "LUXURIOUS POTATO FILLING"
       }
     },
     {
@@ -125,7 +124,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "LUXURIOUS POTATO FILLING"
       }
     },
     {
@@ -138,7 +138,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "LUXURIOUS POTATO FILLING"
       }
     },
     {
@@ -151,7 +152,8 @@
             "unit": "large"
           }
         ],
-        "note": "plus 1 yolk, whisked until uniform"
+        "note": "plus 1 yolk, whisked until uniform",
+        "section": "LUXURIOUS POTATO FILLING"
       }
     },
     {
@@ -168,7 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "LUXURIOUS POTATO FILLING"
       }
     },
     {
@@ -181,16 +184,13 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "section": "LUXURIOUS POTATO FILLING"
       }
     },
     {
       "raw": "DUMPLING DOUGH:",
-      "expected": {
-        "item": "DUMPLING DOUGH:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 cups (450 grams) all-purpose flour, plus more for counter",
@@ -206,7 +206,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for counter"
+        "note": "plus more for counter",
+        "section": "DUMPLING DOUGH"
       }
     },
     {
@@ -219,7 +220,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DUMPLING DOUGH"
       }
     },
     {
@@ -232,7 +234,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DUMPLING DOUGH"
       }
     },
     {
@@ -245,23 +248,21 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 2 to 3 tablespoons cold water"
+        "note": "plus 2 to 3 tablespoons cold water",
+        "section": "DUMPLING DOUGH"
       }
     },
     {
       "raw": "TO SERVE:",
-      "expected": {
-        "item": "TO SERVE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
       "expected": {
         "item": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO SERVE"
       }
     }
   ]

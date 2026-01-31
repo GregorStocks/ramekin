@@ -138,11 +138,7 @@
     },
     {
       "raw": "GLAZE:",
-      "expected": {
-        "item": "GLAZE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups confectioners' sugar",
@@ -158,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     },
     {
@@ -175,7 +172,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "section": "GLAZE"
       }
     },
     {
@@ -188,7 +186,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     }
   ]

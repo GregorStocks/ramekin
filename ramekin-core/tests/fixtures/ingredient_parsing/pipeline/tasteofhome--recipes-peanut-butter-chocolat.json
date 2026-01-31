@@ -60,11 +60,7 @@
     },
     {
       "raw": "FILLING:",
-      "expected": {
-        "item": "FILLING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1-3/4 cups half-and-half cream",
@@ -76,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -97,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -110,7 +108,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -131,7 +130,8 @@
             "unit": "g"
           }
         ],
-        "note": "thawed"
+        "note": "thawed",
+        "section": "FILLING"
       }
     },
     {
@@ -144,7 +144,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -152,7 +153,8 @@
       "expected": {
         "item": "Baking cocoa",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "section": "FILLING"
       }
     }
   ]

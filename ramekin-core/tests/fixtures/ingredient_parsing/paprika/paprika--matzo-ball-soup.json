@@ -236,11 +236,7 @@
     },
     {
       "raw": "For soup:",
-      "expected": {
-        "item": "For soup:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 quarts prepared chicken stock (recipe above)",
@@ -252,7 +248,8 @@
             "unit": "quart"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For soup"
       }
     },
     {
@@ -265,7 +262,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "section": "For soup"
       }
     },
     {
@@ -273,7 +271,8 @@
       "expected": {
         "item": "A few sprigs of dill",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For soup"
       }
     }
   ]

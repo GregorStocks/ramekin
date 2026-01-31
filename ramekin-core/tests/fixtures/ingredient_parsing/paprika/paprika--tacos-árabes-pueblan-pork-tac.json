@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "PORK AND ONIONS:",
-      "expected": {
-        "item": "PORK AND ONIONS:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2½ pounds boneless pork butt roast",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -54,7 +52,8 @@
             "unit": "large"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -67,7 +66,8 @@
             "unit": null
           }
         ],
-        "note": "sliced thin"
+        "note": "sliced thin",
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -80,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -93,7 +94,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "toasted and cracked"
+        "note": "toasted and cracked",
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -106,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "toasted and cracked"
+        "note": "toasted and cracked",
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -119,7 +122,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -132,7 +136,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -145,7 +150,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -158,7 +164,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -171,7 +178,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -192,7 +200,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "PORK AND ONIONS"
       }
     },
     {
@@ -205,16 +214,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "PORK AND ONIONS"
       }
     },
     {
       "raw": "CHIPOTLE SAUCE:",
-      "expected": {
-        "item": "CHIPOTLE SAUCE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 (7-ounce) can chipotle chile in adobo sauce",
@@ -230,7 +236,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CHIPOTLE SAUCE"
       }
     },
     {
@@ -243,7 +250,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CHIPOTLE SAUCE"
       }
     },
     {
@@ -260,7 +268,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CHIPOTLE SAUCE"
       }
     },
     {
@@ -273,7 +282,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CHIPOTLE SAUCE"
       }
     },
     {
@@ -286,7 +296,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CHIPOTLE SAUCE"
       }
     },
     {
@@ -299,7 +310,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CHIPOTLE SAUCE"
       }
     },
     {
@@ -312,16 +324,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CHIPOTLE SAUCE"
       }
     },
     {
       "raw": "YOGURT SAUCE:",
-      "expected": {
-        "item": "YOGURT SAUCE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 garlic cloves, unpeeled",
@@ -333,7 +342,8 @@
             "unit": null
           }
         ],
-        "note": "unpeeled"
+        "note": "unpeeled",
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -346,7 +356,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -359,7 +370,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -372,7 +384,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus extra as needed"
+        "note": "plus extra as needed",
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -389,7 +402,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -406,7 +420,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -414,7 +429,8 @@
       "expected": {
         "item": "serving:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -431,7 +447,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -439,7 +456,8 @@
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "YOGURT SAUCE"
       }
     },
     {
@@ -452,7 +470,8 @@
             "unit": "cup"
           }
         ],
-        "note": "trimmed Lime wedges"
+        "note": "trimmed Lime wedges",
+        "section": "YOGURT SAUCE"
       }
     }
   ]

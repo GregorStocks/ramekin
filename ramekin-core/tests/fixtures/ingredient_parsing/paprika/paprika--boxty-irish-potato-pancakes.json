@@ -149,18 +149,15 @@
     },
     {
       "raw": "For Serving (Optional):",
-      "expected": {
-        "item": "For Serving :",
-        "measurements": [],
-        "note": "Optional"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Sour cream",
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For Serving (Optional)"
       }
     },
     {
@@ -168,7 +165,8 @@
       "expected": {
         "item": "Shredded cheddar cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For Serving (Optional)"
       }
     },
     {
@@ -176,7 +174,8 @@
       "expected": {
         "item": "Cooked bacon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For Serving (Optional)"
       }
     },
     {
@@ -184,7 +183,8 @@
       "expected": {
         "item": "Fried eggs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For Serving (Optional)"
       }
     }
   ]

@@ -1,7 +1,16 @@
-import { Show, Index, For } from "solid-js";
+import { Show, Index, For, createSignal } from "solid-js";
 import type { Accessor, Setter } from "solid-js";
 import type { SetStoreFunction } from "solid-js/store";
 import { A } from "@solidjs/router";
+import {
+  DragDropProvider,
+  DragDropSensors,
+  DragOverlay,
+  SortableProvider,
+  createSortable,
+  closestCenter,
+} from "@thisbeyond/solid-dnd";
+import type { DragEvent } from "@thisbeyond/solid-dnd";
 import TagInput from "./TagInput";
 import StarRating from "./StarRating";
 import PhotoThumbnail from "./PhotoThumbnail";
@@ -17,6 +26,9 @@ import {
   updateMeasurementUnit,
   getMeasurementAmount,
   getMeasurementUnit,
+  updateIngredientSection,
+  addIngredientWithSection,
+  groupIngredientsBySection,
 } from "../utils/recipeFormHelpers";
 
 export interface RecipeFormProps {
@@ -74,6 +86,309 @@ export interface RecipeFormProps {
 
   // Auth token for photo display
   token: Accessor<string | null | undefined>;
+}
+
+/** Sortable ingredient row component */
+function SortableIngredient(props: {
+  ing: Ingredient;
+  index: number;
+  setIngredients: SetStoreFunction<Ingredient[]>;
+}) {
+  const sortable = createSortable(props.index);
+  return (
+    <div
+      ref={sortable.ref}
+      class="ingredient-entry"
+      classList={{ "is-dragging": sortable.isActiveDraggable }}
+      style={{ opacity: sortable.isActiveDraggable ? 0.5 : 1 }}
+    >
+      <div class="ingredient-row" {...sortable.dragActivators}>
+        <span class="drag-handle" title="Drag to reorder">
+          ⋮⋮
+        </span>
+        <input
+          type="text"
+          placeholder="Amount"
+          value={getMeasurementAmount(props.ing, 0)}
+          onInput={(e) =>
+            updateMeasurementAmount(
+              props.index,
+              0,
+              e.currentTarget.value,
+              props.setIngredients,
+            )
+          }
+          class="input-amount"
+        />
+        <input
+          type="text"
+          placeholder="Unit"
+          value={getMeasurementUnit(props.ing, 0)}
+          onInput={(e) =>
+            updateMeasurementUnit(
+              props.index,
+              0,
+              e.currentTarget.value,
+              props.setIngredients,
+            )
+          }
+          class="input-unit"
+        />
+        <input
+          type="text"
+          placeholder="Ingredient *"
+          value={props.ing.item}
+          onInput={(e) =>
+            updateIngredientItem(
+              props.index,
+              e.currentTarget.value,
+              props.setIngredients,
+            )
+          }
+          class="input-item"
+        />
+        <input
+          type="text"
+          placeholder="Note"
+          value={props.ing.note || ""}
+          onInput={(e) =>
+            updateIngredientNote(
+              props.index,
+              e.currentTarget.value,
+              props.setIngredients,
+            )
+          }
+          class="input-note"
+        />
+        <button
+          type="button"
+          class="btn btn-small btn-add-alt"
+          onClick={() =>
+            addAlternativeMeasurement(props.index, props.setIngredients)
+          }
+          title="Add alternative measurement"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          class="btn btn-small btn-remove"
+          onClick={() => removeIngredient(props.index, props.setIngredients)}
+        >
+          &times;
+        </button>
+      </div>
+      <Show when={props.ing.measurements.length > 1}>
+        <div class="alt-measurements">
+          <Index each={props.ing.measurements.slice(1)}>
+            {(_, mIndex) => (
+              <div class="alt-measurement-row">
+                <span class="alt-label">Alt:</span>
+                <input
+                  type="text"
+                  placeholder="Amount"
+                  value={getMeasurementAmount(props.ing, mIndex + 1)}
+                  onInput={(e) =>
+                    updateMeasurementAmount(
+                      props.index,
+                      mIndex + 1,
+                      e.currentTarget.value,
+                      props.setIngredients,
+                    )
+                  }
+                  class="input-amount"
+                />
+                <input
+                  type="text"
+                  placeholder="Unit"
+                  value={getMeasurementUnit(props.ing, mIndex + 1)}
+                  onInput={(e) =>
+                    updateMeasurementUnit(
+                      props.index,
+                      mIndex + 1,
+                      e.currentTarget.value,
+                      props.setIngredients,
+                    )
+                  }
+                  class="input-unit"
+                />
+                <button
+                  type="button"
+                  class="btn btn-small btn-remove"
+                  onClick={() =>
+                    removeMeasurement(
+                      props.index,
+                      mIndex + 1,
+                      props.setIngredients,
+                    )
+                  }
+                  title="Remove alternative measurement"
+                >
+                  &times;
+                </button>
+              </div>
+            )}
+          </Index>
+        </div>
+      </Show>
+      <Show when={props.ing.raw}>
+        <div class="ingredient-raw">
+          <span class="raw-label">Raw:</span> {props.ing.raw}
+        </div>
+      </Show>
+    </div>
+  );
+}
+
+/** Ingredients section with drag-and-drop and section support */
+function IngredientsSection(props: {
+  ingredients: Ingredient[];
+  setIngredients: SetStoreFunction<Ingredient[]>;
+}) {
+  const [newSectionName, setNewSectionName] = createSignal("");
+
+  const ingredientIds = () => props.ingredients.map((_, i) => i);
+
+  const onDragEnd = (event: DragEvent) => {
+    const { draggable, droppable } = event;
+    if (draggable && droppable && draggable.id !== droppable.id) {
+      const fromIndex = draggable.id as number;
+      const toIndex = droppable.id as number;
+      // Move ingredient and inherit section from the target position
+      const targetSection = props.ingredients[toIndex]?.section;
+      const updated = [...props.ingredients];
+      const [moved] = updated.splice(fromIndex, 1);
+      moved.section = targetSection;
+      updated.splice(toIndex, 0, moved);
+      props.setIngredients(updated);
+    }
+  };
+
+  const addSection = () => {
+    const name = newSectionName().trim();
+    if (name) {
+      addIngredientWithSection(props.ingredients, props.setIngredients, name);
+      setNewSectionName("");
+    }
+  };
+
+  const groups = () => groupIngredientsBySection(props.ingredients);
+
+  return (
+    <div class="form-section">
+      <div class="section-header">
+        <label>Ingredients</label>
+        <div class="section-header-actions">
+          <button
+            type="button"
+            class="btn btn-small"
+            onClick={() =>
+              addIngredient(props.ingredients, props.setIngredients)
+            }
+          >
+            + Add
+          </button>
+        </div>
+      </div>
+
+      <DragDropProvider onDragEnd={onDragEnd} collisionDetector={closestCenter}>
+        <DragDropSensors />
+        <SortableProvider ids={ingredientIds()}>
+          <For each={groups()}>
+            {(group) => (
+              <div class="ingredient-section-group">
+                <Show when={group.section !== null}>
+                  <div class="ingredient-section-header-row">
+                    <input
+                      type="text"
+                      class="section-name-input"
+                      value={group.section || ""}
+                      placeholder="Section name"
+                      onInput={(e) => {
+                        // Update section name for all ingredients in this group
+                        const newName = e.currentTarget.value || undefined;
+                        for (let i = 0; i < group.ingredients.length; i++) {
+                          updateIngredientSection(
+                            group.startIndex + i,
+                            newName,
+                            props.setIngredients,
+                          );
+                        }
+                      }}
+                    />
+                    <button
+                      type="button"
+                      class="btn btn-small"
+                      onClick={() =>
+                        addIngredientWithSection(
+                          props.ingredients,
+                          props.setIngredients,
+                          group.section || "",
+                        )
+                      }
+                      title="Add ingredient to this section"
+                    >
+                      +
+                    </button>
+                  </div>
+                </Show>
+                <For each={group.ingredients}>
+                  {(ing, localIndex) => (
+                    <SortableIngredient
+                      ing={ing}
+                      index={group.startIndex + localIndex()}
+                      setIngredients={props.setIngredients}
+                    />
+                  )}
+                </For>
+              </div>
+            )}
+          </For>
+        </SortableProvider>
+        <DragOverlay>
+          {(draggable) => {
+            const ing = props.ingredients[draggable?.id as number];
+            return ing ? (
+              <div class="ingredient-entry drag-overlay">
+                <div class="ingredient-row">
+                  <span class="drag-handle">⋮⋮</span>
+                  <span class="input-amount">
+                    {getMeasurementAmount(ing, 0)}
+                  </span>
+                  <span class="input-unit">{getMeasurementUnit(ing, 0)}</span>
+                  <span class="input-item">{ing.item}</span>
+                </div>
+              </div>
+            ) : null;
+          }}
+        </DragOverlay>
+      </DragDropProvider>
+
+      <div class="add-section-row">
+        <input
+          type="text"
+          placeholder="New section name..."
+          value={newSectionName()}
+          onInput={(e) => setNewSectionName(e.currentTarget.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              addSection();
+            }
+          }}
+          class="section-name-input"
+        />
+        <button
+          type="button"
+          class="btn btn-small"
+          onClick={addSection}
+          disabled={!newSectionName().trim()}
+        >
+          + Add Section
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default function RecipeForm(props: RecipeFormProps) {
@@ -171,157 +486,10 @@ export default function RecipeForm(props: RecipeFormProps) {
         </div>
       </div>
 
-      <div class="form-section">
-        <div class="section-header">
-          <label>Ingredients</label>
-          <button
-            type="button"
-            class="btn btn-small"
-            onClick={() =>
-              addIngredient(props.ingredients, props.setIngredients)
-            }
-          >
-            + Add
-          </button>
-        </div>
-        <Index each={props.ingredients}>
-          {(ing, index) => (
-            <div class="ingredient-entry">
-              <div class="ingredient-row">
-                <input
-                  type="text"
-                  placeholder="Amount"
-                  value={getMeasurementAmount(ing(), 0)}
-                  onInput={(e) =>
-                    updateMeasurementAmount(
-                      index,
-                      0,
-                      e.currentTarget.value,
-                      props.setIngredients,
-                    )
-                  }
-                  class="input-amount"
-                />
-                <input
-                  type="text"
-                  placeholder="Unit"
-                  value={getMeasurementUnit(ing(), 0)}
-                  onInput={(e) =>
-                    updateMeasurementUnit(
-                      index,
-                      0,
-                      e.currentTarget.value,
-                      props.setIngredients,
-                    )
-                  }
-                  class="input-unit"
-                />
-                <input
-                  type="text"
-                  placeholder="Ingredient *"
-                  value={ing().item}
-                  onInput={(e) =>
-                    updateIngredientItem(
-                      index,
-                      e.currentTarget.value,
-                      props.setIngredients,
-                    )
-                  }
-                  class="input-item"
-                />
-                <input
-                  type="text"
-                  placeholder="Note"
-                  value={ing().note || ""}
-                  onInput={(e) =>
-                    updateIngredientNote(
-                      index,
-                      e.currentTarget.value,
-                      props.setIngredients,
-                    )
-                  }
-                  class="input-note"
-                />
-                <button
-                  type="button"
-                  class="btn btn-small btn-add-alt"
-                  onClick={() =>
-                    addAlternativeMeasurement(index, props.setIngredients)
-                  }
-                  title="Add alternative measurement"
-                >
-                  +
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-small btn-remove"
-                  onClick={() => removeIngredient(index, props.setIngredients)}
-                >
-                  &times;
-                </button>
-              </div>
-              <Show when={ing().measurements.length > 1}>
-                <div class="alt-measurements">
-                  <Index each={ing().measurements.slice(1)}>
-                    {(_, mIndex) => (
-                      <div class="alt-measurement-row">
-                        <span class="alt-label">Alt:</span>
-                        <input
-                          type="text"
-                          placeholder="Amount"
-                          value={getMeasurementAmount(ing(), mIndex + 1)}
-                          onInput={(e) =>
-                            updateMeasurementAmount(
-                              index,
-                              mIndex + 1,
-                              e.currentTarget.value,
-                              props.setIngredients,
-                            )
-                          }
-                          class="input-amount"
-                        />
-                        <input
-                          type="text"
-                          placeholder="Unit"
-                          value={getMeasurementUnit(ing(), mIndex + 1)}
-                          onInput={(e) =>
-                            updateMeasurementUnit(
-                              index,
-                              mIndex + 1,
-                              e.currentTarget.value,
-                              props.setIngredients,
-                            )
-                          }
-                          class="input-unit"
-                        />
-                        <button
-                          type="button"
-                          class="btn btn-small btn-remove"
-                          onClick={() =>
-                            removeMeasurement(
-                              index,
-                              mIndex + 1,
-                              props.setIngredients,
-                            )
-                          }
-                          title="Remove alternative measurement"
-                        >
-                          &times;
-                        </button>
-                      </div>
-                    )}
-                  </Index>
-                </div>
-              </Show>
-              <Show when={ing().raw}>
-                <div class="ingredient-raw">
-                  <span class="raw-label">Raw:</span> {ing().raw}
-                </div>
-              </Show>
-            </div>
-          )}
-        </Index>
-      </div>
+      <IngredientsSection
+        ingredients={props.ingredients}
+        setIngredients={props.setIngredients}
+      />
 
       <div class="form-group">
         <label for="instructions">Instructions *</label>

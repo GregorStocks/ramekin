@@ -163,6 +163,7 @@ async fn create_user_and_recipes(
                 }],
                 note: None,
                 raw: None,
+                section: None,
             })
             .collect();
 

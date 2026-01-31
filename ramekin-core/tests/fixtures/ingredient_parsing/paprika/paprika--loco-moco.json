@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For The Burger Patties:",
-      "expected": {
-        "item": "For The Burger Patties:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (453 g) ground beef, (80% lean/20% fat)",
@@ -28,7 +24,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For The Burger Patties"
       }
     },
     {
@@ -45,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For The Burger Patties"
       }
     },
     {
@@ -62,7 +60,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For The Burger Patties"
       }
     },
     {
@@ -75,7 +74,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For The Burger Patties"
       }
     },
     {
@@ -96,7 +96,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For The Burger Patties"
       }
     },
     {
@@ -109,7 +110,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For The Burger Patties"
       }
     },
     {
@@ -122,16 +124,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For The Burger Patties"
       }
     },
     {
       "raw": "For the Gravy:",
-      "expected": {
-        "item": "For the Gravy:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 medium yellow onion (4 ounces; 113 g), thinly sliced",
@@ -151,7 +150,8 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "section": "For the Gravy"
       }
     },
     {
@@ -168,7 +168,8 @@
             "unit": "ml"
           }
         ],
-        "note": "or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water"
+        "note": "or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water",
+        "section": "For the Gravy"
       }
     },
     {
@@ -185,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     },
     {
@@ -202,7 +204,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     },
     {
@@ -219,7 +222,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     },
     {
@@ -236,7 +240,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     },
     {
@@ -253,7 +258,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     },
     {
@@ -266,7 +272,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     },
     {
@@ -274,7 +281,8 @@
       "expected": {
         "item": "Warm cooked white rice for serving",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     },
     {
@@ -287,7 +295,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Gravy"
       }
     }
   ]

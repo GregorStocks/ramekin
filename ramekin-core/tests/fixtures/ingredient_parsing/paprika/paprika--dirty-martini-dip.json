@@ -208,18 +208,15 @@
     },
     {
       "raw": "For serving:",
-      "expected": {
-        "item": "For serving:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Crudités",
       "expected": {
         "item": "Crudités",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     },
     {
@@ -227,7 +224,8 @@
       "expected": {
         "item": "potato chips",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     },
     {
@@ -235,7 +233,8 @@
       "expected": {
         "item": "crackers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     }
   ]

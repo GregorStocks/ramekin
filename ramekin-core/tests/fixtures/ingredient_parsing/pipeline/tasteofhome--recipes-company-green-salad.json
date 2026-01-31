@@ -51,11 +51,7 @@
     },
     {
       "raw": "DRESSING:",
-      "expected": {
-        "item": "DRESSING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup canola oil",
@@ -71,7 +67,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -84,7 +81,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -101,16 +99,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
       "raw": "SALAD:",
-      "expected": {
-        "item": "SALAD:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 cups torn leaf lettuce",
@@ -122,7 +117,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     },
     {
@@ -135,7 +131,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "SALAD"
       }
     },
     {
@@ -148,7 +145,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "SALAD"
       }
     },
     {
@@ -161,7 +159,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "SALAD"
       }
     },
     {
@@ -182,7 +181,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     },
     {
@@ -195,7 +195,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SALAD"
       }
     }
   ]

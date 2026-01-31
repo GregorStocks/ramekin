@@ -103,11 +103,7 @@
     },
     {
       "raw": "For the Seasoning:",
-      "expected": {
-        "item": "For the Seasoning:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 jar nori komi furikake (nori & sesame rice seasoning)",
@@ -119,7 +115,8 @@
             "unit": "jar"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Seasoning"
       }
     },
     {
@@ -132,16 +129,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Seasoning"
       }
     },
     {
       "raw": "For the Syrup:",
-      "expected": {
-        "item": "For the Syrup:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "½ cup unsalted butter (1 stick, 8 Tbsp)",
@@ -165,7 +159,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Syrup"
       }
     },
     {
@@ -178,7 +173,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Syrup"
       }
     },
     {
@@ -195,7 +191,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Syrup"
       }
     },
     {
@@ -208,7 +205,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Syrup"
       }
     },
     {
@@ -221,7 +219,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Syrup"
       }
     }
   ]

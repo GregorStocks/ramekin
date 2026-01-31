@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "SEMI-INSTANT PANCAKE MIX:",
-      "expected": {
-        "item": "SEMI-INSTANT PANCAKE MIX:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 cups all-purpose flour",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SEMI-INSTANT PANCAKE MIX"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SEMI-INSTANT PANCAKE MIX"
       }
     },
     {
@@ -54,7 +52,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SEMI-INSTANT PANCAKE MIX"
       }
     },
     {
@@ -67,7 +66,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SEMI-INSTANT PANCAKE MIX"
       }
     },
     {
@@ -80,16 +80,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SEMI-INSTANT PANCAKE MIX"
       }
     },
     {
       "raw": "SEMI-INSTANT PANCAKES:",
-      "expected": {
-        "item": "SEMI-INSTANT PANCAKES:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "283 grams semi-instant pancake mix",
@@ -101,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SEMI-INSTANT PANCAKES"
       }
     },
     {
@@ -114,7 +112,8 @@
             "unit": "large"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "section": "SEMI-INSTANT PANCAKES"
       }
     },
     {
@@ -127,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "section": "SEMI-INSTANT PANCAKES"
       }
     },
     {
@@ -144,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled"
+        "note": "melted and cooled",
+        "section": "SEMI-INSTANT PANCAKES"
       }
     },
     {
@@ -157,7 +158,8 @@
             "unit": "cup"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "section": "SEMI-INSTANT PANCAKES"
       }
     }
   ]

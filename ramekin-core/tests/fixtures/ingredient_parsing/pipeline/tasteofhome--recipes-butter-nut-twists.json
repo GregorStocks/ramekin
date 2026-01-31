@@ -128,11 +128,7 @@
     },
     {
       "raw": "FILLING:",
-      "expected": {
-        "item": "FILLING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 ounces ground walnuts (about 2 cups)",
@@ -152,7 +148,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -165,7 +162,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -182,7 +180,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -195,7 +194,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "section": "FILLING"
       }
     }
   ]

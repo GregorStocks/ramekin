@@ -120,11 +120,7 @@
     },
     {
       "raw": "TOPPING:",
-      "expected": {
-        "item": "TOPPING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1-1/2 cups sweetened shredded coconut",
@@ -136,7 +132,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -153,7 +150,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -170,7 +168,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -183,7 +182,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     }
   ]

@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "SHORTBREAD:",
-      "expected": {
-        "item": "SHORTBREAD:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (225 grams or 8 ounces) unsalted butter, cut into chunks",
@@ -28,7 +24,8 @@
             "unit": "oz"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SHORTBREAD"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SHORTBREAD"
       }
     },
     {
@@ -58,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus 3 tablespoons all-purpose flour"
+        "note": "plus 3 tablespoons all-purpose flour",
+        "section": "SHORTBREAD"
       }
     },
     {
@@ -75,7 +74,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SHORTBREAD"
       }
     },
     {
@@ -88,7 +88,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SHORTBREAD"
       }
     },
     {
@@ -101,16 +102,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "SHORTBREAD"
       }
     },
     {
       "raw": "ICING (OPTIONAL):",
-      "expected": {
-        "item": "ICING :",
-        "measurements": [],
-        "note": "OPTIONAL"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (60 grams) powdered sugar",
@@ -126,7 +124,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "ICING (OPTIONAL)"
       }
     },
     {
@@ -139,7 +138,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "ICING (OPTIONAL)"
       }
     }
   ]

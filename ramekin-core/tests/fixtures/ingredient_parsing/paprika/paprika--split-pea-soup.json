@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "FOR THE SOUP:",
-      "expected": {
-        "item": "FOR THE SOUP:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive oil or 1 tablespoon olive oil and 1 tablespoon butter",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 tablespoon olive oil and 1 tablespoon butter"
+        "note": "or 1 tablespoon olive oil and 1 tablespoon butter",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": null
           }
         ],
-        "note": "halved and sliced into ribbons"
+        "note": "halved and sliced into ribbons",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "chopped small"
+        "note": "chopped small",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -71,7 +71,8 @@
       "expected": {
         "item": "Salt and freshly black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -84,7 +85,8 @@
             "unit": "clove"
           }
         ],
-        "note": "cloves peeled and sliced thin"
+        "note": "cloves peeled and sliced thin",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -101,7 +103,8 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed and picked over"
+        "note": "rinsed and picked over",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -114,7 +117,8 @@
             "unit": "quart"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -127,7 +131,8 @@
             "unit": "sprig"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -140,23 +145,21 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
       "raw": "TO FINISH:",
-      "expected": {
-        "item": "TO FINISH:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Fresh herb sauce (instructions up top)",
       "expected": {
         "item": "Fresh herb sauce (instructions up top)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -164,7 +167,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -177,7 +181,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -185,7 +190,8 @@
       "expected": {
         "item": "Garlicky or gruyere croutons",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     }
   ]

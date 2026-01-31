@@ -64,11 +64,7 @@
     },
     {
       "raw": "DRESSING:",
-      "expected": {
-        "item": "DRESSING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup vegetable oil",
@@ -84,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -101,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -118,7 +116,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -131,7 +130,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -144,7 +144,8 @@
             "unit": "dash"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     }
   ]
