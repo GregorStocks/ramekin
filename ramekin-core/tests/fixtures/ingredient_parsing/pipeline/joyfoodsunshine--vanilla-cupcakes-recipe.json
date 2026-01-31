@@ -1,0 +1,181 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "vanilla-cupcakes-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup butter (softened)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1 ¼ cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "homemade vanilla frosting",
+      "expected": {
+        "item": "homemade vanilla frosting",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "source": "paprika",
+  "recipe_slug": "moroccan-egg-drop-harira-vege",
+  "ingredients": [
+    {
+      "raw": "1 1/2 tablespoons (22ml) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "22",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (14g) ghee or unsalted butter",
+      "expected": {
+        "item": "ghee or unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium yellow onion (8 ounces; 227g), finely chopped (1 1/4 cups)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 cup finely chopped celery (5 ounces; 140g; from 3 large ribs)",
+      "expected": {
+        "item": "finely chopped celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (355ml) tomato passata (strained tomatoes), from one 24-ounce jar",
+      "expected": {
+        "item": "tomato passata (strained tomatoes), from one 24-ounce jar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 packed cup (20g) finely chopped flat-leaf parsley leaves and tender stems",
+      "expected": {
+        "item": "finely chopped flat-leaf parsley leaves and tender stems",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "packed cup"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons Diamond Crystal kosher salt, plus more to taste; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste; for table salt use half as much by volume"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon saffron threads (about 20 threads)",
+      "expected": {
+        "item": "saffron threads",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          },
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 cups lightly salted homemade vegetable stock or store-bought low-sodium vegetable broth",
+      "expected": {
+        "item": "lightly salted homemade vegetable stock or store-bought low-sodium vegetable broth",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup dried green lentils (2.3 ounces; 66g)",
+      "expected": {
+        "item": "dried green lentils",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "66",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup uncooked white long-grain rice (1/8 ounces; 50g), such as basmati",
+      "expected": {
+        "item": "uncooked white long-grain rice, such as basmati",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1/8",
+            "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup canned chickpeas (2.8 ounces; 79g), rinsed and drained",
+      "expected": {
+        "item": "canned chickpeas",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.8",
+            "unit": "oz"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and drained"
+      }
+    },
+    {
+      "raw": "1 tablespoon (8g) cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg, lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) finely chopped fresh cilantro leaves and tender stems",
+      "expected": {
+        "item": "finely chopped fresh cilantro leaves and tender stems",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cilantro leaves, for serving",
+      "expected": {
+        "item": "Cilantro leaves",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Lemon wedges, for serving",
+      "expected": {
+        "item": "Lemon wedges",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

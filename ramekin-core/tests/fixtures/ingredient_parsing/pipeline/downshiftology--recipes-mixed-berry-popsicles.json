@@ -1,0 +1,100 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-mixed-berry-popsicles",
+  "ingredients": [
+    {
+      "raw": "1 cup blackberries",
+      "expected": {
+        "item": "blackberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "144",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup boysenberries",
+      "expected": {
+        "item": "boysenberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup strawberries",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "174",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup raspberries",
+      "expected": {
+        "item": "raspberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "123",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp honey (or maple)",
+      "expected": {
+        "item": "honey (or maple)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

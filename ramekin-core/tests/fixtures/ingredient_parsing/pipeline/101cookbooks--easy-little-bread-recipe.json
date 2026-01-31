@@ -1,0 +1,142 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "easy-little-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/4 cups / 300 ml warm water (105-115F)",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "105",
+            "unit": null
+          },
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons active dry yeast (one packet)",
+      "expected": {
+        "item": "active dry yeast (one packet)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon runny honey",
+      "expected": {
+        "item": "runny honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup / 4.5 oz / 125 g unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "4.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup / 5 oz / 140 g whole wheat flour",
+      "expected": {
+        "item": "whole wheat flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup / 3.5 oz / 100 g rolled oats (not instant oats)",
+      "expected": {
+        "item": "rolled oats (not instant oats)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons butter, melted, for brushing",
+      "expected": {
+        "item": "butter, melted, for brushing",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "source": "paprika",
+  "recipe_slug": "toad-in-the-hole",
+  "ingredients": [
+    {
+      "raw": "For the Yorkshire Pudding Batter:",
+      "expected": {
+        "item": "For the Yorkshire Pudding Batter:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces all-purpose flour (113 g; 3/4 cups plus 2 tablespoons)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 3/4 ounces whole milk (135 g; 1/2 cup plus 1 tablespoon)",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "4 3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "135",
+            "unit": "g"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce water (15 g; 1 tablespoon)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "For the Red Onion Gravy:",
+      "expected": {
+        "item": "For the Red Onion Gravy:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons beef drippings or ghee (1 ounce; 28 g)",
+      "expected": {
+        "item": "beef drippings or ghee",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large red onion (11 ounces; 310 grams) thinly sliced",
+      "expected": {
+        "item": "red onion thinly sliced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "11",
+            "unit": "oz"
+          },
+          {
+            "amount": "310",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt, plus more to taste; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste; for table salt, use half as much by volume"
+      }
+    },
+    {
+      "raw": "1/4 cup dry red wine (2 ounces; 60 g), such as Cabernet Sauvignon or Merlot",
+      "expected": {
+        "item": "dry red wine, such as Cabernet Sauvignon or Merlot",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons all-purpose flour (1/2 ounce; about 12 g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups low-sodium beef stock (12 ounces; 360 g), homemade or store-bought, see notes",
+      "expected": {
+        "item": "low-sodium beef stock, homemade or store-bought, see notes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons red wine vinegar (1/3 ounce; 10 g)",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1/3",
+            "unit": "oz"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper, to taste",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "To Assemble:",
+      "expected": {
+        "item": "To Assemble:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound (454 g) pork sausages",
+      "expected": {
+        "item": "pork sausages",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 recipe Yorkshire pudding batter, see above",
+      "expected": {
+        "item": "recipe Yorkshire pudding batter, see above",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons beef drippings or ghee (2 ounces; 56 g)",
+      "expected": {
+        "item": "beef drippings or ghee",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

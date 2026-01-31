@@ -1,0 +1,51 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "rice-cracker-recipe",
+  "ingredients": [
+    {
+      "raw": "4  Japanese rice cake (kiri mochi)",
+      "expected": {
+        "item": "Japanese rice cake (kiri mochi)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "neutral oil",
+      "expected": {
+        "item": "neutral oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Diamond Crystal kosher salt ((I used Himalayan Pink Salt))",
+      "expected": {
+        "item": "Diamond Crystal kosher salt (I used Himalayan Pink Salt)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "furikake (rice seasoning)",
+      "expected": {
+        "item": "furikake (rice seasoning)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

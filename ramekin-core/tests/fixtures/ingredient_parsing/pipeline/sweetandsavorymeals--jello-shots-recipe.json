@@ -1,0 +1,49 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "jello-shots-recipe",
+  "ingredients": [
+    {
+      "raw": "3 ounces box Jello (pick your favorite flavor)",
+      "expected": {
+        "item": "box Jello (pick your favorite flavor)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups water (divided)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/2 cup vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

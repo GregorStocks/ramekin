@@ -1,0 +1,114 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2019-12-candy-apple-snowmen-ht",
+  "ingredients": [
+    {
+      "raw": "4  small apples",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  large marshmallows",
+      "expected": {
+        "item": "marshmallows",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "24 oz. 1 package white Almond Bark candy coating (such as Plymouth Pantry)",
+      "expected": {
+        "item": "1 package white Almond Bark candy coating (such as Plymouth Pantry)",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "oz"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup black (white, and silver sprinkle medley)",
+      "expected": {
+        "item": "black (white, and silver sprinkle medley)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "20  black confetti sprinkles",
+      "expected": {
+        "item": "black confetti sprinkles",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  orange candy-coated sunflower seeds",
+      "expected": {
+        "item": "orange candy-coated sunflower seeds",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  mini ice cream cones",
+      "expected": {
+        "item": "mini ice cream cones",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12  Silly Sour Spaghetti strands",
+      "expected": {
+        "item": "Silly Sour Spaghetti strands",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

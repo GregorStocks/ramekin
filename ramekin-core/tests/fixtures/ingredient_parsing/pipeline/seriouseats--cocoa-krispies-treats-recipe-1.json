@@ -1,0 +1,153 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "cocoa-krispies-treats-recipe-1",
+  "ingredients": [
+    {
+      "raw": "99 g Rice Krispies (3 1/2 ounces; 3 1/2 cups), see notes",
+      "expected": {
+        "item": "Rice Krispies, see notes",
+        "measurements": [
+          {
+            "amount": "99",
+            "unit": "g"
+          },
+          {
+            "amount": "3 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "85 g Cocoa Krispies (3 ounces; 3 cups)",
+      "expected": {
+        "item": "Cocoa Krispies",
+        "measurements": [
+          {
+            "amount": "85",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nonstick cooking spray, for greasing",
+      "expected": {
+        "item": "Nonstick cooking spray, for greasing",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "56 g unsalted butter (2 ounces; 4 tablespoons)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "56",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "One 16-ounce bag marshmallows, any size",
+      "expected": {
+        "item": "marshmallows, any size",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "16-ounce bag"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup malted milk powder (about 2 1/3 ounces; 65 g)",
+      "expected": {
+        "item": "malted milk powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2 1/3",
+            "unit": "oz"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "149 g dark chocolate (5 1/4 ounces), coarsely chopped (1 cup), between 64 and 70% cacao",
+      "expected": {
+        "item": "dark chocolate, coarsely chopped, between 64 and 70% cacao",
+        "measurements": [
+          {
+            "amount": "149",
+            "unit": "g"
+          },
+          {
+            "amount": "5 1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Flaky salt, such as Maldon, to garnish, optional",
+      "expected": {
+        "item": "Flaky salt, such as Maldon, to garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

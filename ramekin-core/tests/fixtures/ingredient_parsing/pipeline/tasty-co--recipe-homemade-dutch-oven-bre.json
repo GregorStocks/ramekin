@@ -1,0 +1,79 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-homemade-dutch-oven-bre",
+  "ingredients": [
+    {
+      "raw": "2 cups lukewarm water, between 90˚-110˚F (30˚-40˚C)",
+      "expected": {
+        "item": "lukewarm water, between 90˚-110˚F",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 envelope active dry yeast",
+      "expected": {
+        "item": "envelope active dry yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups all-purpose flour, lightly packed and leveled off, plus more for dusting",
+      "expected": {
+        "item": "all-purpose flour, lightly packed and leveled off",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for dusting"
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

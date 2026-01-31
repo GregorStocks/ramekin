@@ -1,0 +1,71 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "homemade-apple-pie-spice-recip",
+  "ingredients": [
+    {
+      "raw": "3 tbsp ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tsp ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp ginger",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp cardamom",
+      "expected": {
+        "item": "cardamom",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp allspice",
+      "expected": {
+        "item": "allspice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

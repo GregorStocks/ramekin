@@ -1,0 +1,44 @@
+{
+  "source": "paprika",
+  "recipe_slug": "sheet-pan-steak-rainbow-veg",
+  "ingredients": [
+    {
+      "raw": "4 oz sirloin, sliced ¾ inch (raw ≈ 180 kcal, 28 g P)",
+      "expected": {
+        "item": "sirloin, sliced 3/4 inch",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "raw ≈ 180 kcal, 28 g P"
+      }
+    },
+    {
+      "raw": "2 cups chopped bell pepper, zucchini, broccoli",
+      "expected": {
+        "item": "chopped bell pepper, zucchini, broccoli",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Spice rub: smoked paprika + garlic powder + salt/pepper",
+      "expected": {
+        "item": "Spice rub: smoked paprika + garlic powder + salt/pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

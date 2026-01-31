@@ -1,0 +1,176 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-creamy-lemon-chicken",
+  "ingredients": [
+    {
+      "raw": "2 boneless, skinless chicken breasts",
+      "expected": {
+        "item": "boneless, skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "pepper, to taste",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 cup flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ¼ cups chicken stock",
+      "expected": {
+        "item": "chicken stock",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lemon, juiced",
+      "expected": {
+        "item": "lemon, juiced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lemon, sliced",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "fresh parsley, for garnish",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

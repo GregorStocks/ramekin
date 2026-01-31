@@ -1,0 +1,152 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "blueberry-lemon-baked-french-t",
+  "ingredients": [
+    {
+      "raw": "3  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup half and half (or 1/2 cup milk, plus 1/2 cup heavy cream)",
+      "expected": {
+        "item": "half and half (or 1/2 cup milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1/2 cup heavy cream)"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup light brown sugar",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon zest (minced)",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 cup blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "148",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small loaf Challah (sliced into 1\" cubes, about 6 cups worth)",
+      "expected": {
+        "item": "loaf Challah",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "sliced into 1\" cubes, about 6 cups worth"
+      }
+    },
+    {
+      "raw": "2/3 cup maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "210",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "46",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

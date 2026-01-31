@@ -1,0 +1,83 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "10156-minted-green-iced-tea-re",
+  "ingredients": [
+    {
+      "raw": "6 green tea bags",
+      "expected": {
+        "item": "green tea bags",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups water or more to taste",
+      "expected": {
+        "item": "water or more to taste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sugar, optional",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "8 mint leaves",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 orange, thinly sliced",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

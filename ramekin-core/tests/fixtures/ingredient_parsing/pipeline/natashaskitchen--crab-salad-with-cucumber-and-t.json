@@ -1,0 +1,84 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "crab-salad-with-cucumber-and-t",
+  "ingredients": [
+    {
+      "raw": "l lb (16 oz package of Imitation crab meat, chopped/shredded up into small pieces)",
+      "expected": {
+        "item": "lb",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "l"
+          }
+        ],
+        "note": "16 oz package of Imitation crab meat, chopped/shredded up into small pieces"
+      }
+    },
+    {
+      "raw": "1  English One long cucumber (diced small)",
+      "expected": {
+        "item": "English One long cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced small"
+      }
+    },
+    {
+      "raw": "2  medium tomatoes (diced and drained of any excess juice)",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced and drained of any excess juice"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped Green onions (fresh or frozen)",
+      "expected": {
+        "item": "chopped Green onions",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "fresh or frozen"
+      }
+    },
+    {
+      "raw": "3 cloves of garlic (pressed)",
+      "expected": {
+        "item": "garlic (pressed)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise (or to taste (I'm keeping it healthier with a a vegenaise))",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or to taste (I'm keeping it healthier with a a vegenaise"
+      }
+    }
+  ]
+}

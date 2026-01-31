@@ -1,0 +1,126 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-ranch-pork-chops-potat",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pounds baby potatoes",
+      "expected": {
+        "item": "baby potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  pork chops (either boneless or bone-in will work)",
+      "expected": {
+        "item": "pork chops (either boneless or bone-in will work)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce ranch dressing mix ((1 oz package))",
+      "expected": {
+        "item": "ranch dressing mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon oregano (dry)",
+      "expected": {
+        "item": "oregano (dry)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh parsley (chopped)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

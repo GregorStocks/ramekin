@@ -1,0 +1,62 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "ramen-noodle-hack-recipe",
+  "ingredients": [
+    {
+      "raw": "160 g dry spaghetti (1.0-1.8mm depending on your preference)",
+      "expected": {
+        "item": "dry spaghetti",
+        "measurements": [
+          {
+            "amount": "160",
+            "unit": "g"
+          },
+          {
+            "amount": "1.0",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2000 ml water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2000",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2019-03-crispy-oven-roasted-br",
+  "ingredients": [
+    {
+      "raw": "1 bunch broccolini (rough ends trimmed off)",
+      "expected": {
+        "item": "broccolini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": "rough ends trimmed off"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "coarse flake sea salt or fleur de sel (for finishing)",
+      "expected": {
+        "item": "coarse flake sea salt or fleur de sel (for finishing)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

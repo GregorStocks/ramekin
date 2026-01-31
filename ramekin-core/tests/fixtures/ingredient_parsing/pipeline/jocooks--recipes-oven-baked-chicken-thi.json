@@ -1,0 +1,135 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-oven-baked-chicken-thi",
+  "ingredients": [
+    {
+      "raw": "2 pounds chicken thighs (bone-in skin-on)",
+      "expected": {
+        "item": "chicken thighs (bone-in skin-on)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon black pepper (or to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoons whole grain dijon mustard",
+      "expected": {
+        "item": "whole grain dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoons mustard",
+      "expected": {
+        "item": "mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "¼ teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "source": "paprika",
+  "recipe_slug": "marinara-sauce",
+  "ingredients": [
+    {
+      "raw": "Two 28-ounce cans good quality whole tomatoes, crushed by hand",
+      "expected": {
+        "item": "good quality whole tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "28-ounce cans"
+          }
+        ],
+        "note": "crushed by hand"
+      }
+    },
+    {
+      "raw": "1/4 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, diced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 small carrot, finely shredded",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely shredded"
+      }
+    },
+    {
+      "raw": "1 celery stalk, finely chopped",
+      "expected": {
+        "item": "celery stalk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "4 medium cloves garlic, minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon crushed red pepper",
+      "expected": {
+        "item": "crushed red pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh basil",
+      "expected": {
+        "item": "chopped fresh basil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

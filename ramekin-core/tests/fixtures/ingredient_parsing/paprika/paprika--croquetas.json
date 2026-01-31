@@ -1,0 +1,179 @@
+{
+  "source": "paprika",
+  "recipe_slug": "croquetas",
+  "ingredients": [
+    {
+      "raw": "2 cups (473 ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "473",
+            "unit": "ml"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ham ends or trimmings (optional; see notes)",
+      "expected": {
+        "item": "Ham ends or trimmings",
+        "measurements": [],
+        "note": "optional; see notes"
+      }
+    },
+    {
+      "raw": "4 tablespoons (60 g) unsalted butter (see notes)",
+      "expected": {
+        "item": "unsalted butter (see notes)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons (60 g) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 medium yellow onion (4 ounces; 113 g), finely minced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely minced"
+      }
+    },
+    {
+      "raw": "4 ounces (113 g) Spanish dry-cured ham, such as jamón serrano, minced (see notes)",
+      "expected": {
+        "item": "Spanish dry-cured ham, such as jamón serrano",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "minced (see notes)"
+      }
+    },
+    {
+      "raw": "1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided",
+      "expected": {
+        "item": "plus 2 tablespoons all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1 cup all-purpose flour (for dredging), divided"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch freshly grated nutmeg",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs, beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "1 1/2 cups panko breadcrumbs, for breading (see notes)",
+      "expected": {
+        "item": "panko breadcrumbs, for breading (see notes)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Vegetable of other neutral oil, for frying",
+      "expected": {
+        "item": "Vegetable of other neutral oil, for frying",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

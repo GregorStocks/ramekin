@@ -1,0 +1,92 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-fruit-juice-pops",
+  "ingredients": [
+    {
+      "raw": "2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-1/2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups unsweetened apple juice",
+      "expected": {
+        "item": "unsweetened apple juice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup unsweetened pineapple or orange juice",
+      "expected": {
+        "item": "unsweetened pineapple or orange juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "30 freezer pop molds or 20 paper cups (3 ounces each) and wooden pop sticks",
+      "expected": {
+        "item": "freezer pop molds or 20 paper cups and wooden pop sticks",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

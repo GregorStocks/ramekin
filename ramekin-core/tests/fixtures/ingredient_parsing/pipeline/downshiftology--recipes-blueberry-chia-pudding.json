@@ -1,0 +1,130 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-blueberry-chia-pudding",
+  "ingredients": [
+    {
+      "raw": "13.5 oz full fat coconut milk",
+      "expected": {
+        "item": "full fat coconut milk",
+        "measurements": [
+          {
+            "amount": "13.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "383",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "222",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  figs (quartered)",
+      "expected": {
+        "item": "figs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "2 tbsp hazelnuts (chopped)",
+      "expected": {
+        "item": "hazelnuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 tbsp maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "39",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

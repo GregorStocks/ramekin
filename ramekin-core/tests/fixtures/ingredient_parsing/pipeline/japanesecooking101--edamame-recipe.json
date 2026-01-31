@@ -1,0 +1,27 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "edamame-recipe",
+  "ingredients": [
+    {
+      "raw": "1 bag Edamame (frozen)",
+      "expected": {
+        "item": "Edamame",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bag"
+          }
+        ],
+        "note": "frozen"
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

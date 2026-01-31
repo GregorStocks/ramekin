@@ -1,0 +1,185 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "bibimbap-recipe",
+  "ingredients": [
+    {
+      "raw": "½  English cucumber (thinly sliced)",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "½ teaspoon rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1¼ teaspoons toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh mung bean sprouts",
+      "expected": {
+        "item": "fresh mung bean sprouts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded carrots",
+      "expected": {
+        "item": "shredded carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups baby spinach",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon tamari or soy sauce",
+      "expected": {
+        "item": "tamari or soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cooked short-grain white rice",
+      "expected": {
+        "item": "cooked short-grain white rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  fried eggs (or 1 cup cubed baked tofu)",
+      "expected": {
+        "item": "fried eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "or 1 cup cubed baked tofu"
+      }
+    },
+    {
+      "raw": "4 ounces sautéed shiitake mushrooms (optional)",
+      "expected": {
+        "item": "sautéed shiitake mushrooms",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 recipe Gochujang Sauce",
+      "expected": {
+        "item": "recipe Gochujang Sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sesame seeds",
+      "expected": {
+        "item": "Sesame seeds",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sea salt",
+      "expected": {
+        "item": "Sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kimchi (optional, for serving)",
+      "expected": {
+        "item": "Kimchi",
+        "measurements": [],
+        "note": "optional, for serving"
+      }
+    },
+    {
+      "raw": "Chopped scallions (optional, for serving)",
+      "expected": {
+        "item": "Chopped scallions",
+        "measurements": [],
+        "note": "optional, for serving"
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-moist-delicious-banana-",
+  "ingredients": [
+    {
+      "raw": "1/2  cup    butter (or margarine)",
+      "expected": {
+        "item": "butter (or margarine)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4  cups    sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2       eggs (beaten)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "3      ripe bananas, smashed  (about 1 cup)",
+      "expected": {
+        "item": "ripe bananas, smashed",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  cup    milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   cups    flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2-1   cup   chopped pecans (optional) or 1/2-1   cup    walnuts (optional)",
+      "expected": {
+        "item": "chopped pecans or 1/2-1 cup walnuts (optional)",
+        "measurements": [
+          {
+            "amount": "1/2-1",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

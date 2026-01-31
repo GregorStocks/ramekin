@@ -1,0 +1,88 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-parmesan-smashed-potat",
+  "ingredients": [
+    {
+      "raw": "2 pounds baby red potatoes, sliced in half (they should all be about the same size so they cook evenly)",
+      "expected": {
+        "item": "baby red potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced in half (they should all be about the same size so they cook evenly)"
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter, cut into tablespoons",
+      "expected": {
+        "item": "unsalted butter, cut into tablespoons",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup grated Parmigiano-Reggiano",
+      "expected": {
+        "item": "grated Parmigiano-Reggiano",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh chives, finely chopped (optional)",
+      "expected": {
+        "item": "fresh chives, finely chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-apricot-pineapple-jam",
+  "ingredients": [
+    {
+      "raw": "12 ounces dried apricots",
+      "expected": {
+        "item": "dried apricots",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can (20 ounces) crushed pineapple, undrained",
+      "expected": {
+        "item": "crushed pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "20",
+            "unit": "oz"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "undrained"
+      }
+    },
+    {
+      "raw": "1/2 cup grapefruit juice",
+      "expected": {
+        "item": "grapefruit juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "600",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "best-lemon-curd-recipe",
+  "ingredients": [
+    {
+      "raw": "4  lemons",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4  cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup lemon zest (from 3-4 lemons)",
+      "expected": {
+        "item": "lemon zest (from 3-4 lemons)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup lemon juice (from juicing 4 lemons)",
+      "expected": {
+        "item": "lemon juice (from juicing 4 lemons)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

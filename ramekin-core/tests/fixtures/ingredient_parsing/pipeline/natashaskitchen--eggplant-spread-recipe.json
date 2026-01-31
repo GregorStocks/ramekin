@@ -1,0 +1,109 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "eggplant-spread-recipe",
+  "ingredients": [
+    {
+      "raw": "2 lbs eggplant (peeled and diced)",
+      "expected": {
+        "item": "eggplant",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "2  bell peppers (preferably red, yellow, or orange, diced)",
+      "expected": {
+        "item": "bell peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "preferably red, yellow, or orange, diced"
+      }
+    },
+    {
+      "raw": "2 to 3  medium carrots (grated)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "medium"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1  medium onion (finely diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "3  medium tomatoes",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/2 tsp black pepper (or to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "Canola oil or extra light olive oil to sauté",
+      "expected": {
+        "item": "Canola oil or extra light olive oil to sauté",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

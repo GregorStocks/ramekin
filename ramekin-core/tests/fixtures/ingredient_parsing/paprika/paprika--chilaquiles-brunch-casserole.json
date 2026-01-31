@@ -1,0 +1,123 @@
+{
+  "source": "paprika",
+  "recipe_slug": "chilaquiles-brunch-casserole",
+  "ingredients": [
+    {
+      "raw": "12 small (6-inch) corn tortillas, quartered and fried until crisp",
+      "expected": {
+        "item": "corn tortillas",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "small"
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "quartered and fried until crisp"
+      }
+    },
+    {
+      "raw": "1 10 oz can red enchilada sauce",
+      "expected": {
+        "item": "red enchilada sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "10 oz can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 15 oz can black beans, drained and rinsed",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15 oz can"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "2 cups (8 ounces) coarsely grated shredded monterey jack or cheddar cheese (I used a mix)",
+      "expected": {
+        "item": "coarsely grated shredded monterey jack or cheddar cheese (I used a mix)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 to 8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6 to 8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Thinly sliced scallions, to serve",
+      "expected": {
+        "item": "Thinly sliced scallions, to serve",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sour cream, to serve",
+      "expected": {
+        "item": "Sour cream, to serve",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Diced avocado,  to serve",
+      "expected": {
+        "item": "Diced avocado,  to serve",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot sauce, to serve",
+      "expected": {
+        "item": "Hot sauce, to serve",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

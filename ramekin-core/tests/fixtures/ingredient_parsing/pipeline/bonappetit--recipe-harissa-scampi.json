@@ -1,0 +1,113 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-harissa-scampi",
+  "ingredients": [
+    {
+      "raw": "1 lb. extra-jumbo shrimp, peeled and deveined, tails left on",
+      "expected": {
+        "item": "extra-jumbo shrimp, peeled and deveined, tails left on",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt, freshly ground pepper",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "freshly ground pepper"
+      }
+    },
+    {
+      "raw": "1 head of garlic, cloves separated, divided",
+      "expected": {
+        "item": "garlic, cloves separated",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 Tbsp. extra-virgin olive oil, divided, plus more for drizzling",
+      "expected": {
+        "item": "extra-virgin olive oil, divided",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for drizzling"
+      }
+    },
+    {
+      "raw": "1 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp. harissa paste (such as New York Shuk)",
+      "expected": {
+        "item": "harissa paste (such as New York Shuk)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tbsp. unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup chopped parsley, divided",
+      "expected": {
+        "item": "chopped parsley",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

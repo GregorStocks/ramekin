@@ -1,0 +1,126 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-roasted-potatoes-carro",
+  "ingredients": [
+    {
+      "raw": "2 pounds small red potatoes, quartered",
+      "expected": {
+        "item": "small red potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "1 pound fresh baby carrots",
+      "expected": {
+        "item": "fresh baby carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons butter, melted",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 medium leeks (white portions only), halved lengthwise, cleaned and cut into 1-inch lengths",
+      "expected": {
+        "item": "leeks (white portions only), halved lengthwise",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "medium"
+          }
+        ],
+        "note": "cleaned and cut into 1-inch lengths"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    }
+  ]
+}

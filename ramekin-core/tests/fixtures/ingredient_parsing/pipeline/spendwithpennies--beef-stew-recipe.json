@@ -1,0 +1,247 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "beef-stew-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds stewing beef (trimmed and cubed)",
+      "expected": {
+        "item": "stewing beef",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cubed"
+      }
+    },
+    {
+      "raw": "3 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil (more as needed)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "more as needed"
+      }
+    },
+    {
+      "raw": "1  onion (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "6 cups beef broth",
+      "expected": {
+        "item": "beef broth",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup red wine (optional)",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 pound potatoes (peeled and cubed)",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cubed"
+      }
+    },
+    {
+      "raw": "4  carrots (cut into 1 inch pieces)",
+      "expected": {
+        "item": "carrots (cut into 1 inch pieces)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ribs celery (cut into 1 inch pieces)",
+      "expected": {
+        "item": "ribs celery (cut into 1 inch pieces)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dried rosemary (or 1 sprig fresh)",
+      "expected": {
+        "item": "dried rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 sprig fresh"
+      }
+    },
+    {
+      "raw": "2 tablespoons cornstarch (or as needed)",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": "or as needed"
+      }
+    },
+    {
+      "raw": "2 tablespoons water (or as needed)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or as needed"
+      }
+    },
+    {
+      "raw": "¾ cup peas",
+      "expected": {
+        "item": "peas",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

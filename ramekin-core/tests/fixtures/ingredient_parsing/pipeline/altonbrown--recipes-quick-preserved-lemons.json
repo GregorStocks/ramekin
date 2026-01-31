@@ -1,0 +1,32 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-quick-preserved-lemons",
+  "ingredients": [
+    {
+      "raw": "4  lemons, scrubbed and dried, plus the juice of 1 lemon",
+      "expected": {
+        "item": "lemons, scrubbed and dried",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "plus the juice of 1 lemon"
+      }
+    },
+    {
+      "raw": "1/4 cup kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

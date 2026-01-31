@@ -1,0 +1,109 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "goth-hummus-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups cooked black garbanzos, plus more for serving",
+      "expected": {
+        "item": "cooked black garbanzos",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "4-6 tablespoons lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  medium garlic cloves (black, optional)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "black, optional"
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup black tahini, plus 1 tablespoon",
+      "expected": {
+        "item": "black tahini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 tablespoon"
+      }
+    },
+    {
+      "raw": "1 cup ice cold water",
+      "expected": {
+        "item": "ice cold water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
+      "expected": {
+        "item": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

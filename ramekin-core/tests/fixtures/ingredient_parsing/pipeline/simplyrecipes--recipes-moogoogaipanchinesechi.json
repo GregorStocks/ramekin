@@ -1,0 +1,309 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-moogoogaipanchinesechi",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds boneless, skinless chicken breast",
+      "expected": {
+        "item": "boneless, skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups chicken stock",
+      "expected": {
+        "item": "chicken stock",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons corn starch",
+      "expected": {
+        "item": "corn starch",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon hoisin sauce",
+      "expected": {
+        "item": "hoisin sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon oyster sauce",
+      "expected": {
+        "item": "oyster sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Chinese five spice powder",
+      "expected": {
+        "item": "Chinese five spice powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch ground white pepper",
+      "expected": {
+        "item": "ground white pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 carrots, peeled and sliced thinly on a diagonal",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced thinly on a diagonal"
+      }
+    },
+    {
+      "raw": "3/4 cup (3 ounces) snow peas",
+      "expected": {
+        "item": "snow peas",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons grated fresh garlic",
+      "expected": {
+        "item": "grated fresh garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoons grated fresh ginger",
+      "expected": {
+        "item": "grated fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (5 ounces) shiitake (or white button) mushrooms, sliced",
+      "expected": {
+        "item": "shiitake (or white button) mushrooms",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1/3 cup (4 ounces) canned water chestnuts, drained",
+      "expected": {
+        "item": "canned water chestnuts",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1/3 cup (4 ounces) canned bamboo shoots, drained",
+      "expected": {
+        "item": "canned bamboo shoots",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "Kosher salt, to taste",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "6 cups cooked jasmine rice",
+      "expected": {
+        "item": "cooked jasmine rice",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

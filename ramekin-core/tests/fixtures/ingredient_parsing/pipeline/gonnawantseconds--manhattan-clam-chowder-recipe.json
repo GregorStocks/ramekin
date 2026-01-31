@@ -1,0 +1,200 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "manhattan-clam-chowder-recipe",
+  "ingredients": [
+    {
+      "raw": "2 slices thick cut bacon (cut into 1/4-inch pieces)",
+      "expected": {
+        "item": "thick cut bacon (cut into 1/4-inch pieces)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups yellow onion (chopped)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup red bell pepper (chopped)",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 stalks  celery (chopped)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stalk"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "6 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "pinch crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup white wine",
+      "expected": {
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 (8-ounce) bottles clam juice",
+      "expected": {
+        "item": "clam juice",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "bottle"
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons dried Italian seasoning",
+      "expected": {
+        "item": "dried Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large Russet potatoes (peeled and cubed)",
+      "expected": {
+        "item": "Russet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and cubed"
+      }
+    },
+    {
+      "raw": "1 (28-ounce) can  diced tomatoes, including juices (roughly chopped)",
+      "expected": {
+        "item": "diced tomatoes, including juices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "28",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "6 (6.5-ounce) cans  minced clams (drained)",
+      "expected": {
+        "item": "minced clams",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "can"
+          },
+          {
+            "amount": "6.5",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    }
+  ]
+}

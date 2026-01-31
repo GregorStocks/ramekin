@@ -1,0 +1,114 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-clean-green-smoothie-b",
+  "ingredients": [
+    {
+      "raw": "2 cups of spinach ((or other leafy green))",
+      "expected": {
+        "item": "spinach (or other leafy green)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup coconut water ((or plain water))",
+      "expected": {
+        "item": "coconut water (or plain water)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  bananas, (sliced and frozen)",
+      "expected": {
+        "item": "bananas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced and frozen"
+      }
+    },
+    {
+      "raw": "1/2  avocado",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  kiwi fruit, (peeled and sliced)",
+      "expected": {
+        "item": "kiwi fruit",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced"
+      }
+    },
+    {
+      "raw": "1/2 cup blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "74",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup coconut flakes",
+      "expected": {
+        "item": "coconut flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp sunflower seeds",
+      "expected": {
+        "item": "sunflower seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

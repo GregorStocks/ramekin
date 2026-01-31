@@ -1,0 +1,49 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "cheesy-baked-spaghetti-recipe",
+  "ingredients": [
+    {
+      "raw": "4 ounces spaghetti",
+      "expected": {
+        "item": "spaghetti",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 cups bolognese or meat sauce",
+      "expected": {
+        "item": "bolognese or meat sauce",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 cups shredded cheese, depending on how cheesy you’re feeling",
+      "expected": {
+        "item": "shredded cheese, depending on how cheesy you’re feeling",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

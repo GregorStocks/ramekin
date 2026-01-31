@@ -1,0 +1,180 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "roasted-oysters-with-bacon-and",
+  "ingredients": [
+    {
+      "raw": "4 slices thick-cut bacon, finely chopped",
+      "expected": {
+        "item": "thick-cut bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 tablespoons (28 g) unsalted butter, divided",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 medium clove garlic, minced",
+      "expected": {
+        "item": "clove garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) Dijon or whole-grain mustard",
+      "expected": {
+        "item": "Dijon or whole-grain mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) lemon juice, plus lemon wedges for serving",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "5.1",
+            "unit": "g"
+          }
+        ],
+        "note": "plus lemon wedges for serving"
+      }
+    },
+    {
+      "raw": "1/3 cup finely grated Parmigiano-Reggiano cheese (preferably microplaned)",
+      "expected": {
+        "item": "finely grated Parmigiano-Reggiano cheese (preferably microplaned)",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (TK g) panko bread crumbs",
+      "expected": {
+        "item": "(TK g) panko bread crumbs",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (15 g) minced flat-leaf parsley, plus more for garnish",
+      "expected": {
+        "item": "minced flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "24 fresh raw oysters, about 3 inches long, well scrubbed",
+      "expected": {
+        "item": "fresh raw oysters, about 3 inches long",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": "well scrubbed"
+      }
+    }
+  ]
+}

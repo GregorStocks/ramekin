@@ -1,0 +1,105 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "tuna-jaga-recipe",
+  "ingredients": [
+    {
+      "raw": "4  potatoes, medium",
+      "expected": {
+        "item": "potatoes, medium",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can tuna",
+      "expected": {
+        "item": "tuna",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp ginger root, grated",
+      "expected": {
+        "item": "ginger root",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.0",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    }
+  ]
+}

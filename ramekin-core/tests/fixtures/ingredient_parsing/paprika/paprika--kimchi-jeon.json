@@ -1,0 +1,164 @@
+{
+  "source": "paprika",
+  "recipe_slug": "kimchi-jeon",
+  "ingredients": [
+    {
+      "raw": "Dipping Sauce:",
+      "expected": {
+        "item": "Dipping Sauce:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "65g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "80ml soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "80",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "80ml water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "80",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7ml unseasoned rice vinegar",
+      "expected": {
+        "item": "unseasoned rice vinegar",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Pancake:",
+      "expected": {
+        "item": "Pancake:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup (1¼ ounces/35 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": null
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg white",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cabbage kimchi, drained with 2 tablespoons juice reserved, chopped coarse",
+      "expected": {
+        "item": "cabbage kimchi, drained with 2 tablespoons juice reserved",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped coarse"
+      }
+    },
+    {
+      "raw": "4 scallions, white parts sliced thin, green parts cut into 1-inch lengths",
+      "expected": {
+        "item": "scallions, white parts sliced thin, green parts cut into 1-inch lengths",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons vegetable oil, divided",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

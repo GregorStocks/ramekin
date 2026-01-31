@@ -1,0 +1,82 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "baked-brie-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "1 Round of Brie ((8-12oz 227-340g))",
+      "expected": {
+        "item": "Round of Brie",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces sun-dried tomatoes ( packed in oil, drained &amp;amp; chopped (@ 1/4 cup))",
+      "expected": {
+        "item": "sun-dried tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "packed in oil, drained & chopped (@ 1/4 cup"
+      }
+    },
+    {
+      "raw": "2 cloves garlic (, sliced thin)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fresh thyme leaves ( or dried thyme )",
+      "expected": {
+        "item": "fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or dried thyme"
+      }
+    },
+    {
+      "raw": "fresh cracked black pepper",
+      "expected": {
+        "item": "fresh cracked black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "* Crackers, bread, nuts and/or fruit  (, for serving)",
+      "expected": {
+        "item": "* Crackers, bread, nuts and/or fruit",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

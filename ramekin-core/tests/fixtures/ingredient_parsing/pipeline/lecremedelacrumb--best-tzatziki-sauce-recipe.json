@@ -1,0 +1,114 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "best-tzatziki-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2  english cucumber (peeled and finely grated, see note)",
+      "expected": {
+        "item": "english cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and finely grated, see note"
+      }
+    },
+    {
+      "raw": "1 cup plain Greek yogurt (see note)",
+      "expected": {
+        "item": "plain Greek yogurt (see note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 teaspoons minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped fresh baby dill",
+      "expected": {
+        "item": "finely chopped fresh baby dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh-squeezed lemon juice",
+      "expected": {
+        "item": "fresh-squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cracked black pepper (or to taste)",
+      "expected": {
+        "item": "cracked black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

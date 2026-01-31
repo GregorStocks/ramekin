@@ -1,0 +1,114 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "cheese-quesadilla-recipe",
+  "ingredients": [
+    {
+      "raw": "6  large flour tortillas",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces cream cheese (room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1 cup Mozzarella (grated )",
+      "expected": {
+        "item": "Mozzarella",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 cup cheddar cheese (grated)",
+      "expected": {
+        "item": "cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 cup white cheese (grated )",
+      "expected": {
+        "item": "white cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1  jalapeno or chili (cut into rounds)",
+      "expected": {
+        "item": "jalapeno or chili (cut into rounds)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons parsley (chopped)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "6 tablespoons butter (for frying)",
+      "expected": {
+        "item": "butter (for frying)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

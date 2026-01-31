@@ -1,0 +1,131 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "segedinsky-gulas-goulash-recip",
+  "ingredients": [
+    {
+      "raw": "1200 grams pork shoulder ((cut into 2-inch chunks))",
+      "expected": {
+        "item": "pork shoulder (cut into 2-inch chunks)",
+        "measurements": [
+          {
+            "amount": "1200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 medium onions ((thinly sliced))",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "3 cloves garlic ((minced))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3 large Anaheim peppers ((chopped))",
+      "expected": {
+        "item": "Anaheim peppers",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 large tomatoes ((chopped))",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups sauerkraut ((drained))",
+      "expected": {
+        "item": "sauerkraut",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "2 tablespoons Hungarian sweet paprika",
+      "expected": {
+        "item": "Hungarian sweet paprika",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

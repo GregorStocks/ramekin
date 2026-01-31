@@ -1,0 +1,73 @@
+{
+  "source": "paprika",
+  "recipe_slug": "snacky-asparagus",
+  "ingredients": [
+    {
+      "raw": "1 pound fresh asparagus, woody ends trimmed or snapped",
+      "expected": {
+        "item": "fresh asparagus",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "woody ends trimmed or snapped"
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lemon, halved",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "Flaky sea salt",
+      "expected": {
+        "item": "Flaky sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red pepper flakes",
+      "expected": {
+        "item": "Red pepper flakes",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons mayo or another dressing",
+      "expected": {
+        "item": "mayo or another dressing",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

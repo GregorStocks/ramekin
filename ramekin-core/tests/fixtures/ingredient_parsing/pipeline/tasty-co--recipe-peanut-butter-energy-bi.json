@@ -1,0 +1,79 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-peanut-butter-energy-bi",
+  "ingredients": [
+    {
+      "raw": "⅔ cup creamy peanut butter",
+      "expected": {
+        "item": "creamy peanut butter",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup old-fashioned oats, plus extra for rolling",
+      "expected": {
+        "item": "old-fashioned oats",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for rolling"
+      }
+    },
+    {
+      "raw": "1 ½ tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup mini chocolate chips, plus more for rolling",
+      "expected": {
+        "item": "mini chocolate chips",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for rolling"
+      }
+    },
+    {
+      "raw": "¼ cup flax seeds, optional",
+      "expected": {
+        "item": "flax seeds",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

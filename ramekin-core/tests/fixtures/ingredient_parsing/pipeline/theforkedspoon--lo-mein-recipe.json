@@ -1,0 +1,230 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "lo-mein-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon dark soy sauce",
+      "expected": {
+        "item": "dark soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon oyster sauce",
+      "expected": {
+        "item": "oyster sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon hoisin sauce",
+      "expected": {
+        "item": "hoisin sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound boneless skinless chicken thighs (thinly sliced or chopped)",
+      "expected": {
+        "item": "boneless skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced or chopped"
+      }
+    },
+    {
+      "raw": "½  yellow onion (sliced)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1  red bell pepper  (seeded and thinly sliced)",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 cup carrots (sliced into thin matchsticks)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "sliced into thin matchsticks"
+      }
+    },
+    {
+      "raw": "1 cup snow peas",
+      "expected": {
+        "item": "snow peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh ginger (grated)",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 pound egg noodles",
+      "expected": {
+        "item": "egg noodles",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

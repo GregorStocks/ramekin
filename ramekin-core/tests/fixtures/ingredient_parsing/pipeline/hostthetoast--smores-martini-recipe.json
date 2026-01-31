@@ -1,0 +1,125 @@
+{
+  "source": "hostthetoast",
+  "recipe_slug": "smores-martini-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup marshmallow fluff",
+      "expected": {
+        "item": "marshmallow fluff",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 crushed graham crackers",
+      "expected": {
+        "item": "crushed graham crackers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ ounces marshmallow vodka",
+      "expected": {
+        "item": "marshmallow vodka",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce Irish cream",
+      "expected": {
+        "item": "Irish cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce heavy cream (or half-and-half)",
+      "expected": {
+        "item": "heavy cream (or half-and-half)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce chocolate syrup, plus more to drizzle in the glass",
+      "expected": {
+        "item": "chocolate syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to drizzle in the glass"
+      }
+    },
+    {
+      "raw": "½ ounce Drambuie",
+      "expected": {
+        "item": "Drambuie",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toasted jumbo marshmallows",
+      "expected": {
+        "item": "Toasted jumbo marshmallows",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

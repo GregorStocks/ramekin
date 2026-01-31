@@ -1,0 +1,99 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "guava-margaritas-recipe",
+  "ingredients": [
+    {
+      "raw": "3 ounces Guava Juice",
+      "expected": {
+        "item": "Guava Juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces Tequila&nbsp;",
+      "expected": {
+        "item": "Tequila",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 ounce fresh Lime Juice",
+      "expected": {
+        "item": "fresh Lime Juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce Orange Liqueur ((triple sec, Grand Marnier, Cointreau, etc.))",
+      "expected": {
+        "item": "Orange Liqueur (triple sec, Grand Marnier, Cointreau, etc.)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce Simple Syrup ( or Agave Nectar (or to taste))",
+      "expected": {
+        "item": "Simple Syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "or Agave Nectar (or to taste"
+      }
+    },
+    {
+      "raw": "flaky salt (, optional to salt the glass rim)",
+      "expected": {
+        "item": "flaky salt",
+        "measurements": [],
+        "note": "optional to salt the glass rim"
+      }
+    }
+  ]
+}

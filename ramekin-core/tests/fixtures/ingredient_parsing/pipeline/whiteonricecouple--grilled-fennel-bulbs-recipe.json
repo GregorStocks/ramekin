@@ -1,0 +1,81 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "grilled-fennel-bulbs-recipe",
+  "ingredients": [
+    {
+      "raw": "3  Fennel bulbs",
+      "expected": {
+        "item": "Fennel bulbs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt (, to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "fresh cracked black pepper (, to taste)",
+      "expected": {
+        "item": "fresh cracked black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/4 cup grated parmesan cheese",
+      "expected": {
+        "item": "grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "lemon juice (, to taste)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "vegetable oil ( for oiling bbq grate)",
+      "expected": {
+        "item": "vegetable oil ( for oiling bbq grate)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

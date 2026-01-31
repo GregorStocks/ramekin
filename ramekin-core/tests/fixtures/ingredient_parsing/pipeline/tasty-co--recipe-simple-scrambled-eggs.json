@@ -1,0 +1,52 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-simple-scrambled-eggs",
+  "ingredients": [
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt, to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "freshly ground black pepper, to taste",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

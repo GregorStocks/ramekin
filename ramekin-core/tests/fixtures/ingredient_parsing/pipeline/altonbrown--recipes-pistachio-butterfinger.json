@@ -1,0 +1,105 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-pistachio-butterfinger",
+  "ingredients": [
+    {
+      "raw": "1 cup roasted, salted pistachios",
+      "expected": {
+        "item": "roasted, salted pistachios",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 cups plus 1 1/2 teaspoons sugar",
+      "expected": {
+        "item": "1 1/4 cups plus 1 1/2 teaspoons sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 1/2 teaspoons sugar"
+      }
+    },
+    {
+      "raw": "1/2 cup corn flakes",
+      "expected": {
+        "item": "corn flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons plus 1/2 teaspoon light corn syrup",
+      "expected": {
+        "item": "3 tablespoons plus 1/2 teaspoon light corn syrup",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 1/2 teaspoon light corn syrup"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound high-quality milk chocolate, in couverture discs or finely chopped",
+      "expected": {
+        "item": "high-quality milk chocolate",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "in couverture discs or finely chopped"
+      }
+    }
+  ]
+}

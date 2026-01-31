@@ -1,0 +1,105 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "alfredo-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "4 tablespoon butter (salted or unsalted)",
+      "expected": {
+        "item": "butter (salted or unsalted)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic (minced, optional)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced, optional"
+      }
+    },
+    {
+      "raw": "1 tablespoon flour (optional, see notes)",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
+          }
+        ],
+        "note": "optional, see notes"
+      }
+    },
+    {
+      "raw": "¼ teaspoon salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "¼ teaspoon black pepper (plus more to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "2 cups heavy whipping cream",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup parmesan cheese (freshly grated)",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated"
+      }
+    }
+  ]
+}

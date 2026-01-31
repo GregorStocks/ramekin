@@ -1,0 +1,74 @@
+{
+  "source": "marthastewart",
+  "recipe_slug": "1038811-popovers-recipe",
+  "ingredients": [
+    {
+      "raw": "3 large eggs, room temperature",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1.5 cups whole milk, room temperature",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1.5 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "188",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.25 teaspoons coarse salt",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Vegetable-oil nonstick cooking spray",
+      "expected": {
+        "item": "Vegetable-oil nonstick cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

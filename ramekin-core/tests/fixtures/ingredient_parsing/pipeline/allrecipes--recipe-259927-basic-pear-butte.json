@@ -1,0 +1,49 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-259927-basic-pear-butte",
+  "ingredients": [
+    {
+      "raw": "3 large chopped peeled pears",
+      "expected": {
+        "item": "chopped peeled pears",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

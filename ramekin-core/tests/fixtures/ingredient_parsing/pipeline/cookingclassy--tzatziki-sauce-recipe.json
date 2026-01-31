@@ -1,0 +1,100 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "tzatziki-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup whole Greek yogurt, (preferably Fage (important see notes*))",
+      "expected": {
+        "item": "whole Greek yogurt, (preferably Fage (important see notes*)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 oz.  English cucumber**, (peeled if desired, seeded)",
+      "expected": {
+        "item": "English cucumber**",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled if desired, seeded"
+      }
+    },
+    {
+      "raw": "1 1/2 Tbsp chopped fresh dill***",
+      "expected": {
+        "item": "chopped fresh dill***",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  garlic clove, (finely minced (1 tsp))",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely minced (1 tsp"
+      }
+    },
+    {
+      "raw": "1 Tbsp extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sea salt (or table salt, to taste and optionally black pepper)",
+      "expected": {
+        "item": "Sea salt",
+        "measurements": [],
+        "note": "or table salt, to taste and optionally black pepper"
+      }
+    }
+  ]
+}

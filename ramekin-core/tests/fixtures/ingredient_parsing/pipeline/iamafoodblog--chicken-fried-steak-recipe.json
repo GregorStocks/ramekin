@@ -1,0 +1,151 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "chicken-fried-steak-recipe",
+  "ingredients": [
+    {
+      "raw": "1 steak of choice (most people choose round steak and then pound it, I used chuck and didn’t pound)",
+      "expected": {
+        "item": "steak of choice (most people choose round steak and then pound it, I used chuck and didn’t pound)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground pepper",
+      "expected": {
+        "item": "freshly ground pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg, lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "oil for pan-frying",
+      "expected": {
+        "item": "oil for pan-frying",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons duck fat",
+      "expected": {
+        "item": "duck fat",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

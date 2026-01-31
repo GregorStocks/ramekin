@@ -1,0 +1,121 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-crispy-okra-salad",
+  "ingredients": [
+    {
+      "raw": "1 1/4 teaspoons garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon amchur powder (optional, see Note)",
+      "expected": {
+        "item": "amchur powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional, see Note"
+      }
+    },
+    {
+      "raw": "Vegetable oil, for frying",
+      "expected": {
+        "item": "Vegetable oil, for frying",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound young okra — halved lengthwise and cut into long, thin strips",
+      "expected": {
+        "item": "young okra - halved lengthwise and cut into long, thin strips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 small red onion, very thinly sliced (3/4 cup)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "very thinly sliced"
+      }
+    },
+    {
+      "raw": "1 medium tomato — cored, seeded and sliced into thin strips",
+      "expected": {
+        "item": "tomato - cored",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "seeded and sliced into thin strips"
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely chopped cilantro",
+      "expected": {
+        "item": "coarsely chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

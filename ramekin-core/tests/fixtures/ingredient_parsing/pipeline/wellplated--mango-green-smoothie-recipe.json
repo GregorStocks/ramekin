@@ -1,0 +1,66 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "mango-green-smoothie-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups frozen mango pieces (about 10 ounces)",
+      "expected": {
+        "item": "frozen mango pieces",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  ripe banana (cut into chunks)",
+      "expected": {
+        "item": "ripe banana (cut into chunks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup packed baby spinach leaves",
+      "expected": {
+        "item": "packed baby spinach leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup&nbsp; unsweetened almond milk",
+      "expected": {
+        "item": "unsweetened almond milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

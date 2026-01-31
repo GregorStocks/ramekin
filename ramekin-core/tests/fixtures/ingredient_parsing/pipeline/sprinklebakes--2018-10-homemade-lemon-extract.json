@@ -1,0 +1,32 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2018-10-homemade-lemon-extract",
+  "ingredients": [
+    {
+      "raw": "18  organic lemons",
+      "expected": {
+        "item": "organic lemons",
+        "measurements": [
+          {
+            "amount": "18",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.75 liter bottle vodka",
+      "expected": {
+        "item": "bottle vodka",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

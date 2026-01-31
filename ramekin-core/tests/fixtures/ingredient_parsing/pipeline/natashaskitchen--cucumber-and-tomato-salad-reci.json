@@ -1,0 +1,130 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "cucumber-and-tomato-salad-reci",
+  "ingredients": [
+    {
+      "raw": "4-6  medium (2 lbs tomatoes)",
+      "expected": {
+        "item": "4-6  medium (2 lbs tomatoes)",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-5  small (1 lb cucumbers, or 1 english cucumber))",
+      "expected": {
+        "item": "4-5  small (1 lb cucumbers, or 1 english cucumber))",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small onion (thinly sliced (~1/4 lb))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "thinly sliced (~1/4 lb"
+      }
+    },
+    {
+      "raw": "2 Tbsp Sunflower or Extra virgin olive oil",
+      "expected": {
+        "item": "Sunflower or Extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp distilled white vinegar",
+      "expected": {
+        "item": "distilled white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp fine sea salt (or 3/4 tsp table salt)",
+      "expected": {
+        "item": "fine sea salt (or 3/4 tsp table salt)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp Pepper to taste",
+      "expected": {
+        "item": "Pepper to taste",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Green onion for garnish (optional)",
+      "expected": {
+        "item": "Green onion for garnish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "white-peach-iced-tea-recipe",
+  "ingredients": [
+    {
+      "raw": "3  peaches (ripe white, sliced)",
+      "expected": {
+        "item": "peaches",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "ripe white, sliced"
+      }
+    },
+    {
+      "raw": "1 cup granulated sugar (or a a granulated natural sweetener that measures 1:1 with sugar)",
+      "expected": {
+        "item": "granulated sugar (or a a granulated natural sweetener that measures 1:1 with sugar)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  tea bags (any good-quality black tea - adjust to your tastes, more tea bags for stronger tea; less tea bags for weaker tea)",
+      "expected": {
+        "item": "tea bags (any good-quality black tea - adjust to your tastes, more tea bags for stronger tea; less tea bags for weaker tea)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

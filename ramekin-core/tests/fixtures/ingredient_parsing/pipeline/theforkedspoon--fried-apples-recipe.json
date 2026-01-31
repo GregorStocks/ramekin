@@ -1,0 +1,92 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "fried-apples-recipe",
+  "ingredients": [
+    {
+      "raw": "3/4 cup salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 medium  red apples (unpeeled and chopped into cubes)",
+      "expected": {
+        "item": "red apples",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "medium"
+          }
+        ],
+        "note": "unpeeled and chopped into cubes"
+      }
+    },
+    {
+      "raw": "1/2  lemon (juiced)",
+      "expected": {
+        "item": "lemon (juiced)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup brown sugar (packed, plus more to taste)",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": "packed, plus more to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground nutmeg (optional)",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

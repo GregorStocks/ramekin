@@ -1,0 +1,97 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-prime-rib-tacos",
+  "ingredients": [
+    {
+      "raw": "2  tortillas",
+      "expected": {
+        "item": "tortillas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 slice prime rib roast (warmed)",
+      "expected": {
+        "item": "prime rib roast (warmed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  avocado (sliced)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 tablespoons salsa",
+      "expected": {
+        "item": "salsa",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons queso fresco",
+      "expected": {
+        "item": "queso fresco",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh cilantro leaves",
+      "expected": {
+        "item": "fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  lime (sliced)",
+      "expected": {
+        "item": "lime",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    }
+  ]
+}

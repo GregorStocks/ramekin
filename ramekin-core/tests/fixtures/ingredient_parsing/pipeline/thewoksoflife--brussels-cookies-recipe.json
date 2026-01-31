@@ -1,0 +1,135 @@
+{
+  "source": "thewoksoflife",
+  "recipe_slug": "brussels-cookies-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup sugar ((plus 2 tablespoons/18g))",
+      "expected": {
+        "item": "sugar (plus 2 tablespoons/18g)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 tablespoons butter ((at room temperature))",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "46",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup ground oat bran ((or steel cut oats, ground into a flour in a blender))",
+      "expected": {
+        "item": "ground oat bran",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or steel cut oats, ground into a flour in a blender"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz. dark or semisweet chocolate chips",
+      "expected": {
+        "item": "dark or semisweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

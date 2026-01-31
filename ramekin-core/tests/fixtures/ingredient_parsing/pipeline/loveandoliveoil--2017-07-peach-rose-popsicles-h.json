@@ -1,0 +1,87 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2017-07-peach-rose-popsicles-h",
+  "ingredients": [
+    {
+      "raw": "4 medium peaches (about 1 1/4 pounds), pitted and coarsely chopped (about 4 cups chopped)",
+      "expected": {
+        "item": "peaches, pitted and coarsely chopped",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "about 4 cups chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup rosé wine",
+      "expected": {
+        "item": "rosé wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium peach, pitted and sliced, for garnish (optional)",
+      "expected": {
+        "item": "peach, pitted and sliced, for garnish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

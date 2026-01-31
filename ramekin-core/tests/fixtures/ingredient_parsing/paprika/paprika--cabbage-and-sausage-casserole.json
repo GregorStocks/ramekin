@@ -1,0 +1,85 @@
+{
+  "source": "paprika",
+  "recipe_slug": "cabbage-and-sausage-casserole",
+  "ingredients": [
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound fresh sweet Italian pork sausages or bulk sausage meat",
+      "expected": {
+        "item": "fresh sweet Italian pork sausages or bulk sausage meat",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large green or Savoy cabbage (2 pounds), cored and thickly shredded",
+      "expected": {
+        "item": "green or Savoy cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "cored and thickly shredded"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Crusty bread and coarse mustard, for serving",
+      "expected": {
+        "item": "Crusty bread and coarse mustard",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

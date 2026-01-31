@@ -1,0 +1,193 @@
+{
+  "source": "paprika",
+  "recipe_slug": "lentil-soup-with-sausage-char",
+  "ingredients": [
+    {
+      "raw": "1/2 cup olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 large links (about 8 ounces) of sweet Italian sausage [see Note]",
+      "expected": {
+        "item": "links of sweet Italian sausage [see Note]",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 celery ribs, sliced or diced",
+      "expected": {
+        "item": "celery ribs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced or diced"
+      }
+    },
+    {
+      "raw": "2 medium carrots, peeled and sliced into half-moons or diced",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and sliced into half-moons or diced"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, sliced (reserve half for later in recipe)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "sliced (reserve half for later in recipe)"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "A pinch of crushed red pepper flakes (optional)",
+      "expected": {
+        "item": "A pinch of crushed red pepper flakes",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cup brown lentils, sorted and rinsed",
+      "expected": {
+        "item": "brown lentils",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "sorted and rinsed"
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 28-ounce can crushed tomatoes",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 to 4 cups shredded or thinly ribboned Swiss chard leaves or kale",
+      "expected": {
+        "item": "shredded or thinly ribboned Swiss chard leaves or kale",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Grated Pecorino Romano cheese to finish",
+      "expected": {
+        "item": "Grated Pecorino Romano cheese to finish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

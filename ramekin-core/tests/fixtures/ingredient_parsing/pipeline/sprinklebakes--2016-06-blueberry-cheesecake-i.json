@@ -1,0 +1,96 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-06-blueberry-cheesecake-i",
+  "ingredients": [
+    {
+      "raw": "8 ounces cream cheese (at room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "2 cups 540g plain unsweet yogurt, at room temperature",
+      "expected": {
+        "item": "plain unsweet yogurt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "540",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1/2 cup 100 g sugar",
+      "expected": {
+        "item": "100 g sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces blueberry preserves (melted)",
+      "expected": {
+        "item": "blueberry preserves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1 cup 100 g fresh blueberries",
+      "expected": {
+        "item": "100 g fresh blueberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "source": "paprika",
+  "recipe_slug": "hash-brown-patties",
+  "ingredients": [
+    {
+      "raw": "1 pound russet potato(es), peeled, and cut into 1-inch chunks",
+      "expected": {
+        "item": "russet potato(es), peeled, and cut into 1-inch chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon potato starch",
+      "expected": {
+        "item": "potato starch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Neutral, high-heat oil for frying",
+      "expected": {
+        "item": "Neutral, high-heat oil for frying",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

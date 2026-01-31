@@ -1,0 +1,58 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "men-tsuyu-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup Soy Sauce",
+      "expected": {
+        "item": "Soy Sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Sake (Japanese rice wine)",
+      "expected": {
+        "item": "Sake (Japanese rice wine)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful of Dried Bonito Flakes",
+      "expected": {
+        "item": "Dried Bonito Flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

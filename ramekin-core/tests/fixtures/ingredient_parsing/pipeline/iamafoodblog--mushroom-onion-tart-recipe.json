@@ -1,0 +1,99 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "mushroom-onion-tart-recipe",
+  "ingredients": [
+    {
+      "raw": "oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups sliced shiitake mushrooms",
+      "expected": {
+        "item": "sliced shiitake mushrooms",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/ sheet frozen puff pastry, thawed",
+      "expected": {
+        "item": "/ sheet frozen puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1 cup grated gruyere cheese",
+      "expected": {
+        "item": "grated gruyere cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "flat leaf parsley to garnish",
+      "expected": {
+        "item": "flat leaf parsley to garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

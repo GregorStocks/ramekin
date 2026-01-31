@@ -1,0 +1,35 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "broiled-grapefruit-recipe",
+  "ingredients": [
+    {
+      "raw": "1  large pink grapefruit (cut in half)",
+      "expected": {
+        "item": "pink grapefruit (cut in half)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Drizzle of agave nectar",
+      "expected": {
+        "item": "Drizzle of agave nectar",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sprinkling of turbinado sugar",
+      "expected": {
+        "item": "Sprinkling of turbinado sugar",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

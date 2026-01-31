@@ -1,0 +1,49 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-perfect-fried-eggs",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs, cold",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "cold"
+      }
+    },
+    {
+      "raw": "Pinch kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

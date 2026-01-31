@@ -1,0 +1,92 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "cranberry-sorbet-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces fresh cranberries",
+      "expected": {
+        "item": "fresh cranberries",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Cointreau or Grand Marnier liquor (optional, this keeps the sorbet from getting icy)",
+      "expected": {
+        "item": "Cointreau or Grand Marnier liquor",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional, this keeps the sorbet from getting icy"
+      }
+    }
+  ]
+}

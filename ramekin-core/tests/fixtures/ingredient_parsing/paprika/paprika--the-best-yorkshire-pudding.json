@@ -1,0 +1,124 @@
+{
+  "source": "paprika",
+  "recipe_slug": "the-best-yorkshire-pudding",
+  "ingredients": [
+    {
+      "raw": "4 large eggs (200 g; 7 ounces)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "150 g all-purpose flour (5.25 ounces; about 1 cup plus 2 teaspoons)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          },
+          {
+            "amount": "5.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "175 g whole milk (6 ounces; 3/4 cup) (see notes)",
+      "expected": {
+        "item": "whole milk (see notes)",
+        "measurements": [
+          {
+            "amount": "175",
+            "unit": "g"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 g kosher salt (about 1/2 teaspoon)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "25 g water (0.85 ounces; 1 tablespoon plus 2 teaspoons) (see notes)",
+      "expected": {
+        "item": "water (see notes)",
+        "measurements": [
+          {
+            "amount": "25",
+            "unit": "g"
+          },
+          {
+            "amount": "0.85",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100 ml beef drippings, lard, shortening, or vegetable oil (about 1/2 cup)",
+      "expected": {
+        "item": "beef drippings, lard, shortening, or vegetable oil",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "ml"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

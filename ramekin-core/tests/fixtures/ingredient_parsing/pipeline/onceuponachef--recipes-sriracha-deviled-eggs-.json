@@ -1,0 +1,130 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-sriracha-deviled-eggs-",
+  "ingredients": [
+    {
+      "raw": "6  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons mayonnaise, best quality such as Hellman’s, Best Foods or Duke’s",
+      "expected": {
+        "item": "mayonnaise, best quality such as Hellman’s, Best Foods or Duke’s",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons  Sriracha, to taste",
+      "expected": {
+        "item": "Sriracha",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon whole grain mustard",
+      "expected": {
+        "item": "whole grain mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Finely chopped chives, for serving",
+      "expected": {
+        "item": "Finely chopped chives",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Paprika, for serving",
+      "expected": {
+        "item": "Paprika",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

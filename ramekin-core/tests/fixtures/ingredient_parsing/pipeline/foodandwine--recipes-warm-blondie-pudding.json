@@ -1,0 +1,137 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-warm-blondie-pudding",
+  "ingredients": [
+    {
+      "raw": "3/4 cup (6 ounces)&nbsp;plus 2 tablespoons&nbsp;cold unsalted butter, cut into&nbsp;1/2-inch cubes, plus more for greasing pan",
+      "expected": {
+        "item": "plus 2 tablespoons cold unsalted butter, cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for greasing pan"
+      }
+    },
+    {
+      "raw": "1 (2 3/4-ounce) white chocolate baking bar, chopped (about&nbsp;1/2&nbsp;cup)",
+      "expected": {
+        "item": "white chocolate baking bar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3/4 cup plus 2 tablespoons packed light brown sugar",
+      "expected": {
+        "item": "3/4 cup plus 2 tablespoons packed light brown sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons packed light brown sugar"
+      }
+    },
+    {
+      "raw": "2 teaspoons&nbsp;ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 large eggs, at room temperature",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1 2/3 cups fine almond flour (about 5 7/8&nbsp;ounce)",
+      "expected": {
+        "item": "fine almond flour",
+        "measurements": [
+          {
+            "amount": "1 2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "5 7/8",
+            "unit": "oz"
+          },
+          {
+            "amount": "167",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup walnuts, roughly chopped",
+      "expected": {
+        "item": "walnuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "Crème fraîche and fresh raspberries, for serving",
+      "expected": {
+        "item": "Crème fraîche and fresh raspberries",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Fresh raspberries",
+      "expected": {
+        "item": "Fresh raspberries",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

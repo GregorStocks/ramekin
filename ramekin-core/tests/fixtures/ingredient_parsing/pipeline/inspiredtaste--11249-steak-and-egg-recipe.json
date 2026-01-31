@@ -1,0 +1,86 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "11249-steak-and-egg-recipe",
+  "ingredients": [
+    {
+      "raw": "1 bunch asparagus, rinsed and ends cut off",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": "rinsed and ends cut off"
+      }
+    },
+    {
+      "raw": "2 (6-ounce) 3/4-inch thick top sirloin steaks",
+      "expected": {
+        "item": "3/4-inch thick top sirloin steaks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and fresh ground black pepper",
+      "expected": {
+        "item": "Salt and fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Parmesan shavings for serving",
+      "expected": {
+        "item": "Parmesan shavings for serving",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

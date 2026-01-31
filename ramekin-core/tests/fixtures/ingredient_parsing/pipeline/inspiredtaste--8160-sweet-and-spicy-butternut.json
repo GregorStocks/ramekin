@@ -1,0 +1,100 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "8160-sweet-and-spicy-butternut",
+  "ingredients": [
+    {
+      "raw": "1 large butternut squash, peeled, seeded and cut into 1-inch cubes (about 3 pounds or 8 cups, cubed)",
+      "expected": {
+        "item": "butternut squash, peeled, seeded and cut into 1-inch cubes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "about 3 pounds or 8 cups, cubed"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons pure maple syrup",
+      "expected": {
+        "item": "pure maple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "39",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Sriracha chili sauce or more to make it spicier",
+      "expected": {
+        "item": "Sriracha chili sauce or more to make it spicier",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup cubed or crumbed feta cheese, optional",
+      "expected": {
+        "item": "cubed or crumbed feta cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Fresh herbs for serving like basil or parsley, optional",
+      "expected": {
+        "item": "Fresh herbs for serving like basil or parsley",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

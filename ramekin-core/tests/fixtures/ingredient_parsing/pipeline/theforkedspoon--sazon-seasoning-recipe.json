@@ -1,0 +1,110 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "sazon-seasoning-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon coriander",
+      "expected": {
+        "item": "coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon ground annatto (or achiote, see notes)",
+      "expected": {
+        "item": "ground annatto (or achiote, see notes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground oregano",
+      "expected": {
+        "item": "ground oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

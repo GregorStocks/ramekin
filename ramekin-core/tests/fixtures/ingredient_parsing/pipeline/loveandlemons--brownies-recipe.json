@@ -1,0 +1,148 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "brownies-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups granulated sugar*",
+      "expected": {
+        "item": "granulated sugar*",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup cocoa powder (sifted if lumpy)",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted if lumpy"
+      }
+    },
+    {
+      "raw": "1/2 cup powdered sugar (sifted if lumpy)",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted if lumpy"
+      }
+    },
+    {
+      "raw": "1/2 cup dark chocolate chips",
+      "expected": {
+        "item": "dark chocolate chips",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoons sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup canola oil or extra-virgin olive oil**",
+      "expected": {
+        "item": "canola oil or extra-virgin olive oil**",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

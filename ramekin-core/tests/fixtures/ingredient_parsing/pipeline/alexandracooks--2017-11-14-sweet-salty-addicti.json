@@ -1,0 +1,49 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2017-11-14-sweet-salty-addicti",
+  "ingredients": [
+    {
+      "raw": "1 cup raw pumpkin seeds (also called pepitas)",
+      "expected": {
+        "item": "raw pumpkin seeds (also called pepitas)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon flaky sea salt such as Maldon or 1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "flaky sea salt such as Maldon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 teaspoon kosher salt"
+      }
+    }
+  ]
+}

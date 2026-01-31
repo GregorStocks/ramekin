@@ -1,0 +1,112 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-111853-refreshing-water",
+  "ingredients": [
+    {
+      "raw": "1 cup sliced red onion, cut lengthwise",
+      "expected": {
+        "item": "sliced red onion, cut lengthwise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 cups cubed watermelon",
+      "expected": {
+        "item": "cubed watermelon",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups cubed English cucumber",
+      "expected": {
+        "item": "cubed English cucumber",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8 ounce) package feta cheese, crumbled",
+      "expected": {
+        "item": "feta cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "0.5 cup chopped fresh cilantro",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "cracked black pepper",
+      "expected": {
+        "item": "cracked black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

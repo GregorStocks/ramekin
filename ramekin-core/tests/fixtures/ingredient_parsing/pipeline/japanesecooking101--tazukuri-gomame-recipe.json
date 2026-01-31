@@ -1,0 +1,53 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "tazukuri-gomame-recipe",
+  "ingredients": [
+    {
+      "raw": "1 oz Gomame (tiny dried sardines)",
+      "expected": {
+        "item": "Gomame",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "tiny dried sardines"
+      }
+    },
+    {
+      "raw": "2 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

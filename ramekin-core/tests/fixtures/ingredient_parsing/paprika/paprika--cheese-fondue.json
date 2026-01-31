@@ -1,0 +1,148 @@
+{
+  "source": "paprika",
+  "recipe_slug": "cheese-fondue",
+  "ingredients": [
+    {
+      "raw": "8 oz gruyère, shredded",
+      "expected": {
+        "item": "gruyère",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "8 oz emmental, shredded",
+      "expected": {
+        "item": "emmental",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1 cup dry white wine (something crisp—sauvignon blanc or a Swiss chasselas if you're being traditional)",
+      "expected": {
+        "item": "dry white wine (something crisp-sauvignon blanc or a Swiss chasselas if you're being traditional)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon kirsch (optional but traditional)",
+      "expected": {
+        "item": "kirsch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional but traditional"
+      }
+    },
+    {
+      "raw": "1 garlic clove, halved",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "2 teaspoons sodium citrate",
+      "expected": {
+        "item": "sodium citrate",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh nutmeg and white pepper to taste",
+      "expected": {
+        "item": "Fresh nutmeg and white pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "To serve:",
+      "expected": {
+        "item": "To serve:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cubed crusty bread",
+      "expected": {
+        "item": "Cubed crusty bread",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cornichons",
+      "expected": {
+        "item": "Cornichons",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Boiled baby potatoes",
+      "expected": {
+        "item": "Boiled baby potatoes",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Apple slices",
+      "expected": {
+        "item": "Apple slices",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Blanched broccoli",
+      "expected": {
+        "item": "Blanched broccoli",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

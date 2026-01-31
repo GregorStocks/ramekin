@@ -1,0 +1,130 @@
+{
+  "source": "paprika",
+  "recipe_slug": "challah",
+  "ingredients": [
+    {
+      "raw": "5g instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "207g lukewarm water",
+      "expected": {
+        "item": "lukewarm water",
+        "measurements": [
+          {
+            "amount": "207",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "60g granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7g table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "500g all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "To finish:",
+      "expected": {
+        "item": "To finish:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Poppy or sesame seeds (optional)",
+      "expected": {
+        "item": "Poppy or sesame seeds",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

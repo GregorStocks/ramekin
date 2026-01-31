@@ -1,0 +1,105 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "bok-choy-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 large shallots (minced)",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 pounds baby bok choy (halved or quartered)",
+      "expected": {
+        "item": "baby bok choy",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "halved or quartered"
+      }
+    },
+    {
+      "raw": "2 tablespoon soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon crushed red pepper (optional)",
+      "expected": {
+        "item": "crushed red pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

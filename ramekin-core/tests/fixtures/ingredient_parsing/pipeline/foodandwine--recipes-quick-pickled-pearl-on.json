@@ -1,0 +1,105 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-quick-pickled-pearl-on",
+  "ingredients": [
+    {
+      "raw": "16 white pearl onions (about 1 cup), root ends trimmed and scored with an X",
+      "expected": {
+        "item": "white pearl onions",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "root ends trimmed and scored with an X"
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons mustard seeds",
+      "expected": {
+        "item": "mustard seeds",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon coriander seeds",
+      "expected": {
+        "item": "coriander seeds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

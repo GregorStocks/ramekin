@@ -1,0 +1,79 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "best-classic-deviled-eggs-reci",
+  "ingredients": [
+    {
+      "raw": "12  hard-boiled eggs (peeled)",
+      "expected": {
+        "item": "hard-boiled eggs",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "2 teaspoons dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup mayo (I used reduced fat olive oil mayo)",
+      "expected": {
+        "item": "mayo (I used reduced fat olive oil mayo)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and cracked black pepper to taste",
+      "expected": {
+        "item": "salt and cracked black pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon smoked paprika (or regular paprika)",
+      "expected": {
+        "item": "smoked paprika (or regular paprika)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

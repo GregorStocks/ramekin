@@ -1,0 +1,83 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "spicy-tahini-fancy-corn-on-the",
+  "ingredients": [
+    {
+      "raw": "8 ears corn",
+      "expected": {
+        "item": "ears corn",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup tahini",
+      "expected": {
+        "item": "tahini",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lemon (3 tablespoons juice)",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch cilantro",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sriracha hot sauce",
+      "expected": {
+        "item": "Sriracha hot sauce",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

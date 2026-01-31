@@ -1,0 +1,94 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "espresso-martini-recipe-118739",
+  "ingredients": [
+    {
+      "raw": "1 1/2 fluid ounces (45 ml) ice-cold vodka",
+      "expected": {
+        "item": "ice-cold vodka",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 fluid ounce (30 ml) fresh espresso or 1 1/2 fluid ounces (45 ml) fresh strong coffee from a moka pot or cold brew concentrate",
+      "expected": {
+        "item": "fresh espresso",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          }
+        ],
+        "note": "or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate"
+      }
+    },
+    {
+      "raw": "1 ounce (30 ml) coffee liqueur, such as Kahlua or Mr. Black",
+      "expected": {
+        "item": "coffee liqueur, such as Kahlua or Mr. Black",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Very tiny pinch of kosher salt",
+      "expected": {
+        "item": "Very tiny pinch of kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice, for shaking",
+      "expected": {
+        "item": "Ice, for shaking",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 espresso beans, for garnish (optional)",
+      "expected": {
+        "item": "espresso beans, for garnish",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

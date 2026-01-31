@@ -1,0 +1,220 @@
+{
+  "source": "paprika",
+  "recipe_slug": "salmon-chowder",
+  "ingredients": [
+    {
+      "raw": "1/2 pound salt pork or bacon, cut into 1/2-inch pieces (225g)",
+      "expected": {
+        "item": "salt pork or bacon, cut into 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons water (30ml)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium onion, finely chopped (about 8 ounces; 225g)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 large ribs celery, finely chopped (about 6 ounces; 170g)",
+      "expected": {
+        "item": "ribs celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons all-purpose flour (about 20g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup bottled clam juice (235ml)",
+      "expected": {
+        "item": "bottled clam juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 quart whole milk (900ml)",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          },
+          {
+            "amount": "900",
+            "unit": "ml"
+          },
+          {
+            "amount": "980",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound russet or Yukon Gold potatoes, peeled and cut into 1/2-inch cubes (450g)",
+      "expected": {
+        "item": "russet or Yukon Gold potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch cubes"
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 to 1 pound boneless, skinless fish scraps, such as salmon, cod, or halibut, cut into 3/4-inch chunks (350-450g)",
+      "expected": {
+        "item": "boneless, skinless fish scraps, such as salmon, cod, or halibut, cut into 3/4-inch chunks",
+        "measurements": [
+          {
+            "amount": "3/4 to 1",
+            "unit": "lb"
+          },
+          {
+            "amount": "350",
+            "unit": null
+          },
+          {
+            "amount": "340 to 454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Minced fresh herbs such as parsley, dill, or chives, for serving",
+      "expected": {
+        "item": "Minced fresh herbs such as parsley, dill, or chives",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Hot sauce, for serving",
+      "expected": {
+        "item": "Hot sauce",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Crackers, for serving",
+      "expected": {
+        "item": "Crackers",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "source": "paprika",
+  "recipe_slug": "sliced-egg-sandwich",
+  "ingredients": [
+    {
+      "raw": "1/4 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon smooth dijon mustard",
+      "expected": {
+        "item": "smooth dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons wholegrain mustard",
+      "expected": {
+        "item": "wholegrain mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons prepared horseradish",
+      "expected": {
+        "item": "prepared horseradish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly-ground black pepper",
+      "expected": {
+        "item": "Salt and freshly-ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 soft challah, brioche, or potato rolls, split, or slices from a loaf",
+      "expected": {
+        "item": "soft challah, brioche, or potato rolls, split, or slices from a loaf",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Butter, for toasting",
+      "expected": {
+        "item": "Butter, for toasting",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 hard-boiled eggs, cold, peeled, and sliced",
+      "expected": {
+        "item": "hard-boiled eggs, cold, peeled",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "and sliced"
+      }
+    },
+    {
+      "raw": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
+      "expected": {
+        "item": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups fresh arugula, roughly torn",
+      "expected": {
+        "item": "fresh arugula, roughly torn",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

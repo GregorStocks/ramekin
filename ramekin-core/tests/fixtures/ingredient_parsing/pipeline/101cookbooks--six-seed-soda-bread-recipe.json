@@ -1,0 +1,133 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "six-seed-soda-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+      "expected": {
+        "item": "EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fennel seeds",
+      "expected": {
+        "item": "fennel seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cup / 9 oz / 250 g spelt flour",
+      "expected": {
+        "item": "spelt flour",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups / 9 oz / 250 g unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cup / 14 oz / 400 ml buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "400",
+            "unit": "ml"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "a bit of extra buttermilk/milk",
+      "expected": {
+        "item": "a bit of extra buttermilk/milk",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

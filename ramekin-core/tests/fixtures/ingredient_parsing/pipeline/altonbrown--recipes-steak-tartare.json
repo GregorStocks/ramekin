@@ -1,0 +1,140 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-steak-tartare",
+  "ingredients": [
+    {
+      "raw": "16 ounces top sirloin, cleaned and trimmed",
+      "expected": {
+        "item": "top sirloin",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "cleaned and trimmed"
+      }
+    },
+    {
+      "raw": "2 teaspoons sherry vinegar",
+      "expected": {
+        "item": "sherry vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dry mustard",
+      "expected": {
+        "item": "dry mustard",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup light olive oil",
+      "expected": {
+        "item": "light olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons finely diced shallots",
+      "expected": {
+        "item": "finely diced shallots",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup celery leaves, finely chopped and divided",
+      "expected": {
+        "item": "celery leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped and divided"
+      }
+    },
+    {
+      "raw": "2 tablespoons finely chopped fresh parsley, divided",
+      "expected": {
+        "item": "finely chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 tablespoons small, brined capers, drained and unrinsed",
+      "expected": {
+        "item": "small, brined capers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "drained and unrinsed"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

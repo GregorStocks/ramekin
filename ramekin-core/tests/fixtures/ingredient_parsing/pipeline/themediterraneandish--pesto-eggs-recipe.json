@@ -1,0 +1,83 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "pesto-eggs-recipe",
+  "ingredients": [
+    {
+      "raw": "1/3 to 1/2 cup  basil pesto,",
+      "expected": {
+        "item": "basil pesto",
+        "measurements": [
+          {
+            "amount": "1/3 to 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3 ounces fresh mozzarella cheese,  (sliced)",
+      "expected": {
+        "item": "fresh mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "oz"
+          },
+          {
+            "amount": "57 to 85",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1  vine ripe tomato,  (sliced )",
+      "expected": {
+        "item": "vine ripe tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "red pepper flakes,  (or Aleppo pepper)",
+      "expected": {
+        "item": "red pepper flakes,  (or Aleppo pepper)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  pieces of toasted bread,  (optional )",
+      "expected": {
+        "item": "toasted bread",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "piece"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

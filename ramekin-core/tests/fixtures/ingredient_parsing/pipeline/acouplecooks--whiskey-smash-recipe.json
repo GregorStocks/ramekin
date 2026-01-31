@@ -1,0 +1,90 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "whiskey-smash-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ounces (4 tablespoons) whiskey",
+      "expected": {
+        "item": "whiskey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 lemon, sliced into 2 wedges",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "sliced into 2 wedges"
+      }
+    },
+    {
+      "raw": "5 large mint leaves",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce (2 tablespoons) simple syrup or maple syrup",
+      "expected": {
+        "item": "simple syrup or maple syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Soda water, for serving",
+      "expected": {
+        "item": "Soda water",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Crushed ice, for serving",
+      "expected": {
+        "item": "Crushed ice",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "pumpkin-spice-latte-syrup-reci",
+  "ingredients": [
+    {
+      "raw": "3/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons canned pumpkin",
+      "expected": {
+        "item": "canned pumpkin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cups warm milk",
+      "expected": {
+        "item": "warm milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 shot espresso",
+      "expected": {
+        "item": "shot espresso",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons pumpkin spice latte syrup, or to taste",
+      "expected": {
+        "item": "pumpkin spice latte syrup",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "whipped cream and cinnamon, if desired",
+      "expected": {
+        "item": "whipped cream and cinnamon, if desired",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

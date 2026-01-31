@@ -1,0 +1,112 @@
+{
+  "source": "paprika",
+  "recipe_slug": "the-best-crispy-roast-potatoes",
+  "ingredients": [
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon (4g) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 pounds (about 2 kg) russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size (see note)",
+      "expected": {
+        "item": "russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size (see note)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tablespoons (75ml) extra-virgin olive oil, duck fat, goose fat, or beef fat",
+      "expected": {
+        "item": "extra-virgin olive oil, duck fat, goose fat, or beef fat",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "75",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Small handful picked fresh rosemary leaves, finely chopped",
+      "expected": {
+        "item": "handful picked fresh rosemary leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "3 medium cloves garlic, minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Small handful fresh parsley leaves, minced",
+      "expected": {
+        "item": "handful fresh parsley leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "minced"
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "source": "paprika",
+  "recipe_slug": "chickpea-salad-sandwiches-with",
+  "ingredients": [
+    {
+      "raw": "Gather Your Ingredients",
+      "expected": {
+        "item": "Gather Your Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ English cucumber, sliced thin",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "½ small red onion, sliced thin",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "¼ cup cider vinegar",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt, divided",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 (15-ounce) cans chickpeas, rinsed, divided",
+      "expected": {
+        "item": "chickpeas, rinsed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "½ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh dill",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 slices pumpernickel hearty sandwich bread",
+      "expected": {
+        "item": "pumpernickel hearty sandwich bread",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 hard-cooked eggs, sliced thin",
+      "expected": {
+        "item": "hard-cooked eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "4 leaves Bibb lettuce",
+      "expected": {
+        "item": "leaves Bibb lettuce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

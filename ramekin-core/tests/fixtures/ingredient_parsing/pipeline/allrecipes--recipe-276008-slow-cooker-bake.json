@@ -1,0 +1,101 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-276008-slow-cooker-bake",
+  "ingredients": [
+    {
+      "raw": "4 large apples - peeled, cored, and sliced",
+      "expected": {
+        "item": "apples - peeled, cored",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "and sliced"
+      }
+    },
+    {
+      "raw": "0.5 cup raisins",
+      "expected": {
+        "item": "raisins",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.33333334326744 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.33333334326744",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

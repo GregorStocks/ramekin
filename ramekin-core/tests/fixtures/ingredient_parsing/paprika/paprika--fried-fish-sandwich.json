@@ -1,0 +1,207 @@
+{
+  "source": "paprika",
+  "recipe_slug": "fried-fish-sandwich",
+  "ingredients": [
+    {
+      "raw": "1/2 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup bread and butter pickle chips, finely chopped, plus 1 tablespoon pickle brine",
+      "expected": {
+        "item": "bread and butter pickle chips, finely chopped",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 tablespoon pickle brine"
+      }
+    },
+    {
+      "raw": "1 small shallot, finely chopped",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 tablespoons coarsely chopped fresh dill",
+      "expected": {
+        "item": "coarsely chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (drained) capers, coarsely chopped",
+      "expected": {
+        "item": "capers, coarsely chopped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 teaspoon soy sauce or tamari",
+      "expected": {
+        "item": "soy sauce or tamari",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs, lightly beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "2 cups panko bread crumbs",
+      "expected": {
+        "item": "panko bread crumbs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 flounder fillets (about 1 pound), halved crosswise",
+      "expected": {
+        "item": "flounder fillets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "halved crosswise"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 soft white buns",
+      "expected": {
+        "item": "soft white buns",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices American cheese or Cheddar",
+      "expected": {
+        "item": "American cheese or Cheddar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

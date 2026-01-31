@@ -1,0 +1,111 @@
+{
+  "source": "paprika",
+  "recipe_slug": "quick-essential-stovetop-mac",
+  "ingredients": [
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces (115 grams) dried pasta, such as macaroni or another small twisty shape",
+      "expected": {
+        "item": "dried pasta, such as macaroni or another small twisty shape",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 grams) salted or unsalted butter",
+      "expected": {
+        "item": "salted or unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons (6 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (125 ml) low-fat or whole milk",
+      "expected": {
+        "item": "low-fat or whole milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Many grinds of black pepper",
+      "expected": {
+        "item": "Many grinds of black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (1 ounce or 30 grams) finely grated parmesan or pecorino cheese",
+      "expected": {
+        "item": "finely grated parmesan or pecorino cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

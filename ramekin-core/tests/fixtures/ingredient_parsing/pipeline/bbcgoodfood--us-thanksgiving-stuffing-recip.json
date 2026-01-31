@@ -1,0 +1,110 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-thanksgiving-stuffing-recip",
+  "ingredients": [
+    {
+      "raw": "1 stick plus 2 tbsp butter plus extra for the dish",
+      "expected": {
+        "item": "1 stick plus 2 tbsp butter plus extra for the dish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "plus 2 tbsp butter plus extra for the dish"
+      }
+    },
+    {
+      "raw": "8 slices stale bread cut into 1.5-inch cubes (we used sourdough)",
+      "expected": {
+        "item": "stale bread cut into 1.5-inch cubes (we used sourdough)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  onions finely chopped",
+      "expected": {
+        "item": "onions finely chopped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  celery sticks finely chopped",
+      "expected": {
+        "item": "celery sticks finely chopped",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful of sage leaves finely chopped",
+      "expected": {
+        "item": "sage leaves finely chopped",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  rosemary sprigs needles picked and finely chopped",
+      "expected": {
+        "item": "rosemary sprigs needles picked and finely chopped",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups plus 2 tbsp chicken broth",
+      "expected": {
+        "item": "1½ cups plus 2 tbsp chicken broth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tbsp chicken broth"
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

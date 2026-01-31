@@ -1,0 +1,187 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "chicken-a-la-king-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups cooked chicken (cut into cubes)",
+      "expected": {
+        "item": "cooked chicken (cut into cubes)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup unsalted butter (divided)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1  small onion (diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1  red  bell pepper (diced)",
+      "expected": {
+        "item": "red  bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "8 ounces mushrooms (sliced)",
+      "expected": {
+        "item": "mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1/2 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon pepper (plus more to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1 cup whole milk (or cream)",
+      "expected": {
+        "item": "whole milk (or cream)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups chicken broth (more if needed)",
+      "expected": {
+        "item": "chicken broth (more if needed)",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup frozen green peas",
+      "expected": {
+        "item": "frozen green peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup jarred pimientos (diced)",
+      "expected": {
+        "item": "jarred pimientos",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced"
+      }
+    }
+  ]
+}

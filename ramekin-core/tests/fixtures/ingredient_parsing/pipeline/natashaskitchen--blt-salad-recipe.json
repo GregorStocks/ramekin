@@ -1,0 +1,161 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "blt-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "12 oz sliced cooked bacon*",
+      "expected": {
+        "item": "sliced cooked bacon*",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 cups croutons",
+      "expected": {
+        "item": "croutons",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lb 3 cups tomatoes (any kind), sliced",
+      "expected": {
+        "item": "3 cups tomatoes (any kind)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1  medium/large head of lettuce (** chopped, rinsed, dried)",
+      "expected": {
+        "item": "medium/large head of lettuce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "** chopped, rinsed, dried"
+      }
+    },
+    {
+      "raw": "3 Tbsp mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tbsp sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large garlic clove (pressed)",
+      "expected": {
+        "item": "garlic clove (pressed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped fresh chives",
+      "expected": {
+        "item": "finely chopped fresh chives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp sea salt (or to taste)",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 to 2 Tbsp milk (or add to desired consistency)",
+      "expected": {
+        "item": "milk (or add to desired consistency)",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

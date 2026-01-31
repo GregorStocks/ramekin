@@ -1,0 +1,249 @@
+{
+  "source": "sallysbakingaddiction",
+  "recipe_slug": "frittata-recipe",
+  "ingredients": [
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) milk*",
+      "expected": {
+        "item": "milk*",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt, plus more for cooking vegetables",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for cooking vegetables"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground black pepper, plus more for cooking vegetables",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for cooking vegetables"
+      }
+    },
+    {
+      "raw": "1 cup (about 100–120g) shredded sharp cheddar cheese OR crumbled feta, divided",
+      "expected": {
+        "item": "shredded sharp cheddar cheese OR crumbled feta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 Tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 small red onion, thinly sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 heaping cup (about 150g) chopped sweet potato (no need to peel)",
+      "expected": {
+        "item": "chopped sweet potato (no need to peel)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaping cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 heaping cup (130g) sliced zucchini",
+      "expected": {
+        "item": "sliced zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaping cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (about 80g) chopped red bell pepper",
+      "expected": {
+        "item": "chopped red bell pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional for topping: chopped fresh parsley",
+      "expected": {
+        "item": "optional for topping: chopped fresh parsley",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (30g) roughly chopped fresh spinach",
+      "expected": {
+        "item": "roughly chopped fresh spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (150g) halved cherry tomatoes",
+      "expected": {
+        "item": "halved cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 heaping cup (about 160g) canned quartered artichoke hearts, drained",
+      "expected": {
+        "item": "canned quartered artichoke hearts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaping cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "optional: 2 ounces (56g or about 4 slices) roughly chopped prosciutto",
+      "expected": {
+        "item": "optional: 2 ounces roughly chopped prosciutto",
+        "measurements": [
+          {
+            "amount": "56",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "chicken-bites-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds boneless skinless chicken (, (breasts or thigh) , cut into about 1” bite sized pieces (approximately))",
+      "expected": {
+        "item": "boneless skinless chicken (, (breasts or thigh)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "cut into about 1” bite sized pieces (approximately)"
+      }
+    },
+    {
+      "raw": "1 Tablespoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dried oregano (, or any dried/fresh chopped herbs )",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or any dried/fresh chopped herbs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt (, or to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "Fresh cracked black pepper (, to taste)",
+      "expected": {
+        "item": "Fresh cracked black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "2 Tablespoons all-purpose flour (, or cornstarch)",
+      "expected": {
+        "item": "all-purpose flour (, or cornstarch)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons butter (, divided)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (, minced or crushed)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced or crushed"
+      }
+    },
+    {
+      "raw": "3 Tablespoons grated parmesan cheese",
+      "expected": {
+        "item": "grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons chopped parsley",
+      "expected": {
+        "item": "chopped parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

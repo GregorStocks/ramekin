@@ -1,0 +1,161 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-pollo-ranchero",
+  "ingredients": [
+    {
+      "raw": "1 tbsp olive oil (or avocado oil)",
+      "expected": {
+        "item": "olive oil (or avocado oil)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lb boneless skinless chicken breast, sliced thin",
+      "expected": {
+        "item": "boneless skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "1/2 onion, thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 poblano pepper, diced (or yellow chile pepper)",
+      "expected": {
+        "item": "poblano pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced (or yellow chile pepper)"
+      }
+    },
+    {
+      "raw": "1 jalapeno pepper, diced (seeds removed for less heat)",
+      "expected": {
+        "item": "jalapeno pepper, diced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeds removed for less heat"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3 Roma tomatoes, chopped",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup tomato sauce",
+      "expected": {
+        "item": "tomato sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup cilantro, chopped",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 lime, juice",
+      "expected": {
+        "item": "lime, juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

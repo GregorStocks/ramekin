@@ -1,0 +1,117 @@
+{
+  "source": "paprika",
+  "recipe_slug": "japanese-egg-sandwich-tamago",
+  "ingredients": [
+    {
+      "raw": "3 large eggs (50 g each w/o shell)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp Diamond Crystal kosher salt",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Japanese Kewpie mayonnaise",
+      "expected": {
+        "item": "Japanese Kewpie mayonnaise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices shokupan (Japanese milk bread) (or make homemade Shokupan; the same thickness as those from a square shokupan loaf cut into 8 slices)",
+      "expected": {
+        "item": "shokupan (Japanese milk bread) (or make homemade Shokupan; the same thickness as those from a square shokupan loaf cut into 8 slices)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

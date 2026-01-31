@@ -1,0 +1,100 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "miso-cookies-recipe",
+  "ingredients": [
+    {
+      "raw": "2 Tbsp Miso paste",
+      "expected": {
+        "item": "Miso paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup butter (room temperature)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cup all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "raw sugar",
+      "expected": {
+        "item": "raw sugar",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

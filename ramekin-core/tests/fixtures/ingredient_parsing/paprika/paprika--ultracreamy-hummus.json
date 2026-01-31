@@ -1,0 +1,147 @@
+{
+  "source": "paprika",
+  "recipe_slug": "ultracreamy-hummus",
+  "ingredients": [
+    {
+      "raw": "Gather Your Ingredients",
+      "expected": {
+        "item": "Gather Your Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (15-ounce) cans chickpeas, rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "½ teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 garlic cloves, peeled",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "⅓ cup lemon juice (2 lemons), plus extra for seasoning",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for seasoning"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon ground cumin, plus extra for garnish",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus extra for garnish"
+      }
+    },
+    {
+      "raw": "½ cup tahini, stirred well",
+      "expected": {
+        "item": "tahini, stirred well",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil, plus extra for drizzling",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for drizzling"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced fresh parsley",
+      "expected": {
+        "item": "minced fresh parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

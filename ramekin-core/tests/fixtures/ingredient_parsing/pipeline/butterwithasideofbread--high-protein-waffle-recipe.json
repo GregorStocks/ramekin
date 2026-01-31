@@ -1,0 +1,49 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "high-protein-waffle-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups old-fashioned oats",
+      "expected": {
+        "item": "old-fashioned oats",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cottage cheese (any variety)",
+      "expected": {
+        "item": "cottage cheese (any variety)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

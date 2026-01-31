@@ -1,0 +1,70 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2019-12-champagne-ganache-stuf",
+  "ingredients": [
+    {
+      "raw": "8 oz. 2 boxes Baker’s bars white chocolate, finely chopped",
+      "expected": {
+        "item": "2 boxes Baker’s bars white chocolate",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1/3 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons champagne or sparkling wine",
+      "expected": {
+        "item": "champagne or sparkling wine",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ lb. large red cherries (washed and patted dry)",
+      "expected": {
+        "item": "large red cherries",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "washed and patted dry"
+      }
+    }
+  ]
+}

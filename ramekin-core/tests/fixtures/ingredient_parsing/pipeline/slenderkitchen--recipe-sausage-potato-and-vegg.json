@@ -1,0 +1,183 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-sausage-potato-and-vegg",
+  "ingredients": [
+    {
+      "raw": "4 chicken sausages, sliced",
+      "expected": {
+        "item": "chicken sausages",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1 lb red potatoes, diced (or other waxy potatoes)",
+      "expected": {
+        "item": "red potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "diced (or other waxy potatoes)"
+      }
+    },
+    {
+      "raw": "2 cups broccoli florets",
+      "expected": {
+        "item": "broccoli florets",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 red onion, chopped",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 cups zucchini, chopped",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups red peppers, chopped",
+      "expected": {
+        "item": "red peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "4 garlic cloves, whole",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "whole"
+      }
+    },
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp dried rosemary",
+      "expected": {
+        "item": "dried rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

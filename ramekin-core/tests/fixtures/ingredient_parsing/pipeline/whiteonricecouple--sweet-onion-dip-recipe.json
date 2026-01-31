@@ -1,0 +1,75 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "sweet-onion-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "8 ounces cream cheese ( (at room temperature))",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "(at room temperature"
+      }
+    },
+    {
+      "raw": "1 cup mayonnaise ( (preferably Best Foods/Hellmans brand))",
+      "expected": {
+        "item": "mayonnaise ( (preferably Best Foods/Hellmans brand)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup freshly grated Parmesan cheese ( (not the powdered cheese stuff in the green containers))",
+      "expected": {
+        "item": "freshly grated Parmesan cheese ( (not the powdered cheese stuff in the green containers)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup diced sweet onion ( (sometimes we like to add extra 1/2 cup for more flavor and texture))",
+      "expected": {
+        "item": "diced sweet onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "(sometimes we like to add extra 1/2 cup for more flavor and texture"
+      }
+    },
+    {
+      "raw": "2 teaspoons freshly cracked black pepper (, or more to preference)",
+      "expected": {
+        "item": "freshly cracked black pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to preference"
+      }
+    }
+  ]
+}

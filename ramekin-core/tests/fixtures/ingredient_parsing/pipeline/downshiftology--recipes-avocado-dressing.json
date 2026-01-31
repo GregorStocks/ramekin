@@ -1,0 +1,96 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-avocado-dressing",
+  "ingredients": [
+    {
+      "raw": "1  avocado",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup water (or more for thinner consistency)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "or more for thinner consistency"
+      }
+    },
+    {
+      "raw": "1/4 cup cilantro, basil or parsley leaves",
+      "expected": {
+        "item": "cilantro, basil or parsley leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lime (juiced)",
+      "expected": {
+        "item": "lime (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2  garlic clove (minced)",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

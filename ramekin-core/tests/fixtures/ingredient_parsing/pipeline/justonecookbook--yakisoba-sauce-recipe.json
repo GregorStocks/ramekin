@@ -1,0 +1,75 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "yakisoba-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "3 Tbsp oyster sauce",
+      "expected": {
+        "item": "oyster sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ Tbsp sugar ((to taste))",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "7 Tbsp Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

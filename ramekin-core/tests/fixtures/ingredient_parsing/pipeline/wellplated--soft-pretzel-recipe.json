@@ -1,0 +1,170 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "soft-pretzel-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups warm water (100-110 degrees F)",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100-110",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 packet active dry yeast  ((1/4 ounce or 2 1/4 teaspoons))",
+      "expected": {
+        "item": "packet active dry yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "2 1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 2 3/4 cups white whole wheat flour (divided)",
+      "expected": {
+        "item": "3/4 cups white whole wheat flour",
+        "measurements": [
+          {
+            "amount": "2 to 2",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 cup all-purpose flour (divided)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1  large egg (room temperature)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons unsalted butter (melted)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "Pretzel salt",
+      "expected": {
+        "item": "Pretzel salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cinnamon Sugar ((I use 1/4 teaspoon cinnamon for each tablespoon sugar))",
+      "expected": {
+        "item": "Cinnamon Sugar (I use 1/4 teaspoon cinnamon for each tablespoon sugar)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Finely grated Parmesan + Italian herbs",
+      "expected": {
+        "item": "Finely grated Parmesan + Italian herbs",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Everything bagel seasoning",
+      "expected": {
+        "item": "Everything bagel seasoning",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

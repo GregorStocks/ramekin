@@ -1,0 +1,126 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-sticky-lemon-pork",
+  "ingredients": [
+    {
+      "raw": "3 tbsp plain flour",
+      "expected": {
+        "item": "plain flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "800g leg or shoulder pork diced into large chunks",
+      "expected": {
+        "item": "leg or shoulder pork diced into large chunks",
+        "measurements": [
+          {
+            "amount": "800",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 rosemary sprigs, leaves stripped",
+      "expected": {
+        "item": "rosemary sprigs, leaves stripped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 garlic cloves chopped",
+      "expected": {
+        "item": "garlic cloves chopped",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "300ml white wine",
+      "expected": {
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "peeled zest and juice lemon",
+      "expected": {
+        "item": "peeled zest and juice lemon",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

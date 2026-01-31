@@ -1,0 +1,32 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "japanese-ume-syrup-recipe",
+  "ingredients": [
+    {
+      "raw": "500 g Japanese plums (ume) ((ume) before freezing)",
+      "expected": {
+        "item": "Japanese plums (ume) (ume) before freezing)",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "500 g rock sugar ((korizato))",
+      "expected": {
+        "item": "rock sugar (korizato)",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

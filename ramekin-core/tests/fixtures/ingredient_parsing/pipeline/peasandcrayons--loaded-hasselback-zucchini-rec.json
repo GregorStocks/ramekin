@@ -1,0 +1,83 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "loaded-hasselback-zucchini-rec",
+  "ingredients": [
+    {
+      "raw": "3  medium zucchini squash",
+      "expected": {
+        "item": "zucchini squash",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6-8 oz cheese (choose your favorite - see below)",
+      "expected": {
+        "item": "cheese (choose your favorite - see below)",
+        "measurements": [
+          {
+            "amount": "6-8",
+            "unit": "oz"
+          },
+          {
+            "amount": "170-227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4 TBSP sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 slices crumbled cooked bacon",
+      "expected": {
+        "item": "crumbled cooked bacon",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 TBSP chopped green onion",
+      "expected": {
+        "item": "chopped green onion",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

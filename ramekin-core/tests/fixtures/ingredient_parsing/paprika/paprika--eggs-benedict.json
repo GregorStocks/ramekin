@@ -1,0 +1,193 @@
+{
+  "source": "paprika",
+  "recipe_slug": "eggs-benedict",
+  "ingredients": [
+    {
+      "raw": "3/4 cup (1 1/2 sticks) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "stick"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons fresh lemon juice, plus more to taste",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon cayenne or hot paprika, plus more to taste",
+      "expected": {
+        "item": "cayenne or hot paprika",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon white distilled vinegar",
+      "expected": {
+        "item": "white distilled vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 English muffins, split",
+      "expected": {
+        "item": "English muffins, split",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 slices Canadian bacon or thick-cut ham (or 8 slices regular, thick-cut bacon)",
+      "expected": {
+        "item": "Canadian bacon or thick-cut ham (or 8 slices regular, thick-cut bacon)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chopped chives",
+      "expected": {
+        "item": "chopped chives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped dill, tarragon or parsley",
+      "expected": {
+        "item": "chopped dill, tarragon or parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Flaky sea salt",
+      "expected": {
+        "item": "Flaky sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coarsely ground black pepper",
+      "expected": {
+        "item": "Coarsely ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

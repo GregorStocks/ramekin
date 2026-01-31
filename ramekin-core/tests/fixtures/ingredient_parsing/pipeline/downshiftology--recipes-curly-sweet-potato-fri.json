@@ -1,0 +1,122 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-curly-sweet-potato-fri",
+  "ingredients": [
+    {
+      "raw": "1  sweet potato",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp avocado oil",
+      "expected": {
+        "item": "avocado oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 tsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

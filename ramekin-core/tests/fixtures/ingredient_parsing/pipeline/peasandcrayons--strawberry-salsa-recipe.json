@@ -1,0 +1,87 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "strawberry-salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pint ripe strawberries",
+      "expected": {
+        "item": "ripe strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  jalapeño pepper",
+      "expected": {
+        "item": "jalapeño pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup minced red onion",
+      "expected": {
+        "item": "minced red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of 1 lime",
+      "expected": {
+        "item": "juice of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tsp avocado oil or olive oil",
+      "expected": {
+        "item": "avocado oil or olive oil",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup fresh chopped cilantro ((plus extra to taste))",
+      "expected": {
+        "item": "fresh chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus extra to taste"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

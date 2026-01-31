@@ -1,0 +1,146 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "risotto-recipe",
+  "ingredients": [
+    {
+      "raw": "6 cups low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tbsp unsalted butter, (diced into 4 pieces)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "diced into 4 pieces"
+      }
+    },
+    {
+      "raw": "1 cup chopped yellow onion",
+      "expected": {
+        "item": "chopped yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (13.7 oz) Arborio rice",
+      "expected": {
+        "item": "Arborio rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "13.7",
+            "unit": "oz"
+          },
+          {
+            "amount": "388",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot water, (as needed)",
+      "expected": {
+        "item": "Hot water",
+        "measurements": [],
+        "note": "as needed"
+      }
+    },
+    {
+      "raw": "1 cup finely shredded parmesan cheese",
+      "expected": {
+        "item": "finely shredded parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt (as needed and freshly ground black pepper)",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "as needed and freshly ground black pepper"
+      }
+    },
+    {
+      "raw": "2 Tbsp chopped fresh parsley",
+      "expected": {
+        "item": "chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Mushrooms ((optional, see notes))",
+      "expected": {
+        "item": "Mushrooms",
+        "measurements": [],
+        "note": "optional, see notes"
+      }
+    }
+  ]
+}

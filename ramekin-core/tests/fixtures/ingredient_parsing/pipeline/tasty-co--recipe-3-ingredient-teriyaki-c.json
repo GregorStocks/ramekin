@@ -1,0 +1,53 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-3-ingredient-teriyaki-c",
+  "ingredients": [
+    {
+      "raw": "2 lb boneless, skinless chicken thighs, cubed",
+      "expected": {
+        "item": "boneless, skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

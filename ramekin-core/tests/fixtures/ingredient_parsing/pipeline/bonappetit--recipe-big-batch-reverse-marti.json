@@ -1,0 +1,48 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-big-batch-reverse-marti",
+  "ingredients": [
+    {
+      "raw": "4½ cups dry vermouth",
+      "expected": {
+        "item": "dry vermouth",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive brine (for serving; optional)",
+      "expected": {
+        "item": "Olive brine",
+        "measurements": [],
+        "note": "for serving; optional"
+      }
+    },
+    {
+      "raw": "Green olives or lemon twists (for serving; optional)",
+      "expected": {
+        "item": "Green olives or lemon twists",
+        "measurements": [],
+        "note": "for serving; optional"
+      }
+    }
+  ]
+}

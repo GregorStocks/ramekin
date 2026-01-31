@@ -1,0 +1,113 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "keen-wahhhh-adventures-in-cook",
+  "ingredients": [
+    {
+      "raw": "1 cup dry quinoa",
+      "expected": {
+        "item": "dry quinoa",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-4 tsp low sodium soy sauce (add a little to start and extra to taste!)",
+      "expected": {
+        "item": "low sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "2-4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "add a little to start and extra to taste!"
+      }
+    },
+    {
+      "raw": "1-2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/8 tsp garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh or frozen veggies: (peas, carrots, and onion)",
+      "expected": {
+        "item": "fresh or frozen veggies: (peas, carrots, and onion)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2  large eggs (optional)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "large"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "oil or butter for sautéing ((I typically reach for the butter))",
+      "expected": {
+        "item": "oil or butter for sautéing (I typically reach for the butter)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

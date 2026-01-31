@@ -1,0 +1,86 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-07-gelatin-shot-glasses-h",
+  "ingredients": [
+    {
+      "raw": "Neutral-tasting vegetable oil for greasing mold (I used canola)",
+      "expected": {
+        "item": "Neutral-tasting vegetable oil for greasing mold (I used canola)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  box (3 ounces Berry Blue Jello)",
+      "expected": {
+        "item": "1  box (3 ounces Berry Blue Jello)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7  packets (.25 ounces each unflavored powdered gelatin)",
+      "expected": {
+        "item": "packets",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": null
+          },
+          {
+            "amount": ".25",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.5 ounces blue Curaçao liqueur",
+      "expected": {
+        "item": "blue Curaçao liqueur",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

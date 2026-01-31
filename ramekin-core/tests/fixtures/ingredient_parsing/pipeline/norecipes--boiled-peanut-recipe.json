@@ -1,0 +1,118 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "boiled-peanut-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound peanuts (fresh green)",
+      "expected": {
+        "item": "peanuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "fresh green"
+      }
+    },
+    {
+      "raw": "2 tablespoons dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon five spice powder",
+      "expected": {
+        "item": "five spice powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  star anise (whole)",
+      "expected": {
+        "item": "star anise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "whole"
+      }
+    },
+    {
+      "raw": "1 clove garlic (mashed)",
+      "expected": {
+        "item": "garlic (mashed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  chilies (thai (sliced in half lengthwise))",
+      "expected": {
+        "item": "chilies",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thai (sliced in half lengthwise"
+      }
+    },
+    {
+      "raw": "3 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

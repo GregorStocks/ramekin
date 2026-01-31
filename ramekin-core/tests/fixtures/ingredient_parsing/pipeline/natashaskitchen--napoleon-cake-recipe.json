@@ -1,0 +1,134 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "napoleon-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb package of Puff Pastry (Pepperidge Farm brand, thawed according to package instructions.)",
+      "expected": {
+        "item": "package of Puff Pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "Pepperidge Farm brand, thawed according to package instructions."
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup light brown sugar (or 1/2 brown sugar, 1/2 white sugar)",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "1/2",
+            "unit": null
+          },
+          {
+            "amount": "220",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 lb unsalted butter, (or 2 sticks butter, room temperature)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "or 2 sticks butter, room temperature"
+      }
+    },
+    {
+      "raw": "1/2 tsp vanilla powder (optional)",
+      "expected": {
+        "item": "vanilla powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/2 cup chopped walnuts",
+      "expected": {
+        "item": "chopped walnuts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

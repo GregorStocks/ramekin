@@ -1,0 +1,116 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2016-02-mint-chocolate-dessert",
+  "ingredients": [
+    {
+      "raw": "1 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces good quality dark chocolate (60%), about 2/3 cup of chips, callets or finely chopped chocolate",
+      "expected": {
+        "item": "good quality dark chocolate, about 2/3 cup of chips",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": null
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "callets or finely chopped chocolate"
+      }
+    },
+    {
+      "raw": "1 tablespoon unsweetened cocoa powder",
+      "expected": {
+        "item": "unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5.4",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup clear creme de menthe liqueur",
+      "expected": {
+        "item": "clear creme de menthe liqueur",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "vanilla ice cream, warm fudge sauce, and mint leaves, to serve",
+      "expected": {
+        "item": "vanilla ice cream, warm fudge sauce, and mint leaves, to serve",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

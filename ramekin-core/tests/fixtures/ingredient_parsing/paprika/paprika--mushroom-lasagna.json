@@ -1,0 +1,183 @@
+{
+  "source": "paprika",
+  "recipe_slug": "mushroom-lasagna",
+  "ingredients": [
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 pound (12 ounces or 340 grams) dried lasagna noodles",
+      "expected": {
+        "item": "dried lasagna noodles",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large clove garlic, minced",
+      "expected": {
+        "item": "clove garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4 cups (950 ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "950",
+            "unit": "ml"
+          },
+          {
+            "amount": "980",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (12 tablespoons, 6 ounces or 170 grams) unsalted butter, divided",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "12",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/2 cup (65 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground nutmeg (I use less, because this seems like a lot)",
+      "expected": {
+        "item": "ground nutmeg (I use less, because this seems like a lot)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds (680 grams) cremini or portobello mushrooms, sliced",
+      "expected": {
+        "item": "cremini or portobello mushrooms",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1 cup (85 grams or 3 ounces) freshly grated parmesan",
+      "expected": {
+        "item": "freshly grated parmesan",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

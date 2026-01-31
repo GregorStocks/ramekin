@@ -1,0 +1,186 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "mexican-casserole-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound ground beef,  (80/20)",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "80/20",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 envelope taco seasoning",
+      "expected": {
+        "item": "envelope taco seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (16-ounce) jar salsa",
+      "expected": {
+        "item": "salsa",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can  chili beans, (undrained)",
+      "expected": {
+        "item": "chili beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": "undrained"
+      }
+    },
+    {
+      "raw": "1 cup frozen corn,  (thawed and drained)",
+      "expected": {
+        "item": "frozen corn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed and drained"
+      }
+    },
+    {
+      "raw": "12 (6 inch) corn tortillas",
+      "expected": {
+        "item": "corn tortillas",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups Jack cheese, divided (shredded)",
+      "expected": {
+        "item": "Jack cheese, divided",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "2 cups sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "484",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (2.25-ounce) can sliced black olives,  (drained)",
+      "expected": {
+        "item": "sliced black olives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "2.25",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 cup green onion, (sliced~divided)",
+      "expected": {
+        "item": "green onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "sliced~divided"
+      }
+    },
+    {
+      "raw": "1 cup fresh tomatoes,  (seeded and chopped)",
+      "expected": {
+        "item": "fresh tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "seeded and chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup cilantro,  (chopped)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "spinach-ohitashi-recipe",
+  "ingredients": [
+    {
+      "raw": "200 g Oriental spinach",
+      "expected": {
+        "item": "Oriental spinach",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "240 ml dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "240",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 liters water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp salt (1% the weight of cooking water)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice-cold water",
+      "expected": {
+        "item": "ice-cold water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "bonito flakes (katsuobushi) (optional garnish, replace with sesame seeds for plant-based diets)",
+      "expected": {
+        "item": "bonito flakes (katsuobushi) (optional garnish, replace with sesame seeds for plant-based diets)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

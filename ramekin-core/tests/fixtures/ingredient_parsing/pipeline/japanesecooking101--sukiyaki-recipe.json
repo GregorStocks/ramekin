@@ -1,0 +1,174 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "sukiyaki-recipe",
+  "ingredients": [
+    {
+      "raw": "1 Tbsp oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lb beef (thinly sliced)",
+      "expected": {
+        "item": "beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "4 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  Nappa cabbage (cut 2\" width)",
+      "expected": {
+        "item": "Nappa cabbage (cut 2\" width)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  long onions (cut diagonally)",
+      "expected": {
+        "item": "long onions (cut diagonally)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bunch Kikuna (cut 2\" long)",
+      "expected": {
+        "item": "Kikuna (cut 2\" long)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  package tofu (cut 1\" width)",
+      "expected": {
+        "item": "tofu (cut 1\" width)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  shiitake mushrooms",
+      "expected": {
+        "item": "shiitake mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  package enoki mushrooms",
+      "expected": {
+        "item": "enoki mushrooms",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  package itokonnyaku",
+      "expected": {
+        "item": "itokonnyaku",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

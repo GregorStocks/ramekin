@@ -1,0 +1,108 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2018-09-ultimate-breakfast-bur",
+  "ingredients": [
+    {
+      "raw": "5 slices bacon (cut crosswise into thin strips)",
+      "expected": {
+        "item": "bacon (cut crosswise into thin strips)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 pound fresh chorizo sausage",
+      "expected": {
+        "item": "fresh chorizo sausage",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 pound yukon gold potatoes (peeled and cut into 1/2-inch cubes)",
+      "expected": {
+        "item": "yukon gold potatoes",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch cubes"
+      }
+    },
+    {
+      "raw": "4  9-inch flour tortillas",
+      "expected": {
+        "item": "9-inch flour tortillas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded cheese",
+      "expected": {
+        "item": "shredded cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pico de gallo",
+      "expected": {
+        "item": "pico de gallo",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "1109-breakfast-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "12 ounces store-bought pizza dough",
+      "expected": {
+        "item": "store-bought pizza dough",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil plus more for serving",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup sliced plum tomatoes",
+      "expected": {
+        "item": "sliced plum tomatoes",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces crumbled goat cheese",
+      "expected": {
+        "item": "crumbled goat cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup fresh basil leaves, chopped",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and fresh ground black pepper",
+      "expected": {
+        "item": "Salt and fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

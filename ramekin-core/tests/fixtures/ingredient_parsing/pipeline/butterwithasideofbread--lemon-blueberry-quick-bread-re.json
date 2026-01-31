@@ -1,0 +1,139 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "lemon-blueberry-quick-bread-re",
+  "ingredients": [
+    {
+      "raw": "1/2 cup butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 tsp lemon extract",
+      "expected": {
+        "item": "lemon extract",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 cups flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "438",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups frozen blueberries (thawed, rinsed)",
+      "expected": {
+        "item": "frozen blueberries",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed, rinsed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-aspen-2003-smoked-bris",
+  "ingredients": [
+    {
+      "raw": "1/4 cup kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup light brown sugar",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sweet paprika",
+      "expected": {
+        "item": "sweet paprika",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound sliced bacon, preferably artisanal (optional)",
+      "expected": {
+        "item": "sliced bacon, preferably artisanal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 (6 to 8 pound) piece center cut brisket",
+      "expected": {
+        "item": "center cut brisket",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "piece"
+          },
+          {
+            "amount": "6 to 8",
+            "unit": "lb"
+          },
+          {
+            "amount": "2722 to 3629",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup beer",
+      "expected": {
+        "item": "beer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup apple cider",
+      "expected": {
+        "item": "apple cider",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup cider vinegar",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup coffee",
+      "expected": {
+        "item": "coffee",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 to 6 cups hickory or apple chips or wood chunks, soaked in water to cover for 1 hour, then drained",
+      "expected": {
+        "item": "hickory or apple chips or wood chunks, soaked in water to cover for 1 hour",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "cup"
+          }
+        ],
+        "note": "then drained"
+      }
+    },
+    {
+      "raw": "5 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 to 6 shallots, minced (enough to make 1 cup)",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": null
+          }
+        ],
+        "note": "minced (enough to make 1 cup)"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3 cups Zinfandel, divided",
+      "expected": {
+        "item": "Zinfandel",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 1/2 cups ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup brown sugar, or to taste",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/4 cup honey, or to taste",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon liquid smoke",
+      "expected": {
+        "item": "liquid smoke",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

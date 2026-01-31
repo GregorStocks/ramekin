@@ -1,0 +1,122 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "citrus-herb-roast-turkey-breas",
+  "ingredients": [
+    {
+      "raw": "3 to 4 pound turkey half-breast, skin intact (or 6 to 7 pound turkey breast, halved)",
+      "expected": {
+        "item": "turkey half-breast, skin intact",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361 to 1814",
+            "unit": "g"
+          }
+        ],
+        "note": "or 6 to 7 pound turkey breast, halved"
+      }
+    },
+    {
+      "raw": "1  orange (quartered)",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "1  onion (cut into wedges)",
+      "expected": {
+        "item": "onion (cut into wedges)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 springs fresh rosemary",
+      "expected": {
+        "item": "springs fresh rosemary",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp extra light olive oil",
+      "expected": {
+        "item": "extra light olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tbsp fresh thyme (chopped )",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 tbsp fresh rosemary (chopped)",
+      "expected": {
+        "item": "fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

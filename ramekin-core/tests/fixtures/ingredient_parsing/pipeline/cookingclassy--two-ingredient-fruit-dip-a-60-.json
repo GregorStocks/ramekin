@@ -1,0 +1,40 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "two-ingredient-fruit-dip-a-60-",
+  "ingredients": [
+    {
+      "raw": "8 oz strawberry cream cheese (, at room temperature)",
+      "expected": {
+        "item": "strawberry cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "7 oz marshmallow creme*",
+      "expected": {
+        "item": "marshmallow creme*",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

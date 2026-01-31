@@ -1,0 +1,130 @@
+{
+  "source": "keviniscooking",
+  "recipe_slug": "fluffy-pancake-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cup milk ((See Note 1))",
+      "expected": {
+        "item": "milk (See Note 1)",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp butter (melted)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1  egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cooking spray (butter or lard for making pancakes (Gramma's favorite was Crisco))",
+      "expected": {
+        "item": "Cooking spray (butter or lard for making pancakes (Gramma's favorite was Crisco)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-7963409-spinach-salad-w",
+  "ingredients": [
+    {
+      "raw": "8 ounces spinach",
+      "expected": {
+        "item": "spinach",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small red onion, thinly sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 small avocado, peeled and cut into 1/2-inch pieces",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch pieces"
+      }
+    },
+    {
+      "raw": "4 strips bacon, cut into 1-inch pieces",
+      "expected": {
+        "item": "strips bacon, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.333 cup red-wine vinegar",
+      "expected": {
+        "item": "red-wine vinegar",
+        "measurements": [
+          {
+            "amount": "0.333",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon water, as needed",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "as needed"
+      }
+    },
+    {
+      "raw": "Freshly ground pepper for garnish",
+      "expected": {
+        "item": "Freshly ground pepper for garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spicy-tuna-toast-recipe",
+  "ingredients": [
+    {
+      "raw": "6 cherry tomatoes, diced",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 tablespoon roughly chopped cilantro",
+      "expected": {
+        "item": "roughly chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons Tabasco",
+      "expected": {
+        "item": "Tabasco",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small ahi tuna steak, at least 1 inch thick",
+      "expected": {
+        "item": "ahi tuna steak, at least 1 inch thick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 round brioche toasts",
+      "expected": {
+        "item": "round brioche toasts",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

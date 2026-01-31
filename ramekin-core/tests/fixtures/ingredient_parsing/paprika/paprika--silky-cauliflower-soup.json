@@ -1,0 +1,96 @@
+{
+  "source": "paprika",
+  "recipe_slug": "silky-cauliflower-soup",
+  "ingredients": [
+    {
+      "raw": "1 head cauliflower",
+      "expected": {
+        "item": "cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 quart low-sodium chicken or vegetable stock",
+      "expected": {
+        "item": "low-sodium chicken or vegetable stock",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup finely grated Parmesan",
+      "expected": {
+        "item": "finely grated Parmesan",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

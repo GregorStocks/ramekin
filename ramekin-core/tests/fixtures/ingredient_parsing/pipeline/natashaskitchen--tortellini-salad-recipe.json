@@ -1,0 +1,92 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "tortellini-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "18 oz cheese tortellini",
+      "expected": {
+        "item": "cheese tortellini",
+        "measurements": [
+          {
+            "amount": "18",
+            "unit": "oz"
+          },
+          {
+            "amount": "510",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  small or 1 large broccoli crown (chopped into mini florets)",
+      "expected": {
+        "item": "broccoli crown",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped into mini florets"
+      }
+    },
+    {
+      "raw": "1/2  medium onion (finely chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 to  mato (seeded and diced)",
+      "expected": {
+        "item": "to  mato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "1/2 cup shredded parmesan",
+      "expected": {
+        "item": "shredded parmesan",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Creamy Caesar dressing or to taste",
+      "expected": {
+        "item": "Creamy Caesar dressing or to taste",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "pumpkin-pie-spice-recipe",
+  "ingredients": [
+    {
+      "raw": "4 Tablespoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

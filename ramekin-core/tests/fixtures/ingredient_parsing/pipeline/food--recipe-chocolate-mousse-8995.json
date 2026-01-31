@@ -1,0 +1,83 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-chocolate-mousse-8995",
+  "ingredients": [
+    {
+      "raw": "8   ounces    chocolate chips",
+      "expected": {
+        "item": "chocolate chips",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6   tablespoons    water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   teaspoons    vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   cups    whipping cream",
+      "expected": {
+        "item": "whipping cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  cup    confectioners' sugar",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

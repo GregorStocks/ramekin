@@ -1,0 +1,95 @@
+{
+  "source": "paprika",
+  "recipe_slug": "really-simple-pizza-dough",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups (200 grams) flour (can replace up to half of this with whole wheat flour)",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "can replace up to half of this with whole wheat flour"
+      }
+    },
+    {
+      "raw": "2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon instant or active dry yeast",
+      "expected": {
+        "item": "instant or active dry yeast",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) lukewarm water, plus 1 or 2 tablespoons more as needed",
+      "expected": {
+        "item": "lukewarm water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus 1 or 2 tablespoons more as needed"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pizza sauce and toppings as you like them",
+      "expected": {
+        "item": "Pizza sauce and toppings as you like them",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

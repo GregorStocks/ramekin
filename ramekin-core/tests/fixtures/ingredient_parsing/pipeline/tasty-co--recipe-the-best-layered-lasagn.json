@@ -1,0 +1,278 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-the-best-layered-lasagn",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, minced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "½ cup large carrot, peeled and minced",
+      "expected": {
+        "item": "large carrot",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "peeled and minced"
+      }
+    },
+    {
+      "raw": "½ cup celery stalk, minced",
+      "expected": {
+        "item": "celery stalk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 lb ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lb ground pork",
+      "expected": {
+        "item": "ground pork",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "pepper, to taste",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "½ cup can of tomato paste",
+      "expected": {
+        "item": "can of tomato paste",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups red wine",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups diced tomato",
+      "expected": {
+        "item": "diced tomato",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 oz ricotta cheese",
+      "expected": {
+        "item": "ricotta cheese",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup fresh basil, chopped",
+      "expected": {
+        "item": "fresh basil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 cup shredded parmesan cheese, plus more to taste",
+      "expected": {
+        "item": "shredded parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "½ cup fresh parsley, chopped",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "pepper, to taste",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 lb lasagna noodle, cooked",
+      "expected": {
+        "item": "lasagna noodle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "cooked"
+      }
+    },
+    {
+      "raw": "shredded mozzarella cheese",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

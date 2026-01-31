@@ -1,0 +1,105 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8064343-black-bean-patt",
+  "ingredients": [
+    {
+      "raw": "2 (15 ounce) cans no-salt-added black beans, rinsed",
+      "expected": {
+        "item": "no-salt-added black beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup whole-wheat panko breadcrumbs",
+      "expected": {
+        "item": "whole-wheat panko breadcrumbs",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons vegan Worcestershire sauce",
+      "expected": {
+        "item": "vegan Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.75 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon ground pepper",
+      "expected": {
+        "item": "ground pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

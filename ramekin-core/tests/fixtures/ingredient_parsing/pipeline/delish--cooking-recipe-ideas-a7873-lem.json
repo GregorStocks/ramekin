@@ -1,0 +1,83 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipe-ideas-a7873-lem",
+  "ingredients": [
+    {
+      "raw": "4 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 c. (100 g.)&nbsp;granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp. finely grated&nbsp;lemon zest",
+      "expected": {
+        "item": "finely grated lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 c. fresh lemon juice, strained",
+      "expected": {
+        "item": "fresh lemon juice, strained",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp. (1/2 stick) cold&nbsp;unsalted butter, cubed",
+      "expected": {
+        "item": "cold unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": "stick"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-leftover-apple-pie-mil",
+  "ingredients": [
+    {
+      "raw": "1 slice apple pie",
+      "expected": {
+        "item": "apple pie",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 scoops vanilla ice cream",
+      "expected": {
+        "item": "scoops vanilla ice cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup apple cider",
+      "expected": {
+        "item": "apple cider",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup apple jack, optional",
+      "expected": {
+        "item": "apple jack",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

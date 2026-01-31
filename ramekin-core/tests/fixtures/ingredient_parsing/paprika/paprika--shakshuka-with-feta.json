@@ -1,0 +1,194 @@
+{
+  "source": "paprika",
+  "recipe_slug": "shakshuka-with-feta",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion, halved and thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 large red bell pepper, seeded and thinly sliced",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "seeded and thinly sliced"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sweet paprika",
+      "expected": {
+        "item": "sweet paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground cayenne, or to taste",
+      "expected": {
+        "item": "ground cayenne",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 (28-ounce) can whole plum tomatoes with their juices, coarsely chopped",
+      "expected": {
+        "item": "whole plum tomatoes with their juices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "28",
+            "unit": null
+          }
+        ],
+        "note": "coarsely chopped"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon kosher salt, plus more as needed",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon black pepper, plus more as needed",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "5 ounces feta, crumbled (about 1 1/4 cups)",
+      "expected": {
+        "item": "feta",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "6 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped cilantro, for serving",
+      "expected": {
+        "item": "Chopped cilantro",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Hot sauce, for serving",
+      "expected": {
+        "item": "Hot sauce",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

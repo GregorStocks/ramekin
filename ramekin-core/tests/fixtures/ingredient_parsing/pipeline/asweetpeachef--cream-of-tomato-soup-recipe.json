@@ -1,0 +1,157 @@
+{
+  "source": "asweetpeachef",
+  "recipe_slug": "cream-of-tomato-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  red onion, (diced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2  carrots, (diced)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3 cloves garlic, (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "5  vine-ripened tomatoes, (diced)",
+      "expected": {
+        "item": "vine-ripened tomatoes",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 tbsp tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  fresh basil leaves",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups low sodium chicken broth* ( (or vegetable broth if vegan/vegetarian))",
+      "expected": {
+        "item": "low sodium chicken broth* ( (or vegetable broth if vegan/vegetarian)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp sea salt, (plus more to taste)",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/4 tsp ground black pepper, (plus more to taste)",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "3/4 cup canned full-fat coconut milk  (can sub for unsweetened almond milk*)",
+      "expected": {
+        "item": "canned full-fat coconut milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": null,
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

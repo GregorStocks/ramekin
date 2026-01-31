@@ -1,0 +1,90 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "st-germain-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces dry gin (such as Hendrick's or Tanqueray, or vodka)",
+      "expected": {
+        "item": "dry gin (such as Hendrick's or Tanqueray, or vodka)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce St. Germain liqueur",
+      "expected": {
+        "item": "St. Germain liqueur",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 ounce freshly squeezed lemon juice",
+      "expected": {
+        "item": "freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces brut champagne (or prosecco, or other dry sparkling wine)",
+      "expected": {
+        "item": "brut champagne (or prosecco, or other dry sparkling wine)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon twist or peel (for serving)",
+      "expected": {
+        "item": "Lemon twist or peel",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Ice (for cocktail shaker)",
+      "expected": {
+        "item": "Ice (for cocktail shaker)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

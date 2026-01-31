@@ -1,0 +1,61 @@
+{
+  "source": "paprika",
+  "recipe_slug": "2-ingredient-cream-biscuits",
+  "ingredients": [
+    {
+      "raw": "10 ounces (about 2 cups) self-rising flour",
+      "expected": {
+        "item": "self-rising flour",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons sugar (if making sweet shortcake-style biscuits)",
+      "expected": {
+        "item": "sugar (if making sweet shortcake-style biscuits)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 ounces (about 1 1/4 cups) heavy cream, plus more for brushing",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for brushing"
+      }
+    }
+  ]
+}

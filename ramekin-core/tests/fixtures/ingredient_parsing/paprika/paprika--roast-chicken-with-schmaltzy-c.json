@@ -1,0 +1,81 @@
+{
+  "source": "paprika",
+  "recipe_slug": "roast-chicken-with-schmaltzy-c",
+  "ingredients": [
+    {
+      "raw": "1 large head (2 1/2 pounds) green cabbage",
+      "expected": {
+        "item": "head green cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Splash of oil, any kind",
+      "expected": {
+        "item": "Splash of oil, any kind",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 whole chicken, about 3 pounds",
+      "expected": {
+        "item": "whole chicken, about 3 pounds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    }
+  ]
+}

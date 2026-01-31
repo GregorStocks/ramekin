@@ -1,0 +1,160 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-pumpkin-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb 10 oz  pie pumpkin or butternut squash, peeled, deseeded and cut into chunks",
+      "expected": {
+        "item": "10 oz  pie pumpkin or butternut squash, peeled, deseeded and cut into chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz sweet pie crust",
+      "expected": {
+        "item": "sweet pie crust",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "plain flour for dusting",
+      "expected": {
+        "item": "plain flour for dusting",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "scant ¾ cup superfine sugar",
+      "expected": {
+        "item": "superfine sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "scant cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp freshly ground nutmeg",
+      "expected": {
+        "item": "freshly ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs beaten",
+      "expected": {
+        "item": "eggs beaten",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp butter melted",
+      "expected": {
+        "item": "butter melted",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

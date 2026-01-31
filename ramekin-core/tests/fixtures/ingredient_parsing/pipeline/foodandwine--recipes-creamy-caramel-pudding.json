@@ -1,0 +1,83 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-creamy-caramel-pudding",
+  "ingredients": [
+    {
+      "raw": "1 quart 2-percent milk",
+      "expected": {
+        "item": "2-percent milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup plus 3 tablespoons cornstarch",
+      "expected": {
+        "item": "1/4 cup plus 3 tablespoons cornstarch",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 3 tablespoons cornstarch"
+      }
+    },
+    {
+      "raw": "2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nut brittle , for serving (optional)",
+      "expected": {
+        "item": "Nut brittle, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

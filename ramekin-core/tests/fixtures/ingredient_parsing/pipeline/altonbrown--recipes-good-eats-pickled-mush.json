@@ -1,0 +1,131 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-good-eats-pickled-mush",
+  "ingredients": [
+    {
+      "raw": "1/2 cup water, plus more for blanching",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for blanching"
+      }
+    },
+    {
+      "raw": "2 tablespoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound button mushrooms",
+      "expected": {
+        "item": "button mushrooms",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  allspice berries or additional black peppercorns",
+      "expected": {
+        "item": "allspice berries or additional black peppercorns",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic, thinly sliced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup white wine vinegar",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

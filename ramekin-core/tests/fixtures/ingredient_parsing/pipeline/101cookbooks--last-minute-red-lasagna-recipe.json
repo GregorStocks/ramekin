@@ -1,0 +1,164 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "last-minute-red-lasagna-recipe",
+  "ingredients": [
+    {
+      "raw": "28 ounce can of crushed tomatoes",
+      "expected": {
+        "item": "can of crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "28",
+            "unit": "oz"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine grain salt",
+      "expected": {
+        "item": "fine grain salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic, chopped",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces fresh pasta sheets, cut into lasagna strips OR",
+      "expected": {
+        "item": "fresh pasta sheets, cut into lasagna strips OR",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 ounces dried whole wheat no-boil lasagna sheets",
+      "expected": {
+        "item": "dried whole wheat no-boil lasagna sheets",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cooked red lentils or cannellini beans",
+      "expected": {
+        "item": "cooked red lentils or cannellini beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chopped olives (optional)",
+      "expected": {
+        "item": "chopped olives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "4 ounces mozzarella cheese, torn",
+      "expected": {
+        "item": "mozzarella cheese, torn",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

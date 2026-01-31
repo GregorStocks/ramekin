@@ -1,0 +1,61 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-carrot-parsnip-mash",
+  "ingredients": [
+    {
+      "raw": "1 pound carrots",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound parsnips",
+      "expected": {
+        "item": "parsnips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp butter or ghee (melted)",
+      "expected": {
+        "item": "butter or ghee",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

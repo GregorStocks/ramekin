@@ -1,0 +1,41 @@
+{
+  "category": "metric",
+  "test_cases": [
+    {
+      "name": "lb_fraction",
+      "raw": "1 1/2 lb ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "lb_to_g",
+      "raw": "2 lb chicken breast",
+      "expected": {
+        "item": "chicken breast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

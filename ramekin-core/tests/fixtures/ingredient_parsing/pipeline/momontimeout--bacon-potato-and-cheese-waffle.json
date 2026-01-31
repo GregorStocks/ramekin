@@ -1,0 +1,157 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "bacon-potato-and-cheese-waffle",
+  "ingredients": [
+    {
+      "raw": "1 cup refrigerated hash browns (if using frozen, thaw and pat dry)",
+      "expected": {
+        "item": "refrigerated hash browns",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "if using frozen, thaw and pat dry"
+      }
+    },
+    {
+      "raw": "1/4 cup Challenge Unsalted Butter",
+      "expected": {
+        "item": "Challenge Unsalted Butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "219",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs (lightly beaten)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "1/2 cup shredded sharp cheddar cheese",
+      "expected": {
+        "item": "shredded sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 strips bacon (cooked and crumbled)",
+      "expected": {
+        "item": "strips bacon",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "cooked and crumbled"
+      }
+    },
+    {
+      "raw": "2 tbsp chopped chives",
+      "expected": {
+        "item": "chopped chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

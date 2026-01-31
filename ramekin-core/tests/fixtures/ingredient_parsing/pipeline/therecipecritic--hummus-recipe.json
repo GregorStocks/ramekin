@@ -1,0 +1,124 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "hummus-recipe",
+  "ingredients": [
+    {
+      "raw": "¼ cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup tahini",
+      "expected": {
+        "item": "tahini",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (15-ounce) cans chickpeas",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice of half a lemon",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  garlic cloves",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "chopped parsley",
+      "expected": {
+        "item": "chopped parsley",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

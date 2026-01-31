@@ -1,0 +1,649 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-09-state-fair-sampler-cak",
+  "ingredients": [
+    {
+      "raw": "14  whole Oreo cookies",
+      "expected": {
+        "item": "whole Oreo cookies",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons 57g unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "3/4 cup 150g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 120g all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 4 oz. whole milk",
+      "expected": {
+        "item": "4 oz. whole milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Serves 10",
+      "expected": {
+        "item": "Serves 10",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ingredients",
+      "expected": {
+        "item": "Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cups 225g all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 70g fine cornmeal",
+      "expected": {
+        "item": "fine cornmeal",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "70",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup 150g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup 75g maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 100g vegetable oil or light-tasting olive oil",
+      "expected": {
+        "item": "vegetable oil or light-tasting olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons maple extract (I like Frontier brand)",
+      "expected": {
+        "item": "maple extract (I like Frontier brand)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 200g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 8 oz. water",
+      "expected": {
+        "item": "8 oz. water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons maple extract",
+      "expected": {
+        "item": "maple extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Caramel Apple Layers",
+      "expected": {
+        "item": "Caramel Apple Layers",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons 56g unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 105g brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "105",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  large Granny Smith apples",
+      "expected": {
+        "item": "Granny Smith apples",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 113g unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "3/4 cup 150g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 2 tablespoons (145g all-purpose flour)",
+      "expected": {
+        "item": "2 tablespoons",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "145",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 4.3 oz. sour cream",
+      "expected": {
+        "item": "4.3 oz. sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup 2 oz. whole milk",
+      "expected": {
+        "item": "2 oz. whole milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 226g unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1  can (13.4 ounces prepared dulce de leche)",
+      "expected": {
+        "item": "1  can (13.4 ounces prepared dulce de leche)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "13.4",
+            "unit": "oz"
+          },
+          {
+            "amount": "380",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "In the bowl of an electric mixer",
+      "expected": {
+        "item": "In the bowl of an electric mixer",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cover the frosting with a damp towel to prevent it from crusting.",
+      "expected": {
+        "item": "Cover the frosting with a damp towel to prevent it from crusting.",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  frozen soft pretzels with salt (baked)",
+      "expected": {
+        "item": "frozen soft pretzels with salt (baked)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Prepared funnel cake (see headnote)",
+      "expected": {
+        "item": "Prepared funnel cake (see headnote)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Powdered sugar",
+      "expected": {
+        "item": "Powdered sugar",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

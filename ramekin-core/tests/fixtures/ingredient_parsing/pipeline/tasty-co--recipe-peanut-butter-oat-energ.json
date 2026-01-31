@@ -1,0 +1,78 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-peanut-butter-oat-energ",
+  "ingredients": [
+    {
+      "raw": "½ cup rolled oats",
+      "expected": {
+        "item": "rolled oats",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup peanut butter",
+      "expected": {
+        "item": "peanut butter",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "86",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon dark chocolate chip, optional",
+      "expected": {
+        "item": "dark chocolate chip",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

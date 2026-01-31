@@ -1,0 +1,83 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "homemade-butter-mints-old-fash",
+  "ingredients": [
+    {
+      "raw": "1/4 cup butter (softened)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/4 cups powdered sugar *",
+      "expected": {
+        "item": "powdered sugar *",
+        "measurements": [
+          {
+            "amount": "3 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon peppermint extract **",
+      "expected": {
+        "item": "peppermint extract **",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional: 1/4 cup cocoa powder * (reduce the powdered sugar by the amount of cocoa used)",
+      "expected": {
+        "item": "Optional: 1/4 cup cocoa powder * (reduce the powdered sugar by the amount of cocoa used)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

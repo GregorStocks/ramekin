@@ -1,0 +1,152 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-brownie-fudge-cookies",
+  "ingredients": [
+    {
+      "raw": "¾ cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup butter, melted",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "⅔ cup chocolate, melted",
+      "expected": {
+        "item": "chocolate",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup plain flour",
+      "expected": {
+        "item": "plain flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cup dark chocolate chip",
+      "expected": {
+        "item": "dark chocolate chip",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cup white chocolate chip",
+      "expected": {
+        "item": "white chocolate chip",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "granola-bars-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup creamy peanut butter (no sugar added; substitute sunflower butter for nut free)",
+      "expected": {
+        "item": "creamy peanut butter (no sugar added; substitute sunflower butter for nut free)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup honey (or 1/2 cup agave syrup for vegan)",
+      "expected": {
+        "item": "honey (or 1/2 cup agave syrup for vegan)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 cups Old Fashioned rolled oats",
+      "expected": {
+        "item": "Old Fashioned rolled oats",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Up to 1 cup finely chopped nuts, dried fruit and seeds, or 1/2 cup mini chocolate chips",
+      "expected": {
+        "item": "Up to 1 cup finely chopped nuts, dried fruit and seeds",
+        "measurements": [],
+        "note": "or 1/2 cup mini chocolate chips"
+      }
+    }
+  ]
+}

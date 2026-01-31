@@ -1,0 +1,134 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "brownie-recipe",
+  "ingredients": [
+    {
+      "raw": "3/4 cup (170g) unsalted butter*, (cut into 1-Tbsp pieces)",
+      "expected": {
+        "item": "unsalted butter*, (cut into 1-Tbsp pieces)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (300g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup (98g) unbleached all-purpose flour ((scoop and level to measure))",
+      "expected": {
+        "item": "unbleached all-purpose flour (scoop and level to measure)",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "98",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup (56g) unsweetened cocoa powder** ((spoon and level))",
+      "expected": {
+        "item": "unsweetened cocoa powder** (spoon and level)",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (128g) chocolate chips***",
+      "expected": {
+        "item": "chocolate chips***",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "pesto-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup toasted pine nuts",
+      "expected": {
+        "item": "toasted pine nuts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small garlic clove",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups basil leaves",
+      "expected": {
+        "item": "basil leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup extra-virgin olive oil (plus more for a smoother pesto)",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for a smoother pesto"
+      }
+    },
+    {
+      "raw": "¼ cup freshly grated Parmesan cheese (optional)",
+      "expected": {
+        "item": "freshly grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

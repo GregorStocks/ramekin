@@ -1,0 +1,92 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8054853-tomato-cucumber",
+  "ingredients": [
+    {
+      "raw": "1 medium cucumber or 2 mini cucumbers",
+      "expected": {
+        "item": "cucumber or 2 mini cucumbers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium tomatoes, cored and cut into thin wedges",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "cored and cut into thin wedges"
+      }
+    },
+    {
+      "raw": "0.5 medium red onion, thinly sliced into half moons",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced into half moons"
+      }
+    },
+    {
+      "raw": "0.25 cup chopped fresh dill",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
+      "expected": {
+        "item": "unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ground pepper to taste",
+      "expected": {
+        "item": "Ground pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

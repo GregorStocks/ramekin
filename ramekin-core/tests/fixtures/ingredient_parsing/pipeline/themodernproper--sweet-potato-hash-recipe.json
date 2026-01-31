@@ -1,0 +1,143 @@
+{
+  "source": "themodernproper",
+  "recipe_slug": "sweet-potato-hash-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sweet potatoes, (about 1 pound total), peeled and cut into ¾-inch cubes",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 3/4-inch cubes"
+      }
+    },
+    {
+      "raw": "1 red bell pepper, thinly sliced",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 green bell pepper, thinly sliced",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "½ small yellow onion, thinly sliced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 to 2 cups cooked meat, such as crumbled sausage, chopped bacon, shredded chicken or carnitas",
+      "expected": {
+        "item": "cooked meat, such as crumbled sausage, chopped bacon",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded chicken or carnitas"
+      }
+    },
+    {
+      "raw": "½ teaspoon kosher salt, or to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 large eggs, fried",
+      "expected": {
+        "item": "eggs, fried",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 avocado thinly sliced, (optional)",
+      "expected": {
+        "item": "avocado thinly sliced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Fresh cilantro, for serving (optional)",
+      "expected": {
+        "item": "Fresh cilantro, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

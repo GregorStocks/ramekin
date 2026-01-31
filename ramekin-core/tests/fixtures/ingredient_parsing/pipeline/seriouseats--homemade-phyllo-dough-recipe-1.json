@@ -1,0 +1,91 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "homemade-phyllo-dough-recipe-1",
+  "ingredients": [
+    {
+      "raw": "255 g bread flour (9 ounces; 2 cups), plus more for dusting",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "255",
+            "unit": "g"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for dusting"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half by volume",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (30 ml) apple cider vinegar or rice vinegar",
+      "expected": {
+        "item": "apple cider vinegar or rice vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml), plus 1 teaspoon olive oil",
+      "expected": {
+        "item": "2 tablespoons (30 ml), plus 1 teaspoon olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus 1 teaspoon olive oil"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) room temperature water, plus more if needed",
+      "expected": {
+        "item": "room temperature water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus more if needed"
+      }
+    }
+  ]
+}

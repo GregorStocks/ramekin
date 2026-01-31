@@ -1,0 +1,58 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "pesto-chicken-recipe",
+  "ingredients": [
+    {
+      "raw": "4  chicken breast (thin-cut boneless )",
+      "expected": {
+        "item": "chicken breast (thin-cut boneless",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup prepared basil pesto (divided)",
+      "expected": {
+        "item": "prepared basil pesto",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2  Roma tomatoes (sliced into rounds)",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced into rounds"
+      }
+    },
+    {
+      "raw": "1/2 cup mozzarella (shredded)",
+      "expected": {
+        "item": "mozzarella",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    }
+  ]
+}

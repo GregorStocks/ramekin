@@ -1,0 +1,105 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-sweet-and-spicy-pork-c",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped onion",
+      "expected": {
+        "item": "finely chopped onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 1-1/2 teaspoons chili powder",
+      "expected": {
+        "item": "to 1-1/2 teaspoons chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon prepared mustard",
+      "expected": {
+        "item": "prepared mustard",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 boneless pork loin chops (4 ounces each)",
+      "expected": {
+        "item": "boneless pork loin chops",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Dash salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

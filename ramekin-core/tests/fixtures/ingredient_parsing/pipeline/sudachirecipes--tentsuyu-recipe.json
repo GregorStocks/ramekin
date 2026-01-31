@@ -1,0 +1,69 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "tentsuyu-recipe",
+  "ingredients": [
+    {
+      "raw": "100 ml dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "grated daikon radish (daikon oroshi)",
+      "expected": {
+        "item": "grated daikon radish (daikon oroshi)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "grated ginger root",
+      "expected": {
+        "item": "grated ginger root",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "spicy grated daikon radish (momiji oroshi)",
+      "expected": {
+        "item": "spicy grated daikon radish (momiji oroshi)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

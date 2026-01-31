@@ -1,0 +1,71 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "velvety-blueberry-smoothie-rec",
+  "ingredients": [
+    {
+      "raw": "1 cup original almond milk (or water)",
+      "expected": {
+        "item": "original almond milk (or water)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana (peeled)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "2  oranges (or 3 clementines, peeled)",
+      "expected": {
+        "item": "oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "or 3 clementines, peeled"
+      }
+    },
+    {
+      "raw": "2 cups frozen blueberries",
+      "expected": {
+        "item": "frozen blueberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

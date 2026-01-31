@@ -1,0 +1,74 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-blistered-shishito-pep",
+  "ingredients": [
+    {
+      "raw": "½ lb shishito peppers, (rinsed and dried thoroughly)",
+      "expected": {
+        "item": "shishito peppers",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and dried thoroughly"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Generous pinch flaky sea salt, (for serving (optional))",
+      "expected": {
+        "item": "flaky sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "generous pinch"
+          }
+        ],
+        "note": "for serving (optional"
+      }
+    },
+    {
+      "raw": "Lemon wedges and/or dipping sauce,",
+      "expected": {
+        "item": "Lemon wedges and/or dipping sauce",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

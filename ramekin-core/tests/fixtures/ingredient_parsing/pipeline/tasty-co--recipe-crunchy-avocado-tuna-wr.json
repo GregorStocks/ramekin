@@ -1,0 +1,173 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-crunchy-avocado-tuna-wr",
+  "ingredients": [
+    {
+      "raw": "10 oz tuna, drained",
+      "expected": {
+        "item": "tuna",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 large avocado, diced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 cup finely chopped carrots",
+      "expected": {
+        "item": "finely chopped carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ribs celery, finely chopped",
+      "expected": {
+        "item": "ribs celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "¼ cup finely chopped red onion",
+      "expected": {
+        "item": "finely chopped red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt, to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "freshly ground black pepper, to taste",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "4 whole wheat tortillas",
+      "expected": {
+        "item": "whole wheat tortillas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 leaves green leaf lettuce",
+      "expected": {
+        "item": "leaves green leaf lettuce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cherry tomatoes, halved",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    }
+  ]
+}

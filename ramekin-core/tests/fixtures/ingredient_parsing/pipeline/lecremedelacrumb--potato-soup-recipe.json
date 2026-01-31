@@ -1,0 +1,195 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "potato-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  yellow onion (diced)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3  celery stalks (chopped)",
+      "expected": {
+        "item": "celery stalks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  whole carrots (diced)",
+      "expected": {
+        "item": "whole carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "6  russet potatoes (peeled and diced)",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "more to taste"
+      }
+    },
+    {
+      "raw": "½ teaspoon cracked black pepper (or 1/4 teaspoon ground black pepper)",
+      "expected": {
+        "item": "cracked black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 teaspoon ground black pepper"
+      }
+    },
+    {
+      "raw": "8 cups low sodium chicken broth  (or vegetable broth)",
+      "expected": {
+        "item": "low sodium chicken broth  (or vegetable broth)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup  heavy cream  (OR fat free half and half)",
+      "expected": {
+        "item": "heavy cream  (OR fat free half and half)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups freshly grated cheddar  (or white cheddar cheese)",
+      "expected": {
+        "item": "freshly grated cheddar  (or white cheddar cheese)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional garnishes: cooked and crumbled bacon or bacon bits, fresh herbs such as thyme or parsley, cracked black pepper, cheddar or parmesan cheese",
+      "expected": {
+        "item": "optional garnishes: cooked and crumbled bacon or bacon bits, fresh herbs such as thyme or parsley, cracked black pepper, cheddar or parmesan cheese",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

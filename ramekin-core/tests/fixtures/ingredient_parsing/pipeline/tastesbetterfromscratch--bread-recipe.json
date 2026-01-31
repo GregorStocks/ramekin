@@ -1,0 +1,104 @@
+{
+  "source": "tastesbetterfromscratch",
+  "recipe_slug": "bread-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups warm water (105-115 degrees) ((474g))",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "105-115",
+            "unit": null
+          },
+          {
+            "amount": "474",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoons active dry yeast*",
+      "expected": {
+        "item": "active dry yeast*",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup honey or sugar ((85g honey, 50g sugar))",
+      "expected": {
+        "item": "honey or sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons oil (canola or vegetable) ((30 ml))",
+      "expected": {
+        "item": "oil (canola or vegetable) (30 ml)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 - 5 1/2 cups all-purpose or bread flour* ((500g-688g))",
+      "expected": {
+        "item": "1/2 cups all-purpose or bread flour*",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": null
+          },
+          {
+            "amount": "500",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

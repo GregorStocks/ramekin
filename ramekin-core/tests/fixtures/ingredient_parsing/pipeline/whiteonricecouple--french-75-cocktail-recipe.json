@@ -1,0 +1,112 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "french-75-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "2 oz. fresh orange juice (, about 1/2 an orange)",
+      "expected": {
+        "item": "fresh orange juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/2",
+            "unit": null
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 oz. juice from 1/2 a lemon (, about 1/2 a lemon)",
+      "expected": {
+        "item": "juice from 1/2 a lemon",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/2",
+            "unit": null
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 oz. good bourbon ((knob creek))",
+      "expected": {
+        "item": "good bourbon (knob creek)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 oz. simple syrup",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "dash orange bitters",
+      "expected": {
+        "item": "orange bitters",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 oz. Champagne or Prosecco (, to top cocktail)",
+      "expected": {
+        "item": "Champagne or Prosecco (, to top cocktail)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

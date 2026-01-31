@@ -1,0 +1,100 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-7888033-monticellos-mac",
+  "ingredients": [
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.5 cups whole milk, divided",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "612",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 pound elbow macaroni",
+      "expected": {
+        "item": "elbow macaroni",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups shredded mild Cheddar cheese or a mixture of Colby and Cheddar",
+      "expected": {
+        "item": "shredded mild Cheddar cheese or a mixture of Colby and Cheddar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 tablespoons butter (1 stick), sliced",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    }
+  ]
+}

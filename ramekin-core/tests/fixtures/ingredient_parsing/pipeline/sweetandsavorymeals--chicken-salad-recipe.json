@@ -1,0 +1,126 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "chicken-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups cooked chicken breast (chopped into small cubes and some shredded)",
+      "expected": {
+        "item": "cooked chicken breast",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped into small cubes and some shredded"
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup plain greek yogurt",
+      "expected": {
+        "item": "plain greek yogurt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup celery (chopped finely)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped finely"
+      }
+    },
+    {
+      "raw": "2 tablespoons green onions (chopped)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 tablespoons chopped almonds (or slivered almonds, optional)",
+      "expected": {
+        "item": "chopped almonds",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or slivered almonds, optional"
+      }
+    },
+    {
+      "raw": "Salt and Pepper to taste",
+      "expected": {
+        "item": "Salt and Pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

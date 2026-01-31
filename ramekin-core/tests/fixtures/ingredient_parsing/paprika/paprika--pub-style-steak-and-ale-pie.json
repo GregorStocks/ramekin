@@ -1,0 +1,292 @@
+{
+  "source": "paprika",
+  "recipe_slug": "pub-style-steak-and-ale-pie",
+  "ingredients": [
+    {
+      "raw": "Gather Your Ingredients",
+      "expected": {
+        "item": "Gather Your Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Filling",
+      "expected": {
+        "item": "Filling",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 pounds boneless beef short ribs, trimmed and cut into 3/4-inch chunks",
+      "expected": {
+        "item": "boneless beef short ribs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cut into 3/4-inch chunks"
+      }
+    },
+    {
+      "raw": "½ teaspoon Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 slices bacon, chopped",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 pound cremini mushroom, trimmed and halved if medium or quartered if large",
+      "expected": {
+        "item": "cremini mushroom",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and halved if medium or quartered if large"
+      }
+    },
+    {
+      "raw": "1 ½ cups beef broth",
+      "expected": {
+        "item": "beef broth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "½ teaspoon dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup beer",
+      "expected": {
+        "item": "beer",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Crust",
+      "expected": {
+        "item": "Crust",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg, lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "¼ cup sour cream, chilled",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "chilled"
+      }
+    },
+    {
+      "raw": "1 ¼ cups (6 1/4 ounces/177 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "6 1/4",
+            "unit": null
+          },
+          {
+            "amount": "156",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter, cut into 1/2-inch pieces and chilled",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "cut into 1/2-inch pieces and chilled"
+      }
+    }
+  ]
+}

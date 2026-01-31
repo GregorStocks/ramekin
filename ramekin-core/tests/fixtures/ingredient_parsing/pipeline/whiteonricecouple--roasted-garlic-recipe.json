@@ -1,0 +1,60 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "roasted-garlic-recipe",
+  "ingredients": [
+    {
+      "raw": "4  Garlic (, whole heads)",
+      "expected": {
+        "item": "Garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "whole heads"
+      }
+    },
+    {
+      "raw": "2 Tablespoons Olive Oil (, or as needed)",
+      "expected": {
+        "item": "Olive Oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "or as needed"
+      }
+    },
+    {
+      "raw": "Flakey Salt (, such as kosher salt, Murray River salt, Maldon salt)",
+      "expected": {
+        "item": "Flakey Salt (, such as kosher salt, Murray River salt, Maldon salt)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh cracked Black Pepper",
+      "expected": {
+        "item": "fresh cracked Black Pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional-fresh thyme leaves",
+      "expected": {
+        "item": "optional-fresh thyme leaves",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "sauteed-green-bean-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lb green beans (ends trimmed)",
+      "expected": {
+        "item": "green beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "ends trimmed"
+      }
+    },
+    {
+      "raw": "1 pinch coarse salt (pinch of salt)",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          },
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  garlic cloves (minced)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 pinch cracked pepper (to season)",
+      "expected": {
+        "item": "cracked pepper (to season)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons lemon juice (fresh squeezed)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "fresh squeezed"
+      }
+    }
+  ]
+}

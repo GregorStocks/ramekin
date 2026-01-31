@@ -1,0 +1,190 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "naan-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "2  naan breads",
+      "expected": {
+        "item": "naan breads",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup prepared pizza sauce or pesto",
+      "expected": {
+        "item": "prepared pizza sauce or pesto",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Italian seasoning (optional)",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cup shredded mozzarella cheese ((or fresh mozzarella slices))",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "or fresh mozzarella slices"
+      }
+    },
+    {
+      "raw": "2 tablespoons finely grated Parmesan cheese",
+      "expected": {
+        "item": "finely grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch kosher salt or flaky sea salt",
+      "expected": {
+        "item": "kosher salt or flaky sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  fresh basil leaves",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pepperoni and/or Italian chicken or turkey sausage",
+      "expected": {
+        "item": "Pepperoni and/or Italian chicken or turkey sausage",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sautéed Mushrooms",
+      "expected": {
+        "item": "Sautéed Mushrooms",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Roasted Garlic",
+      "expected": {
+        "item": "Roasted Garlic",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Roasted Red Peppers",
+      "expected": {
+        "item": "Roasted Red Peppers",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Burrata",
+      "expected": {
+        "item": "Burrata",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ricotta",
+      "expected": {
+        "item": "Ricotta",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Carbonara",
+      "expected": {
+        "item": "Carbonara",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Brussels Sprouts and Bacon",
+      "expected": {
+        "item": "Brussels Sprouts and Bacon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Asparagus",
+      "expected": {
+        "item": "Asparagus",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Arugula and prosciutto (add after the pizza comes out of the oven)",
+      "expected": {
+        "item": "Arugula and prosciutto (add after the pizza comes out of the oven)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

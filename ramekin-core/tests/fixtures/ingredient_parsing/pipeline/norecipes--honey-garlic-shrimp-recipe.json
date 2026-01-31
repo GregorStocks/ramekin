@@ -1,0 +1,125 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "honey-garlic-shrimp-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 grams garlic ((2 large cloves garlic minced))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "2 large cloves garlic minced"
+      }
+    },
+    {
+      "raw": "300 grams shrimp ((15 jumbo))",
+      "expected": {
+        "item": "shrimp",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon crushed red pepper",
+      "expected": {
+        "item": "crushed red pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Flat-leaf parsley ((for garnish))",
+      "expected": {
+        "item": "Flat-leaf parsley",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "Lemon ((sliced for garnish))",
+      "expected": {
+        "item": "Lemon",
+        "measurements": [],
+        "note": "sliced for garnish"
+      }
+    }
+  ]
+}

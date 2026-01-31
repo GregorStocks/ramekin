@@ -1,0 +1,591 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-chicken-tikka-masala-39",
+  "ingredients": [
+    {
+      "raw": "1   lb    boneless chicken breast, cut into 1-inch cubes",
+      "expected": {
+        "item": "boneless chicken breast, cut into 1-inch cubes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    red chili powder (preferably kashmiri type)",
+      "expected": {
+        "item": "red chili powder (preferably kashmiri type)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4   tablespoons    yogurt",
+      "expected": {
+        "item": "yogurt",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    double cream",
+      "expected": {
+        "item": "double cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    mustard oil",
+      "expected": {
+        "item": "mustard oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    garlic paste",
+      "expected": {
+        "item": "garlic paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    ginger paste",
+      "expected": {
+        "item": "ginger paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    coriander seed",
+      "expected": {
+        "item": "coriander seed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    cumin seed",
+      "expected": {
+        "item": "cumin seed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    dried fenugreek leaves, crushed  (kasoori methi)",
+      "expected": {
+        "item": "dried fenugreek leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "crushed  (kasoori methi)"
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "6   tablespoons    ghee (clarified butter)",
+      "expected": {
+        "item": "ghee (clarified butter)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2  teaspoons    coriander seeds",
+      "expected": {
+        "item": "coriander seeds",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5   cm    cinnamon sticks",
+      "expected": {
+        "item": "cm    cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2       bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4       cloves",
+      "expected": {
+        "item": "4       cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4       green cardamom pods, slightly crushed",
+      "expected": {
+        "item": "green cardamom pods",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "slightly crushed"
+      }
+    },
+    {
+      "raw": "4       black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4  lbs    tomatoes, cut in half",
+      "expected": {
+        "item": "tomatoes, cut in half",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6   tablespoons    ghee",
+      "expected": {
+        "item": "ghee",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4   ounces    onions, finely chopped",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1   ounce    blanched almond, toasted almonds",
+      "expected": {
+        "item": "blanched almond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted almonds"
+      }
+    },
+    {
+      "raw": "2   tablespoons    desiccated coconut",
+      "expected": {
+        "item": "desiccated coconut",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    double cream",
+      "expected": {
+        "item": "double cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    garlic paste",
+      "expected": {
+        "item": "garlic paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    ginger paste",
+      "expected": {
+        "item": "ginger paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2       green chilies, finely chopped",
+      "expected": {
+        "item": "green chilies",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    turmeric",
+      "expected": {
+        "item": "turmeric",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 -3   teaspoons    honey",
+      "expected": {
+        "item": "-3   teaspoons    honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1      processed cheese slice",
+      "expected": {
+        "item": "processed cheese slice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6   tablespoons    double cream",
+      "expected": {
+        "item": "double cream",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "89",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    dried fenugreek leaves, crushed",
+      "expected": {
+        "item": "dried fenugreek leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "crushed"
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    coriander leaves, finely chopped",
+      "expected": {
+        "item": "coriander leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

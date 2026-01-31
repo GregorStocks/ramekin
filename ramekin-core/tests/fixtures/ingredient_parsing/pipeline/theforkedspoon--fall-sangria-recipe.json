@@ -1,0 +1,133 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "fall-sangria-recipe",
+  "ingredients": [
+    {
+      "raw": "2  apples (cored and thinly sliced)",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "cored and thinly sliced"
+      }
+    },
+    {
+      "raw": "2   pears (cored and thinly sliced)",
+      "expected": {
+        "item": "pears",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "cored and thinly sliced"
+      }
+    },
+    {
+      "raw": "1   orange (sliced and cut into quarters)",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced and cut into quarters"
+      }
+    },
+    {
+      "raw": "1 bottle white wine (750ml of Pinot Grigio, Sauvignon Blanc, or Chardonnay)",
+      "expected": {
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "750",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup pear liqueur",
+      "expected": {
+        "item": "pear liqueur",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (12 ounce) bottle hard apple cider",
+      "expected": {
+        "item": "hard apple cider",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  cinnamon sticks",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "tonic water (optional)",
+      "expected": {
+        "item": "tonic water",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "fresh rosemary (to garnish)",
+      "expected": {
+        "item": "fresh rosemary (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

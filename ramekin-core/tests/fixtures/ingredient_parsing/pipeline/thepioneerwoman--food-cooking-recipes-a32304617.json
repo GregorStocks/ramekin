@@ -1,0 +1,83 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32304617",
+  "ingredients": [
+    {
+      "raw": "1/2 gal. apple cider",
+      "expected": {
+        "item": "apple cider",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "gallon"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Granny Smith apple, diced",
+      "expected": {
+        "item": "Granny Smith apple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "Peel of 1 orange, torn into pieces",
+      "expected": {
+        "item": "Peel of 1 orange, torn into pieces",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cinnamon sticks",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 c. sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 c. bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

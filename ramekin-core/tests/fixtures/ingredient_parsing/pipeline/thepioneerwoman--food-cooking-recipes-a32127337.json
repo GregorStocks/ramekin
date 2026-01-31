@@ -1,0 +1,51 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32127337",
+  "ingredients": [
+    {
+      "raw": "12 doughnut holes",
+      "expected": {
+        "item": "doughnut holes",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "White candy melts, melted",
+      "expected": {
+        "item": "White candy melts",
+        "measurements": [],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "Gummy ring",
+      "expected": {
+        "item": "Gummy ring",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Brown mini M&amp;amp;Ms",
+      "expected": {
+        "item": "Brown mini M&Ms",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red candy melts, melted&nbsp;",
+      "expected": {
+        "item": "Red candy melts",
+        "measurements": [],
+        "note": "melted"
+      }
+    }
+  ]
+}

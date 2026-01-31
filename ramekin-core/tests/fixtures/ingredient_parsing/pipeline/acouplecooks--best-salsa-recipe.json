@@ -1,0 +1,122 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "best-salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds fresh tomatoes (6 medium)",
+      "expected": {
+        "item": "fresh tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "6",
+            "unit": "medium"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 white onion",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium garlic clove",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 jalapeño peppers, seeds removed (depending on your spice tolerance)",
+      "expected": {
+        "item": "jalapeño peppers, seeds removed (depending on your spice tolerance)",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large handful cilantro",
+      "expected": {
+        "item": "handful cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons lime juice, divided",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt, divided",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

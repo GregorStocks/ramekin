@@ -1,0 +1,83 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-citrus-lime-vinaigrett",
+  "ingredients": [
+    {
+      "raw": "1/4  cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  orange (juiced)",
+      "expected": {
+        "item": "orange (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  limes (juiced)",
+      "expected": {
+        "item": "limes (juiced)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp jalapeno pepper (finely diced)",
+      "expected": {
+        "item": "jalapeno pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1/4 cup cilantro (finely chopped)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

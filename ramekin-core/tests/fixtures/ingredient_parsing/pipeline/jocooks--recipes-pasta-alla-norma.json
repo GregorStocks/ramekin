@@ -1,0 +1,168 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-pasta-alla-norma",
+  "ingredients": [
+    {
+      "raw": "1 large  eggplant (cut into 1-inch cubes)",
+      "expected": {
+        "item": "eggplant (cut into 1-inch cubes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil (divided)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 small  onion (finely chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "14.5 ounces diced tomatoes (1 can)",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup tomato passata (or tomato puree)",
+      "expected": {
+        "item": "tomato passata (or tomato puree)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon red pepper flakes (optional)",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 pound pasta (rigatoni, penne, or spaghetti)",
+      "expected": {
+        "item": "pasta (rigatoni, penne, or spaghetti)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Pecorino Romano (grated, or Parmesan cheese)",
+      "expected": {
+        "item": "Pecorino Romano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "grated, or Parmesan cheese"
+      }
+    },
+    {
+      "raw": "fresh basil leaves (torn (for garnish))",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [],
+        "note": "torn (for garnish"
+      }
+    },
+    {
+      "raw": "salt and pepper  (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

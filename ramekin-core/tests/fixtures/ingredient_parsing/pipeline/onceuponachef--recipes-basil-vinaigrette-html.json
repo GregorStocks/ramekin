@@ -1,0 +1,101 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-basil-vinaigrette-html",
+  "ingredients": [
+    {
+      "raw": "2 cups  loosely packed fresh basil leaves",
+      "expected": {
+        "item": "loosely packed fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  cloves garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "¼ cup + 2 tablespoons  white wine vinegar, best quality such as Pompeian Gourmet",
+      "expected": {
+        "item": "+ 2 tablespoons  white wine vinegar, best quality such as Pompeian Gourmet",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup  extra-virgin olive oil, best quality such as Lucini",
+      "expected": {
+        "item": "extra-virgin olive oil, best quality such as Lucini",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Scant 1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "scant tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon  ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ tablespoons  honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

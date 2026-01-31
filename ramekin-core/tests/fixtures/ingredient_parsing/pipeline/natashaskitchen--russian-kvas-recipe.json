@@ -1,0 +1,92 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "russian-kvas-recipe",
+  "ingredients": [
+    {
+      "raw": "5 Liters or 5.28 Quarts (or 21 cups Warm Water)",
+      "expected": {
+        "item": "(or 21 cups Warm Water)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "l"
+          },
+          {
+            "amount": "5.28",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 Tbsp Kvas Concentrate",
+      "expected": {
+        "item": "Kvas Concentrate",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "350",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp Active Dry Yeast",
+      "expected": {
+        "item": "Active Dry Yeast",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10  raisins",
+      "expected": {
+        "item": "raisins",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  loaf of Rye Bread (cut into 1\" squares and toasted)",
+      "expected": {
+        "item": "loaf of Rye Bread",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "cut into 1\" squares and toasted"
+      }
+    }
+  ]
+}

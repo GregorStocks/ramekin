@@ -1,0 +1,70 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2022-02-06-simple-sauteed-gree",
+  "ingredients": [
+    {
+      "raw": "1 head escarole, 1.25-1.5 lbs",
+      "expected": {
+        "item": "escarole, 1.25-1.5 lbs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic, thinly sliced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "pinch crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt to taste",
+      "expected": {
+        "item": "kosher salt to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

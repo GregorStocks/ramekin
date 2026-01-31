@@ -1,0 +1,75 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "miso-grilled-salmon-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cups Miso paste (white)",
+      "expected": {
+        "item": "Miso paste (white)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 pieces salmon fillets",
+      "expected": {
+        "item": "salmon fillets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "piece"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

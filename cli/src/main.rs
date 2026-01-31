@@ -263,6 +263,12 @@ enum Commands {
         #[arg(long)]
         fixtures_dir: Option<PathBuf>,
     },
+    /// Migrate curated fixtures from individual files to category files
+    IngredientTestsMigrateCurated {
+        /// Fixtures directory (default: ramekin-core/tests/fixtures/ingredient_parsing)
+        #[arg(long)]
+        fixtures_dir: Option<PathBuf>,
+    },
 }
 
 #[tokio::main]
@@ -430,6 +436,9 @@ async fn main() -> Result<()> {
         }
         Commands::IngredientTestsGeneratePaprika { file, fixtures_dir } => {
             ingredient_tests::generate_from_paprika(&file, fixtures_dir.as_deref())?;
+        }
+        Commands::IngredientTestsMigrateCurated { fixtures_dir } => {
+            ingredient_tests::migrate_curated(fixtures_dir.as_deref())?;
         }
     }
 

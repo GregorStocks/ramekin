@@ -1,0 +1,159 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-sticky-garlic-chicken-b",
+  "ingredients": [
+    {
+      "raw": "2 chicken breasts",
+      "expected": {
+        "item": "chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg, beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "2 cups panko breadcrumbs",
+      "expected": {
+        "item": "panko breadcrumbs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic, crushed",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "crushed"
+      }
+    },
+    {
+      "raw": "2 tablespoons hoisin sauce",
+      "expected": {
+        "item": "hoisin sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon  sriracha",
+      "expected": {
+        "item": "sriracha",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon grated ginger",
+      "expected": {
+        "item": "grated ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "spring onion, for garnish",
+      "expected": {
+        "item": "spring onion",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "sesame seed, for garnish",
+      "expected": {
+        "item": "sesame seed",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-crustless-four-cheese-",
+  "ingredients": [
+    {
+      "raw": "1/4 cup butter, cubed",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-1/4 cups 4% cottage cheese",
+      "expected": {
+        "item": "4% cottage cheese",
+        "measurements": [
+          {
+            "amount": "1-1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground mustard",
+      "expected": {
+        "item": "ground mustard",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 packages (3 ounces each) cream cheese, cubed",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          },
+          {
+            "amount": "3",
+            "unit": "oz each"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1/2 pound Jarlsberg or Swiss cheese, shredded",
+      "expected": {
+        "item": "Jarlsberg or Swiss cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1/4 cup grated Parmesan cheese",
+      "expected": {
+        "item": "grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

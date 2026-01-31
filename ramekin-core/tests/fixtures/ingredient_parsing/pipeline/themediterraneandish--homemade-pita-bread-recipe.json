@@ -1,0 +1,88 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "homemade-pita-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup lukewarm water",
+      "expected": {
+        "item": "lukewarm water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups all-purpose flour, divided (or 1 1/2 cup all-purpose flour and 1 1/2 cup whole wheat flour)",
+      "expected": {
+        "item": "all-purpose flour, divided",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1 1/2 cup all-purpose flour and 1 1/2 cup whole wheat flour"
+      }
+    },
+    {
+      "raw": "1 to 2 tsp kosher salt (I used Diamond Crystal kosher salt)",
+      "expected": {
+        "item": "kosher salt (I used Diamond Crystal kosher salt)",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil), more for the bowl",
+      "expected": {
+        "item": "extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil), more for the bowl",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

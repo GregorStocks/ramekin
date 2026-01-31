@@ -1,0 +1,117 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "10202-fried-apples-recipe",
+  "ingredients": [
+    {
+      "raw": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
+      "expected": {
+        "item": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg white",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup beer, slightly flat",
+      "expected": {
+        "item": "beer, slightly flat",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cinnamon, optional",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon cayenne pepper, optional",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "3 large Granny Smith apples or other firm apple, peeled and cored",
+      "expected": {
+        "item": "Granny Smith apples or other firm apple",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and cored"
+      }
+    },
+    {
+      "raw": "Sea salt, powdered sugar or caramel sauce for serving",
+      "expected": {
+        "item": "Sea salt",
+        "measurements": [],
+        "note": "powdered sugar or caramel sauce for serving"
+      }
+    }
+  ]
+}

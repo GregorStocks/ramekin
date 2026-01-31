@@ -1,0 +1,160 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "basmati-rice-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium onions (chopped or sliced)",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped or sliced"
+      }
+    },
+    {
+      "raw": "1 cup white basmati rice",
+      "expected": {
+        "item": "white basmati rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 cups water ((vegetable broth, chicken broth, or chicken stock))",
+      "expected": {
+        "item": "water (vegetable broth, chicken broth, or chicken stock)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup dried apricots (chopped)",
+      "expected": {
+        "item": "dried apricots",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 tablespoon fresh parsley (minced)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh mint (minced)",
+      "expected": {
+        "item": "fresh mint",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 cup almonds (chopped)",
+      "expected": {
+        "item": "almonds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 teaspoon lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh lemon juice (to taste)",
+      "expected": {
+        "item": "Fresh lemon juice",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Salt and pepper (to taste)",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

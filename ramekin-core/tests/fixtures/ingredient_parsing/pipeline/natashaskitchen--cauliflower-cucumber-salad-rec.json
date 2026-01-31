@@ -1,0 +1,92 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "cauliflower-cucumber-salad-rec",
+  "ingredients": [
+    {
+      "raw": "1  small/medium head of cauliflower (cut into small pieces)",
+      "expected": {
+        "item": "small/medium head of cauliflower (cut into small pieces)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  English cucumber (sliced into thin half circles)",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced into thin half circles"
+      }
+    },
+    {
+      "raw": "1/2 cup chives or green onion (finely sliced)",
+      "expected": {
+        "item": "chives or green onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely sliced"
+      }
+    },
+    {
+      "raw": "1/4 cup sour cream and 1/4 cup plain Greek yogurt (or all sour cream if you don't have the yogurt)",
+      "expected": {
+        "item": "sour cream and 1/4 cup plain Greek yogurt (or all sour cream if you don't have the yogurt)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/4 tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Add a clove of garlic to the dressing for a little extra zing (if you like :))",
+      "expected": {
+        "item": "Add a clove of garlic to the dressing for a little extra zing (if you like :)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

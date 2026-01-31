@@ -1,0 +1,62 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-228653-slow-cooker-cide",
+  "ingredients": [
+    {
+      "raw": "5 pounds apples - peeled, cored, and thinly sliced",
+      "expected": {
+        "item": "apples - peeled, cored",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2268",
+            "unit": "g"
+          }
+        ],
+        "note": "and thinly sliced"
+      }
+    },
+    {
+      "raw": "1.5 tablespoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

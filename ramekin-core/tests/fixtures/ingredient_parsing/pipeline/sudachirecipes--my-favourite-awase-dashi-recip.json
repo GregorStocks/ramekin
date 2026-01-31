@@ -1,0 +1,58 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "my-favourite-awase-dashi-recip",
+  "ingredients": [
+    {
+      "raw": "10 g dried sardines (niboshi) (niboshi )",
+      "expected": {
+        "item": "dried sardines (niboshi) (niboshi",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 g dried kelp (kombu) (kombu )",
+      "expected": {
+        "item": "dried kelp (kombu) (kombu",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1100 ml cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1100",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 g bonito flakes (katsuobushi) (katsuobushi)",
+      "expected": {
+        "item": "bonito flakes (katsuobushi) (katsuobushi)",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

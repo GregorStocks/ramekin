@@ -1,0 +1,141 @@
+{
+  "source": "paprika",
+  "recipe_slug": "buttermilk-biscuits",
+  "ingredients": [
+    {
+      "raw": "1/2 cup (120 ml) buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream (4 ounces; 113 g)",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "284g all-purpose flour (2 1/4 cups), plus additional for dusting",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "284",
+            "unit": "g"
+          },
+          {
+            "amount": "2 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus additional for dusting"
+      }
+    },
+    {
+      "raw": "12g (1 tablespoon) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5g (1/4 teaspoon) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "g"
+          },
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6g (1 1/2 teaspoons) Diamond Crystal kosher salt",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 tablespoons cold unsalted butter (4 ounces; 113 g), cut into 1/4-inch pats, plus 2 tablespoons (1 ounce; 28 g) melted unsalted butter for brushing",
+      "expected": {
+        "item": "cold unsalted butter, cut into 1/4-inch pats",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 2 tablespoons melted unsalted butter for brushing"
+      }
+    }
+  ]
+}

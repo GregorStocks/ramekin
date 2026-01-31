@@ -1,0 +1,56 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "london-fog-recipe",
+  "ingredients": [
+    {
+      "raw": "3/4 cup or 6 ounces hot tea",
+      "expected": {
+        "item": "hot tea",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup or 2 ounces hot milk",
+      "expected": {
+        "item": "hot milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
+      "expected": {
+        "item": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "teriyaki-burgers-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons fish sauce (, optional)",
+      "expected": {
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 clove garlic (, crushed or minced (optional))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "crushed or minced (optional"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon sugar (, optional)",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "fresh cracked black pepper ( to taste)",
+      "expected": {
+        "item": "fresh cracked black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "3  hamburger buns",
+      "expected": {
+        "item": "hamburger buns",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt ( or sea salt, to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "or sea salt, to taste"
+      }
+    },
+    {
+      "raw": "lettuce, tomato, pickles ( and other desired trimmings)",
+      "expected": {
+        "item": "lettuce, tomato, pickles ( and other desired trimmings)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sake (or water)",
+      "expected": {
+        "item": "sake (or water)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon rice vinegar ((or apple cider))",
+      "expected": {
+        "item": "rice vinegar (or apple cider)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon grated fresh ginger (, or 1/2 teaspoon ground ginger)",
+      "expected": {
+        "item": "grated fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/2 teaspoon ground ginger"
+      }
+    },
+    {
+      "raw": "1 large ripe mango (, peeled and cut into small dice )",
+      "expected": {
+        "item": "ripe mango",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and cut into small dice"
+      }
+    },
+    {
+      "raw": "1 small tomato (, small dice )",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup  minced red onion",
+      "expected": {
+        "item": "minced red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Tablespoon  minced jalapeno or serrano chili  (, or to personal taste )",
+      "expected": {
+        "item": "minced jalapeno or serrano chili  (, or to personal taste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon finely minced fresh cilantro leaves",
+      "expected": {
+        "item": "finely minced fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh lime juice (, or more to taste)",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "salt (, to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

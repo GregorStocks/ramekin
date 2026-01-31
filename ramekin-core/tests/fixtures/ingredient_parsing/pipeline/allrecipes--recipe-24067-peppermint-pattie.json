@@ -1,0 +1,75 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-24067-peppermint-pattie",
+  "ingredients": [
+    {
+      "raw": "0.75 cup sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 teaspoons peppermint extract",
+      "expected": {
+        "item": "peppermint extract",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups confectioners' sugar",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups semisweet chocolate chips",
+      "expected": {
+        "item": "semisweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons shortening",
+      "expected": {
+        "item": "shortening",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

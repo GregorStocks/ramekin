@@ -1,0 +1,98 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "grilled-shrimp-quesadillas-rec",
+  "ingredients": [
+    {
+      "raw": "1 lb shrimp (I used 31-40 ct, raw, peeled, tail-on - deveined)",
+      "expected": {
+        "item": "shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "I used 31-40 ct, raw, peeled, tail-on - deveined"
+      }
+    },
+    {
+      "raw": "4 to 6  limes",
+      "expected": {
+        "item": "limes",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz Mexican blend  (or Monterey Jack cheese)",
+      "expected": {
+        "item": "Mexican blend  (or Monterey Jack cheese)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  flour tortillas (or corn)",
+      "expected": {
+        "item": "flour tortillas (or corn)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pico de gallo (optional)",
+      "expected": {
+        "item": "pico de gallo",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "fresh guacamole (optional)",
+      "expected": {
+        "item": "fresh guacamole",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "cilantro (optional)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "grilled peppers and onions (optional)",
+      "expected": {
+        "item": "grilled peppers and onions",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

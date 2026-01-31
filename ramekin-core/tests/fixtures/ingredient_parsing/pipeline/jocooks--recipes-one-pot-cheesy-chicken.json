@@ -1,0 +1,174 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-one-pot-cheesy-chicken",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small onion (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2  chicken breasts (cut into small cubes)",
+      "expected": {
+        "item": "chicken breasts (cut into small cubes)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "¾ cup rice (uncooked)",
+      "expected": {
+        "item": "rice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "uncooked"
+      }
+    },
+    {
+      "raw": "10 ounces cream of chicken soup ((1 can))",
+      "expected": {
+        "item": "cream of chicken soup",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups chicken broth (low sodium)",
+      "expected": {
+        "item": "chicken broth (low sodium)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups broccoli florets",
+      "expected": {
+        "item": "broccoli florets",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cheddar cheese",
+      "expected": {
+        "item": "cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh parsley  (chopped)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

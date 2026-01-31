@@ -1,0 +1,125 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "lemon-couscous-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup couscous",
+      "expected": {
+        "item": "couscous",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "173",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups low-sodium chicken broth (or vegetable broth)",
+      "expected": {
+        "item": "low-sodium chicken broth (or vegetable broth)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons freshly chopped parsley",
+      "expected": {
+        "item": "freshly chopped parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons freshly chopped basil (optional)",
+      "expected": {
+        "item": "freshly chopped basil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Kosher salt (to taste)",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Pinch red pepper flakes (optional and to taste)",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "optional and to taste"
+      }
+    }
+  ]
+}

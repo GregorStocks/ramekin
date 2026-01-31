@@ -1,0 +1,152 @@
+{
+  "source": "themodernproper",
+  "recipe_slug": "smash-burger-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound 80/20 ground beef",
+      "expected": {
+        "item": "80/20 ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large sweet onion, chopped",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "¼ cup yellow mustard",
+      "expected": {
+        "item": "yellow mustard",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices American cheese",
+      "expected": {
+        "item": "American cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 sesame seed buns, halved",
+      "expected": {
+        "item": "sesame seed buns",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "Shredded Iceberg lettuce",
+      "expected": {
+        "item": "Shredded Iceberg lettuce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large tomato, sliced",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "sliced"
+      }
+    }
+  ]
+}

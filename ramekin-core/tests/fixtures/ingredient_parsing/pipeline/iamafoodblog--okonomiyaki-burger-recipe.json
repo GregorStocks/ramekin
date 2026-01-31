@@ -1,0 +1,84 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "okonomiyaki-burger-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 soft mini brioche buns (or buns of your choice)",
+      "expected": {
+        "item": "soft mini brioche buns (or buns of your choice)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kewpie mayo",
+      "expected": {
+        "item": "Kewpie mayo",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "okonomiyaki sauce",
+      "expected": {
+        "item": "okonomiyaki sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "bonito flakes",
+      "expected": {
+        "item": "bonito flakes",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "aonori flakes or seaweed strips",
+      "expected": {
+        "item": "aonori flakes or seaweed strips",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "tempura bits or rice krispies",
+      "expected": {
+        "item": "tempura bits or rice krispies",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

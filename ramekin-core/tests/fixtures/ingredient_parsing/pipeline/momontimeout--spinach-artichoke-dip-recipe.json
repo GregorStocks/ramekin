@@ -1,0 +1,122 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "spinach-artichoke-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "16 oz cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 oz frozen spinach (thawed, drained, excess liquid squeezed out)",
+      "expected": {
+        "item": "frozen spinach",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed, drained, excess liquid squeezed out"
+      }
+    },
+    {
+      "raw": "1 1/2 cups Parmesan or Parmigiano Reggiano cheese",
+      "expected": {
+        "item": "Parmesan or Parmigiano Reggiano cheese",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "21 oz marinated quartered artichoke hearts (drained and coarsely chopped)",
+      "expected": {
+        "item": "marinated quartered artichoke hearts",
+        "measurements": [
+          {
+            "amount": "21",
+            "unit": "oz"
+          },
+          {
+            "amount": "595",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and coarsely chopped"
+      }
+    },
+    {
+      "raw": "2 tsp fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp fresh ground black pepper",
+      "expected": {
+        "item": "fresh ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  heads of garlic (roasted)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "head"
+          }
+        ],
+        "note": "roasted"
+      }
+    }
+  ]
+}

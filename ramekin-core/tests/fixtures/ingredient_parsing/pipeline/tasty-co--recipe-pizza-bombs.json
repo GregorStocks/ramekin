@@ -1,0 +1,127 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-pizza-bombs",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons butter, for greasing the pan",
+      "expected": {
+        "item": "butter, for greasing the pan",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 ½ oz can of biscuit dough, 1 can",
+      "expected": {
+        "item": "can of biscuit dough, 1 can",
+        "measurements": [
+          {
+            "amount": "16 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "468",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "marinara sauce",
+      "expected": {
+        "item": "marinara sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sliced pepperoni",
+      "expected": {
+        "item": "sliced pepperoni",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz ball of mozzarella cheese, cut into cubes",
+      "expected": {
+        "item": "ball of mozzarella cheese, cut into cubes",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "butter, melted",
+      "expected": {
+        "item": "butter",
+        "measurements": [],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "pepper, to taste",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon italian seasoning",
+      "expected": {
+        "item": "italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "shredded parmesan cheese, for topping",
+      "expected": {
+        "item": "shredded parmesan cheese, for topping",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

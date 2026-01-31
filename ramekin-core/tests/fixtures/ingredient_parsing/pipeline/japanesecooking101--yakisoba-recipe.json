@@ -1,0 +1,194 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "yakisoba-recipe",
+  "ingredients": [
+    {
+      "raw": "5 oz pork (thinly sliced)",
+      "expected": {
+        "item": "pork",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1  small onion",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cup cabbage (cut into about 2&amp;quot; (5 cm) squares)",
+      "expected": {
+        "item": "cabbage (cut into about 2\" (5 cm) squares)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cup bean sprouts",
+      "expected": {
+        "item": "bean sprouts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  small carrot",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  green bell pepper",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Aonori",
+      "expected": {
+        "item": "Aonori",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Benishoga",
+      "expected": {
+        "item": "Benishoga",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  packages Chuka Men (Chinese style noodles)",
+      "expected": {
+        "item": "Chuka Men (Chinese style noodles)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tbsp Tonkatsu sauce",
+      "expected": {
+        "item": "Tonkatsu sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Worcester sauce",
+      "expected": {
+        "item": "Worcester sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

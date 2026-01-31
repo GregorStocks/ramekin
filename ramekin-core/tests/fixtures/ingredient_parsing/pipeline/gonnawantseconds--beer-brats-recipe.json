@@ -1,0 +1,130 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "beer-brats-recipe",
+  "ingredients": [
+    {
+      "raw": "4  yellow onions, (sliced into ½ inch rounds)",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced into 1/2 inch rounds"
+      }
+    },
+    {
+      "raw": "salt + black pepper (to taste)",
+      "expected": {
+        "item": "salt + black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "3 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  (12-ounce) cans or bottles beers",
+      "expected": {
+        "item": "or bottles beers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon caraway seed",
+      "expected": {
+        "item": "caraway seed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10  bratwurst sausages",
+      "expected": {
+        "item": "bratwurst sausages",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10  sourdough rolls",
+      "expected": {
+        "item": "sourdough rolls",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

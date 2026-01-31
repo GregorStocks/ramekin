@@ -1,0 +1,56 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-bicycle-bandit",
+  "ingredients": [
+    {
+      "raw": "1 oz. gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ oz. Campari",
+      "expected": {
+        "item": "Campari",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Grapefruit soda (such as San Pellegrino Pompelmo; for serving)",
+      "expected": {
+        "item": "Grapefruit soda",
+        "measurements": [],
+        "note": "such as San Pellegrino Pompelmo; for serving"
+      }
+    },
+    {
+      "raw": "Lemon wedge (for serving)",
+      "expected": {
+        "item": "Lemon wedge",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

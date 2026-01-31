@@ -1,0 +1,117 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "better-breakfast-cereal-recipe",
+  "ingredients": [
+    {
+      "raw": "1  box Kashi wheat biscuits (16 ounce)",
+      "expected": {
+        "item": "Kashi wheat biscuits",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  box Nature's Path Multi-grain Oat Flake Cereal",
+      "expected": {
+        "item": "Nature's Path Multi-grain Oat Flake Cereal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  box Kashi 7-grain nuggets, or Ezekiels",
+      "expected": {
+        "item": "Kashi 7-grain nuggets, or Ezekiels",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups quick-cooking rolled oats",
+      "expected": {
+        "item": "quick-cooking rolled oats",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups oat bran",
+      "expected": {
+        "item": "oat bran",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "141",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups freeze-dried berries (mix of raspberries, blue berries, strawberries)",
+      "expected": {
+        "item": "freeze-dried berries",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "mix of raspberries, blue berries, strawberries"
+      }
+    },
+    {
+      "raw": "1/2 cup ground flax seeds",
+      "expected": {
+        "item": "ground flax seeds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "to serve: fresh berries fruit or sliced banana, chia, hemp seeds &amp; your milk of choice (I prefer almond milk here or a blend of cashew and almond milk)",
+      "expected": {
+        "item": "to serve: fresh berries fruit or sliced banana, chia, hemp seeds & your milk of choice (I prefer almond milk here or a blend of cashew and almond milk)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

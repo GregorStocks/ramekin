@@ -1,0 +1,115 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spam-and-egg-salad-roll-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 can spam",
+      "expected": {
+        "item": "spam",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "tamago-yaki",
+      "expected": {
+        "item": "tamago-yaki",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh spinach",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "vermicelli, cooked and cooled",
+      "expected": {
+        "item": "vermicelli",
+        "measurements": [],
+        "note": "cooked and cooled"
+      }
+    },
+    {
+      "raw": "round rice paper wrappers",
+      "expected": {
+        "item": "round rice paper wrappers",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "fish sauce vinaigrette to serve, if desired",
+      "expected": {
+        "item": "fish sauce vinaigrette to serve, if desired",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon light soy sauce",
+      "expected": {
+        "item": "light soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

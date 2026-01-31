@@ -1,0 +1,142 @@
+{
+  "source": "paprika",
+  "recipe_slug": "cheese-frenchee",
+  "ingredients": [
+    {
+      "raw": "3 cups cornflakes (2.75 ounces; 78 g)",
+      "expected": {
+        "item": "cornflakes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "78",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup all-purpose flour (2.5 ounces; 71 g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup plus 2 tablespoons (90 ml) whole milk",
+      "expected": {
+        "item": "1/4 cup plus 2 tablespoons (90 ml) whole milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus 2 tablespoons whole milk"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices white sandwich bread (see notes)",
+      "expected": {
+        "item": "white sandwich bread (see notes)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices American cheese",
+      "expected": {
+        "item": "American cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Neutral oil such as vegetable or canola for frying",
+      "expected": {
+        "item": "Neutral oil such as vegetable or canola for frying",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

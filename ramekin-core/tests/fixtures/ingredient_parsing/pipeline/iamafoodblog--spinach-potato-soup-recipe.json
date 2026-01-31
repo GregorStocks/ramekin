@@ -1,0 +1,74 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spinach-potato-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups chopped fresh spinach",
+      "expected": {
+        "item": "chopped fresh spinach",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large potato, peeled and cut into chunks",
+      "expected": {
+        "item": "potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and cut into chunks"
+      }
+    },
+    {
+      "raw": "3 cups vegetable or chicken stock",
+      "expected": {
+        "item": "vegetable or chicken stock",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup diced onion",
+      "expected": {
+        "item": "diced onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "drizzle of olive oil",
+      "expected": {
+        "item": "drizzle of olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper to taste",
+      "expected": {
+        "item": "salt and freshly ground pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

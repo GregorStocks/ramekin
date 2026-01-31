@@ -1,0 +1,92 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "potatoes-au-gratin-recipe",
+  "ingredients": [
+    {
+      "raw": "4 pounds Potatoes (,  scrubbed clean (preferably gold potatoes))",
+      "expected": {
+        "item": "Potatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": "scrubbed clean (preferably gold potatoes"
+      }
+    },
+    {
+      "raw": "2 cloves Garlic",
+      "expected": {
+        "item": "Garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 1 1/2 Tablespoons Kosher Salt (, or to taste)",
+      "expected": {
+        "item": "1/2 Tablespoons Kosher Salt",
+        "measurements": [
+          {
+            "amount": "1 to 1",
+            "unit": null
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 teaspoons fresh cracked Black Pepper (, or to taste)",
+      "expected": {
+        "item": "fresh cracked Black Pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly grated Nutmeg (, or to taste)",
+      "expected": {
+        "item": "freshly grated Nutmeg",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 1/2 cups Heavy Cream",
+      "expected": {
+        "item": "Heavy Cream",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "595",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "source": "paprika",
+  "recipe_slug": "khachapuri-adjaruli-georgian",
+  "ingredients": [
+    {
+      "raw": "doigh:",
+      "expected": {
+        "item": "doigh:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cups/225 grams all-purpose or bread flour",
+      "expected": {
+        "item": "cups/225 grams all-purpose or bread flour",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "assemlby:",
+      "expected": {
+        "item": "assemlby:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces store-bought pizza dough, or homemade pizza dough completed through Step 2",
+      "expected": {
+        "item": "store-bought pizza dough, or homemade pizza dough completed through Step 2",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup/100 grams shredded whole milk, low-moisture mozzarella (not fresh mozzarella)",
+      "expected": {
+        "item": "cup/100 grams shredded whole milk, low-moisture mozzarella",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "not fresh mozzarella"
+      }
+    },
+    {
+      "raw": "1/3 cup/40 grams goat cheese, finely crumbled",
+      "expected": {
+        "item": "cup/40 grams goat cheese",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": null
+          }
+        ],
+        "note": "finely crumbled"
+      }
+    },
+    {
+      "raw": "1/3 cup/40 grams drained, finely crumbled brined feta (not low-fat or light)",
+      "expected": {
+        "item": "cup/40 grams drained",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": null
+          }
+        ],
+        "note": "finely crumbled brined feta (not low-fat or light)"
+      }
+    },
+    {
+      "raw": "1 tablespoon unsalted butter, melted, plus 2 tablespoons cold butter for serving (optional)",
+      "expected": {
+        "item": "unsalted butter, melted",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 egg yolk from 1 large egg (optional)",
+      "expected": {
+        "item": "egg yolk from 1 large egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

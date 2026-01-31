@@ -1,0 +1,137 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "shrimp-asparagus-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic, sliced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "12 medium shrimp, peeled and deveined, tails left on if preferred",
+      "expected": {
+        "item": "shrimp, peeled and deveined, tails left on if preferred",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of 1/2 lemon",
+      "expected": {
+        "item": "juice of 1/2 lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ball no-knead pizza dough",
+      "expected": {
+        "item": "ball no-knead pizza dough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3-1/2 cup shredded mozzarella cheese",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1/3-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4 stalks asparagus, ends trimmed and cut into 1 inch pieces",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "stalk"
+          }
+        ],
+        "note": "ends trimmed and cut into 1 inch pieces"
+      }
+    },
+    {
+      "raw": "crushed red pepper, to taste",
+      "expected": {
+        "item": "crushed red pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "zest of 1 lemon",
+      "expected": {
+        "item": "zest of 1 lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped flat leaf parsley",
+      "expected": {
+        "item": "chopped flat leaf parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon parmesan",
+      "expected": {
+        "item": "parmesan",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

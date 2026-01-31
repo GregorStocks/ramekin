@@ -1,0 +1,83 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "miso-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup Bonito fish flakes",
+      "expected": {
+        "item": "Bonito fish flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-8 ounces firm tofu (cut into 1-inch pieces)",
+      "expected": {
+        "item": "firm tofu (cut into 1-inch pieces)",
+        "measurements": [
+          {
+            "amount": "4-8",
+            "unit": "oz"
+          },
+          {
+            "amount": "113-227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup Wakame seaweed (chopped)",
+      "expected": {
+        "item": "Wakame seaweed",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "¼ cup miso paste (plus more if needed)",
+      "expected": {
+        "item": "miso paste (plus more if needed)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh green onions (sliced)",
+      "expected": {
+        "item": "fresh green onions",
+        "measurements": [],
+        "note": "sliced"
+      }
+    }
+  ]
+}

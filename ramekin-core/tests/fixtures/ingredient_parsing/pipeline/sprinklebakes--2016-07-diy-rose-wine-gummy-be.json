@@ -1,0 +1,79 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-07-diy-rose-wine-gummy-be",
+  "ingredients": [
+    {
+      "raw": "1 cup 240 ml rosé wine",
+      "expected": {
+        "item": "240 ml rosé wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 100 g granulated sugar",
+      "expected": {
+        "item": "100 g granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  packets (.25 oz. each powdered gelatin)",
+      "expected": {
+        "item": "packets",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": ".25",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-6  drops LorAnn Sparkling Wine candy flavoring oil",
+      "expected": {
+        "item": "LorAnn Sparkling Wine candy flavoring oil",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  drop pink food color",
+      "expected": {
+        "item": "pink food color",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

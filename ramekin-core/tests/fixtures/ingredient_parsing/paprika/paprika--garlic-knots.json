@@ -1,0 +1,96 @@
+{
+  "source": "paprika",
+  "recipe_slug": "garlic-knots",
+  "ingredients": [
+    {
+      "raw": "10 garlic cloves, minced (see note)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "minced (see note)"
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon plus 3/4 cup water, heated to 110 degrees",
+      "expected": {
+        "item": "1 teaspoon plus 3/4 cup water, heated to 110 degrees",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus 3/4 cup water, heated to 110 degrees"
+      }
+    },
+    {
+      "raw": "1 ⅛ teaspoons instant or rapid-rise yeast",
+      "expected": {
+        "item": "instant or rapid-rise yeast",
+        "measurements": [
+          {
+            "amount": "1 1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (10 ounces/283 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "10",
+            "unit": null
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

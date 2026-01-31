@@ -1,0 +1,116 @@
+{
+  "source": "paprika",
+  "recipe_slug": "spinach-black-bean-and-chipo",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
+      "expected": {
+        "item": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus 2 teaspoons vegetable oil, divided"
+      }
+    },
+    {
+      "raw": "1 ounce (30g) chopped fresh spinach",
+      "expected": {
+        "item": "chopped fresh spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces (85g) drained canned black beans",
+      "expected": {
+        "item": "drained canned black beans",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 chipotle chile packed in adobo sauce, minced (about 15g)",
+      "expected": {
+        "item": "chipotle chile packed in adobo sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4 ounces (115g) shredded Swiss cheese",
+      "expected": {
+        "item": "shredded Swiss cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (8-inch) flour tortillas",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

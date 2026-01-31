@@ -1,0 +1,83 @@
+{
+  "source": "paprika",
+  "recipe_slug": "failproof-crepes",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons (45 grams) unsalted butter, plus more for buttering pan",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for buttering pan"
+      }
+    },
+    {
+      "raw": "1 1/4 cup (295 ml) milk (and sometimes a splash more)",
+      "expected": {
+        "item": "milk (and sometimes a splash more)",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "295",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (125 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Two pinches of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

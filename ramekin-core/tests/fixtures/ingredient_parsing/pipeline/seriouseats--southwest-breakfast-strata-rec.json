@@ -1,0 +1,314 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "southwest-breakfast-strata-rec",
+  "ingredients": [
+    {
+      "raw": "1 pound (454 g) country white bread, cut into 1 1/2-inch pieces&nbsp;",
+      "expected": {
+        "item": "country white bread, cut into 1 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces thick-cut bacon (226 g; about 5 slices), chopped&nbsp;",
+      "expected": {
+        "item": "thick-cut bacon",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "slice"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 medium yellow onion (8 ounces; 226 g), chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 small poblano chiles (2 ounces; 57 g each), stemmed, seeded, and chopped",
+      "expected": {
+        "item": "poblano chiles, stemmed, seeded",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          },
+          {
+            "amount": "2",
+            "unit": "oz each"
+          },
+          {
+            "amount": "57",
+            "unit": "g each"
+          }
+        ],
+        "note": "and chopped"
+      }
+    },
+    {
+      "raw": "2 teaspoons chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (240 ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (4-ounce) can chopped mild or hot green chiles, drained",
+      "expected": {
+        "item": "chopped mild or hot green chiles",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1/4 cup (20 g) chopped fresh cilantro, plus more for garnish&nbsp;",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Diamond Crystal kosher salt; for table salt, use half the amount by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half the amount by volume",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cooking spray",
+      "expected": {
+        "item": "Cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large plum tomato (5 ounces; 142 g), chopped",
+      "expected": {
+        "item": "plum tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "4 ounces (113 g) sharp cheddar cheese, shredded (about 1 cup)",
+      "expected": {
+        "item": "sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "4 ounces (113 g) Monterey Jack cheese or pepper jack cheese, shredded (about 1 cup)",
+      "expected": {
+        "item": "Monterey Jack cheese or pepper jack cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "Store-bought or homemade salsa , for serving",
+      "expected": {
+        "item": "Store-bought or homemade salsa",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Sour cream, for serving",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

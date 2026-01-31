@@ -1,0 +1,71 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "miso-cod-recipe",
+  "ingredients": [
+    {
+      "raw": "1 teaspoon ginger juice",
+      "expected": {
+        "item": "ginger juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons yellow miso",
+      "expected": {
+        "item": "yellow miso",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons evaporated cane sugar",
+      "expected": {
+        "item": "evaporated cane sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pieces Sablefish ((a.k.a. Black Cod))",
+      "expected": {
+        "item": "Sablefish (a.k.a. Black Cod)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "piece"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

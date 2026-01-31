@@ -1,0 +1,391 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "biryani-recipe",
+  "ingredients": [
+    {
+      "raw": "3 medium  yellow onions (peeled and thinly sliced)",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and thinly sliced"
+      }
+    },
+    {
+      "raw": "1½ cups oil ((sunflower oil or peanut oil))",
+      "expected": {
+        "item": "oil (sunflower oil or peanut oil)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 whole cinnamon stick",
+      "expected": {
+        "item": "whole cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 whole green cardamom",
+      "expected": {
+        "item": "whole green cardamom",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 whole cloves",
+      "expected": {
+        "item": "whole cloves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon black cumin seeds ((shah jeera))",
+      "expected": {
+        "item": "black cumin seeds (shah jeera)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  chicken drumsticks (or chicken thighs)",
+      "expected": {
+        "item": "chicken drumsticks (or chicken thighs)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2½ lbs lamb shoulder  (boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb))",
+      "expected": {
+        "item": "lamb shoulder",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh ginger (minced)",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "6 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 teaspoon mild chili powder",
+      "expected": {
+        "item": "mild chili powder",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 teaspoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  Serrano peppers (seeded and diced )",
+      "expected": {
+        "item": "Serrano peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "1 cup plain full-fat yogurt",
+      "expected": {
+        "item": "plain full-fat yogurt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2½ cups long-grain white basmati rice (divided)",
+      "expected": {
+        "item": "long-grain white basmati rice",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1  teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 whole green cardamom",
+      "expected": {
+        "item": "whole green cardamom",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 whole  cloves",
+      "expected": {
+        "item": "whole  cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  cinnamon stick",
+      "expected": {
+        "item": "cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup cilantro (chopped)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh mint leaves (chopped )",
+      "expected": {
+        "item": "fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1  lemon (juiced)",
+      "expected": {
+        "item": "lemon (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon good-quality saffron (soaked in 3 tbsp of hot water or warm milk)",
+      "expected": {
+        "item": "good-quality saffron (soaked in 3 tbsp of hot water or warm milk)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoon melted butter or ghee ((optional))",
+      "expected": {
+        "item": "melted butter or ghee",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

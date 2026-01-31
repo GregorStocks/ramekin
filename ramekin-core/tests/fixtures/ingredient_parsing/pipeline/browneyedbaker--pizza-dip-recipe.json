@@ -1,0 +1,113 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "pizza-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "8 ounces cream cheese (at room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "4 ounces mozzarella cheese (shredded (about 1 cup), divided)",
+      "expected": {
+        "item": "mozzarella cheese, divided)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded (about 1 cup"
+      }
+    },
+    {
+      "raw": "4 ounces Parmesan cheese (shredded (about 1 cup), divided)",
+      "expected": {
+        "item": "Parmesan cheese, divided)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded (about 1 cup"
+      }
+    },
+    {
+      "raw": "1 cup pizza sauce",
+      "expected": {
+        "item": "pizza sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces sliced pepperoni",
+      "expected": {
+        "item": "sliced pepperoni",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped green pepper",
+      "expected": {
+        "item": "chopped green pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons sliced black olives",
+      "expected": {
+        "item": "sliced black olives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

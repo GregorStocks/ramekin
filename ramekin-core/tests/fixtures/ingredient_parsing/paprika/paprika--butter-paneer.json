@@ -1,0 +1,232 @@
+{
+  "source": "paprika",
+  "recipe_slug": "butter-paneer",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons unsalted butter, cut into 4 pieces and chilled, divided",
+      "expected": {
+        "item": "unsalted butter, cut into 4 pieces and chilled",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 onion, chopped fine",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped fine"
+      }
+    },
+    {
+      "raw": "5 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4 teaspoons grated fresh ginger",
+      "expected": {
+        "item": "grated fresh ginger",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 serrano chile, stemmed, seeded, and minced",
+      "expected": {
+        "item": "serrano chile, stemmed, seeded",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "and minced"
+      }
+    },
+    {
+      "raw": "1 tablespoon garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6oz tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons table salt, divided",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Paneer",
+      "expected": {
+        "item": "Paneer",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "To serve:",
+      "expected": {
+        "item": "To serve:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Naan (optional)",
+      "expected": {
+        "item": "Naan",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Rice (optional)",
+      "expected": {
+        "item": "Rice",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

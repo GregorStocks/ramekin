@@ -1,0 +1,96 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "cheesecake-in-a-jar-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup plus 2 tablespoons granulated sugar",
+      "expected": {
+        "item": "½ cup plus 2 tablespoons granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons granulated sugar"
+      }
+    },
+    {
+      "raw": "zest of one lemon",
+      "expected": {
+        "item": "zest of one lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 packages cream cheese, 8 oz each; room temperature",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          }
+        ],
+        "note": "8 oz each; room temperature"
+      }
+    },
+    {
+      "raw": "2 large eggs; room temperature",
+      "expected": {
+        "item": "eggs; room temperature",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh berries",
+      "expected": {
+        "item": "fresh berries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

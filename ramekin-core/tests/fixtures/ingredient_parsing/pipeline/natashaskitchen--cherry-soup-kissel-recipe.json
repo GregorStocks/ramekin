@@ -1,0 +1,79 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "cherry-soup-kissel-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb sweet red cherries (fresh or frozen, pitted)",
+      "expected": {
+        "item": "sweet red cherries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "fresh or frozen, pitted"
+      }
+    },
+    {
+      "raw": "8 cups filtered water",
+      "expected": {
+        "item": "filtered water",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tbsp Potato Starch in 1/4 cup cold water",
+      "expected": {
+        "item": "Potato Starch in 1/4 cup cold water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

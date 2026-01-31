@@ -1,0 +1,78 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "yudofu-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 sheet Kombu dried sea kelp",
+      "expected": {
+        "item": "sheet Kombu dried sea kelp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 oz Tofu",
+      "expected": {
+        "item": "Tofu",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ponzu",
+      "expected": {
+        "item": "Ponzu",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2  green onions (thinly cut)",
+      "expected": {
+        "item": "green onions (thinly cut)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Shichimi",
+      "expected": {
+        "item": "Shichimi",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

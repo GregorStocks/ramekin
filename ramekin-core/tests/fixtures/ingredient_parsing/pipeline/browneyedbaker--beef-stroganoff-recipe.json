@@ -1,0 +1,186 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "beef-stroganoff-recipe",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons unsalted butter (divided)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1½ pounds ribeye steak (sliced ¼-inch thin against the grain, and then crosswise)",
+      "expected": {
+        "item": "ribeye steak",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced 1/4-inch thin against the grain, and then crosswise"
+      }
+    },
+    {
+      "raw": "8 ounces white mushrooms (thinly sliced)",
+      "expected": {
+        "item": "white mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1  medium yellow onion (thinly sliced)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "3 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups beef broth",
+      "expected": {
+        "item": "beef broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "161",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces egg noodles (cooked and drained)",
+      "expected": {
+        "item": "egg noodles",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "cooked and drained"
+      }
+    },
+    {
+      "raw": "1 tablespoon parsley (finely chopped)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

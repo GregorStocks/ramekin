@@ -1,0 +1,62 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-homemade-peanut-butter",
+  "ingredients": [
+    {
+      "raw": "3 cups shelled and skinned roasted peanuts",
+      "expected": {
+        "item": "shelled and skinned roasted peanuts",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons peanut oil",
+      "expected": {
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

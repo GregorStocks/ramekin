@@ -1,0 +1,83 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "five-minute-tomato-sauce-recip",
+  "ingredients": [
+    {
+      "raw": "1/4 cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  medium cloves of garlic, finely chopped",
+      "expected": {
+        "item": "cloves of garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 28-ounce can crushed red tomatoes",
+      "expected": {
+        "item": "crushed red tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest of one lemon",
+      "expected": {
+        "item": "zest of one lemon",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

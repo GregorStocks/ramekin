@@ -1,0 +1,92 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "curry-udon-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup Japanese Curry (leftover)",
+      "expected": {
+        "item": "Japanese Curry (leftover)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Dashi (fish broth)",
+      "expected": {
+        "item": "Dashi (fish broth)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 serving Udon noodle (fresh or frozen, or cooked dried noodle)",
+      "expected": {
+        "item": "serving Udon noodle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "fresh or frozen, or cooked dried noodle"
+      }
+    },
+    {
+      "raw": "1 tbsp corn starch (or poato starch)",
+      "expected": {
+        "item": "corn starch (or poato starch)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Green onions (sliced thinly)",
+      "expected": {
+        "item": "Green onions",
+        "measurements": [],
+        "note": "sliced thinly"
+      }
+    }
+  ]
+}

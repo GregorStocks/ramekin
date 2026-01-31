@@ -1,0 +1,96 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-pork-schnitzel",
+  "ingredients": [
+    {
+      "raw": "10  pork cutlets",
+      "expected": {
+        "item": "pork cutlets",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper (or to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs (or more if needed)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "or more if needed"
+      }
+    },
+    {
+      "raw": "2 cups breadcrumbs (regular or Panko)",
+      "expected": {
+        "item": "breadcrumbs (regular or Panko)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "vegetable oil (for frying)",
+      "expected": {
+        "item": "vegetable oil (for frying)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

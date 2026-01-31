@@ -1,0 +1,45 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "ponzu-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup citrus juice (such as lemon or Yuzu)",
+      "expected": {
+        "item": "citrus juice (such as lemon or Yuzu)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

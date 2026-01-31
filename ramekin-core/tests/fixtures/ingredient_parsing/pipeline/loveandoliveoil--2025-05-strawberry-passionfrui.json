@@ -1,0 +1,83 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2025-05-strawberry-passionfrui",
+  "ingredients": [
+    {
+      "raw": "20 ounces strawberries (hulled and coarsely chopped)",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": "oz"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "hulled and coarsely chopped"
+      }
+    },
+    {
+      "raw": "6 tablespoons strained passionfruit pulp",
+      "expected": {
+        "item": "strained passionfruit pulp",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons Ball Classic Pectin*",
+      "expected": {
+        "item": "Ball Classic Pectin*",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon butter (optional)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 3/4 cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "350",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

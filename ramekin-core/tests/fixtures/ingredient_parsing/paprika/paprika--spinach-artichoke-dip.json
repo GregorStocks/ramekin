@@ -1,0 +1,168 @@
+{
+  "source": "paprika",
+  "recipe_slug": "spinach-artichoke-dip",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "11 ounces (11 cups) baby spinach, chopped coarse",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "11",
+            "unit": "oz"
+          },
+          {
+            "amount": "11",
+            "unit": "cup"
+          },
+          {
+            "amount": "312",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped coarse"
+      }
+    },
+    {
+      "raw": "8 ounces cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "6 ounces Gouda cheese, shredded (1½ cups)",
+      "expected": {
+        "item": "Gouda cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "3 ounces Parmesan cheese, grated (1½ cups)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 ⅓ cups marinated artichoke hearts, chopped",
+      "expected": {
+        "item": "marinated artichoke hearts",
+        "measurements": [
+          {
+            "amount": "1 1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "source": "paprika",
+  "recipe_slug": "deviled-eggs",
+  "ingredients": [
+    {
+      "raw": "8 large hard-boiled eggs",
+      "expected": {
+        "item": "hard-boiled eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons plus 1 teaspoon (45 grams) mayonnaise",
+      "expected": {
+        "item": "3 tablespoons plus 1 teaspoon (45 grams) mayonnaise",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1 teaspoon mayonnaise"
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 grams) smooth dijon mustard",
+      "expected": {
+        "item": "smooth dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (7 ml) white wine vinegar",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot smoked paprika",
+      "expected": {
+        "item": "Hot smoked paprika",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
+      "expected": {
+        "item": "Garnishes, such as minced chives, pickles, celery, radishes, bacon bits, pickled or fried shallots",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

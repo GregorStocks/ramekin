@@ -1,0 +1,122 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "beet-caviar-recipe",
+  "ingredients": [
+    {
+      "raw": "4  medium beets, washed and trimmed",
+      "expected": {
+        "item": "beets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "washed and trimmed"
+      }
+    },
+    {
+      "raw": "5  plump dates, pitted and chopped",
+      "expected": {
+        "item": "plump dates",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "pitted and chopped"
+      }
+    },
+    {
+      "raw": "2 tablespoons cognac (bourbon, or vodka)",
+      "expected": {
+        "item": "cognac (bourbon, or vodka)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  garlic cloves, peeled and smashed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed"
+      }
+    },
+    {
+      "raw": "2 tablespoons lemon juice, plus more to taste",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/2 cup chopped toasted walnuts",
+      "expected": {
+        "item": "chopped toasted walnuts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons creme fraiche, plain yogurt, or sour cream",
+      "expected": {
+        "item": "creme fraiche, plain yogurt, or sour cream",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "lots of freshly chopped chives",
+      "expected": {
+        "item": "lots of freshly chopped chives",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

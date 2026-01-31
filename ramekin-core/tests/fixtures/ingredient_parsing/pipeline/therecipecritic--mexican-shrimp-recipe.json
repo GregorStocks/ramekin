@@ -1,0 +1,156 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "mexican-shrimp-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  chopped red bell pepper",
+      "expected": {
+        "item": "chopped red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  chopped green bell pepper",
+      "expected": {
+        "item": "chopped green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound large shrimp (peeled and deveined)",
+      "expected": {
+        "item": "large shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and deveined"
+      }
+    },
+    {
+      "raw": "1 (1-ounce) package Taco Seasoning",
+      "expected": {
+        "item": "Taco Seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (15-ounce) can corn (drained)",
+      "expected": {
+        "item": "corn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 (15- ounce) can black beans (drained and rinsed)",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1 cup cherry tomatoes",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup chopped black olives",
+      "expected": {
+        "item": "chopped black olives",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup chopped cilantro",
+      "expected": {
+        "item": "chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

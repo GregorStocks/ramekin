@@ -1,0 +1,49 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "homemade-ramen-noodle-recipe",
+  "ingredients": [
+    {
+      "raw": "300 grams bread flour ((about 2 cups))",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup water (warm)",
+      "expected": {
+        "item": "water (warm)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kansui ((Potassium Carbonate &amp;amp; Sodium Bi-Carbonate))",
+      "expected": {
+        "item": "kansui (Potassium Carbonate & Sodium Bi-Carbonate)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

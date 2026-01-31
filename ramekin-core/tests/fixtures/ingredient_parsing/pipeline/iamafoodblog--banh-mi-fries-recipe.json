@@ -1,0 +1,95 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "banh-mi-fries-recipe",
+  "ingredients": [
+    {
+      "raw": "1 large russet potato, peeled",
+      "expected": {
+        "item": "russet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "oil for deep frying – I like to use rice bran oil or grapeseed",
+      "expected": {
+        "item": "oil for deep frying - I like to use rice bran oil or grapeseed",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup store bought Chinese barbecue pork, roughly chopped",
+      "expected": {
+        "item": "store bought Chinese barbecue pork",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup pickled daikons and carrots, recipe here",
+      "expected": {
+        "item": "pickled daikons and carrots, recipe here",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 jalapeño, sliced",
+      "expected": {
+        "item": "jalapeño",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1/2 cup roughly chopped cilantro",
+      "expected": {
+        "item": "roughly chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kewpie mayo and sriracha to taste",
+      "expected": {
+        "item": "kewpie mayo and sriracha to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

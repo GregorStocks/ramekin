@@ -1,0 +1,83 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "best-guacamole-recipe-recipe",
+  "ingredients": [
+    {
+      "raw": "220 grams avocado ((1 large ))",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "220",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sweet onion ((grated))",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "7 grams cilantro ((about 1 tablespoon))",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

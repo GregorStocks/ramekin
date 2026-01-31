@@ -1,0 +1,49 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "caramelized-onions-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16  onions (medium (peeled with just the tops trimmed off))",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": "medium (peeled with just the tops trimmed off"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "healthy-banana-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "&amp;#8531; cup (75 grams) melted coconut oil or extra-virgin olive oil or high quality vegetable oil*",
+      "expected": {
+        "item": "melted coconut oil or extra-virgin olive oil or high quality vegetable oil*",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "&amp;frac12; cup&nbsp;honey (168 grams) or maple syrup (155 grams)",
+      "expected": {
+        "item": "honey or maple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "168",
+            "unit": "g"
+          },
+          {
+            "amount": "155",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (225 grams) mashed ripe bananas (about 2 &amp;frac12; medium or 2 large bananas)",
+      "expected": {
+        "item": "mashed ripe bananas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          },
+          {
+            "amount": "2 1/2",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "&amp;frac14; cup (56 grams) milk of choice or water",
+      "expected": {
+        "item": "milk of choice or water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking soda (NOT baking powder; they aren&amp;#8217;t the same!)",
+      "expected": {
+        "item": "baking soda (NOT baking powder; they aren’t the same!)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "&amp;frac12; teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "&amp;frac12; teaspoon ground cinnamon, plus more to swirl on top",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to swirl on top"
+      }
+    },
+    {
+      "raw": "1 &amp;frac34; cups (220 grams) white whole wheat flour or regular whole wheat flour**",
+      "expected": {
+        "item": "white whole wheat flour or regular whole wheat flour**",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Totally optional: &amp;frac12; cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit, fresh banana slices&amp;#8230;",
+      "expected": {
+        "item": "Totally optional: 1/2 cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit",
+        "measurements": [],
+        "note": "fresh banana slices…"
+      }
+    }
+  ]
+}

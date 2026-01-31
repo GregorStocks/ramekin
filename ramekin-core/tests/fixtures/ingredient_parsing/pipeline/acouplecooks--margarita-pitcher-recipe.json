@@ -1,0 +1,66 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "margarita-pitcher-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup fresh lemon juice (about 2 lemons)",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup fresh lime juice (about 4 limes)*",
+      "expected": {
+        "item": "fresh lime juice *",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Cointreau",
+      "expected": {
+        "item": "Cointreau",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups tequila blanco or reposado",
+      "expected": {
+        "item": "tequila blanco or reposado",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

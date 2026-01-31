@@ -1,0 +1,157 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-sheet-pan-sausage-and-",
+  "ingredients": [
+    {
+      "raw": "2 cups baby potatoes (washed and patted dry)",
+      "expected": {
+        "item": "baby potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "washed and patted dry"
+      }
+    },
+    {
+      "raw": "1 medium broccoli head (cut into florets)",
+      "expected": {
+        "item": "broccoli head (cut into florets)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium bell peppers (any color, cut into 1 inch pieces)",
+      "expected": {
+        "item": "bell peppers (any color, cut into 1 inch pieces)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cherry tomatoes",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound smoked sausage (chicken, turkey, pork, or beef sliced into ¼-inch slices)",
+      "expected": {
+        "item": "smoked sausage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "chicken, turkey, pork, or beef sliced into 1/4-inch slices"
+      }
+    },
+    {
+      "raw": "¼ cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Italian seasoning",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "½ teaspoon pepper (or to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "¼ cup Parmesan cheese (grated, optional)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "grated, optional"
+      }
+    }
+  ]
+}

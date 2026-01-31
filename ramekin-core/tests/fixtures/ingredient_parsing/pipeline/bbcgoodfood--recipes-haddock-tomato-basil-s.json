@@ -1,0 +1,127 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-haddock-tomato-basil-s",
+  "ingredients": [
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion thinly sliced",
+      "expected": {
+        "item": "onion thinly sliced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small  aubergine about 250g/9oz, roughly chopped",
+      "expected": {
+        "item": "aubergine about 250g/9oz",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "½ tsp ground paprika",
+      "expected": {
+        "item": "ground paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves crushed",
+      "expected": {
+        "item": "garlic cloves crushed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "400g can chopped tomato",
+      "expected": {
+        "item": "can chopped tomato",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp dark or light  muscovado sugar",
+      "expected": {
+        "item": "dark or light  muscovado sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 large  basil leaves plus a few extra for sprinkling",
+      "expected": {
+        "item": "basil leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": "plus a few extra for sprinkling"
+      }
+    },
+    {
+      "raw": "4 4x175g/6oz firm skinless white  fish fillets, such as haddock",
+      "expected": {
+        "item": "4x175g/6oz firm skinless white  fish fillets, such as haddock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

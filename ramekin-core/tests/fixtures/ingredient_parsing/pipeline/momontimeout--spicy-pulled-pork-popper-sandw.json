@@ -1,0 +1,202 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "spicy-pulled-pork-popper-sandw",
+  "ingredients": [
+    {
+      "raw": "sliced sourdough bread",
+      "expected": {
+        "item": "sliced sourdough bread",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "PHILADELPHIA Spicy Jalapeño cream cheese",
+      "expected": {
+        "item": "PHILADELPHIA Spicy Jalapeño cream cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-6 lb bone-in pork shoulder roast",
+      "expected": {
+        "item": "bone-in pork shoulder roast",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814-2722",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  medium onions (chopped)",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "4 cloves garlic (crushed)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "crushed"
+      }
+    },
+    {
+      "raw": "3/4 cup apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup light brown sugar",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "18 oz barbecue sauce (divided)",
+      "expected": {
+        "item": "barbecue sauce",
+        "measurements": [
+          {
+            "amount": "18",
+            "unit": "oz"
+          },
+          {
+            "amount": "510",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 tbsp mustard",
+      "expected": {
+        "item": "mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  onions (sliced)",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

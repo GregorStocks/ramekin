@@ -1,0 +1,144 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "whole-wheat-waffles-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup unsweetened applesauce",
+      "expected": {
+        "item": "unsweetened applesauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup skim milk (or milk of choice)",
+      "expected": {
+        "item": "skim milk (or milk of choice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter (melted and cooled to room temperature)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "melted and cooled to room temperature"
+      }
+    },
+    {
+      "raw": "3&nbsp;  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon pure maple syrup",
+      "expected": {
+        "item": "pure maple syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2&nbsp; cups white whole wheat flour (or whole wheat pastry flour)",
+      "expected": {
+        "item": "white whole wheat flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or whole wheat pastry flour"
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder (I prefer aluminum free)",
+      "expected": {
+        "item": "baking powder (I prefer aluminum free)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2&nbsp; teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "17822-basil-and-cheese-garlic-",
+  "ingredients": [
+    {
+      "raw": "1 baguette",
+      "expected": {
+        "item": "baguette",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 tablespoons butter, at room temperature",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "3 ounces mozzarella cheese, coarsely grated (about 3/4 cup)",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely grated"
+      }
+    },
+    {
+      "raw": "3 ounces cheddar cheese, coarsely grated (about 3/4 cup)",
+      "expected": {
+        "item": "cheddar cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely grated"
+      }
+    },
+    {
+      "raw": "1/2 cup loosely packed fresh basil leaves, chopped",
+      "expected": {
+        "item": "loosely packed fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

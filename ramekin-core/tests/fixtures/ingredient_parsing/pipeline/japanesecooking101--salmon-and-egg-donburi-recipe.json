@@ -1,0 +1,135 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "salmon-and-egg-donburi-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small onion (thinly sliced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "3/4 cup cooked salmon (largely flaked)",
+      "expected": {
+        "item": "cooked salmon (largely flaked)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  bowls of steamed rice",
+      "expected": {
+        "item": "bowls of steamed rice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "green onions (thinly sliced)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [],
+        "note": "thinly sliced"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "how-to-cook-kale-garlic-kale-r",
+  "ingredients": [
+    {
+      "raw": "3 slices bacon (chopped)",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "½ cup finely diced onion",
+      "expected": {
+        "item": "finely diced onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch kale (washed and dried)",
+      "expected": {
+        "item": "kale",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": "washed and dried"
+      }
+    },
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "pepperoni-pizza-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "1 8 oz pkg cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "8 oz pkg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  tsp garlic salt",
+      "expected": {
+        "item": "garlic salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8  tsp oregano",
+      "expected": {
+        "item": "oregano",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  cup  pizza sauce",
+      "expected": {
+        "item": "pizza sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup pepperoni (chopped)",
+      "expected": {
+        "item": "pepperoni",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup  canadian bacon (chopped)",
+      "expected": {
+        "item": "canadian bacon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2  cup green peppers (diced)",
+      "expected": {
+        "item": "green peppers",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1/2 cup  mozzarella cheese (shredded)",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    }
+  ]
+}

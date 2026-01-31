@@ -1,0 +1,62 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-quick-braised-lettuce-",
+  "ingredients": [
+    {
+      "raw": "16 halved pearl onions",
+      "expected": {
+        "item": "halved pearl onions",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "300g frozen pea",
+      "expected": {
+        "item": "frozen pea",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Baby Gem lettuces finely shredded",
+      "expected": {
+        "item": "Baby Gem lettuces finely shredded",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

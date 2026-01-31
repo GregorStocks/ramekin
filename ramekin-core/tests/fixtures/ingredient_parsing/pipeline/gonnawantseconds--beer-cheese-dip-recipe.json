@@ -1,0 +1,181 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "beer-cheese-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup beer",
+      "expected": {
+        "item": "beer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 cups half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon hot sauce",
+      "expected": {
+        "item": "hot sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon &nbsp;dried mustard",
+      "expected": {
+        "item": "dried mustard",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup extra sharp cheddar cheese (shredded)",
+      "expected": {
+        "item": "extra sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1 cup Gruyère cheese, (shredded)",
+      "expected": {
+        "item": "Gruyère cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "shredded cheddar",
+      "expected": {
+        "item": "shredded cheddar",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "chives",
+      "expected": {
+        "item": "chives",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "crumbled bacon",
+      "expected": {
+        "item": "crumbled bacon",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "turkey-gravy-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups turkey broth ( or stock mixed with drippings)",
+      "expected": {
+        "item": "turkey broth",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "or stock mixed with drippings"
+      }
+    },
+    {
+      "raw": "2-3 tablespoons fresh herbs (parsley, thyme, sage)",
+      "expected": {
+        "item": "fresh herbs (parsley, thyme, sage)",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup cold water (or cold broth)",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or cold broth"
+      }
+    },
+    {
+      "raw": "⅔ cup  all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "83",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cup cold water (or cold broth)",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or cold broth"
+      }
+    }
+  ]
+}

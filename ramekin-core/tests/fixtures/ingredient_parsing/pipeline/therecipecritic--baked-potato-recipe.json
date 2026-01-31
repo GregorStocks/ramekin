@@ -1,0 +1,66 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "baked-potato-recipe",
+  "ingredients": [
+    {
+      "raw": "6  small-medium russet potatoes ((roughly 110-215 grams each))",
+      "expected": {
+        "item": "small-medium russet potatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "110-215",
+            "unit": "g each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

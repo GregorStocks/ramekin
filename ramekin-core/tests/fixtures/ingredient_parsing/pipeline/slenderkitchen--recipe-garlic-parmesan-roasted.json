@@ -1,0 +1,126 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-garlic-parmesan-roasted",
+  "ingredients": [
+    {
+      "raw": "4 cups broccoli florets",
+      "expected": {
+        "item": "broccoli florets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "4 cloves minced garlic, divided",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/2 cup Parmesan, divided",
+      "expected": {
+        "item": "Parmesan",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 tsp dried basil, divided",
+      "expected": {
+        "item": "dried basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/4 tsp red pepper flakes (optional)",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1.33 lbs shrimp, peeled and deveined",
+      "expected": {
+        "item": "shrimp",
+        "measurements": [
+          {
+            "amount": "1.33",
+            "unit": "lb"
+          },
+          {
+            "amount": "603",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and deveined"
+      }
+    },
+    {
+      "raw": "1 lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

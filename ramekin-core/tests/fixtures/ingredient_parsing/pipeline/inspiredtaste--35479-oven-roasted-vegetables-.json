@@ -1,0 +1,70 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "35479-oven-roasted-vegetables-",
+  "ingredients": [
+    {
+      "raw": "2 to 3 pounds hearty vegetables such as potatoes, carrots, winter squashes, beets, turnips, onion, fennel and broccoli stems",
+      "expected": {
+        "item": "hearty vegetables such as potatoes, carrots, winter squashes, beets, turnips, onion, fennel and broccoli stems",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "lb"
+          },
+          {
+            "amount": "907 to 1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons oil such as avocado, grape seed or sunflower oil",
+      "expected": {
+        "item": "oil such as avocado, grape seed or sunflower oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons dried herbs or 2 tablespoons chopped fresh herbs",
+      "expected": {
+        "item": "dried herbs",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 2 tablespoons chopped fresh herbs"
+      }
+    },
+    {
+      "raw": "Flaky sea salt, as need for serving",
+      "expected": {
+        "item": "Flaky sea salt",
+        "measurements": [],
+        "note": "as need for serving"
+      }
+    }
+  ]
+}

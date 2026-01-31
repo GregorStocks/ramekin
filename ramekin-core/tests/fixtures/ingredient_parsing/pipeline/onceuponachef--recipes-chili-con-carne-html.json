@@ -1,0 +1,297 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-chili-con-carne-html",
+  "ingredients": [
+    {
+      "raw": "¼ cup ground ancho chile pepper",
+      "expected": {
+        "item": "ground ancho chile pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon ground chipotle chile pepper",
+      "expected": {
+        "item": "ground chipotle chile pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon  cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup cornmeal",
+      "expected": {
+        "item": "cornmeal",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (4-pound) beef chuck roast, trimmed of excess fat and cut into 1½-inch cubes (see note below)",
+      "expected": {
+        "item": "beef chuck roast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "trimmed of excess fat and cut into 1 1/2-inch cubes (see note below)"
+      }
+    },
+    {
+      "raw": "8 ounces (about 8 slices) bacon, cut into ¼-inch pieces (see tip below)",
+      "expected": {
+        "item": "bacon, cut into 1/4-inch pieces (see tip below)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "8",
+            "unit": "slice"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  small yellow onions, cut into 1-inch chunks",
+      "expected": {
+        "item": "yellow onions, cut into 1-inch chunks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 garlic cloves, chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3  jalapeño chiles, cored, seeded and finely diced (see note)",
+      "expected": {
+        "item": "jalapeño chiles, cored",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "seeded and finely diced (see note)"
+      }
+    },
+    {
+      "raw": "4 cups (32 oz) low-sodium beef broth",
+      "expected": {
+        "item": "low-sodium beef broth",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups water, plus more for the chili paste and deglazing the pan",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for the chili paste and deglazing the pan"
+      }
+    },
+    {
+      "raw": "1¼ cups lager beer",
+      "expected": {
+        "item": "lager beer",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup canned crushed tomatoes",
+      "expected": {
+        "item": "canned crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon molasses, such as Grandma's Original",
+      "expected": {
+        "item": "molasses, such as Grandma's Original",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons natural unsweetened cocoa powder",
+      "expected": {
+        "item": "natural unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh chopped cilantro",
+      "expected": {
+        "item": "Fresh chopped cilantro",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Shredded Cheddar or Monterey Jack cheese",
+      "expected": {
+        "item": "Shredded Cheddar or Monterey Jack cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lime wedges",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

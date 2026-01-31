@@ -1,0 +1,45 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-how-to-make-cashew-cre",
+  "ingredients": [
+    {
+      "raw": "1 cup raw cashews (soaked overnight, drained and rinsed)",
+      "expected": {
+        "item": "raw cashews",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "soaked overnight, drained and rinsed"
+      }
+    },
+    {
+      "raw": "1/2 cup water (or more, depending on thickness)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or more, depending on thickness"
+      }
+    },
+    {
+      "raw": "pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "chicken-marsala-recipe",
+  "ingredients": [
+    {
+      "raw": "2  medium boneless skinless chicken breasts",
+      "expected": {
+        "item": "boneless skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt (divided)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil (divided)",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 tablespoons softened unsalted butter (divided)",
+      "expected": {
+        "item": "softened unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1  medium shallot (finely chopped)",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (minced (about 1 tablespoon))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced (about 1 tablespoon"
+      }
+    },
+    {
+      "raw": "8 ounces sliced cremini (shiitake, or mixed wild mushrooms (increase to up to 16 ounces if you are a mushroom lover))",
+      "expected": {
+        "item": "sliced cremini",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "shiitake, or mixed wild mushrooms (increase to up to 16 ounces if you are a mushroom lover"
+      }
+    },
+    {
+      "raw": "1/2 cup dry Marsala wine ( not cooking wine; or more chicken stock)",
+      "expected": {
+        "item": "dry Marsala wine",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "not cooking wine; or more chicken stock"
+      }
+    },
+    {
+      "raw": "1 tablespoon sherry vinegar (or red wine vinegar)",
+      "expected": {
+        "item": "sherry vinegar (or red wine vinegar)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh thyme ( or 2 tablespoons chopped fresh parsley)",
+      "expected": {
+        "item": "chopped fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 2 tablespoons chopped fresh parsley"
+      }
+    }
+  ]
+}

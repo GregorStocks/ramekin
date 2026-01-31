@@ -1,0 +1,144 @@
+{
+  "source": "keviniscooking",
+  "recipe_slug": "salsa-morita-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb tomatoes (cored)",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "cored"
+      }
+    },
+    {
+      "raw": "1  small serrano chile (stemmed and sliced lengthwise)",
+      "expected": {
+        "item": "serrano chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "stemmed and sliced lengthwise"
+      }
+    },
+    {
+      "raw": "3  morita chiles (rinsed)",
+      "expected": {
+        "item": "morita chiles",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small white onion (quartered)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "4 cloves garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

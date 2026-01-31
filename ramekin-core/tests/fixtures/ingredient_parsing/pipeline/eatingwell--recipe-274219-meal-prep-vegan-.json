@@ -1,0 +1,58 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-274219-meal-prep-vegan-",
+  "ingredients": [
+    {
+      "raw": "2 heads butter or Bibb lettuce, leaves separated",
+      "expected": {
+        "item": "butter or Bibb lettuce, leaves separated",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups cooked quinoa , cooled to room temperature (see Associated Recipes)",
+      "expected": {
+        "item": "cooked quinoa",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "cooled to room temperature (see Associated Recipes)"
+      }
+    },
+    {
+      "raw": "4 cups Bean Salad with Lemon-Cumin Dressing (see Associated Recipes)",
+      "expected": {
+        "item": "Bean Salad with Lemon-Cumin Dressing (see Associated Recipes)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.33333334326744 cup chopped fresh mint (reserved from bean salad recipe)",
+      "expected": {
+        "item": "chopped fresh mint (reserved from bean salad recipe)",
+        "measurements": [
+          {
+            "amount": "0.33333334326744",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

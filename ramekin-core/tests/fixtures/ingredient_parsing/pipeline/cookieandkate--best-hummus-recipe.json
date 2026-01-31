@@ -1,0 +1,143 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "best-hummus-recipe",
+  "ingredients": [
+    {
+      "raw": "1 can (15 ounces) chickpeas, rinsed and drained, or 1 &amp;frac12; cups cooked chickpeas",
+      "expected": {
+        "item": "chickpeas, rinsed and drained",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1 1/2 cups cooked chickpeas"
+      }
+    },
+    {
+      "raw": "&amp;frac12; teaspoon baking soda (if you&amp;#8217;re using canned chickpeas)",
+      "expected": {
+        "item": "baking soda (if you’re using canned chickpeas)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup lemon juice&nbsp;(from 1 ½ to 2 lemons), more to taste",
+      "expected": {
+        "item": "lemon juice (from 1 1/2 to 2 lemons)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "more to taste"
+      }
+    },
+    {
+      "raw": "1 medium-to-large clove garlic, roughly chopped",
+      "expected": {
+        "item": "medium-to-large clove garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "&amp;frac12; teaspoon fine sea salt, to taste",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "&amp;frac12; cup tahini",
+      "expected": {
+        "item": "tahini",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 4 tablespoons ice water, more as needed",
+      "expected": {
+        "item": "ice water",
+        "measurements": [
+          {
+            "amount": "2 to 4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "more as needed"
+      }
+    },
+    {
+      "raw": "&amp;frac12; teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon extra-virgin&nbsp;olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Any of the following garnishes:&nbsp; drizzle of olive oil or zhoug sauce, sprinkle of ground sumac or paprika, chopped fresh parsley",
+      "expected": {
+        "item": "Any of the following garnishes:  drizzle of olive oil or zhoug sauce, sprinkle of ground sumac or paprika",
+        "measurements": [],
+        "note": "chopped fresh parsley"
+      }
+    }
+  ]
+}

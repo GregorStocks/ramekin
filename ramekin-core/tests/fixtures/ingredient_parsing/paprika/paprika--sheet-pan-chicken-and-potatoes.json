@@ -1,0 +1,142 @@
+{
+  "source": "paprika",
+  "recipe_slug": "sheet-pan-chicken-and-potatoes",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons lemon juice (from about half a lemon)",
+      "expected": {
+        "item": "lemon juice (from about half a lemon)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 to 2 pounds small bone-in, skin-on chicken thighs (4 to 6 thighs)",
+      "expected": {
+        "item": "to 2 pounds small bone-in, skin-on chicken thighs",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": null
+          },
+          {
+            "amount": "4 to 6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 small Yukon gold potatoes (about 1 pound), cut into 3/4-inch pieces",
+      "expected": {
+        "item": "Yukon gold potatoes, cut into 3/4-inch pieces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces feta cheese, crumbled (about 1/2 cup)",
+      "expected": {
+        "item": "feta cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh dill",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

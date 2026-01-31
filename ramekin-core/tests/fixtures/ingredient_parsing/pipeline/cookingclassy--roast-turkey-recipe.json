@@ -1,0 +1,126 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "roast-turkey-recipe",
+  "ingredients": [
+    {
+      "raw": "10 - 14 lb. turkey* ((fresh or frozen and fully thawed))",
+      "expected": {
+        "item": "turkey*",
+        "measurements": [
+          {
+            "amount": "10-14",
+            "unit": "lb"
+          },
+          {
+            "amount": "4536-6350",
+            "unit": "g"
+          }
+        ],
+        "note": "fresh or frozen and fully thawed"
+      }
+    },
+    {
+      "raw": "3/4 cup unsalted butter, (softened)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "2 tsp lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp fresh thyme leaves",
+      "expected": {
+        "item": "fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp chopped fresh rosemary",
+      "expected": {
+        "item": "chopped fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, (cut into quarters)",
+      "expected": {
+        "item": "yellow onion, (cut into quarters)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  garlic cloves, (smashed)",
+      "expected": {
+        "item": "garlic cloves, (smashed)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 bunch Chopped fresh parsley",
+      "expected": {
+        "item": "Chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

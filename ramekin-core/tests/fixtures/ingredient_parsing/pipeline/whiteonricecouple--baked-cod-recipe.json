@@ -1,0 +1,124 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "baked-cod-recipe",
+  "ingredients": [
+    {
+      "raw": "4 (6 oz./170g) cod filets",
+      "expected": {
+        "item": "cod filets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt (, or to personal taste)",
+      "expected": {
+        "item": "salt (, or to personal taste)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh cracked black pepper",
+      "expected": {
+        "item": "Fresh cracked black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon smoked paprika (, or to taste)",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "3 Tablespoons butter (, softened (not melted))",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "softened (not melted"
+      }
+    },
+    {
+      "raw": "2 Tablespoons minced or crushed garlic ((about 3 large cloves))",
+      "expected": {
+        "item": "minced or crushed garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon minced parsley",
+      "expected": {
+        "item": "minced parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil (, for baking dish)",
+      "expected": {
+        "item": "Olive oil (, for baking dish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon wedges (, optional)",
+      "expected": {
+        "item": "Lemon wedges",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

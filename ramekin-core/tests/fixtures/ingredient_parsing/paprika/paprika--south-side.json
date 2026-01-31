@@ -1,0 +1,74 @@
+{
+  "source": "paprika",
+  "recipe_slug": "south-side",
+  "ingredients": [
+    {
+      "raw": "6-8 mint leaves",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "6-8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ ounce rich (2:1) simple syrup",
+      "expected": {
+        "item": "rich simple syrup",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ ounce fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces gin (Plymouth)",
+      "expected": {
+        "item": "gin (Plymouth)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

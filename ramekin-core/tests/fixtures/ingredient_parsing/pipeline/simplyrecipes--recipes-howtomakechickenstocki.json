@@ -1,0 +1,84 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtomakechickenstocki",
+  "ingredients": [
+    {
+      "raw": "1 chicken carcass (from a cooked 2- to 3-pound chicken), or 1 pound bones",
+      "expected": {
+        "item": "chicken carcass, or 1 pound bones",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "from a cooked 2- to 3-pound chicken"
+      }
+    },
+    {
+      "raw": "1 onion, halved or quartered, optional",
+      "expected": {
+        "item": "onion, halved or quartered",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 rib celery, roughly chopped, optional",
+      "expected": {
+        "item": "rib celery, roughly chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 carrot, peeled and roughly chopped, optional",
+      "expected": {
+        "item": "carrot, peeled and roughly chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 quarts water, enough to cover",
+      "expected": {
+        "item": "water, enough to cover",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

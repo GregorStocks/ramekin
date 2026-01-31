@@ -1,0 +1,125 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "baked-feta-recipe",
+  "ingredients": [
+    {
+      "raw": "½  red onion (sliced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "½  green bell pepper (sliced into rounds)",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced into rounds"
+      }
+    },
+    {
+      "raw": "1/2 cup cherry tomatoes (about 3 ounces, halved)",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "about 3 ounces, halved"
+      }
+    },
+    {
+      "raw": "2 tsp dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp red pepper flakes (optional)",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "3 to 4  fresh thyme sprigs (optional)",
+      "expected": {
+        "item": "fresh thyme sprigs",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Extra Virgin Olive Oil",
+      "expected": {
+        "item": "Extra Virgin Olive Oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz Block of quality feta cheese (do not crumble)",
+      "expected": {
+        "item": "Block of quality feta cheese (do not crumble)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh mint leaves for garnish  ((optional) )",
+      "expected": {
+        "item": "Fresh mint leaves for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Crusty bread or pita chips to serve",
+      "expected": {
+        "item": "Crusty bread or pita chips to serve",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "bone-broth-recipe",
+  "ingredients": [
+    {
+      "raw": "10 pounds beef bones",
+      "expected": {
+        "item": "beef bones",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "lb"
+          },
+          {
+            "amount": "4536",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large carrots (chopped into 2-inch pieces)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped into 2-inch pieces"
+      }
+    },
+    {
+      "raw": "2 medium  onions (quartered)",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "2 whole heads garlic (halved crosswise)",
+      "expected": {
+        "item": "whole heads garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "halved crosswise"
+      }
+    },
+    {
+      "raw": "6 stalks  celery (cut into 2-inch pieces)",
+      "expected": {
+        "item": "celery (cut into 2-inch pieces)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "stalk"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  whole star anise (optional)",
+      "expected": {
+        "item": "whole star anise",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2  whole cinnamon sticks (optional)",
+      "expected": {
+        "item": "whole cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 tablespoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

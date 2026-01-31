@@ -1,0 +1,242 @@
+{
+  "source": "paprika",
+  "recipe_slug": "ham-and-bean-soup",
+  "ingredients": [
+    {
+      "raw": "1 pound (450 g) dried navy beans",
+      "expected": {
+        "item": "dried navy beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 1/2 quarts (5.2 L) water, divided",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "5 1/2",
+            "unit": "quart"
+          },
+          {
+            "amount": "5.2",
+            "unit": "l"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large yellow onion (12 ounces; 340 g), roughly chopped (3 cups)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "2 medium carrots (6 ounces; 170 g), peeled and roughly chopped (1 cup)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "peeled and roughly chopped"
+      }
+    },
+    {
+      "raw": "2 celery ribs (5 1/2 ounces; 155 g), roughly chopped (1 1/4 cups)",
+      "expected": {
+        "item": "celery ribs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "5 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "155",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "2 medium garlic cloves, roughly chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "2 sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sprigs flat-leaf parsley, plus finely chopped parsley leaves and tender stems for garnish",
+      "expected": {
+        "item": "flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": "plus finely chopped parsley leaves and tender stems for garnish"
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 pounds (1.1 kg) smoked ham hocks (about 2 to 3 large hocks)",
+      "expected": {
+        "item": "smoked ham hocks",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.1",
+            "unit": "kg"
+          },
+          {
+            "amount": "2 to 3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (473 ml) low-sodium chicken stock (or substitute with water)",
+      "expected": {
+        "item": "low-sodium chicken stock (or substitute with water)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "473",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

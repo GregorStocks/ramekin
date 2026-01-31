@@ -1,0 +1,105 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "how-to-make-turkey-stock-recip",
+  "ingredients": [
+    {
+      "raw": "Turkey carcass and bones from 14-pound turkey",
+      "expected": {
+        "item": "Turkey carcass and bones from 14-pound turkey",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large yellow onion (halved (unpeeled))",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved (unpeeled"
+      }
+    },
+    {
+      "raw": "1  carrot (peeled and cut into large chunks)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut into large chunks"
+      }
+    },
+    {
+      "raw": "2  celery stalks (cut into large chunks)",
+      "expected": {
+        "item": "celery stalks (cut into large chunks)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  sprigs fresh parsley",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

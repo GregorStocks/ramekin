@@ -1,0 +1,62 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "takoyaki-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "3 Tbsp Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp mentsuyu (concentrated noodle soup base)",
+      "expected": {
+        "item": "mentsuyu (concentrated noodle soup base)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "calamari-carbonara-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb clean calamari bodies (tubes)",
+      "expected": {
+        "item": "clean calamari bodies (tubes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 slices of bacon, cut into 1/2 inch pieces",
+      "expected": {
+        "item": "bacon, cut into 1/2 inch pieces",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg, room temperature",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1/4 cup freshly grated parmesan cheese",
+      "expected": {
+        "item": "freshly grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "freshly ground pepper",
+      "expected": {
+        "item": "freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp chopped flat leaf parsley, or to taste",
+      "expected": {
+        "item": "chopped flat leaf parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "ham-and-cheese-sliders-recipe-",
+  "ingredients": [
+    {
+      "raw": "Cooking spray",
+      "expected": {
+        "item": "Cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) sweet relish",
+      "expected": {
+        "item": "sweet relish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) whole-grain mustard, divided",
+      "expected": {
+        "item": "whole-grain mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 (12-ounce; 340 g) package Hawaiian sweet rolls (such as King's Hawaiian), halved crosswise with buns all still attached",
+      "expected": {
+        "item": "Hawaiian sweet rolls (such as King's Hawaiian)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "halved crosswise with buns all still attached"
+      }
+    },
+    {
+      "raw": "8 ounces thinly sliced deli ham (about 15 slices)",
+      "expected": {
+        "item": "thinly sliced deli ham",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "15",
+            "unit": "slice"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices Swiss cheese (about 3/4 ounce; 21 g each)",
+      "expected": {
+        "item": "Swiss cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          },
+          {
+            "amount": "3/4",
+            "unit": "oz each"
+          },
+          {
+            "amount": "21",
+            "unit": "g each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons 45 ml) honey or hot honey",
+      "expected": {
+        "item": "45 ml) honey or hot honey",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (28 g) unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons finely chopped fresh chives",
+      "expected": {
+        "item": "finely chopped fresh chives",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon flaky sea salt, such as Maldon",
+      "expected": {
+        "item": "flaky sea salt, such as Maldon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

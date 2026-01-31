@@ -1,0 +1,74 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "cosmopolitan-drink-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ounces vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce triple sec",
+      "expected": {
+        "item": "triple sec",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce cranberry juice",
+      "expected": {
+        "item": "cranberry juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ ounce fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

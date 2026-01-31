@@ -1,0 +1,143 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "falafel-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound / 16 ounces spinach or kale, washed and trimmed",
+      "expected": {
+        "item": "spinach or kale",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "washed and trimmed"
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 cloves garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cooked chickpeas",
+      "expected": {
+        "item": "cooked chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup breadcrumbs",
+      "expected": {
+        "item": "breadcrumbs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup / 20g grated Parmesan",
+      "expected": {
+        "item": "grated Parmesan",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  + teaspoon fine grain sea salt",
+      "expected": {
+        "item": "+ teaspoon fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest of one lemon",
+      "expected": {
+        "item": "zest of one lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4 green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad (kale, cucumber, cilantro) tossed with a splash of olive oil &amp;amp; squeeze of lemon / sliced avocado",
+      "expected": {
+        "item": "green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad (kale, cucumber",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": null
+          }
+        ],
+        "note": "cilantro) tossed with a splash of olive oil & squeeze of lemon / sliced avocado"
+      }
+    }
+  ]
+}

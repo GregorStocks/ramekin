@@ -1,0 +1,169 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8067520-shaved-brussels",
+  "ingredients": [
+    {
+      "raw": "1 pound Brussels sprouts, thinly sliced (about 6 cups)",
+      "expected": {
+        "item": "Brussels sprouts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "0.75 cup finely shredded hard goat cheese",
+      "expected": {
+        "item": "finely shredded hard goat cheese",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.33 cup sweetened dried cherries, finely chopped",
+      "expected": {
+        "item": "sweetened dried cherries",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted dry-roasted pistachios, finely chopped",
+      "expected": {
+        "item": "unsalted dry-roasted pistachios",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "3 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons cider vinegar",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon salt, divided",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "0.125 teaspoon ground pepper",
+      "expected": {
+        "item": "ground pepper",
+        "measurements": [
+          {
+            "amount": "0.125",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

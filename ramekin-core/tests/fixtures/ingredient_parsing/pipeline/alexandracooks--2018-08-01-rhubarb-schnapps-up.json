@@ -1,0 +1,53 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2018-08-01-rhubarb-schnapps-up",
+  "ingredients": [
+    {
+      "raw": "2 lbs. rhubarb* to yield about 1 1/4 lbs. once cleaned and trimmed",
+      "expected": {
+        "item": "rhubarb* to yield about 1 1/4 lbs. once cleaned and trimmed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 liter vodka, cheap is just fine",
+      "expected": {
+        "item": "vodka, cheap is just fine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

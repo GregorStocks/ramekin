@@ -1,0 +1,70 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-easy-milk-chocolate-sau",
+  "ingredients": [
+    {
+      "raw": "4 oz. milk chocolate, finely chopped",
+      "expected": {
+        "item": "milk chocolate",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "½ tsp. Diamond Crystal or ¼ tsp. Morton kosher salt",
+      "expected": {
+        "item": "Diamond Crystal",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 tsp. Morton kosher salt"
+      }
+    },
+    {
+      "raw": "¾ cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp. unsalted butter, room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    }
+  ]
+}

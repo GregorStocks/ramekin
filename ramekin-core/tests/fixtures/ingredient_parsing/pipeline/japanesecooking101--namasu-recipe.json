@@ -1,0 +1,109 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "namasu-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb Daikon radish",
+      "expected": {
+        "item": "Daikon radish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 lb carrot",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 inch Kombu dried sea kelp",
+      "expected": {
+        "item": "inch Kombu dried sea kelp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

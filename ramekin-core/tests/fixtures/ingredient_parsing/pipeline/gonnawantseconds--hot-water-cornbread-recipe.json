@@ -1,0 +1,101 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "hot-water-cornbread-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups about canola oil or Crisco",
+      "expected": {
+        "item": "about canola oil or Crisco",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups self-rising plain yellow cornmeal",
+      "expected": {
+        "item": "self-rising plain yellow cornmeal",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup green onions (thinly sliced)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 teaspoons fresh thyme leaves",
+      "expected": {
+        "item": "fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

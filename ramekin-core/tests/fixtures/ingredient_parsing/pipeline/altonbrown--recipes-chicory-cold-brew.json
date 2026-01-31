@@ -1,0 +1,104 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-chicory-cold-brew",
+  "ingredients": [
+    {
+      "raw": "1 cup plus 2 tablespoons coarsely ground coffee",
+      "expected": {
+        "item": "1 cup plus 2 tablespoons coarsely ground coffee",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons coarsely ground coffee"
+      }
+    },
+    {
+      "raw": "1/3 cup plus 1 tablespoon roasted chicory",
+      "expected": {
+        "item": "1/3 cup plus 1 tablespoon roasted chicory",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 tablespoon roasted chicory"
+      }
+    },
+    {
+      "raw": "3 1/4 cups filtered water, divided",
+      "expected": {
+        "item": "filtered water",
+        "measurements": [
+          {
+            "amount": "3 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons dark agave syrup",
+      "expected": {
+        "item": "dark agave syrup",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon blackstrap molasses",
+      "expected": {
+        "item": "blackstrap molasses",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice cubes, for serving",
+      "expected": {
+        "item": "Ice cubes",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Whole milk or half and half, for serving",
+      "expected": {
+        "item": "Whole milk or half and half",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

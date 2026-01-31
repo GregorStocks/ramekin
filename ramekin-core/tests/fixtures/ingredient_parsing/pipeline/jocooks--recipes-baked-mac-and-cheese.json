@@ -1,0 +1,148 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-baked-mac-and-cheese",
+  "ingredients": [
+    {
+      "raw": "2½ cups elbow macaroni ((10 oz) uncooked (will yield about 5 cups of cooked macaroni))",
+      "expected": {
+        "item": "elbow macaroni uncooked",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "will yield about 5 cups of cooked macaroni"
+      }
+    },
+    {
+      "raw": "4 tablespoons butter (unsalted)",
+      "expected": {
+        "item": "butter (unsalted)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups milk (lukewarm)",
+      "expected": {
+        "item": "milk (lukewarm)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups provolone cheese (shredded)",
+      "expected": {
+        "item": "provolone cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "4 cups sharp cheddar cheese (shredded)",
+      "expected": {
+        "item": "sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1 tablespoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipes-a54931-pumpkin",
+  "ingredients": [
+    {
+      "raw": "1 box vanilla cake mix",
+      "expected": {
+        "item": "vanilla cake mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (15-oz.)&nbsp;can pumpkin puree",
+      "expected": {
+        "item": "pumpkin puree",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (10-oz.) jar caramel",
+      "expected": {
+        "item": "caramel",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8-oz.)&nbsp;container whipped topping",
+      "expected": {
+        "item": "container whipped topping",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pumpkin pie spice, for garnish",
+      "expected": {
+        "item": "Pumpkin pie spice",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "1/4 c. toasted chopped pecans",
+      "expected": {
+        "item": "toasted chopped pecans",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

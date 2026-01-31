@@ -1,0 +1,83 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "easy-pistachio-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "2 3.4 oz instant pistachio pudding mix",
+      "expected": {
+        "item": "3.4 oz instant pistachio pudding mix",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "20 oz crushed pineapple (NOT drained!)",
+      "expected": {
+        "item": "crushed pineapple",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": "oz"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "NOT drained!"
+      }
+    },
+    {
+      "raw": "16 oz cottage cheese",
+      "expected": {
+        "item": "cottage cheese",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz whipped topping",
+      "expected": {
+        "item": "whipped topping",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups mini marshmallows",
+      "expected": {
+        "item": "mini marshmallows",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

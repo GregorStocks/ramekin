@@ -1,0 +1,100 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "mini-burgers-with-smoked-mozza",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large yellow onion, thinly sliced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 lb ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 slices smoked mozzarella cheese",
+      "expected": {
+        "item": "smoked mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 slider buns",
+      "expected": {
+        "item": "slider buns",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 cups arugula",
+      "expected": {
+        "item": "arugula",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

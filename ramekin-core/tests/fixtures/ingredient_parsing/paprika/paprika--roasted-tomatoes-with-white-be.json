@@ -1,0 +1,87 @@
+{
+  "source": "paprika",
+  "recipe_slug": "roasted-tomatoes-with-white-be",
+  "ingredients": [
+    {
+      "raw": "5 tablespoons olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 pound (455 grams) very ripe cherry tomatoes, halved",
+      "expected": {
+        "item": "very ripe cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "6 small garlic cloves, but who is counting, peeled",
+      "expected": {
+        "item": "garlic cloves, but who is counting",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground pepper or red pepper flakes to taste",
+      "expected": {
+        "item": "Kosher salt and freshly ground pepper or red pepper flakes to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 15-ounce can cannellini or other white bean, drained and rinsed",
+      "expected": {
+        "item": "cannellini or other white bean",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1/4 cup thinly sliced fresh basil leaves, loosely packed",
+      "expected": {
+        "item": "thinly sliced fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "loosely packed"
+      }
+    }
+  ]
+}

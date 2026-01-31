@@ -1,0 +1,170 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-tomato-basil-soup",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 stalk celery, chopped",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stalk"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup finely chopped fresh basil, plus more for garnish",
+      "expected": {
+        "item": "finely chopped fresh basil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "56 oz canned crushed tomatoes",
+      "expected": {
+        "item": "canned crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "56",
+            "unit": "oz"
+          },
+          {
+            "amount": "1588",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups vegetable broth",
+      "expected": {
+        "item": "vegetable broth",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-sheet-pan-chicken-fajit",
+  "ingredients": [
+    {
+      "raw": "1.33 lbs boneless skinless chicken breasts, sliced thin",
+      "expected": {
+        "item": "boneless skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "1.33",
+            "unit": "lb"
+          },
+          {
+            "amount": "603",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "3 tbsp fajita seasoning",
+      "expected": {
+        "item": "fajita seasoning",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 limes, juiced",
+      "expected": {
+        "item": "limes, juiced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 red onion, sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 bell peppers, sliced (any colors)",
+      "expected": {
+        "item": "bell peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced (any colors)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "source": "paprika",
+  "recipe_slug": "small-batch-eggnog",
+  "ingredients": [
+    {
+      "raw": "1 large egg, ideally pasteurized [see Note]",
+      "expected": {
+        "item": "egg, ideally pasteurized [see Note]",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 1 teaspoon granulated sugar",
+      "expected": {
+        "item": "1 tablespoon plus 1 teaspoon granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 1 teaspoon granulated sugar"
+      }
+    },
+    {
+      "raw": "6 tablespoons rum, brandy, whiskey, or a combination thereof",
+      "expected": {
+        "item": "rum, brandy, whiskey, or a combination thereof",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon vanilla (optional)",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground cinnamon (optional)",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "4 to 6 tablespoons milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 to 6 tablespoons heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly grated nutmeg",
+      "expected": {
+        "item": "Freshly grated nutmeg",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

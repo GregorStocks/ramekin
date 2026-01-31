@@ -1,0 +1,45 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "homemade-corn-tortillas-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups Instant corn masa flour",
+      "expected": {
+        "item": "Instant corn masa flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2– 2 ½   cups of warm water",
+      "expected": {
+        "item": "- 2 1/2   cups of warm water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

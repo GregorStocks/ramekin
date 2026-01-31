@@ -1,0 +1,95 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "green-bean-avocado-fried-recip",
+  "ingredients": [
+    {
+      "raw": "oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-5 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful long beans or green beans, should be about 2 cups when sliced",
+      "expected": {
+        "item": "long beans or green beans",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "should be about 2 cups when sliced"
+      }
+    },
+    {
+      "raw": "2 cups old rice",
+      "expected": {
+        "item": "old rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 avocado, sliced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "sweet soy sauce and sriracha, if desired",
+      "expected": {
+        "item": "sweet soy sauce and sriracha, if desired",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

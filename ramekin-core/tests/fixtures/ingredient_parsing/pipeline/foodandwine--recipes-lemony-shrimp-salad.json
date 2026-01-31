@@ -1,0 +1,168 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-lemony-shrimp-salad",
+  "ingredients": [
+    {
+      "raw": "1/2 lemon, plus 2 tablespoons fresh lemon juice",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "plus 2 tablespoons fresh lemon juice"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound shelled and deveined medium shrimp",
+      "expected": {
+        "item": "shelled and deveined medium shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons grapeseed or vegetable oil",
+      "expected": {
+        "item": "grapeseed or vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground pepper",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 hearts of romaine, cut into 1-inch-wide ribbons",
+      "expected": {
+        "item": "hearts of romaine, cut into 1-inch-wide ribbons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup grape tomatoes, halved",
+      "expected": {
+        "item": "grape tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "1 Hass avocado, diced",
+      "expected": {
+        "item": "Hass avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 tablespoons snipped chives",
+      "expected": {
+        "item": "snipped chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

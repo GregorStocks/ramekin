@@ -1,0 +1,173 @@
+{
+  "source": "paprika",
+  "recipe_slug": "spaghetti-al-tonno",
+  "ingredients": [
+    {
+      "raw": "Gather Your Ingredients",
+      "expected": {
+        "item": "Gather Your Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (5- to 7-ounce) jars/cans olive oil-packed tuna, drained",
+      "expected": {
+        "item": "jars/cans olive oil-packed tuna",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt, divided, plus salt for cooking pasta",
+      "expected": {
+        "item": "table salt, divided",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus salt for cooking pasta"
+      }
+    },
+    {
+      "raw": "½ teaspoon pepper, divided",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "¼ cup extra-virgin olive oil, divided, plus extra for drizzling (optional)",
+      "expected": {
+        "item": "extra-virgin olive oil, divided",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1½ tablespoons minced garlic, divided",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 anchovy fillets, rinsed, patted dry, and minced",
+      "expected": {
+        "item": "anchovy fillets, rinsed, patted dry",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "and minced"
+      }
+    },
+    {
+      "raw": "¼–½ teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4-1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (14.5-ounce) can whole peeled tomatoes, drained with juice reserved, crushed by hand to small pieces",
+      "expected": {
+        "item": "whole peeled tomatoes, drained with juice reserved",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14.5",
+            "unit": null
+          }
+        ],
+        "note": "crushed by hand to small pieces"
+      }
+    },
+    {
+      "raw": "12 ounces spaghetti",
+      "expected": {
+        "item": "spaghetti",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons chopped fresh parsley, divided",
+      "expected": {
+        "item": "chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

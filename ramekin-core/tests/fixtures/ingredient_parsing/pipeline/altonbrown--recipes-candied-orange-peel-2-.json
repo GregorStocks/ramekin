@@ -1,0 +1,49 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-candied-orange-peel-2-",
+  "ingredients": [
+    {
+      "raw": "4  ripe oranges, like Navel",
+      "expected": {
+        "item": "ripe oranges, like Navel",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

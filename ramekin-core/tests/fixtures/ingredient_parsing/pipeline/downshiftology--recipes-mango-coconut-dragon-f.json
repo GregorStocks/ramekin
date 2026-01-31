@@ -1,0 +1,71 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-mango-coconut-dragon-f",
+  "ingredients": [
+    {
+      "raw": "2 cups mango chunks (frozen)",
+      "expected": {
+        "item": "mango chunks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "frozen"
+      }
+    },
+    {
+      "raw": "1 1/2  bananas (sliced and frozen, divided)",
+      "expected": {
+        "item": "bananas",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced and frozen, divided"
+      }
+    },
+    {
+      "raw": "1 cup coconut cream",
+      "expected": {
+        "item": "coconut cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Pitaya Plus pack",
+      "expected": {
+        "item": "Pitaya",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "Plus pack"
+      }
+    },
+    {
+      "raw": "1 cup coconut water (divided)",
+      "expected": {
+        "item": "coconut water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

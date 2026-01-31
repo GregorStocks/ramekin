@@ -1,0 +1,312 @@
+{
+  "source": "paprika",
+  "recipe_slug": "fried-pickles-and-bacon-ranch",
+  "ingredients": [
+    {
+      "raw": "For the Bacon Ranch:",
+      "expected": {
+        "item": "For the Bacon Ranch:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 slices thick-cut bacon (about 4 1/2 ounces; 130 g), finely chopped",
+      "expected": {
+        "item": "thick-cut bacon",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          },
+          {
+            "amount": "4 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup mayonnaise (2 ounces; 57 g)",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sour cream (2 ounces; 57 g)",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons dill pickle brine from one 16-ounce jar",
+      "expected": {
+        "item": "dill pickle brine from one 16-ounce jar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped fresh dill",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped fresh chives",
+      "expected": {
+        "item": "chopped fresh chives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small garlic clove, mashed to a paste",
+      "expected": {
+        "item": "garlic clove, mashed to a paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "For the Pickles:",
+      "expected": {
+        "item": "For the Pickles:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (16-ounce) jar dill pickle chips, drained (see notes)",
+      "expected": {
+        "item": "dill pickle chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": "drained (see notes)"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup finely ground yellow cornmeal (4 1/4 ounces; 120 g)",
+      "expected": {
+        "item": "finely ground yellow cornmeal",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "4 1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour (about 1 ounce; 32 g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt, plus more as needed; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more as needed; for table salt, use half as much by volume"
+      }
+    },
+    {
+      "raw": "Neutral oil, such as peanut or canola, for frying",
+      "expected": {
+        "item": "Neutral oil, such as peanut or canola, for frying",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

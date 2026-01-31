@@ -1,0 +1,160 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-lemon-berry-muffins",
+  "ingredients": [
+    {
+      "raw": "2 cups all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 stick unsalted butter, room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1 ¼ cups granulated sugar, plus more for sprinkling",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for sprinkling"
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons Mccormick® lemon extract",
+      "expected": {
+        "item": "Mccormick® lemon extract",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs, room temperature",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "½ cup buttermilk, room temperature",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "6 oz fresh blueberry",
+      "expected": {
+        "item": "fresh blueberry",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "muffin tin, 6 cup, jumbo",
+      "expected": {
+        "item": "muffin tin, 6 cup, jumbo",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "muffin tin liner",
+      "expected": {
+        "item": "muffin tin liner",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "source": "paprika",
+  "recipe_slug": "french-style-pork-stew",
+  "ingredients": [
+    {
+      "raw": "6 parsley sprigs, plus ¼ cup chopped fresh parsley",
+      "expected": {
+        "item": "parsley sprigs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "plus 1/4 cup chopped fresh parsley"
+      }
+    },
+    {
+      "raw": "3 large sprigs fresh thyme",
+      "expected": {
+        "item": "sprigs fresh thyme",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 garlic cloves, unpeeled",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "unpeeled"
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 whole cloves",
+      "expected": {
+        "item": "whole cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 pounds boneless pork butt roast, trimmed and cut into 1- to 1 ½-inch pieces",
+      "expected": {
+        "item": "boneless pork butt roast",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cut into 1- to 1 1/2-inch pieces"
+      }
+    },
+    {
+      "raw": "1 meaty smoked ham shank or 2 to 3 smoked ham hocks (1 ¼ pounds)",
+      "expected": {
+        "item": "meaty smoked ham shank or 2 to 3 smoked ham hocks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 onions, halved through root end, root end left intact",
+      "expected": {
+        "item": "onions, halved through root end, root end left intact",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 carrots, peeled, narrow end cut crosswise into ½-inch pieces, wide end halved lengthwise and cut into ½-inch pieces",
+      "expected": {
+        "item": "carrots, peeled, narrow end cut crosswise into 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "wide end halved lengthwise and cut into 1/2-inch pieces"
+      }
+    },
+    {
+      "raw": "1 pound Yukon Gold potatoes, unpeeled, cut into ¾-inch pieces",
+      "expected": {
+        "item": "Yukon Gold potatoes, unpeeled, cut into 3/4-inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces kielbasa sausage, halved lengthwise and then cut into ½-inch-thick slices",
+      "expected": {
+        "item": "kielbasa sausage",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "halved lengthwise and then cut into 1/2-inch-thick slices"
+      }
+    },
+    {
+      "raw": "½ head savoy cabbage, shredded (8 cups)",
+      "expected": {
+        "item": "savoy cabbage",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "head"
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    }
+  ]
+}

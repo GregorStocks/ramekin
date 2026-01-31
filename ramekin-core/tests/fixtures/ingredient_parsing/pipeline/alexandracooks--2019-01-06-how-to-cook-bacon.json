@@ -1,0 +1,23 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2019-01-06-how-to-cook-bacon",
+  "ingredients": [
+    {
+      "raw": "1 lb. bacon",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "california-roll-recipe",
+  "ingredients": [
+    {
+      "raw": "1 recipe Sushi Rice",
+      "expected": {
+        "item": "recipe Sushi Rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sheets nori roasted seaweed (large, cut into halves)",
+      "expected": {
+        "item": "sheets nori roasted seaweed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  can crab meat (seasoned with lemon juice and salt)",
+      "expected": {
+        "item": "crab meat (seasoned with lemon juice and salt)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  avocado (cut into 1/2\" sticks)",
+      "expected": {
+        "item": "avocado (cut into 1/2\" sticks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  cucumber (cut into 1/2\" sticks)",
+      "expected": {
+        "item": "cucumber (cut into 1/2\" sticks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sesame seeds",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "soy sauce (optional for dipping)",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [],
+        "note": "optional for dipping"
+      }
+    },
+    {
+      "raw": "wasabi (optional for dipping)",
+      "expected": {
+        "item": "wasabi",
+        "measurements": [],
+        "note": "optional for dipping"
+      }
+    }
+  ]
+}

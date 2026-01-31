@@ -1,0 +1,199 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-252777-eatingwells-eggp",
+  "ingredients": [
+    {
+      "raw": "Canola or olive oil cooking spray",
+      "expected": {
+        "item": "Canola or olive oil cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup panko breadcrumbs",
+      "expected": {
+        "item": "panko breadcrumbs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.75 cup grated Parmesan cheese, divided",
+      "expected": {
+        "item": "grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon Italian seasoning",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium eggplants (about 2 pounds total), cut crosswise into &amp;frac14;-inch-thick slices",
+      "expected": {
+        "item": "eggplants, cut crosswise into 1/4-inch-thick slices",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon ground pepper",
+      "expected": {
+        "item": "ground pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (24 ounce) jar no-salt-added tomato sauce",
+      "expected": {
+        "item": "no-salt-added tomato sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "24",
+            "unit": "oz"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup fresh basil leaves, torn, plus more for serving",
+      "expected": {
+        "item": "fresh basil leaves, torn",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, grated",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "0.5 teaspoon crushed red pepper",
+      "expected": {
+        "item": "crushed red pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded part-skim mozzarella cheese, divided",
+      "expected": {
+        "item": "shredded part-skim mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

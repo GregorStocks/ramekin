@@ -1,0 +1,27 @@
+{
+  "category": "smittenkitchen",
+  "test_cases": [
+    {
+      "name": "potatoes",
+      "raw": "4 (about 8 ounces or 225 grams each) russet potatoes, scrubbed clean",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz each"
+          },
+          {
+            "amount": "225",
+            "unit": "g each"
+          }
+        ],
+        "note": "scrubbed clean"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-sticky-maple-pork-appl",
+  "ingredients": [
+    {
+      "raw": "600g pork fillet",
+      "expected": {
+        "item": "pork fillet",
+        "measurements": [
+          {
+            "amount": "600",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 eating apples cored and cut into eighths",
+      "expected": {
+        "item": "eating apples cored and cut into eighths",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic crushed",
+      "expected": {
+        "item": "garlic crushed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "39",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp white or red wine vinegar",
+      "expected": {
+        "item": "white or red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp wholegrain mustard",
+      "expected": {
+        "item": "wholegrain mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

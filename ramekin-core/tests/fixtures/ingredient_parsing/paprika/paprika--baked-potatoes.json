@@ -1,0 +1,48 @@
+{
+  "source": "paprika",
+  "recipe_slug": "baked-potatoes",
+  "ingredients": [
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 (7- to 9-ounce) russet potatoes, unpeeled, each lightly pricked with fork in 6 places",
+      "expected": {
+        "item": "russet potatoes, unpeeled, each lightly pricked with fork in 6 places",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

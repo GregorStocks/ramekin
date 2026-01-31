@@ -1,0 +1,92 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-broccoli-cheddar-egg-mu",
+  "ingredients": [
+    {
+      "raw": "9 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup skim milk",
+      "expected": {
+        "item": "skim milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tbsp Dijon mustard (optional)",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 cups broccoli, steamed and chopped (or defrosted frozen)",
+      "expected": {
+        "item": "broccoli, steamed and chopped",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or defrosted frozen"
+      }
+    },
+    {
+      "raw": "3/4 cup reduced fat shredded cheddar cheese",
+      "expected": {
+        "item": "reduced fat shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 green onions, chopped",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

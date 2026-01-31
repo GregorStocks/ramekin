@@ -1,0 +1,127 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "tuna-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon dill pickle relish",
+      "expected": {
+        "item": "dill pickle relish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½  lemon (zested and juiced)",
+      "expected": {
+        "item": "lemon (zested and juiced)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "½ teaspoon ground black pepper (plus more to taste)",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "2 (12-ounce) cans chunk tuna in water (drained)",
+      "expected": {
+        "item": "chunk tuna in water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 small red onion (minced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 rib celery (minced)",
+      "expected": {
+        "item": "rib celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "½ teaspoon fresh dill (minced (optional))",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced (optional"
+      }
+    }
+  ]
+}

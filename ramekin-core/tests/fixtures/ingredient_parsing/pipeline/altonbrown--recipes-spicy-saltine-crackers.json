@@ -1,0 +1,58 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-spicy-saltine-crackers",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons unsalted butter or ghee, melted",
+      "expected": {
+        "item": "unsalted butter or ghee",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1 tablespoon hot sauce",
+      "expected": {
+        "item": "hot sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dry mustard powder",
+      "expected": {
+        "item": "dry mustard powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 sleeve Saltine crackers",
+      "expected": {
+        "item": "sleeve Saltine crackers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

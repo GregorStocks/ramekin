@@ -1,0 +1,113 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "ginger-dressing-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tbsp rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp fresh ginger (peeled and grated)",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "peeled and grated"
+      }
+    },
+    {
+      "raw": "1/2 - 1 clove garlic (or 1/4 tsp garlic powder)",
+      "expected": {
+        "item": "garlic (or 1/4 tsp garlic powder)",
+        "measurements": [
+          {
+            "amount": "1/2-1",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sesame seeds",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

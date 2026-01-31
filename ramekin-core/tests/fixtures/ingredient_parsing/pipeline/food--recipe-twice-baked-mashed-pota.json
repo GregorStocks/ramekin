@@ -1,0 +1,126 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-twice-baked-mashed-pota",
+  "ingredients": [
+    {
+      "raw": "1 (22   ounce) package  frozen mashed potatoes",
+      "expected": {
+        "item": "frozen mashed potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "22",
+            "unit": "oz"
+          },
+          {
+            "amount": "624",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4   ounces packages   cream cheese, softened",
+      "expected": {
+        "item": "packages   cream cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1/2  cup    sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  cup   chopped fresh chives",
+      "expected": {
+        "item": "chopped fresh chives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4   slices    bacon, cooked and crumbled",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": "cooked and crumbled"
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    seasoned pepper",
+      "expected": {
+        "item": "seasoned pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  teaspoon    salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  cup   shredded cheddar cheese",
+      "expected": {
+        "item": "shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

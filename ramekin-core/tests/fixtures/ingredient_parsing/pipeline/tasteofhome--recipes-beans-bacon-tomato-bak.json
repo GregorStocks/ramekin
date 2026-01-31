@@ -1,0 +1,169 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-beans-bacon-tomato-bak",
+  "ingredients": [
+    {
+      "raw": "8 bacon strips, cut into 1-inch pieces",
+      "expected": {
+        "item": "bacon strips, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup finely chopped onion",
+      "expected": {
+        "item": "finely chopped onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup finely chopped celery",
+      "expected": {
+        "item": "finely chopped celery",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup finely chopped green pepper",
+      "expected": {
+        "item": "finely chopped green pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cans (14-1/2 ounces each) diced tomatoes, undrained",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "14-1/2",
+            "unit": "oz each"
+          }
+        ],
+        "note": "undrained"
+      }
+    },
+    {
+      "raw": "8 cups frozen lima beans (about 42 ounces), thawed",
+      "expected": {
+        "item": "frozen lima beans",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "42",
+            "unit": "oz"
+          },
+          {
+            "amount": "1191",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "beef-tacos-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 medium onion ((chopped))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cloves garlic ((minced))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "450 grams lean ground beef",
+      "expected": {
+        "item": "lean ground beef",
+        "measurements": [
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12  corn tortillas",
+      "expected": {
+        "item": "corn tortillas",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 batch salsa verde",
+      "expected": {
+        "item": "batch salsa verde",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "cilantro",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  lime ((cut into wedges))",
+      "expected": {
+        "item": "lime (cut into wedges)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

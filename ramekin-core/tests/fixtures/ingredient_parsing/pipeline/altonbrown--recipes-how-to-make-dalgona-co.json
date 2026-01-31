@@ -1,0 +1,83 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-how-to-make-dalgona-co",
+  "ingredients": [
+    {
+      "raw": "1/4 cup hot water",
+      "expected": {
+        "item": "hot water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons plus 2 teaspoons instant espresso powder",
+      "expected": {
+        "item": "2 tablespoons plus 2 teaspoons instant espresso powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 2 teaspoons instant espresso powder"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 fluid ounces whole milk, for serving",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": "for serving"
+      }
+    }
+  ]
+}

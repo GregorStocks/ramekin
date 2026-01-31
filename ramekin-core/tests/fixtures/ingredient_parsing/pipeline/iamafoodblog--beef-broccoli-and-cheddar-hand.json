@@ -1,0 +1,147 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "beef-broccoli-and-cheddar-hand",
+  "ingredients": [
+    {
+      "raw": "oil, for the pan",
+      "expected": {
+        "item": "oil, for the pan",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1/4 lb ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.6",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup beef broth (or water)",
+      "expected": {
+        "item": "beef broth (or water)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup broccoli, cut into small pieces",
+      "expected": {
+        "item": "broccoli, cut into small pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper, to taste",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "7 slices cheddar cheese",
+      "expected": {
+        "item": "cheddar cheese",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 package homemade or store bought pie crust",
+      "expected": {
+        "item": "homemade or store bought pie crust",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg lightly beaten with 1 teaspoon water",
+      "expected": {
+        "item": "egg lightly beaten with 1 teaspoon water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

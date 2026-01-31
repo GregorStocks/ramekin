@@ -1,0 +1,121 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "10216-kale-pesto-pasta-recipe",
+  "ingredients": [
+    {
+      "raw": "1 large bunch of kale, rinsed with stems and ribs removed",
+      "expected": {
+        "item": "bunch of kale",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "rinsed with stems and ribs removed"
+      }
+    },
+    {
+      "raw": "1/2 cup blanched almonds",
+      "expected": {
+        "item": "blanched almonds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic, roughly minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "roughly minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "144",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 ounces Parmigiano-Reggiano cheese, grated (1/2 cup)",
+      "expected": {
+        "item": "Parmigiano-Reggiano cheese",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 pound pasta, any shape",
+      "expected": {
+        "item": "pasta, any shape",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and fresh ground black pepper, to taste",
+      "expected": {
+        "item": "Salt and fresh ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

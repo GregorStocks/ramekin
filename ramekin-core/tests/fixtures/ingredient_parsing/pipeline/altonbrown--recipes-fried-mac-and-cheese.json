@@ -1,0 +1,127 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-fried-mac-and-cheese",
+  "ingredients": [
+    {
+      "raw": "1 quart peanut oil, for frying",
+      "expected": {
+        "item": "peanut oil, for frying",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups leftover macaroni and cheese, refrigerated overnight",
+      "expected": {
+        "item": "leftover macaroni and cheese, refrigerated overnight",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cayenne",
+      "expected": {
+        "item": "ground cayenne",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups panko breadcrumbs",
+      "expected": {
+        "item": "panko breadcrumbs",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

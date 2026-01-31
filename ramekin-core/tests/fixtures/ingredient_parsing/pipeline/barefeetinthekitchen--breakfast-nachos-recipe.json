@@ -1,0 +1,112 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "breakfast-nachos-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4  eggs (lightly whisked)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": null
+          }
+        ],
+        "note": "lightly whisked"
+      }
+    },
+    {
+      "raw": "kosher salt (to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 1/2 cups cooked pinto beans or 1 can (drained and rinsed)",
+      "expected": {
+        "item": "cooked pinto beans or 1 can",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1/2 cup green chile enchilada sauce (store-bought is fine as well)",
+      "expected": {
+        "item": "green chile enchilada sauce (store-bought is fine as well)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sliced jalapenos (if desired for topping)",
+      "expected": {
+        "item": "sliced jalapenos (if desired for topping)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shredded Mexican cheese blend or the cheese of your choice",
+      "expected": {
+        "item": "shredded Mexican cheese blend or the cheese of your choice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  handfuls tortilla chips",
+      "expected": {
+        "item": "tortilla chips",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

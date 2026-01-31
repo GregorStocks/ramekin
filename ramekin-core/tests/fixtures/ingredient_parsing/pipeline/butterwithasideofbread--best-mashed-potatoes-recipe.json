@@ -1,0 +1,70 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "best-mashed-potatoes-recipe",
+  "ingredients": [
+    {
+      "raw": "4 lbs potatoes (peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best))",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best"
+      }
+    },
+    {
+      "raw": "8 oz. cream cheese (cut into smaller pieces)",
+      "expected": {
+        "item": "cream cheese (cut into smaller pieces)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "242",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  cube butter (divided)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cube"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

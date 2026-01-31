@@ -1,0 +1,303 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "beef-bourguignon-pot-pie-recip",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon (15 ml) neutral oil, such as vegetable, plus more as needed",
+      "expected": {
+        "item": "neutral oil, such as vegetable",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "1 1/2 pounds (680 g) boneless beef chuck, cut into 1 1/2-inch cubes",
+      "expected": {
+        "item": "boneless beef chuck, cut into 1 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper, to taste",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 small yellow onion (4 ounces; 113 g), finely diced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "2 medium carrots (8 ounces; 227 g), 1 finely diced, 1 cut into 1/4-inch thick rounds, divided",
+      "expected": {
+        "item": "carrots, 1 finely diced, 1 cut into 1/4-inch thick rounds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 medium cloves garlic (10 g), minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons all-purpose flour (1/2 ounce; 14 g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) double-concentrated tomato paste",
+      "expected": {
+        "item": "double-concentrated tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (355 ml) dry red wine, such as Pinot Noir&nbsp;",
+      "expected": {
+        "item": "dry red wine, such as Pinot Noir",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (355 ml) homemade or store-bought low-sodium chicken or beef broth",
+      "expected": {
+        "item": "homemade or store-bought low-sodium chicken or beef broth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons (20 ml) soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon minced fresh thyme",
+      "expected": {
+        "item": "minced fresh thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Dash of fish sauce (optional)",
+      "expected": {
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 slices thick-cut bacon (2 ounces; 56 g), cut into 1/4-inch pieces",
+      "expected": {
+        "item": "thick-cut bacon, cut into 1/4-inch pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces (227 g) button or cremini mushrooms, trimmed and thinly sliced",
+      "expected": {
+        "item": "button or cremini mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 sheet puff pastry from 1 (14-ounce package) frozen puff pastry, thawed (such as Dufour or Pepperidge Farm)",
+      "expected": {
+        "item": "sheet puff pastry from 1 frozen puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": "thawed (such as Dufour or Pepperidge Farm)"
+      }
+    },
+    {
+      "raw": "1 large egg, beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten"
+      }
+    }
+  ]
+}

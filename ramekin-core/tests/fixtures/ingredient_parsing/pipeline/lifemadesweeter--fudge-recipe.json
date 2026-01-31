@@ -1,0 +1,84 @@
+{
+  "source": "lifemadesweeter",
+  "recipe_slug": "fudge-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups chopped dairy-free chocolate or dairyfree chocolate chips",
+      "expected": {
+        "item": "chopped dairy-free chocolate or dairyfree chocolate chips",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup creamy unsalted cashew butter",
+      "expected": {
+        "item": "creamy unsalted cashew butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup coconut cream, chilled overnight",
+      "expected": {
+        "item": "coconut cream",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "chilled overnight"
+      }
+    },
+    {
+      "raw": "1/3 cup pure maple syrup (, or sub with other liquid sweetener such as Lakanto sugar-free maple syrup for keto)",
+      "expected": {
+        "item": "pure maple syrup (, or sub with other liquid sweetener such as Lakanto sugar-free maple syrup for keto)",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "source": "asweetpeachef",
+  "recipe_slug": "roasted-sweet-potato-recipe",
+  "ingredients": [
+    {
+      "raw": "3  medium sweet potatoes (diced into cubes)",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced into cubes"
+      }
+    },
+    {
+      "raw": "2 tbsp coconut oil",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp raw honey",
+      "expected": {
+        "item": "raw honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

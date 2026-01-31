@@ -1,0 +1,171 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "tonkatsu-burger-recipe",
+  "ingredients": [
+    {
+      "raw": "4 thin boneless pork chops, lightly pounded",
+      "expected": {
+        "item": "thin boneless pork chops, lightly pounded",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg, lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "1 cup panko",
+      "expected": {
+        "item": "panko",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups thinly shredded cabbage",
+      "expected": {
+        "item": "thinly shredded cabbage",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 D’Italiano Brioche Buns, lightly toasted",
+      "expected": {
+        "item": "D’Italiano Brioche Buns",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "lightly toasted"
+      }
+    },
+    {
+      "raw": "mayo, to taste",
+      "expected": {
+        "item": "mayo",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "mustard, to taste",
+      "expected": {
+        "item": "mustard",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "tonkatsu sauce, to taste",
+      "expected": {
+        "item": "tonkatsu sauce",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

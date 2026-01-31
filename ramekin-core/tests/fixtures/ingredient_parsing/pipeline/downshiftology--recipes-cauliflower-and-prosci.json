@@ -1,0 +1,96 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-cauliflower-and-prosci",
+  "ingredients": [
+    {
+      "raw": "1/2  head cauliflower",
+      "expected": {
+        "item": "cauliflower",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 lb brussel sprouts",
+      "expected": {
+        "item": "brussel sprouts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 slices prosciutto",
+      "expected": {
+        "item": "prosciutto",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 tbsp chevre",
+      "expected": {
+        "item": "chevre",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp olive oil (separated 2 tbs + 1 tbs)",
+      "expected": {
+        "item": "olive oil (separated 2 tbs + 1 tbs)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

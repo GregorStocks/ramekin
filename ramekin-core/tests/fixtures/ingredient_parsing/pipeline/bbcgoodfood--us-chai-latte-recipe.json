@@ -1,0 +1,136 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-chai-latte-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cinnamon sticks",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cardamom pods",
+      "expected": {
+        "item": "cardamom pods",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves",
+      "expected": {
+        "item": "4 cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 peppercorns",
+      "expected": {
+        "item": "peppercorns",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 star anise",
+      "expected": {
+        "item": "star anise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "small piece of fresh ginger root sliced",
+      "expected": {
+        "item": "piece of fresh ginger root sliced",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 black teabags (such as ceylon, assam or English breakfast)",
+      "expected": {
+        "item": "black teabags (such as ceylon, assam or English breakfast)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups whole milk or coconut milk",
+      "expected": {
+        "item": "whole milk or coconut milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tbsp light brown soft sugar",
+      "expected": {
+        "item": "light brown soft sugar",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of ground cinnamon to serve",
+      "expected": {
+        "item": "ground cinnamon to serve",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

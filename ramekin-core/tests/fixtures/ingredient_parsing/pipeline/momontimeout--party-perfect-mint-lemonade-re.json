@@ -1,0 +1,109 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "party-perfect-mint-lemonade-re",
+  "ingredients": [
+    {
+      "raw": "1 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 cups water (divided)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 sprigs mint",
+      "expected": {
+        "item": "mint",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup fresh orange juice",
+      "expected": {
+        "item": "fresh orange juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp orange zest",
+      "expected": {
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

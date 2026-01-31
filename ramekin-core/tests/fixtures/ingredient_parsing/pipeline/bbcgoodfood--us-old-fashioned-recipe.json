@@ -1,0 +1,81 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-old-fashioned-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tsp simple syrup or 1 tsp granulated sugar",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 tsp granulated sugar"
+      }
+    },
+    {
+      "raw": "1-2 dashes of bitters",
+      "expected": {
+        "item": "bitters",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "splash of  water",
+      "expected": {
+        "item": "splash of  water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz bourbon or rye whiskey",
+      "expected": {
+        "item": "bourbon or rye whiskey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "soda water (optional)",
+      "expected": {
+        "item": "soda water",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "orange slice to garnish",
+      "expected": {
+        "item": "orange slice to garnish",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "maraschino cherry to garnish (optional)",
+      "expected": {
+        "item": "maraschino cherry to garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

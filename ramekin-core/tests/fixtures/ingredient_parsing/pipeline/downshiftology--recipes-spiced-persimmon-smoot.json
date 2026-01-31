@@ -1,0 +1,84 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-spiced-persimmon-smoot",
+  "ingredients": [
+    {
+      "raw": "2  ripe fuyu persimmons",
+      "expected": {
+        "item": "ripe fuyu persimmons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana (frozen)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "frozen"
+      }
+    },
+    {
+      "raw": "1 cup almond milk",
+      "expected": {
+        "item": "almond milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp ginger",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

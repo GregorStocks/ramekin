@@ -1,0 +1,75 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-five-ingredient-butter",
+  "ingredients": [
+    {
+      "raw": "4 sticks unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "stick"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs plus 3 large whites, at room temperature",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "plus 3 large whites, at room temperature"
+      }
+    },
+    {
+      "raw": "1 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup light corn syrup",
+      "expected": {
+        "item": "light corn syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-finger pinch kosher salt",
+      "expected": {
+        "item": "-finger pinch kosher salt",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-carnitas-burrito-bowl",
+  "ingredients": [
+    {
+      "raw": "4 cups romaine lettuce (shredded)",
+      "expected": {
+        "item": "romaine lettuce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "2 cups cilantro lime rice",
+      "expected": {
+        "item": "cilantro lime rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups slow-cooker carnitas",
+      "expected": {
+        "item": "slow-cooker carnitas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup black beans",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup pico de gallo",
+      "expected": {
+        "item": "pico de gallo",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup guacamole",
+      "expected": {
+        "item": "guacamole",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup shredded cheese (optional)",
+      "expected": {
+        "item": "shredded cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "lime crema (optional)",
+      "expected": {
+        "item": "lime crema",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1  bell pepper (thinly sliced)",
+      "expected": {
+        "item": "bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1/2  onion (thinly sliced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "fajita seasoning (to taste)",
+      "expected": {
+        "item": "fajita seasoning",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "source": "asweetpeachef",
+  "recipe_slug": "homemade-marshmallow-recipe",
+  "ingredients": [
+    {
+      "raw": "Cooking spray or vegetable oil (enough to grease pan)",
+      "expected": {
+        "item": "Cooking spray or vegetable oil (enough to grease pan)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup plus ¼ cup water (divided)",
+      "expected": {
+        "item": "½ cup plus ¼ cup water (divided)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 tbsp unflavored powdered gelatin (3 packets)",
+      "expected": {
+        "item": "unflavored powdered gelatin",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup evaporated milk",
+      "expected": {
+        "item": "evaporated milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

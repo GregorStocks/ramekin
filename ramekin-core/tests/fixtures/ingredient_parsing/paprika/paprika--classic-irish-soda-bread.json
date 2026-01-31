@@ -1,0 +1,138 @@
+{
+  "source": "paprika",
+  "recipe_slug": "classic-irish-soda-bread",
+  "ingredients": [
+    {
+      "raw": "3 cups (15 ounces/425 grams) bleached all-purpose flour, plus more for work surface",
+      "expected": {
+        "item": "bleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "plus more for work surface"
+      }
+    },
+    {
+      "raw": "1 cup (4 ounces/113 grams) cake flour",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (28g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons (8g) cream of tartar",
+      "expected": {
+        "item": "cream of tartar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons (8g) table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter (2 tablespoons softened + 1 tablespoon melted)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "2 tablespoons softened + 1 tablespoon melted"
+      }
+    },
+    {
+      "raw": "1 ½ cups buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

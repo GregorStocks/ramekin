@@ -1,0 +1,109 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "shrimp-fried-rice-recipe",
+  "ingredients": [
+    {
+      "raw": "150 grams small shrimp ((peeled and deveined))",
+      "expected": {
+        "item": "small shrimp",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and deveined"
+      }
+    },
+    {
+      "raw": "1 teaspoon shaoxing wine",
+      "expected": {
+        "item": "shaoxing wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "360 grams cooked rice ((use leftover rice))",
+      "expected": {
+        "item": "cooked rice (use leftover rice)",
+        "measurements": [
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons XO sauce",
+      "expected": {
+        "item": "XO sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  scallions ((chopped))",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "Salt ((to taste))",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-frozen-summer-squash",
+  "ingredients": [
+    {
+      "raw": "1 1/2 gallons water, divided",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "gallon"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 pounds summer squash, trimmed and cut into 1/2-inch slices",
+      "expected": {
+        "item": "summer squash",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cut into 1/2-inch slices"
+      }
+    }
+  ]
+}

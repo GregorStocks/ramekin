@@ -1,0 +1,292 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "chanko-nabe-recipe",
+  "ingredients": [
+    {
+      "raw": "200 g ground chicken (or ground turkey/pork)",
+      "expected": {
+        "item": "ground chicken",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "or ground turkey/pork"
+      }
+    },
+    {
+      "raw": "1/2 tsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tbsp yellow miso paste (awase)",
+      "expected": {
+        "item": "yellow miso paste (awase)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp grated ginger root (or ginger paste)",
+      "expected": {
+        "item": "grated ginger root (or ginger paste)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove grated garlic (or ½ tsp garlic paste per clove)",
+      "expected": {
+        "item": "grated garlic (or 1/2 tsp garlic paste per clove)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp cornstarch (or potato starch)",
+      "expected": {
+        "item": "cornstarch (or potato starch)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1000 ml dashi stock (homemade or quality dashi packets)",
+      "expected": {
+        "item": "dashi stock (homemade or quality dashi packets)",
+        "measurements": [
+          {
+            "amount": "1000",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ tbsp Chinese-style chicken bouillon powder",
+      "expected": {
+        "item": "Chinese-style chicken bouillon powder",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp grated ginger root (or ginger paste)",
+      "expected": {
+        "item": "grated ginger root (or ginger paste)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves grated garlic (or ½ tsp garlic paste per clove)",
+      "expected": {
+        "item": "grated garlic (or 1/2 tsp garlic paste per clove)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp ground sesame seeds",
+      "expected": {
+        "item": "ground sesame seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp yellow miso paste (awase)",
+      "expected": {
+        "item": "yellow miso paste (awase)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  carrot (peeled and cut into thick rounds)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut into thick rounds"
+      }
+    },
+    {
+      "raw": "1  Japanese leek (naganegi) (white part, cut into thick diagonal slices)",
+      "expected": {
+        "item": "Japanese leek (naganegi) (white part, cut into thick diagonal slices)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch enoki mushrooms (stems removed)",
+      "expected": {
+        "item": "enoki mushrooms (stems removed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  fresh shiitake mushrooms (stems removed)",
+      "expected": {
+        "item": "fresh shiitake mushrooms (stems removed)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛  Napa cabbage (roughly cut)",
+      "expected": {
+        "item": "Napa cabbage (roughly cut)",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "150 g firm tofu (cubed)",
+      "expected": {
+        "item": "firm tofu",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 bunch potherb mustard (mizuna) (stems removed)",
+      "expected": {
+        "item": "potherb mustard (mizuna) (stems removed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "chicken-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "3 cups cooked diced chicken breasts, (cold)",
+      "expected": {
+        "item": "cooked diced chicken breasts",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "cold"
+      }
+    },
+    {
+      "raw": "1 Tbsp fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup diced celery ((about 2 small))",
+      "expected": {
+        "item": "diced celery",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup chopped green onions* ((about 2))",
+      "expected": {
+        "item": "chopped green onions*",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp finely chopped fresh parsley",
+      "expected": {
+        "item": "finely chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise**",
+      "expected": {
+        "item": "mayonnaise**",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 tsp lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Bread slices or lettuce leaves for serving",
+      "expected": {
+        "item": "Bread slices or lettuce leaves for serving",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

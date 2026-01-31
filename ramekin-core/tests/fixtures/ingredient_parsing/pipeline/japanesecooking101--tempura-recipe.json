@@ -1,0 +1,143 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "tempura-recipe",
+  "ingredients": [
+    {
+      "raw": "4  shrimp",
+      "expected": {
+        "item": "shrimp",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices kabocha squash",
+      "expected": {
+        "item": "kabocha squash",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices sweet potato",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices eggplant",
+      "expected": {
+        "item": "eggplant",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  green beans",
+      "expected": {
+        "item": "green beans",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup cake flour",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "86",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup water with 3-4 ice cubes",
+      "expected": {
+        "item": "water with 3-4 ice cubes",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "oil ( for deep frying)",
+      "expected": {
+        "item": "oil ( for deep frying)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Mentsuyu",
+      "expected": {
+        "item": "Mentsuyu",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

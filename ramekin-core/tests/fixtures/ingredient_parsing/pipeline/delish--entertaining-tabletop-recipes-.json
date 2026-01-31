@@ -1,0 +1,70 @@
+{
+  "source": "delish",
+  "recipe_slug": "entertaining-tabletop-recipes-",
+  "ingredients": [
+    {
+      "raw": "1 Sheet puff pastry, thawed",
+      "expected": {
+        "item": "Sheet puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1 c. crumbled blue cheese",
+      "expected": {
+        "item": "crumbled blue cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 oz. cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "2 Ripe pears, thinly sliced",
+      "expected": {
+        "item": "Ripe pears",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "Maple syrup, for drizzling",
+      "expected": {
+        "item": "Maple syrup, for drizzling",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

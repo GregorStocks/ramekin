@@ -1,0 +1,56 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "grilled-zucchini-recipe",
+  "ingredients": [
+    {
+      "raw": "1.5-2 pounds zucchini (about 3-4 medium zucchini)",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1.5-2",
+            "unit": "lb"
+          },
+          {
+            "amount": "3-4",
+            "unit": "medium"
+          },
+          {
+            "amount": "680-907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "sukju-namul-recipe",
+  "ingredients": [
+    {
+      "raw": "400 grams bean sprouts",
+      "expected": {
+        "item": "bean sprouts",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon garlic ((finely grated))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": "finely grated"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt ((to taste))",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon toasted sesame seeds",
+      "expected": {
+        "item": "toasted sesame seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  scallion ((finely chopped))",
+      "expected": {
+        "item": "scallion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

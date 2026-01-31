@@ -1,0 +1,135 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "crab-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "24 ounces imitation crab meat (flaked style or sticks, chopped)",
+      "expected": {
+        "item": "imitation crab meat",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "oz"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "flaked style or sticks, chopped"
+      }
+    },
+    {
+      "raw": "½  red onion (diced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 stalk  celery (diced)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stalk"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 tablespoons chives (chopped, plus more for serving)",
+      "expected": {
+        "item": "chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped, plus more for serving"
+      }
+    },
+    {
+      "raw": "¾ cup mayonnaise (full-fat or low-fat)",
+      "expected": {
+        "item": "mayonnaise (full-fat or low-fat)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup sour cream (or plain Greek yogurt)",
+      "expected": {
+        "item": "sour cream (or plain Greek yogurt)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon Old Bay seasoning",
+      "expected": {
+        "item": "Old Bay seasoning",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt + pepper (to taste)",
+      "expected": {
+        "item": "salt + pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

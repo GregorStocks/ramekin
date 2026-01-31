@@ -1,0 +1,71 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "honey-balsamic-vinaigrette-rec",
+  "ingredients": [
+    {
+      "raw": "1/4 cup light olive oil",
+      "expected": {
+        "item": "light olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp balsamic vinegar",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 - 2 tbsp honey",
+      "expected": {
+        "item": "- 2 tbsp honey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

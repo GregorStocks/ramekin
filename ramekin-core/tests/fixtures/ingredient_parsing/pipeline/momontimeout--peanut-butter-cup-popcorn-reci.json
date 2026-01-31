@@ -1,0 +1,62 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "peanut-butter-cup-popcorn-reci",
+  "ingredients": [
+    {
+      "raw": "8 cups popped popcorn",
+      "expected": {
+        "item": "popped popcorn",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk chocolate melting candy",
+      "expected": {
+        "item": "milk chocolate melting candy",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp peanut butter",
+      "expected": {
+        "item": "peanut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup miniature peanut butter cups (halved)",
+      "expected": {
+        "item": "miniature peanut butter cups",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    }
+  ]
+}

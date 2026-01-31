@@ -1,0 +1,155 @@
+{
+  "source": "sallysbakingaddiction",
+  "recipe_slug": "dutch-baby-pancake-recipe",
+  "ingredients": [
+    {
+      "raw": "3 large eggs, at room temperature",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "3/4 cup (94g) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (180ml) whole milk, at room temperature (or nondairy)",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature (or nondairy)"
+      }
+    },
+    {
+      "raw": "1 teaspoon lemon zest*",
+      "expected": {
+        "item": "lemon zest*",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons (25g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons (43g) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons confectioners&amp;#8217; sugar, for sifting",
+      "expected": {
+        "item": "confectioners’ sugar, for sifting",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional toppings: berries, whipped cream, maple syrup, and/or strawberry sauce",
+      "expected": {
+        "item": "optional toppings: berries, whipped cream, maple syrup",
+        "measurements": [],
+        "note": "and/or strawberry sauce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "pork-shogayaki-recipe",
+  "ingredients": [
+    {
+      "raw": "1-2 Tbsp ginger root (grated)",
+      "expected": {
+        "item": "ginger root",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp Oil",
+      "expected": {
+        "item": "Oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 oz pork loin, chunk or sliced",
+      "expected": {
+        "item": "pork loin",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": "chunk or sliced"
+      }
+    },
+    {
+      "raw": "Cabbage, shredded",
+      "expected": {
+        "item": "Cabbage",
+        "measurements": [],
+        "note": "shredded"
+      }
+    }
+  ]
+}

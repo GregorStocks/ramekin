@@ -1,0 +1,113 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "baked-honey-glazed-chicken-rec",
+  "ingredients": [
+    {
+      "raw": "5 lbs chicken drumsticks",
+      "expected": {
+        "item": "chicken drumsticks",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2268",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup soy sauce*",
+      "expected": {
+        "item": "soy sauce*",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  large garlic cloves (minced or finely grated)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "minced or finely grated"
+      }
+    },
+    {
+      "raw": "1 Tbsp ginger (peeled and finely grated)",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "peeled and finely grated"
+      }
+    },
+    {
+      "raw": "Sesame seeds and chives for garnish (optional)",
+      "expected": {
+        "item": "Sesame seeds and chives for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

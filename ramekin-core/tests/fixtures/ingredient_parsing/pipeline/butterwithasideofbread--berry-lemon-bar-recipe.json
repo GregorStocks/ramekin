@@ -1,0 +1,104 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "berry-lemon-bar-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup Butter (softened)",
+      "expected": {
+        "item": "Butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1 ⅓ cup Flour (divided)",
+      "expected": {
+        "item": "Flour",
+        "measurements": [
+          {
+            "amount": "1 1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "167",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 ¼ cup Sugar (divided)",
+      "expected": {
+        "item": "Sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "4  Eggs",
+      "expected": {
+        "item": "Eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup Lemon juice (about 2 lemons)",
+      "expected": {
+        "item": "Lemon juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups Mixed berries (blueberries, raspberries and strawberries are a perfect combination for this recipe)",
+      "expected": {
+        "item": "Mixed berries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "blueberries, raspberries and strawberries are a perfect combination for this recipe"
+      }
+    }
+  ]
+}

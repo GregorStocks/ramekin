@@ -1,0 +1,118 @@
+{
+  "source": "budgetbytes",
+  "recipe_slug": "roasted-turkey-breast-recipe",
+  "ingredients": [
+    {
+      "raw": "8 Tbsp butter, room temperature ($1.12)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature ($1.12)"
+      }
+    },
+    {
+      "raw": "2  cloves of garlic, pressed ($0.16)",
+      "expected": {
+        "item": "garlic, pressed ($0.16)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt ($0.03)",
+      "expected": {
+        "item": "salt ($0.03)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp freshly cracked black pepper ($0.03)",
+      "expected": {
+        "item": "freshly cracked black pepper ($0.03)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 tsp fresh rosemary, chopped* ($0.75)",
+      "expected": {
+        "item": "fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "chopped* ($0.75)"
+      }
+    },
+    {
+      "raw": "1 tsp dried thyme ($0.10)",
+      "expected": {
+        "item": "dried thyme ($0.10)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp dried sage ($0.05)",
+      "expected": {
+        "item": "dried sage ($0.05)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5.5 lb. bone-in turkey breast (skin on)** ($19.25)",
+      "expected": {
+        "item": "bone-in turkey breast (skin on)** ($19.25)",
+        "measurements": [
+          {
+            "amount": "5.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2495",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

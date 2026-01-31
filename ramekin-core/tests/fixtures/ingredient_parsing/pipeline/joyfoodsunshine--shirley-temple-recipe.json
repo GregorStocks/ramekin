@@ -1,0 +1,74 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "shirley-temple-recipe",
+  "ingredients": [
+    {
+      "raw": "12 ounces ginger ale",
+      "expected": {
+        "item": "ginger ale",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons grenadine",
+      "expected": {
+        "item": "grenadine",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  maraschino cherries",
+      "expected": {
+        "item": "maraschino cherries",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

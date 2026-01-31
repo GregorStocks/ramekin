@@ -1,0 +1,130 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "cucumber-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound cucumbers, unpeeled unless waxed",
+      "expected": {
+        "item": "cucumbers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "unpeeled unless waxed"
+      }
+    },
+    {
+      "raw": "fine grain sea salt &amp;amp; lots of freshly cracked pepper",
+      "expected": {
+        "item": "fine grain sea salt & lots of freshly cracked pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon rose water",
+      "expected": {
+        "item": "rose water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup white wine vinegar",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup plain yogurt (not Greek)",
+      "expected": {
+        "item": "plain yogurt (not Greek)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bunch scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
+      "expected": {
+        "item": "scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  + cup walnuts, lightly toasted, roughly chopped",
+      "expected": {
+        "item": "+ cup walnuts, lightly toasted",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1  small handful mint leaves",
+      "expected": {
+        "item": "handful mint leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  tiny handful rose petals, fresh or dried (from unsprayed roses)",
+      "expected": {
+        "item": "tiny handful rose petals",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "fresh or dried (from unsprayed roses)"
+      }
+    },
+    {
+      "raw": "For serving: 1-2 cups cooked lentils, drizzle of your best extra virgin olive oil",
+      "expected": {
+        "item": "For serving: 1-2 cups cooked lentils, drizzle of your best extra virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

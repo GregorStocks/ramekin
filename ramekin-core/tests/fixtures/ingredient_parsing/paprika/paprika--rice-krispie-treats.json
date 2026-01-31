@@ -1,0 +1,86 @@
+{
+  "source": "paprika",
+  "recipe_slug": "rice-krispie-treats",
+  "ingredients": [
+    {
+      "raw": "6 cups (165 g) Rice Krispies",
+      "expected": {
+        "item": "Rice Krispies",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nonstick cooking spray, for greasing",
+      "expected": {
+        "item": "Nonstick cooking spray, for greasing",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons (56 g) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (12-ounce) bag marshmallows, any size",
+      "expected": {
+        "item": "marshmallows, any size",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Flaky salt, such as Maldon, to garnish",
+      "expected": {
+        "item": "Flaky salt, such as Maldon, to garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

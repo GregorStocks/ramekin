@@ -1,0 +1,143 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-easy-cooked-eggnog",
+  "ingredients": [
+    {
+      "raw": "6 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly grated nutmeg, plus more for serving",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground grains of paradise  ((or 1/4 teaspoon freshly ground black pepper))",
+      "expected": {
+        "item": "ground grains of paradise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 teaspoon freshly ground black pepper"
+      }
+    },
+    {
+      "raw": "3 fluid ounces (6 tablespoons) bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 fluid ounces (6 tablespoons) gold rum",
+      "expected": {
+        "item": "gold rum",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 fluid ounces (3 tablespoons) fino dry sherry",
+      "expected": {
+        "item": "fino dry sherry",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

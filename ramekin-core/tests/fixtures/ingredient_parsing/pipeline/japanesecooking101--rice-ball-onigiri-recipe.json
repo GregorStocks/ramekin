@@ -1,0 +1,75 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "rice-ball-onigiri-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups Steamed rice",
+      "expected": {
+        "item": "Steamed rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Katsuobushi (dried bonito flakes)",
+      "expected": {
+        "item": "Katsuobushi",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "dried bonito flakes"
+      }
+    },
+    {
+      "raw": "1/2 tsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 sheets Nori (roasted seaweed) (small)",
+      "expected": {
+        "item": "sheets Nori",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "roasted seaweed"
+      }
+    }
+  ]
+}

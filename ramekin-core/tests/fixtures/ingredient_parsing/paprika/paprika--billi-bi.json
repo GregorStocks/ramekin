@@ -1,0 +1,177 @@
+{
+  "source": "paprika",
+  "recipe_slug": "billi-bi",
+  "ingredients": [
+    {
+      "raw": "2 pounds mussels",
+      "expected": {
+        "item": "mussels",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 shallots, peeled and coarsely chopped",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and coarsely chopped"
+      }
+    },
+    {
+      "raw": "2 small white onions, peeled and quartered",
+      "expected": {
+        "item": "white onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled and quartered"
+      }
+    },
+    {
+      "raw": "2 sprigs parsley, plus chopped parsley for garnish",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": "plus chopped parsley for garnish"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pepper, to taste",
+      "expected": {
+        "item": "Pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Pinch cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup dry white wine, like pinot grigio or sauvignon blanc",
+      "expected": {
+        "item": "dry white wine, like pinot grigio or sauvignon blanc",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter, cubed",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg yolk, lightly beaten",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    }
+  ]
+}

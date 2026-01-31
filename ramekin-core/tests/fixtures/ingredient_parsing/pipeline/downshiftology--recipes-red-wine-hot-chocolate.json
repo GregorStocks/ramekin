@@ -1,0 +1,90 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-red-wine-hot-chocolate",
+  "ingredients": [
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup chocolate chunks",
+      "expected": {
+        "item": "chocolate chunks",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup red wine",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "cacao powder",
+      "expected": {
+        "item": "cacao powder",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Homemade Marshmallows",
+      "expected": {
+        "item": "Homemade Marshmallows",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coconut Whipped Cream",
+      "expected": {
+        "item": "Coconut Whipped Cream",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "gazpacho-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds ripe quality tomatoes, cored and roughly chopped (about 3 large)",
+      "expected": {
+        "item": "ripe quality tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": "large"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "cored and roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2 medium cucumber, peeled and roughly chopped",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2 red bell pepper, roughly chopped",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced shallot",
+      "expected": {
+        "item": "minced shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small garlic clove, peeled",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons sherry vinegar (or red wine vinegar)",
+      "expected": {
+        "item": "sherry vinegar (or red wine vinegar)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon smoked paprika (pimenton)",
+      "expected": {
+        "item": "smoked paprika (pimenton)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

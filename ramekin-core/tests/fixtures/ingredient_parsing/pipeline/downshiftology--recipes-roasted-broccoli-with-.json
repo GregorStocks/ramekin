@@ -1,0 +1,139 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-roasted-broccoli-with-",
+  "ingredients": [
+    {
+      "raw": "1  head of broccoli",
+      "expected": {
+        "item": "broccoli",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "3  egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup unsalted butter or ghee (melted and hot)",
+      "expected": {
+        "item": "unsalted butter or ghee",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "melted and hot"
+      }
+    },
+    {
+      "raw": "handful of parsley",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

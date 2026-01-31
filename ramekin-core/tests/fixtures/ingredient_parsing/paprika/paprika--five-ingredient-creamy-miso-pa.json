@@ -1,0 +1,86 @@
+{
+  "source": "paprika",
+  "recipe_slug": "five-ingredient-creamy-miso-pa",
+  "ingredients": [
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 ounces spaghetti, linguine or bucatini",
+      "expected": {
+        "item": "spaghetti, linguine or bucatini",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons white (or red) miso",
+      "expected": {
+        "item": "white (or red) miso",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces Parmesan, finely grated (1 packed cup)",
+      "expected": {
+        "item": "Parmesan, finely grated",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "1 packed cup"
+      }
+    },
+    {
+      "raw": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish (optional)",
+      "expected": {
+        "item": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

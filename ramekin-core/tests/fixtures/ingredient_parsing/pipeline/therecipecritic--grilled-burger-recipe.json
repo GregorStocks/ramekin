@@ -1,0 +1,141 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "grilled-burger-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds 80/20 ground beef (cold)",
+      "expected": {
+        "item": "80/20 ground beef",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "cold"
+      }
+    },
+    {
+      "raw": "3  garlic cloves (minced)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 Tablespoon minced onion",
+      "expected": {
+        "item": "minced onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon Worchestershire sauce",
+      "expected": {
+        "item": "Worchestershire sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons BBQ sauce",
+      "expected": {
+        "item": "BBQ sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Homemade Hamburger Buns",
+      "expected": {
+        "item": "Homemade Hamburger Buns",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sliced Red Onion",
+      "expected": {
+        "item": "Sliced Red Onion",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pickles",
+      "expected": {
+        "item": "Pickles",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lettuce",
+      "expected": {
+        "item": "Lettuce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Tomato",
+      "expected": {
+        "item": "Tomato",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-7934711-romaine-salad-w",
+  "ingredients": [
+    {
+      "raw": "2 small heads romaine lettuce, washed and torn into bite-size pieces",
+      "expected": {
+        "item": "heads romaine lettuce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": "washed and torn into bite-size pieces"
+      }
+    },
+    {
+      "raw": "3 large&nbsp;navel oranges, divided",
+      "expected": {
+        "item": "navel oranges",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 bunch radishes",
+      "expected": {
+        "item": "radishes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 tablespoons red-wine vinegar",
+      "expected": {
+        "item": "red-wine vinegar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon ground pepper",
+      "expected": {
+        "item": "ground pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup pomegranate arils (seeds)",
+      "expected": {
+        "item": "pomegranate arils (seeds)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

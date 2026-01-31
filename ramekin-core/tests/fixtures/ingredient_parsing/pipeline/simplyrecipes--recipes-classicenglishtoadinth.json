@@ -1,0 +1,134 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-classicenglishtoadinth",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cup (180 g) of all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 eggs, beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "1 1/2 cup (350 ml) milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "350",
+            "unit": "ml"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons melted butter",
+      "expected": {
+        "item": "melted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound (450 g) of bangers (an English sausage made with pork and breadcrumbs), or good quality pork or beef sausage links (in casings)",
+      "expected": {
+        "item": "bangers (an English sausage made with pork and breadcrumbs), or good quality pork or beef sausage links (in casings)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "4 large ripe tomatoes (seeds removed and roughly chopped)",
+      "expected": {
+        "item": "ripe tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "seeds removed and roughly chopped"
+      }
+    },
+    {
+      "raw": "1 (14.5 ounce) can diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  green onions (ends trimmed and chopped)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "ends trimmed and chopped"
+      }
+    },
+    {
+      "raw": "½  red onion (peeled and chopped)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and chopped"
+      }
+    },
+    {
+      "raw": "½ cup fresh cilantro",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lime (juiced)",
+      "expected": {
+        "item": "lime (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  jalapeno pepper (chopped (see notes))",
+      "expected": {
+        "item": "jalapeno pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped (see notes"
+      }
+    },
+    {
+      "raw": "1 clove garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "¼ teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sugar ((optional))",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

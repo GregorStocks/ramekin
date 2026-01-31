@@ -1,0 +1,79 @@
+{
+  "source": "onmykidsplate",
+  "recipe_slug": "how-to-make-pork-gravy-homemad",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups pan drippings liquid (If you don&amp;#39;t have a full two cups, supplement with broth or use all boxed broth)",
+      "expected": {
+        "item": "pan drippings liquid (If you don't have a full two cups, supplement with broth or use all boxed broth)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon pepper (add more or less to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "add more or less to taste"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt (add more or less to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "add more or less to taste"
+      }
+    }
+  ]
+}

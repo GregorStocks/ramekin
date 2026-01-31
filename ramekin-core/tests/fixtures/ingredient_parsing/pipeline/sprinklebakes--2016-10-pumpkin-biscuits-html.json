@@ -1,0 +1,104 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-10-pumpkin-biscuits-html",
+  "ingredients": [
+    {
+      "raw": "2 cups 240g all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 270g pumpkin puree (canned is fine)",
+      "expected": {
+        "item": "pumpkin puree (canned is fine)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "270",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup 8 oz. heavy cream",
+      "expected": {
+        "item": "8 oz. heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Egg wash: 1 egg beaten with 1 tablespoon water",
+      "expected": {
+        "item": "Egg wash: 1 egg beaten with 1 tablespoon water",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

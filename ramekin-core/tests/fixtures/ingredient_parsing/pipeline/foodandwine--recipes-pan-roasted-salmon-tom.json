@@ -1,0 +1,164 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-pan-roasted-salmon-tom",
+  "ingredients": [
+    {
+      "raw": "1 pint grape tomatoes (halved)",
+      "expected": {
+        "item": "grape tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "1 medium shallot (thinly sliced)",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 tablespoon drained capers",
+      "expected": {
+        "item": "drained capers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 center-cut salmon fillets with skin (about 7 ounces each)",
+      "expected": {
+        "item": "center-cut salmon fillets with skin",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground pepper",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon minced parsley",
+      "expected": {
+        "item": "minced parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped basil",
+      "expected": {
+        "item": "chopped basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

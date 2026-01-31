@@ -1,0 +1,73 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipe-ideas-a9535-ame",
+  "ingredients": [
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 oz. Campari",
+      "expected": {
+        "item": "Campari",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 oz. sweet vermouth",
+      "expected": {
+        "item": "sweet vermouth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3&amp;nbsp;oz. club soda",
+      "expected": {
+        "item": "club soda",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "oz"
+          },
+          {
+            "amount": "57 to 85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sliced orange wheel, for serving (optional)",
+      "expected": {
+        "item": "Sliced orange wheel, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

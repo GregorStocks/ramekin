@@ -1,0 +1,90 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "lemon-drop-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce Cointreau or Triple Sec",
+      "expected": {
+        "item": "Cointreau or Triple Sec",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce simple syrup",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Superfine sugar, for the rim (or substitute granulated)",
+      "expected": {
+        "item": "Superfine sugar, for the rim (or substitute granulated)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "For the garnish: lemon twist",
+      "expected": {
+        "item": "For the garnish: lemon twist",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

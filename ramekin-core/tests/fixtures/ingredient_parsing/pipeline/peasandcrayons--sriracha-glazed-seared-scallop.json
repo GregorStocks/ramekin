@@ -1,0 +1,81 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "sriracha-glazed-seared-scallop",
+  "ingredients": [
+    {
+      "raw": "1/2 lb sea scallops ((fresh or thawed if frozen))",
+      "expected": {
+        "item": "sea scallops",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "fresh or thawed if frozen"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tsp avocado oil (or olive oil)",
+      "expected": {
+        "item": "avocado oil (or olive oil)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tsp unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "a splash of white wine or dry sherry",
+      "expected": {
+        "item": "a splash of white wine or dry sherry",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sriracha (to taste)",
+      "expected": {
+        "item": "Sriracha",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "parsley (to garnish)",
+      "expected": {
+        "item": "parsley (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

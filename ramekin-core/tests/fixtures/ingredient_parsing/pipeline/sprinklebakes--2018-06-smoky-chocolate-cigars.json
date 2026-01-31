@@ -1,0 +1,78 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2018-06-smoky-chocolate-cigars",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups 360ml heavy whipping cream",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "ml"
+          },
+          {
+            "amount": "357",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup 20g loose leaf Lapsang Souchong tea, plus 2 tablespoons more for dipping",
+      "expected": {
+        "item": "loose leaf Lapsang Souchong tea",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 2 tablespoons more for dipping"
+      }
+    },
+    {
+      "raw": "3 cups 540g semisweet chocolate, chopped (or semisweet chips)",
+      "expected": {
+        "item": "semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "540",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped (or semisweet chips)"
+      }
+    },
+    {
+      "raw": "1/2 cup 65g unsweet cocoa powder",
+      "expected": {
+        "item": "unsweet cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

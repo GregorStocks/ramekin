@@ -1,0 +1,109 @@
+{
+  "source": "paprika",
+  "recipe_slug": "grilled-salmon",
+  "ingredients": [
+    {
+      "raw": "4 8-oz. skin-on salmon fillets",
+      "expected": {
+        "item": "8-oz. skin-on salmon fillets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp. olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 1/2 tsp. kosher salt, plus more to finish",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to finish"
+      }
+    },
+    {
+      "raw": "1/2 tsp. ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp. apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp. dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp. smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped fresh parsley, for garnish",
+      "expected": {
+        "item": "Chopped fresh parsley",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

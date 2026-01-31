@@ -1,0 +1,130 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "rotisserie-chicken-casserole-r",
+  "ingredients": [
+    {
+      "raw": "3 cups diced rotisserie chicken  (or any other cooked chicken)",
+      "expected": {
+        "item": "diced rotisserie chicken",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or any other cooked chicken"
+      }
+    },
+    {
+      "raw": "10.5 oz cream of chicken soup  (can use low-sodium or Healthy Request; other cream soups can be used)",
+      "expected": {
+        "item": "cream of chicken soup",
+        "measurements": [
+          {
+            "amount": "10.5",
+            "unit": "oz"
+          },
+          {
+            "amount": null,
+            "unit": "can"
+          },
+          {
+            "amount": "298",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups cooked rice",
+      "expected": {
+        "item": "cooked rice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sliced almonds (or slivered almonds)",
+      "expected": {
+        "item": "sliced almonds (or slivered almonds)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise (or Greek yogurt)",
+      "expected": {
+        "item": "mayonnaise (or Greek yogurt)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup diced celery",
+      "expected": {
+        "item": "diced celery",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup crushed corn flakes (see post for more topping ideas)",
+      "expected": {
+        "item": "crushed corn flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "see post for more topping ideas"
+      }
+    },
+    {
+      "raw": "2 tbsp butter (melted)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

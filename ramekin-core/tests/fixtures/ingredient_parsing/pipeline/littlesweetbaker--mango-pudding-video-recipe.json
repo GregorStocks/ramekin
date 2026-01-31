@@ -1,0 +1,120 @@
+{
+  "source": "littlesweetbaker",
+  "recipe_slug": "mango-pudding-video-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup (125ml) boiled hot water",
+      "expected": {
+        "item": "boiled hot water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 packet (1 Tbsp) unflavored gelatin ((or agar-agar, see notes*))",
+      "expected": {
+        "item": "packet unflavored gelatin (or agar-agar, see notes*)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (100g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (250ml) coconut milk, evaporated milk, half and half (10% M.F.), or table cream (18% M.F.)  (see notes below**)",
+      "expected": {
+        "item": "coconut milk, evaporated milk, half and half, or table cream (see notes below**)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          },
+          {
+            "amount": "10",
+            "unit": null
+          },
+          {
+            "amount": "18",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (250ml) mango puree (see notes below***)",
+      "expected": {
+        "item": "mango puree (see notes below***)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "some diced mangoes and shredded coconut to garnish",
+      "expected": {
+        "item": "some diced mangoes and shredded coconut to garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

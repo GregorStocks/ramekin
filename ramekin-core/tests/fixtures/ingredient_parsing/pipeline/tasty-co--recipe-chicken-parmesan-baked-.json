@@ -1,0 +1,108 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-chicken-parmesan-baked-",
+  "ingredients": [
+    {
+      "raw": "1 lb ziti pasta",
+      "expected": {
+        "item": "ziti pasta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 chicken breasts",
+      "expected": {
+        "item": "chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "25 oz tomato sauce",
+      "expected": {
+        "item": "tomato sauce",
+        "measurements": [
+          {
+            "amount": "25",
+            "unit": "oz"
+          },
+          {
+            "amount": "709",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups mozarella",
+      "expected": {
+        "item": "mozarella",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup parmesan cheese",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup fresh basil",
+      "expected": {
+        "item": "fresh basil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "pepper, to taste",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "tropical-smoothie-recipe",
+  "ingredients": [
+    {
+      "raw": "14 ounces coconut milk ((1 ½ cups))",
+      "expected": {
+        "item": "coconut milk",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana (frozen)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "frozen"
+      }
+    },
+    {
+      "raw": "2 cups pineapple (frozen (12 oz frozen pineapple))",
+      "expected": {
+        "item": "pineapple",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "frozen (12 oz frozen pineapple"
+      }
+    },
+    {
+      "raw": "2 cups mango (frozen (12 oz frozen mango))",
+      "expected": {
+        "item": "mango",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "frozen (12 oz frozen mango"
+      }
+    },
+    {
+      "raw": "2 Tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

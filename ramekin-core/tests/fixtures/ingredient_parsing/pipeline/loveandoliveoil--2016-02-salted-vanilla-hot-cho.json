@@ -1,0 +1,74 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2016-02-salted-vanilla-hot-cho",
+  "ingredients": [
+    {
+      "raw": "2 cups whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup good quality cocoa powder, sifted",
+      "expected": {
+        "item": "good quality cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "sifted"
+      }
+    },
+    {
+      "raw": "3 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "marshmallows or freshly whipped cream (optional, for serving)",
+      "expected": {
+        "item": "marshmallows or freshly whipped cream",
+        "measurements": [],
+        "note": "optional, for serving"
+      }
+    }
+  ]
+}

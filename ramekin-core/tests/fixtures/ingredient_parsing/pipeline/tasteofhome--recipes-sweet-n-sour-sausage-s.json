@@ -1,0 +1,138 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-sweet-n-sour-sausage-s",
+  "ingredients": [
+    {
+      "raw": "1 package (14 ounces) smoked turkey sausage, cut into 1/2-inch slices",
+      "expected": {
+        "item": "smoked turkey sausage, cut into 1/2-inch slices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 small onions, quartered and separated",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": "quartered and separated"
+      }
+    },
+    {
+      "raw": "1 cup shredded carrots",
+      "expected": {
+        "item": "shredded carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can (8 ounces) unsweetened pineapple chunks, undrained",
+      "expected": {
+        "item": "unsweetened pineapple chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "undrained"
+      }
+    },
+    {
+      "raw": "1 tablespoon cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 to 1 teaspoon ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1/2 to 1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons reduced-sodium soy sauce",
+      "expected": {
+        "item": "reduced-sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot cooked rice, optional",
+      "expected": {
+        "item": "Hot cooked rice",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

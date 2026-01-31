@@ -1,0 +1,83 @@
+{
+  "source": "paprika",
+  "recipe_slug": "two-minute-aioli",
+  "ingredients": [
+    {
+      "raw": "1 whole egg",
+      "expected": {
+        "item": "whole egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 medium cloves garlic, minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoons juice from 1 lemon",
+      "expected": {
+        "item": "juice from 1 lemon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup canola, vegetable, or light olive oil",
+      "expected": {
+        "item": "canola, vegetable, or light olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-the-best-easy-beef-and-",
+  "ingredients": [
+    {
+      "raw": "3   tablespoons    cornstarch, divided",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/2  cup    water, plus",
+      "expected": {
+        "item": "water, plus",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    water, divided",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   lb    boneless round steak or 1   lb   charcoal chuck steak, cut into thin 3-inch strips",
+      "expected": {
+        "item": "boneless round steak",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1   lb   charcoal chuck steak, cut into thin 3-inch strips"
+      }
+    },
+    {
+      "raw": "2   tablespoons    vegetable oil, divided",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "4   cups    broccoli florets",
+      "expected": {
+        "item": "broccoli florets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   small    onion, cut into wedges",
+      "expected": {
+        "item": "onion, cut into wedges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3  cup    reduced sodium soy sauce",
+      "expected": {
+        "item": "reduced sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "hot cooked rice, for serving",
+      "expected": {
+        "item": "hot cooked rice",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "toasted sesame seeds, for serving  (optional)",
+      "expected": {
+        "item": "toasted sesame seeds, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

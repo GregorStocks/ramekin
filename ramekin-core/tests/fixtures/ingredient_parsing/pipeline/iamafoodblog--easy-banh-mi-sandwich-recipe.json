@@ -1,0 +1,136 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "easy-banh-mi-sandwich-recipe",
+  "ingredients": [
+    {
+      "raw": "fresh baguette, cut into 4 equal pieces",
+      "expected": {
+        "item": "fresh baguette, cut into 4 equal pieces",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pork pâté, to taste",
+      "expected": {
+        "item": "pork pâté",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Kewpie mayo, to taste",
+      "expected": {
+        "item": "Kewpie mayo",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "8-12 thin slices of head cheese",
+      "expected": {
+        "item": "thin slices of head cheese",
+        "measurements": [
+          {
+            "amount": "8-12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8-12 thin slices of ham",
+      "expected": {
+        "item": "thin slices of ham",
+        "measurements": [
+          {
+            "amount": "8-12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "quick-pickled daikon and carrots",
+      "expected": {
+        "item": "quick-pickled daikon and carrots",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh cilantro sprigs",
+      "expected": {
+        "item": "fresh cilantro sprigs",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sliced jalapeños, if desired",
+      "expected": {
+        "item": "sliced jalapeños, if desired",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large carrot, julienned",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "julienned"
+      }
+    },
+    {
+      "raw": "2” piece of daikon, julienned",
+      "expected": {
+        "item": "” piece of daikon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "julienned"
+      }
+    },
+    {
+      "raw": "1⁄2 teaspoon salt",
+      "expected": {
+        "item": "⁄2 teaspoon salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "easy-risotto-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tablespoons salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup onion (finely diced (about ½ small onion))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely diced (about 1/2 small onion"
+      }
+    },
+    {
+      "raw": "1 Tablespoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup arborio rice",
+      "expected": {
+        "item": "arborio rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup parmesan cheese",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional – ½ cup dry white wine ((see step 4))",
+      "expected": {
+        "item": "Optional - 1/2 cup dry white wine (see step 4)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

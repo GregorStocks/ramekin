@@ -1,0 +1,91 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "mini-scotch-quail-eggs-recipe",
+  "ingredients": [
+    {
+      "raw": "12 quail eggs",
+      "expected": {
+        "item": "quail eggs",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup panko crumbs",
+      "expected": {
+        "item": "panko crumbs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cups hot Italian sausage or sausage of choice (casings removed)*",
+      "expected": {
+        "item": "hot Italian sausage or sausage of choice (casings removed)*",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "vegetable oil (for frying)",
+      "expected": {
+        "item": "vegetable oil (for frying)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "mustard",
+      "expected": {
+        "item": "mustard",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

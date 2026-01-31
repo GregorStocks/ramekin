@@ -1,0 +1,114 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-aromatic-chicken-curry",
+  "ingredients": [
+    {
+      "raw": "2 tbsp vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion chopped",
+      "expected": {
+        "item": "onion chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small cinnamon stick",
+      "expected": {
+        "item": "cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 tsp hot  chilli powder (depending on how you like your curries)",
+      "expected": {
+        "item": "hot chilli powder (depending on how you like your curries)",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 skinless, boneless chicken thighs",
+      "expected": {
+        "item": "skinless, boneless chicken thighs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
+      "expected": {
+        "item": "creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful of coriander leaves",
+      "expected": {
+        "item": "coriander leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "instant-pot-chili-mac-recipe",
+  "ingredients": [
+    {
+      "raw": "3 1/2 cups of favorite chili (or two 14-ounce cans)",
+      "expected": {
+        "item": "favorite chili (or two 14-ounce cans)",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 12- ounce beer, or equivalent amount of broth",
+      "expected": {
+        "item": "12- ounce beer, or equivalent amount of broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup / 4 ounces water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups of dried elbow pasta",
+      "expected": {
+        "item": "dried elbow pasta",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "a generous splash of cashew or coconut milk",
+      "expected": {
+        "item": "a generous splash of cashew or coconut milk",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions, chopped olives",
+      "expected": {
+        "item": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions",
+        "measurements": [],
+        "note": "chopped olives"
+      }
+    }
+  ]
+}

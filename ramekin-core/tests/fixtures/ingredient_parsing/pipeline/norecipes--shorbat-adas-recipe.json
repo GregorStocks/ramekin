@@ -1,0 +1,140 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "shorbat-adas-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "260 grams onion ((~1 small , finely minced))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "260",
+            "unit": "g"
+          }
+        ],
+        "note": "~1 small , finely minced"
+      }
+    },
+    {
+      "raw": "14 grams garlic ((~2 large cloves, finely minced))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "~2 large cloves, finely minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups vegetable stock",
+      "expected": {
+        "item": "vegetable stock",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200 grams red lentils ((~1 cup, thoroughly washed))",
+      "expected": {
+        "item": "red lentils",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "~1 cup, thoroughly washed"
+      }
+    },
+    {
+      "raw": "3  dried limes",
+      "expected": {
+        "item": "dried limes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

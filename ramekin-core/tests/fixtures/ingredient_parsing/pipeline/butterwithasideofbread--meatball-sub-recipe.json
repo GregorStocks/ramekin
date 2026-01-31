@@ -1,0 +1,183 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "meatball-sub-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs (beaten)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "1/2 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup grated or shredded parmesan cheese",
+      "expected": {
+        "item": "grated or shredded parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Italian bread crumbs",
+      "expected": {
+        "item": "Italian bread crumbs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 tsp oregano (dried)",
+      "expected": {
+        "item": "oregano",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "dried"
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chopped fresh basil (can substitute 1 TBSP dried basil, if you'd like))",
+      "expected": {
+        "item": "chopped fresh basil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "can substitute 1 TBSP dried basil, if you'd like"
+      }
+    },
+    {
+      "raw": "5  rolls (I like to use French Rolls)",
+      "expected": {
+        "item": "rolls (I like to use French Rolls)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups Marinara sauce",
+      "expected": {
+        "item": "Marinara sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 slices provolone cheese",
+      "expected": {
+        "item": "provolone cheese",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Mozzarella cheese (shredded)",
+      "expected": {
+        "item": "Mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    }
+  ]
+}

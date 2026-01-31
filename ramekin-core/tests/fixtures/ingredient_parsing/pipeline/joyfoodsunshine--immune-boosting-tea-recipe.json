@@ -1,0 +1,62 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "immune-boosting-tea-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon raw honey",
+      "expected": {
+        "item": "raw honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

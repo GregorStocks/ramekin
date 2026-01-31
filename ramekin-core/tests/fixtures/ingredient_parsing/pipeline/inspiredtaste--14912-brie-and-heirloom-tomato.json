@@ -1,0 +1,69 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "14912-brie-and-heirloom-tomato",
+  "ingredients": [
+    {
+      "raw": "4 to 6 thick cut slices rustic bread",
+      "expected": {
+        "item": "thick cut slices rustic bread",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 ounces Brie or Camembert cheese, cut into slices",
+      "expected": {
+        "item": "Brie or Camembert cheese, cut into slices",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound tomatoes",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Extra-virgin olive oil",
+      "expected": {
+        "item": "Extra-virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and fresh ground black pepper",
+      "expected": {
+        "item": "Salt and fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

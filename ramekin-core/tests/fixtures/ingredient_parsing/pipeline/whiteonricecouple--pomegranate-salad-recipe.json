@@ -1,0 +1,113 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "pomegranate-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 head lettuce (, washed, drained, torn)",
+      "expected": {
+        "item": "lettuce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "washed, drained, torn"
+      }
+    },
+    {
+      "raw": "1/2 cup pomegranate seeds ((1 small pomegranate))",
+      "expected": {
+        "item": "pomegranate seeds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 Tablespoons red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  shallot (, minced and peeled)",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "minced and peeled"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dijon mustard (( I also like to use whole grain mustard))",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "I also like to use whole grain mustard"
+      }
+    },
+    {
+      "raw": "3 Tablespoons Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh thyme ((optional) or other herbs)",
+      "expected": {
+        "item": "fresh thyme or other herbs)",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

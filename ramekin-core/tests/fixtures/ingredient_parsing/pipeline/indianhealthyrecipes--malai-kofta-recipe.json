@@ -1,0 +1,402 @@
+{
+  "source": "indianhealthyrecipes",
+  "recipe_slug": "malai-kofta-recipe",
+  "ingredients": [
+    {
+      "raw": "1 heaped cup  paneer ( crumbled (about 150 grams))",
+      "expected": {
+        "item": "paneer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaped cup"
+          }
+        ],
+        "note": "crumbled (about 150 grams"
+      }
+    },
+    {
+      "raw": "1 heaped cup  potato boiled &amp;amp; crumbled ((about 2 large))",
+      "expected": {
+        "item": "potato boiled & crumbled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaped cup"
+          },
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2½ tablespoons corn starch ((same as white refined corn flour))",
+      "expected": {
+        "item": "corn starch (same as white refined corn flour)",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ginger paste",
+      "expected": {
+        "item": "ginger paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons coriander leaves  (chopped finely)",
+      "expected": {
+        "item": "coriander leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped finely"
+      }
+    },
+    {
+      "raw": "salt as needed",
+      "expected": {
+        "item": "salt as needed",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ to ¾ teaspoon garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "1/2 to 3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoons cashews chopped ( (optional))",
+      "expected": {
+        "item": "cashews chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "(optional"
+      }
+    },
+    {
+      "raw": "1 tablespoons raisins ( (optional))",
+      "expected": {
+        "item": "raisins",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "(optional"
+      }
+    },
+    {
+      "raw": "Oil for deep frying",
+      "expected": {
+        "item": "Oil for deep frying",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup onions (cubed )",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "138",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1½ cup tomatoes (cubed)",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "15  cashew nuts",
+      "expected": {
+        "item": "cashew nuts",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  green cardamoms",
+      "expected": {
+        "item": "green cardamoms",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ inch cinnamon stick ((optional))",
+      "expected": {
+        "item": "inch cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "3  cloves ((optional))",
+      "expected": {
+        "item": "3  cloves ((optional))",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 tablespoons oil ((or 2 tbsp butter))",
+      "expected": {
+        "item": "oil (or 2 tbsp butter)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bay leaf ((optional))",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "½ inch cinnamon stick ((optional))",
+      "expected": {
+        "item": "inch cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2  cardamoms ((optional))",
+      "expected": {
+        "item": "cardamoms",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1½ teaspoons ginger garlic paste",
+      "expected": {
+        "item": "ginger garlic paste",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon red chili powder  ((adjust to taste))",
+      "expected": {
+        "item": "red chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "¾ to 1¼  teaspoon garam masala ((adjust to taste))",
+      "expected": {
+        "item": "1/4 teaspoon garam masala",
+        "measurements": [
+          {
+            "amount": "3/4 to 1",
+            "unit": null
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon coriander powder ((ground coriander seeds))",
+      "expected": {
+        "item": "coriander powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "ground coriander seeds"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt ((adjust to taste))",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "½ to ¾ teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2 to 3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water ((¼ cup more if needed))",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kasuri methi ((fenugreek leaves))",
+      "expected": {
+        "item": "kasuri methi (fenugreek leaves)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 to 4 tablespoons cream",
+      "expected": {
+        "item": "cream",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

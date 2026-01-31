@@ -1,0 +1,40 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "okra-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "15  okra",
+      "expected": {
+        "item": "okra",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 tsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Katsuobushi dried bonito flakes",
+      "expected": {
+        "item": "Katsuobushi dried bonito flakes",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

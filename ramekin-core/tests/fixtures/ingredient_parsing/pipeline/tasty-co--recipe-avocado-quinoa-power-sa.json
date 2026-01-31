@@ -1,0 +1,130 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-avocado-quinoa-power-sa",
+  "ingredients": [
+    {
+      "raw": "2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 cup quinoa, rinsed",
+      "expected": {
+        "item": "quinoa",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "2 cups fresh spinach, roughly chopped",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1 large cucumber, diced",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "4 roma tomatoes, diced",
+      "expected": {
+        "item": "roma tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 ripe avocados, pits removed and diced",
+      "expected": {
+        "item": "ripe avocados",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "pits removed and diced"
+      }
+    },
+    {
+      "raw": "1 lemon, juiced",
+      "expected": {
+        "item": "lemon, juiced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pepper, to taste",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

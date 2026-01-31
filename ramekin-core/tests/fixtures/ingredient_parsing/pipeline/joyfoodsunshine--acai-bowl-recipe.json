@@ -1,0 +1,105 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "acai-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "10 ounces mixed berries ((frozen (about 2 ½ cups)))",
+      "expected": {
+        "item": "mixed berries",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "frozen (about 2 1/2 cups"
+      }
+    },
+    {
+      "raw": "100 grams acai puree ((frozen, unsweetened (about ½ cup)))",
+      "expected": {
+        "item": "acai puree",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "frozen, unsweetened (about 1/2 cup"
+      }
+    },
+    {
+      "raw": "1  banana (frozen)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "frozen"
+      }
+    },
+    {
+      "raw": "2-4 Tablespoons almond milk",
+      "expected": {
+        "item": "almond milk",
+        "measurements": [
+          {
+            "amount": "2-4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon acai powder",
+      "expected": {
+        "item": "acai powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 Tablespoons honey ((to taste))",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    }
+  ]
+}

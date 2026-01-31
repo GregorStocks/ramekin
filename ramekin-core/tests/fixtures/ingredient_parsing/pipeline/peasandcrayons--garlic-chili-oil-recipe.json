@@ -1,0 +1,58 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "garlic-chili-oil-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup avocado oil or vegetable oil",
+      "expected": {
+        "item": "avocado oil or vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cloves garlic (, peeled and thinly sliced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 TBSP toasted sesame seeds",
+      "expected": {
+        "item": "toasted sesame seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 TBSP crushed red chili flakes",
+      "expected": {
+        "item": "crushed red chili flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

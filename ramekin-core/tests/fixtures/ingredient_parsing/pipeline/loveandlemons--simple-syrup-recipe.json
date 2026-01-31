@@ -1,0 +1,36 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "simple-syrup-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

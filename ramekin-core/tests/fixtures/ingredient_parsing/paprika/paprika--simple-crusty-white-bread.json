@@ -1,0 +1,71 @@
+{
+  "source": "paprika",
+  "recipe_slug": "simple-crusty-white-bread",
+  "ingredients": [
+    {
+      "raw": "500 grams all-purpose flour, plus more for dusting",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting"
+      }
+    },
+    {
+      "raw": "350 grams room-temperature water, divided if using active dry yeast",
+      "expected": {
+        "item": "room-temperature water",
+        "measurements": [
+          {
+            "amount": "350",
+            "unit": "g"
+          }
+        ],
+        "note": "divided if using active dry yeast"
+      }
+    },
+    {
+      "raw": "11 grams salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "11",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 grams instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vegetable, canola, or other neutral oil, for greasing",
+      "expected": {
+        "item": "vegetable, canola, or other neutral oil, for greasing",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

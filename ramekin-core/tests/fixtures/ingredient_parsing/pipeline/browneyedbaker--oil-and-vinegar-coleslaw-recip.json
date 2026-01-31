@@ -1,0 +1,70 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "oil-and-vinegar-coleslaw-recip",
+  "ingredients": [
+    {
+      "raw": "1  head green cabbage (thinly sliced or shredded)",
+      "expected": {
+        "item": "green cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "thinly sliced or shredded"
+      }
+    },
+    {
+      "raw": "3 tablespoons white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

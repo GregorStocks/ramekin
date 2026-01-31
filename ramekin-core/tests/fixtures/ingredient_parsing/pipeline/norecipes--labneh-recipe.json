@@ -1,0 +1,65 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "labneh-recipe",
+  "ingredients": [
+    {
+      "raw": "800 grams yogurt",
+      "expected": {
+        "item": "yogurt",
+        "measurements": [
+          {
+            "amount": "800",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil (for garnish)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "zaatar (for garnish)",
+      "expected": {
+        "item": "zaatar",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "sumac (for garnish)",
+      "expected": {
+        "item": "sumac",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

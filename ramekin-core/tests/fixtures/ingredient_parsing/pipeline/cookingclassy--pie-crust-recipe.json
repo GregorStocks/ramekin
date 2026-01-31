@@ -1,0 +1,83 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "pie-crust-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/4 cups (178g) unbleached all-purpose flour ((scoop and sweep to measure))",
+      "expected": {
+        "item": "unbleached all-purpose flour (scoop and sweep to measure)",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp (12g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp (scant) salt",
+      "expected": {
+        "item": "(scant) salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 Tbsp (141g) unsalted butter, (very cold, cut into cubes about 1/2-inch)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "141",
+            "unit": "g"
+          }
+        ],
+        "note": "very cold, cut into cubes about 1/2-inch"
+      }
+    },
+    {
+      "raw": "3 to 4 1/2 Tbsp ice water",
+      "expected": {
+        "item": "1/2 Tbsp ice water",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

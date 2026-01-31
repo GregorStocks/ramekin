@@ -1,0 +1,56 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2019-03-reverse-sear-steak-htm",
+  "ingredients": [
+    {
+      "raw": "2 (12 ounce) steaks, about 1-inch thick",
+      "expected": {
+        "item": "steaks, about 1-inch thick",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground black pepper",
+      "expected": {
+        "item": "salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 tablespoons vegetable oil vegetable oil",
+      "expected": {
+        "item": "vegetable oil vegetable oil",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh thyme and garlic cloves (optional)",
+      "expected": {
+        "item": "fresh thyme and garlic cloves",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

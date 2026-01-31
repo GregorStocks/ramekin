@@ -1,0 +1,75 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "honey-mustard-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup yellow mustard (or Dijon mustard for spicy)",
+      "expected": {
+        "item": "yellow mustard (or Dijon mustard for spicy)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons BBQ sauce (optional but recommended)",
+      "expected": {
+        "item": "BBQ sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional but recommended"
+      }
+    },
+    {
+      "raw": "1 teaspoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

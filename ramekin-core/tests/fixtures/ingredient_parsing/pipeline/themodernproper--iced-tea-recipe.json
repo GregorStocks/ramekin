@@ -1,0 +1,49 @@
+{
+  "source": "themodernproper",
+  "recipe_slug": "iced-tea-recipe",
+  "ingredients": [
+    {
+      "raw": "8 bags black tea, such as Lipton",
+      "expected": {
+        "item": "black tea, such as Lipton",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "bag"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup sugar, plus more to taste (optional)",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 lemon, sliced (optional)",
+      "expected": {
+        "item": "lemon, sliced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "how-to-make-vegan-parmesan-che",
+  "ingredients": [
+    {
+      "raw": "Zest of 1/4 lemon",
+      "expected": {
+        "item": "Zest of 1/4 lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup raw cashews",
+      "expected": {
+        "item": "raw cashews",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons nutritional yeast",
+      "expected": {
+        "item": "nutritional yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Maldon flaked sea salt (or substitute kosher salt)",
+      "expected": {
+        "item": "Maldon flaked sea salt (or substitute kosher salt)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

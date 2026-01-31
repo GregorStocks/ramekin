@@ -1,0 +1,105 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "lemongrass-stuffing-recipe",
+  "ingredients": [
+    {
+      "raw": "4 slices of thick bread, cut into cubes, about 3 cups",
+      "expected": {
+        "item": "thick bread, cut into cubes, about 3 cups",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 stalk celery, diced",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stalk"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 small carrot, peeled and diced",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely minced lemongrass",
+      "expected": {
+        "item": "finely minced lemongrass",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 – 3/4 cups stock, vegetable or chicken",
+      "expected": {
+        "item": "stock, vegetable or chicken",
+        "measurements": [
+          {
+            "amount": "1/2-3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

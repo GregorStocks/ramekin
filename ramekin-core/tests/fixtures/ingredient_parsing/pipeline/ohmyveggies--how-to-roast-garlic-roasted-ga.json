@@ -1,0 +1,65 @@
+{
+  "source": "ohmyveggies",
+  "recipe_slug": "how-to-roast-garlic-roasted-ga",
+  "ingredients": [
+    {
+      "raw": "1  medium head garlic (roasted according to instructions above)",
+      "expected": {
+        "item": "head garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "roasted according to instructions above"
+      }
+    },
+    {
+      "raw": "salt + freshly cracked black pepper to taste",
+      "expected": {
+        "item": "salt + freshly cracked black pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "about 1 tablespoon butter (softened)",
+      "expected": {
+        "item": "about 1 tablespoon butter",
+        "measurements": [],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "4 slices crusty bread",
+      "expected": {
+        "item": "crusty bread",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 slices or 1/2 cup shredded cheese (just about any cheese will work!)",
+      "expected": {
+        "item": "shredded cheese (just about any cheese will work!)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

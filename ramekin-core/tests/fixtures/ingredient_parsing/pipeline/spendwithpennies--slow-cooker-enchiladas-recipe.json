@@ -1,0 +1,130 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "slow-cooker-enchiladas-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups cooked shredded chicken",
+      "expected": {
+        "item": "cooked shredded chicken",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup salsa",
+      "expected": {
+        "item": "salsa",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12  small flour tortillas (6-inch)",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "small"
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces canned mild green chiles (1 can)",
+      "expected": {
+        "item": "canned mild green chiles",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 ounces canned black beans (1 can, drained and rinsed)",
+      "expected": {
+        "item": "canned black beans",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "1 can, drained and rinsed"
+      }
+    },
+    {
+      "raw": "1 cup frozen corn kernels (thawed)",
+      "expected": {
+        "item": "frozen corn kernels",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "10 ounces enchilada sauce (1 can, divided)",
+      "expected": {
+        "item": "enchilada sauce",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "1 can, divided"
+      }
+    },
+    {
+      "raw": "2 cups shredded cheddar cheese blend (or your favorite blend)",
+      "expected": {
+        "item": "shredded cheddar cheese blend (or your favorite blend)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

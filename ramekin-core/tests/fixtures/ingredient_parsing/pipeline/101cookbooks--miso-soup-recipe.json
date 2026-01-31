@@ -1,0 +1,94 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "miso-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "3 ounces dried soba noodles",
+      "expected": {
+        "item": "dried soba noodles",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 - 4 tablespoons miso paste (to taste)",
+      "expected": {
+        "item": "miso paste",
+        "measurements": [
+          {
+            "amount": "2-4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "2 - 3 ounces firm tofu (2 handfuls), chopped into 1/3-inch cubes",
+      "expected": {
+        "item": "firm tofu",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "handful"
+          },
+          {
+            "amount": "57-85",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped into 1/3-inch cubes"
+      }
+    },
+    {
+      "raw": "a handful of watercress or spinach, well washed and stems trimmed",
+      "expected": {
+        "item": "a handful of watercress or spinach",
+        "measurements": [],
+        "note": "well washed and stems trimmed"
+      }
+    },
+    {
+      "raw": "2  green onions, tops removed thinly sliced",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "tops removed thinly sliced"
+      }
+    },
+    {
+      "raw": "a small handful of cilantro",
+      "expected": {
+        "item": "a small handful of cilantro",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "a pinch of red pepper flakes",
+      "expected": {
+        "item": "a pinch of red pepper flakes",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

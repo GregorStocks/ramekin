@@ -1,0 +1,32 @@
+{
+  "category": "real",
+  "test_cases": [
+    {
+      "name": "for_serving",
+      "raw": "Fresh herbs, for serving",
+      "expected": {
+        "item": "Fresh herbs",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "name": "whiskey_alt_measurement",
+      "raw": "⅓ cup Irish whiskey (1 fl oz)",
+      "expected": {
+        "item": "Irish whiskey",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

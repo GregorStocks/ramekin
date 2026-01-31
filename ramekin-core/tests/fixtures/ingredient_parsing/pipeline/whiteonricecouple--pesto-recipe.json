@@ -1,0 +1,109 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "pesto-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup pine nuts ( or chopped nuts of choice (walnuts, pecans, cashews, pistachios, etc…))",
+      "expected": {
+        "item": "pine nuts",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "or chopped nuts of choice (walnuts, pecans, cashews, pistachios, etc…"
+      }
+    },
+    {
+      "raw": "2 cups (packed) fresh basil leaves (, or herb leaves of your choice)",
+      "expected": {
+        "item": "fresh basil leaves (, or herb leaves of your choice)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "packed"
+      }
+    },
+    {
+      "raw": "1/2 - 1 cup freshly grated Parmesan",
+      "expected": {
+        "item": "freshly grated Parmesan",
+        "measurements": [
+          {
+            "amount": "1/2-1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic (, rough chopped)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "rough chopped"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt (, or to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "black pepper (, to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1-2 Tablespoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup extra-virgin olive oil (, or as needed to get your desired thin/thickness of pesto)",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": "or as needed to get your desired thin/thickness of pesto"
+      }
+    }
+  ]
+}

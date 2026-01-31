@@ -1,0 +1,169 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "chocolate-devils-food-cake-rec",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups plus 1 tablespoon / 200g all-purpose flour",
+      "expected": {
+        "item": "1 1/2 cups plus 1 tablespoon / 200g all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 tablespoon / 200g all-purpose flour"
+      }
+    },
+    {
+      "raw": "1 cup / 100g cocoa powder",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/4 cups / 450g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup plus 2 tablespoons / 200g buttermilk or plain yogurt",
+      "expected": {
+        "item": "3/4 cup plus 2 tablespoons / 200g buttermilk or plain yogurt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons / 200g buttermilk or plain yogurt"
+      }
+    },
+    {
+      "raw": "7 tablespoons / 100g vegetable oil*",
+      "expected": {
+        "item": "vegetable oil*",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup / 225g hot water",
+      "expected": {
+        "item": "hot water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

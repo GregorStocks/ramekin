@@ -1,0 +1,65 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "vibrant-tasty-green-beans-reci",
+  "ingredients": [
+    {
+      "raw": "4  leeks (or one bunch of scallions), well washed, root end and tops trimmed, sliced lengthwise into quarters and then chopped into 1-inch segments",
+      "expected": {
+        "item": "leeks (or one bunch of scallions), well washed, root end and tops trimmed",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced lengthwise into quarters and then chopped into 1-inch segments"
+      }
+    },
+    {
+      "raw": "1/3 cup fresh dill, well chopped",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "well chopped"
+      }
+    },
+    {
+      "raw": "3/4 pound green beans, tops and tails trimmed",
+      "expected": {
+        "item": "green beans",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "tops and tails trimmed"
+      }
+    },
+    {
+      "raw": "extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "fine-grain sea salt",
+      "expected": {
+        "item": "fine-grain sea salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

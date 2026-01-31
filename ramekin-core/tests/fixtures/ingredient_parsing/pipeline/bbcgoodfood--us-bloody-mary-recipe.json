@@ -1,0 +1,121 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-bloody-mary-recipe",
+  "ingredients": [
+    {
+      "raw": "large handful of ice",
+      "expected": {
+        "item": "handful of ice",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3½ oz vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups tomato juice",
+      "expected": {
+        "item": "tomato juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp lemon juice plus 2 lemon slices to serve",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 2 lemon slices to serve"
+      }
+    },
+    {
+      "raw": "few shakes of Worcestershire sauce",
+      "expected": {
+        "item": "few shakes of Worcestershire sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "few shakes of Tabasco (chipotle Tabasco is nice)",
+      "expected": {
+        "item": "few shakes of Tabasco (chipotle Tabasco is nice)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of celery salt",
+      "expected": {
+        "item": "celery salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  celery sticks to serve",
+      "expected": {
+        "item": "celery sticks to serve",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

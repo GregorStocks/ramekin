@@ -1,0 +1,117 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-7897222-smashed-sweet-p",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon ground chipotle",
+      "expected": {
+        "item": "ground chipotle",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large sweet potatoes (2 pounds), peeled and cut into 3/4-inch rounds",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 3/4-inch rounds"
+      }
+    },
+    {
+      "raw": "Flaky sea salt (optional)",
+      "expected": {
+        "item": "Flaky sea salt",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

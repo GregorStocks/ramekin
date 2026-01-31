@@ -1,0 +1,75 @@
+{
+  "source": "paprika",
+  "recipe_slug": "perfect-uncluttered-chicken-s",
+  "ingredients": [
+    {
+      "raw": "3 pounds uncooked chicken wings",
+      "expected": {
+        "item": "uncooked chicken wings",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 quarts water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion, roughly chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1 garlic clove, smashed",
+      "expected": {
+        "item": "garlic clove, smashed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt, or more to taste*",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste*"
+      }
+    }
+  ]
+}

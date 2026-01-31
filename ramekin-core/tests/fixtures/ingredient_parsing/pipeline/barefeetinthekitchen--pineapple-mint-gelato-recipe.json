@@ -1,0 +1,32 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "pineapple-mint-gelato-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups pineapple mint puree",
+      "expected": {
+        "item": "pineapple mint puree",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 14 ounce can Thai coconut milk",
+      "expected": {
+        "item": "Thai coconut milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14 ounce can"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "christmas-crack-recipe",
+  "ingredients": [
+    {
+      "raw": "42  saltine crackers (about 1 ½ sleeves)",
+      "expected": {
+        "item": "saltine crackers",
+        "measurements": [
+          {
+            "amount": "42",
+            "unit": null
+          },
+          {
+            "amount": "1 1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
+      "expected": {
+        "item": "milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup toffee bits (from one 8-ounce bag)",
+      "expected": {
+        "item": "toffee bits (from one 8-ounce bag)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup white chocolate chips (melted)",
+      "expected": {
+        "item": "white chocolate chips",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "melted"
+      }
+    }
+  ]
+}

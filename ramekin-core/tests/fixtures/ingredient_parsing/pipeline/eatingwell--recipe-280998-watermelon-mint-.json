@@ -1,0 +1,66 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-280998-watermelon-mint-",
+  "ingredients": [
+    {
+      "raw": "2 fresh mint leaves, plus more for garnish",
+      "expected": {
+        "item": "fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup watermelon juice (see Tip)",
+      "expected": {
+        "item": "watermelon juice (see Tip)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup club soda",
+      "expected": {
+        "item": "club soda",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Small slice watermelon for garnish",
+      "expected": {
+        "item": "slice watermelon for garnish",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

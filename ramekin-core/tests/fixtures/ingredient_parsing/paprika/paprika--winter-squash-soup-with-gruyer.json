@@ -1,0 +1,420 @@
+{
+  "source": "paprika",
+  "recipe_slug": "winter-squash-soup-with-gruyer",
+  "ingredients": [
+    {
+      "raw": "Soup",
+      "expected": {
+        "item": "Soup",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (1/2 stick) butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1/2",
+            "unit": "stick"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "4 large garlic cloves, chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 14 1/2-ounce cans low-salt chicken broth",
+      "expected": {
+        "item": "14 1/2-ounce cans low-salt chicken broth",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups 1-inch pieces peeled butternut squash (about 1 1/2 pounds)*",
+      "expected": {
+        "item": "1-inch pieces peeled butternut squash *",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups 1-inch pieces peeled acorn squash (about 1 1/2 pounds)*",
+      "expected": {
+        "item": "1-inch pieces peeled acorn squash *",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons minced fresh thyme",
+      "expected": {
+        "item": "minced fresh thyme",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons minced fresh sage",
+      "expected": {
+        "item": "minced fresh sage",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 cup whipping cream",
+      "expected": {
+        "item": "whipping cream",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Croutons",
+      "expected": {
+        "item": "Croutons",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (1/4 stick) butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1/4",
+            "unit": "stick"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "24 1/4-inch-thick baguette bread slices",
+      "expected": {
+        "item": "1/4-inch-thick baguette bread slices",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup grated Gruyere cheese",
+      "expected": {
+        "item": "grated Gruyere cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon minced fresh thyme",
+      "expected": {
+        "item": "minced fresh thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon minced fresh sage",
+      "expected": {
+        "item": "minced fresh sage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 deep pie dish, or frankly, any old dish you feel like baking in",
+      "expected": {
+        "item": "deep pie dish, or frankly, any old dish you feel like baking in",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 peck of your favorite apples to bake with, or whatever the lady is selling that day",
+      "expected": {
+        "item": "peck of your favorite apples to bake with, or whatever the lady is selling that day",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons sugar, or to taste",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon nutmeg",
+      "expected": {
+        "item": "nutmeg",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "A pinch of allspice",
+      "expected": {
+        "item": "A pinch of allspice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "5-6 tablespoons unsalted or salted butter, your choice, melted",
+      "expected": {
+        "item": "unsalted or salted butter, your choice",
+        "measurements": [
+          {
+            "amount": "5-6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1/3 cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "73",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup dried oatmeal",
+      "expected": {
+        "item": "dried oatmeal",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Up to 1 cup all-purpose flour",
+      "expected": {
+        "item": "Up to 1 cup all-purpose flour",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "lemony-dill-potato-egg-salad-r",
+  "ingredients": [
+    {
+      "raw": "4  small baked potatoes (about 1 pound, diced into 1/2\" pieces)",
+      "expected": {
+        "item": "baked potatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "small"
+          }
+        ],
+        "note": "about 1 pound, diced into 1/2\" pieces"
+      }
+    },
+    {
+      "raw": "4  hardboiled eggs (chopped small)",
+      "expected": {
+        "item": "hardboiled eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "chopped small"
+      }
+    },
+    {
+      "raw": "1/4 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lemon juice (half a lemon's worth)",
+      "expected": {
+        "item": "fresh lemon juice (half a lemon's worth)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh dill (minced)",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-how-to-cook-a-frozen-s",
+  "ingredients": [
+    {
+      "raw": "1 (1-inch-thick) sirloin steak, about 1 pound",
+      "expected": {
+        "item": "sirloin steak, about 1 pound",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon neutral oil, such as safflower or canola",
+      "expected": {
+        "item": "neutral oil, such as safflower or canola",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

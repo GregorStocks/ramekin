@@ -1,0 +1,362 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "healthy-carrot-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "1 2/3 cups unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup whole wheat pastry flour&nbsp;",
+      "expected": {
+        "item": "whole wheat pastry flour",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large egg (at room temperature)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "2  large egg whites (at room temperature)",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1 1/4 cups light brown sugar (lightly packed)",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "275",
+            "unit": "g"
+          }
+        ],
+        "note": "lightly packed"
+      }
+    },
+    {
+      "raw": "1/4 cup canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups grated carrots ((about 3 large or 4 small/medium))",
+      "expected": {
+        "item": "grated carrots",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "large"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup crushed pineapple (drained)",
+      "expected": {
+        "item": "crushed pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1/2 cup shredded sweetened coconut",
+      "expected": {
+        "item": "shredded sweetened coconut",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup buttermilk (at room temperature)",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1/2 cup walnuts (or pecans, toasted and roughly chopped )",
+      "expected": {
+        "item": "walnuts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or pecans, toasted and roughly chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup raisins, (golden raisins, or dried cranberries (optional))",
+      "expected": {
+        "item": "raisins",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "golden raisins, or dried cranberries (optional"
+      }
+    },
+    {
+      "raw": "3 ounces reduced-fat&nbsp;cream cheese",
+      "expected": {
+        "item": "reduced-fat cream cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons Greek yogurt",
+      "expected": {
+        "item": "Greek yogurt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter (softened)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon&nbsp; vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon almond extract (optional)",
+      "expected": {
+        "item": "almond extract",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon&nbsp; kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 cups powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "toasted chopped pecans (or walnuts)",
+      "expected": {
+        "item": "toasted chopped pecans (or walnuts)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

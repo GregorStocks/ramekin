@@ -1,0 +1,79 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2020-12-chocolate-dipped-toffe",
+  "ingredients": [
+    {
+      "raw": "24 oz. chocolate candy coating (almond bark or Ghiradelli chocolate wafers)",
+      "expected": {
+        "item": "chocolate candy coating (almond bark or Ghiradelli chocolate wafers)",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "oz"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 oz. white chocolate candy coating or almond bark",
+      "expected": {
+        "item": "white chocolate candy coating or almond bark",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "24  graham cracker squares",
+      "expected": {
+        "item": "graham cracker squares",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup toffee bits (recommend Heath Bits o’ Brickle)",
+      "expected": {
+        "item": "toffee bits (recommend Heath Bits o’ Brickle)",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 tablespoons red and green nonpareils",
+      "expected": {
+        "item": "red and green nonpareils",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

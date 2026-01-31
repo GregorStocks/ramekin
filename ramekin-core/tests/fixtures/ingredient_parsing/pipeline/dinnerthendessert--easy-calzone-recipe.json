@@ -1,0 +1,139 @@
+{
+  "source": "dinnerthendessert",
+  "recipe_slug": "easy-calzone-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ball pizza dough",
+      "expected": {
+        "item": "ball pizza dough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup pizza sauce",
+      "expected": {
+        "item": "pizza sauce",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup black olives (, sliced)",
+      "expected": {
+        "item": "black olives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 tablespoons red onions (, sliced)",
+      "expected": {
+        "item": "red onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "4 ounces sliced pepperoni",
+      "expected": {
+        "item": "sliced pepperoni",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces Italian sausage (, cooked and crumbled)",
+      "expected": {
+        "item": "Italian sausage",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "cooked and crumbled"
+      }
+    },
+    {
+      "raw": "1 cup mozzarella cheese (, shredded)",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "ratatouille-recipe",
+  "ingredients": [
+    {
+      "raw": "1 medium eggplant, cut into 3/4” pieces",
+      "expected": {
+        "item": "eggplant, cut into 3/4” pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium zucchini, cut into 1/2-inch thick bite-sized chunks",
+      "expected": {
+        "item": "zucchini, cut into 1/2-inch thick bite-sized chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 green pepper, diced",
+      "expected": {
+        "item": "green pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 yellow onion, sliced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "4 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4 tablespoons olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons kosher salt, divided",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 large tomato, roughly chopped",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "28-ounce can crushed San Marzano tomatoes",
+      "expected": {
+        "item": "-ounce can crushed San Marzano tomatoes",
+        "measurements": [
+          {
+            "amount": "28",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.6",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup roughly chopped basil",
+      "expected": {
+        "item": "roughly chopped basil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pistou, for serving",
+      "expected": {
+        "item": "Pistou",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

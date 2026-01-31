@@ -1,0 +1,78 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2025-12-homemade-peppermint-ba",
+  "ingredients": [
+    {
+      "raw": "12  mini candy canes (crushed (1/4 cup crushed))",
+      "expected": {
+        "item": "mini candy canes",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "crushed (1/4 cup crushed"
+      }
+    },
+    {
+      "raw": "5 oz good quality dark chocolate (finely chopped)",
+      "expected": {
+        "item": "good quality dark chocolate",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "6 oz good quality white chocolate (finely chopped)",
+      "expected": {
+        "item": "good quality white chocolate",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "½ oz cocoa butter (optional)",
+      "expected": {
+        "item": "cocoa butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "peppermint flavoring oil or oil-based peppermint extract*",
+      "expected": {
+        "item": "peppermint flavoring oil or oil-based peppermint extract*",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

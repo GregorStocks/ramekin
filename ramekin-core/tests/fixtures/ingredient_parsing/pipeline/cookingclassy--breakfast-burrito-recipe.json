@@ -1,0 +1,138 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "breakfast-burrito-recipe",
+  "ingredients": [
+    {
+      "raw": "6  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz. chorizo sausage*",
+      "expected": {
+        "item": "chorizo sausage*",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups frozen O&amp;#x27;Brien hash brown potatoes",
+      "expected": {
+        "item": "frozen O'Brien hash brown potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  extra large flour tortillas ((10 to 11-inch))",
+      "expected": {
+        "item": "extra large flour tortillas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup shredded Mexican cheese blend",
+      "expected": {
+        "item": "shredded Mexican cheese blend",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh pico de gallo, (homemade or store-bought)",
+      "expected": {
+        "item": "fresh pico de gallo, (homemade or store-bought)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  avocado, (diced)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "Mexican hot sauce, (such as Cholula or Tapatio, for serving (optional))",
+      "expected": {
+        "item": "Mexican hot sauce",
+        "measurements": [],
+        "note": "such as Cholula or Tapatio, for serving (optional"
+      }
+    }
+  ]
+}

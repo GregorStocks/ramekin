@@ -1,0 +1,147 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-healthy-taco-soup",
+  "ingredients": [
+    {
+      "raw": "1 lb. boneless skinless chicken breast",
+      "expected": {
+        "item": "boneless skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "14.5 oz. canned pinto beans, drained",
+      "expected": {
+        "item": "canned pinto beans",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "14.5 oz. canned black beans, drained",
+      "expected": {
+        "item": "canned black beans",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "14.5 oz. canned corn, drained",
+      "expected": {
+        "item": "canned corn",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "14.5 oz. canned diced tomatoes with green chilies (not drained)",
+      "expected": {
+        "item": "canned diced tomatoes with green chilies",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": "not drained"
+      }
+    },
+    {
+      "raw": "2 cups fat free chicken broth",
+      "expected": {
+        "item": "fat free chicken broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.25 oz. taco seasoning",
+      "expected": {
+        "item": "taco seasoning",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

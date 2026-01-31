@@ -1,0 +1,125 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "shrimp-scampi-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoon butter (divided)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "8 cloves garlic (minced or thinly sliced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced or thinly sliced"
+      }
+    },
+    {
+      "raw": "1.5 pounds shrimp (peeled with tails on)",
+      "expected": {
+        "item": "shrimp",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled with tails on"
+      }
+    },
+    {
+      "raw": "salt and pepper (to season)",
+      "expected": {
+        "item": "salt and pepper (to season)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup white wine",
+      "expected": {
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon crushed red pepper",
+      "expected": {
+        "item": "crushed red pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  lemon (juiced)",
+      "expected": {
+        "item": "lemon (juiced)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh parsley  (minced, to garnish)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [],
+        "note": "minced, to garnish"
+      }
+    }
+  ]
+}

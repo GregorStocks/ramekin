@@ -1,0 +1,86 @@
+{
+  "source": "paprika",
+  "recipe_slug": "shamrock-shake",
+  "ingredients": [
+    {
+      "raw": "2 cups vanilla ice cream",
+      "expected": {
+        "item": "vanilla ice cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 drops green food coloring",
+      "expected": {
+        "item": "green food coloring",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon mint extract",
+      "expected": {
+        "item": "mint extract",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "whipped cream",
+      "expected": {
+        "item": "whipped cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sprinkles",
+      "expected": {
+        "item": "sprinkles",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "maraschino cherries",
+      "expected": {
+        "item": "maraschino cherries",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

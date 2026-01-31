@@ -1,0 +1,70 @@
+{
+  "source": "paprika",
+  "recipe_slug": "real-texas-nachos",
+  "ingredients": [
+    {
+      "raw": "2 to 3 cups canola or peanut oil",
+      "expected": {
+        "item": "canola or peanut oil",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 corn tortillas, cut into quarters",
+      "expected": {
+        "item": "corn tortillas, cut into quarters",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces Longhorn cheese, grated (see note)",
+      "expected": {
+        "item": "Longhorn cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "grated (see note)"
+      }
+    },
+    {
+      "raw": "24 slices pickled jalapeños",
+      "expected": {
+        "item": "pickled jalapeños",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt, to taste",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

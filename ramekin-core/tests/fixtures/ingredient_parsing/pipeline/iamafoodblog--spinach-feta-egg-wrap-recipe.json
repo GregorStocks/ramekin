@@ -1,0 +1,87 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spinach-feta-egg-wrap-recipe",
+  "ingredients": [
+    {
+      "raw": "2 egg whites",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-5 cherry tomatoes*",
+      "expected": {
+        "item": "cherry tomatoes*",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 handful of spinach",
+      "expected": {
+        "item": "spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons feta cheese",
+      "expected": {
+        "item": "feta cheese",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 whole wheat wrap",
+      "expected": {
+        "item": "whole wheat wrap",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

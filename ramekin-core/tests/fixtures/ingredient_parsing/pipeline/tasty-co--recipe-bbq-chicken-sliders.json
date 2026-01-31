@@ -1,0 +1,101 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-bbq-chicken-sliders",
+  "ingredients": [
+    {
+      "raw": "12 dinner rolls or Hawaiian sweet rolls",
+      "expected": {
+        "item": "dinner rolls or Hawaiian sweet rolls",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups shredded cooked chicken",
+      "expected": {
+        "item": "shredded cooked chicken",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup barbecue sauce",
+      "expected": {
+        "item": "barbecue sauce",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ red onion, thinly sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "6 slices pepper jack cheese",
+      "expected": {
+        "item": "pepper jack cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup fresh parsley, finely chopped",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

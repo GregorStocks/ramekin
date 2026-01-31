@@ -1,0 +1,87 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "bruschetta-recipe",
+  "ingredients": [
+    {
+      "raw": "1  sliced French baguette, (1-inch slices)",
+      "expected": {
+        "item": "sliced French baguette",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups chopped strawberries",
+      "expected": {
+        "item": "chopped strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoon thinly sliced fresh basil",
+      "expected": {
+        "item": "thinly sliced fresh basil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  softened goat cheese log",
+      "expected": {
+        "item": "softened goat cheese log",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "balsamic glaze",
+      "expected": {
+        "item": "balsamic glaze",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

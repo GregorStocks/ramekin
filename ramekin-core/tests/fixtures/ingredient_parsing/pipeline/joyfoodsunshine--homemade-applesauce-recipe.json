@@ -1,0 +1,49 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "homemade-applesauce-recipe",
+  "ingredients": [
+    {
+      "raw": "3 pounds apples (organic (about 10 medium apples))",
+      "expected": {
+        "item": "apples (organic (about 10 medium apples)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon ground cinnamon (optional)",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

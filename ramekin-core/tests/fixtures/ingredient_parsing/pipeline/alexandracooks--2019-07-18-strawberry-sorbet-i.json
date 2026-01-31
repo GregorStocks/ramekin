@@ -1,0 +1,66 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2019-07-18-strawberry-sorbet-i",
+  "ingredients": [
+    {
+      "raw": "1 &amp;#8211; 1.5 lbs. strawberries, washed, hulled, and chopped",
+      "expected": {
+        "item": "strawberries, washed, hulled",
+        "measurements": [
+          {
+            "amount": "1-1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "454-680",
+            "unit": "g"
+          }
+        ],
+        "note": "and chopped"
+      }
+    },
+    {
+      "raw": "3/4 c. sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 3 teaspoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1 to 3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of sea salt, such as Maldon",
+      "expected": {
+        "item": "sea salt, such as Maldon",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

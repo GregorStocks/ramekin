@@ -1,0 +1,95 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "paloma-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ounces tequila",
+      "expected": {
+        "item": "tequila",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "lime wedges (and kosher salt, for serving)",
+      "expected": {
+        "item": "lime wedges",
+        "measurements": [],
+        "note": "and kosher salt, for serving"
+      }
+    },
+    {
+      "raw": "6 ounces grapefruit soda",
+      "expected": {
+        "item": "grapefruit soda",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces fresh grapefruit juice (freshly squeezed)",
+      "expected": {
+        "item": "fresh grapefruit juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "freshly squeezed"
+      }
+    },
+    {
+      "raw": "3 ounces club soda",
+      "expected": {
+        "item": "club soda",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tablespoon simple syrup (or to taste)",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    }
+  ]
+}

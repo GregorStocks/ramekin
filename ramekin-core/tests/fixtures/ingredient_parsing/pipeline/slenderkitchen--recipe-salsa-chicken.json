@@ -1,0 +1,148 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-salsa-chicken",
+  "ingredients": [
+    {
+      "raw": "2 lbs boneless skinless chicken breast (4 filets)",
+      "expected": {
+        "item": "boneless skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups pico de gallo (store bought or homemade)",
+      "expected": {
+        "item": "pico de gallo (store bought or homemade)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp kosher salt (more to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "more to taste"
+      }
+    },
+    {
+      "raw": "1/2 tsp pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp cayenne pepper (optional)",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 oz pepper jack cheese (slices or shredded)",
+      "expected": {
+        "item": "pepper jack cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "slices or shredded"
+      }
+    },
+    {
+      "raw": "2 tbsp fresh cilantro",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lime (for serving)",
+      "expected": {
+        "item": "lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "for serving"
+      }
+    }
+  ]
+}

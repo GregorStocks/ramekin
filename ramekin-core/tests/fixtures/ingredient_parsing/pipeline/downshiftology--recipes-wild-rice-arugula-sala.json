@@ -1,0 +1,122 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-wild-rice-arugula-sala",
+  "ingredients": [
+    {
+      "raw": "4 cups baby arugula",
+      "expected": {
+        "item": "baby arugula",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup wild rice",
+      "expected": {
+        "item": "wild rice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large cucumber (small diced)",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "small diced"
+      }
+    },
+    {
+      "raw": "3  green onions (sliced)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh mint (chopped)",
+      "expected": {
+        "item": "fresh mint",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup dried cranberries",
+      "expected": {
+        "item": "dried cranberries",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sliced almonds",
+      "expected": {
+        "item": "sliced almonds",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/2  recipe lemon vinaigrette",
+      "expected": {
+        "item": "recipe lemon vinaigrette",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

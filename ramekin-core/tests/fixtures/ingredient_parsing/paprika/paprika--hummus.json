@@ -1,0 +1,92 @@
+{
+  "source": "paprika",
+  "recipe_slug": "hummus",
+  "ingredients": [
+    {
+      "raw": "1 3/4 cups cooked, drained chickpeas (from a 15-ounce can) or a little shy of 2/3 cup dried chickpeas (for same yield)",
+      "expected": {
+        "item": "cooked",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained chickpeas (from a 15-ounce can) or a little shy of 2/3 cup dried chickpeas (for same yield)"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking soda (for dried chickpeas only)",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "for dried chickpeas only"
+      }
+    },
+    {
+      "raw": "1/2 cup tahini paste",
+      "expected": {
+        "item": "tahini paste",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons freshly squeezed lemon juice, or more to taste",
+      "expected": {
+        "item": "freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "2 small cloves garlic, roughly chopped",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon table salt, or more to taste",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "Approximately 1/4 cup water or reserved chickpea cooking water",
+      "expected": {
+        "item": "Approximately 1/4 cup water or reserved chickpea cooking water",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

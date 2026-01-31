@@ -1,0 +1,109 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "lobster-tail-recipe",
+  "ingredients": [
+    {
+      "raw": "4  lobster tails",
+      "expected": {
+        "item": "lobster tails",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup butter (melted)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "3  garlic cloves (minced)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon thyme (minced)",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon rosemary (minced)",
+      "expected": {
+        "item": "rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon parsley (chopped)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

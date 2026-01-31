@@ -1,0 +1,156 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "chicken-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "10-12  bone-in skinless chicken thighs",
+      "expected": {
+        "item": "bone-in skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "10-12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 quarts  cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  yellow onions (peeled and diced)",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "8 large carrots (peeled and chopped)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and chopped"
+      }
+    },
+    {
+      "raw": "6 ribs celery (chopped)",
+      "expected": {
+        "item": "ribs celery",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "5 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice from one lemon",
+      "expected": {
+        "item": "Juice from one lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh chopped parsley (to garnish)",
+      "expected": {
+        "item": "fresh chopped parsley (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

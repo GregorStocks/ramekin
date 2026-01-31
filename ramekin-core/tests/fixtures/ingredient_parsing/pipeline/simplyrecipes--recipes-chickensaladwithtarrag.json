@@ -1,0 +1,96 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-chickensaladwithtarrag",
+  "ingredients": [
+    {
+      "raw": "2 cups finely chopped, cooked chicken meat",
+      "expected": {
+        "item": "finely chopped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "cooked chicken meat"
+      }
+    },
+    {
+      "raw": "1/4 cup dried cranberries, finely chopped",
+      "expected": {
+        "item": "dried cranberries",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 stalk celery, finely chopped",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stalk"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 teaspoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 teaspoons dried tarragon (or 1-2 tablespoons fresh chopped tarragon)",
+      "expected": {
+        "item": "dried tarragon",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1-2 tablespoons fresh chopped tarragon"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

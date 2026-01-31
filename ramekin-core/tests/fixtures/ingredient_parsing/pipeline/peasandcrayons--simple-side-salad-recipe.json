@@ -1,0 +1,417 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "simple-side-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "5 oz chopped lettuce ((a 5 ounce bag or 3-4 cups))",
+      "expected": {
+        "item": "chopped lettuce",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "3-4",
+            "unit": "cup"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2  Roma tomatoes",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½  cucumber",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup shredded carrots",
+      "expected": {
+        "item": "shredded carrots",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼-⅓ cup thinly sliced red onion",
+      "expected": {
+        "item": "thinly sliced red onion",
+        "measurements": [
+          {
+            "amount": "1/4-1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 cups croutons ((freshly made or store bought))",
+      "expected": {
+        "item": "croutons",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly made or store bought"
+      }
+    },
+    {
+      "raw": "¼-⅓ cup grated Parmesan cheese (or crumbled feta (optional))",
+      "expected": {
+        "item": "grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4-1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or crumbled feta (optional"
+      }
+    },
+    {
+      "raw": "3 TBSP quality olive oil",
+      "expected": {
+        "item": "quality olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 TBSP white wine vinegar (or red wine vinegar)",
+      "expected": {
+        "item": "white wine vinegar (or red wine vinegar)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp Italian seasoning blend ((I love using Mrs. Dash’s salt-free blend))",
+      "expected": {
+        "item": "Italian seasoning blend (I love using Mrs. Dash’s salt-free blend)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp garlic powder (or 1 small clove garlic, minced)",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 small clove garlic, minced"
+      }
+    },
+    {
+      "raw": "¼ tsp salt (or season to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or season to taste"
+      }
+    },
+    {
+      "raw": "¼ tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup quality olive oil (or avocado oil)",
+      "expected": {
+        "item": "quality olive oil (or avocado oil)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 TBSP red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 TBSP Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp dried parsley (or 1 tsp fresh)",
+      "expected": {
+        "item": "dried parsley",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 tsp fresh"
+      }
+    },
+    {
+      "raw": "½ tsp garlic powder (or one super small clove garlic, minced)",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or one super small clove garlic, minced"
+      }
+    },
+    {
+      "raw": "¼ tsp dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp dried basil",
+      "expected": {
+        "item": "dried basil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛-¼ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/8-1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛-¼ tsp black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/8-1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup quality olive oil (or avocado oil)",
+      "expected": {
+        "item": "quality olive oil (or avocado oil)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 TBSP balsamic vinegar (plus extra to taste)",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus extra to taste"
+      }
+    },
+    {
+      "raw": "½-1 TBSP red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1/2-1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 TBSP Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp honey (or sweetener or choice if vegan)",
+      "expected": {
+        "item": "honey (or sweetener or choice if vegan)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small clove garlic (, minced)",
+      "expected": {
+        "item": "clove garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "½ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

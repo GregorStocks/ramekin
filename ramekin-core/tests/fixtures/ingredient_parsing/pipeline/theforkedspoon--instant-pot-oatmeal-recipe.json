@@ -1,0 +1,110 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "instant-pot-oatmeal-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cup old fashioned rolled oats",
+      "expected": {
+        "item": "old fashioned rolled oats",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups water (see notes)",
+      "expected": {
+        "item": "water (see notes)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon butter (optional)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh fruit",
+      "expected": {
+        "item": "Fresh fruit",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sweetener (honey, maple syrup, brown sugar)",
+      "expected": {
+        "item": "Sweetener (honey, maple syrup, brown sugar)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nuts &amp;amp; Seeds",
+      "expected": {
+        "item": "Nuts & Seeds",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nut Butter (peanut butter, almond butter)",
+      "expected": {
+        "item": "Nut Butter (peanut butter, almond butter)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
+      "expected": {
+        "item": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ground cinnamon or Nutmeg",
+      "expected": {
+        "item": "Ground cinnamon or Nutmeg",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

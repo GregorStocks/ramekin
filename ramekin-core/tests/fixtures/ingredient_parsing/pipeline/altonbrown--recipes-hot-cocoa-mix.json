@@ -1,0 +1,100 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-hot-cocoa-mix",
+  "ingredients": [
+    {
+      "raw": "2 1/2 cups  nonfat dry milk powder",
+      "expected": {
+        "item": "nonfat dry milk powder",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Dutch-process cocoa powder",
+      "expected": {
+        "item": "Dutch-process cocoa powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fine salt (see note)",
+      "expected": {
+        "item": "fine salt (see note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch ground cayenne pepper, optional, plus more to taste",
+      "expected": {
+        "item": "ground cayenne pepper, optional",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "Hot water, for serving",
+      "expected": {
+        "item": "Hot water",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

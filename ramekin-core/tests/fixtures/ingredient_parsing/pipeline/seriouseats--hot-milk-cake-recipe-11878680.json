@@ -1,0 +1,157 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "hot-milk-cake-recipe-11878680",
+  "ingredients": [
+    {
+      "raw": "Unsalted butter, for greasing",
+      "expected": {
+        "item": "Unsalted butter, for greasing",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large eggs (200g)300g granulated sugar (10 1/2 ounces; 1 1/2 cups)192g cake flour (6 3/4 ounces; 1 1/2 cups), plus more for dusting",
+      "expected": {
+        "item": "eggs 300g granulated sugar 192g cake flour",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "10 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "6 3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for dusting"
+      }
+    },
+    {
+      "raw": "300g granulated sugar (10 1/2 ounces; 1 1/2 cups)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          },
+          {
+            "amount": "10 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "192g cake flour (6 3/4 ounces; 1 1/2 cups), plus more for dusting",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "192",
+            "unit": "g"
+          },
+          {
+            "amount": "6 3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for dusting"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (180ml) milk 1/4 cup (60ml) vegetable oil",
+      "expected": {
+        "item": "milk 1/4 cup vegetable oil",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

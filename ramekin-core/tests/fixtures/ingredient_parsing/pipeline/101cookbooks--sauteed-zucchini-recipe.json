@@ -1,0 +1,91 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "sauteed-zucchini-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  medium garlic cloves, thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "3  medium shallots or new red onions, thinly sliced",
+      "expected": {
+        "item": "shallots or new red onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  medium zucchini, sliced into 1/4-inch thick coins",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "sliced into 1/4-inch thick coins"
+      }
+    },
+    {
+      "raw": "a good handful of dill and/or scallions, chopped",
+      "expected": {
+        "item": "a good handful of dill and/or scallions",
+        "measurements": [],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup Marcona almonds or toasted almond slices",
+      "expected": {
+        "item": "Marcona almonds or toasted almond slices",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "rhubarb-rosewater-syrup-recipe",
+  "ingredients": [
+    {
+      "raw": "4  large / 500 g / 1 pound rhubarb stalks, chopped",
+      "expected": {
+        "item": "rhubarb stalks",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "500",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups / 400 g granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups / 475 ml water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "475",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 tablespoons freshly squeezed lime juice, or to taste",
+      "expected": {
+        "item": "freshly squeezed lime juice",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "scant 2 teaspoons rosewater, or to taste",
+      "expected": {
+        "item": "rosewater",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "scant tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "rose petals, optional",
+      "expected": {
+        "item": "rose petals",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

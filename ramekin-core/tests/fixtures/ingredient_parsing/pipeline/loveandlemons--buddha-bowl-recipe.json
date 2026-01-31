@@ -1,0 +1,163 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "buddha-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "1  large sweet potato (cubed)",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "Extra-virgin olive oil (for drizzling)",
+      "expected": {
+        "item": "Extra-virgin olive oil (for drizzling)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  watermelon radish or 2 red radishes",
+      "expected": {
+        "item": "watermelon radish or 2 red radishes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  medium carrots",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded red cabbage",
+      "expected": {
+        "item": "shredded red cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon wedge (for squeezing)",
+      "expected": {
+        "item": "Lemon wedge (for squeezing)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  kale leaves (chopped)",
+      "expected": {
+        "item": "kale leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups cooked brown rice or quinoa",
+      "expected": {
+        "item": "cooked brown rice or quinoa",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cooked chickpeas or cooked lentils",
+      "expected": {
+        "item": "cooked chickpeas or cooked lentils",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup sauerkraut or other fermented veggie",
+      "expected": {
+        "item": "sauerkraut or other fermented veggie",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons sesame seeds or hemp seeds",
+      "expected": {
+        "item": "sesame seeds or hemp seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Turmeric Tahini Sauce (for serving)",
+      "expected": {
+        "item": "Turmeric Tahini Sauce",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Microgreens (optional)",
+      "expected": {
+        "item": "Microgreens",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Sea salt and freshly ground black pepper",
+      "expected": {
+        "item": "Sea salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

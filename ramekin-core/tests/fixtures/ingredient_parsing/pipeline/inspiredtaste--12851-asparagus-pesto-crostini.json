@@ -1,0 +1,100 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "12851-asparagus-pesto-crostini",
+  "ingredients": [
+    {
+      "raw": "1 pound fresh asparagus",
+      "expected": {
+        "item": "fresh asparagus",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh ground black pepper",
+      "expected": {
+        "item": "Fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 baguette, cut on diagonal into 1/2-inch slices",
+      "expected": {
+        "item": "baguette, cut on diagonal into 1/2-inch slices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup ricotta cheese",
+      "expected": {
+        "item": "ricotta cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons basil pesto, see our homemade pesto recipe",
+      "expected": {
+        "item": "basil pesto, see our homemade pesto recipe",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

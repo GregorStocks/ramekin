@@ -1,0 +1,156 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "zucchini-orzo-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup orzo",
+      "expected": {
+        "item": "orzo",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ½ cups chicken broth (or as needed)",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or as needed"
+      }
+    },
+    {
+      "raw": "½ teaspoon Italian seasoning",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small  zucchini (diced, about 1 ½ cups)",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced, about 1 1/2 cups"
+      }
+    },
+    {
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup finely diced onion",
+      "expected": {
+        "item": "finely diced onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 cup cherry tomatoes (halved)",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "2 tablespoons pesto",
+      "expected": {
+        "item": "pesto",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup shredded Parmesan cheese (divided)",
+      "expected": {
+        "item": "shredded Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "salt and black pepper (to taste )",
+      "expected": {
+        "item": "salt and black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "chopped fresh parsley (for garnish, optional)",
+      "expected": {
+        "item": "chopped fresh parsley",
+        "measurements": [],
+        "note": "for garnish, optional"
+      }
+    }
+  ]
+}

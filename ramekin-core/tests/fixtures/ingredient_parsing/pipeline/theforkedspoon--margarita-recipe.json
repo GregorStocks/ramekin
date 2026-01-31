@@ -1,0 +1,74 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "margarita-recipe",
+  "ingredients": [
+    {
+      "raw": "2 fluid ounces Blanco tequila (or preferred spirit)",
+      "expected": {
+        "item": "Blanco tequila (or preferred spirit)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 fluid ounce fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 fluid ounce Orange liqueur",
+      "expected": {
+        "item": "Orange liqueur",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 fluid ounce Agave syrup (optional)",
+      "expected": {
+        "item": "Agave syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Lime wedges (to garnish)",
+      "expected": {
+        "item": "Lime wedges (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt (to rim each glass (optional))",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to rim each glass (optional"
+      }
+    }
+  ]
+}

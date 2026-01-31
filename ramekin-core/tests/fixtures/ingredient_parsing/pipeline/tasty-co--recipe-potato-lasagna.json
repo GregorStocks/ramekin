@@ -1,0 +1,140 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-potato-lasagna",
+  "ingredients": [
+    {
+      "raw": "5 potatoes, peeled",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 slices ham",
+      "expected": {
+        "item": "ham",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 slices mozzarella cheese",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 slices bacon, cooked and crumbled",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "slice"
+          }
+        ],
+        "note": "cooked and crumbled"
+      }
+    },
+    {
+      "raw": "¼ cup fresh parsley, chopped",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups shredded mozzarella cheese",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

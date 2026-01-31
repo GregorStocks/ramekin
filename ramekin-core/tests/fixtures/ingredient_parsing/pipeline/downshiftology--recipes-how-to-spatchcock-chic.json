@@ -1,0 +1,40 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-how-to-spatchcock-chic",
+  "ingredients": [
+    {
+      "raw": "1  whole chicken ((about 4 pounds))",
+      "expected": {
+        "item": "whole chicken",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "good quality kitchen shears",
+      "expected": {
+        "item": "quality kitchen shears",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "good"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

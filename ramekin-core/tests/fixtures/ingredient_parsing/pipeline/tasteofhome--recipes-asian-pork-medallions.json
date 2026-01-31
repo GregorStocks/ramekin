@@ -1,0 +1,138 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-asian-pork-medallions",
+  "ingredients": [
+    {
+      "raw": "1/4 cup dry sherry or reduced-sodium chicken broth",
+      "expected": {
+        "item": "dry sherry or reduced-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons reduced-sodium soy sauce",
+      "expected": {
+        "item": "reduced-sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon hoisin sauce",
+      "expected": {
+        "item": "hoisin sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pork tenderloin (1 pound), cut into 1/2-in. slices",
+      "expected": {
+        "item": "pork tenderloin, cut into 1/2-in. slices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot cooked brown rice, optional",
+      "expected": {
+        "item": "Hot cooked brown rice",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Sliced green onions, optional",
+      "expected": {
+        "item": "Sliced green onions",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

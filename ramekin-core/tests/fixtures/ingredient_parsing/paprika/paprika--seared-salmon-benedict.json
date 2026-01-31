@@ -1,0 +1,196 @@
+{
+  "source": "paprika",
+  "recipe_slug": "seared-salmon-benedict",
+  "ingredients": [
+    {
+      "raw": "Salmon:",
+      "expected": {
+        "item": "Salmon:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 salmon fillets (5oz each), skin removed",
+      "expected": {
+        "item": "salmon fillets, skin removed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp cooking fat",
+      "expected": {
+        "item": "cooking fat",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Eggs:",
+      "expected": {
+        "item": "Eggs:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hollandaise:",
+      "expected": {
+        "item": "Hollandaise:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tbsp unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 tsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.6",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Dash of cayenne (optional)",
+      "expected": {
+        "item": "cayenne",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Assembly:",
+      "expected": {
+        "item": "Assembly:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cayenne",
+      "expected": {
+        "item": "Cayenne",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Black pepper",
+      "expected": {
+        "item": "Black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

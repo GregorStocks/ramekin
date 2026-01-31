@@ -1,0 +1,70 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "dumpling-enchiladas-recipe",
+  "ingredients": [
+    {
+      "raw": "15  Frozen Dumplings",
+      "expected": {
+        "item": "Frozen Dumplings",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "28 oz. enchilada sauce  (, red or green )",
+      "expected": {
+        "item": "enchilada sauce  (, red or green",
+        "measurements": [
+          {
+            "amount": "28",
+            "unit": "oz"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons  taco seasoning",
+      "expected": {
+        "item": "taco seasoning",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  cup  grated cheese",
+      "expected": {
+        "item": "grated cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sliced green onion, chopped cilantro, jalapenos, guacamole, sour cream, chili crisp  (, optional Toppings )",
+      "expected": {
+        "item": "Sliced green onion, chopped cilantro, jalapenos, guacamole, sour cream, chili crisp",
+        "measurements": [],
+        "note": "optional Toppings"
+      }
+    }
+  ]
+}

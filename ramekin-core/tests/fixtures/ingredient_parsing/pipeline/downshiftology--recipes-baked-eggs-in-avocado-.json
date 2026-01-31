@@ -1,0 +1,72 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-baked-eggs-in-avocado-",
+  "ingredients": [
+    {
+      "raw": "2  avocados",
+      "expected": {
+        "item": "avocados",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "goat cheese",
+      "expected": {
+        "item": "goat cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "cilantro",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "bacon",
+      "expected": {
+        "item": "bacon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "chives",
+      "expected": {
+        "item": "chives",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "lemon-lime-jello-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "3 oz lemon JELLO",
+      "expected": {
+        "item": "lemon JELLO",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 oz lime JELLO",
+      "expected": {
+        "item": "lime JELLO",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": ".25 oz unflavored gelatin",
+      "expected": {
+        "item": "unflavored gelatin",
+        "measurements": [
+          {
+            "amount": ".25",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups hot water",
+      "expected": {
+        "item": "hot water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 oz can sweetened condensed milk",
+      "expected": {
+        "item": "can sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup crushed pineapple (not completely drained)",
+      "expected": {
+        "item": "crushed pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "not completely drained"
+      }
+    },
+    {
+      "raw": "1 pint cottage cheese",
+      "expected": {
+        "item": "cottage cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "lemon and lime zest for topping (optional)",
+      "expected": {
+        "item": "lemon and lime zest for topping",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

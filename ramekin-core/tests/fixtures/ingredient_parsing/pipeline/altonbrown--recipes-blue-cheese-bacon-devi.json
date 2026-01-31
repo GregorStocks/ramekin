@@ -1,0 +1,62 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-blue-cheese-bacon-devi",
+  "ingredients": [
+    {
+      "raw": "20  Pitted Deglet Noor dates",
+      "expected": {
+        "item": "Pitted Deglet Noor dates",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup dry sherry&nbsp;",
+      "expected": {
+        "item": "dry sherry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces blue cheese&nbsp;",
+      "expected": {
+        "item": "blue cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 slices bacon (not thick-cut), cut into 3-inch lengths",
+      "expected": {
+        "item": "bacon (not thick-cut), cut into 3-inch lengths",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

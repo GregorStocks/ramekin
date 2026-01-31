@@ -1,0 +1,88 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "best-pico-de-gallo-recipe",
+  "ingredients": [
+    {
+      "raw": "570 grams tomatoes ((~5 small tomatoes))",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "570",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 grams sweet onions ((~1/4 onion, minced))",
+      "expected": {
+        "item": "sweet onions",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "~1/4 onion, minced"
+      }
+    },
+    {
+      "raw": "30 grams jalapeño peppers ((~1 pepper, seeded and minced))",
+      "expected": {
+        "item": "jalapeño peppers",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "~1 pepper, seeded and minced"
+      }
+    },
+    {
+      "raw": "15 grams cilantro ((~2 tablespoons, minced))",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "~2 tablespoons, minced"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon xanthan gum ((optional))",
+      "expected": {
+        "item": "xanthan gum",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

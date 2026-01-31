@@ -1,0 +1,109 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "no-mayo-coleslaw-recipe",
+  "ingredients": [
+    {
+      "raw": "450 grams cabbage",
+      "expected": {
+        "item": "cabbage",
+        "measurements": [
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 grams kale",
+      "expected": {
+        "item": "kale",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100 grams carrot ((about 1/2 carrot, shredded))",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "about 1/2 carrot, shredded"
+      }
+    },
+    {
+      "raw": "1  lemon ((zest + 2 tablespoons juice))",
+      "expected": {
+        "item": "lemon (zest + 2 tablespoons juice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fennel pollen",
+      "expected": {
+        "item": "fennel pollen",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ground black pepper ((to taste))",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-smoked-brisket",
+  "ingredients": [
+    {
+      "raw": "1 (10- to 12-pound) whole packer beef brisket",
+      "expected": {
+        "item": "whole packer beef brisket",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons freshly ground dried green peppercorn",
+      "expected": {
+        "item": "freshly ground dried green peppercorn",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon freshly ground white peppercorn",
+      "expected": {
+        "item": "freshly ground white peppercorn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

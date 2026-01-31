@@ -1,0 +1,104 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "balsamic-berry-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds fresh strawberries (quartered or cut bite-size)",
+      "expected": {
+        "item": "fresh strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "quartered or cut bite-size"
+      }
+    },
+    {
+      "raw": "12 ounces fresh blueberries",
+      "expected": {
+        "item": "fresh blueberries",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons traditional or white balsamic vinegar",
+      "expected": {
+        "item": "traditional or white balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional 1 tablespoon white sugar",
+      "expected": {
+        "item": "optional 1 tablespoon white sugar",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  basil leaves (sliced very thin)",
+      "expected": {
+        "item": "basil leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "sliced very thin"
+      }
+    }
+  ]
+}

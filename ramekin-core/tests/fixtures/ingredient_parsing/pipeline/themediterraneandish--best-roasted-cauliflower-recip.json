@@ -1,0 +1,100 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "best-roasted-cauliflower-recip",
+  "ingredients": [
+    {
+      "raw": "1  head cauliflower (cored and divided into small florets)",
+      "expected": {
+        "item": "cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "cored and divided into small florets"
+      }
+    },
+    {
+      "raw": "Private Reserve Greek extra virgin olive oil",
+      "expected": {
+        "item": "Private Reserve Greek extra virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  tsp harissa spice",
+      "expected": {
+        "item": "harissa spice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 tbsp lemon juice (or juice of 1/2 to 1 lemon to your liking)",
+      "expected": {
+        "item": "lemon juice (or juice of 1/2 to 1 lemon to your liking)",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Handful fresh parsley for garnish (optional)",
+      "expected": {
+        "item": "fresh parsley for garnish",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/4  cup/30 g toasted pine nuts (or toasted slivered almonds, optional)",
+      "expected": {
+        "item": "cup/30 g toasted pine nuts",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "or toasted slivered almonds, optional"
+      }
+    }
+  ]
+}

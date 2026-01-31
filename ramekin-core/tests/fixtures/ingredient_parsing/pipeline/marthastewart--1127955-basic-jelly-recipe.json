@@ -1,0 +1,60 @@
+{
+  "source": "marthastewart",
+  "recipe_slug": "1127955-basic-jelly-recipe",
+  "ingredients": [
+    {
+      "raw": "3 pounds fruit, cut into 1-inch chunks if large, stone fruit pitted",
+      "expected": {
+        "item": "fruit, cut into 1-inch chunks if large, stone fruit pitted",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Water (see amounts, below)",
+      "expected": {
+        "item": "Water (see amounts, below)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sugar",
+      "expected": {
+        "item": "Sugar",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coarse salt",
+      "expected": {
+        "item": "Coarse salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

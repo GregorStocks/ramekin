@@ -1,0 +1,88 @@
+{
+  "source": "chefspencil",
+  "recipe_slug": "tahini-halva-with-almonds-reci",
+  "ingredients": [
+    {
+      "raw": "1 kg tahini",
+      "expected": {
+        "item": "tahini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "400 gr granulated sugar",
+      "expected": {
+        "item": "gr granulated sugar",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200 gr almonds (skinned)",
+      "expected": {
+        "item": "gr almonds (skinned)",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200 gr glucose syrup",
+      "expected": {
+        "item": "gr glucose syrup",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 ml water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "ham-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon yellow mustard (or dijon mustard)",
+      "expected": {
+        "item": "yellow mustard (or dijon mustard)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon dill pickle relish",
+      "expected": {
+        "item": "dill pickle relish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh dill (or fresh parsley, minced)",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or fresh parsley, minced"
+      }
+    },
+    {
+      "raw": "1 (16-ounce) package cooked ham steak (or leftover holiday ham )",
+      "expected": {
+        "item": "cooked ham steak (or leftover holiday ham",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  hard-boiled eggs (peeled and diced)",
+      "expected": {
+        "item": "hard-boiled eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "½ small sweet onion (finely diced)",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "¼ cup celery (finely diced)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced"
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2017-10-06-favorite-weeknight-",
+  "ingredients": [
+    {
+      "raw": "Coarse salt and ground pepper",
+      "expected": {
+        "item": "Coarse salt and ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, peeled and thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and thinly sliced"
+      }
+    },
+    {
+      "raw": "pinch red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 pounds greens, soaked in water to allow dirt to settle",
+      "expected": {
+        "item": "greens, soaked in water to allow dirt to settle",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "lb"
+          },
+          {
+            "amount": "454 to 907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 to ¾ pound bucatini, linguini, or pappardelle",
+      "expected": {
+        "item": "bucatini, linguini, or pappardelle",
+        "measurements": [
+          {
+            "amount": "1/2 to 3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "227 to 340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup grated Parmigiano Reggiano, plus more for serving",
+      "expected": {
+        "item": "grated Parmigiano Reggiano",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lemon juice plus more to taste",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    }
+  ]
+}

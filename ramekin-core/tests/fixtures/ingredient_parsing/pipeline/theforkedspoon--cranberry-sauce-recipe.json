@@ -1,0 +1,122 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "cranberry-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "1 (12-ounce) bag fresh cranberries (frozen cranberries may also be used)",
+      "expected": {
+        "item": "fresh cranberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "frozen cranberries may also be used"
+      }
+    },
+    {
+      "raw": "1-2 teaspoon orange zest",
+      "expected": {
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 whole cinnamon stick",
+      "expected": {
+        "item": "whole cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup fresh orange juice",
+      "expected": {
+        "item": "fresh orange juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    }
+  ]
+}

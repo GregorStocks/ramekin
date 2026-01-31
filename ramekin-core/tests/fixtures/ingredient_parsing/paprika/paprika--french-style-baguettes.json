@@ -1,0 +1,70 @@
+{
+  "source": "paprika",
+  "recipe_slug": "french-style-baguettes",
+  "ingredients": [
+    {
+      "raw": "3 cups (360g) King Arthur Unbleached All-Purpose Flour",
+      "expected": {
+        "item": "King Arthur Unbleached All-Purpose Flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 1 1/4 cups (227g to 283g) lukewarm water",
+      "expected": {
+        "item": "1/4 cups lukewarm water",
+        "measurements": [
+          {
+            "amount": "1 to 1",
+            "unit": null
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (9g) salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

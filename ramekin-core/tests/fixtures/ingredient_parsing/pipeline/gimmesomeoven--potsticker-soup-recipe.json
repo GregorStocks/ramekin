@@ -1,0 +1,164 @@
+{
+  "source": "gimmesomeoven",
+  "recipe_slug": "potsticker-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "8 ounces shiitake mushrooms, thinly sliced",
+      "expected": {
+        "item": "shiitake mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 tablespoons grated or minced fresh ginger",
+      "expected": {
+        "item": "grated or minced fresh ginger",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic, pressed or minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "pressed or minced"
+      }
+    },
+    {
+      "raw": "6 cups vegetable broth",
+      "expected": {
+        "item": "vegetable broth",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 to 20 ounces frozen potstickers",
+      "expected": {
+        "item": "frozen potstickers",
+        "measurements": [
+          {
+            "amount": "16 to 20",
+            "unit": "oz"
+          },
+          {
+            "amount": "454 to 567",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 scallions, thinly sliced and divided",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced and divided"
+      }
+    },
+    {
+      "raw": "3 baby bok choy, ends trimmed off and leaves separated",
+      "expected": {
+        "item": "baby bok choy",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "ends trimmed off and leaves separated"
+      }
+    },
+    {
+      "raw": "2 teaspoons toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "freshly-ground black pepper",
+      "expected": {
+        "item": "freshly-ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional toppings: chili crisp, toasted sesame seeds, furikake seasoning, fried garlic",
+      "expected": {
+        "item": "optional toppings: chili crisp, toasted sesame seeds, furikake seasoning, fried garlic",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

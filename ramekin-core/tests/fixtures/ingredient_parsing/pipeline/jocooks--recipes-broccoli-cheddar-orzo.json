@@ -1,0 +1,178 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-broccoli-cheddar-orzo",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small  onion (finely chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1½ cups orzo (uncooked )",
+      "expected": {
+        "item": "orzo",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "uncooked"
+      }
+    },
+    {
+      "raw": "3 cups chicken broth (low-sodium, or vegetable broth)",
+      "expected": {
+        "item": "chicken broth (low-sodium, or vegetable broth)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups broccoli florets (cut into small pieces)",
+      "expected": {
+        "item": "broccoli florets (cut into small pieces)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "¼ teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sharp cheddar cheese (shredded )",
+      "expected": {
+        "item": "sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "½ cup milk  (or half-and-half)",
+      "expected": {
+        "item": "milk  (or half-and-half)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons Parmesan cheese (grated )",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "Fresh parsley (for garnish)",
+      "expected": {
+        "item": "Fresh parsley",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

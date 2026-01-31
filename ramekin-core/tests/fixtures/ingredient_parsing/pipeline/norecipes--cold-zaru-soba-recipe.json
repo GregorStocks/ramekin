@@ -1,0 +1,127 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "cold-zaru-soba-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoons sake",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons evaporated cane sugar",
+      "expected": {
+        "item": "evaporated cane sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 servings soba noodles",
+      "expected": {
+        "item": "servings soba noodles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon wasabi",
+      "expected": {
+        "item": "wasabi",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  scallion ((finely chopped))",
+      "expected": {
+        "item": "scallion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "50 grams daikon ((grated and drained))",
+      "expected": {
+        "item": "daikon",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "grated and drained"
+      }
+    },
+    {
+      "raw": "1/2 sheet nori ((cut into thin strips with scissors))",
+      "expected": {
+        "item": "sheet nori (cut into thin strips with scissors)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

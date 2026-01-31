@@ -1,0 +1,108 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-buffalo-chicken-dip",
+  "ingredients": [
+    {
+      "raw": "8 ounces cream cheese, at room temperature",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "3/4 cup cayenne pepper sauce, preferably Frank’s RedHot",
+      "expected": {
+        "item": "cayenne pepper sauce, preferably Frank’s RedHot",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups chopped cooked chicken (8 ounces)",
+      "expected": {
+        "item": "chopped cooked chicken",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups shredded Monterey Jack cheese",
+      "expected": {
+        "item": "shredded Monterey Jack cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped scallions, plus more for garnish",
+      "expected": {
+        "item": "finely chopped scallions",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "Tortilla chips and celery sticks, for serving",
+      "expected": {
+        "item": "Tortilla chips and celery sticks",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-21649-sausage-balls",
+  "ingredients": [
+    {
+      "raw": "1 pound ground pork sausage, at room temperature",
+      "expected": {
+        "item": "ground pork sausage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "2 cups biscuit baking mix",
+      "expected": {
+        "item": "biscuit baking mix",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound sharp Cheddar cheese, shredded",
+      "expected": {
+        "item": "sharp Cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded"
+      }
+    }
+  ]
+}

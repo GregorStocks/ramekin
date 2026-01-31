@@ -1,0 +1,185 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "eggs-benedict-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice (plus more to taste)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  poached eggs",
+      "expected": {
+        "item": "poached eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  English muffins",
+      "expected": {
+        "item": "English muffins",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Smoked paprika",
+      "expected": {
+        "item": "Smoked paprika",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sliced ham or Canadian bacon",
+      "expected": {
+        "item": "Sliced ham or Canadian bacon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cooked American bacon",
+      "expected": {
+        "item": "Cooked American bacon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lump crab meat",
+      "expected": {
+        "item": "Lump crab meat",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Smoked salmon",
+      "expected": {
+        "item": "Smoked salmon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sautéed spinach",
+      "expected": {
+        "item": "Sautéed spinach",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh arugula",
+      "expected": {
+        "item": "Fresh arugula",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Steamed asparagus",
+      "expected": {
+        "item": "Steamed asparagus",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Seasoned tomato slices",
+      "expected": {
+        "item": "Seasoned tomato slices",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

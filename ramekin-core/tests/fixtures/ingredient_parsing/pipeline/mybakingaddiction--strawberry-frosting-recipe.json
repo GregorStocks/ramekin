@@ -1,0 +1,75 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "strawberry-frosting-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup whole strawberries",
+      "expected": {
+        "item": "whole strawberries",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 stick unsalted butter, firm and slightly cold confectioners’ sugar, sifted",
+      "expected": {
+        "item": "unsalted butter, firm and slightly cold confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "sifted"
+      }
+    },
+    {
+      "raw": "1 8-ounce package of cream cheese, slightly cold",
+      "expected": {
+        "item": "of cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "8-ounce package"
+          }
+        ],
+        "note": "slightly cold"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon clear vanilla extract",
+      "expected": {
+        "item": "clear vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups confectioners' sugar, sifted",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted"
+      }
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "source": "paprika",
+  "recipe_slug": "mexican-tuna-boats",
+  "ingredients": [
+    {
+      "raw": "1 avocado",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cans (5 oz each) tuna",
+      "expected": {
+        "item": "tuna",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "5",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 green onions",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice of 1 lime",
+      "expected": {
+        "item": "Juice of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 jalapeno",
+      "expected": {
+        "item": "jalapeno",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp fresh cilantro",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "To serve:",
+      "expected": {
+        "item": "To serve:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lettuce or endive leaves, or bread",
+      "expected": {
+        "item": "Lettuce or endive leaves, or bread",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "lentil-sausage-stew-recipe-118",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons (30 ml) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound (454 g) fresh chorizo sausage, casings removed",
+      "expected": {
+        "item": "fresh chorizo sausage, casings removed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium yellow onion (8 ounces; 227 g), chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 medium carrots (8 ounces; 227 g total), peeled and chopped",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and chopped"
+      }
+    },
+    {
+      "raw": "4 large cloves garlic, minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup dried red lentils (about 7 ounces; 200 g), picked over and rinsed (see notes)",
+      "expected": {
+        "item": "dried red lentils",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "picked over and rinsed (see notes)"
+      }
+    },
+    {
+      "raw": "6 cups (1.4 L) homemade chicken stock or store-bought low-sodium chicken broth",
+      "expected": {
+        "item": "homemade chicken stock or store-bought low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.4",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (14.5-ounce; 411 g) can diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14.5",
+            "unit": null
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium bunch escarole (1 pound; 454 g), stem end trimmed, wilted leaves discarded, chopped into bite-size pieces, and washed very well in multiple changes of water (see notes)",
+      "expected": {
+        "item": "bunch escarole, stem end trimmed, wilted leaves discarded, chopped into bite-size pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "and washed very well in multiple changes of water (see notes)"
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 ml) sherry vinegar",
+      "expected": {
+        "item": "sherry vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped fresh flat-leaf parsley leaves and tender stems, for serving",
+      "expected": {
+        "item": "Chopped fresh flat-leaf parsley leaves and tender stems",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

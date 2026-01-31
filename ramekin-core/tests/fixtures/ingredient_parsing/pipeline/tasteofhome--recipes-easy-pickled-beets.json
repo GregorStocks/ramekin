@@ -1,0 +1,92 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-easy-pickled-beets",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon mixed pickling spices",
+      "expected": {
+        "item": "mixed pickling spices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups vinegar",
+      "expected": {
+        "item": "vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cans (16 ounces each) sliced beets",
+      "expected": {
+        "item": "sliced beets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "can"
+          },
+          {
+            "amount": "16",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

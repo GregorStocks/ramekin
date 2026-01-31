@@ -1,0 +1,173 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "fried-rice-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoon canola oil (divided)",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 large eggs (whisked)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "whisked"
+      }
+    },
+    {
+      "raw": "1 small white onion (diced (approx. 1 cup))",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced (approx. 1 cup"
+      }
+    },
+    {
+      "raw": "1  carrot (¼-inch dice)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoon fresh ginger (minced)",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4 cups cooked white rice (preferably cold, day-old rice)",
+      "expected": {
+        "item": "cooked white rice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "preferably cold, day-old rice"
+      }
+    },
+    {
+      "raw": "1 cup frozen peas (defrosted)",
+      "expected": {
+        "item": "frozen peas (defrosted)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup Shaoxing wine ((Chinese rice wine))",
+      "expected": {
+        "item": "Shaoxing wine (Chinese rice wine)",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon soy sauce (plus more to taste)",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "white pepper (as needed to season)",
+      "expected": {
+        "item": "white pepper",
+        "measurements": [],
+        "note": "as needed to season"
+      }
+    },
+    {
+      "raw": "Thinly sliced green onions (to garnish)",
+      "expected": {
+        "item": "Thinly sliced green onions (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

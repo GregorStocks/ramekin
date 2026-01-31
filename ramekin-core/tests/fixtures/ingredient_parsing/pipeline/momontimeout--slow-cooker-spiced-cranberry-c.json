@@ -1,0 +1,127 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "slow-cooker-spiced-cranberry-c",
+  "ingredients": [
+    {
+      "raw": "3 cups fresh cranberries",
+      "expected": {
+        "item": "fresh cranberries",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup fresh orange juice",
+      "expected": {
+        "item": "fresh orange juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  Granny Smith apples (peeled, cored, and diced (about the size of cranberries))",
+      "expected": {
+        "item": "Granny Smith apples",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled, cored, and diced (about the size of cranberries"
+      }
+    },
+    {
+      "raw": "1  red pear (peeled, cored, and diced (about the size of cranberries))",
+      "expected": {
+        "item": "red pear",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled, cored, and diced (about the size of cranberries"
+      }
+    },
+    {
+      "raw": "1  shallot or 1/2 small yellow onion (diced)",
+      "expected": {
+        "item": "shallot or 1/2 small yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3/4 cup golden raisins",
+      "expected": {
+        "item": "golden raisins",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  cinnamon sticks",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  whole cloves",
+      "expected": {
+        "item": "whole cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

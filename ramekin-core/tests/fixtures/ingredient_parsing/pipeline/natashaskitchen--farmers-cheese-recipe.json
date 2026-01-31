@@ -1,0 +1,53 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "farmers-cheese-recipe",
+  "ingredients": [
+    {
+      "raw": "1 gallon whole milk (preferably organic, room temp*)",
+      "expected": {
+        "item": "whole milk (preferably organic, room temp*)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "gallon"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "35 oz large tub full fat Greek yogurt, room temp*",
+      "expected": {
+        "item": "large tub full fat Greek yogurt, room temp*",
+        "measurements": [
+          {
+            "amount": "35",
+            "unit": "oz"
+          },
+          {
+            "amount": "992",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

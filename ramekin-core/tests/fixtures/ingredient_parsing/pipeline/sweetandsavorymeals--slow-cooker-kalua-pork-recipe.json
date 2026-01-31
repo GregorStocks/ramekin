@@ -1,0 +1,58 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "slow-cooker-kalua-pork-recipe",
+  "ingredients": [
+    {
+      "raw": "1 5- pound pork shoulder roast",
+      "expected": {
+        "item": "5- pound pork shoulder roast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons liquid smoke",
+      "expected": {
+        "item": "liquid smoke",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons pink Himalayan salt",
+      "expected": {
+        "item": "pink Himalayan salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 20-oz can pineapple chunks (or crushed pineapple)",
+      "expected": {
+        "item": "pineapple chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "20-oz can"
+          }
+        ],
+        "note": "or crushed pineapple"
+      }
+    }
+  ]
+}

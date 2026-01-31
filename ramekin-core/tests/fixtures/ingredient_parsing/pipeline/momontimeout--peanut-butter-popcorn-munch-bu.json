@@ -1,0 +1,96 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "peanut-butter-popcorn-munch-bu",
+  "ingredients": [
+    {
+      "raw": "3 oz microwave butter popcorn (1 bag)",
+      "expected": {
+        "item": "microwave butter popcorn",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup tiny pretzel twists",
+      "expected": {
+        "item": "tiny pretzel twists",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup creamy peanut butter",
+      "expected": {
+        "item": "creamy peanut butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 - 1 cup powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "3/4-1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup peanut butter M&amp;amp;M&amp;#x27;s",
+      "expected": {
+        "item": "peanut butter M&M's",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

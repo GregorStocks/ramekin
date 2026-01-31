@@ -1,0 +1,220 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "the-best-chili-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds lean ground beef",
+      "expected": {
+        "item": "lean ground beef",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  onion (diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1  jalapeño (seeded and finely diced)",
+      "expected": {
+        "item": "jalapeño",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and finely diced"
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 ½ tablespoons chili powder (divided, or to taste)",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided, or to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  green bell pepper (seeded and diced)",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "14.5 ounces crushed tomatoes (1 can)",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "19 ounces canned red kidney beans (drained and rinsed)",
+      "expected": {
+        "item": "canned red kidney beans",
+        "measurements": [
+          {
+            "amount": "19",
+            "unit": "oz"
+          },
+          {
+            "amount": "539",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "14.5 ounces canned diced tomatoes (with juices)",
+      "expected": {
+        "item": "canned diced tomatoes (with juices)",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups beef broth",
+      "expected": {
+        "item": "beef broth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup beer",
+      "expected": {
+        "item": "beer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon brown sugar (optional)",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "salt and black pepper (to taste)",
+      "expected": {
+        "item": "salt and black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

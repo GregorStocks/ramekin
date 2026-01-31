@@ -1,0 +1,374 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "mexican-beef-stew-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds beef stew meat (trimmed and cut into 2-3 inch cubes)",
+      "expected": {
+        "item": "beef stew meat",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cut into 2-3 inch cubes"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon freshly ground pepper",
+      "expected": {
+        "item": "freshly ground pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup red wine",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons butter (unsalted)",
+      "expected": {
+        "item": "butter (unsalted)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  medium onion (peeled and finely diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and finely diced"
+      }
+    },
+    {
+      "raw": "1  medium onion (cut into quarters)",
+      "expected": {
+        "item": "onion (cut into quarters)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4 cloves garlic (whole)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "whole"
+      }
+    },
+    {
+      "raw": "2 tablespoons Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can 14oz diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  jalapenos (diced )",
+      "expected": {
+        "item": "jalapenos",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2  bell peppers (red or yellow, or combo - chopped)",
+      "expected": {
+        "item": "bell peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "red or yellow, or combo - chopped"
+      }
+    },
+    {
+      "raw": "3 tablespoons taco seasoning",
+      "expected": {
+        "item": "taco seasoning",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice of 1 lime",
+      "expected": {
+        "item": "Juice of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Zest of 1 lime",
+      "expected": {
+        "item": "Zest of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups beef broth (low-sodium, more if needed)",
+      "expected": {
+        "item": "beef broth (low-sodium, more if needed)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bunch of fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  medium carrots (peeled and cut into 1/4-inch rounds)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and cut into 1/4-inch rounds"
+      }
+    },
+    {
+      "raw": "1 cup celery (diced)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 pound mini red potatoes (peeled and cut into halves)",
+      "expected": {
+        "item": "mini red potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into halves"
+      }
+    },
+    {
+      "raw": "8 ounces baby Bella mushrooms (cleaned, stem removed and cap cut into halves)",
+      "expected": {
+        "item": "baby Bella mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "cleaned, stem removed and cap cut into halves"
+      }
+    },
+    {
+      "raw": "Chopped fresh cilantro (for garnish)",
+      "expected": {
+        "item": "Chopped fresh cilantro",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

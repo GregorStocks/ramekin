@@ -1,0 +1,136 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "everything-nice-recipe-1186667",
+  "ingredients": [
+    {
+      "raw": "3/4 cup (175ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "175",
+            "unit": "ml"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (10g) malted milk powder, such as Carnation",
+      "expected": {
+        "item": "malted milk powder, such as Carnation",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (15g) dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Tiny pinch kosher salt",
+      "expected": {
+        "item": "Tiny pinch kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces (175ml) hot black coffee",
+      "expected": {
+        "item": "hot black coffee",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "175",
+            "unit": "ml"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces (60ml) spiced rum",
+      "expected": {
+        "item": "spiced rum",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15ml) 2:1 simple syrup (see note)",
+      "expected": {
+        "item": "2:1 simple syrup (see note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly grated nutmeg, for garnish (optional)",
+      "expected": {
+        "item": "Freshly grated nutmeg, for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

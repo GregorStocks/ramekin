@@ -1,0 +1,96 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "mango-pineapple-salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "1  ripe mango (peeled, cored and diced small (about 2 cups))",
+      "expected": {
+        "item": "ripe mango",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled, cored and diced small (about 2 cups"
+      }
+    },
+    {
+      "raw": "1 cup diced pineapple",
+      "expected": {
+        "item": "diced pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup minced red onion",
+      "expected": {
+        "item": "minced red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  jalapeno pepper (seeded and minced)",
+      "expected": {
+        "item": "jalapeno pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and minced"
+      }
+    },
+    {
+      "raw": "3 tablespoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons chopped cilantro",
+      "expected": {
+        "item": "chopped cilantro",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt (to taste)",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

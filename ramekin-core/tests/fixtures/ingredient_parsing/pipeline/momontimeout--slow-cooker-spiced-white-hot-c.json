@@ -1,0 +1,155 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "slow-cooker-spiced-white-hot-c",
+  "ingredients": [
+    {
+      "raw": "8 oz white chocolate (broken into small pieces)",
+      "expected": {
+        "item": "white chocolate (broken into small pieces)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 oz sweetened condensed milk (1 can)",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 oz marshmallow creme (1 jar)",
+      "expected": {
+        "item": "marshmallow creme",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 sticks cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "stick"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  vanilla bean (split and scraped OR 2 tsp vanilla extract)",
+      "expected": {
+        "item": "vanilla bean",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp ground cardamom ( OR 4 cardamom pods)",
+      "expected": {
+        "item": "ground cardamom",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp ground nutmeg  (OR 1 whole nutmeg)",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "OR 1 whole nutmeg"
+      }
+    }
+  ]
+}

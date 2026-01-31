@@ -1,0 +1,48 @@
+{
+  "source": "paprika",
+  "recipe_slug": "roasted-broccoli",
+  "ingredients": [
+    {
+      "raw": "14 ounces broccoli",
+      "expected": {
+        "item": "broccoli",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and ground black pepper to taste",
+      "expected": {
+        "item": "salt and ground black pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

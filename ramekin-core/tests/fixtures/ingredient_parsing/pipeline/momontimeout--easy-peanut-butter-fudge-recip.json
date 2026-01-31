@@ -1,0 +1,121 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "easy-peanut-butter-fudge-recip",
+  "ingredients": [
+    {
+      "raw": "1 cup butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 1/2 cups brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "990",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups peanut butter (smooth)",
+      "expected": {
+        "item": "peanut butter (smooth)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 cups powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "cup"
+          },
+          {
+            "amount": "840",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 oz peanut butter chips (1 bag)",
+      "expected": {
+        "item": "peanut butter chips",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "ikea-swedish-meatball-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 pound ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 pound ground pork",
+      "expected": {
+        "item": "ground pork",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.5 tablespoons finely chopped onion",
+      "expected": {
+        "item": "finely chopped onion",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup breadcrumbs (I used panko)",
+      "expected": {
+        "item": "breadcrumbs (I used panko)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 small potatoes",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and white pepper",
+      "expected": {
+        "item": "salt and white pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon all spice",
+      "expected": {
+        "item": "all spice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

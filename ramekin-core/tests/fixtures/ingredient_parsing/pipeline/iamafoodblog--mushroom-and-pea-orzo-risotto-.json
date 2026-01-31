@@ -1,0 +1,96 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "mushroom-and-pea-orzo-risotto-",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons of olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 cup diced white button mushrooms",
+      "expected": {
+        "item": "diced white button mushrooms",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup of orzo",
+      "expected": {
+        "item": "orzo",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups vegetable broth plus 1/2 cup more if needed",
+      "expected": {
+        "item": "vegetable broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1/2 cup more if needed"
+      }
+    },
+    {
+      "raw": "1 cup peas (I used fresh, but feel free to use frozen)",
+      "expected": {
+        "item": "peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "I used fresh, but feel free to use frozen"
+      }
+    },
+    {
+      "raw": "sea salt and freshly ground pepper to taste",
+      "expected": {
+        "item": "sea salt and freshly ground pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

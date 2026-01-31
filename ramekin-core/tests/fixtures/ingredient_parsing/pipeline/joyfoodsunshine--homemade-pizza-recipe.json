@@ -1,0 +1,43 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "homemade-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "Pizza Dough",
+      "expected": {
+        "item": "Pizza Dough",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pizza Sauce",
+      "expected": {
+        "item": "Pizza Sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Cups Mozzarella Cheese",
+      "expected": {
+        "item": "Mozzarella Cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
+      "expected": {
+        "item": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

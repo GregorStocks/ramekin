@@ -1,0 +1,75 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "lemon-rosemary-potato-salad-re",
+  "ingredients": [
+    {
+      "raw": "3 pounds yukon gold potatoes (baked until fork tender, about 6 cups worth peeled and chopped small)",
+      "expected": {
+        "item": "yukon gold potatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": "baked until fork tender, about 6 cups worth peeled and chopped small"
+      }
+    },
+    {
+      "raw": "1 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of a large lemon (about 1/4 cup worth)",
+      "expected": {
+        "item": "juice of a large lemon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon finely minced fresh rosemary",
+      "expected": {
+        "item": "finely minced fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

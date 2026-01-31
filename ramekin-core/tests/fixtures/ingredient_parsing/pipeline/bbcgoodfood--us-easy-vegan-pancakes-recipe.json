@@ -1,0 +1,100 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-easy-vegan-pancakes-recipe",
+  "ingredients": [
+    {
+      "raw": "2½ cups self-rising flour",
+      "expected": {
+        "item": "self-rising flour",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp sugar (any kind)",
+      "expected": {
+        "item": "sugar (any kind)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups plus 2 tbsp plant-based milk (such as oat, almond or soya)",
+      "expected": {
+        "item": "1½ cups plus 2 tbsp plant-based milk (such as oat, almond or soya)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tbsp plant-based milk (such as oat, almond or soya)"
+      }
+    },
+    {
+      "raw": "1 tbsp vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt, to serve",
+      "expected": {
+        "item": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt, to serve",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

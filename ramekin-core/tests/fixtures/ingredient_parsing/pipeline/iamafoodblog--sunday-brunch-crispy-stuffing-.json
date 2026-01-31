@@ -1,0 +1,64 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "sunday-brunch-crispy-stuffing-",
+  "ingredients": [
+    {
+      "raw": "2 cups leftover stuffing",
+      "expected": {
+        "item": "leftover stuffing",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg, lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "oil or butter for the pan",
+      "expected": {
+        "item": "oil or butter for the pan",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "quail eggs, as needed",
+      "expected": {
+        "item": "quail eggs",
+        "measurements": [],
+        "note": "as needed"
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sriracha, if desired",
+      "expected": {
+        "item": "sriracha, if desired",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

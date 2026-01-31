@@ -1,0 +1,91 @@
+{
+  "category": "volume",
+  "test_cases": [
+    {
+      "name": "already_has_weight",
+      "raw": "1 cup (125g) flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "butter_softened",
+      "raw": "1/2 cup unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "name": "flour_cup",
+      "raw": "2 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "sugar_tbsp",
+      "raw": "3 tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "unknown_ingredient",
+      "raw": "1 cup mystery powder",
+      "expected": {
+        "item": "mystery powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

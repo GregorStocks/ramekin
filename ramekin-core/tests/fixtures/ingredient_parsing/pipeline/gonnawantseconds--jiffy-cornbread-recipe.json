@@ -1,0 +1,117 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "jiffy-cornbread-recipe",
+  "ingredients": [
+    {
+      "raw": "2  (8.5-ounce) boxes Jiffy Corn Muffin Mix",
+      "expected": {
+        "item": "Jiffy Corn Muffin Mix",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "box"
+          },
+          {
+            "amount": "8.5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "242",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

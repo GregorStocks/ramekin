@@ -1,0 +1,65 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "8992-gingered-green-beans-reci",
+  "ingredients": [
+    {
+      "raw": "1 ½ pounds green beans, stem ends trimmed",
+      "expected": {
+        "item": "green beans",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "stem ends trimmed"
+      }
+    },
+    {
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (2-inch-long) piece fresh ginger",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "piece"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and fresh ground black pepper",
+      "expected": {
+        "item": "Salt and fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

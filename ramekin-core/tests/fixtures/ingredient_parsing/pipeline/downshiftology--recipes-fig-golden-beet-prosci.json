@@ -1,0 +1,144 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-fig-golden-beet-prosci",
+  "ingredients": [
+    {
+      "raw": "6 cups arugula",
+      "expected": {
+        "item": "arugula",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12  figs (halved)",
+      "expected": {
+        "item": "figs",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "8 slices prosciutto",
+      "expected": {
+        "item": "prosciutto",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  golden beets",
+      "expected": {
+        "item": "golden beets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  figs",
+      "expected": {
+        "item": "figs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp champagne vinegar",
+      "expected": {
+        "item": "champagne vinegar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp shallot (finely diced )",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1 tsp dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

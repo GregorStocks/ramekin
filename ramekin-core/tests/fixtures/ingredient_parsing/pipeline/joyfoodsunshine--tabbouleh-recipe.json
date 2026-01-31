@@ -1,0 +1,152 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "tabbouleh-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup bulgur wheat",
+      "expected": {
+        "item": "bulgur wheat",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups flat leaf parsley (finely chopped)",
+      "expected": {
+        "item": "flat leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "¼ cup fresh mint (finely chopped)",
+      "expected": {
+        "item": "fresh mint",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2  Roma tomatoes (finely diced)",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "4  green onions (finely sliced (1/2 cup))",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "finely sliced (1/2 cup"
+      }
+    },
+    {
+      "raw": "1  cucumber (peeled and finely diced (about 1 cup))",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and finely diced (about 1 cup"
+      }
+    },
+    {
+      "raw": "¼ cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pepper",
+      "expected": {
+        "item": "Pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

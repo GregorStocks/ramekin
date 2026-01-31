@@ -1,0 +1,92 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "9749-ham-and-broccoli-pizza-po",
+  "ingredients": [
+    {
+      "raw": "1 (16.3 ounce) can Pillsbury Grands Homestyle Buttermilk Reduced Fat Biscuits",
+      "expected": {
+        "item": "Pillsbury Grands Homestyle Buttermilk Reduced Fat Biscuits",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "16.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "462",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup tomato pizza or pasta sauce",
+      "expected": {
+        "item": "tomato pizza or pasta sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup frozen chopped broccoli, thawed",
+      "expected": {
+        "item": "frozen chopped broccoli",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "3/4 cup diced ham",
+      "expected": {
+        "item": "diced ham",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shredded 2% cheddar cheese",
+      "expected": {
+        "item": "shredded 2% cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg, beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    }
+  ]
+}

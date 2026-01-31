@@ -1,0 +1,110 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "guacamole-recipe",
+  "ingredients": [
+    {
+      "raw": "5 large avocados (peeled, pitted, and mashed)",
+      "expected": {
+        "item": "avocados",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled, pitted, and mashed"
+      }
+    },
+    {
+      "raw": "2  limes (juiced)",
+      "expected": {
+        "item": "limes (juiced)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "½ cup white onion (finely diced)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "2  Roma tomatoes (seeded and diced)",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "1 clove fresh garlic (minced, optional)",
+      "expected": {
+        "item": "fresh garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced, optional"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh cilantro (chopped)",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "½ teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

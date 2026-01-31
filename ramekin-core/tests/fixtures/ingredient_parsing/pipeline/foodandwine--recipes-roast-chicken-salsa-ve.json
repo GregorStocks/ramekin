@@ -1,0 +1,191 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-roast-chicken-salsa-ve",
+  "ingredients": [
+    {
+      "raw": "One whole 4-pound chicken, backbone removed, chicken halved lengthwise",
+      "expected": {
+        "item": "whole 4-pound chicken, backbone removed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chicken halved lengthwise"
+      }
+    },
+    {
+      "raw": "1 cup plus 2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "1 cup plus 2 tablespoons extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons extra-virgin olive oil"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pepper",
+      "expected": {
+        "item": "Pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 lemons, halved crosswise",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "halved crosswise"
+      }
+    },
+    {
+      "raw": "1/4 cup capers, rinsed",
+      "expected": {
+        "item": "capers",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "4 anchovy fillets in oil, drained",
+      "expected": {
+        "item": "anchovy fillets in oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, crushed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "crushed"
+      }
+    },
+    {
+      "raw": "1/2 cup coarsely chopped arugula",
+      "expected": {
+        "item": "coarsely chopped arugula",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup coarsely chopped parsley",
+      "expected": {
+        "item": "coarsely chopped parsley",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup coarsely chopped basil",
+      "expected": {
+        "item": "coarsely chopped basil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup coarsely chopped cilantro",
+      "expected": {
+        "item": "coarsely chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely chopped tarragon",
+      "expected": {
+        "item": "coarsely chopped tarragon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely chopped chives",
+      "expected": {
+        "item": "coarsely chopped chives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely chopped sage",
+      "expected": {
+        "item": "coarsely chopped sage",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

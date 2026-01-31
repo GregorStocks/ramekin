@@ -1,0 +1,101 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-southern-buttermilk-bi",
+  "ingredients": [
+    {
+      "raw": "2 cups plus 6 tablespoons all-purpose flour, plus an additional 1/2 cup for dusting",
+      "expected": {
+        "item": "plus 6 tablespoons all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus an additional 1/2 cup for dusting"
+      }
+    },
+    {
+      "raw": "5 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup leaf lard, chilled",
+      "expected": {
+        "item": "leaf lard",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "chilled"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter, sliced into very thin pats and chilled",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced into very thin pats and chilled"
+      }
+    },
+    {
+      "raw": "1 cup low-fat buttermilk, chilled",
+      "expected": {
+        "item": "low-fat buttermilk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chilled"
+      }
+    }
+  ]
+}

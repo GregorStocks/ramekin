@@ -1,0 +1,62 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-slow-cooker-chickpeas",
+  "ingredients": [
+    {
+      "raw": "7 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound dried chickpeas, sorted and rinsed",
+      "expected": {
+        "item": "dried chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sorted and rinsed"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

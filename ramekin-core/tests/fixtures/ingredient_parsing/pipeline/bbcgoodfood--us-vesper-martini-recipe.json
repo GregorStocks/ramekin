@@ -1,0 +1,61 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-vesper-martini-recipe",
+  "ingredients": [
+    {
+      "raw": "3 tbsp gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tsp white vermouth",
+      "expected": {
+        "item": "white vermouth",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "lemon peel",
+      "expected": {
+        "item": "lemon peel",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

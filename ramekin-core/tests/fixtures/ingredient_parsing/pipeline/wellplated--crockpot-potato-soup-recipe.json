@@ -1,0 +1,190 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "crockpot-potato-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons unsalted butter*",
+      "expected": {
+        "item": "unsalted butter*",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small yellow onion (diced)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3 large carrots (scrubbed and diced)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "scrubbed and diced"
+      }
+    },
+    {
+      "raw": "2 pounds Yukon gold potatoes (peeled and cut into 1/2-inch chunks)",
+      "expected": {
+        "item": "Yukon gold potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch chunks"
+      }
+    },
+    {
+      "raw": "1 teaspoon Italian seasoning",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt (plus additional to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus additional to taste"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3–4 cups reduced-sodium chicken broth ((or vegetable broth for a vegetarian soup))",
+      "expected": {
+        "item": "reduced-sodium chicken broth (or vegetable broth for a vegetarian soup)",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can 2% evaporated milk ((12-ounces)  )",
+      "expected": {
+        "item": "2% evaporated milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded sharp cheddar cheese (plus additional for serving)",
+      "expected": {
+        "item": "shredded sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus additional for serving"
+      }
+    },
+    {
+      "raw": "1 cup nonfat plain Greek yogurt (plus additional for serving)",
+      "expected": {
+        "item": "nonfat plain Greek yogurt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus additional for serving"
+      }
+    },
+    {
+      "raw": "Cooked crumbled bacon ((optional))",
+      "expected": {
+        "item": "Cooked crumbled bacon",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Chopped fresh chives ((optional))",
+      "expected": {
+        "item": "Chopped fresh chives",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

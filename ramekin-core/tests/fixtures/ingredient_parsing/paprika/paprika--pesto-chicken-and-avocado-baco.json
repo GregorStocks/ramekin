@@ -1,0 +1,233 @@
+{
+  "source": "paprika",
+  "recipe_slug": "pesto-chicken-and-avocado-baco",
+  "ingredients": [
+    {
+      "raw": "Caesar dressing:",
+      "expected": {
+        "item": "Caesar dressing:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup mayo",
+      "expected": {
+        "item": "mayo",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "46",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 cloves garlic, grated",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "clove"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "kosher salt and black pepper",
+      "expected": {
+        "item": "kosher salt and black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup grated parmesan",
+      "expected": {
+        "item": "grated parmesan",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Wraps:",
+      "expected": {
+        "item": "Wraps:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large tortillas",
+      "expected": {
+        "item": "tortillas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups shredded lettuce",
+      "expected": {
+        "item": "shredded lettuce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 avocado, diced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh basil, torn",
+      "expected": {
+        "item": "fresh basil, torn",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup basil pesto",
+      "expected": {
+        "item": "basil pesto",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-1 1/2 cups grilled chicken, cubed or shredded",
+      "expected": {
+        "item": "1/2 cups grilled chicken",
+        "measurements": [
+          {
+            "amount": "1-1",
+            "unit": null
+          }
+        ],
+        "note": "cubed or shredded"
+      }
+    },
+    {
+      "raw": "6 slices cooked bacon, crumbled",
+      "expected": {
+        "item": "cooked bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "1/2 cup crumbled blue cheese or shredded cheddar",
+      "expected": {
+        "item": "crumbled blue cheese or shredded cheddar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

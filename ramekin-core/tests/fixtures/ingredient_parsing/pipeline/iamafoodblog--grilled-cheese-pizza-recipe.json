@@ -1,0 +1,95 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "grilled-cheese-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ball no-knead pizza dough",
+      "expected": {
+        "item": "ball no-knead pizza dough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "drizzle of olive oil",
+      "expected": {
+        "item": "drizzle of olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small tomato, sliced",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shredded cheese, divided",
+      "expected": {
+        "item": "shredded cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3-4 slices bacon, chopped and cooked until crisp",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "slice"
+          }
+        ],
+        "note": "chopped and cooked until crisp"
+      }
+    },
+    {
+      "raw": "1 grilled cheese, cut into small squares",
+      "expected": {
+        "item": "grilled cheese, cut into small squares",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sliced green onions, to garnish",
+      "expected": {
+        "item": "sliced green onions, to garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

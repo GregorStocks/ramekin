@@ -1,0 +1,88 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-gnocchi-roasted-squash",
+  "ingredients": [
+    {
+      "raw": "450g butternut squash peeled and cut into small chunks",
+      "expected": {
+        "item": "butternut squash peeled and cut into small chunks",
+        "measurements": [
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "500g pack  gnocchi",
+      "expected": {
+        "item": "pack  gnocchi",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200g young leaf spinach",
+      "expected": {
+        "item": "young leaf spinach",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g vegetarian goat's cheese",
+      "expected": {
+        "item": "vegetarian goat's cheese",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

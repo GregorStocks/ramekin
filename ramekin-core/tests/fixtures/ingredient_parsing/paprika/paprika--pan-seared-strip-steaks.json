@@ -1,0 +1,44 @@
+{
+  "source": "paprika",
+  "recipe_slug": "pan-seared-strip-steaks",
+  "ingredients": [
+    {
+      "raw": "Gather Your Ingredients",
+      "expected": {
+        "item": "Gather Your Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (12- to 16-ounce) boneless strip steaks, 1½ inches thick, trimmed",
+      "expected": {
+        "item": "boneless strip steaks, 1 1/2 inches thick",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "trimmed"
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

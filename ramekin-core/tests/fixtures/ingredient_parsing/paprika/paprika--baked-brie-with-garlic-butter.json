@@ -1,0 +1,150 @@
+{
+  "source": "paprika",
+  "recipe_slug": "baked-brie-with-garlic-butter",
+  "ingredients": [
+    {
+      "raw": "1 pound mushrooms, any kind",
+      "expected": {
+        "item": "mushrooms, any kind",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons capers, drained and chopped",
+      "expected": {
+        "item": "capers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "drained and chopped"
+      }
+    },
+    {
+      "raw": "3 large garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt (I’m using Diamond, use half of other brands)",
+      "expected": {
+        "item": "kosher salt (I’m using Diamond, use half of other brands)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons cold unsalted butter, cut into pieces",
+      "expected": {
+        "item": "cold unsalted butter, cut into pieces",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice of half a lemon",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chopped flat-leaf parsley",
+      "expected": {
+        "item": "chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8-ounce wheel of brie (or camembert)",
+      "expected": {
+        "item": "-ounce wheel of brie (or camembert)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "A few sprigs of thyme (optional)",
+      "expected": {
+        "item": "A few sprigs of thyme",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Toasted baguette slices",
+      "expected": {
+        "item": "Toasted baguette slices",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

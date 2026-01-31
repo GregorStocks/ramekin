@@ -1,0 +1,75 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-baked-ranch-chicken",
+  "ingredients": [
+    {
+      "raw": "1 ounce ranch dressing mix",
+      "expected": {
+        "item": "ranch dressing mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup breadcrumbs",
+      "expected": {
+        "item": "breadcrumbs",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup parmesan cheese (freshly grated)",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated"
+      }
+    },
+    {
+      "raw": "4  chicken breasts (skinless and boneless)",
+      "expected": {
+        "item": "chicken breasts (skinless and boneless)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "jambalaya-recipe",
+  "ingredients": [
+    {
+      "raw": "3 tablespoon olive oil (divided)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 pound Andouille sausage ((or any smoked sausage))",
+      "expected": {
+        "item": "Andouille sausage (or any smoked sausage)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ pounds boneless skinless chicken breasts or thighs (chopped into 1-inch cubes)",
+      "expected": {
+        "item": "boneless skinless chicken breasts or thighs",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped into 1-inch cubes"
+      }
+    },
+    {
+      "raw": "3 tablespoon Cajun seasoning (divided and adjusted to suit your own personal taste/heat preference)",
+      "expected": {
+        "item": "Cajun seasoning",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided and adjusted to suit your own personal taste/heat preference"
+      }
+    },
+    {
+      "raw": "2 medium yellow onions (diced)",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 green  bell pepper (seeded and diced)",
+      "expected": {
+        "item": "green  bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "1 red bell pepper (seeded and diced)",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "3 stalks  celery (diced)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "stalk"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "6 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon cayenne",
+      "expected": {
+        "item": "cayenne",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Italian seasoning",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (14 ounce) can diced/crushed tomatoes",
+      "expected": {
+        "item": "diced/crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups uncooked long-grain white rice (rinsed and drained thoroughly)",
+      "expected": {
+        "item": "uncooked long-grain white rice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed and drained thoroughly"
+      }
+    },
+    {
+      "raw": "2¾ cups low sodium chicken broth",
+      "expected": {
+        "item": "low sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "2 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup okra (thinly sliced (or 1 tsp file powder), optional)",
+      "expected": {
+        "item": "okra, optional)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thinly sliced (or 1 tsp file powder"
+      }
+    },
+    {
+      "raw": "1 pound  raw shrimp (thawed, peeled, and deveined)",
+      "expected": {
+        "item": "raw shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed, peeled, and deveined"
+      }
+    },
+    {
+      "raw": "fresh chopped parsley (to garnish)",
+      "expected": {
+        "item": "fresh chopped parsley (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "chopped green onion (to garnish)",
+      "expected": {
+        "item": "chopped green onion (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

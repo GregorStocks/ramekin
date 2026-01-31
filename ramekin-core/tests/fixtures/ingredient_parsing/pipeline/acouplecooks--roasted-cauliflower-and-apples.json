@@ -1,0 +1,96 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "roasted-cauliflower-and-apples",
+  "ingredients": [
+    {
+      "raw": "1 large cauliflower (2¼ pounds whole; 7 cups chopped)",
+      "expected": {
+        "item": "cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "2 1/4 pounds whole; 7 cups chopped"
+      }
+    },
+    {
+      "raw": "1 large red onion",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 crisp tart apples (like Honey Crisp, Jonathon or Jonagold, Granny Smith, Gala, or Fuji)",
+      "expected": {
+        "item": "crisp tart apples (like Honey Crisp, Jonathon or Jonagold, Granny Smith, Gala, or Fuji)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh dill (do not substitute dried)",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "do not substitute dried"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh ground black pepper",
+      "expected": {
+        "item": "Fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-one-pot-beef-ragu-past",
+  "ingredients": [
+    {
+      "raw": "1 pound ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 medium carrot (chopped)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 stalk celery (chopped)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stalk"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano  (or 1 tbsp fresh oregano chopped)",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 tbsp fresh oregano chopped"
+      }
+    },
+    {
+      "raw": "½ cup red wine",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups beef broth (low sodium or no sodium added)",
+      "expected": {
+        "item": "beef broth (low sodium or no sodium added)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup crushed tomatoes",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "¼ teaspoon pepper (or to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 pound fettuccine (uncooked, or pasta of your choice)",
+      "expected": {
+        "item": "fettuccine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "uncooked, or pasta of your choice"
+      }
+    },
+    {
+      "raw": "4 cups vegetable broth (low sodium)",
+      "expected": {
+        "item": "vegetable broth (low sodium)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons parsley (chopped, for garnish)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped, for garnish"
+      }
+    },
+    {
+      "raw": "Parmesan cheese (grated, for serving)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [],
+        "note": "grated, for serving"
+      }
+    }
+  ]
+}

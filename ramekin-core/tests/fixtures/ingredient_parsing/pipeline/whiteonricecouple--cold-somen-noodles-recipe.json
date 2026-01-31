@@ -1,0 +1,133 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "cold-somen-noodles-recipe",
+  "ingredients": [
+    {
+      "raw": "14 oz. dried somen noodles",
+      "expected": {
+        "item": "dried somen noodles",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon grated or minced garlic",
+      "expected": {
+        "item": "grated or minced garlic",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon grated ginger",
+      "expected": {
+        "item": "grated ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Japanese soy sauce",
+      "expected": {
+        "item": "Japanese soy sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon chili paste (, chili garlic sauce or chili flakes)",
+      "expected": {
+        "item": "chili paste (, chili garlic sauce or chili flakes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "green onions for garnish",
+      "expected": {
+        "item": "green onions for garnish",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "water to dilute the sauce if it's too salty ((optional))",
+      "expected": {
+        "item": "water to dilute the sauce if it's too salty",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "steamed vegetables ((optional))",
+      "expected": {
+        "item": "steamed vegetables",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "grilled meat ((optional))",
+      "expected": {
+        "item": "grilled meat",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

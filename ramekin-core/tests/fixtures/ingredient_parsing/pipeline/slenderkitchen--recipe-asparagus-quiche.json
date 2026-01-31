@@ -1,0 +1,139 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-asparagus-quiche",
+  "ingredients": [
+    {
+      "raw": "1/2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6.8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 lb asparagus",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 chopped red onion",
+      "expected": {
+        "item": "chopped red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "6 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup nonfat milk",
+      "expected": {
+        "item": "nonfat milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup shredded part skim mozzarella cheese",
+      "expected": {
+        "item": "shredded part skim mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup crumbled feta cheese",
+      "expected": {
+        "item": "crumbled feta cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 refrigerated pie crust",
+      "expected": {
+        "item": "refrigerated pie crust",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

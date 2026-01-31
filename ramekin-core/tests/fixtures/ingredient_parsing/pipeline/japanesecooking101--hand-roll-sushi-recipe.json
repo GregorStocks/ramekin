@@ -1,0 +1,113 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "hand-roll-sushi-recipe",
+  "ingredients": [
+    {
+      "raw": "1 recipe Sushi Rice",
+      "expected": {
+        "item": "recipe Sushi Rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 sheets nori roasted seaweed (large, cut into quarters)",
+      "expected": {
+        "item": "sheets nori roasted seaweed",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  cans tuna (drained)",
+      "expected": {
+        "item": "tuna",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "4 Tbsp mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Japanese or Persian cucumber (cut into julienne)",
+      "expected": {
+        "item": "Japanese or Persian cucumber (cut into julienne)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
+      "expected": {
+        "item": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

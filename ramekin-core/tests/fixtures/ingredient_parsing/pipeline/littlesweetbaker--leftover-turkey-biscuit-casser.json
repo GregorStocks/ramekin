@@ -1,0 +1,96 @@
+{
+  "source": "littlesweetbaker",
+  "recipe_slug": "leftover-turkey-biscuit-casser",
+  "ingredients": [
+    {
+      "raw": "2 cups leftover turkey (diced or shredded)",
+      "expected": {
+        "item": "leftover turkey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced or shredded"
+      }
+    },
+    {
+      "raw": "3 cups leftover vegetables (or frozen vegetables, drained &amp;amp; thawed)",
+      "expected": {
+        "item": "leftover vegetables",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or frozen vegetables, drained & thawed"
+      }
+    },
+    {
+      "raw": "1  can condensed cream of mushroom soup (or any kind of condensed cream soup)",
+      "expected": {
+        "item": "condensed cream of mushroom soup (or any kind of condensed cream soup)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 &amp;amp; 1/2 cups milk",
+      "expected": {
+        "item": "& 1/2 cups milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tbsp all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  container refrigerated biscuits",
+      "expected": {
+        "item": "container refrigerated biscuits",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt &amp;amp; pepper to taste",
+      "expected": {
+        "item": "salt & pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

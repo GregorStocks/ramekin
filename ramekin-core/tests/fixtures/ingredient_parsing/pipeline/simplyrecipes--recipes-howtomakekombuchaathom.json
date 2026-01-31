@@ -1,0 +1,83 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtomakekombuchaathom",
+  "ingredients": [
+    {
+      "raw": "3 1/2 quarts water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sugar (table sugar, turbinado, demerara, sugar in the raw, or brown sugar)",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "table sugar, turbinado, demerara, sugar in the raw, or brown sugar"
+      }
+    },
+    {
+      "raw": "8 bags caffeinated tea, or 4 tablespoons looseleaf tea (black, green, or white)",
+      "expected": {
+        "item": "caffeinated tea",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "bag"
+          }
+        ],
+        "note": "or 4 tablespoons looseleaf tea (black, green, or white)"
+      }
+    },
+    {
+      "raw": "2 cups prepared unflavored kombucha",
+      "expected": {
+        "item": "prepared unflavored kombucha",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 scoby",
+      "expected": {
+        "item": "scoby",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "To flavor:&nbsp;2 to 3 cups of juice, 1 to 2 cups chopped fruit, 2 to 4 tablespoons fresh herbs or spices",
+      "expected": {
+        "item": "To flavor: 2 to 3 cups of juice, 1 to 2 cups chopped fruit",
+        "measurements": [],
+        "note": "2 to 4 tablespoons fresh herbs or spices"
+      }
+    }
+  ]
+}

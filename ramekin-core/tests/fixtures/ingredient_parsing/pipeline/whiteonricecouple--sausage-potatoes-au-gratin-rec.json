@@ -1,0 +1,113 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "sausage-potatoes-au-gratin-rec",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds uncooked sausage",
+      "expected": {
+        "item": "uncooked sausage",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 pounds Yukon Gold Potatoes (, or similar potato)",
+      "expected": {
+        "item": "Yukon Gold Potatoes (, or similar potato)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Tablespoon Kosher Salt (, or to taste)",
+      "expected": {
+        "item": "Kosher Salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 teaspoons fresh cracked coarse Black Pepper",
+      "expected": {
+        "item": "fresh cracked coarse Black Pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly grated Nutmeg",
+      "expected": {
+        "item": "freshly grated Nutmeg",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 cups Heavy Cream (, or more if needed)",
+      "expected": {
+        "item": "Heavy Cream",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "833",
+            "unit": "g"
+          }
+        ],
+        "note": "or more if needed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "source": "paprika",
+  "recipe_slug": "japanese-potato-salad",
+  "ingredients": [
+    {
+      "raw": "2X 3X",
+      "expected": {
+        "item": "X 3X",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 russet potatoes (1.15 lb, 520 g)",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "1.15",
+            "unit": "lb"
+          },
+          {
+            "amount": "520",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp Diamond Crystal kosher salt (for cooking the potatoes)",
+      "expected": {
+        "item": "Diamond Crystal kosher salt (for cooking the potatoes)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 inches carrot (2 oz, 60 g)",
+      "expected": {
+        "item": "inches carrot",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup frozen or canned corn",
+      "expected": {
+        "item": "frozen or canned corn",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg (50 g each w/o shell)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Persian cucumber (or ½ Japanese cucumber; 3 oz, 90 g)",
+      "expected": {
+        "item": "Persian cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp Diamond Crystal kosher salt (for the cucumber)",
+      "expected": {
+        "item": "Diamond Crystal kosher salt (for the cucumber)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 slices Black Forest ham (1.9 oz, 54 g)",
+      "expected": {
+        "item": "Black Forest ham",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          },
+          {
+            "amount": "1.9",
+            "unit": "oz"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "For the Seasonings:",
+      "expected": {
+        "item": "For the Seasonings:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp rice vinegar (unseasoned) (or use ½ Tbsp lemon juice/apple cider/Champagne vinegar/white wine vinegar)",
+      "expected": {
+        "item": "rice vinegar (unseasoned) (or use 1/2 Tbsp lemon juice/apple cider/Champagne vinegar/white wine vinegar)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "6 Tbsp Japanese Kewpie mayonnaise (divided; add 4 Tbsp first, then add more to taste)",
+      "expected": {
+        "item": "Japanese Kewpie mayonnaise",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided; add 4 Tbsp first, then add more to taste"
+      }
+    }
+  ]
+}

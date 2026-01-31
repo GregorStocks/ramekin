@@ -1,0 +1,61 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "pesto-recipe",
+  "ingredients": [
+    {
+      "raw": "1  large bunch of basil, (leaves only, washed and dried)",
+      "expected": {
+        "item": "bunch of basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "leaves only, washed and dried"
+      }
+    },
+    {
+      "raw": "3  medium cloves of garlic",
+      "expected": {
+        "item": "cloves of garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "one small handful of raw pine nuts",
+      "expected": {
+        "item": "handful of raw pine nuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "roughly 3/4 cup Parmesan, (loosely packed and freshly grated)",
+      "expected": {
+        "item": "roughly 3/4 cup Parmesan",
+        "measurements": [],
+        "note": "loosely packed and freshly grated"
+      }
+    },
+    {
+      "raw": "A few tablespoons of extra-virgin olive oil",
+      "expected": {
+        "item": "A few tablespoons of extra-virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

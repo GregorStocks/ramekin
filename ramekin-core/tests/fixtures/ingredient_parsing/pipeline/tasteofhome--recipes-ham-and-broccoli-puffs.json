@@ -1,0 +1,130 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-ham-and-broccoli-puffs",
+  "ingredients": [
+    {
+      "raw": "4 cups frozen broccoli florets, thawed and finely chopped",
+      "expected": {
+        "item": "frozen broccoli florets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed and finely chopped"
+      }
+    },
+    {
+      "raw": "1 carton (8 ounces) spreadable chive and onion cream cheese",
+      "expected": {
+        "item": "carton spreadable chive and onion cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded Swiss cheese",
+      "expected": {
+        "item": "shredded Swiss cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 pound thinly sliced deli ham, finely chopped",
+      "expected": {
+        "item": "thinly sliced deli ham",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup finely chopped fresh mushrooms",
+      "expected": {
+        "item": "finely chopped fresh mushrooms",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 package (17.3 ounces) frozen puff pastry, thawed",
+      "expected": {
+        "item": "frozen puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "17.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "2 large eggs, beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten"
+      }
+    }
+  ]
+}

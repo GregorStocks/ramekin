@@ -1,0 +1,122 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-06-carrot-and-apple-doggi",
+  "ingredients": [
+    {
+      "raw": "2 cups 315 g brown rice flour",
+      "expected": {
+        "item": "315 g brown rice flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 235 g unsweet applesauce",
+      "expected": {
+        "item": "235 g unsweet applesauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup 80 ml filtered water",
+      "expected": {
+        "item": "80 ml filtered water",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  medium organic apple finely diced (about 105 g)",
+      "expected": {
+        "item": "organic apple finely diced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "105",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  large carrot (grated (about 25 g))",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "large"
+          }
+        ],
+        "note": "grated (about 25 g"
+      }
+    },
+    {
+      "raw": "2 tablespoons coconut oil (melted, plus more for greasing the pan)",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "melted, plus more for greasing the pan"
+      }
+    }
+  ]
+}

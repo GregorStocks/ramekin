@@ -1,0 +1,126 @@
+{
+  "source": "paprika",
+  "recipe_slug": "falafel",
+  "ingredients": [
+    {
+      "raw": "1/2 pound (1 1/4 cups or 225 grams) dried chickpeas",
+      "expected": {
+        "item": "dried chickpeas",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 a large onion, roughly chopped or 1 cup chopped scallions",
+      "expected": {
+        "item": "a large onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped or 1 cup chopped scallions"
+      }
+    },
+    {
+      "raw": "2 to 4 garlic cloves, peeled",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2 to 4",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped fresh parsley, if you’re measuring, or a big handful",
+      "expected": {
+        "item": "finely chopped fresh parsley, if you’re measuring, or a big handful",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped fresh cilantro, if you’re measuring, or a big handful",
+      "expected": {
+        "item": "finely chopped fresh cilantro, if you’re measuring, or a big handful",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoons fine sea salt or 2 teaspoons kosher salt, plus more to taste",
+      "expected": {
+        "item": "fine sea salt or 2 teaspoons kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/2 to 1 teaspoon hot red pepper flakes or mild ones such as urfa biber or Aleppo",
+      "expected": {
+        "item": "hot red pepper flakes or mild ones such as urfa biber or Aleppo",
+        "measurements": [
+          {
+            "amount": "1/2 to 1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Peanut or vegetable oil for frying",
+      "expected": {
+        "item": "Peanut or vegetable oil for frying",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

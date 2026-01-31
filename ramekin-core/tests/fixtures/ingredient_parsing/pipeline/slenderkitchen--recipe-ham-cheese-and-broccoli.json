@@ -1,0 +1,123 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-ham-cheese-and-broccoli",
+  "ingredients": [
+    {
+      "raw": "9 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup skim milk (or milk of choice)",
+      "expected": {
+        "item": "skim milk (or milk of choice)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shredded cheddar cheese",
+      "expected": {
+        "item": "shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Parmesan cheese",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup boneless lean ham, diced",
+      "expected": {
+        "item": "boneless lean ham",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 cups cooked broccoli, diced",
+      "expected": {
+        "item": "cooked broccoli",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 green onions, diced",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3/4 tsp. kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp. black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

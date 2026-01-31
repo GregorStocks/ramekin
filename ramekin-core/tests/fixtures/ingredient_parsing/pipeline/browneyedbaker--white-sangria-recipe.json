@@ -1,0 +1,92 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "white-sangria-recipe",
+  "ingredients": [
+    {
+      "raw": "2  large oranges (1 cut into ¼-inch-thick slices, the other 1 juiced)",
+      "expected": {
+        "item": "oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large lemon (cut into ¼-inch-thick slices)",
+      "expected": {
+        "item": "lemon (cut into 1/4-inch-thick slices)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons Grand Marnier (or other orange-flavored liquor, i.e. Triple Sec or Cointreau)",
+      "expected": {
+        "item": "Grand Marnier (or other orange-flavored liquor, i.e. Triple Sec or Cointreau)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bottle white wine (Pinot Grigio or Chardonnay, preferably), chilled ((750-mL ))",
+      "expected": {
+        "item": "white wine (Pinot Grigio or Chardonnay, preferably)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": "chilled (750-mL )"
+      }
+    },
+    {
+      "raw": "6 to 8  ice cubes",
+      "expected": {
+        "item": "ice cubes",
+        "measurements": [
+          {
+            "amount": "6 to 8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

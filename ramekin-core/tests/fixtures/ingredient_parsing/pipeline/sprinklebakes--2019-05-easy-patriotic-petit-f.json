@@ -1,0 +1,64 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2019-05-easy-patriotic-petit-f",
+  "ingredients": [
+    {
+      "raw": "1  16 oz. Sara Lee frozen all-butter pound cake, thawed",
+      "expected": {
+        "item": "16 oz. Sara Lee frozen all-butter pound cake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "3  tubs (16 oz. each ready-made classic vanilla frosting (not the whipped variety))",
+      "expected": {
+        "item": "tubs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red and sky blue gel food color",
+      "expected": {
+        "item": "Red and sky blue gel food color",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Gold star sprinkles",
+      "expected": {
+        "item": "Gold star sprinkles",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Edible gold glitter (optional)",
+      "expected": {
+        "item": "Edible gold glitter",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

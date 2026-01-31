@@ -1,0 +1,53 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-sweet-potato-hash-brow",
+  "ingredients": [
+    {
+      "raw": "1  medium sweet potato",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  shallot",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "2 tbsp ghee (or avocado oil)",
+      "expected": {
+        "item": "ghee (or avocado oil)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

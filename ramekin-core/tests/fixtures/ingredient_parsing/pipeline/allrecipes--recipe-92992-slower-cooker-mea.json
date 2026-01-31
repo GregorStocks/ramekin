@@ -1,0 +1,75 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-92992-slower-cooker-mea",
+  "ingredients": [
+    {
+      "raw": "2 pounds lean ground beef",
+      "expected": {
+        "item": "lean ground beef",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs, beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "3 tablespoons dry onion soup mix",
+      "expected": {
+        "item": "dry onion soup mix",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons steak seasoning",
+      "expected": {
+        "item": "steak seasoning",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "honey-whole-wheat-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pkg dry active yeast",
+      "expected": {
+        "item": "dry active yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 cup very warm water (divided)",
+      "expected": {
+        "item": "very warm water",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/4 cup + 1 tsp honey",
+      "expected": {
+        "item": "+ 1 tsp honey",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp butter (melted)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-3 1/2 cups whole wheat flour",
+      "expected": {
+        "item": "1/2 cups whole wheat flour",
+        "measurements": [
+          {
+            "amount": "3-3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

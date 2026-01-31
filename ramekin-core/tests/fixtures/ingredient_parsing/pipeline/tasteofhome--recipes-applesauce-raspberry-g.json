@@ -1,0 +1,62 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-applesauce-raspberry-g",
+  "ingredients": [
+    {
+      "raw": "3 cups unsweetened applesauce",
+      "expected": {
+        "item": "unsweetened applesauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 packages (3 ounces each) raspberry gelatin",
+      "expected": {
+        "item": "raspberry gelatin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          },
+          {
+            "amount": "3",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-1/2 cups lemon-lime soda",
+      "expected": {
+        "item": "lemon-lime soda",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "shrimp-ceviche-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds shrimp (peeled and cooked)",
+      "expected": {
+        "item": "shrimp",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cooked"
+      }
+    },
+    {
+      "raw": "1  small red onion (diced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2  jalapenos (seeds removed then minced)",
+      "expected": {
+        "item": "jalapenos",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeds removed then minced"
+      }
+    },
+    {
+      "raw": "1 cup cucumber (finely diced)",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "2 cups Roma tomatoes (seeded and diced)",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "1/2 cup cilantro leaves (finely chopped)",
+      "expected": {
+        "item": "cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2  avocados (seeded and chopped)",
+      "expected": {
+        "item": "avocados",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeded and chopped"
+      }
+    },
+    {
+      "raw": "2  large mangos (seeded and chopped)",
+      "expected": {
+        "item": "mangos",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "seeded and chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Zest of 1 lime",
+      "expected": {
+        "item": "Zest of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt to taste",
+      "expected": {
+        "item": "Salt to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Tortilla chips (for serving)",
+      "expected": {
+        "item": "Tortilla chips",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

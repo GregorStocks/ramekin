@@ -1,0 +1,112 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "oatmeal-cookie-ice-cream-recip",
+  "ingredients": [
+    {
+      "raw": "2 cups heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional: 1-2 teaspoons ground cinnamon",
+      "expected": {
+        "item": "optional: 1-2 teaspoons ground cinnamon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6-8  oatmeal raisin cookies ((about 3 cups worth, broken into bite-size pieces))",
+      "expected": {
+        "item": "oatmeal raisin cookies",
+        "measurements": [
+          {
+            "amount": "6-8",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

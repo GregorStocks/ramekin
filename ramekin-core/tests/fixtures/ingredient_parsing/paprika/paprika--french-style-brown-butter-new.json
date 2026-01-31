@@ -1,0 +1,94 @@
+{
+  "source": "paprika",
+  "recipe_slug": "french-style-brown-butter-new",
+  "ingredients": [
+    {
+      "raw": "1 stick unsalted butter (4 ounces; 113g), cut into 1/2-inch pieces (see notes)",
+      "expected": {
+        "item": "unsalted butter, cut into 1/2-inch pieces (see notes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound (450 g) small new potatoes, rinsed (see notes)",
+      "expected": {
+        "item": "small new potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed (see notes)"
+      }
+    },
+    {
+      "raw": "Kosher or sea salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher or sea salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 sprigs fresh thyme or rosemary (optional)",
+      "expected": {
+        "item": "fresh thyme or rosemary",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "sprig"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 garlic cloves (optional)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Sliced chives, for serving",
+      "expected": {
+        "item": "Sliced chives",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Crème fraîche, for serving",
+      "expected": {
+        "item": "Crème fraîche",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

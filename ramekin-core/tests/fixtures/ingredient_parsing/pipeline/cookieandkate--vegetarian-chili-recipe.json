@@ -1,0 +1,276 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "vegetarian-chili-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium red onion, chopped",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 large red bell pepper, chopped",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 medium carrots, chopped",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 ribs celery, chopped",
+      "expected": {
+        "item": "ribs celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "&amp;frac12; teaspoon salt, divided",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, pressed or minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "pressed or minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons chili powder*",
+      "expected": {
+        "item": "chili powder*",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 &amp;frac12; teaspoons smoked paprika*",
+      "expected": {
+        "item": "smoked paprika*",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large can (28 ounces) or 2 small cans (15 ounces each) diced tomatoes**, with their juices",
+      "expected": {
+        "item": "can",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "28",
+            "unit": "oz"
+          },
+          {
+            "amount": "15",
+            "unit": "oz each"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": "or 2 small cans diced tomatoes**, with their juices"
+      }
+    },
+    {
+      "raw": "2 cans (15 ounces each) black beans, rinsed and drained",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz each"
+          }
+        ],
+        "note": "rinsed and drained"
+      }
+    },
+    {
+      "raw": "1 can (15 ounces) pinto beans, rinsed and drained",
+      "expected": {
+        "item": "pinto beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and drained"
+      }
+    },
+    {
+      "raw": "2 cups vegetable broth or water",
+      "expected": {
+        "item": "vegetable broth or water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh cilantro, plus more for garnishing",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for garnishing"
+      }
+    },
+    {
+      "raw": "1 to 2 teaspoons sherry vinegar or red wine vinegar or lime juice, to taste",
+      "expected": {
+        "item": "sherry vinegar or red wine vinegar or lime juice",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Garnishes: chopped cilantro, sliced avocado, tortilla chips, sour cream or crème fraîche, grated cheddar cheese, etc.",
+      "expected": {
+        "item": "Garnishes: chopped cilantro, sliced avocado, tortilla chips, sour cream or crème fraîche, grated cheddar cheese, etc.",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

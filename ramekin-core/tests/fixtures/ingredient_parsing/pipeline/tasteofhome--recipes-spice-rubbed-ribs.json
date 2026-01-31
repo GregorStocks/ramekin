@@ -1,0 +1,127 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-spice-rubbed-ribs",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons plus 1 teaspoon salt",
+      "expected": {
+        "item": "2 tablespoons plus 1 teaspoon salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 1 teaspoon salt"
+      }
+    },
+    {
+      "raw": "2 tablespoons plus 1 teaspoon garlic powder",
+      "expected": {
+        "item": "2 tablespoons plus 1 teaspoon garlic powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 1 teaspoon garlic powder"
+      }
+    },
+    {
+      "raw": "2 tablespoons cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 teaspoons onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 teaspoons dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 teaspoons dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 teaspoons pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 pounds pork baby back ribs",
+      "expected": {
+        "item": "pork baby back ribs",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "lb"
+          },
+          {
+            "amount": "4536",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

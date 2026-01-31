@@ -1,0 +1,132 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "creamy-eggless-chocolate-frost",
+  "ingredients": [
+    {
+      "raw": "7 ounces plain or toasted sugar (1 cup; 195g)",
+      "expected": {
+        "item": "plain or toasted sugar",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "195",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces Dutch cocoa powder, such as Cacao Barry Extra Brute (about 2/3 cup, spooned; 55g); see note",
+      "expected": {
+        "item": "Dutch cocoa powder, such as Cacao Barry Extra Brute ; see note",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon (1g) Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "32 ounces milk, any percentage will do (4 cups; 910g)",
+      "expected": {
+        "item": "milk, any percentage will do",
+        "measurements": [
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "910",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces heavy cream (3/4 cup; 170g)",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces unsalted butter (about 3 sticks; 340g), softened to about 70°F (21°C)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "3",
+            "unit": "stick"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          },
+          {
+            "amount": "21",
+            "unit": null
+          }
+        ],
+        "note": "softened to about 70°F"
+      }
+    }
+  ]
+}

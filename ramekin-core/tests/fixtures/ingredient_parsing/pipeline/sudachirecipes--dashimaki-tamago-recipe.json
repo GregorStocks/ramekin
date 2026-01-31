@@ -1,0 +1,114 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "dashimaki-tamago-recipe",
+  "ingredients": [
+    {
+      "raw": "4  egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp cooking oil",
+      "expected": {
+        "item": "cooking oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp grated daikon radish (daikon oroshi) (optional)",
+      "expected": {
+        "item": "grated daikon radish (daikon oroshi) (optional)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

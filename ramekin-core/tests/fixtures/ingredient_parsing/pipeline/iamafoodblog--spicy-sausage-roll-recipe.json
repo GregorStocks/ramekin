@@ -1,0 +1,144 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spicy-sausage-roll-recipe",
+  "ingredients": [
+    {
+      "raw": "1 teaspoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small shallot, minced",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon spicy korean seasoning, or crushed red pepper flakes",
+      "expected": {
+        "item": "spicy korean seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or crushed red pepper flakes"
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 pound lean ground pork",
+      "expected": {
+        "item": "lean ground pork",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon sliced green onions",
+      "expected": {
+        "item": "sliced green onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons panko or breadcrumbs",
+      "expected": {
+        "item": "panko or breadcrumbs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp freshly ground pepper",
+      "expected": {
+        "item": "freshly ground pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 x 10 inch sheet of frozen puff pastry, thawed and cut in half",
+      "expected": {
+        "item": "x 10 inch sheet of frozen puff pastry",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "thawed and cut in half"
+      }
+    }
+  ]
+}

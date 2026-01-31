@@ -1,0 +1,84 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-almond-orange-smoothie",
+  "ingredients": [
+    {
+      "raw": "2  navel oranges (peeled)",
+      "expected": {
+        "item": "navel oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "2  cara cara oranges (peeled)",
+      "expected": {
+        "item": "cara cara oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1  banana, (peeled)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  vanilla bean (scraped (or 1/2 tsp vanilla extract))",
+      "expected": {
+        "item": "vanilla bean (scraped (or 1/2 tsp vanilla extract)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp almond butter",
+      "expected": {
+        "item": "almond butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

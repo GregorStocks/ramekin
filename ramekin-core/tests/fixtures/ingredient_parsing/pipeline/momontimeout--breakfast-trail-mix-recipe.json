@@ -1,0 +1,97 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "breakfast-trail-mix-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup dried cranberries",
+      "expected": {
+        "item": "dried cranberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup pistachios, shelled",
+      "expected": {
+        "item": "pistachios, shelled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup dried banana chips",
+      "expected": {
+        "item": "dried banana chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups Honey Nut Cheerios (or your favorite cereal)",
+      "expected": {
+        "item": "Honey Nut Cheerios (or your favorite cereal)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups yogurt covered pretzels",
+      "expected": {
+        "item": "yogurt covered pretzels",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup white chocolate chips (optional)",
+      "expected": {
+        "item": "white chocolate chips",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "3/4 cup  miniature marshmallows (optional)",
+      "expected": {
+        "item": "miniature marshmallows",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

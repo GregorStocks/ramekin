@@ -1,0 +1,147 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32337015",
+  "ingredients": [
+    {
+      "raw": "1/2 head green cabbage, thinly sliced",
+      "expected": {
+        "item": "green cabbage",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "head"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1/2 head purple cabbage, thinly sliced",
+      "expected": {
+        "item": "purple cabbage",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "head"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "3 mini sweet peppers (in 2 different colors), thinly sliced",
+      "expected": {
+        "item": "mini sweet peppers (in 2 different colors)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 whole carrots, shredded",
+      "expected": {
+        "item": "whole carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1/2 c. mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 c. whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp. sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp. white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt, to taste",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Couple dashes hot sauce",
+      "expected": {
+        "item": "Couple dashes hot sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 c. fresh cilantro leaves",
+      "expected": {
+        "item": "fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

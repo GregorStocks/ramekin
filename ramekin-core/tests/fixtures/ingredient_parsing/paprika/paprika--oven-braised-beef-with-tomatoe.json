@@ -1,0 +1,49 @@
+{
+  "source": "paprika",
+  "recipe_slug": "oven-braised-beef-with-tomatoe",
+  "ingredients": [
+    {
+      "raw": "1 28-ounce can whole tomatoes",
+      "expected": {
+        "item": "whole tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (3 to 3 1/2 pound) boneless beef chuck roast, tied with a string",
+      "expected": {
+        "item": "boneless beef chuck roast, tied with a string",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "3 to 3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 head garlic, separated into cloves, left unpeeled",
+      "expected": {
+        "item": "garlic, separated into cloves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "left unpeeled"
+      }
+    }
+  ]
+}

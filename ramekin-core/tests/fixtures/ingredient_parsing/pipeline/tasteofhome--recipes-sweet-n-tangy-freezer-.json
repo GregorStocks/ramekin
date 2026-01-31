@@ -1,0 +1,109 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-sweet-n-tangy-freezer-",
+  "ingredients": [
+    {
+      "raw": "2 pounds pickling cucumbers (about 8 to 10 medium), trimmed and thinly sliced",
+      "expected": {
+        "item": "pickling cucumbers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "8 to 10",
+            "unit": "medium"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and thinly sliced"
+      }
+    },
+    {
+      "raw": "3 medium onions, thinly sliced",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 large green pepper, chopped",
+      "expected": {
+        "item": "green pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 tablespoons salt, divided",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 teaspoons celery seed",
+      "expected": {
+        "item": "celery seed",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

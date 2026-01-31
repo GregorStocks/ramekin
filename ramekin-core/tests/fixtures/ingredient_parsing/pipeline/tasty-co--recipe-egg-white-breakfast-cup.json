@@ -1,0 +1,78 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-egg-white-breakfast-cup",
+  "ingredients": [
+    {
+      "raw": "nonstick cooking spray, for greasing",
+      "expected": {
+        "item": "nonstick cooking spray, for greasing",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups spinach",
+      "expected": {
+        "item": "spinach",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 roma tomato",
+      "expected": {
+        "item": "roma tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups egg white",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "russian-apple-kvas-recipe",
+  "ingredients": [
+    {
+      "raw": "8 cups apple juice",
+      "expected": {
+        "item": "apple juice",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp dark molasses (or 1 tsp instant coffee)",
+      "expected": {
+        "item": "dark molasses (or 1 tsp instant coffee)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups filtered water",
+      "expected": {
+        "item": "filtered water",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

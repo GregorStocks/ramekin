@@ -1,0 +1,143 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "honey-lime-fruit-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound strawberries (washed, hulled and sliced)",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "washed, hulled and sliced"
+      }
+    },
+    {
+      "raw": "3  kiwi fruits (peeled and sliced into half moons)",
+      "expected": {
+        "item": "kiwi fruits",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced into half moons"
+      }
+    },
+    {
+      "raw": "2  mangoes (peeled and diced)",
+      "expected": {
+        "item": "mangoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "10 ounces blueberries (washed)",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "washed"
+      }
+    },
+    {
+      "raw": "1 cup green grapes (halved)",
+      "expected": {
+        "item": "green grapes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "9 ounce pineapple (canned chunks or pieces, or 1/2 of a fresh pineapple, peeled and diced)",
+      "expected": {
+        "item": "pineapple",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": "canned chunks or pieces, or 1/2 of a fresh pineapple, peeled and diced"
+      }
+    },
+    {
+      "raw": "3 tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lime juice (fresh squeezed)",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "fresh squeezed"
+      }
+    },
+    {
+      "raw": "1 tablespoon pineapple juice (from the canned pineapple, if using)",
+      "expected": {
+        "item": "pineapple juice (from the canned pineapple, if using)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

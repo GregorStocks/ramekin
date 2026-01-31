@@ -1,0 +1,109 @@
+{
+  "source": "keviniscooking",
+  "recipe_slug": "authentic-guacamole-recipe",
+  "ingredients": [
+    {
+      "raw": "4  medium avocados ((about 2 lbs))",
+      "expected": {
+        "item": "avocados",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lime or lemon",
+      "expected": {
+        "item": "lime or lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  white onion (small )",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  roma tomato ((plum), seeded and chopped)",
+      "expected": {
+        "item": "roma tomato (plum)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and chopped)"
+      }
+    },
+    {
+      "raw": "2-3  serrano chilis (seeded and minced)",
+      "expected": {
+        "item": "serrano chilis",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": null
+          }
+        ],
+        "note": "seeded and minced"
+      }
+    },
+    {
+      "raw": "1/4 cup cilantro (chopped)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 tsp kosher salt (to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    }
+  ]
+}

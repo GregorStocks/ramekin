@@ -1,0 +1,61 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "hiyayakko-cold-tofu-salad-reci",
+  "ingredients": [
+    {
+      "raw": "2  green onions",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ginger root (about 2\")",
+      "expected": {
+        "item": "ginger root",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "400 g Tofu",
+      "expected": {
+        "item": "Tofu",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Katsuobushi (dried bonito flakes)",
+      "expected": {
+        "item": "Katsuobushi",
+        "measurements": [],
+        "note": "dried bonito flakes"
+      }
+    },
+    {
+      "raw": "soy sauce (or optionally Ponzu Sauce)",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [],
+        "note": "or optionally Ponzu Sauce"
+      }
+    }
+  ]
+}

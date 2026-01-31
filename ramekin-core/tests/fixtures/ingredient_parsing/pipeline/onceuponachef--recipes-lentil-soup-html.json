@@ -1,0 +1,187 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-lentil-soup-html",
+  "ingredients": [
+    {
+      "raw": "3  slices bacon, finely chopped",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large yellow onion, finely chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1  stalk celery, finely chopped",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stalk"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 medium carrots, diced",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3  cloves garlic, chopped",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 14.5-oz can diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14.5-oz can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups chicken broth, best quality such as Swanson",
+      "expected": {
+        "item": "chicken broth, best quality such as Swanson",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup French lentils (lentilles du Puy) or common brown or green lentils",
+      "expected": {
+        "item": "French lentils (lentilles du Puy) or common brown or green lentils",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "A few tablespoons chopped fresh parsley, for garnish (optional)",
+      "expected": {
+        "item": "A few tablespoons chopped fresh parsley, for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

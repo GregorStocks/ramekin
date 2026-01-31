@@ -1,0 +1,87 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-swordfish-sicilian-sty",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh oregano or 1 teaspoon dried",
+      "expected": {
+        "item": "chopped fresh oregano",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 teaspoon dried"
+      }
+    },
+    {
+      "raw": "1/4 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground pepper",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pounds swordfish steaks, cut 1/2 inch thick",
+      "expected": {
+        "item": "swordfish steaks, cut 1/2 inch thick",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

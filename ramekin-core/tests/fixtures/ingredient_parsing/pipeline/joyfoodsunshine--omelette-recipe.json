@@ -1,0 +1,152 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "omelette-recipe",
+  "ingredients": [
+    {
+      "raw": "½ Tablespoon salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup sharp cheddar cheese (shredded)",
+      "expected": {
+        "item": "sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1 teaspoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup vegetables (diced small (bell pepper, zucchini, onion, etc.))",
+      "expected": {
+        "item": "vegetables",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced small (bell pepper, zucchini, onion, etc."
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoon minced onion",
+      "expected": {
+        "item": "minced onion",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 slices bacon (diced)",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": "diced"
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "source": "paprika",
+  "recipe_slug": "spam-onigirazu",
+  "ingredients": [
+    {
+      "raw": "2 slices spam meat (1/2\" thick)",
+      "expected": {
+        "item": "spam meat",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp oil (divided)",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 leaves lettuce",
+      "expected": {
+        "item": "leaves lettuce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups steamed rice",
+      "expected": {
+        "item": "steamed rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sheets Nori (roasted seaweed)",
+      "expected": {
+        "item": "sheets Nori",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "roasted seaweed"
+      }
+    }
+  ]
+}

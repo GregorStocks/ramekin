@@ -1,0 +1,130 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "hamburger-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup Barbecue sauce",
+      "expected": {
+        "item": "Barbecue sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons Montreal steak seasoning (divided)",
+      "expected": {
+        "item": "Montreal steak seasoning",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 Tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ketchup",
+      "expected": {
+        "item": "Ketchup",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Mustard",
+      "expected": {
+        "item": "Mustard",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lettuce",
+      "expected": {
+        "item": "Lettuce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Tomato",
+      "expected": {
+        "item": "Tomato",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red Onion",
+      "expected": {
+        "item": "Red Onion",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cheese*",
+      "expected": {
+        "item": "Cheese*",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pickles",
+      "expected": {
+        "item": "pickles",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Homemade Hamburger buns",
+      "expected": {
+        "item": "Homemade Hamburger buns",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

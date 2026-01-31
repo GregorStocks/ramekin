@@ -1,0 +1,66 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-slow-cooker-hot-toddy",
+  "ingredients": [
+    {
+      "raw": "1  lemon, thinly sliced",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1/2 cup demerara or turbinado sugar",
+      "expected": {
+        "item": "demerara or turbinado sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 quart water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups Scotch whiskey",
+      "expected": {
+        "item": "Scotch whiskey",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly grated nutmeg",
+      "expected": {
+        "item": "Freshly grated nutmeg",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

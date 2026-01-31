@@ -1,0 +1,57 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-honeycomb-candy-recipe",
+  "ingredients": [
+    {
+      "raw": "butter for the pan",
+      "expected": {
+        "item": "butter for the pan",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tbsp light corn syrup",
+      "expected": {
+        "item": "light corn syrup",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

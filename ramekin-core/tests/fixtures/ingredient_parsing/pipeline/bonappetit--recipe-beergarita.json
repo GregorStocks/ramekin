@@ -1,0 +1,92 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-beergarita",
+  "ingredients": [
+    {
+      "raw": "1½ cups tequila (such as Patrón)",
+      "expected": {
+        "item": "tequila (such as Patrón)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Grand Marnier or other orange liqueur",
+      "expected": {
+        "item": "Grand Marnier or other orange liqueur",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh orange juice (from about 4 oranges)",
+      "expected": {
+        "item": "fresh orange juice (from about 4 oranges)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup fresh lime juice (from about 2 limes)",
+      "expected": {
+        "item": "fresh lime juice (from about 2 limes)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp. Diamond Crystal or ¼ tsp. Morton kosher salt; plus more (optional)",
+      "expected": {
+        "item": "Diamond Crystal or 1/4 tsp. Morton kosher salt;",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 12-oz. bottles or cans Mexican beer (such as Corona)",
+      "expected": {
+        "item": "or cans Mexican beer (such as Corona)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "12-oz. bottles"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lime wheels (for serving)",
+      "expected": {
+        "item": "Lime wheels",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

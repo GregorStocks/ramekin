@@ -1,0 +1,117 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "breakfast-hash-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  plant-based hot dogs / Tofu Pups",
+      "expected": {
+        "item": "plant-based hot dogs / Tofu Pups",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 - 2  cooked potatoes, cubed (see headnotes)",
+      "expected": {
+        "item": "cooked potatoes",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": "cubed (see headnotes)"
+      }
+    },
+    {
+      "raw": "1  onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1  serrano chile, stemmed and thinly sliced",
+      "expected": {
+        "item": "serrano chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "stemmed and thinly sliced"
+      }
+    },
+    {
+      "raw": "2  big handfuls of chopped kale",
+      "expected": {
+        "item": "big handfuls of chopped kale",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "to serve: a favorite salsa, grated cheese",
+      "expected": {
+        "item": "to serve: a favorite salsa",
+        "measurements": [],
+        "note": "grated cheese"
+      }
+    }
+  ]
+}

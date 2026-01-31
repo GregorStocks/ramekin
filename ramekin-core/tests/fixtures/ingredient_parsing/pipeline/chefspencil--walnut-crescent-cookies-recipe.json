@@ -1,0 +1,109 @@
+{
+  "source": "chefspencil",
+  "recipe_slug": "walnut-crescent-cookies-recipe",
+  "ingredients": [
+    {
+      "raw": "100 g butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100 g ground walnuts",
+      "expected": {
+        "item": "ground walnuts",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  vanilla paste",
+      "expected": {
+        "item": "vanilla paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200-220 g flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "200-220",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "powdered sugar for decoration",
+      "expected": {
+        "item": "powdered sugar for decoration",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

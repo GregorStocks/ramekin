@@ -1,0 +1,139 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-gnocchi-piccata",
+  "ingredients": [
+    {
+      "raw": "1 lemon, halved",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "4 Tbsp. extra-virgin olive oil, divided",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 17.5-oz. package shelf-stable potato gnocchi",
+      "expected": {
+        "item": "shelf-stable potato gnocchi",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "17.5-oz. package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 garlic cloves, thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "⅓ cup coarsely chopped drained capers",
+      "expected": {
+        "item": "coarsely chopped drained capers",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups low-sodium vegetable or chicken broth",
+      "expected": {
+        "item": "low-sodium vegetable or chicken broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 Tbsp. unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup finely chopped parsley",
+      "expected": {
+        "item": "finely chopped parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground pepper",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

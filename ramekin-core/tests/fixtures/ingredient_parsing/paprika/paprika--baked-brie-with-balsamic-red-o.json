@@ -1,0 +1,273 @@
+{
+  "source": "paprika",
+  "recipe_slug": "baked-brie-with-balsamic-red-o",
+  "ingredients": [
+    {
+      "raw": "Pastry:",
+      "expected": {
+        "item": "Pastry:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup plus 2 tablespoons (10 tablespoons total; 85 grams) all-purpose flour",
+      "expected": {
+        "item": "1/2 cup plus 2 tablespoons (10 tablespoons total; 85 grams) all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "10",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 2 tablespoons all-purpose flour"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons (55 grams) cold unsalted butter, diced",
+      "expected": {
+        "item": "cold unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 tablespoons plain yogurt or sour cream",
+      "expected": {
+        "item": "plain yogurt or sour cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Balsamic onions:",
+      "expected": {
+        "item": "Balsamic onions:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 small or 1 large red onion, halved and thinly sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved and thinly sliced"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 grams) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons brown sugar, light or dark",
+      "expected": {
+        "item": "brown sugar, light or dark",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons balsamic vinegar",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Assembly:",
+      "expected": {
+        "item": "Assembly:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons smooth Dijon mustard",
+      "expected": {
+        "item": "smooth Dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons minced fresh thyme leaves (optional)",
+      "expected": {
+        "item": "minced fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 (8.5-ounce or 250-gram) wheel of brie",
+      "expected": {
+        "item": "wheel of brie",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8.5",
+            "unit": null
+          },
+          {
+            "amount": "250",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg, beaten with 1 teaspoon water",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten with 1 teaspoon water"
+      }
+    },
+    {
+      "raw": "Sesame seeds, ideally toasted (optional)",
+      "expected": {
+        "item": "Sesame seeds, ideally toasted",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-pasta-e-fagioli",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small  onion (finely chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 medium carrots (diced)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 stalks celery  (diced)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stalk"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "4 ounces bacon (diced (optional))",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "diced (optional"
+      }
+    },
+    {
+      "raw": "14.5 ounces diced tomatoes (1 can)",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups chicken broth (low sodium or no sodium added)",
+      "expected": {
+        "item": "chicken broth (low sodium or no sodium added)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 ounces cannellini beans (drained and rinsed)",
+      "expected": {
+        "item": "cannellini beans",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "15 ounces red kidney beans (drained and rinsed)",
+      "expected": {
+        "item": "red kidney beans",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dried basil",
+      "expected": {
+        "item": "dried basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon red pepper flakes (optional)",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cube chicken bouillon",
+      "expected": {
+        "item": "chicken bouillon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cube"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup ditalini pasta  (or other small pasta)",
+      "expected": {
+        "item": "ditalini pasta  (or other small pasta)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper  (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Parmesan cheese (freshly grated, for serving)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [],
+        "note": "freshly grated, for serving"
+      }
+    },
+    {
+      "raw": "fresh parsley (chopped, for garnish)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [],
+        "note": "chopped, for garnish"
+      }
+    }
+  ]
+}

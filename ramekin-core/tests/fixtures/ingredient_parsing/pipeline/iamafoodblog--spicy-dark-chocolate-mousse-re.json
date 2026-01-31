@@ -1,0 +1,65 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spicy-dark-chocolate-mousse-re",
+  "ingredients": [
+    {
+      "raw": "3/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces chocolate (I used 70% bittersweet), roughly chopped",
+      "expected": {
+        "item": "chocolate (I used 70% bittersweet)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1 teaspoon Tabasco",
+      "expected": {
+        "item": "Tabasco",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "a bowl of ice cubes with a bit of cold water",
+      "expected": {
+        "item": "a bowl of ice cubes with a bit of cold water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "mint, to garnish",
+      "expected": {
+        "item": "mint, to garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

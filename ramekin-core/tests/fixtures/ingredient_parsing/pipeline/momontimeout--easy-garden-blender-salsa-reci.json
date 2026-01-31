@@ -1,0 +1,109 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "easy-garden-blender-salsa-reci",
+  "ingredients": [
+    {
+      "raw": "1/2  medium red onion (divided)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1  jalapeno (seeded)",
+      "expected": {
+        "item": "jalapeno (seeded)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lime (juice from lime)",
+      "expected": {
+        "item": "lime (juice from lime)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cloves garlic (crushed)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "crushed"
+      }
+    },
+    {
+      "raw": "5  Roma or Plum tomatoes (halved, seeds removed)",
+      "expected": {
+        "item": "Roma or Plum tomatoes",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "halved, seeds removed"
+      }
+    },
+    {
+      "raw": "1 tsp Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "cilantro  (about half a bunch)",
+      "expected": {
+        "item": "cilantro  (about half a bunch)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

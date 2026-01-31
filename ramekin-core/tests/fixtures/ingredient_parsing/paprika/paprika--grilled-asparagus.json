@@ -1,0 +1,83 @@
+{
+  "source": "paprika",
+  "recipe_slug": "grilled-asparagus",
+  "ingredients": [
+    {
+      "raw": "1 bunch of asparagus",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp. olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp. kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp. ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red pepper flakes, optional",
+      "expected": {
+        "item": "Red pepper flakes",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 lemon, halved",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    }
+  ]
+}

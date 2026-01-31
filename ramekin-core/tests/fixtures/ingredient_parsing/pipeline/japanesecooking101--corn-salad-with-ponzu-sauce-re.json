@@ -1,0 +1,53 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "corn-salad-with-ponzu-sauce-re",
+  "ingredients": [
+    {
+      "raw": "3  cobs of corn",
+      "expected": {
+        "item": "cobs of corn",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tbsp Ponzu Sauce",
+      "expected": {
+        "item": "Ponzu Sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp chopped green onions",
+      "expected": {
+        "item": "chopped green onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Shichimi red pepper",
+      "expected": {
+        "item": "Shichimi red pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

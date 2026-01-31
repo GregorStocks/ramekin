@@ -1,0 +1,87 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "bacon-and-egg-grilled-cheese-b",
+  "ingredients": [
+    {
+      "raw": "1 potato bun or other soft bun",
+      "expected": {
+        "item": "potato bun or other soft bun",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup shredded cheddar",
+      "expected": {
+        "item": "shredded cheddar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 slices of thick cut bacon",
+      "expected": {
+        "item": "thick cut bacon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 slices tomato",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "jalapeño slices, to taste",
+      "expected": {
+        "item": "jalapeño slices",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

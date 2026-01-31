@@ -1,0 +1,27 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-aspen-2002-buerre-mont",
+  "ingredients": [
+    {
+      "raw": "Water",
+      "expected": {
+        "item": "Water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons to 1 pound of butter, cut into chunks",
+      "expected": {
+        "item": "to 1 pound of butter, cut into chunks",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

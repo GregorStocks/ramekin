@@ -1,0 +1,75 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-vegan-bacon-148899",
+  "ingredients": [
+    {
+      "raw": "1   lb    firm tofu, cut into strips shaped like bacon",
+      "expected": {
+        "item": "firm tofu, cut into strips shaped like bacon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    nutritional yeast",
+      "expected": {
+        "item": "nutritional yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    soya sauce",
+      "expected": {
+        "item": "soya sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    liquid smoke",
+      "expected": {
+        "item": "liquid smoke",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    oil, something neutral, not olive oil",
+      "expected": {
+        "item": "oil, something neutral, not olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

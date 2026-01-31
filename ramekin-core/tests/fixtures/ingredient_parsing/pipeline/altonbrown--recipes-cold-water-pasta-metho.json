@@ -1,0 +1,49 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-cold-water-pasta-metho",
+  "ingredients": [
+    {
+      "raw": "64 fluid ounces cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "64",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (16-ounce) box dry pasta, farfalle, rigatoni, penne, etc.",
+      "expected": {
+        "item": "dry pasta, farfalle, rigatoni, penne, etc.",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

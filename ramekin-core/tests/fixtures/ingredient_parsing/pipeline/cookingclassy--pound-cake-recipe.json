@@ -1,0 +1,117 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "pound-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "1 (8 oz) pkg. cream cheese, (at room temperature*)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature*"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (340g) unsalted butter, (at room temperature)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "2 1/2 cups (500g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 large eggs, (at room temperature)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "2 tsp vanilla extract**",
+      "expected": {
+        "item": "vanilla extract**",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups (354g) unbleached all-purpose flour ((scoop and level to measure), plus more for dusting pan)",
+      "expected": {
+        "item": "unbleached all-purpose flour (scoop and level to measure)",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "354",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting pan)"
+      }
+    }
+  ]
+}

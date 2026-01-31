@@ -1,0 +1,109 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "pizza-margherita-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups water ((luke warm))",
+      "expected": {
+        "item": "water (luke warm)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "375 grams bread flour ((~3 cups))",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "375",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  tomatoes ((very ripe))",
+      "expected": {
+        "item": "tomatoes (very ripe)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ball fresh mozzarella",
+      "expected": {
+        "item": "ball fresh mozzarella",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch basil ((leaves only))",
+      "expected": {
+        "item": "basil (leaves only)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

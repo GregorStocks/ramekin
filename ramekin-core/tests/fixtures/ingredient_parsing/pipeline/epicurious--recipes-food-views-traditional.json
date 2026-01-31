@@ -1,0 +1,203 @@
+{
+  "source": "epicurious",
+  "recipe_slug": "recipes-food-views-traditional",
+  "ingredients": [
+    {
+      "raw": "5 Tbsp. extra-virgin olive oil, divided",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 large yellow onion, thinly sliced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, finely chopped or grated",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped or grated"
+      }
+    },
+    {
+      "raw": "1 large globe eggplant (about ¾ lb.), cut into ½\" pieces",
+      "expected": {
+        "item": "globe eggplant, cut into 1/2\" pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 zucchini, quartered lengthwise and thinly sliced",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "quartered lengthwise and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 red bell pepper, seeded and chopped",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and chopped"
+      }
+    },
+    {
+      "raw": "1 pint cherry or grape tomatoes (about 12 oz.), halved or quartered if large",
+      "expected": {
+        "item": "cherry or grape tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "halved or quartered if large"
+      }
+    },
+    {
+      "raw": "¼ tsp. dried oregano, crumbled",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "¼ tsp. dried thyme, crumbled",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "⅛ tsp. ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp. fennel seeds",
+      "expected": {
+        "item": "fennel seeds",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ tsp. Diamond Crystal or ¼ tsp. plus ⅛ tsp. Morton kosher salt",
+      "expected": {
+        "item": "Diamond Crystal or 1/4 tsp.",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus 1/8 tsp. Morton kosher salt"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup torn fresh basil leaves",
+      "expected": {
+        "item": "torn fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

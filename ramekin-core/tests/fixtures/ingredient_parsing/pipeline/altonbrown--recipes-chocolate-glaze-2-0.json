@@ -1,0 +1,75 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-chocolate-glaze-2-0",
+  "ingredients": [
+    {
+      "raw": "1 1/4 cups semisweet chocolate chips",
+      "expected": {
+        "item": "semisweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "11 tablespoons heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "11",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "164",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 teaspoons brewed coffee",
+      "expected": {
+        "item": "brewed coffee",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon corn syrup",
+      "expected": {
+        "item": "corn syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

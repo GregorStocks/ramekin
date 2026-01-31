@@ -1,0 +1,53 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2016-03-homemade-cultured-butt",
+  "ingredients": [
+    {
+      "raw": "2 cups heavy cream, room temperature (65-68ºF)",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": null
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon mesophilic culture (optional, for cultured butter. Can be purchased where cheese-making supplies are sold)",
+      "expected": {
+        "item": "mesophilic culture",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional, for cultured butter. Can be purchased where cheese-making supplies are sold"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine sea salt or butter salt (optional, for salted butter)",
+      "expected": {
+        "item": "fine sea salt or butter salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional, for salted butter"
+      }
+    }
+  ]
+}

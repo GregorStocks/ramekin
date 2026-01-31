@@ -1,0 +1,66 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-creamy-mash-recipe",
+  "ingredients": [
+    {
+      "raw": "3.3 lbs floury potatoes cut into even chunks",
+      "expected": {
+        "item": "floury potatoes cut into even chunks",
+        "measurements": [
+          {
+            "amount": "3.3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1497",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup skim milk",
+      "expected": {
+        "item": "skim milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp crème fraîche or sour cream",
+      "expected": {
+        "item": "crème fraîche or sour cream",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

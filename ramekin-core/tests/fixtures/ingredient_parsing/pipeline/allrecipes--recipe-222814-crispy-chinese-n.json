@@ -1,0 +1,44 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-222814-crispy-chinese-n",
+  "ingredients": [
+    {
+      "raw": "1 (10 ounce) package egg roll wrappers",
+      "expected": {
+        "item": "egg roll wrappers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups vegetable oil, or as needed",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "436",
+            "unit": "g"
+          }
+        ],
+        "note": "or as needed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "citrus-salt-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup / 2.25 oz / 65 g flaky sea salt",
+      "expected": {
+        "item": "flaky sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon citrus zest",
+      "expected": {
+        "item": "citrus zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

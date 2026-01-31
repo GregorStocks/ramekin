@@ -1,0 +1,62 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "9431-pretzel-cranberry-and-toa",
+  "ingredients": [
+    {
+      "raw": "12 ounces bittersweet chocolate, chopped",
+      "expected": {
+        "item": "bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup unsweetened coconut flakes",
+      "expected": {
+        "item": "unsweetened coconut flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup salted pretzels",
+      "expected": {
+        "item": "salted pretzels",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup dried cranberries",
+      "expected": {
+        "item": "dried cranberries",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "source": "paprika",
+  "recipe_slug": "pasta-e-ceci-italian-pasta-an",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons olive oil, plus more for drizzling",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for drizzling"
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, finely chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, finely chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh rosemary",
+      "expected": {
+        "item": "chopped fresh rosemary",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon red-pepper flakes",
+      "expected": {
+        "item": "red-pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 packed cup canned whole tomatoes, drained",
+      "expected": {
+        "item": "canned whole tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "packed cup"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 (15-ounce) can chickpeas, rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "1 cup ditalini",
+      "expected": {
+        "item": "ditalini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups roughly chopped escarole, Tuscan kale or radicchio",
+      "expected": {
+        "item": "roughly chopped escarole, Tuscan kale or radicchio",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Grated pecorino, for serving",
+      "expected": {
+        "item": "Grated pecorino",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "bbq-sundaes-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb hot Sweet And Tangy Pulled Pork",
+      "expected": {
+        "item": "hot Sweet And Tangy Pulled Pork",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups hot Baked Beans",
+      "expected": {
+        "item": "hot Baked Beans",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  recipe cold Memphis Coleslaw (about 4 cups worth)",
+      "expected": {
+        "item": "recipe cold Memphis Coleslaw",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup warm or room temperature Sweet And Spicy Barbecue Sauce",
+      "expected": {
+        "item": "warm or room temperature Sweet And Spicy Barbecue Sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

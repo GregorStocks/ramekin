@@ -1,0 +1,113 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "pea-and-avocado-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ball no-knead pizza dough",
+      "expected": {
+        "item": "ball no-knead pizza dough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shredded mozzarella",
+      "expected": {
+        "item": "shredded mozzarella",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 head roasted garlic",
+      "expected": {
+        "item": "roasted garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup frozen peas, thawed",
+      "expected": {
+        "item": "frozen peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1/2 jalapeño, sliced",
+      "expected": {
+        "item": "jalapeño",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "red pepper flakes, to taste",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/4 cup parmesan",
+      "expected": {
+        "item": "parmesan",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest of 1 lemon",
+      "expected": {
+        "item": "zest of 1 lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 avocado, sliced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    }
+  ]
+}

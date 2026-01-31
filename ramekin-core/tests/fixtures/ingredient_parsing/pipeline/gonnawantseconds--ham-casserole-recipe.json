@@ -1,0 +1,297 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "ham-casserole-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups panko crumbs",
+      "expected": {
+        "item": "panko crumbs",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons butter,  (melted)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "12 ounces dried egg noodles",
+      "expected": {
+        "item": "dried egg noodles",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds  ham (about 4 1/2-5 cups cubed), (cut into 1/2 cubes)",
+      "expected": {
+        "item": "ham, (cut into 1/2 cubes)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "about 4 1/2-5 cups cubed"
+      }
+    },
+    {
+      "raw": "1/2  cup, plus 2 tablespoons butter, divided",
+      "expected": {
+        "item": "1/2  cup, plus 2 tablespoons butter, divided",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons butter, divided"
+      }
+    },
+    {
+      "raw": "1 cup yellow onion, (chopped)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 cup celery, (finely minced)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": "finely minced"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 1/2 cups whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "5 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1348",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  teaspoon Tabasco sauce",
+      "expected": {
+        "item": "Tabasco sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh thyme leaves, (stripped off stems)",
+      "expected": {
+        "item": "fresh thyme leaves, (stripped off stems)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons fresh sage leaves, (chopped)",
+      "expected": {
+        "item": "fresh sage leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups sharp cheddar cheese, (shredded)",
+      "expected": {
+        "item": "sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "4 ounces cream cheese (softened)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1 cup frozen petites peas, (thawed and drained)",
+      "expected": {
+        "item": "frozen petites peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed and drained"
+      }
+    },
+    {
+      "raw": "thyme leaves",
+      "expected": {
+        "item": "thyme leaves",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sage leaves",
+      "expected": {
+        "item": "sage leaves",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-grits-or-polenta",
+  "ingredients": [
+    {
+      "raw": "4 cups cold water or 2 cups (473 milliliters) each water and whole milk",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "473",
+            "unit": "ml"
+          }
+        ],
+        "note": "or 2 cups each water and whole milk"
+      }
+    },
+    {
+      "raw": "1 cup stone-ground grits or polenta",
+      "expected": {
+        "item": "stone-ground grits or polenta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter, cubed",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    }
+  ]
+}

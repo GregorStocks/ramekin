@@ -1,0 +1,70 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipe-ideas-a5233-pre",
+  "ingredients": [
+    {
+      "raw": "8 large lemons, divided&amp;nbsp;",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (3\") cinnamon sticks (optional)&amp;nbsp;",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 tbsp. whole black peppercorns (optional)",
+      "expected": {
+        "item": "whole black peppercorns",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 tbsp. whole star anise pods (optional)",
+      "expected": {
+        "item": "whole star anise pods",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "yaki-udon-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100 grams cabbage ((~2 leaves, chopped))",
+      "expected": {
+        "item": "cabbage",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "~2 leaves, chopped"
+      }
+    },
+    {
+      "raw": "100 grams onion ((~1/2 small onion, sliced))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "~1/2 small onion, sliced"
+      }
+    },
+    {
+      "raw": "60 grams shiitake mushrooms ((3 mushrooms, sliced))",
+      "expected": {
+        "item": "shiitake mushrooms",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "3 mushrooms, sliced"
+      }
+    },
+    {
+      "raw": "60 grams carrot ((~1/2 carrot, julienned))",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "~1/2 carrot, julienned"
+      }
+    },
+    {
+      "raw": "600 grams pre-cooked frozen udon ((defrosted *see note))",
+      "expected": {
+        "item": "pre-cooked frozen udon (defrosted *see note)",
+        "measurements": [
+          {
+            "amount": "600",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  Scallions ((chopped, for garnish))",
+      "expected": {
+        "item": "Scallions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "chopped, for garnish"
+      }
+    },
+    {
+      "raw": "Benishoga ((for garnish))",
+      "expected": {
+        "item": "Benishoga",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

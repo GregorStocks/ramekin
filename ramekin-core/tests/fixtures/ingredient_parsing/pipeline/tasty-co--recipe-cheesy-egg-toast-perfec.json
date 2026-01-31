@@ -1,0 +1,78 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-cheesy-egg-toast-perfec",
+  "ingredients": [
+    {
+      "raw": "1 slice bread",
+      "expected": {
+        "item": "bread",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons shredded cheese",
+      "expected": {
+        "item": "shredded cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt, to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "freshly ground black pepper, to taste",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

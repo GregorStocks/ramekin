@@ -1,0 +1,96 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "quick-menma-recipe",
+  "ingredients": [
+    {
+      "raw": "1 package boiled bamboo shoot ((7 oz, 200 g; whole and vacuum-sealed; avoid canned))",
+      "expected": {
+        "item": "boiled bamboo shoot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": "7 oz, 200 g; whole and vacuum-sealed; avoid canned"
+      }
+    },
+    {
+      "raw": "Diamond Crystal kosher salt",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup chicken stock/broth",
+      "expected": {
+        "item": "chicken stock/broth",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp la-yu (Japanese chili oil) ((optional, for a spicy kick))",
+      "expected": {
+        "item": "la-yu (Japanese chili oil) (optional, for a spicy kick)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

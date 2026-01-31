@@ -1,0 +1,210 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-steak-or-chicken-fajita",
+  "ingredients": [
+    {
+      "raw": "3/4  lb    top sirloin steak",
+      "expected": {
+        "item": "top sirloin steak",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1       garlic clove, finely minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely minced"
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    hot pepper flakes",
+      "expected": {
+        "item": "hot pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8       flour tortillas (8 inch/20 cm)",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 -2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
+      "expected": {
+        "item": "-2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   small    sweet peppers, of your choice  (green, red, or yellow)",
+      "expected": {
+        "item": "sweet peppers, of your choice  (green, red, or yellow)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salsa",
+      "expected": {
+        "item": "salsa",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "shredded cheese",
+      "expected": {
+        "item": "shredded cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "chopped tomato",
+      "expected": {
+        "item": "chopped tomato",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

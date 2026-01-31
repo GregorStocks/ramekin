@@ -1,0 +1,126 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-sweet-potato-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "1.1 lbs sweet potatoes",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "1.1",
+            "unit": "lb"
+          },
+          {
+            "amount": "499",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 unroll-and-bake sheet of pie crust",
+      "expected": {
+        "item": "unroll-and-bake sheet of pie crust",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 stick plus 1 tbsp butter",
+      "expected": {
+        "item": "1 stick plus 1 tbsp butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "plus 1 tbsp butter"
+      }
+    },
+    {
+      "raw": "1¼ cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup plus 1 tbsp whole milk",
+      "expected": {
+        "item": "½ cup plus 1 tbsp whole milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 tbsp whole milk"
+      }
+    },
+    {
+      "raw": "3  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "grating of nutmeg",
+      "expected": {
+        "item": "grating of nutmeg",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla bean paste",
+      "expected": {
+        "item": "vanilla bean paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

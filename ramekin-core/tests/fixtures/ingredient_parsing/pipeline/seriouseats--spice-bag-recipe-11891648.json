@@ -1,0 +1,325 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "spice-bag-recipe-11891648",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon (4 g) Sichuan peppercorns, freshly ground with a spice mill or mortar and pestle",
+      "expected": {
+        "item": "Sichuan peppercorns",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
+          }
+        ],
+        "note": "freshly ground with a spice mill or mortar and pestle"
+      }
+    },
+    {
+      "raw": "1 tablespoon (10 g) garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon five-spice",
+      "expected": {
+        "item": "five-spice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon white pepper",
+      "expected": {
+        "item": "white pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon granulated sugar (1/2 ounce; 15 g)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon MSG",
+      "expected": {
+        "item": "MSG",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons chicken bouillon powder, such as Knorr or Lee Kum Kee",
+      "expected": {
+        "item": "chicken bouillon powder, such as Knorr or Lee Kum Kee",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Sichuan chili flakes, see notes",
+      "expected": {
+        "item": "Sichuan chili flakes, see notes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter (2 ounces; 56 g)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons all-purpose flour (about 1/2 ounce; 16 g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Madras curry powder",
+      "expected": {
+        "item": "Madras curry powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (480) homemade chicken stock or store-bought low-sodium chicken broth",
+      "expected": {
+        "item": "homemade chicken stock or store-bought low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt, to taste",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 recipe Japanese-style karaage or 12 ounces (340 g) frozen, breaded chicken breast nuggets, prepared according to package directions, see notes",
+      "expected": {
+        "item": "recipe Japanese-style karaage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "or 12 ounces frozen, breaded chicken breast nuggets, prepared according to package directions, see notes"
+      }
+    },
+    {
+      "raw": "1 recipe British-style chips or 12 ounces (340 g) frozen bagged steak fries, prepared according to package directions, see notes",
+      "expected": {
+        "item": "recipe British-style chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "or 12 ounces frozen bagged steak fries, prepared according to package directions, see notes"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) neutral oil, such as canola or peanut",
+      "expected": {
+        "item": "neutral oil, such as canola or peanut",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium red bell pepper (8 ounces; 227 g), stemmed, seeded, and thinly sliced",
+      "expected": {
+        "item": "red bell pepper, stemmed, seeded",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 medium onion (8 ounces; 226 g), thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 tablespoons chili crisp, such as Lao Gan Ma, plus more as needed",
+      "expected": {
+        "item": "chili crisp, such as Lao Gan Ma",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    }
+  ]
+}

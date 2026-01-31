@@ -1,0 +1,173 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "sweet-side-dish-holiday-quinoa",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups quinoa",
+      "expected": {
+        "item": "quinoa",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 cups plus 2 tablespoons vegetable or chicken broth",
+      "expected": {
+        "item": "1 3/4 cups plus 2 tablespoons vegetable or chicken broth",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons vegetable or chicken broth"
+      }
+    },
+    {
+      "raw": "1-2 teaspoons oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 stalks celery, diced",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stalk"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3/4 cup pecans, toasted and roughly chopped",
+      "expected": {
+        "item": "pecans",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasted and roughly chopped"
+      }
+    },
+    {
+      "raw": "3/4 cup dried cranberries",
+      "expected": {
+        "item": "dried cranberries",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pears, cored and diced",
+      "expected": {
+        "item": "pears",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "cored and diced"
+      }
+    },
+    {
+      "raw": "1/2 cup green onions",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest and juice of 1 orange",
+      "expected": {
+        "item": "zest and juice of 1 orange",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons honey, or to taste",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper, to taste",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

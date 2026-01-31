@@ -1,0 +1,159 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-biscoff-banana-pudding",
+  "ingredients": [
+    {
+      "raw": "1 (5.1-ounce) package instant vanilla pudding and pie filling mix (such as Jell-O)",
+      "expected": {
+        "item": "instant vanilla pudding and pie filling mix (such as Jell-O)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "5.1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 quart heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          },
+          {
+            "amount": "952",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": ".5 cup powdered sugar (about 2 ounce)",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": ".5",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (14-ounce) can sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (11-ounce) package vanilla wafers, divided",
+      "expected": {
+        "item": "vanilla wafers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "11",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 (8.8-ounce) package crisp gourmet cookies (such as Biscoff), divided",
+      "expected": {
+        "item": "crisp gourmet cookies (such as Biscoff)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8.8",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "10 medium bananas, cut into 1/4-inch-thick slices (about 10 cups), divided",
+      "expected": {
+        "item": "bananas, cut into 1/4-inch-thick slices",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "medium"
+          },
+          {
+            "amount": "10",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

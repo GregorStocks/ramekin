@@ -1,0 +1,57 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "koshian-recipe",
+  "ingredients": [
+    {
+      "raw": "200 g dry adzuki beans",
+      "expected": {
+        "item": "dry adzuki beans",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "water",
+      "expected": {
+        "item": "water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "175 g sugar (I use 60% white sugar, 40% light brown sugar)",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "175",
+            "unit": "g"
+          },
+          {
+            "amount": "40",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

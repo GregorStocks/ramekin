@@ -1,0 +1,243 @@
+{
+  "source": "paprika",
+  "recipe_slug": "zuppa-toscana",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon (15 ml) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds (680 g) mild or spicy Italian sausage, removed from casing",
+      "expected": {
+        "item": "mild or spicy Italian sausage, removed from casing",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium onions (8 ounces; 227 g each), finely chopped",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz each"
+          },
+          {
+            "amount": "227",
+            "unit": "g each"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "3 medium cloves garlic (1/2 ounce; 15 g), finely chopped",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "3 medium celery ribs (about 5 3/4 ounces; 165 g) with leaves, finely chopped",
+      "expected": {
+        "item": "celery ribs with leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "5 3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 medium fennel bulb (8 ounces; 226 g), finely chopped",
+      "expected": {
+        "item": "fennel bulb",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons fennel seeds",
+      "expected": {
+        "item": "fennel seeds",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 cups (2.4 L) homemade chicken stock or store-bought low-sodium broth",
+      "expected": {
+        "item": "homemade chicken stock or store-bought low-sodium broth",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.4",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 or 2 Parmigiano-Reggiano cheese rinds (optional), plus Grated Parmigiano-Reggiano, for serving",
+      "expected": {
+        "item": "Parmigiano-Reggiano cheese rinds",
+        "measurements": [
+          {
+            "amount": "1 or 2",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "6 ounces (170 g) lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
+      "expected": {
+        "item": "lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 russet potato (12 ounces; 340 g), peeled and cut into irregular chunks about 1/2 inch thick (read about this potato cutting method for more details)",
+      "expected": {
+        "item": "russet potato, peeled and cut into irregular chunks about 1/2 inch thick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "read about this potato cutting method for more details"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

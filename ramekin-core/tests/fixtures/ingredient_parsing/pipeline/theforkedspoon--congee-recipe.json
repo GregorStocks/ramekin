@@ -1,0 +1,82 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "congee-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup glutinous rice ((see notes))",
+      "expected": {
+        "item": "glutinous rice (see notes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups low-sodium broth ((chicken, beef, or vegetable))",
+      "expected": {
+        "item": "low-sodium broth (chicken, beef, or vegetable)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt (to taste)",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "6  green onions (thinly sliced, to garnish)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced, to garnish"
+      }
+    },
+    {
+      "raw": "Fresh ginger (julienned, to garnish)",
+      "expected": {
+        "item": "Fresh ginger",
+        "measurements": [],
+        "note": "julienned, to garnish"
+      }
+    },
+    {
+      "raw": "Sesame oil and soy sauce (to garnish)",
+      "expected": {
+        "item": "Sesame oil and soy sauce (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

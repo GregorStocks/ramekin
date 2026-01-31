@@ -1,0 +1,53 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "poached-aloe-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup evaporated cane sugar",
+      "expected": {
+        "item": "evaporated cane sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons lime juice ((juice of 1 lime))",
+      "expected": {
+        "item": "lime juice (juice of 1 lime)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large aloe leaves ((about 1 pound))",
+      "expected": {
+        "item": "aloe leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

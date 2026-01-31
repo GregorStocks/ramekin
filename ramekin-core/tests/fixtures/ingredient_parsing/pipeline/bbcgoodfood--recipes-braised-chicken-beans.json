@@ -1,0 +1,114 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-braised-chicken-beans",
+  "ingredients": [
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 skinless boneless chicken thighs",
+      "expected": {
+        "item": "skinless boneless chicken thighs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion chopped",
+      "expected": {
+        "item": "onion chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove chopped",
+      "expected": {
+        "item": "garlic clove chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "300ml white wine",
+      "expected": {
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "400g can flageolet bean rinsed and drained",
+      "expected": {
+        "item": "can flageolet bean rinsed and drained",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful  parsley leaves",
+      "expected": {
+        "item": "parsley leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

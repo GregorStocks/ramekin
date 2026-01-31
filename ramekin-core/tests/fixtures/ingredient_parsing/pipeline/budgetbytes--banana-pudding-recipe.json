@@ -1,0 +1,49 @@
+{
+  "source": "budgetbytes",
+  "recipe_slug": "banana-pudding-recipe",
+  "ingredients": [
+    {
+      "raw": "6  ounces vanilla wafers* ($1.43)",
+      "expected": {
+        "item": "vanilla wafers* ($1.43)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3   bananas ($0.69)",
+      "expected": {
+        "item": "bananas ($0.69)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups vanilla pudding (homemade or store bought) ($2.79)",
+      "expected": {
+        "item": "vanilla pudding (homemade or store bought) ($2.79)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

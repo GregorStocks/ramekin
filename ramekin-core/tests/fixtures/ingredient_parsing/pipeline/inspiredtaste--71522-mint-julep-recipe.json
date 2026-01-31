@@ -1,0 +1,77 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "71522-mint-julep-recipe",
+  "ingredients": [
+    {
+      "raw": "10 mint leaves, plus one sprig for garnish",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "plus one sprig for garnish"
+      }
+    },
+    {
+      "raw": "1 ounce simple syrup, or more to taste (2 tablespoons)",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "2 ounces Kentucky bourbon whisky (1/4 cup)",
+      "expected": {
+        "item": "Kentucky bourbon whisky",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Crushed ice",
+      "expected": {
+        "item": "Crushed ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sugar, for garnish, optional",
+      "expected": {
+        "item": "Sugar, for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

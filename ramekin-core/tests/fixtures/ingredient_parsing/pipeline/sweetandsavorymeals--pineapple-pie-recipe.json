@@ -1,0 +1,159 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "pineapple-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "9 inch pie crust (homemade or store-bought)",
+      "expected": {
+        "item": "inch pie crust (homemade or store-bought)",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "20 oz canned crushed pineapple",
+      "expected": {
+        "item": "canned crushed pineapple",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": "oz"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shredded coconut",
+      "expected": {
+        "item": "shredded coconut",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz cream cheese (room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "Juice of 1 lime",
+      "expected": {
+        "item": "Juice of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Zest of 1 lime",
+      "expected": {
+        "item": "Zest of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon coconut extract",
+      "expected": {
+        "item": "coconut extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

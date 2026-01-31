@@ -1,0 +1,148 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-aromatic-bitters",
+  "ingredients": [
+    {
+      "raw": "1 cup 100-proof grain alcohol (such as moonshine)",
+      "expected": {
+        "item": "100-proof grain alcohol (such as moonshine)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon cardamom seeds, toasted",
+      "expected": {
+        "item": "cardamom seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "1 tablespoon coriander seeds, toasted",
+      "expected": {
+        "item": "coriander seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "1 tablespoon dried chopped dandelion root",
+      "expected": {
+        "item": "dried chopped dandelion root",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped quassia bark chips",
+      "expected": {
+        "item": "chopped quassia bark chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon caraway seeds, toasted",
+      "expected": {
+        "item": "caraway seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "3 (3- x 1/2-inch) orange peel strips (from 1 orange; white pith completely removed)",
+      "expected": {
+        "item": "orange peel strips (from 1 orange; white pith completely removed)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (3- x 1/2-inch) grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
+      "expected": {
+        "item": "grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

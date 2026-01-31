@@ -1,0 +1,71 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "grilled-corn-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ears fresh corn",
+      "expected": {
+        "item": "ears fresh corn",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup neutral oil (I used rice bran)",
+      "expected": {
+        "item": "neutral oil (I used rice bran)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch of green onions, thinly sliced",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 Thai chili, finely diced",
+      "expected": {
+        "item": "Thai chili",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "2 teaspoons fish sauce",
+      "expected": {
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

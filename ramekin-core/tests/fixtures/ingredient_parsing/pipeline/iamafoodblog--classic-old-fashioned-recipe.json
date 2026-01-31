@@ -1,0 +1,47 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "classic-old-fashioned-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ounces bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "simple syrup",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Angostura bitters",
+      "expected": {
+        "item": "Angostura bitters",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice (optional)",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

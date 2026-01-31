@@ -1,0 +1,82 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-12711-shrimp-dip-i",
+  "ingredients": [
+    {
+      "raw": "1 (10.75 ounce) can condensed cream of shrimp soup",
+      "expected": {
+        "item": "condensed cream of shrimp soup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "10.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "305",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8 ounce) package cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1 (4 ounce) can small shrimp, drained",
+      "expected": {
+        "item": "small shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped green onion",
+      "expected": {
+        "item": "chopped green onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

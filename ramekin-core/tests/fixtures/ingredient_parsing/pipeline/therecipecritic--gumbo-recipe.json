@@ -1,0 +1,236 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "gumbo-recipe",
+  "ingredients": [
+    {
+      "raw": "12 ounces sliced Andouille sausage (½-inch pieces)",
+      "expected": {
+        "item": "sliced Andouille sausage",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups shredded cooked chicken",
+      "expected": {
+        "item": "shredded cooked chicken",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound peeled and deveined raw shrimp",
+      "expected": {
+        "item": "peeled and deveined raw shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups chopped yellow onion (aboud 1 medium onion)",
+      "expected": {
+        "item": "chopped yellow onion (aboud 1 medium onion)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups chopped green bell pepper (about 1 large bell pepper)",
+      "expected": {
+        "item": "chopped green bell pepper",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup chopped celery (about 3-4 large ribs)",
+      "expected": {
+        "item": "chopped celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "3-4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons minced garlic (about 6 cloves)",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons Cajun or Creole seasoning (more or less to taste)",
+      "expected": {
+        "item": "Cajun or Creole seasoning",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "more or less to taste"
+      }
+    },
+    {
+      "raw": "¼ teaspoon dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt (to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "ground black pepper (to taste)",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "3-4  chopped green onions (optional garnish)",
+      "expected": {
+        "item": "chopped green onions",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": null
+          }
+        ],
+        "note": "optional garnish"
+      }
+    }
+  ]
+}

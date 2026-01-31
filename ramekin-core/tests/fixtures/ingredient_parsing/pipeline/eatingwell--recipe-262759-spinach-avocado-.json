@@ -1,0 +1,88 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-262759-spinach-avocado-",
+  "ingredients": [
+    {
+      "raw": "1 cup nonfat plain yogurt",
+      "expected": {
+        "item": "nonfat plain yogurt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh spinach",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 frozen banana",
+      "expected": {
+        "item": "frozen banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 avocado",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

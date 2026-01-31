@@ -1,0 +1,138 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "cloverleaf-rolls-recipe-118499",
+  "ingredients": [
+    {
+      "raw": "420 g ( 3 ½ cups) bread flour",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "420",
+            "unit": "g"
+          },
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "42 g (3/4 cup) unseasoned potato flakes, such as Bob's Red Mill",
+      "expected": {
+        "item": "unseasoned potato flakes, such as Bob's Red Mill",
+        "measurements": [
+          {
+            "amount": "42",
+            "unit": "g"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 g (1/4) cup granulated sugar",
+      "expected": {
+        "item": "cup granulated sugar",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 g (1 tablespoon) Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 g (2 teaspoons) instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 unsalted butter, cut into 8 pieces, 6 tablespoons softened and 2 tablespoons reserved for melting",
+      "expected": {
+        "item": "unsalted butter, cut into 8 pieces",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "6 tablespoons softened and 2 tablespoons reserved for melting"
+      }
+    },
+    {
+      "raw": "1 large egg (50 g), room temperature",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1 ¼ cups whole milk (284 g), room temperature",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "284",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    }
+  ]
+}

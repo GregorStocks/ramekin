@@ -1,0 +1,113 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-ham-n-tater-bake",
+  "ingredients": [
+    {
+      "raw": "1 package (28 ounces) frozen steak fries",
+      "expected": {
+        "item": "frozen steak fries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "28",
+            "unit": "oz"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups frozen chopped broccoli, thawed and drained",
+      "expected": {
+        "item": "frozen chopped broccoli",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed and drained"
+      }
+    },
+    {
+      "raw": "1-1/2 cups diced fully cooked ham",
+      "expected": {
+        "item": "diced fully cooked ham",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can (10-3/4 ounces) condensed cream of broccoli soup, undiluted",
+      "expected": {
+        "item": "condensed cream of broccoli soup, undiluted",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "10-3/4",
+            "unit": "oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded cheddar cheese",
+      "expected": {
+        "item": "shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

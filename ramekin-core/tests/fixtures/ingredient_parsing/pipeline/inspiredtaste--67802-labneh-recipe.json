@@ -1,0 +1,40 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "67802-labneh-recipe",
+  "ingredients": [
+    {
+      "raw": "1 quart (32 ounces) full-fat plain yogurt",
+      "expected": {
+        "item": "full-fat plain yogurt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          },
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

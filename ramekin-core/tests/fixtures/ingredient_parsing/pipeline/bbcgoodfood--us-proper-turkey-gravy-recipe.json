@@ -1,0 +1,74 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-proper-turkey-gravy-recipe",
+  "ingredients": [
+    {
+      "raw": "2  onions chopped",
+      "expected": {
+        "item": "onions chopped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "turkey neck (optional)",
+      "expected": {
+        "item": "turkey neck",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "5½ cups or 2.5 pints turkey or chicken broth",
+      "expected": {
+        "item": "turkey or chicken broth",
+        "measurements": [
+          {
+            "amount": "5 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.5",
+            "unit": "pint"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tbsp white wine or water",
+      "expected": {
+        "item": "white wine or water",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

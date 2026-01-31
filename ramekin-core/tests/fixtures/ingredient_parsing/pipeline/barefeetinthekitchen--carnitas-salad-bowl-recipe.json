@@ -1,0 +1,162 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "carnitas-salad-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "2-3 cups crunchy lettuce (chopped small)",
+      "expected": {
+        "item": "crunchy lettuce",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped small"
+      }
+    },
+    {
+      "raw": "1  small tomato (sliced into thin wedges)",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "sliced into thin wedges"
+      }
+    },
+    {
+      "raw": "1/4  avocado (sliced thin)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "1/8  small red onion (sliced very thin)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "small"
+          }
+        ],
+        "note": "sliced very thin"
+      }
+    },
+    {
+      "raw": "1/4 cup corn (frozen (thawed), canned (drained))",
+      "expected": {
+        "item": "corn, canned (drained)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "frozen (thawed"
+      }
+    },
+    {
+      "raw": "1/4 cup black beans (rinsed and drained (optional))",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed and drained (optional"
+      }
+    },
+    {
+      "raw": "1/2 cup pulled pork carnitas",
+      "expected": {
+        "item": "pulled pork carnitas",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons crumbled cotija cheese (feta, or shredded cheddar cheese)",
+      "expected": {
+        "item": "crumbled cotija cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "feta, or shredded cheddar cheese"
+      }
+    },
+    {
+      "raw": "dash of kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "dash of freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3  lime wedges",
+      "expected": {
+        "item": "lime wedges",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup corn chips or tortilla strips (optional)",
+      "expected": {
+        "item": "corn chips or tortilla strips",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

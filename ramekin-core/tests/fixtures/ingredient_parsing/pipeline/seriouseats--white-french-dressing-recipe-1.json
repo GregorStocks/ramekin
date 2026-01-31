@@ -1,0 +1,138 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "white-french-dressing-recipe-1",
+  "ingredients": [
+    {
+      "raw": "1/2 small sweet onion (about 2 ounces; 60 g), roughly chopped",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1 medium clove garlic (about 5 g), roughly chopped",
+      "expected": {
+        "item": "clove garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) spicy brown mustard, such as Bertman Ball Park Mustard",
+      "expected": {
+        "item": "spicy brown mustard, such as Bertman Ball Park Mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 1 teaspoon (16 g) granulated sugar",
+      "expected": {
+        "item": "1 tablespoon plus 1 teaspoon (16 g) granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1 teaspoon granulated sugar"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground white pepper",
+      "expected": {
+        "item": "ground white pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Diamond Crystal kosher salt, plus more to taste; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste; for table salt use half as much by volume"
+      }
+    },
+    {
+      "raw": "1 cup (about 230 g) Duke's mayonnaise",
+      "expected": {
+        "item": "Duke's mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "230",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

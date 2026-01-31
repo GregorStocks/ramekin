@@ -1,0 +1,165 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-crock-pot-beef-roast-38",
+  "ingredients": [
+    {
+      "raw": "6       potatoes, peeled and cut into large chunks",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut into large chunks"
+      }
+    },
+    {
+      "raw": "5       carrots, peeled and cut into 2-inch slices",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut into 2-inch slices"
+      }
+    },
+    {
+      "raw": "1       onion, quartered",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "2 -3   lbs    boneless chuck roast",
+      "expected": {
+        "item": "-3   lbs    boneless chuck roast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  cup    water or 1/2  cup    beef broth",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1/2  cup    beef broth"
+      }
+    },
+    {
+      "raw": "1   tablespoon    chives, chopped",
+      "expected": {
+        "item": "chives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2   tablespoons    parsley, chopped",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/8  teaspoon    pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (1   ounce) package   onion soup mix",
+      "expected": {
+        "item": "onion soup mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (10 3/4  ounce) can   cream of mushroom soup",
+      "expected": {
+        "item": "cream of mushroom soup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "10 3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "305",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

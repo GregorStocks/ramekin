@@ -1,0 +1,79 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-cinnamon-roll-apple-pie",
+  "ingredients": [
+    {
+      "raw": "5 granny smith apples, sliced",
+      "expected": {
+        "item": "granny smith apples",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 cans cinnamon roll",
+      "expected": {
+        "item": "cinnamon roll",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

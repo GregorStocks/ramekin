@@ -1,0 +1,126 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8009710-almond-flour-ca",
+  "ingredients": [
+    {
+      "raw": "4 large eggs, separated",
+      "expected": {
+        "item": "eggs, separated",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon orange zest, plus more for garnish",
+      "expected": {
+        "item": "orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "1 teaspoon almond extract",
+      "expected": {
+        "item": "almond extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup granulated sugar, divided",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1.5 cups almond flour",
+      "expected": {
+        "item": "almond flour",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "144",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup raw sliced almonds",
+      "expected": {
+        "item": "raw sliced almonds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sifted confectioners’ sugar for garnish",
+      "expected": {
+        "item": "Sifted confectioners’ sugar for garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

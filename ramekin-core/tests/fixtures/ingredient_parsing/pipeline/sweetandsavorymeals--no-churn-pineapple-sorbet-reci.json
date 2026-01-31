@@ -1,0 +1,84 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "no-churn-pineapple-sorbet-reci",
+  "ingredients": [
+    {
+      "raw": "4 cups frozen pineapple",
+      "expected": {
+        "item": "frozen pineapple",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup maple syrup (honey or agave)",
+      "expected": {
+        "item": "maple syrup (honey or agave)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lime (juiced and zested)",
+      "expected": {
+        "item": "lime (juiced and zested)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup of coconut cream (not coconut milk*)",
+      "expected": {
+        "item": "coconut cream (not coconut milk*)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon coconut extract",
+      "expected": {
+        "item": "coconut extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shredded unsweetened coconut flakes",
+      "expected": {
+        "item": "shredded unsweetened coconut flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

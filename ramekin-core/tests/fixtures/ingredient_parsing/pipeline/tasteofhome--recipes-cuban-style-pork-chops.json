@@ -1,0 +1,121 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-cuban-style-pork-chops",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon adobo seasoning",
+      "expected": {
+        "item": "adobo seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 boneless pork loin chops (4 ounces each)",
+      "expected": {
+        "item": "boneless pork loin chops",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices deli ham (about 3 ounces)",
+      "expected": {
+        "item": "deli ham",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices Swiss cheese",
+      "expected": {
+        "item": "Swiss cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh cilantro",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional: Mayonnaise, additional Dijon mustard and thinly sliced dill pickles",
+      "expected": {
+        "item": "Optional: Mayonnaise",
+        "measurements": [],
+        "note": "additional Dijon mustard and thinly sliced dill pickles"
+      }
+    }
+  ]
+}

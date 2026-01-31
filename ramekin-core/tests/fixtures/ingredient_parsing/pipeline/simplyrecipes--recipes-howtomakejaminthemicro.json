@@ -1,0 +1,45 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtomakejaminthemicro",
+  "ingredients": [
+    {
+      "raw": "2 to 3 cups berries or other diced fruit",
+      "expected": {
+        "item": "berries or other diced fruit",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 to 1/2 cup sugar, honey, or your favorite sweetener",
+      "expected": {
+        "item": "sugar, honey, or your favorite sweetener",
+        "measurements": [
+          {
+            "amount": "1/4 to 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons lemon juice, to taste",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    }
+  ]
+}

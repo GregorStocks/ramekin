@@ -1,0 +1,65 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "easy-3-ingredient-chili-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound lean ground beef",
+      "expected": {
+        "item": "lean ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 ounce can of chili beans (undrained)",
+      "expected": {
+        "item": "can of chili beans",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "undrained"
+      }
+    },
+    {
+      "raw": "10 ounce Rotel tomatoes with diced chiles",
+      "expected": {
+        "item": "Rotel tomatoes with diced chiles",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional toppings like shredded cheese, diced onions, cilantro or sour cream",
+      "expected": {
+        "item": "Optional toppings like shredded cheese, diced onions, cilantro or sour cream",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

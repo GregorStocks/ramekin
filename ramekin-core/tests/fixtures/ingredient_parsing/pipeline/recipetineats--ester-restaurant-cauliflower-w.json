@@ -1,0 +1,169 @@
+{
+  "source": "recipetineats",
+  "recipe_slug": "ester-restaurant-cauliflower-w",
+  "ingredients": [
+    {
+      "raw": "1 cup almond meal",
+      "expected": {
+        "item": "almond meal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup + 1 tbsp   extra virgin olive oil (, separated)",
+      "expected": {
+        "item": "+ 1 tbsp   extra virgin olive oil (, separated)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp brown rice vinegar ((or rice vinegar or apple cider vinegar))",
+      "expected": {
+        "item": "brown rice vinegar (or rice vinegar or apple cider vinegar)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt ((plus more to taste))",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "Black pepper",
+      "expected": {
+        "item": "Black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large head of cauliflower ((Note 1))",
+      "expected": {
+        "item": "head of cauliflower (Note 1)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  lemon (, juice only)",
+      "expected": {
+        "item": "lemon (, juice only)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup almonds (, roughly chopped and lightly toasted in a dry frypan)",
+      "expected": {
+        "item": "almonds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped and lightly toasted in a dry frypan"
+      }
+    },
+    {
+      "raw": "1/2 cup fresh mint leaves ((packed))",
+      "expected": {
+        "item": "fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "packed"
+      }
+    }
+  ]
+}

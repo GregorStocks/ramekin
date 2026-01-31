@@ -1,0 +1,138 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-meal-prep-chicken-burri",
+  "ingredients": [
+    {
+      "raw": "2 large, boneless, skinless chicken breasts, cubed",
+      "expected": {
+        "item": "boneless, skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "15 oz black beans, 1 can, drained and rinsed",
+      "expected": {
+        "item": "black beans, 1 can",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1 white onion, diced",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 cloves garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 oz medium chunky salsa, 1 jar",
+      "expected": {
+        "item": "medium chunky salsa, 1 jar",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup brown rice, cooked",
+      "expected": {
+        "item": "brown rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "cooked"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bundle green onion, sliced, for garnish",
+      "expected": {
+        "item": "bundle green onion, sliced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "black pepper, to taste",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

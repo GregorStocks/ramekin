@@ -1,0 +1,135 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-252949-homemade-hot-sau",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup diced onion",
+      "expected": {
+        "item": "diced onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium chile peppers, such as poblano, New Mexico or Anaheim, diced",
+      "expected": {
+        "item": "chile peppers, such as poblano, New Mexico or Anaheim",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2-4 habanero peppers, or other small hot chile peppers, stemmed, halved and seeded",
+      "expected": {
+        "item": "habanero peppers, or other small hot chile peppers, stemmed",
+        "measurements": [
+          {
+            "amount": "2-4",
+            "unit": null
+          }
+        ],
+        "note": "halved and seeded"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 pound tomatoes, diced (about 3 cups)",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 cup distilled white vinegar",
+      "expected": {
+        "item": "distilled white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-3 teaspoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1-3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

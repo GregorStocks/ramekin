@@ -1,0 +1,49 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-240343-creamy-buffalo-d",
+  "ingredients": [
+    {
+      "raw": "0.25 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons hot Buffalo wing sauce (such as Frank's® REDHOT Buffalo Wing Sauce)",
+      "expected": {
+        "item": "hot Buffalo wing sauce (such as Frank's® REDHOT Buffalo Wing Sauce)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

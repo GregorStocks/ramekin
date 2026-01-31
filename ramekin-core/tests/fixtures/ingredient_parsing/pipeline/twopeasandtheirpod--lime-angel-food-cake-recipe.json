@@ -1,0 +1,79 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "lime-angel-food-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups powdered sugar (sifted)",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted"
+      }
+    },
+    {
+      "raw": "1 cup unbleached all purpose flour",
+      "expected": {
+        "item": "unbleached all purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups egg whites at room temperature (10-12 egg whites)",
+      "expected": {
+        "item": "egg whites at room temperature",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "10-12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 teaspoons lime zest",
+      "expected": {
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 1/2 teaspoons fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2016-07-canning-101-blueberry-",
+  "ingredients": [
+    {
+      "raw": "1 1/4 pounds (about 3 1/2 cups) fresh or frozen blueberries, rinsed and stems removed",
+      "expected": {
+        "item": "fresh or frozen blueberries",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and stems removed"
+      }
+    },
+    {
+      "raw": "3/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon calcium water (this comes with every box of Pomona’s pectin)",
+      "expected": {
+        "item": "calcium water (this comes with every box of Pomona’s pectin)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
+      "expected": {
+        "item": "vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

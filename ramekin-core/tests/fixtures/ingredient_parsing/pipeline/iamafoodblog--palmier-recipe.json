@@ -1,0 +1,36 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "palmier-recipe",
+  "ingredients": [
+    {
+      "raw": "1 sheet of store-bought puff pastry",
+      "expected": {
+        "item": "sheet of store-bought puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "2-ingredient-pesto-chicken-rec",
+  "ingredients": [
+    {
+      "raw": "4  boneless chicken breast fillets (skinless)",
+      "expected": {
+        "item": "boneless chicken breast fillets (skinless)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup basil pesto (plus 1/4 cup extra for serving. Use this recipe for homemade pesto or you can use store bought. )",
+      "expected": {
+        "item": "basil pesto",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1/4 cup extra for serving. Use this recipe for homemade pesto or you can use store bought."
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt (optional - adjust to your tastes)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional - adjust to your tastes"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "500 g cherry tomatoes (optional as a serving idea)",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": "optional as a serving idea"
+      }
+    }
+  ]
+}

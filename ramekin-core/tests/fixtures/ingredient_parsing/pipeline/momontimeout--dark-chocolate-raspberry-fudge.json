@@ -1,0 +1,138 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "dark-chocolate-raspberry-fudge",
+  "ingredients": [
+    {
+      "raw": "20 oz dark chocolate chips ((60% Cacoa))",
+      "expected": {
+        "item": "dark chocolate chips",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": null
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 oz sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup seedless raspberry jam",
+      "expected": {
+        "item": "seedless raspberry jam",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz white chocolate chips ((divided))",
+      "expected": {
+        "item": "white chocolate chips",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 1/2 tbsp coconut oil or shortening",
+      "expected": {
+        "item": "coconut oil or shortening",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp raspberry extract or liqueur",
+      "expected": {
+        "item": "raspberry extract or liqueur",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pink food coloring",
+      "expected": {
+        "item": "pink food coloring",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

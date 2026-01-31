@@ -1,0 +1,66 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "butter-popcorn-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup popcorn kernels",
+      "expected": {
+        "item": "popcorn kernels",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon coconut oil",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 Tablespoons salted butter (melted)",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "½ teaspoon popcorn salt ((or to taste))",
+      "expected": {
+        "item": "popcorn salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    }
+  ]
+}

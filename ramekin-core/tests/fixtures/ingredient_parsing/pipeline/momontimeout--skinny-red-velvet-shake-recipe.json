@@ -1,0 +1,122 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "skinny-red-velvet-shake-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup frozen yogurt (I used Greek)",
+      "expected": {
+        "item": "frozen yogurt (I used Greek)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup Blue Diamond Almond Breeze Almondmilk Cashewmilk blend",
+      "expected": {
+        "item": "Blue Diamond Almond Breeze Almondmilk Cashewmilk blend",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Red Velvet cake mix",
+      "expected": {
+        "item": "Red Velvet cake mix",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  scoop of protein powder (optional, use chocolate or vanilla)",
+      "expected": {
+        "item": "scoop of protein powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional, use chocolate or vanilla"
+      }
+    },
+    {
+      "raw": "2 oz light cream cheese (softened)",
+      "expected": {
+        "item": "light cream cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1/2  heavy whipping cream",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

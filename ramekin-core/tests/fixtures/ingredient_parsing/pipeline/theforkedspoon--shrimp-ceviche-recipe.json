@@ -1,0 +1,169 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "shrimp-ceviche-recipe",
+  "ingredients": [
+    {
+      "raw": "1 small white onion (thinly sliced)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.5 pounds cooked shrimp (peeled, deveined, and chopped into bite-size pieces)",
+      "expected": {
+        "item": "cooked shrimp",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled, deveined, and chopped into bite-size pieces"
+      }
+    },
+    {
+      "raw": "4  Roma tomatoes  (seeded and chopped)",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "seeded and chopped"
+      }
+    },
+    {
+      "raw": "1  green bell pepper (seeded and diced)",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "1  jalapeño (seeded and diced (optional))",
+      "expected": {
+        "item": "jalapeño",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced (optional"
+      }
+    },
+    {
+      "raw": "1  orange (juiced)",
+      "expected": {
+        "item": "orange (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  grapefruit (juiced)",
+      "expected": {
+        "item": "grapefruit (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  lemons (juiced)",
+      "expected": {
+        "item": "lemons (juiced)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10  limes (juiced)",
+      "expected": {
+        "item": "limes (juiced)",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small bunch fresh cilantro (finely chopped)",
+      "expected": {
+        "item": "bunch fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Tortilla chips or Fried Green Plantain Chips (for serving)",
+      "expected": {
+        "item": "Tortilla chips or Fried Green Plantain Chips",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

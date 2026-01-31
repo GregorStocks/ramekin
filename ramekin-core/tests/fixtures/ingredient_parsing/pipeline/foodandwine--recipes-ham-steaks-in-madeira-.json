@@ -1,0 +1,143 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-ham-steaks-in-madeira-",
+  "ingredients": [
+    {
+      "raw": "1 teaspoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 tablespoons salted butter, divided",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 (12-ounce) boneless cured ham steaks",
+      "expected": {
+        "item": "boneless cured ham steaks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Madeira",
+      "expected": {
+        "item": "Madeira",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup unsalted chicken stock",
+      "expected": {
+        "item": "unsalted chicken stock",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces fresh button or wild mushrooms, thinly sliced",
+      "expected": {
+        "item": "fresh button or wild mushrooms",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 tablespoon&nbsp;finely chopped shallots",
+      "expected": {
+        "item": "finely chopped shallots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup English peas (optional)",
+      "expected": {
+        "item": "English peas",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/4 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

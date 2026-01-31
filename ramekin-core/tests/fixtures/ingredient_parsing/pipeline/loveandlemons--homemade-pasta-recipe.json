@@ -1,0 +1,62 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "homemade-pasta-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups all-purpose flour (spooned &amp;amp; leveled)",
+      "expected": {
+        "item": "all-purpose flour (spooned & leveled)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tablespoon extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6.8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

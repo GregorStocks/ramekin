@@ -1,0 +1,75 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2022-04-03-all-purpose-lemon-v",
+  "ingredients": [
+    {
+      "raw": "⅓ cup fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup white balsamic vinegar",
+      "expected": {
+        "item": "white balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoon honey or maple syrup",
+      "expected": {
+        "item": "honey or maple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1&nbsp; cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "216",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

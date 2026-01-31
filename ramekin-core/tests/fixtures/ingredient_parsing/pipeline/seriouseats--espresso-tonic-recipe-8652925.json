@@ -1,0 +1,60 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "espresso-tonic-recipe-8652925",
+  "ingredients": [
+    {
+      "raw": "4 fluid ounces tonic water (120ml)",
+      "expected": {
+        "item": "tonic water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 freshly brewed shot espresso (about 1 fluid ounce; 30ml)",
+      "expected": {
+        "item": "freshly brewed shot espresso",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Simple syrup, oleo-saccharum, to taste (optional, see notes)",
+      "expected": {
+        "item": "Simple syrup, oleo-saccharum, to taste",
+        "measurements": [],
+        "note": "optional, see notes"
+      }
+    },
+    {
+      "raw": "Lemon peel (optional, see notes)",
+      "expected": {
+        "item": "Lemon peel",
+        "measurements": [],
+        "note": "optional, see notes"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-watermelon-campari-ice",
+  "ingredients": [
+    {
+      "raw": "1 cup fresh watermelon juice",
+      "expected": {
+        "item": "fresh watermelon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Campari",
+      "expected": {
+        "item": "Campari",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

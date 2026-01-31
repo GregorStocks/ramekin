@@ -1,0 +1,111 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-8405691-lemon-dump-cake",
+  "ingredients": [
+    {
+      "raw": "nonstick cooking spray",
+      "expected": {
+        "item": "nonstick cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (22 ounce) can lemon pie filling",
+      "expected": {
+        "item": "lemon pie filling",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "22",
+            "unit": "oz"
+          },
+          {
+            "amount": "624",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (15.25 ounce) package lemon cake mix",
+      "expected": {
+        "item": "lemon cake mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "15.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "432",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8 ounce) package cream cheese, cubed",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "0.5 cup salted butter, cut into small pieces",
+      "expected": {
+        "item": "salted butter, cut into small pieces",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8 ounce) container frozen whipped topping (such as Cool Whip®), thawed",
+      "expected": {
+        "item": "container frozen whipped topping (such as Cool Whip®)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    }
+  ]
+}

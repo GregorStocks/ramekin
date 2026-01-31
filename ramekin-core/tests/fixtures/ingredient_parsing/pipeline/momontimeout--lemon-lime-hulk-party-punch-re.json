@@ -1,0 +1,45 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "lemon-lime-hulk-party-punch-re",
+  "ingredients": [
+    {
+      "raw": "1/2 gallon Lime Sherbet",
+      "expected": {
+        "item": "Lime Sherbet",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "gallon"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 liters Lemon-Lime Soda",
+      "expected": {
+        "item": "Lemon-Lime Soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3  Fresh Limes",
+      "expected": {
+        "item": "Fresh Limes",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

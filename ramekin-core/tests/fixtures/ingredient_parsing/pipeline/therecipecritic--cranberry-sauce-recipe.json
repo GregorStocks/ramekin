@@ -1,0 +1,74 @@
+{
+  "source": "therecipecritic",
+  "recipe_slug": "cranberry-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "12 ounces fresh cranberries",
+      "expected": {
+        "item": "fresh cranberries",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest from one orange",
+      "expected": {
+        "item": "zest from one orange",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "cheesy-broccoli-and-bacon-scra",
+  "ingredients": [
+    {
+      "raw": "1 teaspoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  roasted broccoli florets (chopped small, about 1/3 cup worth)",
+      "expected": {
+        "item": "roasted broccoli florets",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "chopped small, about 1/3 cup worth"
+      }
+    },
+    {
+      "raw": "1  strip of bacon (cooked and chopped small)",
+      "expected": {
+        "item": "strip of bacon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "cooked and chopped small"
+      }
+    },
+    {
+      "raw": "2 tablespoons shredded cheddar cheese",
+      "expected": {
+        "item": "shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt (to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

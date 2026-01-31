@@ -1,0 +1,331 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-halloween-layer-cake",
+  "ingredients": [
+    {
+      "raw": "1 cup butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "2 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large eggs, room temperature",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "3 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 2% milk",
+      "expected": {
+        "item": "2% milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup baking cocoa",
+      "expected": {
+        "item": "baking cocoa",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon orange extract",
+      "expected": {
+        "item": "orange extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon grated orange zest",
+      "expected": {
+        "item": "grated orange zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 drops yellow food coloring",
+      "expected": {
+        "item": "yellow food coloring",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 drops red food coloring",
+      "expected": {
+        "item": "red food coloring",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "FROSTING:",
+      "expected": {
+        "item": "FROSTING:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 ounces cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "5-3/4 cups confectioners' sugar",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "5-3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons 2% milk",
+      "expected": {
+        "item": "2% milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 drops yellow food coloring",
+      "expected": {
+        "item": "yellow food coloring",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 drops red food coloring",
+      "expected": {
+        "item": "red food coloring",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "GLAZE:",
+      "expected": {
+        "item": "GLAZE:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces semisweet chocolate",
+      "expected": {
+        "item": "semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup heavy whipping cream",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Candy corn for garnish",
+      "expected": {
+        "item": "Candy corn for garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

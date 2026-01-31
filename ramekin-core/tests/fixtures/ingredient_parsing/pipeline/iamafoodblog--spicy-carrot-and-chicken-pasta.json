@@ -1,0 +1,109 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spicy-carrot-and-chicken-pasta",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves, thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 teaspoons crushed red pepper flakes (or to taste)",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 whole chicken legs (thigh and drumstick), skin removed and saved, meat cut into 1 inch pieces",
+      "expected": {
+        "item": "whole chicken legs (thigh and drumstick), skin removed and saved, meat cut into 1 inch pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small zucchini, diced",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "6 button mushrooms, diced",
+      "expected": {
+        "item": "button mushrooms",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 cups of your favorite pasta (I used mini carrot farfalle**)",
+      "expected": {
+        "item": "your favorite pasta (I used mini carrot farfalle**)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and  freshly ground pepper to taste",
+      "expected": {
+        "item": "salt and  freshly ground pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

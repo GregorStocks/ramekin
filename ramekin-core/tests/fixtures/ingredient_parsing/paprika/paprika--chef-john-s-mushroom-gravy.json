@@ -1,0 +1,104 @@
+{
+  "source": "paprika",
+  "recipe_slug": "chef-john-s-mushroom-gravy",
+  "ingredients": [
+    {
+      "raw": "4 Tbsp butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 oz sliced mushrooms",
+      "expected": {
+        "item": "sliced mushrooms",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup all-purpose flour, or as needed",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": "or as needed"
+      }
+    },
+    {
+      "raw": "1 quart beef stock",
+      "expected": {
+        "item": "beef stock",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch ground black pepper to taste",
+      "expected": {
+        "item": "ground black pepper to taste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch fresh thyme leaves, to taste",
+      "expected": {
+        "item": "fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": "to taste"
+      }
+    }
+  ]
+}

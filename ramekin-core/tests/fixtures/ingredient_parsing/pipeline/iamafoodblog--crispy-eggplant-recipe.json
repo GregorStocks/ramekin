@@ -1,0 +1,133 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "crispy-eggplant-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 pint cherry tomatoes",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "pint"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped basil",
+      "expected": {
+        "item": "chopped basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Tabasco, to taste",
+      "expected": {
+        "item": "Tabasco",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "2-3 slices of old brioche",
+      "expected": {
+        "item": "old brioche",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Tabasco Original Red Sauce",
+      "expected": {
+        "item": "Tabasco Original Red Sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 small eggplants, cut crosswise into 1/4 inch slices",
+      "expected": {
+        "item": "eggplants, cut crosswise into 1/4 inch slices",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "oil for frying",
+      "expected": {
+        "item": "oil for frying",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

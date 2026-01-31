@@ -1,0 +1,134 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "mushroom-and-egg-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "Olive oil to sauté",
+      "expected": {
+        "item": "Olive oil to sauté",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lb fresh white mushrooms (diced)",
+      "expected": {
+        "item": "fresh white mushrooms",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1  medium onion (finely diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1  garlic clove (minced)",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4  large hard boiled eggs (diced (click here for quick tutorial))",
+      "expected": {
+        "item": "hard boiled eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "diced (click here for quick tutorial"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh dill (finely chopped)",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt &amp;amp; Pepper to taste",
+      "expected": {
+        "item": "Salt & Pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

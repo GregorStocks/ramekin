@@ -1,0 +1,66 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-peppermint-bark-recipe",
+  "ingredients": [
+    {
+      "raw": "7 oz milk chocolate broken into chunks, or use melts",
+      "expected": {
+        "item": "milk chocolate broken into chunks, or use melts",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3½ oz white chocolate broken into chunks, or use melts",
+      "expected": {
+        "item": "white chocolate broken into chunks, or use melts",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1⁄2 tsp peppermint extract",
+      "expected": {
+        "item": "⁄2 tsp peppermint extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 small peppermint candy canes broken into chunks",
+      "expected": {
+        "item": "peppermint candy canes broken into chunks",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

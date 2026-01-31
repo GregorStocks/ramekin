@@ -1,0 +1,120 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipe-ideas-a54878-bl",
+  "ingredients": [
+    {
+      "raw": "Cooking spray",
+      "expected": {
+        "item": "Cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp. melted butter",
+      "expected": {
+        "item": "melted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp. packed brown sugar",
+      "expected": {
+        "item": "packed brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp. granulated&nbsp;sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp. ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 apples",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 chewy caramel squares",
+      "expected": {
+        "item": "chewy caramel squares",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Breyers Natural Vanilla ice cream, for serving",
+      "expected": {
+        "item": "Breyers Natural Vanilla ice cream",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Caramel, for drizzling",
+      "expected": {
+        "item": "Caramel, for drizzling",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

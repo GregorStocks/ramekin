@@ -1,0 +1,91 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "apple-steel-cut-oatmeal-recipe",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon butter (optional)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cup steel-cut oats (certified gluten-free if necessary)",
+      "expected": {
+        "item": "steel-cut oats (certified gluten-free if necessary)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 medium-to-large apples (I used 2 Granny Smiths and 1 Honeycrisp), cored and sliced into 1-to-2&amp;#8243; chunks",
+      "expected": {
+        "item": "medium-to-large apples (I used 2 Granny Smiths and 1 Honeycrisp)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "cored and sliced into 1-to-2″ chunks"
+      }
+    },
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Maple syrup or honey, to taste (optional)",
+      "expected": {
+        "item": "Maple syrup or honey, to taste",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey, light sprinkle of ground cinnamon&amp;#8230;",
+      "expected": {
+        "item": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey",
+        "measurements": [],
+        "note": "light sprinkle of ground cinnamon…"
+      }
+    }
+  ]
+}

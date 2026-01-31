@@ -1,0 +1,45 @@
+{
+  "source": "thewoksoflife",
+  "recipe_slug": "sourdough-starter-recipe",
+  "ingredients": [
+    {
+      "raw": "105 g unbleached all-purpose flour or bread flour  ((divided into 3 portions of 35g))",
+      "expected": {
+        "item": "unbleached all-purpose flour or bread flour",
+        "measurements": [
+          {
+            "amount": "105",
+            "unit": "g"
+          }
+        ],
+        "note": "divided into 3 portions of 35g"
+      }
+    },
+    {
+      "raw": "35 g whole wheat flour",
+      "expected": {
+        "item": "whole wheat flour",
+        "measurements": [
+          {
+            "amount": "35",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "140 g lukewarm water ((divided into 4 portions of 35g; avoid using heavily chlorinated tap water))",
+      "expected": {
+        "item": "lukewarm water",
+        "measurements": [
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": "divided into 4 portions of 35g; avoid using heavily chlorinated tap water"
+      }
+    }
+  ]
+}

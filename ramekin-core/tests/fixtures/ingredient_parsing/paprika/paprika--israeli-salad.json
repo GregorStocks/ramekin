@@ -1,0 +1,146 @@
+{
+  "source": "paprika",
+  "recipe_slug": "israeli-salad",
+  "ingredients": [
+    {
+      "raw": "2 medium roma tomatoes, cubed",
+      "expected": {
+        "item": "roma tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 pound seedless (English) or Persian cucumbers, unpeeled, cubed",
+      "expected": {
+        "item": "seedless (English) or Persian cucumbers, unpeeled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1/2 medium red onion or 4 scallions, finely chopped",
+      "expected": {
+        "item": "red onion or 4 scallions",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "3 tablespoons finely minced fresh parsley",
+      "expected": {
+        "item": "finely minced fresh parsley",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice of half a lemon, or more to taste",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons sumac powder",
+      "expected": {
+        "item": "sumac powder",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper, to taste",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "6 large pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
+      "expected": {
+        "item": "pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil cooking spray or 2 tablespoons olive oil",
+      "expected": {
+        "item": "Olive oil cooking spray",
+        "measurements": [],
+        "note": "or 2 tablespoons olive oil"
+      }
+    },
+    {
+      "raw": "Flaky sea salt",
+      "expected": {
+        "item": "Flaky sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon za’atar or sumac",
+      "expected": {
+        "item": "za’atar or sumac",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

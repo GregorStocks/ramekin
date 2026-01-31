@@ -1,0 +1,113 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "teriyaki-chicken-wings-recipe",
+  "ingredients": [
+    {
+      "raw": "1.5 pounds chicken wings",
+      "expected": {
+        "item": "chicken wings",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic (grated)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 tsp ginger (grated)",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup pineapple juice",
+      "expected": {
+        "item": "pineapple juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "toasted sesame seeds",
+      "expected": {
+        "item": "toasted sesame seeds",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

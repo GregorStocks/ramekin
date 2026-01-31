@@ -1,0 +1,114 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "apple-cider-recipe",
+  "ingredients": [
+    {
+      "raw": "4 pounds apples ((about 12, cored &amp;amp; quartered))",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": "about 12, cored & quartered"
+      }
+    },
+    {
+      "raw": "1  orange ((quartered and unpeeled))",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "quartered and unpeeled"
+      }
+    },
+    {
+      "raw": "3  cinnamon sticks",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp whole cloves",
+      "expected": {
+        "item": "whole cloves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp allspice berries",
+      "expected": {
+        "item": "allspice berries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp ground nutmeg ((or 1 whole nutmeg))",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 whole nutmeg"
+      }
+    },
+    {
+      "raw": "¼  cup light brown sugar ((or honey, dark brown sugar, maple syrup, coconut sugar, etc.))",
+      "expected": {
+        "item": "light brown sugar (or honey, dark brown sugar, maple syrup, coconut sugar, etc.)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10-12 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "10-12",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

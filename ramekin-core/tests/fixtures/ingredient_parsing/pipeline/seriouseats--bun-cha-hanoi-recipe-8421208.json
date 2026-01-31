@@ -1,0 +1,550 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "bun-cha-hanoi-recipe-8421208",
+  "ingredients": [
+    {
+      "raw": "1 1/4 pounds (567g) ground pork, 20 percent fat",
+      "expected": {
+        "item": "ground pork, 20 percent fat",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small shallot (35g), finely chopped (about 2 tablespoons)",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "5 medium cloves (25g) garlic, minced (2 tablespoons)",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "medium"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3 tablespoons (37g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "37",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) fish sauce (see note)",
+      "expected": {
+        "item": "fish sauce (see note)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Vegetable or other neutral oil, for brushing",
+      "expected": {
+        "item": "Vegetable or other neutral oil, for brushing",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound (456g) skin-on pork belly, frozen for 45 to 50 minutes",
+      "expected": {
+        "item": "skin-on pork belly",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "456",
+            "unit": "g"
+          }
+        ],
+        "note": "frozen for 45 to 50 minutes"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) hot water",
+      "expected": {
+        "item": "hot water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (25g) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) fish sauce (see note)",
+      "expected": {
+        "item": "fish sauce (see note)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) vegetable or other neutral oil",
+      "expected": {
+        "item": "vegetable or other neutral oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 scallions, white and green parts, thinly sliced (about 20g)",
+      "expected": {
+        "item": "scallions, white and green parts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 small shallot (35g), roughly chopped (2 tablespoons)&nbsp;",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "2 medium cloves garlic, roughly chopped (1 tablespoon)",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) hot water",
+      "expected": {
+        "item": "hot water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small carrot (59g), peeled and thinly sliced (1/2 cup)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "peeled and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 small kohlrabi (68g), thinly sliced, then cut into small pieces (1/2 cup), see note",
+      "expected": {
+        "item": "kohlrabi, thinly sliced, then cut into small pieces, see note",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups (960ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "960",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (150g) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) fish sauce (see note)",
+      "expected": {
+        "item": "fish sauce (see note)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces (227g) uncooked rice vermicelli noodles (see note)",
+      "expected": {
+        "item": "uncooked rice vermicelli noodles (see note)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 head butter lettuce, leaves picked and washed&nbsp;",
+      "expected": {
+        "item": "butter lettuce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "leaves picked and washed"
+      }
+    },
+    {
+      "raw": "1 bunch Thai basil (húng quế), leaves picked",
+      "expected": {
+        "item": "Thai basil (húng quế), leaves picked",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch Vietnamese coriander (rau răm), leaves picked",
+      "expected": {
+        "item": "Vietnamese coriander (rau răm), leaves picked",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch perilla (tiá tô), leaves picked",
+      "expected": {
+        "item": "perilla (tiá tô), leaves picked",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch peppermint (húng lủi), leaves picked",
+      "expected": {
+        "item": "peppermint (húng lủi), leaves picked",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch fish mint (dấp cá), leaves picked",
+      "expected": {
+        "item": "fish mint (dấp cá), leaves picked",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cloves (50g) garlic, chopped (1/4 cup)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "clove"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 bird’s eye chiles, thinly sliced",
+      "expected": {
+        "item": "bird’s eye chiles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    }
+  ]
+}

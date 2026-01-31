@@ -1,0 +1,87 @@
+{
+  "source": "paprika",
+  "recipe_slug": "hot-chocolate-manhattan",
+  "ingredients": [
+    {
+      "raw": "1 ½ ounces semi-sweet chocolate",
+      "expected": {
+        "item": "semi-sweet chocolate",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ ounce sweet vermouth, preferably Carpano Antica formula",
+      "expected": {
+        "item": "sweet vermouth, preferably Carpano Antica formula",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ ounces whiskey, such as Wild Turkey 101 bourbon",
+      "expected": {
+        "item": "whiskey, such as Wild Turkey 101 bourbon",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 dashes Angostura Aromatic bitters",
+      "expected": {
+        "item": "Angostura Aromatic bitters",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "source": "paprika",
+  "recipe_slug": "perfect-guacamole",
+  "ingredients": [
+    {
+      "raw": "1/2 of 1 medium white onion (about 4 ounces; 113 g), roughly chopped",
+      "expected": {
+        "item": "of 1 medium white onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1 serrano chile, stemmed and roughly chopped (remove seeds before chopping for a less hot result)",
+      "expected": {
+        "item": "serrano chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "stemmed and roughly chopped (remove seeds before chopping for a less hot result)"
+      }
+    },
+    {
+      "raw": "1/2 cup picked cilantro leaves and tender stems, finely chopped, divided",
+      "expected": {
+        "item": "picked cilantro leaves and tender stems, finely chopped",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ripe Hass avocados (about 7 ounces; 200 g each)",
+      "expected": {
+        "item": "ripe Hass avocados",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": "oz each"
+          },
+          {
+            "amount": "200",
+            "unit": "g each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons (30-45 ml) fresh lime juice (from about 2 limes)",
+      "expected": {
+        "item": "fresh lime juice (from about 2 limes)",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30-45",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

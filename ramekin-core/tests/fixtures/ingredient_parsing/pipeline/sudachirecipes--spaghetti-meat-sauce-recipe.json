@@ -1,0 +1,287 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "spaghetti-meat-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "100 g onion (finely diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "30 g carrot (diced small)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "diced small"
+      }
+    },
+    {
+      "raw": "25 g celery (finely diced)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1 clove garlic (finely minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "finely minced"
+      }
+    },
+    {
+      "raw": "400 g canned tomato (diced or crushed)",
+      "expected": {
+        "item": "canned tomato",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": "diced or crushed"
+      }
+    },
+    {
+      "raw": "1 tbsp butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "150 g ground pork (or beef, or a mixture of both)",
+      "expected": {
+        "item": "ground pork (or beef, or a mixture of both)",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp red wine",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp tomato ketchup",
+      "expected": {
+        "item": "tomato ketchup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp oregano",
+      "expected": {
+        "item": "oregano",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "240 g dry spaghetti",
+      "expected": {
+        "item": "dry spaghetti",
+        "measurements": [
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2500 ml water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2500",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ½ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch nutmeg powder",
+      "expected": {
+        "item": "nutmeg powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch cinnamon powder",
+      "expected": {
+        "item": "cinnamon powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp grated parmesan cheese (optional)",
+      "expected": {
+        "item": "grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 tsp fresh parsley (optional, to garnish)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional, to garnish"
+      }
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "source": "paprika",
+  "recipe_slug": "new-york-deli-rye-bread",
+  "ingredients": [
+    {
+      "raw": "Sponge:",
+      "expected": {
+        "item": "Sponge:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (4 ounces, 117 grams) bread flour",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "117",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (3.3 ounces, 95 grams) rye flour",
+      "expected": {
+        "item": "rye flour",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "3.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "95",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon (1.6 grams) instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.6",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (0.6 ounces, 18.7 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "oz"
+          },
+          {
+            "amount": "18.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon (4.6 grams) malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams))",
+      "expected": {
+        "item": "malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (12.5 ounces, 354 grams) water, at room temperature",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "12.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "354",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "Flour Mixture:",
+      "expected": {
+        "item": "Flour Mixture:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/4 cups (12.5 ounces, 351 grams) bread flour",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "2 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "12.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "351",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 plus 1/8 teaspoon (2 grams) instant yeast",
+      "expected": {
+        "item": "1/2 plus 1/8 teaspoon (2 grams) instant yeast",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1/8 teaspoon instant yeast"
+      }
+    },
+    {
+      "raw": "2 tablespoons (0.5 ounces, 14 grams) caraway seeds (you can grind these if you want to avoid the crunch)",
+      "expected": {
+        "item": "caraway seeds (you can grind these if you want to avoid the crunch)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon (0.3 ounces, 10.5 grams) coarse salt",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "10.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Dough and Baking",
+      "expected": {
+        "item": "Dough and Baking",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon (0.25 ounces, 6.7 grams) vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "6.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "about 2 teaspoons (about 0.5 ounces, 16 grams) cornmeal for sprinkling",
+      "expected": {
+        "item": "about 2 teaspoons cornmeal for sprinkling",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

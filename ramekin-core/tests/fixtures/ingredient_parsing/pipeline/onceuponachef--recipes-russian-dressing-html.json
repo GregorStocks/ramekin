@@ -1,0 +1,88 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-russian-dressing-html",
+  "ingredients": [
+    {
+      "raw": "½ cup  mayonnaise, best quality such as Hellmann’s or Duke’s",
+      "expected": {
+        "item": "mayonnaise, best quality such as Hellmann’s or Duke’s",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
+      "expected": {
+        "item": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons  ketchup or chili sauce"
+      }
+    },
+    {
+      "raw": "¼ cup plus 2 tablespoons  dill relish",
+      "expected": {
+        "item": "¼ cup plus 2 tablespoons  dill relish",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons  dill relish"
+      }
+    },
+    {
+      "raw": "1 tablespoon  prepared horseradish",
+      "expected": {
+        "item": "prepared horseradish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 heaping tablespoon finely minced shallot",
+      "expected": {
+        "item": "finely minced shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaping tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

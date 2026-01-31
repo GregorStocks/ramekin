@@ -1,0 +1,66 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-classic-negroni-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tbsp gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp sweet vermouth",
+      "expected": {
+        "item": "sweet vermouth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp Campari",
+      "expected": {
+        "item": "Campari",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 orange slice",
+      "expected": {
+        "item": "orange slice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "watergate-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 (3.4-ounce) box   Instant Pistachio Pudding",
+      "expected": {
+        "item": "Instant Pistachio Pudding",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          },
+          {
+            "amount": "3.4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (20-ounce) can  crushed pineapple (drained with 1/2 cup juice reserved)",
+      "expected": {
+        "item": "crushed pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": "drained with 1/2 cup juice reserved"
+      }
+    },
+    {
+      "raw": "1 cup miniature marshmallows",
+      "expected": {
+        "item": "miniature marshmallows",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup pecans (Chopped~Divided)",
+      "expected": {
+        "item": "pecans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "Chopped~Divided"
+      }
+    },
+    {
+      "raw": "1 3/4 cups frozen whipped topping (thawed)",
+      "expected": {
+        "item": "frozen whipped topping",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "Maraschino cherries",
+      "expected": {
+        "item": "Maraschino cherries",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

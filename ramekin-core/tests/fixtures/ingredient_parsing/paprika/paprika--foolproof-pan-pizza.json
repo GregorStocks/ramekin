@@ -1,0 +1,179 @@
+{
+  "source": "paprika",
+  "recipe_slug": "foolproof-pan-pizza",
+  "ingredients": [
+    {
+      "raw": "400g bread flour (14 ounces; about 2 1/2 cups), plus more for dusting",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for dusting"
+      }
+    },
+    {
+      "raw": "10 g kosher salt (0.35 ounces; about 2 teaspoons), plus more for sprinkling",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "g"
+          },
+          {
+            "amount": "0.35",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for sprinkling"
+      }
+    },
+    {
+      "raw": "4 g instant yeast (0.15 ounces; about 1 teaspoon), such as SAF Instant Yeast",
+      "expected": {
+        "item": "instant yeast, such as SAF Instant Yeast",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "g"
+          },
+          {
+            "amount": "0.15",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "275 g water (9.5 ounces; about 1 cup plus 3 tablespoons)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "275",
+            "unit": "g"
+          },
+          {
+            "amount": "9.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 g extra-virgin olive oil (0.25 ounces; about 2 teaspoons), plus more to coat pans and for drizzling",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to coat pans and for drizzling"
+      }
+    },
+    {
+      "raw": "1 1/2 cups pizza sauce, such as our New York–style pizza sauce",
+      "expected": {
+        "item": "pizza sauce, such as our New York-style pizza sauce",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces grated full-fat, low moisture (dry) mozzarella cheese (see note)",
+      "expected": {
+        "item": "grated full-fat, low moisture (dry) mozzarella cheese (see note)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toppings as desired",
+      "expected": {
+        "item": "Toppings as desired",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Small handful torn fresh basil leaves (optional)",
+      "expected": {
+        "item": "handful torn fresh basil leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 ounces grated Parmesan or Pecorino Romano cheese (optional)",
+      "expected": {
+        "item": "grated Parmesan or Pecorino Romano cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "source": "thewoksoflife",
+  "recipe_slug": "feijoada-recipe",
+  "ingredients": [
+    {
+      "raw": "½ pound smoked bacon ((225g, chopped))",
+      "expected": {
+        "item": "smoked bacon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "225g, chopped"
+      }
+    },
+    {
+      "raw": "4 pounds bone-in pork shoulder ((1.8 kg, cut into 2-inch chunks))",
+      "expected": {
+        "item": "bone-in pork shoulder",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.8",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  onions ((chopped))",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "10 cloves garlic ((chopped))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "clove"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 pound dried black beans ((450g, soaked in water overnight))",
+      "expected": {
+        "item": "dried black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  smoked ham hocks",
+      "expected": {
+        "item": "smoked ham hocks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "cooked rice and orange slices ((to serve))",
+      "expected": {
+        "item": "cooked rice and orange slices (to serve)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

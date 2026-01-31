@@ -1,0 +1,109 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds Roma tomatoes (or similar), cut in half lengthwise",
+      "expected": {
+        "item": "Roma tomatoes (or similar), cut in half lengthwise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  medium white onion, cut into six wedges",
+      "expected": {
+        "item": "white onion, cut into six wedges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large garlic clove, halved",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "a couple pinches of finely ground sea salt",
+      "expected": {
+        "item": "a couple pinches of finely ground sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 tablespoons of extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  medium dried guajillo chile pepper, soaked in boiling water until softened, and then drained",
+      "expected": {
+        "item": "dried guajillo chile pepper, soaked in boiling water until softened",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "and then drained"
+      }
+    },
+    {
+      "raw": "1 -2  chipotles in adobo sauce (canned)",
+      "expected": {
+        "item": "-2  chipotles in adobo sauce (canned)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup cilantro, roughly chopped",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    }
+  ]
+}

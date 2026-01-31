@@ -1,0 +1,92 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "peach-heirloom-tomato-and-burr",
+  "ingredients": [
+    {
+      "raw": "2 ripe peaches",
+      "expected": {
+        "item": "ripe peaches",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large ripe heirloom tomatoes",
+      "expected": {
+        "item": "ripe heirloom tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup multicolored cherry tomatoes",
+      "expected": {
+        "item": "multicolored cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 4-ounce balls burrata cheese",
+      "expected": {
+        "item": "4-ounce balls burrata cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 leaves basil",
+      "expected": {
+        "item": "leaves basil",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons salted peanuts (crushed)",
+      "expected": {
+        "item": "salted peanuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "crushed"
+      }
+    },
+    {
+      "raw": "Kosher or sea salt",
+      "expected": {
+        "item": "Kosher or sea salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

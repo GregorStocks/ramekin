@@ -1,0 +1,118 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "healthy-tomato-cucumber-avocad",
+  "ingredients": [
+    {
+      "raw": "1  green bell pepper",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 cups cherry tomatoes ((quartered))",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "1  English cucumber",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2  ripe avocados",
+      "expected": {
+        "item": "ripe avocados",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 TBSP red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8-1/4 cup avocado oil (or your favorite healthy oil)",
+      "expected": {
+        "item": "avocado oil (or your favorite healthy oil)",
+        "measurements": [
+          {
+            "amount": "1/8-1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lemon, juiced",
+      "expected": {
+        "item": "lemon, juiced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "2 TBSP fresh cilantro or parsley ((pick your favorite!))",
+      "expected": {
+        "item": "fresh cilantro or parsley (pick your favorite!)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

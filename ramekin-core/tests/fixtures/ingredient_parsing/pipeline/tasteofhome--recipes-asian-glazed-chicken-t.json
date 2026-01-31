@@ -1,0 +1,121 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-asian-glazed-chicken-t",
+  "ingredients": [
+    {
+      "raw": "1/4 cup rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons reduced-sodium soy sauce",
+      "expected": {
+        "item": "reduced-sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 boneless skinless chicken thighs (about 1 pound)",
+      "expected": {
+        "item": "boneless skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon minced fresh gingerroot or 1/2 teaspoon ground ginger",
+      "expected": {
+        "item": "minced fresh gingerroot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/2 teaspoon ground ginger"
+      }
+    },
+    {
+      "raw": "Toasted sesame seeds, optional",
+      "expected": {
+        "item": "Toasted sesame seeds",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

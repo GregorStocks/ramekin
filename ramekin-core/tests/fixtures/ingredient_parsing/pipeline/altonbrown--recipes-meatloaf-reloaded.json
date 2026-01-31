@@ -1,0 +1,286 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-meatloaf-reloaded",
+  "ingredients": [
+    {
+      "raw": "1/2 cup ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  canned chipotle in adobo sauce seeded and finely chopped",
+      "expected": {
+        "item": "canned chipotle in adobo sauce seeded and finely chopped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon",
+      "expected": {
+        "item": "1 tablespoon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon cocoa powder",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5.4",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups garlic-flavored crutons",
+      "expected": {
+        "item": "garlic-flavored crutons",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cayenne pepper, optional",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/2 medium onion, roughly chopped (1 1/3 cups)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          },
+          {
+            "amount": "1 1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2 medium red bell pepper, seeded and cut into large pieces",
+      "expected": {
+        "item": "red bell pepper, seeded and cut into large pieces",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium carrot, peeled and broken into a few large pieces",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and broken into a few large pieces"
+      }
+    },
+    {
+      "raw": "3 cloves garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "18 ounces chuck roast, trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
+      "expected": {
+        "item": "chuck roast, trimmed of excess gristle and silver skin",
+        "measurements": [
+          {
+            "amount": "18",
+            "unit": "oz"
+          },
+          {
+            "amount": "510",
+            "unit": "g"
+          }
+        ],
+        "note": "cut into 1 1/2-inch cubes and chilled"
+      }
+    },
+    {
+      "raw": "18 ounces sirloin roast, cut into 1 1/2-inch cubes and chilled",
+      "expected": {
+        "item": "sirloin roast",
+        "measurements": [
+          {
+            "amount": "18",
+            "unit": "oz"
+          },
+          {
+            "amount": "510",
+            "unit": "g"
+          }
+        ],
+        "note": "cut into 1 1/2-inch cubes and chilled"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

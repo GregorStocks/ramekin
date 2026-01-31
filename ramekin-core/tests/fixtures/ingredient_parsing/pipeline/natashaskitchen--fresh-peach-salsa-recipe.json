@@ -1,0 +1,135 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "fresh-peach-salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb tomatoes (diced)",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1  bell pepper (4 oz, seeded and finely diced)",
+      "expected": {
+        "item": "bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "4 oz, seeded and finely diced"
+      }
+    },
+    {
+      "raw": "2  jalapenos (seeded and finely diced)",
+      "expected": {
+        "item": "jalapenos",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeded and finely diced"
+      }
+    },
+    {
+      "raw": "1  medium onion (finely diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1 1/2 lbs peaches (diced)",
+      "expected": {
+        "item": "peaches",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1/2  bunch cilantro (chopped)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "bunch"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 Tbsp lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/4 tsp freshly ground black pepper or to taste",
+      "expected": {
+        "item": "freshly ground black pepper or to taste",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

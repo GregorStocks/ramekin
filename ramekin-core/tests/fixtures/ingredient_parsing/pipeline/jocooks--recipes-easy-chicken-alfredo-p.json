@@ -1,0 +1,125 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-easy-chicken-alfredo-p",
+  "ingredients": [
+    {
+      "raw": "16 ounce pasta (uncooked, I used elbow macaroni)",
+      "expected": {
+        "item": "pasta",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "uncooked, I used elbow macaroni"
+      }
+    },
+    {
+      "raw": "3 tablespoon butter (unsalted)",
+      "expected": {
+        "item": "butter (unsalted)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  chicken breast (cut into small pieces)",
+      "expected": {
+        "item": "chicken breast (cut into small pieces)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup parmesan cheese (grated)",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 cup mozzarella cheese (shredded)",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "parsley ( for garnish)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

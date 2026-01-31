@@ -1,0 +1,101 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-ahi-tuna-poke",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon  white soy sauce",
+      "expected": {
+        "item": "white soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons untoasted sesame oil",
+      "expected": {
+        "item": "untoasted sesame oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon rice wine vinegar",
+      "expected": {
+        "item": "rice wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon yuzu juice",
+      "expected": {
+        "item": "yuzu juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  scallions, light and dark green parts, sliced thinly on the bias",
+      "expected": {
+        "item": "scallions, light and dark green parts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced thinly on the bias"
+      }
+    },
+    {
+      "raw": "1 tablespoon dry-roasted macadamia nuts",
+      "expected": {
+        "item": "dry-roasted macadamia nuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces ahi tuna, cut into 1/2-inch cubes",
+      "expected": {
+        "item": "ahi tuna, cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

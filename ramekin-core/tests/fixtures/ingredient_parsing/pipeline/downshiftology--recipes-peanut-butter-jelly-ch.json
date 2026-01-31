@@ -1,0 +1,96 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-peanut-butter-jelly-ch",
+  "ingredients": [
+    {
+      "raw": "1/2 cup chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cashew milk (almond milk or coconut milk)",
+      "expected": {
+        "item": "cashew milk (almond milk or coconut milk)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp almond butter or peanut butter",
+      "expected": {
+        "item": "almond butter or peanut butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pint blueberries (plus more for garnish)",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          },
+          {
+            "amount": "296",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "1 tbsp honey or maple syrup",
+      "expected": {
+        "item": "honey or maple syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "blackberries (for garnish)",
+      "expected": {
+        "item": "blackberries",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "3 tbsp chopped pistachios (for garnish)",
+      "expected": {
+        "item": "chopped pistachios",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

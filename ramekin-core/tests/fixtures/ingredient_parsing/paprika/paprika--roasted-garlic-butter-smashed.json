@@ -1,0 +1,129 @@
+{
+  "source": "paprika",
+  "recipe_slug": "roasted-garlic-butter-smashed",
+  "ingredients": [
+    {
+      "raw": "2 pounds mixed baby potatoes",
+      "expected": {
+        "item": "mixed baby potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt and black pepper",
+      "expected": {
+        "item": "kosher salt and black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 stick (8 tablespoons) salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8-12 whole cloves of garlic, peeled",
+      "expected": {
+        "item": "whole cloves of garlic",
+        "measurements": [
+          {
+            "amount": "8-12",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh oregano, chopped",
+      "expected": {
+        "item": "fresh oregano",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh parsley, chopped",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh basil, chopped",
+      "expected": {
+        "item": "fresh basil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "cayenne pepper, to taste",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

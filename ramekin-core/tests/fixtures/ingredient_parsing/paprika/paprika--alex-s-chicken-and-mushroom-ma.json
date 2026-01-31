@@ -1,0 +1,130 @@
+{
+  "source": "paprika",
+  "recipe_slug": "alex-s-chicken-and-mushroom-ma",
+  "ingredients": [
+    {
+      "raw": "3 whole boneless chicken breasts with skin (about 2 1/2 pounds), halved (see Note)",
+      "expected": {
+        "item": "whole boneless chicken breasts with skin",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": "halved (see Note)"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, halved and sliced thin",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved and sliced thin"
+      }
+    },
+    {
+      "raw": "3/4 pound mushrooms, sliced thin, any variety you like",
+      "expected": {
+        "item": "mushrooms, sliced thin, any variety you like",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup dry Marsala",
+      "expected": {
+        "item": "dry Marsala",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons minced fresh parsley leaves (optional, for garnish)",
+      "expected": {
+        "item": "minced fresh parsley leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional, for garnish"
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-269133-cranberry-orange",
+  "ingredients": [
+    {
+      "raw": "2 (2 quart) bottles chilled cranberry juice (no-sugar-added but sweetened with fruit juice)",
+      "expected": {
+        "item": "chilled cranberry juice (no-sugar-added but sweetened with fruit juice)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bottle"
+          },
+          {
+            "amount": "2",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (1 liter) bottle chilled club soda",
+      "expected": {
+        "item": "chilled club soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "1",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Oranges, thinly sliced for garnish",
+      "expected": {
+        "item": "Oranges",
+        "measurements": [],
+        "note": "thinly sliced for garnish"
+      }
+    },
+    {
+      "raw": "Fresh cranberries for garnish",
+      "expected": {
+        "item": "Fresh cranberries for garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "scottish-style-oatmeal-recipe-",
+  "ingredients": [
+    {
+      "raw": "1 cup (180g) steel-cut oats (also sold as pinhead or Irish oats; see note), such as Bob's Red Mill",
+      "expected": {
+        "item": "steel-cut oats (also sold as pinhead or Irish oats; see note), such as Bob's Red Mill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups (700ml) cold water, plus more if needed",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "700",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus more if needed"
+      }
+    },
+    {
+      "raw": "Kosher or sea salt",
+      "expected": {
+        "item": "Kosher or sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Unsalted butter or cream, for serving (optional)",
+      "expected": {
+        "item": "Unsalted butter or cream, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Flaky sea salt, for sprinkling (optional)",
+      "expected": {
+        "item": "Flaky sea salt, for sprinkling",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

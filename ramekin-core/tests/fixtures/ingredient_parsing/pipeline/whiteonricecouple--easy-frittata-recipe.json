@@ -1,0 +1,127 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "easy-frittata-recipe",
+  "ingredients": [
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup half &amp; half (, or milk)",
+      "expected": {
+        "item": "half & half (, or milk)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher or sea salt (, or to taste)",
+      "expected": {
+        "item": "kosher or sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fresh cracked black pepper (, or to taste)",
+      "expected": {
+        "item": "fresh cracked black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "3 Tablespoons butter (, divided)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/2  onion (, diced (or 2 medium shallots))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "diced (or 2 medium shallots"
+      }
+    },
+    {
+      "raw": "3 cups fresh spinach leaves (, tough stems removed)",
+      "expected": {
+        "item": "fresh spinach leaves (, tough stems removed)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small tomato (, diced)",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1/4 cup grated parmesan cheese",
+      "expected": {
+        "item": "grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

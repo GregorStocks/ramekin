@@ -1,0 +1,121 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-israeli-shakshuka-28187",
+  "ingredients": [
+    {
+      "raw": "2   teaspoons    olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4      extra large ripe tomatoes, chopped",
+      "expected": {
+        "item": "extra large ripe tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2       red bell peppers, diced",
+      "expected": {
+        "item": "red bell peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1   large    onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1       green jalapeno pepper, finely diced",
+      "expected": {
+        "item": "green jalapeno pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "26 1/2  ounces   pomi brand chopped tomatoes (nothing works like this!)",
+      "expected": {
+        "item": "pomi brand chopped tomatoes (nothing works like this!)",
+        "measurements": [
+          {
+            "amount": "26 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "751",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt, to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "black pepper, to taste",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "6   large    eggs (or as many as will fit on your sautÃƒ pan)",
+      "expected": {
+        "item": "eggs (or as many as will fit on your sautÃƒ pan)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

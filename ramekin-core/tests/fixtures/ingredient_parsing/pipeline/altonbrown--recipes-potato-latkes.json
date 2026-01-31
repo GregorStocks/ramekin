@@ -1,0 +1,101 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-potato-latkes",
+  "ingredients": [
+    {
+      "raw": "1/2 medium onion",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds russet potatoes, quartered",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "1 large  egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup schmaltz, plus more as needed",
+      "expected": {
+        "item": "schmaltz",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "2 tablespoons dry instant mashed potatoes",
+      "expected": {
+        "item": "dry instant mashed potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt, plus more for seasoning",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for seasoning"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

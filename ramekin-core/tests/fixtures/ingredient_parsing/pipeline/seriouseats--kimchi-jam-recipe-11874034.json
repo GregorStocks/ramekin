@@ -1,0 +1,70 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "kimchi-jam-recipe-11874034",
+  "ingredients": [
+    {
+      "raw": "16 ounces (454 g) Napa cabbage kimchi, homemade or store-bought, coarsely chopped",
+      "expected": {
+        "item": "Napa cabbage kimchi, homemade or store-bought",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped"
+      }
+    },
+    {
+      "raw": "1/3 cup light brown sugar (7 1/2 ounces; 213 g)",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "7 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "213",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

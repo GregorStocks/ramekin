@@ -1,0 +1,77 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-bacon-egg-cups",
+  "ingredients": [
+    {
+      "raw": "6 slices bacon",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt, taste",
+      "expected": {
+        "item": "salt, taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pepper, taste",
+      "expected": {
+        "item": "pepper, taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup shredded cheddar cheese",
+      "expected": {
+        "item": "shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "chive, to taste",
+      "expected": {
+        "item": "chive",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "muffin tin",
+      "expected": {
+        "item": "muffin tin",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

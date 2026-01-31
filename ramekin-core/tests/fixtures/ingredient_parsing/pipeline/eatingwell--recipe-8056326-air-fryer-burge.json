@@ -1,0 +1,140 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8056326-air-fryer-burge",
+  "ingredients": [
+    {
+      "raw": "1 pound 90%-lean ground beef",
+      "expected": {
+        "item": "90%-lean ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon ground pepper",
+      "expected": {
+        "item": "ground pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices Cheddar cheese",
+      "expected": {
+        "item": "Cheddar cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 whole-wheat hamburger buns, toasted",
+      "expected": {
+        "item": "whole-wheat hamburger buns",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "4 leaves butter lettuce",
+      "expected": {
+        "item": "leaves butter lettuce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices tomato",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices white onion",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup dill pickle chips",
+      "expected": {
+        "item": "dill pickle chips",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "source": "paprika",
+  "recipe_slug": "classic-pico-de-gallo",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds (680 g) ripe tomatoes, cut into 1/4- to 1/2-inch dice (about 3 cups); see notes",
+      "expected": {
+        "item": "ripe tomatoes, cut into 1/4- to 1/2-inch dice ; see notes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 large white onion, finely diced (about 3/4 cup)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "large"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1 to 2 serrano or jalapeño chiles, finely diced (seeds and membranes removed for a milder salsa)",
+      "expected": {
+        "item": "serrano or jalapeño chiles",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": "finely diced (seeds and membranes removed for a milder salsa)"
+      }
+    },
+    {
+      "raw": "1/2 cup finely chopped fresh cilantro leaves",
+      "expected": {
+        "item": "finely chopped fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) lime juice from 1 lime",
+      "expected": {
+        "item": "lime juice from 1 lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

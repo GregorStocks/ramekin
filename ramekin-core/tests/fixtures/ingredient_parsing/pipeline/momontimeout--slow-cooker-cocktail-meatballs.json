@@ -1,0 +1,53 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "slow-cooker-cocktail-meatballs",
+  "ingredients": [
+    {
+      "raw": "40  frozen meatballs",
+      "expected": {
+        "item": "frozen meatballs",
+        "measurements": [
+          {
+            "amount": "40",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups grape jelly",
+      "expected": {
+        "item": "grape jelly",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz chil sauce (1 bottle )",
+      "expected": {
+        "item": "chil sauce",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

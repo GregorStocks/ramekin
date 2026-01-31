@@ -1,0 +1,108 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "best-umami-hamburger-recipe",
+  "ingredients": [
+    {
+      "raw": "2 lbs. Ground Beef",
+      "expected": {
+        "item": "Ground Beef",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 Tablespoons Fish Sauce ((for more daring, savory depth, use 2 tablespoons))",
+      "expected": {
+        "item": "Fish Sauce",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "for more daring, savory depth, use 2 tablespoons"
+      }
+    },
+    {
+      "raw": "2 cloves Garlic (, crushed or minced)",
+      "expected": {
+        "item": "Garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "crushed or minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon Sugar",
+      "expected": {
+        "item": "Sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fresh ground Black Pepper (, or to taste)",
+      "expected": {
+        "item": "fresh ground Black Pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "Flaky Salt (, optional)",
+      "expected": {
+        "item": "Flaky Salt",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "6  Hamburger buns ((or 8-12 slider buns))",
+      "expected": {
+        "item": "Hamburger buns (or 8-12 slider buns)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "condiments of your choice and cheese makes it extra decadent and special",
+      "expected": {
+        "item": "condiments of your choice and cheese makes it extra decadent and special",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

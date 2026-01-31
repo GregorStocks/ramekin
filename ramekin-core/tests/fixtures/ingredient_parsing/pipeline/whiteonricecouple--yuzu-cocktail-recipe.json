@@ -1,0 +1,83 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "yuzu-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "1  whole Yuzu ((or @ 1 1/2 Tablespoons (3/4 oz. - 22ml) yuzu juice))",
+      "expected": {
+        "item": "whole Yuzu (or @ 1 1/2 Tablespoons (3/4 oz. - 22ml) yuzu juice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces Gin ( (preferably Hendricks or Tanqueray Rangpur or similar))",
+      "expected": {
+        "item": "Gin ( (preferably Hendricks or Tanqueray Rangpur or similar)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce Simple Syrup (, or to taste)",
+      "expected": {
+        "item": "Simple Syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "dash of orange bitters (, optional )",
+      "expected": {
+        "item": "orange bitters",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 ounces club soda",
+      "expected": {
+        "item": "club soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

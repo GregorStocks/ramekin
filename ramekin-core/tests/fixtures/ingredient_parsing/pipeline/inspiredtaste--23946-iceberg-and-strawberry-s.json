@@ -1,0 +1,151 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "23946-iceberg-and-strawberry-s",
+  "ingredients": [
+    {
+      "raw": "5 thick-cut bacon slices, cooked until crisp then crumbled",
+      "expected": {
+        "item": "thick-cut bacon slices",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "cooked until crisp then crumbled"
+      }
+    },
+    {
+      "raw": "1 medium head iceberg lettuce, trimmed and cored, sliced into 1-inch-thick rounds (should get about 4 to 5 rounds)",
+      "expected": {
+        "item": "head iceberg lettuce, trimmed and cored",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "sliced into 1-inch-thick rounds (should get about 4 to 5 rounds)"
+      }
+    },
+    {
+      "raw": "6 ounces strawberries, hulled and sliced (9 strawberries)",
+      "expected": {
+        "item": "strawberries, hulled and sliced",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "9 strawberries"
+      }
+    },
+    {
+      "raw": "1/4 medium red onion, thinly sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 ounces blue cheese, crumbled (1/2 cup)",
+      "expected": {
+        "item": "blue cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon very finely minced garlic (about 1/2 medium clove)",
+      "expected": {
+        "item": "very finely minced garlic",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch sugar, plus more to taste",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "3 tablespoons apple cider vinegar, white wine vinegar or champagne vinegar",
+      "expected": {
+        "item": "apple cider vinegar, white wine vinegar or champagne vinegar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and fresh ground black pepper",
+      "expected": {
+        "item": "Salt and fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

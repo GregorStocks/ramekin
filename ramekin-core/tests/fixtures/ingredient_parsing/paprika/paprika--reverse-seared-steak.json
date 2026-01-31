@@ -1,0 +1,47 @@
+{
+  "source": "paprika",
+  "recipe_slug": "reverse-seared-steak",
+  "ingredients": [
+    {
+      "raw": "Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
+      "expected": {
+        "item": "Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Vegetable oil (if finishing on the stovetop; optional)",
+      "expected": {
+        "item": "Vegetable oil",
+        "measurements": [],
+        "note": "if finishing on the stovetop; optional"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15g) unsalted butter (if finishing on the stovetop; optional)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "if finishing on the stovetop; optional"
+      }
+    }
+  ]
+}

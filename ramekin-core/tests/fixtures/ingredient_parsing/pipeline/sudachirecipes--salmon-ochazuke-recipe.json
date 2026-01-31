@@ -1,0 +1,137 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "salmon-ochazuke-recipe",
+  "ingredients": [
+    {
+      "raw": "200 g salmon fillets (skin-on)",
+      "expected": {
+        "item": "salmon fillets (skin-on)",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp sake (optional)",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "300 ml dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  green tea bag (approx 2g per teabag)",
+      "expected": {
+        "item": "green tea bag",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ptns cooked Japanese short-grain rice (approx 150g per portion)",
+      "expected": {
+        "item": "ptns cooked Japanese short-grain rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ground sesame seeds",
+      "expected": {
+        "item": "ground sesame seeds",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "kizami nori (shredded nori)",
+      "expected": {
+        "item": "kizami nori",
+        "measurements": [],
+        "note": "shredded nori"
+      }
+    },
+    {
+      "raw": "finely chopped green onions (to garnish)",
+      "expected": {
+        "item": "finely chopped green onions (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "wasabi paste (optional)",
+      "expected": {
+        "item": "wasabi paste",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "category": "seriouseats",
+  "test_cases": [
+    {
+      "name": "onion_format",
+      "raw": "2 medium onions (8 ounces; 227 g each), finely chopped",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz each"
+          },
+          {
+            "amount": "227",
+            "unit": "g each"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

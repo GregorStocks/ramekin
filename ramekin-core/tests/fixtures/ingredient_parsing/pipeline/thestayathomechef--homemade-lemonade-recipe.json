@@ -1,0 +1,53 @@
+{
+  "source": "thestayathomechef",
+  "recipe_slug": "homemade-lemonade-recipe",
+  "ingredients": [
+    {
+      "raw": "5 pounds lemons",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2268",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "date-energy-bites-recipe",
+  "ingredients": [
+    {
+      "raw": "14  pitted dates",
+      "expected": {
+        "item": "pitted dates",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups unsalted cashews (or the nut of your choice)",
+      "expected": {
+        "item": "unsalted cashews (or the nut of your choice)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons flaxseed",
+      "expected": {
+        "item": "flaxseed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup dried cranberries (or other dried berry of your choice)",
+      "expected": {
+        "item": "dried cranberries",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or other dried berry of your choice"
+      }
+    }
+  ]
+}

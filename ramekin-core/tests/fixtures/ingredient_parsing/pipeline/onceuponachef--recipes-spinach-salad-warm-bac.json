@@ -1,0 +1,151 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-spinach-salad-warm-bac",
+  "ingredients": [
+    {
+      "raw": "8  slices bacon, cut into ½-inch pieces",
+      "expected": {
+        "item": "bacon, cut into 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup  finely chopped shallots, from 1 to 2 shallots",
+      "expected": {
+        "item": "finely chopped shallots, from 1 to 2 shallots",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2½ tablespoons  cider vinegar",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ teaspoons Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Heaping ¼ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "heaping tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Several grinds fresh black pepper",
+      "expected": {
+        "item": "Several grinds fresh black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 oz (about 8 cups)  baby spinach",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz  white button or baby bella mushrooms, thinly sliced (about 2 cups)",
+      "expected": {
+        "item": "white button or baby bella mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "3 hard or soft boiled eggs, thinly sliced or cut into wedges",
+      "expected": {
+        "item": "hard or soft boiled eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced or cut into wedges"
+      }
+    }
+  ]
+}

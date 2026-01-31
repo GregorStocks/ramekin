@@ -1,0 +1,96 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-ham-n-swiss-envelopes",
+  "ingredients": [
+    {
+      "raw": "3/4 cup diced fully cooked ham",
+      "expected": {
+        "item": "diced fully cooked ham",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 teaspoons finely chopped onion",
+      "expected": {
+        "item": "finely chopped onion",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup shredded Swiss cheese",
+      "expected": {
+        "item": "shredded Swiss cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces cream cheese, cubed",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "2 tubes (8 ounces each) refrigerated crescent rolls",
+      "expected": {
+        "item": "tubes refrigerated crescent rolls",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

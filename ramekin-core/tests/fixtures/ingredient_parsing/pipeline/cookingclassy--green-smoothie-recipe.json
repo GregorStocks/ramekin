@@ -1,0 +1,164 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "green-smoothie-recipe",
+  "ingredients": [
+    {
+      "raw": "3 Tbsp rolled oats",
+      "expected": {
+        "item": "rolled oats",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp sliced almonds or 1 Tbsp almond butter",
+      "expected": {
+        "item": "sliced almonds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 1 Tbsp almond butter"
+      }
+    },
+    {
+      "raw": "1  medium ripe banana",
+      "expected": {
+        "item": "ripe banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.25 oz. frozen raspberries or blueberries  ((1/4 cup))",
+      "expected": {
+        "item": "frozen raspberries or blueberries",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz. frozen strawberries ((about 2 large or 6 small))",
+      "expected": {
+        "item": "frozen strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": "small"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup cold water*",
+      "expected": {
+        "item": "cold water*",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.5 oz. fresh spinach ((2 1/2 cups packed))",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": "2 1/2 cups packed"
+      }
+    },
+    {
+      "raw": "6  ice cubes",
+      "expected": {
+        "item": "ice cubes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp cinnamon + 1/8 tsp vanilla extract (- for blueberry version)",
+      "expected": {
+        "item": "cinnamon + 1/8 tsp vanilla extract (- for blueberry version)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp almond extract (- for raspberry version)",
+      "expected": {
+        "item": "almond extract (- for raspberry version)",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

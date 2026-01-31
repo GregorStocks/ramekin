@@ -1,0 +1,57 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "lemon-poke-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "1 9x13 Lemon Cake  (box cake mix, prepared according to package instructions)",
+      "expected": {
+        "item": "9x13 Lemon Cake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "box"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "21 oz lemon pie filling",
+      "expected": {
+        "item": "lemon pie filling",
+        "measurements": [
+          {
+            "amount": "21",
+            "unit": "oz"
+          },
+          {
+            "amount": "595",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz whipped topping (thawed)",
+      "expected": {
+        "item": "whipped topping",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    }
+  ]
+}

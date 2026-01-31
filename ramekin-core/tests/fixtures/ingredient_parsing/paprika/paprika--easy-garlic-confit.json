@@ -1,0 +1,53 @@
+{
+  "source": "paprika",
+  "recipe_slug": "easy-garlic-confit",
+  "ingredients": [
+    {
+      "raw": "50 garlic cloves, peeled (1¼ cups), root ends trimmed",
+      "expected": {
+        "item": "garlic cloves, peeled",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": null
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "root ends trimmed"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "324",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

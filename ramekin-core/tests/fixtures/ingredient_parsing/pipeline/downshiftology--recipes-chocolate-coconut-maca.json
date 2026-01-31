@@ -1,0 +1,109 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-chocolate-coconut-maca",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cup shredded coconut (unsweetened)",
+      "expected": {
+        "item": "shredded coconut (unsweetened)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup almond flour (finely ground)",
+      "expected": {
+        "item": "almond flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "48",
+            "unit": "g"
+          }
+        ],
+        "note": "finely ground"
+      }
+    },
+    {
+      "raw": "1/2 cup honey or maple syrup",
+      "expected": {
+        "item": "honey or maple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup raw cacao",
+      "expected": {
+        "item": "raw cacao",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp coconut oil (melted)",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1/2 tbsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

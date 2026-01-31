@@ -1,0 +1,71 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-rosemary-garlic-chicke",
+  "ingredients": [
+    {
+      "raw": "8 chicken thighs skin on",
+      "expected": {
+        "item": "chicken thighs skin on",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp seasoned flour",
+      "expected": {
+        "item": "seasoned flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 head garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 large stalks rosemary",
+      "expected": {
+        "item": "stalks rosemary",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "300ml dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

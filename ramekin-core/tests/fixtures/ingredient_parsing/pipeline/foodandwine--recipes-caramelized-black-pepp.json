@@ -1,0 +1,169 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-caramelized-black-pepp",
+  "ingredients": [
+    {
+      "raw": "1/2 cup dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "About 1/4 cup nam pla (fish sauce)",
+      "expected": {
+        "item": "About 1/4 cup nam pla (fish sauce)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon finely grated fresh ginger",
+      "expected": {
+        "item": "finely grated fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon coarsely ground pepper",
+      "expected": {
+        "item": "coarsely ground pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 fresh Thai chiles, halved, or dried red chiles",
+      "expected": {
+        "item": "fresh Thai chiles, halved",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "or dried red chiles"
+      }
+    },
+    {
+      "raw": "1 tablespoon canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 shallot, thinly sliced",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 pound skinless, boneless chicken thighs, cut into 1-inch pieces",
+      "expected": {
+        "item": "skinless, boneless chicken thighs, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cilantro sprigs",
+      "expected": {
+        "item": "cilantro sprigs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

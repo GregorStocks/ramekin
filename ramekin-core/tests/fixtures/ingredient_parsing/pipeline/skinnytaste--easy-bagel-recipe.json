@@ -1,0 +1,87 @@
+{
+  "source": "skinnytaste",
+  "recipe_slug": "easy-bagel-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup unbleached all purpose flour, whole wheat or gluten-free mix* ((5 oz in weight))",
+      "expected": {
+        "item": "unbleached all purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "whole wheat or gluten-free mix*"
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder (make sure it's not expired or it won't rise)",
+      "expected": {
+        "item": "baking powder (make sure it's not expired or it won't rise)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon kosher salt (use less if using table salt)",
+      "expected": {
+        "item": "kosher salt (use less if using table salt)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup non-fat Greek yogurt (not regular yogurt, it will be too sticky (Stonyfield))",
+      "expected": {
+        "item": "non-fat Greek yogurt (not regular yogurt, it will be too sticky (Stonyfield)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg white or whole egg (beaten)",
+      "expected": {
+        "item": "egg white or whole egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "optional toppings:",
+      "expected": {
+        "item": "optional toppings:",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

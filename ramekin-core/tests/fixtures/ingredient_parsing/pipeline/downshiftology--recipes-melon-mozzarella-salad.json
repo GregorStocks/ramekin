@@ -1,0 +1,138 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-melon-mozzarella-salad",
+  "ingredients": [
+    {
+      "raw": "1  cantaloupe melon",
+      "expected": {
+        "item": "cantaloupe melon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  honeydew melon",
+      "expected": {
+        "item": "honeydew melon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "296",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups mozzarella balls",
+      "expected": {
+        "item": "mozzarella balls",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh basil leaves (loosely packed)",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "loosely packed"
+      }
+    },
+    {
+      "raw": "1 1/2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp white balsamic vinegar",
+      "expected": {
+        "item": "white balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "chopped raw cashews (for garnish)",
+      "expected": {
+        "item": "chopped raw cashews",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

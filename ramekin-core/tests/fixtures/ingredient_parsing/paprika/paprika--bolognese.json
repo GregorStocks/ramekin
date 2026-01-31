@@ -1,0 +1,205 @@
+{
+  "source": "paprika",
+  "recipe_slug": "bolognese",
+  "ingredients": [
+    {
+      "raw": "1 small yellow onion",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 slim carrot",
+      "expected": {
+        "item": "slim carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 rib celery",
+      "expected": {
+        "item": "rib celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic (optional)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 ounces pancetta, diced (optional) or 2 to 3 tablespoons olive oil",
+      "expected": {
+        "item": "pancetta, diced or 2 to 3 tablespoons olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper and red pepper flakes",
+      "expected": {
+        "item": "Freshly ground black pepper and red pepper flakes",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound ground beef (80/20 or 85/15)",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "80/20",
+            "unit": null
+          },
+          {
+            "amount": "85/15",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup whole milk, or 3/4 cup of a low-fat one",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": "or 3/4 cup of a low-fat one"
+      }
+    },
+    {
+      "raw": "1/2 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 6-ounce can tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "6-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Water",
+      "expected": {
+        "item": "Water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "A few gratings of fresh nutmeg",
+      "expected": {
+        "item": "A few gratings of fresh nutmeg",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound dried tagliatelle",
+      "expected": {
+        "item": "dried tagliatelle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

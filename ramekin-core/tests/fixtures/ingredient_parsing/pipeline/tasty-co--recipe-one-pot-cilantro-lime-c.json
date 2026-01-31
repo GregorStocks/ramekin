@@ -1,0 +1,187 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-one-pot-cilantro-lime-c",
+  "ingredients": [
+    {
+      "raw": "1 lb boneless, skinless chicken breast, cubed",
+      "expected": {
+        "item": "boneless, skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 yellow onion, diced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 poblano peppers, chopped",
+      "expected": {
+        "item": "poblano peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 ½ cups low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lime, juiced",
+      "expected": {
+        "item": "lime, juiced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 ½ oz canned cooked black beans, rinsed and drained",
+      "expected": {
+        "item": "canned cooked black beans",
+        "measurements": [
+          {
+            "amount": "14 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and drained"
+      }
+    },
+    {
+      "raw": "2 diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups jasmine rice, uncooked, rinsed",
+      "expected": {
+        "item": "jasmine rice, uncooked",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons cilantro, chopped",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

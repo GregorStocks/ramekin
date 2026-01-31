@@ -1,0 +1,82 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-easy-carbonara",
+  "ingredients": [
+    {
+      "raw": "14 ounces spaghetti",
+      "expected": {
+        "item": "spaghetti",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 ounces guanciale (or pancetta, diced)",
+      "expected": {
+        "item": "guanciale",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "or pancetta, diced"
+      }
+    },
+    {
+      "raw": "3  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Pecorino Romano cheese (freshly grated)",
+      "expected": {
+        "item": "Pecorino Romano cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated"
+      }
+    },
+    {
+      "raw": "ground black pepepr (freshly ground, to taste)",
+      "expected": {
+        "item": "ground black pepepr",
+        "measurements": [],
+        "note": "freshly ground, to taste"
+      }
+    },
+    {
+      "raw": "salt (for pasta water)",
+      "expected": {
+        "item": "salt (for pasta water)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

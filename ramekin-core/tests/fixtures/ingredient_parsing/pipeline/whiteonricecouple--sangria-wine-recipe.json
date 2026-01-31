@@ -1,0 +1,104 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "sangria-wine-recipe",
+  "ingredients": [
+    {
+      "raw": "1  (750 ml) bottle dry red, white, or rosé wine (, chilled *see note below)",
+      "expected": {
+        "item": "dry red, white, or rosé wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "750",
+            "unit": "ml"
+          }
+        ],
+        "note": "chilled *see note below"
+      }
+    },
+    {
+      "raw": "2 cups chopped fruit ((apples, peaches, nectarines, melon, berries))",
+      "expected": {
+        "item": "chopped fruit (apples, peaches, nectarines, melon, berries)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small orange (, cut into thin pieces)",
+      "expected": {
+        "item": "orange (, cut into thin pieces)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of 1 orange or 1/2 cup orange juice",
+      "expected": {
+        "item": "juice of 1 orange",
+        "measurements": [],
+        "note": "or 1/2 cup orange juice"
+      }
+    },
+    {
+      "raw": "1/4 cup brandy (, rum, grand mariner etc., or to taste)",
+      "expected": {
+        "item": "brandy",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "rum, grand mariner etc., or to taste"
+      }
+    },
+    {
+      "raw": "2 Tablespoon simple syrup (, or to taste)",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "3-4 cups (optional) ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "(optional) extra slices of fruit for garnish",
+      "expected": {
+        "item": "extra slices of fruit for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

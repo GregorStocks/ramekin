@@ -1,0 +1,87 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "gambas-al-ajillo-garlic-shrimp",
+  "ingredients": [
+    {
+      "raw": "320 grams large shrimp",
+      "expected": {
+        "item": "large shrimp",
+        "measurements": [
+          {
+            "amount": "320",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "21 grams garlic ((5-6 cloves))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "21",
+            "unit": "g"
+          },
+          {
+            "amount": "5-6",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon salt ((to taste))",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "flat leaf parsley ((chopped, for garnish))",
+      "expected": {
+        "item": "flat leaf parsley",
+        "measurements": [],
+        "note": "chopped, for garnish"
+      }
+    }
+  ]
+}

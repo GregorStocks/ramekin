@@ -1,0 +1,164 @@
+{
+  "source": "paprika",
+  "recipe_slug": "cornbread",
+  "ingredients": [
+    {
+      "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cold is fine",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "cold is fine"
+      }
+    },
+    {
+      "raw": "1 cup (135 grams) fresh or frozen corn kernels, no need to defrost",
+      "expected": {
+        "item": "fresh or frozen corn kernels, no need to defrost",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "135",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons (40 grams) light brown or granulated sugar",
+      "expected": {
+        "item": "light brown or granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (235 ml) buttermilk, well-shaken, cold is fine",
+      "expected": {
+        "item": "buttermilk, well-shaken",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          }
+        ],
+        "note": "cold is fine"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (195 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "195",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (155 grams) cornmeal",
+      "expected": {
+        "item": "cornmeal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "155",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

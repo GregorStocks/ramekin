@@ -1,0 +1,122 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "kheer-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup basmati rice (or other long-grain rice)",
+      "expected": {
+        "item": "basmati rice (or other long-grain rice)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups milk (use whole milk for best creamiest results)",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "980",
+            "unit": "g"
+          }
+        ],
+        "note": "use whole milk for best creamiest results"
+      }
+    },
+    {
+      "raw": "1/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoon granulated sugar ((reduce to 4 tablespoons for a less sweetened kheer))",
+      "expected": {
+        "item": "granulated sugar (reduce to 4 tablespoons for a less sweetened kheer)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cardamom",
+      "expected": {
+        "item": "ground cardamom",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup cashews (chopped)",
+      "expected": {
+        "item": "cashews",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup pistachios (chopped)",
+      "expected": {
+        "item": "pistachios",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "raisins or dried cranberries (to garnish)",
+      "expected": {
+        "item": "raisins or dried cranberries (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon ghee",
+      "expected": {
+        "item": "ghee",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

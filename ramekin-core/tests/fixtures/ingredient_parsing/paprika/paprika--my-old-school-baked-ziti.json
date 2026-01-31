@@ -1,0 +1,159 @@
+{
+  "source": "paprika",
+  "recipe_slug": "my-old-school-baked-ziti",
+  "ingredients": [
+    {
+      "raw": "Glug of olive oil",
+      "expected": {
+        "item": "Glug of olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium onion, chopped small",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped small"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 pound ground beef or Italian sausage, casings removed",
+      "expected": {
+        "item": "ground beef or Italian sausage, casings removed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "28-ounce can whole tomatoes with juices, chopped by you, or crushed tomatoes",
+      "expected": {
+        "item": "-ounce can whole tomatoes with juices, chopped by you",
+        "measurements": [
+          {
+            "amount": "28",
+            "unit": null
+          }
+        ],
+        "note": "or crushed tomatoes"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red pepper flakes, to taste",
+      "expected": {
+        "item": "Red pepper flakes",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 pound pasta, cooked al dente and drained",
+      "expected": {
+        "item": "pasta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "cooked al dente and drained"
+      }
+    },
+    {
+      "raw": "3/4 pound mozzarella, coarsely grated",
+      "expected": {
+        "item": "mozzarella",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely grated"
+      }
+    },
+    {
+      "raw": "2/3 cup finely grated pecorino or parmesan cheese",
+      "expected": {
+        "item": "finely grated pecorino or parmesan cheese",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 pound (4 ounces) baby spinach or a few handfuls of another green, cut into thin ribbons",
+      "expected": {
+        "item": "baby spinach or a few handfuls of another green, cut into thin ribbons",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

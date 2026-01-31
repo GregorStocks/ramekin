@@ -1,0 +1,65 @@
+{
+  "source": "paprika",
+  "recipe_slug": "coddled-eggs",
+  "ingredients": [
+    {
+      "raw": "Gather Your Ingredients",
+      "expected": {
+        "item": "Gather Your Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large eggs, cold from refrigerator",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "cold from refrigerator"
+      }
+    },
+    {
+      "raw": "4 pinches table salt, divided",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "pinch"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 teaspoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "minced fresh tarragon or dill (optional)",
+      "expected": {
+        "item": "minced fresh tarragon or dill",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

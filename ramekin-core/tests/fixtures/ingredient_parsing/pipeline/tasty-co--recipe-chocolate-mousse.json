@@ -1,0 +1,109 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-chocolate-mousse",
+  "ingredients": [
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz chocolate, milk or dark, broken into small pieces",
+      "expected": {
+        "item": "chocolate, milk or dark, broken into small pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup heavy cream, hot",
+      "expected": {
+        "item": "heavy cream, hot",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 raspberries, to garnish",
+      "expected": {
+        "item": "raspberries, to garnish",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sprigs mint, to garnish",
+      "expected": {
+        "item": "mint, to garnish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tubes tube cookie, to garnish",
+      "expected": {
+        "item": "tubes tube cookie, to garnish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

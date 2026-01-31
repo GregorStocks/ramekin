@@ -1,0 +1,70 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "asparagus-ohitashi-recipe",
+  "ingredients": [
+    {
+      "raw": "1  bunch asparagus",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Katsuobushi (dried bonito flakes)",
+      "expected": {
+        "item": "Katsuobushi",
+        "measurements": [],
+        "note": "dried bonito flakes"
+      }
+    }
+  ]
+}

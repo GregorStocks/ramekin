@@ -1,0 +1,117 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "frozen-yogurt-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups whole milk Greek yogurt",
+      "expected": {
+        "item": "whole milk Greek yogurt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can full fat coconut milk (refrigerate & scoop the solid part)",
+      "expected": {
+        "item": "full fat coconut milk (refrigerate & scoop the solid part)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cups cane sugar",
+      "expected": {
+        "item": "cane sugar",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup tart cherries or raspberries, thawed if frozen",
+      "expected": {
+        "item": "tart cherries or raspberries",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed if frozen"
+      }
+    },
+    {
+      "raw": "extra tart cherries",
+      "expected": {
+        "item": "extra tart cherries",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "toasted sliced almonds",
+      "expected": {
+        "item": "toasted sliced almonds",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

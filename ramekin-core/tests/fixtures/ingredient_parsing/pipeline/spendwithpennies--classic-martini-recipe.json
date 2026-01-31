@@ -1,0 +1,57 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "classic-martini-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ounces vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dry vermouth (optional)",
+      "expected": {
+        "item": "dry vermouth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 large pimento stuffed olives",
+      "expected": {
+        "item": "pimento stuffed olives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

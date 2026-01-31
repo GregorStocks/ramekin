@@ -1,0 +1,130 @@
+{
+  "source": "paprika",
+  "recipe_slug": "miniature-soft-pretzels",
+  "ingredients": [
+    {
+      "raw": "2 cups warm water (100°F to 110°F)",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon + 2 tablespoons sugar",
+      "expected": {
+        "item": "+ 2 tablespoons sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 packet active dry yeast",
+      "expected": {
+        "item": "packet active dry yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 to 6 cups all-purpose flour, plus more for dusting",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "5 to 6",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for dusting"
+      }
+    },
+    {
+      "raw": "1 tablespoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons canola or other neutral oil",
+      "expected": {
+        "item": "canola or other neutral oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coarse or pretzel salt",
+      "expected": {
+        "item": "Coarse or pretzel salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Vegetable-oil cooking spray",
+      "expected": {
+        "item": "Vegetable-oil cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-spiked-coconut-cherry-",
+  "ingredients": [
+    {
+      "raw": "28 oz coconut cream",
+      "expected": {
+        "item": "coconut cream",
+        "measurements": [
+          {
+            "amount": "28",
+            "unit": "oz"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "13.5 oz coconut milk",
+      "expected": {
+        "item": "coconut milk",
+        "measurements": [
+          {
+            "amount": "13.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "383",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 cups of cherries (pitted)",
+      "expected": {
+        "item": "cherries (pitted)",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  case White Claw Dark Cherry Seltzer",
+      "expected": {
+        "item": "case White Claw Dark Cherry Seltzer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

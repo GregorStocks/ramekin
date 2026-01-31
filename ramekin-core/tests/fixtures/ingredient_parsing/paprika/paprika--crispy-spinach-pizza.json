@@ -1,0 +1,128 @@
+{
+  "source": "paprika",
+  "recipe_slug": "crispy-spinach-pizza",
+  "ingredients": [
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cornmeal, for dusting",
+      "expected": {
+        "item": "Cornmeal, for dusting",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 fully risen pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be",
+      "expected": {
+        "item": "fully risen pizza dough or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces (2/3 cup) grated gruyere or comte cheese",
+      "expected": {
+        "item": "grated gruyere or comte cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces pecorino cheese, chopped into mixed-sized rubble or 2/3 cup grated",
+      "expected": {
+        "item": "pecorino cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped into mixed-sized rubble or 2/3 cup grated"
+      }
+    },
+    {
+      "raw": "4 ounces mozzarella, either torn into shreds, diced, or (as shown) in ciliegine",
+      "expected": {
+        "item": "mozzarella, either torn into shreds, diced, or (as shown) in ciliegine",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large garlic clove, thinly sliced or grated",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "thinly sliced or grated"
+      }
+    },
+    {
+      "raw": "Sea salt and freshly ground black pepper",
+      "expected": {
+        "item": "Sea salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 to 9 ounces fresh spinach, larger stems removed",
+      "expected": {
+        "item": "fresh spinach, larger stems removed",
+        "measurements": [
+          {
+            "amount": "8 to 9",
+            "unit": "oz"
+          },
+          {
+            "amount": "227 to 255",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}
