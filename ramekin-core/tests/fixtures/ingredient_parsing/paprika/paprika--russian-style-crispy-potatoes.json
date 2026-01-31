@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "POTATOES:",
-      "expected": {
-        "item": "POTATOES:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (680 grams) Yukon gold potatoes, peeled if you wish, cut into 1/4-inch slices",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "POTATOES"
       }
     },
     {
@@ -32,7 +29,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "POTATOES"
       }
     },
     {
@@ -40,7 +38,8 @@
       "expected": {
         "item": "Kosher Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "POTATOES"
       }
     },
     {
@@ -48,16 +47,13 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "POTATOES"
       }
     },
     {
       "raw": "MUSHROOMS:",
-      "expected": {
-        "item": "MUSHROOMS:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45 grams) unsalted butter, divided",
@@ -73,7 +69,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "MUSHROOMS"
       }
     },
     {
@@ -90,7 +87,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "section": "MUSHROOMS"
       }
     },
     {
@@ -98,7 +96,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "MUSHROOMS"
       }
     },
     {
@@ -106,7 +105,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "MUSHROOMS"
       }
     },
     {
@@ -119,7 +119,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "MUSHROOMS"
       }
     },
     {
@@ -136,23 +137,21 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "section": "MUSHROOMS"
       }
     },
     {
       "raw": "TO SERVE:",
-      "expected": {
-        "item": "TO SERVE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Sour cream",
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO SERVE"
       }
     },
     {
@@ -160,7 +159,8 @@
       "expected": {
         "item": "A handful of fresh dill",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO SERVE"
       }
     }
   ]

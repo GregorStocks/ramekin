@@ -119,11 +119,7 @@
     },
     {
       "raw": "TO FINISH:",
-      "expected": {
-        "item": "TO FINISH:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 to 3 tablespoons olive oil (estimate 1 per serving)",
@@ -135,7 +131,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -148,7 +145,8 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled and finely chopped"
+        "note": "peeled and finely chopped",
+        "section": "TO FINISH"
       }
     },
     {
@@ -161,7 +159,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -169,7 +168,8 @@
       "expected": {
         "item": "Salt and red pepper flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     }
   ]

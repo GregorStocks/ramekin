@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Steak Fajita Marinade:",
-      "expected": {
-        "item": "For the Steak Fajita Marinade:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (120 ml) soy sauce",
@@ -24,7 +20,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -62,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -79,7 +78,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -92,7 +92,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -109,7 +110,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -122,7 +124,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -135,7 +138,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
@@ -152,16 +156,13 @@
             "unit": "g"
           }
         ],
-        "note": "about 1 whole steak; see note"
+        "note": "about 1 whole steak; see note",
+        "section": "For the Steak Fajita Marinade"
       }
     },
     {
       "raw": "For the Fajitas:",
-      "expected": {
-        "item": "For the Fajitas:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large red bell pepper, stemmed, seeded, and cut into 1/2-inch-wide strips",
@@ -173,7 +174,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     },
     {
@@ -186,7 +188,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     },
     {
@@ -199,7 +202,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     },
     {
@@ -212,7 +216,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     },
     {
@@ -225,7 +230,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     },
     {
@@ -238,7 +244,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     },
     {
@@ -251,7 +258,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     },
     {
@@ -259,7 +267,8 @@
       "expected": {
         "item": "Sour cream, shredded cheese, and salsa, for serving, if desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Fajitas"
       }
     }
   ]

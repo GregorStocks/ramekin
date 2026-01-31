@@ -34,6 +34,7 @@ export function IngredientFromJSONTyped(json, ignoreDiscriminator) {
         'measurements': (json['measurements'].map(MeasurementFromJSON)),
         'note': json['note'] == null ? undefined : json['note'],
         'raw': json['raw'] == null ? undefined : json['raw'],
+        'section': json['section'] == null ? undefined : json['section'],
     };
 }
 export function IngredientToJSON(json) {
@@ -48,5 +49,6 @@ export function IngredientToJSONTyped(value, ignoreDiscriminator = false) {
         'measurements': (value['measurements'].map(MeasurementToJSON)),
         'note': value['note'],
         'raw': value['raw'],
+        'section': value['section'],
     };
 }

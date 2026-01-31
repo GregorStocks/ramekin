@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For  Peanut Sauce:",
-      "expected": {
-        "item": "For  Peanut Sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1  small piece of lemon grass (chopped)",
@@ -20,7 +16,8 @@
             "unit": "small"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -28,7 +25,8 @@
       "expected": {
         "item": "Freshly grated ginger-to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -41,7 +39,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -54,7 +53,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -67,7 +67,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -84,7 +85,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -92,7 +94,8 @@
       "expected": {
         "item": "Whole Wheat Spaghetti (Soba noodles would work too)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -100,7 +103,8 @@
       "expected": {
         "item": "Broccoli",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -108,7 +112,8 @@
       "expected": {
         "item": "Red Pepper Strips",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -116,7 +121,8 @@
       "expected": {
         "item": "Green Pepper Strips",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -124,7 +130,8 @@
       "expected": {
         "item": "Carrot Strips",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -132,7 +139,8 @@
       "expected": {
         "item": "Cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     },
     {
@@ -140,7 +148,8 @@
       "expected": {
         "item": "Sesame Seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For  Peanut Sauce"
       }
     }
   ]

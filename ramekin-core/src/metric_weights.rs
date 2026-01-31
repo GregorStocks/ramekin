@@ -312,6 +312,7 @@ mod tests {
             }],
             note: None,
             raw: Some("8 oz butter".to_string()),
+            section: None,
         };
 
         let mut stats = MetricConversionStats::default();
@@ -335,6 +336,7 @@ mod tests {
             }],
             note: None,
             raw: Some("2 lb chicken".to_string()),
+            section: None,
         };
 
         let mut stats = MetricConversionStats::default();
@@ -358,6 +360,7 @@ mod tests {
             }],
             note: None,
             raw: Some("2 cups flour".to_string()),
+            section: None,
         };
 
         let mut stats = MetricConversionStats::default();
@@ -383,6 +386,7 @@ mod tests {
             ],
             note: None,
             raw: Some("8 oz (227g) butter".to_string()),
+            section: None,
         };
 
         let mut stats = MetricConversionStats::default();
@@ -402,6 +406,7 @@ mod tests {
             }],
             note: None,
             raw: Some("6-8 oz chicken".to_string()),
+            section: None,
         };
 
         let mut stats = MetricConversionStats::default();

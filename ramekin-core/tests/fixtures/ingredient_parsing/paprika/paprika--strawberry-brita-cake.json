@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "CAKE:",
-      "expected": {
-        "item": "CAKE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 large eggs, separated",
@@ -20,7 +16,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CAKE"
       }
     },
     {
@@ -33,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "CAKE"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "CAKE"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "CAKE"
       }
     },
     {
@@ -80,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": "softened"
+        "note": "softened",
+        "section": "CAKE"
       }
     },
     {
@@ -88,7 +89,8 @@
       "expected": {
         "item": "Finely grated zest of half a lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "CAKE"
       }
     },
     {
@@ -105,7 +107,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CAKE"
       }
     },
     {
@@ -122,7 +125,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CAKE"
       }
     },
     {
@@ -135,16 +139,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "CAKE"
       }
     },
     {
       "raw": "ASSEMBLY:",
-      "expected": {
-        "item": "ASSEMBLY:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) fresh strawberries, halved or sliced",
@@ -160,7 +161,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved or sliced"
+        "note": "halved or sliced",
+        "section": "ASSEMBLY"
       }
     },
     {
@@ -168,7 +170,8 @@
       "expected": {
         "item": "Juice of half a lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "ASSEMBLY"
       }
     },
     {
@@ -185,7 +188,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "ASSEMBLY"
       }
     },
     {
@@ -202,7 +206,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "ASSEMBLY"
       }
     },
     {
@@ -219,7 +224,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "ASSEMBLY"
       }
     },
     {
@@ -232,7 +238,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "ASSEMBLY"
       }
     },
     {
@@ -240,7 +247,8 @@
       "expected": {
         "item": "Confectioners’ sugar, for dusting, and mint leaves, for garnish",
         "measurements": [],
-        "note": "both optional"
+        "note": "both optional",
+        "section": "ASSEMBLY"
       }
     }
   ]

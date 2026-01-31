@@ -83,18 +83,15 @@
     },
     {
       "raw": "For serving:",
-      "expected": {
-        "item": "For serving:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "toasted burger buns",
       "expected": {
         "item": "toasted burger buns",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     },
     {
@@ -102,7 +99,8 @@
       "expected": {
         "item": "favorite barbecue sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     },
     {
@@ -110,7 +108,8 @@
       "expected": {
         "item": "thinly sliced red onion",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     },
     {
@@ -118,7 +117,8 @@
       "expected": {
         "item": "sliced tomatoes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     },
     {
@@ -126,7 +126,8 @@
       "expected": {
         "item": "sliced pickles",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     },
     {
@@ -134,7 +135,8 @@
       "expected": {
         "item": "crisp lettuce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For serving"
       }
     }
   ]

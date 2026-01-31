@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Yorkshire Pudding Batter:",
-      "expected": {
-        "item": "For the Yorkshire Pudding Batter:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 large eggs",
@@ -20,7 +16,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Yorkshire Pudding Batter"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Yorkshire Pudding Batter"
       }
     },
     {
@@ -62,7 +60,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Yorkshire Pudding Batter"
       }
     },
     {
@@ -83,7 +82,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Yorkshire Pudding Batter"
       }
     },
     {
@@ -96,16 +96,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Yorkshire Pudding Batter"
       }
     },
     {
       "raw": "For the Red Onion Gravy:",
-      "expected": {
-        "item": "For the Red Onion Gravy:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons beef drippings or ghee (1 ounce; 28 g)",
@@ -125,7 +122,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -146,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -159,7 +158,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste; for table salt, use half as much by volume"
+        "note": "plus more to taste; for table salt, use half as much by volume",
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -180,7 +180,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -201,7 +202,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -222,7 +224,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -243,7 +246,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -251,7 +255,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -259,7 +264,8 @@
       "expected": {
         "item": "To Assemble:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -276,7 +282,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -289,7 +296,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     },
     {
@@ -310,7 +318,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Red Onion Gravy"
       }
     }
   ]

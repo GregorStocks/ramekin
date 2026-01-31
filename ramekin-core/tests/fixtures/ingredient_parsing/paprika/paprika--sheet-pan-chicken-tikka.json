@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the chicken:",
-      "expected": {
-        "item": "For the chicken:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 3/4-inch piece of ginger, peeled and minced",
@@ -20,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and minced"
+        "note": "peeled and minced",
+        "section": "For the chicken"
       }
     },
     {
@@ -33,7 +30,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced or pressed"
+        "note": "minced or pressed",
+        "section": "For the chicken"
       }
     },
     {
@@ -46,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "seeded and minced"
+        "note": "seeded and minced",
+        "section": "For the chicken"
       }
     },
     {
@@ -59,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -72,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -85,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or adjusted to taste1/2 teaspoon ground turmeric"
+        "note": "or adjusted to taste1/2 teaspoon ground turmeric",
+        "section": "For the chicken"
       }
     },
     {
@@ -98,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -115,7 +118,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -128,7 +132,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -141,7 +146,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
@@ -158,16 +164,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the chicken"
       }
     },
     {
       "raw": "For the vegetables:",
-      "expected": {
-        "item": "For the vegetables:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons olive oil",
@@ -183,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     },
     {
@@ -204,7 +208,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     },
     {
@@ -225,7 +230,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     },
     {
@@ -238,7 +244,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     },
     {
@@ -251,7 +258,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     },
     {
@@ -259,7 +267,8 @@
       "expected": {
         "item": "To finish, if desired:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     },
     {
@@ -267,7 +276,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     },
     {
@@ -275,7 +285,8 @@
       "expected": {
         "item": "Dollops of yogurt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the vegetables"
       }
     }
   ]

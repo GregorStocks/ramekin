@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Soup:",
-      "expected": {
-        "item": "For the Soup:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 heads cauliflower (about 2 pounds/900g each), trimmed and cut into roughly 1-inch-thick florets",
@@ -24,7 +20,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed and cut into roughly 1-inch-thick florets"
+        "note": "trimmed and cut into roughly 1-inch-thick florets",
+        "section": "For the Soup"
       }
     },
     {
@@ -45,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "For the Soup"
       }
     },
     {
@@ -53,7 +51,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -74,7 +73,8 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "section": "For the Soup"
       }
     },
     {
@@ -95,7 +95,8 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "section": "For the Soup"
       }
     },
     {
@@ -108,7 +109,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -121,7 +123,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -138,7 +141,8 @@
             "unit": "l"
           }
         ],
-        "note": "plus more as needed (see notes)"
+        "note": "plus more as needed (see notes)",
+        "section": "For the Soup"
       }
     },
     {
@@ -159,7 +163,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -167,16 +172,13 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
       "raw": "For the Curry Cream:",
-      "expected": {
-        "item": "For the Curry Cream:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (118ml) heavy cream",
@@ -196,7 +198,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Curry Cream"
       }
     },
     {
@@ -213,7 +216,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Curry Cream"
       }
     },
     {
@@ -230,7 +234,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Curry Cream"
       }
     },
     {
@@ -238,7 +243,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Curry Cream"
       }
     }
   ]

@@ -123,18 +123,15 @@
     },
     {
       "raw": "TOPPINGS, OPTIONAL:",
-      "expected": {
-        "item": "TOPPINGS",
-        "measurements": [],
-        "note": "OPTIONAL:"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Minced fresh chives or scallions",
       "expected": {
         "item": "Minced fresh chives or scallions",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TOPPINGS, OPTIONAL"
       }
     },
     {
@@ -142,7 +139,8 @@
       "expected": {
         "item": "Bacon bits",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TOPPINGS, OPTIONAL"
       }
     },
     {
@@ -150,7 +148,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TOPPINGS, OPTIONAL"
       }
     },
     {
@@ -158,7 +157,8 @@
       "expected": {
         "item": "Grated cheddar",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TOPPINGS, OPTIONAL"
       }
     },
     {
@@ -166,7 +166,8 @@
       "expected": {
         "item": "A drizzle of melted butter",
         "measurements": [],
-        "note": "or melted and browned"
+        "note": "or melted and browned",
+        "section": "TOPPINGS, OPTIONAL"
       }
     }
   ]

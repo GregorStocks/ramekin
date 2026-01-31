@@ -47,7 +47,8 @@ class TestRecipeContent(unittest.TestCase):
                                 unit = '', )
                             ], 
                         note = '', 
-                        raw = '', )
+                        raw = '', 
+                        section = '', )
                     ],
                 instructions = '',
                 notes = '',
@@ -74,7 +75,8 @@ class TestRecipeContent(unittest.TestCase):
                                 unit = '', )
                             ], 
                         note = '', 
-                        raw = '', )
+                        raw = '', 
+                        section = '', )
                     ],
                 instructions = '',
                 title = '',

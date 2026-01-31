@@ -49,7 +49,8 @@ class TestRecipeResponse(unittest.TestCase):
                                 unit = '', )
                             ], 
                         note = '', 
-                        raw = '', )
+                        raw = '', 
+                        section = '', )
                     ],
                 instructions = '',
                 notes = '',
@@ -84,7 +85,8 @@ class TestRecipeResponse(unittest.TestCase):
                                 unit = '', )
                             ], 
                         note = '', 
-                        raw = '', )
+                        raw = '', 
+                        section = '', )
                     ],
                 instructions = '',
                 photo_ids = [

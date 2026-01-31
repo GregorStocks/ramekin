@@ -47,7 +47,8 @@ class TestUpdateRecipeRequest(unittest.TestCase):
                                 unit = '', )
                             ], 
                         note = '', 
-                        raw = '', )
+                        raw = '', 
+                        section = '', )
                     ],
                 instructions = '',
                 notes = '',

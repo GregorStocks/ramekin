@@ -145,11 +145,7 @@
     },
     {
       "raw": "FILLING:",
-      "expected": {
-        "item": "FILLING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons butter, softened",
@@ -165,7 +161,8 @@
             "unit": "g"
           }
         ],
-        "note": "softened"
+        "note": "softened",
+        "section": "FILLING"
       }
     },
     {
@@ -182,7 +179,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -199,7 +197,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -212,16 +211,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
       "raw": "GLAZE:",
-      "expected": {
-        "item": "GLAZE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup semisweet chocolate chips",
@@ -233,7 +229,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     },
     {
@@ -246,7 +243,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "GLAZE"
       }
     }
   ]

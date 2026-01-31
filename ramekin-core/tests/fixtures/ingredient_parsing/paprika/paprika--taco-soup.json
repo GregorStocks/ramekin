@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Soup:",
-      "expected": {
-        "item": "For the Soup:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 small yellow onion (6 ounces; 170g), peeled",
@@ -28,7 +24,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "section": "For the Soup"
       }
     },
     {
@@ -49,7 +46,8 @@
             "unit": "g each"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -62,7 +60,8 @@
             "unit": "medium"
           }
         ],
-        "note": "unpeeled"
+        "note": "unpeeled",
+        "section": "For the Soup"
       }
     },
     {
@@ -83,7 +82,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "For the Soup"
       }
     },
     {
@@ -100,7 +100,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "For the Soup"
       }
     },
     {
@@ -117,7 +118,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -134,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -151,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -168,7 +172,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -185,7 +190,8 @@
             "unit": "l"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -202,7 +208,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "section": "For the Soup"
       }
     },
     {
@@ -223,7 +230,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Soup"
       }
     },
     {
@@ -244,7 +252,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus whole chips for topping"
+        "note": "plus whole chips for topping",
+        "section": "For the Soup"
       }
     },
     {
@@ -257,16 +266,13 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste; for table salt, use half as much by volume"
+        "note": "plus more to taste; for table salt, use half as much by volume",
+        "section": "For the Soup"
       }
     },
     {
       "raw": "For the Salsa:",
-      "expected": {
-        "item": "For the Salsa:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "10 ounces fresh tomatoes (285g; about 3 medium), seeded and chopped (1 cup)",
@@ -290,7 +296,8 @@
             "unit": "cup"
           }
         ],
-        "note": "seeded and chopped"
+        "note": "seeded and chopped",
+        "section": "For the Salsa"
       }
     },
     {
@@ -311,7 +318,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Salsa"
       }
     },
     {
@@ -328,7 +336,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Salsa"
       }
     },
     {
@@ -349,7 +358,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "section": "For the Salsa"
       }
     }
   ]

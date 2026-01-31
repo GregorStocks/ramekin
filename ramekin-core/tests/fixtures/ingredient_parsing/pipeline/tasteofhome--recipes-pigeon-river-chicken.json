@@ -60,11 +60,7 @@
     },
     {
       "raw": "COATING:",
-      "expected": {
-        "item": "COATING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups all-purpose flour",
@@ -80,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "COATING"
       }
     },
     {
@@ -93,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "COATING"
       }
     },
     {
@@ -106,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "COATING"
       }
     },
     {
@@ -119,7 +118,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "COATING"
       }
     },
     {
@@ -132,7 +132,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "COATING"
       }
     },
     {
@@ -145,7 +146,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "COATING"
       }
     },
     {
@@ -153,7 +155,8 @@
       "expected": {
         "item": "Oil for deep-fat frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "COATING"
       }
     }
   ]

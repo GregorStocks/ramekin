@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "YOGURT-GARLIC SAUCE:",
-      "expected": {
-        "item": "YOGURT-GARLIC SAUCE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup plain whole-milk yogurt",
@@ -20,7 +16,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT-GARLIC SAUCE"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT-GARLIC SAUCE"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT-GARLIC SAUCE"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "YOGURT-GARLIC SAUCE"
       }
     },
     {
@@ -76,16 +76,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "YOGURT-GARLIC SAUCE"
       }
     },
     {
       "raw": "KOFTE:",
-      "expected": {
-        "item": "KOFTE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "½ cup pine nuts",
@@ -97,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -110,7 +108,8 @@
             "unit": null
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "section": "KOFTE"
       }
     },
     {
@@ -123,7 +122,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -136,7 +136,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -149,7 +150,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -162,7 +164,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -175,7 +178,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -188,7 +192,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -201,7 +206,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -214,7 +220,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -231,7 +238,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -244,7 +252,8 @@
             "unit": "cup"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "section": "KOFTE"
       }
     },
     {
@@ -257,7 +266,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -270,7 +280,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -283,7 +294,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     },
     {
@@ -296,7 +308,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "KOFTE"
       }
     }
   ]

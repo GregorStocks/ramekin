@@ -157,11 +157,7 @@
     },
     {
       "raw": "For the Seasonings:",
-      "expected": {
-        "item": "For the Seasonings:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 Tbsp rice vinegar (unseasoned) (or use ½ Tbsp lemon juice/apple cider/Champagne vinegar/white wine vinegar)",
@@ -173,7 +169,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Seasonings"
       }
     },
     {
@@ -181,7 +178,8 @@
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "For the Seasonings"
       }
     },
     {
@@ -194,7 +192,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "divided; add 4 Tbsp first, then add more to taste"
+        "note": "divided; add 4 Tbsp first, then add more to taste",
+        "section": "For the Seasonings"
       }
     }
   ]

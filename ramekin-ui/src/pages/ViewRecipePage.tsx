@@ -17,7 +17,31 @@ import type {
   RecipeResponse,
   RecipeContent,
   VersionSummary,
+  Ingredient,
 } from "ramekin-client";
+
+/** Group ingredients by contiguous sections (preserving order). */
+function groupIngredientsBySection(
+  ingredients: Ingredient[],
+): Array<{ section: string | null; ingredients: Ingredient[] }> {
+  const groups: Array<{ section: string | null; ingredients: Ingredient[] }> =
+    [];
+
+  for (const ing of ingredients) {
+    const section = ing.section ?? null;
+    const lastGroup = groups[groups.length - 1];
+
+    // If this ingredient has the same section as the last group, add to it
+    if (lastGroup && lastGroup.section === section) {
+      lastGroup.ingredients.push(ing);
+    } else {
+      // Start a new group
+      groups.push({ section, ingredients: [ing] });
+    }
+  }
+
+  return groups;
+}
 
 function PhotoImage(props: { photoId: string; token: string; alt: string }) {
   const [src, setSrc] = createSignal<string | null>(null);
@@ -583,45 +607,60 @@ export default function ViewRecipePage() {
                 <div class="recipe-left">
                   <section class="recipe-section">
                     <h3>Ingredients</h3>
-                    <ul class="ingredients-list">
-                      <For each={r().ingredients}>
-                        {(ing) => (
-                          <li>
-                            <Show when={ing.measurements[0]?.amount}>
-                              <span class="amount">
-                                {ing.measurements[0]?.amount}
-                              </span>{" "}
-                            </Show>
-                            <Show when={ing.measurements[0]?.unit}>
-                              <span class="unit">
-                                {ing.measurements[0]?.unit}
-                              </span>{" "}
-                            </Show>
-                            <Show when={ing.measurements.length > 1}>
-                              <span class="alt-measurement">
-                                (
-                                {ing.measurements
-                                  .slice(1)
-                                  .map((m) =>
-                                    [m.amount, m.unit]
-                                      .filter(Boolean)
-                                      .join(" "),
-                                  )
-                                  .join(", ")}
-                                ){" "}
-                              </span>
-                            </Show>
-                            <span class="item">{ing.item}</span>
-                            <Show when={ing.note}>
-                              <span class="note"> ({ing.note})</span>
-                            </Show>
-                            <Show when={ing.raw}>
-                              <div class="ingredient-raw">Raw: {ing.raw}</div>
-                            </Show>
-                          </li>
-                        )}
-                      </For>
-                    </ul>
+                    <For
+                      each={groupIngredientsBySection(r().ingredients ?? [])}
+                    >
+                      {(group) => (
+                        <>
+                          <Show when={group.section}>
+                            <h4 class="ingredient-section-header">
+                              {group.section}
+                            </h4>
+                          </Show>
+                          <ul class="ingredients-list">
+                            <For each={group.ingredients}>
+                              {(ing) => (
+                                <li>
+                                  <Show when={ing.measurements[0]?.amount}>
+                                    <span class="amount">
+                                      {ing.measurements[0]?.amount}
+                                    </span>{" "}
+                                  </Show>
+                                  <Show when={ing.measurements[0]?.unit}>
+                                    <span class="unit">
+                                      {ing.measurements[0]?.unit}
+                                    </span>{" "}
+                                  </Show>
+                                  <Show when={ing.measurements.length > 1}>
+                                    <span class="alt-measurement">
+                                      (
+                                      {ing.measurements
+                                        .slice(1)
+                                        .map((m) =>
+                                          [m.amount, m.unit]
+                                            .filter(Boolean)
+                                            .join(" "),
+                                        )
+                                        .join(", ")}
+                                      ){" "}
+                                    </span>
+                                  </Show>
+                                  <span class="item">{ing.item}</span>
+                                  <Show when={ing.note}>
+                                    <span class="note"> ({ing.note})</span>
+                                  </Show>
+                                  <Show when={ing.raw}>
+                                    <div class="ingredient-raw">
+                                      Raw: {ing.raw}
+                                    </div>
+                                  </Show>
+                                </li>
+                              )}
+                            </For>
+                          </ul>
+                        </>
+                      )}
+                    </For>
                   </section>
                 </div>
               </Show>

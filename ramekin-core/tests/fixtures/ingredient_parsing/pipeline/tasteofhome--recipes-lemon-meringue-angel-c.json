@@ -107,11 +107,7 @@
     },
     {
       "raw": "MERINGUE TOPPING:",
-      "expected": {
-        "item": "MERINGUE TOPPING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 large egg whites, room temperature",
@@ -123,7 +119,8 @@
             "unit": "large"
           }
         ],
-        "note": "room temperature"
+        "note": "room temperature",
+        "section": "MERINGUE TOPPING"
       }
     },
     {
@@ -136,7 +133,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "MERINGUE TOPPING"
       }
     },
     {
@@ -153,7 +151,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "MERINGUE TOPPING"
       }
     }
   ]

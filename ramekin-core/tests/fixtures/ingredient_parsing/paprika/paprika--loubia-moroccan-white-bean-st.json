@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Beans:",
-      "expected": {
-        "item": "For the Beans:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (454 g) dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "picked off any debris and rinsed"
+        "note": "picked off any debris and rinsed",
+        "section": "For the Beans"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Beans"
       }
     },
     {
@@ -58,16 +56,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Beans"
       }
     },
     {
       "raw": "For the Stew:",
-      "expected": {
-        "item": "For the Stew:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45 ml) olive oil, plus more for serving",
@@ -87,7 +82,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for serving"
+        "note": "plus more for serving",
+        "section": "For the Stew"
       }
     },
     {
@@ -108,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "For the Stew"
       }
     },
     {
@@ -125,7 +122,8 @@
             "unit": "g"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "For the Stew"
       }
     },
     {
@@ -138,7 +136,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -151,7 +150,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -164,7 +164,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -177,7 +178,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -190,7 +192,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -203,7 +206,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -216,7 +220,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -233,7 +238,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed of excess fat and cut into 2- to 3-inch pieces"
+        "note": "trimmed of excess fat and cut into 2- to 3-inch pieces",
+        "section": "For the Stew"
       }
     },
     {
@@ -241,7 +247,8 @@
       "expected": {
         "item": "Drained brined white beans from above",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -262,7 +269,8 @@
             "unit": "g"
           }
         ],
-        "note": "alternatively use 7 ounces canned chopped tomatoes"
+        "note": "alternatively use 7 ounces canned chopped tomatoes",
+        "section": "For the Stew"
       }
     },
     {
@@ -279,7 +287,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     },
     {
@@ -287,7 +296,8 @@
       "expected": {
         "item": "Chopped cilantro, for garnish, if desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Stew"
       }
     }
   ]

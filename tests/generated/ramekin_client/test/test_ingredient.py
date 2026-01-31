@@ -42,7 +42,8 @@ class TestIngredient(unittest.TestCase):
                         unit = '', )
                     ],
                 note = '',
-                raw = ''
+                raw = '',
+                section = ''
             )
         else:
             return Ingredient(

@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Chile Vinegar:",
-      "expected": {
-        "item": "For the Chile Vinegar:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (240ml) distilled white vinegar",
@@ -24,7 +20,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Chile Vinegar"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Chile Vinegar"
       }
     },
     {
@@ -58,16 +56,13 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed and thinly sliced crosswise (see notes)"
+        "note": "stemmed and thinly sliced crosswise (see notes)",
+        "section": "For the Chile Vinegar"
       }
     },
     {
       "raw": "For the Noodles:",
-      "expected": {
-        "item": "For the Noodles:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "20 ounces (568g) fresh rice noodle sheets or 8 ounces (226g) dried wide rice noodles (see notes)",
@@ -87,7 +82,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 8 ounces dried wide rice noodles (see notes)"
+        "note": "or 8 ounces dried wide rice noodles (see notes)",
+        "section": "For the Noodles"
       }
     },
     {
@@ -104,7 +100,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Noodles"
       }
     },
     {
@@ -121,16 +118,13 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Noodles"
       }
     },
     {
       "raw": "For the Marinated Pork:",
-      "expected": {
-        "item": "For the Marinated Pork:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 ounces (225g) pork shoulder, sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)",
@@ -146,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)"
+        "note": "sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)",
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -163,7 +158,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -180,7 +176,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -197,7 +194,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -210,7 +208,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -227,7 +226,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -244,7 +244,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -257,7 +258,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -274,7 +276,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
@@ -291,16 +294,13 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Marinated Pork"
       }
     },
     {
       "raw": "For the Stir-Fry Sauce:",
-      "expected": {
-        "item": "For the Stir-Fry Sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons (45ml) Thai oyster sauce",
@@ -316,7 +316,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stir-Fry Sauce"
       }
     },
     {
@@ -333,7 +334,8 @@
             "unit": "ml"
           }
         ],
-        "note": "plus 1 teaspoon Thai thin soy sauce"
+        "note": "plus 1 teaspoon Thai thin soy sauce",
+        "section": "For the Stir-Fry Sauce"
       }
     },
     {
@@ -350,7 +352,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stir-Fry Sauce"
       }
     },
     {
@@ -363,7 +366,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stir-Fry Sauce"
       }
     },
     {
@@ -376,16 +380,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Stir-Fry Sauce"
       }
     },
     {
       "raw": "For Par-Cooking and the Stir Fry:",
-      "expected": {
-        "item": "For Par-Cooking and the Stir Fry:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 1/2 ounces (240g) Chinese broccoli, sliced on a bias into 1-inch pieces (4 cups)",
@@ -405,7 +406,8 @@
             "unit": "cup"
           }
         ],
-        "note": "sliced on a bias into 1-inch pieces"
+        "note": "sliced on a bias into 1-inch pieces",
+        "section": "For Par-Cooking and the Stir Fry"
       }
     },
     {
@@ -422,7 +424,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For Par-Cooking and the Stir Fry"
       }
     },
     {
@@ -439,7 +442,8 @@
             "unit": "ml"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "For Par-Cooking and the Stir Fry"
       }
     },
     {
@@ -456,7 +460,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "For Par-Cooking and the Stir Fry"
       }
     },
     {
@@ -464,7 +469,8 @@
       "expected": {
         "item": "Prepared rice noodles from above",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For Par-Cooking and the Stir Fry"
       }
     },
     {
@@ -481,7 +487,8 @@
             "unit": "ml"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "For Par-Cooking and the Stir Fry"
       }
     },
     {
@@ -494,7 +501,8 @@
             "unit": "large"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "For Par-Cooking and the Stir Fry"
       }
     }
   ]

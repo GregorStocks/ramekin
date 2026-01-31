@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the potatoes:",
-      "expected": {
-        "item": "For the potatoes:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds russet potatoes",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the potatoes"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the potatoes"
       }
     },
     {
@@ -54,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the potatoes"
       }
     },
     {
@@ -67,7 +66,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the potatoes"
       }
     },
     {
@@ -80,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the potatoes"
       }
     },
     {
@@ -93,16 +94,13 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the potatoes"
       }
     },
     {
       "raw": "For the meat filling:",
-      "expected": {
-        "item": "For the meat filling:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons canola oil",
@@ -118,7 +116,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -131,7 +130,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -144,7 +144,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and diced small"
+        "note": "peeled and diced small",
+        "section": "For the meat filling"
       }
     },
     {
@@ -157,7 +158,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "For the meat filling"
       }
     },
     {
@@ -174,7 +176,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -187,7 +190,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -200,7 +204,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -217,7 +222,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -230,7 +236,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -243,7 +250,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -256,7 +264,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -269,7 +278,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -282,7 +292,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -295,7 +306,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     },
     {
@@ -308,7 +320,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the meat filling"
       }
     }
   ]

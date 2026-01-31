@@ -77,11 +77,7 @@
     },
     {
       "raw": "TOPPING:",
-      "expected": {
-        "item": "TOPPING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup packed brown sugar",
@@ -97,7 +93,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -110,7 +107,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -127,16 +125,13 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "section": "TOPPING"
       }
     },
     {
       "raw": "DRIZZLE:",
-      "expected": {
-        "item": "DRIZZLE:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup confectioners' sugar",
@@ -152,7 +147,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRIZZLE"
       }
     },
     {
@@ -165,7 +161,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRIZZLE"
       }
     },
     {
@@ -178,7 +175,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRIZZLE"
       }
     }
   ]

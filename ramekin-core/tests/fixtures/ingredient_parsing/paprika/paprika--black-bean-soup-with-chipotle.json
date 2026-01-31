@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "FOR THE SOUP:",
-      "expected": {
-        "item": "FOR THE SOUP:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -89,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -102,7 +104,8 @@
             "unit": "16-ounce package"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -115,7 +118,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -128,7 +132,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -141,7 +146,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -154,7 +160,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
@@ -167,16 +174,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FOR THE SOUP"
       }
     },
     {
       "raw": "TO FINISH:",
-      "expected": {
-        "item": "TO FINISH:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon whole cumin seeds",
@@ -188,7 +192,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -201,7 +206,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -209,7 +215,8 @@
       "expected": {
         "item": "Salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     }
   ]

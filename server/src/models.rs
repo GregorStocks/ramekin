@@ -62,6 +62,8 @@ pub struct Ingredient {
     pub note: Option<String>,
     /// Original unparsed text for debugging
     pub raw: Option<String>,
+    /// Section name for grouping (e.g., "For the sauce", "For the dough")
+    pub section: Option<String>,
 }
 
 #[derive(Queryable, Selectable, Debug)]

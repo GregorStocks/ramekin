@@ -40,6 +40,12 @@ export interface Ingredient {
      * @memberof Ingredient
      */
     raw?: string | null;
+    /**
+     * Section name for grouping (e.g., "For the sauce", "For the dough")
+     * @type {string}
+     * @memberof Ingredient
+     */
+    section?: string | null;
 }
 /**
  * Check if a given object implements the Ingredient interface.

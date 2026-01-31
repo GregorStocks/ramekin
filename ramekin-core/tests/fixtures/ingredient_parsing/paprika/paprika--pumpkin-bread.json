@@ -188,11 +188,7 @@
     },
     {
       "raw": "TO FINISH:",
-      "expected": {
-        "item": "TO FINISH:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon (12 grams) granulated sugar",
@@ -208,7 +204,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     },
     {
@@ -221,7 +218,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TO FINISH"
       }
     }
   ]

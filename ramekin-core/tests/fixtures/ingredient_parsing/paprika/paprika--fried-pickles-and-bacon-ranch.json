@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Bacon Ranch:",
-      "expected": {
-        "item": "For the Bacon Ranch:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 slices thick-cut bacon (about 4 1/2 ounces; 130 g), finely chopped",
@@ -28,7 +24,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "section": "For the Bacon Ranch"
       }
     },
     {
@@ -49,7 +46,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Bacon Ranch"
       }
     },
     {
@@ -70,7 +68,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Bacon Ranch"
       }
     },
     {
@@ -83,7 +82,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Bacon Ranch"
       }
     },
     {
@@ -96,7 +96,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Bacon Ranch"
       }
     },
     {
@@ -109,7 +110,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Bacon Ranch"
       }
     },
     {
@@ -122,7 +124,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Bacon Ranch"
       }
     },
     {
@@ -135,16 +138,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Bacon Ranch"
       }
     },
     {
       "raw": "For the Pickles:",
-      "expected": {
-        "item": "For the Pickles:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 (16-ounce) jar dill pickle chips, drained (see notes)",
@@ -160,7 +160,8 @@
             "unit": null
           }
         ],
-        "note": "drained (see notes)"
+        "note": "drained (see notes)",
+        "section": "For the Pickles"
       }
     },
     {
@@ -177,7 +178,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -190,7 +192,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -211,7 +214,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -232,7 +236,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -245,7 +250,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -258,7 +264,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -271,7 +278,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -284,7 +292,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     },
     {
@@ -297,7 +306,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more as needed; for table salt, use half as much by volume"
+        "note": "plus more as needed; for table salt, use half as much by volume",
+        "section": "For the Pickles"
       }
     },
     {
@@ -305,7 +315,8 @@
       "expected": {
         "item": "Neutral oil, such as peanut or canola, for frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Pickles"
       }
     }
   ]

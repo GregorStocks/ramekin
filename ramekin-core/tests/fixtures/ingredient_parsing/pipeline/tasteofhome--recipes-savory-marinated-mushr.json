@@ -146,11 +146,7 @@
     },
     {
       "raw": "DRESSING:",
-      "expected": {
-        "item": "DRESSING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup prepared Italian salad dressing",
@@ -162,7 +158,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -175,7 +172,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -188,7 +186,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "DRESSING"
       }
     },
     {
@@ -201,7 +200,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     },
     {
@@ -214,7 +214,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "DRESSING"
       }
     }
   ]

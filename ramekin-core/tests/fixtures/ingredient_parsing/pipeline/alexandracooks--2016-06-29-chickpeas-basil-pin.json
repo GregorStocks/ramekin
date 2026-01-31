@@ -102,11 +102,7 @@
     },
     {
       "raw": "for the sauté:",
-      "expected": {
-        "item": "for the sauté:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/4 cup pine nuts",
@@ -118,7 +114,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "for the sauté"
       }
     },
     {
@@ -135,7 +132,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "for the sauté"
       }
     },
     {
@@ -148,7 +146,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced or thinly sliced"
+        "note": "minced or thinly sliced",
+        "section": "for the sauté"
       }
     },
     {
@@ -161,7 +160,8 @@
             "unit": "cup"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "section": "for the sauté"
       }
     },
     {
@@ -169,7 +169,8 @@
       "expected": {
         "item": "nice sea salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "for the sauté"
       }
     },
     {
@@ -182,7 +183,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "for the sauté"
       }
     },
     {
@@ -190,7 +192,8 @@
       "expected": {
         "item": "a few tablespoons finely minced parsley or more to taste",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "section": "for the sauté"
       }
     },
     {
@@ -198,7 +201,8 @@
       "expected": {
         "item": "bread for serving",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "for the sauté"
       }
     }
   ]

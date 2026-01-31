@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Pickled Onions:",
-      "expected": {
-        "item": "For the Pickled Onions:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup red wine vinegar (I swapped half with white vinegar; I was feeling stingy with my fancy red wine stuff)",
@@ -20,7 +16,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickled Onions"
       }
     },
     {
@@ -33,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickled Onions"
       }
     },
     {
@@ -46,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickled Onions"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickled Onions"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pickled Onions"
       }
     },
     {
@@ -89,16 +90,13 @@
             "unit": null
           }
         ],
-        "note": "sliced into very thin rings"
+        "note": "sliced into very thin rings",
+        "section": "For the Pickled Onions"
       }
     },
     {
       "raw": "For the Chicken Milanese:",
-      "expected": {
-        "item": "For the Chicken Milanese:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup all-purpose flour",
@@ -114,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Chicken Milanese"
       }
     },
     {
@@ -127,7 +126,8 @@
             "unit": null
           }
         ],
-        "note": "beaten with 1 tablespoon of water"
+        "note": "beaten with 1 tablespoon of water",
+        "section": "For the Chicken Milanese"
       }
     },
     {
@@ -140,7 +140,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Chicken Milanese"
       }
     },
     {
@@ -153,7 +154,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Chicken Milanese"
       }
     },
     {
@@ -166,7 +168,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Chicken Milanese"
       }
     },
     {
@@ -174,7 +177,8 @@
       "expected": {
         "item": "Kosher salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Chicken Milanese"
       }
     },
     {
@@ -182,16 +186,13 @@
       "expected": {
         "item": "Extra-virgin olive oil, for frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Chicken Milanese"
       }
     },
     {
       "raw": "For the Escarole Salad:",
-      "expected": {
-        "item": "For the Escarole Salad:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup grated pecorino romano",
@@ -203,7 +204,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Escarole Salad"
       }
     },
     {
@@ -216,7 +218,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Escarole Salad"
       }
     },
     {
@@ -229,7 +232,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Escarole Salad"
       }
     },
     {
@@ -242,7 +246,8 @@
             "unit": "head"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Escarole Salad"
       }
     },
     {
@@ -250,7 +255,8 @@
       "expected": {
         "item": "High-quality extra-virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Escarole Salad"
       }
     }
   ]

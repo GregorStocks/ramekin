@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "For the Pastry Cream:",
-      "expected": {
-        "item": "For the Pastry Cream:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 cups (1.4L) whole milk",
@@ -28,7 +24,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pastry Cream"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pastry Cream"
       }
     },
     {
@@ -62,7 +60,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pastry Cream"
       }
     },
     {
@@ -83,7 +82,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pastry Cream"
       }
     },
     {
@@ -96,7 +96,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pastry Cream"
       }
     },
     {
@@ -113,7 +114,8 @@
             "unit": "g"
           }
         ],
-        "note": "cold"
+        "note": "cold",
+        "section": "For the Pastry Cream"
       }
     },
     {
@@ -134,16 +136,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Pastry Cream"
       }
     },
     {
       "raw": "For the Puff Pastry:",
-      "expected": {
-        "item": "For the Puff Pastry:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Three 14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed, preferably all-butter (such as Dufour)",
@@ -155,7 +154,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Puff Pastry"
       }
     },
     {
@@ -172,7 +172,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "For the Puff Pastry"
       }
     },
     {
@@ -180,7 +181,8 @@
       "expected": {
         "item": "Confectioners sugar, for dusting",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "For the Puff Pastry"
       }
     }
   ]

@@ -167,11 +167,7 @@
     },
     {
       "raw": "TOPPING:",
-      "expected": {
-        "item": "TOPPING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup finely shredded cheddar cheese",
@@ -183,7 +179,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -196,7 +193,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "TOPPING"
       }
     },
     {
@@ -209,7 +207,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -222,7 +221,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -235,7 +235,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     },
     {
@@ -248,7 +249,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "TOPPING"
       }
     }
   ]

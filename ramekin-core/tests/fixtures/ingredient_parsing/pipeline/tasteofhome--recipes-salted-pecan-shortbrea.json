@@ -81,11 +81,7 @@
     },
     {
       "raw": "FILLING:",
-      "expected": {
-        "item": "FILLING:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup unsalted butter, cubed",
@@ -101,7 +97,8 @@
             "unit": "g"
           }
         ],
-        "note": "cubed"
+        "note": "cubed",
+        "section": "FILLING"
       }
     },
     {
@@ -114,7 +111,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -127,7 +125,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -140,7 +139,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -153,7 +153,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -170,7 +171,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -187,7 +189,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "FILLING"
       }
     },
     {
@@ -200,7 +203,8 @@
             "unit": "cup"
           }
         ],
-        "note": "toasted"
+        "note": "toasted",
+        "section": "FILLING"
       }
     }
   ]

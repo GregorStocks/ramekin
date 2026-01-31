@@ -783,6 +783,17 @@
   font-style: italic;
 }
 
+.ingredient-section-header {
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.ingredient-section-header:first-child {
+  margin-top: 0;
+}
+
 .instructions {
   white-space: pre-wrap;
   line-height: 1.6;
@@ -1010,6 +1021,89 @@
 
 .ingredient-raw .raw-label {
   color: #888;
+}
+
+/* Drag-and-drop section styles */
+.drag-handle {
+  cursor: grab;
+  color: #666;
+  padding: 0 0.25rem;
+  user-select: none;
+  font-size: 0.9rem;
+  letter-spacing: -2px;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.ingredient-entry.is-dragging {
+  opacity: 0.5;
+}
+
+.ingredient-entry.drag-overlay {
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ingredient-section-group {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #1e1e1e;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+.ingredient-section-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #444;
+}
+
+.section-name-input {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #252525;
+  color: #ccc;
+}
+
+.section-name-input:focus {
+  outline: none;
+  border-color: #646cff;
+  background: #2a2a2a;
+}
+
+.section-name-input::placeholder {
+  color: #666;
+  font-weight: 400;
+}
+
+.add-section-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #444;
+}
+
+.add-section-row .section-name-input {
+  max-width: 200px;
+}
+
+.section-header-actions {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .form-actions {

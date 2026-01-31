@@ -323,6 +323,7 @@ impl PipelineStep for SaveRecipeStep {
                         measurements: vec![],
                         note: None,
                         raw: None,
+                        section: None,
                     })
                     .collect()
             });
