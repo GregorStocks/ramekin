@@ -8,7 +8,7 @@ processes:
     command: |
       echo "[TIMING] rust-tests starting at $(date +%H:%M:%S)"
       START=$(date +%s)
-      cargo test -q --manifest-path server/Cargo.toml && cargo test -q --manifest-path cli/Cargo.toml
+      cargo test -q --manifest-path server/Cargo.toml && cargo test -q --manifest-path cli/Cargo.toml && cargo test -q --manifest-path ramekin-core/Cargo.toml
       echo "[TIMING] rust-tests completed in $(($(date +%s) - START))s"
     availability:
       restart: "no"
