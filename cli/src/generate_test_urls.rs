@@ -556,9 +556,7 @@ fn parse_robots_sitemaps(content: &str) -> Vec<String> {
         .filter_map(|line| {
             let line = line.trim();
             if line.to_lowercase().starts_with("sitemap:") {
-                // Safe: "sitemap:" is 8 ASCII bytes, so index 8 is always a char boundary
-                #[allow(clippy::string_slice)]
-                Some(line[8..].trim().to_string())
+                line.get(8..).map(|s| s.trim().to_string())
             } else {
                 None
             }
@@ -808,10 +806,7 @@ fn is_recipe_url(url: &str) -> bool {
     }
 
     // Check "/recipes/" followed by a slug (not ending there)
-    if let Some(pos) = lower.find("/recipes/") {
-        // Safe: pos is from .find() on ASCII pattern "/recipes/" (9 bytes)
-        #[allow(clippy::string_slice)]
-        let after_recipes = &lower[pos + 9..];
+    if let Some((_, after_recipes)) = lower.split_once("/recipes/") {
         // Strip trailing slash if present
         let slug = after_recipes.trim_end_matches('/');
         // Must have content after /recipes/ and not be a category path or nested

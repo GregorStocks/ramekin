@@ -370,10 +370,7 @@ fn extract_site_from_url(url: &str) -> String {
 fn extract_recipe_slug(url: &str) -> String {
     // URL format is: site-com_recipe-slug (e.g., "101cookbooks-com_coleslaw-recipe")
     // Extract everything after the first underscore
-    if let Some(idx) = url.find('_') {
-        // Safe: idx is from .find('_'), and '_' is 1 ASCII byte
-        #[allow(clippy::string_slice)]
-        let slug = &url[idx + 1..];
+    if let Some((_, slug)) = url.split_once('_') {
         // Limit length and clean up
         let cleaned: String = slug
             .chars()

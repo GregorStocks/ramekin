@@ -1226,12 +1226,10 @@ fn simplify_error(error: &str) -> String {
     if error.contains("No recipe found") || error.contains("No Recipe found") {
         "No recipe found".to_string()
     } else if error.contains("MissingField") {
-        // Extract the field name
-        // Safe: start/end are from .find() on ASCII patterns
-        #[allow(clippy::string_slice)]
-        if let Some(start) = error.find("MissingField(") {
-            if let Some(end) = error[start..].find(')') {
-                return error[start..start + end + 1].to_string();
+        // Extract the field name using split_once for Unicode safety
+        if let Some((_, after)) = error.split_once("MissingField(") {
+            if let Some((field, _)) = after.split_once(')') {
+                return format!("MissingField({})", field);
             }
         }
         "MissingField".to_string()

@@ -2,11 +2,6 @@
 //!
 //! Parses raw ingredient strings (e.g., "2 cups flour, sifted") into structured data.
 
-// Safety: All string slicing in this module is done at positions found by `.find()` on ASCII
-// characters (like '(', ')', '+', ',') or after `.starts_with()` checks on ASCII-only patterns.
-// These operations return byte positions that are guaranteed to be at UTF-8 char boundaries.
-#![allow(clippy::string_slice)]
-
 use std::collections::HashMap;
 use std::sync::LazyLock;
 
@@ -329,10 +324,11 @@ fn strip_measurement_modifier(s: &str) -> (Option<String>, String) {
 
     for &modifier in MEASUREMENT_MODIFIERS {
         if s_lower.trim().starts_with(modifier) {
-            let after = &s_trimmed[modifier.len()..];
-            // Make sure it's a word boundary (followed by space or end)
-            if after.is_empty() || after.starts_with(char::is_whitespace) {
-                return (Some(modifier.to_string()), after.trim().to_string());
+            if let Some(after) = s_trimmed.get(modifier.len()..) {
+                // Make sure it's a word boundary (followed by space or end)
+                if after.is_empty() || after.starts_with(char::is_whitespace) {
+                    return (Some(modifier.to_string()), after.trim().to_string());
+                }
             }
         }
     }
@@ -429,9 +425,10 @@ fn normalize_word_numbers(s: &str) -> String {
     for (word, digit) in word_to_digit {
         if s_lower.starts_with(word) {
             // Check for word boundary (space or end of string)
-            let after = &s[word.len()..];
-            if after.is_empty() || after.starts_with(char::is_whitespace) {
-                return format!("{}{}", digit, after);
+            if let Some(after) = s.get(word.len()..) {
+                if after.is_empty() || after.starts_with(char::is_whitespace) {
+                    return format!("{}{}", digit, after);
+                }
             }
         }
     }
@@ -475,61 +472,79 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., "1/2 cup butter (softened)" -> extract "(softened)" as note
     let mut alt_measurements = Vec::new();
     while let Some(start) = remaining.find('(') {
-        if let Some(end) = remaining[start..].find(')') {
-            let paren_content = &remaining[start + 1..start + end];
+        // Find ')' in the substring after '('
+        let after_open = match remaining.get(start..) {
+            Some(s) => s,
+            None => break,
+        };
+        let Some(end_offset) = after_open.find(')') else {
+            break;
+        };
+        // end_offset is relative to start, so absolute close paren is at start + end_offset
+        let paren_content = match remaining.get(start + 1..start + end_offset) {
+            Some(s) => s,
+            None => break,
+        };
 
-            // First check if this is a prep note (like "softened", "chopped", etc.)
-            if is_prep_note(paren_content) && note.is_none() {
-                // Strip leading comma (e.g., from raw like "tomato (, sliced)")
-                note = Some(
-                    paren_content
-                        .trim()
-                        .trim_start_matches(',')
-                        .trim()
-                        .to_string(),
-                );
-                // Remove the parenthetical from remaining
-                // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
-                let before = remaining[..start]
-                    .trim_end()
-                    .trim_end_matches(',')
-                    .trim_end();
-                let after = remaining[start + end + 1..].trim_start();
-                remaining = if before.is_empty() {
-                    after.to_string()
-                } else if after.is_empty() {
-                    before.to_string()
-                } else {
-                    format!("{} {}", before, after)
-                };
-                continue;
-            }
-
-            // Try to parse the parenthetical content as one or more measurements
-            // Split by semicolons or commas to handle "8 ounces; 227 g each"
-            let parsed_measurements = parse_parenthetical_measurements(paren_content);
-
-            if !parsed_measurements.is_empty() {
-                alt_measurements.extend(parsed_measurements);
-                // Remove the parenthetical from remaining, preserving space
-                // Also strip trailing comma before the parenthetical
-                let before = remaining[..start]
-                    .trim_end()
-                    .trim_end_matches(',')
-                    .trim_end();
-                let after = remaining[start + end + 1..].trim_start();
-                remaining = if before.is_empty() {
-                    after.to_string()
-                } else if after.is_empty() {
-                    before.to_string()
-                } else {
-                    format!("{} {}", before, after)
-                };
+        // First check if this is a prep note (like "softened", "chopped", etc.)
+        if is_prep_note(paren_content) && note.is_none() {
+            // Strip leading comma (e.g., from raw like "tomato (, sliced)")
+            note = Some(
+                paren_content
+                    .trim()
+                    .trim_start_matches(',')
+                    .trim()
+                    .to_string(),
+            );
+            // Remove the parenthetical from remaining
+            // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
+            let before = remaining
+                .get(..start)
+                .unwrap_or("")
+                .trim_end()
+                .trim_end_matches(',')
+                .trim_end();
+            let after = remaining
+                .get(start + end_offset + 1..)
+                .unwrap_or("")
+                .trim_start();
+            remaining = if before.is_empty() {
+                after.to_string()
+            } else if after.is_empty() {
+                before.to_string()
             } else {
-                // Not a measurement or prep note, leave it and stop looking for more
-                break;
-            }
+                format!("{} {}", before, after)
+            };
+            continue;
+        }
+
+        // Try to parse the parenthetical content as one or more measurements
+        // Split by semicolons or commas to handle "8 ounces; 227 g each"
+        let parsed_measurements = parse_parenthetical_measurements(paren_content);
+
+        if !parsed_measurements.is_empty() {
+            alt_measurements.extend(parsed_measurements);
+            // Remove the parenthetical from remaining, preserving space
+            // Also strip trailing comma before the parenthetical
+            let before = remaining
+                .get(..start)
+                .unwrap_or("")
+                .trim_end()
+                .trim_end_matches(',')
+                .trim_end();
+            let after = remaining
+                .get(start + end_offset + 1..)
+                .unwrap_or("")
+                .trim_start();
+            remaining = if before.is_empty() {
+                after.to_string()
+            } else if after.is_empty() {
+                before.to_string()
+            } else {
+                format!("{} {}", before, after)
+            };
         } else {
+            // Not a measurement or prep note, leave it and stop looking for more
             break;
         }
     }
@@ -538,21 +553,24 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., "1 cup flour, plus 2 tablespoons" -> note = "plus 2 tablespoons"
     // Look for ", plus " or just " plus " with a measurement after
     if let Some(plus_idx) = remaining.to_lowercase().find(", plus ") {
-        let plus_part = remaining[plus_idx + 2..].trim(); // Skip ", "
-        if note.is_none() {
-            note = Some(plus_part.to_string());
+        // Skip ", " to get "plus ..."
+        if let Some(plus_part) = remaining.get(plus_idx + 2..) {
+            if note.is_none() {
+                note = Some(plus_part.trim().to_string());
+            }
         }
-        remaining = remaining[..plus_idx].trim().to_string();
+        remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
     } else if let Some(plus_idx) = remaining.to_lowercase().find(" plus ") {
         // Check if there's a measurement-like thing after "plus"
-        let after_plus = remaining[plus_idx + 6..].trim();
+        let after_plus = remaining.get(plus_idx + 6..).unwrap_or("").trim();
         if !after_plus.is_empty() {
-            // Extract just the "plus ..." part
-            let plus_part = remaining[plus_idx + 1..].trim();
-            if note.is_none() {
-                note = Some(plus_part.to_string());
+            // Extract just the "plus ..." part (skip the leading space)
+            if let Some(plus_part) = remaining.get(plus_idx + 1..) {
+                if note.is_none() {
+                    note = Some(plus_part.trim().to_string());
+                }
             }
-            remaining = remaining[..plus_idx].trim().to_string();
+            remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
         }
     }
 
@@ -597,8 +615,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let remaining_trimmed = remaining.trim_start();
     let remaining_lower = remaining_trimmed.to_lowercase();
     if remaining_lower.starts_with("or ") {
-        // Find the byte position after "or " (safe since "or " is ASCII)
-        let after_or = remaining_trimmed[3..].trim_start();
+        // Use the length of what was stripped to get from original (preserving case)
+        let after_or = remaining_trimmed.get(3..).unwrap_or("").trim_start();
 
         // Try to parse as measurement, following the same flow as main parsing:
         // 1. Strip pre-amount modifier (e.g., "scant 1 cup")
@@ -639,10 +657,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Loop to handle multiple: "3/4 cup / 4 oz / 115g toasted sunflower seeds"
     loop {
         let remaining_trimmed = remaining.trim_start();
-        if !remaining_trimmed.starts_with("/ ") {
+        let Some(after_slash) = remaining_trimmed.strip_prefix("/ ") else {
             break;
-        }
-        let after_slash = remaining_trimmed[2..].trim_start();
+        };
+        let after_slash = after_slash.trim_start();
 
         // Try to parse as measurement
         let (slash_pre_amount_modifier, after_slash_modifier) =
@@ -684,18 +702,20 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         // Check for slash-separated alternative (e.g., "/8 oz." after "226g")
         // Only do this AFTER we've found at least one attached metric, to avoid
         // false positives like "1/2cup" being parsed as "1" then "/2 cup"
-        if found_attached_metric && remaining_trimmed.starts_with('/') {
-            let after_slash = remaining_trimmed[1..].trim_start();
-            let (slash_amount, after_slash_amount) = extract_amount(after_slash);
-            let (slash_unit, after_slash_unit) = extract_unit(&after_slash_amount);
+        if found_attached_metric {
+            if let Some(after_slash) = remaining_trimmed.strip_prefix('/') {
+                let after_slash = after_slash.trim_start();
+                let (slash_amount, after_slash_amount) = extract_amount(after_slash);
+                let (slash_unit, after_slash_unit) = extract_unit(&after_slash_amount);
 
-            if slash_amount.is_some() && slash_unit.is_some() {
-                alt_measurements.push(Measurement {
-                    amount: slash_amount,
-                    unit: slash_unit,
-                });
-                remaining = after_slash_unit;
-                continue;
+                if slash_amount.is_some() && slash_unit.is_some() {
+                    alt_measurements.push(Measurement {
+                        amount: slash_amount,
+                        unit: slash_unit,
+                    });
+                    remaining = after_slash_unit;
+                    continue;
+                }
             }
         }
 
@@ -714,11 +734,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Step 5: Extract note from the end (after comma), if not already set
     if note.is_none() {
         if let Some(comma_idx) = remaining.rfind(',') {
-            let potential_note = remaining[comma_idx + 1..].trim();
-            // Check if it looks like a prep note
-            if is_prep_note(potential_note) {
-                note = Some(potential_note.to_string());
-                remaining = remaining[..comma_idx].trim().to_string();
+            if let Some(potential_note) = remaining.get(comma_idx + 1..) {
+                let potential_note = potential_note.trim();
+                // Check if it looks like a prep note
+                if is_prep_note(potential_note) {
+                    note = Some(potential_note.to_string());
+                    remaining = remaining.get(..comma_idx).unwrap_or("").trim().to_string();
+                }
             }
         }
     }
@@ -730,8 +752,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Only apply if note isn't already set
     if note.is_none() {
         if let Some(or_idx) = remaining.to_lowercase().find(" or ") {
-            let before_or = remaining[..or_idx].trim();
-            let after_or = remaining[or_idx + 4..].trim(); // Skip " or "
+            let before_or = remaining.get(..or_idx).unwrap_or("").trim();
+            let after_or = remaining.get(or_idx + 4..).unwrap_or("").trim(); // Skip " or "
 
             // Try to parse what's after "or" as a measurement
             let (_or_pre_amount_modifier, after_or_modifier) = strip_measurement_modifier(after_or);
@@ -891,7 +913,7 @@ fn strip_measurement_qualifiers(s: &str) -> String {
     let mut result = s.to_string();
     for q in remove_qualifiers {
         if let Some(idx) = result.to_lowercase().find(q) {
-            result = result[..idx].to_string();
+            result = result.get(..idx).unwrap_or("").to_string();
         }
     }
 
@@ -900,7 +922,7 @@ fn strip_measurement_qualifiers(s: &str) -> String {
     let lower = result.to_lowercase();
     for q in start_qualifiers {
         if lower.starts_with(q) {
-            result = result[q.len()..].to_string();
+            result = result.get(q.len()..).unwrap_or("").to_string();
             break;
         }
     }
@@ -930,7 +952,10 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
             // Find where the second word ends in the original string
             if let Some(pos) = s.find(second) {
                 let end_pos = pos + second.len();
-                return (Some(amount), s[end_pos..].trim().to_string());
+                return (
+                    Some(amount),
+                    s.get(end_pos..).unwrap_or("").trim().to_string(),
+                );
             }
         }
 
@@ -998,7 +1023,7 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
             let word_len = first_word.len();
             return (
                 Some((*first_word).to_string()),
-                s[word_len..].trim().to_string(),
+                s.get(word_len..).unwrap_or("").trim().to_string(),
             );
         }
     }
@@ -1054,9 +1079,7 @@ fn is_amount_like(s: &str) -> bool {
 
 /// Check if a string is a fraction like "1/2" or "3/4"
 fn is_fraction(s: &str) -> bool {
-    if let Some(slash_pos) = s.find('/') {
-        let before = &s[..slash_pos];
-        let after = &s[slash_pos + 1..];
+    if let Some((before, after)) = s.split_once('/') {
         !before.is_empty()
             && !after.is_empty()
             && before.chars().all(|c| c.is_ascii_digit())
@@ -1075,7 +1098,7 @@ fn extract_unit(s: &str) -> (Option<String>, String) {
     for &unit in UNITS_SORTED.iter() {
         if s_lower.starts_with(unit) {
             // Make sure it's a word boundary
-            let after = &s[unit.len()..];
+            let after = s.get(unit.len()..).unwrap_or("");
             if after.is_empty()
                 || after.starts_with(|c: char| c.is_whitespace() || c == '.' || c == ',')
             {
@@ -1085,7 +1108,7 @@ fn extract_unit(s: &str) -> (Option<String>, String) {
                 // Strip "of " if present after the unit (e.g., "cloves of garlic" -> "garlic")
                 let remaining_lower = remaining.to_lowercase();
                 if remaining_lower.starts_with("of ") || remaining_lower == "of" {
-                    remaining = remaining[2..].trim_start();
+                    remaining = remaining.get(2..).unwrap_or("").trim_start();
                 }
 
                 return (Some(unit.to_string()), remaining.to_string());
@@ -1136,10 +1159,7 @@ fn try_extract_compound_unit(s: &str) -> Option<(String, String)> {
     // Check for hyphenated form first: "28-oz." or "14-ounce" followed by container
     // Pattern: FIRST_WORD contains hyphen with NUMBER-UNIT format
     let first = words[0];
-    if let Some(hyphen_pos) = first.find('-') {
-        let before_hyphen = &first[..hyphen_pos];
-        let after_hyphen = &first[hyphen_pos + 1..];
-
+    if let Some((before_hyphen, after_hyphen)) = first.split_once('-') {
         // Before hyphen must be a number
         if is_amount_like(before_hyphen) {
             // After hyphen must be a weight unit (possibly with trailing period)
@@ -1245,20 +1265,20 @@ fn try_extract_attached_metric(s: &str) -> Option<(Measurement, String)> {
 
     // Check if trailing dot should be excluded (e.g., "65." is not a valid amount by itself
     // unless followed by digits)
-    let amount_str = s[..num_end].trim_end_matches('.');
+    let amount_str = s.get(..num_end)?.trim_end_matches('.');
     if amount_str.is_empty() {
         return None;
     }
 
     // Now check if immediately followed by a metric unit (no space)
-    let after_num = &s[num_end..];
+    let after_num = s.get(num_end..)?;
 
     // Check each metric unit (longest first would be ideal, but these are short)
     for &unit in ATTACHED_METRIC_UNITS {
         let after_lower = after_num.to_lowercase();
         if after_lower.starts_with(unit) {
             // Check for word boundary after unit
-            let after_unit = &after_num[unit.len()..];
+            let after_unit = after_num.get(unit.len()..).unwrap_or("");
             // Valid boundaries: end of string, space, comma, slash, period (abbreviation)
             if after_unit.is_empty()
                 || after_unit.starts_with(char::is_whitespace)
@@ -1267,7 +1287,7 @@ fn try_extract_attached_metric(s: &str) -> Option<(Measurement, String)> {
                 || after_unit.starts_with('.')
             {
                 // Skip any trailing period (abbreviation like "oz.")
-                let unit_with_case = &after_num[..unit.len()];
+                let unit_with_case = after_num.get(..unit.len()).unwrap_or("");
                 let remaining = after_unit.trim_start_matches('.').trim_start();
 
                 return Some((
@@ -1304,9 +1324,10 @@ fn normalize_unit(unit: &str) -> String {
         return unit.to_string();
     }
 
-    // Check for "each" suffix first
+    // Check for "each" suffix first (case-insensitive check, preserve original for base)
     let (base_unit, each_suffix) = if unit.to_lowercase().ends_with(" each") {
-        (&unit[..unit.len() - 5], " each")
+        // Safe because " each" is 5 ASCII bytes
+        (unit.get(..unit.len() - 5).unwrap_or(unit), " each")
     } else {
         (unit, "")
     };
@@ -1315,7 +1336,7 @@ fn normalize_unit(unit: &str) -> String {
     let base_lower = base_unit.to_lowercase();
     for &modifier in MEASUREMENT_MODIFIERS {
         if base_lower.starts_with(modifier) {
-            let after_modifier = base_unit[modifier.len()..].trim();
+            let after_modifier = base_unit.get(modifier.len()..).unwrap_or("").trim();
             if !after_modifier.is_empty() {
                 // Normalize the unit part after the modifier
                 let normalized_base = normalize_unit_base(after_modifier);
@@ -1477,13 +1498,8 @@ fn title_case(s: &str) -> String {
 pub fn detect_section_header(raw: &str) -> Option<String> {
     let trimmed = raw.trim();
 
-    // Must end with colon
-    if !trimmed.ends_with(':') {
-        return None;
-    }
-
-    // Strip the colon to get the section name
-    let name = trimmed[..trimmed.len() - 1].trim();
+    // Must end with colon - strip it to get the section name
+    let name = trimmed.strip_suffix(':')?.trim();
 
     // Must not be empty
     if name.is_empty() {

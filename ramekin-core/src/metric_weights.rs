@@ -3,10 +3,6 @@
 //! Provides deterministic conversion of imperial weight measurements to metric.
 //! Handles oz → grams and lb → grams conversions.
 
-// Safety: All string slicing in this module is done at positions found by `.find()` on ASCII
-// characters (like '-'). These operations return byte positions at UTF-8 char boundaries.
-#![allow(clippy::string_slice)]
-
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 
 const GRAMS_PER_OZ: f64 = 28.3495;
@@ -132,8 +128,8 @@ fn convert_amount_to_grams(amount: &str, grams_per_unit: f64) -> Option<String> 
     // Check for range with hyphen (but not negative numbers or fractions like 1-1/2)
     // A range hyphen should have digits on both sides: "6-8"
     if let Some(hyphen_idx) = find_range_hyphen(amount) {
-        let low = &amount[..hyphen_idx];
-        let high = &amount[hyphen_idx + 1..];
+        let low = amount.get(..hyphen_idx)?;
+        let high = amount.get(hyphen_idx + 1..)?;
         let low_g = parse_and_convert(low.trim(), grams_per_unit)?;
         let high_g = parse_and_convert(high.trim(), grams_per_unit)?;
         return Some(format!("{}-{}", format_grams(low_g), format_grams(high_g)));
@@ -149,13 +145,13 @@ fn find_range_hyphen(s: &str) -> Option<usize> {
     // Look for pattern: digit-digit where the part after hyphen doesn't contain /
     for (i, c) in s.char_indices() {
         if c == '-' && i > 0 {
-            let before = s[..i].chars().last()?;
-            let after = s.get(i + 1..)?.chars().next()?;
+            let before = s.get(..i)?.chars().last()?;
+            let after_part = s.get(i + 1..)?;
+            let after = after_part.chars().next()?;
 
             // Must have digit before and digit after
             if before.is_ascii_digit() && after.is_ascii_digit() {
                 // The part after must not contain a slash (would be mixed number like 1-1/2)
-                let after_part = &s[i + 1..];
                 if !after_part.contains('/') {
                     return Some(i);
                 }
