@@ -20,7 +20,9 @@ use ramekin_core::pipeline::steps::{
 };
 use ramekin_core::pipeline::StepRegistry;
 
-pub use runners::{run_all_steps, AllStepsResult, ExtractionStats, PipelineStep, StepResult};
+pub use runners::{
+    run_all_steps, AllStepsResult, ExtractionStats, IngredientStats, PipelineStep, StepResult,
+};
 pub use staging::{clear_staging, ensure_staging_dir, find_staged_html, staging_dir};
 
 use steps::{ApplyAutoTagsStep, FetchImagesStep, SaveRecipeStep};

@@ -9,7 +9,7 @@ const GRAMS_PER_OZ: f64 = 28.3495;
 const GRAMS_PER_LB: f64 = 453.592;
 
 /// Statistics about metric weight conversion.
-#[derive(Debug, Default, Clone)]
+#[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize)]
 pub struct MetricConversionStats {
     pub converted_oz: usize,
     pub converted_lb: usize,

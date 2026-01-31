@@ -84,6 +84,8 @@ impl PipelineStep for ParseIngredientsStep {
 
         let output = ParseIngredientsOutput {
             ingredients: enriched,
+            volume_stats: Some(volume_stats),
+            metric_stats: Some(weight_stats),
         };
 
         StepResult {

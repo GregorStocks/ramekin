@@ -3,21 +3,31 @@
 ## Overall
 
 - Total URLs: 4405
-- Completed: 4158 (94.4%)
-- Failed at fetch: 46 (1.0%)
+- Completed: 4191 (95.1%)
+- Failed at fetch: 13 (0.3%)
 - Failed at extract: 201 (4.6%)
 
 ## Extraction Methods
 
-- JSON-LD: 4018/4359 (92.2%)
-- Microdata: 140/4359 (3.2%)
-- Both: 0/4359 (0.0%)
-- Neither: 201/4359 (4.6%)
+- JSON-LD: 4051/4392 (92.2%)
+- Microdata: 140/4392 (3.2%)
+- Both: 0/4392 (0.0%)
+- Neither: 201/4392 (4.6%)
+
+## Ingredient Parsing
+
+- Total ingredients: 45870
+- Volume-to-weight converted: 6933/32572 (21.3%)
+- Unknown ingredient (no density data): 19987
+- Already has weight: 5652
+- No volume unit (count-based): 13181
+- Metric converted (oz→g): 2091
+- Metric converted (lb→g): 1311
 
 ## AI Cache
 
-- Cache hits: 1891/4158 (45.5%)
-- API calls: 2267/4158 (54.5%)
+- Cache hits: 4191/4191 (100.0%)
+- API calls: 0/4191 (0.0%)
 
 ## By Site
 
@@ -94,7 +104,7 @@
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 100 | 74.0% |
-| sudachirecipes.com | 65 | 94 | 69.1% |
+| sudachirecipes.com | 94 | 94 | 100.0% |
 | sweetandsavorymeals.com | 100 | 100 | 100.0% |
 | tasteofhome.com | 100 | 100 | 100.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
@@ -109,4 +119,4 @@
 | twopeasandtheirpod.com | 21 | 23 | 91.3% |
 | wellplated.com | 35 | 35 | 100.0% |
 | whiteonricecouple.com | 83 | 83 | 100.0% |
-| yellowblissroad.com | 27 | 31 | 87.1% |
+| yellowblissroad.com | 31 | 31 | 100.0% |

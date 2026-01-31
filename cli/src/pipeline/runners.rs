@@ -34,11 +34,24 @@ pub struct ExtractionStats {
     pub microdata_success: bool,
 }
 
+/// Stats about ingredient parsing (volume-to-weight and metric conversions).
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct IngredientStats {
+    pub total_ingredients: usize,
+    pub volume_converted: usize,
+    pub volume_unknown_ingredient: usize,
+    pub volume_no_volume: usize,
+    pub volume_already_has_weight: usize,
+    pub metric_converted_oz: usize,
+    pub metric_converted_lb: usize,
+}
+
 /// Result from running all steps, including extraction stats.
 #[derive(Debug, Clone)]
 pub struct AllStepsResult {
     pub step_results: Vec<StepResult>,
     pub extraction_stats: Option<ExtractionStats>,
+    pub ingredient_stats: Option<IngredientStats>,
     /// Whether the AI auto-tag response was cached (None if auto-tag didn't run)
     pub ai_cached: Option<bool>,
 }
@@ -139,6 +152,7 @@ pub async fn run_all_steps(
             return AllStepsResult {
                 step_results,
                 extraction_stats: None,
+                ingredient_stats: None,
                 ai_cached: None,
             };
         }
@@ -174,6 +188,7 @@ pub async fn run_all_steps(
 
     // Convert generic results to our StepResult format and append to any existing results
     let mut extraction_stats = None;
+    let mut ingredient_stats = None;
     let mut ai_cached = None;
 
     for result in &generic_results {
@@ -186,6 +201,11 @@ pub async fn run_all_steps(
         // Extract stats for extract_recipe step
         if step == PipelineStep::ExtractRecipe {
             extraction_stats = extract_stats_from_output(&result.output);
+        }
+
+        // Extract stats for parse_ingredients step
+        if step == PipelineStep::ParseIngredients && result.success {
+            ingredient_stats = extract_ingredient_stats_from_output(&result.output);
         }
 
         // Extract AI cache status from auto-tag step
@@ -205,6 +225,7 @@ pub async fn run_all_steps(
     AllStepsResult {
         step_results,
         extraction_stats,
+        ingredient_stats,
         ai_cached,
     }
 }
@@ -234,6 +255,43 @@ fn extract_stats_from_output(output: &serde_json::Value) -> Option<ExtractionSta
         method_used: method,
         jsonld_success,
         microdata_success,
+    })
+}
+
+/// Extract IngredientStats from the parse_ingredients output JSON.
+fn extract_ingredient_stats_from_output(output: &serde_json::Value) -> Option<IngredientStats> {
+    let ingredients = output.get("ingredients")?.as_array()?;
+    let total_ingredients = ingredients.len();
+
+    let volume_stats = output.get("volume_stats")?;
+    let metric_stats = output.get("metric_stats")?;
+
+    Some(IngredientStats {
+        total_ingredients,
+        volume_converted: volume_stats
+            .get("converted")
+            .and_then(|v| v.as_u64())
+            .unwrap_or(0) as usize,
+        volume_unknown_ingredient: volume_stats
+            .get("skipped_unknown_ingredient")
+            .and_then(|v| v.as_u64())
+            .unwrap_or(0) as usize,
+        volume_no_volume: volume_stats
+            .get("skipped_no_volume")
+            .and_then(|v| v.as_u64())
+            .unwrap_or(0) as usize,
+        volume_already_has_weight: volume_stats
+            .get("skipped_already_has_weight")
+            .and_then(|v| v.as_u64())
+            .unwrap_or(0) as usize,
+        metric_converted_oz: metric_stats
+            .get("converted_oz")
+            .and_then(|v| v.as_u64())
+            .unwrap_or(0) as usize,
+        metric_converted_lb: metric_stats
+            .get("converted_lb")
+            .and_then(|v| v.as_u64())
+            .unwrap_or(0) as usize,
     })
 }
 

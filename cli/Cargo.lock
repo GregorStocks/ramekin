@@ -1645,6 +1645,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "ingredient-density"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "inout"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2471,6 +2479,7 @@ dependencies = [
  "dirs",
  "html-escape",
  "image",
+ "ingredient-density",
  "reqwest 0.13.1",
  "scraper",
  "serde",

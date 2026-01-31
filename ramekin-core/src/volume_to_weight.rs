@@ -3,12 +3,12 @@
 //! Converts volume measurements (cups, tbsp, tsp, etc.) to grams for
 //! ingredients where we have reliable density data.
 
-use crate::density_data::{find_density, is_volume_unit, volume_to_cups};
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::{format_grams, parse_amount};
+use ingredient_density::{find_density, is_volume_unit, volume_to_cups};
 
 /// Statistics about volume-to-weight conversion.
-#[derive(Debug, Default, Clone)]
+#[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize)]
 pub struct VolumeConversionStats {
     pub converted: usize,
     pub skipped_no_volume: usize,
