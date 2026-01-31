@@ -105,7 +105,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: ~/.local/bin
-        key: tools-${{ runner.os }}-swiftlint-0.58.0-pc-v1.46.0-mkcert-v1.4.4
+        key: tools-${{ runner.os }}-swiftlint-0.63.2-pc-v1.90.0-mkcert-v1.4.4
 
     - name: Install SwiftLint
       shell: bash
@@ -117,7 +117,7 @@ runs:
         if [[ -x ~/.local/bin/swiftlint ]]; then
           echo "SwiftLint found in cache"
         else
-          SWIFTLINT_VERSION=0.58.0
+          SWIFTLINT_VERSION=0.63.2
           echo "Installing SwiftLint ${SWIFTLINT_VERSION}"
           SWIFTLINT_URL="https://github.com/realm/SwiftLint/releases/download"
           curl -fsSL "${SWIFTLINT_URL}/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip" \
@@ -147,7 +147,7 @@ runs:
         if [[ -x ~/.local/bin/process-compose ]]; then
           echo "process-compose found in cache"
         else
-          PC_VERSION=v1.46.0
+          PC_VERSION=v1.90.0
           echo "Installing process-compose ${PC_VERSION}"
           PC_URL="https://github.com/F1bonacc1/process-compose/releases/download/${PC_VERSION}"
           curl -fsSL "${PC_URL}/process-compose_linux_amd64.tar.gz" \
