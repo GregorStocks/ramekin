@@ -215,14 +215,15 @@ mod tests {
 
     #[test]
     fn test_skip_no_volume() {
+        // Test with a count-based measurement (no volume, no weight)
         let ingredient = ParsedIngredient {
-            item: "flour".to_string(),
+            item: "egg".to_string(),
             measurements: vec![Measurement {
-                amount: Some("500".to_string()),
-                unit: Some("g".to_string()),
+                amount: Some("2".to_string()),
+                unit: None,
             }],
             note: None,
-            raw: Some("500g flour".to_string()),
+            raw: Some("2 eggs".to_string()),
         };
 
         let mut stats = VolumeConversionStats::default();
