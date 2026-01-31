@@ -10,7 +10,6 @@ Usage:
 """
 
 import csv
-import re
 from pathlib import Path
 from collections import defaultdict
 
@@ -30,93 +29,14 @@ def load_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def normalize_food_name(name: str) -> str:
-    """
-    Normalize USDA food name to a simpler form.
-
-    USDA names are like "Flour, wheat, all-purpose, enriched, bleached"
-    We want: "all-purpose flour"
-    """
-    # Lowercase
-    name = name.lower()
-
-    # Remove parenthetical notes
-    name = re.sub(r"\([^)]*\)", "", name)
-
-    # Common transformations
-    name = name.strip()
-
-    return name
-
-
 def extract_ingredient_key(description: str) -> str | None:
     """
-    Extract a clean ingredient key from USDA description.
-    Returns None if this doesn't look like a useful baking/cooking ingredient.
+    Extract ingredient key from USDA description.
+    Returns lowercase name, or None if empty.
     """
-    desc_lower = description.lower()
-
-    # Skip entries with lab/sample codes (e.g., "nfy040y31", "ar1", "pa2")
-    if re.search(r"- nfy\w+|pass \d|region \d|\([a-z]{2}\d?\)", desc_lower):
+    name = description.lower().strip()
+    if not name:
         return None
-
-    # Skip branded products
-    brand_markers = [
-        "sabra",
-        "brand",
-        "company",
-        "inc.",
-        "kraft",
-        "del monte",
-        "great value",
-        "blue diamond",
-        "emerald",
-        "snack artist",
-        "albertsons",
-        "best choice",
-        "c&h",
-        "cracker barrel",
-        "galbani",
-        "lucerne",
-        "polly-o",
-        "sorrento",
-        "store/other",
-        "chinese restaurant",
-        "mexican restaurant",
-        "restaurant",
-    ]
-    if any(x in desc_lower for x in brand_markers):
-        return None
-
-    # Skip prepared dishes and complex foods
-    skip_patterns = [
-        "soup,",
-        "salad,",
-        "sandwich",
-        "pizza",
-        "pasta,",
-        "fried rice",
-        "casserole",
-        "stew",
-        "pie,",
-        "cake,",
-        "cookie",
-        "brownie",
-        "burrito",
-        "taco",
-        "enchilada",
-        "quesadilla",
-    ]
-    if any(x in desc_lower for x in skip_patterns):
-        return None
-
-    # Normalize the name
-    name = normalize_food_name(description)
-
-    # Skip if too short or too long
-    if len(name) < 3 or len(name) > 60:
-        return None
-
     return name
 
 
