@@ -1,55 +1,154 @@
+use std::sync::LazyLock;
+
+use regex::Regex;
+
 use crate::error::ExtractError;
 use crate::types::{ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, RawRecipe};
 use scraper::{Html, Selector};
 
+/// Regex to find JSON-LD script tags (case-insensitive for type attribute)
+static JSONLD_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?is)<script[^>]*type\s*=\s*["']application/ld\+json["'][^>]*>(.*?)</script>"#)
+        .expect("Invalid JSON-LD regex")
+});
+
+/// Regex to find og:image meta tag
+static OG_IMAGE_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?i)<meta[^>]*property\s*=\s*["']og:image["'][^>]*content\s*=\s*["']([^"']+)["'][^>]*/?\s*>"#)
+        .expect("Invalid og:image regex")
+});
+
+/// Alternative og:image regex (content before property)
+static OG_IMAGE_REGEX_ALT: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?i)<meta[^>]*content\s*=\s*["']([^"']+)["'][^>]*property\s*=\s*["']og:image["'][^>]*/?\s*>"#)
+        .expect("Invalid og:image alt regex")
+});
+
 /// Extract a recipe from HTML containing JSON-LD structured data.
 /// Falls back to microdata extraction if JSON-LD fails.
+///
+/// Uses a fast regex-based path for JSON-LD to avoid full DOM parsing.
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
-    extract_recipe_with_stats(html, source_url).map(|output| output.raw_recipe)
+    // Fast path: extract JSON-LD using regex (avoids DOM parsing)
+    if let Some(recipe) = extract_jsonld_fast(html, source_url) {
+        return Ok(recipe);
+    }
+
+    // Slow path: full DOM parsing for malformed HTML or microdata-only sites
+    let document = Html::parse_document(html);
+
+    // Try JSON-LD via DOM (handles edge cases regex might miss)
+    if let Ok(recipe) = extract_recipe_from_jsonld(&document, source_url) {
+        return Ok(recipe);
+    }
+
+    // Fall back to microdata
+    extract_recipe_from_microdata(&document, source_url)
+}
+
+/// Fast JSON-LD extraction using regex to avoid DOM parsing.
+/// Returns None if no valid JSON-LD recipe is found.
+fn extract_jsonld_fast(html: &str, source_url: &str) -> Option<RawRecipe> {
+    for cap in JSONLD_REGEX.captures_iter(html) {
+        let json_text = match cap.get(1) {
+            Some(m) => m.as_str(),
+            None => continue,
+        };
+
+        // Sanitize and parse JSON
+        let sanitized = sanitize_json(json_text);
+        let json: serde_json::Value = match serde_json::from_str(&sanitized) {
+            Ok(v) => v,
+            Err(_) => continue, // Try next script tag
+        };
+
+        // Look for Recipe type
+        if let Some(recipe) = find_recipe_in_json(&json) {
+            if let Ok(mut raw_recipe) = extract_recipe_data(recipe, source_url) {
+                // Fallback to og:image if no images found
+                if raw_recipe.image_urls.is_empty() {
+                    if let Some(og_image) = extract_og_image_fast(html) {
+                        raw_recipe.image_urls.push(og_image);
+                    }
+                }
+                return Some(raw_recipe);
+            }
+        }
+    }
+    None
+}
+
+/// Fast og:image extraction using regex.
+fn extract_og_image_fast(html: &str) -> Option<String> {
+    // Try property-first pattern
+    if let Some(cap) = OG_IMAGE_REGEX.captures(html) {
+        return cap.get(1).map(|m| m.as_str().to_string());
+    }
+    // Try content-first pattern
+    if let Some(cap) = OG_IMAGE_REGEX_ALT.captures(html) {
+        return cap.get(1).map(|m| m.as_str().to_string());
+    }
+    None
 }
 
 /// Extract a recipe, trying all methods and reporting which ones work.
 /// Returns the first successful recipe along with stats for all methods tried.
+///
+/// Uses fast regex-based JSON-LD extraction when possible to avoid DOM parsing.
 pub fn extract_recipe_with_stats(
     html: &str,
     source_url: &str,
 ) -> Result<ExtractRecipeOutput, ExtractError> {
+    // Fast path: try regex-based JSON-LD extraction (avoids DOM parsing)
+    if let Some(recipe) = extract_jsonld_fast(html, source_url) {
+        return Ok(ExtractRecipeOutput {
+            raw_recipe: recipe,
+            method_used: ExtractionMethod::JsonLd,
+            all_attempts: vec![ExtractionAttempt {
+                method: ExtractionMethod::JsonLd,
+                success: true,
+                error: None,
+            }],
+        });
+    }
+
+    // Slow path: full DOM parsing for malformed HTML or microdata-only sites
     let document = Html::parse_document(html);
 
-    let mut attempts = Vec::new();
-    let mut best_recipe: Option<(RawRecipe, ExtractionMethod)> = None;
-
-    // Try JSON-LD
+    // Try JSON-LD via DOM (handles edge cases regex might miss)
     let jsonld_result = extract_recipe_from_jsonld(&document, source_url);
-    attempts.push(ExtractionAttempt {
-        method: ExtractionMethod::JsonLd,
-        success: jsonld_result.is_ok(),
-        error: jsonld_result.as_ref().err().map(|e| e.to_string()),
-    });
     if let Ok(recipe) = jsonld_result {
-        best_recipe = Some((recipe, ExtractionMethod::JsonLd));
-    }
-
-    // Try microdata (even if JSON-LD succeeded, for stats)
-    let microdata_result = extract_recipe_from_microdata(&document, source_url);
-    attempts.push(ExtractionAttempt {
-        method: ExtractionMethod::Microdata,
-        success: microdata_result.is_ok(),
-        error: microdata_result.as_ref().err().map(|e| e.to_string()),
-    });
-    if best_recipe.is_none() {
-        if let Ok(recipe) = microdata_result {
-            best_recipe = Some((recipe, ExtractionMethod::Microdata));
-        }
-    }
-
-    match best_recipe {
-        Some((recipe, method)) => Ok(ExtractRecipeOutput {
+        return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
-            method_used: method,
-            all_attempts: attempts,
+            method_used: ExtractionMethod::JsonLd,
+            all_attempts: vec![ExtractionAttempt {
+                method: ExtractionMethod::JsonLd,
+                success: true,
+                error: None,
+            }],
+        });
+    }
+
+    // Fall back to microdata
+    let microdata_result = extract_recipe_from_microdata(&document, source_url);
+    match microdata_result {
+        Ok(recipe) => Ok(ExtractRecipeOutput {
+            raw_recipe: recipe,
+            method_used: ExtractionMethod::Microdata,
+            all_attempts: vec![
+                ExtractionAttempt {
+                    method: ExtractionMethod::JsonLd,
+                    success: false,
+                    error: jsonld_result.as_ref().err().map(|e| e.to_string()),
+                },
+                ExtractionAttempt {
+                    method: ExtractionMethod::Microdata,
+                    success: true,
+                    error: None,
+                },
+            ],
         }),
-        None => Err(ExtractError::NoRecipe),
+        Err(e) => Err(e),
     }
 }
 

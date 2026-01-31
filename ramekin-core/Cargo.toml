@@ -11,6 +11,9 @@ ingredient-density = { path = "../ingredient-density" }
 # HTML parsing
 scraper = "0.25"
 
+# Regex for fast JSON-LD extraction
+regex = "1"
+
 # HTML entity decoding
 html-escape = "0.2"
 
