@@ -746,10 +746,10 @@ fn save_results(run_dir: &Path, results: &PipelineResults) -> Result<()> {
 }
 
 fn truncate_url(url: &str, max_len: usize) -> String {
-    if url.len() <= max_len {
+    if url.chars().count() <= max_len {
         url.to_string()
     } else {
-        format!("{}...", &url[..max_len - 3])
+        format!("{}...", url.chars().take(max_len - 3).collect::<String>())
     }
 }
 
@@ -986,9 +986,9 @@ pub fn generate_tag_report(run_dir: &Path) -> Result<String> {
 
                     let cached_str = if output.cached { "yes" } else { "no" };
 
-                    // Truncate title for table
-                    let title_display = if title.len() > 40 {
-                        format!("{}...", &title[..37])
+                    // Truncate title for table (character-safe)
+                    let title_display = if title.chars().count() > 40 {
+                        format!("{}...", title.chars().take(37).collect::<String>())
                     } else {
                         title.clone()
                     };
@@ -1227,6 +1227,8 @@ fn simplify_error(error: &str) -> String {
         "No recipe found".to_string()
     } else if error.contains("MissingField") {
         // Extract the field name
+        // Safe: start/end are from .find() on ASCII patterns
+        #[allow(clippy::string_slice)]
         if let Some(start) = error.find("MissingField(") {
             if let Some(end) = error[start..].find(')') {
                 return error[start..start + end + 1].to_string();

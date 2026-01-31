@@ -3,6 +3,10 @@
 //! Provides deterministic conversion of imperial weight measurements to metric.
 //! Handles oz → grams and lb → grams conversions.
 
+// Safety: All string slicing in this module is done at positions found by `.find()` on ASCII
+// characters (like '-'). These operations return byte positions at UTF-8 char boundaries.
+#![allow(clippy::string_slice)]
+
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 
 const GRAMS_PER_OZ: f64 = 28.3495;

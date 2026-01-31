@@ -60,6 +60,7 @@ impl CacheKey {
     /// Convert to a filesystem path relative to the cache directory.
     ///
     /// Format: {prompt_name}/{model_safe}/{hash[0:2]}/{hash}.json
+    #[allow(clippy::string_slice)] // Safe: input_hash is hex (ASCII only)
     pub fn to_path(&self) -> PathBuf {
         // Replace slashes in model name (e.g., "openai/gpt-4o-mini" -> "openai--gpt-4o-mini")
         let model_safe = self.model.replace('/', "--");

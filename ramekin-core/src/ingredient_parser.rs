@@ -2,6 +2,11 @@
 //!
 //! Parses raw ingredient strings (e.g., "2 cups flour, sifted") into structured data.
 
+// Safety: All string slicing in this module is done at positions found by `.find()` on ASCII
+// characters (like '(', ')', '+', ',') or after `.starts_with()` checks on ASCII-only patterns.
+// These operations return byte positions that are guaranteed to be at UTF-8 char boundaries.
+#![allow(clippy::string_slice)]
+
 use std::collections::HashMap;
 use std::sync::LazyLock;
 
@@ -30,7 +35,7 @@ pub struct ParsedIngredient {
 /// (e.g., "tablespoons" must match before "tb").
 static UNITS_SORTED: LazyLock<Vec<&'static str>> = LazyLock::new(|| {
     let mut units = UNITS_RAW.to_vec();
-    units.sort_by(|a, b| b.len().cmp(&a.len()));
+    units.sort_by_key(|u| std::cmp::Reverse(u.len()));
     units
 });
 
@@ -841,7 +846,7 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
         .replace(" OR ", ";");
 
     // Split by semicolons or commas (common separators in recipe measurements)
-    for part in normalized.split(|c| c == ';' || c == ',') {
+    for part in normalized.split([';', ',']) {
         let part = part.trim();
         if part.is_empty() {
             continue;
@@ -1140,7 +1145,7 @@ fn try_extract_compound_unit(s: &str) -> Option<(String, String)> {
             // After hyphen must be a weight unit (possibly with trailing period)
             let after_lower = after_hyphen.to_lowercase();
             let after_no_dot = after_lower.trim_end_matches('.');
-            let is_weight = WEIGHT_UNITS_FOR_COMPOUND.iter().any(|&u| after_no_dot == u);
+            let is_weight = WEIGHT_UNITS_FOR_COMPOUND.contains(&after_no_dot);
 
             if is_weight && words.len() >= 2 {
                 // Second word must be a container

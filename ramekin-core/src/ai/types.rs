@@ -42,7 +42,7 @@ impl ChatMessage {
 }
 
 /// Request for a chat completion.
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Default, Serialize)]
 pub struct ChatRequest {
     pub messages: Vec<ChatMessage>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -52,17 +52,6 @@ pub struct ChatRequest {
     /// If true, request JSON response format.
     #[serde(skip)]
     pub json_response: bool,
-}
-
-impl Default for ChatRequest {
-    fn default() -> Self {
-        Self {
-            messages: Vec::new(),
-            max_tokens: None,
-            temperature: None,
-            json_response: false,
-        }
-    }
 }
 
 /// Token usage information.
