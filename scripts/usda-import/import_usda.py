@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Import ingredient densities from USDA FoodData Central.
+Import ingredient densities from USDA FoodData Central SR Legacy.
 
-Downloads Foundation Foods data and extracts grams-per-cup for each ingredient,
+Downloads SR Legacy data and extracts grams-per-cup for each ingredient,
 then updates density_data.json.
 
 Usage:
@@ -11,13 +11,9 @@ Usage:
 
 import csv
 import json
+import re
 from pathlib import Path
 from collections import defaultdict
-
-# Volume measure unit IDs from USDA
-CUP_UNIT_ID = "1000"
-TBSP_UNIT_ID = "1001"
-TSP_UNIT_ID = "1002"
 
 # Conversion factors to cups
 TBSP_PER_CUP = 16.0
@@ -30,15 +26,33 @@ def load_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def extract_ingredient_key(description: str) -> str | None:
+def parse_volume_unit(modifier: str) -> tuple[str | None, float]:
     """
-    Extract ingredient key from USDA description.
-    Returns lowercase name, or None if empty.
+    Parse volume unit from SR Legacy modifier field.
+    Returns (unit_type, multiplier) where unit_type is 'cup', 'tbsp', 'tsp', or None.
+    The multiplier accounts for partial measurements like "1/2 cup".
     """
-    name = description.lower().strip()
-    if not name:
-        return None
-    return name
+    mod = modifier.lower().strip()
+
+    # Skip entries with non-standard qualifiers
+    # e.g., "cup chips" (not a typical measurement)
+    if "chip" in mod:
+        return None, 1.0
+
+    # Check for cup - accept various forms like "cup", "cup, shredded", "cup, diced"
+    if (
+        mod == "cup"
+        or mod.startswith("cup,")
+        or mod.startswith("cup (")
+        or mod == "cups"
+    ):
+        return "cup", 1.0
+    if mod == "tbsp" or mod == "tablespoon":
+        return "tbsp", 1.0
+    if mod == "tsp" or mod == "teaspoon":
+        return "tsp", 1.0
+
+    return None, 1.0
 
 
 def calculate_grams_per_cup(portions: list[dict]) -> float | None:
@@ -51,7 +65,11 @@ def calculate_grams_per_cup(portions: list[dict]) -> float | None:
     tsp_weights = []
 
     for p in portions:
-        unit_id = p.get("measure_unit_id", "")
+        modifier = p.get("modifier", "")
+        unit_type, _ = parse_volume_unit(modifier)
+        if unit_type is None:
+            continue
+
         try:
             amount = float(p.get("amount", 0))
             gram_weight = float(p.get("gram_weight", 0))
@@ -64,12 +82,12 @@ def calculate_grams_per_cup(portions: list[dict]) -> float | None:
         # Calculate grams per single unit
         grams_per_unit = gram_weight / amount
 
-        if unit_id == CUP_UNIT_ID:
+        if unit_type == "cup":
             cup_weights.append(grams_per_unit)
-        elif unit_id == TBSP_UNIT_ID:
+        elif unit_type == "tbsp":
             # Convert tbsp to cup equivalent
             tbsp_weights.append(grams_per_unit * TBSP_PER_CUP)
-        elif unit_id == TSP_UNIT_ID:
+        elif unit_type == "tsp":
             # Convert tsp to cup equivalent
             tsp_weights.append(grams_per_unit * TSP_PER_CUP)
 
@@ -84,10 +102,65 @@ def calculate_grams_per_cup(portions: list[dict]) -> float | None:
     return None
 
 
+def normalize_usda_name(description: str) -> str:
+    """
+    Normalize USDA description to a more recipe-friendly name.
+    E.g., "Wheat flour, white, all-purpose, enriched, bleached"
+    becomes "wheat flour, white, all-purpose".
+    """
+    name = description.lower().strip()
+
+    # Remove common USDA suffixes that aren't useful for matching
+    suffixes_to_remove = [
+        ", enriched, bleached",
+        ", enriched, unbleached",
+        ", enriched",
+        ", unenriched",
+        ", raw",
+        ", dry",
+        " (includes foods for usda's food distribution program)",
+    ]
+    for suffix in suffixes_to_remove:
+        if name.endswith(suffix):
+            name = name[: -len(suffix)]
+
+    return name
+
+
+def extract_simple_name(description: str) -> str | None:
+    """
+    Extract a simple ingredient name from USDA description.
+    E.g., "Butter, salted" -> "butter"
+    Returns the simple name or None if not applicable.
+    """
+    name = description.lower().strip()
+
+    # For entries like "Butter, salted" or "Butter, without salt", return just "butter"
+    # But don't simplify "Flour, wheat" since "flour" alone is ambiguous
+    simple_patterns = [
+        (r"^butter,.*$", "butter"),
+        (r"^milk,.*whole.*$", "milk"),
+        (r"^milk,.*$", None),  # Don't alias other milks to just "milk"
+        (r"^cream,.*heavy.*$", "heavy cream"),
+        (r"^cream,.*sour.*$", "sour cream"),
+        (r"^oil,.*olive.*$", "olive oil"),
+        (r"^oil,.*vegetable.*$", "vegetable oil"),
+        (r"^oil,.*coconut.*$", "coconut oil"),
+        (r"^sugars,.*granulated.*$", "granulated sugar"),
+        (r"^honey$", "honey"),
+    ]
+
+    for pattern, simple in simple_patterns:
+        if re.match(pattern, name):
+            return simple
+
+    return None
+
+
 def get_curated_ingredients() -> dict[str, float]:
     """
     Return curated ingredient densities for common baking ingredients.
-    These are not well-covered by USDA Foundation Foods data.
+    These override USDA data when there's a conflict.
     Sources: King Arthur Baking weight chart, various baking references.
     """
     return {
@@ -168,14 +241,19 @@ def get_curated_aliases() -> dict[str, str]:
 
 def main():
     script_dir = Path(__file__).parent
-    data_dir = script_dir / "FoodData_Central_foundation_food_csv_2024-10-31"
+    data_dir = script_dir / "FoodData_Central_sr_legacy_food_csv_2018-04"
+
+    if not data_dir.exists():
+        print(f"Error: Data directory not found: {data_dir}")
+        print("Please download SR Legacy data from USDA FoodData Central")
+        return
 
     # Start with curated ingredients
     print("Loading curated ingredients...")
     ingredients = get_curated_ingredients()
     print(f"  {len(ingredients)} curated ingredients")
 
-    print("\nLoading USDA data...")
+    print("\nLoading USDA SR Legacy data...")
 
     # Load food descriptions
     foods = load_csv(data_dir / "food.csv")
@@ -195,17 +273,13 @@ def main():
     print("\nExtracting USDA densities...")
     usda_count = 0
     skipped_no_volume = 0
-    skipped_bad_name = 0
+
+    aliases = get_curated_aliases()
+    generated_aliases = {}
 
     for fdc_id, food_portions in portions_by_food.items():
         description = food_map.get(fdc_id, "")
         if not description:
-            continue
-
-        # Extract clean ingredient name
-        key = extract_ingredient_key(description)
-        if not key:
-            skipped_bad_name += 1
             continue
 
         # Calculate grams per cup
@@ -214,25 +288,32 @@ def main():
             skipped_no_volume += 1
             continue
 
-        # Use the original description as the key (lowercase)
-        canonical_name = description.lower()
+        # Normalize the USDA name
+        normalized_name = normalize_usda_name(description)
 
-        # Add USDA data (don't overwrite curated data)
-        if canonical_name not in ingredients:
-            ingredients[canonical_name] = grams_per_cup
+        # Add to ingredients (don't overwrite curated data)
+        if normalized_name not in ingredients:
+            ingredients[normalized_name] = grams_per_cup
             usda_count += 1
+
+            # Check if we can create a simple alias
+            simple_name = extract_simple_name(description)
+            if simple_name and simple_name in ingredients:
+                # Add alias from USDA name to simple name
+                if normalized_name not in aliases:
+                    generated_aliases[normalized_name] = simple_name
 
     print(f"  Added {usda_count} ingredients from USDA")
     print(f"  Skipped {skipped_no_volume} foods without volume measurements")
-    print(f"  Skipped {skipped_bad_name} foods with unsuitable names")
+    print(f"  Generated {len(generated_aliases)} aliases")
 
-    # Get aliases
-    aliases = get_curated_aliases()
+    # Merge generated aliases into curated aliases
+    all_aliases = {**aliases, **generated_aliases}
 
     # Build JSON structure
     data = {
         "ingredients": dict(sorted(ingredients.items())),
-        "aliases": dict(sorted(aliases.items())),
+        "aliases": dict(sorted(all_aliases.items())),
     }
 
     # Write JSON
@@ -247,11 +328,11 @@ def main():
     # Print some stats
     print("\nDensity data summary:")
     print(f"  Total ingredients: {len(ingredients)}")
-    print(f"  Total aliases: {len(aliases)}")
+    print(f"  Total aliases: {len(all_aliases)}")
 
     # Show some examples
     print("\nSample entries:")
-    for name, grams in sorted(ingredients.items())[:10]:
+    for name, grams in sorted(ingredients.items())[:15]:
         print(f"  {name}: {grams:.1f} g/cup")
 
 
