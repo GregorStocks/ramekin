@@ -56,6 +56,7 @@ impl PipelineStep {
         }
     }
 
+    #[allow(clippy::should_implement_trait)] // Returns Option, not Result
     pub fn from_str(s: &str) -> Option<Self> {
         match s {
             "fetch_html" => Some(PipelineStep::FetchHtml),

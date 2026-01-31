@@ -63,11 +63,12 @@ impl CacheKey {
     pub fn to_path(&self) -> PathBuf {
         // Replace slashes in model name (e.g., "openai/gpt-4o-mini" -> "openai--gpt-4o-mini")
         let model_safe = self.model.replace('/', "--");
+        let hash_prefix: String = self.input_hash.chars().take(2).collect();
 
         PathBuf::new()
             .join(&self.prompt_name)
             .join(&model_safe)
-            .join(&self.input_hash[..2])
+            .join(&hash_prefix)
             .join(format!("{}.json", &self.input_hash))
     }
 }

@@ -76,6 +76,9 @@ def lint_rust_server(project_root: Path) -> tuple[str, bool]:
             "--",
             "-D",
             "warnings",
+            "-D",
+            # Prevent UTF-8 panics from byte-based string slicing
+            "clippy::string_slice",
         ],
         cwd=server_dir,
         capture_output=True,
@@ -116,6 +119,9 @@ def lint_rust_cli(project_root: Path) -> tuple[str, bool]:
             "--",
             "-D",
             "warnings",
+            "-D",
+            # Prevent UTF-8 panics from byte-based string slicing
+            "clippy::string_slice",
         ],
         cwd=cli_dir,
         capture_output=True,
@@ -131,6 +137,49 @@ def lint_rust_cli(project_root: Path) -> tuple[str, bool]:
 
     success = fmt_result.returncode == 0 and clippy_result.returncode == 0
     return ("Rust (cli)", success)
+
+
+def lint_rust_core(project_root: Path) -> tuple[str, bool]:
+    """Lint Rust ramekin-core crate."""
+    crate_dir = project_root / "ramekin-core"
+
+    # Run fmt
+    fmt_result = subprocess.run(
+        ["cargo", "fmt", "--all"],
+        cwd=crate_dir,
+        capture_output=True,
+        check=False,
+    )
+
+    # Run clippy
+    clippy_result = subprocess.run(
+        [
+            "cargo",
+            "clippy",
+            "--all-targets",
+            "--all-features",
+            "-q",
+            "--",
+            "-D",
+            "warnings",
+            "-D",
+            # Prevent UTF-8 panics from byte-based string slicing
+            "clippy::string_slice",
+        ],
+        cwd=crate_dir,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    # Print any output
+    if clippy_result.stdout:
+        print(clippy_result.stdout, end="")
+    if clippy_result.stderr:
+        print(clippy_result.stderr, end="", file=sys.stderr)
+
+    success = fmt_result.returncode == 0 and clippy_result.returncode == 0
+    return ("Rust (core)", success)
 
 
 def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
@@ -156,6 +205,9 @@ def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
             "--",
             "-D",
             "warnings",
+            "-D",
+            # Prevent UTF-8 panics from byte-based string slicing
+            "clippy::string_slice",
         ],
         cwd=crate_dir,
         capture_output=True,
@@ -503,6 +555,7 @@ def main() -> None:
     linters = [
         ("Rust (server)", lambda: lint_rust_server(project_root)),
         ("Rust (cli)", lambda: lint_rust_cli(project_root)),
+        ("Rust (core)", lambda: lint_rust_core(project_root)),
         (
             "Rust (ingredient-density)",
             lambda: lint_rust_ingredient_density(project_root),

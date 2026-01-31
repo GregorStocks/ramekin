@@ -65,6 +65,7 @@ struct IngredientTestCase {
     expected: Option<Expected>,
     /// True if this raw line is a section header (not an ingredient).
     #[serde(default)]
+    #[allow(dead_code)] // Used by serde for deserialization filtering
     is_section_header: bool,
 }
 
