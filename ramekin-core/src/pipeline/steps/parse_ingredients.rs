@@ -1,5 +1,5 @@
 //! ParseIngredients step - parses raw ingredient strings into structured data
-//! and enriches them with metric weight alternatives.
+//! and enriches them with metric weight and volume-to-weight alternatives.
 
 use std::time::Instant;
 
@@ -9,6 +9,7 @@ use crate::ingredient_parser::parse_ingredients;
 use crate::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 use crate::types::{ParseIngredientsOutput, RawRecipe};
+use crate::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
 
 /// Step that parses raw ingredient strings into structured data.
 ///
@@ -71,11 +72,14 @@ impl PipelineStep for ParseIngredientsStep {
         // Parse the ingredients blob into structured data
         let parsed = parse_ingredients(&raw_recipe.ingredients);
 
-        // Enrich with metric weight alternatives (oz → g)
-        let mut stats = MetricConversionStats::default();
+        // Enrich with metric weight alternatives (oz/lb → g)
+        let mut weight_stats = MetricConversionStats::default();
+        // Enrich with volume-to-weight alternatives for known ingredients
+        let mut volume_stats = VolumeConversionStats::default();
         let enriched: Vec<_> = parsed
             .into_iter()
-            .map(|ing| add_metric_weight_alternative(ing, &mut stats))
+            .map(|ing| add_metric_weight_alternative(ing, &mut weight_stats))
+            .map(|ing| add_volume_to_weight_alternative(ing, &mut volume_stats))
             .collect();
 
         let output = ParseIngredientsOutput {

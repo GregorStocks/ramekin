@@ -1,4 +1,5 @@
 pub mod ai;
+pub mod density_data;
 pub mod error;
 pub mod extract;
 pub mod fetch;
@@ -8,6 +9,7 @@ pub mod ingredient_parser;
 pub mod metric_weights;
 pub mod pipeline;
 pub mod types;
+pub mod volume_to_weight;
 
 pub use error::{ExtractError, FetchError};
 pub use extract::{extract_recipe, extract_recipe_with_stats};

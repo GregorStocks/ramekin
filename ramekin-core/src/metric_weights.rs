@@ -1,24 +1,26 @@
 //! Metric weight conversion module.
 //!
 //! Provides deterministic conversion of imperial weight measurements to metric.
-//! Currently only handles oz → grams conversion.
+//! Handles oz → grams and lb → grams conversions.
 
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 
 const GRAMS_PER_OZ: f64 = 28.3495;
+const GRAMS_PER_LB: f64 = 453.592;
 
 /// Statistics about metric weight conversion.
 #[derive(Debug, Default, Clone)]
 pub struct MetricConversionStats {
-    pub converted: usize,
-    pub skipped_no_oz: usize,
+    pub converted_oz: usize,
+    pub converted_lb: usize,
+    pub skipped_no_us_weight: usize,
     pub skipped_already_metric: usize,
     pub skipped_unparseable: usize,
 }
 
 /// Add a metric weight alternative to an ingredient if applicable.
 ///
-/// Only converts measurements with unit "oz" to grams.
+/// Converts measurements with unit "oz" or "lb" to grams.
 /// Returns the ingredient with the metric alternative added to measurements.
 pub fn add_metric_weight_alternative(
     mut ingredient: ParsedIngredient,
@@ -30,24 +32,28 @@ pub fn add_metric_weight_alternative(
         return ingredient;
     }
 
-    // Find the first oz measurement and convert it
-    let oz_measurement = ingredient
+    // Find the first US weight measurement (oz or lb) and extract needed values
+    let conversion_info = ingredient
         .measurements
         .iter()
-        .find(|m| m.unit.as_deref() == Some("oz"));
+        .find_map(|m| match m.unit.as_deref() {
+            Some("oz") => Some(("oz", GRAMS_PER_OZ, m.amount.clone())),
+            Some("lb") => Some(("lb", GRAMS_PER_LB, m.amount.clone())),
+            _ => None,
+        });
 
-    let Some(oz_measurement) = oz_measurement else {
-        stats.skipped_no_oz += 1;
+    let Some((unit, grams_per_unit, amount_opt)) = conversion_info else {
+        stats.skipped_no_us_weight += 1;
         return ingredient;
     };
 
-    let Some(amount_str) = oz_measurement.amount.as_deref() else {
+    let Some(amount_str) = amount_opt else {
         stats.skipped_unparseable += 1;
         return ingredient;
     };
 
     // Convert the amount to grams
-    let gram_amount = match convert_amount_to_grams(amount_str) {
+    let gram_amount = match convert_amount_to_grams(&amount_str, grams_per_unit) {
         Some(g) => g,
         None => {
             stats.skipped_unparseable += 1;
@@ -61,7 +67,11 @@ pub fn add_metric_weight_alternative(
         unit: Some("g".to_string()),
     });
 
-    stats.converted += 1;
+    if unit == "lb" {
+        stats.converted_lb += 1;
+    } else {
+        stats.converted_oz += 1;
+    }
     ingredient
 }
 
@@ -90,13 +100,13 @@ fn has_metric_weight(measurements: &[Measurement]) -> bool {
 /// - Mixed numbers: "1 1/2" → "43"
 /// - Ranges with hyphen: "6-8" → "170-227"
 /// - Ranges with "to": "6 to 8" → "170 to 227"
-fn convert_amount_to_grams(amount: &str) -> Option<String> {
+fn convert_amount_to_grams(amount: &str, grams_per_unit: f64) -> Option<String> {
     let amount = amount.trim();
 
     // Check for range with " to "
     if let Some((low, high)) = amount.split_once(" to ") {
-        let low_g = parse_and_convert(low.trim())?;
-        let high_g = parse_and_convert(high.trim())?;
+        let low_g = parse_and_convert(low.trim(), grams_per_unit)?;
+        let high_g = parse_and_convert(high.trim(), grams_per_unit)?;
         return Some(format!(
             "{} to {}",
             format_grams(low_g),
@@ -106,8 +116,8 @@ fn convert_amount_to_grams(amount: &str) -> Option<String> {
 
     // Check for range with " or "
     if let Some((low, high)) = amount.split_once(" or ") {
-        let low_g = parse_and_convert(low.trim())?;
-        let high_g = parse_and_convert(high.trim())?;
+        let low_g = parse_and_convert(low.trim(), grams_per_unit)?;
+        let high_g = parse_and_convert(high.trim(), grams_per_unit)?;
         return Some(format!(
             "{} or {}",
             format_grams(low_g),
@@ -120,13 +130,13 @@ fn convert_amount_to_grams(amount: &str) -> Option<String> {
     if let Some(hyphen_idx) = find_range_hyphen(amount) {
         let low = &amount[..hyphen_idx];
         let high = &amount[hyphen_idx + 1..];
-        let low_g = parse_and_convert(low.trim())?;
-        let high_g = parse_and_convert(high.trim())?;
+        let low_g = parse_and_convert(low.trim(), grams_per_unit)?;
+        let high_g = parse_and_convert(high.trim(), grams_per_unit)?;
         return Some(format!("{}-{}", format_grams(low_g), format_grams(high_g)));
     }
 
     // Single amount
-    let grams = parse_and_convert(amount)?;
+    let grams = parse_and_convert(amount, grams_per_unit)?;
     Some(format_grams(grams))
 }
 
@@ -152,9 +162,9 @@ fn find_range_hyphen(s: &str) -> Option<usize> {
 }
 
 /// Parse an amount string and convert to grams.
-fn parse_and_convert(amount: &str) -> Option<f64> {
-    let oz = parse_amount(amount)?;
-    Some(oz * GRAMS_PER_OZ)
+fn parse_and_convert(amount: &str, grams_per_unit: f64) -> Option<f64> {
+    let value = parse_amount(amount)?;
+    Some(value * grams_per_unit)
 }
 
 /// Parse an amount string into a decimal value.
@@ -164,7 +174,7 @@ fn parse_and_convert(amount: &str) -> Option<f64> {
 /// - Decimals: "2.5" → 2.5
 /// - Fractions: "1/2" → 0.5
 /// - Mixed numbers: "1 1/2" → 1.5
-fn parse_amount(amount: &str) -> Option<f64> {
+pub fn parse_amount(amount: &str) -> Option<f64> {
     let amount = amount.trim();
 
     if amount.is_empty() {
@@ -200,7 +210,7 @@ fn parse_fraction(s: &str) -> Option<f64> {
 }
 
 /// Format grams as a string, rounding to nearest whole number.
-fn format_grams(grams: f64) -> String {
+pub fn format_grams(grams: f64) -> String {
     let rounded = grams.round() as i64;
     rounded.to_string()
 }
@@ -235,28 +245,46 @@ mod tests {
     }
 
     #[test]
-    fn test_convert_simple() {
+    fn test_convert_simple_oz() {
         // 8 oz = 227g (rounded)
-        assert_eq!(convert_amount_to_grams("8"), Some("227".to_string()));
+        assert_eq!(
+            convert_amount_to_grams("8", GRAMS_PER_OZ),
+            Some("227".to_string())
+        );
+    }
+
+    #[test]
+    fn test_convert_simple_lb() {
+        // 2 lb = 907g (rounded)
+        assert_eq!(
+            convert_amount_to_grams("2", GRAMS_PER_LB),
+            Some("907".to_string())
+        );
     }
 
     #[test]
     fn test_convert_fraction() {
         // 1/2 oz = 14g (rounded)
-        assert_eq!(convert_amount_to_grams("1/2"), Some("14".to_string()));
+        assert_eq!(
+            convert_amount_to_grams("1/2", GRAMS_PER_OZ),
+            Some("14".to_string())
+        );
     }
 
     #[test]
     fn test_convert_range_hyphen() {
         // 6-8 oz = 170-227g
-        assert_eq!(convert_amount_to_grams("6-8"), Some("170-227".to_string()));
+        assert_eq!(
+            convert_amount_to_grams("6-8", GRAMS_PER_OZ),
+            Some("170-227".to_string())
+        );
     }
 
     #[test]
     fn test_convert_range_to() {
         // 6 to 8 oz = 170 to 227g
         assert_eq!(
-            convert_amount_to_grams("6 to 8"),
+            convert_amount_to_grams("6 to 8", GRAMS_PER_OZ),
             Some("170 to 227".to_string())
         );
     }
@@ -264,7 +292,7 @@ mod tests {
     #[test]
     fn test_convert_range_or() {
         assert_eq!(
-            convert_amount_to_grams("6 or 8"),
+            convert_amount_to_grams("6 or 8", GRAMS_PER_OZ),
             Some("170 or 227".to_string())
         );
     }
@@ -289,11 +317,34 @@ mod tests {
         assert_eq!(result.measurements[0].unit, Some("oz".to_string()));
         assert_eq!(result.measurements[1].amount, Some("227".to_string()));
         assert_eq!(result.measurements[1].unit, Some("g".to_string()));
-        assert_eq!(stats.converted, 1);
+        assert_eq!(stats.converted_oz, 1);
     }
 
     #[test]
-    fn test_skip_non_oz() {
+    fn test_add_metric_weight_lb() {
+        let ingredient = ParsedIngredient {
+            item: "chicken".to_string(),
+            measurements: vec![Measurement {
+                amount: Some("2".to_string()),
+                unit: Some("lb".to_string()),
+            }],
+            note: None,
+            raw: Some("2 lb chicken".to_string()),
+        };
+
+        let mut stats = MetricConversionStats::default();
+        let result = add_metric_weight_alternative(ingredient, &mut stats);
+
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("lb".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("907".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+        assert_eq!(stats.converted_lb, 1);
+    }
+
+    #[test]
+    fn test_skip_non_us_weight() {
         let ingredient = ParsedIngredient {
             item: "flour".to_string(),
             measurements: vec![Measurement {
@@ -308,7 +359,7 @@ mod tests {
         let result = add_metric_weight_alternative(ingredient, &mut stats);
 
         assert_eq!(result.measurements.len(), 1);
-        assert_eq!(stats.skipped_no_oz, 1);
+        assert_eq!(stats.skipped_no_us_weight, 1);
     }
 
     #[test]
