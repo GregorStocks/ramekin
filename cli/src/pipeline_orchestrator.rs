@@ -376,11 +376,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                         all_results.extraction_stats.as_ref(),
                         all_results.ai_cached,
                     );
-
-                    // Save intermediate results periodically
-                    if let Err(e) = save_results(&run_dir, &results) {
-                        tracing::warn!(error = %e, "Failed to save intermediate results");
-                    }
                 }
 
                 Some(UrlResult {
@@ -418,6 +413,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         ..manifest
     };
     save_manifest(&run_dir, &final_manifest)?;
+    save_results(&run_dir, &results)?;
 
     // Print summary
     println!();
