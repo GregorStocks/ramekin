@@ -897,35 +897,15 @@ pub fn clear_cache(cache_dir: &Path) -> Result<()> {
 // Summary report generation
 // ============================================================================
 
-/// Load results from the most recent pipeline run
-pub fn load_latest_results(output_dir: &Path) -> Result<(String, PipelineResults)> {
-    // Find the most recent run directory
-    let mut runs: Vec<_> = fs::read_dir(output_dir)?
-        .filter_map(|e| e.ok())
-        .filter(|e| e.path().is_dir())
-        .collect();
-
-    runs.sort_by_key(|e| e.file_name());
-    runs.reverse();
-
-    let latest = runs
-        .first()
-        .ok_or_else(|| anyhow::anyhow!("No pipeline runs found in {}", output_dir.display()))?;
-
-    let run_id = latest.file_name().to_string_lossy().to_string();
-    let results_path = latest.path().join("results.json");
-
-    let content = fs::read_to_string(&results_path)
-        .with_context(|| format!("Failed to read {}", results_path.display()))?;
-
-    let results: PipelineResults = serde_json::from_str(&content)
-        .with_context(|| format!("Failed to parse {}", results_path.display()))?;
-
-    Ok((run_id, results))
-}
-
 /// Get the path to the most recent pipeline run directory
 pub fn get_latest_run_dir(output_dir: &Path) -> Result<(String, PathBuf)> {
+    if !output_dir.exists() {
+        anyhow::bail!(
+            "Pipeline runs directory '{}' not found. Run `make pipeline` first.",
+            output_dir.display()
+        );
+    }
+
     let mut runs: Vec<_> = fs::read_dir(output_dir)?
         .filter_map(|e| e.ok())
         .filter(|e| e.path().is_dir())
