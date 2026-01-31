@@ -1,0 +1,101 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "perfect-sushi-rice-recipe",
+  "ingredients": [
+    {
+      "raw": "300 g uncooked Japanese rice (I used koshihikari)",
+      "expected": {
+        "item": "uncooked Japanese rice (I used koshihikari)",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "350 ml cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "350",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 g dried kelp (kombu) (optional)",
+      "expected": {
+        "item": "dried kelp (kombu) (optional)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp sake (optional)",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 tbsp rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tbsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

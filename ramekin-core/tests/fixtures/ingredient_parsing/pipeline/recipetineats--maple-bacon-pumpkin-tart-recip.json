@@ -1,0 +1,108 @@
+{
+  "source": "recipetineats",
+  "recipe_slug": "maple-bacon-pumpkin-tart-recip",
+  "ingredients": [
+    {
+      "raw": "1  sheet store bought frozen puff pastry (, thawed (25 cm x 25cm / 10\" x 10\"))",
+      "expected": {
+        "item": "sheet store bought frozen puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thawed (25 cm x 25cm / 10\" x 10\""
+      }
+    },
+    {
+      "raw": "8 slices streaky bacon ((Note 1))",
+      "expected": {
+        "item": "streaky bacon (Note 1)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tbsp maple syrup ((Note 2))",
+      "expected": {
+        "item": "maple syrup (Note 2)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Oil spray",
+      "expected": {
+        "item": "Oil spray",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 oz / 200g   butternut or Jap pumpkin (, peeled and roughly diced into 1.5cm/0.5\" cubes)",
+      "expected": {
+        "item": "butternut or Jap pumpkin",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and roughly diced into 1.5cm/0.5\" cubes"
+      }
+    },
+    {
+      "raw": "1/2 tbsp olive oil ((only required if roasting the pumpkin))",
+      "expected": {
+        "item": "olive oil (only required if roasting the pumpkin)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

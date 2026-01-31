@@ -1,0 +1,103 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "blackberry-tom-collins-cocktai",
+  "ingredients": [
+    {
+      "raw": "3  large Blackberries",
+      "expected": {
+        "item": "Blackberries",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce (15ml) fresh Lime Juice",
+      "expected": {
+        "item": "fresh Lime Juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon (5ml) Sugar (or 1/2 oz. simple syrup, or to taste)",
+      "expected": {
+        "item": "Sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1/2 oz. simple syrup, or to taste"
+      }
+    },
+    {
+      "raw": "2 ounces (60ml) Gin",
+      "expected": {
+        "item": "Gin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4 ounces (90-120ml) Club Soda",
+      "expected": {
+        "item": "Club Soda",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "oz"
+          },
+          {
+            "amount": "90",
+            "unit": null
+          },
+          {
+            "amount": "85-113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

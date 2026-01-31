@@ -1,0 +1,87 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-creamy-orange-gelatin",
+  "ingredients": [
+    {
+      "raw": "4 cups boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 packages (3 ounces each) orange gelatin",
+      "expected": {
+        "item": "orange gelatin",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "package"
+          },
+          {
+            "amount": "3",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 quart vanilla ice cream, softened",
+      "expected": {
+        "item": "vanilla ice cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1-1/2 cups orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cans (11 ounces each) mandarin oranges, drained",
+      "expected": {
+        "item": "mandarin oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "11",
+            "unit": "oz each"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "Orange slices, optional",
+      "expected": {
+        "item": "Orange slices",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

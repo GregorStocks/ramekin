@@ -1,0 +1,66 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "kazunoko-recipe",
+  "ingredients": [
+    {
+      "raw": "4-5  Kazunoko (herring roe)",
+      "expected": {
+        "item": "Kazunoko (herring roe)",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Katsuobushi (dried bonito flakes)",
+      "expected": {
+        "item": "Katsuobushi",
+        "measurements": [],
+        "note": "dried bonito flakes"
+      }
+    }
+  ]
+}

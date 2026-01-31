@@ -1,0 +1,115 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "hummus-b-tahini-hummus-tahini-",
+  "ingredients": [
+    {
+      "raw": "One 14-ounce can or jar of chickpeas, drained and rinsed well (see notes)",
+      "expected": {
+        "item": "or jar of chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
+        "note": "drained and rinsed well (see notes)"
+      }
+    },
+    {
+      "raw": "1/3 cup (90ml) cold water (see notes)",
+      "expected": {
+        "item": "cold water (see notes)",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup tahini (3 ounces; 85g), stirred well before measuring",
+      "expected": {
+        "item": "tahini, stirred well before measuring",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons freshly squeezed lemon juice, plus more as needed",
+      "expected": {
+        "item": "freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt, plus more as needed; if using table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more as needed; if using table salt, use half as much by volume"
+      }
+    },
+    {
+      "raw": "Cooked chickpeas",
+      "expected": {
+        "item": "Cooked chickpeas",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pita",
+      "expected": {
+        "item": "Pita",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+      "expected": {
+        "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "ribollita-recipe",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons extra-virgin olive oil, plus more for drizzling",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for drizzling"
+      }
+    },
+    {
+      "raw": "4  celery stalks, chopped",
+      "expected": {
+        "item": "celery stalks",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3  medium cloves garlic, chopped",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2  medium carrots or equiv. winter squash, chopped",
+      "expected": {
+        "item": "carrots or equiv. winter squash",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1  medium red onion, chopped",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 14- ounce / 400 ml can crushed tomatoes",
+      "expected": {
+        "item": "14- ounce / 400 ml can crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound / 16 ounces / 450g cavolo nero (lacinato kale, Tuscan kale), stems trimmed off and leaves well chopped",
+      "expected": {
+        "item": "cavolo nero (lacinato kale, Tuscan kale)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          }
+        ],
+        "note": "stems trimmed off and leaves well chopped"
+      }
+    },
+    {
+      "raw": "4 cups / 22 oz / 620g cooked white beans",
+      "expected": {
+        "item": "cooked white beans",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "22",
+            "unit": "oz"
+          },
+          {
+            "amount": "620",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 pound / 8 oz / 225g crustless loaf of bread",
+      "expected": {
+        "item": "crustless loaf of bread",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2  + teaspoons fine grain sea salt",
+      "expected": {
+        "item": "+ teaspoons fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest of one lemon",
+      "expected": {
+        "item": "zest of one lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "lots of well-chopped oily black olives",
+      "expected": {
+        "item": "lots of well-chopped oily black olives",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

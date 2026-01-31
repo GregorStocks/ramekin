@@ -1,0 +1,84 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "porchetta-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ball of no-knead pizza dough",
+      "expected": {
+        "item": "ball of no-knead pizza dough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons salsa verde",
+      "expected": {
+        "item": "salsa verde",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2-3/4 cup shredded mozzarella",
+      "expected": {
+        "item": "shredded mozzarella",
+        "measurements": [
+          {
+            "amount": "1/2-3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup porchetta with crackling",
+      "expected": {
+        "item": "porchetta with crackling",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons parmesan",
+      "expected": {
+        "item": "parmesan",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

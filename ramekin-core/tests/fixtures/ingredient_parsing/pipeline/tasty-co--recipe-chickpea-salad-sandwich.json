@@ -1,0 +1,146 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-chickpea-salad-sandwich",
+  "ingredients": [
+    {
+      "raw": "15 oz chickpeas, drained and rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "¼ cup diced red onion",
+      "expected": {
+        "item": "diced red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ red bell pepper, diced",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3 tablespoons vegan mayonnaise",
+      "expected": {
+        "item": "vegan mayonnaise",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon dijon mustard",
+      "expected": {
+        "item": "dijon mustard",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt, to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "freshly ground black pepper, to taste",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh dill, chopped",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "sliced bread, for serving",
+      "expected": {
+        "item": "sliced bread",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "leafy green, for serving",
+      "expected": {
+        "item": "leafy green",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

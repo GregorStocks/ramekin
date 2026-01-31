@@ -1,0 +1,84 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipes-a43033-best-bl",
+  "ingredients": [
+    {
+      "raw": "1 750-ml bottle dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "750-ml bottle"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. Simply Lemonade with Blueberry",
+      "expected": {
+        "item": "Simply Lemonade with Blueberry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 c. tequila",
+      "expected": {
+        "item": "tequila",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. fresh or frozen blueberries",
+      "expected": {
+        "item": "fresh or frozen blueberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lemon, thinly sliced",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 c. cold seltzer",
+      "expected": {
+        "item": "cold seltzer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

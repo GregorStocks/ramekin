@@ -1,0 +1,114 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "tonjiru-recipe",
+  "ingredients": [
+    {
+      "raw": "3 oz pork (thinly sliced)",
+      "expected": {
+        "item": "pork",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1/2  carrot",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 inches Gobo (burdock root)",
+      "expected": {
+        "item": "inches Gobo (burdock root)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 inches Daikon",
+      "expected": {
+        "item": "inches Daikon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 block Konnyaku",
+      "expected": {
+        "item": "block Konnyaku",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  green onions",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cup Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tbsp Miso Paste",
+      "expected": {
+        "item": "Miso Paste",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

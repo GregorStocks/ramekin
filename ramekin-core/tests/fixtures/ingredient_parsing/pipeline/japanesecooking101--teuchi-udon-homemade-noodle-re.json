@@ -1,0 +1,49 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "teuchi-udon-homemade-noodle-re",
+  "ingredients": [
+    {
+      "raw": "1 cup warm water",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 oz all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-cheerwine-sangria",
+  "ingredients": [
+    {
+      "raw": "1 bottle red wine, Spanish blend",
+      "expected": {
+        "item": "red wine, Spanish blend",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 fluid ounces triple sec or other orange liqueur",
+      "expected": {
+        "item": "triple sec or other orange liqueur",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 fluid ounces brandy",
+      "expected": {
+        "item": "brandy",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cherry bitters",
+      "expected": {
+        "item": "cherry bitters",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup frozen peaches, chopped",
+      "expected": {
+        "item": "frozen peaches",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup frozen mango, chopped",
+      "expected": {
+        "item": "frozen mango",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "8 to 10  basil leaves, roughly torn into large pieces",
+      "expected": {
+        "item": "basil leaves, roughly torn into large pieces",
+        "measurements": [
+          {
+            "amount": "8 to 10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  orange, quartered",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "1  orange, thinly sliced",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "2 (12-ounce) bottles Cheerwine, chilled",
+      "expected": {
+        "item": "Cheerwine",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bottle"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "chilled"
+      }
+    }
+  ]
+}

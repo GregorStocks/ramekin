@@ -1,0 +1,152 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-cloverleaf-rolls",
+  "ingredients": [
+    {
+      "raw": "1 medium baking potato ( 1/2 pound), peeled and cut into 1-inch dice",
+      "expected": {
+        "item": "baking potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1-inch dice"
+      }
+    },
+    {
+      "raw": "3 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 1/2 cups plus 6 tablespoons all-purpose flour",
+      "expected": {
+        "item": "5 1/2 cups plus 6 tablespoons all-purpose flour",
+        "measurements": [
+          {
+            "amount": "5 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 6 tablespoons all-purpose flour"
+      }
+    },
+    {
+      "raw": "3 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 envelope active dry yeast",
+      "expected": {
+        "item": "envelope active dry yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk, scalded and cooled",
+      "expected": {
+        "item": "milk, scalded and cooled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs, lightly beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "7 tablespoons unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "4 tablespoons lard or solid vegetable shortening, melted and cooled",
+      "expected": {
+        "item": "lard or solid vegetable shortening",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted and cooled"
+      }
+    },
+    {
+      "raw": "1 tablespoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

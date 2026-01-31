@@ -1,0 +1,199 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "vegan-burger-recipe",
+  "ingredients": [
+    {
+      "raw": "1  large red pepper (cored and roughly chopped)",
+      "expected": {
+        "item": "red pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "cored and roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2  small red onion (roughly chopped)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup raw almonds",
+      "expected": {
+        "item": "raw almonds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup pepitas (pumpkin&nbsp;seeds)",
+      "expected": {
+        "item": "pepitas (pumpkin seeds)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup hemp seed hearts",
+      "expected": {
+        "item": "hemp seed hearts",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
+      "expected": {
+        "item": "ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can black beans, ((15 ounces) rinsed and drained)",
+      "expected": {
+        "item": "black beans rinsed and drained)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup old fashioned rolled oats (gluten free if needed)",
+      "expected": {
+        "item": "old fashioned rolled oats (gluten free if needed)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Whole grain buns (for serving)",
+      "expected": {
+        "item": "Whole grain buns",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Sliced tomatoes, (avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard)",
+      "expected": {
+        "item": "Sliced tomatoes, mustard)",
+        "measurements": [],
+        "note": "avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "quesadilla-recipe",
+  "ingredients": [
+    {
+      "raw": "8 (8-inch) flour tortillas",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups grated sharp cheddar cheese",
+      "expected": {
+        "item": "grated sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups grated  Monterey Jack cheese",
+      "expected": {
+        "item": "grated  Monterey Jack cheese",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup cooked black beans (drained and rinsed)",
+      "expected": {
+        "item": "cooked black beans",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "½  red bell pepper (stemmed, seeded, and diced)",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "stemmed, seeded, and diced"
+      }
+    },
+    {
+      "raw": "4  scallions (thinly sliced)",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "½ cup corn kernels (thawed if frozen)",
+      "expected": {
+        "item": "corn kernels",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed if frozen"
+      }
+    },
+    {
+      "raw": "2  jalapeño peppers (thinly sliced)",
+      "expected": {
+        "item": "jalapeño peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "Homemade Salsa or Salsa Verde",
+      "expected": {
+        "item": "Homemade Salsa or Salsa Verde",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pico de Gallo",
+      "expected": {
+        "item": "Pico de Gallo",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Guacamole",
+      "expected": {
+        "item": "Guacamole",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sour cream",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped fresh cilantro",
+      "expected": {
+        "item": "Chopped fresh cilantro",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

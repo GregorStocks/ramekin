@@ -1,0 +1,84 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "chipotle-inspired-pico-de-gall",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups Roma tomatoes (chopped (seeds removed))",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped (seeds removed"
+      }
+    },
+    {
+      "raw": "1/2 cup cilantro (chopped)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 1/2 tbsp jalapeno pepper (finely diced (leave seeds in if you want spicier salsa))",
+      "expected": {
+        "item": "jalapeno pepper",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "finely diced (leave seeds in if you want spicier salsa"
+      }
+    },
+    {
+      "raw": "1/2  red onion (finely diced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1/2 tbsp Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

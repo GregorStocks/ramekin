@@ -1,0 +1,98 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "tater-tot-breakfast-nacho-reci",
+  "ingredients": [
+    {
+      "raw": "1 package tater tots",
+      "expected": {
+        "item": "tater tots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "eggs, as many as desired",
+      "expected": {
+        "item": "eggs, as many as desired",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded cheddar",
+      "expected": {
+        "item": "shredded cheddar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded mozzarella",
+      "expected": {
+        "item": "shredded mozzarella",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 jalapeño, sliced",
+      "expected": {
+        "item": "jalapeño",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "sliced green onions",
+      "expected": {
+        "item": "sliced green onions",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "chopped cilantro",
+      "expected": {
+        "item": "chopped cilantro",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sriracha or hot sauce, if desired",
+      "expected": {
+        "item": "sriracha or hot sauce, if desired",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sour cream, if desired",
+      "expected": {
+        "item": "sour cream, if desired",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

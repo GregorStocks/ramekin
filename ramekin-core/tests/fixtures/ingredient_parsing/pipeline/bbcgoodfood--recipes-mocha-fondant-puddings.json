@@ -1,0 +1,92 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-mocha-fondant-puddings",
+  "ingredients": [
+    {
+      "raw": "1 tbsp top-quality instant coffee",
+      "expected": {
+        "item": "top-quality instant coffee",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g dark 'continental' chocolate (at least 65% cocoa solids)",
+      "expected": {
+        "item": "dark 'continental' chocolate (at least 65% cocoa solids)",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g unsalted butter plus a little extra softened butter for greasing",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "plus a little extra softened butter for greasing"
+      }
+    },
+    {
+      "raw": "4 large free-range eggs",
+      "expected": {
+        "item": "free-range eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "140g golden caster sugar (preferably vanilla infused)",
+      "expected": {
+        "item": "golden caster sugar (preferably vanilla infused)",
+        "measurements": [
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50g plain flour sifted",
+      "expected": {
+        "item": "plain flour sifted",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "double cream (cold) to serve",
+      "expected": {
+        "item": "double cream to serve",
+        "measurements": [],
+        "note": "cold"
+      }
+    }
+  ]
+}

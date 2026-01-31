@@ -1,0 +1,75 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "sauteed-peas-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups fresh peas ( or frozen peas)",
+      "expected": {
+        "item": "fresh peas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or frozen peas"
+      }
+    },
+    {
+      "raw": "2 tbs shallots (, minced (abot 1 large shallot))",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced (abot 1 large shallot"
+      }
+    },
+    {
+      "raw": "1 tbs olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon soy sauce ( or Tamari Gluten Free Soy Sauce)",
+      "expected": {
+        "item": "soy sauce ( or Tamari Gluten Free Soy Sauce)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful fresh mint ((minced))",
+      "expected": {
+        "item": "fresh mint",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "minced"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "source": "loveandlemons",
+  "recipe_slug": "avocado-toast-recipe",
+  "ingredients": [
+    {
+      "raw": "1  ripe avocado",
+      "expected": {
+        "item": "ripe avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon wedge (for squeezing)",
+      "expected": {
+        "item": "Lemon wedge (for squeezing)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sea salt",
+      "expected": {
+        "item": "Sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 4 slices toasted bread",
+      "expected": {
+        "item": "toasted bread",
+        "measurements": [
+          {
+            "amount": "2 to 4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Desired toppings (listed above, optional)",
+      "expected": {
+        "item": "Desired toppings",
+        "measurements": [],
+        "note": "listed above, optional"
+      }
+    }
+  ]
+}

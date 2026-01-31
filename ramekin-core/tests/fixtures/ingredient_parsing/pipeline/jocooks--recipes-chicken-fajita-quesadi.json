@@ -1,0 +1,147 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-chicken-fajita-quesadi",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fajita seasoning",
+      "expected": {
+        "item": "fajita seasoning",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  chicken breasts (boneless and skinless, cut into long strips)",
+      "expected": {
+        "item": "chicken breasts (boneless and skinless, cut into long strips)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium red bell pepper (cut into long strips)",
+      "expected": {
+        "item": "red bell pepper (cut into long strips)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium green bell pepper (cut into long strips)",
+      "expected": {
+        "item": "green bell pepper (cut into long strips)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large onions (sliced)",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Tex Mex cheese (or cheddar cheese)",
+      "expected": {
+        "item": "Tex Mex cheese (or cheddar cheese)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  tortillas",
+      "expected": {
+        "item": "tortillas",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salsa",
+      "expected": {
+        "item": "salsa",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

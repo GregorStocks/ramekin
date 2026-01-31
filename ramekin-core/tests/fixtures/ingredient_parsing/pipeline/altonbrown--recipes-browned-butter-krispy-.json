@@ -1,0 +1,66 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-browned-butter-krispy-",
+  "ingredients": [
+    {
+      "raw": "1 (18-ounce) bag Rice Krispies",
+      "expected": {
+        "item": "Rice Krispies",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "18",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 tablespoons unsalted Kerrygold butter",
+      "expected": {
+        "item": "unsalted Kerrygold butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (10-ounce) bags Jet-Puffed mini marshmallows",
+      "expected": {
+        "item": "Jet-Puffed mini marshmallows",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bag"
+          },
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 big pinches kosher salt",
+      "expected": {
+        "item": "big pinches kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

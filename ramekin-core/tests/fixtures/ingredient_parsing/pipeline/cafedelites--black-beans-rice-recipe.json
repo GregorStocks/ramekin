@@ -1,0 +1,127 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "black-beans-rice-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  onion (finely chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "5 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cup uncooked white rice (long grain or jasmine rice)",
+      "expected": {
+        "item": "uncooked white rice (long grain or jasmine rice)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups chicken broth (or stock)",
+      "expected": {
+        "item": "chicken broth (or stock)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2x 14 ounce cans black beans (drained and rinsed)",
+      "expected": {
+        "item": "x 14 ounce cans black beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "3-4 tablespoons  lime juice ((adjust to your tastes))",
+      "expected": {
+        "item": "lime juice (adjust to your tastes)",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons Cilantro (or parsley, finely chopped to garnish)",
+      "expected": {
+        "item": "Cilantro",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or parsley, finely chopped to garnish"
+      }
+    }
+  ]
+}

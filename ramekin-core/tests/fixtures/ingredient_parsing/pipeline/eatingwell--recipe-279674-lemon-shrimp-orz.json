@@ -1,0 +1,147 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-279674-lemon-shrimp-orz",
+  "ingredients": [
+    {
+      "raw": "8 ounces whole-wheat orzo",
+      "expected": {
+        "item": "whole-wheat orzo",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound peeled and deveined raw shrimp (21-25 per pound), cut into bite-size pieces",
+      "expected": {
+        "item": "peeled and deveined raw shrimp, cut into bite-size pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "21-25",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups sugar snap peas, cut into bite-size pieces",
+      "expected": {
+        "item": "sugar snap peas, cut into bite-size pieces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Zest &amp; juice of 1 lemon",
+      "expected": {
+        "item": "Zest & juice of 1 lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup finely chopped dill, plus more for garnish",
+      "expected": {
+        "item": "finely chopped dill",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced shallot",
+      "expected": {
+        "item": "minced shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon ground pepper",
+      "expected": {
+        "item": "ground pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

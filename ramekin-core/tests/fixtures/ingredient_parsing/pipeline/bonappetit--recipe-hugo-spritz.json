@@ -1,0 +1,74 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-hugo-spritz",
+  "ingredients": [
+    {
+      "raw": "4 mint sprigs, divided",
+      "expected": {
+        "item": "mint sprigs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "4 oz. St-Germain (elderflower liqueur)",
+      "expected": {
+        "item": "St-Germain (elderflower liqueur)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 oz. prosecco",
+      "expected": {
+        "item": "prosecco",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sparkling water (for serving)",
+      "expected": {
+        "item": "Sparkling water",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "2 lime wedges",
+      "expected": {
+        "item": "lime wedges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

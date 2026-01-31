@@ -1,0 +1,139 @@
+{
+  "source": "marthastewart",
+  "recipe_slug": "1066612-snickerdoodles-recipe",
+  "ingredients": [
+    {
+      "raw": "2.75 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "344",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons cream of tartar",
+      "expected": {
+        "item": "cream of tartar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 tablespoons (1 stick) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup pure vegetable shortening",
+      "expected": {
+        "item": "pure vegetable shortening",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.75 cups sugar, plus more if needed",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "350",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more if needed"
+      }
+    },
+    {
+      "raw": "2 tablespoons ground cinnamon, plus more if needed",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more if needed"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

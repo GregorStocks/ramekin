@@ -1,0 +1,105 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-creamy-carbonara",
+  "ingredients": [
+    {
+      "raw": "8 ounces spaghetti (uncooked)",
+      "expected": {
+        "item": "spaghetti",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "uncooked"
+      }
+    },
+    {
+      "raw": "6 ounce pancetta (chopped)",
+      "expected": {
+        "item": "pancetta",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups Parmesan cheese (freshly grated, plus more for garnish)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated, plus more for garnish"
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper (freshly ground)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "freshly ground"
+      }
+    },
+    {
+      "raw": "4 tablespoon basil (chopped)",
+      "expected": {
+        "item": "basil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

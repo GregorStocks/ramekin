@@ -1,0 +1,58 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-fruity-pork-meatballs",
+  "ingredients": [
+    {
+      "raw": "300g pack meatball (we like Waitrose organic)",
+      "expected": {
+        "item": "pack meatball (we like Waitrose organic)",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp caramelised onion marmalade or onion chutney",
+      "expected": {
+        "item": "caramelised onion marmalade or onion chutney",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "300g vegetable stock",
+      "expected": {
+        "item": "vegetable stock",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 red apples cored and thickly sliced",
+      "expected": {
+        "item": "red apples cored and thickly sliced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

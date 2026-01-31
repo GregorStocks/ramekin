@@ -1,0 +1,66 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-wok-fried-peanut-butte",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons peanut oil",
+      "expected": {
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound peanuts, raw, shelled and skinned",
+      "expected": {
+        "item": "peanuts, raw, shelled and skinned",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons honey, optional",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

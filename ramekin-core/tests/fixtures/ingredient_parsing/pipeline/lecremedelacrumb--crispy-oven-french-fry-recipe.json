@@ -1,0 +1,61 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "crispy-oven-french-fry-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound russet potatoes (or Idaho potatoes)",
+      "expected": {
+        "item": "russet potatoes (or Idaho potatoes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "dipping sauce (for serving, optional)",
+      "expected": {
+        "item": "dipping sauce",
+        "measurements": [],
+        "note": "for serving, optional"
+      }
+    }
+  ]
+}

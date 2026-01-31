@@ -1,0 +1,91 @@
+{
+  "source": "ohmyveggies",
+  "recipe_slug": "what-i-ate-this-week-chocolate",
+  "ingredients": [
+    {
+      "raw": "1/2 cup oats",
+      "expected": {
+        "item": "oats",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "78",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup coconut milk (refrigerated kind, such as Silk)",
+      "expected": {
+        "item": "coconut milk (refrigerated kind, such as Silk)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp peanut butter",
+      "expected": {
+        "item": "peanut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp cocoa powder",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5.4",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "agave syrup (or similar sweetener, to taste)",
+      "expected": {
+        "item": "agave syrup",
+        "measurements": [],
+        "note": "or similar sweetener, to taste"
+      }
+    }
+  ]
+}

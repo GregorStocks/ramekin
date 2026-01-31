@@ -1,0 +1,53 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-cookies-cream-truffles-",
+  "ingredients": [
+    {
+      "raw": "36 chocolate sandwich cookies",
+      "expected": {
+        "item": "chocolate sandwich cookies",
+        "measurements": [
+          {
+            "amount": "36",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "12 oz white chocolate, melted",
+      "expected": {
+        "item": "white chocolate",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    }
+  ]
+}

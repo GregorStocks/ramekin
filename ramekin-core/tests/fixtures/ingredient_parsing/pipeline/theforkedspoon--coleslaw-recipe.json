@@ -1,0 +1,122 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "coleslaw-recipe",
+  "ingredients": [
+    {
+      "raw": "1 small green cabbage (finely shredded)",
+      "expected": {
+        "item": "green cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely shredded"
+      }
+    },
+    {
+      "raw": "3 cups purple cabbage (finely shredded)",
+      "expected": {
+        "item": "purple cabbage",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely shredded"
+      }
+    },
+    {
+      "raw": "1 cup carrot (finely shredded)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely shredded"
+      }
+    },
+    {
+      "raw": "1 tablespoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 large lemon (juiced)",
+      "expected": {
+        "item": "lemon (juiced)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup mayonnaise ((full-fat recommended))",
+      "expected": {
+        "item": "mayonnaise (full-fat recommended)",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt (to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

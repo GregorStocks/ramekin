@@ -1,0 +1,83 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-282472-peppers-stuffed-",
+  "ingredients": [
+    {
+      "raw": "4 large Cubanelle peppers, stemmed and seeded",
+      "expected": {
+        "item": "Cubanelle peppers, stemmed and seeded",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound mild Italian pork sausage",
+      "expected": {
+        "item": "mild Italian pork sausage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8 ounce) package cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "0.25 cup pasta sauce, or to taste",
+      "expected": {
+        "item": "pasta sauce",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 tablespoons grated Parmesan cheese, or to taste",
+      "expected": {
+        "item": "grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    }
+  ]
+}

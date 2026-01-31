@@ -1,0 +1,104 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-ultimate-chocolate-mou",
+  "ingredients": [
+    {
+      "raw": "8 ounces semisweet dark chocolate, broken into 1/2-inch pieces",
+      "expected": {
+        "item": "semisweet dark chocolate, broken into 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 large eggs, separated",
+      "expected": {
+        "item": "eggs, separated",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoon water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sweet liqueur (such as Chartreuse, amaretto, mandarin, or Grand Marnier)",
+      "expected": {
+        "item": "sweet liqueur (such as Chartreuse, amaretto, mandarin, or Grand Marnier)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons granulated sugar, divided",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "Whipped cream and grated chocolate, for garnish",
+      "expected": {
+        "item": "Whipped cream and grated chocolate",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

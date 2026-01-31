@@ -1,0 +1,131 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-111004-blue-ribbon-hors",
+  "ingredients": [
+    {
+      "raw": "40 small pickling cucumbers",
+      "expected": {
+        "item": "pickling cucumbers",
+        "measurements": [
+          {
+            "amount": "40",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.75 cups white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.25 cups white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon whole pickling spices",
+      "expected": {
+        "item": "whole pickling spices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bunch dill sprigs",
+      "expected": {
+        "item": "dill sprigs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tablespoons pickling salt",
+      "expected": {
+        "item": "pickling salt",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 cloves garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "10 (1/4 inch x 3 inch) strips peeled fresh horseradish root",
+      "expected": {
+        "item": "strips peeled fresh horseradish root",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          },
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

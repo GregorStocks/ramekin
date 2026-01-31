@@ -1,0 +1,126 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "potato-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "4-5  potatoes",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  small cucumbers",
+      "expected": {
+        "item": "cucumbers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small carrot",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  boiled eggs",
+      "expected": {
+        "item": "boiled eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 slices of ham",
+      "expected": {
+        "item": "ham",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-5 Tbsp Japanese mayonnaise",
+      "expected": {
+        "item": "Japanese mayonnaise",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

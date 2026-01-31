@@ -1,0 +1,169 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "fruit-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 large orange (juiced)",
+      "expected": {
+        "item": "orange (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lemon (juiced)",
+      "expected": {
+        "item": "lemon (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups seedless red grapes",
+      "expected": {
+        "item": "seedless red grapes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  pineapple (cored and chopped into chunks)",
+      "expected": {
+        "item": "pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "cored and chopped into chunks"
+      }
+    },
+    {
+      "raw": "4  mango (peeled, cored, cubed)",
+      "expected": {
+        "item": "mango",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled, cored, cubed"
+      }
+    },
+    {
+      "raw": "6 ounces blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pounds strawberries (halved)",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "6 cups watermelon (cubed)",
+      "expected": {
+        "item": "watermelon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "918",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "12 ounces blackberries",
+      "expected": {
+        "item": "blackberries",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  kiwi (peeled and quartered)",
+      "expected": {
+        "item": "kiwi",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "peeled and quartered"
+      }
+    },
+    {
+      "raw": "6 ounces raspberries ((see notes))",
+      "expected": {
+        "item": "raspberries (see notes)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

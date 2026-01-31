@@ -1,0 +1,53 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "pepperoni-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "Homemade Pizza Dough (or store-bought dough)",
+      "expected": {
+        "item": "Homemade Pizza Dough (or store-bought dough)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Pizza Sauce  ((homemade or store bought))",
+      "expected": {
+        "item": "Pizza Sauce  (homemade or store bought)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups mozzarella cheese",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup pepperoni",
+      "expected": {
+        "item": "pepperoni",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

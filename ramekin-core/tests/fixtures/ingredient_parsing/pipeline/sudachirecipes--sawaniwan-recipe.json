@@ -1,0 +1,126 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "sawaniwan-recipe",
+  "ingredients": [
+    {
+      "raw": "½  carrot (julienned)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "julienned"
+      }
+    },
+    {
+      "raw": "⅛  daikon radish (thinly sliced)",
+      "expected": {
+        "item": "daikon radish",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "10  snow peas (thinly sliced)",
+      "expected": {
+        "item": "snow peas",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "4  fresh shiitake mushroom (thinly sliced)",
+      "expected": {
+        "item": "fresh shiitake mushroom",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "150 g thinly sliced pork belly (cut into thin strips)",
+      "expected": {
+        "item": "thinly sliced pork belly (cut into thin strips)",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "850 ml dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "850",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp Japanese light soy sauce (usukuchi shoyu)",
+      "expected": {
+        "item": "Japanese light soy sauce (usukuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt (to taste (if necessary))",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste (if necessary"
+      }
+    },
+    {
+      "raw": "ground black pepper (garnish)",
+      "expected": {
+        "item": "ground black pepper (garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

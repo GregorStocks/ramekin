@@ -1,0 +1,145 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "chocolate-pot-de-cremes-recipe",
+  "ingredients": [
+    {
+      "raw": "4 1/2 ounces (128g) bittersweet chocolate, about 70% cacao, finely chopped",
+      "expected": {
+        "item": "bittersweet chocolate, about 70% cacao",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 1/4 cups (355ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          },
+          {
+            "amount": "306",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cups (180ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 ounce granulated sugar (22g; 1 1/2 tablespoons)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Whipped cream, for topping (optional)",
+      "expected": {
+        "item": "Whipped cream, for topping",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Chocolate shavings, for topping (optional)",
+      "expected": {
+        "item": "Chocolate shavings, for topping",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

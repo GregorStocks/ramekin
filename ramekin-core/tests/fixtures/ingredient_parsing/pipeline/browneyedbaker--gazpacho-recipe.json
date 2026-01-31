@@ -1,0 +1,183 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "gazpacho-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "½  red onion (diced, divided)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "diced, divided"
+      }
+    },
+    {
+      "raw": "1  large cucumber (diced, divided)",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "diced, divided"
+      }
+    },
+    {
+      "raw": "5  Roma tomatoes (diced, divided)",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "diced, divided"
+      }
+    },
+    {
+      "raw": "1  zucchini (diced, divided)",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced, divided"
+      }
+    },
+    {
+      "raw": "2  stalks celery (diced, divided)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stalk"
+          }
+        ],
+        "note": "diced, divided"
+      }
+    },
+    {
+      "raw": "1  dash salt (to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "dash"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "4 cups tomato juice (divided)",
+      "expected": {
+        "item": "tomato juice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "¼ cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  dashes Tabasco",
+      "expected": {
+        "item": "Tabasco",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  dash black pepper (to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "dash"
+          }
+        ],
+        "note": "to taste"
+      }
+    }
+  ]
+}

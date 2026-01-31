@@ -1,0 +1,138 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-shrimp-with-coconut-ri",
+  "ingredients": [
+    {
+      "raw": "1 can (13.66 ounces) coconut milk",
+      "expected": {
+        "item": "coconut milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "13.66",
+            "unit": "oz"
+          },
+          {
+            "amount": "387",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup uncooked long grain rice",
+      "expected": {
+        "item": "uncooked long grain rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons butter, divided",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt, divided",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 pound uncooked shrimp (31-40 per pound), peeled and deveined",
+      "expected": {
+        "item": "uncooked shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "31-40",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and deveined"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 green onions, chopped",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "Lime wedges",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

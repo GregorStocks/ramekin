@@ -1,0 +1,100 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-easy-french-toast",
+  "ingredients": [
+    {
+      "raw": "1 cup half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons honey, warmed in microwave for 20 seconds",
+      "expected": {
+        "item": "honey, warmed in microwave for 20 seconds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 (1/2-inch) slices day-old or stale country loaf, brioche, or challah bread",
+      "expected": {
+        "item": "day-old or stale country loaf, brioche, or challah bread",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Crushed Frosted Flakes, for coating, optional",
+      "expected": {
+        "item": "Crushed Frosted Flakes, for coating",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

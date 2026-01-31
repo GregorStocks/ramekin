@@ -1,0 +1,61 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-restaurant-style-pan-s",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon  extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon  kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  (6-ounce) salmon fillets, 1¼ in thick (I have my fish monger remove the skin, but it's fine to leave it on if you like)",
+      "expected": {
+        "item": "salmon fillets, 1 1/4 in thick (I have my fish monger remove the skin, but it's fine to leave it on if you like)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

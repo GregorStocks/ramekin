@@ -1,0 +1,123 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "best-teriyaki-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup low sodium soy sauce",
+      "expected": {
+        "item": "low sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sugar (see note)",
+      "expected": {
+        "item": "sugar (see note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground ginger (see note)",
+      "expected": {
+        "item": "ground ginger (see note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon crushed red pepper flakes (or 1-2 teaspoons sriracha sauce, to taste)",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1-2 teaspoons sriracha sauce, to taste"
+      }
+    },
+    {
+      "raw": "2 teaspoons minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons corn starch (+ ¼ cup water or soy sauce, see note)",
+      "expected": {
+        "item": "corn starch (+ 1/4 cup water or soy sauce, see note)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon sesame seeds",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

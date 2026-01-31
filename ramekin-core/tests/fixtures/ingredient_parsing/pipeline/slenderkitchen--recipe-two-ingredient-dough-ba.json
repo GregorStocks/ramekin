@@ -1,0 +1,58 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-two-ingredient-dough-ba",
+  "ingredients": [
+    {
+      "raw": "1.25 cups self rising flour",
+      "expected": {
+        "item": "self rising flour",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup nonfat plain Greek yogurt",
+      "expected": {
+        "item": "nonfat plain Greek yogurt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg, whisked",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "whisked"
+      }
+    },
+    {
+      "raw": "1.5 tbsp sesame seeds",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

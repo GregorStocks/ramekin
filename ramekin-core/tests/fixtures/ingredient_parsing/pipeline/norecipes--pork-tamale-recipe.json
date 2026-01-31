@@ -1,0 +1,404 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "pork-tamale-recipe",
+  "ingredients": [
+    {
+      "raw": "1 large onion ((sliced crosswise into 3 rounds))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "sliced crosswise into 3 rounds"
+      }
+    },
+    {
+      "raw": "4 large cloves garlic",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  jalapeño pepper",
+      "expected": {
+        "item": "jalapeño pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.4 kilograms pork shoulder",
+      "expected": {
+        "item": "pork shoulder",
+        "measurements": [
+          {
+            "amount": "1.4",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "60 grams dried Pasilla chilies",
+      "expected": {
+        "item": "dried Pasilla chilies",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "60 grams dried guajillo chiles",
+      "expected": {
+        "item": "dried guajillo chiles",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  carrot",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  cinnamon stick",
+      "expected": {
+        "item": "cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  cloves",
+      "expected": {
+        "item": "5  cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Mexican oregano",
+      "expected": {
+        "item": "Mexican oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground coriander seed",
+      "expected": {
+        "item": "ground coriander seed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large onions ((minced))",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3 large cloves garlic ((minced))",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons toasted sesame seeds",
+      "expected": {
+        "item": "toasted sesame seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "400 grams whole stewed tomatoes",
+      "expected": {
+        "item": "whole stewed tomatoes",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons Mexican oregano",
+      "expected": {
+        "item": "Mexican oregano",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground coriander seed",
+      "expected": {
+        "item": "ground coriander seed",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 package hoja de maíz para tamale ((dried corn husks))",
+      "expected": {
+        "item": "hoja de maíz para tamale",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": "dried corn husks"
+      }
+    },
+    {
+      "raw": "4 cups masa harina para tamales",
+      "expected": {
+        "item": "masa harina para tamales",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/3 cups manteca ((lard))",
+      "expected": {
+        "item": "manteca (lard)",
+        "measurements": [
+          {
+            "amount": "1 1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 - 4 cups reserved pork stock ( (cooled to room temperature))",
+      "expected": {
+        "item": "- 4 cups reserved pork stock",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": null
+          }
+        ],
+        "note": "(cooled to room temperature"
+      }
+    },
+    {
+      "raw": "2 large tomatoes",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-broccoli-and-garlic-pas",
+  "ingredients": [
+    {
+      "raw": "1   cup    chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    dried basil",
+      "expected": {
+        "item": "dried basil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2       garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3   cups    broccoli florets",
+      "expected": {
+        "item": "broccoli florets",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 1/2  cups   hot cooked penne",
+      "expected": {
+        "item": "hot cooked penne",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "parmesan cheese",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "black pepper (to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

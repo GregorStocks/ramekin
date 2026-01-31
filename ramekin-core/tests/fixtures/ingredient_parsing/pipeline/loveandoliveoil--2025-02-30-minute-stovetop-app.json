@@ -1,0 +1,109 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2025-02-30-minute-stovetop-app",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds apples (about 4 medium or 3 large apples*)",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "3",
+            "unit": "large"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup filtered water",
+      "expected": {
+        "item": "filtered water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-4 tablespoons brown sugar (more or less to taste)",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "2-4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "more or less to taste"
+      }
+    },
+    {
+      "raw": "1-2 tablespoons lemon juice (from 1 lemon)",
+      "expected": {
+        "item": "lemon juice (from 1 lemon)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground cardamom (optional)",
+      "expected": {
+        "item": "ground cardamom",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "pinch sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

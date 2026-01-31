@@ -1,0 +1,152 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-one-pot-pasta",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil (extra virgin)",
+      "expected": {
+        "item": "olive oil (extra virgin)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cloves garlic  (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "12 ounces cherry tomatoes (cut in half)",
+      "expected": {
+        "item": "cherry tomatoes (cut in half)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper  (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon Italian seasoning",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces linguine (or spaghetti)",
+      "expected": {
+        "item": "linguine (or spaghetti)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4½ cups chicken broth (or vegetable broth, low sodium)",
+      "expected": {
+        "item": "chicken broth (or vegetable broth, low sodium)",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Parmesan cheese (freshly grated)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated"
+      }
+    },
+    {
+      "raw": "6 leaves basil (chopped)",
+      "expected": {
+        "item": "leaves basil",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

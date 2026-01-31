@@ -1,0 +1,39 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "triple-cooked-fries-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds baker’s potatoes, peeled and cut into fries (approximately 2x2x6 cm)",
+      "expected": {
+        "item": "baker’s potatoes, peeled and cut into fries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "approximately 2x2x6 cm"
+      }
+    },
+    {
+      "raw": "grape seed oil",
+      "expected": {
+        "item": "grape seed oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "roasted-garlic-and-tomato-brus",
+  "ingredients": [
+    {
+      "raw": "1 garlic head, whole",
+      "expected": {
+        "item": "garlic head",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "whole"
+      }
+    },
+    {
+      "raw": "3 teaspoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium tomato, diced",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "¼ cup fresh basil, chiffonaded",
+      "expected": {
+        "item": "fresh basil, chiffonaded",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "½ cup Sargento® Artisan Blends® Shredded Parmesan Cheese, divided use",
+      "expected": {
+        "item": "Sargento® Artisan Blends® Shredded Parmesan Cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided use"
+      }
+    },
+    {
+      "raw": "12 slices baguette, 1/2-inch thick",
+      "expected": {
+        "item": "baguette, 1/2-inch thick",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "baked-tomatoes-recipe",
+  "ingredients": [
+    {
+      "raw": "2 medium ripe tomatoes",
+      "expected": {
+        "item": "ripe tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup freshly grated parmesan cheese",
+      "expected": {
+        "item": "freshly grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons fresh thyme or herbs",
+      "expected": {
+        "item": "fresh thyme or herbs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

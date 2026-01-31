@@ -1,0 +1,158 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "ricotta-pancakes-recipe",
+  "ingredients": [
+    {
+      "raw": "2/3&nbsp; cup (100g) flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30g) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1&nbsp; teaspoon&nbsp; baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch of&nbsp;salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1&nbsp; cup (250g) whole milk ricotta cheese",
+      "expected": {
+        "item": "whole milk ricotta cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2&nbsp; cup (125ml) milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2&nbsp;  large&nbsp;eggs&nbsp; ((separated))",
+      "expected": {
+        "item": "eggs  (separated)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest from one large lemon",
+      "expected": {
+        "item": "zest from one large lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "butter or clean tasting oil for cooking pancakes",
+      "expected": {
+        "item": "butter or clean tasting oil for cooking pancakes",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "jam of choice or fresh berries partially crushed",
+      "expected": {
+        "item": "jam of choice or fresh berries partially crushed",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

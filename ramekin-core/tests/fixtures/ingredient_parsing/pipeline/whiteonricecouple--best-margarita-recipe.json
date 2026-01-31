@@ -1,0 +1,90 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "best-margarita-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces Tequila (we prefer Resposada or Anejo for this cocktail)",
+      "expected": {
+        "item": "Tequila (we prefer Resposada or Anejo for this cocktail)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce Orange Liqueur (, or to taste *see headnote)",
+      "expected": {
+        "item": "Orange Liqueur",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste *see headnote"
+      }
+    },
+    {
+      "raw": "1 ounce fresh Lime Juice",
+      "expected": {
+        "item": "fresh Lime Juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce Simple Syrup (, or to taste *see headnote)",
+      "expected": {
+        "item": "Simple Syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste *see headnote"
+      }
+    },
+    {
+      "raw": "a few dashes Orange Bitters (, optional)",
+      "expected": {
+        "item": "a few dashes Orange Bitters",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "flaky salt ( for the rim (optional))",
+      "expected": {
+        "item": "flaky salt",
+        "measurements": [],
+        "note": "for the rim (optional"
+      }
+    }
+  ]
+}

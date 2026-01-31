@@ -1,0 +1,302 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "chickpea-cabbage-soup-recipe-1",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons (30 ml) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium yellow onion (8 ounces; 227 g)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium carrots (8 ounces; 227 g total), peeled and thinly sliced",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and thinly sliced"
+      }
+    },
+    {
+      "raw": "4 medium cloves garlic, minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 (1 1/2-inch) piece fresh ginger, peeled and finely chopped",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "piece"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and finely chopped"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 head green cabbage (about 2 pounds; 907 g), cut into 3/4-inch pieces",
+      "expected": {
+        "item": "green cabbage, cut into 3/4-inch pieces",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "head"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups (1.9 L) homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
+      "expected": {
+        "item": "homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.9",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (15-ounce, 425 g) can chickpeas, rinsed and drained",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and drained"
+      }
+    },
+    {
+      "raw": "1 (14.5-ounce; 411 g) can diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14.5",
+            "unit": null
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 ounces (283 g) cauliflower, cut into 1-inch florets (from 1 medium head)",
+      "expected": {
+        "item": "cauliflower, cut into 1-inch florets (from 1 medium head)",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (9 g) Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (13.5-ounce; 383 g) can unsweetened full-fat coconut milk, shaken well before use",
+      "expected": {
+        "item": "unsweetened full-fat coconut milk, shaken well before use",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "13.5",
+            "unit": null
+          },
+          {
+            "amount": "383",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped fresh cilantro leaves and tender stems, for serving",
+      "expected": {
+        "item": "Chopped fresh cilantro leaves and tender stems",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Lime wedges, for serving",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

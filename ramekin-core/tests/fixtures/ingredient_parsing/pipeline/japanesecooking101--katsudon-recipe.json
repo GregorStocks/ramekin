@@ -1,0 +1,125 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "katsudon-recipe",
+  "ingredients": [
+    {
+      "raw": "1  Tonkatsu",
+      "expected": {
+        "item": "Tonkatsu",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "green onions (chopped (optional))",
+      "expected": {
+        "item": "green onions",
+        "measurements": [],
+        "note": "chopped (optional"
+      }
+    },
+    {
+      "raw": "Steamed Rice",
+      "expected": {
+        "item": "Steamed Rice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nori roasted seaweed (shredded (optional) )",
+      "expected": {
+        "item": "Nori roasted seaweed",
+        "measurements": [],
+        "note": "shredded (optional"
+      }
+    }
+  ]
+}

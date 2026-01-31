@@ -1,0 +1,118 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "orange-citrus-vinaigrette-reci",
+  "ingredients": [
+    {
+      "raw": "1  small shallot (about 2 teaspoons minced)",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "about 2 teaspoons minced"
+      }
+    },
+    {
+      "raw": "juice of 1 medium lemon (about 2 1/2 tablespoons)",
+      "expected": {
+        "item": "juice of 1 medium lemon",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of 1 medium orange (about 5 tablespoons)",
+      "expected": {
+        "item": "juice of 1 medium orange",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "162",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup golden balsamic vinegar (champagne or white wine vinegar will work also)",
+      "expected": {
+        "item": "golden balsamic vinegar (champagne or white wine vinegar will work also)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 - 3/4 teaspoon kosher salt (adjust to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2-3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "1/4 - 1/2 teaspoon freshly ground black pepper (adjust to taste)",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4-1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    }
+  ]
+}

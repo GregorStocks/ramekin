@@ -1,0 +1,36 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "homemade-peanut-butter-recipe",
+  "ingredients": [
+    {
+      "raw": "16 ounces Peanuts (roasted, unsalted)",
+      "expected": {
+        "item": "Peanuts",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "roasted, unsalted"
+      }
+    },
+    {
+      "raw": "¼ teaspoon sea salt  ((optional))",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

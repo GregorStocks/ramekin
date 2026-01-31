@@ -1,0 +1,35 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32129852",
+  "ingredients": [
+    {
+      "raw": "1/2 batch Rice Krispies Treats",
+      "expected": {
+        "item": "batch Rice Krispies Treats",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Green candy melts, melted",
+      "expected": {
+        "item": "Green candy melts",
+        "measurements": [],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "Candy eyeballs",
+      "expected": {
+        "item": "Candy eyeballs",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

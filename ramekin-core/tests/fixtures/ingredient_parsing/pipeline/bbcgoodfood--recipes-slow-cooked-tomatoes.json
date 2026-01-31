@@ -1,0 +1,64 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-slow-cooked-tomatoes",
+  "ingredients": [
+    {
+      "raw": "6medium-sized vine tomatoes",
+      "expected": {
+        "item": "medium-sized vine tomatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "thyme or rosemary leaves",
+      "expected": {
+        "item": "thyme or rosemary leaves",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sherry vinegar",
+      "expected": {
+        "item": "sherry vinegar",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "balsamic vinegar",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

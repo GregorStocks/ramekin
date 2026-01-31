@@ -1,0 +1,83 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-eggnog-recipe",
+  "ingredients": [
+    {
+      "raw": "¼ cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  egg yolks (you can whisk the whites to fold into the eggnog just before serving, if you like)",
+      "expected": {
+        "item": "egg yolks (you can whisk the whites to fold into the eggnog just before serving, if you like)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 oz can sweetened condensed milk",
+      "expected": {
+        "item": "can sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tbsp brandy",
+      "expected": {
+        "item": "brandy",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

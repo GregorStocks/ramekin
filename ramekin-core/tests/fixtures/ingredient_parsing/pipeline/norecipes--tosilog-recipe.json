@@ -1,0 +1,45 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "tosilog-recipe",
+  "ingredients": [
+    {
+      "raw": "1 batch Sinangag ((garlic rice))",
+      "expected": {
+        "item": "batch Sinangag (garlic rice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "160 grams Tocino",
+      "expected": {
+        "item": "Tocino",
+        "measurements": [
+          {
+            "amount": "160",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

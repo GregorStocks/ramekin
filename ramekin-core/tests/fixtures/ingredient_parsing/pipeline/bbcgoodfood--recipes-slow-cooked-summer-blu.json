@@ -1,0 +1,114 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-slow-cooked-summer-blu",
+  "ingredients": [
+    {
+      "raw": "15 red peppers quartered and deseeded",
+      "expected": {
+        "item": "red peppers quartered and deseeded",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 ripe  plum tomatoes quartered",
+      "expected": {
+        "item": "ripe  plum tomatoes quartered",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 heads of  garlic broken down into individual unpeeled cloves",
+      "expected": {
+        "item": "garlic broken down into individual unpeeled cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tbsp  extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp golden caster sugar",
+      "expected": {
+        "item": "golden caster sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp   red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful  thyme sprigs",
+      "expected": {
+        "item": "thyme sprigs",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 handfuls  basil leaves roughly torn",
+      "expected": {
+        "item": "basil leaves roughly torn",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

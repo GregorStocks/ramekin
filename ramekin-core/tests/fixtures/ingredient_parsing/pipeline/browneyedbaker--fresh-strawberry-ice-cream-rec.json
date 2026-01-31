@@ -1,0 +1,147 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "fresh-strawberry-ice-cream-rec",
+  "ingredients": [
+    {
+      "raw": "1 quart strawberries (hulled and sliced)",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          },
+          {
+            "amount": "694",
+            "unit": "g"
+          }
+        ],
+        "note": "hulled and sliced"
+      }
+    },
+    {
+      "raw": "1 cup granulated sugar (divided)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups heavy cream (divided)",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  whole vanilla bean",
+      "expected": {
+        "item": "whole vanilla bean",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

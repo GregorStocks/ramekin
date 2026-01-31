@@ -1,0 +1,44 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "roasted-cauliflower-recipe",
+  "ingredients": [
+    {
+      "raw": "1 head of cauliflower cut into small florets",
+      "expected": {
+        "item": "cauliflower cut into small florets",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper to taste",
+      "expected": {
+        "item": "salt and freshly ground pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

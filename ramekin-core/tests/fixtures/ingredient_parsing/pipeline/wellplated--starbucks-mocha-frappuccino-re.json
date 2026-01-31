@@ -1,0 +1,104 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "starbucks-mocha-frappuccino-re",
+  "ingredients": [
+    {
+      "raw": "1 cup strong black coffee (chilled)",
+      "expected": {
+        "item": "strong black coffee",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chilled"
+      }
+    },
+    {
+      "raw": "1/2  medium banana (cut into chunks and frozen)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "cut into chunks and frozen"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsweetened cocoa powder",
+      "expected": {
+        "item": "unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon light agave (plus additional to taste)",
+      "expected": {
+        "item": "light agave",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus additional to taste"
+      }
+    },
+    {
+      "raw": "2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional for serving: whipped cream (whipped coconut cream, chocolate shavings, chocolate syrup or mini chocolate chips)",
+      "expected": {
+        "item": "Optional for serving: whipped cream (whipped coconut cream, chocolate shavings, chocolate syrup or mini chocolate chips)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

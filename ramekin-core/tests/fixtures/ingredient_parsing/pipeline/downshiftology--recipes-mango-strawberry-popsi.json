@@ -1,0 +1,62 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-mango-strawberry-popsi",
+  "ingredients": [
+    {
+      "raw": "1  mango (peeled, pitted and sliced)",
+      "expected": {
+        "item": "mango",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled, pitted and sliced"
+      }
+    },
+    {
+      "raw": "2 cups fresh strawberries (halved)",
+      "expected": {
+        "item": "fresh strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "2 tbsp honey (or maple syrup)",
+      "expected": {
+        "item": "honey (or maple syrup)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

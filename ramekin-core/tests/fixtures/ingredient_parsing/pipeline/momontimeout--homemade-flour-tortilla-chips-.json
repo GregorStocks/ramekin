@@ -1,0 +1,35 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "homemade-flour-tortilla-chips-",
+  "ingredients": [
+    {
+      "raw": "3  Flour Tortillas",
+      "expected": {
+        "item": "Flour Tortillas",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Frying Oil (Vegetable, Canola, Peanut, etc)",
+      "expected": {
+        "item": "Frying Oil (Vegetable, Canola, Peanut, etc)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt  (Optional)",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "Optional"
+      }
+    }
+  ]
+}

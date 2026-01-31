@@ -1,0 +1,45 @@
+{
+  "source": "asweetpeachef",
+  "recipe_slug": "orange-creamsicle-recipe",
+  "ingredients": [
+    {
+      "raw": "2  naval oranges, (plus zest)",
+      "expected": {
+        "item": "naval oranges, (plus zest)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 13.5 oz. can full fat coconut milk ((not refrigerated), divided)",
+      "expected": {
+        "item": "full fat coconut milk (not refrigerated)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "13.5 oz. can"
+          }
+        ],
+        "note": "divided)"
+      }
+    },
+    {
+      "raw": "2 tbsp raw honey, (divided)",
+      "expected": {
+        "item": "raw honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "coleslaw-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups unsalted raw peanuts",
+      "expected": {
+        "item": "unsalted raw peanuts",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  of a medium-large cabbage",
+      "expected": {
+        "item": "of a medium-large cabbage",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  basket of tiny cherry tomatoes, washed and quartered",
+      "expected": {
+        "item": "basket of tiny cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "washed and quartered"
+      }
+    },
+    {
+      "raw": "1  jalapeno chile, seeded and diced",
+      "expected": {
+        "item": "jalapeno chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and diced"
+      }
+    },
+    {
+      "raw": "3/4 cup cilantro, chopped",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup freshly squeezed lime juice",
+      "expected": {
+        "item": "freshly squeezed lime juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon + fine-grain sea salt",
+      "expected": {
+        "item": "+ fine-grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "honey, to taste",
+      "expected": {
+        "item": "honey",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

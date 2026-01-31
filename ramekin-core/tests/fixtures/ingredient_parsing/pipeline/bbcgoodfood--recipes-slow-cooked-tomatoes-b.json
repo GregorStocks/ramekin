@@ -1,0 +1,71 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-slow-cooked-tomatoes-b",
+  "ingredients": [
+    {
+      "raw": "3kg  small tomatoes from the vine, halved",
+      "expected": {
+        "item": "small tomatoes from the vine",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "kg"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "4 tsp herbes de Provence",
+      "expected": {
+        "item": "herbes de Provence",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "large bunch basil leaves only",
+      "expected": {
+        "item": "bunch basil leaves only",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "500ml  light olive oil plus extra for drizzling",
+      "expected": {
+        "item": "light olive oil",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus extra for drizzling"
+      }
+    },
+    {
+      "raw": "2 tsp black peppercorn",
+      "expected": {
+        "item": "black peppercorn",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

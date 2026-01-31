@@ -1,0 +1,83 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-salted-caramel-sauce",
+  "ingredients": [
+    {
+      "raw": "13.5 oz coconut milk (full fat)",
+      "expected": {
+        "item": "coconut milk (full fat)",
+        "measurements": [
+          {
+            "amount": "13.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "383",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup coconut sugar",
+      "expected": {
+        "item": "coconut sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp coconut oil",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

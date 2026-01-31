@@ -1,0 +1,130 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "36601-strawberry-banana-smooth",
+  "ingredients": [
+    {
+      "raw": "1 medium (125 grams) ripe banana, 1 cup chopped",
+      "expected": {
+        "item": "ripe banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": "1 cup chopped"
+      }
+    },
+    {
+      "raw": "1 heaped cup (150 grams) fresh or frozen strawberries",
+      "expected": {
+        "item": "fresh or frozen strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaped cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (185 grams) chopped zucchini (about half a medium zucchini)",
+      "expected": {
+        "item": "chopped zucchini (about half a medium zucchini)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "185",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons nut butter like peanut or almond butter, see our homemade peanut butter recipe",
+      "expected": {
+        "item": "nut butter like peanut or almond butter, see our homemade peanut butter recipe",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup water or milk (dairy or non-dairy)",
+      "expected": {
+        "item": "water or milk (dairy or non-dairy)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Honey, agave or other sweetener as needed",
+      "expected": {
+        "item": "Honey",
+        "measurements": [],
+        "note": "agave or other sweetener as needed"
+      }
+    }
+  ]
+}

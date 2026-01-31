@@ -1,0 +1,49 @@
+{
+  "source": "onmykidsplate",
+  "recipe_slug": "pineapple-dole-whip-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup almond milk (I used unsweetened vanilla almond milk, you can use any milk of choice)",
+      "expected": {
+        "item": "almond milk (I used unsweetened vanilla almond milk, you can use any milk of choice)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup pineapple (frozen)",
+      "expected": {
+        "item": "pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "frozen"
+      }
+    },
+    {
+      "raw": "2 tablespoons honey (optional, but adds extra sweetness if needed)",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": "optional, but adds extra sweetness if needed"
+      }
+    }
+  ]
+}

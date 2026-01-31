@@ -1,0 +1,500 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "lane-cake-recipe-11717929",
+  "ingredients": [
+    {
+      "raw": "Baking spray with flour",
+      "expected": {
+        "item": "Baking spray with flour",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 large egg whites (8 1/2 ounces; 240 g), at room temperature",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          },
+          {
+            "amount": "8 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "15 ounces bleached cake flour (425 g; 3 1/3 cups)",
+      "expected": {
+        "item": "bleached cake flour",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          },
+          {
+            "amount": "3 1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 3/4 ounces granulated sugar (450 g; 2 1/4 cups)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "15 3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          },
+          {
+            "amount": "2 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce baking powder (16 g; 4 teaspoons)",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces unsalted butter (227 g; 2 sticks), at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (355 ml) whole milk, at room temperature",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) neutral oil, such as canola",
+      "expected": {
+        "item": "neutral oil, such as canola",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon almond extract",
+      "expected": {
+        "item": "almond extract",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 large egg yolks (7 ounces; 200g)",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "large"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 1/2 ounces granulated sugar (300 g; 1 1/2 cups)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "10 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces unsalted butter (170 g; 12 tablespoons), at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "12",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "6 ounces finely chopped toasted pecans (170 g; 1 1/2 cups)",
+      "expected": {
+        "item": "finely chopped toasted pecans",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces finely shredded unsweetened coconut (170 g; 1 1/2 cups),&nbsp;",
+      "expected": {
+        "item": "finely shredded unsweetened coconut",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces golden raisins (170 g; 1 1/2 cups), finely chopped",
+      "expected": {
+        "item": "golden raisins",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "6 ounces dried sweetened tart cherries (170 g; 1 cup), finely chopped",
+      "expected": {
+        "item": "dried sweetened tart cherries",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1/2 cup (60 ml) bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon finely grated orange zest from 1 medium orange",
+      "expected": {
+        "item": "finely grated orange zest from 1 medium orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large egg whites (4 1/4 ounces; 120 g)",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "4 1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 3/4 ounces granulated sugar (250 g; 1 1/4 cups)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "8 3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon cream of tartar",
+      "expected": {
+        "item": "cream of tartar",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 ounces unsalted butter (284 g; 20 tablespoons), softened cut into 1-inch size pieces",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "284",
+            "unit": "g"
+          },
+          {
+            "amount": "20",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "softened cut into 1-inch size pieces"
+      }
+    }
+  ]
+}

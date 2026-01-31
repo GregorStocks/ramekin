@@ -1,0 +1,58 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-250704-yellow-natural-e",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons distilled white vinegar",
+      "expected": {
+        "item": "distilled white vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4 white eggs, hard-boiled (see Tip)",
+      "expected": {
+        "item": "white eggs, hard-boiled (see Tip)",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

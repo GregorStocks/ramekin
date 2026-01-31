@@ -1,0 +1,96 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "vegetarian-chili-tot-breakfast",
+  "ingredients": [
+    {
+      "raw": "2 cups leftover vegetarian quinoa chili",
+      "expected": {
+        "item": "leftover vegetarian quinoa chili",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 cups frozen tater tots",
+      "expected": {
+        "item": "frozen tater tots",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz cheese, grated",
+      "expected": {
+        "item": "cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1  large avocado ((chopped or sliced))",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped or sliced"
+      }
+    },
+    {
+      "raw": "2 TBSP Sriracha (or to taste)",
+      "expected": {
+        "item": "Sriracha",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "sofrito-recipe",
+  "ingredients": [
+    {
+      "raw": "6  sweet peppers (deseeded and cut into pieces)",
+      "expected": {
+        "item": "sweet peppers (deseeded and cut into pieces)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 head garlic (peeled with the cloves left whole)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "peeled with the cloves left whole"
+      }
+    },
+    {
+      "raw": "1  red bell pepper (deseeded and cut into large chunks)",
+      "expected": {
+        "item": "red bell pepper (deseeded and cut into large chunks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  green bell pepper (deseeded and cut into large chunks)",
+      "expected": {
+        "item": "green bell pepper (deseeded and cut into large chunks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Anaheim pepper (deseeded and cut into large chunks, optional)",
+      "expected": {
+        "item": "Anaheim pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "deseeded and cut into large chunks, optional"
+      }
+    },
+    {
+      "raw": "1 large white onion (peeled and cut into large chunks)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and cut into large chunks"
+      }
+    },
+    {
+      "raw": "¼ cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon white vinegar (optional)",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large bunch cilantro (with the thicker stems removed)",
+      "expected": {
+        "item": "bunch cilantro (with the thicker stems removed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon fresh oregano leaves (packed)",
+      "expected": {
+        "item": "fresh oregano leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "packed"
+      }
+    }
+  ]
+}

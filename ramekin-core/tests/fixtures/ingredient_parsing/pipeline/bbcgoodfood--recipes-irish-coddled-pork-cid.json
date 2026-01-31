@@ -1,0 +1,136 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-irish-coddled-pork-cid",
+  "ingredients": [
+    {
+      "raw": "small knob  butter",
+      "expected": {
+        "item": "knob  butter",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pork loin chops",
+      "expected": {
+        "item": "pork loin chops",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 rashers smoked bacon cut into pieces",
+      "expected": {
+        "item": "rashers smoked bacon cut into pieces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 potatoes cut into chunks",
+      "expected": {
+        "item": "potatoes cut into chunks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 carrot cut into large chunks",
+      "expected": {
+        "item": "carrot cut into large chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1⁄2 small swede cut into chunks",
+      "expected": {
+        "item": "⁄2 small swede cut into chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1⁄2 large cabbage cut into smaller pieces",
+      "expected": {
+        "item": "⁄2 large cabbage cut into smaller pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100ml Irish cider",
+      "expected": {
+        "item": "Irish cider",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g chicken stock",
+      "expected": {
+        "item": "chicken stock",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "vegetable-tian-recipe",
+  "ingredients": [
+    {
+      "raw": "1  medium yellow onion",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  large cloves of garlic (pressed)",
+      "expected": {
+        "item": "cloves of garlic (pressed)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  medium zucchini",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  roma tomatoes",
+      "expected": {
+        "item": "roma tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3  russet potatoes (depending on their size)",
+      "expected": {
+        "item": "russet potatoes (depending on their size)",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp dill; fresh or frozen (or 1/2 tbsp dried dill)",
+      "expected": {
+        "item": "dill; fresh or frozen",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 1/2 tbsp dried dill"
+      }
+    },
+    {
+      "raw": "1/2 cup freshly grated Parmesan cheese",
+      "expected": {
+        "item": "freshly grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Mild olive oil (2 tbsp for onion mix, 2 tbsp for the seasoning mix)",
+      "expected": {
+        "item": "Mild olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

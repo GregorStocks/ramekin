@@ -1,0 +1,79 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32345419",
+  "ingredients": [
+    {
+      "raw": "4 slices bacon",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 stick salted butter, at room temperature",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1 c. fresh parsley, chopped",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 c. pickled jalapeño peppers, chopped",
+      "expected": {
+        "item": "pickled jalapeño peppers",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper, to taste",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "6 ears of corn, shucked",
+      "expected": {
+        "item": "ears of corn, shucked",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

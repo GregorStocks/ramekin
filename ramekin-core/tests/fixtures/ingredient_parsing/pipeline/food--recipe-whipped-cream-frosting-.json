@@ -1,0 +1,166 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-whipped-cream-frosting-",
+  "ingredients": [
+    {
+      "raw": "1   pint    heavy cream, well chilled",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": "well chilled"
+      }
+    },
+    {
+      "raw": "1   cup   sifted icing sugar",
+      "expected": {
+        "item": "sifted icing sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  cup    cocoa, sifted in with in the icing sugar",
+      "expected": {
+        "item": "cocoa",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "sifted in with in the icing sugar"
+      }
+    },
+    {
+      "raw": "1   tablespoon    instant coffee, dissolved in the cream",
+      "expected": {
+        "item": "instant coffee, dissolved in the cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    lemon extract",
+      "expected": {
+        "item": "lemon extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1      finely grated lemon, rind of, in place of the vanilla",
+      "expected": {
+        "item": "finely grated lemon, rind of, in place of the vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    orange extract",
+      "expected": {
+        "item": "orange extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1      finely grated orange, rind of, in place of the vanilla",
+      "expected": {
+        "item": "finely grated orange, rind of, in place of the vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    almond extract, in place of the vanilla",
+      "expected": {
+        "item": "almond extract, in place of the vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4  cup   minced nuts, of your choice,folded in",
+      "expected": {
+        "item": "minced nuts, of your choice,folded in",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 -2   tablespoon    rum or 1 -2   tablespoon    Bourbon, in place of the vanilla  (For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta)",
+      "expected": {
+        "item": "-2   tablespoon    rum or 1 -2   tablespoon    Bourbon, in place of the vanilla  (For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

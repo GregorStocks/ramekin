@@ -1,0 +1,116 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-228864-best-cheese-dip",
+  "ingredients": [
+    {
+      "raw": "0.5 pound bulk spicy pork sausage",
+      "expected": {
+        "item": "bulk spicy pork sausage",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 pound ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 (2 pound) loaf processed cheese food (such as Velveeta®), cubed",
+      "expected": {
+        "item": "loaf processed cheese food (such as Velveeta®)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 (28 ounce) can diced tomatoes with green chile peppers (such as RO*TEL®)",
+      "expected": {
+        "item": "diced tomatoes with green chile peppers (such as RO*TEL®)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "28",
+            "unit": "oz"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (10.5 ounce) can condensed cream of mushroom soup",
+      "expected": {
+        "item": "condensed cream of mushroom soup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "10.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "298",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

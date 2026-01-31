@@ -1,0 +1,96 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "gazpacho-recipe",
+  "ingredients": [
+    {
+      "raw": "1 whole  mango (, peeled and sliced)",
+      "expected": {
+        "item": "whole  mango",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced"
+      }
+    },
+    {
+      "raw": "1  whole English cucumber (, peeled &amp;amp; sliced)",
+      "expected": {
+        "item": "whole English cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled & sliced"
+      }
+    },
+    {
+      "raw": "1 clove garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup almonds (, sliced and toasted)",
+      "expected": {
+        "item": "almonds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "sliced and toasted"
+      }
+    },
+    {
+      "raw": "2 Tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon sriracha",
+      "expected": {
+        "item": "sriracha",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt &amp;amp; pepper to taste",
+      "expected": {
+        "item": "salt & pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

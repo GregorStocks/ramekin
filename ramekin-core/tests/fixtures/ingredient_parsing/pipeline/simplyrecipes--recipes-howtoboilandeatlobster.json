@@ -1,0 +1,51 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtoboilandeatlobster",
+  "ingredients": [
+    {
+      "raw": "Live lobsters, 1 per person",
+      "expected": {
+        "item": "Live lobsters, 1 per person",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "A large pot of salted water",
+      "expected": {
+        "item": "A large pot of salted water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Butter",
+      "expected": {
+        "item": "Butter",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Bread for dipping into the lobster-infused butter (optional)",
+      "expected": {
+        "item": "Bread for dipping into the lobster-infused butter",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "cherry-pie-filling-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups whole pitted fresh sweet cherries (about 2 pounds with pits or 1 1/2 pounds pitted or frozen, thawed&nbsp;pitted&nbsp;cherries)",
+      "expected": {
+        "item": "whole pitted fresh sweet cherries",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "about 2 pounds with pits or 1 1/2 pounds pitted or frozen, thawed pitted cherries"
+      }
+    },
+    {
+      "raw": "1/2 cup honey (plus additional to taste (if using tart cherries, you may need to add a bit more))",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional to taste (if using tart cherries, you may need to add a bit more"
+      }
+    },
+    {
+      "raw": "1 tablespoon freshly squeezed lemon juice",
+      "expected": {
+        "item": "freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon pure almond extract",
+      "expected": {
+        "item": "pure almond extract",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

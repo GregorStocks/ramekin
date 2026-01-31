@@ -1,0 +1,40 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "healthy-riceberry-recipe",
+  "ingredients": [
+    {
+      "raw": "100 grams Riceberry (about 1 US cup)",
+      "expected": {
+        "item": "Riceberry",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200 grams water (1 2/3 US cups)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "1 2/3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

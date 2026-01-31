@@ -1,0 +1,109 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2018-08-01-large-batch-basil-p",
+  "ingredients": [
+    {
+      "raw": "16 cups (320 g) basil",
+      "expected": {
+        "item": "basil",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "cup"
+          },
+          {
+            "amount": "320",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 head garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1/2 cup fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 to 3.5 teaspoons kosher salt (Diamond Crystal brand, see notes)",
+      "expected": {
+        "item": "kosher salt (Diamond Crystal brand, see notes)",
+        "measurements": [
+          {
+            "amount": "3 to 3.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (215 g) grated Parmigiano Reggiano",
+      "expected": {
+        "item": "grated Parmigiano Reggiano",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "215",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup toasted pine nuts, almonds, or walnuts (optional)",
+      "expected": {
+        "item": "toasted pine nuts, almonds, or walnuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 cups extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "432",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

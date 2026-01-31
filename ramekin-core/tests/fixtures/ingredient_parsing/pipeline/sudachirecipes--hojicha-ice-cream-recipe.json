@@ -1,0 +1,96 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "hojicha-ice-cream-recipe",
+  "ingredients": [
+    {
+      "raw": "200 ml whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "ml"
+          },
+          {
+            "amount": "207",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  roasted green tea bags (hojicha) (1 tea bag is approx 3g loose tea)",
+      "expected": {
+        "item": "roasted green tea bags (hojicha) (1 tea bag is approx 3g loose tea)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  pasteurized egg yolk",
+      "expected": {
+        "item": "pasteurized egg yolk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "75 g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200 ml heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "ml"
+          },
+          {
+            "amount": "201",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

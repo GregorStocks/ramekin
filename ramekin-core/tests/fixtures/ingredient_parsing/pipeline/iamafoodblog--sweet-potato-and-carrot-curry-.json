@@ -1,0 +1,66 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "sweet-potato-and-carrot-curry-",
+  "ingredients": [
+    {
+      "raw": "1 giant carrot, or 2 regular sized carrots",
+      "expected": {
+        "item": "giant carrot, or 2 regular sized carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 sweet potato",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups vegetable broth, or more to taste",
+      "expected": {
+        "item": "vegetable broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "2 teaspoons curry powder",
+      "expected": {
+        "item": "curry powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

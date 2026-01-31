@@ -1,0 +1,133 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "seeded-flatbread-recipe",
+  "ingredients": [
+    {
+      "raw": "4 1/2 cups / 1 lb. 6.5 oz / 640 g White Whole Wheat Flour",
+      "expected": {
+        "item": "6.5 oz / 640 g White Whole Wheat Flour",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3/4 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup / 5 oz / 140g seeds (equal parts chopped pepitas, sunflower &amp; poppy seeds)",
+      "expected": {
+        "item": "seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": "equal parts chopped pepitas, sunflower & poppy seeds"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons mustard seeds, toasted and crushed",
+      "expected": {
+        "item": "mustard seeds",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "toasted and crushed"
+      }
+    },
+    {
+      "raw": "1/4 cup / 60ml extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups / 475 ml water, ice cold",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "475",
+            "unit": "ml"
+          }
+        ],
+        "note": "ice cold"
+      }
+    },
+    {
+      "raw": "semolina flour or cornmeal for dusting baking sheet",
+      "expected": {
+        "item": "semolina flour or cornmeal for dusting baking sheet",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

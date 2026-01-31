@@ -1,0 +1,74 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-lavender-lemonade",
+  "ingredients": [
+    {
+      "raw": "1 cup freshly squeezed lemon juice  (Meyer lemons are preferred )",
+      "expected": {
+        "item": "freshly squeezed lemon juice  (Meyer lemons are preferred",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups  water (divided)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 cup honey  (or maple syrup / other sweeteners )",
+      "expected": {
+        "item": "honey  (or maple syrup / other sweeteners",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  tablespoon dried lavender flowers",
+      "expected": {
+        "item": "dried lavender flowers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "lemon slices and fresh lavender flowers (for garnish)",
+      "expected": {
+        "item": "lemon slices and fresh lavender flowers",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

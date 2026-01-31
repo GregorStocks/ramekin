@@ -1,0 +1,104 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "bread-baking-the-simplest-whit",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 teaspoons (1 package) yeast",
+      "expected": {
+        "item": "yeast",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup lukewarm water",
+      "expected": {
+        "item": "lukewarm water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 cups (11 1/4 oz) all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "11 1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "319",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

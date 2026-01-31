@@ -1,0 +1,36 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "labneh-recipe",
+  "ingredients": [
+    {
+      "raw": "32 ounces plain full-fat yogurt",
+      "expected": {
+        "item": "plain full-fat yogurt",
+        "measurements": [
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

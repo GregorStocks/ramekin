@@ -1,0 +1,207 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-arroz-con-pollo-mushro",
+  "ingredients": [
+    {
+      "raw": "3 plum tomatoes, halved lengthwise",
+      "expected": {
+        "item": "plum tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "halved lengthwise"
+      }
+    },
+    {
+      "raw": "1/4 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "One 3 1/2-pound chicken, cut into 8 pieces",
+      "expected": {
+        "item": "3 1/2-pound chicken, cut into 8 pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pepper",
+      "expected": {
+        "item": "Pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium Spanish onion, finely chopped",
+      "expected": {
+        "item": "Spanish onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 medium green bell pepper, finely chopped",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "5 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "4 thyme sprigs",
+      "expected": {
+        "item": "thyme sprigs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon sweet pimentón de la Vera (smoked Spanish paprika)",
+      "expected": {
+        "item": "sweet pimentón de la Vera (smoked Spanish paprika)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 pound oyster or cremini mushrooms, cut into 1-inch pieces",
+      "expected": {
+        "item": "oyster or cremini mushrooms, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Bomba or Calasparra rice",
+      "expected": {
+        "item": "Bomba or Calasparra rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Small pinch of saffron threads",
+      "expected": {
+        "item": "pinch of saffron threads",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot sauce, for serving",
+      "expected": {
+        "item": "Hot sauce",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "fresh-basil-pesto-recipe",
+  "ingredients": [
+    {
+      "raw": "3 cups packed fresh basil",
+      "expected": {
+        "item": "packed fresh basil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "144",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup pine nuts (toasted until golden and cooled)",
+      "expected": {
+        "item": "pine nuts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasted until golden and cooled"
+      }
+    },
+    {
+      "raw": "2/3 cup grated Parmesan cheese",
+      "expected": {
+        "item": "grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

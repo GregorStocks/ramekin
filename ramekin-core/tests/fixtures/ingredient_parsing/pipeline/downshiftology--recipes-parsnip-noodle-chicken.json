@@ -1,0 +1,79 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-parsnip-noodle-chicken",
+  "ingredients": [
+    {
+      "raw": "1  recipe Vegan Alfredo Sauce",
+      "expected": {
+        "item": "recipe Vegan Alfredo Sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large boneless skinless chicken breast",
+      "expected": {
+        "item": "boneless skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp avocado oil or olive oil (divided)",
+      "expected": {
+        "item": "avocado oil or olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2  medium parsnips",
+      "expected": {
+        "item": "parsnips",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  head of broccoli (florets trimmed off)",
+      "expected": {
+        "item": "broccoli",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "florets trimmed off"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

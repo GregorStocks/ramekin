@@ -1,0 +1,144 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "chilaquiles-recipe",
+  "ingredients": [
+    {
+      "raw": "3  Roma tomatoes",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cloves garlic (peeled)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "½  yellow onion (roughly chopped)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "3 dried chile arbol (ends removed and deseeded)",
+      "expected": {
+        "item": "dried chile arbol (ends removed and deseeded)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 dried guajillo peppers (ends removed and deseeded)",
+      "expected": {
+        "item": "dried guajillo peppers (ends removed and deseeded)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Mexican oregano",
+      "expected": {
+        "item": "Mexican oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "Vegetable oil for frying",
+      "expected": {
+        "item": "Vegetable oil for frying",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "30  corn tortillas (each cut into 9 pieces)",
+      "expected": {
+        "item": "corn tortillas (each cut into 9 pieces)",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

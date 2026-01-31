@@ -1,0 +1,52 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-pancetta-wrapped-aspar",
+  "ingredients": [
+    {
+      "raw": "1 bunch thick asparagus (12-15 spears; about 1 pound), trimmed",
+      "expected": {
+        "item": "thick asparagus",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          },
+          {
+            "amount": "12-15",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed"
+      }
+    },
+    {
+      "raw": "12-15 thin slices pancetta",
+      "expected": {
+        "item": "thin slices pancetta",
+        "measurements": [
+          {
+            "amount": "12-15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Vegetable oil",
+      "expected": {
+        "item": "Vegetable oil",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "pina-colada-recipe",
+  "ingredients": [
+    {
+      "raw": "3 ounces (90ml) light Rum",
+      "expected": {
+        "item": "light Rum",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces (180ml) pineapple juice ( (fresh or canned))",
+      "expected": {
+        "item": "pineapple juice",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "(fresh or canned"
+      }
+    },
+    {
+      "raw": "2 ounces (60ml) coconut cream",
+      "expected": {
+        "item": "coconut cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  oz fresh lime juice ( (optional))",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "(optional"
+      }
+    },
+    {
+      "raw": "2 cups (475ml) ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "475",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "garnish: pineapple spears",
+      "expected": {
+        "item": "garnish: pineapple spears",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

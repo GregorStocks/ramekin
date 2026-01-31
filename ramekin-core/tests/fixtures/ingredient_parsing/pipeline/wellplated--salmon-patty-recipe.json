@@ -1,0 +1,169 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "salmon-patty-recipe",
+  "ingredients": [
+    {
+      "raw": "1  large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  (15-ounce) can salmon (drained (wild-caught if possible))",
+      "expected": {
+        "item": "salmon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "drained (wild-caught if possible"
+      }
+    },
+    {
+      "raw": "1/2 cup Italian seasoned dry whole wheat bread crumbs",
+      "expected": {
+        "item": "Italian seasoned dry whole wheat bread crumbs",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup nonfat plain Greek yogurt (or sour cream)",
+      "expected": {
+        "item": "nonfat plain Greek yogurt (or sour cream)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon white vinegar or lemon juice",
+      "expected": {
+        "item": "white vinegar or lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons finely chopped fresh parsley (plus additional for serving)",
+      "expected": {
+        "item": "finely chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus additional for serving"
+      }
+    },
+    {
+      "raw": "1–2 tablespoons extra-virgin olive oil (for cooking the patties)",
+      "expected": {
+        "item": "extra-virgin olive oil (for cooking the patties)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Greek yogurt",
+      "expected": {
+        "item": "Greek yogurt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon wedges",
+      "expected": {
+        "item": "Lemon wedges",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

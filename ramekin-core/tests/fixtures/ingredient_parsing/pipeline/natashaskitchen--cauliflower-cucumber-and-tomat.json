@@ -1,0 +1,88 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "cauliflower-cucumber-and-tomat",
+  "ingredients": [
+    {
+      "raw": "1  Medium cauliflower",
+      "expected": {
+        "item": "cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  English cucumber or 2 small cucumbers with ends trimmed",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "or 2 small cucumbers with ends trimmed"
+      }
+    },
+    {
+      "raw": "1  large or 2 medium cloves garlic (pressed)",
+      "expected": {
+        "item": "cloves garlic (pressed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp ranch",
+      "expected": {
+        "item": "ranch",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 1 1/2 cups cherry or grape tomatoes",
+      "expected": {
+        "item": "1/2 cups cherry or grape tomatoes",
+        "measurements": [
+          {
+            "amount": "1 to 1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spiced-apple-cider-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups apple cider",
+      "expected": {
+        "item": "apple cider",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cinnamon stick",
+      "expected": {
+        "item": "cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 anise pod",
+      "expected": {
+        "item": "anise pod",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon whole cloves",
+      "expected": {
+        "item": "whole cloves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "orange slices to garnish",
+      "expected": {
+        "item": "orange slices to garnish",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "bourbon, optional",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

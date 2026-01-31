@@ -1,0 +1,129 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-poulet-au-vinaigre",
+  "ingredients": [
+    {
+      "raw": "3 tablespoon clarified unsalted butter (see Note) or 2 tablespoon unsalted butter and 1 tablespoon peanut oil",
+      "expected": {
+        "item": "clarified unsalted butter (see Note)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 2 tablespoon unsalted butter and 1 tablespoon peanut oil"
+      }
+    },
+    {
+      "raw": "4 unpeeled garlic cloves",
+      "expected": {
+        "item": "unpeeled garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (2 1/2- to 3-pound) whole chicken, cut into 10 pieces",
+      "expected": {
+        "item": "whole chicken, cut into 10 pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup mild white wine vinegar or rice vinegar",
+      "expected": {
+        "item": "mild white wine vinegar or rice vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 pound very ripe red tomatoes, peeled, cored, seeded, and cut into 1/4-inch pieces (about 1 1/2 cups)",
+      "expected": {
+        "item": "very ripe red tomatoes, peeled, cored, seeded, and cut into 1/4-inch pieces",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh flat-leaf parsley",
+      "expected": {
+        "item": "chopped fresh flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

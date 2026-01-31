@@ -1,0 +1,56 @@
+{
+  "source": "themodernproper",
+  "recipe_slug": "ranch-water-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "2½ ounces tequila blanco",
+      "expected": {
+        "item": "tequila blanco",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ ounces freshly squeezed lime juice (from 2 limes)",
+      "expected": {
+        "item": "freshly squeezed lime juice (from 2 limes)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sparkling mineral water, such as Topo Chico",
+      "expected": {
+        "item": "Sparkling mineral water, such as Topo Chico",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lime wedge, for serving",
+      "expected": {
+        "item": "Lime wedge",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

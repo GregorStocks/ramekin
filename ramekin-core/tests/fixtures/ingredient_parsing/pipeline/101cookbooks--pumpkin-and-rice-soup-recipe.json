@@ -1,0 +1,124 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "pumpkin-and-rice-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  medium onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1  large shallot, chopped",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2  serrano chile, seeds and all, chopped",
+      "expected": {
+        "item": "serrano chile, seeds and all",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds pumpkin/squash flesh, seeded, peeled, and cut into 3/4-inch chunks",
+      "expected": {
+        "item": "pumpkin/squash flesh, seeded, peeled, and cut into 3/4-inch chunks",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh ginger juice, pressed from grated ginger",
+      "expected": {
+        "item": "fresh ginger juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "pressed from grated ginger"
+      }
+    },
+    {
+      "raw": "cooked brown rice, warm",
+      "expected": {
+        "item": "cooked brown rice, warm",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "toasted pumpkin seeds",
+      "expected": {
+        "item": "toasted pumpkin seeds",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
+      "expected": {
+        "item": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

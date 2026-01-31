@@ -1,0 +1,101 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "spicy-turkey-meatloaf-recipe",
+  "ingredients": [
+    {
+      "raw": "2 pounds ground turkey",
+      "expected": {
+        "item": "ground turkey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup grated Parmesan cheese",
+      "expected": {
+        "item": "grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 4-ounce can green chiles (drained)",
+      "expected": {
+        "item": "green chiles",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "4-ounce can"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "3/4 cup of your favorite salsa",
+      "expected": {
+        "item": "your favorite salsa",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons taco seasoning",
+      "expected": {
+        "item": "taco seasoning",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 slices pepper jack cheese",
+      "expected": {
+        "item": "pepper jack cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

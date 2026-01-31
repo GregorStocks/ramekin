@@ -1,0 +1,101 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "frozen-yogurt-recipe",
+  "ingredients": [
+    {
+      "raw": "4  cups sliced frozen strawberries,  (or other frozen fruit of your choice (see notes) )",
+      "expected": {
+        "item": "sliced frozen strawberries",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "or other frozen fruit of your choice (see notes"
+      }
+    },
+    {
+      "raw": "2 cups sliced frozen banana",
+      "expected": {
+        "item": "sliced frozen banana",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Whole milk Greek yogurt",
+      "expected": {
+        "item": "Whole milk Greek yogurt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp orange extract,  (or vanilla extract, if you like)",
+      "expected": {
+        "item": "orange extract,  (or vanilla extract, if you like)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 to 6 tbsp honey, (more to your liking, I used Greek honey)",
+      "expected": {
+        "item": "honey, (more to your liking, I used Greek honey)",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup  sugar,  (optional but highly recommended)",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "optional but highly recommended"
+      }
+    },
+    {
+      "raw": "1 tbsp corn syrup,  (optional)",
+      "expected": {
+        "item": "corn syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

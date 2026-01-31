@@ -1,0 +1,200 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-instant-pot-chicken-no",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons butter (unsalted)",
+      "expected": {
+        "item": "butter (unsalted)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 medium carrots (chopped)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 stalks celery (chopped)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stalk"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper (or to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon thyme (dry, 1 tbsp if using fresh)",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "dry, 1 tbsp if using fresh"
+      }
+    },
+    {
+      "raw": "1 tablespoon parsley (fresh, chopped)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "fresh, chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon oregano (fresh, chopped, 1 tsp if using dry)",
+      "expected": {
+        "item": "oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "fresh, chopped, 1 tsp if using dry"
+      }
+    },
+    {
+      "raw": "1  chicken bouillon (cube or powder)",
+      "expected": {
+        "item": "chicken bouillon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "cube"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups chicken broth (or vegetable broth, no sodium added)",
+      "expected": {
+        "item": "chicken broth (or vegetable broth, no sodium added)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pounds chicken (with skin and bones, use at least 1 chicken breast)",
+      "expected": {
+        "item": "chicken (with skin and bones, use at least 1 chicken breast)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 ounce egg noodles (uncooked, (about 2 cups))",
+      "expected": {
+        "item": "egg noodles",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "uncooked, (about 2 cups"
+      }
+    }
+  ]
+}

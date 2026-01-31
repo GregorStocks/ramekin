@@ -1,0 +1,84 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "easy-white-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "3 Tablespoons white granulated sugar",
+      "expected": {
+        "item": "white granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ½ teaspoons active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ½ cups warm water",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons butter or margarine (melted or very soft)",
+      "expected": {
+        "item": "butter or margarine",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted or very soft"
+      }
+    },
+    {
+      "raw": "2 ½ teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5-6 cups all purpose flour or bread flour",
+      "expected": {
+        "item": "all purpose flour or bread flour",
+        "measurements": [
+          {
+            "amount": "5-6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

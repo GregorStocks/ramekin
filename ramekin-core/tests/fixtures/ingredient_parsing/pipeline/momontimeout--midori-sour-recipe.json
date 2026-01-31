@@ -1,0 +1,82 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "midori-sour-recipe",
+  "ingredients": [
+    {
+      "raw": "2 oz MIDORI",
+      "expected": {
+        "item": "MIDORI",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 oz sweet and sour mix",
+      "expected": {
+        "item": "sweet and sour mix",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz Sprite",
+      "expected": {
+        "item": "Sprite",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 oz fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "orange (lemon, lime, maraschino cherries - for garnish)",
+      "expected": {
+        "item": "orange",
+        "measurements": [],
+        "note": "lemon, lime, maraschino cherries - for garnish"
+      }
+    }
+  ]
+}

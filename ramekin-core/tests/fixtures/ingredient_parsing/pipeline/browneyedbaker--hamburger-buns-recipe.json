@@ -1,0 +1,130 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "hamburger-buns-recipe",
+  "ingredients": [
+    {
+      "raw": "4¼ cups bread flour",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "4 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "540",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg (slightly beaten, at room temperature)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "slightly beaten, at room temperature"
+      }
+    },
+    {
+      "raw": "¼ cup butter (at room temperature)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1½ cups buttermilk or whole milk (at room temperature)",
+      "expected": {
+        "item": "buttermilk or whole milk",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1  egg (whisked with 1 teaspoon water until frothy, for egg wash (optional))",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "whisked with 1 teaspoon water until frothy, for egg wash (optional"
+      }
+    },
+    {
+      "raw": "Sesame or poppy seeds for garnish (optional)",
+      "expected": {
+        "item": "Sesame or poppy seeds for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

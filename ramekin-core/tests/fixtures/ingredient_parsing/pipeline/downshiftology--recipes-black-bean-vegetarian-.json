@@ -1,0 +1,165 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-black-bean-vegetarian-",
+  "ingredients": [
+    {
+      "raw": "1  recipe cassava flour tortillas",
+      "expected": {
+        "item": "recipe cassava flour tortillas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15.5 oz can organic black beans, drained and rinsed",
+      "expected": {
+        "item": "can organic black beans",
+        "measurements": [
+          {
+            "amount": "15.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "439",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1/4 tsp cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "3 tbsp olive oil ((divided))",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2  shallots (finely diced)",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1  zucchini (finely sliced)",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely sliced"
+      }
+    },
+    {
+      "raw": "1 cup grape tomatoes (quartered)",
+      "expected": {
+        "item": "grape tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "1/4  cup (thin red onion slices)",
+      "expected": {
+        "item": "(thin red onion slices)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup feta cheese ((optional))",
+      "expected": {
+        "item": "feta cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1  avocado (peeled and sliced)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced"
+      }
+    },
+    {
+      "raw": "1/4 cup cilantro leaves",
+      "expected": {
+        "item": "cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

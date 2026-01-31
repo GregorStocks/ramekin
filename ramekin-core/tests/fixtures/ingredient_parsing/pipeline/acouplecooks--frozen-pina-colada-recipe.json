@@ -1,0 +1,91 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "frozen-pina-colada-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound or 3 heaping cups frozen pineapple chunks",
+      "expected": {
+        "item": "frozen pineapple chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": "heaping cup"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup white rum",
+      "expected": {
+        "item": "white rum",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup full fat coconut milk",
+      "expected": {
+        "item": "full fat coconut milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon maple syrup or simple syrup (optional)",
+      "expected": {
+        "item": "maple syrup or simple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "For the garnish: Drink umbrellas, toasted coconut (optional)",
+      "expected": {
+        "item": "For the garnish: Drink umbrellas, toasted coconut",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

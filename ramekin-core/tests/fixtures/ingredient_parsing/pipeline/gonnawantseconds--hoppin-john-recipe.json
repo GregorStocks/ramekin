@@ -1,0 +1,178 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "hoppin-john-recipe",
+  "ingredients": [
+    {
+      "raw": "6 slices  bacon,  (chopped)",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1  1/2 cups  onion,  (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "4 stalks celery,   (chopped)",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "stalk"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 cup green pepper,  (chopped)",
+      "expected": {
+        "item": "green pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon garlic,  (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.5",
+            "unit": "g"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh thymes",
+      "expected": {
+        "item": "fresh thymes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  1/2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups chicken broth,  (low sodium)",
+      "expected": {
+        "item": "chicken broth,  (low sodium)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups frozen black-eyed peas.  (thawed and drained)",
+      "expected": {
+        "item": "frozen black-eyed peas.",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed and drained"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  1/2 cups  uncooked Carolina&nbsp;Gold Rice",
+      "expected": {
+        "item": "uncooked Carolina Gold Rice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "green onions",
+      "expected": {
+        "item": "green onions",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

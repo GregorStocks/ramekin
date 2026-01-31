@@ -1,0 +1,118 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-simple-oven-baked-sea-b",
+  "ingredients": [
+    {
+      "raw": "1   lb    sea bass (cleaned and scaled)",
+      "expected": {
+        "item": "sea bass",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "cleaned and scaled"
+      }
+    },
+    {
+      "raw": "3       garlic cloves, minced or crushed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced or crushed"
+      }
+    },
+    {
+      "raw": "1   tablespoon    extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    italian seasoning or 1   tablespoon    fresh parsley leaves",
+      "expected": {
+        "item": "italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 1   tablespoon    fresh parsley leaves"
+      }
+    },
+    {
+      "raw": "2   teaspoons    fresh coarse ground black pepper",
+      "expected": {
+        "item": "fresh coarse ground black pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2       lemon wedges",
+      "expected": {
+        "item": "lemon wedges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3  cup    white wine vinegar (optional) or 1/3  cup    white wine (optional)",
+      "expected": {
+        "item": "white wine vinegar or 1/3  cup    white wine (optional)",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

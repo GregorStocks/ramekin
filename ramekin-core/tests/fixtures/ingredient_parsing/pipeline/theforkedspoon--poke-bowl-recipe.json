@@ -1,0 +1,200 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "poke-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup low-sodium soy sauce",
+      "expected": {
+        "item": "low-sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh ginger (grated)",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 tablespoon garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.5",
+            "unit": "g"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 pound sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
+      "expected": {
+        "item": "sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoon Sriracha (plus more to taste)",
+      "expected": {
+        "item": "Sriracha",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups cooked rice (sushi rice, white rice, or brown rice)",
+      "expected": {
+        "item": "cooked rice (sushi rice, white rice, or brown rice)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shelled edamame",
+      "expected": {
+        "item": "shelled edamame",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sliced English cucumber",
+      "expected": {
+        "item": "sliced English cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  avocado (peeled, pitted, and sliced)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled, pitted, and sliced"
+      }
+    },
+    {
+      "raw": "1 large mango (peeled, pitted, and sliced)",
+      "expected": {
+        "item": "mango",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled, pitted, and sliced"
+      }
+    },
+    {
+      "raw": "¼ cup sliced green onions",
+      "expected": {
+        "item": "sliced green onions",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

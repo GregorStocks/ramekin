@@ -1,0 +1,100 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-sweet-potato-toast-avo",
+  "ingredients": [
+    {
+      "raw": "1  sweet potato",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  avocado (peeled and smashed)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed"
+      }
+    },
+    {
+      "raw": "1/2 cup baby spinach",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices prosciutto",
+      "expected": {
+        "item": "prosciutto",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp avocado oil",
+      "expected": {
+        "item": "avocado oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "parsley (for garnishment)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [],
+        "note": "for garnishment"
+      }
+    }
+  ]
+}

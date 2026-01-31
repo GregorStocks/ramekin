@@ -1,0 +1,133 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "dirt-dessert-recipe",
+  "ingredients": [
+    {
+      "raw": "14.3 ounce Oreo Cookies",
+      "expected": {
+        "item": "Oreo Cookies",
+        "measurements": [
+          {
+            "amount": "14.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "405",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7.8 ounce instant chocolate pudding",
+      "expected": {
+        "item": "instant chocolate pudding",
+        "measurements": [
+          {
+            "amount": "7.8",
+            "unit": "oz"
+          },
+          {
+            "amount": "221",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "980",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces cream cheese (at room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "¼ cup butter, at room temperature",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1 cup powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounce container&nbsp;Cool Whip",
+      "expected": {
+        "item": "container Cool Whip",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Gummy worms (optional)",
+      "expected": {
+        "item": "Gummy worms",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

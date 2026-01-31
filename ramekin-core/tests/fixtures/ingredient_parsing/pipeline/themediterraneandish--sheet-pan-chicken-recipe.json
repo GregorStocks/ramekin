@@ -1,0 +1,181 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "sheet-pan-chicken-recipe",
+  "ingredients": [
+    {
+      "raw": "2  medium zucchini (about 11 oz, halved length-wise then sliced into half moons)",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "about 11 oz, halved length-wise then sliced into half moons"
+      }
+    },
+    {
+      "raw": "1  large red pepper (cored, cut into chunks)",
+      "expected": {
+        "item": "red pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "cored, cut into chunks"
+      }
+    },
+    {
+      "raw": "1  red onion (cut into chunks)",
+      "expected": {
+        "item": "red onion (cut into chunks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 oz baby broccoli (trimmed and cut into pieces of equal size)",
+      "expected": {
+        "item": "baby broccoli",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cut into pieces of equal size"
+      }
+    },
+    {
+      "raw": "1 1/2 lb boneless chicken breast (cut into bite-size pieces)",
+      "expected": {
+        "item": "boneless chicken breast (cut into bite-size pieces)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  garlic cloves (minced)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp Dry oregano",
+      "expected": {
+        "item": "Dry oregano",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp Paprika",
+      "expected": {
+        "item": "Paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp coriander",
+      "expected": {
+        "item": "coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lemon (zested and juiced)",
+      "expected": {
+        "item": "lemon (zested and juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Extra virgin olive oil",
+      "expected": {
+        "item": "Extra virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh parsley for garnish (optional)",
+      "expected": {
+        "item": "Fresh parsley for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

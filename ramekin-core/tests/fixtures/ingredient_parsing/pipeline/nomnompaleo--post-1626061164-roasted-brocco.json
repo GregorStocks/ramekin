@@ -1,0 +1,90 @@
+{
+  "source": "nomnompaleo",
+  "recipe_slug": "post-1626061164-roasted-brocco",
+  "ingredients": [
+    {
+      "raw": "1½ pounds broccoli",
+      "expected": {
+        "item": "broccoli",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  garlic cloves (peeled and smashed)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed"
+      }
+    },
+    {
+      "raw": "4 slices bacon (cut into bite-size pieces)",
+      "expected": {
+        "item": "bacon (cut into bite-size pieces)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil (avocado oil, melted ghee, or melted lard)",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "avocado oil, melted ghee, or melted lard"
+      }
+    },
+    {
+      "raw": "Diamond Crystal kosher salt (to taste)",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Freshly ground pepper (to taste)",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Juice from 1 lemon (or 2 tablespoons aged balsamic vinegar)",
+      "expected": {
+        "item": "Juice from 1 lemon (or 2 tablespoons aged balsamic vinegar)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

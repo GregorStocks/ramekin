@@ -1,0 +1,53 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "apple-dump-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "2 (20-ounce) cans apple pie filling",
+      "expected": {
+        "item": "apple pie filling",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 box yellow cake mix",
+      "expected": {
+        "item": "yellow cake mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 tablespoons (1 1/2 Sticks)  butter (cut into 24 thin slices)",
+      "expected": {
+        "item": "butter (cut into 24 thin slices)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "stick"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

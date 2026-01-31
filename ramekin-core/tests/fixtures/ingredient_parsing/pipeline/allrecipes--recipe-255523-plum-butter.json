@@ -1,0 +1,53 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-255523-plum-butter",
+  "ingredients": [
+    {
+      "raw": "4.5 pounds plums, pitted and diced",
+      "expected": {
+        "item": "plums",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2041",
+            "unit": "g"
+          }
+        ],
+        "note": "pitted and diced"
+      }
+    },
+    {
+      "raw": "0.25 cup water, or as needed",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "or as needed"
+      }
+    },
+    {
+      "raw": "1 cup white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

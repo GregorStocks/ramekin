@@ -1,0 +1,142 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "acorn-squash-breakfast-pudding",
+  "ingredients": [
+    {
+      "raw": "1 acorn squash",
+      "expected": {
+        "item": "acorn squash",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 stale baguette, cubed, about 4 cups",
+      "expected": {
+        "item": "stale baguette, cubed, about 4 cups",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup cream",
+      "expected": {
+        "item": "cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 spicy Italian sausages, removed from casings",
+      "expected": {
+        "item": "spicy Italian sausages, removed from casings",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded cheddar",
+      "expected": {
+        "item": "shredded cheddar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "red pepper flakes, optional",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

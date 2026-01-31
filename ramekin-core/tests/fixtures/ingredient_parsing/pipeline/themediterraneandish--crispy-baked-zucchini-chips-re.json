@@ -1,0 +1,56 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "crispy-baked-zucchini-chips-re",
+  "ingredients": [
+    {
+      "raw": "1 tzatziki sauce recipe",
+      "expected": {
+        "item": "tzatziki sauce recipe",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 zucchini squash, sliced into 1/8-inch rounds using a mandoline",
+      "expected": {
+        "item": "zucchini squash",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced into 1/8-inch rounds using a mandoline"
+      }
+    },
+    {
+      "raw": "Kosher Salt",
+      "expected": {
+        "item": "Kosher Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Private Reserve Greek extra virgin olive oil",
+      "expected": {
+        "item": "Private Reserve Greek extra virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Harissa spice blend",
+      "expected": {
+        "item": "Harissa spice blend",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

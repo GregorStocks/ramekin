@@ -1,0 +1,160 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "pesto-pasta-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups fresh basil",
+      "expected": {
+        "item": "fresh basil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 Tablespoons pine nuts ((toasted))",
+      "expected": {
+        "item": "pine nuts",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "4-5 Tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ Tablespoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup parmesan cheese",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salted Water",
+      "expected": {
+        "item": "Salted Water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 ounces bucatini spaghetti ((or your preferred pasta))",
+      "expected": {
+        "item": "bucatini spaghetti (or your preferred pasta)",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons toasted pine nuts",
+      "expected": {
+        "item": "toasted pine nuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Baby tomatoes, fresh basil, parmesan cheese, etc. ((optional garnishes))",
+      "expected": {
+        "item": "Baby tomatoes, fresh basil, parmesan cheese, etc.",
+        "measurements": [],
+        "note": "optional garnishes"
+      }
+    }
+  ]
+}

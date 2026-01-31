@@ -1,0 +1,69 @@
+{
+  "source": "howsweeteats",
+  "recipe_slug": "2024-02-non-alcoholic-blood-or",
+  "ingredients": [
+    {
+      "raw": "3 ounces fresh blood orange juice",
+      "expected": {
+        "item": "fresh blood orange juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  fresh jalapeño slices, (or more or less, depending on your tolerance)",
+      "expected": {
+        "item": "fresh jalapeño slices",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "or more or less, depending on your tolerance"
+      }
+    },
+    {
+      "raw": "lime seltzer, (to top off the drink)",
+      "expected": {
+        "item": "lime seltzer, (to top off the drink)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "lime wedges, (for garnish)",
+      "expected": {
+        "item": "lime wedges",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

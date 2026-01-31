@@ -1,0 +1,48 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-french-omelette",
+  "ingredients": [
+    {
+      "raw": "3 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter, unsalted",
+      "expected": {
+        "item": "butter, unsalted",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh chive, to serve",
+      "expected": {
+        "item": "fresh chive, to serve",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

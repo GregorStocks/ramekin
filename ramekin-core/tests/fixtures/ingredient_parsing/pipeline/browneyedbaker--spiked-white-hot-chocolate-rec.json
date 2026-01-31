@@ -1,0 +1,78 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "spiked-white-hot-chocolate-rec",
+  "ingredients": [
+    {
+      "raw": "6 tablespoons Ghiradelli Sweet Ground White Chocolate",
+      "expected": {
+        "item": "Ghiradelli Sweet Ground White Chocolate",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces whipped cream vodka ((2 shots ))",
+      "expected": {
+        "item": "whipped cream vodka",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  candy canes (crushed, plus more for garnish)",
+      "expected": {
+        "item": "candy canes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "crushed, plus more for garnish"
+      }
+    },
+    {
+      "raw": "24 ounces steamed or warmed milk",
+      "expected": {
+        "item": "steamed or warmed milk",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "oz"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Whipped cream",
+      "expected": {
+        "item": "Whipped cream",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

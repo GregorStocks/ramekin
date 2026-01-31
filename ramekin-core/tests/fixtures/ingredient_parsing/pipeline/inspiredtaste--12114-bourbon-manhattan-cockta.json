@@ -1,0 +1,69 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "12114-bourbon-manhattan-cockta",
+  "ingredients": [
+    {
+      "raw": "2 ½ ounces bourbon whiskey",
+      "expected": {
+        "item": "bourbon whiskey",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce sweet vermouth",
+      "expected": {
+        "item": "sweet vermouth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3 dashes aromatic bitters, we use Angostura",
+      "expected": {
+        "item": "aromatic bitters, we use Angostura",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Maraschino cherry, for garnish",
+      "expected": {
+        "item": "Maraschino cherry",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "Orange peel, for garnish",
+      "expected": {
+        "item": "Orange peel",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

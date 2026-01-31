@@ -1,0 +1,100 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "miso-salmon-recipe",
+  "ingredients": [
+    {
+      "raw": "12 oz. (two 6-oz./170g) salmon filets",
+      "expected": {
+        "item": "(two 6-oz./170g) salmon filets",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons white miso paste",
+      "expected": {
+        "item": "white miso paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon sake",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon brown sugar (, or to taste)",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon sesame oil (, optional)",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "sliced green onions for garnish ((optional))",
+      "expected": {
+        "item": "sliced green onions for garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "negroni-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "1 oz. Gin",
+      "expected": {
+        "item": "Gin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 oz. Campari",
+      "expected": {
+        "item": "Campari",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 oz. Sweet Vermouth",
+      "expected": {
+        "item": "Sweet Vermouth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "(optional) Simple Syrup (, to taste)",
+      "expected": {
+        "item": "Simple Syrup (, to taste)",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1  Orange Peel",
+      "expected": {
+        "item": "Orange Peel",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

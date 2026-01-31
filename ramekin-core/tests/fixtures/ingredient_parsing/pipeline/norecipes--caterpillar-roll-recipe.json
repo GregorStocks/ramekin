@@ -1,0 +1,110 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "caterpillar-roll-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sake",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup evaporated cane sugar",
+      "expected": {
+        "item": "evaporated cane sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 batch prepared sushi rice",
+      "expected": {
+        "item": "batch prepared sushi rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 packs unagi ((cut into 1/2 inch strips))",
+      "expected": {
+        "item": "packs unagi (cut into 1/2 inch strips)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  avocados ((halved, peeled, pitted and sliced))",
+      "expected": {
+        "item": "avocados",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "halved, peeled, pitted and sliced"
+      }
+    },
+    {
+      "raw": "1  hot house cucumbers ((seeds removed with a spoon and julienned))",
+      "expected": {
+        "item": "hot house cucumbers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeds removed with a spoon and julienned"
+      }
+    },
+    {
+      "raw": "1 pack unseasoned nori",
+      "expected": {
+        "item": "pack unseasoned nori",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

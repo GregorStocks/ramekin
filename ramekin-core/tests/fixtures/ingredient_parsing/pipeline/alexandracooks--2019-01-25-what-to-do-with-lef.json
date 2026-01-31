@@ -1,0 +1,110 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2019-01-25-what-to-do-with-lef",
+  "ingredients": [
+    {
+      "raw": "1/4 cup finely minced shallots",
+      "expected": {
+        "item": "finely minced shallots",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup white balsamic vinegar, I like Colavita brand",
+      "expected": {
+        "item": "white balsamic vinegar, I like Colavita brand",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup extra virgin olive oil, plus more to taste",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "a mix of greens, whatever you like: arugula, endive (thinly sliced), kale (thinly sliced), etc",
+      "expected": {
+        "item": "a mix of greens, whatever you like: arugula, endive, kale (thinly sliced), etc",
+        "measurements": [],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "leftover roasted chicken, shredded",
+      "expected": {
+        "item": "leftover roasted chicken",
+        "measurements": [],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "shaved parmesan or Manchego, optional",
+      "expected": {
+        "item": "shaved parmesan or Manchego",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "toasted pine nuts or other toasted nuts",
+      "expected": {
+        "item": "toasted pine nuts or other toasted nuts",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "orange segments or diced apple or pear, optional",
+      "expected": {
+        "item": "orange segments or diced apple or pear",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "freshly cracked pepper, to taste",
+      "expected": {
+        "item": "freshly cracked pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

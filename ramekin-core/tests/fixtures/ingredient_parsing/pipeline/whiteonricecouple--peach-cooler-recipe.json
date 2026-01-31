@@ -1,0 +1,99 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "peach-cooler-recipe",
+  "ingredients": [
+    {
+      "raw": "1 medium ripe Peach",
+      "expected": {
+        "item": "ripe Peach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup fresh Orange Juice",
+      "expected": {
+        "item": "fresh Orange Juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon Sugar (, or to taste)",
+      "expected": {
+        "item": "Sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 Tablespoons Gin or Vodka ((1 ounce) , optional)",
+      "expected": {
+        "item": "Gin or Vodka",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "optional)"
+      }
+    },
+    {
+      "raw": "optional - dash of peach bitters&nbsp;",
+      "expected": {
+        "item": "optional - dash of peach bitters",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Club Soda",
+      "expected": {
+        "item": "Club Soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

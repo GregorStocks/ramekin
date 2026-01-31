@@ -1,0 +1,61 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "italian-cream-soda-recipe",
+  "ingredients": [
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup club soda",
+      "expected": {
+        "item": "club soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons Torani chocolate syrup (or flavor of your choice)",
+      "expected": {
+        "item": "Torani chocolate syrup (or flavor of your choice)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons half-and-half",
+      "expected": {
+        "item": "half-and-half",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Whipped cream for topping (optional)",
+      "expected": {
+        "item": "Whipped cream for topping",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

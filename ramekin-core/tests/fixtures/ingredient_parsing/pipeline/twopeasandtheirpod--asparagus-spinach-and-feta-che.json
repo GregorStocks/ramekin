@@ -1,0 +1,122 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "asparagus-spinach-and-feta-che",
+  "ingredients": [
+    {
+      "raw": "6  egg whites",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic (finely chopped)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "6  asparagus spears (tough ends removed and cut into 1 inch pieces)",
+      "expected": {
+        "item": "asparagus spears (tough ends removed and cut into 1 inch pieces)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh spinach (chopped)",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2  green onions (sliced)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1/4 cup feta cheese",
+      "expected": {
+        "item": "feta cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper (to taste)",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

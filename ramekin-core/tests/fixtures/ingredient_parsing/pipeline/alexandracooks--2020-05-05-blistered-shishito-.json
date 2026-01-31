@@ -1,0 +1,95 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2020-05-05-blistered-shishito-",
+  "ingredients": [
+    {
+      "raw": "1 avocado",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons Greek yogurt",
+      "expected": {
+        "item": "Greek yogurt",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 tablespoons fresh lime juice, plus more to taste",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "flaky sea salt, such as Maldon, to taste",
+      "expected": {
+        "item": "flaky sea salt, such as Maldon",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Aleppo pepper, if you have it, see notes above",
+      "expected": {
+        "item": "Aleppo pepper, if you have it, see notes above",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz shishito peppers",
+      "expected": {
+        "item": "shishito peppers",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "source": "keviniscooking",
+  "recipe_slug": "serrano-hot-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "20  serrano peppers (stems removed)",
+      "expected": {
+        "item": "serrano peppers (stems removed)",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  large tomatillos (husks removed and washed)",
+      "expected": {
+        "item": "tomatillos",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "husks removed and washed"
+      }
+    },
+    {
+      "raw": "12 cloves garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

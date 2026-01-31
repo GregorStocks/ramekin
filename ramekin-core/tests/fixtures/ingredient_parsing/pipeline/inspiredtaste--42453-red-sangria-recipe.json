@@ -1,0 +1,118 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "42453-red-sangria-recipe",
+  "ingredients": [
+    {
+      "raw": "1 (750ml) bottle of dry red wine, see notes below for suggestions",
+      "expected": {
+        "item": "dry red wine, see notes below for suggestions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "750",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) brandy",
+      "expected": {
+        "item": "brandy",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium oranges",
+      "expected": {
+        "item": "oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 to 5 tablespoons brown sugar or sweetener of choice, see notes",
+      "expected": {
+        "item": "brown sugar or sweetener of choice, see notes",
+        "measurements": [
+          {
+            "amount": "3 to 5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups sliced seasonal fruit (apple, pear, strawberries, peaches or a combination)",
+      "expected": {
+        "item": "sliced seasonal fruit",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "apple, pear, strawberries, peaches or a combination"
+      }
+    },
+    {
+      "raw": "1 cinnamon stick",
+      "expected": {
+        "item": "cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bottle sparkling water, chilled, optional",
+      "expected": {
+        "item": "sparkling water, chilled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

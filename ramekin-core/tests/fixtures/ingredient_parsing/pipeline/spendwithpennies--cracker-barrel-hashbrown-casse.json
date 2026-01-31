@@ -1,0 +1,117 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "cracker-barrel-hashbrown-casse",
+  "ingredients": [
+    {
+      "raw": "32 ounces frozen shredded hash browns (thawed)",
+      "expected": {
+        "item": "frozen shredded hash browns",
+        "measurements": [
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "½  cup melted butter",
+      "expected": {
+        "item": "melted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10.5 ounces condensed cream of chicken soup (1 can, or cream of cheddar)",
+      "expected": {
+        "item": "condensed cream of chicken soup",
+        "measurements": [
+          {
+            "amount": "10.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "298",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 ounces sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½  cup finely diced onion",
+      "expected": {
+        "item": "finely diced onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups shredded Colby cheese (divided, or cheddar cheese)",
+      "expected": {
+        "item": "shredded Colby cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided, or cheddar cheese"
+      }
+    },
+    {
+      "raw": "¼ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

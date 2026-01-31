@@ -1,0 +1,74 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2017-07-caramel-coffee-milksha",
+  "ingredients": [
+    {
+      "raw": "1 pint (16 ounces) vanilla ice cream, softened slightly",
+      "expected": {
+        "item": "vanilla ice cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "softened slightly"
+      }
+    },
+    {
+      "raw": "2/3 cup GEVALIA Caramel Cold Brew Iced Coffee Concentrate, chilled",
+      "expected": {
+        "item": "GEVALIA Caramel Cold Brew Iced Coffee Concentrate",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "chilled"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "whipped cream and caramel sauce, optional, for garnish",
+      "expected": {
+        "item": "whipped cream and caramel sauce, optional",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

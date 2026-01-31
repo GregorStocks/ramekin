@@ -1,0 +1,113 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "classic-bread-stuffing-recipe",
+  "ingredients": [
+    {
+      "raw": "8 ounces butter ((1 cup ))",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup chopped onion",
+      "expected": {
+        "item": "chopped onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup pine nuts",
+      "expected": {
+        "item": "pine nuts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 to 8 cups fresh bread crumbs",
+      "expected": {
+        "item": "fresh bread crumbs",
+        "measurements": [
+          {
+            "amount": "6 to 8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon minced fresh sage leaves (or 1 teaspoon dried)",
+      "expected": {
+        "item": "minced fresh sage leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 1 teaspoon dried"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup chopped scallion",
+      "expected": {
+        "item": "chopped scallion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup chopped fresh parsley leaves",
+      "expected": {
+        "item": "chopped fresh parsley leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

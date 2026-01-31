@@ -1,0 +1,49 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-white-russian-recipe",
+  "ingredients": [
+    {
+      "raw": "2 oz chilled vodka",
+      "expected": {
+        "item": "chilled vodka",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp Kahlúa or other coffee liqueur",
+      "expected": {
+        "item": "Kahlúa or other coffee liqueur",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp light cream",
+      "expected": {
+        "item": "light cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

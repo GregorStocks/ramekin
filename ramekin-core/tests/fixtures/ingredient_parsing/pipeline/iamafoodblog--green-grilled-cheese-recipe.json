@@ -1,0 +1,118 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "green-grilled-cheese-recipe",
+  "ingredients": [
+    {
+      "raw": "oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 leek, cleaned, trimmed and sliced",
+      "expected": {
+        "item": "leek, cleaned",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "trimmed and sliced"
+      }
+    },
+    {
+      "raw": "1 clove garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2-3 cups fresh spinach",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons butter, at room temperature",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "2 slices bread of choice",
+      "expected": {
+        "item": "bread of choice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons pesto",
+      "expected": {
+        "item": "pesto",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup shredded Fontina and white cheddar",
+      "expected": {
+        "item": "shredded Fontina and white cheddar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 avocado, sliced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    }
+  ]
+}

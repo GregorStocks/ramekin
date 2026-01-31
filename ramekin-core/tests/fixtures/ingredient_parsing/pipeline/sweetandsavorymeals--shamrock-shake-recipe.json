@@ -1,0 +1,112 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "shamrock-shake-recipe",
+  "ingredients": [
+    {
+      "raw": "6 cups vanilla ice cream",
+      "expected": {
+        "item": "vanilla ice cream",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon pure mint extract",
+      "expected": {
+        "item": "pure mint extract",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon mint green food coloring (or more)",
+      "expected": {
+        "item": "mint green food coloring",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more"
+      }
+    },
+    {
+      "raw": "10  Oreos (crushed)",
+      "expected": {
+        "item": "Oreos",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "crushed"
+      }
+    },
+    {
+      "raw": "Whipped cream",
+      "expected": {
+        "item": "Whipped cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Green sanding",
+      "expected": {
+        "item": "Green sanding",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Maraschino cherries",
+      "expected": {
+        "item": "Maraschino cherries",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "homemade-cranberry-sauce-recip",
+  "ingredients": [
+    {
+      "raw": "12 ounces fresh cranberries (rinsed and dried)",
+      "expected": {
+        "item": "fresh cranberries",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and dried"
+      }
+    },
+    {
+      "raw": "1¾ cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "350",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Granny Smith apple (peeled, cored and finely chopped)",
+      "expected": {
+        "item": "Granny Smith apple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled, cored and finely chopped"
+      }
+    },
+    {
+      "raw": "Grated zest and juice of 1 orange",
+      "expected": {
+        "item": "Grated zest and juice of 1 orange",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Grated zest and juice of 1 lemon",
+      "expected": {
+        "item": "Grated zest and juice of 1 lemon",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

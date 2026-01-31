@@ -1,0 +1,79 @@
+{
+  "source": "bakerita",
+  "recipe_slug": "homemade-apple-syrup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups pure apple juice or apple cider, look for 100% apples, no additives or sweeteners",
+      "expected": {
+        "item": "pure apple juice or apple cider, look for 100% apples, no additives or sweeteners",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cinnamon sticks, optional",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "¼ teaspoon&nbsp;apple pie spice,&nbsp;optional and to taste",
+      "expected": {
+        "item": "apple pie spice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional and to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract, optional",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

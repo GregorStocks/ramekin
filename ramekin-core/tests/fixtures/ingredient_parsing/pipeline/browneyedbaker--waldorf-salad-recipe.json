@@ -1,0 +1,96 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "waldorf-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups cubed apples (peeled and cored)",
+      "expected": {
+        "item": "cubed apples",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "peeled and cored"
+      }
+    },
+    {
+      "raw": "1 cup halved red grapes",
+      "expected": {
+        "item": "halved red grapes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup chopped celery",
+      "expected": {
+        "item": "chopped celery",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup chopped walnuts",
+      "expected": {
+        "item": "chopped walnuts",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lettuce",
+      "expected": {
+        "item": "Lettuce",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

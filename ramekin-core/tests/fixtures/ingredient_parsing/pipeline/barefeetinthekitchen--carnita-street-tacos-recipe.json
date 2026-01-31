@@ -1,0 +1,114 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "carnita-street-tacos-recipe",
+  "ingredients": [
+    {
+      "raw": "12  small corn or flour tortillas",
+      "expected": {
+        "item": "corn or flour tortillas",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
+      "expected": {
+        "item": "Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups very thinly shredded green cabbage or iceberg lettuce",
+      "expected": {
+        "item": "very thinly shredded green cabbage or iceberg lettuce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  red onion (very thinly sliced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "very thinly sliced"
+      }
+    },
+    {
+      "raw": "1/2 cup crumbled cotija cheese",
+      "expected": {
+        "item": "crumbled cotija cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chopped fresh cilantro",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  limes (cut into wedges)",
+      "expected": {
+        "item": "limes (cut into wedges)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream (optional)",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

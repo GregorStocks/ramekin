@@ -1,0 +1,48 @@
+{
+  "source": "onmykidsplate",
+  "recipe_slug": "banana-popsicles-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
+      "expected": {
+        "item": "almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large banana",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sprinkles (optional)",
+      "expected": {
+        "item": "sprinkles",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "water (for sprinkles)",
+      "expected": {
+        "item": "water (for sprinkles)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

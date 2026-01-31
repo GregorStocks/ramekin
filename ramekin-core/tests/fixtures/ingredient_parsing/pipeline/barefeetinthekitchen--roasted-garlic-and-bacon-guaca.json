@@ -1,0 +1,131 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "roasted-garlic-and-bacon-guaca",
+  "ingredients": [
+    {
+      "raw": "1  head of garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  strips bacon (roughly chopped into 1/2\" pieces)",
+      "expected": {
+        "item": "strips bacon",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped into 1/2\" pieces"
+      }
+    },
+    {
+      "raw": "2 tablespoons sweet yellow onion (minced)",
+      "expected": {
+        "item": "sweet yellow onion",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3  avocados (pits removed)",
+      "expected": {
+        "item": "avocados (pits removed)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lime juice (about 1 lime's worth)",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  handful fresh cilantro (about 1/4 cup chopped small)",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": "about 1/4 cup chopped small"
+      }
+    },
+    {
+      "raw": "1/8 - 1/4 teaspoon kosher salt (adjust to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/8-1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    }
+  ]
+}

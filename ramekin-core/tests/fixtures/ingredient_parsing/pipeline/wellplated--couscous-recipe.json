@@ -1,0 +1,62 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "couscous-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup couscous",
+      "expected": {
+        "item": "couscous",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "173",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups water or vegetable or chicken broth",
+      "expected": {
+        "item": "water or vegetable or chicken broth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil or butter (optional)",
+      "expected": {
+        "item": "olive oil or butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Pinch kosher salt (optional; omit if using broth)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "optional; omit if using broth"
+      }
+    }
+  ]
+}

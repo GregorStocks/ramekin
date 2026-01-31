@@ -1,0 +1,109 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-7961766-spiked-party-pu",
+  "ingredients": [
+    {
+      "raw": "1 small lemon, halved and thinly sliced",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "halved and thinly sliced"
+      }
+    },
+    {
+      "raw": "0.5 cup raspberries",
+      "expected": {
+        "item": "raspberries",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cold water, plus more as needed",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "5 cups chilled seltzer",
+      "expected": {
+        "item": "chilled seltzer",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups 100%-juice cranberry-raspberry juice",
+      "expected": {
+        "item": "100%-juice cranberry-raspberry juice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (12 ounce) can frozen lemonade concentrate, thawed",
+      "expected": {
+        "item": "frozen lemonade concentrate",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1 cup vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

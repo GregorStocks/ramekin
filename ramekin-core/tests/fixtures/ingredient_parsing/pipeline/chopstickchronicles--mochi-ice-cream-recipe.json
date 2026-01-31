@@ -1,0 +1,71 @@
+{
+  "source": "chopstickchronicles",
+  "recipe_slug": "mochi-ice-cream-recipe",
+  "ingredients": [
+    {
+      "raw": "90 g Shiratamako",
+      "expected": {
+        "item": "Shiratamako",
+        "measurements": [
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "180 ml water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "180",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 g caster sugar",
+      "expected": {
+        "item": "caster sugar",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "80 g Katakuriko(potato starch)  (or corn starch)",
+      "expected": {
+        "item": "Katakuriko(potato starch)  (or corn starch)",
+        "measurements": [
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "300 g Ice cream of your choice",
+      "expected": {
+        "item": "Ice cream of your choice",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

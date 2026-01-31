@@ -1,0 +1,114 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "parsley-pesto-recipe",
+  "ingredients": [
+    {
+      "raw": "12 oz. dried Soba Noodles",
+      "expected": {
+        "item": "dried Soba Noodles",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup roughly chopped Italian Parsley ((flat leaf parsley))",
+      "expected": {
+        "item": "roughly chopped Italian Parsley (flat leaf parsley)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons Pine Nuts (, toasted *see head note)",
+      "expected": {
+        "item": "Pine Nuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "toasted *see head note"
+      }
+    },
+    {
+      "raw": "2 cloves Garlic",
+      "expected": {
+        "item": "Garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tablespoon fresh Lemon Juice",
+      "expected": {
+        "item": "fresh Lemon Juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tablespoon Sesame Oil",
+      "expected": {
+        "item": "Sesame Oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 Tablespoons Soy Sauce",
+      "expected": {
+        "item": "Soy Sauce",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons Grape Seed Oil (, or other neutral tasting oil)",
+      "expected": {
+        "item": "Grape Seed Oil (, or other neutral tasting oil)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

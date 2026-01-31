@@ -1,0 +1,70 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "strawberry-banana-smoothie-rec",
+  "ingredients": [
+    {
+      "raw": "2 cups fresh strawberries (hulled and cut in half)",
+      "expected": {
+        "item": "fresh strawberries (hulled and cut in half)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana (peeled and cut into large chunks)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut into large chunks"
+      }
+    },
+    {
+      "raw": "5 ounces plain Greek yogurt (or regular plain or vanilla)",
+      "expected": {
+        "item": "plain Greek yogurt (or regular plain or vanilla)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Honey (to taste)",
+      "expected": {
+        "item": "Honey",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/2 cup apple juice (or milk, more or less to taste)",
+      "expected": {
+        "item": "apple juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or milk, more or less to taste"
+      }
+    }
+  ]
+}

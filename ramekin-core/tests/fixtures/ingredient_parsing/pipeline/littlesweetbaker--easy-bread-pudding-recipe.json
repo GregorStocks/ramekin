@@ -1,0 +1,91 @@
+{
+  "source": "littlesweetbaker",
+  "recipe_slug": "easy-bread-pudding-recipe",
+  "ingredients": [
+    {
+      "raw": "600 g (1 loaf) stale cinnamon raisin bread (cubed and omit the end pieces)",
+      "expected": {
+        "item": "stale cinnamon raisin bread",
+        "measurements": [
+          {
+            "amount": "600",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "cubed and omit the end pieces"
+      }
+    },
+    {
+      "raw": "3 cups (750ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "750",
+            "unit": "ml"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (50g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

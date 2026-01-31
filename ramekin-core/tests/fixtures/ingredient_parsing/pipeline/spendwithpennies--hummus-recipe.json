@@ -1,0 +1,117 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "hummus-recipe",
+  "ingredients": [
+    {
+      "raw": "15 ounces canned chickpeas (also known as garbanzo beans, drained and rinsed)",
+      "expected": {
+        "item": "canned chickpeas",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "also known as garbanzo beans, drained and rinsed"
+      }
+    },
+    {
+      "raw": "2 ½ tablespoons tahini",
+      "expected": {
+        "item": "tahini",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "¼ teaspoon salt ( or to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "½  lemon (juiced, about 2 tablespoons)",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "olive oil (and parsley for garnish)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [],
+        "note": "and parsley for garnish"
+      }
+    }
+  ]
+}

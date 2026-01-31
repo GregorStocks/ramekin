@@ -1,0 +1,96 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "no-knead-pizza-dough-recipe",
+  "ingredients": [
+    {
+      "raw": "2-3/4 cups lukewarm water",
+      "expected": {
+        "item": "lukewarm water",
+        "measurements": [
+          {
+            "amount": "2-3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-1/2 tablespoon granulated yeast (2 packets)",
+      "expected": {
+        "item": "granulated yeast",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-1/2 tablespoons Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6-1/2 cups unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "6-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

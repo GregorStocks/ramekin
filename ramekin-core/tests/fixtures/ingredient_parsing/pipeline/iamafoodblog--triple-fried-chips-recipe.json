@@ -1,0 +1,40 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "triple-fried-chips-recipe",
+  "ingredients": [
+    {
+      "raw": "3-4 Maris Piper potatoes",
+      "expected": {
+        "item": "Maris Piper potatoes",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups of beef drippings",
+      "expected": {
+        "item": "beef drippings",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt to taste",
+      "expected": {
+        "item": "salt to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

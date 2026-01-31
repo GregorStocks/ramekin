@@ -1,0 +1,71 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-watermelon-radish-and-",
+  "ingredients": [
+    {
+      "raw": "4  watermelon radishes",
+      "expected": {
+        "item": "watermelon radishes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large cucumber",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups microgreens",
+      "expected": {
+        "item": "microgreens",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp black lava salt",
+      "expected": {
+        "item": "black lava salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  recipe lemon vinaigrette",
+      "expected": {
+        "item": "recipe lemon vinaigrette",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

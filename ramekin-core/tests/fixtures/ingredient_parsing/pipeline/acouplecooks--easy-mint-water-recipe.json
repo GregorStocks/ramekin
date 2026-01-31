@@ -1,0 +1,53 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "easy-mint-water-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup fresh mint leaves, loosely packed, plus additional sprigs for garnish",
+      "expected": {
+        "item": "fresh mint leaves, loosely packed",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus additional sprigs for garnish"
+      }
+    },
+    {
+      "raw": "1 cup boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 cups (64 ounces) cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "oz"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

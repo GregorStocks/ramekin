@@ -1,0 +1,214 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "cranberry-trifle-recipe",
+  "ingredients": [
+    {
+      "raw": "24 ounces fresh cranberries (2 packages)",
+      "expected": {
+        "item": "fresh cranberries",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "package"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½  cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  cinnamon stick",
+      "expected": {
+        "item": "cinnamon stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ⅓ cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "267",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼  teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ½ cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1102",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "9  egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14.25 ounces white cake mix (1 box, baked, cooled and cubed)",
+      "expected": {
+        "item": "white cake mix",
+        "measurements": [
+          {
+            "amount": "14.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "404",
+            "unit": "g"
+          }
+        ],
+        "note": "1 box, baked, cooled and cubed"
+      }
+    },
+    {
+      "raw": "whipped cream (for decorating )",
+      "expected": {
+        "item": "whipped cream (for decorating",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sugared Cranberries ( for decorating)",
+      "expected": {
+        "item": "Sugared Cranberries ( for decorating)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

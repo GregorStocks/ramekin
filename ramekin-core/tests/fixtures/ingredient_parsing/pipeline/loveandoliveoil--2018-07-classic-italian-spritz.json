@@ -1,0 +1,56 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2018-07-classic-italian-spritz",
+  "ingredients": [
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces prosecco (or sparkling wine of your choice)",
+      "expected": {
+        "item": "prosecco (or sparkling wine of your choice)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce aperitif (such as Aperol or Campari)",
+      "expected": {
+        "item": "aperitif (such as Aperol or Campari)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "club soda or sparkling water (optional, to taste)",
+      "expected": {
+        "item": "club soda or sparkling water",
+        "measurements": [],
+        "note": "optional, to taste"
+      }
+    }
+  ]
+}

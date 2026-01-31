@@ -1,0 +1,178 @@
+{
+  "source": "gimmesomeoven",
+  "recipe_slug": "potato-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "5 slices bacon, diced",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "slice"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3 tablespoons (reserved) bacon grease or butter",
+      "expected": {
+        "item": "(reserved) bacon grease or butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup&nbsp;diced&nbsp;white or yellow onion",
+      "expected": {
+        "item": "diced white or yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic, peeled and minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and minced"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups chicken stock or vegetable stock",
+      "expected": {
+        "item": "chicken stock or vegetable stock",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups&nbsp;milk, warmed",
+      "expected": {
+        "item": "milk, warmed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 pounds Yukon gold potatoes,&nbsp;diced",
+      "expected": {
+        "item": "Yukon gold potatoes",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 cup shredded sharp cheddar cheese",
+      "expected": {
+        "item": "shredded sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup&nbsp;plain Greek yogurt or sour cream",
+      "expected": {
+        "item": "plain Greek yogurt or sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon&nbsp;sea salt, or more to taste",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly-cracked black pepper",
+      "expected": {
+        "item": "freshly-cracked black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional toppings: thinly-sliced green onions or chives, extra shredded cheese, extra bacon, sour cream",
+      "expected": {
+        "item": "optional toppings: thinly-sliced green onions or chives, extra shredded cheese, extra bacon, sour cream",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

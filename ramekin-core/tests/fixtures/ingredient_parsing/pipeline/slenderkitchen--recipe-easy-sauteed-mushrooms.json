@@ -1,0 +1,100 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-easy-sauteed-mushrooms",
+  "ingredients": [
+    {
+      "raw": "1 lb baby bella mushrooms, sliced (or other white or brown mushroom)",
+      "expected": {
+        "item": "baby bella mushrooms",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced (or other white or brown mushroom)"
+      }
+    },
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp butter (or ghee)",
+      "expected": {
+        "item": "butter (or ghee)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp low sodium soy sauce (or coconut aminos or balsamic vinegar)",
+      "expected": {
+        "item": "low sodium soy sauce (or coconut aminos or balsamic vinegar)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp fresh thyme, chopped (optional)",
+      "expected": {
+        "item": "fresh thyme, chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

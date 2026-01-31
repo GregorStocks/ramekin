@@ -1,0 +1,82 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "french-75-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ounce gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce simple syrup",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces champagne",
+      "expected": {
+        "item": "champagne",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon curls",
+      "expected": {
+        "item": "Lemon curls",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

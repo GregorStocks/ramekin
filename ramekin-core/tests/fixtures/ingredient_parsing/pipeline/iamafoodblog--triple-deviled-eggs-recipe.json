@@ -1,0 +1,86 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "triple-deviled-eggs-recipe",
+  "ingredients": [
+    {
+      "raw": "4 hard boiled eggs, peeled, chilled and cut in half",
+      "expected": {
+        "item": "hard boiled eggs, peeled",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "chilled and cut in half"
+      }
+    },
+    {
+      "raw": "2 tablespoons Japanese mayonnaise",
+      "expected": {
+        "item": "Japanese mayonnaise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon tobiko (small fish eggs)",
+      "expected": {
+        "item": "tobiko",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sriracha (optional)",
+      "expected": {
+        "item": "sriracha",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 tablespoon ikura (big fish eggs)",
+      "expected": {
+        "item": "ikura (big fish eggs)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "seaweed strips for garnish",
+      "expected": {
+        "item": "seaweed strips for garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "best-easy-prime-rib-recipe",
+  "ingredients": [
+    {
+      "raw": "4 ½ lb boneless prime rib (at room temperature)",
+      "expected": {
+        "item": "boneless prime rib",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "2041",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "flaky sea salt (to taste)",
+      "expected": {
+        "item": "flaky sea salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1  large brown or white onion (peeled and sliced into half moons)",
+      "expected": {
+        "item": "brown or white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and sliced into half moons"
+      }
+    }
+  ]
+}

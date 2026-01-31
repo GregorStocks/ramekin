@@ -1,0 +1,75 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "coconut-cream-bars-recipe",
+  "ingredients": [
+    {
+      "raw": "100 grams dried unsweetened shredded coconut ((~2 cups))",
+      "expected": {
+        "item": "dried unsweetened shredded coconut",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 tablespoons coconut cream",
+      "expected": {
+        "item": "coconut cream",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 grams almonds ((roughly chopped))",
+      "expected": {
+        "item": "almonds",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "150 grams bittersweet chocolate",
+      "expected": {
+        "item": "bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons coconut cream",
+      "expected": {
+        "item": "coconut cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

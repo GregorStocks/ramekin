@@ -1,0 +1,52 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "brown-sugar-bacon-ice-cream-sa",
+  "ingredients": [
+    {
+      "raw": "8 slices of bacon, chopped as finely as possible",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": "chopped as finely as possible"
+      }
+    },
+    {
+      "raw": "4 tablespoons brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "wafers or cookies of your choice",
+      "expected": {
+        "item": "wafers or cookies of your choice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice cream of your choice, slightly softened (I used vanilla)",
+      "expected": {
+        "item": "ice cream of your choice",
+        "measurements": [],
+        "note": "slightly softened (I used vanilla)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "dorayaki-recipe",
+  "ingredients": [
+    {
+      "raw": "2  eggs (room temperature)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "70 g sugar (white granulated)",
+      "expected": {
+        "item": "sugar (white granulated)",
+        "measurements": [
+          {
+            "amount": "70",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ tbsp honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ tsp salt (fine sea salt preferred)",
+      "expected": {
+        "item": "salt (fine sea salt preferred)",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "120 g cake flour (low-protein, substitute with all-purpose)",
+      "expected": {
+        "item": "cake flour (low-protein, substitute with all-purpose)",
+        "measurements": [
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp cooking oil (for batter, flavorless neutral oil like vegetable, canola, rice bran works best)",
+      "expected": {
+        "item": "cooking oil (for batter, flavorless neutral oil like vegetable, canola, rice bran works best)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp water (room temperature)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "cooking oil (for frying)",
+      "expected": {
+        "item": "cooking oil (for frying)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "300 g red bean paste (anko)",
+      "expected": {
+        "item": "red bean paste (anko)",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

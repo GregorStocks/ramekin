@@ -1,0 +1,122 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "oatmeal-smoothie-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup old-fashioned oats or quick oats",
+      "expected": {
+        "item": "old-fashioned oats or quick oats",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana (chopped into chunks and frozen)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped into chunks and frozen"
+      }
+    },
+    {
+      "raw": "1/2 cup unsweetened almond milk",
+      "expected": {
+        "item": "unsweetened almond milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon creamy peanut butter",
+      "expected": {
+        "item": "creamy peanut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon pure maple syrup (plus additional to taste)",
+      "expected": {
+        "item": "pure maple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "9.8",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon kosher salt (don’t skip this, as it makes the oatmeal pop!)",
+      "expected": {
+        "item": "kosher salt (don’t skip this, as it makes the oatmeal pop!)",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice (optional, add at the end if you want a thicker smoothie)",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": "optional, add at the end if you want a thicker smoothie"
+      }
+    }
+  ]
+}

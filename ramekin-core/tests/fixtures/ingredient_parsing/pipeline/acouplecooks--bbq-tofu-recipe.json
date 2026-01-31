@@ -1,0 +1,79 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "bbq-tofu-recipe",
+  "ingredients": [
+    {
+      "raw": "14-ounces firm or extra firm tofu*",
+      "expected": {
+        "item": "-ounces firm or extra firm tofu*",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons neutral oil",
+      "expected": {
+        "item": "neutral oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup BBQ sauce",
+      "expected": {
+        "item": "BBQ sauce",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon chili garlic sauce, if desired",
+      "expected": {
+        "item": "chili garlic sauce, if desired",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

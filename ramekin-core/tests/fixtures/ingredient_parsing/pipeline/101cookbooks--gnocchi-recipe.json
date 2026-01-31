@@ -1,0 +1,57 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "gnocchi-recipe",
+  "ingredients": [
+    {
+      "raw": "Scant 2 pounds of starchy potatoes, (2 large russets)",
+      "expected": {
+        "item": "starchy potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "scant lb"
+          },
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup egg, (lightly beaten)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "lightly beaten"
+      }
+    },
+    {
+      "raw": "scant 1 cup of unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "scant cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

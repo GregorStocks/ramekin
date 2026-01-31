@@ -1,0 +1,95 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtomakemayonnaiseina",
+  "ingredients": [
+    {
+      "raw": "1 whole egg or 1 egg yolk",
+      "expected": {
+        "item": "whole egg or 1 egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Dijon mustard, or 1/2 teaspoon dry mustard powder",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/2 teaspoon dry mustard powder"
+      }
+    },
+    {
+      "raw": "1 tablespoon white or red wine vinegar",
+      "expected": {
+        "item": "white or red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon water, if using only an egg yolk",
+      "expected": {
+        "item": "water, if using only an egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup neutral oil (like vegetable, grapeseed, or canola)",
+      "expected": {
+        "item": "neutral oil (like vegetable, grapeseed, or canola)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "A dew dashes of Tabasco, optional",
+      "expected": {
+        "item": "A dew dashes of Tabasco",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Salt to taste",
+      "expected": {
+        "item": "Salt to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper to taste (optional; I don’t bother)",
+      "expected": {
+        "item": "Freshly ground black pepper to taste",
+        "measurements": [],
+        "note": "optional; I don’t bother"
+      }
+    }
+  ]
+}

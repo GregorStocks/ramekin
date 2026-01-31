@@ -1,0 +1,182 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-tuna-and-potato-salad",
+  "ingredients": [
+    {
+      "raw": "2 Yukon Gold potatoes, peeled and cut into 1/2-inch pieces",
+      "expected": {
+        "item": "Yukon Gold potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch pieces"
+      }
+    },
+    {
+      "raw": "1 medium carrot, peeled and cut into 1/4-inch pieces",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and cut into 1/4-inch pieces"
+      }
+    },
+    {
+      "raw": "1/2 cup frozen baby peas",
+      "expected": {
+        "item": "frozen baby peas",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup plus 2 tablespoons mayonnaise",
+      "expected": {
+        "item": "1/4 cup plus 2 tablespoons mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 tablespoons mayonnaise"
+      }
+    },
+    {
+      "raw": "2 tablespoons crème fraîche",
+      "expected": {
+        "item": "crème fraîche",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground pepper",
+      "expected": {
+        "item": "Salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely chopped flat-leaf parsley",
+      "expected": {
+        "item": "coarsely chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons snipped chives",
+      "expected": {
+        "item": "snipped chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "One 6-ounce can or jar solid white tuna in olive oil, preferably Spanish or Italian, drained and flaked",
+      "expected": {
+        "item": "or jar solid white tuna in olive oil, preferably Spanish or Italian",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "6-ounce can"
+          }
+        ],
+        "note": "drained and flaked"
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces baby arugula (4 cups)",
+      "expected": {
+        "item": "baby arugula",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

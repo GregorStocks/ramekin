@@ -1,0 +1,101 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8048382-the-best-mango-",
+  "ingredients": [
+    {
+      "raw": "4 cups kale, stemmed and roughly chopped",
+      "expected": {
+        "item": "kale",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "84",
+            "unit": "g"
+          }
+        ],
+        "note": "stemmed and roughly chopped"
+      }
+    },
+    {
+      "raw": "2 cups frozen mango chunks, thawed slightly (see Tip)",
+      "expected": {
+        "item": "frozen mango chunks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed slightly (see Tip)"
+      }
+    },
+    {
+      "raw": "1 cup frozen unsweetened seedless passion fruit cubes",
+      "expected": {
+        "item": "frozen unsweetened seedless passion fruit cubes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup whole-milk plain yogurt",
+      "expected": {
+        "item": "whole-milk plain yogurt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Medjool dates, pitted",
+      "expected": {
+        "item": "Medjool dates, pitted",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 sprig fresh cilantro (optional)",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "sprig"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

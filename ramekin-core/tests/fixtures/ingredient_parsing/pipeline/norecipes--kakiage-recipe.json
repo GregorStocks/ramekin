@@ -1,0 +1,92 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "kakiage-recipe",
+  "ingredients": [
+    {
+      "raw": "160 grams onions ((1 small onion, sliced))",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "160",
+            "unit": "g"
+          }
+        ],
+        "note": "1 small onion, sliced"
+      }
+    },
+    {
+      "raw": "90 grams carrots ((1 small carrot, julienned))",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": "1 small carrot, julienned"
+      }
+    },
+    {
+      "raw": "70 grams burdock root ((1/3 root julienned))",
+      "expected": {
+        "item": "burdock root",
+        "measurements": [
+          {
+            "amount": "70",
+            "unit": "g"
+          }
+        ],
+        "note": "1/3 root julienned"
+      }
+    },
+    {
+      "raw": "10 grams mitsuba ((1 small bunch))",
+      "expected": {
+        "item": "mitsuba",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "80 grams all-purpose flour ((about 2/3 cup))",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "80",
+            "unit": "g"
+          },
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup club soda ((cold))",
+      "expected": {
+        "item": "club soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "cold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "dragon-fruit-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1  dragon fruit (, chilled)",
+      "expected": {
+        "item": "dragon fruit",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chilled"
+      }
+    },
+    {
+      "raw": "1 cup chopped fresh fruit of choice ((apple, grape, stone fruit, etc.))",
+      "expected": {
+        "item": "chopped fresh fruit of choice (apple, grape, stone fruit, etc.)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup torn lettuce leaves ((optional))",
+      "expected": {
+        "item": "torn lettuce leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh mint leaves (, thinly sliced (optional))",
+      "expected": {
+        "item": "fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "thinly sliced (optional"
+      }
+    },
+    {
+      "raw": "1 tablespoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

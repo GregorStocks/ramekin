@@ -1,0 +1,49 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-jalapeno-poppers",
+  "ingredients": [
+    {
+      "raw": "4 jalapeñoes",
+      "expected": {
+        "item": "jalapeñoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 slices bacon",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    }
+  ]
+}

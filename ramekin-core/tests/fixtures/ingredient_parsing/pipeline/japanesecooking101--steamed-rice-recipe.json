@@ -1,0 +1,32 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "steamed-rice-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup short grain rice",
+      "expected": {
+        "item": "short grain rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

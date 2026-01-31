@@ -1,0 +1,125 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-sausage-and-potatoes-s",
+  "ingredients": [
+    {
+      "raw": "4-6  smoked sausages (such as kielbasa)",
+      "expected": {
+        "item": "smoked sausages (such as kielbasa)",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ pounds baby potatoes (halved or whole if they&amp;#39;re small)",
+      "expected": {
+        "item": "baby potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "halved or whole if they're small"
+      }
+    },
+    {
+      "raw": "3 medium bell peppers (1 each red, green and yellow)",
+      "expected": {
+        "item": "bell peppers",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium red onions (quartered)",
+      "expected": {
+        "item": "red onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Italian seasoning",
+      "expected": {
+        "item": "Italian seasoning",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "fresh parsley (chopped, for garnish)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [],
+        "note": "chopped, for garnish"
+      }
+    }
+  ]
+}

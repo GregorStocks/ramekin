@@ -1,0 +1,105 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "sweet-potato-fries-recipe",
+  "ingredients": [
+    {
+      "raw": "3 medium-large sweet potatoes ((approximately 2.5 pounds))",
+      "expected": {
+        "item": "medium-large sweet potatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "approximately 2.5 pounds"
+      }
+    },
+    {
+      "raw": "4 teaspoon cornstarch (divided)",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 teaspoon salt (divided)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon onion powder (divided)",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder (divided)",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon sweet paprika (divided)",
+      "expected": {
+        "item": "sweet paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

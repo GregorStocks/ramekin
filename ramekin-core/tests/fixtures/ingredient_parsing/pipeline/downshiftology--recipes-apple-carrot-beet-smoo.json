@@ -1,0 +1,84 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-apple-carrot-beet-smoo",
+  "ingredients": [
+    {
+      "raw": "1  red beet (medium, trimmed, cut into 2-inch chunks)",
+      "expected": {
+        "item": "red beet",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "medium, trimmed, cut into 2-inch chunks"
+      }
+    },
+    {
+      "raw": "1  apple (any variety, cut into 2-inch chunks)",
+      "expected": {
+        "item": "apple (any variety, cut into 2-inch chunks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  carrots (ends trimmed, cut into 2-inch chunks)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "ends trimmed, cut into 2-inch chunks"
+      }
+    },
+    {
+      "raw": "1  orange (juiced)",
+      "expected": {
+        "item": "orange (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 2-inch piece fresh ginger (peeled)",
+      "expected": {
+        "item": "2-inch piece fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1 cup cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

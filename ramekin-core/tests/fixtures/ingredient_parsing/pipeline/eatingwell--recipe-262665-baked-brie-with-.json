@@ -1,0 +1,78 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-262665-baked-brie-with-",
+  "ingredients": [
+    {
+      "raw": "1 sheet frozen puff pastry (about 8 1/2 ounces), thawed",
+      "expected": {
+        "item": "sheet frozen puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "241",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1 4- to 6-inch round Brie cheese (8 ounces), cold",
+      "expected": {
+        "item": "4- to 6-inch round Brie cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "cold"
+      }
+    },
+    {
+      "raw": "3 tablespoons raspberry or red currant jam",
+      "expected": {
+        "item": "raspberry or red currant jam",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "somen-cold-noodle-recipe",
+  "ingredients": [
+    {
+      "raw": "2 bunches somen noodles",
+      "expected": {
+        "item": "somen noodles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "ice water",
+      "expected": {
+        "item": "ice water",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  green onion (thinly sliced)",
+      "expected": {
+        "item": "green onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "ginger root (grated)",
+      "expected": {
+        "item": "ginger root",
+        "measurements": [],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1/4 cup Men-Tsuyu (dipping sauce)",
+      "expected": {
+        "item": "Men-Tsuyu (dipping sauce)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

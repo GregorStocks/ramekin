@@ -1,0 +1,138 @@
+{
+  "source": "howsweeteats",
+  "recipe_slug": "2024-11-honeynut-squash-soup",
+  "ingredients": [
+    {
+      "raw": "4 slices bacon, (diced)",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 tablespoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon chipotle chili powder",
+      "expected": {
+        "item": "chipotle chili powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  sweet onion, (diced)",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "4  garlic cloves, (minced)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "kosher salt and pepper",
+      "expected": {
+        "item": "kosher salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 to 5 cups honeynut squash cubes",
+      "expected": {
+        "item": "honeynut squash cubes",
+        "measurements": [
+          {
+            "amount": "4 to 5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups chicken stock",
+      "expected": {
+        "item": "chicken stock",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cup cream",
+      "expected": {
+        "item": "cream",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "buttered popcorn",
+      "expected": {
+        "item": "buttered popcorn",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sliced green onions",
+      "expected": {
+        "item": "sliced green onions",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

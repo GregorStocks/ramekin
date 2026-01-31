@@ -1,0 +1,40 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "microwave-brown-bag-popcorn-re",
+  "ingredients": [
+    {
+      "raw": "1/2 cup popcorn kernels",
+      "expected": {
+        "item": "popcorn kernels",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon canola or vegetable oil",
+      "expected": {
+        "item": "canola or vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt to taste",
+      "expected": {
+        "item": "Kosher salt to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

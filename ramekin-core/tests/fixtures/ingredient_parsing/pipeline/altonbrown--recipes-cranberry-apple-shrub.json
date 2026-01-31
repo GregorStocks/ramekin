@@ -1,0 +1,126 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-cranberry-apple-shrub",
+  "ingredients": [
+    {
+      "raw": "1 medium Fuji apple, seeded and cubed",
+      "expected": {
+        "item": "Fuji apple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "seeded and cubed"
+      }
+    },
+    {
+      "raw": "1 1/2 cups cranberries&nbsp;",
+      "expected": {
+        "item": "cranberries",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "158",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups apple cider vinegar&nbsp;",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15  sage leaves&nbsp;",
+      "expected": {
+        "item": "sage leaves",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (4- to 5-inch) rosemary sprigs, needles only&nbsp;",
+      "expected": {
+        "item": "rosemary sprigs, needles only",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup turbinado sugar&nbsp;",
+      "expected": {
+        "item": "turbinado sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  &nbsp;lemon, rind only, scraped clean of pith&nbsp;",
+      "expected": {
+        "item": "lemon, rind only, scraped clean of pith",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  orange, rind only, scraped clean of pith&nbsp;",
+      "expected": {
+        "item": "orange, rind only, scraped clean of pith",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Prosecco, other sparkling wine or seltzer, for serving",
+      "expected": {
+        "item": "Prosecco, other sparkling wine or seltzer",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

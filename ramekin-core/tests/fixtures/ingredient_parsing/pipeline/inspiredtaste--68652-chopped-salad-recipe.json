@@ -1,0 +1,160 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "68652-chopped-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 head romaine lettuce, rinsed, patted or spun dry, and chopped",
+      "expected": {
+        "item": "romaine lettuce, rinsed, patted or spun dry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "and chopped"
+      }
+    },
+    {
+      "raw": "1 bunch green onions, chopped",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 ounces thin sliced salami, cut into ribbons",
+      "expected": {
+        "item": "thin sliced salami, cut into ribbons",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pint cherry tomatoes, halved, about 2 cups",
+      "expected": {
+        "item": "cherry tomatoes, halved, about 2 cups",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (2.25oz) can sliced black olives, drained",
+      "expected": {
+        "item": "sliced black olives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "2.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1/2 cup feta cheese, blue cheese, or fresh mozzarella cheese",
+      "expected": {
+        "item": "feta cheese, blue cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or fresh mozzarella cheese"
+      }
+    },
+    {
+      "raw": "1 tablespoon whole grain mustard or Dijon mustard",
+      "expected": {
+        "item": "whole grain mustard or Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tablespoons red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper, to taste",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

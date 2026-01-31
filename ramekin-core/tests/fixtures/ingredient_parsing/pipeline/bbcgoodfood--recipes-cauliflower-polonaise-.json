@@ -1,0 +1,122 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-cauliflower-polonaise-",
+  "ingredients": [
+    {
+      "raw": "1 cauliflower",
+      "expected": {
+        "item": "cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "a good knob of butter (about the size of a large walnut)",
+      "expected": {
+        "item": "a good knob of butter (about the size of a large walnut)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion chopped",
+      "expected": {
+        "item": "onion chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1l milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "l"
+          },
+          {
+            "amount": "1036",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "142ml  pot single cream",
+      "expected": {
+        "item": "pot single cream",
+        "measurements": [
+          {
+            "amount": "142",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  medium eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3-4 slices thick-cut  white bread crusts removed",
+      "expected": {
+        "item": "thick-cut white bread crusts removed",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 good knobs butter",
+      "expected": {
+        "item": "knobs butter",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "good"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 heaped tbsp  chopped curly parsley",
+      "expected": {
+        "item": "chopped curly parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaped tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

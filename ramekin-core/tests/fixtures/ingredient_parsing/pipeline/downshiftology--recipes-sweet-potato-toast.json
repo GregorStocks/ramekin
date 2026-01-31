@@ -1,0 +1,104 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-sweet-potato-toast",
+  "ingredients": [
+    {
+      "raw": "1  sweet potato",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  avocado (peeled and sliced)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced"
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  cucumber (peeled and sliced)",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced"
+      }
+    },
+    {
+      "raw": "5 oz package smoked salmon",
+      "expected": {
+        "item": "package smoked salmon",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp avocado oil",
+      "expected": {
+        "item": "avocado oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "dill (for garnishment)",
+      "expected": {
+        "item": "dill",
+        "measurements": [],
+        "note": "for garnishment"
+      }
+    }
+  ]
+}

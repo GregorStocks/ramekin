@@ -1,0 +1,105 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "mango-pineapple-ice-cream-reci",
+  "ingredients": [
+    {
+      "raw": "1 14-ounce can pineapple tidbits, drained",
+      "expected": {
+        "item": "pineapple tidbits",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 14-ounce can diced mangoes, drained",
+      "expected": {
+        "item": "diced mangoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "3/4 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

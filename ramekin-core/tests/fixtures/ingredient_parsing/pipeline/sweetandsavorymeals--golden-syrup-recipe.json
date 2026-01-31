@@ -1,0 +1,62 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "golden-syrup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 3/4 cup granulated white sugar (divided)",
+      "expected": {
+        "item": "granulated white sugar",
+        "measurements": [
+          {
+            "amount": "2 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1/4 cup water (room temperature)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "1 ½ cup boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

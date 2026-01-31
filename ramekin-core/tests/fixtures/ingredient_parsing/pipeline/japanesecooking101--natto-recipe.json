@@ -1,0 +1,87 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "natto-recipe",
+  "ingredients": [
+    {
+      "raw": "1  package Natto",
+      "expected": {
+        "item": "Natto",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp green onions (chopped)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 Tbsp Katsuobushi dried bonito flakes",
+      "expected": {
+        "item": "Katsuobushi dried bonito flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Japanese yellow mustard",
+      "expected": {
+        "item": "Japanese yellow mustard",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  Shiso leaves (thinly sliced, if you have them)",
+      "expected": {
+        "item": "Shiso leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced, if you have them"
+      }
+    },
+    {
+      "raw": "Steamed Rice",
+      "expected": {
+        "item": "Steamed Rice",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

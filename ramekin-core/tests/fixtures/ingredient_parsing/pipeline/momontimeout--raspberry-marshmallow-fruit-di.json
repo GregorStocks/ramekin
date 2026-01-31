@@ -1,0 +1,57 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "raspberry-marshmallow-fruit-di",
+  "ingredients": [
+    {
+      "raw": "7 oz marshmallow creme (1 jar)",
+      "expected": {
+        "item": "marshmallow creme",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz light cream cheese",
+      "expected": {
+        "item": "light cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup raspberry preserves  (or your favorite flavor)",
+      "expected": {
+        "item": "raspberry preserves  (or your favorite flavor)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

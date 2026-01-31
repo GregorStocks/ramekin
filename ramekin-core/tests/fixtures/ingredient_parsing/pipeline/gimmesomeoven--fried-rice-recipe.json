@@ -1,0 +1,161 @@
+{
+  "source": "gimmesomeoven",
+  "recipe_slug": "fried-rice-recipe",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons butter, divided",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 large eggs, whisked",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "whisked"
+      }
+    },
+    {
+      "raw": "2 medium carrots, peeled and diced",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "1 small white onion,&nbsp;diced",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1/2 cup frozen peas",
+      "expected": {
+        "item": "frozen peas",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "salt and black pepper",
+      "expected": {
+        "item": "salt and black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups cooked and chilled rice (I prefer short-grain white rice)",
+      "expected": {
+        "item": "cooked and chilled rice (I prefer short-grain white rice)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 green onions, thinly sliced",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "3-4 tablespoons&nbsp;soy sauce, or more to taste",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "2 teaspoons&nbsp;oyster sauce&nbsp;(optional)",
+      "expected": {
+        "item": "oyster sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/2 teaspoons&nbsp;toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

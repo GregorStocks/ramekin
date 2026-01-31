@@ -1,0 +1,97 @@
+{
+  "source": "chefspencil",
+  "recipe_slug": "zebra-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "300 g chocolate graham crackers ((or European chocolate digestive biscuits))",
+      "expected": {
+        "item": "chocolate graham crackers (or European chocolate digestive biscuits)",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100 g cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 g gelatin sheets",
+      "expected": {
+        "item": "gelatin sheets",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100 ml water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  egg whites from medium eggs",
+      "expected": {
+        "item": "egg whites from medium eggs",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "250 g caster sugar",
+      "expected": {
+        "item": "caster sugar",
+        "measurements": [
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "20 g cocoa powder",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

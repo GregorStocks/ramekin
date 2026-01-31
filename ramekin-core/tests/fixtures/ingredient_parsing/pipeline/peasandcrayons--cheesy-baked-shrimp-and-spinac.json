@@ -1,0 +1,177 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "cheesy-baked-shrimp-and-spinac",
+  "ingredients": [
+    {
+      "raw": "9 oz frozen chopped spinach (thawed)",
+      "expected": {
+        "item": "frozen chopped spinach",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "9 oz frozen creamed spinach (thawed)",
+      "expected": {
+        "item": "frozen creamed spinach",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "8-10 oz shrimp (thawed if frozen)",
+      "expected": {
+        "item": "shrimp",
+        "measurements": [
+          {
+            "amount": "8-10",
+            "unit": "oz"
+          },
+          {
+            "amount": "227-283",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed if frozen"
+      }
+    },
+    {
+      "raw": "1 TBSP oil or butter",
+      "expected": {
+        "item": "oil or butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup onion (diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 cloves garlic (smashed and minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "smashed and minced"
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz Havarti cheese (freshly grated)",
+      "expected": {
+        "item": "Havarti cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "freshly grated"
+      }
+    },
+    {
+      "raw": "4 oz cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup freshly grated Parmesan cheese",
+      "expected": {
+        "item": "freshly grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/8 tsp red pepper flakes (optional)",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

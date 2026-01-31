@@ -1,0 +1,100 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "11686-bananas-foster-shortcake",
+  "ingredients": [
+    {
+      "raw": "4 biscuits, from frozen, refrigerated, or homemade biscuits",
+      "expected": {
+        "item": "biscuits, from frozen, refrigerated, or homemade biscuits",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 tablespoons unsalted butter (113 g)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup packed brown sugar (100 g)",
+      "expected": {
+        "item": "packed brown sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 bananas, peeled and sliced",
+      "expected": {
+        "item": "bananas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced"
+      }
+    },
+    {
+      "raw": "4 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Homemade whipped cream, for serving",
+      "expected": {
+        "item": "Homemade whipped cream",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

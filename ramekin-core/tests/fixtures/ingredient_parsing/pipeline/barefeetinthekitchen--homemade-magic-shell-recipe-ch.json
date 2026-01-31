@@ -1,0 +1,32 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "homemade-magic-shell-recipe-ch",
+  "ingredients": [
+    {
+      "raw": "1/2 cup semi-sweet or bittersweet chocolate chips",
+      "expected": {
+        "item": "semi-sweet or bittersweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons coconut oil (see note)",
+      "expected": {
+        "item": "coconut oil (see note)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

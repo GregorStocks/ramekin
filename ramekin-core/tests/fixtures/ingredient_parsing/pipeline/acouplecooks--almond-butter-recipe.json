@@ -1,0 +1,56 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "almond-butter-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups raw almonds*",
+      "expected": {
+        "item": "raw almonds*",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional add ins: 1/2 teaspoon vanilla extract (or seeds from 1 vanilla bean), 1/4 teaspoon cinnamon",
+      "expected": {
+        "item": "Optional add ins: 1/2 teaspoon vanilla extract (or seeds from 1 vanilla bean), 1/4 teaspoon cinnamon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Other ideas: Chai Spices&nbsp;or Pumpkin Spices, to taste",
+      "expected": {
+        "item": "Other ideas: Chai Spices or Pumpkin Spices",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Grapeseed or canola oil (optional)",
+      "expected": {
+        "item": "Grapeseed or canola oil",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

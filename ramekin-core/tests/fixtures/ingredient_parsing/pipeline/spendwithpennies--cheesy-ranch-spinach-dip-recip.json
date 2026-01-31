@@ -1,0 +1,131 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "cheesy-ranch-spinach-dip-recip",
+  "ingredients": [
+    {
+      "raw": "2 bunches fresh spinach (washed)",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bunch"
+          }
+        ],
+        "note": "washed"
+      }
+    },
+    {
+      "raw": "8 ounces cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup sliced green onions",
+      "expected": {
+        "item": "sliced green onions",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup diced red bell pepper",
+      "expected": {
+        "item": "diced red bell pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 packet Hidden Valley Ranch Mix",
+      "expected": {
+        "item": "packet Hidden Valley Ranch Mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups shredded mozzarella cheese (divided)",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "¼ cup shredded Parmesan cheese",
+      "expected": {
+        "item": "shredded Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

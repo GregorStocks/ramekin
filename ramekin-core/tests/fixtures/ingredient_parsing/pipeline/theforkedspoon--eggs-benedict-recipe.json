@@ -1,0 +1,101 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "eggs-benedict-recipe",
+  "ingredients": [
+    {
+      "raw": "3  English Muffins (each sliced in half)",
+      "expected": {
+        "item": "English Muffins",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "each sliced in half"
+      }
+    },
+    {
+      "raw": "6 slices Canadian Bacon",
+      "expected": {
+        "item": "Canadian Bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon distilled vinegar",
+      "expected": {
+        "item": "distilled vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup hollandaise sauce (freshly made)",
+      "expected": {
+        "item": "hollandaise sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly made"
+      }
+    }
+  ]
+}

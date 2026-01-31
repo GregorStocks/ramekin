@@ -1,0 +1,300 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-jamaican-black-cake",
+  "ingredients": [
+    {
+      "raw": "0.75 cup pitted prunes (about 14-16 prunes depending on size)",
+      "expected": {
+        "item": "pitted prunes",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "14-16",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.75 cup raisins (8 ounces)",
+      "expected": {
+        "item": "raisins",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.75 cup dried currants (3 1/2 ounces)",
+      "expected": {
+        "item": "dried currants",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "3 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.75 cup dried unsweetened cherries (3 1/2 ounces)",
+      "expected": {
+        "item": "dried unsweetened cherries",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "3 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.5 cups white rum, divided",
+      "expected": {
+        "item": "white rum",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1.5 cups Manischewitz wine",
+      "expected": {
+        "item": "Manischewitz wine",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (2 sticks) unsalted butter, softened, plus more for pans",
+      "expected": {
+        "item": "unsalted butter, softened",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for pans"
+      }
+    },
+    {
+      "raw": "2.5 cups dark brown sugar (1 pound)",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons finely grated lime zest (from 1 lime)",
+      "expected": {
+        "item": "finely grated lime zest (from 1 lime)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon pure almond extract",
+      "expected": {
+        "item": "pure almond extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 cups unbleached all-purpose flour, plus more for cake pans (7 ounces)",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for cake pans"
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon ground allspice",
+      "expected": {
+        "item": "ground allspice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 plus 1 tablespoon dark unsulfured molasses",
+      "expected": {
+        "item": "0.25 plus 1 tablespoon dark unsulfured molasses",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": null
+          }
+        ],
+        "note": "plus 1 tablespoon dark unsulfured molasses"
+      }
+    },
+    {
+      "raw": "0.25 cup raw sliced almonds (1 ounce)",
+      "expected": {
+        "item": "raw sliced almonds",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

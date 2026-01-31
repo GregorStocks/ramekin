@@ -1,0 +1,178 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "butternut-squash-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons (30ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 medium onion (, diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "8 ounces (225g) sliced mushrooms",
+      "expected": {
+        "item": "sliced mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium  butternut squash ((@ 1.25 lbs or 570g), peeled, seeded and cubed into 1-inch sized pieces)",
+      "expected": {
+        "item": "butternut squash, peeled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "570",
+            "unit": "g"
+          }
+        ],
+        "note": "seeded and cubed into 1-inch sized pieces)"
+      }
+    },
+    {
+      "raw": "about 10 sprigs Italian parsley",
+      "expected": {
+        "item": "about 10 sprigs Italian parsley",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups vegetable or chicken stock",
+      "expected": {
+        "item": "vegetable or chicken stock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt (, to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) heavy cream, optional",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1-2 teaspoons (5-10ml) truffled olive oil, (optional) (or to taste (plus more for drizzling))",
+      "expected": {
+        "item": "truffled olive oil (or to taste (plus more for drizzling)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "fresh cracked black pepper (, to taste)",
+      "expected": {
+        "item": "fresh cracked black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "chopped Italian parsley leaves (, for garnish)",
+      "expected": {
+        "item": "chopped Italian parsley leaves",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "sour cream or crème fraîche (, for garnish - optional)",
+      "expected": {
+        "item": "sour cream or crème fraîche",
+        "measurements": [],
+        "note": "for garnish - optional"
+      }
+    }
+  ]
+}

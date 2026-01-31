@@ -1,0 +1,32 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-258225-basic-quinoa",
+  "ingredients": [
+    {
+      "raw": "2 cups water or broth",
+      "expected": {
+        "item": "water or broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup quinoa",
+      "expected": {
+        "item": "quinoa",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

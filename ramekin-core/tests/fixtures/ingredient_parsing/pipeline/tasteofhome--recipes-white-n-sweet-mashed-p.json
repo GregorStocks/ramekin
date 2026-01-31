@@ -1,0 +1,109 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-white-n-sweet-mashed-p",
+  "ingredients": [
+    {
+      "raw": "1-1/2 pounds russet potatoes (about 4 medium), peeled and cubed",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and cubed"
+      }
+    },
+    {
+      "raw": "1-1/2 pounds sweet potatoes (about 4 medium), peeled and cubed",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and cubed"
+      }
+    },
+    {
+      "raw": "1 cup milk, warmed",
+      "expected": {
+        "item": "milk, warmed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup butter, cubed",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

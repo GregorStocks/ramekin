@@ -1,0 +1,69 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-265890-whole-wheat-sour",
+  "ingredients": [
+    {
+      "raw": "4.3333334922791 cups whole-wheat flour (1 pound, 6 ounces), divided, plus more as needed for feeding",
+      "expected": {
+        "item": "whole-wheat flour, divided",
+        "measurements": [
+          {
+            "amount": "4.3333334922791",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more as needed for feeding"
+      }
+    },
+    {
+      "raw": "2.5 cups warm water (85 degrees F), divided, plus more as needed for feeding",
+      "expected": {
+        "item": "warm water, divided",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": null
+          }
+        ],
+        "note": "plus more as needed for feeding"
+      }
+    },
+    {
+      "raw": "2/3 cup plus 2 tablespoons all-purpose flour (4 ounces), divided, plus more as needed for feeding",
+      "expected": {
+        "item": "plus 2 tablespoons all-purpose flour, divided",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more as needed for feeding"
+      }
+    }
+  ]
+}

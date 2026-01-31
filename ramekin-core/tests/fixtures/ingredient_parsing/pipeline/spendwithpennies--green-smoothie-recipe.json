@@ -1,0 +1,96 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "green-smoothie-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup plain yogurt (or Greek)",
+      "expected": {
+        "item": "plain yogurt (or Greek)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups chopped kale",
+      "expected": {
+        "item": "chopped kale",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup pineapple chunks",
+      "expected": {
+        "item": "pineapple chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon flax seeds",
+      "expected": {
+        "item": "flax seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "honey (to taste, optional)",
+      "expected": {
+        "item": "honey",
+        "measurements": [],
+        "note": "to taste, optional"
+      }
+    }
+  ]
+}

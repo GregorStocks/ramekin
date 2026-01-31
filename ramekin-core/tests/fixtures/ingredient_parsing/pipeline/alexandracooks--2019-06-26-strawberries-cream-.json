@@ -1,0 +1,40 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2019-06-26-strawberries-cream-",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons of cream",
+      "expected": {
+        "item": "cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "a handful of fresh berries: raspberries, strawberries, blackberries, blueberries — any fresh, local berries you can get your hands on; a mix of berries is nice, too",
+      "expected": {
+        "item": "a handful of fresh berries: raspberries, strawberries, blackberries, blueberries - any fresh, local berries you can get your hands on; a mix of berries is nice, too",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sugar or to taste",
+      "expected": {
+        "item": "sugar or to taste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

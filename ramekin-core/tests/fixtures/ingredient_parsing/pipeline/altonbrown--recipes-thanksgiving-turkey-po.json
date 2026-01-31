@@ -1,0 +1,353 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-thanksgiving-turkey-po",
+  "ingredients": [
+    {
+      "raw": "5 slices hearty white bread, cut into 1/2-inch cubes",
+      "expected": {
+        "item": "hearty white bread, cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 tablespoons unsalted butter, divided",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, diced and divided (1 1/2 cups)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced and divided"
+      }
+    },
+    {
+      "raw": "4 medium celery stalks, sliced into 1/4-inch rounds, divided (2 cups)",
+      "expected": {
+        "item": "celery stalks, sliced into 1/4-inch rounds",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon rubbed sage",
+      "expected": {
+        "item": "rubbed sage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons plus 1/2 teaspoon kosher salt, divided",
+      "expected": {
+        "item": "2 tablespoons plus 1/2 teaspoon kosher salt, divided",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 1/2 teaspoon kosher salt, divided"
+      }
+    },
+    {
+      "raw": "1 3/4 teaspoon freshly ground black pepper, divided",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 3/4 cups unsalted chicken stock, divided",
+      "expected": {
+        "item": "unsalted chicken stock",
+        "measurements": [
+          {
+            "amount": "2 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 large egg, plus 1 egg yolk, divided",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "plus 1 egg yolk, divided"
+      }
+    },
+    {
+      "raw": "2 tablespoons vegetable oil, divided",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3/4 pound boneless, skinless turkey thighs or breasts, cut into 1/2-inch cubes",
+      "expected": {
+        "item": "boneless, skinless turkey thighs or breasts, cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces cremini mushrooms, cut into 1/4-inch-thick slices (1 1/2 cups)",
+      "expected": {
+        "item": "cremini mushrooms, cut into 1/4-inch-thick slices",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium carrot, peeled and cut into 1/4-inch-thick rounds (1/3 cup)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "peeled and cut into 1/4-inch-thick rounds"
+      }
+    },
+    {
+      "raw": "1 clove garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh sage",
+      "expected": {
+        "item": "chopped fresh sage",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon chopped fresh thyme",
+      "expected": {
+        "item": "chopped fresh thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 fluid ounces dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup 2 percent milk, at room temperature",
+      "expected": {
+        "item": "2 percent milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "4 ounces frozen peas",
+      "expected": {
+        "item": "frozen peas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds (about 3 medium) russet potatoes, peeled and cut into 1/2-inch dice",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch dice"
+      }
+    },
+    {
+      "raw": "1/2 cup half and half",
+      "expected": {
+        "item": "half and half",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

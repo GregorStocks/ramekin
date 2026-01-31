@@ -1,0 +1,139 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "zaru-udon-recipe",
+  "ingredients": [
+    {
+      "raw": "200 ml dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 portions udon noodles (fresh, frozen, or dried)",
+      "expected": {
+        "item": "portions udon noodles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "fresh, frozen, or dried"
+      }
+    },
+    {
+      "raw": "kizami nori (shredded nori) (optional garnish)",
+      "expected": {
+        "item": "kizami nori (optional garnish)",
+        "measurements": [],
+        "note": "shredded nori"
+      }
+    },
+    {
+      "raw": "1 tsp wasabi paste",
+      "expected": {
+        "item": "wasabi paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp ginger root (grated)",
+      "expected": {
+        "item": "ginger root",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.0",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "2 tbsp tempura flakes (tenkasu) (store-bought or homemade)",
+      "expected": {
+        "item": "tempura flakes (tenkasu) (store-bought or homemade)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp finely chopped green onions",
+      "expected": {
+        "item": "finely chopped green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

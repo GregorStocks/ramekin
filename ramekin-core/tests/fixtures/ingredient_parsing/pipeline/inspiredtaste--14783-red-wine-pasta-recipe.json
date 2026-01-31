@@ -1,0 +1,112 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "14783-red-wine-pasta-recipe",
+  "ingredients": [
+    {
+      "raw": "3&nbsp;tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound thin spaghetti",
+      "expected": {
+        "item": "thin spaghetti",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups dry red wine such as Chianti or zinfandel (about 3/4 bottle)",
+      "expected": {
+        "item": "dry red wine such as Chianti or zinfandel",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "3/4",
+            "unit": "bottle"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and fresh ground pepper",
+      "expected": {
+        "item": "Salt and fresh ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup pistachios, toasted and roughly chopped",
+      "expected": {
+        "item": "pistachios",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasted and roughly chopped"
+      }
+    },
+    {
+      "raw": "Parmigiano-Reggiano cheese, for serving",
+      "expected": {
+        "item": "Parmigiano-Reggiano cheese",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

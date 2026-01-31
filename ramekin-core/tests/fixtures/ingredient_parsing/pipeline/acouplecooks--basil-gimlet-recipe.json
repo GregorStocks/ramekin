@@ -1,0 +1,82 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "basil-gimlet-recipe",
+  "ingredients": [
+    {
+      "raw": "3 fresh basil leaves, plus more for a garnish",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "plus more for a garnish"
+      }
+    },
+    {
+      "raw": "2 ounces (4 tablespoons) gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce (1 tablespoon) lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce (1 tablespoon) simple syrup or maple syrup",
+      "expected": {
+        "item": "simple syrup or maple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

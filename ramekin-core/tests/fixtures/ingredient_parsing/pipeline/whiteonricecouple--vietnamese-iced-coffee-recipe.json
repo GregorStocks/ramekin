@@ -1,0 +1,48 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "vietnamese-iced-coffee-recipe",
+  "ingredients": [
+    {
+      "raw": "2 Tablespoons Sweetened Condensed Milk  (*See Note 1)",
+      "expected": {
+        "item": "Sweetened Condensed Milk  (*See Note 1)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 Tablespoons coarse ground Coffee ((use a roast suitable for espresso, the grind the same as for a french press))",
+      "expected": {
+        "item": "coarse ground Coffee (use a roast suitable for espresso, the grind the same as for a french press)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot Water ((almost to a boil))",
+      "expected": {
+        "item": "Hot Water (almost to a boil)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

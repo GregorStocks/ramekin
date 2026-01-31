@@ -1,0 +1,105 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "seaweed-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "½ oz dried seaweed salad mix ((about 1 handful))",
+      "expected": {
+        "item": "dried seaweed salad mix",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "handful"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp miso ((I use koji miso or awase miso; you can use your favorite type))",
+      "expected": {
+        "item": "miso (I use koji miso or awase miso; you can use your favorite type)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp rice vinegar (unseasoned)",
+      "expected": {
+        "item": "rice vinegar (unseasoned)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp mirin",
+      "expected": {
+        "item": "mirin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp toasted white sesame seeds ((plus more for garnish))",
+      "expected": {
+        "item": "toasted white sesame seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-beef-carpaccio",
+  "ingredients": [
+    {
+      "raw": "1 (8- to 10-ounce) beef tenderloin, from the tip end of the roast",
+      "expected": {
+        "item": "beef tenderloin, from the tip end of the roast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 handfuls  arugula or other mixed greens",
+      "expected": {
+        "item": "arugula or other mixed greens",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Your favorite vinaigrette",
+      "expected": {
+        "item": "Your favorite vinaigrette",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt, to taste",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper, to taste",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Shaved Parmesan cheese",
+      "expected": {
+        "item": "Shaved Parmesan cheese",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "quick-and-easy-carmelitas-reci",
+  "ingredients": [
+    {
+      "raw": "30 oz refrigerated chocolate chip cookie dough (1 roll)",
+      "expected": {
+        "item": "refrigerated chocolate chip cookie dough",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "850",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "11 oz KRAFT caramels (1 bag)",
+      "expected": {
+        "item": "KRAFT caramels",
+        "measurements": [
+          {
+            "amount": "11",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "312",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup evaporated milk",
+      "expected": {
+        "item": "evaporated milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup semi-sweet chocolate chips",
+      "expected": {
+        "item": "semi-sweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

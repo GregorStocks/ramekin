@@ -1,0 +1,131 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "cucumber-feta-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "2  English Cucumber (sliced into rings)",
+      "expected": {
+        "item": "English Cucumber",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced into rings"
+      }
+    },
+    {
+      "raw": "1  small/medium red onion (thinly sliced)",
+      "expected": {
+        "item": "small/medium red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1  bell pepper (any color, sliced into strips)",
+      "expected": {
+        "item": "bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "any color, sliced into strips"
+      }
+    },
+    {
+      "raw": "1/2 cup Feta Cheese (or to taste)",
+      "expected": {
+        "item": "Feta Cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "2 Tbsp Extra Virgin Olive Oil",
+      "expected": {
+        "item": "Extra Virgin Olive Oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp Balsamic Vinegar",
+      "expected": {
+        "item": "Balsamic Vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2- 1 tsp salt (or to taste)",
+      "expected": {
+        "item": "/2- 1 tsp salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1/8 tsp black pepper (or to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    }
+  ]
+}

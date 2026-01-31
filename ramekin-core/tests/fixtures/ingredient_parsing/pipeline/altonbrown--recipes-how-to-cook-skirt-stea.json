@@ -1,0 +1,36 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-how-to-cook-skirt-stea",
+  "ingredients": [
+    {
+      "raw": "2 pounds inside skirt steak, cut into three equal pieces",
+      "expected": {
+        "item": "inside skirt steak, cut into three equal pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-five-spice-beef-black-",
+  "ingredients": [
+    {
+      "raw": "2 tsp Chinese five-spice powder",
+      "expected": {
+        "item": "Chinese five-spice powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large sirloin steak (about 300g/10oz)",
+      "expected": {
+        "item": "sirloin steak",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "300",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 heads bok choi or pak choi, halved",
+      "expected": {
+        "item": "bok choi or pak choi",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "head"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "1 tsp sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g sachet black bean sauce",
+      "expected": {
+        "item": "sachet black bean sauce",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves finely minced",
+      "expected": {
+        "item": "garlic cloves finely minced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small piece fresh root ginger finely minced",
+      "expected": {
+        "item": "piece fresh root ginger finely minced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp rice wine vinegar",
+      "expected": {
+        "item": "rice wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

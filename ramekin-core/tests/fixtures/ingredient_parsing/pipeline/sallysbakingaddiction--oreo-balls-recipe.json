@@ -1,0 +1,78 @@
+{
+  "source": "sallysbakingaddiction",
+  "recipe_slug": "oreo-balls-recipe",
+  "ingredients": [
+    {
+      "raw": "36 (14.3oz/405g) regular Oreo cookies (not Double-Stuf)",
+      "expected": {
+        "item": "regular Oreo cookies (not Double-Stuf)",
+        "measurements": [
+          {
+            "amount": "36",
+            "unit": null
+          },
+          {
+            "amount": "14.3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces (226g) full-fat brick cream cheese, softened to room temperature",
+      "expected": {
+        "item": "full-fat brick cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "softened to room temperature"
+      }
+    },
+    {
+      "raw": "12 ounces (339g) semi-sweet or white chocolate, coarsely chopped",
+      "expected": {
+        "item": "semi-sweet or white chocolate",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "339",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vegetable oil or coconut oil",
+      "expected": {
+        "item": "vegetable oil or coconut oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional for garnish: sprinkles, Oreo crumbs, additional melted chocolate",
+      "expected": {
+        "item": "optional for garnish: sprinkles, Oreo crumbs",
+        "measurements": [],
+        "note": "additional melted chocolate"
+      }
+    }
+  ]
+}

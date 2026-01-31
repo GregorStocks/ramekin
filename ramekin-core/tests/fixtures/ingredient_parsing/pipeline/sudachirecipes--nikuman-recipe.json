@@ -1,0 +1,403 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "nikuman-recipe",
+  "ingredients": [
+    {
+      "raw": "100 g cake flour",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 g bread flour",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ½ tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp instant dry yeast",
+      "expected": {
+        "item": "instant dry yeast",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 ml water (lukewarm)",
+      "expected": {
+        "item": "water (lukewarm)",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "25 ml milk (whole milk)",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "25",
+            "unit": "ml"
+          },
+          {
+            "amount": "26",
+            "unit": "g"
+          }
+        ],
+        "note": "whole milk"
+      }
+    },
+    {
+      "raw": "100 g ground pork",
+      "expected": {
+        "item": "ground pork",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp lard",
+      "expected": {
+        "item": "lard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 g onion (finely diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "50 g canned bamboo shoots (finely diced)",
+      "expected": {
+        "item": "canned bamboo shoots",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "30 g fresh shiitake mushroom (finely diced)",
+      "expected": {
+        "item": "fresh shiitake mushroom",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "15 g boiled wood ear mushroom (diced)",
+      "expected": {
+        "item": "boiled wood ear mushroom",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 tsp grated ginger root (or ginger paste)",
+      "expected": {
+        "item": "grated ginger root (or ginger paste)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp grated garlic (or garlic paste)",
+      "expected": {
+        "item": "grated garlic (or garlic paste)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tbsp Japanese soy sauce (koikuchi shoyu)",
+      "expected": {
+        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp oyster sauce",
+      "expected": {
+        "item": "oyster sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp yellow miso paste (awase) (awase)",
+      "expected": {
+        "item": "yellow miso paste (awase) (awase)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tbsp toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp Japanese black vinegar (kurozu)",
+      "expected": {
+        "item": "Japanese black vinegar (kurozu)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tbsp sake",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pinch ground white pepper",
+      "expected": {
+        "item": "ground white pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand&amp;#39;s strength)",
+      "expected": {
+        "item": "Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand's strength)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp cold water (for slurry)",
+      "expected": {
+        "item": "cold water (for slurry)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp potato starch (katakuriko) (for slurry)",
+      "expected": {
+        "item": "potato starch (katakuriko) (for slurry)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

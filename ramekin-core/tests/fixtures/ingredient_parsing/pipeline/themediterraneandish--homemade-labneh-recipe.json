@@ -1,0 +1,72 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "homemade-labneh-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups (32 ounces) whole milk yogurt",
+      "expected": {
+        "item": "whole milk yogurt",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Extra virgin olive oil",
+      "expected": {
+        "item": "Extra virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Za’atar  (or chopped fresh herbs)",
+      "expected": {
+        "item": "Za’atar",
+        "measurements": [],
+        "note": "or chopped fresh herbs"
+      }
+    },
+    {
+      "raw": "Warm pita bread",
+      "expected": {
+        "item": "Warm pita bread",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sliced vegetables",
+      "expected": {
+        "item": "Sliced vegetables",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

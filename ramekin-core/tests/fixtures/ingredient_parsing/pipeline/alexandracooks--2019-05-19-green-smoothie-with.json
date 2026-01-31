@@ -1,0 +1,127 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2019-05-19-green-smoothie-with",
+  "ingredients": [
+    {
+      "raw": "1 banana, sliced and frozen (unfrozen is fine, too)",
+      "expected": {
+        "item": "banana, sliced and frozen",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "unfrozen is fine, too"
+      }
+    },
+    {
+      "raw": "handful of ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon almond butter or other nut butter",
+      "expected": {
+        "item": "almond butter or other nut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Medjool dates, pitted and torn into pieces, see notes above",
+      "expected": {
+        "item": "Medjool dates, pitted and torn into pieces, see notes above",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 4 ounces spinach (I use 4 ounces)",
+      "expected": {
+        "item": "spinach (I use 4 ounces)",
+        "measurements": [
+          {
+            "amount": "2 to 4",
+            "unit": "oz"
+          },
+          {
+            "amount": "57 to 113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup unsweetened almond milk or milk of choice, plus more as needed",
+      "expected": {
+        "item": "unsweetened almond milk or milk of choice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "1 tablespoon chia seeds, optional",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 tablespoon hemp seeds, optional",
+      "expected": {
+        "item": "hemp seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

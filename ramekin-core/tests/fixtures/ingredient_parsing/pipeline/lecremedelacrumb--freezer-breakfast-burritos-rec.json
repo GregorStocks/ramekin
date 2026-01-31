@@ -1,0 +1,151 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "freezer-breakfast-burritos-rec",
+  "ingredients": [
+    {
+      "raw": "10  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper  (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "2 cups shredded Mexican blend cheese (divided)",
+      "expected": {
+        "item": "shredded Mexican blend cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups shredded hash browns",
+      "expected": {
+        "item": "shredded hash browns",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound ground Italian sausage",
+      "expected": {
+        "item": "ground Italian sausage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  strips bacon or turkey bacon",
+      "expected": {
+        "item": "strips bacon or turkey bacon",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  extra large burrito-size flour tortillas",
+      "expected": {
+        "item": "extra large burrito-size flour tortillas",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  16-inch long pieces of Reynolds Wrap Heavy Duty Foil",
+      "expected": {
+        "item": "16-inch long pieces of Reynolds Wrap Heavy Duty Foil",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional toppings: avocado or guacamole, salsa, hot sauce, diced tomatoes or pico de gallo, cilantro",
+      "expected": {
+        "item": "optional toppings: avocado or guacamole, salsa, hot sauce, diced tomatoes or pico de gallo, cilantro",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

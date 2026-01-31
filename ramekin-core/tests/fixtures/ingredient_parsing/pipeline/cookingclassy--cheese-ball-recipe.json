@@ -1,0 +1,108 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "cheese-ball-recipe",
+  "ingredients": [
+    {
+      "raw": "2 (8 oz) pkgs. cream cheese, (softened but still slightly firm)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened but still slightly firm"
+      }
+    },
+    {
+      "raw": "1/3 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  oz. shredded medium cheddar cheese",
+      "expected": {
+        "item": "shredded medium cheddar cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pepper, (to taste)",
+      "expected": {
+        "item": "Pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 cup Fisher Pecans, (chopped small)",
+      "expected": {
+        "item": "Fisher Pecans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped small"
+      }
+    }
+  ]
+}

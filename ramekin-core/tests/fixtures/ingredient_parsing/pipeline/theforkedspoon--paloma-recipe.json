@@ -1,0 +1,142 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "paloma-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chili Salt ((or just kosher salt))",
+      "expected": {
+        "item": "Chili Salt (or just kosher salt)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 fluid ounces tequila",
+      "expected": {
+        "item": "tequila",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 fluid ounces fresh grapefruit juice",
+      "expected": {
+        "item": "fresh grapefruit juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sugar ((optional))",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 fluid ounces club soda (or grapefruit soda)",
+      "expected": {
+        "item": "club soda (or grapefruit soda)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Grapefruit and lime wedges (for serving)",
+      "expected": {
+        "item": "Grapefruit and lime wedges",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

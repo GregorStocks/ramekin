@@ -1,0 +1,75 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-roast-sweet-potato-squ",
+  "ingredients": [
+    {
+      "raw": "1kg squash",
+      "expected": {
+        "item": "squash",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1kg sweet potato",
+      "expected": {
+        "item": "sweet potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 bulbs of  garlic halved",
+      "expected": {
+        "item": "bulbs of  garlic halved",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 red chilli",
+      "expected": {
+        "item": "red chilli",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

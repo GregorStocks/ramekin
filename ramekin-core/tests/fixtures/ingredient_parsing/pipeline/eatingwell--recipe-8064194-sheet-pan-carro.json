@@ -1,0 +1,143 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8064194-sheet-pan-carro",
+  "ingredients": [
+    {
+      "raw": "1 large bunch carrots with tops (about 1 pound), peeled",
+      "expected": {
+        "item": "bunch carrots with tops",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1 (15.5 ounce) can no-salt-added chickpeas, rinsed",
+      "expected": {
+        "item": "no-salt-added chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "439",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "0.25 cup sesame oil, divided",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "0.25 cup cider vinegar, divided",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "0.5 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon ground pepper",
+      "expected": {
+        "item": "ground pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup tahini",
+      "expected": {
+        "item": "tahini",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons pure maple syrup",
+      "expected": {
+        "item": "pure maple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

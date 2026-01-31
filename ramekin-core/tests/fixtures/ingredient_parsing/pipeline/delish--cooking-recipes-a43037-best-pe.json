@@ -1,0 +1,88 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipes-a43037-best-pe",
+  "ingredients": [
+    {
+      "raw": "1 750-ml bottle red wine",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "750-ml bottle"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. peach nectar",
+      "expected": {
+        "item": "peach nectar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 c. brandy",
+      "expected": {
+        "item": "brandy",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 peaches, sliced",
+      "expected": {
+        "item": "peaches",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1 c. raspberries",
+      "expected": {
+        "item": "raspberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "123",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. cold seltzer",
+      "expected": {
+        "item": "cold seltzer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

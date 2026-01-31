@@ -1,0 +1,45 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32304789",
+  "ingredients": [
+    {
+      "raw": "2 tbsp. pomegranate seeds",
+      "expected": {
+        "item": "pomegranate seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 8-ounce bottle pomegranate juice, chilled",
+      "expected": {
+        "item": "pomegranate juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "8-ounce bottle"
+          }
+        ],
+        "note": "chilled"
+      }
+    },
+    {
+      "raw": "1 bottle sparkling white wine, chilled",
+      "expected": {
+        "item": "sparkling white wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": "chilled"
+      }
+    }
+  ]
+}

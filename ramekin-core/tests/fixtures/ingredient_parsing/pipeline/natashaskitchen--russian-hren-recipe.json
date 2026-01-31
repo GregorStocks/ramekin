@@ -1,0 +1,75 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "russian-hren-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup of Extra Hot Cream-style Horseradish",
+      "expected": {
+        "item": "Extra Hot Cream-style Horseradish",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  large beets",
+      "expected": {
+        "item": "beets",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp vinegar + 1/2 tsp",
+      "expected": {
+        "item": "vinegar + 1/2 tsp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 tsp salt + 1/8 tsp",
+      "expected": {
+        "item": "salt + 1/8 tsp",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

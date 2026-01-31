@@ -1,0 +1,88 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-parsnip-mash-apple",
+  "ingredients": [
+    {
+      "raw": "850g parsnip peeled and cut into small chunks",
+      "expected": {
+        "item": "parsnip peeled and cut into small chunks",
+        "measurements": [
+          {
+            "amount": "850",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Bramley apples peeled, cored and quartered",
+      "expected": {
+        "item": "Bramley apples peeled",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "cored and quartered"
+      }
+    },
+    {
+      "raw": "50g butter plus a little extra to serve",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "plus a little extra to serve"
+      }
+    },
+    {
+      "raw": "¼ tsp ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100ml milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "ml"
+          },
+          {
+            "amount": "104",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

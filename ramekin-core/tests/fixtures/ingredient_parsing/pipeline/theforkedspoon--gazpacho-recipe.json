@@ -1,0 +1,199 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "gazpacho-recipe",
+  "ingredients": [
+    {
+      "raw": "3  pounds vine-ripened tomatoes",
+      "expected": {
+        "item": "vine-ripened tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large and thick slice white bread (crust removed)",
+      "expected": {
+        "item": "and thick slice white bread (crust removed)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  red onion (peeled and chopped)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and chopped"
+      }
+    },
+    {
+      "raw": "1  English cucumber (peeled, seeded, and chopped)",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled, seeded, and chopped"
+      }
+    },
+    {
+      "raw": "1  bell pepper (seeded and chopped)",
+      "expected": {
+        "item": "bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and chopped"
+      }
+    },
+    {
+      "raw": "1  jalapeño (for heat (optional) *)",
+      "expected": {
+        "item": "jalapeño *)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "for heat (optional"
+      }
+    },
+    {
+      "raw": "2 cloves garlic (peeled and minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and minced"
+      }
+    },
+    {
+      "raw": "3  strawberries (stems removed *)",
+      "expected": {
+        "item": "strawberries (stems removed *)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoon sherry vinegar ((or red wine vinegar))",
+      "expected": {
+        "item": "sherry vinegar (or red wine vinegar)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (plus more to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper (plus more to taste)",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Diced bell pepper, cucumber, cherry tomatoes, and red onion (to garnish)",
+      "expected": {
+        "item": "Diced bell pepper, cucumber, cherry tomatoes, and red onion (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh basil (for serving)",
+      "expected": {
+        "item": "Fresh basil",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

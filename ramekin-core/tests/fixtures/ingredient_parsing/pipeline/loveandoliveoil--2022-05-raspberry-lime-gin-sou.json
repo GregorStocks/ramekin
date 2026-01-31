@@ -1,0 +1,83 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2022-05-raspberry-lime-gin-sou",
+  "ingredients": [
+    {
+      "raw": "2 fl. oz gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 fl. oz lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 fl. oz simple syrup*",
+      "expected": {
+        "item": "simple syrup*",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  fresh raspberries",
+      "expected": {
+        "item": "fresh raspberries",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "dash cardamom bitters (optional)",
+      "expected": {
+        "item": "cardamom bitters",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

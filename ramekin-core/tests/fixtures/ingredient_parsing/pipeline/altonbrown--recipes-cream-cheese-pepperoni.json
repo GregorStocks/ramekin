@@ -1,0 +1,88 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-cream-cheese-pepperoni",
+  "ingredients": [
+    {
+      "raw": "20  pitted Deglet Noor dates",
+      "expected": {
+        "item": "pitted Deglet Noor dates",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup lager-style beer&nbsp;",
+      "expected": {
+        "item": "lager-style beer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces cream cheese, softened&nbsp;",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "4  gherkin pickles, diced fine&nbsp;",
+      "expected": {
+        "item": "gherkin pickles",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "diced fine"
+      }
+    },
+    {
+      "raw": "1 teaspoon sriracha&nbsp;",
+      "expected": {
+        "item": "sriracha",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10  sandwich-style pepperoni slices, halved&nbsp;",
+      "expected": {
+        "item": "sandwich-style pepperoni slices",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    }
+  ]
+}

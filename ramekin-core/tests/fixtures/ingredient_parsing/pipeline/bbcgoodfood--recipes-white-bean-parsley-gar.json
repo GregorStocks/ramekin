@@ -1,0 +1,88 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-white-bean-parsley-gar",
+  "ingredients": [
+    {
+      "raw": "2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 shallot or 1⁄2 a small onion, finely chopped",
+      "expected": {
+        "item": "shallot or 1⁄2 a small onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 garlic cloves chopped",
+      "expected": {
+        "item": "garlic cloves chopped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 x 400g cans  cannellini beans drained",
+      "expected": {
+        "item": "x 400g cans  cannellini beans drained",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50ml stock or water",
+      "expected": {
+        "item": "stock or water",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "large handful flat-leaf parsley",
+      "expected": {
+        "item": "handful flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

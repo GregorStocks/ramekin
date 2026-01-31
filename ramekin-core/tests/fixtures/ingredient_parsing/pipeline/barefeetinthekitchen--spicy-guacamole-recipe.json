@@ -1,0 +1,79 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "spicy-guacamole-recipe",
+  "ingredients": [
+    {
+      "raw": "4  medium ripe avocados",
+      "expected": {
+        "item": "ripe avocados",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small yellow onion (diced small, 1/2 cups worth)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced small, 1/2 cups worth"
+      }
+    },
+    {
+      "raw": "1  large jalapeno (finely minced)",
+      "expected": {
+        "item": "jalapeno",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely minced"
+      }
+    },
+    {
+      "raw": "juice of 1 large lime (about 2 teaspoons worth)",
+      "expected": {
+        "item": "juice of 1 large lime",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt (adjust to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "Optional: dash of cayenne pepper (adjust to taste)",
+      "expected": {
+        "item": "Optional: dash of cayenne pepper",
+        "measurements": [],
+        "note": "adjust to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-fondant-potatoes-recipe",
+  "ingredients": [
+    {
+      "raw": "6  medium russet potatoes (these need to be the same size)",
+      "expected": {
+        "item": "russet potatoes (these need to be the same size)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sticks unsalted butter cubed",
+      "expected": {
+        "item": "unsalted butter cubed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stick"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  large garlic cloves bashed",
+      "expected": {
+        "item": "garlic cloves bashed",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  rosemary sprigs",
+      "expected": {
+        "item": "rosemary sprigs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  thyme sprigs",
+      "expected": {
+        "item": "thyme sprigs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 fl oz chicken or vegetable broth",
+      "expected": {
+        "item": "chicken or vegetable broth",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "source": "sudachirecipes",
+  "recipe_slug": "salted-onigiri-recipe",
+  "ingredients": [
+    {
+      "raw": "700 g cooked Japanese short-grain rice",
+      "expected": {
+        "item": "cooked Japanese short-grain rice",
+        "measurements": [
+          {
+            "amount": "700",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tbsp salt (fine sea salt is recommended)",
+      "expected": {
+        "item": "salt (fine sea salt is recommended)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 sheets roasted seaweed for sushi (nori) (cut into strips)",
+      "expected": {
+        "item": "sheets roasted seaweed for sushi (nori) (cut into strips)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bowl ice cold water",
+      "expected": {
+        "item": "bowl ice cold water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

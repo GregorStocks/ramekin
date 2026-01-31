@@ -1,0 +1,83 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "steel-cut-oats-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup steel cut oats",
+      "expected": {
+        "item": "steel cut oats",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup milk (almond milk, or soy milk)",
+      "expected": {
+        "item": "milk (almond milk, or soy milk)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toppings: cinnamon (dried fruit, fresh fruit, nuts)",
+      "expected": {
+        "item": "Toppings: cinnamon",
+        "measurements": [],
+        "note": "dried fruit, fresh fruit, nuts"
+      }
+    }
+  ]
+}

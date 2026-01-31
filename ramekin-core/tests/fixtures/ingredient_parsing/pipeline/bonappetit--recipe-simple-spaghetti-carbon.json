@@ -1,0 +1,108 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-simple-spaghetti-carbon",
+  "ingredients": [
+    {
+      "raw": "3 Tbsp. Diamond Crystal or 1 Tbsp. plus 2¼ tsp. Morton kosher salt, plus more",
+      "expected": {
+        "item": "Diamond Crystal or 1 Tbsp. plus 2 1/4 tsp. Morton kosher salt",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more"
+      }
+    },
+    {
+      "raw": "4 oz. guanciale (salt-cured pork jowl), pancetta (Italian bacon), or bacon",
+      "expected": {
+        "item": "guanciale (salt-cured pork jowl), pancetta (Italian bacon), or bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz. Parmesan or Pecorino Romano",
+      "expected": {
+        "item": "Parmesan or Pecorino Romano",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs plus 3 large egg yolks",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "plus 3 large egg yolks"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp. extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz. spaghetti",
+      "expected": {
+        "item": "spaghetti",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

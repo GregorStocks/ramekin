@@ -1,0 +1,137 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "knorr-spinach-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "1 (10-ounce) box frozen spinach, (thawed and well-drained)",
+      "expected": {
+        "item": "frozen spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          },
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "thawed and well-drained"
+      }
+    },
+    {
+      "raw": "1 envelope Knorr Vegetable recipe mix",
+      "expected": {
+        "item": "envelope Knorr Vegetable recipe mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 ounces sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8 ounces) can water chestnuts, (well-drained and coarsely chopped)",
+      "expected": {
+        "item": "water chestnuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "well-drained and coarsely chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
+      "expected": {
+        "item": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1  round loaf of bread",
+      "expected": {
+        "item": "round loaf of bread",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sliced vegetables",
+      "expected": {
+        "item": "sliced vegetables",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sliced baguette",
+      "expected": {
+        "item": "sliced baguette",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hawaiian rolls, (cut into cubes)",
+      "expected": {
+        "item": "Hawaiian rolls, (cut into cubes)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

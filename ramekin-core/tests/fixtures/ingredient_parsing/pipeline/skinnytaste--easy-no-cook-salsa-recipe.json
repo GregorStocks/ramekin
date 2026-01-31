@@ -1,0 +1,96 @@
+{
+  "source": "skinnytaste",
+  "recipe_slug": "easy-no-cook-salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4  small onion",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  small cloves peeled garlic",
+      "expected": {
+        "item": "cloves peeled garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  jalapeño (seeded and membranes removed or leave in for spicy)",
+      "expected": {
+        "item": "jalapeño (seeded and membranes removed or leave in for spicy)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14.5 ounce can diced tomatoes (not with basil I use Tuttorosso)",
+      "expected": {
+        "item": "can diced tomatoes (not with basil I use Tuttorosso)",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful cilantro",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of 1 lime",
+      "expected": {
+        "item": "juice of 1 lime",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

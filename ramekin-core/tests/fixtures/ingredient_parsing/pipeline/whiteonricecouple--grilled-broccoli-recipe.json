@@ -1,0 +1,135 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "grilled-broccoli-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound broccoli (, cut into thick slices)",
+      "expected": {
+        "item": "broccoli (, cut into thick slices)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2  lemons (, sliced into 1/2-inch thick circles)",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": "sliced into 1/2-inch thick circles"
+      }
+    },
+    {
+      "raw": "1/4 cup vegetable or olive oil",
+      "expected": {
+        "item": "vegetable or olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dried thyme ((or herbs of choice))",
+      "expected": {
+        "item": "dried thyme (or herbs of choice)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon garlic powder (, or 3 minced garlic cloves)",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 3 minced garlic cloves"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt (, or more to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "black pepper (, to taste)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/2 cup grated fresh parmesan",
+      "expected": {
+        "item": "grated fresh parmesan",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

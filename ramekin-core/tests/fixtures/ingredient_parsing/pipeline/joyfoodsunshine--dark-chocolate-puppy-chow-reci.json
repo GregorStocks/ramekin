@@ -1,0 +1,79 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "dark-chocolate-puppy-chow-reci",
+  "ingredients": [
+    {
+      "raw": "1 cup dark chocolate chips",
+      "expected": {
+        "item": "dark chocolate chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup creamy peanut butter",
+      "expected": {
+        "item": "creamy peanut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cups Rice Chex Cereal",
+      "expected": {
+        "item": "Rice Chex Cereal",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ½ cups powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup unsweetened cocoa powder",
+      "expected": {
+        "item": "unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

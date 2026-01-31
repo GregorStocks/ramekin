@@ -1,0 +1,109 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "biscuits-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups (283g) unbleached all-purpose flour ((scoop and level to measure))",
+      "expected": {
+        "item": "unbleached all-purpose flour (scoop and level to measure)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp aluminum free baking powder",
+      "expected": {
+        "item": "aluminum free baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 Tbsp (113g) unsalted butter, (divided, 7 Tbsp very cold, 1 Tbsp melted)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "divided, 7 Tbsp very cold, 1 Tbsp melted"
+      }
+    },
+    {
+      "raw": "1 cup buttermilk, (cold)",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "cold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-asparagus-salad-with-c",
+  "ingredients": [
+    {
+      "raw": "3  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  bunches thick asparagus spears, (bottom ends trimmed)",
+      "expected": {
+        "item": "thick asparagus spears",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bunch"
+          }
+        ],
+        "note": "bottom ends trimmed"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced fresh chives, (for garnish)",
+      "expected": {
+        "item": "minced fresh chives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "for garnish"
+      }
+    },
+    {
+      "raw": "½ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
+      "expected": {
+        "item": "mayonnaise, (best quality such as Hellmann's or Duke's)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "A few grinds freshly ground black pepper",
+      "expected": {
+        "item": "A few grinds freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

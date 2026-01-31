@@ -1,0 +1,120 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2016-11-05-philadelphia-fish-h",
+  "ingredients": [
+    {
+      "raw": "1 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups fresh lemon juice (6 to 8 lemons), strained",
+      "expected": {
+        "item": "fresh lemon juice, strained",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "6 to 8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (750-ml) bottle Jamaican amber rum",
+      "expected": {
+        "item": "Jamaican amber rum",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "750",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz Cognac (1 1/2 cups)",
+      "expected": {
+        "item": "Cognac",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz (1/4 cup) peach brandy* or 1/4 cup Cognac, which is how I always make it now",
+      "expected": {
+        "item": "peach brandy*",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1/4 cup Cognac, which is how I always make it now"
+      }
+    },
+    {
+      "raw": "Garnish: lemon slices",
+      "expected": {
+        "item": "Garnish: lemon slices",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

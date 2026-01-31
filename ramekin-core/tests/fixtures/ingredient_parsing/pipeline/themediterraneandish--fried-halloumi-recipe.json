@@ -1,0 +1,69 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "fried-halloumi-recipe",
+  "ingredients": [
+    {
+      "raw": "extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
+      "expected": {
+        "item": "Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons toasted sesame seeds",
+      "expected": {
+        "item": "toasted sesame seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "crushed red pepper flakes ((I used Aleppo pepper))",
+      "expected": {
+        "item": "crushed red pepper flakes (I used Aleppo pepper)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

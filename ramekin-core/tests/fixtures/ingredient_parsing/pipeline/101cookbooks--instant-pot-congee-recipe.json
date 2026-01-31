@@ -1,0 +1,92 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "instant-pot-congee-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup brown jasmine rice",
+      "expected": {
+        "item": "brown jasmine rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup white jasmine rice",
+      "expected": {
+        "item": "white jasmine rice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 cups water or mushroom broth",
+      "expected": {
+        "item": "water or mushroom broth",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "(optional) 1/4 cup of other quick-cooking grains: quinoa, millet, french lentils, Job's tears, etc.",
+      "expected": {
+        "item": "other quick-cooking grains: quinoa, millet, french lentils, Job's tears, etc.",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "salted peanuts, flash sautéed bok choy, pickled shaved mushrooms*, soy sauce, a spicy chile oil or sriracha, sprouts or micro greens, a few rogue chickpeas",
+      "expected": {
+        "item": "salted peanuts, flash sautéed bok choy, pickled shaved mushrooms*, soy sauce, a spicy chile oil or sriracha, sprouts or micro greens, a few rogue chickpeas",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

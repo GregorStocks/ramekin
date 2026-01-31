@@ -1,0 +1,123 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "ozoni-zoni-recipe",
+  "ingredients": [
+    {
+      "raw": "3 cups Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup Daikon radish (thin and skinny slices)",
+      "expected": {
+        "item": "Daikon radish (thin and skinny slices)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup carrot (thin and skinny slices)",
+      "expected": {
+        "item": "carrot (thin and skinny slices)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 slices Kamaboko",
+      "expected": {
+        "item": "Kamaboko",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4-1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4-1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  Mochi",
+      "expected": {
+        "item": "Mochi",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 bunch Mitsuba (coarsely chopped)",
+      "expected": {
+        "item": "Mitsuba",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "bunch"
+          }
+        ],
+        "note": "coarsely chopped"
+      }
+    }
+  ]
+}

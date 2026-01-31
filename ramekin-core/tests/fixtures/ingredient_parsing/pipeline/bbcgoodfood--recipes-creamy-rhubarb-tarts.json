@@ -1,0 +1,88 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-creamy-rhubarb-tarts",
+  "ingredients": [
+    {
+      "raw": "375g all-butter puff pastry",
+      "expected": {
+        "item": "all-butter puff pastry",
+        "measurements": [
+          {
+            "amount": "375",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg beaten",
+      "expected": {
+        "item": "egg beaten",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp demerara sugar",
+      "expected": {
+        "item": "demerara sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp crème fraîche",
+      "expected": {
+        "item": "crème fraîche",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sticks rhubarb thinly sliced on an angle",
+      "expected": {
+        "item": "rhubarb thinly sliced on an angle",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stick"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp icing sugar",
+      "expected": {
+        "item": "icing sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-smashed-broccoli-pasta",
+  "ingredients": [
+    {
+      "raw": "1 large head of broccoli (1–1¼ lb.)",
+      "expected": {
+        "item": "head of broccoli",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "1-1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz. short pasta (such as mezze rigatoni or cavatappi)",
+      "expected": {
+        "item": "short pasta (such as mezze rigatoni or cavatappi)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oil-packed anchovy fillets",
+      "expected": {
+        "item": "oil-packed anchovy fillets",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 garlic cloves, thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "⅓ cup extra-virgin olive oil, plus more for serving",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "½ tsp. crushed red pepper flakes, plus more for serving",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz. Parmesan, finely grated (about 1 cup), divided",
+      "expected": {
+        "item": "Parmesan, finely grated",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

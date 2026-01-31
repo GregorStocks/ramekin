@@ -1,0 +1,123 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "green-juice-recipe",
+  "ingredients": [
+    {
+      "raw": "2 to 3  kale leaves, to taste",
+      "expected": {
+        "item": "kale leaves",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": null
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "large handful of spinach",
+      "expected": {
+        "item": "handful of spinach",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  head romaine",
+      "expected": {
+        "item": "romaine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  celery stalks",
+      "expected": {
+        "item": "celery stalks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  small bunch of parsley, trimmed",
+      "expected": {
+        "item": "bunch of parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "trimmed"
+      }
+    },
+    {
+      "raw": "1/2  lemon, peeled, deseeded",
+      "expected": {
+        "item": "lemon, peeled, deseeded",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  lime, peeled, deseeded",
+      "expected": {
+        "item": "lime, peeled, deseeded",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1- inch cube of peeled ginger",
+      "expected": {
+        "item": "1- inch cube of peeled ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  small cucumbers, peeled",
+      "expected": {
+        "item": "cucumbers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled"
+      }
+    }
+  ]
+}

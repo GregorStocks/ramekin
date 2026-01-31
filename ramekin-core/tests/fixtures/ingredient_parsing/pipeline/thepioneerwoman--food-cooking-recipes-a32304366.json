@@ -1,0 +1,92 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32304366",
+  "ingredients": [
+    {
+      "raw": "1 bottle rosé wine",
+      "expected": {
+        "item": "rosé wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. orange-flavored vodka",
+      "expected": {
+        "item": "orange-flavored vodka",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pt. strawberries, hulled and halved",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          },
+          {
+            "amount": "347",
+            "unit": "g"
+          }
+        ],
+        "note": "hulled and halved"
+      }
+    },
+    {
+      "raw": "1/2 c. red grapes, halved",
+      "expected": {
+        "item": "red grapes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "1/2 c. sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bottle prosecco or other sparkling wine",
+      "expected": {
+        "item": "prosecco or other sparkling wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

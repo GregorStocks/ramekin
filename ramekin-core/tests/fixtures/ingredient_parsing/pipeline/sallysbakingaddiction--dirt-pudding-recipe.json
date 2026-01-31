@@ -1,0 +1,147 @@
+{
+  "source": "sallysbakingaddiction",
+  "recipe_slug": "dirt-pudding-recipe",
+  "ingredients": [
+    {
+      "raw": "1 and 1/3 cups (267g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "267",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (42g) unsweetened natural or Dutch-process cocoa powder",
+      "expected": {
+        "item": "unsweetened natural or Dutch-process cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup (40g) cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 and 1/2 cups (1,080ml) whole milk*",
+      "expected": {
+        "item": "whole milk*",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "080",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons (43g) unsalted butter, softened to room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "softened to room temperature"
+      }
+    },
+    {
+      "raw": "2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "24–30 Oreo cookies (or about 1 standard package)",
+      "expected": {
+        "item": "Oreo cookies (or about 1 standard package)",
+        "measurements": [
+          {
+            "amount": "24-30",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "24 gummy worms",
+      "expected": {
+        "item": "gummy worms",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

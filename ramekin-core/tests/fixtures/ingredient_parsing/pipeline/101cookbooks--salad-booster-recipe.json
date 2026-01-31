@@ -1,0 +1,82 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "salad-booster-recipe",
+  "ingredients": [
+    {
+      "raw": "2  sheets nori seaweed",
+      "expected": {
+        "item": "sheets nori seaweed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz kale (8-10 leaves), stems &amp; center ribs removed",
+      "expected": {
+        "item": "kale, stems & center ribs removed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "8-10",
+            "unit": null
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup sunflower seeds",
+      "expected": {
+        "item": "sunflower seeds",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest of one lemon",
+      "expected": {
+        "item": "zest of one lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Wildcards: nutritional yeast, smoked salt to taste, a bit of smoked paprika, dried herbs",
+      "expected": {
+        "item": "Wildcards: nutritional yeast, smoked salt to taste, a bit of smoked paprika",
+        "measurements": [],
+        "note": "dried herbs"
+      }
+    }
+  ]
+}

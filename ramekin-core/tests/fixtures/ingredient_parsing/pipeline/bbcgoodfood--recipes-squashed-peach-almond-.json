@@ -1,0 +1,84 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-squashed-peach-almond-",
+  "ingredients": [
+    {
+      "raw": "100g ground almonds",
+      "expected": {
+        "item": "ground almonds",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g butter softened",
+      "expected": {
+        "item": "butter softened",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "250g  (half a 500g block) puff pastry",
+      "expected": {
+        "item": "(half a 500g block) puff pastry",
+        "measurements": [
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 peaches halved, stoned and finely sliced",
+      "expected": {
+        "item": "peaches halved",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "stoned and finely sliced"
+      }
+    }
+  ]
+}

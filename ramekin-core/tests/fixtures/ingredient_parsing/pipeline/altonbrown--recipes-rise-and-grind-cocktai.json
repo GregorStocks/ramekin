@@ -1,0 +1,122 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-rise-and-grind-cocktai",
+  "ingredients": [
+    {
+      "raw": "1 (12-ounce) bottle cola",
+      "expected": {
+        "item": "cola",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup demerara sugar",
+      "expected": {
+        "item": "demerara sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 fluid ounces rye whiskey",
+      "expected": {
+        "item": "rye whiskey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 fluid ounce Fernet Branca",
+      "expected": {
+        "item": "Fernet Branca",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 fluid ounce cola syrup",
+      "expected": {
+        "item": "cola syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 fluid ounces cold brew coffee",
+      "expected": {
+        "item": "cold brew coffee",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 dashes coffee bitters",
+      "expected": {
+        "item": "coffee bitters",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 dashes black walnut bitters",
+      "expected": {
+        "item": "black walnut bitters",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Maraschino cherries and and orange twist, for garnish",
+      "expected": {
+        "item": "Maraschino cherries and and orange twist",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

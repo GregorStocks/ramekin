@@ -1,0 +1,100 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8064331-spicy-shrimp-wi",
+  "ingredients": [
+    {
+      "raw": "1 bunch scallions",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 pounds large peeled, deveined raw shrimp, tail-on (31-40 count)",
+      "expected": {
+        "item": "large peeled, deveined raw shrimp, tail-on",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "31-40",
+            "unit": null
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons salt-free Cajun seasoning plus 1 teaspoon, divided",
+      "expected": {
+        "item": "salt-free Cajun seasoning",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 1 teaspoon, divided"
+      }
+    },
+    {
+      "raw": "5 tablespoons unsalted butter, divided",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "0.25 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (16-ounce) package refrigerated riced cauliflower",
+      "expected": {
+        "item": "refrigerated riced cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

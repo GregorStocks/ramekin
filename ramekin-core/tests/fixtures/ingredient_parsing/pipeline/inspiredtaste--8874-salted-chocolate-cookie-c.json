@@ -1,0 +1,87 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "8874-salted-chocolate-cookie-c",
+  "ingredients": [
+    {
+      "raw": "1 (16-ounce) package Pillsbury Simply Peanut Butter refrigerated cookies",
+      "expected": {
+        "item": "Pillsbury Simply Peanut Butter refrigerated cookies",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup semi-sweet chocolate chips",
+      "expected": {
+        "item": "semi-sweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon allspice",
+      "expected": {
+        "item": "allspice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Course or flaky sea salt for topping cups",
+      "expected": {
+        "item": "Course or flaky sea salt for topping cups",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

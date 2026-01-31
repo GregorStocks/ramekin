@@ -1,0 +1,172 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-stovetopdoublestackche",
+  "ingredients": [
+    {
+      "raw": "1/2 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon pickle relish",
+      "expected": {
+        "item": "pickle relish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "20 to 24 ounces ground beef (90/10)",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "20 to 24",
+            "unit": "oz"
+          },
+          {
+            "amount": "90/10",
+            "unit": null
+          },
+          {
+            "amount": "567 to 680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon garlic powder, optional",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 teaspoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 to 8 slices American cheese",
+      "expected": {
+        "item": "American cheese",
+        "measurements": [
+          {
+            "amount": "4 to 8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 hamburger buns",
+      "expected": {
+        "item": "hamburger buns",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh lettuce",
+      "expected": {
+        "item": "Fresh lettuce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Tomato slices",
+      "expected": {
+        "item": "Tomato slices",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red onion slices",
+      "expected": {
+        "item": "Red onion slices",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

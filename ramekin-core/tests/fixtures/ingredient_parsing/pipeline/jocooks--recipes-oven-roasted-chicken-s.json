@@ -1,0 +1,288 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-oven-roasted-chicken-s",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons lemon juice (freshly squeezed)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": "freshly squeezed"
+      }
+    },
+    {
+      "raw": "½ cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons cumin (ground)",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "ground"
+      }
+    },
+    {
+      "raw": "2 teaspoons black pepper (ground)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "ground"
+      }
+    },
+    {
+      "raw": "2 teaspoons smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon turmeric",
+      "expected": {
+        "item": "turmeric",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3  chicken breasts (boneless and skinless)",
+      "expected": {
+        "item": "chicken breasts (boneless and skinless)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  large onion (sliced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 tablespoons parsley (fresh, for garnish)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "fresh, for garnish"
+      }
+    },
+    {
+      "raw": "1 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 cloves garlic (peeled)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1  egg white (*)",
+      "expected": {
+        "item": "egg white (*)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "hummus",
+      "expected": {
+        "item": "hummus",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "tabbouleh salad",
+      "expected": {
+        "item": "tabbouleh salad",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "garlic sauce",
+      "expected": {
+        "item": "garlic sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pita wraps",
+      "expected": {
+        "item": "pita wraps",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-spiced-smoky-barbecued",
+  "ingredients": [
+    {
+      "raw": "2 garlic cloves peeled finely",
+      "expected": {
+        "item": "garlic cloves peeled finely",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "grated zest and juice of 1  lemon",
+      "expected": {
+        "item": "grated zest and juice of 1  lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp Kashmiri  spice mix, or good-quality curry powder",
+      "expected": {
+        "item": "Kashmiri  spice mix, or good-quality curry powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 dried bird's-eye  chilli seeded and crushed, or a pinch of chilli flakes",
+      "expected": {
+        "item": "dried bird's-eye  chilli seeded and crushed, or a pinch of chilli flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 chicken thighs bone in, skin on",
+      "expected": {
+        "item": "chicken thighs bone in, skin on",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large bunches each rosemary and thyme",
+      "expected": {
+        "item": "bunches each rosemary and thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 branches fresh  bay leaves",
+      "expected": {
+        "item": "branches fresh  bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

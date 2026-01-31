@@ -1,0 +1,148 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "italian-potato-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "2 - 2 1/2 pounds potatoes",
+      "expected": {
+        "item": "1/2 pounds potatoes",
+        "measurements": [
+          {
+            "amount": "2-2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons coarse-ground or whole grain mustard",
+      "expected": {
+        "item": "coarse-ground or whole grain mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt (add more to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "add more to taste"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8-12 ounces salami (thinly sliced, quartered bite-size, about 2 cups worth)",
+      "expected": {
+        "item": "salami",
+        "measurements": [
+          {
+            "amount": "8-12",
+            "unit": "oz"
+          },
+          {
+            "amount": "227-340",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced, quartered bite-size, about 2 cups worth"
+      }
+    },
+    {
+      "raw": "2  green onions (sliced very thin, about 1/4 cup worth)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced very thin, about 1/4 cup worth"
+      }
+    },
+    {
+      "raw": "small handful of parsley leaves (minced, about 2 tablespoons worth)",
+      "expected": {
+        "item": "handful of parsley leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "minced, about 2 tablespoons worth"
+      }
+    }
+  ]
+}

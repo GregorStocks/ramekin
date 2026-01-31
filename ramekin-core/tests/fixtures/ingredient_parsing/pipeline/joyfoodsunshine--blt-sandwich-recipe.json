@@ -1,0 +1,113 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "blt-sandwich-recipe",
+  "ingredients": [
+    {
+      "raw": "4 slices bread",
+      "expected": {
+        "item": "bread",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tablespoons mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  tomato ((thinly sliced into 8 slices))",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced into 8 slices"
+      }
+    },
+    {
+      "raw": "8 ounces bacon ((8 pieces - oven baked bacon))",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "8",
+            "unit": "piece"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  avocado (sliced thin)",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin"
+      }
+    },
+    {
+      "raw": "Pinch sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground Black pepper",
+      "expected": {
+        "item": "Freshly ground Black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pieces romaine lettuce (or red leaf, etc)",
+      "expected": {
+        "item": "romaine lettuce (or red leaf, etc)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "piece"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

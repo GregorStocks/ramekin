@@ -1,0 +1,113 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "summer-pasta-estate-recipe",
+  "ingredients": [
+    {
+      "raw": "210 grams cherry tomatoes ((cut in half if large))",
+      "expected": {
+        "item": "cherry tomatoes (cut in half if large)",
+        "measurements": [
+          {
+            "amount": "210",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "170 grams corn ((1 ear, kernels removed from cob))",
+      "expected": {
+        "item": "corn",
+        "measurements": [
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "140 grams zucchini ((1 small, julienned))",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": "1 small, julienned"
+      }
+    },
+    {
+      "raw": "14 grams garlic ((2 large cloves, minced))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "2 large cloves, minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "180 grams spaghettini",
+      "expected": {
+        "item": "spaghettini",
+        "measurements": [
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "basil leaves ((to taste))",
+      "expected": {
+        "item": "basil leaves",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

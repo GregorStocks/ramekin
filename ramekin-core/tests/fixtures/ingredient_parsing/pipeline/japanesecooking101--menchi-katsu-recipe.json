@@ -1,0 +1,185 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "menchi-katsu-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 lb ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 lb ground pork",
+      "expected": {
+        "item": "ground pork",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  brown onion (chopped)",
+      "expected": {
+        "item": "brown onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1  egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Panko (bread crumbs)",
+      "expected": {
+        "item": "Panko (bread crumbs)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp nutmeg",
+      "expected": {
+        "item": "nutmeg",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2  egg (beaten)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "1 1/2 cups Panko (bread crumbs)",
+      "expected": {
+        "item": "Panko (bread crumbs)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "oil  (for deep-frying)",
+      "expected": {
+        "item": "oil  (for deep-frying)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Tonkatsu sauce",
+      "expected": {
+        "item": "Tonkatsu sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "cabbage (shredded)",
+      "expected": {
+        "item": "cabbage",
+        "measurements": [],
+        "note": "shredded"
+      }
+    }
+  ]
+}

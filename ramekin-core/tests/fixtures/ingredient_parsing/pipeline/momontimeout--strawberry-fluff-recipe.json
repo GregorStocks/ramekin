@@ -1,0 +1,121 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "strawberry-fluff-recipe",
+  "ingredients": [
+    {
+      "raw": "8 oz Cool Whip (can use lite)",
+      "expected": {
+        "item": "Cool Whip",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": null,
+            "unit": "can"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14 oz sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "21 oz strawberry pie filling",
+      "expected": {
+        "item": "strawberry pie filling",
+        "measurements": [
+          {
+            "amount": "21",
+            "unit": "oz"
+          },
+          {
+            "amount": "595",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "20 oz crushed pineapple (well drained)",
+      "expected": {
+        "item": "crushed pineapple",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": "oz"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "well drained"
+      }
+    },
+    {
+      "raw": "2 cups mini marshmallows (use the multi-colored ones if possible)",
+      "expected": {
+        "item": "mini marshmallows (use the multi-colored ones if possible)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup pecans (chopped  - optional)",
+      "expected": {
+        "item": "pecans",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped  - optional"
+      }
+    },
+    {
+      "raw": "1 cup strawberries (chopped)",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "174",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

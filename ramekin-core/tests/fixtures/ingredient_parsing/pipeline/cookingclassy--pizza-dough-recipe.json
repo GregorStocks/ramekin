@@ -1,0 +1,104 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "pizza-dough-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tsp active dry yeast (or instant yeast (see notes*))",
+      "expected": {
+        "item": "active dry yeast (or instant yeast (see notes*)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups warm water, (heated to 110 - 115 degrees for active dry yeast, 120 - 130 degrees for instant yeast)",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120-130",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tbsp olive oil, (plus more for brushing)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for brushing"
+      }
+    },
+    {
+      "raw": "1 1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 cups (17 oz) unbleached all-purpose flour (or bread flour, then more as needed (scoop and level to measure))",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "17",
+            "unit": "oz"
+          },
+          {
+            "amount": "482",
+            "unit": "g"
+          }
+        ],
+        "note": "or bread flour, then more as needed (scoop and level to measure"
+      }
+    }
+  ]
+}

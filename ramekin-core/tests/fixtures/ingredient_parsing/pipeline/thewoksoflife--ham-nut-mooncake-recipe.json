@@ -1,0 +1,350 @@
+{
+  "source": "thewoksoflife",
+  "recipe_slug": "ham-nut-mooncake-recipe",
+  "ingredients": [
+    {
+      "raw": "½ pound granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice of half a lemon",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "140 ml inverted sugar syrup ((which you bought or made in Part I))",
+      "expected": {
+        "item": "inverted sugar syrup (which you bought or made in Part I)",
+        "measurements": [
+          {
+            "amount": "140",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup peanut oil or corn oil",
+      "expected": {
+        "item": "peanut oil or corn oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon lye water ((available at your Chinese grocery store))",
+      "expected": {
+        "item": "lye water (available at your Chinese grocery store)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ⅔ cups all-purpose flour ((about 250 grams, plus more for dusting))",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "208",
+            "unit": "g"
+          }
+        ],
+        "note": "about 250 grams, plus more for dusting"
+      }
+    },
+    {
+      "raw": "100 grams jinhua ham ((京华火腿))",
+      "expected": {
+        "item": "jinhua ham (京华火腿)",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons ham juice ((from steaming the ham––see instructions below))",
+      "expected": {
+        "item": "ham juice (from steaming the ham--see instructions below)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100 grams walnuts ((toasted))",
+      "expected": {
+        "item": "walnuts",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "100 grams cashews ((toasted))",
+      "expected": {
+        "item": "cashews",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "100 grams pecans ((toasted))",
+      "expected": {
+        "item": "pecans",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "75 grams pumpkin seeds ((toasted))",
+      "expected": {
+        "item": "pumpkin seeds",
+        "measurements": [
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "60 grams sunflower seeds ((toasted))",
+      "expected": {
+        "item": "sunflower seeds",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "60 grams sesame seeds ((toasted))",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "200 grams sweet rice flour",
+      "expected": {
+        "item": "sweet rice flour",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup peanut oil ((or corn oil, about 75 ml))",
+      "expected": {
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50 grams dried currants",
+      "expected": {
+        "item": "dried currants",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "150 grams granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon five spice powder",
+      "expected": {
+        "item": "five spice powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons Chinese bai jiu 白酒",
+      "expected": {
+        "item": "Chinese bai jiu 白酒",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup water ((about 120 ml))",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "[no additional ingredients needed for this step]",
+      "expected": {
+        "item": "[no additional ingredients needed for this step]",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

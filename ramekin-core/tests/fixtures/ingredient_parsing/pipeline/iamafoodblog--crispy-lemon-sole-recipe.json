@@ -1,0 +1,121 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "crispy-lemon-sole-recipe",
+  "ingredients": [
+    {
+      "raw": "1 slice thin white sandwich bread",
+      "expected": {
+        "item": "thin white sandwich bread",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest and juice of 1/4 lemon",
+      "expected": {
+        "item": "zest and juice of 1/4 lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sole fillets, skinned",
+      "expected": {
+        "item": "sole fillets, skinned",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup cooked baby shrimp",
+      "expected": {
+        "item": "cooked baby shrimp",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon finely chopped fresh dill",
+      "expected": {
+        "item": "finely chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cucumber, peeled, de-seeded and sliced",
+      "expected": {
+        "item": "cucumber, peeled",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "de-seeded and sliced"
+      }
+    }
+  ]
+}

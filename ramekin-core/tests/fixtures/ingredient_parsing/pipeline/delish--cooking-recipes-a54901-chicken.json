@@ -1,0 +1,118 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipes-a54901-chicken",
+  "ingredients": [
+    {
+      "raw": "4 large flour tortillas",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz. fresh or frozen breaded chicken",
+      "expected": {
+        "item": "fresh or frozen breaded chicken",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. marinara",
+      "expected": {
+        "item": "marinara",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 c. shredded mozzarella",
+      "expected": {
+        "item": "shredded mozzarella",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. freshly grated Parmesan, plus more for sprinkling",
+      "expected": {
+        "item": "freshly grated Parmesan",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for sprinkling"
+      }
+    },
+    {
+      "raw": "3/4 c. chopped cherry tomatoes",
+      "expected": {
+        "item": "chopped cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 c. torn basil leaves",
+      "expected": {
+        "item": "torn basil leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp. extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

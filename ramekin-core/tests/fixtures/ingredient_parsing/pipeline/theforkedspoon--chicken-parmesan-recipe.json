@@ -1,0 +1,233 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "chicken-parmesan-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large yellow onion (minced)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "½ teaspoon crushed red pepper flakes (plus more to taste)",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (28-ounce) can whole tomatoes (with juice)",
+      "expected": {
+        "item": "whole tomatoes (with juice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "28",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  fresh basil leaves (plus more to taste)",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1½ pounds chicken breasts (or 3 large chicken breasts)",
+      "expected": {
+        "item": "chicken breasts (or 3 large chicken breasts)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ teaspoon salt (divided 3 ways)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided 3 ways"
+      }
+    },
+    {
+      "raw": "1½ teaspoon black pepper (divided 3 ways)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided 3 ways"
+      }
+    },
+    {
+      "raw": "vegetable oil (like canola oil; for frying (approximately 1-2 cups))",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [],
+        "note": "like canola oil; for frying (approximately 1-2 cups"
+      }
+    },
+    {
+      "raw": "1 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs (plus ¼ cup water, whisked)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "plus 1/4 cup water, whisked"
+      }
+    },
+    {
+      "raw": "¾ cup Italian breadcrumbs",
+      "expected": {
+        "item": "Italian breadcrumbs",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup parmesan cheese (freshly grated, divided)",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated, divided"
+      }
+    },
+    {
+      "raw": "1 cup mozzarella cheese (freshly shredded, plus more if desired)",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly shredded, plus more if desired"
+      }
+    },
+    {
+      "raw": "fresh basil (for garnish)",
+      "expected": {
+        "item": "fresh basil",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

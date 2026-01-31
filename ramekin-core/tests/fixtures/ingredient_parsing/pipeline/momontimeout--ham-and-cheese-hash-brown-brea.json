@@ -1,0 +1,160 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "ham-and-cheese-hash-brown-brea",
+  "ingredients": [
+    {
+      "raw": "1 tbsp olive oil (1 to 2 tbsp)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  onion (diced)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1  bell pepper (diced)",
+      "expected": {
+        "item": "bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz evaporated milk (1 can)",
+      "expected": {
+        "item": "evaporated milk",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups 8 oz shredded cheese (cheddar, Monterey jack, any will work)",
+      "expected": {
+        "item": "8 oz shredded cheese (cheddar, Monterey jack, any will work)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "30 oz frozen hash brown potatoes (1 bag - keep frozen)",
+      "expected": {
+        "item": "frozen hash brown potatoes",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "oz"
+          },
+          {
+            "amount": "850",
+            "unit": "g"
+          }
+        ],
+        "note": "1 bag - keep frozen"
+      }
+    },
+    {
+      "raw": "12 oz diced ham",
+      "expected": {
+        "item": "diced ham",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

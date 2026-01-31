@@ -1,0 +1,104 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "easy-fudge-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3.4 oz box cook &amp;amp; serve chocolate pudding mix",
+      "expected": {
+        "item": "cook & serve chocolate pudding mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "3.4 oz box"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 3 oz box cook &amp;amp; serve vanilla pudding mix",
+      "expected": {
+        "item": "cook & serve vanilla pudding mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "3 oz box"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound powdered sugar ((about 4 3/4 cups))",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "4 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

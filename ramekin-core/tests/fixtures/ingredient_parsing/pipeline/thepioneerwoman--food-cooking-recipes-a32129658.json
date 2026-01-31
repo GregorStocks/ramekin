@@ -1,0 +1,48 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32129658",
+  "ingredients": [
+    {
+      "raw": "45 chocolate sandwich cookies",
+      "expected": {
+        "item": "chocolate sandwich cookies",
+        "measurements": [
+          {
+            "amount": "45",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Green gel icing",
+      "expected": {
+        "item": "Green gel icing",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "45 brown M&amp;amp;Ms",
+      "expected": {
+        "item": "brown M&Ms",
+        "measurements": [
+          {
+            "amount": "45",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red gel icing",
+      "expected": {
+        "item": "Red gel icing",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

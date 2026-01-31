@@ -1,0 +1,78 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "cucumber-dill-toasts-picnic-re",
+  "ingredients": [
+    {
+      "raw": "24 baguette slices or rye cocktail bread",
+      "expected": {
+        "item": "baguette slices or rye cocktail bread",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 English cucumber",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons chopped fresh dill, plus more to garnish",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to garnish"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh ground black pepper",
+      "expected": {
+        "item": "Fresh ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

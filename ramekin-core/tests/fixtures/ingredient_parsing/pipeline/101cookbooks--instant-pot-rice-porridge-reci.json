@@ -1,0 +1,105 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "instant-pot-rice-porridge-reci",
+  "ingredients": [
+    {
+      "raw": "1 cup brown jasmine rice",
+      "expected": {
+        "item": "brown jasmine rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup white jasmine rice",
+      "expected": {
+        "item": "white jasmine rice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 cups water or mushroom broth",
+      "expected": {
+        "item": "water or mushroom broth",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  pound+ chopped spinach",
+      "expected": {
+        "item": "pound+ chopped spinach",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  chlorella tablets, crushed in m+p (optional boost!)",
+      "expected": {
+        "item": "chlorella tablets, crushed in m+p",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "optional boost!"
+      }
+    },
+    {
+      "raw": "(optional) 1/4 cup of other quick-cooking grains: quinoa, millet, french lentils, Job's tears, etc.",
+      "expected": {
+        "item": "other quick-cooking grains: quinoa, millet, french lentils, Job's tears, etc.",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "toppings pictured: lime, crushed kale chips and toasted nori, toasted pepitas, hemp seeds, and jungle peanuts. The tofu is sliced thinly and drizzled with shoyu",
+      "expected": {
+        "item": "toppings pictured: lime, crushed kale chips and toasted nori, toasted pepitas, hemp seeds",
+        "measurements": [],
+        "note": "and jungle peanuts. The tofu is sliced thinly and drizzled with shoyu"
+      }
+    }
+  ]
+}

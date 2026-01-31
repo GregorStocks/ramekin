@@ -1,0 +1,62 @@
+{
+  "source": "lifemadesweeter",
+  "recipe_slug": "chocolate-ice-cream-cake-recip",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons instant coffee + 3 tablespoons boiling water",
+      "expected": {
+        "item": "instant coffee + 3 tablespoons boiling water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup semi-sweet melted chocolate or semi-sweet chocolate chips",
+      "expected": {
+        "item": "semi-sweet melted chocolate or semi-sweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups of chocolate crispy rice cereal (like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch)",
+      "expected": {
+        "item": "chocolate crispy rice cereal (like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 quart or 5 cups of no churn vanilla ice cream ((or use your favorite brand), softened)",
+      "expected": {
+        "item": "no churn vanilla ice cream (or use your favorite brand)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": "softened)"
+      }
+    }
+  ]
+}

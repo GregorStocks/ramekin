@@ -1,0 +1,83 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "chia-pudding-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup milk ((almond milk, cashew milk, whole milk, coconut milk, etc.))",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": "almond milk, cashew milk, whole milk, coconut milk, etc."
+      }
+    },
+    {
+      "raw": "2 Tablespoons honey ((or maple syrup))",
+      "expected": {
+        "item": "honey (or maple syrup)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional toppings: fresh berries, sliced bananas, nut butter, extra maple syrup or honey, etc.",
+      "expected": {
+        "item": "Optional toppings: fresh berries, sliced bananas, nut butter, extra maple syrup or honey, etc.",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

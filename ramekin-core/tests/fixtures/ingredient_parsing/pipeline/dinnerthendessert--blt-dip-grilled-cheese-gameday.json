@@ -1,0 +1,49 @@
+{
+  "source": "dinnerthendessert",
+  "recipe_slug": "blt-dip-grilled-cheese-gameday",
+  "ingredients": [
+    {
+      "raw": "2 cups BLT Dip",
+      "expected": {
+        "item": "BLT Dip",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 slices buttermilk bread",
+      "expected": {
+        "item": "buttermilk bread",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter (, softened)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    }
+  ]
+}

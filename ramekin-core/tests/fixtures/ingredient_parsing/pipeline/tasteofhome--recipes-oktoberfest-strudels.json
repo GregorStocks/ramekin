@@ -1,0 +1,164 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-oktoberfest-strudels",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 fully cooked bratwurst links (about 1-1/4 pounds), chopped",
+      "expected": {
+        "item": "fully cooked bratwurst links",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          },
+          {
+            "amount": "1-1/4",
+            "unit": "lb"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 medium onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 can (14 ounces) sauerkraut, rinsed and well-drained",
+      "expected": {
+        "item": "sauerkraut",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and well-drained"
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-1/2 teaspoons caraway seeds, divided",
+      "expected": {
+        "item": "caraway seeds",
+        "measurements": [
+          {
+            "amount": "2-1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 package (17.3 ounces) frozen puff pastry, thawed",
+      "expected": {
+        "item": "frozen puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "17.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1 cup shredded Muenster cheese",
+      "expected": {
+        "item": "shredded Muenster cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded sharp cheddar cheese",
+      "expected": {
+        "item": "shredded sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

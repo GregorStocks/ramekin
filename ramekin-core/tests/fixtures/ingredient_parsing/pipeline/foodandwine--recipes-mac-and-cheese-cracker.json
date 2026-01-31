@@ -1,0 +1,148 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-mac-and-cheese-cracker",
+  "ingredients": [
+    {
+      "raw": "1 pound&nbsp;radiatore pasta",
+      "expected": {
+        "item": "radiatore pasta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon&nbsp;sodium citrate (see Note)",
+      "expected": {
+        "item": "sodium citrate (see Note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound aged extra-sharp cheddar, preferably Tillamook, shredded",
+      "expected": {
+        "item": "aged extra-sharp cheddar, preferably Tillamook",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1 tablespoon Worcestershire",
+      "expected": {
+        "item": "Worcestershire",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4&nbsp;teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups crumbled buttery crackers, preferably Ritz",
+      "expected": {
+        "item": "crumbled buttery crackers, preferably Ritz",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 stick unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "1/2 cup finely grated Parmigiano-Reggiano",
+      "expected": {
+        "item": "finely grated Parmigiano-Reggiano",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4&nbsp;teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

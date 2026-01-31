@@ -1,0 +1,96 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2020-02-whiskey-butter-toffee-",
+  "ingredients": [
+    {
+      "raw": "1 cup chopped walnuts",
+      "expected": {
+        "item": "chopped walnuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup unsalted butter (cubed)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1/2 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup light brown sugar (lightly packed)",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": "lightly packed"
+      }
+    },
+    {
+      "raw": "2 1/2 tablespoons bourbon whiskey",
+      "expected": {
+        "item": "bourbon whiskey",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon flaky sea salt (plus more for garnish)",
+      "expected": {
+        "item": "flaky sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-artichoke-olive-lemon-",
+  "ingredients": [
+    {
+      "raw": "400g spaghetti",
+      "expected": {
+        "item": "spaghetti",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "zest and juice 1 lemon",
+      "expected": {
+        "item": "zest and juice 1 lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50g freshly grated   parmesan",
+      "expected": {
+        "item": "freshly grated   parmesan",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g artichoke heart from a jar",
+      "expected": {
+        "item": "artichoke heart from a jar",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful black olive",
+      "expected": {
+        "item": "black olive",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100g bag wild rocket",
+      "expected": {
+        "item": "bag wild rocket",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

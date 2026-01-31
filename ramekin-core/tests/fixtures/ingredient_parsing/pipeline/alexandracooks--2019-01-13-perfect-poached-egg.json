@@ -1,0 +1,32 @@
+{
+  "source": "alexandracooks",
+  "recipe_slug": "2019-01-13-perfect-poached-egg",
+  "ingredients": [
+    {
+      "raw": "1 to 4 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "1 to 4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons vinegar, such as white wine, white balsamic, rice, or apple cider",
+      "expected": {
+        "item": "vinegar, such as white wine, white balsamic, rice, or apple cider",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

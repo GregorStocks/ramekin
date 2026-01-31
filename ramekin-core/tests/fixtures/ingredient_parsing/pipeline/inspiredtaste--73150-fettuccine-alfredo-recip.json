@@ -1,0 +1,95 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "73150-fettuccine-alfredo-recip",
+  "ingredients": [
+    {
+      "raw": "8 ounces dried fettuccine (226g)",
+      "expected": {
+        "item": "dried fettuccine",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tablespoons butter, see notes (55g)",
+      "expected": {
+        "item": "butter, see notes",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces Parmigiano Reggiano cheese, finely grated (60g)",
+      "expected": {
+        "item": "Parmigiano Reggiano cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "finely grated"
+      }
+    },
+    {
+      "raw": "2 tablespoons sour cream (30g)",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small garlic clove, finely grated on a microplane",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely grated on a microplane"
+      }
+    },
+    {
+      "raw": "Salt and fresh ground black pepper, to taste",
+      "expected": {
+        "item": "Salt and fresh ground black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

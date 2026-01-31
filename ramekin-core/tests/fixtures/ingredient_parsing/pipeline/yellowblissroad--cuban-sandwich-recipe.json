@@ -1,0 +1,117 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "cuban-sandwich-recipe",
+  "ingredients": [
+    {
+      "raw": "1  loaf Cuban bread ((8”-12”) sliced lengthwise)",
+      "expected": {
+        "item": "loaf Cuban bread sliced lengthwise)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup unsalted butter (softened)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "¼ cup yellow mustard (or to taste)",
+      "expected": {
+        "item": "yellow mustard",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 pound ham (sliced)",
+      "expected": {
+        "item": "ham",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1 pound roasted pork (sliced)",
+      "expected": {
+        "item": "roasted pork",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "8 ounces Swiss cheese (sliced)",
+      "expected": {
+        "item": "Swiss cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2  dill pickles (sliced lengthwise)",
+      "expected": {
+        "item": "dill pickles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced lengthwise"
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "source": "sallysbakingaddiction",
+  "recipe_slug": "peach-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "Homemade Pie Crust or All Butter Pie Crust (both recipes make 2 crusts, 1 for bottom and 1 for top)",
+      "expected": {
+        "item": "Homemade Pie Crust or All Butter Pie Crust",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups (about 1.4kg) peeled chopped peaches, cut into 1-inch chunks",
+      "expected": {
+        "item": "peeled chopped peaches, cut into 1-inch chunks",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.4",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup (135g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "135",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (63g) all-purpose flour OR&nbsp;1/4 cup&nbsp;instant tapioca",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "63",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1/4 cup instant tapioca"
+      }
+    },
+    {
+      "raw": "1 Tablespoon (15ml) fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1–2 teaspoons peeled minced fresh ginger, optional",
+      "expected": {
+        "item": "peeled minced fresh ginger",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons (28g) cold unsalted butter, cut into small cubes",
+      "expected": {
+        "item": "cold unsalted butter, cut into small cubes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "egg wash: 1 large egg beaten with 1 Tablespoon (15ml) milk",
+      "expected": {
+        "item": "egg wash: 1 large egg beaten with 1 Tablespoon milk",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional: coarse sugar for sprinkling on crust",
+      "expected": {
+        "item": "optional: coarse sugar for sprinkling on crust",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-lemon-five-spice-chick",
+  "ingredients": [
+    {
+      "raw": "2 lemons",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp  light muscovado sugar",
+      "expected": {
+        "item": "light muscovado sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "thumb-sized piece  ginger shredded (no need to peel)",
+      "expected": {
+        "item": "thumb-sized piece  ginger shredded (no need to peel)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves crushed",
+      "expected": {
+        "item": "garlic cloves crushed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tbsp  soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp Chinese  five spice powder",
+      "expected": {
+        "item": "Chinese  five spice powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "splash dry sherry or dry white wine",
+      "expected": {
+        "item": "splash dry sherry or dry white wine",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 chicken thighs",
+      "expected": {
+        "item": "chicken thighs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

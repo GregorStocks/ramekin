@@ -1,0 +1,56 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "grilled-pear-brie-and-honey-cr",
+  "ingredients": [
+    {
+      "raw": "1  French baguette (sliced 1/2 inch thick)",
+      "expected": {
+        "item": "French baguette",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced 1/2 inch thick"
+      }
+    },
+    {
+      "raw": "Brie cheese (thinly sliced, rind removed)",
+      "expected": {
+        "item": "Brie cheese",
+        "measurements": [],
+        "note": "thinly sliced, rind removed"
+      }
+    },
+    {
+      "raw": "2  pears (halved, cored, and thinly sliced)",
+      "expected": {
+        "item": "pears",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "halved, cored, and thinly sliced"
+      }
+    },
+    {
+      "raw": "Honey",
+      "expected": {
+        "item": "Honey",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh rosemary (finely chopped)",
+      "expected": {
+        "item": "Fresh rosemary",
+        "measurements": [],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

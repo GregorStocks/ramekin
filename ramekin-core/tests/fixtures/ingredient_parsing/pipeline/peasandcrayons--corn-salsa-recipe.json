@@ -1,0 +1,118 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "corn-salsa-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups sweet yellow corn kernels",
+      "expected": {
+        "item": "sweet yellow corn kernels",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups diced tomatoes ((roma or vine ripened))",
+      "expected": {
+        "item": "diced tomatoes (roma or vine ripened)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup finely diced white onion (or red onion)",
+      "expected": {
+        "item": "finely diced white onion (or red onion)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  jalapeño",
+      "expected": {
+        "item": "jalapeño",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup chopped cilantro",
+      "expected": {
+        "item": "chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 TBSP chopped green onions",
+      "expected": {
+        "item": "chopped green onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  lime ((juiced))",
+      "expected": {
+        "item": "lime (juiced)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "sea salt and black pepper ( to taste)",
+      "expected": {
+        "item": "sea salt and black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

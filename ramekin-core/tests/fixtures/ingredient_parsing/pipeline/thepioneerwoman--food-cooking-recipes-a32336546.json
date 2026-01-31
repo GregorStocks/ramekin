@@ -1,0 +1,75 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32336546",
+  "ingredients": [
+    {
+      "raw": "2 pt. halved strawberries",
+      "expected": {
+        "item": "halved strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "pint"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 c. sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp. grated lemon zest",
+      "expected": {
+        "item": "grated lemon zest",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp. vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sprig of mint, to garnish",
+      "expected": {
+        "item": "mint, to garnish",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

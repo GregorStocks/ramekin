@@ -1,0 +1,48 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "vietnamese-hot-coffee-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 Tablespoons (25ml) coarse Ground Coffee  ((use a roast suitable for espresso, the grind the same as for a french press))",
+      "expected": {
+        "item": "coarse Ground Coffee  (use a roast suitable for espresso, the grind the same as for a french press)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tablespoons (30ml) Sweetened Condensed Milk ( *See Note 1)",
+      "expected": {
+        "item": "Sweetened Condensed Milk ( *See Note 1)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot Water ((almost to a boil))",
+      "expected": {
+        "item": "Hot Water (almost to a boil)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

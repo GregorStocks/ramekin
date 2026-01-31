@@ -1,0 +1,131 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "quick-carrot-apple-salad-recip",
+  "ingredients": [
+    {
+      "raw": "4  medium carrots (coarsely grated)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "coarsely grated"
+      }
+    },
+    {
+      "raw": "1  apple (diced)",
+      "expected": {
+        "item": "apple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3/4 cup craisins (dried cranberries)",
+      "expected": {
+        "item": "craisins",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "dried cranberries"
+      }
+    },
+    {
+      "raw": "1/4 cup purple or sweet onion (finely diced)",
+      "expected": {
+        "item": "purple or sweet onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise (real mayo or vegenaise)",
+      "expected": {
+        "item": "mayonnaise (real mayo or vegenaise)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 Tbsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 tsp sea salt (or to taste)",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "pinch of black pepper (freshly ground)",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "freshly ground"
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "source": "gimmesomeoven",
+  "recipe_slug": "nachos-recipe",
+  "ingredients": [
+    {
+      "raw": "1 small bag (about 8 ounces) corn tortilla chips",
+      "expected": {
+        "item": "bag corn tortilla chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3 cups queso blanco",
+      "expected": {
+        "item": "queso blanco",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Roma tomatoes, cored and finely diced",
+      "expected": {
+        "item": "Roma tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "cored and finely diced"
+      }
+    },
+    {
+      "raw": "1 large avocado, thinly sliced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 jalapeño pepper, thinly sliced",
+      "expected": {
+        "item": "jalapeño pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "half of a small red onion, very finely diced",
+      "expected": {
+        "item": "half of a small red onion",
+        "measurements": [],
+        "note": "very finely diced"
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped fresh cilantro",
+      "expected": {
+        "item": "finely chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

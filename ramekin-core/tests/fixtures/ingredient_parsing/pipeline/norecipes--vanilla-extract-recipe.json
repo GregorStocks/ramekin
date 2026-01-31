@@ -1,0 +1,32 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "vanilla-extract-recipe",
+  "ingredients": [
+    {
+      "raw": "1  vanilla bean",
+      "expected": {
+        "item": "vanilla bean",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  mini bottle liquor ((such as bourbon, vodka or rum))",
+      "expected": {
+        "item": "mini bottle liquor (such as bourbon, vodka or rum)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

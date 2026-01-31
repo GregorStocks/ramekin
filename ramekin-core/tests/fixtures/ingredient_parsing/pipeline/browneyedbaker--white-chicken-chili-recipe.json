@@ -1,0 +1,279 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "white-chicken-chili-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  medium yellow onions (finely chopped)",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2  jalapeño peppers (seeded and finely chopped)",
+      "expected": {
+        "item": "jalapeño peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeded and finely chopped"
+      }
+    },
+    {
+      "raw": "2  poblano peppers (seeded and finely chopped)",
+      "expected": {
+        "item": "poblano peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeded and finely chopped"
+      }
+    },
+    {
+      "raw": "2  Anaheim peppers (seeded and finely chopped)",
+      "expected": {
+        "item": "Anaheim peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "seeded and finely chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ teaspoons chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon salt (divided)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "6  garlic cloves (minced)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups chicken stock",
+      "expected": {
+        "item": "chicken stock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "45 oz can cannelini beans (rinsed, drained, and divided)",
+      "expected": {
+        "item": "can cannelini beans",
+        "measurements": [
+          {
+            "amount": "45",
+            "unit": "oz"
+          },
+          {
+            "amount": "1276",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed, drained, and divided"
+      }
+    },
+    {
+      "raw": "3 cups chopped cooked chicken",
+      "expected": {
+        "item": "chopped cooked chicken",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lime wedges",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Monterey Jack cheese",
+      "expected": {
+        "item": "Monterey Jack cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cilantro",
+      "expected": {
+        "item": "Cilantro",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sour cream",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

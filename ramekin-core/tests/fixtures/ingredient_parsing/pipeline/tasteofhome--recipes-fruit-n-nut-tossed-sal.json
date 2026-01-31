@@ -1,0 +1,151 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-fruit-n-nut-tossed-sal",
+  "ingredients": [
+    {
+      "raw": "1 head romaine, torn",
+      "expected": {
+        "item": "romaine, torn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can (11 ounces) mandarin oranges, drained",
+      "expected": {
+        "item": "mandarin oranges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "11",
+            "unit": "oz"
+          },
+          {
+            "amount": "312",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 cup seedless red grapes, halved",
+      "expected": {
+        "item": "seedless red grapes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "1/2 cup slivered almonds, toasted",
+      "expected": {
+        "item": "slivered almonds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "DRESSING:",
+      "expected": {
+        "item": "DRESSING:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "46",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon grated lemon zest",
+      "expected": {
+        "item": "grated lemon zest",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Dash salt and pepper",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

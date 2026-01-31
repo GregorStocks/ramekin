@@ -1,0 +1,126 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "japanese-basic-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "200 ml milk (lukewarm)",
+      "expected": {
+        "item": "milk (lukewarm)",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 g active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "30 g sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "240 g bread flour",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "60 g cake flour",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 g salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 g dry milk powder",
+      "expected": {
+        "item": "dry milk powder",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "30 g butter (room temperature)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "egg wash: 1 egg plus pinch of salt (mixed well)",
+      "expected": {
+        "item": "egg wash: 1 egg",
+        "measurements": [],
+        "note": "mixed well"
+      }
+    },
+    {
+      "raw": "pearl sugar",
+      "expected": {
+        "item": "pearl sugar",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

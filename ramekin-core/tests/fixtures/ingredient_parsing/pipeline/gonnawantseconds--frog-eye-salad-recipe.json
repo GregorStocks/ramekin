@@ -1,0 +1,189 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "frog-eye-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup Acini di pepe",
+      "expected": {
+        "item": "Acini di pepe",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (3.5-ounce) box  instant vanilla pudding mix",
+      "expected": {
+        "item": "instant vanilla pudding mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "box"
+          },
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "306",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8-ounce) can  crushed pineapple,  (drained with juice reserved)",
+      "expected": {
+        "item": "crushed pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "drained with juice reserved"
+      }
+    },
+    {
+      "raw": "1 (20-ounce) can pineapple tidbits,  (drained with juice discarded)",
+      "expected": {
+        "item": "pineapple tidbits",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": "drained with juice discarded"
+      }
+    },
+    {
+      "raw": "1 (11-ounce) can  mandarin oranges,  (drained with juice discarded)",
+      "expected": {
+        "item": "mandarin oranges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "11",
+            "unit": null
+          }
+        ],
+        "note": "drained with juice discarded"
+      }
+    },
+    {
+      "raw": "2 (15-ounce)  cans fruit cocktail,  (drained with juice discarded)",
+      "expected": {
+        "item": "fruit cocktail",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "drained with juice discarded"
+      }
+    },
+    {
+      "raw": "3 cups colored mini marshmallow",
+      "expected": {
+        "item": "colored mini marshmallow",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded coconut",
+      "expected": {
+        "item": "shredded coconut",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (8-ounce) container cool whip (thawed)",
+      "expected": {
+        "item": "container cool whip",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "Reddi wip",
+      "expected": {
+        "item": "Reddi wip",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

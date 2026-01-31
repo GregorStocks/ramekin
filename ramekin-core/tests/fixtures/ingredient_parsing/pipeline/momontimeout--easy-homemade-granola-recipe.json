@@ -1,0 +1,127 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "easy-homemade-granola-recipe",
+  "ingredients": [
+    {
+      "raw": "3 cups old fashioned oats (not quick oats)",
+      "expected": {
+        "item": "old fashioned oats (not quick oats)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded coconut",
+      "expected": {
+        "item": "shredded coconut",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sliced almonds (or any other nut you prefer (pecans, walnuts, etc.))",
+      "expected": {
+        "item": "sliced almonds (or any other nut you prefer (pecans, walnuts, etc.)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tbsp honey (or real maple syrup)",
+      "expected": {
+        "item": "honey (or real maple syrup)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup coconut oil (or extra virgin olive oil)",
+      "expected": {
+        "item": "coconut oil (or extra virgin olive oil)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup dried cranberries (or other dried fruit (raisins, apricots, cherries, etc.))",
+      "expected": {
+        "item": "dried cranberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "or other dried fruit (raisins, apricots, cherries, etc."
+      }
+    }
+  ]
+}

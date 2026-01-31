@@ -1,0 +1,53 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "negroni-recipe",
+  "ingredients": [
+    {
+      "raw": "1 fluid ounce Campari",
+      "expected": {
+        "item": "Campari",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 fluid ounce Gin",
+      "expected": {
+        "item": "Gin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 fluid ounce Red Vermouth (sweet or semi-sweet)",
+      "expected": {
+        "item": "Red Vermouth (sweet or semi-sweet)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "orange peel (to garnish)",
+      "expected": {
+        "item": "orange peel (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

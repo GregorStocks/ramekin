@@ -1,0 +1,174 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-252380-classic-hamburge",
+  "ingredients": [
+    {
+      "raw": "1 small onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1.5 teaspoons canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 teaspoons ketchup, divided",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 tablespoon low-fat mayonnaise",
+      "expected": {
+        "item": "low-fat mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dill pickle relish",
+      "expected": {
+        "item": "dill pickle relish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 teaspoon distilled white vinegar",
+      "expected": {
+        "item": "distilled white vinegar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces lean (90&amp;amp;#37; or leaner) ground beef",
+      "expected": {
+        "item": "lean ground beef",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "90",
+            "unit": null
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Worcestershire sauce or steak sauce",
+      "expected": {
+        "item": "Worcestershire sauce or steak sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 teaspoon freshly ground pepper",
+      "expected": {
+        "item": "freshly ground pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sesame-seed or other hamburger buns, toasted",
+      "expected": {
+        "item": "sesame-seed or other hamburger buns",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "2 slices tomato",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 leaves green-leaf lettuce",
+      "expected": {
+        "item": "leaves green-leaf lettuce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

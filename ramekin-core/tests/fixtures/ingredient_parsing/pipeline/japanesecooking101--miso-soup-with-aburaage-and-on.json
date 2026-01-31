@@ -1,0 +1,71 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "miso-soup-with-aburaage-and-on",
+  "ingredients": [
+    {
+      "raw": "1  square Aburaage",
+      "expected": {
+        "item": "square Aburaage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  small onion",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tbsp miso paste",
+      "expected": {
+        "item": "miso paste",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  green onions (finely chopped)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

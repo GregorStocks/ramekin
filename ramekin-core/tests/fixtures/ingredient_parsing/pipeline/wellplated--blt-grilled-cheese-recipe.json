@@ -1,0 +1,113 @@
+{
+  "source": "wellplated",
+  "recipe_slug": "blt-grilled-cheese-recipe",
+  "ingredients": [
+    {
+      "raw": "6 slices thick-cut bacon",
+      "expected": {
+        "item": "thick-cut bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 to 8  tender green lettuce leaves (washed and spun dry)",
+      "expected": {
+        "item": "tender green lettuce leaves",
+        "measurements": [
+          {
+            "amount": "4 to 8",
+            "unit": null
+          }
+        ],
+        "note": "washed and spun dry"
+      }
+    },
+    {
+      "raw": "1  ripe heirloom tomato (cut into 1/2-inch thick slices (if tomatoes are not in season, use small on the vine tomatoes instead))",
+      "expected": {
+        "item": "ripe heirloom tomato (cut into 1/2-inch thick slices (if tomatoes are not in season, use small on the vine tomatoes instead)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ground black pepper",
+      "expected": {
+        "item": "Ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 slices good quality (sturdy whole wheat bread (I like sourdough))",
+      "expected": {
+        "item": "good quality",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": "sturdy whole wheat bread (I like sourdough"
+      }
+    },
+    {
+      "raw": "4 tablespoons nonfat plain Greek yogurt",
+      "expected": {
+        "item": "nonfat plain Greek yogurt",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  ripe avocado (sliced)",
+      "expected": {
+        "item": "ripe avocado",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    }
+  ]
+}

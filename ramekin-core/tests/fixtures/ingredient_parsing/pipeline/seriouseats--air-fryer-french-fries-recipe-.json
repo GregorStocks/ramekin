@@ -1,0 +1,73 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "air-fryer-french-fries-recipe-",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds (680 g) russet potatoes, peeled",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "3/4 cup (180 ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil cooking spray",
+      "expected": {
+        "item": "Olive oil cooking spray",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

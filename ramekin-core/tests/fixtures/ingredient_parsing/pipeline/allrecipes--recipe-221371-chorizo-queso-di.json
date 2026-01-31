@@ -1,0 +1,86 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-221371-chorizo-queso-di",
+  "ingredients": [
+    {
+      "raw": "10 ounces bulk chorizo sausage",
+      "expected": {
+        "item": "bulk chorizo sausage",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (10 ounce) can diced tomatoes with green chile peppers (such as RO*TEL®), drained",
+      "expected": {
+        "item": "diced tomatoes with green chile peppers (such as RO*TEL®)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 (8 ounce) package cream cheese, cubed",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "1 (8 ounce) package processed cheese (such as Velveeta®), cubed",
+      "expected": {
+        "item": "processed cheese (such as Velveeta®)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    }
+  ]
+}

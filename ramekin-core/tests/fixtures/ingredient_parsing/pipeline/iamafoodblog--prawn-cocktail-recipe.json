@@ -1,0 +1,121 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "prawn-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons mayonaise",
+      "expected": {
+        "item": "mayonaise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "squeeze of lemon juice",
+      "expected": {
+        "item": "squeeze of lemon juice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup cooked shelled prawns (I used baby shrimp)",
+      "expected": {
+        "item": "cooked shelled prawns (I used baby shrimp)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 of head of iceberg lettuce, finely shredded",
+      "expected": {
+        "item": "of head of iceberg lettuce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "finely shredded"
+      }
+    },
+    {
+      "raw": "1/2 avocado, finely diced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "salmon roe (optional)",
+      "expected": {
+        "item": "salmon roe",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

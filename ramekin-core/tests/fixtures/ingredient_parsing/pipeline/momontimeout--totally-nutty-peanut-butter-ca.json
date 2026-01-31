@@ -1,0 +1,79 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "totally-nutty-peanut-butter-ca",
+  "ingredients": [
+    {
+      "raw": "10 oz Reese's Peanut Butter Chips",
+      "expected": {
+        "item": "Reese's Peanut Butter Chips",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup light corn syrup",
+      "expected": {
+        "item": "light corn syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups roasted (salted peanuts (whole))",
+      "expected": {
+        "item": "roasted",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "salted peanuts (whole"
+      }
+    },
+    {
+      "raw": "1 cup roasted salted peanuts (chopped)",
+      "expected": {
+        "item": "roasted salted peanuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    }
+  ]
+}

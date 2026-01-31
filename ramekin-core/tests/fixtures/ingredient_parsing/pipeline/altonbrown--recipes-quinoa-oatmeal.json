@@ -1,0 +1,58 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-quinoa-oatmeal",
+  "ingredients": [
+    {
+      "raw": "1 1/4 cups old-fashioned rolled oats",
+      "expected": {
+        "item": "old-fashioned rolled oats",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons quinoa",
+      "expected": {
+        "item": "quinoa",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "2 cups boiling water",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

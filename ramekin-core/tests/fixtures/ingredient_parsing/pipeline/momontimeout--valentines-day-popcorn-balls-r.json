@@ -1,0 +1,111 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "valentines-day-popcorn-balls-r",
+  "ingredients": [
+    {
+      "raw": "10 oz marshmallows (1 bag)",
+      "expected": {
+        "item": "marshmallows",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup butter (1 stick)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.75 oz popcorn (1 bag)",
+      "expected": {
+        "item": "popcorn",
+        "measurements": [
+          {
+            "amount": "2.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "78",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "food coloring (optional)",
+      "expected": {
+        "item": "food coloring",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cup M&amp;amp;Ms or other candy",
+      "expected": {
+        "item": "M&Ms or other candy",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "non stick baking spray",
+      "expected": {
+        "item": "non stick baking spray",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

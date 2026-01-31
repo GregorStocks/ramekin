@@ -1,0 +1,61 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-almond-butter-cups",
+  "ingredients": [
+    {
+      "raw": "14 ounces chocolate chips",
+      "expected": {
+        "item": "chocolate chips",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons coconut oil",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup almond butter",
+      "expected": {
+        "item": "almond butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "flakey sea salt (optional)",
+      "expected": {
+        "item": "flakey sea salt",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

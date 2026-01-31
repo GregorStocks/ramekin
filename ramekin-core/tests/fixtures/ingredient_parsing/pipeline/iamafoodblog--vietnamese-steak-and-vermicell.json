@@ -1,0 +1,172 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "vietnamese-steak-and-vermicell",
+  "ingredients": [
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 boneless rib eye steak (or steak of choice)",
+      "expected": {
+        "item": "boneless rib eye steak (or steak of choice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-4 bundles of vermicelli",
+      "expected": {
+        "item": "bundles of vermicelli",
+        "measurements": [
+          {
+            "amount": "2-4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 avocado, sliced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1 pint mini heirloom or cherry tomatoes, sliced in half",
+      "expected": {
+        "item": "mini heirloom or cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          }
+        ],
+        "note": "sliced in half"
+      }
+    },
+    {
+      "raw": "2 mini cucumbers, shredded",
+      "expected": {
+        "item": "mini cucumbers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "mixed fish sauce to taste, see below",
+      "expected": {
+        "item": "mixed fish sauce to taste, see below",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove of garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 red bird’s eye chili",
+      "expected": {
+        "item": "red bird’s eye chili",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of 1/2 lime (or to taste)",
+      "expected": {
+        "item": "juice of 1/2 lime",
+        "measurements": [],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "1 3/4 cups of water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup fish sauce",
+      "expected": {
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

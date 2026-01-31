@@ -1,0 +1,87 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "fresh-cucumber-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb of cucumbers (4-5)",
+      "expected": {
+        "item": "cucumbers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove of garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  heaping tbsp of fresh dill (chopped)",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "heaping tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 tbsp of Sunflower oil or Olive oil (add more to taste)",
+      "expected": {
+        "item": "Sunflower oil or Olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "add more to taste"
+      }
+    },
+    {
+      "raw": "1 tbsp white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt &amp;amp; pepper to taste",
+      "expected": {
+        "item": "salt & pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

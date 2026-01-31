@@ -1,0 +1,101 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "salsa-verde-recipe",
+  "ingredients": [
+    {
+      "raw": "5 medium tomatillos",
+      "expected": {
+        "item": "tomatillos",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium serrano chili",
+      "expected": {
+        "item": "serrano chili",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cloves garlic ((unpeeled))",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "unpeeled"
+      }
+    },
+    {
+      "raw": "1 tablespoon lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 medium onion ((minced))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "10 sprigs cilantro ((minced))",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "sprig"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

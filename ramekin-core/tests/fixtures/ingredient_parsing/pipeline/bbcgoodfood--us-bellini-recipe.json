@@ -1,0 +1,32 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-bellini-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups peach purée or nectar",
+      "expected": {
+        "item": "peach purée or nectar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bottle of prosecco",
+      "expected": {
+        "item": "prosecco",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

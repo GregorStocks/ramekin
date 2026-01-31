@@ -1,0 +1,61 @@
+{
+  "source": "loveandoliveoil",
+  "recipe_slug": "2017-06-firecracker-smores-htm",
+  "ingredients": [
+    {
+      "raw": "8 graham crackers, broken in half",
+      "expected": {
+        "item": "graham crackers, broken in half",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (3oz) bar firecracker chocolate",
+      "expected": {
+        "item": "bar firecracker chocolate",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 jumbo or s&amp;#8217;mores marshmallows",
+      "expected": {
+        "item": "jumbo or s’mores marshmallows",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "red and blue pop rocks candy, for topping",
+      "expected": {
+        "item": "red and blue pop rocks candy, for topping",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-caramel-cashew-cluster",
+  "ingredients": [
+    {
+      "raw": "2 teaspoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pounds milk chocolate candy coating, coarsely chopped, divided",
+      "expected": {
+        "item": "milk chocolate candy coating, coarsely chopped",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 cup salted cashew halves",
+      "expected": {
+        "item": "salted cashew halves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "28 caramels",
+      "expected": {
+        "item": "caramels",
+        "measurements": [
+          {
+            "amount": "28",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons heavy whipping cream",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

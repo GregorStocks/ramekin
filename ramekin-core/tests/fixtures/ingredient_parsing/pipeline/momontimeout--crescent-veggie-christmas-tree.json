@@ -1,0 +1,96 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "crescent-veggie-christmas-tree",
+  "ingredients": [
+    {
+      "raw": "16 oz Pillsbury Crescent Rolls (2 cans)",
+      "expected": {
+        "item": "Pillsbury Crescent Rolls",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz cream cheese (softened (I used light))",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened (I used light"
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream (light)",
+      "expected": {
+        "item": "sour cream (light)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp dried dill weed",
+      "expected": {
+        "item": "dried dill weed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups finely chopped assorted veggies (broccoli, bell peppers, carrots, green onion, cucumber)",
+      "expected": {
+        "item": "finely chopped assorted veggies (broccoli, bell peppers, carrots, green onion, cucumber)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

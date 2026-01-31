@@ -1,0 +1,32 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "dashi-fish-broth-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 handfuls dried bonito flakes",
+      "expected": {
+        "item": "dried bonito flakes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

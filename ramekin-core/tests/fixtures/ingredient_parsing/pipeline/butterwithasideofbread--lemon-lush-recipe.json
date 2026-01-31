@@ -1,0 +1,100 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "lemon-lush-recipe",
+  "ingredients": [
+    {
+      "raw": "1  pkg golden oreos ((36 cookies))",
+      "expected": {
+        "item": "golden oreos",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "36",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  cup butter (melted)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "8 oz cream cheese  (room temperature )",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature"
+      }
+    },
+    {
+      "raw": "3 1/4 cups cold milk (divided)",
+      "expected": {
+        "item": "cold milk",
+        "measurements": [
+          {
+            "amount": "3 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "796",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 8 oz tubs frozen whipped topping (divided)",
+      "expected": {
+        "item": "8 oz tubs frozen whipped topping",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 3.4 oz pkg lemon instant pudding",
+      "expected": {
+        "item": "lemon instant pudding",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "3.4 oz pkg"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source": "dinnerthendessert",
+  "recipe_slug": "quinoa-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup quinoa",
+      "expected": {
+        "item": "quinoa",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

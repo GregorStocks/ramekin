@@ -1,0 +1,71 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "strawberry-mango-jicama-salad-",
+  "ingredients": [
+    {
+      "raw": "2 cups sliced strawberries",
+      "expected": {
+        "item": "sliced strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup chopped mango",
+      "expected": {
+        "item": "chopped mango",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup chopped jicama",
+      "expected": {
+        "item": "chopped jicama",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chopped cilantro",
+      "expected": {
+        "item": "chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 Tablespoons fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

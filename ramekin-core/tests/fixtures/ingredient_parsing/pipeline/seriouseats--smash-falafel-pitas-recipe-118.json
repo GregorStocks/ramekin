@@ -1,0 +1,108 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "smash-falafel-pitas-recipe-118",
+  "ingredients": [
+    {
+      "raw": "4 (6-inch) fresh pita (9 ounces, 256g total), see note",
+      "expected": {
+        "item": "fresh pita, see note",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "256",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Homemade Falafel , prepared through Step 2 and chilled for 15 minutes",
+      "expected": {
+        "item": "Homemade Falafel",
+        "measurements": [],
+        "note": "prepared through Step 2 and chilled for 15 minutes"
+      }
+    },
+    {
+      "raw": "3 Tbsp. (45ml) olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "Shredded iceberg lettuce",
+      "expected": {
+        "item": "Shredded iceberg lettuce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped fresh tomatoes Chopped fresh cucumbers&nbsp;",
+      "expected": {
+        "item": "Chopped fresh tomatoes Chopped fresh cucumbers",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "chopped fresh cucumbers",
+      "expected": {
+        "item": "chopped fresh cucumbers",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon (optional)",
+      "expected": {
+        "item": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Tahini Sauce With Garlic and Lemon (optional)",
+      "expected": {
+        "item": "Tahini Sauce With Garlic and Lemon",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Zhug (Yemenite Hot Sauce With Cilantro and Parsley) (optional)",
+      "expected": {
+        "item": "Zhug (Yemenite Hot Sauce With Cilantro and Parsley) (optional)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

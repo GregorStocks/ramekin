@@ -1,0 +1,94 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "tekka-don-tuna-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 lb sliced tuna, Sashimi grade",
+      "expected": {
+        "item": "sliced tuna, Sashimi grade",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Mirin",
+      "expected": {
+        "item": "Mirin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Steamed Rice",
+      "expected": {
+        "item": "Steamed Rice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sesame seeds",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Wasabi",
+      "expected": {
+        "item": "Wasabi",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nori roasted Seaweed (thinly cut)",
+      "expected": {
+        "item": "Nori roasted Seaweed (thinly cut)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

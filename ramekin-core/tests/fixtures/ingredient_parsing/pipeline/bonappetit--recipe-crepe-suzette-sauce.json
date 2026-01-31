@@ -1,0 +1,75 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-crepe-suzette-sauce",
+  "ingredients": [
+    {
+      "raw": "⅔ cup fresh orange juice",
+      "expected": {
+        "item": "fresh orange juice",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cup (133 g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp. Grand Marnier or other orange liqueur",
+      "expected": {
+        "item": "Grand Marnier or other orange liqueur",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 Tbsp. chilled unsalted butter, cut into pieces",
+      "expected": {
+        "item": "chilled unsalted butter, cut into pieces",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp. Diamond Crystal or Morton kosher salt",
+      "expected": {
+        "item": "Diamond Crystal or Morton kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

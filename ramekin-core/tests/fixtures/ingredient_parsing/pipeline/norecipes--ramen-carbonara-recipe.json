@@ -1,0 +1,87 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "ramen-carbonara-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 package instant ramen (curly flash-fried type)",
+      "expected": {
+        "item": "instant ramen (curly flash-fried type)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 slice bacon",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Parmesan cheese (more for topping)",
+      "expected": {
+        "item": "Parmesan cheese (more for topping)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Black pepper (to taste)",
+      "expected": {
+        "item": "Black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Scallion greens (for garnish)",
+      "expected": {
+        "item": "Scallion greens",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

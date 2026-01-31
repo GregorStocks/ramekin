@@ -1,0 +1,164 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "shepherds-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds potatoes or sweet potatoes",
+      "expected": {
+        "item": "potatoes or sweet potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup full-fat coconut milk",
+      "expected": {
+        "item": "full-fat coconut milk",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "fine grain sea salt, to taste",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 tablespoon coconut oil",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  medium onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "8 ounces mushrooms, chopped",
+      "expected": {
+        "item": "mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 cup crushed tomatoes",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons garam masala",
+      "expected": {
+        "item": "garam masala",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cooked yellow or green split peas",
+      "expected": {
+        "item": "cooked yellow or green split peas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup peas (fresh or frozen)",
+      "expected": {
+        "item": "peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "fresh or frozen"
+      }
+    },
+    {
+      "raw": "To serve: a drizzle of melted coconut oil with chopped serrano chiles, micro greens, scallions",
+      "expected": {
+        "item": "To serve: a drizzle of melted coconut oil with chopped serrano chiles, micro greens, scallions",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

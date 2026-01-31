@@ -1,0 +1,83 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "easy-yeast-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "3 cups all-purpose flour (or bread, plus more for dusting)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
+          }
+        ],
+        "note": "or bread, plus more for dusting"
+      }
+    },
+    {
+      "raw": "2 teaspoons instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons kosher salt (NOT table salt)",
+      "expected": {
+        "item": "kosher salt (NOT table salt)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups very warm tap water (about 130°F)",
+      "expected": {
+        "item": "very warm tap water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

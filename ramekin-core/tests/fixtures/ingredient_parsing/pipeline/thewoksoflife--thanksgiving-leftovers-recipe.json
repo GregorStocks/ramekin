@@ -1,0 +1,110 @@
+{
+  "source": "thewoksoflife",
+  "recipe_slug": "thanksgiving-leftovers-recipe",
+  "ingredients": [
+    {
+      "raw": "2 sheets puff pastry ((thawed))",
+      "expected": {
+        "item": "sheets puff pastry",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1/2 cup gravy",
+      "expected": {
+        "item": "gravy",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup mashed potatoes",
+      "expected": {
+        "item": "mashed potatoes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup stuffing",
+      "expected": {
+        "item": "stuffing",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup cranberry sauce",
+      "expected": {
+        "item": "cranberry sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup diced turkey",
+      "expected": {
+        "item": "diced turkey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded cheese ((cheddar, gruyere, manchego, etc.))",
+      "expected": {
+        "item": "shredded cheese (cheddar, gruyere, manchego, etc.)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg ((beaten with 1 tablespoon water))",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten with 1 tablespoon water"
+      }
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-218324-baked-potato-dip",
+  "ingredients": [
+    {
+      "raw": "1 (8 ounce) package cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "1 (8 ounce) container sour cream",
+      "expected": {
+        "item": "container sour cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (1 ounce) package ranch dressing mix",
+      "expected": {
+        "item": "ranch dressing mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 green onions, thinly sliced",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 cup shredded Cheddar cheese",
+      "expected": {
+        "item": "shredded Cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.66666668653488 (3 ounce) can real bacon bits",
+      "expected": {
+        "item": "real bacon bits",
+        "measurements": [
+          {
+            "amount": "0.66666668653488",
+            "unit": "can"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

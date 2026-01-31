@@ -1,0 +1,143 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "southern-deviled-eggs-recipe",
+  "ingredients": [
+    {
+      "raw": "6 large hard-boiled eggs",
+      "expected": {
+        "item": "hard-boiled eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 tablespoons mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons yellow mustard",
+      "expected": {
+        "item": "yellow mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons whole-grain mustard",
+      "expected": {
+        "item": "whole-grain mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  cornichons, (minced)",
+      "expected": {
+        "item": "cornichons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoons pimento, (chopped)",
+      "expected": {
+        "item": "pimento",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh dill, (chopped)",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon Cajun seasoning",
+      "expected": {
+        "item": "Cajun seasoning",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pimento",
+      "expected": {
+        "item": "pimento",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "dill",
+      "expected": {
+        "item": "dill",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

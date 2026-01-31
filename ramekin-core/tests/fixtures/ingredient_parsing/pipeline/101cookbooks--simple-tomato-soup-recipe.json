@@ -1,0 +1,135 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "simple-tomato-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons unsalted butter, olive oil, or coconut oil",
+      "expected": {
+        "item": "unsalted butter, olive oil, or coconut oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  medium yellow onions, thinly sliced",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 teaspoon fine grain sea salt, plus more to taste",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "3 teaspoons curry powder",
+      "expected": {
+        "item": "curry powder",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon chile flakes",
+      "expected": {
+        "item": "chile flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  (28-ounce) cans whole tomatoes (pref. fire-roasted)",
+      "expected": {
+        "item": "whole tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "28",
+            "unit": null
+          }
+        ],
+        "note": "pref. fire-roasted"
+      }
+    },
+    {
+      "raw": "1 14-ounce can coconut milk",
+      "expected": {
+        "item": "coconut milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "to serve: any of the following that sound good to you - cooked brown rice, lemon wedges, toasted almond slices, pan-fried paneer, fresh thyme or oregano, oregano drizzle, a poached egg",
+      "expected": {
+        "item": "to serve: any of the following that sound good to you - cooked brown rice, lemon wedges, toasted almond slices, pan-fried paneer, fresh thyme or oregano, oregano drizzle, a poached egg",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

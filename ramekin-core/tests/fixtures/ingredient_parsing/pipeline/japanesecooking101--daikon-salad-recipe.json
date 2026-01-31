@@ -1,0 +1,104 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "daikon-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp sesame seeds",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  Daikon",
+      "expected": {
+        "item": "Daikon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Katsuobushi (Dried Bonito Flakes)",
+      "expected": {
+        "item": "Katsuobushi",
+        "measurements": [],
+        "note": "Dried Bonito Flakes"
+      }
+    },
+    {
+      "raw": "Nori (Roasted Seaweed, thinly cut)",
+      "expected": {
+        "item": "Nori",
+        "measurements": [],
+        "note": "Roasted Seaweed, thinly cut"
+      }
+    }
+  ]
+}

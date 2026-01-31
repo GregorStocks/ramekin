@@ -1,0 +1,122 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "10-minute-meal-instant-ramen-r",
+  "ingredients": [
+    {
+      "raw": "1  green onion/scallion",
+      "expected": {
+        "item": "green onion/scallion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 package instant ramen noodles",
+      "expected": {
+        "item": "instant ramen noodles",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "500 ml water ((about 2 cups))",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "ml"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ (5-oz) can albacore tuna (preferably packed in olive oil)",
+      "expected": {
+        "item": "albacore tuna",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "can"
+          },
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "preferably packed in olive oil"
+      }
+    },
+    {
+      "raw": "2 Tbsp kimchi ((optional; plus more for topping/serving; cut into bite-size pieces))",
+      "expected": {
+        "item": "kimchi",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional; plus more for topping/serving; cut into bite-size pieces"
+      }
+    },
+    {
+      "raw": "1  large egg (50 g each w/o shell)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ Tbsp toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ tsp toasted white sesame seeds ((optional))",
+      "expected": {
+        "item": "toasted white sesame seeds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

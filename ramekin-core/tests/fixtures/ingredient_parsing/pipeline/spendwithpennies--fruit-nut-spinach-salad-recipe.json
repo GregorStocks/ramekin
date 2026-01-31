@@ -1,0 +1,152 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "fruit-nut-spinach-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "⅓ cup pecans (toasted)",
+      "expected": {
+        "item": "pecans",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "⅓ cup almonds (toasted)",
+      "expected": {
+        "item": "almonds",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "10 oz fresh spinach",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sliced fresh strawberries",
+      "expected": {
+        "item": "sliced fresh strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "74",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup blackberries",
+      "expected": {
+        "item": "blackberries",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅔ cup raspberries",
+      "expected": {
+        "item": "raspberries",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "82",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup crumbled feta cheese (or goat cheese)",
+      "expected": {
+        "item": "crumbled feta cheese (or goat cheese)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup thinly sliced red onion (optional)",
+      "expected": {
+        "item": "thinly sliced red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cup balsamic vinaigrette (such as Marzetti® Simply Dressed® Balsamic Salad Dressing)",
+      "expected": {
+        "item": "balsamic vinaigrette (such as Marzetti® Simply Dressed® Balsamic Salad Dressing)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

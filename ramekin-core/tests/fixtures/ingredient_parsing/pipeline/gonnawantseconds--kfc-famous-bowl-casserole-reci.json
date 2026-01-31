@@ -1,0 +1,96 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "kfc-famous-bowl-casserole-reci",
+  "ingredients": [
+    {
+      "raw": "6 cups prepared mashed potatoes (homemade or store bought)",
+      "expected": {
+        "item": "prepared mashed potatoes (homemade or store bought)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces frozen corn,  (thawed, drained, and heated)",
+      "expected": {
+        "item": "frozen corn",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed, drained, and heated"
+      }
+    },
+    {
+      "raw": "26 ounces frozen chicken nuggets (chopped) or popcorn chicken  (heated per package instructions)",
+      "expected": {
+        "item": "frozen chicken nuggets or popcorn chicken  (heated per package instructions)",
+        "measurements": [
+          {
+            "amount": "26",
+            "unit": "oz"
+          },
+          {
+            "amount": "737",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups Colby jack or cheddar cheese,   (shredded)",
+      "expected": {
+        "item": "Colby jack or cheddar cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "1  (12-ounce) jar prepared chicken gravy",
+      "expected": {
+        "item": "prepared chicken gravy",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh parsley,  (minced)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced"
+      }
+    }
+  ]
+}

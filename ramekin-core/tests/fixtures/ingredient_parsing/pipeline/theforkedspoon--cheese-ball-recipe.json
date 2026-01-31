@@ -1,0 +1,114 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "cheese-ball-recipe",
+  "ingredients": [
+    {
+      "raw": "2 (8-ounce) blocks full-fat cream cheese (softened and at room temperature)",
+      "expected": {
+        "item": "blocks full-fat cream cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "softened and at room temperature"
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups chopped pecans (divided)",
+      "expected": {
+        "item": "chopped pecans",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1½ cups sharp cheddar cheese (freshly shredded)",
+      "expected": {
+        "item": "sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly shredded"
+      }
+    },
+    {
+      "raw": "½ cup Monterey Jack cheese (freshly shredded)",
+      "expected": {
+        "item": "Monterey Jack cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly shredded"
+      }
+    },
+    {
+      "raw": "2  green onions ((green parts only), chopped)",
+      "expected": {
+        "item": "green onions (green parts only)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "chopped)"
+      }
+    }
+  ]
+}

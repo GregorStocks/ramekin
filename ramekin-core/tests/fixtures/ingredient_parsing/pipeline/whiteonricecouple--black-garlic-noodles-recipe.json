@@ -1,0 +1,96 @@
+{
+  "source": "whiteonricecouple",
+  "recipe_slug": "black-garlic-noodles-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 pound dry noodles (, cooked to package directions (about 2 heaping cups of cooked noodles))",
+      "expected": {
+        "item": "dry noodles",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "cooked to package directions (about 2 heaping cups of cooked noodles"
+      }
+    },
+    {
+      "raw": "8 cloves black garlic (, sliced thinly)",
+      "expected": {
+        "item": "black garlic",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "clove"
+          }
+        ],
+        "note": "sliced thinly"
+      }
+    },
+    {
+      "raw": "1 tablespoon grape seed oil ( or vegetable oil)",
+      "expected": {
+        "item": "grape seed oil ( or vegetable oil)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sesame oil",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons fish sauce ( or soy sauce)",
+      "expected": {
+        "item": "fish sauce ( or soy sauce)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful of chopped cilantro or herbs",
+      "expected": {
+        "item": "chopped cilantro or herbs",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "lemon-meringue-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "1 batch Homemade Microwave Lemon Curd (about 2 cups), chilled",
+      "expected": {
+        "item": "batch Homemade Microwave Lemon Curd",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chilled"
+      }
+    },
+    {
+      "raw": "24 1.75-inch premade miniature tart shells",
+      "expected": {
+        "item": "1.75-inch premade miniature tart shells",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups meringue topping (see note below)",
+      "expected": {
+        "item": "meringue topping (see note below)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

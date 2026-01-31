@@ -1,0 +1,87 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "strawberry-mojito-recipe",
+  "ingredients": [
+    {
+      "raw": "8  fresh mint leaves",
+      "expected": {
+        "item": "fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  lime (sliced into 4 wedges, plus more for serving)",
+      "expected": {
+        "item": "lime",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced into 4 wedges, plus more for serving"
+      }
+    },
+    {
+      "raw": "2 large strawberries (chopped)",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 teaspoon simple syrup (or granulated sugar or honey)",
+      "expected": {
+        "item": "simple syrup (or granulated sugar or honey)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 fluid ounces white rum",
+      "expected": {
+        "item": "white rum",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "club soda",
+      "expected": {
+        "item": "club soda",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

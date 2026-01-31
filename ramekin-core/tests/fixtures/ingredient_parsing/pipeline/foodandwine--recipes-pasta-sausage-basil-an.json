@@ -1,0 +1,130 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-pasta-sausage-basil-an",
+  "ingredients": [
+    {
+      "raw": "1 pound penne, rigatoni, or medium shells",
+      "expected": {
+        "item": "penne, rigatoni, or medium shells",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 hot Italian sausages, meat removed from casings and crumbled (about 1 1/2 pounds)",
+      "expected": {
+        "item": "hot Italian sausages",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "meat removed from casings and crumbled"
+      }
+    },
+    {
+      "raw": "3/4 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons grainy mustard",
+      "expected": {
+        "item": "grainy mustard",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch of crushed red pepper",
+      "expected": {
+        "item": "crushed red pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup thinly sliced basil",
+      "expected": {
+        "item": "thinly sliced basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

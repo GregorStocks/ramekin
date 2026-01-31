@@ -1,0 +1,83 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "11936-roasted-olives-with-clem",
+  "ingredients": [
+    {
+      "raw": "2 cups mixed olives",
+      "expected": {
+        "item": "mixed olives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 sprig fresh rosemary",
+      "expected": {
+        "item": "fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clementine, sliced",
+      "expected": {
+        "item": "clementine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Warm baguette, sliced, for serving",
+      "expected": {
+        "item": "Warm baguette, sliced",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

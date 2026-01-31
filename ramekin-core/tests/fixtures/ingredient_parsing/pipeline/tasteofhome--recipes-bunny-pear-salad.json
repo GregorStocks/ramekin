@@ -1,0 +1,91 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-bunny-pear-salad",
+  "ingredients": [
+    {
+      "raw": "Red lettuce leaves",
+      "expected": {
+        "item": "Red lettuce leaves",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can (15-1/4 ounces) pear halves, drained",
+      "expected": {
+        "item": "pear halves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15-1/4",
+            "unit": "oz"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "12 dried currants or raisins",
+      "expected": {
+        "item": "dried currants or raisins",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 whole almonds",
+      "expected": {
+        "item": "whole almonds",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 baby carrots",
+      "expected": {
+        "item": "baby carrots",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 parsley sprigs",
+      "expected": {
+        "item": "parsley sprigs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Whipped cream in a can",
+      "expected": {
+        "item": "Whipped cream in a can",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

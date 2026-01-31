@@ -1,0 +1,155 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "instant-pot-plov-recipe",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  medium yellow onions, thinly sliced",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 teaspoon red chile flakes",
+      "expected": {
+        "item": "red chile flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 14- ounce can of chickpeas, drained, rinsed (or equivalent)",
+      "expected": {
+        "item": "14- ounce can of chickpeas, drained",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "rinsed (or equivalent)"
+      }
+    },
+    {
+      "raw": "3  garlic cloves, peeled and chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "peeled and chopped"
+      }
+    },
+    {
+      "raw": "1/3 cup black olives, chopped",
+      "expected": {
+        "item": "black olives",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "2 cups boiling water with 1/2 teaspoon salt added, divided",
+      "expected": {
+        "item": "boiling water with 1/2 teaspoon salt added",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "6 ounces kale or spinach, chopped (frozen is ok)",
+      "expected": {
+        "item": "kale or spinach, chopped",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "frozen is ok"
+      }
+    },
+    {
+      "raw": "a couple handfuls chopped herbs (cilantro, dill, celery leaves)",
+      "expected": {
+        "item": "a couple handfuls chopped herbs (cilantro, dill, celery leaves)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups brown basmati rice, well rinsed",
+      "expected": {
+        "item": "brown basmati rice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "well rinsed"
+      }
+    },
+    {
+      "raw": "a big pinch of saffron, (optional)",
+      "expected": {
+        "item": "a big pinch of saffron",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
+      "expected": {
+        "item": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "edamame-guacamole-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup frozen shelled edamame (thawed)",
+      "expected": {
+        "item": "frozen shelled edamame",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed"
+      }
+    },
+    {
+      "raw": "1  ripe avocado (peeled  and pitted)",
+      "expected": {
+        "item": "ripe avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled  and pitted"
+      }
+    },
+    {
+      "raw": "1/2 cup chopped cilantro",
+      "expected": {
+        "item": "chopped cilantro",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/4  onion (roughly chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1/2  jalepeno (finely chopped)",
+      "expected": {
+        "item": "jalepeno",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "Juice of 2  limes",
+      "expected": {
+        "item": "Juice of 2  limes",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black  pepper (to taste)",
+      "expected": {
+        "item": "Salt and freshly ground black  pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-american-buttercream-f",
+  "ingredients": [
+    {
+      "raw": "1/4 cup low-fat buttermilk, cold",
+      "expected": {
+        "item": "low-fat buttermilk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "cold"
+      }
+    },
+    {
+      "raw": "2 tablespoons full-fat sour cream, cold",
+      "expected": {
+        "item": "full-fat sour cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "cold"
+      }
+    },
+    {
+      "raw": "18 tablespoons unsalted butter, cut into 1/2-inch pieces, at cool room temperature (about 65°F)",
+      "expected": {
+        "item": "unsalted butter, cut into 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "18",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "65",
+            "unit": null
+          }
+        ],
+        "note": "at cool room temperature"
+      }
+    },
+    {
+      "raw": "3 ounces unflavored shortening, at room temperature",
+      "expected": {
+        "item": "unflavored shortening",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "3 cups confectioners&amp;#039; sugar",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

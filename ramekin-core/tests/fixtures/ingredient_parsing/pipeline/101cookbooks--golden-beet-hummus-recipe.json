@@ -1,0 +1,152 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "golden-beet-hummus-recipe",
+  "ingredients": [
+    {
+      "raw": "1 14- ounce can chickpeas, drained and rinsed",
+      "expected": {
+        "item": "14- ounce can chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1  medium golden beet (raw), peeled, and quartered (4-inch diameter)",
+      "expected": {
+        "item": "golden beet, peeled, and quartered",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "raw"
+      }
+    },
+    {
+      "raw": "4-6 tablespoons fresh lemon juice (2 lemons)",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  medium garlic cloves",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine grain sea salt, plus more to taste",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "2 tablespoons tahini",
+      "expected": {
+        "item": "tahini",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 - 1/2 cup ice water",
+      "expected": {
+        "item": "ice water",
+        "measurements": [
+          {
+            "amount": "1/3-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon round turmeric (optional)",
+      "expected": {
+        "item": "round turmeric",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "pinch of saffron (optional)",
+      "expected": {
+        "item": "saffron",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "3 tablespoons nutritional yeast (optional)",
+      "expected": {
+        "item": "nutritional yeast",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "to serve (all or some of the others): sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives, thread of toasted sesame oil",
+      "expected": {
+        "item": "to serve (all or some of the others): sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives",
+        "measurements": [],
+        "note": "thread of toasted sesame oil"
+      }
+    }
+  ]
+}

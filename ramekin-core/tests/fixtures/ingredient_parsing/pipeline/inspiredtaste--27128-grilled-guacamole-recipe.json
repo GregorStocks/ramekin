@@ -1,0 +1,131 @@
+{
+  "source": "inspiredtaste",
+  "recipe_slug": "27128-grilled-guacamole-recipe",
+  "ingredients": [
+    {
+      "raw": "2 medium ripe avocados, halved with pits removed",
+      "expected": {
+        "item": "ripe avocados",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "halved with pits removed"
+      }
+    },
+    {
+      "raw": "2 medium ears corn, husked",
+      "expected": {
+        "item": "ears corn, husked",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion slice, about 1/2-inch thick",
+      "expected": {
+        "item": "onion slice, about 1/2-inch thick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 jalapeño pepper",
+      "expected": {
+        "item": "jalapeño pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup chopped tomatoes (1 large or 2 medium)",
+      "expected": {
+        "item": "chopped tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic, finely minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "finely minced"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh cilantro leaves, chopped",
+      "expected": {
+        "item": "fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 limes",
+      "expected": {
+        "item": "limes",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

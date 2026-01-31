@@ -1,0 +1,49 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "perfect-shredded-chicken-recip",
+  "ingredients": [
+    {
+      "raw": "2-3 pounds boneless skinless chicken thighs and/or breasts",
+      "expected": {
+        "item": "boneless skinless chicken thighs and/or breasts",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "lb"
+          },
+          {
+            "amount": "907-1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons&nbsp; Mexican spice mix&nbsp;or store-bought taco seasoning (optional)",
+      "expected": {
+        "item": "Mexican spice mix or store-bought taco seasoning",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cup chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

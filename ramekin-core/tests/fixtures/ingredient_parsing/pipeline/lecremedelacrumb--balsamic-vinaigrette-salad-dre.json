@@ -1,0 +1,57 @@
+{
+  "source": "lecremedelacrumb",
+  "recipe_slug": "balsamic-vinaigrette-salad-dre",
+  "ingredients": [
+    {
+      "raw": "½ cup high quality balsamic vinegar",
+      "expected": {
+        "item": "high quality balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup  honey  (or 2-3 tablespoons sugar, see note)",
+      "expected": {
+        "item": "honey  (or 2-3 tablespoons sugar, see note)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

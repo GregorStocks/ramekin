@@ -1,0 +1,100 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "green-juice-recipe",
+  "ingredients": [
+    {
+      "raw": "1 bunch kale (about 5 oz)",
+      "expected": {
+        "item": "kale",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 inch piece fresh ginger, peeled",
+      "expected": {
+        "item": "inch piece fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1 Granny smith apple (or any large apple)",
+      "expected": {
+        "item": "Granny smith apple (or any large apple)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 celery stalks, ends trimmed",
+      "expected": {
+        "item": "celery stalks",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "ends trimmed"
+      }
+    },
+    {
+      "raw": "½ large English cucumber",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Handful fresh parsley (about 1 oz)",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

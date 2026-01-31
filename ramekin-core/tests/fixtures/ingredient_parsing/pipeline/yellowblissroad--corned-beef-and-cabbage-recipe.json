@@ -1,0 +1,92 @@
+{
+  "source": "yellowblissroad",
+  "recipe_slug": "corned-beef-and-cabbage-recipe",
+  "ingredients": [
+    {
+      "raw": "3 to 4  pounds corned beef (flat cut with spice packet)",
+      "expected": {
+        "item": "corned beef (flat cut with spice packet)",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361 to 1814",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces beer ((amber ale or lager))",
+      "expected": {
+        "item": "beer (amber ale or lager)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  red potatoes (chopped into large pieces)",
+      "expected": {
+        "item": "red potatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "chopped into large pieces"
+      }
+    },
+    {
+      "raw": "6  carrots (peeled and chopped into large pieces)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "peeled and chopped into large pieces"
+      }
+    },
+    {
+      "raw": "1 head green cabbage (cut into wedges)",
+      "expected": {
+        "item": "green cabbage (cut into wedges)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

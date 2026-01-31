@@ -1,0 +1,59 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "omelette-recipe",
+  "ingredients": [
+    {
+      "raw": "2  large eggs, beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "a tiny pinch of fine grain sea salt",
+      "expected": {
+        "item": "a tiny pinch of fine grain sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "a few tablespoons of chopped chives or herbs",
+      "expected": {
+        "item": "a few tablespoons of chopped chives or herbs",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "a dollop of pesto",
+      "expected": {
+        "item": "a dollop of pesto",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "a bit of goat cheese or feta",
+      "expected": {
+        "item": "a bit of goat cheese or feta",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "a small handful of mixed salad greens",
+      "expected": {
+        "item": "a small handful of mixed salad greens",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

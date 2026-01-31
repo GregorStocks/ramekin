@@ -1,0 +1,82 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtomakefluffyscrambl",
+  "ingredients": [
+    {
+      "raw": "1/2 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh cracked pepper",
+      "expected": {
+        "item": "Fresh cracked pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Mix-ins, like leftover meat, cooked vegetables, cheese, or herbs",
+      "expected": {
+        "item": "Mix-ins, like leftover meat, cooked vegetables, cheese, or herbs",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

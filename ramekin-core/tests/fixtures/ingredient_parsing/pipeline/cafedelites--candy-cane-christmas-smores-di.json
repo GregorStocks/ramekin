@@ -1,0 +1,53 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "candy-cane-christmas-smores-di",
+  "ingredients": [
+    {
+      "raw": "1 cup chocolate chips of choice (dark, milk or white)",
+      "expected": {
+        "item": "chocolate chips of choice (dark, milk or white)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 large marshmallows",
+      "expected": {
+        "item": "marshmallows",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  candy canes (roughly chopped)",
+      "expected": {
+        "item": "candy canes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "Graham Crackers ((or Digestives) to serve)",
+      "expected": {
+        "item": "Graham Crackers (or Digestives) to serve)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

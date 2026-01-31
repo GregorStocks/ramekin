@@ -1,0 +1,49 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "chimichurri-chickpeas-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cans (15 ounces each) chickpeas or 3 cups cooked chickpeas",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz each"
+          }
+        ],
+        "note": "or 3 cups cooked chickpeas"
+      }
+    },
+    {
+      "raw": "1 cup homemade chimichurri sauce&nbsp;",
+      "expected": {
+        "item": "homemade chimichurri sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup crumbled feta cheese",
+      "expected": {
+        "item": "crumbled feta cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

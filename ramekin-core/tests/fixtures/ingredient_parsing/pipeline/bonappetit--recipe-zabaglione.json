@@ -1,0 +1,91 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-zabaglione",
+  "ingredients": [
+    {
+      "raw": "5 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup (50 g) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ tsp. Diamond Crystal or Morton kosher salt",
+      "expected": {
+        "item": "Diamond Crystal or Morton kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup sparkling white wine (such as prosecco)",
+      "expected": {
+        "item": "sparkling white wine (such as prosecco)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp. (or more) fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more"
+      }
+    },
+    {
+      "raw": "Cookies (such as biscotti, savoiardi, or amaretti) and/or sliced",
+      "expected": {
+        "item": "Cookies (such as biscotti, savoiardi",
+        "measurements": [],
+        "note": "or amaretti) and/or sliced"
+      }
+    },
+    {
+      "raw": "fruit (such as oranges, strawberries, and/or figs; for serving; optional)",
+      "expected": {
+        "item": "fruit",
+        "measurements": [],
+        "note": "such as oranges, strawberries, and/or figs; for serving; optional"
+      }
+    }
+  ]
+}

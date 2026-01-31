@@ -1,0 +1,114 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "kale-pesto-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup walnuts, toasted",
+      "expected": {
+        "item": "walnuts",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasted"
+      }
+    },
+    {
+      "raw": "2 cloves garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups torn kale leaves ((removed from stem))",
+      "expected": {
+        "item": "torn kale leaves (removed from stem)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh spinach or basil ((use what you have handy!))",
+      "expected": {
+        "item": "fresh spinach or basil (use what you have handy!)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp salt (plus extra to taste)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus extra to taste"
+      }
+    },
+    {
+      "raw": "1  lemon, juiced ((approx. 2 TBSP lemon juice))",
+      "expected": {
+        "item": "lemon, juiced (approx. 2 TBSP lemon juice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3-1/2 cup freshly grated parmesan cheese (to taste)",
+      "expected": {
+        "item": "freshly grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/3-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1/3 cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "berry-smoothie-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup baby kale",
+      "expected": {
+        "item": "baby kale",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  ripe banana",
+      "expected": {
+        "item": "ripe banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 heaping cup frozen mixed berries",
+      "expected": {
+        "item": "frozen mixed berries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaping cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup non-fat Greek yogurt ((4 Tbsp; can be any type of yogurt))",
+      "expected": {
+        "item": "non-fat Greek yogurt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": null,
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ¼ cup almond milk",
+      "expected": {
+        "item": "almond milk",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

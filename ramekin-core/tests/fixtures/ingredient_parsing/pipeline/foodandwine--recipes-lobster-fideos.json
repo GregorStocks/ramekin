@@ -1,0 +1,173 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-lobster-fideos",
+  "ingredients": [
+    {
+      "raw": "Six 1 1/4-pound lobsters",
+      "expected": {
+        "item": "1 1/4-pound lobsters",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup plus 1 tablespoon extra-virgin olive oil",
+      "expected": {
+        "item": "3/4 cup plus 1 tablespoon extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 tablespoon extra-virgin olive oil"
+      }
+    },
+    {
+      "raw": "6 garlic cloves, coarsely chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "coarsely chopped"
+      }
+    },
+    {
+      "raw": "2 large carrots, coarsely chopped",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "coarsely chopped"
+      }
+    },
+    {
+      "raw": "2 large sweet onions, chopped",
+      "expected": {
+        "item": "sweet onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "One 35-ounce can peeled whole tomatoes, drained and chopped",
+      "expected": {
+        "item": "peeled whole tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "35-ounce can"
+          }
+        ],
+        "note": "drained and chopped"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons sweet pimentón de la Vera (smoked Spanish paprika)",
+      "expected": {
+        "item": "sweet pimentón de la Vera (smoked Spanish paprika)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup brandy",
+      "expected": {
+        "item": "brandy",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 quarts water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground pepper",
+      "expected": {
+        "item": "Salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds fideos or angel hair pasta, broken into 3-inch lengths",
+      "expected": {
+        "item": "fideos or angel hair pasta, broken into 3-inch lengths",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

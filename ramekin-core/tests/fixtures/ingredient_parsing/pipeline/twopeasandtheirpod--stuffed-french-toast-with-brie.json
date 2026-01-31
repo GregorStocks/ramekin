@@ -1,0 +1,124 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "stuffed-french-toast-with-brie",
+  "ingredients": [
+    {
+      "raw": "8 slices of bread-brioche (white, or French)",
+      "expected": {
+        "item": "bread-brioche (white, or French)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "163",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tablespoons raspberry jam",
+      "expected": {
+        "item": "raspberry jam",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Brie cheese (sliced and rind removed, 4 slices per French toast \"sandwich\")",
+      "expected": {
+        "item": "Brie cheese",
+        "measurements": [],
+        "note": "sliced and rind removed, 4 slices per French toast \"sandwich\""
+      }
+    },
+    {
+      "raw": "Mixed berries",
+      "expected": {
+        "item": "Mixed berries",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Maple syrup",
+      "expected": {
+        "item": "Maple syrup",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Powdered sugar",
+      "expected": {
+        "item": "Powdered sugar",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

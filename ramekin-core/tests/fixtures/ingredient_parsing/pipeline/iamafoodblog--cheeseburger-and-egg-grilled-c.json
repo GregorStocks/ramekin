@@ -1,0 +1,91 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "cheeseburger-and-egg-grilled-c",
+  "ingredients": [
+    {
+      "raw": "6 oz lean ground beef",
+      "expected": {
+        "item": "lean ground beef",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "oil for the pan",
+      "expected": {
+        "item": "oil for the pan",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 slices of your favorite bread",
+      "expected": {
+        "item": "your favorite bread",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 over easy egg",
+      "expected": {
+        "item": "over easy egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup shredded cheese of choice",
+      "expected": {
+        "item": "shredded cheese of choice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

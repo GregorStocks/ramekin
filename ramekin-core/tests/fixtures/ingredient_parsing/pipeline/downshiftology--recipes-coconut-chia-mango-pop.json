@@ -1,0 +1,79 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-coconut-chia-mango-pop",
+  "ingredients": [
+    {
+      "raw": "13.5 oz can full fat coconut milk",
+      "expected": {
+        "item": "can full fat coconut milk",
+        "measurements": [
+          {
+            "amount": "13.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "383",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp chia seeds",
+      "expected": {
+        "item": "chia seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp maple or honey",
+      "expected": {
+        "item": "maple or honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  mango (peeled, seed removed)",
+      "expected": {
+        "item": "mango",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled, seed removed"
+      }
+    }
+  ]
+}

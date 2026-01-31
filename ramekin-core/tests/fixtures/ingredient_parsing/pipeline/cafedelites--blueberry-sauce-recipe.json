@@ -1,0 +1,75 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "blueberry-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups frozen blueberries (or fresh blueberries)",
+      "expected": {
+        "item": "frozen blueberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or fresh blueberries"
+      }
+    },
+    {
+      "raw": "1/3 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar (white or coconut is fine - a natural granulated sweetener may be used that measures 1:1 with sugar)",
+      "expected": {
+        "item": "granulated sugar (white or coconut is fine - a natural granulated sweetener may be used that measures 1:1 with sugar)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons lemon juice (or orange juice)",
+      "expected": {
+        "item": "lemon juice (or orange juice)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons cornstarch (corn flour mixed with 2 tablespoons water)",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": "corn flour mixed with 2 tablespoons water"
+      }
+    }
+  ]
+}

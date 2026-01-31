@@ -1,0 +1,108 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "mango-mojito-recipe",
+  "ingredients": [
+    {
+      "raw": "6 mint leaves, plus additional for garnish",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "plus additional for garnish"
+      }
+    },
+    {
+      "raw": "2 ounces* mango nectar",
+      "expected": {
+        "item": "ounces* mango nectar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces white rum",
+      "expected": {
+        "item": "white rum",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce simple syrup",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 4 ounces soda water",
+      "expected": {
+        "item": "soda water",
+        "measurements": [
+          {
+            "amount": "2 to 4",
+            "unit": "oz"
+          },
+          {
+            "amount": "57 to 113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice, for serving (try clear ice!)",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": "for serving (try clear ice!)"
+      }
+    }
+  ]
+}

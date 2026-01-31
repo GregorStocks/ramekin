@@ -1,0 +1,153 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "shoyu-ramen-recipe",
+  "ingredients": [
+    {
+      "raw": "225 grams ground chicken",
+      "expected": {
+        "item": "ground chicken",
+        "measurements": [
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "60 grams onion ((grated))",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "6 grams ginger ((grated))",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "1 tablespoon tamari soy sauce",
+      "expected": {
+        "item": "tamari soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/16 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/16",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 grams powdered gelatin",
+      "expected": {
+        "item": "powdered gelatin",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 grams dried shiitake mushroom",
+      "expected": {
+        "item": "dried shiitake mushroom",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "220 grams fresh ramen noodles",
+      "expected": {
+        "item": "fresh ramen noodles",
+        "measurements": [
+          {
+            "amount": "220",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

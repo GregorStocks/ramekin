@@ -1,0 +1,96 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-281283-whipped-frozen-c",
+  "ingredients": [
+    {
+      "raw": "0.5 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.5 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Zest of 1 large lime or 2 small limes",
+      "expected": {
+        "item": "Zest of 1 large lime",
+        "measurements": [],
+        "note": "or 2 small limes"
+      }
+    },
+    {
+      "raw": "0.25 cup freshly squeezed lime juice (from 2 limes)",
+      "expected": {
+        "item": "freshly squeezed lime juice (from 2 limes)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "0.25 cup tart unsweetened cherry juice",
+      "expected": {
+        "item": "tart unsweetened cherry juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons half-and-half",
+      "expected": {
+        "item": "half-and-half",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2.5 cups ice cubes",
+      "expected": {
+        "item": "ice cubes",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

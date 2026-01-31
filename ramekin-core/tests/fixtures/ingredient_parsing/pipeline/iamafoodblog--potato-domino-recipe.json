@@ -1,0 +1,48 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "potato-domino-recipe",
+  "ingredients": [
+    {
+      "raw": "2 russet potatoes",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons butter, cut into small pieces",
+      "expected": {
+        "item": "butter, cut into small pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "coase salt and pepper",
+      "expected": {
+        "item": "coase salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "sour cream and sliced green onions to finish",
+      "expected": {
+        "item": "sour cream and sliced green onions to finish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

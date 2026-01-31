@@ -1,0 +1,138 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "indiana-fried-chicken-recipe-1",
+  "ingredients": [
+    {
+      "raw": "1 small whole chicken (as close to 3 pounds as possible)",
+      "expected": {
+        "item": "whole chicken (as close to 3 pounds as possible)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Diamond Crystal kosher salt, plus more to taste; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste; for table salt use half as much by volume"
+      }
+    },
+    {
+      "raw": "2 1/2 tablespoons coarse ground black pepper, such as McCormick, or freshly ground pepper, if necessary, plus more to taste",
+      "expected": {
+        "item": "coarse ground black pepper, such as McCormick, or freshly ground pepper, if necessary",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "4 cups (2 pounds) pure, non-hydrogenated lard",
+      "expected": {
+        "item": "pure, non-hydrogenated lard",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups all-purpose flour (9 ounces; 255g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (355ml) homemade chicken stock or store bought low-sodium chicken broth",
+      "expected": {
+        "item": "homemade chicken stock or store bought low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coleslaw, mashed potatoes, braised green beans, and warm dinner rolls, for serving",
+      "expected": {
+        "item": "Coleslaw, mashed potatoes, braised green beans, and warm dinner rolls",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

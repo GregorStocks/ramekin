@@ -1,0 +1,178 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "stuffed-shells-recipe",
+  "ingredients": [
+    {
+      "raw": "zest of one lemon",
+      "expected": {
+        "item": "zest of one lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup / 80 ml extra virgin olive oil, (plus more for the pan)",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "ml"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for the pan"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "scant 3/4 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "scant tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  medium cloves of garlic, (finely chopped)",
+      "expected": {
+        "item": "cloves of garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 28- ounce can crushed red tomatoes",
+      "expected": {
+        "item": "28- ounce can crushed red tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 14- ounce can crushed red tomatoes",
+      "expected": {
+        "item": "14- ounce can crushed red tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 15- ounce container ricotta cheese",
+      "expected": {
+        "item": "15- ounce container ricotta cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  egg, (beaten)",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup / ~5 oz grated mozzarella",
+      "expected": {
+        "item": "/ ~5 oz grated mozzarella",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  bunch of chives, (minced)",
+      "expected": {
+        "item": "chives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "25-30  jumbo dried pasta shells",
+      "expected": {
+        "item": "jumbo dried pasta shells",
+        "measurements": [
+          {
+            "amount": "25-30",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

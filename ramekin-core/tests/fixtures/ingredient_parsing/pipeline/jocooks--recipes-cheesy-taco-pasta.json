@@ -1,0 +1,179 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-cheesy-taco-pasta",
+  "ingredients": [
+    {
+      "raw": "1 pound ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium onion (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2-3 tablespoons taco seasoning",
+      "expected": {
+        "item": "taco seasoning",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "14.5 ounces diced tomatoes (undrained, 1 can)",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "14.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": "undrained, 1 can"
+      }
+    },
+    {
+      "raw": "4 ounces green chilies (undrained)",
+      "expected": {
+        "item": "green chilies",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "undrained"
+      }
+    },
+    {
+      "raw": "3 cups beef broth (low sodium)",
+      "expected": {
+        "item": "beef broth (low sodium)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces pasta (like rotini or penne, dry)",
+      "expected": {
+        "item": "pasta (like rotini or penne, dry)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cheddar cheese (shredded)",
+      "expected": {
+        "item": "cheddar cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "green onions (chopped)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "tomatoes (diced)",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "black olives (sliced)",
+      "expected": {
+        "item": "black olives",
+        "measurements": [],
+        "note": "sliced"
+      }
+    }
+  ]
+}

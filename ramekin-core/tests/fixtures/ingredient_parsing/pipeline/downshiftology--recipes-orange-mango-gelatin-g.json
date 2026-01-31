@@ -1,0 +1,58 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-orange-mango-gelatin-g",
+  "ingredients": [
+    {
+      "raw": "1/2 cup orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  mangos (peeled and diced)",
+      "expected": {
+        "item": "mangos",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp gelatin",
+      "expected": {
+        "item": "gelatin",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

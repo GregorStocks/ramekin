@@ -1,0 +1,190 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-chicken-enchiladas",
+  "ingredients": [
+    {
+      "raw": "3 cups cooked chicken (shredded, rotisserie chicken works great!)",
+      "expected": {
+        "item": "cooked chicken",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded, rotisserie chicken works great!"
+      }
+    },
+    {
+      "raw": "8 ounces cream cheese (softened)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "4 ounces green chilies (1 small can)",
+      "expected": {
+        "item": "green chilies",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Monterey Jack cheese (shredded )",
+      "expected": {
+        "item": "Monterey Jack cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "salt and black pepper (to taste)",
+      "expected": {
+        "item": "salt and black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "8-10 small flour tortillas (or corn tortillas, if preferred)",
+      "expected": {
+        "item": "flour tortillas (or corn tortillas, if preferred)",
+        "measurements": [
+          {
+            "amount": "8-10",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 ounces red enchilada sauce (1 can)",
+      "expected": {
+        "item": "red enchilada sauce",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup Mexican blend  (or cheddar cheese, shredded)",
+      "expected": {
+        "item": "Mexican blend",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "or cheddar cheese, shredded"
+      }
+    },
+    {
+      "raw": "½ cup red onion (finely diced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely diced"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh cilantro (chopped)",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "½ cup tomatoes (finely chopped)",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

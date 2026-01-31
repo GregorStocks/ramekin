@@ -1,0 +1,136 @@
+{
+  "source": "joyfoodsunshine",
+  "recipe_slug": "smoothie-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "10 ounces frozen fruit ((about 2 ½ cups))",
+      "expected": {
+        "item": "frozen fruit",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana (frozen)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "frozen"
+      }
+    },
+    {
+      "raw": "3-4 Tablespoons almond milk",
+      "expected": {
+        "item": "almond milk",
+        "measurements": [
+          {
+            "amount": "3-4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 Tablespoons honey ((optional))",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 cup greens ((optional))",
+      "expected": {
+        "item": "greens",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Chia seeds",
+      "expected": {
+        "item": "Chia seeds",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Protein powder",
+      "expected": {
+        "item": "Protein powder",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nut butter",
+      "expected": {
+        "item": "Nut butter",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Acai powder",
+      "expected": {
+        "item": "Acai powder",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh Fruit",
+      "expected": {
+        "item": "Fresh Fruit",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

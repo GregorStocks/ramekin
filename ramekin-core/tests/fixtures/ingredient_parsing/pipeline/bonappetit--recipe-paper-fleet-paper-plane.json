@@ -1,0 +1,66 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-paper-fleet-paper-plane",
+  "ingredients": [
+    {
+      "raw": "1¼ cups Amaro Nonino",
+      "expected": {
+        "item": "Amaro Nonino",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1¼ cups Aperol",
+      "expected": {
+        "item": "Aperol",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1¼ cups bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1¼ cups fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon twists (for serving)",
+      "expected": {
+        "item": "Lemon twists",
+        "measurements": [],
+        "note": "for serving"
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-pozole-rojo-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 to 4 pounds pork shoulder (trimmed of fat and cut into 2 inch pieces)",
+      "expected": {
+        "item": "pork shoulder",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361 to 1814",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed of fat and cut into 2 inch pieces"
+      }
+    },
+    {
+      "raw": "3  bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon coarse salt",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 quarts water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5  ancho chiles (dried)",
+      "expected": {
+        "item": "ancho chiles",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "dried"
+      }
+    },
+    {
+      "raw": "5  guajillo chiles (dried)",
+      "expected": {
+        "item": "guajillo chiles",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "dried"
+      }
+    },
+    {
+      "raw": "2  chiles de arbol (dried)",
+      "expected": {
+        "item": "chiles de arbol",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "dried"
+      }
+    },
+    {
+      "raw": "1 medium onion (quartered)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "6 cloves garlic (peeled and sliced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and sliced"
+      }
+    },
+    {
+      "raw": "1 tablespoon Mexican oregano",
+      "expected": {
+        "item": "Mexican oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups chicken broth (low sodium)",
+      "expected": {
+        "item": "chicken broth (low sodium)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoon cumin (ground)",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "ground"
+      }
+    },
+    {
+      "raw": "3 cans hominy ((15 ounce cans) drained and rinsed)",
+      "expected": {
+        "item": "hominy drained and rinsed)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "shredded cabbage",
+      "expected": {
+        "item": "shredded cabbage",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "radishes (sliced)",
+      "expected": {
+        "item": "radishes",
+        "measurements": [],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "onion (chopped)",
+      "expected": {
+        "item": "onion",
+        "measurements": [],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "lime wedges",
+      "expected": {
+        "item": "lime wedges",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

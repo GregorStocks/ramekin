@@ -1,0 +1,74 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "ultimate-vegan-nachos-recipe",
+  "ingredients": [
+    {
+      "raw": "5-6  big handfuls of baked tortilla chips",
+      "expected": {
+        "item": "big handfuls of baked tortilla chips",
+        "measurements": [
+          {
+            "amount": "5-6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  can black beans (drained)",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 cup sweet potato vegan nacho cheese ((recipe below))",
+      "expected": {
+        "item": "sweet potato vegan nacho cheese (recipe below)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  ripe avocado",
+      "expected": {
+        "item": "ripe avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
+      "expected": {
+        "item": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles*",
+      "expected": {
+        "item": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles*",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

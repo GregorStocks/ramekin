@@ -1,0 +1,66 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "kuromame-recipe",
+  "ingredients": [
+    {
+      "raw": "8.5 oz Japanese black beans",
+      "expected": {
+        "item": "Japanese black beans",
+        "measurements": [
+          {
+            "amount": "8.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "241",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 oz sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

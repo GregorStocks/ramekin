@@ -1,0 +1,101 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "jewish-rye-bread-recipe",
+  "ingredients": [
+    {
+      "raw": "1½ tablespoons active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups warm water (110 degrees F)",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups first clear flour",
+      "expected": {
+        "item": "first clear flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups rye flour",
+      "expected": {
+        "item": "rye flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups Rye Sour Starter",
+      "expected": {
+        "item": "Rye Sour Starter",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ tablespoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2½ tablespoons caraway seeds (optional, use more or less if you'd like)",
+      "expected": {
+        "item": "caraway seeds",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional, use more or less if you'd like"
+      }
+    }
+  ]
+}

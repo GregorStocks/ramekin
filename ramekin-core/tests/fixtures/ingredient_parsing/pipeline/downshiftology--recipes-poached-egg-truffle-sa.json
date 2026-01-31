@@ -1,0 +1,96 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-poached-egg-truffle-sa",
+  "ingredients": [
+    {
+      "raw": "3  large zucchini",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  eggs (poached)",
+      "expected": {
+        "item": "eggs (poached)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16  cherry or plum tomatoes (halved)",
+      "expected": {
+        "item": "cherry or plum tomatoes",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "2 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful fresh basil leaves",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp truffle salt",
+      "expected": {
+        "item": "truffle salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pepper (to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "pineapple-strawberry-mojito-re",
+  "ingredients": [
+    {
+      "raw": "8  strawberries trimmed (hulled, quartered)",
+      "expected": {
+        "item": "strawberries trimmed",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "hulled, quartered"
+      }
+    },
+    {
+      "raw": "8  pineapple chunks (fresh is best but canned will work too)",
+      "expected": {
+        "item": "pineapple chunks",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "fresh is best but canned will work too"
+      }
+    },
+    {
+      "raw": "20  mint leaves plus more for garnishing",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": "plus more for garnishing"
+      }
+    },
+    {
+      "raw": "1  lime quartered",
+      "expected": {
+        "item": "lime quartered",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup simple syrup",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz pineapple juice",
+      "expected": {
+        "item": "pineapple juice",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz light rum",
+      "expected": {
+        "item": "light rum",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8  frozen strawberries (8 to 12)",
+      "expected": {
+        "item": "frozen strawberries",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "8 to 12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "soda water (club soda, lemon-lime soda)",
+      "expected": {
+        "item": "soda water (club soda, lemon-lime soda)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "source": "recipetineats",
+  "recipe_slug": "vietnamese-pho-recipe",
+  "ingredients": [
+    {
+      "raw": "2  large onions (, halved)",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "150g / 5oz   ginger (, sliced down the centre)",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          }
+        ],
+        "note": "sliced down the centre"
+      }
+    },
+    {
+      "raw": "10  star anise",
+      "expected": {
+        "item": "star anise",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  cinnamon quills",
+      "expected": {
+        "item": "cinnamon quills",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  cardamon pods",
+      "expected": {
+        "item": "cardamon pods",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  cloves ((the spice cloves!))",
+      "expected": {
+        "item": "(the spice cloves!)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5 tbsp coriander seeds",
+      "expected": {
+        "item": "coriander seeds",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.5kg / 3lb   beef brisket",
+      "expected": {
+        "item": "beef brisket",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "kg"
+          },
+          {
+            "amount": "3",
+            "unit": "lb"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1kg / 2lb   meaty beef bones",
+      "expected": {
+        "item": "meaty beef bones",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "kg"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1kg / 2lb   marrow bones ((leg, knuckle), cut to reveal marrow)",
+      "expected": {
+        "item": "marrow bones (leg, knuckle), cut to reveal marrow)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "kg"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3.5 litres / 3.75 quarts   water ((15 cups))",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "l"
+          },
+          {
+            "amount": "15",
+            "unit": "cup"
+          },
+          {
+            "amount": "3.75",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "40 ml / 3 tbsp   fish sauce ((Note 2))",
+      "expected": {
+        "item": "fish sauce (Note 2)",
+        "measurements": [
+          {
+            "amount": "40",
+            "unit": "ml"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50g / 1.5 oz   dried rice sticks ((or 120g/4oz fresh) (Note 3))",
+      "expected": {
+        "item": "dried rice sticks (Note 3)",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          }
+        ],
+        "note": "or 120g/4oz fresh"
+      }
+    },
+    {
+      "raw": "30g / 1 oz   beef tenderloin, raw, very thinly sliced ((Note 4))",
+      "expected": {
+        "item": "beef tenderloin, raw",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          }
+        ],
+        "note": "very thinly sliced (Note 4)"
+      }
+    },
+    {
+      "raw": "3 - 5  brisket slices ((used for broth))",
+      "expected": {
+        "item": "brisket slices (used for broth)",
+        "measurements": [
+          {
+            "amount": "3-5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Beansprouts, handful",
+      "expected": {
+        "item": "Beansprouts, handful",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Thai basil, 3 - 5 sprigs",
+      "expected": {
+        "item": "Thai basil, 3 - 5 sprigs",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coriander/cilantro, 3 - 5 sprigs ((or more basil))",
+      "expected": {
+        "item": "Coriander/cilantro, 3 - 5 sprigs",
+        "measurements": [],
+        "note": "or more basil"
+      }
+    },
+    {
+      "raw": "Lime wedges*",
+      "expected": {
+        "item": "Lime wedges*",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Finely sliced red chilli*",
+      "expected": {
+        "item": "Finely sliced red chilli*",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hoisin sauce*",
+      "expected": {
+        "item": "Hoisin sauce*",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sriracha* ((for spiciness))",
+      "expected": {
+        "item": "Sriracha* (for spiciness)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "instant-pot-mushroom-broth-rec",
+  "ingredients": [
+    {
+      "raw": "8 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "15 g / 1/2 cup dried porcini mushrooms",
+      "expected": {
+        "item": "dried porcini mushrooms",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6  medium cloves of garlic, peeled and smashed",
+      "expected": {
+        "item": "cloves of garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and smashed"
+      }
+    },
+    {
+      "raw": "scant 1 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "scant tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground pepper, or to taste",
+      "expected": {
+        "item": "freshly ground pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "a sprig or two of fresh thyme",
+      "expected": {
+        "item": "a sprig or two of fresh thyme",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

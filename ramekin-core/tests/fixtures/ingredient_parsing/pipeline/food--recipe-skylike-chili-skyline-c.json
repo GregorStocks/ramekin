@@ -1,0 +1,254 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-skylike-chili-skyline-c",
+  "ingredients": [
+    {
+      "raw": "2   lbs    ground beef",
+      "expected": {
+        "item": "ground beef",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   cups   chopped onions",
+      "expected": {
+        "item": "chopped onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4   cups    beef stock",
+      "expected": {
+        "item": "beef stock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (8   ounce) cans   tomato sauce",
+      "expected": {
+        "item": "tomato sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 -3   tablespoons    chili powder",
+      "expected": {
+        "item": "-3   tablespoons    chili powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   tablespoons    apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2   teaspoons    Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  ounce   grated unsweetened chocolate or 2 3/4  tablespoons    cocoa",
+      "expected": {
+        "item": "grated unsweetened chocolate",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "or 2 3/4  tablespoons    cocoa"
+      }
+    },
+    {
+      "raw": "2   teaspoons    instant minced garlic",
+      "expected": {
+        "item": "instant minced garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   teaspoon    ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  teaspoon    ground red pepper or 1/2  teaspoon    cayenne pepper",
+      "expected": {
+        "item": "ground red pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/2  teaspoon    cayenne pepper"
+      }
+    },
+    {
+      "raw": "1/4  teaspoon    ground allspice",
+      "expected": {
+        "item": "ground allspice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4  teaspoon    ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1       bay leaves or 1/8  teaspoon    bay leaf powder",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "or 1/8  teaspoon    bay leaf powder"
+      }
+    },
+    {
+      "raw": "chopped onion (optional)",
+      "expected": {
+        "item": "chopped onion",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "finely shredded cheddar cheese (certainly NOT optional)",
+      "expected": {
+        "item": "finely shredded cheddar cheese",
+        "measurements": [],
+        "note": "certainly NOT optional"
+      }
+    },
+    {
+      "raw": "kidney bean (optional)",
+      "expected": {
+        "item": "kidney bean",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

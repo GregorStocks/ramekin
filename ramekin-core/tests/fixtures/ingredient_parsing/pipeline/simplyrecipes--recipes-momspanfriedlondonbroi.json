@@ -1,0 +1,55 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-momspanfriedlondonbroi",
+  "ingredients": [
+    {
+      "raw": "2 pounds top round cut of steak",
+      "expected": {
+        "item": "top round cut of steak",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Dry mustard",
+      "expected": {
+        "item": "Dry mustard",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pepper",
+      "expected": {
+        "item": "Pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Unsalted butter, softened to room temperature",
+      "expected": {
+        "item": "Unsalted butter",
+        "measurements": [],
+        "note": "softened to room temperature"
+      }
+    }
+  ]
+}

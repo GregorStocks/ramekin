@@ -1,0 +1,276 @@
+{
+  "source": "indianhealthyrecipes",
+  "recipe_slug": "aloo-gobi-recipe",
+  "ingredients": [
+    {
+      "raw": "1½ cup (2 medium)  potatoes ((cubed to ¾ x ¾ inch))",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "cubed to 3/4 x 3/4 inch"
+      }
+    },
+    {
+      "raw": "2 cups (180 grams)  cauliflower florets ((gobi, chopped to 1½ inch) )",
+      "expected": {
+        "item": "cauliflower florets",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": "gobi, chopped to 1 1/2 inch"
+      }
+    },
+    {
+      "raw": "¾ to 1 cup (1 medium)  onion ((chopped finely) )",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "3/4 to 1",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped finely"
+      }
+    },
+    {
+      "raw": "¾ to 1 cup (2 medium)  tomatoes ((finely chopped) or ¼ cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
+      "expected": {
+        "item": "tomatoes or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
+        "measurements": [
+          {
+            "amount": "3/4 to 1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "½ tablespoon (½ inch)  ginger (peeled &amp;amp; minced or grated)",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "peeled & minced or grated"
+      }
+    },
+    {
+      "raw": "½ tablespoon (3 to 4)  garlic  (cloves, peeled &amp;amp; minced or pressed)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3 to 4",
+            "unit": null
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": "cloves, peeled & minced or pressed"
+      }
+    },
+    {
+      "raw": "1  green chili (slit or chopped (optional))",
+      "expected": {
+        "item": "green chili",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "slit or chopped (optional"
+      }
+    },
+    {
+      "raw": "2 tablespoons coriander leaves  (chopped finely)",
+      "expected": {
+        "item": "coriander leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped finely"
+      }
+    },
+    {
+      "raw": "½ to ¾ teaspoon salt  ((adjust to taste))",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2 to 3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "lemon juice to serve ((optional))",
+      "expected": {
+        "item": "lemon juice to serve",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "½ teaspoon cumin seeds ((jeera))",
+      "expected": {
+        "item": "cumin seeds (jeera)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ to 1¼ teaspoon Kashmiri red chili powder ((adjust to taste))",
+      "expected": {
+        "item": "1/4 teaspoon Kashmiri red chili powder",
+        "measurements": [
+          {
+            "amount": "3/4 to 1",
+            "unit": null
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "¼ teaspoon turmeric",
+      "expected": {
+        "item": "turmeric",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 1½ teaspoon garam masala ((adjust to taste))",
+      "expected": {
+        "item": "1/2 teaspoon garam masala",
+        "measurements": [
+          {
+            "amount": "1 to 1",
+            "unit": null
+          }
+        ],
+        "note": "adjust to taste"
+      }
+    },
+    {
+      "raw": "¾ to 1 teaspoon coriander powder",
+      "expected": {
+        "item": "coriander powder",
+        "measurements": [
+          {
+            "amount": "3/4 to 1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ to ¾ teaspoon roasted cumin powder ((jeera powder) (updated))",
+      "expected": {
+        "item": "roasted cumin powder (jeera powder) (updated)",
+        "measurements": [
+          {
+            "amount": "1/2 to 3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon kasuri methi  ((dried fenugreek leaves) (skip if you don&amp;#x27;t have))",
+      "expected": {
+        "item": "kasuri methi (skip if you don't have)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "dried fenugreek leaves"
+      }
+    },
+    {
+      "raw": "½ to 1 teaspoon amchur ((Optional, Dried mango powder))",
+      "expected": {
+        "item": "amchur",
+        "measurements": [
+          {
+            "amount": "1/2 to 1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "Optional, Dried mango powder"
+      }
+    }
+  ]
+}

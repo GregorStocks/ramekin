@@ -1,0 +1,75 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-mustard-champ",
+  "ingredients": [
+    {
+      "raw": "1kg potato peeled and quartered",
+      "expected": {
+        "item": "potato peeled and quartered",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200ml milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "ml"
+          },
+          {
+            "amount": "207",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "50g butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1-2 tbsp wholegrain mustard",
+      "expected": {
+        "item": "wholegrain mustard",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 bunches spring onion washed and sliced",
+      "expected": {
+        "item": "spring onion washed and sliced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

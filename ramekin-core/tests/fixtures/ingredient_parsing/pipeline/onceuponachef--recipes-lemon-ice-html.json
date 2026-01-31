@@ -1,0 +1,75 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-lemon-ice-html",
+  "ingredients": [
+    {
+      "raw": "1 teaspoon lemon zest, from 1 lemon",
+      "expected": {
+        "item": "lemon zest, from 1 lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup + 2 tablespoons  freshly squeezed lemon juice (from about 3 lemons)",
+      "expected": {
+        "item": "+ 2 tablespoons  freshly squeezed lemon juice (from about 3 lemons)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup  sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ teaspoon  salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups  half &amp; half",
+      "expected": {
+        "item": "half & half",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

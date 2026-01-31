@@ -1,0 +1,45 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-kyoto-style-cold-brew-",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups coarsely ground coffee",
+      "expected": {
+        "item": "coarsely ground coffee",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup filtered water",
+      "expected": {
+        "item": "filtered water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 cups ice cubes",
+      "expected": {
+        "item": "ice cubes",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

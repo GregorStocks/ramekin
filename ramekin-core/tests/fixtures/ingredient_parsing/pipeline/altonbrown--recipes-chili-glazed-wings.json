@@ -1,0 +1,66 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-chili-glazed-wings",
+  "ingredients": [
+    {
+      "raw": "24  chicken wing &amp;quot;drumettes&amp;quot;",
+      "expected": {
+        "item": "chicken wing \"drumettes\"",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sweet Thai chili sauce",
+      "expected": {
+        "item": "sweet Thai chili sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup rice wine or apple cider vinegar",
+      "expected": {
+        "item": "rice wine or apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup Dr. Pepper",
+      "expected": {
+        "item": "Dr. Pepper",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt, to taste",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

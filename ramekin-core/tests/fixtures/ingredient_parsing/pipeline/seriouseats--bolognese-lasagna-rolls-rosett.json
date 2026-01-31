@@ -1,0 +1,462 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "bolognese-lasagna-rolls-rosett",
+  "ingredients": [
+    {
+      "raw": "One 1/4-ounce (7g) packet unflavored gelatin (about 1 1/2 teaspoons)",
+      "expected": {
+        "item": "1/4-ounce packet unflavored gelatin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (240ml) homemade or store-bought low-sodium chicken stock",
+      "expected": {
+        "item": "homemade or store-bought low-sodium chicken stock",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15g) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large carrot (about 6 ounces; 188g), peeled and finely minced (see notes)",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "188",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and finely minced (see notes)"
+      }
+    },
+    {
+      "raw": "1-2 celery ribs (about 4 ounces; 120g); finely minced (see notes)",
+      "expected": {
+        "item": "celery ribs ; finely minced (see notes)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium yellow onion (about 8 ounces; 240g), finely minced (see notes)",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": "finely minced (see notes)"
+      }
+    },
+    {
+      "raw": "2 pounds (900g) ground meat, either all beef or 1 pound beef with 1/2 pound each ground pork and veal, divided (see notes)",
+      "expected": {
+        "item": "ground meat, either all beef or 1 pound beef with 1/2 pound each ground pork and veal",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "900",
+            "unit": "g"
+          }
+        ],
+        "note": "divided (see notes)"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (240ml) dry red wine",
+      "expected": {
+        "item": "dry red wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch freshly grated nutmeg",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon fish sauce (optional)",
+      "expected": {
+        "item": "fish sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter (3 ounces; 80g)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons (48g) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "48",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cup (960ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "960",
+            "unit": "ml"
+          },
+          {
+            "amount": "980",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pinch freshly grated nutmeg (optional)",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium clove garlic, lightly smashed",
+      "expected": {
+        "item": "clove garlic, lightly smashed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large sprig fresh basil",
+      "expected": {
+        "item": "sprig fresh basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "One 28-ounce (794g) can whole peeled tomatoes in the juices, blended, or one 24-ounce (700g) bottle tomato passata",
+      "expected": {
+        "item": "whole peeled tomatoes in the juices, blended, or one 24-ounce bottle tomato passata",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          },
+          {
+            "amount": "700",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pounds (900g) store-bought fresh lasagna noodles or fresh homemade (Follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total), cut into 6- by 12-inch-long rectangles",
+      "expected": {
+        "item": "store-bought fresh lasagna noodles or fresh homemade (Follow the recipe and instructions here through step 10, doubling the quantity to yield 2 pounds total), cut into 6- by 12-inch-long rectangles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "900",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Vegetable oil, for greasing pan and pasta",
+      "expected": {
+        "item": "Vegetable oil, for greasing pan and pasta",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces fresh mozzarella, cut into 1/4-inch pieces",
+      "expected": {
+        "item": "fresh mozzarella, cut into 1/4-inch pieces",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup finely grated Parmigiano-Reggiano (4 ounces; 112g), divided",
+      "expected": {
+        "item": "finely grated Parmigiano-Reggiano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "112",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

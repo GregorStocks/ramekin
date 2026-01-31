@@ -1,0 +1,142 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "turtle-cheesecake-trifle-recip",
+  "ingredients": [
+    {
+      "raw": "32 oz Sara Lee Pound Cake (2 cakes - freezer section)",
+      "expected": {
+        "item": "Sara Lee Pound Cake",
+        "measurements": [
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 oz reduced-fat cream cheese (3 package - softened)",
+      "expected": {
+        "item": "reduced-fat cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "3 package - softened"
+      }
+    },
+    {
+      "raw": "1 1/2 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 oz Cool Whip",
+      "expected": {
+        "item": "Cool Whip",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups pecans (chopped )",
+      "expected": {
+        "item": "pecans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "10 oz caramel ice cream topping",
+      "expected": {
+        "item": "caramel ice cream topping",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 oz hot fudge ice cream topping",
+      "expected": {
+        "item": "hot fudge ice cream topping",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

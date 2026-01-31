@@ -1,0 +1,53 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-darn-near-perfect-popc",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons ghee",
+      "expected": {
+        "item": "ghee",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup popcorn kernels",
+      "expected": {
+        "item": "popcorn kernels",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon popcorn salt (or finely ground kosher salt)",
+      "expected": {
+        "item": "popcorn salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or finely ground kosher salt"
+      }
+    },
+    {
+      "raw": "Toppings of your choice (optional; see note above)",
+      "expected": {
+        "item": "Toppings of your choice",
+        "measurements": [],
+        "note": "optional; see note above"
+      }
+    }
+  ]
+}

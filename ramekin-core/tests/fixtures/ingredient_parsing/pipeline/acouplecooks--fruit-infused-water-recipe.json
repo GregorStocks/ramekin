@@ -1,0 +1,66 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "fruit-infused-water-recipe",
+  "ingredients": [
+    {
+      "raw": "1 orange",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 strawberries",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 handful mint or basil leaves",
+      "expected": {
+        "item": "mint or basil leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups (64 ounces) cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "oz"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

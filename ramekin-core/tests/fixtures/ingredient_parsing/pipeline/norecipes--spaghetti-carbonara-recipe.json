@@ -1,0 +1,109 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "spaghetti-carbonara-recipe",
+  "ingredients": [
+    {
+      "raw": "220 grams spaghetti",
+      "expected": {
+        "item": "spaghetti",
+        "measurements": [
+          {
+            "amount": "220",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "120 grams guanciale ((cut into 3/16-inch batons))",
+      "expected": {
+        "item": "guanciale (cut into 3/16-inch batons)",
+        "measurements": [
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "30 grams Pecorino Romano ((grated))",
+      "expected": {
+        "item": "Pecorino Romano",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "black pepper ((to taste))",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "3  slow cooked eggs ((optional))",
+      "expected": {
+        "item": "slow cooked eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    }
+  ]
+}

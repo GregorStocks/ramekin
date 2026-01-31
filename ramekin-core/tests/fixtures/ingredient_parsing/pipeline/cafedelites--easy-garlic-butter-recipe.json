@@ -1,0 +1,62 @@
+{
+  "source": "cafedelites",
+  "recipe_slug": "easy-garlic-butter-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup butter (or spread of choice, softened at room temperature)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "or spread of choice, softened at room temperature"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, minced (or 1 teaspoon garlic powder)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced (or 1 teaspoon garlic powder)"
+      }
+    },
+    {
+      "raw": "4 tablespoons fresh chopped parsley (or 2 teaspoon dry parsley)",
+      "expected": {
+        "item": "fresh chopped parsley (or 2 teaspoon dry parsley)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pinches salt to taste (if using unsalted butter)",
+      "expected": {
+        "item": "salt to taste (if using unsalted butter)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

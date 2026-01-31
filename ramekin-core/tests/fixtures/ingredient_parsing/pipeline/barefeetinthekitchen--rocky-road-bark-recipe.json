@@ -1,0 +1,45 @@
+{
+  "source": "barefeetinthekitchen",
+  "recipe_slug": "rocky-road-bark-recipe",
+  "ingredients": [
+    {
+      "raw": "2 10 ounce bags semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
+      "expected": {
+        "item": "semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "10 ounce bags"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups miniature marshmallows (divided)",
+      "expected": {
+        "item": "miniature marshmallows",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 cup roasted (salted peanuts, divided)",
+      "expected": {
+        "item": "roasted",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "salted peanuts, divided"
+      }
+    }
+  ]
+}

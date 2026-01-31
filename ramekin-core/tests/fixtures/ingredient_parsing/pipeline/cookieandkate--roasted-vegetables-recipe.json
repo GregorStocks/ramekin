@@ -1,0 +1,96 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "roasted-vegetables-recipe",
+  "ingredients": [
+    {
+      "raw": "1 bell pepper (red, orange or yellow), cut into 1” squares",
+      "expected": {
+        "item": "bell pepper (red, orange or yellow), cut into 1” squares",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 carrots, peeled and cut on the diagonal so each piece is about ½″ thick at the widest part",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut on the diagonal so each piece is about 1/2″ thick at the widest part"
+      }
+    },
+    {
+      "raw": "1 crown of broccoli, cut into bite-sized florets",
+      "expected": {
+        "item": "crown of broccoli, cut into bite-sized florets",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small red onion, cut into ½”-wide wedges",
+      "expected": {
+        "item": "red onion, cut into 1/2”-wide wedges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ teaspoon fine salt",
+      "expected": {
+        "item": "fine salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional seasonings: 1 tablespoon unsalted butter and 1 tablespoon white wine vinegar",
+      "expected": {
+        "item": "Optional seasonings: 1 tablespoon unsalted butter and 1 tablespoon white wine vinegar",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

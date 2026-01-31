@@ -1,0 +1,112 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "banana-berry-oatmeal-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup rolled oats",
+      "expected": {
+        "item": "rolled oats",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  banana (sliced)",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2 Tablespoons vanilla soy milk",
+      "expected": {
+        "item": "vanilla soy milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toppings:",
+      "expected": {
+        "item": "Toppings:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Strawberries (sliced)",
+      "expected": {
+        "item": "Strawberries",
+        "measurements": [],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "Banana (slices)",
+      "expected": {
+        "item": "Banana",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Blackberries",
+      "expected": {
+        "item": "Blackberries",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

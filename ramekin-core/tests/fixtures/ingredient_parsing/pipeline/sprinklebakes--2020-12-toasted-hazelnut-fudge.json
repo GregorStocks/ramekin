@@ -1,0 +1,113 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2020-12-toasted-hazelnut-fudge",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon butter (softened, for the pan)",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "softened, for the pan"
+      }
+    },
+    {
+      "raw": "14 oz. 1 can, 397 grams sweetened condensed milk",
+      "expected": {
+        "item": "1 can, 397 grams sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "11.5 oz. 1 package, 326 grams semisweet chocolate morsels",
+      "expected": {
+        "item": "1 package, 326 grams semisweet chocolate morsels",
+        "measurements": [
+          {
+            "amount": "11.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "326",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup 108 grams chocolate-hazelnut spread",
+      "expected": {
+        "item": "108 grams chocolate-hazelnut spread",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup 150 grams chopped toasted hazelnuts, divided",
+      "expected": {
+        "item": "150 grams chopped toasted hazelnuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

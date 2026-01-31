@@ -1,0 +1,36 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-how-to-make-powdered-s",
+  "ingredients": [
+    {
+      "raw": "1 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp arrowroot powder (or other starch)",
+      "expected": {
+        "item": "arrowroot powder (or other starch)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

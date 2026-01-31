@@ -1,0 +1,44 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-3-ingredient-breakfast-",
+  "ingredients": [
+    {
+      "raw": "1 cup oats",
+      "expected": {
+        "item": "oats",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "156",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 bananas",
+      "expected": {
+        "item": "bananas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "mix-in of choice, such as sliced almonds, shredded coconut, crushed chocolate sandwich cookies, chopped walnuts, chocolate chips, or peanut butter",
+      "expected": {
+        "item": "mix-in of choice, such as sliced almonds, shredded coconut, crushed chocolate sandwich cookies, chopped walnuts, chocolate chips, or peanut butter",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

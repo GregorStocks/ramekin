@@ -1,0 +1,62 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-223233-french-macaroons",
+  "ingredients": [
+    {
+      "raw": "3 egg whites",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons superfine (castor) sugar",
+      "expected": {
+        "item": "superfine (castor) sugar",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup almond meal",
+      "expected": {
+        "item": "almond meal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1.3333333730698 cups confectioners' sugar",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "1.3333333730698",
+            "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "turmeric-cashews-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups raw cashews",
+      "expected": {
+        "item": "raw cashews",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon toasted sesame oil, plus more if needed",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more if needed"
+      }
+    },
+    {
+      "raw": "scant 1/4 teaspoon fine grain sea salt, or to taste",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "scant tsp"
+          }
+        ],
+        "note": "or to taste"
+      }
+    },
+    {
+      "raw": "half an 8x8-inch sheet nori seaweed",
+      "expected": {
+        "item": "half an 8x8-inch sheet nori seaweed",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons sesame seeds",
+      "expected": {
+        "item": "sesame seeds",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "scant 1/4 teaspoon cayenne",
+      "expected": {
+        "item": "cayenne",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "scant tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tablespoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

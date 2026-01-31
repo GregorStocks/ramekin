@@ -1,0 +1,103 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "lemon-chutney-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup / 1 oz / 30g finely chopped shallots",
+      "expected": {
+        "item": "finely chopped shallots",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  small lemons (4 to 5 oz each)",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "small"
+          },
+          {
+            "amount": "4 to 5",
+            "unit": "oz each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup / 60 ml extra-virgin olive oil, plus more for brushing",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for brushing"
+      }
+    },
+    {
+      "raw": "1 tablespoon honey, plus more to taste",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "kosher or sea salt and freshly ground black pepper",
+      "expected": {
+        "item": "kosher or sea salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped basil or mint",
+      "expected": {
+        "item": "chopped basil or mint",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

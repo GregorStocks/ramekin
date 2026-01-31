@@ -1,0 +1,141 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "peach-strawberry-lemonade-reci",
+  "ingredients": [
+    {
+      "raw": "4  ripe peaches (chopped into large chunks)",
+      "expected": {
+        "item": "ripe peaches",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "chopped into large chunks"
+      }
+    },
+    {
+      "raw": "2 cups fresh strawberries (stems removed and halved)",
+      "expected": {
+        "item": "fresh strawberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "stems removed and halved"
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6-8 cups cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "6-8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh chopped strawberries (to garnish)",
+      "expected": {
+        "item": "Fresh chopped strawberries (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh sliced peaches (to garnish)",
+      "expected": {
+        "item": "Fresh sliced peaches (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lemon wedges (to garnish)",
+      "expected": {
+        "item": "Lemon wedges (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Mint (to garnish)",
+      "expected": {
+        "item": "Mint (to garnish)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

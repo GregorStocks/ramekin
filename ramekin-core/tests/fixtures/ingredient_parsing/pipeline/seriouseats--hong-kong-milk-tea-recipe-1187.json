@@ -1,0 +1,57 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "hong-kong-milk-tea-recipe-1187",
+  "ingredients": [
+    {
+      "raw": "3 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 black tea bags, such as English Breakfast",
+      "expected": {
+        "item": "black tea bags, such as English Breakfast",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) evaporated milk, plus more as needed",
+      "expected": {
+        "item": "evaporated milk",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "Granulated sugar, to taste",
+      "expected": {
+        "item": "Granulated sugar",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

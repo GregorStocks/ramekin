@@ -1,0 +1,49 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "ichiban-dashi-recipe",
+  "ingredients": [
+    {
+      "raw": "4 cups water (about 1 litter)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 sheet Kombu dried sea kelp (&amp;quot;4 x 2&amp;quot; (10 cm x 5 cm) )",
+      "expected": {
+        "item": "sheet Kombu dried sea kelp (\"4 x 2\" (10 cm x 5 cm)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 handful bonito flakes (Katsuobushi)",
+      "expected": {
+        "item": "bonito flakes (Katsuobushi)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

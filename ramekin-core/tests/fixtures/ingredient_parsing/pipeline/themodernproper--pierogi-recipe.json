@@ -1,0 +1,177 @@
+{
+  "source": "themodernproper",
+  "recipe_slug": "pierogi-recipe",
+  "ingredients": [
+    {
+      "raw": "2½ cups all-purpose flour, plus more for rolling",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "312",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for rolling"
+      }
+    },
+    {
+      "raw": "1 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 eggs, beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pounds russet potatoes, peeled and cut into 1-inch pieces",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1-inch pieces"
+      }
+    },
+    {
+      "raw": "2 tablespoons kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "½ teaspoon freshly cracked black pepper",
+      "expected": {
+        "item": "freshly cracked black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup salted butter or extra-virgin olive oil",
+      "expected": {
+        "item": "salted butter or extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup finely chopped fresh mint",
+      "expected": {
+        "item": "finely chopped fresh mint",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, diced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "4 strips bacon, roughly chopped",
+      "expected": {
+        "item": "strips bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "Cottage cheese, for serving (optional)",
+      "expected": {
+        "item": "Cottage cheese, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Sour cream, for serving (optional)",
+      "expected": {
+        "item": "Sour cream, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

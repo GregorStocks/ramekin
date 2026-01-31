@@ -1,0 +1,66 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-strawberry-acai-smooth",
+  "ingredients": [
+    {
+      "raw": "3.5 oz packet frozen acai",
+      "expected": {
+        "item": "packet frozen acai",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  banana",
+      "expected": {
+        "item": "banana",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup strawberries",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "174",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup almond milk or cashew milk",
+      "expected": {
+        "item": "almond milk or cashew milk",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

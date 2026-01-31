@@ -1,0 +1,86 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-sex-on-the-beach-cocktail-r",
+  "ingredients": [
+    {
+      "raw": "ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 oz peach schnapps",
+      "expected": {
+        "item": "peach schnapps",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oranges juiced, plus 2 slices to garnish",
+      "expected": {
+        "item": "oranges juiced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "plus 2 slices to garnish"
+      }
+    },
+    {
+      "raw": "2 oz cranberry juice",
+      "expected": {
+        "item": "cranberry juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "maraschino cherries to garnish (optional)",
+      "expected": {
+        "item": "maraschino cherries to garnish",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

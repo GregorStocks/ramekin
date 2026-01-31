@@ -1,0 +1,66 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "iced-coffee-with-condensed-mil",
+  "ingredients": [
+    {
+      "raw": "1/2 lb Ground Coffee (~3 1/4 cups)",
+      "expected": {
+        "item": "Ground Coffee",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "3 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups Boiling Water",
+      "expected": {
+        "item": "Boiling Water",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups Ice Cold Water",
+      "expected": {
+        "item": "Ice Cold Water",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  Can Sweetened Condensed Milk",
+      "expected": {
+        "item": "Sweetened Condensed Milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

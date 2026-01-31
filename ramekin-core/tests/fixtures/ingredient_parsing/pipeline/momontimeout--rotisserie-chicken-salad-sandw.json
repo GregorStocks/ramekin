@@ -1,0 +1,87 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "rotisserie-chicken-salad-sandw",
+  "ingredients": [
+    {
+      "raw": "2 cups chicken  (chopped and cooked )",
+      "expected": {
+        "item": "chicken",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped and cooked"
+      }
+    },
+    {
+      "raw": "1 cup diced apple (I use Gala)",
+      "expected": {
+        "item": "diced apple (I use Gala)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup raisins",
+      "expected": {
+        "item": "raisins",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 up light mayonnaise",
+      "expected": {
+        "item": "up light mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp celery seed",
+      "expected": {
+        "item": "celery seed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "bread (your choice)",
+      "expected": {
+        "item": "bread (your choice)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-miznons-whole-roasted-",
+  "ingredients": [
+    {
+      "raw": "One 1 1/2- to 2-pound head cauliflower with leaves",
+      "expected": {
+        "item": "1 1/2- to 2-pound head cauliflower with leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 gallons&nbsp;water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "gallon"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 tablespoons sel gris, divided",
+      "expected": {
+        "item": "sel gris",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "3 tablespoons best-quality extra-virgin olive oil, divided",
+      "expected": {
+        "item": "best-quality extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

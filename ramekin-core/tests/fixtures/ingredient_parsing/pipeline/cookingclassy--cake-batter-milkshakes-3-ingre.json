@@ -1,0 +1,53 @@
+{
+  "source": "cookingclassy",
+  "recipe_slug": "cake-batter-milkshakes-3-ingre",
+  "ingredients": [
+    {
+      "raw": "2 cups vanilla ice cream",
+      "expected": {
+        "item": "vanilla ice cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup milk*",
+      "expected": {
+        "item": "milk*",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup vanilla or funfetti dry cake mix",
+      "expected": {
+        "item": "vanilla or funfetti dry cake mix",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sprinkles ((optional))",
+      "expected": {
+        "item": "Sprinkles",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

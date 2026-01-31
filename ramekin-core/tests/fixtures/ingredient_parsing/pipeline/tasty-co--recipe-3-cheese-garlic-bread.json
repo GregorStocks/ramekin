@@ -1,0 +1,101 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-3-cheese-garlic-bread",
+  "ingredients": [
+    {
+      "raw": "1 stick butter, 1 stick, softened",
+      "expected": {
+        "item": "butter, 1 stick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "softened"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "⅓ cup parmesan cheese",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup shredded monterey jack cheese",
+      "expected": {
+        "item": "shredded monterey jack cheese",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup shredded cheddar cheese",
+      "expected": {
+        "item": "shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅓ cup fresh green onion, sliced",
+      "expected": {
+        "item": "fresh green onion",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1 baguette, 8 inch (20 cm)",
+      "expected": {
+        "item": "baguette, 8 inch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

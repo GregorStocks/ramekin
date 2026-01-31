@@ -1,0 +1,173 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "zucchini-green-chile-quiche-re",
+  "ingredients": [
+    {
+      "raw": "1 to 2  pie crusts (1 for a standard size quiche, 2 if making mini quiches)",
+      "expected": {
+        "item": "pie crusts",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  zucchini (medium size)",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup shallots (diced )",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 to 3 cups cheese (two or more kinds)",
+      "expected": {
+        "item": "to 3 cups cheese",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": null
+          }
+        ],
+        "note": "two or more kinds"
+      }
+    },
+    {
+      "raw": "1 cup cottage cheese",
+      "expected": {
+        "item": "cottage cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 oz green chiles (1 can - drained, chopped)",
+      "expected": {
+        "item": "green chiles",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "1 can - drained, chopped"
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "source": "iamafoodblog",
+  "recipe_slug": "spicy-tuna-deviled-eggs-recipe",
+  "ingredients": [
+    {
+      "raw": "4 hard boiled eggs, peeled and cut in half",
+      "expected": {
+        "item": "hard boiled eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut in half"
+      }
+    },
+    {
+      "raw": "4 ounce can olive oil packed tuna, drained and flaked",
+      "expected": {
+        "item": "can olive oil packed tuna",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and flaked"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil from tuna can",
+      "expected": {
+        "item": "olive oil from tuna can",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon Tabasco",
+      "expected": {
+        "item": "Tabasco",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped basil",
+      "expected": {
+        "item": "chopped basil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and freshly ground pepper",
+      "expected": {
+        "item": "salt and freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "basil, to garnish",
+      "expected": {
+        "item": "basil, to garnish",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

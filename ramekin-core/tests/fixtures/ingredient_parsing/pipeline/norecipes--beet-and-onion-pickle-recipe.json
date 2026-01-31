@@ -1,0 +1,101 @@
+{
+  "source": "norecipes",
+  "recipe_slug": "beet-and-onion-pickle-recipe",
+  "ingredients": [
+    {
+      "raw": "2  sweet onions (medium shredded on a mandoline)",
+      "expected": {
+        "item": "sweet onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "medium shredded on a mandoline"
+      }
+    },
+    {
+      "raw": "1  beet (small shredded on a mandoline)",
+      "expected": {
+        "item": "beet",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "small shredded on a mandoline"
+      }
+    },
+    {
+      "raw": "2 tablespoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt ((halve if using regular salt))",
+      "expected": {
+        "item": "kosher salt (halve if using regular salt)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "handful  cilantro (of chopped)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "of chopped"
+      }
+    }
+  ]
+}

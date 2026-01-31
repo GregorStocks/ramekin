@@ -1,0 +1,57 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "pita-chips-recipe",
+  "ingredients": [
+    {
+      "raw": "4 pita breads (5 to 8 inches in diameter), whole wheat or regular",
+      "expected": {
+        "item": "pita breads",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "5 to 8",
+            "unit": null
+          }
+        ],
+        "note": "whole wheat or regular"
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons olive oil, as needed",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "as needed"
+      }
+    },
+    {
+      "raw": "1 teaspoon flaky sea salt or kosher salt",
+      "expected": {
+        "item": "flaky sea salt or kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Optional additional seasonings: za’atar, sesame seeds, dried oregano, dried minced onion or garlic",
+      "expected": {
+        "item": "Optional additional seasonings: za’atar, sesame seeds, dried oregano",
+        "measurements": [],
+        "note": "dried minced onion or garlic"
+      }
+    }
+  ]
+}

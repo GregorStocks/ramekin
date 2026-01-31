@@ -1,0 +1,43 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-broil-a-perfect-steak-1",
+  "ingredients": [
+    {
+      "raw": "2       steaks",
+      "expected": {
+        "item": "steaks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "fresh coarse ground black pepper",
+      "expected": {
+        "item": "fresh coarse ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

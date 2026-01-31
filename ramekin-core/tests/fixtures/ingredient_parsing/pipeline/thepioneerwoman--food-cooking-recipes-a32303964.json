@@ -1,0 +1,92 @@
+{
+  "source": "thepioneerwoman",
+  "recipe_slug": "food-cooking-recipes-a32303964",
+  "ingredients": [
+    {
+      "raw": "2 (750-ml) bottles of dry red wine",
+      "expected": {
+        "item": "dry red wine",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bottle"
+          },
+          {
+            "amount": "750",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 c. cranberries&nbsp;(thawed if frozen)",
+      "expected": {
+        "item": "cranberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "105",
+            "unit": "g"
+          }
+        ],
+        "note": "thawed if frozen"
+      }
+    },
+    {
+      "raw": "1 c. orange liqueur (such as Cointreau)&nbsp;",
+      "expected": {
+        "item": "orange liqueur (such as Cointreau)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 c. Campari or Aperol",
+      "expected": {
+        "item": "Campari or Aperol",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oranges, thinly sliced and quartered",
+      "expected": {
+        "item": "oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced and quartered"
+      }
+    },
+    {
+      "raw": "2 apples, cut into 1-inch pieces",
+      "expected": {
+        "item": "apples, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

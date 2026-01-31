@@ -1,0 +1,91 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "bourbon-slush-recipe",
+  "ingredients": [
+    {
+      "raw": "9 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounce canned frozen orange juice concentrate",
+      "expected": {
+        "item": "canned frozen orange juice concentrate",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounce canned frozen lemonade concentrate",
+      "expected": {
+        "item": "canned frozen lemonade concentrate",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresca (Sprite or 7UP for serving)",
+      "expected": {
+        "item": "Fresca",
+        "measurements": [],
+        "note": "Sprite or 7UP for serving"
+      }
+    }
+  ]
+}

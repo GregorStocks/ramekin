@@ -1,0 +1,113 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "cheese-ball-recipe",
+  "ingredients": [
+    {
+      "raw": "½ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces cream cheese (at room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "3  garlic cloves (minced)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "¼ cup chopped fresh parsley",
+      "expected": {
+        "item": "chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  drops Tabasco sauce",
+      "expected": {
+        "item": "Tabasco sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounce jar pimento (undrained)",
+      "expected": {
+        "item": "jar pimento",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "undrained"
+      }
+    },
+    {
+      "raw": "3 cups finely shredded cheddar cheese",
+      "expected": {
+        "item": "finely shredded cheddar cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pecans or walnuts (finely chopped)",
+      "expected": {
+        "item": "Pecans or walnuts",
+        "measurements": [],
+        "note": "finely chopped"
+      }
+    }
+  ]
+}

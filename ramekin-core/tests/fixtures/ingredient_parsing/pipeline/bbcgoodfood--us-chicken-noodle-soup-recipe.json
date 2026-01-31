@@ -1,0 +1,135 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "us-chicken-noodle-soup-recipe",
+  "ingredients": [
+    {
+      "raw": "3¾ cups chicken or vegetable broth (or miso soup mix)",
+      "expected": {
+        "item": "chicken or vegetable broth (or miso soup mix)",
+        "measurements": [
+          {
+            "amount": "3 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  boneless, skinless chicken breast",
+      "expected": {
+        "item": "boneless, skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp chopped fresh ginger root",
+      "expected": {
+        "item": "chopped fresh ginger root",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  garlic clove finely chopped",
+      "expected": {
+        "item": "garlic clove finely chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 oz rice or wheat noodles",
+      "expected": {
+        "item": "rice or wheat noodles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tbsp sweet corn kernels (canned or frozen)",
+      "expected": {
+        "item": "sweet corn kernels",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "canned or frozen"
+      }
+    },
+    {
+      "raw": "2-3  mushrooms thinly sliced",
+      "expected": {
+        "item": "mushrooms thinly sliced",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  scallions shredded",
+      "expected": {
+        "item": "scallions shredded",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp soy sauce plus extra for serving",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus extra for serving"
+      }
+    },
+    {
+      "raw": "mint or basil leaves and shredded chiles (optional), to serve",
+      "expected": {
+        "item": "mint or basil leaves and shredded chiles, to serve",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "greek-yogurt-pancakes-recipe",
+  "ingredients": [
+    {
+      "raw": "2  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 Tbsp milk or to desired thickness",
+      "expected": {
+        "item": "milk or to desired thickness",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5.3 oz container (about 2/3 cup vanilla Greek yogurt (I used Tillamook 2%))",
+      "expected": {
+        "item": "container",
+        "measurements": [
+          {
+            "amount": "5.3",
+            "unit": "oz"
+          },
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup all-purpose flour *",
+      "expected": {
+        "item": "all-purpose flour *",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coconut oil to saute (or light olive oil, or butter)",
+      "expected": {
+        "item": "Coconut oil to saute (or light olive oil, or butter)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

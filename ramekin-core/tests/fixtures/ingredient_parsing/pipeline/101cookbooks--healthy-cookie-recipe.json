@@ -1,0 +1,148 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "healthy-cookie-recipe",
+  "ingredients": [
+    {
+      "raw": "3  large (ripe bananas, well mashed (about 1 1/2 cups))",
+      "expected": {
+        "item": "(ripe bananas, well mashed (about 1 1/2 cups)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup coconut oil (barely warm - so it isn't solid (or alternately, olive oil))",
+      "expected": {
+        "item": "coconut oil (barely warm - so it isn't solid (or alternately, olive oil)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups rolled oats",
+      "expected": {
+        "item": "rolled oats",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup almond meal",
+      "expected": {
+        "item": "almond meal",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup coconut (finely shredded &amp;amp; unsweetened)",
+      "expected": {
+        "item": "coconut",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely shredded & unsweetened"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 - 7 ounces chocolate chips or dark chocolate bar chopped",
+      "expected": {
+        "item": "chocolate chips or dark chocolate bar chopped",
+        "measurements": [
+          {
+            "amount": "6-7",
+            "unit": "oz"
+          },
+          {
+            "amount": "170-198",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

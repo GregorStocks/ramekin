@@ -1,0 +1,65 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "devils-on-horseback-recipe-118",
+  "ingredients": [
+    {
+      "raw": "15 center-cut bacon slices, cut in half crosswise",
+      "expected": {
+        "item": "center-cut bacon slices, cut in half crosswise",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "30 pitted Medjool dates (about 2-inches each), soaked in warm water for 5 minutes, then drained",
+      "expected": {
+        "item": "pitted Medjool dates, soaked in warm water for 5 minutes",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "then drained"
+      }
+    },
+    {
+      "raw": "4 ounces blue cheese, crumbled (about 3/4 cup)",
+      "expected": {
+        "item": "blue cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "Metal or wooden toothpicks (see notes)",
+      "expected": {
+        "item": "Metal or wooden toothpicks (see notes)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

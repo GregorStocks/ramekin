@@ -1,0 +1,83 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "avocado-salad-with-wasabi-dres",
+  "ingredients": [
+    {
+      "raw": "1  avocado",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Roasted Seaweed (Sushi Nori, cut thinly)",
+      "expected": {
+        "item": "Roasted Seaweed (Sushi Nori, cut thinly)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp Wasabi paste",
+      "expected": {
+        "item": "Wasabi paste",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp Japanese mayonnaise",
+      "expected": {
+        "item": "Japanese mayonnaise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

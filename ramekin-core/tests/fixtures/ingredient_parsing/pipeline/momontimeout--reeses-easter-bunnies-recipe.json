@@ -1,0 +1,96 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "reeses-easter-bunnies-recipe",
+  "ingredients": [
+    {
+      "raw": "10  white chocolate Reese's peanut butter cups or regularRees'es peanut butter cups",
+      "expected": {
+        "item": "white chocolate Reese's peanut butter cups or regularRees'es peanut butter cups",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10  pink marshmallows (from a Fun Mallows bag)",
+      "expected": {
+        "item": "pink marshmallows (from a Fun Mallows bag)",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "60  jimmies",
+      "expected": {
+        "item": "jimmies",
+        "measurements": [
+          {
+            "amount": "60",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "16 oz white candy coating",
+      "expected": {
+        "item": "white candy coating",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "pink sugar",
+      "expected": {
+        "item": "pink sugar",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "20  mini M&amp;amp;M's (blue, green, brown)",
+      "expected": {
+        "item": "mini M&M's (blue, green, brown)",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sweetened shredded coconut",
+      "expected": {
+        "item": "sweetened shredded coconut",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

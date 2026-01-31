@@ -1,0 +1,162 @@
+{
+  "source": "browneyedbaker",
+  "recipe_slug": "snickers-cheesecake-recipe",
+  "ingredients": [
+    {
+      "raw": "24  Oreo cookies (whole)",
+      "expected": {
+        "item": "Oreo cookies",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": "whole"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter (melted)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "32 ounces cream cheese (at room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1¼ cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4  eggs (at room temperature)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "¾ cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "20  fun size Snickers bars (coarsely chopped)",
+      "expected": {
+        "item": "fun size Snickers bars",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": "coarsely chopped"
+      }
+    },
+    {
+      "raw": "Whipped cream",
+      "expected": {
+        "item": "Whipped cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped Snickers bars",
+      "expected": {
+        "item": "Chopped Snickers bars",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot fudge sauce",
+      "expected": {
+        "item": "Hot fudge sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Caramel sauce",
+      "expected": {
+        "item": "Caramel sauce",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

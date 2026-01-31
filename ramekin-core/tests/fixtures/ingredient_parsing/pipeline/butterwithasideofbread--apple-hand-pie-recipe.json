@@ -1,0 +1,92 @@
+{
+  "source": "butterwithasideofbread",
+  "recipe_slug": "apple-hand-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "21 oz apple pie filling  (or 1 cup Fried Apples)",
+      "expected": {
+        "item": "apple pie filling  (or 1 cup Fried Apples)",
+        "measurements": [
+          {
+            "amount": "21",
+            "unit": "oz"
+          },
+          {
+            "amount": "595",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pkg refrigerated pie crust (double crust, thawed for 15 mins)",
+      "expected": {
+        "item": "refrigerated pie crust",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          }
+        ],
+        "note": "double crust, thawed for 15 mins"
+      }
+    },
+    {
+      "raw": "1  egg yolk (slightly beaten)",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "slightly beaten"
+      }
+    },
+    {
+      "raw": "1 Tbsp water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp warm water",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "mojito-pitcher-recipe",
+  "ingredients": [
+    {
+      "raw": "1/2 cup loosely packed mint leaves, plus more for the garnish",
+      "expected": {
+        "item": "loosely packed mint leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for the garnish"
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup lime juice (about 8 limes), plus 1 lime for the garnish",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "242",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1 lime for the garnish"
+      }
+    },
+    {
+      "raw": "2 cups white rum",
+      "expected": {
+        "item": "white rum",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups soda water or club soda",
+      "expected": {
+        "item": "soda water or club soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

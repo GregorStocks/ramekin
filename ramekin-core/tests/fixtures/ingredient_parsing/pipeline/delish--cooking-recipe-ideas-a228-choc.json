@@ -1,0 +1,86 @@
+{
+  "source": "delish",
+  "recipe_slug": "cooking-recipe-ideas-a228-choc",
+  "ingredients": [
+    {
+      "raw": "2 tbsp. chocolate syrup, plus more for drizzling",
+      "expected": {
+        "item": "chocolate syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for drizzling"
+      }
+    },
+    {
+      "raw": "4 oz. Baileys",
+      "expected": {
+        "item": "Baileys",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 oz. chocolate liqueur&amp;nbsp;&amp;nbsp;",
+      "expected": {
+        "item": "chocolate liqueur",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 oz. Smirnoff vodka",
+      "expected": {
+        "item": "Smirnoff vodka",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chocolate shavings,&amp;nbsp;for serving&amp;nbsp;(optional)",
+      "expected": {
+        "item": "Chocolate shavings, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

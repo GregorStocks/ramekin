@@ -1,0 +1,140 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "best-waffle-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup | 4.5 oz | 120 g whole wheat flour",
+      "expected": {
+        "item": "| 4.5 oz | 120 g whole wheat flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups | 9 oz | 225 g all-purpose flour",
+      "expected": {
+        "item": "| 9 oz | 225 g all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup | 1.75 oz | 50 g rolled oats or 1/2 cup | 1.5 oz | 40 g wheat germ",
+      "expected": {
+        "item": "| 1.75 oz | 50 g rolled oats",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1/2 cup | 1.5 oz | 40 g wheat germ"
+      }
+    },
+    {
+      "raw": "4 oz | 110 g organic cornstarch or rice flour",
+      "expected": {
+        "item": "| 110 g organic cornstarch or rice flour",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons fine-grain sea salt",
+      "expected": {
+        "item": "fine-grain sea salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups | 1 L buttermilk",
+      "expected": {
+        "item": "| 1 L buttermilk",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup | 4 oz | 115 g butter, melted and cooled",
+      "expected": {
+        "item": "| 4 oz | 115 g butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "melted and cooled"
+      }
+    },
+    {
+      "raw": "4  eggs, separated",
+      "expected": {
+        "item": "eggs, separated",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

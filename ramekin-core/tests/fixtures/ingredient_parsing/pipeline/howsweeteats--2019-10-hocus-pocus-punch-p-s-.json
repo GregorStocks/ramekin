@@ -1,0 +1,118 @@
+{
+  "source": "howsweeteats",
+  "recipe_slug": "2019-10-hocus-pocus-punch-p-s-",
+  "ingredients": [
+    {
+      "raw": "6 cups apple cider",
+      "expected": {
+        "item": "apple cider",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cranberry juice",
+      "expected": {
+        "item": "cranberry juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (12 ounce) cans   orange seltzer",
+      "expected": {
+        "item": "orange seltzer",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup maraschino cherry juice",
+      "expected": {
+        "item": "maraschino cherry juice",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  oranges, (sliced)",
+      "expected": {
+        "item": "oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "2  apples, (sliced)",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "raw": "1/3 cup maraschino cherries",
+      "expected": {
+        "item": "maraschino cherries",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup ginger ale or ginger beer",
+      "expected": {
+        "item": "ginger ale or ginger beer",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

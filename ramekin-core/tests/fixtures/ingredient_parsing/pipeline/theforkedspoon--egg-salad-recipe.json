@@ -1,0 +1,105 @@
+{
+  "source": "theforkedspoon",
+  "recipe_slug": "egg-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "8 large eggs (hard-boiled and cooled)",
+      "expected": {
+        "item": "eggs (hard-boiled and cooled)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup mayonnaise (plus more as needed)",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more as needed"
+      }
+    },
+    {
+      "raw": "2 teaspoon pickle juice ((optional))",
+      "expected": {
+        "item": "pickle juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/4  red onion (minced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 teaspoon mustard (yellow or dijon)",
+      "expected": {
+        "item": "mustard (yellow or dijon)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup chives (chopped)",
+      "expected": {
+        "item": "chives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon sweet paprika",
+      "expected": {
+        "item": "sweet paprika",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt and pepper (to taste)",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste"
+      }
+    }
+  ]
+}

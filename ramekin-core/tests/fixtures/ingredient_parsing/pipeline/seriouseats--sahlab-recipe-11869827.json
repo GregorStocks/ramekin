@@ -1,0 +1,136 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "sahlab-recipe-11869827",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons (24 g) cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups (960 ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "960",
+            "unit": "ml"
+          },
+          {
+            "amount": "980",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons (38 g) granulated sugar, plus more to taste (see notes)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste (see notes)"
+      }
+    },
+    {
+      "raw": "Pinch Diamond Crystal kosher salt; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 ml) orange blossom water (see notes)",
+      "expected": {
+        "item": "orange blossom water (see notes)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Ground cinnamon, for serving",
+      "expected": {
+        "item": "Ground cinnamon",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "Desiccated coconut, for serving (optional)",
+      "expected": {
+        "item": "Desiccated coconut, for serving",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Very finely chopped pistachios (see notes)",
+      "expected": {
+        "item": "Very finely chopped pistachios (see notes)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

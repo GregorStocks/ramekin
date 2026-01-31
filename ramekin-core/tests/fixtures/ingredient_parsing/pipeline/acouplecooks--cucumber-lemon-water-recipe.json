@@ -1,0 +1,53 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "cucumber-lemon-water-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cucumber",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 cups (64 ounces) cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "oz"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-smoked-salmon-grapefru",
+  "ingredients": [
+    {
+      "raw": "3 grapefruit (a selection of yellow and pink if you want)",
+      "expected": {
+        "item": "grapefruit (a selection of yellow and pink if you want)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "100ml olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "ml"
+          },
+          {
+            "amount": "91",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 slices smoked salmon",
+      "expected": {
+        "item": "smoked salmon",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "large handful coriander seed sprigs",
+      "expected": {
+        "item": "handful coriander seed sprigs",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

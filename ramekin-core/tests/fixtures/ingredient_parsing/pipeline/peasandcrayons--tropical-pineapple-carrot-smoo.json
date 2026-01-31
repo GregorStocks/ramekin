@@ -1,0 +1,87 @@
+{
+  "source": "peasandcrayons",
+  "recipe_slug": "tropical-pineapple-carrot-smoo",
+  "ingredients": [
+    {
+      "raw": "1 cup unsweetened almond-coconut milk*",
+      "expected": {
+        "item": "unsweetened almond-coconut milk*",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "juice of 1 orange (or 2-4 TBSP orange juice)",
+      "expected": {
+        "item": "juice of 1 orange (or 2-4 TBSP orange juice)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup frozen pineapple",
+      "expected": {
+        "item": "frozen pineapple",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup frozen mango",
+      "expected": {
+        "item": "frozen mango",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  a fresh banana",
+      "expected": {
+        "item": "a fresh banana",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2-3  carrots ((peeled and chopped))",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": null
+          }
+        ],
+        "note": "peeled and chopped"
+      }
+    },
+    {
+      "raw": "sweeten as desired",
+      "expected": {
+        "item": "sweeten as desired",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

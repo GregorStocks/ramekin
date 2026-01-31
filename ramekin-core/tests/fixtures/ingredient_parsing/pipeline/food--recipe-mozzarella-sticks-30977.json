@@ -1,0 +1,113 @@
+{
+  "source": "food",
+  "recipe_slug": "recipe-mozzarella-sticks-30977",
+  "ingredients": [
+    {
+      "raw": "1/4  cup    flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   cup    Italian style breadcrumbs",
+      "expected": {
+        "item": "Italian style breadcrumbs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2       eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   tablespoon    milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   lb    mozzarella cheese, cut into 3/4 inch x 3/4 inch strips  (or you can use string cheese and cut each in half)",
+      "expected": {
+        "item": "mozzarella cheese, cut into 3/4 inch x 3/4 inch strips  (or you can use string cheese and cut each in half)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   cup    vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1   cup   jarred pizza sauce or 1   cup    marinara sauce",
+      "expected": {
+        "item": "jarred pizza sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1   cup    marinara sauce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "kabocha-gohan-kabocha-squash-r",
+  "ingredients": [
+    {
+      "raw": "2 cups rice (using 240ml cup)",
+      "expected": {
+        "item": "rice (using 240ml cup)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups water (720ml)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "720",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp Sake",
+      "expected": {
+        "item": "Sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups Kabocha (peel and cut into 1-1.5 inch cubes)",
+      "expected": {
+        "item": "Kabocha (peel and cut into 1-1.5 inch cubes)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

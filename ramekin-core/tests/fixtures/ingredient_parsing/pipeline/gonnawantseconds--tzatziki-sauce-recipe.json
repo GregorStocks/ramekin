@@ -1,0 +1,96 @@
+{
+  "source": "gonnawantseconds",
+  "recipe_slug": "tzatziki-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "16 ounces plain Greek yogurt",
+      "expected": {
+        "item": "plain Greek yogurt",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  English cucumber",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large cloves fresh garlic",
+      "expected": {
+        "item": "cloves fresh garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "pinch up to a 1/4  teaspoon black pepper",
+      "expected": {
+        "item": "up to a 1/4  teaspoon black pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons fresh dill (finely chopped)",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

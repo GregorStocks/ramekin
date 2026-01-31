@@ -1,0 +1,166 @@
+{
+  "source": "japanesecooking101",
+  "recipe_slug": "takoyaki-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups Dashi",
+      "expected": {
+        "item": "Dashi",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2  eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup plus 2 Tbsp all purpose flour",
+      "expected": {
+        "item": "1 cup plus 2 Tbsp all purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 2 Tbsp all purpose flour"
+      }
+    },
+    {
+      "raw": "2-3  green onions (finely chopped)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2-3",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 Tbsp Benishoga (pickled red ginger, chopped)",
+      "expected": {
+        "item": "Benishoga",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "pickled red ginger, chopped"
+      }
+    },
+    {
+      "raw": "Boiled octopus* (cut into 1/2&amp;quot; (1 cm) cubes)",
+      "expected": {
+        "item": "Boiled octopus* (cut into 1/2\" (1 cm) cubes)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Tenkasu (Tempura bits) (homemade or store-bought  (optional) )",
+      "expected": {
+        "item": "Tenkasu (Tempura bits) (homemade or store-bought  (optional)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Takoyaki sauce (or Okonomiyaki sauce)",
+      "expected": {
+        "item": "Takoyaki sauce (or Okonomiyaki sauce)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Aonori (green dried seaweed)",
+      "expected": {
+        "item": "Aonori",
+        "measurements": [],
+        "note": "green dried seaweed"
+      }
+    },
+    {
+      "raw": "Katsuobushi (dried bonito flakes)",
+      "expected": {
+        "item": "Katsuobushi",
+        "measurements": [],
+        "note": "dried bonito flakes"
+      }
+    },
+    {
+      "raw": "*Substitute octopus with sausage (cheese, ham, and etc.)",
+      "expected": {
+        "item": "*Substitute octopus with sausage (cheese, ham, and etc.)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

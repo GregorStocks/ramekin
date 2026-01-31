@@ -1,0 +1,103 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "no-bake-chocolate-cake-recipe",
+  "ingredients": [
+    {
+      "raw": "butter, to grease pan",
+      "expected": {
+        "item": "butter, to grease pan",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces / 225 g 70% chocolate, well chopped",
+      "expected": {
+        "item": "70% chocolate",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "well chopped"
+      }
+    },
+    {
+      "raw": "8 ounces / 225 g heavy cream, cashew cream, or full-fat coconut milk",
+      "expected": {
+        "item": "heavy cream, cashew cream, or full-fat coconut milk",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon allspice (optional)",
+      "expected": {
+        "item": "allspice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 teaspoons finely ground espresso (optional)",
+      "expected": {
+        "item": "finely ground espresso",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine grain salt",
+      "expected": {
+        "item": "fine grain salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "cocoa powder, to serve",
+      "expected": {
+        "item": "cocoa powder, to serve",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "optional other toppings: rose petals, cacao nibs",
+      "expected": {
+        "item": "optional other toppings: rose petals, cacao nibs",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

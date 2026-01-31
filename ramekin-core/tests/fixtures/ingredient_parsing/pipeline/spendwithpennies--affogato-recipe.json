@@ -1,0 +1,49 @@
+{
+  "source": "spendwithpennies",
+  "recipe_slug": "affogato-recipe",
+  "ingredients": [
+    {
+      "raw": "4 scoops vanilla ice cream (or hazelnut)",
+      "expected": {
+        "item": "scoops vanilla ice cream (or hazelnut)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 shots espresso",
+      "expected": {
+        "item": "shots espresso",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ ounce Irish cream liquor (such as Bailey&amp;#39;s, or Frangelico, optional)",
+      "expected": {
+        "item": "Irish cream liquor",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "such as Bailey's, or Frangelico, optional"
+      }
+    }
+  ]
+}

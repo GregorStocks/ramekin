@@ -1,0 +1,49 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-roasted-peanuts",
+  "ingredients": [
+    {
+      "raw": "2 pounds raw peanuts in their shells",
+      "expected": {
+        "item": "raw peanuts in their shells",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons peanut oil",
+      "expected": {
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    }
+  ]
+}

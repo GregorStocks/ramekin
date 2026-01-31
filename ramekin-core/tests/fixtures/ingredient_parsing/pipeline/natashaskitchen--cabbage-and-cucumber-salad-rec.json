@@ -1,0 +1,97 @@
+{
+  "source": "natashaskitchen",
+  "recipe_slug": "cabbage-and-cucumber-salad-rec",
+  "ingredients": [
+    {
+      "raw": "1  medium head of white cabbage",
+      "expected": {
+        "item": "head of white cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2  medium head of red/purple cabbage",
+      "expected": {
+        "item": "head of red/purple cabbage",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1  English cucumber or 4 small cucumbers",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "or 4 small cucumbers"
+      }
+    },
+    {
+      "raw": "1  bunch of green onion",
+      "expected": {
+        "item": "green onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tbsp sunflower oil",
+      "expected": {
+        "item": "sunflower oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tbsp vinegar or to taste",
+      "expected": {
+        "item": "vinegar or to taste",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tsp salt or to taste",
+      "expected": {
+        "item": "salt or to taste",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

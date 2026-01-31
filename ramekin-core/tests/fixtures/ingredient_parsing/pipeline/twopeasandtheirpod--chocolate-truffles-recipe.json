@@ -1,0 +1,81 @@
+{
+  "source": "twopeasandtheirpod",
+  "recipe_slug": "chocolate-truffles-recipe",
+  "ingredients": [
+    {
+      "raw": "8 ounces good chocolate (chopped into small pieces- (I used 70% Bittersweet Chocolate))",
+      "expected": {
+        "item": "good chocolate",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped into small pieces- (I used 70% Bittersweet Chocolate"
+      }
+    },
+    {
+      "raw": "1/2 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp. vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toasted coconut",
+      "expected": {
+        "item": "Toasted coconut",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cocoa powder",
+      "expected": {
+        "item": "Cocoa powder",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toffee (chopped into small pieces)",
+      "expected": {
+        "item": "Toffee",
+        "measurements": [],
+        "note": "chopped into small pieces"
+      }
+    }
+  ]
+}

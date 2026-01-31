@@ -1,0 +1,69 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-catalan-tomato-bread",
+  "ingredients": [
+    {
+      "raw": "8 large slices country-style bread, about 1/2 inch thick",
+      "expected": {
+        "item": "slices country-style bread, about 1/2 inch thick",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 garlic cloves (optional)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 very ripe tomatoes, halved crosswise",
+      "expected": {
+        "item": "very ripe tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "halved crosswise"
+      }
+    },
+    {
+      "raw": "Spanish extra-virgin olive oil",
+      "expected": {
+        "item": "Spanish extra-virgin olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coarse sea salt",
+      "expected": {
+        "item": "Coarse sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground pepper",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}
