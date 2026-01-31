@@ -214,13 +214,9 @@ fn parse_fraction(s: &str) -> Option<f64> {
 /// For larger amounts, rounds to nearest whole number.
 pub fn format_grams(grams: f64) -> String {
     if grams < 10.0 {
-        // Round to 1 decimal place using standard rounding (not banker's)
+        // Round to 1 decimal using standard rounding (not banker's)
         let rounded = (grams * 10.0).round() / 10.0;
-        if rounded.fract() == 0.0 {
-            format!("{:.0}", rounded)
-        } else {
-            format!("{:.1}", rounded)
-        }
+        format!("{:.1}", rounded)
     } else {
         (grams.round() as i64).to_string()
     }
