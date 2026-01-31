@@ -4,12 +4,30 @@ extends: compose/base.yaml
 log_location: ./logs/test.log
 
 processes:
-  rust-tests:
+  rust-tests-server:
     command: |
-      echo "[TIMING] rust-tests starting at $(date +%H:%M:%S)"
+      echo "[TIMING] rust-tests-server starting at $(date +%H:%M:%S)"
       START=$(date +%s)
-      cargo test -q --manifest-path server/Cargo.toml && cargo test -q --manifest-path cli/Cargo.toml && cargo test -q --manifest-path ramekin-core/Cargo.toml
-      echo "[TIMING] rust-tests completed in $(($(date +%s) - START))s"
+      cargo test -q --manifest-path server/Cargo.toml
+      echo "[TIMING] rust-tests-server completed in $(($(date +%s) - START))s"
+    availability:
+      restart: "no"
+
+  rust-tests-cli:
+    command: |
+      echo "[TIMING] rust-tests-cli starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      cargo test -q --manifest-path cli/Cargo.toml
+      echo "[TIMING] rust-tests-cli completed in $(($(date +%s) - START))s"
+    availability:
+      restart: "no"
+
+  rust-tests-core:
+    command: |
+      echo "[TIMING] rust-tests-core starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      cargo test -q --manifest-path ramekin-core/Cargo.toml
+      echo "[TIMING] rust-tests-core completed in $(($(date +%s) - START))s"
     availability:
       restart: "no"
 
@@ -46,7 +64,7 @@ processes:
     command: |
       echo "[TIMING] api-tests starting at $(date +%H:%M:%S)"
       START=$(date +%s)
-      pytest tests -v --ignore=tests/ui
+      pytest tests -v -n auto --ignore=tests/ui
       EXIT_CODE=$?
       echo "[TIMING] api-tests completed in $(($(date +%s) - START))s"
       exit $EXIT_CODE
@@ -56,9 +74,21 @@ processes:
       - CLI_PATH=./cli/target/debug/ramekin-cli
     availability:
       restart: "no"
-      exit_on_end: true
     depends_on:
       server:
         condition: process_healthy
-      rust-tests:
+
+  all-tests:
+    command: echo "All tests completed successfully"
+    availability:
+      restart: "no"
+      exit_on_end: true
+    depends_on:
+      rust-tests-server:
+        condition: process_completed_successfully
+      rust-tests-cli:
+        condition: process_completed_successfully
+      rust-tests-core:
+        condition: process_completed_successfully
+      api-tests:
         condition: process_completed_successfully
