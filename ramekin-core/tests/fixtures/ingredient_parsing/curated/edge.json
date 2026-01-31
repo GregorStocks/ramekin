@@ -1,0 +1,481 @@
+{
+  "category": "edge",
+  "test_cases": [
+    {
+      "name": "and_mixed_number",
+      "raw": "2 and 1/2 teaspoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "attached_metric",
+      "raw": "1/3 cup 65g granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "cloves_of",
+      "raw": "2 cloves of garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "name": "compound_unit",
+      "raw": "1 14 ounce can sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14 ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "double_encoded_entity",
+      "raw": "&amp;#8531; cup melted coconut oil",
+      "expected": {
+        "item": "melted coconut oil",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "73",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "double_parens",
+      "raw": "1 1/2 Tbsp minced garlic ((about 4 cloves))",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "emdash_range",
+      "raw": "1—2 teaspoons minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "endash_range",
+      "raw": "1–2 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "footnote_asterisk",
+      "raw": "6 Tbsp butter*, divided",
+      "expected": {
+        "item": "butter*",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "name": "fresh_dried_alternative",
+      "raw": "1 tablespoon fresh minced dill or 1 teaspoon dried dill",
+      "expected": {
+        "item": "fresh minced dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 1 teaspoon dried dill"
+      }
+    },
+    {
+      "name": "heaping",
+      "raw": "2 heaping tablespoons miso paste",
+      "expected": {
+        "item": "miso paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "heaping tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "html_entity_fraction",
+      "raw": "&frac14; cup fresh cilantro leaves",
+      "expected": {
+        "item": "fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "hyphen_range",
+      "raw": "1 - 2 cooked potatoes, cubed",
+      "expected": {
+        "item": "cooked potatoes",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "name": "hyphenated_compound_unit",
+      "raw": "1 28-oz. can whole peeled tomatoes",
+      "expected": {
+        "item": "whole peeled tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-oz. can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "ingredient_alternative",
+      "raw": "1/2 cup water or 1/2 cup beef broth",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1/2 cup beef broth"
+      }
+    },
+    {
+      "name": "leading_comma",
+      "raw": "2 large, boneless, skinless chicken breasts, cubed",
+      "expected": {
+        "item": "boneless, skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "name": "leading_comma_in_note",
+      "raw": "1 large tomato (, sliced )",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "sliced"
+      }
+    },
+    {
+      "name": "or_alternative",
+      "raw": "1 pound or 3 heaping cups frozen pineapple chunks",
+      "expected": {
+        "item": "frozen pineapple chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": "heaping cup"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "parenthetical_size",
+      "raw": "2 (15.5-ounce) cans chickpeas",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15.5",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "plus_amount",
+      "raw": "2 tablespoons butter, plus 1 tablespoon chilled",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1 tablespoon chilled"
+      }
+    },
+    {
+      "name": "price_in_text",
+      "raw": "6 ounces vanilla wafers ($1.43)",
+      "expected": {
+        "item": "vanilla wafers ($1.43)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "range_with_to",
+      "raw": "1 to 4 medium Russet potatoes",
+      "expected": {
+        "item": "Russet potatoes",
+        "measurements": [
+          {
+            "amount": "1 to 4",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "scant",
+      "raw": "scant 1 teaspoon fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "scant tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "slash_metric",
+      "raw": "3.5 ounces / 100g celery root, peeled",
+      "expected": {
+        "item": "celery root",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "name": "space_before_comma",
+      "raw": "4 scallions (about 2 ounces; 56 g), thinly sliced, plus more for garnish",
+      "expected": {
+        "item": "scallions, thinly sliced",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "name": "trailing_comma",
+      "raw": "2 (1 lb each) pork tenderloins,",
+      "expected": {
+        "item": "pork tenderloins",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "trailing_comma_before_paren",
+      "raw": "1 sweet onion, (diced)",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "name": "trailing_paren",
+      "raw": "3 Tablespoons ketchup ((45ml) )",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "unicode_fraction_with_whole",
+      "raw": "1½ cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "188",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "word_number",
+      "raw": "One teaspoon of baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

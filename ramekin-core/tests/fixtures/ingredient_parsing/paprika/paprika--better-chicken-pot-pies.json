@@ -1,0 +1,331 @@
+{
+  "source": "paprika",
+  "recipe_slug": "better-chicken-pot-pies",
+  "ingredients": [
+    {
+      "raw": "2 cups (250 grams) all- purpose flour",
+      "expected": {
+        "item": "all- purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "13 tablespoons (185 grams or 6 1/2 ounces) cold unsalted butter, diced",
+      "expected": {
+        "item": "cold unsalted butter",
+        "measurements": [
+          {
+            "amount": "13",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "185",
+            "unit": "g"
+          },
+          {
+            "amount": "6 1/2",
+            "unit": "oz"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "6 tablespoons (90 grams) sour cream or Greek-style yogurt",
+      "expected": {
+        "item": "sour cream or Greek-style yogurt",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) cider vinegar",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) very cold water",
+      "expected": {
+        "item": "very cold water",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg, beaten with 1 teaspoon water, for egg wash",
+      "expected": {
+        "item": "egg, beaten with 1 teaspoon water, for egg wash",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Filling",
+      "expected": {
+        "item": "Filling",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 to 4 pounds bone-in, skin-on chicken parts (breasts, thighs and drumsticks are ideal)",
+      "expected": {
+        "item": "to 4 pounds bone-in, skin-on chicken parts (breasts, thighs and drumsticks are ideal)",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 glugs olive oil",
+      "expected": {
+        "item": "glugs olive oil",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 medium leeks, white and light green parts only, cut in half lengthwise and then into 1/2-inch slices",
+      "expected": {
+        "item": "leeks, white and light green parts only, cut in half lengthwise and then into 1/2-inch slices",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion, diced small",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "diced small"
+      }
+    },
+    {
+      "raw": "1/4 cup dry sherry (optional)",
+      "expected": {
+        "item": "dry sherry",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "3 cups low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup milk or heavy cream",
+      "expected": {
+        "item": "milk or heavy cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon minced fresh thyme",
+      "expected": {
+        "item": "minced fresh thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "4 1/2 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup fresh or frozen green peas (no need to defrost)",
+      "expected": {
+        "item": "fresh or frozen green peas (no need to defrost)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large carrots, diced small (about 1 cup carrots)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced small"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped flat-leaf parsley",
+      "expected": {
+        "item": "chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

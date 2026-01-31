@@ -1,0 +1,74 @@
+{
+  "source": "paprika",
+  "recipe_slug": "crispy-sweet-potato-roast",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons salted or unsalted butter, melted",
+      "expected": {
+        "item": "salted or unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coarse salt and black pepper or red pepper flakes to taste",
+      "expected": {
+        "item": "Coarse salt and black pepper or red pepper flakes to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 pounds sweet potatoes, peeled and sliced thin",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2268",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and sliced thin"
+      }
+    },
+    {
+      "raw": "2 shallots, peeled and sliced thin",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced thin"
+      }
+    }
+  ]
+}

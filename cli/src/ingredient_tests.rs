@@ -13,9 +13,24 @@ use std::io::Read;
 use std::path::{Path, PathBuf};
 use zip::ZipArchive;
 
-/// A test case for ingredient parsing
+/// A test case for ingredient parsing (legacy format, used for curated migration)
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct TestCase {
+    raw: String,
+    expected: Expected,
+}
+
+/// Recipe-based test file (for pipeline/paprika)
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct RecipeTestFile {
+    source: String,
+    recipe_slug: String,
+    ingredients: Vec<IngredientTestCase>,
+}
+
+/// A single ingredient test case within a recipe
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct IngredientTestCase {
     raw: String,
     expected: Expected,
 }
@@ -57,8 +72,8 @@ fn run_pipeline(raw: &str) -> Expected {
 /// Generate test fixtures from the latest pipeline run.
 ///
 /// Reads parse_ingredients output from pipeline results and creates
-/// individual JSON test case files in the pipeline/ directory.
-/// Uses UPSERT behavior: only adds new test cases, never deletes existing ones.
+/// one JSON file per recipe in the pipeline/ directory.
+/// Uses UPSERT behavior: only adds new recipes, never deletes existing ones.
 pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
@@ -72,7 +87,8 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
     // Create directory if it doesn't exist (UPSERT: never delete existing)
     fs::create_dir_all(&pipeline_dir)?;
 
-    let mut total_cases = 0;
+    let mut total_recipes = 0;
+    let mut total_ingredients = 0;
 
     // Walk through all URL directories in the run
     let urls_dir = run_dir.join("urls");
@@ -100,52 +116,55 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
         let site = extract_site_from_url(&url_name);
         let recipe_slug = extract_recipe_slug(&url_name);
 
-        // Create test cases for each ingredient
-        for (idx, ingredient) in output.ingredients.iter().enumerate() {
+        // Collect all ingredients for this recipe
+        let mut ingredients = Vec::new();
+        for ingredient in &output.ingredients {
             let raw = ingredient.raw.clone().unwrap_or_default();
             if raw.is_empty() {
                 continue;
             }
 
-            // Run the pipeline to get expected output
             let expected = run_pipeline(&raw);
+            ingredients.push(IngredientTestCase { raw, expected });
+        }
 
-            let test_case = TestCase { raw, expected };
+        if ingredients.is_empty() {
+            continue;
+        }
 
-            let filename = format!("{}--{}--{:02}.json", site, recipe_slug, idx + 1);
-            let filepath = pipeline_dir.join(&filename);
+        let recipe_file = RecipeTestFile {
+            source: site.clone(),
+            recipe_slug: recipe_slug.clone(),
+            ingredients,
+        };
 
-            // UPSERT: only write if file doesn't already exist
-            if !filepath.exists() {
-                let json = serde_json::to_string_pretty(&test_case)? + "\n";
-                fs::write(&filepath, json)?;
-                total_cases += 1;
-            }
+        let filename = format!("{}--{}.json", site, recipe_slug);
+        let filepath = pipeline_dir.join(&filename);
+
+        // UPSERT: only write if file doesn't already exist
+        if !filepath.exists() {
+            total_ingredients += recipe_file.ingredients.len();
+            let json = serde_json::to_string_pretty(&recipe_file)? + "\n";
+            fs::write(&filepath, json)?;
+            total_recipes += 1;
         }
     }
 
     println!(
-        "Generated {} new test cases in {}",
-        total_cases,
+        "Generated {} new recipes ({} ingredients) in {}",
+        total_recipes,
+        total_ingredients,
         pipeline_dir.display()
     );
 
     Ok(())
 }
 
-/// Legacy test case format with step_outputs (for migration)
-#[derive(Debug, Deserialize)]
-struct LegacyTestCase {
-    raw: String,
-    #[allow(dead_code)]
-    step_outputs: std::collections::HashMap<String, Expected>,
-}
-
 /// Update all test fixtures to match current parser output.
 ///
 /// Runs the pipeline on each test case's `raw` input and updates
 /// the `expected` field to match the actual output.
-/// Also migrates from legacy step_outputs format to expected format.
+/// Handles both new formats (recipe and curated) and legacy single-case format.
 pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
@@ -165,37 +184,55 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
             let entry = entry?;
             let path = entry.path();
 
-            if path.extension().map(|e| e == "json").unwrap_or(false) {
-                let content = fs::read_to_string(&path)?;
+            if !path.extension().map(|e| e == "json").unwrap_or(false) {
+                continue;
+            }
 
-                // Extract raw and old expected from either format
-                let (raw, old_expected) =
-                    if let Ok(test_case) = serde_json::from_str::<TestCase>(&content) {
-                        (test_case.raw, Some(test_case.expected))
-                    } else if let Ok(legacy) = serde_json::from_str::<LegacyTestCase>(&content) {
-                        (legacy.raw, None)
-                    } else {
-                        println!("Skipping invalid file: {}", path.display());
-                        continue;
-                    };
+            let content = fs::read_to_string(&path)?;
+            let json: serde_json::Value = serde_json::from_str(&content)?;
 
-                // Run pipeline to get current expected output
-                let new_expected = run_pipeline(&raw);
+            if json.get("ingredients").is_some() {
+                // Recipe format (pipeline/paprika)
+                let mut recipe: RecipeTestFile = serde_json::from_value(json)?;
+                let mut file_changed = false;
 
-                // Only write if actual content changed (not just formatting)
-                let content_changed = old_expected.as_ref() != Some(&new_expected);
+                for ing in &mut recipe.ingredients {
+                    let new_expected = run_pipeline(&ing.raw);
+                    if ing.expected != new_expected {
+                        ing.expected = new_expected;
+                        file_changed = true;
+                    }
+                }
 
-                if content_changed {
-                    let updated_case = TestCase {
-                        raw,
-                        expected: new_expected,
-                    };
-                    let json = serde_json::to_string_pretty(&updated_case)? + "\n";
+                if file_changed {
+                    let json = serde_json::to_string_pretty(&recipe)? + "\n";
                     fs::write(&path, json)?;
                     updated += 1;
                 } else {
                     unchanged += 1;
                 }
+            } else if json.get("test_cases").is_some() {
+                // Curated format
+                let mut curated: CuratedTestFile = serde_json::from_value(json)?;
+                let mut file_changed = false;
+
+                for tc in &mut curated.test_cases {
+                    let new_expected = run_pipeline(&tc.raw);
+                    if tc.expected != new_expected {
+                        tc.expected = new_expected;
+                        file_changed = true;
+                    }
+                }
+
+                if file_changed {
+                    let json = serde_json::to_string_pretty(&curated)? + "\n";
+                    fs::write(&path, json)?;
+                    updated += 1;
+                } else {
+                    unchanged += 1;
+                }
+            } else {
+                println!("Skipping unknown format: {}", path.display());
             }
         }
     }
@@ -292,9 +329,9 @@ struct PaprikaRecipe {
 
 /// Generate test fixtures from a .paprikarecipes file.
 ///
-/// Reads recipes from the Paprika archive and creates individual JSON
-/// test case files in the paprika/ directory.
-/// Uses UPSERT behavior: only adds new test cases, never deletes existing ones.
+/// Reads recipes from the Paprika archive and creates one JSON file per recipe
+/// in the paprika/ directory.
+/// Uses UPSERT behavior: only adds new recipes, never deletes existing ones.
 pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
@@ -313,7 +350,8 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
 
     println!("Reading recipes from: {}", paprika_file.display());
 
-    let mut total_cases = 0;
+    let mut total_recipes = 0;
+    let mut total_ingredients = 0;
 
     for i in 0..archive.len() {
         let mut entry = archive.by_index(i)?;
@@ -350,33 +388,44 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
         // Create recipe slug from name
         let recipe_slug = slugify_recipe_name(&recipe.name);
 
-        // Parse each ingredient line and create test cases
-        for (idx, line) in ingredients_str.lines().enumerate() {
+        // Collect all ingredients for this recipe
+        let mut ingredients = Vec::new();
+        for line in ingredients_str.lines() {
             let raw = line.trim().to_string();
             if raw.is_empty() {
                 continue;
             }
 
-            // Run the pipeline to get expected output
             let expected = run_pipeline(&raw);
+            ingredients.push(IngredientTestCase { raw, expected });
+        }
 
-            let test_case = TestCase { raw, expected };
+        if ingredients.is_empty() {
+            continue;
+        }
 
-            let filename = format!("paprika--{}--{:02}.json", recipe_slug, idx + 1);
-            let filepath = paprika_dir.join(&filename);
+        let recipe_file = RecipeTestFile {
+            source: "paprika".to_string(),
+            recipe_slug: recipe_slug.clone(),
+            ingredients,
+        };
 
-            // UPSERT: only write if file doesn't already exist
-            if !filepath.exists() {
-                let json = serde_json::to_string_pretty(&test_case)? + "\n";
-                fs::write(&filepath, json)?;
-                total_cases += 1;
-            }
+        let filename = format!("paprika--{}.json", recipe_slug);
+        let filepath = paprika_dir.join(&filename);
+
+        // UPSERT: only write if file doesn't already exist
+        if !filepath.exists() {
+            total_ingredients += recipe_file.ingredients.len();
+            let json = serde_json::to_string_pretty(&recipe_file)? + "\n";
+            fs::write(&filepath, json)?;
+            total_recipes += 1;
         }
     }
 
     println!(
-        "Generated {} new test cases in {}",
-        total_cases,
+        "Generated {} new recipes ({} ingredients) in {}",
+        total_recipes,
+        total_ingredients,
         paprika_dir.display()
     );
 
@@ -416,4 +465,119 @@ fn slugify_recipe_name(name: &str) -> String {
     } else {
         result
     }
+}
+
+/// Curated test file format (category-based)
+#[derive(Debug, Serialize, Deserialize)]
+struct CuratedTestFile {
+    category: String,
+    test_cases: Vec<CuratedTestCase>,
+}
+
+/// A single test case within a curated category file
+#[derive(Debug, Serialize, Deserialize)]
+struct CuratedTestCase {
+    name: String,
+    raw: String,
+    expected: Expected,
+}
+
+/// Migrate curated fixtures from individual files to category files.
+///
+/// Reads all individual test case files from curated/, groups them by category,
+/// and writes consolidated category files.
+pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
+    let fixtures_dir = fixtures_dir
+        .map(PathBuf::from)
+        .unwrap_or_else(default_fixtures_dir);
+    let curated_dir = fixtures_dir.join("curated");
+
+    if !curated_dir.exists() {
+        println!("No curated directory found at {}", curated_dir.display());
+        return Ok(());
+    }
+
+    // Collect all test cases grouped by category
+    let mut categories: std::collections::HashMap<String, Vec<CuratedTestCase>> =
+        std::collections::HashMap::new();
+    let mut files_to_delete = Vec::new();
+
+    for entry in fs::read_dir(&curated_dir)? {
+        let entry = entry?;
+        let path = entry.path();
+
+        if !path.extension().map(|e| e == "json").unwrap_or(false) {
+            continue;
+        }
+
+        let filename = path.file_stem().unwrap().to_string_lossy();
+
+        // Parse filename: category--name--NN.json
+        let parts: Vec<&str> = filename.split("--").collect();
+        if parts.len() < 2 {
+            println!("Skipping file with unexpected format: {}", filename);
+            continue;
+        }
+
+        let category = parts[0].to_string();
+        // Combine remaining parts as the test name (excluding the number suffix)
+        let name = if parts.len() >= 3 {
+            // Format: category--subcategory--NN
+            parts[1].to_string()
+        } else {
+            // Format: category--NN (shouldn't happen but handle it)
+            "test".to_string()
+        };
+
+        // Read and parse the test case
+        let content = fs::read_to_string(&path)?;
+        let test_case: TestCase = serde_json::from_str(&content)
+            .with_context(|| format!("Failed to parse {}", path.display()))?;
+
+        categories
+            .entry(category)
+            .or_default()
+            .push(CuratedTestCase {
+                name,
+                raw: test_case.raw,
+                expected: test_case.expected,
+            });
+
+        files_to_delete.push(path);
+    }
+
+    if categories.is_empty() {
+        println!("No curated test cases found to migrate");
+        return Ok(());
+    }
+
+    // Write consolidated category files
+    for (category, mut test_cases) in categories {
+        // Sort test cases by name for deterministic ordering
+        test_cases.sort_by(|a, b| a.name.cmp(&b.name));
+
+        let file = CuratedTestFile {
+            category: category.clone(),
+            test_cases,
+        };
+
+        let filename = format!("{}.json", category);
+        let filepath = curated_dir.join(&filename);
+
+        let json = serde_json::to_string_pretty(&file)? + "\n";
+        fs::write(&filepath, &json)?;
+        println!(
+            "Created {} with {} test cases",
+            filename,
+            file.test_cases.len()
+        );
+    }
+
+    // Delete old individual files
+    for path in &files_to_delete {
+        fs::remove_file(path)?;
+    }
+    println!("\nDeleted {} old individual files", files_to_delete.len());
+
+    Ok(())
 }

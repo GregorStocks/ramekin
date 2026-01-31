@@ -1,0 +1,265 @@
+{
+  "source": "paprika",
+  "recipe_slug": "mushroom-french-dip",
+  "ingredients": [
+    {
+      "raw": "3/4 cup (180 ml) hot water",
+      "expected": {
+        "item": "hot water",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 ounce (14 g) dried porcini mushrooms",
+      "expected": {
+        "item": "dried porcini mushrooms",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 ml) olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 large portobello mushrooms (about 3 ounces; 85 g each), stems and gills removed, cut into 1/4-inch thick slices",
+      "expected": {
+        "item": "portobello mushrooms, stems and gills removed, cut into 1/4-inch thick slices",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "3",
+            "unit": "oz each"
+          },
+          {
+            "amount": "85",
+            "unit": "g each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces (170 g) mixed mushrooms, such as oyster, shiitake, and/or cremini, roughly chopped",
+      "expected": {
+        "item": "mixed mushrooms, such as oyster, shiitake, and/or cremini",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped"
+      }
+    },
+    {
+      "raw": "1 medium yellow onion (8 ounces; 226 g), diced (1 cup diced)",
+      "expected": {
+        "item": "yellow onion, diced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "1 cup diced"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoons minced fresh thyme leaves",
+      "expected": {
+        "item": "minced fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) dry vermouth or dry white wine",
+      "expected": {
+        "item": "dry vermouth or dry white wine",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (480 ml) homemade or storebought low-sodium vegetable or mushroom broth",
+      "expected": {
+        "item": "homemade or storebought low-sodium vegetable or mushroom broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 (7- to 8-inch long) store-bought or homemade French rolls or hoagie/sub rolls (about 6-ounces each), split lengthwise, but left attached on 1 side to create a hinge",
+      "expected": {
+        "item": "store-bought or homemade French rolls or hoagie/sub rolls, split lengthwise, but left attached on 1 side to create a hinge",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 thin slices aged provolone or Swiss cheese (about 2 ounces; 56 g total weight)",
+      "expected": {
+        "item": "thin slices aged provolone or Swiss cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "source": "paprika",
+  "recipe_slug": "mozzarella-in-carrozza-fried",
+  "ingredients": [
+    {
+      "raw": "3 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup bread crumbs (preferably panko)",
+      "expected": {
+        "item": "bread crumbs (preferably panko)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 slices white sandwich bread, crusts removed",
+      "expected": {
+        "item": "white sandwich bread, crusts removed",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound low-moisture mozzarella (not fresh mozzarella), chilled and cut into 1/4-inch slices",
+      "expected": {
+        "item": "low-moisture mozzarella, chilled and cut into 1/4-inch slices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "not fresh mozzarella"
+      }
+    },
+    {
+      "raw": "Olive oil, for frying",
+      "expected": {
+        "item": "Olive oil, for frying",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

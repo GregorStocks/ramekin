@@ -1,0 +1,70 @@
+{
+  "source": "paprika",
+  "recipe_slug": "turkey-taco-skillet",
+  "ingredients": [
+    {
+      "raw": "1 lb 93 % lean ground turkey",
+      "expected": {
+        "item": "93 % lean ground turkey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 can fire-roasted tomatoes",
+      "expected": {
+        "item": "fire-roasted tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup black beans, rinsed",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "Taco seasoning",
+      "expected": {
+        "item": "Taco seasoning",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup frozen corn",
+      "expected": {
+        "item": "frozen corn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

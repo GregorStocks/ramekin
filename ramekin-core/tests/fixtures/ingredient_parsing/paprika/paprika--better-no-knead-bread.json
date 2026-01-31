@@ -1,0 +1,82 @@
+{
+  "source": "paprika",
+  "recipe_slug": "better-no-knead-bread",
+  "ingredients": [
+    {
+      "raw": "300 grams (10.5 ounces, about 2 cups) bread flour or all-purpose flour",
+      "expected": {
+        "item": "bread flour or all-purpose flour",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          },
+          {
+            "amount": "10.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4.5 grams (about 3/4 teaspoon) salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "g"
+          },
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 grams (about 0.5 teaspoons) yeast",
+      "expected": {
+        "item": "yeast",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "g"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "210 grams (7.5 ounces, about 1 cup minus 1.5 tablespoons) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "210",
+            "unit": "g"
+          },
+          {
+            "amount": "7.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

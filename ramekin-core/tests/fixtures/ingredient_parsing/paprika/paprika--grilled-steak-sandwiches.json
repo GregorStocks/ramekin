@@ -1,0 +1,179 @@
+{
+  "source": "paprika",
+  "recipe_slug": "grilled-steak-sandwiches",
+  "ingredients": [
+    {
+      "raw": "Blue cheese sauce:",
+      "expected": {
+        "item": "Blue cheese sauce:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces blue cheese, crumbled (¾ cup)",
+      "expected": {
+        "item": "blue cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled"
+      }
+    },
+    {
+      "raw": "1 tablespoon balsamic vinegar",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Steak:",
+      "expected": {
+        "item": "Steak:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (1-pound) skirt steak, cut crosswise into 4 equal pieces and trimmed",
+      "expected": {
+        "item": "skirt steak",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "cut crosswise into 4 equal pieces and trimmed"
+      }
+    },
+    {
+      "raw": "¼ cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Assembly:",
+      "expected": {
+        "item": "Assembly:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ciabatta sandwich rolls, halved lengthwise",
+      "expected": {
+        "item": "ciabatta sandwich rolls",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "halved lengthwise"
+      }
+    },
+    {
+      "raw": "2 ounces (2 cups) baby arugula",
+      "expected": {
+        "item": "baby arugula",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small red onion, halved and sliced thin",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "halved and sliced thin"
+      }
+    }
+  ]
+}

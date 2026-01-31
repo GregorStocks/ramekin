@@ -1,0 +1,202 @@
+{
+  "source": "paprika",
+  "recipe_slug": "margherita-pizza",
+  "ingredients": [
+    {
+      "raw": "Dough:",
+      "expected": {
+        "item": "Dough:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups (375 grams) all-purpose flour (bread flour works too)",
+      "expected": {
+        "item": "all-purpose flour (bread flour works too)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Slightly heaped 1/8, 1/4 or 1/2 teaspoon active dry yeast (for Overnight, All-Day, or Part-Day Schedules respectively)",
+      "expected": {
+        "item": "/8, 1/4",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slightly heaped"
+          }
+        ],
+        "note": "or 1/2 teaspoon active dry yeast (for Overnight, All-Day, or Part-Day Schedules respectively)"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons sea or kosher salt",
+      "expected": {
+        "item": "sea or kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 cup water, plus an additional tablespoon or two if needed (updated)",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus an additional tablespoon or two if needed (updated)"
+      }
+    },
+    {
+      "raw": "Pizza:",
+      "expected": {
+        "item": "Pizza:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 12-inch round or 9×13 rectangular pizza doughs",
+      "expected": {
+        "item": "12-inch round or 9×13 rectangular pizza doughs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 28-ounce can whole peeled tomatoes",
+      "expected": {
+        "item": "whole peeled tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon sea or kosher salt",
+      "expected": {
+        "item": "sea or kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Red pepper flakes, to taste",
+      "expected": {
+        "item": "Red pepper flakes",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Pinch of sugar, if desired",
+      "expected": {
+        "item": "sugar, if desired",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces aged mozzarella (sold in plastic, not water) (use more if you like your pizza with extra cheese)",
+      "expected": {
+        "item": "aged mozzarella (sold in plastic, not water) (use more if you like your pizza with extra cheese)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup finely grated parmesan or pecorino romano cheese",
+      "expected": {
+        "item": "finely grated parmesan or pecorino romano cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Two glugs of olive oil",
+      "expected": {
+        "item": "glugs of olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Few leaves of fresh basil, torn or sliced",
+      "expected": {
+        "item": "Few leaves of fresh basil",
+        "measurements": [],
+        "note": "torn or sliced"
+      }
+    }
+  ]
+}

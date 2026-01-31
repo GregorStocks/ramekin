@@ -1,0 +1,112 @@
+{
+  "source": "paprika",
+  "recipe_slug": "loaded-baked-sweet-potatoes",
+  "ingredients": [
+    {
+      "raw": "4 medium sweet potatoes (about 12 ounces; 340g each), washed, scrubbed, and dried",
+      "expected": {
+        "item": "sweet potatoes, washed, scrubbed",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "12",
+            "unit": "oz each"
+          },
+          {
+            "amount": "340",
+            "unit": "g each"
+          }
+        ],
+        "note": "and dried"
+      }
+    },
+    {
+      "raw": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
+      "expected": {
+        "item": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter (2 ounces; 56g), diced",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toppings:",
+      "expected": {
+        "item": "Toppings:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Grated cheddar cheese",
+      "expected": {
+        "item": "Grated cheddar cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Crispy diced bacon bits",
+      "expected": {
+        "item": "Crispy diced bacon bits",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Minced chives",
+      "expected": {
+        "item": "Minced chives",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sour cream",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chili",
+      "expected": {
+        "item": "Chili",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

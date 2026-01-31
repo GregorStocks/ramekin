@@ -1,0 +1,83 @@
+{
+  "source": "paprika",
+  "recipe_slug": "sous-vide-peppercorn-crusted-r",
+  "ingredients": [
+    {
+      "raw": "1 5-pound boneless beef chuck-eye roast, pulled into 2 pieces at natural seam and trimmed of large pieces of fat",
+      "expected": {
+        "item": "5-pound boneless beef chuck-eye roast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "pulled into 2 pieces at natural seam and trimmed of large pieces of fat"
+      }
+    },
+    {
+      "raw": "Kosher salt and pepper",
+      "expected": {
+        "item": "Kosher salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg white",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ cup coarsely ground black, green, and pink peppercorns",
+      "expected": {
+        "item": "coarsely ground black, green, and pink peppercorns",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons flake sea salt",
+      "expected": {
+        "item": "flake sea salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

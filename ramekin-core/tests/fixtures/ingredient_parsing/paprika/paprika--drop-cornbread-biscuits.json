@@ -1,0 +1,113 @@
+{
+  "source": "paprika",
+  "recipe_slug": "drop-cornbread-biscuits",
+  "ingredients": [
+    {
+      "raw": "1 3/4 cups (230 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "230",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup (90 grams) cornmeal",
+      "expected": {
+        "item": "cornmeal",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons granulated sugar (use 1 for a more savory biscuit)",
+      "expected": {
+        "item": "granulated sugar (use 1 for a more savory biscuit)",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup (115 grams) cold butter, in cubes",
+      "expected": {
+        "item": "cold butter, in cubes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (235 ml) cold buttermilk (buttermilk substitutes)",
+      "expected": {
+        "item": "cold buttermilk (buttermilk substitutes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "source": "paprika",
+  "recipe_slug": "grilled-steak-fajitas",
+  "ingredients": [
+    {
+      "raw": "Gather Your Ingredients",
+      "expected": {
+        "item": "Gather Your Ingredients",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ cup pineapple juice",
+      "expected": {
+        "item": "pineapple juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup plus 1 tablespoon vegetable oil",
+      "expected": {
+        "item": "½ cup plus 1 tablespoon vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus 1 tablespoon vegetable oil"
+      }
+    },
+    {
+      "raw": "¼ cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 pounds skirt steak, trimmed and cut crosswise into 6 equal pieces",
+      "expected": {
+        "item": "skirt steak",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cut crosswise into 6 equal pieces"
+      }
+    },
+    {
+      "raw": "3 yellow, red, orange, or green bell peppers",
+      "expected": {
+        "item": "yellow, red, orange, or green bell peppers",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large red onion, sliced into 1/2-inch-thick rounds",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "sliced into 1/2-inch-thick rounds"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 (6-inch) flour tortillas",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (13 by 9-inch) disposable aluminum pan",
+      "expected": {
+        "item": "disposable aluminum pan",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "13",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped fresh cilantro",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

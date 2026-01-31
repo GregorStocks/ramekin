@@ -1,0 +1,174 @@
+{
+  "source": "paprika",
+  "recipe_slug": "light-wheat-bread",
+  "ingredients": [
+    {
+      "raw": "2 1/2 cups (11.25 oz) unbleached high-gluten or bread flour",
+      "expected": {
+        "item": "unbleached high-gluten or bread flour",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "11.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "319",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (6.75 oz.) whole-wheat flour",
+      "expected": {
+        "item": "whole-wheat flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "6.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "191",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (.75 oz.) granulated sugar or honey",
+      "expected": {
+        "item": "granulated sugar or honey",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": ".75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (.38 oz.) salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": ".38",
+            "unit": "oz"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons (1 oz.) powdered milk*",
+      "expected": {
+        "item": "powdered milk*",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (.17 oz.) instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": ".17",
+            "unit": "oz"
+          },
+          {
+            "amount": "4.8",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (1 oz.) shortening or unsalted butter, at room temperature",
+      "expected": {
+        "item": "shortening or unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1 1/4 cups (10 oz.) water, at room temperature",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    }
+  ]
+}

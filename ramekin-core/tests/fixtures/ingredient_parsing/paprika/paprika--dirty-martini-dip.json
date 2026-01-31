@@ -1,0 +1,242 @@
+{
+  "source": "paprika",
+  "recipe_slug": "dirty-martini-dip",
+  "ingredients": [
+    {
+      "raw": "2/3 cup (100 g) pitted Spanish Queen olives, drained and quartered lengthwise",
+      "expected": {
+        "item": "pitted Spanish Queen olives",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and quartered lengthwise"
+      }
+    },
+    {
+      "raw": "5 tablespoons (75 ml) brine from jar, divided",
+      "expected": {
+        "item": "brine from jar",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "75",
+            "unit": "ml"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 g) jarred diced pimentos, drained",
+      "expected": {
+        "item": "jarred diced pimentos",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "2 (3-inch long; 3 g each) lemon peel strips",
+      "expected": {
+        "item": "lemon peel strips",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "g each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) London dry gin",
+      "expected": {
+        "item": "London dry gin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) dry vermouth",
+      "expected": {
+        "item": "dry vermouth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces (226 g) cream cheese, at room temperature",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) crème fraîche, at room temperature",
+      "expected": {
+        "item": "crème fraîche",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "3 ounces blue cheese, preferably gorgonzola dolce, crumbled (about 3/4 cup crumbled; see notes)",
+      "expected": {
+        "item": "blue cheese, preferably gorgonzola dolce, crumbled",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "about 3/4 cup crumbled; see notes"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon freshly ground black pepper plus more for garnish",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "Pinch Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) extra-virgin olive oil, divided",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "For serving:",
+      "expected": {
+        "item": "For serving:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Crudités",
+      "expected": {
+        "item": "Crudités",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "potato chips",
+      "expected": {
+        "item": "potato chips",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "crackers",
+      "expected": {
+        "item": "crackers",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

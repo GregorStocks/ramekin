@@ -1,0 +1,77 @@
+{
+  "source": "paprika",
+  "recipe_slug": "dirty-sopping-wet-martini",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces (45 ml) dry gin",
+      "expected": {
+        "item": "dry gin",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 ounces (45 ml) dry vermouth",
+      "expected": {
+        "item": "dry vermouth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 ounce (22 ml) olive brine (see notes)",
+      "expected": {
+        "item": "olive brine (see notes)",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "22",
+            "unit": "ml"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pitted manzanilla olives, for garnish",
+      "expected": {
+        "item": "Pitted manzanilla olives",
+        "measurements": [],
+        "note": "for garnish"
+      }
+    }
+  ]
+}

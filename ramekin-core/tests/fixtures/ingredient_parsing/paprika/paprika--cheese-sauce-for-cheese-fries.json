@@ -1,0 +1,70 @@
+{
+  "source": "paprika",
+  "recipe_slug": "cheese-sauce-for-cheese-fries",
+  "ingredients": [
+    {
+      "raw": "8 ounces extra-sharp cheddar cheese (or a mix of cheddar and pepper Jack; see notes), grated on large holes of a box grater",
+      "expected": {
+        "item": "extra-sharp cheddar cheese (or a mix of cheddar and pepper Jack; see notes)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "grated on large holes of a box grater"
+      }
+    },
+    {
+      "raw": "1 tablespoon cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.0",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 (12-ounce can) evaporated milk, divided",
+      "expected": {
+        "item": "evaporated milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 teaspoons Franks Red Hot or other hot sauce",
+      "expected": {
+        "item": "Franks Red Hot or other hot sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

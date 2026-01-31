@@ -1,0 +1,70 @@
+{
+  "source": "paprika",
+  "recipe_slug": "lol-it-s-an-appletini",
+  "ingredients": [
+    {
+      "raw": "6 drops 20 percent saline solution*",
+      "expected": {
+        "item": "20 percent saline solution*",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "drop"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces fresh Granny Smith apple juice",
+      "expected": {
+        "item": "fresh Granny Smith apple juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 ounces Dolin dry vermouth",
+      "expected": {
+        "item": "Dolin dry vermouth",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "7 ounces London dry gin, such as Beefeater or Tanqueray",
+      "expected": {
+        "item": "London dry gin, such as Beefeater or Tanqueray",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

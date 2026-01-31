@@ -1,0 +1,125 @@
+{
+  "source": "paprika",
+  "recipe_slug": "potato-and-leek-gratin",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons unsalted butter, plus more for pan",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for pan"
+      }
+    },
+    {
+      "raw": "2 1/2 pounds yukon gold potatoes, unpeeled, scrubbed, thinly sliced",
+      "expected": {
+        "item": "yukon gold potatoes, unpeeled, scrubbed",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 thick or 2 slimmer leeks, halved, washed, cut into 1-inch segments",
+      "expected": {
+        "item": "thick or 2 slimmer leeks, halved, washed, cut into 1-inch segments",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Leaves from 3 sprigs fresh thyme",
+      "expected": {
+        "item": "Leaves from 3 sprigs fresh thyme",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup plain breadcrumbs (panko or homemade are great here)",
+      "expected": {
+        "item": "plain breadcrumbs (panko or homemade are great here)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup coarsely grated gruyère, comte, or baby swiss cheese",
+      "expected": {
+        "item": "coarsely grated gruyère, comte, or baby swiss cheese",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "source": "paprika",
+  "recipe_slug": "beef-stew",
+  "ingredients": [
+    {
+      "raw": "4 pounds lean, boneless chuck steak",
+      "expected": {
+        "item": "lean, boneless chuck steak",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground pepper to taste",
+      "expected": {
+        "item": "Salt and freshly ground pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped garlic",
+      "expected": {
+        "item": "finely chopped garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups coarsely chopped onions",
+      "expected": {
+        "item": "coarsely chopped onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "47",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups dry red wine",
+      "expected": {
+        "item": "dry red wine",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 whole cloves",
+      "expected": {
+        "item": "whole cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 sprigs parsley, tied in a bundle",
+      "expected": {
+        "item": "parsley, tied in a bundle",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 large carrots, about 1 1/2 pounds, trimmed and scraped",
+      "expected": {
+        "item": "carrots, about 1 1/2 pounds",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": "trimmed and scraped"
+      }
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "source": "paprika",
+  "recipe_slug": "chicken-phở",
+  "ingredients": [
+    {
+      "raw": "Broth",
+      "expected": {
+        "item": "Broth",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 unpeeled yellow onions, quartered",
+      "expected": {
+        "item": "unpeeled yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "Three 1/2-inch-thick slices of unpeeled fresh ginger, smashed",
+      "expected": {
+        "item": "1/2-inch-thick slices of unpeeled fresh ginger, smashed",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 quarts cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 pounds chicken bones or chicken wings",
+      "expected": {
+        "item": "chicken bones or chicken wings",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "One fresh 3 1/2-pound chicken, quartered",
+      "expected": {
+        "item": "fresh 3 1/2-pound chicken",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "quartered"
+      }
+    },
+    {
+      "raw": "1 tablespoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Additional spices (optional): Cinnamon, star anise, black cardamoms, coriander seeds, fennel seeds or cloves",
+      "expected": {
+        "item": "Additional spices : Cinnamon, star anise, black cardamoms, coriander seeds, fennel seeds or cloves",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/4 cup Asian fish sauce",
+      "expected": {
+        "item": "Asian fish sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound dried rice noodles, a linguine shape (bánh phở) if you can find them",
+      "expected": {
+        "item": "dried rice noodles, a linguine shape (bánh phở) if you can find them",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Garnishes",
+      "expected": {
+        "item": "Garnishes",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large scallion, thinly sliced",
+      "expected": {
+        "item": "scallion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "1 pound mung bean sprouts",
+      "expected": {
+        "item": "mung bean sprouts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup torn basil leaves, Thai basil if you can find it",
+      "expected": {
+        "item": "torn basil leaves, Thai basil if you can find it",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup cilantro leaves",
+      "expected": {
+        "item": "cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 limes, cut into wedges",
+      "expected": {
+        "item": "limes, cut into wedges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 jalapeños, thinly sliced",
+      "expected": {
+        "item": "jalapeños",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced"
+      }
+    },
+    {
+      "raw": "Asian chili-garlic sauce",
+      "expected": {
+        "item": "Asian chili-garlic sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hoisin sauce",
+      "expected": {
+        "item": "Hoisin sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Crispy shallots, recipe follows",
+      "expected": {
+        "item": "Crispy shallots, recipe follows",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups thinly sliced shallots (about 4 large shallots)",
+      "expected": {
+        "item": "thinly sliced shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "436",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

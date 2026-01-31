@@ -1,0 +1,69 @@
+{
+  "source": "paprika",
+  "recipe_slug": "bodega-style-egg-and-cheese-sa",
+  "ingredients": [
+    {
+      "raw": "An English muffin, roll or two slices bread of your choice",
+      "expected": {
+        "item": "An English muffin, roll or two slices bread of your choice",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons butter or oil",
+      "expected": {
+        "item": "butter or oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 slice of cheese or a small pile of grated or crumbled cheese",
+      "expected": {
+        "item": "cheese or a small pile of grated or crumbled cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Spoonful of sliced scallions, chives, crumbled bacon, or whatever else you want in your eggs",
+      "expected": {
+        "item": "Spoonful of sliced scallions, chives, crumbled bacon, or whatever else you want in your eggs",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "source": "paprika",
+  "recipe_slug": "armenian-style-rice-pilaf",
+  "ingredients": [
+    {
+      "raw": "1 cup (185 g) long-grain white rice",
+      "expected": {
+        "item": "long-grain white rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "185",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons (42 g) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup (2 ounces; 57 g) thin pasta (such as vermicelli or fine spaghetti), broken into 1-inch pieces, or 1/2 cup of small, non-tubular pasta, like orzo",
+      "expected": {
+        "item": "thin pasta (such as vermicelli or fine spaghetti), broken into 1-inch pieces, or 1/2 cup of small, non-tubular pasta, like orzo",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups (480 ml) homemade or store-bought low-sodium chicken stock",
+      "expected": {
+        "item": "homemade or store-bought low-sodium chicken stock",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon (3 g) Diamond Crystal kosher salt; if using table salt use half as much by volume or same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; if using table salt use half as much by volume or same weight",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon minced fresh parsley or dill (or a combination), optional, divided",
+      "expected": {
+        "item": "minced fresh parsley or dill (or a combination), optional",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    }
+  ]
+}

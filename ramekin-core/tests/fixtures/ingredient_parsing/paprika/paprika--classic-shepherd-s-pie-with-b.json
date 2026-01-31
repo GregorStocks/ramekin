@@ -1,0 +1,397 @@
+{
+  "source": "paprika",
+  "recipe_slug": "classic-shepherd-s-pie-with-b",
+  "ingredients": [
+    {
+      "raw": "For the Mashed Potatoes:",
+      "expected": {
+        "item": "For the Mashed Potatoes:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 pounds (1.6 kg) russet potatoes (about 4 large), peeled and cut into 1-inch pieces",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.6",
+            "unit": "kg"
+          },
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and cut into 1-inch pieces"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons (85 g) unsalted butter, cubed",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed"
+      }
+    },
+    {
+      "raw": "For the Meat Sauce:",
+      "expected": {
+        "item": "For the Meat Sauce:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (360 ml) homemade or store-bought low-sodium chicken stock",
+      "expected": {
+        "item": "homemade or store-bought low-sodium chicken stock",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 packets unflavored gelatin (about 5 teaspoons; 1/2 ounce; 14 g)",
+      "expected": {
+        "item": "packets unflavored gelatin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 pounds (1 kg) ground beef or lamb, or some combination (see note)",
+      "expected": {
+        "item": "ground beef or lamb, or some combination (see note)",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "kg"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large yellow onion (about 14 ounces; 400 g), diced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "3 medium carrots (about 8 ounces; 225 g), diced",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 ribs celery (about 4 ounces; 110 g), diced",
+      "expected": {
+        "item": "ribs celery",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 medium cloves garlic, minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup (240 ml) dry red wine",
+      "expected": {
+        "item": "dry red wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 sprigs thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) Marmite (optional)",
+      "expected": {
+        "item": "Marmite",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "2 tablespoons (15 g) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces (225 g) frozen peas",
+      "expected": {
+        "item": "frozen peas",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "To Assemble:",
+      "expected": {
+        "item": "To Assemble:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (360 ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "ml"
+          },
+          {
+            "amount": "357",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Grated Parmigiano-Reggiano cheese, for topping (optional)",
+      "expected": {
+        "item": "Grated Parmigiano-Reggiano cheese, for topping",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "source": "paprika",
+  "recipe_slug": "mushrooms-and-greens-with-toas",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons unsalted butter, divided",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds mixed mushrooms, cleaned, trimmed and torn into bite size pieces (see suggestions above)",
+      "expected": {
+        "item": "mixed mushrooms, cleaned",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and torn into bite size pieces (see suggestions above)"
+      }
+    },
+    {
+      "raw": "2 thick slices bread from a large, crusty loaf (I’d use 4 from a smaller loaf)",
+      "expected": {
+        "item": "thick slices bread from a large, crusty loaf (I’d use 4 from a smaller loaf)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cloves garlic or 1 shallot, minced",
+      "expected": {
+        "item": "garlic or 1 shallot",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 tablespoon white wine vinegar, or more to taste (I used 2)",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or more to taste (I used 2)"
+      }
+    },
+    {
+      "raw": "1 fresh red chile, stemmed, seeded and minced or red pepper flakes, to taste",
+      "expected": {
+        "item": "fresh red chile, stemmed, seeded and minced or red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "Coarse salt and freshly ground black pepper",
+      "expected": {
+        "item": "Coarse salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces chopped fresh greens (see suggestions above)",
+      "expected": {
+        "item": "chopped fresh greens (see suggestions above)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces of a good melting cheese, thickly sliced (suggestions above)",
+      "expected": {
+        "item": "a good melting cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "thickly sliced (suggestions above)"
+      }
+    }
+  ]
+}

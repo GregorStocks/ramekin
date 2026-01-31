@@ -1,0 +1,169 @@
+{
+  "source": "paprika",
+  "recipe_slug": "omurice",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 medium onion, cut in 1/2-inch dice (about 3/4 cup)",
+      "expected": {
+        "item": "onion, cut in 1/2-inch dice",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "medium"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium carrot, peeled, cut in 1/4-inch dice (about 3/4 cup)",
+      "expected": {
+        "item": "carrot, peeled, cut in 1/4-inch dice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 3 slices deli ham, cut into 1/2-inch pieces",
+      "expected": {
+        "item": "deli ham, cut into 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups cooked medium-grain rice, preferably day-old or cooked a little dry",
+      "expected": {
+        "item": "cooked medium-grain rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "preferably day-old or cooked a little dry"
+      }
+    },
+    {
+      "raw": "2 tablespoons ketchup, plus more for serving",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "1 teaspoon soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup frozen peas",
+      "expected": {
+        "item": "frozen peas",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon chicken stock or dashi (optional)",
+      "expected": {
+        "item": "chicken stock or dashi",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon dashi or water",
+      "expected": {
+        "item": "dashi or water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

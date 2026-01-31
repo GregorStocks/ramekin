@@ -1,0 +1,62 @@
+{
+  "source": "paprika",
+  "recipe_slug": "slushy-paper-planes",
+  "ingredients": [
+    {
+      "raw": "3/4 cup bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup amaro nonino",
+      "expected": {
+        "item": "amaro nonino",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup Aperol",
+      "expected": {
+        "item": "Aperol",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "183",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "source": "paprika",
+  "recipe_slug": "thanksgiving-drinks",
+  "ingredients": [
+    {
+      "raw": "Jellied cranberry sauce:",
+      "expected": {
+        "item": "Jellied cranberry sauce:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups cranberries",
+      "expected": {
+        "item": "cranberries",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "315",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pumpkin pie sugar:",
+      "expected": {
+        "item": "Pumpkin pie sugar:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon pumpkin pie spice, such as McCormick",
+      "expected": {
+        "item": "pumpkin pie spice, such as McCormick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 teaspoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Thanksgiving Sidecar:",
+      "expected": {
+        "item": "Thanksgiving Sidecar:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 dash Angostura Aromatic bitters",
+      "expected": {
+        "item": "Angostura Aromatic bitters",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ ounce cranberry jelly",
+      "expected": {
+        "item": "cranberry jelly",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ ounce maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ ounce Grand Marnier",
+      "expected": {
+        "item": "Grand Marnier",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ ounce lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ ounce rye, preferably Old Overholt",
+      "expected": {
+        "item": "rye, preferably Old Overholt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ ounce Laird’s Straight Apple Brandy bottled-in-bond",
+      "expected": {
+        "item": "Laird’s Straight Apple Brandy bottled-in-bond",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pumpkin pie sugar, to sprinkle on top",
+      "expected": {
+        "item": "Pumpkin pie sugar, to sprinkle on top",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cranberry Sauce Manhattan:",
+      "expected": {
+        "item": "Cranberry Sauce Manhattan:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 dashes Angostura Aromatic bitters",
+      "expected": {
+        "item": "Angostura Aromatic bitters",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 dashes orange bitters, such as Regan’s",
+      "expected": {
+        "item": "orange bitters, such as Regan’s",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ ounce jellied cranberry sauce",
+      "expected": {
+        "item": "jellied cranberry sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce sweet vermouth, preferably Carpano Antica Formula",
+      "expected": {
+        "item": "sweet vermouth, preferably Carpano Antica Formula",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce dark aged rum, preferably El Dorado 8",
+      "expected": {
+        "item": "dark aged rum, preferably El Dorado 8",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 ounce rye whiskey, preferably Rittenhouse",
+      "expected": {
+        "item": "rye whiskey, preferably Rittenhouse",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

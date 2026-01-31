@@ -1,0 +1,64 @@
+{
+  "source": "paprika",
+  "recipe_slug": "steamed-artichokes",
+  "ingredients": [
+    {
+      "raw": "2 to 3 full-sized fresh artichokes",
+      "expected": {
+        "item": "full-sized fresh artichokes",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 lemons, halved",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": "halved"
+      }
+    },
+    {
+      "raw": "Salt, freshly ground black pepper",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "freshly ground black pepper"
+      }
+    },
+    {
+      "raw": "A big pat of butter (optional)",
+      "expected": {
+        "item": "A big pat of butter",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "A few garlic cloves, halved lengthwise (optional)",
+      "expected": {
+        "item": "A few garlic cloves, halved lengthwise",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Mayonnaise, for dipping sauce",
+      "expected": {
+        "item": "Mayonnaise, for dipping sauce",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

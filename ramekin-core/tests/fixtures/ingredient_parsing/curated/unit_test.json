@@ -1,0 +1,218 @@
+{
+  "category": "unit_test",
+  "test_cases": [
+    {
+      "name": "alt_measurement",
+      "raw": "1 stick (113g) butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "decimal",
+      "raw": "2.5 oz cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "fraction",
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "medium",
+      "raw": "2 medium onions",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "medium_with_weight",
+      "raw": "2 medium (8 oz) onions",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "mixed_number",
+      "raw": "1 1/2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "no_amount",
+      "raw": "Salt to taste",
+      "expected": {
+        "item": "Salt to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "name": "no_unit",
+      "raw": "3 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "simple",
+      "raw": "2 cups flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "tablespoons",
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "tbsp",
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "unicode_fraction",
+      "raw": "⅓ cup graham cracker crumbs",
+      "expected": {
+        "item": "graham cracker crumbs",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "with_note",
+      "raw": "1 cup butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened"
+      }
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "source": "paprika",
+  "recipe_slug": "hummus-heaped-with-tomatoes-an",
+  "ingredients": [
+    {
+      "raw": "4 large pitas, toasted, cut into wedges",
+      "expected": {
+        "item": "pitas, toasted, cut into wedges",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups prepared hummus (from this recipe, your favorite recipe, or your favorite brand)",
+      "expected": {
+        "item": "prepared hummus (from this recipe, your favorite recipe, or your favorite brand)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cups (8 ounces or 225 grams) cherry tomatoes, chopped small, plus more to taste",
+      "expected": {
+        "item": "cherry tomatoes, chopped small",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "8 ounces (225 grams) small cucumbers, washed, unpeeled, chopped small",
+      "expected": {
+        "item": "small cucumbers, washed, unpeeled",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped small"
+      }
+    },
+    {
+      "raw": "1/4 medium red onion, chopped small",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped small"
+      }
+    },
+    {
+      "raw": "Juice of half a lemon",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sumac and/or za’atar (optional)",
+      "expected": {
+        "item": "Sumac and/or za’atar",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons finely chopped parsley, or a mix of parsley, mint, and chives, plus more for garnish",
+      "expected": {
+        "item": "finely chopped parsley, or a mix of parsley, mint, and chives",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    }
+  ]
+}

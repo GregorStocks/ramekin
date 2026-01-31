@@ -1,0 +1,141 @@
+{
+  "source": "paprika",
+  "recipe_slug": "simplest-mushroom-pasta",
+  "ingredients": [
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound dried pasta, any shape you like",
+      "expected": {
+        "item": "dried pasta, any shape you like",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons salted or unsalted butter",
+      "expected": {
+        "item": "salted or unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound fresh cremini mushrooms, sliced thin (see note)",
+      "expected": {
+        "item": "fresh cremini mushrooms",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced thin (see note)"
+      }
+    },
+    {
+      "raw": "4 medium garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Glug of dry marsala or white wine (optional)",
+      "expected": {
+        "item": "Glug of dry marsala or white wine",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1/3 cup crème fraîche or mascarpone, or heavy cream",
+      "expected": {
+        "item": "crème fraîche or mascarpone, or heavy cream",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Handful chopped chives or parsley, to finish (optional)",
+      "expected": {
+        "item": "chopped chives or parsley, to finish",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "Grated parmesan or pecorino",
+      "expected": {
+        "item": "Grated parmesan or pecorino",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "source": "paprika",
+  "recipe_slug": "sizzling-chicken-fajitas",
+  "ingredients": [
+    {
+      "raw": "For the chicken:",
+      "expected": {
+        "item": "For the chicken:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds boneless, skinless chicken thighs (though, frankly, a little more or less will be fine here)",
+      "expected": {
+        "item": "boneless, skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "though, frankly, a little more or less will be fine here"
+      }
+    },
+    {
+      "raw": "2 tablespoons lime juice (half a juicy lime)",
+      "expected": {
+        "item": "lime juice (half a juicy lime)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon chili powder",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced or pressed",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced or pressed"
+      }
+    },
+    {
+      "raw": "Few dashes hot sauce, optional",
+      "expected": {
+        "item": "Few dashes hot sauce",
+        "measurements": [],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "To assemble:",
+      "expected": {
+        "item": "To assemble:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 (6-inch) flour or corn tortillas",
+      "expected": {
+        "item": "flour or corn tortillas",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 large bell peppers, cut into thin strips (I use a mix of green, red and other colors, if I can find them)",
+      "expected": {
+        "item": "bell peppers, cut into thin strips (I use a mix of green, red and other colors, if I can find them)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large yellow or sweet onion, halved and sliced thin",
+      "expected": {
+        "item": "yellow or sweet onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved and sliced thin"
+      }
+    },
+    {
+      "raw": "Coarse salt",
+      "expected": {
+        "item": "Coarse salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fixings (pick your favorites):",
+      "expected": {
+        "item": "Fixings (pick your favorites):",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 cup cooked black beans (1 15-ounce can, drained and rinsed)",
+      "expected": {
+        "item": "cooked black beans",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "1 15-ounce can, drained and rinsed"
+      }
+    },
+    {
+      "raw": "Salsa (or pico de gallo)",
+      "expected": {
+        "item": "Salsa (or pico de gallo)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sliced avocado (or guacamole)",
+      "expected": {
+        "item": "Sliced avocado (or guacamole)",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Shredded cheese",
+      "expected": {
+        "item": "Shredded cheese",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Sour cream",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Minced white onion or pickled red onions",
+      "expected": {
+        "item": "Minced white onion or pickled red onions",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped cilantro",
+      "expected": {
+        "item": "Chopped cilantro",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Pickled jalalpenos",
+      "expected": {
+        "item": "Pickled jalalpenos",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Hot sauce",
+      "expected": {
+        "item": "Hot sauce",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Lime wedges",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

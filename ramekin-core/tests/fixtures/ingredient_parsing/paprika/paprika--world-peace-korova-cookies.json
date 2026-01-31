@@ -1,0 +1,159 @@
+{
+  "source": "paprika",
+  "recipe_slug": "world-peace-korova-cookies",
+  "ingredients": [
+    {
+      "raw": "1 1/4 cups (165 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/3 cup (25 to 27 grams) unsweetened cocoa powder",
+      "expected": {
+        "item": "unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "25 to 27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "11 tablespoons (155 grams or 5.5 ounces) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "11",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "155",
+            "unit": "g"
+          },
+          {
+            "amount": "5.5",
+            "unit": "oz"
+          }
+        ],
+        "note": "at room temperature"
+      }
+    },
+    {
+      "raw": "2/3 cup (packed) (125 grams) light brown sugar",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": "packed"
+      }
+    },
+    {
+      "raw": "1/4 cup (50 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fleur de sel or 1/4 teaspoon fine sea salt",
+      "expected": {
+        "item": "fleur de sel",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 teaspoon fine sea salt"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 ounces (140 grams) bittersweet chocolate, chopped into chips, or a generous 3/4 cup store-bought mini chocolate chips",
+      "expected": {
+        "item": "bittersweet chocolate, chopped into chips, or a generous 3/4 cup store-bought mini chocolate chips",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

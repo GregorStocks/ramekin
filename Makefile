@@ -194,3 +194,6 @@ ingredient-tests-update: ## Update ingredient parsing test fixtures to match cur
 
 ingredient-tests-generate-paprika: ## Generate ingredient parsing test fixtures from paprikarecipes file
 	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-generate-paprika
+
+ingredient-tests-migrate-curated: ## Migrate curated fixtures from individual files to category files
+	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-migrate-curated

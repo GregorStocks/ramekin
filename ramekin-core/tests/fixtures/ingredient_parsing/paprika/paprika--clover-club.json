@@ -1,0 +1,95 @@
+{
+  "source": "paprika",
+  "recipe_slug": "clover-club",
+  "ingredients": [
+    {
+      "raw": "½ ounce egg white",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ ounce rich (2:1) syrup",
+      "expected": {
+        "item": "rich syrup",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¼ ounce crème de framboise [raspberry liqueuer] (preferably Giffard)",
+      "expected": {
+        "item": "crème de framboise [raspberry liqueuer] (preferably Giffard)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "¾ ounce fresh squeezed lemon juice",
+      "expected": {
+        "item": "fresh squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces dry gin (preferably Tanqueray)",
+      "expected": {
+        "item": "dry gin (preferably Tanqueray)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

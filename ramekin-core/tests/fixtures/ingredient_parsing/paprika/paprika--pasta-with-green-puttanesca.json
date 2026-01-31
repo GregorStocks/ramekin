@@ -1,0 +1,160 @@
+{
+  "source": "paprika",
+  "recipe_slug": "pasta-with-green-puttanesca",
+  "ingredients": [
+    {
+      "raw": "Kosher salt, to taste",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "to taste"
+      }
+    },
+    {
+      "raw": "1 pound spaghettini or spaghetti",
+      "expected": {
+        "item": "spaghettini or spaghetti",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 anchovy fillets",
+      "expected": {
+        "item": "anchovy fillets",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup drained capers",
+      "expected": {
+        "item": "drained capers",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup pitted and sliced green Cerignola or Picholine olives",
+      "expected": {
+        "item": "pitted and sliced green Cerignola or Picholine olives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 fat green garlic cloves, peeled, sliced 1/4-inch thick or use 8 regular garlic cloves",
+      "expected": {
+        "item": "fat green garlic cloves, peeled",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "sliced 1/4-inch thick or use 8 regular garlic cloves"
+      }
+    },
+    {
+      "raw": "1/3 cup chopped scallions including greens",
+      "expected": {
+        "item": "chopped scallions including greens",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 cups baby spinach leaves (11 ounces)",
+      "expected": {
+        "item": "baby spinach leaves",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "cup"
+          },
+          {
+            "amount": "11",
+            "unit": "oz"
+          },
+          {
+            "amount": "312",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup torn basil leaves",
+      "expected": {
+        "item": "torn basil leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

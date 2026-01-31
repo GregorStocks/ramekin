@@ -1,0 +1,105 @@
+{
+  "source": "paprika",
+  "recipe_slug": "classic-french-aligot",
+  "ingredients": [
+    {
+      "raw": "2 pounds mashing potatoes, peeled and cut into quarters",
+      "expected": {
+        "item": "mashing potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into quarters"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground white pepper",
+      "expected": {
+        "item": "ground white pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup crème fraîche, or substitute equal parts sour cream and heavy cream",
+      "expected": {
+        "item": "crème fraîche, or substitute equal parts sour cream and heavy cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 clove garlic, lightly crushed, but kept intact",
+      "expected": {
+        "item": "garlic, lightly crushed, but kept intact",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups Cantal cheese, or substitute good-quality grated sharp cheddar",
+      "expected": {
+        "item": "Cantal cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or substitute good-quality grated sharp cheddar"
+      }
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "source": "paprika",
+  "recipe_slug": "yaki-onigiri-chazuke",
+  "ingredients": [
+    {
+      "raw": "2 cups steamed rice",
+      "expected": {
+        "item": "steamed rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tsp oil",
+      "expected": {
+        "item": "oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 Tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Dashi Soup",
+      "expected": {
+        "item": "Dashi Soup",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups dashi (fish broth)",
+      "expected": {
+        "item": "dashi (fish broth)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Tbsp sake",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Toppings",
+      "expected": {
+        "item": "Toppings",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 Umeboshi pickled sour plum",
+      "expected": {
+        "item": "Umeboshi pickled sour plum",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 green onion",
+      "expected": {
+        "item": "green onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Nori roasted seaweed (shredded)",
+      "expected": {
+        "item": "Nori roasted seaweed",
+        "measurements": [],
+        "note": "shredded"
+      }
+    },
+    {
+      "raw": "wasabi",
+      "expected": {
+        "item": "wasabi",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

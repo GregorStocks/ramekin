@@ -1,0 +1,142 @@
+{
+  "source": "paprika",
+  "recipe_slug": "french-onion-soup",
+  "ingredients": [
+    {
+      "raw": "3 pounds thinly sliced yellow onions (see Tip)",
+      "expected": {
+        "item": "thinly sliced yellow onions (see Tip)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fine sea salt",
+      "expected": {
+        "item": "Fine sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup dry sherry, vermouth, or white wine (optional)",
+      "expected": {
+        "item": "dry sherry, vermouth, or white wine",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 bay leaf or a few sprigs of thyme (optional, and honestly, I rarely bother)",
+      "expected": {
+        "item": "bay leaf or a few sprigs of thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional, and honestly, I rarely bother"
+      }
+    },
+    {
+      "raw": "2 quarts (8 cups) beef, chicken, or vegetable (mushroom is excellent here) stock, the more robust the better",
+      "expected": {
+        "item": "beef, chicken, or vegetable (mushroom is excellent here) stock, the more robust the better",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 garlic clove",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "One (3/4- to 1-inch) thick slice of bread for each bowl of soup",
+      "expected": {
+        "item": "thick slice of bread for each bowl of soup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup grated gruyere, comte, or a mix of gruyere and parmesan per toast",
+      "expected": {
+        "item": "grated gruyere, comte, or a mix of gruyere and parmesan per toast",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

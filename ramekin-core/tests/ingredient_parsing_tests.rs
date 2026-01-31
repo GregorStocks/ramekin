@@ -1,18 +1,31 @@
 //! Golden file tests for ingredient parsing pipeline.
 //!
 //! These tests verify that the ingredient parsing pipeline produces expected results.
-//! Test cases are individual JSON files in `fixtures/ingredient_parsing/`.
+//! Test cases are JSON files in `fixtures/ingredient_parsing/`.
 //!
 //! Directory structure:
-//! - `curated/` - Hand-picked test cases representing important scenarios
-//! - `pipeline/` - Auto-generated from pipeline runs for regression testing
-//! - `paprika/` - Auto-generated from paprikarecipes file for regression testing
+//! - `curated/` - Hand-picked test cases grouped by category (edge.json, unit_test.json, etc.)
+//! - `pipeline/` - Auto-generated from pipeline runs, one file per recipe
+//! - `paprika/` - Auto-generated from paprikarecipes file, one file per recipe
 //!
-//! Test format:
+//! Curated format (category files):
 //! ```json
 //! {
-//!   "raw": "8 oz butter",
-//!   "expected": { "item": "butter", "measurements": [...], "note": null }
+//!   "category": "edge",
+//!   "test_cases": [
+//!     { "name": "ingredient_alternative", "raw": "...", "expected": {...} }
+//!   ]
+//! }
+//! ```
+//!
+//! Recipe format (pipeline/paprika):
+//! ```json
+//! {
+//!   "source": "101cookbooks",
+//!   "recipe_slug": "beet-caviar-recipe",
+//!   "ingredients": [
+//!     { "raw": "4 medium beets", "expected": {...} }
+//!   ]
 //! }
 //! ```
 
@@ -24,12 +37,42 @@ use serde::Deserialize;
 use std::fs;
 use std::path::PathBuf;
 
-/// A test case loaded from a JSON fixture file
-#[derive(Debug, Deserialize)]
+/// A single test case with raw input and expected output
+#[derive(Debug, Deserialize, Clone)]
 struct TestCase {
     /// Raw ingredient string to parse
     raw: String,
     /// Expected output from parsing
+    expected: Expected,
+}
+
+/// Recipe-based test file (for pipeline/paprika)
+#[derive(Debug, Deserialize)]
+struct RecipeTestFile {
+    source: String,
+    recipe_slug: String,
+    ingredients: Vec<IngredientTestCase>,
+}
+
+/// A single ingredient test case within a recipe
+#[derive(Debug, Deserialize)]
+struct IngredientTestCase {
+    raw: String,
+    expected: Expected,
+}
+
+/// Curated test file (category-based)
+#[derive(Debug, Deserialize)]
+struct CuratedTestFile {
+    category: String,
+    test_cases: Vec<CuratedTestCase>,
+}
+
+/// A single test case within a curated category file
+#[derive(Debug, Deserialize)]
+struct CuratedTestCase {
+    name: String,
+    raw: String,
     expected: Expected,
 }
 
@@ -76,12 +119,49 @@ fn load_test_cases() -> Vec<(String, TestCase)> {
 
         for entry in glob(&pattern_str).expect("Failed to read glob pattern") {
             let path = entry.expect("Failed to read directory entry");
-            let name = format!("{}/{}", subdir, path.file_stem().unwrap().to_string_lossy());
             let content = fs::read_to_string(&path)
                 .unwrap_or_else(|e| panic!("Failed to read {}: {}", path.display(), e));
-            let case: TestCase = serde_json::from_str(&content)
+
+            // Parse as generic JSON first to detect format
+            let json: serde_json::Value = serde_json::from_str(&content)
                 .unwrap_or_else(|e| panic!("Failed to parse {}: {}", path.display(), e));
-            cases.push((name, case));
+
+            if json.get("ingredients").is_some() {
+                // Recipe format (pipeline/paprika)
+                let file: RecipeTestFile = serde_json::from_value(json).unwrap_or_else(|e| {
+                    panic!("Failed to parse recipe file {}: {}", path.display(), e)
+                });
+                for (idx, ing) in file.ingredients.iter().enumerate() {
+                    let name = format!("{}/{}--{}[{}]", subdir, file.source, file.recipe_slug, idx);
+                    cases.push((
+                        name,
+                        TestCase {
+                            raw: ing.raw.clone(),
+                            expected: ing.expected.clone(),
+                        },
+                    ));
+                }
+            } else if json.get("test_cases").is_some() {
+                // Curated format (category files)
+                let file: CuratedTestFile = serde_json::from_value(json).unwrap_or_else(|e| {
+                    panic!("Failed to parse curated file {}: {}", path.display(), e)
+                });
+                for tc in &file.test_cases {
+                    let name = format!("{}/{}/{}", subdir, file.category, tc.name);
+                    cases.push((
+                        name,
+                        TestCase {
+                            raw: tc.raw.clone(),
+                            expected: tc.expected.clone(),
+                        },
+                    ));
+                }
+            } else {
+                panic!(
+                    "Unknown fixture format in {}: expected 'ingredients' or 'test_cases' field",
+                    path.display()
+                );
+            }
         }
     }
 
@@ -147,12 +227,23 @@ fn test_ingredient_parsing_curated() {
     let mut cases = Vec::new();
     for entry in glob(&pattern_str).expect("Failed to read glob pattern") {
         let path = entry.expect("Failed to read directory entry");
-        let name = path.file_stem().unwrap().to_string_lossy().into_owned();
         let content = fs::read_to_string(&path)
             .unwrap_or_else(|e| panic!("Failed to read {}: {}", path.display(), e));
-        let case: TestCase = serde_json::from_str(&content)
+
+        // Parse curated category file
+        let file: CuratedTestFile = serde_json::from_str(&content)
             .unwrap_or_else(|e| panic!("Failed to parse {}: {}", path.display(), e));
-        cases.push((name, case));
+
+        for tc in &file.test_cases {
+            let name = format!("{}/{}", file.category, tc.name);
+            cases.push((
+                name,
+                TestCase {
+                    raw: tc.raw.clone(),
+                    expected: tc.expected.clone(),
+                },
+            ));
+        }
     }
 
     if cases.is_empty() {

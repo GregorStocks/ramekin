@@ -1,0 +1,78 @@
+{
+  "source": "paprika",
+  "recipe_slug": "tortilla-de-patatas",
+  "ingredients": [
+    {
+      "raw": "3 to 4 (1 1/4 to 1 1/2 pounds) Yukon Gold potatoes",
+      "expected": {
+        "item": "Yukon Gold potatoes",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": null
+          },
+          {
+            "amount": "1 1/4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small onion",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "216",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 extra-large or 7 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "extra-large"
+          },
+          {
+            "amount": "7",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper (don’t skimp)",
+      "expected": {
+        "item": "Salt and freshly ground black pepper (don’t skimp)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

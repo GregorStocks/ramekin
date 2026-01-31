@@ -1,0 +1,84 @@
+{
+  "source": "paprika",
+  "recipe_slug": "japanese-pizza-toast-ピザトースト-15",
+  "ingredients": [
+    {
+      "raw": "3 slices shokupan (Japanese milk bread) (¾ inch, 1.5 cm thick per slice)",
+      "expected": {
+        "item": "shokupan (Japanese milk bread) (3/4 inch, 1.5 cm thick per slice)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ sweet onion",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "⅛ green bell pepper",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cherry tomatoes",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 slices ham",
+      "expected": {
+        "item": "ham",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 Tbsp shredded mozzarella cheese (or more, if you'd like)",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or more, if you'd like"
+      }
+    }
+  ]
+}

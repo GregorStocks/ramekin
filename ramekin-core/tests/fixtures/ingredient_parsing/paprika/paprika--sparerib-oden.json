@@ -1,0 +1,162 @@
+{
+  "source": "paprika",
+  "recipe_slug": "sparerib-oden",
+  "ingredients": [
+    {
+      "raw": "1x 2x 3x",
+      "expected": {
+        "item": "x 2x 3x",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "650 grams spareribs",
+      "expected": {
+        "item": "spareribs",
+        "measurements": [
+          {
+            "amount": "650",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "540 grams daikon (peeled and cut into 1-inch thick rounds)",
+      "expected": {
+        "item": "daikon",
+        "measurements": [
+          {
+            "amount": "540",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1-inch thick rounds"
+      }
+    },
+    {
+      "raw": "8 cups dashi stock",
+      "expected": {
+        "item": "dashi stock",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "½ cup sake",
+      "expected": {
+        "item": "sake",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon evaporated cane sugar",
+      "expected": {
+        "item": "evaporated cane sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 hardboiled eggs",
+      "expected": {
+        "item": "hardboiled eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "260 grams atsuage (thick fried tofu)",
+      "expected": {
+        "item": "atsuage (thick fried tofu)",
+        "measurements": [
+          {
+            "amount": "260",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "300 grams konnyaku",
+      "expected": {
+        "item": "konnyaku",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "500 grams assorted nerimono (Japanese fish cakes)",
+      "expected": {
+        "item": "assorted nerimono (Japanese fish cakes)",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

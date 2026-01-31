@@ -1,0 +1,91 @@
+{
+  "source": "paprika",
+  "recipe_slug": "quick-potato-pierogi",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds baking potatoes, peeled and cut into chunks",
+      "expected": {
+        "item": "baking potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into chunks"
+      }
+    },
+    {
+      "raw": "4 to 5 tablespoons unsalted butter + a little extra to melt and drizzle over the dumplings (Deb note: I was able to make do with just 2 T butter in a non-stick)",
+      "expected": {
+        "item": "unsalted butter + a little extra to melt and drizzle over the dumplings (Deb note: I was able to make do with just 2 T butter in a non-stick)",
+        "measurements": [
+          {
+            "amount": "4 to 5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 onions, finely chopped",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "Salt and black pepper to taste",
+      "expected": {
+        "item": "Salt and black pepper to taste",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 packages of gyoza (pot sticker) wrappers",
+      "expected": {
+        "item": "gyoza (pot sticker) wrappers",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "package"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 to 5 green onions, thinly sliced or 1/4 cup chopped chives or 2 tablespoons chopped parsley or additional fried onions (see note), to serve",
+      "expected": {
+        "item": "green onions, thinly sliced",
+        "measurements": [
+          {
+            "amount": "3 to 5",
+            "unit": null
+          }
+        ],
+        "note": "or 1/4 cup chopped chives or 2 tablespoons chopped parsley or additional fried onions (see note), to serve"
+      }
+    },
+    {
+      "raw": "Sour cream, melted butter or vinegar to serve",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": "melted butter or vinegar to serve"
+      }
+    }
+  ]
+}

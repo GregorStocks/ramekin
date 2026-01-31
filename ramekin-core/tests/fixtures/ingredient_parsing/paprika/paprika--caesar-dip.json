@@ -1,0 +1,184 @@
+{
+  "source": "paprika",
+  "recipe_slug": "caesar-dip",
+  "ingredients": [
+    {
+      "raw": "4 anchovy fillets packed in oil, rinsed",
+      "expected": {
+        "item": "anchovy fillets packed in oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "rinsed"
+      }
+    },
+    {
+      "raw": "2 medium garlic cloves, minced (about 2 teaspoons)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) lemon juice from 1 whole lemon",
+      "expected": {
+        "item": "lemon juice from 1 whole lemon",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces (225 g) plain, full-fat cream cheese, softened (see notes)",
+      "expected": {
+        "item": "plain, full-fat cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "softened (see notes)"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup freshly grated Parmesan cheese (1 ounce; 25 g)",
+      "expected": {
+        "item": "freshly grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chopped parsley for garnish, if desired",
+      "expected": {
+        "item": "Chopped parsley for garnish, if desired",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Fresh cut vegetables, romaine lettuce wedges, chips, or crackers for serving",
+      "expected": {
+        "item": "Fresh cut vegetables, romaine lettuce wedges, chips",
+        "measurements": [],
+        "note": "or crackers for serving"
+      }
+    }
+  ]
+}

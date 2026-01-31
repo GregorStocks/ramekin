@@ -1,0 +1,96 @@
+{
+  "source": "paprika",
+  "recipe_slug": "mashed-sweet-potatoes",
+  "ingredients": [
+    {
+      "raw": "3 pounds sweet potatoes, about 5 large or 6 medium, peeled and cut into 1-inch cubes",
+      "expected": {
+        "item": "sweet potatoes, about 5 large or 6 medium",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1-inch cubes"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter, cut into pats, plus more for serving",
+      "expected": {
+        "item": "unsalted butter, cut into pats",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for serving"
+      }
+    },
+    {
+      "raw": "½ cup milk, warmed",
+      "expected": {
+        "item": "milk, warmed",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons",
+      "expected": {
+        "item": "2 tablespoons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 grated garlic cloves",
+      "expected": {
+        "item": "grated garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

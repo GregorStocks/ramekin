@@ -1,0 +1,117 @@
+{
+  "source": "paprika",
+  "recipe_slug": "blackberry-bourbon-ginger-lemo",
+  "ingredients": [
+    {
+      "raw": "6 dashes Angostura Aromatic bitters",
+      "expected": {
+        "item": "Angostura Aromatic bitters",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "dash"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10-12 blackberries",
+      "expected": {
+        "item": "blackberries",
+        "measurements": [
+          {
+            "amount": "10-12",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces fresh-squeezed and strained lemon juice",
+      "expected": {
+        "item": "fresh-squeezed and strained lemon juice",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 ounces bourbon (preferably Evan Williams Black)",
+      "expected": {
+        "item": "bourbon (preferably Evan Williams Black)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "12 ounces (so one can or one bottle) ginger beer",
+      "expected": {
+        "item": "(so one can or one bottle) ginger beer",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

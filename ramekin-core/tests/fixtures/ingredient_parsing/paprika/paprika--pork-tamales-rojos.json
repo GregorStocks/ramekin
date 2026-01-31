@@ -1,0 +1,385 @@
+{
+  "source": "paprika",
+  "recipe_slug": "pork-tamales-rojos",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon lard or vegetable oil",
+      "expected": {
+        "item": "lard or vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "5 large ancho chiles, stems and seeds removed",
+      "expected": {
+        "item": "ancho chiles, stems and seeds removed",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 dried guajillo chiles, stems and seeds removed",
+      "expected": {
+        "item": "dried guajillo chiles, stems and seeds removed",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 morita chiles",
+      "expected": {
+        "item": "morita chiles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 pasilla chiles, stems and seeds removed",
+      "expected": {
+        "item": "pasilla chiles, stems and seeds removed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ cups low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon coriander seeds",
+      "expected": {
+        "item": "coriander seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon cumin seeds",
+      "expected": {
+        "item": "cumin seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 garlic cloves, peeled",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1 teaspoon crushed Mexican or Italian dried oregano",
+      "expected": {
+        "item": "crushed Mexican or Italian dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
+      "expected": {
+        "item": "boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound pork belly, cut into 1-inch pieces",
+      "expected": {
+        "item": "pork belly, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 pounds fresh coarse-grind corn masa for tamales (unprepared)",
+      "expected": {
+        "item": "fresh coarse-grind corn masa for tamales (unprepared)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1¼ cups plus 2 tablespoons (or more) lard, melted",
+      "expected": {
+        "item": "1¼ cups plus 2 tablespoons (or more) lard, melted",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "or more"
+      }
+    },
+    {
+      "raw": "¼ cup low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3¾ cups instant corn masa flour (such as Maseca Tamal Instant Corn Masa Mix)",
+      "expected": {
+        "item": "instant corn masa flour (such as Maseca Tamal Instant Corn Masa Mix)",
+        "measurements": [
+          {
+            "amount": "3 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 cups homemade chicken stock or low-sodium chicken broth",
+      "expected": {
+        "item": "homemade chicken stock or low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1¼ cups plus 2 tablespoons lard, melted, plus more if needed",
+      "expected": {
+        "item": "plus 2 tablespoons lard, melted",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more if needed"
+      }
+    },
+    {
+      "raw": "1 tablespoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1½ teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "30 dried corn husks (from a 1-pound bag)",
+      "expected": {
+        "item": "dried corn husks (from a 1-pound bag)",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 cups (or more) low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "or more"
+      }
+    },
+    {
+      "raw": "Fresh salsa and lime wedges (for serving)",
+      "expected": {
+        "item": "Fresh salsa and lime wedges",
+        "measurements": [],
+        "note": "for serving"
+      }
+    },
+    {
+      "raw": "A spice mill or mortar and pestle",
+      "expected": {
+        "item": "A spice mill or mortar and pestle",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

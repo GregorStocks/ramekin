@@ -1,0 +1,116 @@
+{
+  "source": "paprika",
+  "recipe_slug": "potato-latkes",
+  "ingredients": [
+    {
+      "raw": "1 large baking potato (1 pound), peeled",
+      "expected": {
+        "item": "baking potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1 small onion (4 ounces), peeled",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour or potato starch",
+      "expected": {
+        "item": "all-purpose flour or potato starch",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder (optional)",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "A few grinds freshly ground pepper",
+      "expected": {
+        "item": "A few grinds freshly ground pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Peanut oil, for frying",
+      "expected": {
+        "item": "Peanut oil, for frying",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

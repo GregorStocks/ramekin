@@ -1,0 +1,134 @@
+{
+  "source": "paprika",
+  "recipe_slug": "carrot-and-white-bean-burgers",
+  "ingredients": [
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup panko-style breadcrumbs",
+      "expected": {
+        "item": "panko-style breadcrumbs",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 shallots, or 1 small onion, diced",
+      "expected": {
+        "item": "shallots, or 1 small onion",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "1 tablespoon tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup packed grated carrot (from 2 medium carrots)",
+      "expected": {
+        "item": "packed grated carrot (from 2 medium carrots)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Two 15-ounce cans cannellini or other white beans, drained and rinsed",
+      "expected": {
+        "item": "cannellini or other white beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "15-ounce cans"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1 large egg, beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Burger accompaniments, as you like",
+      "expected": {
+        "item": "Burger accompaniments, as you like",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

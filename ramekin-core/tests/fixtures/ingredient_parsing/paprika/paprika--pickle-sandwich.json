@@ -1,0 +1,97 @@
+{
+  "source": "paprika",
+  "recipe_slug": "pickle-sandwich",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon minced half-sour pickle",
+      "expected": {
+        "item": "minced half-sour pickle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon grainy Dijon mustard",
+      "expected": {
+        "item": "grainy Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon pickle brine",
+      "expected": {
+        "item": "pickle brine",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 slices seedy bread, lightly toasted",
+      "expected": {
+        "item": "seedy bread",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": "lightly toasted"
+      }
+    },
+    {
+      "raw": "1 half-sour pickle, thinly sliced lengthwise",
+      "expected": {
+        "item": "half-sour pickle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced lengthwise"
+      }
+    },
+    {
+      "raw": "2 layers sliced sharp white cheddar",
+      "expected": {
+        "item": "layers sliced sharp white cheddar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

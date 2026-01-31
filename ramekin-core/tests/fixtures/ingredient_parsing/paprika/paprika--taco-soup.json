@@ -1,0 +1,356 @@
+{
+  "source": "paprika",
+  "recipe_slug": "taco-soup",
+  "ingredients": [
+    {
+      "raw": "For the Soup:",
+      "expected": {
+        "item": "For the Soup:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small yellow onion (6 ounces; 170g), peeled",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "Two 5- to 6-inch Cubanelle chiles or banana peppers (3 ounces each; 85g each)",
+      "expected": {
+        "item": "5- to 6-inch Cubanelle chiles or banana peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "oz each"
+          },
+          {
+            "amount": "85",
+            "unit": "g each"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 medium garlic cloves, unpeeled",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "unpeeled"
+      }
+    },
+    {
+      "raw": "2 small jalapeño peppers (2 ounces; 60g), divided",
+      "expected": {
+        "item": "jalapeño peppers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "Two 14.5-ounce (411g) cans fire-roasted diced tomatoes, undrained, divided",
+      "expected": {
+        "item": "fire-roasted diced tomatoes, undrained",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "14.5-ounce cans"
+          },
+          {
+            "amount": "411",
+            "unit": "g"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) neutral cooking oil such as vegetable or canola oil",
+      "expected": {
+        "item": "neutral cooking oil such as vegetable or canola oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 1/2 tablespoons homemade taco seasoning or store-bought taco seasoning (21g)",
+      "expected": {
+        "item": "homemade taco seasoning or store-bought taco seasoning",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 pounds (680g) ground beef, 93% lean",
+      "expected": {
+        "item": "ground beef, 93% lean",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 cups (1.2L) homemade chicken stock or store bought lower-sodium chicken broth",
+      "expected": {
+        "item": "homemade chicken stock or store bought lower-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.2",
+            "unit": "l"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Two 15.5-ounce (439g) cans pinto beans, drained and rinsed",
+      "expected": {
+        "item": "pinto beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "15.5-ounce cans"
+          },
+          {
+            "amount": "439",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1 cup frozen corn (5 ounces; 140g)",
+      "expected": {
+        "item": "frozen corn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup crushed tortilla chips (1 ounce; 30g), plus whole chips for topping",
+      "expected": {
+        "item": "crushed tortilla chips",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "plus whole chips for topping"
+      }
+    },
+    {
+      "raw": "2 teaspoons Diamond Crystal kosher salt, divided, plus more to taste; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt, divided",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste; for table salt, use half as much by volume"
+      }
+    },
+    {
+      "raw": "For the Salsa:",
+      "expected": {
+        "item": "For the Salsa:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 ounces fresh tomatoes (285g; about 3 medium), seeded and chopped (1 cup)",
+      "expected": {
+        "item": "fresh tomatoes",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "285",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "seeded and chopped"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped fresh cilantro (1 ounce; 29g)",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "29",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon (15ml) fresh lime juice from 1 lime",
+      "expected": {
+        "item": "fresh lime juice from 1 lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 ounces (170g) medium Cheddar cheese, shredded (about 1 1/2 cups)",
+      "expected": {
+        "item": "medium Cheddar cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded"
+      }
+    }
+  ]
+}

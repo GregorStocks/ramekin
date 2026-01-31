@@ -1,0 +1,104 @@
+{
+  "source": "paprika",
+  "recipe_slug": "asparagus-goat-cheese-and-lem",
+  "ingredients": [
+    {
+      "raw": "1 pound spiral-shaped pasta",
+      "expected": {
+        "item": "spiral-shaped pasta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound slender asparagus spears, trimmed, cut into 1- to 1 1/2-inch pieces",
+      "expected": {
+        "item": "slender asparagus spears, trimmed, cut into 1- to 1 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon finely grated lemon peel",
+      "expected": {
+        "item": "finely grated lemon peel",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh tarragon plus more for garnish",
+      "expected": {
+        "item": "chopped fresh tarragon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for garnish"
+      }
+    },
+    {
+      "raw": "1 5- to 5 1/2-ounce log soft fresh goat cheese (the pre-crumbled stuff will not melt as well)",
+      "expected": {
+        "item": "5- to 5 1/2-ounce log soft fresh goat cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "the pre-crumbled stuff will not melt as well"
+      }
+    },
+    {
+      "raw": "Fresh lemon juice to taste (optional)",
+      "expected": {
+        "item": "Fresh lemon juice to taste",
+        "measurements": [],
+        "note": "optional"
+      }
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "source": "paprika",
+  "recipe_slug": "caramelized-shallot-pasta",
+  "ingredients": [
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 large shallots, very thinly sliced",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": "very thinly sliced"
+      }
+    },
+    {
+      "raw": "5 garlic cloves, 4 thinly sliced, 1 finely chopped",
+      "expected": {
+        "item": "garlic cloves, 4 thinly sliced",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "1 finely chopped"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon red-pepper flakes, plus more to taste",
+      "expected": {
+        "item": "red-pepper flakes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste"
+      }
+    },
+    {
+      "raw": "1 (2-ounce) can anchovy fillets (about 12), drained",
+      "expected": {
+        "item": "anchovy fillets",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "drained"
+      }
+    },
+    {
+      "raw": "1 (4.5-ounce) tube or (6-ounce) can of tomato paste (about 1/2 to 3/4 cup)",
+      "expected": {
+        "item": "tube or can of tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "4.5",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "1/2 to 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "10 ounces pasta",
+      "expected": {
+        "item": "pasta",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup parsley, leaves and tender stems, finely chopped",
+      "expected": {
+        "item": "parsley, leaves and tender stems",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "Flaky sea salt",
+      "expected": {
+        "item": "Flaky sea salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "parmesan cheese",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

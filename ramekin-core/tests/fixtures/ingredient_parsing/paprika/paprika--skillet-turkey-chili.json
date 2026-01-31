@@ -1,0 +1,165 @@
+{
+  "source": "paprika",
+  "recipe_slug": "skillet-turkey-chili",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 large onion, chopped small",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped small"
+      }
+    },
+    {
+      "raw": "3 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 3 teaspoons ground chile powder (see Note; to taste)",
+      "expected": {
+        "item": "ground chile powder",
+        "measurements": [
+          {
+            "amount": "1 to 3",
+            "unit": "tsp"
+          }
+        ],
+        "note": "see Note; to taste"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 pound ground turkey",
+      "expected": {
+        "item": "ground turkey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 15-ounce can black or small red beans, drained and rinsed",
+      "expected": {
+        "item": "black or small red beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "1 15-ounce can diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 lime",
+      "expected": {
+        "item": "lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges, and/or thinly sliced scallions",
+      "expected": {
+        "item": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges",
+        "measurements": [],
+        "note": "and/or thinly sliced scallions"
+      }
+    }
+  ]
+}

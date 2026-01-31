@@ -1,0 +1,166 @@
+{
+  "source": "paprika",
+  "recipe_slug": "veselka-s-cabbage-soup",
+  "ingredients": [
+    {
+      "raw": "1 pound pork butt, cut into small cubes",
+      "expected": {
+        "item": "pork butt, cut into small cubes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/2 quarts chicken stock",
+      "expected": {
+        "item": "chicken stock",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 allspice berries",
+      "expected": {
+        "item": "allspice berries",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon dried marjoram",
+      "expected": {
+        "item": "dried marjoram",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup sauerkraut, plus around 4 tablespoons juice",
+      "expected": {
+        "item": "sauerkraut",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus around 4 tablespoons juice"
+      }
+    },
+    {
+      "raw": "1 large potato, peeled and diced",
+      "expected": {
+        "item": "potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and diced"
+      }
+    },
+    {
+      "raw": "2 carrots, minced",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "3 stalks celery, minced",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "stalk"
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 small onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "2 cups fresh cabbage, shredded thin",
+      "expected": {
+        "item": "fresh cabbage",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded thin"
+      }
+    }
+  ]
+}

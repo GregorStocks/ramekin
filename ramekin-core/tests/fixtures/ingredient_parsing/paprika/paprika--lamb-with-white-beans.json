@@ -1,0 +1,247 @@
+{
+  "source": "paprika",
+  "recipe_slug": "lamb-with-white-beans",
+  "ingredients": [
+    {
+      "raw": "Lamb:",
+      "expected": {
+        "item": "Lamb:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "9 cloves garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1 leg of lamb, shank end chopped off by the butcher",
+      "expected": {
+        "item": "leg of lamb",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "shank end chopped off by the butcher"
+      }
+    },
+    {
+      "raw": "1 tbsp tomato puree",
+      "expected": {
+        "item": "tomato puree",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp MSG",
+      "expected": {
+        "item": "MSG",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp crushed dried celery leaves",
+      "expected": {
+        "item": "crushed dried celery leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tbsp salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tsp pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "White beans:",
+      "expected": {
+        "item": "White beans:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup diced lamb fat",
+      "expected": {
+        "item": "diced lamb fat",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 onion, diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced"
+      }
+    },
+    {
+      "raw": "4 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "2 15-oz cans white beans, drained and rinsed",
+      "expected": {
+        "item": "white beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "15-oz cans"
+          }
+        ],
+        "note": "drained and rinsed"
+      }
+    },
+    {
+      "raw": "3 tbsp tomato puree",
+      "expected": {
+        "item": "tomato puree",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2/3 cup stock (preferably unthickened lamb sauce, TODO)",
+      "expected": {
+        "item": "stock (preferably unthickened lamb sauce, TODO)",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 tsp MSG",
+      "expected": {
+        "item": "MSG",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup chopped parsley",
+      "expected": {
+        "item": "chopped parsley",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

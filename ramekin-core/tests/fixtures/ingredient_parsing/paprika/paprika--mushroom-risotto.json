@@ -1,0 +1,225 @@
+{
+  "source": "paprika",
+  "recipe_slug": "mushroom-risotto",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "8 ounces cremini mushrooms, trimmed and quartered",
+      "expected": {
+        "item": "cremini mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and quartered"
+      }
+    },
+    {
+      "raw": "8 ounces shiitake mushrooms, stemmed and quartered",
+      "expected": {
+        "item": "shiitake mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "stemmed and quartered"
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons table salt, divided",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "½ teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter, cut into 6 pieces, divided",
+      "expected": {
+        "item": "unsalted butter, cut into 6 pieces",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 shallots, minced",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "¼ ounce dried porcini mushrooms, rinsed and chopped fine",
+      "expected": {
+        "item": "dried porcini mushrooms",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and chopped fine"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced"
+      }
+    },
+    {
+      "raw": "1 ½ cups Arborio rice",
+      "expected": {
+        "item": "Arborio rice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 cups water, divided",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided"
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh thyme",
+      "expected": {
+        "item": "chopped fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 ounces Parmesan cheese, grated (1 cup)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "grated"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh parsley, plus extra for sprinkling",
+      "expected": {
+        "item": "chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus extra for sprinkling"
+      }
+    }
+  ]
+}

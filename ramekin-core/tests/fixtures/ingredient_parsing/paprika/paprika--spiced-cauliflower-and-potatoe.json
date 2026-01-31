@@ -1,0 +1,440 @@
+{
+  "source": "paprika",
+  "recipe_slug": "spiced-cauliflower-and-potatoe",
+  "ingredients": [
+    {
+      "raw": "1 (1 3/4-lb) head cauliflower, cut into 3/4-inch-wide florets",
+      "expected": {
+        "item": "cauliflower, cut into 3/4-inch-wide florets",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 1/4 lb Yukon Gold potatoes, peeled and cut into 1/2-inch cubes",
+      "expected": {
+        "item": "Yukon Gold potatoes",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch cubes"
+      }
+    },
+    {
+      "raw": "5 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon cumin seeds",
+      "expected": {
+        "item": "cumin seeds",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, finely chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped"
+      }
+    },
+    {
+      "raw": "2 teaspoons minced fresh jalapeño, including seeds",
+      "expected": {
+        "item": "minced fresh jalapeño, including seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 teaspoons minced peeled fresh ginger",
+      "expected": {
+        "item": "minced peeled fresh ginger",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon turmeric",
+      "expected": {
+        "item": "turmeric",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 teaspoon cayenne",
+      "expected": {
+        "item": "cayenne",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Accompaniment: lemon wedges",
+      "expected": {
+        "item": "Accompaniment: lemon wedges",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "Cucumber Scallion Raita",
+      "expected": {
+        "item": "Cucumber Scallion Raita",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped English (seedless cucumber)",
+      "expected": {
+        "item": "finely chopped English (seedless cucumber)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 thinly sliced scallion",
+      "expected": {
+        "item": "thinly sliced scallion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup yogurt",
+      "expected": {
+        "item": "yogurt",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "200 grams (1 1/4 cups) red split lentils (masoor dal), picked over, washed and drained",
+      "expected": {
+        "item": "red split lentils (masoor dal), picked over",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "1 1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "washed and drained"
+      }
+    },
+    {
+      "raw": "1.2 liters (5 cups) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1.2",
+            "unit": "l"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "5 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 teaspoon cumin seeds",
+      "expected": {
+        "item": "cumin seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 to 4 cloves garlic, peeled and finely chopped",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2 to 4",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and finely chopped"
+      }
+    },
+    {
+      "raw": "1 medium onion, peeled and cut into fine slices",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and cut into fine slices"
+      }
+    },
+    {
+      "raw": "225 grams (1/2 pound) cored and finely shredded cabbage",
+      "expected": {
+        "item": "cored and finely shredded cabbage",
+        "measurements": [
+          {
+            "amount": "225",
+            "unit": "g"
+          },
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 to 2 fresh, hot green chilies, finely sliced",
+      "expected": {
+        "item": "fresh, hot green chilies",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": "finely sliced"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium tomato, peeled (ahem, Deb did not peel her tomato) and finely chopped",
+      "expected": {
+        "item": "tomato, peeled (ahem",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "Deb did not peel her tomato) and finely chopped"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon peeled, finely grated fresh ginger",
+      "expected": {
+        "item": "peeled",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "finely grated fresh ginger"
+      }
+    }
+  ]
+}

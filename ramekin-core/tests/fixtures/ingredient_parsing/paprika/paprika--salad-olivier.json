@@ -1,0 +1,118 @@
+{
+  "source": "paprika",
+  "recipe_slug": "salad-olivier",
+  "ingredients": [
+    {
+      "raw": "2 pounds Russet potatoes",
+      "expected": {
+        "item": "Russet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 small red or white onion,",
+      "expected": {
+        "item": "red or white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "3/4 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 dill pickles",
+      "expected": {
+        "item": "dill pickles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 medium carrot",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 cup frozen peas",
+      "expected": {
+        "item": "frozen peas",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4-6 oz baloney (or mortadella)",
+      "expected": {
+        "item": "baloney (or mortadella)",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": "oz"
+          },
+          {
+            "amount": "113-170",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

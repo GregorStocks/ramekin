@@ -1,0 +1,97 @@
+{
+  "source": "paprika",
+  "recipe_slug": "salsa",
+  "ingredients": [
+    {
+      "raw": "One 28-ounce can whole tomatoes",
+      "expected": {
+        "item": "whole tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 of a small or 1/4 of a large white onion",
+      "expected": {
+        "item": "of a small or 1/4 of a large white onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 fresh jalapeño, trimmed",
+      "expected": {
+        "item": "fresh jalapeño",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "trimmed"
+      }
+    },
+    {
+      "raw": "1 clove garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled"
+      }
+    },
+    {
+      "raw": "1/2 cup chopped fresh cilantro leaves",
+      "expected": {
+        "item": "chopped fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Juice of half a lime (2 to 3 tablespoons)",
+      "expected": {
+        "item": "Juice of half a lime",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    }
+  ]
+}

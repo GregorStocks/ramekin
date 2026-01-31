@@ -1,0 +1,82 @@
+{
+  "source": "paprika",
+  "recipe_slug": "nolita-style-avocado-toast",
+  "ingredients": [
+    {
+      "raw": "1 1/2-inch slice seven-grain sandwich bread",
+      "expected": {
+        "item": "1/2-inch slice seven-grain sandwich bread",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/2 a large, ripe avocado",
+      "expected": {
+        "item": "a large, ripe avocado",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice, or more to taste",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "or more to taste"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "An unholy amount of red pepper flakes",
+      "expected": {
+        "item": "An unholy amount of red pepper flakes",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

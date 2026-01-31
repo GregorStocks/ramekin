@@ -1,0 +1,104 @@
+{
+  "source": "paprika",
+  "recipe_slug": "potato-and-artichoke-tortilla",
+  "ingredients": [
+    {
+      "raw": "About 4 tablespoons olive oil, plus more if needed",
+      "expected": {
+        "item": "About 4 tablespoons olive oil",
+        "measurements": [],
+        "note": "plus more if needed"
+      }
+    },
+    {
+      "raw": "1/2 medium-size onion, quartered and thinly sliced",
+      "expected": {
+        "item": "medium-size onion",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "quartered and thinly sliced"
+      }
+    },
+    {
+      "raw": "1 large boiled Yukon Gold potato, quartered and thinly sliced (a leftover potato works great here)",
+      "expected": {
+        "item": "boiled Yukon Gold potato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "quartered and thinly sliced (a leftover potato works great here)"
+      }
+    },
+    {
+      "raw": "3 marinated artichoke hearts (from a can or jar), rinsed, patted dry, and thinly sliced",
+      "expected": {
+        "item": "marinated artichoke hearts, rinsed, patted dry",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "jar"
+          }
+        ],
+        "note": "and thinly sliced"
+      }
+    },
+    {
+      "raw": "1/4 cup sliced piquillo peppers or roasted red bell peppers",
+      "expected": {
+        "item": "sliced piquillo peppers or roasted red bell peppers",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "4 large, very fresh eggs, preferably organic",
+      "expected": {
+        "item": "very fresh eggs, preferably organic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons chick stock or broth",
+      "expected": {
+        "item": "chick stock or broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Coarse salt (kosher or sea)",
+      "expected": {
+        "item": "Coarse salt (kosher or sea)",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}

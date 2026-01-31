@@ -1,0 +1,86 @@
+{
+  "source": "paprika",
+  "recipe_slug": "exceptional-grilled-chicken",
+  "ingredients": [
+    {
+      "raw": "Brine:",
+      "expected": {
+        "item": "Brine:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 quarts cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "2 tablespoons granulated or brown sugar",
+      "expected": {
+        "item": "granulated or brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "1/4 cup Diamond kosher salt (use 2 tablespoons if any other brand)",
+      "expected": {
+        "item": "Diamond kosher salt (use 2 tablespoons if any other brand)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Chicken:",
+      "expected": {
+        "item": "Chicken:",
+        "measurements": [],
+        "note": null
+      }
+    },
+    {
+      "raw": "3 1/2 pounds chicken parts with skin and bones",
+      "expected": {
+        "item": "chicken parts with skin and bones",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1588",
+            "unit": "g"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "raw": "Oil for grill",
+      "expected": {
+        "item": "Oil for grill",
+        "measurements": [],
+        "note": null
+      }
+    }
+  ]
+}
