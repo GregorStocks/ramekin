@@ -6,6 +6,8 @@ authors = ["Gregor Stocks"]
 license = "LicenseRef-Proprietary"
 
 [dependencies]
+# Ingredient density lookup
+ingredient-density = { path = "../ingredient-density" }
 # HTML parsing
 scraper = "0.25"
 

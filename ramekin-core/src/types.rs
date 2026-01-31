@@ -209,4 +209,10 @@ pub struct FailedImageFetch {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ParseIngredientsOutput {
     pub ingredients: Vec<crate::ingredient_parser::ParsedIngredient>,
+    /// Statistics about volume-to-weight conversion
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub volume_stats: Option<crate::volume_to_weight::VolumeConversionStats>,
+    /// Statistics about metric weight conversion
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub metric_stats: Option<crate::metric_weights::MetricConversionStats>,
 }
