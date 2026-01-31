@@ -1392,21 +1392,10 @@ fn normalize_section_name(name: &str) -> String {
         return name.to_string();
     }
 
-    // Check if all alphabetic chars are uppercase (all-caps header)
-    let alpha_chars: Vec<char> = name.chars().filter(|c| c.is_alphabetic()).collect();
-    let is_all_caps = !alpha_chars.is_empty() && alpha_chars.iter().all(|c| c.is_uppercase());
-
-    // Check if first char is lowercase (needs capitalization)
-    let first_char = name.chars().next().unwrap();
-    let starts_lowercase = first_char.is_alphabetic() && first_char.is_lowercase();
-
-    if is_all_caps || starts_lowercase {
-        // Convert to title case
-        title_case(name)
-    } else {
-        // Already looks good, keep as-is
-        name.to_string()
-    }
+    // Always apply title case for consistent normalization.
+    // This handles all-caps headers, lowercase headers, and mixed-case headers
+    // like "For the sauce" -> "For the Sauce"
+    title_case(name)
 }
 
 /// Convert a string to title case.
