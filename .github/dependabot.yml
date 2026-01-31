@@ -6,6 +6,7 @@ updates:
       - "/server"
       - "/cli"
       - "/ramekin-core"
+      - "/ingredient-density"
     schedule:
       interval: "weekly"
     groups:

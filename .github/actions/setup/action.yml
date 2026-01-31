@@ -29,6 +29,7 @@ runs:
           server -> target
           cli -> target
           ramekin-core -> target
+          ingredient-density -> target
         cache-on-failure: true
         cache-all-crates: true
         shared-key: ci
