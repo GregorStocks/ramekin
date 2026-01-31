@@ -260,12 +260,11 @@ async fn main() -> Result<()> {
     // Can be overridden with RUST_LOG environment variable (e.g., RUST_LOG=debug)
     let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
 
-    // If TRACE_FILE is set, output Chrome trace format for viewing in chrome://tracing
-    let _chrome_guard = if let Ok(trace_file) = std::env::var("TRACE_FILE") {
-        let (chrome_layer, guard) = tracing_chrome::ChromeLayerBuilder::new()
-            .file(trace_file)
-            .include_args(true)
-            .build();
+    // If FLAME_FILE is set, output folded stacks for flamegraph generation
+    // Convert to SVG: cat pipeline.folded | inferno-flamegraph > flamegraph.svg
+    let _flame_guard = if let Ok(flame_file) = std::env::var("FLAME_FILE") {
+        let (flame_layer, guard) = tracing_flame::FlameLayer::with_file(&flame_file)
+            .expect("Failed to create flame layer");
 
         tracing_subscriber::registry()
             .with(filter)
@@ -274,7 +273,7 @@ async fn main() -> Result<()> {
                     .with_target(false)
                     .without_time(),
             )
-            .with(chrome_layer)
+            .with(flame_layer)
             .init();
 
         Some(guard)
