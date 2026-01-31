@@ -209,10 +209,20 @@ fn parse_fraction(s: &str) -> Option<f64> {
     Some(num / denom)
 }
 
-/// Format grams as a string, rounding to nearest whole number.
+/// Format grams as a string.
+/// For amounts under 10g, shows one decimal place for precision.
+/// For larger amounts, rounds to nearest whole number.
 pub fn format_grams(grams: f64) -> String {
-    let rounded = grams.round() as i64;
-    rounded.to_string()
+    if grams < 10.0 {
+        // One decimal place for small amounts
+        let rounded = (grams * 10.0).round() / 10.0;
+        // Format and strip trailing ".0" if it's a whole number
+        let s = format!("{:.1}", rounded);
+        s.strip_suffix(".0").unwrap_or(&s).to_string()
+    } else {
+        let rounded = grams.round() as i64;
+        rounded.to_string()
+    }
 }
 
 #[cfg(test)]
