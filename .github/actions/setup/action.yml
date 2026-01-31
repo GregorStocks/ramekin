@@ -100,21 +100,33 @@ runs:
         echo "ast-grep ready in $(($(date +%s) - START))s"
         echo "::endgroup::"
 
+    - name: Cache downloaded tools
+      id: tools-cache
+      uses: actions/cache@v4
+      with:
+        path: ~/.local/bin
+        key: tools-${{ runner.os }}-swiftlint-0.58.0-pc-v1.46.0-mkcert-v1.4.4
+
     - name: Install SwiftLint
       shell: bash
       run: |
         echo "::group::Install SwiftLint"
         START=$(date +%s)
-        SWIFTLINT_VERSION=$(curl -fsSL \
-          https://api.github.com/repos/realm/SwiftLint/releases/latest | jq -r .tag_name)
-        echo "Installing SwiftLint ${SWIFTLINT_VERSION}"
-        SWIFTLINT_URL="https://github.com/realm/SwiftLint/releases/download"
-        curl -fsSL "${SWIFTLINT_URL}/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip" \
-          -o /tmp/swiftlint.zip
-        unzip -q /tmp/swiftlint.zip -d /tmp/swiftlint
-        sudo mv /tmp/swiftlint/swiftlint /usr/local/bin/swiftlint
-        sudo chmod +x /usr/local/bin/swiftlint
-        echo "SwiftLint installed in $(($(date +%s) - START))s"
+        mkdir -p ~/.local/bin
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        if [[ -x ~/.local/bin/swiftlint ]]; then
+          echo "SwiftLint found in cache"
+        else
+          SWIFTLINT_VERSION=0.58.0
+          echo "Installing SwiftLint ${SWIFTLINT_VERSION}"
+          SWIFTLINT_URL="https://github.com/realm/SwiftLint/releases/download"
+          curl -fsSL "${SWIFTLINT_URL}/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip" \
+            -o /tmp/swiftlint.zip
+          unzip -q /tmp/swiftlint.zip -d /tmp/swiftlint
+          mv /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint
+          chmod +x ~/.local/bin/swiftlint
+        fi
+        echo "SwiftLint ready in $(($(date +%s) - START))s"
         echo "::endgroup::"
 
     - name: Install uv
@@ -132,14 +144,17 @@ runs:
       run: |
         echo "::group::Install process-compose"
         START=$(date +%s)
-        PC_API="https://api.github.com/repos/F1bonacc1/process-compose/releases/latest"
-        PC_VERSION=$(curl -fsSL "$PC_API" | jq -r .tag_name)
-        echo "Installing process-compose ${PC_VERSION}"
-        PC_URL="https://github.com/F1bonacc1/process-compose/releases/download/${PC_VERSION}"
-        curl -fsSL "${PC_URL}/process-compose_linux_amd64.tar.gz" \
-          | sudo tar -xzf - -C /usr/local/bin process-compose
-        sudo chmod +x /usr/local/bin/process-compose
-        echo "process-compose installed in $(($(date +%s) - START))s"
+        if [[ -x ~/.local/bin/process-compose ]]; then
+          echo "process-compose found in cache"
+        else
+          PC_VERSION=v1.46.0
+          echo "Installing process-compose ${PC_VERSION}"
+          PC_URL="https://github.com/F1bonacc1/process-compose/releases/download/${PC_VERSION}"
+          curl -fsSL "${PC_URL}/process-compose_linux_amd64.tar.gz" \
+            | tar -xzf - -C ~/.local/bin process-compose
+          chmod +x ~/.local/bin/process-compose
+        fi
+        echo "process-compose ready in $(($(date +%s) - START))s"
         echo "::endgroup::"
 
     - name: Install mkcert
@@ -147,14 +162,17 @@ runs:
       run: |
         echo "::group::Install mkcert"
         START=$(date +%s)
-        MKCERT_VERSION=v1.4.4
-        MKCERT_URL="https://github.com/FiloSottile/mkcert/releases/download"
-        curl -fsSL "${MKCERT_URL}/${MKCERT_VERSION}/mkcert-${MKCERT_VERSION}-linux-amd64" \
-          -o /tmp/mkcert
-        sudo mv /tmp/mkcert /usr/local/bin/mkcert
-        sudo chmod +x /usr/local/bin/mkcert
+        if [[ -x ~/.local/bin/mkcert ]]; then
+          echo "mkcert found in cache"
+        else
+          MKCERT_VERSION=v1.4.4
+          MKCERT_URL="https://github.com/FiloSottile/mkcert/releases/download"
+          curl -fsSL "${MKCERT_URL}/${MKCERT_VERSION}/mkcert-${MKCERT_VERSION}-linux-amd64" \
+            -o ~/.local/bin/mkcert
+          chmod +x ~/.local/bin/mkcert
+        fi
         mkcert -install
-        echo "mkcert installed in $(($(date +%s) - START))s"
+        echo "mkcert ready in $(($(date +%s) - START))s"
         echo "::endgroup::"
 
     - name: Print setup timing summary

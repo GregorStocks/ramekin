@@ -101,6 +101,8 @@ jobs:
           echo "PROCESS_COMPOSE_PORT=${PROCESS_COMPOSE_PORT}" >> test.env
           echo "RUST_LOG=error" >> test.env
           echo "INSECURE_PASSWORD_HASHING=1" >> test.env
+          # Use pre-built binaries instead of cargo run
+          echo "SERVER_COMMAND=./target/release/ramekin-server" >> test.env
           echo "::notice::API ports: ${PORT} ${FIXTURE_PORT} ${MOCK_OPENROUTER_PORT} ${PROCESS_COMPOSE_PORT}"
 
       - name: Create test-ui.env (for UI tests, with dynamically allocated ports)
@@ -115,6 +117,9 @@ jobs:
           echo "PROCESS_COMPOSE_PORT=${PROCESS_COMPOSE_PORT}" >> test-ui.env
           echo "RUST_LOG=error" >> test-ui.env
           echo "INSECURE_PASSWORD_HASHING=1" >> test-ui.env
+          # Use pre-built binaries instead of cargo run
+          echo "SERVER_COMMAND=./target/release/ramekin-server" >> test-ui.env
+          echo "CLI_COMMAND=./target/debug/ramekin-cli" >> test-ui.env
           echo "::notice::UI ports: ${PORT} ${UI_PORT} ${MOCK_OPENROUTER_PORT} ${PROCESS_COMPOSE_PORT}"
 
       - name: Run tests
