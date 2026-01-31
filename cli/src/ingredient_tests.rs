@@ -6,6 +6,7 @@ use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
 use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
 use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
+use ramekin_core::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
 use serde::{Deserialize, Serialize};
 use std::fs::{self, File};
 use std::io::Read;
@@ -43,11 +44,13 @@ fn default_fixtures_dir() -> PathBuf {
 }
 
 /// Run the ingredient parsing pipeline on a raw ingredient string.
-/// Includes metric weight conversion (oz → g).
+/// Includes metric weight conversion (oz/lb → g) and volume-to-weight conversion.
 fn run_pipeline(raw: &str) -> Expected {
     let parsed = parse_ingredient(raw);
-    let mut stats = MetricConversionStats::default();
-    let result = add_metric_weight_alternative(parsed, &mut stats);
+    let mut weight_stats = MetricConversionStats::default();
+    let mut volume_stats = VolumeConversionStats::default();
+    let result = add_metric_weight_alternative(parsed, &mut weight_stats);
+    let result = add_volume_to_weight_alternative(result, &mut volume_stats);
     Expected::from(result)
 }
 

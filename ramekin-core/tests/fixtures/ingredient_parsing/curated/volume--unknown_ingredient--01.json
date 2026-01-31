@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup mystery powder",
+  "expected": {
+    "item": "mystery powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

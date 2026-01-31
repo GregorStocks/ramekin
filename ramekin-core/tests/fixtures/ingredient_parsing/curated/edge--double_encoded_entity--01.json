@@ -3,7 +3,14 @@
   "expected": {
     "item": "melted coconut oil",
     "measurements": [
-      {"amount": "1/3", "unit": "cup"}
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "73",
+        "unit": "g"
+      }
     ],
     "note": null
   }
