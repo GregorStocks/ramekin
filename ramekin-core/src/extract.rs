@@ -184,6 +184,14 @@ fn extract_recipe_data(
     let image_urls = extract_image_urls(recipe);
     let source_name = extract_source_name(source_url);
 
+    let servings = recipe.get("recipeYield").and_then(|v| match v {
+        serde_json::Value::String(s) => Some(s.clone()),
+        serde_json::Value::Array(arr) => {
+            arr.first().and_then(|v| v.as_str()).map(|s| s.to_string())
+        }
+        _ => None,
+    });
+
     Ok(RawRecipe {
         title,
         description,
@@ -192,7 +200,7 @@ fn extract_recipe_data(
         image_urls,
         source_url: Some(source_url.to_string()),
         source_name,
-        servings: None,
+        servings,
         prep_time: None,
         cook_time: None,
         total_time: None,
@@ -382,6 +390,7 @@ fn extract_recipe_from_microdata(
     }
 
     let source_name = extract_source_name(source_url);
+    let servings = extract_microdata_text(&recipe_element, "recipeYield");
 
     Ok(RawRecipe {
         title,
@@ -391,7 +400,7 @@ fn extract_recipe_from_microdata(
         image_urls,
         source_url: Some(source_url.to_string()),
         source_name,
-        servings: None,
+        servings,
         prep_time: None,
         cook_time: None,
         total_time: None,
@@ -586,5 +595,75 @@ mod tests {
         let og_image = extract_og_image(&document);
 
         assert_eq!(og_image, Some("https://example.com/image.jpg".to_string()));
+    }
+
+    #[test]
+    fn test_extract_servings_from_jsonld_string() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Test Recipe",
+                    "recipeYield": "4 servings",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": "Mix and bake."
+                }
+                </script>
+            </head>
+            <body></body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.servings, Some("4 servings".to_string()));
+    }
+
+    #[test]
+    fn test_extract_servings_from_jsonld_array() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Test Recipe",
+                    "recipeYield": ["8 slices", "4 servings"],
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": "Mix and bake."
+                }
+                </script>
+            </head>
+            <body></body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.servings, Some("8 slices".to_string()));
+    }
+
+    #[test]
+    fn test_extract_servings_from_microdata() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h1 itemprop="name">Test Recipe</h1>
+                    <span itemprop="recipeYield">Serves 6</span>
+                    <ul>
+                        <li itemprop="recipeIngredient">1 cup flour</li>
+                    </ul>
+                    <div itemprop="recipeInstructions">Mix and bake.</div>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.servings, Some("Serves 6".to_string()));
     }
 }
