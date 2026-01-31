@@ -9,6 +9,9 @@ updates:
       - "/ingredient-density"
     schedule:
       interval: "weekly"
+      day: "wednesday"
+      time: "04:00"
+      timezone: "America/Los_Angeles"
     groups:
       rust-deps:
         patterns: ["*"]
@@ -17,6 +20,9 @@ updates:
     directory: "/ramekin-ui"
     schedule:
       interval: "weekly"
+      day: "wednesday"
+      time: "04:00"
+      timezone: "America/Los_Angeles"
     groups:
       npm-deps:
         patterns: ["*"]
@@ -25,3 +31,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "wednesday"
+      time: "04:00"
+      timezone: "America/Los_Angeles"
