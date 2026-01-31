@@ -5,7 +5,8 @@
 use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
 use ramekin_core::ingredient_parser::{
-    detect_section_header, parse_ingredient, parse_ingredients, Measurement, ParsedIngredient,
+    detect_section_header, parse_ingredient, parse_ingredients, should_ignore_line, Measurement,
+    ParsedIngredient,
 };
 use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use ramekin_core::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
@@ -243,10 +244,15 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                 let batch_results = run_pipeline_batch(&raw_lines);
 
                 // Build new ingredients list, preserving section headers as markers
+                // Skip lines that should be ignored (scraper artifacts)
                 let mut new_ingredients = Vec::new();
                 let mut batch_iter = batch_results.into_iter().peekable();
 
                 for raw in &raw_lines {
+                    // Skip lines that should be ignored (scraper artifacts like "Gather Your Ingredients")
+                    if should_ignore_line(raw) {
+                        continue;
+                    }
                     if detect_section_header(raw).is_some() {
                         // This is a section header - mark it as such
                         new_ingredients.push(IngredientTestCase {

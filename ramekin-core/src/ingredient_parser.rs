@@ -1334,8 +1334,141 @@ fn normalize_unit_base(unit: &str) -> String {
     }
 }
 
+/// Lines that should be completely ignored (scraper artifacts, not ingredients or headers).
+/// These are checked case-insensitively.
+const IGNORED_LINE_PATTERNS: &[&str] = &[
+    "gather your ingredients",
+    "gather the ingredients",
+    "here's what you'll need",
+    "here's what you need",
+    "what you'll need",
+    "what you need",
+    "you will need",
+    "you'll need",
+    "ingredients list",
+];
+
+/// Prefixes that indicate a line should be ignored (not an ingredient).
+const IGNORED_LINE_PREFIXES: &[&str] = &[
+    "special equipment:",
+    "equipment:",
+    "tools:",
+    "notes:",
+    "note:",
+    "tip:",
+    "tips:",
+];
+
+/// Check if a line should be completely ignored (scraper artifact).
+/// Returns true if the line should be skipped entirely.
+pub fn should_ignore_line(raw: &str) -> bool {
+    let trimmed = raw.trim();
+    let lower = trimmed.to_lowercase();
+
+    // Check exact matches (case-insensitive)
+    for &pattern in IGNORED_LINE_PATTERNS {
+        if lower == pattern {
+            return true;
+        }
+    }
+
+    // Check prefixes (case-insensitive)
+    for &prefix in IGNORED_LINE_PREFIXES {
+        if lower.starts_with(prefix) {
+            return true;
+        }
+    }
+
+    false
+}
+
+/// Normalize section header capitalization.
+/// - All-caps like "FILLING" → "Filling"
+/// - Mixed case like "For the Steak Fajita Marinade" → kept as-is
+/// - Lowercase "for the sauce" → "For the Sauce"
+fn normalize_section_name(name: &str) -> String {
+    let name = name.trim();
+    if name.is_empty() {
+        return name.to_string();
+    }
+
+    // Check if all alphabetic chars are uppercase (all-caps header)
+    let alpha_chars: Vec<char> = name.chars().filter(|c| c.is_alphabetic()).collect();
+    let is_all_caps = !alpha_chars.is_empty() && alpha_chars.iter().all(|c| c.is_uppercase());
+
+    // Check if first char is lowercase (needs capitalization)
+    let first_char = name.chars().next().unwrap();
+    let starts_lowercase = first_char.is_alphabetic() && first_char.is_lowercase();
+
+    if is_all_caps || starts_lowercase {
+        // Convert to title case
+        title_case(name)
+    } else {
+        // Already looks good, keep as-is
+        name.to_string()
+    }
+}
+
+/// Convert a string to title case.
+/// Capitalizes first letter of each word, lowercases the rest.
+/// Special handling for small words (the, and, or, of, for, a, an, to, in) - kept lowercase except at start.
+fn title_case(s: &str) -> String {
+    const SMALL_WORDS: &[&str] = &[
+        "the", "and", "or", "of", "for", "a", "an", "to", "in", "with",
+    ];
+
+    let mut result = String::with_capacity(s.len());
+    let mut is_first_word = true;
+    let mut current_word = String::new();
+
+    for c in s.chars() {
+        if c.is_whitespace() || c == ',' || c == '(' || c == ')' {
+            // End of word - flush current word
+            if !current_word.is_empty() {
+                let word_lower = current_word.to_lowercase();
+                if !is_first_word && SMALL_WORDS.contains(&word_lower.as_str()) {
+                    result.push_str(&word_lower);
+                } else {
+                    // Capitalize first letter, lowercase rest
+                    let mut chars = current_word.chars();
+                    if let Some(first) = chars.next() {
+                        result.extend(first.to_uppercase());
+                        for ch in chars {
+                            result.extend(ch.to_lowercase());
+                        }
+                    }
+                }
+                current_word.clear();
+                is_first_word = false;
+            }
+            result.push(c);
+        } else {
+            current_word.push(c);
+        }
+    }
+
+    // Flush final word
+    if !current_word.is_empty() {
+        let word_lower = current_word.to_lowercase();
+        if !is_first_word && SMALL_WORDS.contains(&word_lower.as_str()) {
+            result.push_str(&word_lower);
+        } else {
+            let mut chars = current_word.chars();
+            if let Some(first) = chars.next() {
+                result.extend(first.to_uppercase());
+                for ch in chars {
+                    result.extend(ch.to_lowercase());
+                }
+            }
+        }
+    }
+
+    result
+}
+
 /// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:").
-/// Returns Some(section_name) if it's a header, None if it's a regular ingredient.
+/// Returns Some(normalized_section_name) if it's a header, None if it's a regular ingredient.
+/// Section names are normalized: "FILLING" → "Filling", "for the sauce" → "For the Sauce".
 pub fn detect_section_header(raw: &str) -> Option<String> {
     let trimmed = raw.trim();
 
@@ -1367,7 +1500,7 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
 
     // "For the X" or "For X" patterns
     if name_lower.starts_with("for the ") || name_lower.starts_with("for ") {
-        return Some(name.to_string());
+        return Some(normalize_section_name(name));
     }
 
     // All-caps short names (FILLING, DRIZZLE, TOPPING, SAUCE, etc.)
@@ -1379,7 +1512,7 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
             .all(|c| c.is_uppercase())
         && name.chars().any(|c| c.is_alphabetic())
     {
-        return Some(name.to_string());
+        return Some(normalize_section_name(name));
     }
 
     None
@@ -1388,6 +1521,7 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
 /// Parse multiple ingredient lines (separated by newlines).
 /// Detects section headers (lines ending with colon, no measurements) and
 /// applies the section name to subsequent ingredients.
+/// Skips lines that should be ignored (scraper artifacts like "Gather Your Ingredients").
 pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
     let mut current_section: Option<String> = None;
     let mut results = Vec::new();
@@ -1395,6 +1529,11 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
     for line in blob.lines() {
         let trimmed = line.trim();
         if trimmed.is_empty() {
+            continue;
+        }
+
+        // Skip lines that should be ignored (scraper artifacts)
+        if should_ignore_line(trimmed) {
             continue;
         }
 
@@ -1419,33 +1558,48 @@ mod tests {
 
     #[test]
     fn test_detect_section_header_for_the_pattern() {
+        // "For the X" patterns should be normalized
         assert_eq!(
             detect_section_header("For the sauce:"),
-            Some("For the sauce".to_string())
+            Some("For the Sauce".to_string())
         );
         assert_eq!(
             detect_section_header("For the dough:"),
-            Some("For the dough".to_string())
+            Some("For the Dough".to_string())
         );
         assert_eq!(
             detect_section_header("For serving:"),
-            Some("For serving".to_string())
+            Some("For Serving".to_string())
+        );
+        // Already title case should be preserved
+        assert_eq!(
+            detect_section_header("For the Steak Fajita Marinade:"),
+            Some("For the Steak Fajita Marinade".to_string())
         );
     }
 
     #[test]
     fn test_detect_section_header_all_caps() {
+        // All-caps headers should be normalized to title case
         assert_eq!(
             detect_section_header("FILLING:"),
-            Some("FILLING".to_string())
+            Some("Filling".to_string())
         );
         assert_eq!(
             detect_section_header("DRIZZLE:"),
-            Some("DRIZZLE".to_string())
+            Some("Drizzle".to_string())
         );
         assert_eq!(
             detect_section_header("TOPPING:"),
-            Some("TOPPING".to_string())
+            Some("Topping".to_string())
+        );
+        assert_eq!(
+            detect_section_header("TOPPINGS, OPTIONAL:"),
+            Some("Toppings, Optional".to_string())
+        );
+        assert_eq!(
+            detect_section_header("FOR THE SAUCE:"),
+            Some("For the Sauce".to_string())
         );
     }
 
@@ -1459,16 +1613,32 @@ mod tests {
     }
 
     #[test]
+    fn test_should_ignore_line() {
+        // Scraper artifacts should be ignored
+        assert!(should_ignore_line("Gather Your Ingredients"));
+        assert!(should_ignore_line("gather your ingredients"));
+        assert!(should_ignore_line("GATHER YOUR INGREDIENTS"));
+        assert!(should_ignore_line("Special equipment: Spice grinder"));
+        assert!(should_ignore_line("Equipment: Stand mixer"));
+        assert!(should_ignore_line("Notes: See recipe headnotes"));
+
+        // Regular ingredients should not be ignored
+        assert!(!should_ignore_line("1 cup flour"));
+        assert!(!should_ignore_line("salt to taste"));
+        assert!(!should_ignore_line("For the sauce:"));
+    }
+
+    #[test]
     fn test_parse_ingredients_with_sections() {
         let blob = "For the sauce:\n1 cup tomatoes\n2 tbsp oil\nFor the pasta:\n1 lb spaghetti";
         let result = parse_ingredients(blob);
 
         assert_eq!(result.len(), 3);
-        assert_eq!(result[0].section, Some("For the sauce".to_string()));
+        assert_eq!(result[0].section, Some("For the Sauce".to_string()));
         assert_eq!(result[0].item, "tomatoes");
-        assert_eq!(result[1].section, Some("For the sauce".to_string()));
+        assert_eq!(result[1].section, Some("For the Sauce".to_string()));
         assert_eq!(result[1].item, "oil");
-        assert_eq!(result[2].section, Some("For the pasta".to_string()));
+        assert_eq!(result[2].section, Some("For the Pasta".to_string()));
         assert_eq!(result[2].item, "spaghetti");
     }
 
@@ -1489,10 +1659,34 @@ mod tests {
         let result = parse_ingredients(blob);
 
         // Section headers should not appear as ingredients
+        // Section names should be normalized to title case
         assert_eq!(result.len(), 2);
         assert_eq!(result[0].item, "ricotta");
-        assert_eq!(result[0].section, Some("FILLING".to_string()));
+        assert_eq!(result[0].section, Some("Filling".to_string()));
         assert_eq!(result[1].item, "cheese");
-        assert_eq!(result[1].section, Some("TOPPING".to_string()));
+        assert_eq!(result[1].section, Some("Topping".to_string()));
+    }
+
+    #[test]
+    fn test_parse_ingredients_ignores_scraper_artifacts() {
+        let blob = "Gather Your Ingredients\n1 cup flour\nSpecial equipment: Stand mixer\n2 eggs";
+        let result = parse_ingredients(blob);
+
+        // Scraper artifacts should be filtered out
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[1].item, "eggs");
+    }
+
+    #[test]
+    fn test_title_case() {
+        assert_eq!(title_case("FILLING"), "Filling");
+        assert_eq!(title_case("FOR THE SAUCE"), "For the Sauce");
+        assert_eq!(title_case("TOPPINGS, OPTIONAL"), "Toppings, Optional");
+        assert_eq!(title_case("for the dough"), "For the Dough");
+        assert_eq!(
+            title_case("FOR THE STEAK FAJITA MARINADE"),
+            "For the Steak Fajita Marinade"
+        );
     }
 }
