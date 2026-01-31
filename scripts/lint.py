@@ -3,7 +3,7 @@
 Run all linters in parallel.
 
 This script runs:
-- Rust formatters and linters (server and cli)
+- Rust formatters and linters (server, cli, ingredient-density)
 - TypeScript formatter and type checker
 - CSS linter (Stylelint)
 - Python formatter and linter
@@ -131,6 +131,46 @@ def lint_rust_cli(project_root: Path) -> tuple[str, bool]:
 
     success = fmt_result.returncode == 0 and clippy_result.returncode == 0
     return ("Rust (cli)", success)
+
+
+def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
+    """Lint Rust ingredient-density crate."""
+    crate_dir = project_root / "ingredient-density"
+
+    # Run fmt
+    fmt_result = subprocess.run(
+        ["cargo", "fmt", "--all"],
+        cwd=crate_dir,
+        capture_output=True,
+        check=False,
+    )
+
+    # Run clippy
+    clippy_result = subprocess.run(
+        [
+            "cargo",
+            "clippy",
+            "--all-targets",
+            "--all-features",
+            "-q",
+            "--",
+            "-D",
+            "warnings",
+        ],
+        cwd=crate_dir,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    # Print any output
+    if clippy_result.stdout:
+        print(clippy_result.stdout, end="")
+    if clippy_result.stderr:
+        print(clippy_result.stderr, end="", file=sys.stderr)
+
+    success = fmt_result.returncode == 0 and clippy_result.returncode == 0
+    return ("Rust (ingredient-density)", success)
 
 
 def lint_typescript(project_root: Path) -> tuple[str, bool]:
@@ -385,7 +425,16 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
     # Run ast-grep with the rule file
     rule_file = project_root / "scripts" / "raw-sql-rules.yml"
     result = subprocess.run(
-        ["ast-grep", "scan", "--rule", str(rule_file), "--json", "server/", "cli/"],
+        [
+            "ast-grep",
+            "scan",
+            "--rule",
+            str(rule_file),
+            "--json",
+            "server/",
+            "cli/",
+            "ingredient-density/",
+        ],
         cwd=project_root,
         capture_output=True,
         text=True,
@@ -454,6 +503,10 @@ def main() -> None:
     linters = [
         ("Rust (server)", lambda: lint_rust_server(project_root)),
         ("Rust (cli)", lambda: lint_rust_cli(project_root)),
+        (
+            "Rust (ingredient-density)",
+            lambda: lint_rust_ingredient_density(project_root),
+        ),
         ("TypeScript", lambda: lint_typescript(project_root)),
         ("CSS", lambda: lint_css(project_root)),
         ("Swift", lambda: lint_swift(project_root)),
@@ -466,7 +519,7 @@ def main() -> None:
     # Run all linters in parallel with timing
     results: dict[str, bool] = {}
     timings: dict[str, float] = {}
-    with ThreadPoolExecutor(max_workers=9) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         futures = {
             executor.submit(run_with_timing, name, func): name for name, func in linters
         }

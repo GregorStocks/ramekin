@@ -16,7 +16,7 @@ use tokio::sync::Mutex;
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{
     clear_staging, ensure_staging_dir, find_staged_html, run_all_steps, staging_dir,
-    AllStepsResult, ExtractionStats, PipelineStep, StepResult,
+    AllStepsResult, ExtractionStats, IngredientStats, PipelineStep, StepResult,
 };
 use crate::OnFetchFail;
 use ramekin_core::http::{CachingClient, DiskCache};
@@ -120,6 +120,26 @@ pub struct PipelineResults {
     pub by_site: HashMap<String, SiteResults>,
     pub url_results: Vec<UrlResult>,
     pub extraction_method_stats: ExtractionMethodStats,
+    pub ingredient_stats: IngredientParsingStats,
+}
+
+/// Aggregated stats about ingredient parsing across all URLs
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct IngredientParsingStats {
+    /// Total ingredients parsed across all recipes
+    pub total_ingredients: usize,
+    /// Volume-to-weight conversions successful
+    pub volume_converted: usize,
+    /// Volume-to-weight conversions failed (unknown ingredient)
+    pub volume_unknown_ingredient: usize,
+    /// Volume-to-weight conversions skipped (no volume unit)
+    pub volume_no_volume: usize,
+    /// Volume-to-weight conversions skipped (already has weight)
+    pub volume_already_has_weight: usize,
+    /// Metric conversions from oz
+    pub metric_converted_oz: usize,
+    /// Metric conversions from lb
+    pub metric_converted_lb: usize,
 }
 
 /// Stats about which extraction methods work across all URLs
@@ -374,6 +394,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                         &final_status,
                         &domain,
                         all_results.extraction_stats.as_ref(),
+                        all_results.ingredient_stats.as_ref(),
                         all_results.ai_cached,
                     );
 
@@ -550,6 +571,39 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         println!("  (no HTML fetched)");
     }
 
+    // Print ingredient parsing stats
+    let ips = &results.ingredient_stats;
+    if ips.total_ingredients > 0 {
+        println!();
+        println!("Ingredient Parsing Stats:");
+        println!("  Total ingredients: {}", ips.total_ingredients);
+
+        let volume_attempted =
+            ips.volume_converted + ips.volume_unknown_ingredient + ips.volume_already_has_weight;
+        if volume_attempted > 0 {
+            println!(
+                "  Volume→weight converted: {}/{} ({:.1}%)",
+                ips.volume_converted,
+                volume_attempted,
+                ips.volume_converted as f64 / volume_attempted as f64 * 100.0
+            );
+            println!(
+                "  Unknown ingredient (no density): {}",
+                ips.volume_unknown_ingredient
+            );
+        }
+        println!("  Already has weight: {}", ips.volume_already_has_weight);
+        println!("  No volume unit: {}", ips.volume_no_volume);
+
+        let metric_total = ips.metric_converted_oz + ips.metric_converted_lb;
+        if metric_total > 0 {
+            println!(
+                "  Metric converted: {} oz→g, {} lb→g",
+                ips.metric_converted_oz, ips.metric_converted_lb
+            );
+        }
+    }
+
     println!();
     println!("Artifacts saved to: {}", run_dir.display());
 
@@ -589,6 +643,7 @@ fn update_results(
     final_status: &FinalStatus,
     domain: &str,
     extraction_stats: Option<&ExtractionStats>,
+    ingredient_stats: Option<&IngredientStats>,
     ai_cached: Option<bool>,
 ) {
     // Update HTML cache stats
@@ -664,6 +719,17 @@ fn update_results(
     match final_status {
         FinalStatus::Completed => site_stats.completed += 1,
         _ => site_stats.failed += 1,
+    }
+
+    // Update ingredient parsing stats
+    if let Some(stats) = ingredient_stats {
+        results.ingredient_stats.total_ingredients += stats.total_ingredients;
+        results.ingredient_stats.volume_converted += stats.volume_converted;
+        results.ingredient_stats.volume_unknown_ingredient += stats.volume_unknown_ingredient;
+        results.ingredient_stats.volume_no_volume += stats.volume_no_volume;
+        results.ingredient_stats.volume_already_has_weight += stats.volume_already_has_weight;
+        results.ingredient_stats.metric_converted_oz += stats.metric_converted_oz;
+        results.ingredient_stats.metric_converted_lb += stats.metric_converted_lb;
     }
 }
 
@@ -1045,6 +1111,50 @@ pub fn generate_summary_report(results: &PipelineResults) -> String {
             ems.urls_with_html,
             pct(ems.neither_success, ems.urls_with_html)
         ));
+    }
+
+    // Ingredient parsing stats
+    let ips = &results.ingredient_stats;
+    if ips.total_ingredients > 0 {
+        report.push_str("\n## Ingredient Parsing\n\n");
+        report.push_str(&format!("- Total ingredients: {}\n", ips.total_ingredients));
+
+        // Volume-to-weight conversion stats
+        let volume_attempted =
+            ips.volume_converted + ips.volume_unknown_ingredient + ips.volume_already_has_weight;
+        if volume_attempted > 0 {
+            report.push_str(&format!(
+                "- Volume-to-weight converted: {}/{} ({:.1}%)\n",
+                ips.volume_converted,
+                volume_attempted,
+                pct(ips.volume_converted, volume_attempted)
+            ));
+            report.push_str(&format!(
+                "- Unknown ingredient (no density data): {}\n",
+                ips.volume_unknown_ingredient
+            ));
+        }
+        report.push_str(&format!(
+            "- Already has weight: {}\n",
+            ips.volume_already_has_weight
+        ));
+        report.push_str(&format!(
+            "- No volume unit (count-based): {}\n",
+            ips.volume_no_volume
+        ));
+
+        // Metric conversion stats
+        let metric_total = ips.metric_converted_oz + ips.metric_converted_lb;
+        if metric_total > 0 {
+            report.push_str(&format!(
+                "- Metric converted (oz→g): {}\n",
+                ips.metric_converted_oz
+            ));
+            report.push_str(&format!(
+                "- Metric converted (lb→g): {}\n",
+                ips.metric_converted_lb
+            ));
+        }
     }
 
     // AI cache stats
