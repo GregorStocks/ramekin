@@ -14,6 +14,7 @@ use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
 use std::path::PathBuf;
+use tracing_subscriber::prelude::*;
 use tracing_subscriber::EnvFilter;
 
 /// What to do when HTML fetch fails
@@ -255,17 +256,36 @@ enum Commands {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    // Initialize tracing with debug level by default for CLI
-    // Can be overridden with RUST_LOG environment variable
-    // Filter out verbose logs from html parsing and HTTP libraries
-    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| {
-        EnvFilter::new("debug,html5ever=info,selectors=info,h2=info,hyper_util=info,reqwest=info")
-    });
-    tracing_subscriber::fmt()
-        .with_env_filter(filter)
-        .with_target(false)
-        .without_time()
-        .init();
+    // Initialize tracing with info level by default for CLI
+    // Can be overridden with RUST_LOG environment variable (e.g., RUST_LOG=debug)
+    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
+
+    // If TRACE_FILE is set, output Chrome trace format for viewing in chrome://tracing
+    let _chrome_guard = if let Ok(trace_file) = std::env::var("TRACE_FILE") {
+        let (chrome_layer, guard) = tracing_chrome::ChromeLayerBuilder::new()
+            .file(trace_file)
+            .include_args(true)
+            .build();
+
+        tracing_subscriber::registry()
+            .with(filter)
+            .with(
+                tracing_subscriber::fmt::layer()
+                    .with_target(false)
+                    .without_time(),
+            )
+            .with(chrome_layer)
+            .init();
+
+        Some(guard)
+    } else {
+        tracing_subscriber::fmt()
+            .with_env_filter(filter)
+            .with_target(false)
+            .without_time()
+            .init();
+        None
+    };
 
     let cli = Cli::parse();
 

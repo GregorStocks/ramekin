@@ -4196,7 +4196,7 @@
 
 ## Summary
 
-- Total recipes processed: 4379
+- Total recipes processed: 4188
 - Recipes with tag suggestions: 4170
 - Cached responses: 4188
 
