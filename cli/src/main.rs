@@ -176,8 +176,8 @@ enum Commands {
         #[arg(long)]
         merge: bool,
     },
-    /// Run the full pipeline for all test URLs
-    PipelineTest {
+    /// Run the full pipeline for all test URLs and generate reports
+    Pipeline {
         /// Path to test-urls.json
         #[arg(long, default_value = "data/test-urls.json")]
         test_urls: PathBuf,
@@ -220,24 +220,6 @@ enum Commands {
         /// Cache directory (defaults to ~/.ramekin/pipeline-cache/html)
         #[arg(long)]
         cache_dir: Option<PathBuf>,
-    },
-    /// Generate a summary report from the latest pipeline run
-    PipelineSummary {
-        /// Directory containing pipeline run results
-        #[arg(long, default_value = "data/pipeline-runs")]
-        runs_dir: PathBuf,
-        /// Output file for the summary (default: print to stdout)
-        #[arg(short, long)]
-        output: Option<PathBuf>,
-    },
-    /// Generate a report of auto-tag suggestions from the latest pipeline run
-    PipelineTagReport {
-        /// Directory containing pipeline run results
-        #[arg(long, default_value = "data/pipeline-runs")]
-        runs_dir: PathBuf,
-        /// Output file for the report (default: print to stdout)
-        #[arg(short, long)]
-        output: Option<PathBuf>,
     },
     /// Generate ingredient parsing test fixtures from pipeline run
     IngredientTestsGenerate {
@@ -365,7 +347,7 @@ async fn main() -> Result<()> {
             generate_test_urls::generate_test_urls(&output, num_sites, urls_per_site, merge)
                 .await?;
         }
-        Commands::PipelineTest {
+        Commands::Pipeline {
             test_urls,
             output_dir,
             limit,
@@ -379,7 +361,7 @@ async fn main() -> Result<()> {
         } => {
             let config = pipeline_orchestrator::OrchestratorConfig {
                 test_urls_file: test_urls,
-                output_dir,
+                output_dir: output_dir.clone(),
                 limit,
                 site_filter: site,
                 delay_ms,
@@ -389,7 +371,27 @@ async fn main() -> Result<()> {
                 tags_file,
                 concurrency,
             };
-            pipeline_orchestrator::run_pipeline_test(config).await?;
+            let results = pipeline_orchestrator::run_pipeline_test(config).await?;
+
+            // Generate and save extraction report
+            let extraction_report = pipeline_orchestrator::generate_summary_report(&results);
+            let extraction_report_path = PathBuf::from("data/extraction-report.md");
+            std::fs::write(&extraction_report_path, &extraction_report)?;
+            println!(
+                "Extraction report saved to: {}",
+                extraction_report_path.display()
+            );
+
+            // Generate and save tag report
+            let (run_id, run_dir) = pipeline_orchestrator::get_latest_run_dir(&output_dir)?;
+            let tag_report = pipeline_orchestrator::generate_tag_report(&run_dir)?;
+            let tag_report_path = PathBuf::from("data/tag-report.md");
+            std::fs::write(&tag_report_path, &tag_report)?;
+            println!(
+                "Tag report saved to: {} (from run: {})",
+                tag_report_path.display(),
+                run_id
+            );
         }
         Commands::PipelineCacheStats { cache_dir } => {
             let cache_dir = cache_dir.unwrap_or_else(ramekin_core::http::DiskCache::default_dir);
@@ -398,32 +400,6 @@ async fn main() -> Result<()> {
         Commands::PipelineCacheClear { cache_dir } => {
             let cache_dir = cache_dir.unwrap_or_else(ramekin_core::http::DiskCache::default_dir);
             pipeline_orchestrator::clear_cache(&cache_dir)?;
-        }
-        Commands::PipelineSummary { runs_dir, output } => {
-            let (run_id, results) = pipeline_orchestrator::load_latest_results(&runs_dir)?;
-            let report = pipeline_orchestrator::generate_summary_report(&results);
-
-            if let Some(output_path) = output {
-                std::fs::write(&output_path, &report)?;
-                println!("Summary saved to: {}", output_path.display());
-                println!("(from run: {})", run_id);
-            } else {
-                println!("Run: {}\n", run_id);
-                print!("{}", report);
-            }
-        }
-        Commands::PipelineTagReport { runs_dir, output } => {
-            let (run_id, run_dir) = pipeline_orchestrator::get_latest_run_dir(&runs_dir)?;
-            let report = pipeline_orchestrator::generate_tag_report(&run_dir)?;
-
-            if let Some(output_path) = output {
-                std::fs::write(&output_path, &report)?;
-                println!("Tag report saved to: {}", output_path.display());
-                println!("(from run: {})", run_id);
-            } else {
-                println!("Run: {}\n", run_id);
-                print!("{}", report);
-            }
         }
         Commands::IngredientTestsGenerate {
             runs_dir,

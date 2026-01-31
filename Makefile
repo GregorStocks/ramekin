@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary pipeline-tag-report ios-generate ios-build ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-density-test ingredient-density-import
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-density-test ingredient-density-import
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -147,9 +147,9 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
 
-pipeline-test: ## Run pipeline for test URLs (offline by default, use OFFLINE=false to enable network)
+pipeline: ## Run pipeline for test URLs and generate reports (offline by default, use OFFLINE=false to enable network)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
-	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline \
 		$(if $(LIMIT),--limit $(LIMIT),) \
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
@@ -166,14 +166,6 @@ pipeline-cache-stats: ## Show HTML cache statistics
 pipeline-cache-clear: ## Clear HTML cache
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-clear
-
-pipeline-summary: ## Generate summary report from latest pipeline run (saves to data/extraction-report.md)
-	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
-	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md
-
-pipeline-tag-report: ## Generate auto-tag evaluation report from latest pipeline run
-	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
-	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-tag-report -o data/tag-report.md
 
 ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
 	@cd ramekin-ios && xcodegen generate

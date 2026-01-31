@@ -313,4 +313,34 @@ mod tests {
         assert!(!is_volume_unit(Some("g")));
         assert!(!is_volume_unit(None));
     }
+
+    #[test]
+    fn test_curated_aliases() {
+        // Leavening agents
+        assert!(find_density("baking powder").is_some());
+        assert!(find_density("baking soda").is_some());
+        // Spices
+        assert!(find_density("cinnamon").is_some());
+        assert!(find_density("ground cinnamon").is_some());
+        assert!(find_density("garlic powder").is_some());
+        // Onion varieties
+        assert!(find_density("yellow onion").is_some());
+        assert!(find_density("red onion").is_some());
+        // Dairy
+        assert!(find_density("buttermilk").is_some());
+        assert!(find_density("greek yogurt").is_some());
+        // Other
+        assert!(find_density("water").is_some());
+    }
+
+    #[test]
+    fn test_ambiguous_aliases_return_none() {
+        // Salt varieties are ambiguous (different densities)
+        assert!(find_density("salt").is_none());
+        assert!(find_density("kosher salt").is_none());
+        assert!(find_density("sea salt").is_none());
+        // Pepper is ambiguous
+        assert!(find_density("black pepper").is_none());
+        assert!(find_density("ground black pepper").is_none());
+    }
 }
