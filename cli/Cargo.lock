@@ -2471,6 +2471,7 @@ dependencies = [
  "dirs",
  "html-escape",
  "image",
+ "regex",
  "reqwest 0.13.1",
  "scraper",
  "serde",
