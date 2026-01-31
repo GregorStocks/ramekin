@@ -313,4 +313,29 @@ mod tests {
         assert!(!is_volume_unit(Some("g")));
         assert!(!is_volume_unit(None));
     }
+
+    #[test]
+    fn test_curated_aliases() {
+        // High-impact curated aliases
+        assert!(find_density("salt").is_some());
+        assert!(find_density("egg").is_some());
+        assert!(find_density("eggs").is_some());
+        assert!(find_density("large eggs").is_some());
+        assert!(find_density("baking powder").is_some());
+        assert!(find_density("baking soda").is_some());
+        assert!(find_density("cinnamon").is_some());
+        assert!(find_density("ground cinnamon").is_some());
+        assert!(find_density("garlic powder").is_some());
+        assert!(find_density("yellow onion").is_some());
+        assert!(find_density("scallions").is_some());
+        assert!(find_density("water").is_some());
+    }
+
+    #[test]
+    fn test_ambiguous_aliases_return_none() {
+        // These are explicitly marked as ambiguous in curated.json
+        assert!(find_density("kosher salt").is_none());
+        assert!(find_density("black pepper").is_none());
+        assert!(find_density("ground black pepper").is_none());
+    }
 }
