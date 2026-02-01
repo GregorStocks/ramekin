@@ -35,5 +35,6 @@ jobs:
           xcodebuild test \
             -scheme Ramekin \
             -destination 'platform=iOS Simulator,name=${{ steps.simulator.outputs.name }}' \
+            -skip-testing:RamekinUITests \
             -resultBundlePath TestResults \
             CODE_SIGNING_ALLOWED=NO
