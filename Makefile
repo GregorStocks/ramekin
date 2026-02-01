@@ -175,6 +175,17 @@ ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew ins
 ios-build: ## Build iOS app for simulator
 	@cd ramekin-ios && xcodebuild -project Ramekin.xcodeproj -scheme Ramekin -destination 'generic/platform=iOS Simulator' build
 
+ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
+	@rm -rf logs/ios-ui-tests.xcresult
+	@cd ramekin-ios && xcodebuild test \
+		-project Ramekin.xcodeproj \
+		-scheme Ramekin \
+		-destination 'platform=iOS Simulator,name=iPhone 17' \
+		-only-testing:RamekinUITests \
+		-resultBundlePath ../logs/ios-ui-tests.xcresult \
+		CODE_SIGNING_ALLOWED=NO || true
+	@echo "UI test results at logs/ios-ui-tests.xcresult"
+
 ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run
 	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-generate
 

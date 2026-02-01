@@ -73,11 +73,15 @@ EOF
     # Generate Python client (for tests)
     generate_client "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"
 
+    # Generate Swift client (for iOS app)
+    generate_client "swift5" "ramekin-ios/generated-client" "projectName=RamekinClient,responseAs=AsyncAwait"
+
     echo ""
     echo "All clients generated successfully:"
     echo "  - Rust:       cli/generated/ramekin-client/"
     echo "  - TypeScript: ramekin-ui/generated-client/"
     echo "  - Python:     tests/generated/"
+    echo "  - Swift:      ramekin-ios/generated-client/"
 }
 
 LOG_DIR="$PROJECT_ROOT/logs"
