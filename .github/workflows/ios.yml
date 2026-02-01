@@ -63,6 +63,10 @@ jobs:
           else
             echo "diesel_cli already cached"
           fi
+        env:
+          # Help linker find libpq from Homebrew
+          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib:/usr/local/opt/postgresql@16/lib
+          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
 
       - name: Run migrations
         run: cd server && diesel migration run
