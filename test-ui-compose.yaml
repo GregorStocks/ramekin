@@ -39,7 +39,7 @@ processes:
     command: |
       echo "[TIMING] seed starting at $(date +%H:%M:%S)"
       START=$(date +%s)
-      ${CLI_COMMAND:-cargo run -q --} seed \
+      cargo run -q -- seed \
         --server-url http://localhost:${PORT} \
         --username t --password t \
         ../data/dev/seed.paprikarecipes
