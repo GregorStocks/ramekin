@@ -46,12 +46,26 @@ jobs:
           workspaces: |
             server -> target
             cli -> target
+            ramekin-core -> target
           shared-key: ios-ci
 
-      - name: Run migrations
+      - name: Cache cargo binaries
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin
+          key: cargo-bin-macos-diesel-3.2
+
+      - name: Install diesel CLI
         run: |
-          cargo install diesel_cli --no-default-features --features postgres 2>/dev/null || true
-          cd server && diesel migration run
+          if ! command -v diesel &> /dev/null; then
+            echo "Installing diesel_cli..."
+            cargo install diesel_cli --no-default-features --features postgres
+          else
+            echo "diesel_cli already cached"
+          fi
+
+      - name: Run migrations
+        run: cd server && diesel migration run
         env:
           DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
 
