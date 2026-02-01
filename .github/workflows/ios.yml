@@ -21,19 +21,33 @@ jobs:
 
       - name: Start PostgreSQL
         run: |
+          # Add PostgreSQL binaries to PATH
+          export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+          # Initialize database if needed
+          if [ ! -d "/opt/homebrew/var/postgresql@16" ]; then
+            initdb --locale=C -E UTF-8 /opt/homebrew/var/postgresql@16
+          fi
+
           brew services start postgresql@16
+
           # Wait for postgres to be ready
           for i in {1..30}; do
             if pg_isready -h localhost -p 5432 2>/dev/null; then
               echo "PostgreSQL is ready"
               break
             fi
-            echo "Waiting for PostgreSQL..."
+            if [ $i -eq 30 ]; then
+              echo "PostgreSQL failed to start"
+              exit 1
+            fi
+            echo "Waiting for PostgreSQL... ($i/30)"
             sleep 1
           done
 
       - name: Create database and user
         run: |
+          export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
           createuser -s ramekin 2>/dev/null || true
           createdb -O ramekin ramekin_ios 2>/dev/null || true
 
