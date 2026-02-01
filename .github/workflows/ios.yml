@@ -89,6 +89,9 @@ jobs:
 
       - name: Build server
         run: cd server && cargo build --release
+        env:
+          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
+          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
 
       - name: Start server
         run: |
@@ -118,6 +121,9 @@ jobs:
             --tags-file ../data/eval-tags.json \
             --preserve-tags=false \
             ../data/dev/seed.paprikarecipes
+        env:
+          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
+          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
 
       - name: Generate Xcode project
         run: make ios-generate
