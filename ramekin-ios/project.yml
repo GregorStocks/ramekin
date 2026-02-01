@@ -81,8 +81,6 @@ targets:
     platform: iOS
     sources:
       - path: RamekinTests
-      - path: Shared
-      - path: generated-client/RamekinClient/Classes/OpenAPIs
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests
