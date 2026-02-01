@@ -12,6 +12,7 @@ use futures::stream::{self, StreamExt};
 use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
 use tokio::sync::Mutex;
+use tracing::{info_span, Instrument};
 
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{
@@ -322,6 +323,10 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             let force_refetch = config.force_refetch;
             let offline = config.offline;
 
+            // Capture for span (before async move takes ownership)
+            let span_url = truncate_url(&url, 80);
+            let span_domain = domain.clone();
+
             async move {
                 // Check if we need to fetch (for progress display)
                 let needs_fetch = force_refetch || (!offline && !client.is_cached(&url));
@@ -387,6 +392,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
                 // Update shared results
                 {
+                    let _span = tracing::info_span!("update_and_save_results").entered();
                     let mut results = results.lock().await;
                     update_results(
                         &mut results,
@@ -412,6 +418,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                     extraction_stats: all_results.extraction_stats,
                 })
             }
+            .instrument(info_span!("process_url", url = %span_url, domain = %span_domain))
         })
         .buffer_unordered(concurrency)
         .collect()
@@ -604,6 +611,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
     }
 
+    // Print step timing summary
+    print_timing_summary(&results);
+
     println!();
     println!("Artifacts saved to: {}", run_dir.display());
 
@@ -751,6 +761,83 @@ fn truncate_url(url: &str, max_len: usize) -> String {
     } else {
         format!("{}...", url.chars().take(max_len - 3).collect::<String>())
     }
+}
+
+fn print_timing_summary(results: &PipelineResults) {
+    // Aggregate step durations across all URLs
+    let mut step_times: HashMap<String, Vec<u64>> = HashMap::new();
+
+    for url_result in &results.url_results {
+        for step in &url_result.steps {
+            let step_name = format!("{:?}", step.step);
+            step_times
+                .entry(step_name)
+                .or_default()
+                .push(step.duration_ms);
+        }
+    }
+
+    if step_times.is_empty() {
+        return;
+    }
+
+    println!();
+    println!("Step Timing Summary:");
+
+    // Order for consistent display
+    let step_order = [
+        "FetchHtml",
+        "ExtractRecipe",
+        "FetchImages",
+        "ParseIngredients",
+        "SaveRecipe",
+        "EnrichNormalizeIngredients",
+        "EnrichAutoTag",
+        "EnrichGeneratePhoto",
+    ];
+
+    let mut grand_total_ms: u64 = 0;
+
+    for step_name in step_order {
+        if let Some(times) = step_times.get(step_name) {
+            if times.is_empty() {
+                continue;
+            }
+            let total: u64 = times.iter().sum();
+            grand_total_ms += total;
+            let avg = total as f64 / times.len() as f64;
+            let max = *times.iter().max().unwrap_or(&0);
+            let p50 = percentile(times, 50);
+            let p95 = percentile(times, 95);
+
+            println!(
+                "  {:30} avg={:>6.0}ms  p50={:>6.0}ms  p95={:>6.0}ms  max={:>6}ms  total={:>7.1}s  (n={})",
+                step_name,
+                avg,
+                p50,
+                p95,
+                max,
+                total as f64 / 1000.0,
+                times.len()
+            );
+        }
+    }
+
+    println!(
+        "  {:30} {:>54.1}s",
+        "TOTAL (sum of step times)",
+        grand_total_ms as f64 / 1000.0
+    );
+}
+
+fn percentile(times: &[u64], pct: usize) -> f64 {
+    if times.is_empty() {
+        return 0.0;
+    }
+    let mut sorted = times.to_vec();
+    sorted.sort();
+    let idx = (pct as f64 / 100.0 * (sorted.len() - 1) as f64).round() as usize;
+    sorted[idx.min(sorted.len() - 1)] as f64
 }
 
 // ============================================================================

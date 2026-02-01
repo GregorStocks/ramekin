@@ -7,7 +7,7 @@ use std::time::Instant;
 use serde::{Deserialize, Serialize};
 
 use ramekin_core::http::{CachingClient, HttpClient};
-use ramekin_core::pipeline::{run_pipeline, StepOutputStore};
+use ramekin_core::pipeline::run_pipeline;
 pub use ramekin_core::PipelineStep;
 
 use super::output_store::FileOutputStore;
@@ -134,6 +134,8 @@ pub async fn run_all_steps(
 ) -> AllStepsResult {
     use super::build_registry;
 
+    let _span = tracing::info_span!("run_all_steps").entered();
+
     let mut step_results = Vec::new();
     let mut store = FileOutputStore::new(run_dir, url);
 
@@ -157,8 +159,12 @@ pub async fn run_all_steps(
             };
         }
         // After force fetch, pre-populate store and start from extract_recipe
-        if let Some(html) = client.get_cached_html(url) {
-            let _ = store.save_output("fetch_html", &serde_json::json!({ "html": html }));
+        // Only cache in memory - skip disk write since HTML is already in disk cache
+        {
+            let _span = tracing::info_span!("load_cached_html").entered();
+            if let Some(html) = client.get_cached_html(url) {
+                store.cache_only("fetch_html", serde_json::json!({ "html": html }));
+            }
         }
         "extract_recipe"
     } else if already_cached {
@@ -171,8 +177,12 @@ pub async fn run_all_steps(
             cached: true,
         });
         // Pre-populate store with cached HTML so extract_recipe can find it
-        if let Some(html) = client.get_cached_html(url) {
-            let _ = store.save_output("fetch_html", &serde_json::json!({ "html": html }));
+        // Only cache in memory - skip disk write since HTML is already in disk cache
+        {
+            let _span = tracing::info_span!("load_cached_html").entered();
+            if let Some(html) = client.get_cached_html(url) {
+                store.cache_only("fetch_html", serde_json::json!({ "html": html }));
+            }
         }
         "extract_recipe"
     } else {
@@ -181,7 +191,10 @@ pub async fn run_all_steps(
     };
 
     // Build the registry with the shared client and user tags
-    let registry = build_registry(client, user_tags);
+    let registry = {
+        let _span = tracing::info_span!("build_registry").entered();
+        build_registry(client, user_tags)
+    };
 
     // Run the generic pipeline from the determined starting point
     let generic_results = run_pipeline(first_step, url, &mut store, &registry).await;
