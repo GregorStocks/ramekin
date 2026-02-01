@@ -1116,7 +1116,7 @@ pub fn generate_tag_report(run_dir: &Path) -> Result<String> {
         report.push_str("|-----|-------|\n");
 
         let mut sorted_tags: Vec<_> = tag_counts.iter().collect();
-        sorted_tags.sort_by(|a, b| b.1.cmp(a.1));
+        sorted_tags.sort_by(|a, b| b.1.cmp(a.1).then_with(|| a.0.cmp(b.0)));
 
         for (tag, count) in sorted_tags {
             report.push_str(&format!("| {} | {} |\n", tag, count));
