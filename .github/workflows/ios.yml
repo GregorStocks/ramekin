@@ -12,12 +12,80 @@ jobs:
   ios:
     name: iOS Tests
     runs-on: macos-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install xcodegen
-        run: brew install xcodegen
+      - name: Install dependencies
+        run: brew install xcodegen postgresql@16
+
+      - name: Start PostgreSQL
+        run: |
+          brew services start postgresql@16
+          # Wait for postgres to be ready
+          for i in {1..30}; do
+            if pg_isready -h localhost -p 5432 2>/dev/null; then
+              echo "PostgreSQL is ready"
+              break
+            fi
+            echo "Waiting for PostgreSQL..."
+            sleep 1
+          done
+
+      - name: Create database and user
+        run: |
+          createuser -s ramekin 2>/dev/null || true
+          createdb -O ramekin ramekin_ios 2>/dev/null || true
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            server -> target
+            cli -> target
+          shared-key: ios-ci
+
+      - name: Run migrations
+        run: |
+          cargo install diesel_cli --no-default-features --features postgres 2>/dev/null || true
+          cd server && diesel migration run
+        env:
+          DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
+
+      - name: Build server
+        run: cd server && cargo build --release
+
+      - name: Start server
+        run: |
+          cd server
+          ./target/release/ramekin-server &
+          # Wait for server to be ready
+          for i in {1..60}; do
+            if curl -s http://localhost:55000/api/test/unauthed-ping > /dev/null 2>&1; then
+              echo "Server is ready"
+              break
+            fi
+            echo "Waiting for server..."
+            sleep 1
+          done
+        env:
+          DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
+          PORT: 55000
+          RUST_LOG: error
+          INSECURE_PASSWORD_HASHING: 1
+
+      - name: Build CLI and seed database
+        run: |
+          cd cli && cargo build --release
+          ./target/release/ramekin-cli seed \
+            --server-url http://localhost:55000 \
+            --username t --password t \
+            --tags-file ../data/eval-tags.json \
+            --preserve-tags=false \
+            ../data/dev/seed.paprikarecipes
 
       - name: Generate Xcode project
         run: make ios-generate
@@ -35,6 +103,5 @@ jobs:
           xcodebuild test \
             -scheme Ramekin \
             -destination 'platform=iOS Simulator,name=${{ steps.simulator.outputs.name }}' \
-            -skip-testing:RamekinUITests \
             -resultBundlePath TestResults \
             CODE_SIGNING_ALLOWED=NO
