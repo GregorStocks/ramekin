@@ -12,12 +12,118 @@ jobs:
   ios:
     name: iOS Tests
     runs-on: macos-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install xcodegen
-        run: brew install xcodegen
+      - name: Install dependencies
+        run: brew install xcodegen postgresql@16
+
+      - name: Start PostgreSQL
+        run: |
+          # Add PostgreSQL binaries to PATH
+          export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+          # Initialize database if needed
+          if [ ! -d "/opt/homebrew/var/postgresql@16" ]; then
+            initdb --locale=C -E UTF-8 /opt/homebrew/var/postgresql@16
+          fi
+
+          brew services start postgresql@16
+
+          # Wait for postgres to be ready
+          for i in {1..30}; do
+            if pg_isready -h localhost -p 5432 2>/dev/null; then
+              echo "PostgreSQL is ready"
+              break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "PostgreSQL failed to start"
+              exit 1
+            fi
+            echo "Waiting for PostgreSQL... ($i/30)"
+            sleep 1
+          done
+
+      - name: Create database and user
+        run: |
+          export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+          createuser -s ramekin 2>/dev/null || true
+          createdb -O ramekin ramekin_ios 2>/dev/null || true
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            server -> target
+            cli -> target
+            ramekin-core -> target
+          shared-key: ios-ci
+
+      - name: Cache cargo binaries
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin
+          key: cargo-bin-macos-diesel-3.2
+
+      - name: Install diesel CLI
+        run: |
+          if ! command -v diesel &> /dev/null; then
+            echo "Installing diesel_cli..."
+            cargo install diesel_cli --no-default-features --features postgres
+          else
+            echo "diesel_cli already cached"
+          fi
+        env:
+          # Help linker find libpq from Homebrew
+          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib:/usr/local/opt/postgresql@16/lib
+          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
+
+      - name: Run migrations
+        run: cd server && diesel migration run
+        env:
+          DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
+
+      - name: Build server
+        run: cd server && cargo build --release
+        env:
+          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
+          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
+
+      - name: Start server
+        run: |
+          cd server
+          ./target/release/ramekin-server &
+          # Wait for server to be ready
+          for i in {1..60}; do
+            if curl -s http://localhost:55000/api/test/unauthed-ping > /dev/null 2>&1; then
+              echo "Server is ready"
+              break
+            fi
+            echo "Waiting for server..."
+            sleep 1
+          done
+        env:
+          DATABASE_URL: postgres://ramekin@localhost:5432/ramekin_ios
+          PORT: 55000
+          RUST_LOG: error
+          INSECURE_PASSWORD_HASHING: 1
+
+      - name: Build CLI and seed database
+        run: |
+          cd cli && cargo build --release
+          ./target/release/ramekin-cli seed \
+            --server-url http://localhost:55000 \
+            --username t --password t \
+            --tags-file ../data/eval-tags.json \
+            --preserve-tags=false \
+            ../data/dev/seed.paprikarecipes
+        env:
+          LIBRARY_PATH: /opt/homebrew/opt/postgresql@16/lib
+          PQ_LIB_DIR: /opt/homebrew/opt/postgresql@16/lib
 
       - name: Generate Xcode project
         run: make ios-generate

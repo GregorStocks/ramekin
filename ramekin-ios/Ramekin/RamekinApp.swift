@@ -40,7 +40,15 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             if appState.isLoggedIn {
-                SettingsView()
+                RecipeListView()
+                    .navigationDestination(for: NavigationDestination.self) { destination in
+                        switch destination {
+                        case .recipe(let id):
+                            RecipeDetailView(recipeId: id)
+                        case .settings:
+                            SettingsView()
+                        }
+                    }
             } else {
                 LoginView()
             }

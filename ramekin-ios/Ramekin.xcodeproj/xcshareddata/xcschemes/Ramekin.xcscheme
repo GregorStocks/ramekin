@@ -49,6 +49,20 @@
                ReferencedContainer = "container:Ramekin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9AD2140B021E544C6BF379A6"
+               BuildableName = "RamekinUITests.xctest"
+               BlueprintName = "RamekinUITests"
+               ReferencedContainer = "container:Ramekin.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -75,6 +89,17 @@
                BlueprintIdentifier = "67DC56D85ECA0F433270268C"
                BuildableName = "RamekinTests.xctest"
                BlueprintName = "RamekinTests"
+               ReferencedContainer = "container:Ramekin.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9AD2140B021E544C6BF379A6"
+               BuildableName = "RamekinUITests.xctest"
+               BlueprintName = "RamekinUITests"
                ReferencedContainer = "container:Ramekin.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -49,6 +49,14 @@ Thumbs.db
 *.swo
 *~
 
+# Xcode
+DerivedData/
+**/xcuserdata/
+**/*.xcuserstate
+**/*.xcuserdatad/
+*.xcscmblueprint
+*.xccheckout
+
 # Database
 *.db
 *.sqlite

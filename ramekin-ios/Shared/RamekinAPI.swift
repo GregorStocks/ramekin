@@ -6,7 +6,10 @@ class RamekinAPI {
 
     private let logger = DebugLogger.shared
 
-    private init() {}
+    private init() {
+        // Configure generated client with any existing credentials
+        updateGeneratedClientConfig()
+    }
 
     // MARK: - Configuration
 
@@ -16,6 +19,7 @@ class RamekinAPI {
             if let url = newValue {
                 _ = KeychainHelper.shared.saveServerURL(url)
             }
+            updateGeneratedClientConfig()
         }
     }
 
@@ -25,6 +29,18 @@ class RamekinAPI {
 
     var isLoggedIn: Bool {
         authToken != nil && serverURL != nil
+    }
+
+    /// Configure the generated OpenAPI client with current credentials
+    func updateGeneratedClientConfig() {
+        if let baseURL = serverURL {
+            RamekinClientAPI.basePath = baseURL
+        }
+        if let token = authToken {
+            RamekinClientAPI.customHeaders["Authorization"] = "Bearer \(token)"
+        } else {
+            RamekinClientAPI.customHeaders.removeValue(forKey: "Authorization")
+        }
     }
 
     // MARK: - API Errors
@@ -131,6 +147,9 @@ class RamekinAPI {
             _ = KeychainHelper.shared.saveToken(loginResponse.token)
             _ = KeychainHelper.shared.saveUsername(username)
 
+            // Update generated client with new credentials
+            updateGeneratedClientConfig()
+
             return loginResponse.token
         } else {
             let errorMessage: String?
@@ -146,6 +165,7 @@ class RamekinAPI {
     /// Logout and clear credentials
     func logout() {
         KeychainHelper.shared.clearAll()
+        updateGeneratedClientConfig()
     }
 
     // MARK: - Scraping

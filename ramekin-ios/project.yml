@@ -23,6 +23,7 @@ targets:
           - "*.entitlements"
           - Info.plist
       - path: Shared
+      - path: generated-client/RamekinClient/Classes/OpenAPIs
     info:
       path: Ramekin/Info.plist
       properties:
@@ -52,6 +53,7 @@ targets:
         excludes:
           - "*.entitlements"
       - path: Shared
+      - path: generated-client/RamekinClient/Classes/OpenAPIs
     info:
       path: RamekinShareExtension/Info.plist
       properties:
@@ -79,10 +81,20 @@ targets:
     platform: iOS
     sources:
       - path: RamekinTests
-      - path: Shared
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests
+    dependencies:
+      - target: Ramekin
+
+  RamekinUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: RamekinUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.uitests
     dependencies:
       - target: Ramekin
 
@@ -93,12 +105,14 @@ schemes:
         Ramekin: all
         RamekinShareExtension: all
         RamekinTests: [test]
+        RamekinUITests: [test]
     run:
       config: Debug
     test:
       config: Debug
       targets:
         - RamekinTests
+        - RamekinUITests
     profile:
       config: Release
     analyze:
