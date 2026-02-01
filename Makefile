@@ -13,6 +13,9 @@ API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) ser
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
 
+# Default simulator target for iOS UI tests (override with IOS_UI_DESTINATION)
+IOS_UI_DESTINATION ?= platform=iOS Simulator,name=iPhone 15,OS=latest
+
 help: ## Show this help message
 	@echo 'Usage: make [target]'
 	@echo ''
@@ -180,10 +183,10 @@ ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
 	@cd ramekin-ios && xcodebuild test \
 		-project Ramekin.xcodeproj \
 		-scheme Ramekin \
-		-destination 'platform=iOS Simulator,name=iPhone 17' \
+		-destination '$(IOS_UI_DESTINATION)' \
 		-only-testing:RamekinUITests \
 		-resultBundlePath ../logs/ios-ui-tests.xcresult \
-		CODE_SIGNING_ALLOWED=NO || true
+		CODE_SIGNING_ALLOWED=NO
 	@echo "UI test results at logs/ios-ui-tests.xcresult"
 
 ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run

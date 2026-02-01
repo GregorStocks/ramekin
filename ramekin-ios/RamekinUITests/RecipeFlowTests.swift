@@ -49,9 +49,7 @@ final class RecipeFlowTests: XCTestCase {
 
         // MARK: - Recipe List
 
-        // Wait for recipe list to load (look for navigation title or first cell)
-        // The app currently shows SettingsView after login, so this will fail
-        // until Phase 6 wires up RecipeListView
+        // Wait for recipe list to load (requires seeded data from make seed)
         let recipeCell = app.cells.firstMatch
         let recipesLoaded = recipeCell.waitForExistence(timeout: 15)
 
@@ -82,8 +80,7 @@ final class RecipeFlowTests: XCTestCase {
             afterLoginScreenshot.lifetime = .keepAlways
             add(afterLoginScreenshot)
 
-            // This is expected to fail until RecipeListView is implemented
-            XCTFail("Recipe list did not load - this is expected until Phase 6")
+            XCTFail("Recipe list did not load. Seed data from make seed is required for UI tests.")
         }
     }
 
@@ -112,7 +109,6 @@ final class RecipeFlowTests: XCTestCase {
         errorScreenshot.lifetime = .keepAlways
         add(errorScreenshot)
 
-        // We expect some error indicator after failed login
-        // Don't assert on this since error format may vary
+        XCTAssertTrue(errorExists, "Expected an error message after failed login.")
     }
 }

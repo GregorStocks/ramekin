@@ -5,10 +5,14 @@ struct RecipeListView: View {
 
     @State private var recipes: [RecipeSummary] = []
     @State private var isLoading = false
+    @State private var isLoadingMore = false
     @State private var error: String?
     @State private var hasMore = true
+    @State private var loadMoreFailed = false
     @State private var searchText = ""
     @State private var totalCount = 0
+    @State private var activeQuery: String?
+    @State private var searchTask: Task<Void, Never>?
 
     private let pageSize: Int64 = 20
 
@@ -26,8 +30,13 @@ struct RecipeListView: View {
             }
         }
         .searchable(text: $searchText, prompt: "Search recipes")
-        .onChange(of: searchText) { _ in
-            Task { await loadRecipes(reset: true) }
+        .onChange(of: searchText) { newValue in
+            searchTask?.cancel()
+            let trimmed = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
+            searchTask = Task {
+                try? await Task.sleep(nanoseconds: 300_000_000)
+                await loadRecipes(reset: true, query: trimmed.isEmpty ? nil : trimmed)
+            }
         }
         .navigationTitle("Recipes")
         .toolbar {
@@ -56,14 +65,30 @@ struct RecipeListView: View {
             }
 
             if hasMore {
-                HStack {
-                    Spacer()
-                    ProgressView()
-                    Spacer()
-                }
-                .listRowSeparator(.hidden)
-                .onAppear {
-                    Task { await loadMore() }
+                if loadMoreFailed {
+                    HStack {
+                        Spacer()
+                        VStack(spacing: 8) {
+                            Text("Couldn't load more recipes.")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                            Button("Retry") {
+                                Task { await loadMore() }
+                            }
+                        }
+                        Spacer()
+                    }
+                    .listRowSeparator(.hidden)
+                } else {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                    .listRowSeparator(.hidden)
+                    .onAppear {
+                        Task { await loadMore() }
+                    }
                 }
             }
         }
@@ -104,23 +129,31 @@ struct RecipeListView: View {
 
     // MARK: - Data Loading
 
-    private func loadRecipes(reset: Bool) async {
-        if reset {
-            recipes = []
-            hasMore = true
-        }
+    private func loadRecipes(reset: Bool, query: String? = nil) async {
+        let queryValue = query ?? (searchText.isEmpty ? nil : searchText)
 
-        isLoading = true
-        error = nil
+        await MainActor.run {
+            if reset {
+                recipes = []
+                hasMore = true
+                loadMoreFailed = false
+                isLoadingMore = false
+                activeQuery = queryValue
+            }
+
+            isLoading = true
+            error = nil
+        }
 
         do {
             let response = try await RecipesAPI.listRecipes(
                 limit: pageSize,
                 offset: 0,
-                q: searchText.isEmpty ? nil : searchText
+                q: queryValue
             )
 
             await MainActor.run {
+                guard activeQuery == queryValue else { return }
                 recipes = response.recipes
                 totalCount = Int(response.pagination.total)
                 hasMore = recipes.count < totalCount
@@ -128,6 +161,7 @@ struct RecipeListView: View {
             }
         } catch {
             await MainActor.run {
+                guard activeQuery == queryValue else { return }
                 self.error = error.localizedDescription
                 isLoading = false
             }
@@ -135,26 +169,30 @@ struct RecipeListView: View {
     }
 
     private func loadMore() async {
-        guard !isLoading && hasMore else { return }
+        guard !isLoading && !isLoadingMore && hasMore else { return }
 
-        isLoading = true
+        await MainActor.run {
+            isLoadingMore = true
+            loadMoreFailed = false
+        }
 
         do {
             let response = try await RecipesAPI.listRecipes(
                 limit: pageSize,
                 offset: Int64(recipes.count),
-                q: searchText.isEmpty ? nil : searchText
+                q: activeQuery
             )
 
             await MainActor.run {
                 recipes.append(contentsOf: response.recipes)
                 totalCount = Int(response.pagination.total)
                 hasMore = recipes.count < totalCount
-                isLoading = false
+                isLoadingMore = false
             }
         } catch {
             await MainActor.run {
-                isLoading = false
+                loadMoreFailed = true
+                isLoadingMore = false
             }
         }
     }
