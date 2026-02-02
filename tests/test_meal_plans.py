@@ -236,6 +236,43 @@ def test_delete_meal_plan_success(authed_api_client):
     assert len(list_response.meal_plans) == 0
 
 
+def test_delete_allows_readd(authed_api_client):
+    """Test that a meal plan can be re-added after soft delete."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    meal_plans_api = MealPlansApi(client)
+
+    recipe = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Readd Test",
+            instructions="Cook it",
+            ingredients=[make_ingredient(item="food")],
+        )
+    )
+
+    today = date.today()
+    create_response = meal_plans_api.create_meal_plan(
+        CreateMealPlanRequest(
+            recipe_id=recipe.id,
+            meal_date=today,
+            meal_type="dinner",
+        )
+    )
+
+    meal_plans_api.delete_meal_plan(create_response.id)
+
+    meal_plans_api.create_meal_plan(
+        CreateMealPlanRequest(
+            recipe_id=recipe.id,
+            meal_date=today,
+            meal_type="dinner",
+        )
+    )
+
+    list_response = meal_plans_api.list_meal_plans(start_date=today, end_date=today)
+    assert len(list_response.meal_plans) == 1
+
+
 def test_delete_meal_plan_requires_auth(unauthed_api_client):
     """Test that deleting a meal plan requires authentication."""
     api = MealPlansApi(unauthed_api_client)

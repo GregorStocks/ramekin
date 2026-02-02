@@ -48,15 +48,26 @@ pub async fn create_meal_plan(
     let mut conn = get_conn!(pool);
 
     // Verify recipe exists and belongs to user
-    let recipe_exists: bool = recipes::table
+    let recipe_exists: bool = match recipes::table
         .filter(recipes::id.eq(request.recipe_id))
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
         .select(recipes::id)
         .first::<Uuid>(&mut conn)
         .optional()
-        .unwrap_or(None)
-        .is_some();
+    {
+        Ok(record) => record.is_some(),
+        Err(e) => {
+            tracing::error!("Failed to verify recipe ownership: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to verify recipe".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     if !recipe_exists {
         return (

@@ -51,7 +51,7 @@ pub async fn update_meal_plan(
     let mut conn = get_conn!(pool);
 
     // Fetch the existing meal plan
-    let existing: Option<(NaiveDate, String, Option<String>)> = meal_plans::table
+    let existing: Option<(NaiveDate, String, Option<String>)> = match meal_plans::table
         .filter(meal_plans::id.eq(id))
         .filter(meal_plans::user_id.eq(user.id))
         .filter(meal_plans::deleted_at.is_null())
@@ -62,7 +62,19 @@ pub async fn update_meal_plan(
         ))
         .first(&mut conn)
         .optional()
-        .unwrap_or(None);
+    {
+        Ok(record) => record,
+        Err(e) => {
+            tracing::error!("Failed to fetch meal plan: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to fetch meal plan".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     let Some((current_date, current_type, current_notes)) = existing else {
         return (

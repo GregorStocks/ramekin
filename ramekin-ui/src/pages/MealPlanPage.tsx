@@ -21,11 +21,26 @@ function getMonday(d: Date): Date {
   const day = date.getDay();
   const diff = date.getDate() - day + (day === 0 ? -6 : 1);
   date.setDate(diff);
+  date.setHours(0, 0, 0, 0);
   return date;
 }
 
-function formatDate(d: Date): string {
-  return d.toISOString().split("T")[0];
+function formatDateLocal(d: Date): string {
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function formatDateUtc(d: Date): string {
+  const year = d.getUTCFullYear();
+  const month = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(d.getUTCDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function toApiDate(d: Date): Date {
+  return new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
 }
 
 function formatDayHeader(d: Date): string {
@@ -86,8 +101,8 @@ export default function MealPlanPage() {
     try {
       const days = weekDays();
       const response = await getMealPlansApi().listMealPlans({
-        startDate: days[0],
-        endDate: days[6],
+        startDate: toApiDate(days[0]),
+        endDate: toApiDate(days[6]),
       });
       setMealPlans(response.mealPlans);
     } catch (err) {
@@ -105,9 +120,9 @@ export default function MealPlanPage() {
   });
 
   const getMealsForSlot = (date: Date, mealType: MealTypeValue) => {
-    const dateStr = formatDate(date);
+    const dateStr = formatDateLocal(date);
     return mealPlans().filter(
-      (mp) => formatDate(mp.mealDate) === dateStr && mp.mealType === mealType,
+      (mp) => formatDateUtc(mp.mealDate) === dateStr && mp.mealType === mealType,
     );
   };
 
@@ -164,7 +179,7 @@ export default function MealPlanPage() {
       await getMealPlansApi().createMealPlan({
         createMealPlanRequest: {
           recipeId: recipe.id,
-          mealDate: date,
+          mealDate: toApiDate(date),
           mealType: mealType,
         },
       });
