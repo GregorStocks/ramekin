@@ -30,6 +30,10 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *EnrichApi* | [**enrich_recipe**](docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
 *ImportApi* | [**import_recipe**](docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
+*MealPlansApi* | [**create_meal_plan**](docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
+*MealPlansApi* | [**delete_meal_plan**](docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
+*MealPlansApi* | [**list_meal_plans**](docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
+*MealPlansApi* | [**update_meal_plan**](docs/MealPlansApi.md#update_meal_plan) | **PUT** /api/meal-plans/{id} | 
 *PhotosApi* | [**get_photo**](docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -57,6 +61,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CaptureRequest](docs/CaptureRequest.md)
+ - [CreateMealPlanRequest](docs/CreateMealPlanRequest.md)
+ - [CreateMealPlanResponse](docs/CreateMealPlanResponse.md)
  - [CreateRecipeRequest](docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](docs/CreateScrapeRequest.md)
@@ -73,6 +79,9 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)
+ - [MealPlanItem](docs/MealPlanItem.md)
+ - [MealPlanListResponse](docs/MealPlanListResponse.md)
+ - [MealType](docs/MealType.md)
  - [Measurement](docs/Measurement.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PingResponse](docs/PingResponse.md)
@@ -90,6 +99,7 @@ Class | Method | HTTP request | Description
  - [TagItem](docs/TagItem.md)
  - [TagsListResponse](docs/TagsListResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
+ - [UpdateMealPlanRequest](docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)
  - [UploadPhotoResponse](docs/UploadPhotoResponse.md)
  - [VersionListResponse](docs/VersionListResponse.md)

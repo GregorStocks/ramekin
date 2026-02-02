@@ -223,6 +223,250 @@
         ]
       }
     },
+    "/api/meal-plans": {
+      "get": {
+        "tags": [
+          "meal_plans"
+        ],
+        "operationId": "list_meal_plans",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "query",
+            "description": "Start date (inclusive), format: YYYY-MM-DD. Defaults to today.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "description": "End date (inclusive), format: YYYY-MM-DD. Defaults to start_date + 6 days (one week).",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of meal plans for date range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MealPlanListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "meal_plans"
+        ],
+        "operationId": "create_meal_plan",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMealPlanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Meal plan created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateMealPlanResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request (recipe not found or deleted)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Duplicate meal plan entry",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/meal-plans/{id}": {
+      "put": {
+        "tags": [
+          "meal_plans"
+        ],
+        "operationId": "update_meal_plan",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meal plan ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMealPlanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Meal plan updated"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Meal plan not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing meal plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "meal_plans"
+        ],
+        "operationId": "delete_meal_plan",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Meal plan ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Meal plan deleted"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Meal plan not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/photos": {
       "post": {
         "tags": [
@@ -1476,6 +1720,45 @@
           }
         }
       },
+      "CreateMealPlanRequest": {
+        "type": "object",
+        "required": [
+          "recipe_id",
+          "meal_date",
+          "meal_type"
+        ],
+        "properties": {
+          "meal_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "meal_type": {
+            "$ref": "#/components/schemas/MealType"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "CreateMealPlanResponse": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
       "CreateRecipeRequest": {
         "allOf": [
           {
@@ -1833,6 +2116,72 @@
             "type": "string"
           }
         }
+      },
+      "MealPlanItem": {
+        "type": "object",
+        "required": [
+          "id",
+          "recipe_id",
+          "recipe_title",
+          "meal_date",
+          "meal_type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "meal_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "meal_type": {
+            "$ref": "#/components/schemas/MealType"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "recipe_title": {
+            "type": "string"
+          },
+          "thumbnail_photo_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
+      "MealPlanListResponse": {
+        "type": "object",
+        "required": [
+          "meal_plans"
+        ],
+        "properties": {
+          "meal_plans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MealPlanItem"
+            }
+          }
+        }
+      },
+      "MealType": {
+        "type": "string",
+        "enum": [
+          "breakfast",
+          "lunch",
+          "dinner",
+          "snack"
+        ]
       },
       "Measurement": {
         "type": "object",
@@ -2370,6 +2719,35 @@
         "properties": {
           "message": {
             "type": "string"
+          }
+        }
+      },
+      "UpdateMealPlanRequest": {
+        "type": "object",
+        "properties": {
+          "meal_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "meal_type": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/MealType"
+              }
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Set to empty string to clear notes, or provide new value"
           }
         }
       },

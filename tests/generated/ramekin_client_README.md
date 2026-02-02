@@ -67,6 +67,10 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
+*MealPlansApi* | [**create_meal_plan**](ramekin_client/docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
+*MealPlansApi* | [**delete_meal_plan**](ramekin_client/docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
+*MealPlansApi* | [**list_meal_plans**](ramekin_client/docs/MealPlansApi.md#list_meal_plans) | **GET** /api/meal-plans | 
+*MealPlansApi* | [**update_meal_plan**](ramekin_client/docs/MealPlansApi.md#update_meal_plan) | **PUT** /api/meal-plans/{id} | 
 *PhotosApi* | [**get_photo**](ramekin_client/docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](ramekin_client/docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -94,6 +98,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
+ - [CreateMealPlanRequest](ramekin_client/docs/CreateMealPlanRequest.md)
+ - [CreateMealPlanResponse](ramekin_client/docs/CreateMealPlanResponse.md)
  - [CreateRecipeRequest](ramekin_client/docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](ramekin_client/docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](ramekin_client/docs/CreateScrapeRequest.md)
@@ -110,6 +116,9 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)
+ - [MealPlanItem](ramekin_client/docs/MealPlanItem.md)
+ - [MealPlanListResponse](ramekin_client/docs/MealPlanListResponse.md)
+ - [MealType](ramekin_client/docs/MealType.md)
  - [Measurement](ramekin_client/docs/Measurement.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
  - [PingResponse](ramekin_client/docs/PingResponse.md)
@@ -127,6 +136,7 @@ Class | Method | HTTP request | Description
  - [TagItem](ramekin_client/docs/TagItem.md)
  - [TagsListResponse](ramekin_client/docs/TagsListResponse.md)
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
+ - [UpdateMealPlanRequest](ramekin_client/docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
  - [UploadPhotoResponse](ramekin_client/docs/UploadPhotoResponse.md)
  - [VersionListResponse](ramekin_client/docs/VersionListResponse.md)

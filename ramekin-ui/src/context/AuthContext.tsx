@@ -12,6 +12,7 @@ import {
   ScrapeApi,
   EnrichApi,
   TagsApi,
+  MealPlansApi,
 } from "ramekin-client";
 
 interface AuthContextValue {
@@ -23,6 +24,7 @@ interface AuthContextValue {
   getScrapeApi: () => ScrapeApi;
   getEnrichApi: () => EnrichApi;
   getTagsApi: () => TagsApi;
+  getMealPlansApi: () => MealPlansApi;
   // Cached tags - fetched once, shared across components
   tags: Accessor<string[]>;
   tagsLoading: Accessor<boolean>;
@@ -62,6 +64,7 @@ export const AuthProvider: ParentComponent = (props) => {
   const getScrapeApi = () => new ScrapeApi(getAuthedConfig());
   const getEnrichApi = () => new EnrichApi(getAuthedConfig());
   const getTagsApi = () => new TagsApi(getAuthedConfig());
+  const getMealPlansApi = () => new MealPlansApi(getAuthedConfig());
 
   const refreshTags = async () => {
     if (!token()) {
@@ -97,6 +100,7 @@ export const AuthProvider: ParentComponent = (props) => {
     getScrapeApi,
     getEnrichApi,
     getTagsApi,
+    getMealPlansApi,
     tags,
     tagsLoading,
     refreshTags,

@@ -14,6 +14,8 @@
 
 # import models into model package
 from ramekin_client.models.capture_request import CaptureRequest
+from ramekin_client.models.create_meal_plan_request import CreateMealPlanRequest
+from ramekin_client.models.create_meal_plan_response import CreateMealPlanResponse
 from ramekin_client.models.create_recipe_request import CreateRecipeRequest
 from ramekin_client.models.create_recipe_response import CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest
@@ -30,6 +32,9 @@ from ramekin_client.models.ingredient import Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse
+from ramekin_client.models.meal_plan_item import MealPlanItem
+from ramekin_client.models.meal_plan_list_response import MealPlanListResponse
+from ramekin_client.models.meal_type import MealType
 from ramekin_client.models.measurement import Measurement
 from ramekin_client.models.pagination_metadata import PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse
@@ -47,6 +52,7 @@ from ramekin_client.models.sort_by import SortBy
 from ramekin_client.models.tag_item import TagItem
 from ramekin_client.models.tags_list_response import TagsListResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
+from ramekin_client.models.update_meal_plan_request import UpdateMealPlanRequest
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse
 from ramekin_client.models.version_list_response import VersionListResponse

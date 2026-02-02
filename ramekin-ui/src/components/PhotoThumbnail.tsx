@@ -3,7 +3,9 @@ import { createSignal, Show, onMount, onCleanup } from "solid-js";
 interface PhotoThumbnailProps {
   photoId: string;
   token: string;
-  onRemove: () => void;
+  onRemove?: () => void;
+  alt?: string;
+  class?: string;
 }
 
 export default function PhotoThumbnail(props: PhotoThumbnailProps) {
@@ -25,13 +27,15 @@ export default function PhotoThumbnail(props: PhotoThumbnailProps) {
   });
 
   return (
-    <div class="photo-thumbnail">
+    <div class={props.class ?? "photo-thumbnail"}>
       <Show when={src()} fallback={<div class="photo-loading">Loading...</div>}>
-        <img src={src()!} alt="Recipe photo" />
+        <img src={src()!} alt={props.alt ?? "Recipe photo"} />
       </Show>
-      <button type="button" class="photo-remove" onClick={props.onRemove}>
-        &times;
-      </button>
+      <Show when={props.onRemove}>
+        <button type="button" class="photo-remove" onClick={props.onRemove}>
+          &times;
+        </button>
+      </Show>
     </div>
   );
 }
