@@ -1,6 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export * from './CaptureRequest';
+export * from './CreateMealPlanRequest';
+export * from './CreateMealPlanResponse';
 export * from './CreateRecipeRequest';
 export * from './CreateRecipeResponse';
 export * from './CreateScrapeRequest';
@@ -17,6 +19,9 @@ export * from './Ingredient';
 export * from './ListRecipesResponse';
 export * from './LoginRequest';
 export * from './LoginResponse';
+export * from './MealPlanItem';
+export * from './MealPlanListResponse';
+export * from './MealType';
 export * from './Measurement';
 export * from './PaginationMetadata';
 export * from './PingResponse';
@@ -34,6 +39,7 @@ export * from './SortBy';
 export * from './TagItem';
 export * from './TagsListResponse';
 export * from './UnauthedPingResponse';
+export * from './UpdateMealPlanRequest';
 export * from './UpdateRecipeRequest';
 export * from './UploadPhotoResponse';
 export * from './VersionListResponse';

@@ -221,3 +221,29 @@ pub struct RecipeVersionTag {
     pub recipe_version_id: Uuid,
     pub tag_id: Uuid,
 }
+
+// Meal planning: assign recipes to dates and meal types
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::meal_plans)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct MealPlan {
+    pub id: Uuid,
+    pub user_id: Uuid,
+    pub recipe_id: Uuid,
+    pub meal_date: chrono::NaiveDate,
+    pub meal_type: String,
+    pub notes: Option<String>,
+    pub created_at: DateTime<Utc>,
+    pub deleted_at: Option<DateTime<Utc>>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::meal_plans)]
+pub struct NewMealPlan<'a> {
+    pub user_id: Uuid,
+    pub recipe_id: Uuid,
+    pub meal_date: chrono::NaiveDate,
+    pub meal_type: &'a str,
+    pub notes: Option<&'a str>,
+}

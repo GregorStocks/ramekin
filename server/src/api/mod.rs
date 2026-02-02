@@ -1,5 +1,6 @@
 pub mod enrich;
 pub mod import;
+pub mod meal_plans;
 pub mod photos;
 pub mod public;
 pub mod recipes;
@@ -46,6 +47,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         enrich::ApiDoc::openapi(),
         tags::ApiDoc::openapi(),
         import::ApiDoc::openapi(),
+        meal_plans::ApiDoc::openapi(),
     ];
 
     for module_spec in modules {

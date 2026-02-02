@@ -5,6 +5,8 @@ Cargo.toml
 README.md
 docs/AuthApi.md
 docs/CaptureRequest.md
+docs/CreateMealPlanRequest.md
+docs/CreateMealPlanResponse.md
 docs/CreateRecipeRequest.md
 docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
@@ -23,6 +25,10 @@ docs/Ingredient.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/MealPlanItem.md
+docs/MealPlanListResponse.md
+docs/MealPlansApi.md
+docs/MealType.md
 docs/Measurement.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
@@ -45,6 +51,7 @@ docs/TagsApi.md
 docs/TagsListResponse.md
 docs/TestingApi.md
 docs/UnauthedPingResponse.md
+docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UploadPhotoResponse.md
 docs/VersionListResponse.md
@@ -54,6 +61,7 @@ src/apis/auth_api.rs
 src/apis/configuration.rs
 src/apis/enrich_api.rs
 src/apis/import_api.rs
+src/apis/meal_plans_api.rs
 src/apis/mod.rs
 src/apis/photos_api.rs
 src/apis/recipes_api.rs
@@ -62,6 +70,8 @@ src/apis/tags_api.rs
 src/apis/testing_api.rs
 src/lib.rs
 src/models/capture_request.rs
+src/models/create_meal_plan_request.rs
+src/models/create_meal_plan_response.rs
 src/models/create_recipe_request.rs
 src/models/create_recipe_response.rs
 src/models/create_scrape_request.rs
@@ -78,6 +88,9 @@ src/models/ingredient.rs
 src/models/list_recipes_response.rs
 src/models/login_request.rs
 src/models/login_response.rs
+src/models/meal_plan_item.rs
+src/models/meal_plan_list_response.rs
+src/models/meal_type.rs
 src/models/measurement.rs
 src/models/mod.rs
 src/models/pagination_metadata.rs
@@ -96,6 +109,7 @@ src/models/sort_by.rs
 src/models/tag_item.rs
 src/models/tags_list_response.rs
 src/models/unauthed_ping_response.rs
+src/models/update_meal_plan_request.rs
 src/models/update_recipe_request.rs
 src/models/upload_photo_response.rs
 src/models/version_list_response.rs

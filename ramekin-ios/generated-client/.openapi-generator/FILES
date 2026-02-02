@@ -10,6 +10,7 @@ RamekinClient/Classes/OpenAPIs/APIs.swift
 RamekinClient/Classes/OpenAPIs/APIs/AuthAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/EnrichAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/ImportAPI.swift
+RamekinClient/Classes/OpenAPIs/APIs/MealPlansAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/PhotosAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/RecipesAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/ScrapeAPI.swift
@@ -22,6 +23,8 @@ RamekinClient/Classes/OpenAPIs/JSONDataEncoding.swift
 RamekinClient/Classes/OpenAPIs/JSONEncodingHelper.swift
 RamekinClient/Classes/OpenAPIs/Models.swift
 RamekinClient/Classes/OpenAPIs/Models/CaptureRequest.swift
+RamekinClient/Classes/OpenAPIs/Models/CreateMealPlanRequest.swift
+RamekinClient/Classes/OpenAPIs/Models/CreateMealPlanResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateRecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateScrapeRequest.swift
@@ -37,6 +40,9 @@ RamekinClient/Classes/OpenAPIs/Models/Ingredient.swift
 RamekinClient/Classes/OpenAPIs/Models/ListRecipesResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/MealPlanItem.swift
+RamekinClient/Classes/OpenAPIs/Models/MealPlanListResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/MealType.swift
 RamekinClient/Classes/OpenAPIs/Models/Measurement.swift
 RamekinClient/Classes/OpenAPIs/Models/ModelErrorResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/PaginationMetadata.swift
@@ -55,6 +61,7 @@ RamekinClient/Classes/OpenAPIs/Models/SortBy.swift
 RamekinClient/Classes/OpenAPIs/Models/TagItem.swift
 RamekinClient/Classes/OpenAPIs/Models/TagsListResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/UnauthedPingResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/UpdateMealPlanRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/UpdateRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/UploadPhotoResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/VersionListResponse.swift
@@ -65,6 +72,8 @@ RamekinClient/Classes/OpenAPIs/URLSessionImplementations.swift
 RamekinClient/Classes/OpenAPIs/Validation.swift
 docs/AuthAPI.md
 docs/CaptureRequest.md
+docs/CreateMealPlanRequest.md
+docs/CreateMealPlanResponse.md
 docs/CreateRecipeRequest.md
 docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
@@ -82,6 +91,10 @@ docs/Ingredient.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/MealPlanItem.md
+docs/MealPlanListResponse.md
+docs/MealPlansAPI.md
+docs/MealType.md
 docs/Measurement.md
 docs/ModelErrorResponse.md
 docs/PaginationMetadata.md
@@ -105,6 +118,7 @@ docs/TagsAPI.md
 docs/TagsListResponse.md
 docs/TestingAPI.md
 docs/UnauthedPingResponse.md
+docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UploadPhotoResponse.md
 docs/VersionListResponse.md
