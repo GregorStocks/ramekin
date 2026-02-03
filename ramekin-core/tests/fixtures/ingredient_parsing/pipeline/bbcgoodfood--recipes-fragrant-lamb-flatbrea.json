@@ -5,8 +5,13 @@
     {
       "raw": "half a 500g pack  bread mix - or make your own (see below)",
       "expected": {
-        "item": "half a 500g pack  bread mix - or make your own (see below)",
-        "measurements": [],
+        "item": "a 500g pack  bread mix - or make your own (see below)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
         "note": null
       }
     },
