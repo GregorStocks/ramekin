@@ -1476,14 +1476,6 @@ pub fn should_ignore_line(raw: &str) -> bool {
     false
 }
 
-/// Check if a line is a continuation line (starts with "and ", "or ", "plus ").
-/// These lines are merged into the previous ingredient rather than parsed separately.
-pub fn is_continuation_line(raw: &str) -> bool {
-    let trimmed = raw.trim();
-    let lower = trimmed.to_lowercase();
-    lower.starts_with("and ") || lower.starts_with("or ") || lower.starts_with("plus ")
-}
-
 /// Normalize section header capitalization.
 /// - All-caps like "FILLING" → "Filling"
 /// - Mixed case like "For the Steak Fajita Marinade" → kept as-is
@@ -1628,7 +1620,7 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
 /// Skips lines that should be ignored (scraper artifacts like "Gather Your Ingredients").
 pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
     let mut current_section: Option<String> = None;
-    let mut results: Vec<ParsedIngredient> = Vec::new();
+    let mut results = Vec::new();
 
     for line in blob.lines() {
         let trimmed = line.trim();
@@ -1650,25 +1642,6 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         if let Some(section_name) = detect_section_header(trimmed) {
             current_section = Some(section_name);
             continue; // Don't emit the header as an ingredient
-        }
-
-        // Check if this is a continuation line (starts with "and ", "or ", "plus ")
-        // If so, merge into the previous ingredient's note instead of creating a new ingredient
-        if let Some(prev) = results.last_mut() {
-            let lower = trimmed.to_lowercase();
-            if lower.starts_with("and ") || lower.starts_with("or ") || lower.starts_with("plus ") {
-                // Append to the previous ingredient's note
-                match &mut prev.note {
-                    Some(note) => {
-                        note.push_str(", ");
-                        note.push_str(trimmed);
-                    }
-                    None => {
-                        prev.note = Some(trimmed.to_string());
-                    }
-                }
-                continue;
-            }
         }
 
         // Parse the ingredient and apply current section
