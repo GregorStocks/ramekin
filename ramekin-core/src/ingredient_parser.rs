@@ -473,6 +473,21 @@ fn strip_leading_list_marker(s: &str) -> String {
     remaining.to_string()
 }
 
+/// Strip leading continuation words ("and ", "or ", "plus ") from ingredient lines.
+/// These appear when an ingredient is split across multiple lines in the source.
+fn strip_leading_continuation(s: &str) -> &str {
+    // Check case-insensitively by comparing lowercase prefix against lowercase start
+    for prefix in ["and ", "or ", "plus "] {
+        if s.len() >= prefix.len()
+            && s.get(..prefix.len())
+                .is_some_and(|start| start.eq_ignore_ascii_case(prefix))
+        {
+            return s.get(prefix.len()..).unwrap_or(s).trim_start();
+        }
+    }
+    s
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -1632,6 +1647,9 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         if trimmed.is_empty() {
             continue;
         }
+
+        // Strip leading continuation words (and, or, plus) from orphaned lines
+        let trimmed = strip_leading_continuation(trimmed);
 
         // Skip lines that should be ignored (scraper artifacts)
         if should_ignore_line(trimmed) {
