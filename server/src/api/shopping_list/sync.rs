@@ -152,10 +152,7 @@ pub async fn sync_items(
 
             let (server_id, version) = match diesel::insert_into(shopping_list_items::table)
                 .values(&new_item)
-                .on_conflict((
-                    shopping_list_items::user_id,
-                    shopping_list_items::client_id,
-                ))
+                .on_conflict((shopping_list_items::user_id, shopping_list_items::client_id))
                 .do_nothing()
                 .returning((shopping_list_items::id, shopping_list_items::version))
                 .get_result::<(Uuid, i32)>(conn)
@@ -298,8 +295,7 @@ pub async fn sync_items(
         }
 
         // 4. Get server changes since last_sync_at
-        let server_changes: Vec<SyncServerChange> = if let Some(last_sync) = request.last_sync_at
-        {
+        let server_changes: Vec<SyncServerChange> = if let Some(last_sync) = request.last_sync_at {
             let rows: Vec<ServerChangeRow> = shopping_list_items::table
                 .filter(shopping_list_items::user_id.eq(user.id))
                 .filter(shopping_list_items::deleted_at.is_null())

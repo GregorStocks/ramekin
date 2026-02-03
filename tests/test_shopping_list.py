@@ -436,7 +436,9 @@ def test_sync_returns_server_deletions(authed_api_client):
     api = ShoppingListApi(client)
 
     create_response = api.create_items(
-        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="server_deleted")])
+        CreateShoppingListRequest(
+            items=[CreateShoppingListItemRequest(item="server_deleted")]
+        )
     )
     item_id = create_response.ids[0]
 

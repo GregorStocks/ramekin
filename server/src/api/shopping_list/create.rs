@@ -92,10 +92,7 @@ pub async fn create_items(
             let id = if let Some(client_id) = item_req.client_id {
                 match diesel::insert_into(shopping_list_items::table)
                     .values(&new_item)
-                    .on_conflict((
-                        shopping_list_items::user_id,
-                        shopping_list_items::client_id,
-                    ))
+                    .on_conflict((shopping_list_items::user_id, shopping_list_items::client_id))
                     .do_nothing()
                     .returning(shopping_list_items::id)
                     .get_result::<Uuid>(conn)

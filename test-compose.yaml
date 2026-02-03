@@ -83,6 +83,7 @@ processes:
     availability:
       restart: "no"
       exit_on_end: true
+      exit_on_skipped: true
     depends_on:
       rust-tests-server:
         condition: process_completed_successfully
