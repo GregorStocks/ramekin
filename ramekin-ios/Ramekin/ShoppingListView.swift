@@ -102,29 +102,31 @@ struct ShoppingItemRow: View {
     let item: ShoppingItem
     let store: ShoppingListStore
 
+    private var displayText: String {
+        let name = item.item ?? ""
+        if let amount = item.amount, !amount.isEmpty {
+            return "\(name) · \(amount)"
+        }
+        return name
+    }
+
     var body: some View {
         Button {
             store.toggleChecked(item)
         } label: {
-            HStack(alignment: .top, spacing: 12) {
+            HStack(alignment: .center, spacing: 8) {
                 Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
                     .font(.body)
                     .foregroundColor(item.isChecked ? .green : .secondary)
 
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(item.item ?? "")
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(displayText)
                         .font(.body)
                         .strikethrough(item.isChecked)
                         .foregroundColor(item.isChecked ? .secondary : .primary)
 
-                    if let amount = item.amount, !amount.isEmpty {
-                        Text(amount)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-
                     if let recipeTitle = item.sourceRecipeTitle {
-                        Text("from \(recipeTitle)")
+                        Text(recipeTitle)
                             .font(.caption)
                             .foregroundColor(.orange)
                     }
@@ -135,6 +137,7 @@ struct ShoppingItemRow: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
     }
 }
 
