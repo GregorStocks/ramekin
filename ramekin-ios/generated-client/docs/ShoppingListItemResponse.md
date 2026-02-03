@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **String** |  | [optional] 
+**category** | **String** | Computed aisle category for grouping (e.g., \&quot;Produce\&quot;, \&quot;Dairy &amp; Eggs\&quot;) | 
 **id** | **UUID** |  | 
 **isChecked** | **Bool** |  | 
 **item** | **String** |  | 

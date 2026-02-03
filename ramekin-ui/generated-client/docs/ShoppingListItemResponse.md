@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `amount` | string
+`category` | string
 `id` | string
 `isChecked` | boolean
 `item` | string
@@ -25,6 +26,7 @@ import type { ShoppingListItemResponse } from ''
 // TODO: Update the object below with actual values
 const example = {
   "amount": null,
+  "category": null,
   "id": null,
   "isChecked": null,
   "item": null,

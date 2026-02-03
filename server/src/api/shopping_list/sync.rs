@@ -8,6 +8,7 @@ use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
+use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::sync::Arc;
@@ -96,6 +97,8 @@ pub struct SyncServerChange {
     pub sort_order: i32,
     pub version: i32,
     pub updated_at: DateTime<Utc>,
+    /// Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+    pub category: String,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -330,6 +333,7 @@ pub async fn sync_items(
                         version,
                         updated_at,
                     )| {
+                        let category = ingredient_categorizer::categorize(&item).to_string();
                         SyncServerChange {
                             id,
                             item,
@@ -341,6 +345,7 @@ pub async fn sync_items(
                             sort_order,
                             version,
                             updated_at,
+                            category,
                         }
                     },
                 )
@@ -378,6 +383,7 @@ pub async fn sync_items(
                         version,
                         updated_at,
                     )| {
+                        let category = ingredient_categorizer::categorize(&item).to_string();
                         SyncServerChange {
                             id,
                             item,
@@ -389,6 +395,7 @@ pub async fn sync_items(
                             sort_order,
                             version,
                             updated_at,
+                            category,
                         }
                     },
                 )

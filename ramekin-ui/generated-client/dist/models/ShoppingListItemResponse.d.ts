@@ -22,6 +22,12 @@ export interface ShoppingListItemResponse {
      */
     amount?: string | null;
     /**
+     * Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+     * @type {string}
+     * @memberof ShoppingListItemResponse
+     */
+    category: string;
+    /**
      *
      * @type {string}
      * @memberof ShoppingListItemResponse

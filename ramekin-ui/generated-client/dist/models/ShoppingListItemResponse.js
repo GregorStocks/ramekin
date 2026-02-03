@@ -15,6 +15,8 @@
  * Check if a given object implements the ShoppingListItemResponse interface.
  */
 export function instanceOfShoppingListItemResponse(value) {
+    if (!('category' in value) || value['category'] === undefined)
+        return false;
     if (!('id' in value) || value['id'] === undefined)
         return false;
     if (!('isChecked' in value) || value['isChecked'] === undefined)
@@ -38,6 +40,7 @@ export function ShoppingListItemResponseFromJSONTyped(json, ignoreDiscriminator)
     }
     return {
         'amount': json['amount'] == null ? undefined : json['amount'],
+        'category': json['category'],
         'id': json['id'],
         'isChecked': json['is_checked'],
         'item': json['item'],
@@ -58,6 +61,7 @@ export function ShoppingListItemResponseToJSONTyped(value, ignoreDiscriminator =
     }
     return {
         'amount': value['amount'],
+        'category': value['category'],
         'id': value['id'],
         'is_checked': value['isChecked'],
         'item': value['item'],

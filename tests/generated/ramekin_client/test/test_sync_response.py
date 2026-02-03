@@ -47,6 +47,7 @@ class TestSyncResponse(unittest.TestCase):
                 server_changes = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
+                        category = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 
@@ -79,6 +80,7 @@ class TestSyncResponse(unittest.TestCase):
                 server_changes = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
+                        category = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 

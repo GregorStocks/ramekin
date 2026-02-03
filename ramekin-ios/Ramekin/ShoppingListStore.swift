@@ -227,6 +227,7 @@ class ShoppingListStore: ObservableObject {
             item.sortOrder = Int32(change.sortOrder)
             item.sourceRecipeId = change.sourceRecipeId
             item.sourceRecipeTitle = change.sourceRecipeTitle
+            item.category = change.category
             item.updatedAt = change.updatedAt
             item.markSynced(serverVersion: Int32(change.version))
         } else {
@@ -239,6 +240,7 @@ class ShoppingListStore: ObservableObject {
             newItem.sortOrder = Int32(change.sortOrder)
             newItem.sourceRecipeId = change.sourceRecipeId
             newItem.sourceRecipeTitle = change.sourceRecipeTitle
+            newItem.category = change.category
             newItem.createdAt = Date()
             newItem.updatedAt = change.updatedAt
             newItem.markSynced(serverVersion: Int32(change.version))

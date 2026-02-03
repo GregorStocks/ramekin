@@ -15,6 +15,8 @@
  * Check if a given object implements the SyncServerChange interface.
  */
 export function instanceOfSyncServerChange(value) {
+    if (!('category' in value) || value['category'] === undefined)
+        return false;
     if (!('id' in value) || value['id'] === undefined)
         return false;
     if (!('isChecked' in value) || value['isChecked'] === undefined)
@@ -38,6 +40,7 @@ export function SyncServerChangeFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'amount': json['amount'] == null ? undefined : json['amount'],
+        'category': json['category'],
         'id': json['id'],
         'isChecked': json['is_checked'],
         'item': json['item'],
@@ -58,6 +61,7 @@ export function SyncServerChangeToJSONTyped(value, ignoreDiscriminator = false) 
     }
     return {
         'amount': value['amount'],
+        'category': value['category'],
         'id': value['id'],
         'is_checked': value['isChecked'],
         'item': value['item'],
