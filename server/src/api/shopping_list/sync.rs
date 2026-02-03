@@ -7,6 +7,7 @@ use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
+use diesel::upsert::on_constraint;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::sync::Arc;
@@ -150,9 +151,10 @@ pub async fn sync_items(
                 client_id: Some(create_req.client_id),
             };
 
+            // Use the unique constraint for conflict detection (dedup offline syncs)
             let (server_id, version) = match diesel::insert_into(shopping_list_items::table)
                 .values(&new_item)
-                .on_conflict((shopping_list_items::user_id, shopping_list_items::client_id))
+                .on_conflict(on_constraint("uq_shopping_list_client_id"))
                 .do_nothing()
                 .returning((shopping_list_items::id, shopping_list_items::version))
                 .get_result::<(Uuid, i32)>(conn)

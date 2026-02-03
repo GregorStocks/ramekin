@@ -6,6 +6,7 @@ use crate::models::NewShoppingListItem;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
+use diesel::upsert::on_constraint;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -90,9 +91,10 @@ pub async fn create_items(
             };
 
             let id = if let Some(client_id) = item_req.client_id {
+                // Use the unique constraint for conflict detection (dedup offline syncs)
                 match diesel::insert_into(shopping_list_items::table)
                     .values(&new_item)
-                    .on_conflict((shopping_list_items::user_id, shopping_list_items::client_id))
+                    .on_conflict(on_constraint("uq_shopping_list_client_id"))
                     .do_nothing()
                     .returning(shopping_list_items::id)
                     .get_result::<Uuid>(conn)
