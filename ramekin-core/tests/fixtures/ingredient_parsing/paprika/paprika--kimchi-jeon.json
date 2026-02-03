@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Dipping Sauce:",
-      "expected": {
-        "item": "Dipping Sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "65g sugar",
@@ -20,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -33,7 +30,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -84,7 +85,8 @@
       "expected": {
         "item": "Pancake:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -105,7 +107,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -118,7 +121,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -131,7 +135,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped coarse"
+        "note": "chopped coarse",
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -144,7 +149,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -161,7 +167,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "Dipping Sauce"
       }
     }
   ]

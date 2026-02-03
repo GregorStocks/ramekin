@@ -137,11 +137,7 @@
     },
     {
       "raw": "Topping Ingredients:",
-      "expected": {
-        "item": "Topping Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup brown sugar",
@@ -157,7 +153,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Topping Ingredients"
       }
     },
     {
@@ -170,7 +167,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Topping Ingredients"
       }
     },
     {
@@ -187,7 +185,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Topping Ingredients"
       }
     },
     {
@@ -204,7 +203,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Topping Ingredients"
       }
     }
   ]

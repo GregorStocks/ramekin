@@ -114,11 +114,7 @@
     },
     {
       "raw": "Sauce:",
-      "expected": {
-        "item": "Sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1¼ cups canned crushed tomatoes",
@@ -130,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -147,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -160,7 +158,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Sauce"
       }
     },
     {
@@ -173,7 +172,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Sauce"
       }
     },
     {
@@ -186,7 +186,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -203,7 +204,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -220,7 +222,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus extra for sprinkling"
+        "note": "plus extra for sprinkling",
+        "section": "Sauce"
       }
     },
     {
@@ -237,7 +240,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -245,7 +249,8 @@
       "expected": {
         "item": "Pizza:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -266,7 +271,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus extra for sprinkling"
+        "note": "plus extra for sprinkling",
+        "section": "Sauce"
       }
     },
     {
@@ -287,7 +293,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "section": "Sauce"
       }
     },
     {
@@ -304,7 +311,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     }
   ]

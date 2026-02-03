@@ -123,11 +123,7 @@
     },
     {
       "raw": "Assembly:",
-      "expected": {
-        "item": "Assembly:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 pieces sourdough or whole grain bread, toasted",
@@ -139,7 +135,8 @@
             "unit": "piece"
           }
         ],
-        "note": "toasted"
+        "note": "toasted",
+        "section": "Assembly"
       }
     },
     {
@@ -152,7 +149,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -160,7 +158,8 @@
       "expected": {
         "item": "fresh herbs",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "section": "Assembly"
       }
     }
   ]

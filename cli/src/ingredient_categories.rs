@@ -16,7 +16,7 @@ struct FixtureFile {
 
 #[derive(Deserialize)]
 struct IngredientFixture {
-    expected: ExpectedParsing,
+    expected: Option<ExpectedParsing>,
 }
 
 #[derive(Deserialize)]
@@ -102,7 +102,11 @@ fn process_file(path: &Path, ingredients: &mut BTreeMap<String, String>) -> Resu
     let fixture: FixtureFile = serde_json::from_str(&content)?;
 
     for ingredient in fixture.ingredients {
-        let item = ingredient.expected.item.trim().to_string();
+        // Skip section headers (they have is_section_header: true instead of expected)
+        let Some(expected) = ingredient.expected else {
+            continue;
+        };
+        let item = expected.item.trim().to_string();
         if !item.is_empty() && !ingredients.contains_key(&item) {
             let category = ingredient_categorizer::categorize(&item).to_string();
             ingredients.insert(item, category);

@@ -195,11 +195,7 @@
     },
     {
       "raw": "Assembly:",
-      "expected": {
-        "item": "Assembly:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 teaspoons smooth Dijon mustard",
@@ -211,7 +207,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -224,7 +221,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "section": "Assembly"
       }
     },
     {
@@ -245,7 +243,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -258,7 +257,8 @@
             "unit": null
           }
         ],
-        "note": "beaten with 1 teaspoon water"
+        "note": "beaten with 1 teaspoon water",
+        "section": "Assembly"
       }
     },
     {
@@ -266,7 +266,8 @@
       "expected": {
         "item": "Sesame seeds, ideally toasted",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "section": "Assembly"
       }
     }
   ]

@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Sauce:",
-      "expected": {
-        "item": "Sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons soy sauce",
@@ -20,7 +16,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -93,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -101,7 +103,8 @@
       "expected": {
         "item": "Pancakes:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -114,7 +117,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -135,7 +139,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -152,7 +157,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -169,7 +175,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -186,7 +193,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -203,7 +211,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -216,7 +225,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -233,7 +243,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -246,7 +257,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce"
       }
     },
     {
@@ -259,7 +271,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Sauce"
       }
     },
     {
@@ -276,7 +289,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "Sauce"
       }
     }
   ]

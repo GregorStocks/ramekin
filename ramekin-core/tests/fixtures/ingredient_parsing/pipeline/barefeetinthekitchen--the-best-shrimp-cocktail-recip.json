@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Shrimp Ingredients:",
-      "expected": {
-        "item": "Shrimp Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 pounds deveined ((shells removed and tails left on) jumbo shrimp (16-20 per pound))",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
@@ -89,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
@@ -102,7 +104,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
@@ -115,16 +118,13 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Shrimp Ingredients"
       }
     },
     {
       "raw": "Cocktail Sauce Ingredients:",
-      "expected": {
-        "item": "Cocktail Sauce Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup ketchup",
@@ -136,7 +136,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cocktail Sauce Ingredients"
       }
     },
     {
@@ -149,7 +150,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cocktail Sauce Ingredients"
       }
     },
     {
@@ -162,7 +164,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cocktail Sauce Ingredients"
       }
     },
     {
@@ -179,7 +182,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cocktail Sauce Ingredients"
       }
     },
     {
@@ -192,7 +196,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cocktail Sauce Ingredients"
       }
     },
     {
@@ -209,7 +214,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cocktail Sauce Ingredients"
       }
     }
   ]

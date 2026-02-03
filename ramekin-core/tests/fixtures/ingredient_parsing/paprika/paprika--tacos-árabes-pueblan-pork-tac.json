@@ -446,12 +446,7 @@
     },
     {
       "raw": "serving:",
-      "expected": {
-        "item": "serving:",
-        "measurements": [],
-        "note": null,
-        "section": "Yogurt Sauce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "12 (6-inch) pitas or flour tortillas, warmed",
@@ -468,7 +463,7 @@
           }
         ],
         "note": null,
-        "section": "Yogurt Sauce"
+        "section": "Serving"
       }
     },
     {
@@ -477,7 +472,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
-        "section": "Yogurt Sauce"
+        "section": "Serving"
       }
     },
     {
@@ -491,7 +486,7 @@
           }
         ],
         "note": "trimmed Lime wedges",
-        "section": "Yogurt Sauce"
+        "section": "Serving"
       }
     }
   ]

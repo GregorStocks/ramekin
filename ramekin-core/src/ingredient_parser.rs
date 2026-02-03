@@ -1506,7 +1506,7 @@ fn title_case(s: &str) -> String {
     result
 }
 
-/// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:").
+/// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:", "Topping Ingredients:").
 /// Returns Some(normalized_section_name) if it's a header, None if it's a regular ingredient.
 /// Section names are normalized: "FILLING" → "Filling", "for the sauce" → "For the Sauce".
 pub fn detect_section_header(raw: &str) -> Option<String> {
@@ -1533,12 +1533,17 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
     // Check if it matches common header patterns
     let name_lower = name.to_lowercase();
 
-    // "For the X" or "For X" patterns
+    // Pattern 1: Ends with "Ingredients" (e.g., "Topping Ingredients", "Crust Ingredients")
+    if name_lower.ends_with("ingredients") || name_lower.ends_with("ingredient") {
+        return Some(normalize_section_name(name));
+    }
+
+    // Pattern 2: "For the X" or "For X" patterns
     if name_lower.starts_with("for the ") || name_lower.starts_with("for ") {
         return Some(normalize_section_name(name));
     }
 
-    // All-caps short names (FILLING, DRIZZLE, TOPPING, SAUCE, etc.)
+    // Pattern 3: All-caps short names (FILLING, DRIZZLE, TOPPING, SAUCE, etc.)
     // Must be reasonably short and mostly uppercase letters/spaces
     if name.len() <= 40
         && name
@@ -1548,6 +1553,19 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
         && name.chars().any(|c| c.is_alphabetic())
     {
         return Some(normalize_section_name(name));
+    }
+
+    // Pattern 4: Mixed-case headers containing common section keywords
+    // Must be short (typical section names are brief) and contain no digits
+    if name.len() <= 50 && !name.chars().any(|c| c.is_ascii_digit()) {
+        const SECTION_KEYWORDS: &[&str] = &[
+            "topping", "filling", "frosting", "icing", "glaze", "sauce", "marinade", "dressing",
+            "crust", "batter", "drizzle", "garnish", "assembly", "serving", "optional", "coating",
+            "base", "cream", "streusel", "crumble",
+        ];
+        if SECTION_KEYWORDS.iter().any(|kw| name_lower.contains(kw)) {
+            return Some(normalize_section_name(name));
+        }
     }
 
     None
@@ -1640,6 +1658,48 @@ mod tests {
         assert_eq!(
             detect_section_header("FOR THE SAUCE:"),
             Some("For the Sauce".to_string())
+        );
+    }
+
+    #[test]
+    fn test_detect_section_header_ingredients_suffix() {
+        // Lines ending with "Ingredients" should be detected
+        assert_eq!(
+            detect_section_header("Topping Ingredients:"),
+            Some("Topping Ingredients".to_string())
+        );
+        assert_eq!(
+            detect_section_header("Crust Ingredients:"),
+            Some("Crust Ingredients".to_string())
+        );
+        assert_eq!(
+            detect_section_header("Optional Frosting Ingredients:"),
+            Some("Optional Frosting Ingredients".to_string())
+        );
+    }
+
+    #[test]
+    fn test_detect_section_header_mixed_case_keywords() {
+        // Mixed-case headers with section keywords should be detected
+        assert_eq!(
+            detect_section_header("Toppings:"),
+            Some("Toppings".to_string())
+        );
+        assert_eq!(
+            detect_section_header("optional toppings:"),
+            Some("Optional Toppings".to_string())
+        );
+        assert_eq!(
+            detect_section_header("Cream cheese filling:"),
+            Some("Cream Cheese Filling".to_string())
+        );
+        assert_eq!(
+            detect_section_header("Chocolate Glaze:"),
+            Some("Chocolate Glaze".to_string())
+        );
+        assert_eq!(
+            detect_section_header("For serving:"),
+            Some("For Serving".to_string())
         );
     }
 

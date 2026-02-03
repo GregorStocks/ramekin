@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Jellied cranberry sauce:",
-      "expected": {
-        "item": "Jellied cranberry sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup sugar",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -58,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -66,7 +65,8 @@
       "expected": {
         "item": "Pumpkin pie sugar:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -79,7 +79,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -96,7 +97,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -104,7 +106,8 @@
       "expected": {
         "item": "Thanksgiving Sidecar:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -117,7 +120,8 @@
             "unit": "dash"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -134,7 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -151,7 +156,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -168,7 +174,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -185,7 +192,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -202,7 +210,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -219,7 +228,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
@@ -227,16 +237,13 @@
       "expected": {
         "item": "Pumpkin pie sugar, to sprinkle on top",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Jellied Cranberry Sauce"
       }
     },
     {
       "raw": "Cranberry Sauce Manhattan:",
-      "expected": {
-        "item": "Cranberry Sauce Manhattan:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 dashes Angostura Aromatic bitters",
@@ -248,7 +255,8 @@
             "unit": "dash"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cranberry Sauce Manhattan"
       }
     },
     {
@@ -261,7 +269,8 @@
             "unit": "dash"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cranberry Sauce Manhattan"
       }
     },
     {
@@ -278,7 +287,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cranberry Sauce Manhattan"
       }
     },
     {
@@ -295,7 +305,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cranberry Sauce Manhattan"
       }
     },
     {
@@ -312,7 +323,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cranberry Sauce Manhattan"
       }
     },
     {
@@ -329,7 +341,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cranberry Sauce Manhattan"
       }
     }
   ]

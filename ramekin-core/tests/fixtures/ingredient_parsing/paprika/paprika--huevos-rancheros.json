@@ -41,18 +41,15 @@
     },
     {
       "raw": "Assembly:",
-      "expected": {
-        "item": "Assembly:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Salsa",
       "expected": {
         "item": "Salsa",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -60,7 +57,8 @@
       "expected": {
         "item": "Black beans",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -68,7 +66,8 @@
       "expected": {
         "item": "Cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -76,7 +75,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -84,7 +84,8 @@
       "expected": {
         "item": "Mexican cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -92,7 +93,8 @@
       "expected": {
         "item": "Coteja",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     }
   ]

@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Chicken filling ingredients:",
-      "expected": {
-        "item": "Chicken filling ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 pounds boneless skinless chicken thighs",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chicken Filling Ingredients"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chicken Filling Ingredients"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chicken Filling Ingredients"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chicken Filling Ingredients"
       }
     },
     {
@@ -80,16 +80,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chicken Filling Ingredients"
       }
     },
     {
       "raw": "Burrito ingredients:",
-      "expected": {
-        "item": "Burrito ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "6-8  flour tortillas (or 12-16 corn tortillas)",
@@ -101,7 +98,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Burrito Ingredients"
       }
     },
     {
@@ -118,7 +116,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Burrito Ingredients"
       }
     },
     {
@@ -131,7 +130,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Burrito Ingredients"
       }
     },
     {
@@ -144,16 +144,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Burrito Ingredients"
       }
     },
     {
       "raw": "Sauce ingredients:",
-      "expected": {
-        "item": "Sauce ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons butter",
@@ -169,7 +166,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     },
     {
@@ -182,7 +180,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     },
     {
@@ -195,7 +194,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     },
     {
@@ -208,7 +208,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     },
     {
@@ -221,7 +222,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     },
     {
@@ -234,7 +236,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     },
     {
@@ -251,7 +254,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     },
     {
@@ -264,7 +268,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sauce Ingredients"
       }
     }
   ]

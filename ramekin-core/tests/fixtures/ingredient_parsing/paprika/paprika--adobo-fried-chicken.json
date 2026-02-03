@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Dipping sauce:",
-      "expected": {
-        "item": "Dipping sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons fresh lemon juice",
@@ -20,7 +16,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -84,7 +85,8 @@
       "expected": {
         "item": "Broth:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -97,7 +99,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -110,7 +113,8 @@
             "unit": null
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -123,7 +127,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -136,7 +141,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -153,7 +159,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -166,7 +173,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -183,7 +191,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -196,7 +205,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -204,7 +214,8 @@
       "expected": {
         "item": "Chicken:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -221,7 +232,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus wings if desired (do not use breasts)"
+        "note": "plus wings if desired (do not use breasts)",
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -229,7 +241,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -246,7 +259,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -263,7 +277,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -280,7 +295,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -293,7 +309,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     },
     {
@@ -301,7 +318,8 @@
       "expected": {
         "item": "About 8 cups peanut oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Dipping Sauce"
       }
     }
   ]

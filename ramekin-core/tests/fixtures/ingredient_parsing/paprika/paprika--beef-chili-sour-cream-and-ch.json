@@ -226,11 +226,7 @@
     },
     {
       "raw": "Sour Cream and Cheddar Biscuits:",
-      "expected": {
-        "item": "Sour Cream and Cheddar Biscuits:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour",
@@ -246,7 +242,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     },
     {
@@ -263,7 +260,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     },
     {
@@ -280,7 +278,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     },
     {
@@ -293,7 +292,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     },
     {
@@ -306,7 +306,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     },
     {
@@ -327,7 +328,8 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated"
+        "note": "coarsely grated",
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     },
     {
@@ -335,7 +337,8 @@
       "expected": {
         "item": "Drained and chopped pickled jalapeños",
         "measurements": [],
-        "note": "to taste (I used about 2 tablespoons)"
+        "note": "to taste (I used about 2 tablespoons)",
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     },
     {
@@ -352,7 +355,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream and Cheddar Biscuits"
       }
     }
   ]

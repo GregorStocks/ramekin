@@ -169,18 +169,15 @@
     },
     {
       "raw": "Serving:",
-      "expected": {
-        "item": "Serving:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Lime wedges",
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     },
     {
@@ -188,7 +185,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     },
     {
@@ -196,7 +194,8 @@
       "expected": {
         "item": "Corn slaw",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     }
   ]

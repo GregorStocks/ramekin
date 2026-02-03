@@ -214,18 +214,15 @@
     },
     {
       "raw": "To finish (all optional):",
-      "expected": {
-        "item": "To finish :",
-        "measurements": [],
-        "note": "all optional"
-      }
+      "is_section_header": true
     },
     {
       "raw": "A couple spoonfuls heavy cream or dollops of yogurt",
       "expected": {
         "item": "A couple spoonfuls heavy cream or dollops of yogurt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "To Finish (All Optional)"
       }
     },
     {
@@ -238,7 +235,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "To Finish (All Optional)"
       }
     },
     {
@@ -251,7 +249,8 @@
             "unit": "handful"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "To Finish (All Optional)"
       }
     },
     {
@@ -259,7 +258,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "To Finish (All Optional)"
       }
     },
     {
@@ -267,7 +267,8 @@
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "To Finish (All Optional)"
       }
     },
     {
@@ -275,7 +276,8 @@
       "expected": {
         "item": "Toasted pita or naan wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "To Finish (All Optional)"
       }
     }
   ]

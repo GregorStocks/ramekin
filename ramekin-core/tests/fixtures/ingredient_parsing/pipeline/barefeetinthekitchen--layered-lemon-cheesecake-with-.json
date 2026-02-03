@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Crust Ingredients:",
-      "expected": {
-        "item": "Crust Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups almond flour",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Crust Ingredients"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Crust Ingredients"
       }
     },
     {
@@ -58,16 +56,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Crust Ingredients"
       }
     },
     {
       "raw": "Filling Ingredients:",
-      "expected": {
-        "item": "Filling Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "24 ounces cream cheese (room temperature)",
@@ -83,7 +78,8 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature"
+        "note": "room temperature",
+        "section": "Filling Ingredients"
       }
     },
     {
@@ -96,7 +92,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Filling Ingredients"
       }
     },
     {
@@ -113,7 +110,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Filling Ingredients"
       }
     },
     {
@@ -130,7 +128,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Filling Ingredients"
       }
     },
     {
@@ -143,7 +142,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Filling Ingredients"
       }
     },
     {
@@ -156,16 +156,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely minced, this was the zest from 1 large lemon"
+        "note": "finely minced, this was the zest from 1 large lemon",
+        "section": "Filling Ingredients"
       }
     },
     {
       "raw": "Sour Cream Topping Ingredients:",
-      "expected": {
-        "item": "Sour Cream Topping Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups sour cream",
@@ -181,7 +178,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream Topping Ingredients"
       }
     },
     {
@@ -198,16 +196,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Sour Cream Topping Ingredients"
       }
     },
     {
       "raw": "Glaze Ingredients:",
-      "expected": {
-        "item": "Glaze Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup sugar",
@@ -223,7 +218,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze Ingredients"
       }
     },
     {
@@ -236,7 +232,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze Ingredients"
       }
     },
     {
@@ -253,7 +250,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze Ingredients"
       }
     },
     {
@@ -266,7 +264,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze Ingredients"
       }
     }
   ]
