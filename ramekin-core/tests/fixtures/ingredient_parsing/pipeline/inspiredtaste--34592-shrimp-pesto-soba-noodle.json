@@ -56,8 +56,13 @@
     {
       "raw": "Half of a lemon",
       "expected": {
-        "item": "Half of a lemon",
-        "measurements": [],
+        "item": "of a lemon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
         "note": null
       }
     },
@@ -77,8 +82,13 @@
     {
       "raw": "Half of a seedless (English or hothouse) cucumber",
       "expected": {
-        "item": "Half of a seedless (English or hothouse) cucumber",
-        "measurements": [],
+        "item": "of a seedless (English or hothouse) cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
         "note": null
       }
     },

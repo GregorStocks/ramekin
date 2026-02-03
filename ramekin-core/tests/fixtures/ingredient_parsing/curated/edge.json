@@ -502,6 +502,62 @@
         ],
         "note": null
       }
+    },
+    {
+      "name": "leading_paren_with_unit",
+      "raw": "(half stick) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "stick"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "leading_paren_no_unit",
+      "raw": "(half block) cream cheese",
+      "expected": {
+        "item": "block cream cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "leading_paren_compound",
+      "raw": "(two 6-oz.) salmon filets",
+      "expected": {
+        "item": "6-oz. salmon filets",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "leading_paren_modifier",
+      "raw": "(heaping) salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "heaping"
+          }
+        ],
+        "note": null
+      }
     }
   ]
 }
