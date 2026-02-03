@@ -21,8 +21,9 @@ static INGREDIENT_MAP: LazyLock<Vec<(String, String)>> = LazyLock::new(|| {
         serde_json::from_str(json).expect("Failed to parse ingredients.json");
 
     let mut map: Vec<(String, String)> = data.categories.into_iter().collect();
-    // Sort by keyword length descending so longer/more specific matches are tried first
-    map.sort_by(|a, b| b.0.len().cmp(&a.0.len()));
+    // Sort by keyword length descending so longer/more specific matches are tried first.
+    // Secondary sort by keyword alphabetically for deterministic ordering.
+    map.sort_by(|a, b| b.0.len().cmp(&a.0.len()).then_with(|| a.0.cmp(&b.0)));
     map
 });
 
