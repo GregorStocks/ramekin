@@ -20,6 +20,28 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 8. **Document ALL issues you discover** in Open Issues, even if you're only fixing one. Future Claudes benefit from this documentation!
 9. Create a PR, then stop - leave remaining issues for the next Claude
 
+### Finding New Issues via ingredient-categories.csv
+
+The file `data/ingredient-categories.csv` is a quick way to spot pipeline parsing problems. Each row is a raw ingredient string paired with its assigned category; malformed or odd-looking strings often reveal parsing gaps or upstream extraction noise.
+
+Use targeted searches to find patterns:
+
+```bash
+# Leading bullets / list markers that shouldn't be part of the ingredient
+rg -n "^[&+\\-*]" data/ingredient-categories.csv
+
+# Lines starting with a parenthetical (often hidden quantities)
+rg -n "^\\(" data/ingredient-categories.csv
+
+# Orphaned continuation lines (likely belong to previous ingredient)
+rg -n "^(and|or|plus) " data/ingredient-categories.csv
+
+# Section headers or equipment lines (frequently end with colons or "pan", "bowl", etc.)
+rg -n ":[^,]*,|\\bpan\\b|\\bbowl\\b|\\bskillet\\b" data/ingredient-categories.csv
+```
+
+When you find a recurring pattern, add an Open Issue with a few concrete examples and (if possible) a rough count from `rg -c`.
+
 ### Is It Worth Fixing?
 
 Not every parsing quirk deserves a fix. For issues that seem one-in-a-million (e.g. an uncommon typo) or where it's not realistically possible to determine the original author's intent, it's fine to give up and say "we parse the entire ingredient string into `ingredient` and leave the amount, note, etc, blank". That's better than being _wrong_. Our #1 goal is not to be wrong.
@@ -33,47 +55,17 @@ Not every parsing quirk deserves a fix. For issues that seem one-in-a-million (e
 
 Issues are roughly ordered by potential impact. Update this list as you fix things or discover new issues.
 
-### Fixed
-
-- [x] **"of" not stripped after units** - "4 cloves of garlic" produced item="of garlic". Fixed by stripping "of " after recognized units in `extract_unit()`.
-
-- [x] **Measurement modifiers (scant, heaping, etc.)** - "scant 1 teaspoon salt" and "2 heaping tablespoons miso" now parse correctly. Modifiers are recognized and included in the unit (e.g., "scant teaspoon", "heaping tablespoons"). Supported modifiers: scant, heaping, heaped, rounded, level, generous, good, packed, lightly packed, firmly packed, loosely packed, slightly heaped, slightly heaping.
-
-- [x] **"and" in mixed numbers** - "2 and 1/2 teaspoons cinnamon" now parses correctly as amount="2 1/2". The parser recognizes "X and Y/Z" as a mixed number pattern and normalizes it to "X Y/Z".
-
-- [x] **Hyphen range with spaces** - "1 - 2 potatoes" now correctly extracts amount="1-2". The parser recognizes "X - Y" patterns (with spaces around hyphen) and normalizes them to "X-Y" format. 14 pipeline fixtures updated.
-
-- [x] **"or" alternatives in main text** - "1 pound or 3 heaping cups frozen pineapple" now correctly extracts both measurements. The fix adds a new Step 4.5 in `parse_ingredient()` that checks if remaining text starts with "or " followed by a valid measurement (amount AND unit required). This avoids false positives like "vanilla or chocolate ice cream" where "or" is part of the item name. 17 pipeline fixtures updated.
-
-- [x] **Unicode dashes in ranges** - "1–2 cups" (en-dash) and "1—2 tbsp" (em-dash) now parse correctly. Added `normalize_dashes()` to convert unicode dashes to ASCII hyphens early in the pipeline. 14 pipeline/paprika fixtures updated.
-
-- [x] **Slash-separated metrics** - "3.5 oz / 100g celery root" now correctly extracts both measurements. Step 4.6 checks if remaining text starts with "/ " followed by a measurement, similar to "or" handling. 32 pipeline fixtures updated.
-
-- [x] **Word numbers at start** - "One teaspoon of baking powder" and "Two pinches of salt" now parse correctly. Added `normalize_word_numbers()` to convert word numbers (one through twelve) to digits at the start of the string. 70 fixtures updated.
-
-- [x] **Leading comma after unit** - "2 large, boneless chicken breasts" now correctly strips the leading comma from item. Added `.trim_start_matches(',')` when extracting the item. 7 fixtures updated.
-
-- [x] **"N X-unit container" compound units** - "1 14 ounce can coconut milk" now correctly extracts unit="14 ounce can". Added `try_extract_compound_unit()` to recognize patterns like "NUMBER WEIGHT_UNIT CONTAINER". 32 fixtures updated.
-
-- [x] **Hyphenated compound units** - "1 28-oz. can tomatoes" and "1 14-ounce can" now correctly extract the hyphenated compound unit. Extended `try_extract_compound_unit()` to also handle "NUMBER-UNIT CONTAINER" patterns. 138 fixtures updated.
-
-- [x] **Metric units attached to numbers** - "1/3 cup 65g sugar" now correctly extracts both measurements. Added Step 4.7 with `try_extract_attached_metric()` to recognize patterns where a number is immediately followed by a metric unit (g, kg, ml, oz, lb) without space. Also handles chained alternatives like "226g/8 oz.". 211 fixtures updated.
-
-- [x] **Double-encoded HTML entities** - "&amp;#8531;" (double-encoded 1/3 fraction) now decodes correctly. Replaced manual entity decoding with the `html-escape` crate, which handles all named and numeric entities. Double-encoding is handled by decoding twice. Also normalizes non-breaking spaces to regular spaces. 199 fixtures updated.
-
-- [x] **Trailing comma before parenthetical note** - "1 sweet onion, (diced)" now correctly produces item="sweet onion" without the trailing comma. Added `.trim_end_matches(',')` when extracting the text before parenthetical notes. 708 fixtures updated.
-
-- [x] **Fresh/dried herb alternatives and ingredient-level alternatives** - "1 tablespoon fresh dill or 1 teaspoon dried dill" now produces item="fresh minced dill" with note="or 1 teaspoon dried dill". Added Step 5.5 to handle " or " in the middle of remaining text (after the primary item). When " or " is followed by a valid measurement (amount AND unit), the text before becomes the item and the alternative goes into the note. This also fixes ingredient-level alternatives like "1/2 cup water or 1/2 cup beef broth". 112 fixtures updated.
-
-- [x] **Leading comma in parenthetical notes** - "1 large tomato (, sliced )" now correctly produces note="sliced" instead of note=", sliced". Added `.trim_start_matches(',').trim()` when extracting note from parenthetical content. 247 fixtures updated (mostly whiteonricecouple.com).
-
-- [x] **Trailing ` )` in items** - "3 Tablespoons ketchup ((45ml) )" now correctly produces item="ketchup" instead of item="ketchup )". Added `.trim_end_matches(" )")` when extracting the item in Step 7. 111 fixtures updated.
-
-- [x] **Trailing comma in items** - "2 (1 lb each) pork tenderloins," now correctly produces item="pork tenderloins" instead of item="pork tenderloins,". Added `.trim_end_matches(',')` when extracting the item in Step 7. 32 fixtures updated.
-
-- [x] **Space before comma in items** - "4 scallions (about 2 ounces; 56 g), thinly sliced" now correctly produces item="scallions, thinly sliced" instead of item="scallions , thinly sliced". When parentheticals are extracted, they can leave a trailing space before the comma. Added `.replace(" ,", ",")` in Step 7. 156 fixtures updated (44 paprika + 112 pipeline).
-
 ### Open Issues
+
+Updated with examples from `data/ingredient-categories.csv` (pipeline audit).
+
+- [ ] **Leading list markers (&, -, +, *) before amounts** (~115 lines in ingredient-categories.csv) - Examples like "& 1/2 cups milk", "- 3 tablespoons ice water", "+ 1/3 cup panko breadcrumbs", "*5 cups flour". These look like list/bullet artifacts or HTML leftovers and should be stripped before parsing.
+
+- [ ] **Leading parenthetical quantities/descriptors** (~27 lines in ingredient-categories.csv) - Examples like "(half block) cream cheese", "(two 6-oz./170g) salmon filets", "(about) parsley", "(one envelope unflavored powdered gelatin)". When the line begins with a parenthetical, try parsing it as amount/unit and move any leftovers into the note.
+
+- [ ] **Standalone continuation lines starting with "and", "or", or "plus"** (~20 lines in ingredient-categories.csv) - Examples like "and 2 Tbsp sugar", "or 2 regular carrots", "plus 1 tablespoon extra-virgin olive oil". These likely belong to the previous ingredient as an alternative/addition but currently parse as orphaned lines.
+
+- [ ] **Non-ingredient or equipment lines leaking into ingredient lists** (spotty but recurring) - Examples like "A 12-cup Bundt pan, a pastry bag, and a large star tip", "9x13 metal baking pans or large roasting pan lined with foil", "Burger accompaniments, as you like". Should be filtered upstream or flagged as section headers.
 
 - [ ] **Trailing colons (section headers)** (~50 fixtures) - Items like "DRIZZLE:", "FILLING:", "For the dough:" are section headers that ended up in the ingredient list. These have no measurements and end with colons. Should be handled more principally by filtering them out as non-ingredients (or flagging them as section headers), rather than just stripping the colon. Examples from tasteofhome, barefeetinthekitchen.
 
