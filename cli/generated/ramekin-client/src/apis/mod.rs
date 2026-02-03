@@ -120,6 +120,7 @@ pub mod meal_plans_api;
 pub mod photos_api;
 pub mod recipes_api;
 pub mod scrape_api;
+pub mod shopping_list_api;
 pub mod tags_api;
 pub mod testing_api;
 

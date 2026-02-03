@@ -50,6 +50,12 @@ Class | Method | HTTP request | Description
 *ScrapeAPI* | [**createScrape**](docs/ScrapeAPI.md#createscrape) | **POST** /api/scrape | 
 *ScrapeAPI* | [**getScrape**](docs/ScrapeAPI.md#getscrape) | **GET** /api/scrape/{id} | 
 *ScrapeAPI* | [**retryScrape**](docs/ScrapeAPI.md#retryscrape) | **POST** /api/scrape/{id}/retry | 
+*ShoppingListAPI* | [**clearChecked**](docs/ShoppingListAPI.md#clearchecked) | **DELETE** /api/shopping-list/clear-checked | 
+*ShoppingListAPI* | [**createItems**](docs/ShoppingListAPI.md#createitems) | **POST** /api/shopping-list | 
+*ShoppingListAPI* | [**deleteItem**](docs/ShoppingListAPI.md#deleteitem) | **DELETE** /api/shopping-list/{id} | 
+*ShoppingListAPI* | [**listItems**](docs/ShoppingListAPI.md#listitems) | **GET** /api/shopping-list | 
+*ShoppingListAPI* | [**syncItems**](docs/ShoppingListAPI.md#syncitems) | **POST** /api/shopping-list/sync | 
+*ShoppingListAPI* | [**updateItem**](docs/ShoppingListAPI.md#updateitem) | **PUT** /api/shopping-list/{id} | 
 *TagsAPI* | [**createTag**](docs/TagsAPI.md#createtag) | **POST** /api/tags | 
 *TagsAPI* | [**deleteTag**](docs/TagsAPI.md#deletetag) | **DELETE** /api/tags/{id} | 
 *TagsAPI* | [**listAllTags**](docs/TagsAPI.md#listalltags) | **GET** /api/tags | 
@@ -61,12 +67,16 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CaptureRequest](docs/CaptureRequest.md)
+ - [ClearCheckedResponse](docs/ClearCheckedResponse.md)
  - [CreateMealPlanRequest](docs/CreateMealPlanRequest.md)
  - [CreateMealPlanResponse](docs/CreateMealPlanResponse.md)
  - [CreateRecipeRequest](docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](docs/CreateScrapeResponse.md)
+ - [CreateShoppingListItemRequest](docs/CreateShoppingListItemRequest.md)
+ - [CreateShoppingListRequest](docs/CreateShoppingListRequest.md)
+ - [CreateShoppingListResponse](docs/CreateShoppingListResponse.md)
  - [CreateTagRequest](docs/CreateTagRequest.md)
  - [CreateTagResponse](docs/CreateTagResponse.md)
  - [Direction](docs/Direction.md)
@@ -93,14 +103,24 @@ Class | Method | HTTP request | Description
  - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)
+ - [ShoppingListItemResponse](docs/ShoppingListItemResponse.md)
+ - [ShoppingListResponse](docs/ShoppingListResponse.md)
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)
  - [SortBy](docs/SortBy.md)
+ - [SyncCreateItem](docs/SyncCreateItem.md)
+ - [SyncCreatedItem](docs/SyncCreatedItem.md)
+ - [SyncRequest](docs/SyncRequest.md)
+ - [SyncResponse](docs/SyncResponse.md)
+ - [SyncServerChange](docs/SyncServerChange.md)
+ - [SyncUpdateItem](docs/SyncUpdateItem.md)
+ - [SyncUpdatedItem](docs/SyncUpdatedItem.md)
  - [TagItem](docs/TagItem.md)
  - [TagsListResponse](docs/TagsListResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
  - [UpdateMealPlanRequest](docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)
+ - [UpdateShoppingListItemRequest](docs/UpdateShoppingListItemRequest.md)
  - [UploadPhotoResponse](docs/UploadPhotoResponse.md)
  - [VersionListResponse](docs/VersionListResponse.md)
  - [VersionSummary](docs/VersionSummary.md)

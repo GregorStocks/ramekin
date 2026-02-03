@@ -38,20 +38,36 @@ struct ContentView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        NavigationStack {
-            if appState.isLoggedIn {
-                RecipeListView()
-                    .navigationDestination(for: NavigationDestination.self) { destination in
-                        switch destination {
-                        case .recipe(let id):
-                            RecipeDetailView(recipeId: id)
-                        case .settings:
-                            SettingsView()
-                        }
+        if appState.isLoggedIn {
+            TabView {
+                RecipesTab()
+                    .tabItem {
+                        Label("Recipes", systemImage: "book")
                     }
-            } else {
-                LoginView()
+
+                ShoppingListView()
+                    .tabItem {
+                        Label("Shopping", systemImage: "cart")
+                    }
             }
+        } else {
+            LoginView()
+        }
+    }
+}
+
+struct RecipesTab: View {
+    var body: some View {
+        NavigationStack {
+            RecipeListView()
+                .navigationDestination(for: NavigationDestination.self) { destination in
+                    switch destination {
+                    case .recipe(let id):
+                        RecipeDetailView(recipeId: id)
+                    case .settings:
+                        SettingsView()
+                    }
+                }
         }
     }
 }

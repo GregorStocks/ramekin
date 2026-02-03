@@ -5,6 +5,7 @@ pub mod photos;
 pub mod public;
 pub mod recipes;
 pub mod scrape;
+pub mod shopping_list;
 pub mod tags;
 pub mod testing;
 
@@ -48,6 +49,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         tags::ApiDoc::openapi(),
         import::ApiDoc::openapi(),
         meal_plans::ApiDoc::openapi(),
+        shopping_list::ApiDoc::openapi(),
     ];
 
     for module_spec in modules {

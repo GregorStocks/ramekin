@@ -247,3 +247,38 @@ pub struct NewMealPlan<'a> {
     pub meal_type: &'a str,
     pub notes: Option<&'a str>,
 }
+
+// Shopping list: track ingredients to buy (offline-capable)
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::shopping_list_items)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct ShoppingListItem {
+    pub id: Uuid,
+    pub user_id: Uuid,
+    pub item: String,
+    pub amount: Option<String>,
+    pub note: Option<String>,
+    pub source_recipe_id: Option<Uuid>,
+    pub source_recipe_title: Option<String>,
+    pub is_checked: bool,
+    pub sort_order: i32,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
+    pub client_id: Option<Uuid>,
+    pub version: i32,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::shopping_list_items)]
+pub struct NewShoppingListItem<'a> {
+    pub user_id: Uuid,
+    pub item: &'a str,
+    pub amount: Option<&'a str>,
+    pub note: Option<&'a str>,
+    pub source_recipe_id: Option<Uuid>,
+    pub source_recipe_title: Option<&'a str>,
+    pub is_checked: bool,
+    pub sort_order: i32,
+    pub client_id: Option<Uuid>,
+}

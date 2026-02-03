@@ -166,6 +166,7 @@ async fn main() {
         .nest("/api/scrape", api::scrape::router())
         .nest("/api/tags", api::tags::router())
         .nest("/api/meal-plans", api::meal_plans::router())
+        .nest("/api/shopping-list", api::shopping_list::router())
         .route("/api/enrich", post(api::enrich::enrich_recipe))
         .route("/api/import/recipe", post(api::import::import_recipe))
         .layer(middleware::from_fn_with_state(
