@@ -544,3 +544,49 @@ def test_version_increments_on_update(authed_api_client):
     api.update_item(item_id, UpdateShoppingListItemRequest(is_checked=False))
     list_response = api.list_items()
     assert list_response.items[0].version == 3
+
+
+def test_items_have_category(authed_api_client):
+    """Test that items include computed category based on ingredient name."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    # Create items with known categories
+    api.create_items(
+        CreateShoppingListRequest(
+            items=[
+                CreateShoppingListItemRequest(item="chicken breast"),
+                CreateShoppingListItemRequest(item="olive oil"),
+                CreateShoppingListItemRequest(item="fresh basil"),
+                CreateShoppingListItemRequest(item="parmesan cheese"),
+                CreateShoppingListItemRequest(item="unknown_xyz_ingredient"),
+            ]
+        )
+    )
+
+    list_response = api.list_items()
+    items_by_name = {item.item: item for item in list_response.items}
+
+    assert items_by_name["chicken breast"].category == "Meat & Seafood"
+    assert items_by_name["olive oil"].category == "Oils & Vinegars"
+    assert items_by_name["fresh basil"].category == "Produce"
+    assert items_by_name["parmesan cheese"].category == "Cheese"
+    assert items_by_name["unknown_xyz_ingredient"].category == "Other"
+
+
+def test_sync_server_changes_have_category(authed_api_client):
+    """Test that sync response includes category in server_changes."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    # Create an item via normal API
+    api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
+    )
+
+    # Sync with no last_sync_at should return all items with category
+    sync_response = api.sync_items(SyncRequest())
+
+    assert len(sync_response.server_changes) == 1
+    assert sync_response.server_changes[0].item == "butter"
+    assert sync_response.server_changes[0].category == "Dairy & Eggs"

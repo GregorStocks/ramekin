@@ -36,6 +36,7 @@ class TestShoppingListItemResponse(unittest.TestCase):
         if include_optional:
             return ShoppingListItemResponse(
                 amount = '',
+                category = '',
                 id = '',
                 is_checked = True,
                 item = '',
@@ -48,6 +49,7 @@ class TestShoppingListItemResponse(unittest.TestCase):
             )
         else:
             return ShoppingListItemResponse(
+                category = '',
                 id = '',
                 is_checked = True,
                 item = '',

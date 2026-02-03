@@ -13,6 +13,7 @@ import Modal from "../components/Modal";
 import VersionHistoryPanel from "../components/VersionHistoryPanel";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import VersionCompareModal from "../components/VersionCompareModal";
+import AddToShoppingListModal from "../components/AddToShoppingListModal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import type {
   RecipeResponse,
@@ -137,6 +138,9 @@ export default function ViewRecipePage() {
 
   // Rescrape state
   const [rescraping, setRescraping] = createSignal(false);
+
+  // Shopping list modal state
+  const [showShoppingListModal, setShowShoppingListModal] = createSignal(false);
 
   // Meal plan modal state
   const [showMealPlanModal, setShowMealPlanModal] = createSignal(false);
@@ -554,6 +558,14 @@ export default function ViewRecipePage() {
                 <button
                   type="button"
                   class="btn"
+                  onClick={() => setShowShoppingListModal(true)}
+                  disabled={isViewingHistoricalVersion()}
+                >
+                  Add to Shopping List
+                </button>
+                <button
+                  type="button"
+                  class="btn"
                   onClick={openMealPlanModal}
                   disabled={isViewingHistoricalVersion()}
                 >
@@ -845,6 +857,13 @@ export default function ViewRecipePage() {
               error={compareError()}
               versionA={compareVersions()?.[0] ?? null}
               versionB={compareVersions()?.[1] ?? null}
+            />
+
+            {/* Add to Shopping List Modal */}
+            <AddToShoppingListModal
+              isOpen={showShoppingListModal}
+              onClose={() => setShowShoppingListModal(false)}
+              recipe={r()}
             />
 
             {/* Add to Meal Plan Modal */}

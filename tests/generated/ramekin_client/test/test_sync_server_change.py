@@ -36,6 +36,7 @@ class TestSyncServerChange(unittest.TestCase):
         if include_optional:
             return SyncServerChange(
                 amount = '',
+                category = '',
                 id = '',
                 is_checked = True,
                 item = '',
@@ -48,6 +49,7 @@ class TestSyncServerChange(unittest.TestCase):
             )
         else:
             return SyncServerChange(
+                category = '',
                 id = '',
                 is_checked = True,
                 item = '',

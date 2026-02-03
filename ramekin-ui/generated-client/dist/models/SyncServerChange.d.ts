@@ -22,6 +22,12 @@ export interface SyncServerChange {
      */
     amount?: string | null;
     /**
+     * Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+     * @type {string}
+     * @memberof SyncServerChange
+     */
+    category: string;
+    /**
      *
      * @type {string}
      * @memberof SyncServerChange
