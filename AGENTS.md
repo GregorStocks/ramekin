@@ -4,8 +4,6 @@ We use uv and npx for the linter and code generation. Never use system Python or
 
 We plan to never actually delete any data from the DB - everything will be soft-deletes.
 
-Always explicitly get signoff from the user before creating a new database migration, since we want to get them right the first time.
-
 When adding new dependencies, make sure you're getting the latest version - you were trained several months ago so you probably don't know what the state of the art is.
 
 When adding new API endpoints, remember to add end-to-end tests before you start using them in the UI.

@@ -6,6 +6,7 @@ struct RecipeDetailView: View {
     @State private var recipe: RecipeResponse?
     @State private var isLoading = false
     @State private var error: String?
+    @State private var showingAddToShoppingList = false
 
     var body: some View {
         ScrollView {
@@ -20,6 +21,22 @@ struct RecipeDetailView: View {
         }
         .navigationTitle(recipe?.title ?? "Recipe")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            if let recipe = recipe, !recipe.ingredients.isEmpty {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showingAddToShoppingList = true
+                    } label: {
+                        Image(systemName: "cart.badge.plus")
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $showingAddToShoppingList) {
+            if let recipe = recipe {
+                AddToShoppingListSheet(recipe: recipe, isPresented: $showingAddToShoppingList)
+            }
+        }
         .task {
             await loadRecipe()
         }

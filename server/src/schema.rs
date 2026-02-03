@@ -95,6 +95,25 @@ diesel::table! {
 }
 
 diesel::table! {
+    shopping_list_items (id) {
+        id -> Uuid,
+        user_id -> Uuid,
+        item -> Text,
+        amount -> Nullable<Text>,
+        note -> Nullable<Text>,
+        source_recipe_id -> Nullable<Uuid>,
+        source_recipe_title -> Nullable<Text>,
+        is_checked -> Bool,
+        sort_order -> Int4,
+        created_at -> Timestamptz,
+        updated_at -> Timestamptz,
+        deleted_at -> Nullable<Timestamptz>,
+        client_id -> Nullable<Uuid>,
+        version -> Int4,
+    }
+}
+
+diesel::table! {
     step_outputs (id) {
         id -> Uuid,
         scrape_job_id -> Uuid,
@@ -135,6 +154,8 @@ diesel::joinable!(recipe_version_tags -> user_tags (tag_id));
 diesel::joinable!(recipes -> users (user_id));
 diesel::joinable!(scrape_jobs -> users (user_id));
 diesel::joinable!(sessions -> users (user_id));
+diesel::joinable!(shopping_list_items -> recipes (source_recipe_id));
+diesel::joinable!(shopping_list_items -> users (user_id));
 diesel::joinable!(step_outputs -> scrape_jobs (scrape_job_id));
 diesel::joinable!(user_tags -> users (user_id));
 
@@ -146,6 +167,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     recipes,
     scrape_jobs,
     sessions,
+    shopping_list_items,
     step_outputs,
     user_tags,
     users,

@@ -87,6 +87,12 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**create_scrape**](ramekin_client/docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
 *ScrapeApi* | [**get_scrape**](ramekin_client/docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**retry_scrape**](ramekin_client/docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*ShoppingListApi* | [**clear_checked**](ramekin_client/docs/ShoppingListApi.md#clear_checked) | **DELETE** /api/shopping-list/clear-checked | 
+*ShoppingListApi* | [**create_items**](ramekin_client/docs/ShoppingListApi.md#create_items) | **POST** /api/shopping-list | 
+*ShoppingListApi* | [**delete_item**](ramekin_client/docs/ShoppingListApi.md#delete_item) | **DELETE** /api/shopping-list/{id} | 
+*ShoppingListApi* | [**list_items**](ramekin_client/docs/ShoppingListApi.md#list_items) | **GET** /api/shopping-list | 
+*ShoppingListApi* | [**sync_items**](ramekin_client/docs/ShoppingListApi.md#sync_items) | **POST** /api/shopping-list/sync | 
+*ShoppingListApi* | [**update_item**](ramekin_client/docs/ShoppingListApi.md#update_item) | **PUT** /api/shopping-list/{id} | 
 *TagsApi* | [**create_tag**](ramekin_client/docs/TagsApi.md#create_tag) | **POST** /api/tags | 
 *TagsApi* | [**delete_tag**](ramekin_client/docs/TagsApi.md#delete_tag) | **DELETE** /api/tags/{id} | 
 *TagsApi* | [**list_all_tags**](ramekin_client/docs/TagsApi.md#list_all_tags) | **GET** /api/tags | 
@@ -98,12 +104,16 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
+ - [ClearCheckedResponse](ramekin_client/docs/ClearCheckedResponse.md)
  - [CreateMealPlanRequest](ramekin_client/docs/CreateMealPlanRequest.md)
  - [CreateMealPlanResponse](ramekin_client/docs/CreateMealPlanResponse.md)
  - [CreateRecipeRequest](ramekin_client/docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](ramekin_client/docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](ramekin_client/docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](ramekin_client/docs/CreateScrapeResponse.md)
+ - [CreateShoppingListItemRequest](ramekin_client/docs/CreateShoppingListItemRequest.md)
+ - [CreateShoppingListRequest](ramekin_client/docs/CreateShoppingListRequest.md)
+ - [CreateShoppingListResponse](ramekin_client/docs/CreateShoppingListResponse.md)
  - [CreateTagRequest](ramekin_client/docs/CreateTagRequest.md)
  - [CreateTagResponse](ramekin_client/docs/CreateTagResponse.md)
  - [Direction](ramekin_client/docs/Direction.md)
@@ -130,14 +140,24 @@ Class | Method | HTTP request | Description
  - [RescrapeResponse](ramekin_client/docs/RescrapeResponse.md)
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)
+ - [ShoppingListItemResponse](ramekin_client/docs/ShoppingListItemResponse.md)
+ - [ShoppingListResponse](ramekin_client/docs/ShoppingListResponse.md)
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)
  - [SortBy](ramekin_client/docs/SortBy.md)
+ - [SyncCreateItem](ramekin_client/docs/SyncCreateItem.md)
+ - [SyncCreatedItem](ramekin_client/docs/SyncCreatedItem.md)
+ - [SyncRequest](ramekin_client/docs/SyncRequest.md)
+ - [SyncResponse](ramekin_client/docs/SyncResponse.md)
+ - [SyncServerChange](ramekin_client/docs/SyncServerChange.md)
+ - [SyncUpdateItem](ramekin_client/docs/SyncUpdateItem.md)
+ - [SyncUpdatedItem](ramekin_client/docs/SyncUpdatedItem.md)
  - [TagItem](ramekin_client/docs/TagItem.md)
  - [TagsListResponse](ramekin_client/docs/TagsListResponse.md)
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
  - [UpdateMealPlanRequest](ramekin_client/docs/UpdateMealPlanRequest.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
+ - [UpdateShoppingListItemRequest](ramekin_client/docs/UpdateShoppingListItemRequest.md)
  - [UploadPhotoResponse](ramekin_client/docs/UploadPhotoResponse.md)
  - [VersionListResponse](ramekin_client/docs/VersionListResponse.md)
  - [VersionSummary](ramekin_client/docs/VersionSummary.md)
