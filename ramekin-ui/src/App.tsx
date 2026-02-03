@@ -11,6 +11,7 @@ import EditRecipePage from "./pages/EditRecipePage";
 import CapturePage from "./pages/CapturePage";
 import TagsPage from "./pages/TagsPage";
 import MealPlanPage from "./pages/MealPlanPage";
+import ShoppingListPage from "./pages/ShoppingListPage";
 import type { ParentComponent } from "solid-js";
 
 const ProtectedRoute: ParentComponent = (props) => {
@@ -90,6 +91,14 @@ function App() {
           component={() => (
             <ProtectedRoute>
               <MealPlanPage />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path="/shopping-list"
+          component={() => (
+            <ProtectedRoute>
+              <ShoppingListPage />
             </ProtectedRoute>
           )}
         />

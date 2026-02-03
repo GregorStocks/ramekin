@@ -3000,7 +3000,8 @@
           "is_checked",
           "sort_order",
           "version",
-          "updated_at"
+          "updated_at",
+          "category"
         ],
         "properties": {
           "amount": {
@@ -3008,6 +3009,10 @@
               "string",
               "null"
             ]
+          },
+          "category": {
+            "type": "string",
+            "description": "Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")"
           },
           "id": {
             "type": "string",
@@ -3267,7 +3272,8 @@
           "is_checked",
           "sort_order",
           "version",
-          "updated_at"
+          "updated_at",
+          "category"
         ],
         "properties": {
           "amount": {
@@ -3275,6 +3281,10 @@
               "string",
               "null"
             ]
+          },
+          "category": {
+            "type": "string",
+            "description": "Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")"
           },
           "id": {
             "type": "string",

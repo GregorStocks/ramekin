@@ -38,6 +38,7 @@ class TestShoppingListResponse(unittest.TestCase):
                 items = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
+                        category = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 
@@ -54,6 +55,7 @@ class TestShoppingListResponse(unittest.TestCase):
                 items = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
+                        category = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 

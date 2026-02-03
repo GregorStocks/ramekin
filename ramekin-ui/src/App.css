@@ -2502,3 +2502,196 @@
   color: #4caf50;
   font-weight: 500;
 }
+
+/* Shopping List Page */
+.shopping-list-page {
+  max-width: 600px;
+}
+
+.shopping-list-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.shopping-list-page .empty-state {
+  padding: 3rem 1rem;
+}
+
+.shopping-list-page .empty-hint {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.shopping-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shopping-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.shopping-item:hover {
+  border-color: #444;
+}
+
+.shopping-item.checked {
+  opacity: 0.6;
+}
+
+.shopping-item.checked .shopping-item-name {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.shopping-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.shopping-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #646cff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.shopping-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.shopping-item-name {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.shopping-item-amount {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.shopping-item-source {
+  font-size: 0.8rem;
+  color: #646cff;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.shopping-item-source:hover {
+  text-decoration: underline;
+}
+
+.shopping-item-delete {
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.shopping-item:hover .shopping-item-delete {
+  opacity: 1;
+}
+
+.shopping-item-delete:hover {
+  color: #dc3545;
+}
+
+/* Add to Shopping List Modal */
+.add-shopping-modal .ingredient-select-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #333;
+}
+
+.add-shopping-modal .select-all-btn {
+  font-size: 0.85rem;
+  color: #646cff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.add-shopping-modal .select-all-btn:hover {
+  text-decoration: underline;
+}
+
+.add-shopping-modal .ingredient-select-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-shopping-modal .ingredient-select-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: #252525;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-shopping-modal .ingredient-select-item:hover {
+  background: #2a2a2a;
+}
+
+.add-shopping-modal .ingredient-select-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #646cff;
+  cursor: pointer;
+}
+
+.add-shopping-modal .ingredient-text {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.add-shopping-modal .add-count {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #333;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.add-shopping-success {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #4caf50;
+  font-weight: 500;
+}

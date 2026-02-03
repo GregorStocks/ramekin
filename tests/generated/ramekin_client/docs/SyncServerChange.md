@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **str** |  | [optional] 
+**category** | **str** | Computed aisle category for grouping (e.g., \&quot;Produce\&quot;, \&quot;Dairy &amp; Eggs\&quot;) | 
 **id** | **UUID** |  | 
 **is_checked** | **bool** |  | 
 **item** | **str** |  | 

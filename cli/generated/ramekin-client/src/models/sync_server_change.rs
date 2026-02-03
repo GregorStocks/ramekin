@@ -20,6 +20,9 @@ pub struct SyncServerChange {
         skip_serializing_if = "Option::is_none"
     )]
     pub amount: Option<Option<String>>,
+    /// Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")
+    #[serde(rename = "category")]
+    pub category: String,
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
     #[serde(rename = "is_checked")]
@@ -57,6 +60,7 @@ pub struct SyncServerChange {
 
 impl SyncServerChange {
     pub fn new(
+        category: String,
         id: uuid::Uuid,
         is_checked: bool,
         item: String,
@@ -66,6 +70,7 @@ impl SyncServerChange {
     ) -> SyncServerChange {
         SyncServerChange {
             amount: None,
+            category,
             id,
             is_checked,
             item,
