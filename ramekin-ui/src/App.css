@@ -2437,3 +2437,68 @@
   flex: 1;
   font-size: 0.9rem;
 }
+
+/* Add to Meal Plan Modal */
+.meal-plan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.meal-plan-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meal-plan-form label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.meal-plan-form input[type="date"] {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #252525;
+  color: #fff;
+}
+
+.meal-plan-form input[type="date"]:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.meal-type-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.meal-type-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #2a2a2a;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.meal-type-button:hover {
+  border-color: #646cff;
+}
+
+.meal-type-button.selected {
+  background: #646cff;
+  border-color: #646cff;
+  color: #fff;
+}
+
+.meal-plan-success {
+  text-align: center;
+  padding: 1rem;
+  color: #4caf50;
+  font-weight: 500;
+}
