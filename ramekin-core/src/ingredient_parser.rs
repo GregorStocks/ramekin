@@ -406,6 +406,21 @@ fn normalize_unicode(s: &str) -> String {
 /// Only converts at word boundaries and only at the start to avoid
 /// changing words like "someone" or "twenty-one" mid-string.
 fn normalize_word_numbers(s: &str) -> String {
+    // Handle fractional words first (before whole numbers)
+    let fraction_to_digit = [("half", "1/2"), ("quarter", "1/4")];
+
+    let s_lower = s.to_lowercase();
+    for (word, digit) in fraction_to_digit {
+        if s_lower.starts_with(word) {
+            if let Some(after) = s.get(word.len()..) {
+                if after.is_empty() || after.starts_with(char::is_whitespace) {
+                    return format!("{}{}", digit, after);
+                }
+            }
+        }
+    }
+
+    // Handle whole number words
     let word_to_digit = [
         ("one", "1"),
         ("two", "2"),
@@ -421,7 +436,6 @@ fn normalize_word_numbers(s: &str) -> String {
         ("twelve", "12"),
     ];
 
-    let s_lower = s.to_lowercase();
     for (word, digit) in word_to_digit {
         if s_lower.starts_with(word) {
             // Check for word boundary (space or end of string)
@@ -490,6 +504,35 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
     while remaining.contains("))") {
         remaining = remaining.replace("))", ")");
+    }
+
+    // Unwrap leading parentheticals that contain quantities
+    // e.g., "(half stick) butter" -> "1/2 stick butter"
+    // But NOT "(optional) 1/4 cup" which should keep the paren structure
+    if remaining.starts_with('(') {
+        if let Some(close_idx) = remaining.find(')') {
+            let paren_content = remaining.get(1..close_idx).unwrap_or("").trim();
+
+            // Normalize word numbers in paren content (e.g., "half" -> "1/2", "two" -> "2")
+            let normalized_content = normalize_word_numbers(paren_content);
+
+            // Only unwrap if the content starts with a digit (after normalization)
+            // or is a known measurement modifier like "heaping", "scant"
+            let first_char = normalized_content.chars().next();
+            let is_quantity = first_char.is_some_and(|c| c.is_ascii_digit());
+            let is_modifier = MEASUREMENT_MODIFIERS
+                .iter()
+                .any(|&m| normalized_content.eq_ignore_ascii_case(m));
+
+            if is_quantity || is_modifier {
+                let after_paren = remaining.get(close_idx + 1..).unwrap_or("").trim();
+                remaining = if after_paren.is_empty() {
+                    normalized_content
+                } else {
+                    format!("{} {}", normalized_content, after_paren)
+                };
+            }
+        }
     }
 
     // Step 1: Extract any parenthetical content (measurements or prep notes)

@@ -197,8 +197,13 @@
     {
       "raw": "half an english cucumber, sliced thin on the bias",
       "expected": {
-        "item": "half an english cucumber",
-        "measurements": [],
+        "item": "an english cucumber",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
         "note": "sliced thin on the bias",
         "section": "For the Sandwich"
       }
