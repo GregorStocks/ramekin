@@ -3,9 +3,9 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var appState: AppState
 
-    @State private var serverURL: String = ""
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @State private var serverURL: String = "https://media.noodles:5173"
+    @State private var username: String = "t"
+    @State private var password: String = "t"
 
     @State private var isLoading: Bool = false
     @State private var errorMessage: String?
@@ -39,7 +39,7 @@ struct LoginView: View {
             }
 
             Section("Server") {
-                TextField("https://your-server.com", text: $serverURL)
+                TextField("https://media.noodles:5173", text: $serverURL)
                     .textContentType(.URL)
                     .keyboardType(.URL)
                     .autocapitalization(.none)
