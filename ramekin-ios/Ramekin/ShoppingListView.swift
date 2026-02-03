@@ -51,32 +51,12 @@ struct ShoppingListView: View {
 
     private var itemsList: some View {
         List {
-            let unchecked = store.items.filter { !$0.isChecked }
-            let checked = store.items.filter(\.isChecked)
-
-            if !unchecked.isEmpty {
-                Section {
-                    ForEach(unchecked, id: \.id) { item in
-                        ShoppingItemRow(item: item, store: store)
-                    }
-                    .onDelete { offsets in
-                        for offset in offsets {
-                            store.deleteItem(unchecked[offset])
-                        }
-                    }
-                }
+            ForEach(store.items, id: \.id) { item in
+                ShoppingItemRow(item: item, store: store)
             }
-
-            if !checked.isEmpty {
-                Section("Checked") {
-                    ForEach(checked, id: \.id) { item in
-                        ShoppingItemRow(item: item, store: store)
-                    }
-                    .onDelete { offsets in
-                        for offset in offsets {
-                            store.deleteItem(checked[offset])
-                        }
-                    }
+            .onDelete { offsets in
+                for offset in offsets {
+                    store.deleteItem(store.items[offset])
                 }
             }
         }

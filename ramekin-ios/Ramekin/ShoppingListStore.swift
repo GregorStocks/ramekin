@@ -51,30 +51,22 @@ class ShoppingListStore: ObservableObject {
         sourceRecipeId: UUID? = nil,
         sourceRecipeTitle: String? = nil
     ) {
-        if let existing = findExistingItem(name: name) {
-            AmountAggregator.aggregate(existing: existing, newAmount: amount)
-        } else {
-            let maxSort = items.filter { !$0.isChecked }.map(\.sortOrder).max() ?? -1
-            _ = ShoppingItem.create(
-                in: coreDataStack.viewContext, item: name, amount: amount, note: note,
-                sourceRecipeId: sourceRecipeId, sourceRecipeTitle: sourceRecipeTitle, sortOrder: maxSort + 1
-            )
-        }
+        let maxSort = items.map(\.sortOrder).max() ?? -1
+        _ = ShoppingItem.create(
+            in: coreDataStack.viewContext, item: name, amount: amount, note: note,
+            sourceRecipeId: sourceRecipeId, sourceRecipeTitle: sourceRecipeTitle, sortOrder: maxSort + 1
+        )
         saveAndSync()
     }
 
     func addItemsFromRecipe(ingredients: [(name: String, amount: String?)], recipeId: UUID, recipeTitle: String) {
-        var maxSort = items.filter { !$0.isChecked }.map(\.sortOrder).max() ?? -1
+        var maxSort = items.map(\.sortOrder).max() ?? -1
         for ingredient in ingredients {
-            if let existing = findExistingItem(name: ingredient.name) {
-                AmountAggregator.aggregate(existing: existing, newAmount: ingredient.amount)
-            } else {
-                maxSort += 1
-                _ = ShoppingItem.create(
-                    in: coreDataStack.viewContext, item: ingredient.name, amount: ingredient.amount,
-                    sourceRecipeId: recipeId, sourceRecipeTitle: recipeTitle, sortOrder: maxSort
-                )
-            }
+            maxSort += 1
+            _ = ShoppingItem.create(
+                in: coreDataStack.viewContext, item: ingredient.name, amount: ingredient.amount,
+                sourceRecipeId: recipeId, sourceRecipeTitle: recipeTitle, sortOrder: maxSort
+            )
         }
         saveAndSync()
     }
@@ -245,67 +237,4 @@ class ShoppingListStore: ObservableObject {
         }
     }
 
-    private func findExistingItem(name: String) -> ShoppingItem? {
-        let normalized = name.lowercased().trimmingCharacters(in: .whitespaces)
-        return items.first { item in
-            guard let itemName = item.item else { return false }
-            return itemName.lowercased().trimmingCharacters(in: .whitespaces) == normalized &&
-                   item.syncStatusEnum != .pendingDelete
-        }
-    }
-}
-
-// MARK: - Amount Aggregation Helper
-
-private enum AmountAggregator {
-    static func aggregate(existing: ShoppingItem, newAmount: String?) {
-        guard let newAmount = newAmount, !newAmount.isEmpty else { return }
-        guard let existingAmount = existing.amount, !existingAmount.isEmpty else {
-            existing.amount = newAmount
-            existing.markUpdated()
-            return
-        }
-
-        if let combined = combine(existingAmount, newAmount) {
-            existing.amount = combined
-        } else {
-            existing.amount = "\(existingAmount), \(newAmount)"
-        }
-        existing.markUpdated()
-    }
-
-    private static func combine(_ amount1: String, _ amount2: String) -> String? {
-        guard let (val1, unit1) = parse(amount1),
-              let (val2, unit2) = parse(amount2),
-              unit1 == unit2 else { return nil }
-
-        let total = val1 + val2
-        let unit = String(amount1.drop(while: { $0.isNumber || $0 == "/" || $0 == "." || $0 == " " }))
-        return total == floor(total)
-            ? "\(Int(total)) \(unit)".trimmingCharacters(in: .whitespaces)
-            : "\(total) \(unit)".trimmingCharacters(in: .whitespaces)
-    }
-
-    private static func parse(_ amount: String) -> (Double, String)? {
-        let pattern = #"^([\d./]+)\s*(.*)$"#
-        guard let regex = try? NSRegularExpression(pattern: pattern),
-              let match = regex.firstMatch(in: amount, range: NSRange(amount.startIndex..., in: amount)),
-              let numRange = Range(match.range(at: 1), in: amount),
-              let unitRange = Range(match.range(at: 2), in: amount) else { return nil }
-
-        let numString = String(amount[numRange])
-        let unit = String(amount[unitRange]).trimmingCharacters(in: .whitespaces).lowercased()
-
-        let value: Double
-        if numString.contains("/") {
-            let parts = numString.split(separator: "/")
-            guard parts.count == 2,
-                  let num = Double(parts[0]), let den = Double(parts[1]), den != 0 else { return nil }
-            value = num / den
-        } else {
-            guard let num = Double(numString) else { return nil }
-            value = num
-        }
-        return (value, unit)
-    }
 }
