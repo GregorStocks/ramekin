@@ -5,8 +5,8 @@
 use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
 use ramekin_core::ingredient_parser::{
-    detect_section_header, parse_ingredient, parse_ingredients, should_ignore_line, Measurement,
-    ParsedIngredient,
+    detect_section_header, is_continuation_line, parse_ingredient, parse_ingredients,
+    should_ignore_line, Measurement, ParsedIngredient,
 };
 use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use ramekin_core::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
@@ -35,12 +35,15 @@ struct RecipeTestFile {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct IngredientTestCase {
     raw: String,
-    /// Expected output. None if this is a section header (filtered out).
+    /// Expected output. None if this is a section header or continuation (filtered out).
     #[serde(default, skip_serializing_if = "Option::is_none")]
     expected: Option<Expected>,
     /// True if this raw line is a section header (not an ingredient).
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     is_section_header: bool,
+    /// True if this raw line is a continuation (merged into previous ingredient).
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    is_continuation: bool,
 }
 
 /// Expected output from parsing
@@ -168,6 +171,7 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
                 raw,
                 expected: Some(expected),
                 is_section_header: false,
+                is_continuation: false,
             });
         }
 
@@ -259,6 +263,15 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                             raw: raw.clone(),
                             expected: None,
                             is_section_header: true,
+                            is_continuation: false,
+                        });
+                    } else if is_continuation_line(raw) {
+                        // This is a continuation line - merged into previous ingredient
+                        new_ingredients.push(IngredientTestCase {
+                            raw: raw.clone(),
+                            expected: None,
+                            is_section_header: false,
+                            is_continuation: true,
                         });
                     } else if let Some(result) = batch_iter.next() {
                         // Regular ingredient - use the batch result
@@ -266,6 +279,7 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                             raw: result.raw,
                             expected: Some(result.expected),
                             is_section_header: false,
+                            is_continuation: false,
                         });
                     }
                 }
@@ -486,6 +500,7 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
                 raw,
                 expected: Some(expected),
                 is_section_header: false,
+                is_continuation: false,
             });
         }
 

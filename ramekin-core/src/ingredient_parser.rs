@@ -473,21 +473,6 @@ fn strip_leading_list_marker(s: &str) -> String {
     remaining.to_string()
 }
 
-/// Strip leading continuation words ("and ", "or ", "plus ") from ingredient lines.
-/// These appear when an ingredient is split across multiple lines in the source.
-fn strip_leading_continuation(s: &str) -> &str {
-    // Check case-insensitively by comparing lowercase prefix against lowercase start
-    for prefix in ["and ", "or ", "plus "] {
-        if s.len() >= prefix.len()
-            && s.get(..prefix.len())
-                .is_some_and(|start| start.eq_ignore_ascii_case(prefix))
-        {
-            return s.get(prefix.len()..).unwrap_or(s).trim_start();
-        }
-    }
-    s
-}
-
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -1491,6 +1476,14 @@ pub fn should_ignore_line(raw: &str) -> bool {
     false
 }
 
+/// Check if a line is a continuation line (starts with "and ", "or ", "plus ").
+/// These lines are merged into the previous ingredient rather than parsed separately.
+pub fn is_continuation_line(raw: &str) -> bool {
+    let trimmed = raw.trim();
+    let lower = trimmed.to_lowercase();
+    lower.starts_with("and ") || lower.starts_with("or ") || lower.starts_with("plus ")
+}
+
 /// Normalize section header capitalization.
 /// - All-caps like "FILLING" → "Filling"
 /// - Mixed case like "For the Steak Fajita Marinade" → kept as-is
@@ -1635,7 +1628,7 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
 /// Skips lines that should be ignored (scraper artifacts like "Gather Your Ingredients").
 pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
     let mut current_section: Option<String> = None;
-    let mut results = Vec::new();
+    let mut results: Vec<ParsedIngredient> = Vec::new();
 
     for line in blob.lines() {
         let trimmed = line.trim();
@@ -1648,9 +1641,6 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
             continue;
         }
 
-        // Strip leading continuation words (and, or, plus) from orphaned lines
-        let trimmed = strip_leading_continuation(trimmed);
-
         // Skip lines that should be ignored (scraper artifacts)
         if should_ignore_line(trimmed) {
             continue;
@@ -1660,6 +1650,25 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         if let Some(section_name) = detect_section_header(trimmed) {
             current_section = Some(section_name);
             continue; // Don't emit the header as an ingredient
+        }
+
+        // Check if this is a continuation line (starts with "and ", "or ", "plus ")
+        // If so, merge into the previous ingredient's note instead of creating a new ingredient
+        if let Some(prev) = results.last_mut() {
+            let lower = trimmed.to_lowercase();
+            if lower.starts_with("and ") || lower.starts_with("or ") || lower.starts_with("plus ") {
+                // Append to the previous ingredient's note
+                match &mut prev.note {
+                    Some(note) => {
+                        note.push_str(", ");
+                        note.push_str(trimmed);
+                    }
+                    None => {
+                        prev.note = Some(trimmed.to_string());
+                    }
+                }
+                continue;
+            }
         }
 
         // Parse the ingredient and apply current section
