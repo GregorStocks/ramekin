@@ -33,3 +33,5 @@ Always run `make lint` before creating a PR, and fix any lint errors it finds.
 # Claude Web
 
 If you are Claude for Web, first run `make setup-claude-web`. (If you're not sure, just go ahead and run it - it's a no-op if you aren't.)
+
+Use 'bd' for task tracking
