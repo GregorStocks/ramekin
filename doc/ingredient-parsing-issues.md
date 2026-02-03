@@ -17,8 +17,9 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 5. Update the curated fixture to expect the correct behavior
 6. Run `make ingredient-tests-update` to update pipeline fixtures
 7. Run `make test` and `make lint` to verify
-8. **Document ALL issues you discover** in Open Issues, even if you're only fixing one. Future Claudes benefit from this documentation!
-9. Create a PR, then stop - leave remaining issues for the next Claude
+8. Run `make pipeline` and spot-check the resulting fixture changes with `git diff`. Look for regressions (good parses that got worse) and verify the fix is working as intended.
+9. **Document ALL issues you discover** in Open Issues, even if you're only fixing one. Future Claudes benefit from this documentation!
+10. Create a PR, then stop - leave remaining issues for the next Claude
 
 ### Finding New Issues via ingredient-categories.csv
 
