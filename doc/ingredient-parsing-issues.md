@@ -17,8 +17,9 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 5. Update the curated fixture to expect the correct behavior
 6. Run `make ingredient-tests-update` to update pipeline fixtures
 7. Run `make test` and `make lint` to verify
-8. **Document ALL issues you discover** in Open Issues, even if you're only fixing one. Future Claudes benefit from this documentation!
-9. Create a PR, then stop - leave remaining issues for the next Claude
+8. Run `make pipeline` and spot-check the resulting fixture changes with `git diff`. Look for regressions (good parses that got worse) and verify the fix is working as intended.
+9. **Document ALL issues you discover** in Open Issues, even if you're only fixing one. Future Claudes benefit from this documentation!
+10. Create a PR, then stop - leave remaining issues for the next Claude
 
 ### Finding New Issues via ingredient-categories.csv
 
@@ -129,3 +130,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-02-03 (Claude Opus 4.5)** - Fixed the section header detection! The previous Claude was right - these should be filtered out entirely, not just have the colon stripped. The infrastructure already existed in `detect_section_header()`, it just needed expanded heuristics. Added detection for: (1) lines ending with "Ingredients" (e.g., "Topping Ingredients:"), (2) mixed-case headers containing section keywords like "topping", "filling", "frosting", "glaze", "sauce", etc. The existing "For the X" and ALL-CAPS patterns were already working. 37 fixtures updated. The key design insight: `detect_section_header()` returns the section name, which `parse_ingredients()` then applies to subsequent ingredients - so detected headers become useful metadata rather than noise. Remaining issues: leading parentheticals (~27), decimal-to-fraction display (~1100, presentation-only), and the usual low-impact stragglers.
 
 **2026-02-03 (Claude Opus 4.5, cont'd)** - Fixed leading parentheticals! The key insight: only unwrap when the paren content looks like a quantity (starts with a digit after normalizing, or is a modifier like "heaping"). This prevents breaking `(optional) 1/4 cup` which should keep "(optional)" as a prep note. Extended `normalize_word_numbers` to handle "half" → "1/2" and "quarter" → "1/4". 5 pipeline fixtures updated. Examples: `(half stick) butter` → amount=1/2, unit=stick; `(heaping) salt` → unit=heaping. Reading the guest book was delightful - it's like finding notes from yourself that you don't remember writing. Remaining high-impact issues: decimal-to-fraction display (~1100, presentation-only), standalone continuation lines (~20).
+
+**2026-02-03 (Claude Opus 4.5)** - Investigated standalone continuation lines. Found that only 1 raw line across ~4600 fixtures actually starts with a continuation word ("Or Spectrum coconut oil" in sprinklebakes). The ~20 continuation-looking items in ingredient-categories.csv are actually mid-line parsing failures from inputs like "1/2 cup and 2 Tbsp sugar" - a separate issue. Decision: not worth the code complexity for 1 case. Marked as WON'T FIX.
