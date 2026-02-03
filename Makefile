@@ -161,6 +161,8 @@ pipeline: ## Run pipeline for test URLs and generate reports (offline by default
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
 		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),) \
 		$(if $(CONCURRENCY),--concurrency $(CONCURRENCY),)
+	@$(MAKE) ingredient-tests-generate
+	@$(MAKE) ingredient-categories-generate
 
 pipeline-cache-stats: ## Show HTML cache statistics
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \

@@ -22,7 +22,7 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 
 ### Finding New Issues via ingredient-categories.csv
 
-The file `data/ingredient-categories.csv` is a quick way to spot pipeline parsing problems. Each row is a raw ingredient string paired with its assigned category; malformed or odd-looking strings often reveal parsing gaps or upstream extraction noise.
+The file `data/ingredient-categories.csv` is a quick way to spot pipeline parsing problems. Each row is a raw ingredient string paired with its assigned category; malformed or odd-looking strings often reveal parsing gaps or upstream extraction noise. Regenerate it with `make pipeline` (runs the pipeline and refreshes the CSV) or `make ingredient-categories-generate`.
 
 Use targeted searches to find patterns:
 
