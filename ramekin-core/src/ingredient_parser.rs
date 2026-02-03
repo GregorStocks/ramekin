@@ -435,6 +435,30 @@ fn normalize_word_numbers(s: &str) -> String {
     s.to_string()
 }
 
+fn strip_leading_list_marker(s: &str) -> String {
+    let mut remaining = s.trim_start();
+    loop {
+        let mut chars = remaining.chars();
+        let Some(first) = chars.next() else {
+            break;
+        };
+        if matches!(first, '-' | '+' | '*' | '&') {
+            let rest = chars.as_str();
+            let rest_first = rest.chars().next();
+            let should_strip = matches!(
+                rest_first,
+                Some(c) if c.is_ascii_digit() || c.is_whitespace() || c == '('
+            );
+            if should_strip {
+                remaining = rest.trim_start();
+                continue;
+            }
+        }
+        break;
+    }
+    remaining.to_string()
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -454,6 +478,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Decode HTML entities and normalize unicode before processing
     let decoded = decode_html_entities(raw);
     let normalized = normalize_unicode(&decoded);
+    let normalized = strip_leading_list_marker(&normalized);
     let mut remaining = normalize_word_numbers(&normalized);
     let mut measurements = Vec::new();
     let mut note = None;
@@ -1538,6 +1563,11 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
 
     for line in blob.lines() {
         let trimmed = line.trim();
+        if trimmed.is_empty() {
+            continue;
+        }
+        let normalized = strip_leading_list_marker(trimmed);
+        let trimmed = normalized.trim();
         if trimmed.is_empty() {
             continue;
         }
