@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from typing import Optional, Set
@@ -29,6 +29,7 @@ class ShoppingListItemResponse(BaseModel):
     ShoppingListItemResponse
     """ # noqa: E501
     amount: Optional[StrictStr] = None
+    category: StrictStr = Field(description="Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")")
     id: UUID
     is_checked: StrictBool
     item: StrictStr
@@ -38,7 +39,7 @@ class ShoppingListItemResponse(BaseModel):
     source_recipe_title: Optional[StrictStr] = None
     updated_at: datetime
     version: StrictInt
-    __properties: ClassVar[List[str]] = ["amount", "id", "is_checked", "item", "note", "sort_order", "source_recipe_id", "source_recipe_title", "updated_at", "version"]
+    __properties: ClassVar[List[str]] = ["amount", "category", "id", "is_checked", "item", "note", "sort_order", "source_recipe_id", "source_recipe_title", "updated_at", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,6 +113,7 @@ class ShoppingListItemResponse(BaseModel):
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
+            "category": obj.get("category"),
             "id": obj.get("id"),
             "is_checked": obj.get("is_checked"),
             "item": obj.get("item"),

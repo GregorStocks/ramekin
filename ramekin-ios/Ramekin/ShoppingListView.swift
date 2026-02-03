@@ -3,6 +3,26 @@ import SwiftUI
 struct ShoppingListView: View {
     @StateObject private var store = ShoppingListStore.shared
 
+    /// Category display order for grouping
+    private static let categoryOrder = [
+        "Produce",
+        "Meat & Seafood",
+        "Dairy & Eggs",
+        "Cheese",
+        "Bakery & Bread",
+        "Frozen",
+        "Pasta & Rice",
+        "Canned Goods",
+        "Baking",
+        "Spices & Seasonings",
+        "Condiments & Sauces",
+        "Oils & Vinegars",
+        "Nuts & Dried Fruit",
+        "Beverages",
+        "Snacks",
+        "Other"
+    ]
+
     var body: some View {
         NavigationStack {
             Group {
@@ -49,14 +69,46 @@ struct ShoppingListView: View {
         .padding()
     }
 
+    /// Groups unchecked items by category in display order
+    private var groupedUncheckedItems: [(category: String, items: [ShoppingItem])] {
+        let unchecked = store.items.filter { !$0.isChecked }
+        let grouped = Dictionary(grouping: unchecked) { $0.category ?? "Other" }
+
+        return Self.categoryOrder.compactMap { category in
+            guard let items = grouped[category], !items.isEmpty else { return nil }
+            return (category: category, items: items)
+        }
+    }
+
     private var itemsList: some View {
         List {
-            ForEach(store.items, id: \.id) { item in
-                ShoppingItemRow(item: item, store: store)
+            let checked = store.items.filter(\.isChecked)
+
+            // Unchecked items grouped by category
+            ForEach(groupedUncheckedItems, id: \.category) { group in
+                Section(group.category) {
+                    ForEach(group.items, id: \.id) { item in
+                        ShoppingItemRow(item: item, store: store)
+                    }
+                    .onDelete { offsets in
+                        for offset in offsets {
+                            store.deleteItem(group.items[offset])
+                        }
+                    }
+                }
             }
-            .onDelete { offsets in
-                for offset in offsets {
-                    store.deleteItem(store.items[offset])
+
+            // Checked items in a separate section at the bottom
+            if !checked.isEmpty {
+                Section("Checked") {
+                    ForEach(checked, id: \.id) { item in
+                        ShoppingItemRow(item: item, store: store)
+                    }
+                    .onDelete { offsets in
+                        for offset in offsets {
+                            store.deleteItem(checked[offset])
+                        }
+                    }
                 }
             }
         }

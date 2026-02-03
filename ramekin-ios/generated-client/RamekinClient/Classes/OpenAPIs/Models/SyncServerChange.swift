@@ -13,6 +13,8 @@ import AnyCodable
 public struct SyncServerChange: Codable, JSONEncodable, Hashable {
 
     public var amount: String?
+    /** Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\") */
+    public var category: String
     public var id: UUID
     public var isChecked: Bool
     public var item: String
@@ -23,8 +25,9 @@ public struct SyncServerChange: Codable, JSONEncodable, Hashable {
     public var updatedAt: Date
     public var version: Int
 
-    public init(amount: String? = nil, id: UUID, isChecked: Bool, item: String, note: String? = nil, sortOrder: Int, sourceRecipeId: UUID? = nil, sourceRecipeTitle: String? = nil, updatedAt: Date, version: Int) {
+    public init(amount: String? = nil, category: String, id: UUID, isChecked: Bool, item: String, note: String? = nil, sortOrder: Int, sourceRecipeId: UUID? = nil, sourceRecipeTitle: String? = nil, updatedAt: Date, version: Int) {
         self.amount = amount
+        self.category = category
         self.id = id
         self.isChecked = isChecked
         self.item = item
@@ -38,6 +41,7 @@ public struct SyncServerChange: Codable, JSONEncodable, Hashable {
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case amount
+        case category
         case id
         case isChecked = "is_checked"
         case item
@@ -54,6 +58,7 @@ public struct SyncServerChange: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(amount, forKey: .amount)
+        try container.encode(category, forKey: .category)
         try container.encode(id, forKey: .id)
         try container.encode(isChecked, forKey: .isChecked)
         try container.encode(item, forKey: .item)

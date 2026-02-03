@@ -6,6 +6,7 @@ use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
+use ramekin_core::ingredient_categorizer;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -23,6 +24,8 @@ pub struct ShoppingListItemResponse {
     pub sort_order: i32,
     pub version: i32,
     pub updated_at: DateTime<Utc>,
+    /// Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+    pub category: String,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -109,6 +112,7 @@ pub async fn list_items(
                 version,
                 updated_at,
             )| {
+                let category = ingredient_categorizer::categorize(&item).to_string();
                 ShoppingListItemResponse {
                     id,
                     item,
@@ -120,6 +124,7 @@ pub async fn list_items(
                     sort_order,
                     version,
                     updated_at,
+                    category,
                 }
             },
         )

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | Option<**String**> |  | [optional]
+**category** | **String** | Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\") | 
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **is_checked** | **bool** |  | 
 **item** | **String** |  | 
