@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Blue cheese sauce:",
-      "expected": {
-        "item": "Blue cheese sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "¾ cup mayonnaise",
@@ -20,7 +16,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Blue Cheese Sauce"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled"
+        "note": "crumbled",
+        "section": "Blue Cheese Sauce"
       }
     },
     {
@@ -54,7 +52,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Blue Cheese Sauce"
       }
     },
     {
@@ -67,7 +66,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Blue Cheese Sauce"
       }
     },
     {
@@ -75,7 +75,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Blue Cheese Sauce"
       }
     },
     {
@@ -83,7 +84,8 @@
       "expected": {
         "item": "Steak:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Blue Cheese Sauce"
       }
     },
     {
@@ -100,7 +102,8 @@
             "unit": null
           }
         ],
-        "note": "cut crosswise into 4 equal pieces and trimmed"
+        "note": "cut crosswise into 4 equal pieces and trimmed",
+        "section": "Blue Cheese Sauce"
       }
     },
     {
@@ -117,16 +120,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Blue Cheese Sauce"
       }
     },
     {
       "raw": "Assembly:",
-      "expected": {
-        "item": "Assembly:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 ciabatta sandwich rolls, halved lengthwise",
@@ -138,7 +138,8 @@
             "unit": null
           }
         ],
-        "note": "halved lengthwise"
+        "note": "halved lengthwise",
+        "section": "Assembly"
       }
     },
     {
@@ -159,7 +160,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     },
     {
@@ -172,7 +174,8 @@
             "unit": "small"
           }
         ],
-        "note": "halved and sliced thin"
+        "note": "halved and sliced thin",
+        "section": "Assembly"
       }
     }
   ]

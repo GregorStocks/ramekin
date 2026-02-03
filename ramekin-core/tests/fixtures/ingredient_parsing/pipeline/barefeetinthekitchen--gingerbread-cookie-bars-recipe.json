@@ -196,11 +196,7 @@
     },
     {
       "raw": "Optional Frosting Ingredients:",
-      "expected": {
-        "item": "Optional Frosting Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 ounces cream cheese (room temperature)",
@@ -216,7 +212,8 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature"
+        "note": "room temperature",
+        "section": "Optional Frosting Ingredients"
       }
     },
     {
@@ -233,7 +230,8 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature"
+        "note": "room temperature",
+        "section": "Optional Frosting Ingredients"
       }
     },
     {
@@ -250,7 +248,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Optional Frosting Ingredients"
       }
     },
     {
@@ -263,7 +262,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Optional Frosting Ingredients"
       }
     }
   ]

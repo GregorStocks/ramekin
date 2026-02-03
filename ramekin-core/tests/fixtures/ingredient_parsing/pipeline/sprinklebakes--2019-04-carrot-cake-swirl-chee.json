@@ -166,11 +166,7 @@
     },
     {
       "raw": "Cheesecake Ingredients:",
-      "expected": {
-        "item": "Cheesecake Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "16 oz. cream cheese (at room temperature)",
@@ -186,7 +182,8 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "section": "Cheesecake Ingredients"
       }
     },
     {
@@ -203,7 +200,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cheesecake Ingredients"
       }
     },
     {
@@ -216,7 +214,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cheesecake Ingredients"
       }
     },
     {
@@ -233,7 +232,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cheesecake Ingredients"
       }
     },
     {
@@ -250,7 +250,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cheesecake Ingredients"
       }
     },
     {
@@ -263,7 +264,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cheesecake Ingredients"
       }
     },
     {
@@ -280,16 +282,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Cheesecake Ingredients"
       }
     },
     {
       "raw": "Icing Ingredients:",
-      "expected": {
-        "item": "Icing Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup 240g sour cream",
@@ -305,7 +304,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Icing Ingredients"
       }
     },
     {
@@ -322,7 +322,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Icing Ingredients"
       }
     },
     {
@@ -335,7 +336,8 @@
             "unit": "cup"
           }
         ],
-        "note": "for garnish"
+        "note": "for garnish",
+        "section": "Icing Ingredients"
       }
     },
     {
@@ -343,7 +345,8 @@
       "expected": {
         "item": "Carrot ribbons or grated carrots",
         "measurements": [],
-        "note": "for garnish (optional"
+        "note": "for garnish (optional",
+        "section": "Icing Ingredients"
       }
     }
   ]

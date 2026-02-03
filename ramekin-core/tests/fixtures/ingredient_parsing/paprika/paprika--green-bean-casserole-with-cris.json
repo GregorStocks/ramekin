@@ -84,11 +84,7 @@
     },
     {
       "raw": "Mushroom Sauce:",
-      "expected": {
-        "item": "Mushroom Sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tablespoons butter",
@@ -104,7 +100,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -121,7 +118,8 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced or coarsely chopped"
+        "note": "thinly sliced or coarsely chopped",
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -129,7 +127,8 @@
       "expected": {
         "item": "Few gratings fresh nutmeg",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -137,7 +136,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -154,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -167,7 +168,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -184,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -197,7 +200,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Mushroom Sauce"
       }
     },
     {
@@ -214,16 +218,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Mushroom Sauce"
       }
     },
     {
       "raw": "Assembly:",
-      "expected": {
-        "item": "Assembly:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 to 1 1/2 pounds green beans, trimmed and halved (see note about volume)",
@@ -235,7 +236,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed and halved (see note about volume)"
+        "note": "trimmed and halved (see note about volume)",
+        "section": "Assembly"
       }
     }
   ]

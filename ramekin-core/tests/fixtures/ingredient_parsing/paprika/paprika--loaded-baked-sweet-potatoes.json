@@ -62,18 +62,15 @@
     },
     {
       "raw": "Toppings:",
-      "expected": {
-        "item": "Toppings:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Grated cheddar cheese",
       "expected": {
         "item": "Grated cheddar cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Toppings"
       }
     },
     {
@@ -81,7 +78,8 @@
       "expected": {
         "item": "Crispy diced bacon bits",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Toppings"
       }
     },
     {
@@ -89,7 +87,8 @@
       "expected": {
         "item": "Minced chives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Toppings"
       }
     },
     {
@@ -97,7 +96,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Toppings"
       }
     },
     {
@@ -105,7 +105,8 @@
       "expected": {
         "item": "Chili",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Toppings"
       }
     }
   ]

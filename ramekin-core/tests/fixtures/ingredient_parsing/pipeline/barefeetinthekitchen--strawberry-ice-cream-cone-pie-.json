@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Ice Cream Ingredients:",
-      "expected": {
-        "item": "Ice Cream Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 lb fresh strawberries* (washed with the tops removed)",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "washed with the tops removed"
+        "note": "washed with the tops removed",
+        "section": "Ice Cream Ingredients"
       }
     },
     {
@@ -41,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ice Cream Ingredients"
       }
     },
     {
@@ -58,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ice Cream Ingredients"
       }
     },
     {
@@ -71,7 +70,8 @@
             "unit": "14 ounce can"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ice Cream Ingredients"
       }
     },
     {
@@ -88,7 +88,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ice Cream Ingredients"
       }
     },
     {
@@ -101,16 +102,13 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ice Cream Ingredients"
       }
     },
     {
       "raw": "Crust Ingredients:",
-      "expected": {
-        "item": "Crust Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "8  ice cream sugar cones (broken into pieces)",
@@ -122,7 +120,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Crust Ingredients"
       }
     },
     {
@@ -139,7 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Crust Ingredients"
       }
     },
     {
@@ -156,7 +156,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Crust Ingredients"
       }
     }
   ]

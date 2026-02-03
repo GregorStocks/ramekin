@@ -154,11 +154,7 @@
     },
     {
       "raw": "Glaze:",
-      "expected": {
-        "item": "Glaze:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 heaped tbsp ketchup",
@@ -170,7 +166,8 @@
             "unit": "heaped tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze"
       }
     },
     {
@@ -187,7 +184,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze"
       }
     },
     {
@@ -200,7 +198,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze"
       }
     },
     {
@@ -213,7 +212,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Glaze"
       }
     }
   ]

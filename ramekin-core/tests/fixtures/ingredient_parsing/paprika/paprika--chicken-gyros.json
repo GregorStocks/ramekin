@@ -140,11 +140,7 @@
     },
     {
       "raw": "Serving:",
-      "expected": {
-        "item": "Serving:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 head romaine lettuce, chopped",
@@ -156,7 +152,8 @@
             "unit": "head"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "Serving"
       }
     },
     {
@@ -169,7 +166,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "section": "Serving"
       }
     },
     {
@@ -186,7 +184,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "Serving"
       }
     },
     {
@@ -199,7 +198,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "Serving"
       }
     },
     {
@@ -212,7 +212,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     },
     {
@@ -220,7 +221,8 @@
       "expected": {
         "item": "Tzatziki",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     }
   ]

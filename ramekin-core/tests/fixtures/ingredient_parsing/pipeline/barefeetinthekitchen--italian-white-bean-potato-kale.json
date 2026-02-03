@@ -185,18 +185,15 @@
     },
     {
       "raw": "Optional:",
-      "expected": {
-        "item": "Optional:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "Pecorino Romano cheese (finely grated for topping)",
       "expected": {
         "item": "Pecorino Romano cheese",
         "measurements": [],
-        "note": "finely grated for topping"
+        "note": "finely grated for topping",
+        "section": "Optional"
       }
     }
   ]

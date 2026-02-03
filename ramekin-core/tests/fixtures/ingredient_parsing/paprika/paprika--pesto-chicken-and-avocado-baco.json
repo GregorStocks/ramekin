@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Caesar dressing:",
-      "expected": {
-        "item": "Caesar dressing:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup mayo",
@@ -20,7 +16,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -54,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -67,7 +66,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -80,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -93,7 +94,8 @@
             "unit": "clove"
           }
         ],
-        "note": "grated"
+        "note": "grated",
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -101,7 +103,8 @@
       "expected": {
         "item": "kosher salt and black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -114,7 +117,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -122,7 +126,8 @@
       "expected": {
         "item": "Wraps:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -135,7 +140,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -148,7 +154,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -161,7 +168,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -174,7 +182,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -187,7 +196,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -200,7 +210,8 @@
             "unit": null
           }
         ],
-        "note": "cubed or shredded"
+        "note": "cubed or shredded",
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -213,7 +224,8 @@
             "unit": "slice"
           }
         ],
-        "note": "crumbled"
+        "note": "crumbled",
+        "section": "Caesar Dressing"
       }
     },
     {
@@ -226,7 +238,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Caesar Dressing"
       }
     }
   ]

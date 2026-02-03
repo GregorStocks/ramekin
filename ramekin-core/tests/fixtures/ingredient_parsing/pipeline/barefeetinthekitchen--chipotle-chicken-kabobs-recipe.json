@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Marinade Ingredients:",
-      "expected": {
-        "item": "Marinade Ingredients:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup light olive oil",
@@ -20,7 +16,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -33,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -46,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "seeded and minced"
+        "note": "seeded and minced",
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -59,7 +58,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -89,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -106,7 +108,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -123,7 +126,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -136,7 +140,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -153,7 +158,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -170,7 +176,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -178,7 +185,8 @@
       "expected": {
         "item": "Avocado Cream Sauce for serving",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Marinade Ingredients"
       }
     },
     {
@@ -186,7 +194,8 @@
       "expected": {
         "item": "Optional topping: fresh cilantro",
         "measurements": [],
-        "note": "chopped"
+        "note": "chopped",
+        "section": "Marinade Ingredients"
       }
     }
   ]

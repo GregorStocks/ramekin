@@ -109,11 +109,7 @@
     },
     {
       "raw": "Serving:",
-      "expected": {
-        "item": "Serving:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1lb dried pasta, any shape",
@@ -129,7 +125,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     },
     {
@@ -137,7 +134,8 @@
       "expected": {
         "item": "Grated parmesan",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "Serving"
       }
     },
     {
@@ -154,7 +152,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     },
     {
@@ -171,7 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Serving"
       }
     },
     {
@@ -179,7 +179,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": "as needed"
+        "note": "as needed",
+        "section": "Serving"
       }
     }
   ]

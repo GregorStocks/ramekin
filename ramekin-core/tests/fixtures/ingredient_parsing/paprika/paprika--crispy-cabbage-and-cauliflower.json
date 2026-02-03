@@ -75,11 +75,7 @@
     },
     {
       "raw": "Dressing:",
-      "expected": {
-        "item": "Dressing:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 garlic clove, minced",
@@ -91,7 +87,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Dressing"
       }
     },
     {
@@ -108,7 +105,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dressing"
       }
     },
     {
@@ -121,7 +119,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dressing"
       }
     },
     {
@@ -138,7 +137,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Dressing"
       }
     },
     {
@@ -146,7 +146,8 @@
       "expected": {
         "item": "Water",
         "measurements": [],
-        "note": "as needed"
+        "note": "as needed",
+        "section": "Dressing"
       }
     },
     {
@@ -154,7 +155,8 @@
       "expected": {
         "item": "Harissa*",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "Dressing"
       }
     }
   ]

@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "Bolognese sauce:",
-      "expected": {
-        "item": "Bolognese sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 medium onion, coarsely chopped (1-inch pieces are fine)",
@@ -24,7 +20,8 @@
             "unit": null
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "large"
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "clove"
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -84,7 +85,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -92,7 +94,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -109,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -122,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -135,7 +140,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -143,7 +149,8 @@
       "expected": {
         "item": "Water as needed",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -156,7 +163,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -164,7 +172,8 @@
       "expected": {
         "item": "A few sprigs thyme, tied in a bundle",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -172,7 +181,8 @@
       "expected": {
         "item": "Pasta:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -189,7 +199,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -202,7 +213,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -215,7 +227,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
@@ -228,16 +241,13 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bolognese Sauce"
       }
     },
     {
       "raw": "Bechamel sauce:",
-      "expected": {
-        "item": "Bechamel sauce:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (8 tablespoons) unsalted butter",
@@ -257,7 +267,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bechamel Sauce"
       }
     },
     {
@@ -274,7 +285,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bechamel Sauce"
       }
     },
     {
@@ -291,7 +303,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bechamel Sauce"
       }
     },
     {
@@ -304,7 +317,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bechamel Sauce"
       }
     },
     {
@@ -317,7 +331,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Bechamel Sauce"
       }
     },
     {
@@ -325,7 +340,8 @@
       "expected": {
         "item": "Freshly grated nutmeg",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "Bechamel Sauce"
       }
     },
     {
@@ -333,16 +349,13 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Bechamel Sauce"
       }
     },
     {
       "raw": "Assembly:",
-      "expected": {
-        "item": "Assembly:",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 2/3 cups grated Parmesan cheese",
@@ -354,7 +367,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Assembly"
       }
     }
   ]
