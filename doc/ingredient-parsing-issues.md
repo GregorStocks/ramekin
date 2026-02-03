@@ -20,6 +20,28 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 8. **Document ALL issues you discover** in Open Issues, even if you're only fixing one. Future Claudes benefit from this documentation!
 9. Create a PR, then stop - leave remaining issues for the next Claude
 
+### Finding New Issues via ingredient-categories.csv
+
+The file `data/ingredient-categories.csv` is a quick way to spot pipeline parsing problems. Each row is a raw ingredient string paired with its assigned category; malformed or odd-looking strings often reveal parsing gaps or upstream extraction noise.
+
+Use targeted searches to find patterns:
+
+```bash
+# Leading bullets / list markers that shouldn't be part of the ingredient
+rg -n "^[&+\\-*]" data/ingredient-categories.csv
+
+# Lines starting with a parenthetical (often hidden quantities)
+rg -n "^\\(" data/ingredient-categories.csv
+
+# Orphaned continuation lines (likely belong to previous ingredient)
+rg -n "^(and|or|plus) " data/ingredient-categories.csv
+
+# Section headers or equipment lines (frequently end with colons or "pan", "bowl", etc.)
+rg -n ":[^,]*,|\\bpan\\b|\\bbowl\\b|\\bskillet\\b" data/ingredient-categories.csv
+```
+
+When you find a recurring pattern, add an Open Issue with a few concrete examples and (if possible) a rough count from `rg -c`.
+
 ### Is It Worth Fixing?
 
 Not every parsing quirk deserves a fix. For issues that seem one-in-a-million (e.g. an uncommon typo) or where it's not realistically possible to determine the original author's intent, it's fine to give up and say "we parse the entire ingredient string into `ingredient` and leave the amount, note, etc, blank". That's better than being _wrong_. Our #1 goal is not to be wrong.
