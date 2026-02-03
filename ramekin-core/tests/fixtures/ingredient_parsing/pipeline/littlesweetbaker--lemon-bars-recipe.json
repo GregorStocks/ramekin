@@ -5,11 +5,11 @@
     {
       "raw": "1 &amp;amp; 1/4  cups (155g) all-purpose flour",
       "expected": {
-        "item": "& 1/4  cups all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/4",
+            "unit": "cup"
           },
           {
             "amount": "155",
@@ -86,11 +86,11 @@
     {
       "raw": "1 &amp;amp; 1/2 cups (300g) granulated sugar",
       "expected": {
-        "item": "& 1/2 cups granulated sugar",
+        "item": "granulated sugar",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/2",
+            "unit": "cup"
           },
           {
             "amount": "300",

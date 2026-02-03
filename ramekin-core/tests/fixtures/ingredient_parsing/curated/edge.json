@@ -2,6 +2,20 @@
   "category": "edge",
   "test_cases": [
     {
+      "name": "ampersand_mixed_number",
+      "raw": "1 & 1/2 cups Oreo cookie crumbs",
+      "expected": {
+        "item": "Oreo cookie crumbs",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
       "name": "and_mixed_number",
       "raw": "2 and 1/2 teaspoons ground cinnamon",
       "expected": {

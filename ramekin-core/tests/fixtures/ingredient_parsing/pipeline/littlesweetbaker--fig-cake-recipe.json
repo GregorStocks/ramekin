@@ -5,11 +5,11 @@
     {
       "raw": "2 &amp;amp; 1/2 cups (315g) all-purpose flour",
       "expected": {
-        "item": "& 1/2 cups all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2 1/2",
+            "unit": "cup"
           },
           {
             "amount": "315",
@@ -137,15 +137,19 @@
     {
       "raw": "1 &amp;amp; 1/2 cups (360ml) buttermilk",
       "expected": {
-        "item": "& 1/2 cups buttermilk",
+        "item": "buttermilk",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/2",
+            "unit": "cup"
           },
           {
             "amount": "360",
             "unit": "ml"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
           }
         ],
         "note": null
@@ -209,11 +213,15 @@
     {
       "raw": "1 &amp;amp; 1/2 tsp vanilla extract",
       "expected": {
-        "item": "& 1/2 tsp vanilla extract",
+        "item": "vanilla extract",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
           }
         ],
         "note": null
