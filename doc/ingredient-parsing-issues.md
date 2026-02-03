@@ -16,7 +16,7 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 4. Implement the fix in `ingredient_parser.rs`
 5. Update the curated fixture to expect the correct behavior
 6. Run `make ingredient-tests-update` to update pipeline fixtures
-7. Run `make ingredient-tests` and `make lint` to verify
+7. Run `make test` and `make lint` to verify
 8. **Document ALL issues you discover** in Open Issues, even if you're only fixing one. Future Claudes benefit from this documentation!
 9. Create a PR, then stop - leave remaining issues for the next Claude
 
@@ -59,8 +59,6 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 Updated with examples from `data/ingredient-categories.csv` (pipeline audit).
 
-- [ ] **Leading list markers (&, -, +, *) before amounts** (~115 lines in ingredient-categories.csv) - Examples like "& 1/2 cups milk", "- 3 tablespoons ice water", "+ 1/3 cup panko breadcrumbs", "*5 cups flour". These look like list/bullet artifacts or HTML leftovers and should be stripped before parsing.
-
 - [ ] **Leading parenthetical quantities/descriptors** (~27 lines in ingredient-categories.csv) - Examples like "(half block) cream cheese", "(two 6-oz./170g) salmon filets", "(about) parsley", "(one envelope unflavored powdered gelatin)". When the line begins with a parenthetical, try parsing it as amount/unit and move any leftovers into the note.
 
 - [ ] **Standalone continuation lines starting with "and", "or", or "plus"** (~20 lines in ingredient-categories.csv) - Examples like "and 2 Tbsp sugar", "or 2 regular carrots", "plus 1 tablespoon extra-virgin olive oil". These likely belong to the previous ingredient as an alternative/addition but currently parse as orphaned lines.
@@ -83,7 +81,7 @@ Updated with examples from `data/ingredient-categories.csv` (pipeline audit).
 
 ```bash
 # Run ingredient parsing tests
-make ingredient-tests
+make test
 
 # Update pipeline fixtures after changing parser
 make ingredient-tests-update

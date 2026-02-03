@@ -472,6 +472,20 @@
       }
     },
     {
+      "name": "leading_list_marker",
+      "raw": "- 2 cloves garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
       "name": "word_number",
       "raw": "One teaspoon of baking powder",
       "expected": {
