@@ -80,7 +80,7 @@ struct ShoppingListView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.plain)
     }
 
     private var offlineBanner: some View {
@@ -108,7 +108,7 @@ struct ShoppingItemRow: View {
         } label: {
             HStack(alignment: .top, spacing: 12) {
                 Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
-                    .font(.title2)
+                    .font(.body)
                     .foregroundColor(item.isChecked ? .green : .secondary)
 
                 VStack(alignment: .leading, spacing: 2) {
