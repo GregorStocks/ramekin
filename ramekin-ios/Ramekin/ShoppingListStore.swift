@@ -203,7 +203,7 @@ class ShoppingListStore: ObservableObject {
         }
 
         for deletedId in response.deleted {
-            if let local = pendingItems.first(where: { $0.id == deletedId }) {
+            if let local = (try? context.fetch(ShoppingItem.fetchById(deletedId)))?.first {
                 context.delete(local)
             }
         }

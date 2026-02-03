@@ -8,6 +8,7 @@ use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+use std::collections::HashSet;
 use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
@@ -129,124 +130,132 @@ pub async fn sync_items(
     let mut conn = get_conn!(pool);
     let sync_timestamp = Utc::now();
 
-    // 1. Process creates
-    let mut created = Vec::with_capacity(request.creates.len());
-    for create_req in &request.creates {
-        let amount_ref = create_req.amount.as_deref();
-        let note_ref = create_req.note.as_deref();
-        let source_title_ref = create_req.source_recipe_title.as_deref();
+    let result = conn.transaction(|conn| {
+        // 1. Process creates
+        let mut created = Vec::with_capacity(request.creates.len());
+        for create_req in &request.creates {
+            let amount_ref = create_req.amount.as_deref();
+            let note_ref = create_req.note.as_deref();
+            let source_title_ref = create_req.source_recipe_title.as_deref();
 
-        let new_item = NewShoppingListItem {
-            user_id: user.id,
-            item: &create_req.item,
-            amount: amount_ref,
-            note: note_ref,
-            source_recipe_id: create_req.source_recipe_id,
-            source_recipe_title: source_title_ref,
-            is_checked: create_req.is_checked,
-            sort_order: create_req.sort_order,
-            client_id: Some(create_req.client_id),
-        };
+            let new_item = NewShoppingListItem {
+                user_id: user.id,
+                item: &create_req.item,
+                amount: amount_ref,
+                note: note_ref,
+                source_recipe_id: create_req.source_recipe_id,
+                source_recipe_title: source_title_ref,
+                is_checked: create_req.is_checked,
+                sort_order: create_req.sort_order,
+                client_id: Some(create_req.client_id),
+            };
 
-        match diesel::insert_into(shopping_list_items::table)
-            .values(&new_item)
-            .returning((shopping_list_items::id, shopping_list_items::version))
-            .get_result::<(Uuid, i32)>(&mut conn)
-        {
-            Ok((server_id, version)) => {
-                created.push(SyncCreatedItem {
-                    client_id: create_req.client_id,
-                    server_id,
-                    version,
-                });
-            }
-            Err(e) => {
-                tracing::error!("Failed to create item during sync: {}", e);
-                // Continue with other items
-            }
-        }
-    }
+            let (server_id, version) = match diesel::insert_into(shopping_list_items::table)
+                .values(&new_item)
+                .on_conflict((
+                    shopping_list_items::user_id,
+                    shopping_list_items::client_id,
+                ))
+                .do_nothing()
+                .returning((shopping_list_items::id, shopping_list_items::version))
+                .get_result::<(Uuid, i32)>(conn)
+            {
+                Ok(result) => result,
+                Err(diesel::result::Error::NotFound) => shopping_list_items::table
+                    .filter(shopping_list_items::user_id.eq(user.id))
+                    .filter(shopping_list_items::client_id.eq(create_req.client_id))
+                    .select((shopping_list_items::id, shopping_list_items::version))
+                    .first::<(Uuid, i32)>(conn)?,
+                Err(e) => return Err(e),
+            };
 
-    // 2. Process updates (with optimistic locking)
-    let mut updated = Vec::with_capacity(request.updates.len());
-    for update_req in &request.updates {
-        // Fetch current state
-        let current: Option<ItemUpdateRow> = shopping_list_items::table
-            .filter(shopping_list_items::id.eq(update_req.id))
-            .filter(shopping_list_items::user_id.eq(user.id))
-            .select((
-                shopping_list_items::item,
-                shopping_list_items::amount,
-                shopping_list_items::note,
-                shopping_list_items::is_checked,
-                shopping_list_items::sort_order,
-                shopping_list_items::version,
-            ))
-            .first(&mut conn)
-            .optional()
-            .unwrap_or(None);
-
-        let Some((
-            current_item,
-            current_amount,
-            current_note,
-            current_checked,
-            current_order,
-            current_version,
-        )) = current
-        else {
-            updated.push(SyncUpdatedItem {
-                id: update_req.id,
-                version: 0,
-                success: false,
+            created.push(SyncCreatedItem {
+                client_id: create_req.client_id,
+                server_id,
+                version,
             });
-            continue;
-        };
-
-        // Check version for conflict
-        if current_version != update_req.expected_version {
-            // Conflict - server wins, return current version
-            updated.push(SyncUpdatedItem {
-                id: update_req.id,
-                version: current_version,
-                success: false,
-            });
-            continue;
         }
 
-        // Apply update
-        let new_item = update_req.item.clone().unwrap_or(current_item);
-        let new_amount = update_req.amount.clone().or(current_amount);
-        let new_note = update_req.note.clone().or(current_note);
-        let new_checked = update_req.is_checked.unwrap_or(current_checked);
-        let new_order = update_req.sort_order.unwrap_or(current_order);
-        let new_version = current_version + 1;
-
-        match diesel::update(
-            shopping_list_items::table
+        // 2. Process updates (with optimistic locking)
+        let mut updated = Vec::with_capacity(request.updates.len());
+        for update_req in &request.updates {
+            // Fetch current state
+            let current: Option<ItemUpdateRow> = shopping_list_items::table
                 .filter(shopping_list_items::id.eq(update_req.id))
                 .filter(shopping_list_items::user_id.eq(user.id))
-                .filter(shopping_list_items::version.eq(update_req.expected_version)),
-        )
-        .set((
-            shopping_list_items::item.eq(&new_item),
-            shopping_list_items::amount.eq(&new_amount),
-            shopping_list_items::note.eq(&new_note),
-            shopping_list_items::is_checked.eq(new_checked),
-            shopping_list_items::sort_order.eq(new_order),
-            shopping_list_items::version.eq(new_version),
-            shopping_list_items::updated_at.eq(Utc::now()),
-        ))
-        .execute(&mut conn)
-        {
-            Ok(1) => {
+                .filter(shopping_list_items::deleted_at.is_null())
+                .select((
+                    shopping_list_items::item,
+                    shopping_list_items::amount,
+                    shopping_list_items::note,
+                    shopping_list_items::is_checked,
+                    shopping_list_items::sort_order,
+                    shopping_list_items::version,
+                ))
+                .first(conn)
+                .optional()?;
+
+            let Some((
+                current_item,
+                current_amount,
+                current_note,
+                current_checked,
+                current_order,
+                current_version,
+            )) = current
+            else {
+                updated.push(SyncUpdatedItem {
+                    id: update_req.id,
+                    version: 0,
+                    success: false,
+                });
+                continue;
+            };
+
+            // Check version for conflict
+            if current_version != update_req.expected_version {
+                // Conflict - server wins, return current version
+                updated.push(SyncUpdatedItem {
+                    id: update_req.id,
+                    version: current_version,
+                    success: false,
+                });
+                continue;
+            }
+
+            // Apply update
+            let new_item = update_req.item.clone().unwrap_or(current_item);
+            let new_amount = update_req.amount.clone().or(current_amount);
+            let new_note = update_req.note.clone().or(current_note);
+            let new_checked = update_req.is_checked.unwrap_or(current_checked);
+            let new_order = update_req.sort_order.unwrap_or(current_order);
+            let new_version = current_version + 1;
+
+            let updated_rows = diesel::update(
+                shopping_list_items::table
+                    .filter(shopping_list_items::id.eq(update_req.id))
+                    .filter(shopping_list_items::user_id.eq(user.id))
+                    .filter(shopping_list_items::deleted_at.is_null())
+                    .filter(shopping_list_items::version.eq(update_req.expected_version)),
+            )
+            .set((
+                shopping_list_items::item.eq(&new_item),
+                shopping_list_items::amount.eq(&new_amount),
+                shopping_list_items::note.eq(&new_note),
+                shopping_list_items::is_checked.eq(new_checked),
+                shopping_list_items::sort_order.eq(new_order),
+                shopping_list_items::version.eq(new_version),
+                shopping_list_items::updated_at.eq(sync_timestamp),
+            ))
+            .execute(conn)?;
+
+            if updated_rows == 1 {
                 updated.push(SyncUpdatedItem {
                     id: update_req.id,
                     version: new_version,
                     success: true,
                 });
-            }
-            _ => {
+            } else {
                 updated.push(SyncUpdatedItem {
                     id: update_req.id,
                     version: current_version,
@@ -254,57 +263,64 @@ pub async fn sync_items(
                 });
             }
         }
-    }
 
-    // 3. Process deletes
-    let mut deleted = Vec::with_capacity(request.deletes.len());
-    for delete_id in &request.deletes {
-        if let Ok(1) = diesel::delete(
-            shopping_list_items::table
+        // 3. Process deletes
+        let mut deleted_set: HashSet<Uuid> = HashSet::with_capacity(request.deletes.len());
+        for delete_id in &request.deletes {
+            let updated_rows = diesel::update(
+                shopping_list_items::table
+                    .filter(shopping_list_items::id.eq(delete_id))
+                    .filter(shopping_list_items::user_id.eq(user.id))
+                    .filter(shopping_list_items::deleted_at.is_null()),
+            )
+            .set((
+                shopping_list_items::deleted_at.eq(sync_timestamp),
+                shopping_list_items::updated_at.eq(sync_timestamp),
+                shopping_list_items::version.eq(shopping_list_items::version + 1),
+            ))
+            .execute(conn)?;
+
+            if updated_rows == 1 {
+                deleted_set.insert(*delete_id);
+                continue;
+            }
+
+            let exists = shopping_list_items::table
                 .filter(shopping_list_items::id.eq(delete_id))
-                .filter(shopping_list_items::user_id.eq(user.id)),
-        )
-        .execute(&mut conn)
-        {
-            deleted.push(*delete_id);
+                .filter(shopping_list_items::user_id.eq(user.id))
+                .select(shopping_list_items::id)
+                .first::<Uuid>(conn)
+                .optional()?;
+
+            if exists.is_some() {
+                deleted_set.insert(*delete_id);
+            }
         }
-    }
 
-    // 4. Get server changes since last_sync_at
-    let server_changes: Vec<SyncServerChange> = if let Some(last_sync) = request.last_sync_at {
-        let rows: Vec<ServerChangeRow> = shopping_list_items::table
-            .filter(shopping_list_items::user_id.eq(user.id))
-            .filter(shopping_list_items::updated_at.gt(last_sync))
-            .select((
-                shopping_list_items::id,
-                shopping_list_items::item,
-                shopping_list_items::amount,
-                shopping_list_items::note,
-                shopping_list_items::source_recipe_id,
-                shopping_list_items::source_recipe_title,
-                shopping_list_items::is_checked,
-                shopping_list_items::sort_order,
-                shopping_list_items::version,
-                shopping_list_items::updated_at,
-            ))
-            .load(&mut conn)
-            .unwrap_or_default();
+        // 4. Get server changes since last_sync_at
+        let server_changes: Vec<SyncServerChange> = if let Some(last_sync) = request.last_sync_at
+        {
+            let rows: Vec<ServerChangeRow> = shopping_list_items::table
+                .filter(shopping_list_items::user_id.eq(user.id))
+                .filter(shopping_list_items::deleted_at.is_null())
+                .filter(shopping_list_items::updated_at.gt(last_sync))
+                .select((
+                    shopping_list_items::id,
+                    shopping_list_items::item,
+                    shopping_list_items::amount,
+                    shopping_list_items::note,
+                    shopping_list_items::source_recipe_id,
+                    shopping_list_items::source_recipe_title,
+                    shopping_list_items::is_checked,
+                    shopping_list_items::sort_order,
+                    shopping_list_items::version,
+                    shopping_list_items::updated_at,
+                ))
+                .load(conn)?;
 
-        rows.into_iter()
-            .map(
-                |(
-                    id,
-                    item,
-                    amount,
-                    note,
-                    source_recipe_id,
-                    source_recipe_title,
-                    is_checked,
-                    sort_order,
-                    version,
-                    updated_at,
-                )| {
-                    SyncServerChange {
+            rows.into_iter()
+                .map(
+                    |(
                         id,
                         item,
                         amount,
@@ -315,44 +331,44 @@ pub async fn sync_items(
                         sort_order,
                         version,
                         updated_at,
-                    }
-                },
-            )
-            .collect()
-    } else {
-        // No last_sync_at means first sync - return all items
-        let rows: Vec<ServerChangeRow> = shopping_list_items::table
-            .filter(shopping_list_items::user_id.eq(user.id))
-            .select((
-                shopping_list_items::id,
-                shopping_list_items::item,
-                shopping_list_items::amount,
-                shopping_list_items::note,
-                shopping_list_items::source_recipe_id,
-                shopping_list_items::source_recipe_title,
-                shopping_list_items::is_checked,
-                shopping_list_items::sort_order,
-                shopping_list_items::version,
-                shopping_list_items::updated_at,
-            ))
-            .load(&mut conn)
-            .unwrap_or_default();
+                    )| {
+                        SyncServerChange {
+                            id,
+                            item,
+                            amount,
+                            note,
+                            source_recipe_id,
+                            source_recipe_title,
+                            is_checked,
+                            sort_order,
+                            version,
+                            updated_at,
+                        }
+                    },
+                )
+                .collect()
+        } else {
+            // No last_sync_at means first sync - return all items
+            let rows: Vec<ServerChangeRow> = shopping_list_items::table
+                .filter(shopping_list_items::user_id.eq(user.id))
+                .filter(shopping_list_items::deleted_at.is_null())
+                .select((
+                    shopping_list_items::id,
+                    shopping_list_items::item,
+                    shopping_list_items::amount,
+                    shopping_list_items::note,
+                    shopping_list_items::source_recipe_id,
+                    shopping_list_items::source_recipe_title,
+                    shopping_list_items::is_checked,
+                    shopping_list_items::sort_order,
+                    shopping_list_items::version,
+                    shopping_list_items::updated_at,
+                ))
+                .load(conn)?;
 
-        rows.into_iter()
-            .map(
-                |(
-                    id,
-                    item,
-                    amount,
-                    note,
-                    source_recipe_id,
-                    source_recipe_title,
-                    is_checked,
-                    sort_order,
-                    version,
-                    updated_at,
-                )| {
-                    SyncServerChange {
+            rows.into_iter()
+                .map(
+                    |(
                         id,
                         item,
                         amount,
@@ -363,21 +379,54 @@ pub async fn sync_items(
                         sort_order,
                         version,
                         updated_at,
-                    }
-                },
-            )
-            .collect()
-    };
+                    )| {
+                        SyncServerChange {
+                            id,
+                            item,
+                            amount,
+                            note,
+                            source_recipe_id,
+                            source_recipe_title,
+                            is_checked,
+                            sort_order,
+                            version,
+                            updated_at,
+                        }
+                    },
+                )
+                .collect()
+        };
 
-    (
-        StatusCode::OK,
-        Json(SyncResponse {
+        if let Some(last_sync) = request.last_sync_at {
+            let deleted_rows: Vec<Uuid> = shopping_list_items::table
+                .filter(shopping_list_items::user_id.eq(user.id))
+                .filter(shopping_list_items::deleted_at.gt(last_sync))
+                .select(shopping_list_items::id)
+                .load(conn)?;
+
+            deleted_set.extend(deleted_rows);
+        }
+
+        Ok(SyncResponse {
             created,
             updated,
-            deleted,
+            deleted: deleted_set.into_iter().collect(),
             server_changes,
             sync_timestamp,
-        }),
-    )
-        .into_response()
+        })
+    });
+
+    match result {
+        Ok(response) => (StatusCode::OK, Json(response)).into_response(),
+        Err(e) => {
+            tracing::error!("Failed to sync shopping list: {}", e);
+            (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to sync shopping list".to_string(),
+                }),
+            )
+                .into_response()
+        }
+    }
 }

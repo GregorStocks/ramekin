@@ -62,6 +62,7 @@ pub async fn list_items(
 
     let rows: Vec<ShoppingListRow> = match shopping_list_items::table
         .filter(shopping_list_items::user_id.eq(user.id))
+        .filter(shopping_list_items::deleted_at.is_null())
         .select((
             shopping_list_items::id,
             shopping_list_items::item,

@@ -55,6 +55,7 @@ pub async fn update_item(
     let existing: Option<ItemRow> = match shopping_list_items::table
         .filter(shopping_list_items::id.eq(id))
         .filter(shopping_list_items::user_id.eq(user.id))
+        .filter(shopping_list_items::deleted_at.is_null())
         .select((
             shopping_list_items::item,
             shopping_list_items::amount,
@@ -108,7 +109,8 @@ pub async fn update_item(
     let result = diesel::update(
         shopping_list_items::table
             .filter(shopping_list_items::id.eq(id))
-            .filter(shopping_list_items::user_id.eq(user.id)),
+            .filter(shopping_list_items::user_id.eq(user.id))
+            .filter(shopping_list_items::deleted_at.is_null()),
     )
     .set((
         shopping_list_items::item.eq(&new_item),

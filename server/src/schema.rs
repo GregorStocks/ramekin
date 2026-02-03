@@ -107,6 +107,7 @@ diesel::table! {
         sort_order -> Int4,
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
+        deleted_at -> Nullable<Timestamptz>,
         client_id -> Nullable<Uuid>,
         version -> Int4,
     }

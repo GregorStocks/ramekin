@@ -9,6 +9,7 @@ use axum::{
     response::IntoResponse,
     Json,
 };
+use chrono::Utc;
 use diesel::prelude::*;
 use std::sync::Arc;
 use uuid::Uuid;
@@ -34,12 +35,18 @@ pub async fn delete_item(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // Hard delete - no soft delete for shopping list items
-    let deleted = match diesel::delete(
+    let now = Utc::now();
+    let deleted = match diesel::update(
         shopping_list_items::table
             .filter(shopping_list_items::id.eq(id))
-            .filter(shopping_list_items::user_id.eq(user.id)),
+            .filter(shopping_list_items::user_id.eq(user.id))
+            .filter(shopping_list_items::deleted_at.is_null()),
     )
+    .set((
+        shopping_list_items::deleted_at.eq(now),
+        shopping_list_items::updated_at.eq(now),
+        shopping_list_items::version.eq(shopping_list_items::version + 1),
+    ))
     .execute(&mut conn)
     {
         Ok(count) => count,
@@ -56,13 +63,35 @@ pub async fn delete_item(
     };
 
     if deleted == 0 {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Item not found".to_string(),
-            }),
-        )
-            .into_response();
+        let exists = match shopping_list_items::table
+            .filter(shopping_list_items::id.eq(id))
+            .filter(shopping_list_items::user_id.eq(user.id))
+            .select(shopping_list_items::id)
+            .first::<Uuid>(&mut conn)
+            .optional()
+        {
+            Ok(result) => result,
+            Err(e) => {
+                tracing::error!("Failed to check shopping list item: {}", e);
+                return (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    Json(ErrorResponse {
+                        error: "Failed to delete item".to_string(),
+                    }),
+                )
+                    .into_response();
+            }
+        };
+
+        if exists.is_none() {
+            return (
+                StatusCode::NOT_FOUND,
+                Json(ErrorResponse {
+                    error: "Item not found".to_string(),
+                }),
+            )
+                .into_response();
+        }
     }
 
     StatusCode::NO_CONTENT.into_response()

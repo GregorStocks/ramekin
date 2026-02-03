@@ -430,6 +430,29 @@ def test_sync_delete_items(authed_api_client):
     assert len(list_response.items) == 0
 
 
+def test_sync_returns_server_deletions(authed_api_client):
+    """Test that sync returns deletions performed on the server."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="server_deleted")])
+    )
+    item_id = create_response.ids[0]
+
+    # Capture a sync timestamp
+    initial_sync = api.sync_items(SyncRequest())
+    last_sync_at = initial_sync.sync_timestamp
+
+    # Delete on server
+    api.delete_item(item_id)
+
+    # Sync with last_sync_at should report deletion
+    sync_response = api.sync_items(SyncRequest(last_sync_at=last_sync_at))
+    assert item_id in sync_response.deleted
+    assert all(change.id != item_id for change in sync_response.server_changes)
+
+
 def test_sync_returns_server_changes(authed_api_client):
     """Test that sync returns server-side changes."""
     client, user_id = authed_api_client

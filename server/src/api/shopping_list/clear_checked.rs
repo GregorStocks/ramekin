@@ -4,6 +4,7 @@ use crate::db::DbPool;
 use crate::get_conn;
 use crate::schema::shopping_list_items;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
+use chrono::Utc;
 use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
@@ -30,12 +31,18 @@ pub async fn clear_checked(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // Hard delete all checked items for this user
-    let deleted = match diesel::delete(
+    let now = Utc::now();
+    let deleted = match diesel::update(
         shopping_list_items::table
             .filter(shopping_list_items::user_id.eq(user.id))
-            .filter(shopping_list_items::is_checked.eq(true)),
+            .filter(shopping_list_items::is_checked.eq(true))
+            .filter(shopping_list_items::deleted_at.is_null()),
     )
+    .set((
+        shopping_list_items::deleted_at.eq(now),
+        shopping_list_items::updated_at.eq(now),
+        shopping_list_items::version.eq(shopping_list_items::version + 1),
+    ))
     .execute(&mut conn)
     {
         Ok(count) => count,

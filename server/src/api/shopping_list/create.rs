@@ -61,51 +61,79 @@ pub async fn create_items(
 
     let mut conn = get_conn!(pool);
 
-    // Get current max sort_order for this user
-    let max_sort_order: i32 = shopping_list_items::table
-        .filter(shopping_list_items::user_id.eq(user.id))
-        .select(diesel::dsl::max(shopping_list_items::sort_order))
-        .first::<Option<i32>>(&mut conn)
-        .unwrap_or(None)
-        .unwrap_or(0);
+    let ids_result = conn.transaction(|conn| {
+        // Get current max sort_order for this user
+        let max_sort_order: i32 = shopping_list_items::table
+            .filter(shopping_list_items::user_id.eq(user.id))
+            .filter(shopping_list_items::deleted_at.is_null())
+            .select(diesel::dsl::max(shopping_list_items::sort_order))
+            .first::<Option<i32>>(conn)?
+            .unwrap_or(0);
 
-    let mut ids = Vec::with_capacity(request.items.len());
+        let mut ids = Vec::with_capacity(request.items.len());
 
-    for (i, item_req) in request.items.iter().enumerate() {
-        let amount_ref = item_req.amount.as_deref();
-        let note_ref = item_req.note.as_deref();
-        let source_title_ref = item_req.source_recipe_title.as_deref();
+        for (i, item_req) in request.items.iter().enumerate() {
+            let amount_ref = item_req.amount.as_deref();
+            let note_ref = item_req.note.as_deref();
+            let source_title_ref = item_req.source_recipe_title.as_deref();
 
-        let new_item = NewShoppingListItem {
-            user_id: user.id,
-            item: &item_req.item,
-            amount: amount_ref,
-            note: note_ref,
-            source_recipe_id: item_req.source_recipe_id,
-            source_recipe_title: source_title_ref,
-            is_checked: false,
-            sort_order: max_sort_order + 1 + i as i32,
-            client_id: item_req.client_id,
-        };
+            let new_item = NewShoppingListItem {
+                user_id: user.id,
+                item: &item_req.item,
+                amount: amount_ref,
+                note: note_ref,
+                source_recipe_id: item_req.source_recipe_id,
+                source_recipe_title: source_title_ref,
+                is_checked: false,
+                sort_order: max_sort_order + 1 + i as i32,
+                client_id: item_req.client_id,
+            };
 
-        match diesel::insert_into(shopping_list_items::table)
-            .values(&new_item)
-            .returning(shopping_list_items::id)
-            .get_result::<Uuid>(&mut conn)
-        {
-            Ok(id) => ids.push(id),
-            Err(e) => {
-                tracing::error!("Failed to create shopping list item: {}", e);
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to create shopping list item".to_string(),
-                    }),
-                )
-                    .into_response();
-            }
+            let id = if let Some(client_id) = item_req.client_id {
+                match diesel::insert_into(shopping_list_items::table)
+                    .values(&new_item)
+                    .on_conflict((
+                        shopping_list_items::user_id,
+                        shopping_list_items::client_id,
+                    ))
+                    .do_nothing()
+                    .returning(shopping_list_items::id)
+                    .get_result::<Uuid>(conn)
+                {
+                    Ok(id) => id,
+                    Err(diesel::result::Error::NotFound) => shopping_list_items::table
+                        .filter(shopping_list_items::user_id.eq(user.id))
+                        .filter(shopping_list_items::client_id.eq(client_id))
+                        .select(shopping_list_items::id)
+                        .first::<Uuid>(conn)?,
+                    Err(e) => return Err(e),
+                }
+            } else {
+                diesel::insert_into(shopping_list_items::table)
+                    .values(&new_item)
+                    .returning(shopping_list_items::id)
+                    .get_result::<Uuid>(conn)?
+            };
+
+            ids.push(id);
         }
-    }
+
+        Ok(ids)
+    });
+
+    let ids = match ids_result {
+        Ok(ids) => ids,
+        Err(e) => {
+            tracing::error!("Failed to create shopping list items: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to create shopping list items".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     (
         StatusCode::CREATED,
