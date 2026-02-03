@@ -44,11 +44,15 @@
     {
       "raw": "1 &amp;amp; 1/2 cups milk",
       "expected": {
-        "item": "& 1/2 cups milk",
+        "item": "milk",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
           }
         ],
         "note": null

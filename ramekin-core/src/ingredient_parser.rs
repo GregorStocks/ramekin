@@ -1027,9 +1027,9 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
             }
         }
 
-        // Check for "X and Y/Z" pattern: "2 and 1/2"
+        // Check for "X and Y/Z" or "X & Y/Z" pattern: "2 and 1/2" or "1 & 1/2"
         if words.len() >= 3
-            && words[1].eq_ignore_ascii_case("and")
+            && (words[1].eq_ignore_ascii_case("and") || words[1] == "&")
             && first.chars().all(|c| c.is_ascii_digit())
             && is_fraction(words[2])
         {

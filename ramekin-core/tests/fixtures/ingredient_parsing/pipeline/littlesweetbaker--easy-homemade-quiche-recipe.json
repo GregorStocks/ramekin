@@ -5,11 +5,11 @@
     {
       "raw": "1 &amp;amp; 1/2 cups (188g) all-purpose flour",
       "expected": {
-        "item": "& 1/2 cups all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/2",
+            "unit": "cup"
           },
           {
             "amount": "188",
@@ -56,11 +56,15 @@
     {
       "raw": "2 &amp;amp; 1/2 Tbsp milk",
       "expected": {
-        "item": "& 1/2 Tbsp milk",
+        "item": "milk",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2 1/2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
           }
         ],
         "note": null
@@ -134,15 +138,19 @@
     {
       "raw": "1 &amp;amp; 1/3  cups (330ml) milk",
       "expected": {
-        "item": "& 1/3  cups milk",
+        "item": "milk",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/3",
+            "unit": "cup"
           },
           {
             "amount": "330",
             "unit": "ml"
+          },
+          {
+            "amount": "327",
+            "unit": "g"
           }
         ],
         "note": null

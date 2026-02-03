@@ -61,11 +61,11 @@
     {
       "raw": "1 &amp;amp; 1/2 cups (188g) all-purpose flour",
       "expected": {
-        "item": "& 1/2 cups all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 1/2",
+            "unit": "cup"
           },
           {
             "amount": "188",

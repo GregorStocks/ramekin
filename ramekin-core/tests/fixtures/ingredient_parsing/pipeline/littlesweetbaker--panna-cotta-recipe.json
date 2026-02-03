@@ -5,11 +5,11 @@
     {
       "raw": "2 &amp;amp; 1/4 tsp (7g) unflavored powdered gelatin",
       "expected": {
-        "item": "& 1/4 tsp unflavored powdered gelatin",
+        "item": "unflavored powdered gelatin",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2 1/4",
+            "unit": "tsp"
           },
           {
             "amount": "7",
