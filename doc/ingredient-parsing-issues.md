@@ -53,29 +53,7 @@ Not every parsing quirk deserves a fix. For issues that seem one-in-a-million (e
 
 ## Known Issues
 
-Issues are roughly ordered by potential impact. Update this list as you fix things or discover new issues.
-
-### Open Issues
-
-Updated with examples from `data/ingredient-categories.csv` (pipeline audit).
-
-- [x] **Leading parenthetical quantities/descriptors** (~27 lines in ingredient-categories.csv) - Examples like "(half block) cream cheese", "(two 6-oz./170g) salmon filets", "(about) parsley", "(one envelope unflavored powdered gelatin)". When the line begins with a parenthetical, try parsing it as amount/unit and move any leftovers into the note. **FIXED:** Added unwrapping of leading parentheticals when they contain quantities - only unwraps if content starts with a digit (after normalizing "half" → "1/2") or is a known modifier like "heaping". This preserves `(optional)` as a prep note while unwrapping `(half stick)` to `1/2 stick`. 5 pipeline fixtures updated.
-
-- [ ] **Standalone continuation lines starting with "and", "or", or "plus"** (~20 lines in ingredient-categories.csv) - Examples like "and 2 Tbsp sugar", "or 2 regular carrots", "plus 1 tablespoon extra-virgin olive oil". These likely belong to the previous ingredient as an alternative/addition but currently parse as orphaned lines.
-
-- [ ] **Non-ingredient or equipment lines leaking into ingredient lists** (spotty but recurring) - Examples like "A 12-cup Bundt pan, a pastry bag, and a large star tip", "9x13 metal baking pans or large roasting pan lined with foil", "Burger accompaniments, as you like". Should be filtered upstream or flagged as section headers.
-
-- [x] **Trailing colons (section headers)** (~50 fixtures) - Items like "DRIZZLE:", "FILLING:", "For the dough:" are section headers that ended up in the ingredient list. These have no measurements and end with colons. **FIXED:** Expanded `detect_section_header()` to also detect lines ending with "Ingredients", mixed-case headers containing section keywords (topping, filling, frosting, etc.), plus the existing "For the X" and ALL-CAPS patterns. 37 fixtures updated.
-
-- [ ] **Decimal amounts not converted to fractions** (~1100+ fixtures) - Amounts like "0.5", "0.75", "1.5" could be displayed as "1/2", "3/4", "1 1/2" for readability. This is a presentation choice - the current behavior isn't wrong, just less idiomatic for recipes. Would need a conversion function for common decimals.
-
-- [ ] **Footnote asterisks in item names** (~7 fixtures) - "4-5 cherry tomatoes*" produces item="cherry tomatoes*". The asterisk is a footnote marker. Low impact and potentially risky to strip (what if someone writes "brand*name"?). Probably acceptable to leave as-is.
-
-- [ ] **Concatenated ingredient lines** (unknown count) - "3/4 cup (180ml) milk 1/4 cup (60ml) vegetable oil" gets parsed as a single ingredient. This is an extraction bug upstream (ingredients should be on separate lines), not a parser bug. The parser can't reasonably split these without risking false positives.
-
-- [ ] **Trailing semicolon in items** (~3 fixtures) - Semicolons used as separators stick to item names (e.g., `"item": "Parmesan cheese, grated;"`). Example from kingarthurbaking. Low impact.
-
-- [ ] **Comma-separated conditional quantities** (~2 fixtures in paprika) - Ingredient lines with multiple quantities for different use cases, like `"4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups vegetable broth (for cooked chickpeas)"`. Currently only the first measurement is extracted; the second alternative ends up in the item field. This is tricky because the comma normally separates item from preparation notes, not alternatives. May need special handling for patterns where text after comma starts with a number+unit. Low fixture count but confusing output when it happens.
+Open issues are tracked in beads. Run `bd list -l ingredient-parser` to see them.
 
 ## Useful Commands
 
