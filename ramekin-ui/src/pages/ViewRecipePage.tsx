@@ -13,11 +13,13 @@ import Modal from "../components/Modal";
 import VersionHistoryPanel from "../components/VersionHistoryPanel";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import VersionCompareModal from "../components/VersionCompareModal";
+import { extractApiError } from "../utils/recipeFormHelpers";
 import type {
   RecipeResponse,
   RecipeContent,
   VersionSummary,
   Ingredient,
+  MealType,
 } from "ramekin-client";
 
 /** Group ingredients by contiguous sections (preserving order). */
@@ -68,11 +70,33 @@ function PhotoImage(props: { photoId: string; token: string; alt: string }) {
   );
 }
 
+const MEAL_TYPES: MealType[] = ["breakfast", "lunch", "dinner", "snack"];
+const MEAL_TYPE_LABELS: Record<MealType, string> = {
+  breakfast: "Breakfast",
+  lunch: "Lunch",
+  dinner: "Dinner",
+  snack: "Snack",
+};
+
+function getTodayString(): string {
+  const d = new Date();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function toApiDate(dateStr: string): Date {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
 export default function ViewRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { getRecipesApi, getEnrichApi, getScrapeApi, token } = useAuth();
+  const { getRecipesApi, getEnrichApi, getScrapeApi, getMealPlansApi, token } =
+    useAuth();
 
   // Check if we're in "random browsing" mode
   const randomQuery = () =>
@@ -113,6 +137,15 @@ export default function ViewRecipePage() {
 
   // Rescrape state
   const [rescraping, setRescraping] = createSignal(false);
+
+  // Meal plan modal state
+  const [showMealPlanModal, setShowMealPlanModal] = createSignal(false);
+  const [mealPlanDate, setMealPlanDate] = createSignal(getTodayString());
+  const [mealPlanMealType, setMealPlanMealType] =
+    createSignal<MealType>("dinner");
+  const [addingToMealPlan, setAddingToMealPlan] = createSignal(false);
+  const [mealPlanError, setMealPlanError] = createSignal<string | null>(null);
+  const [mealPlanSuccess, setMealPlanSuccess] = createSignal(false);
 
   const loadRecipe = async () => {
     setLoading(true);
@@ -407,6 +440,53 @@ export default function ViewRecipePage() {
     }).format(date);
   };
 
+  // Meal plan handlers
+  const openMealPlanModal = () => {
+    setMealPlanDate(getTodayString());
+    setMealPlanMealType("dinner");
+    setMealPlanError(null);
+    setMealPlanSuccess(false);
+    setShowMealPlanModal(true);
+  };
+
+  const closeMealPlanModal = () => {
+    setShowMealPlanModal(false);
+    setMealPlanError(null);
+    setMealPlanSuccess(false);
+  };
+
+  const handleAddToMealPlan = async () => {
+    setAddingToMealPlan(true);
+    setMealPlanError(null);
+    try {
+      await getMealPlansApi().createMealPlan({
+        createMealPlanRequest: {
+          recipeId: params.id,
+          mealDate: toApiDate(mealPlanDate()),
+          mealType: mealPlanMealType(),
+        },
+      });
+      setMealPlanSuccess(true);
+      setTimeout(() => {
+        closeMealPlanModal();
+      }, 1500);
+    } catch (err) {
+      if (err instanceof Response && err.status === 409) {
+        setMealPlanError(
+          `This recipe is already scheduled for ${MEAL_TYPE_LABELS[mealPlanMealType()].toLowerCase()} on this date`,
+        );
+      } else {
+        const message = await extractApiError(
+          err,
+          "Failed to add to meal plan",
+        );
+        setMealPlanError(message);
+      }
+    } finally {
+      setAddingToMealPlan(false);
+    }
+  };
+
   onMount(() => {
     loadCurrentVersionId();
     loadRecipe();
@@ -470,6 +550,14 @@ export default function ViewRecipePage() {
                   disabled={enriching() || isViewingHistoricalVersion()}
                 >
                   {enriching() ? "Enriching..." : "Enrich with AI"}
+                </button>
+                <button
+                  type="button"
+                  class="btn"
+                  onClick={openMealPlanModal}
+                  disabled={isViewingHistoricalVersion()}
+                >
+                  Add to Meal Plan
                 </button>
                 <A href={`/recipes/${params.id}/edit`} class="btn btn-primary">
                   Edit
@@ -758,6 +846,69 @@ export default function ViewRecipePage() {
               versionA={compareVersions()?.[0] ?? null}
               versionB={compareVersions()?.[1] ?? null}
             />
+
+            {/* Add to Meal Plan Modal */}
+            <Modal
+              isOpen={showMealPlanModal}
+              onClose={closeMealPlanModal}
+              title="Add to Meal Plan"
+              actions={
+                <>
+                  <button
+                    type="button"
+                    class="btn"
+                    onClick={closeMealPlanModal}
+                    disabled={addingToMealPlan()}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onClick={handleAddToMealPlan}
+                    disabled={addingToMealPlan() || mealPlanSuccess()}
+                  >
+                    {addingToMealPlan() ? "Adding..." : "Add"}
+                  </button>
+                </>
+              }
+            >
+              <Show when={mealPlanSuccess()}>
+                <div class="meal-plan-success">Added to meal plan!</div>
+              </Show>
+              <Show when={!mealPlanSuccess()}>
+                <div class="meal-plan-form">
+                  <div class="form-group">
+                    <label for="meal-plan-date">Date</label>
+                    <input
+                      type="date"
+                      id="meal-plan-date"
+                      value={mealPlanDate()}
+                      onInput={(e) => setMealPlanDate(e.currentTarget.value)}
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Meal</label>
+                    <div class="meal-type-buttons">
+                      <For each={MEAL_TYPES}>
+                        {(type) => (
+                          <button
+                            type="button"
+                            class={`meal-type-button ${mealPlanMealType() === type ? "selected" : ""}`}
+                            onClick={() => setMealPlanMealType(type)}
+                          >
+                            {MEAL_TYPE_LABELS[type]}
+                          </button>
+                        )}
+                      </For>
+                    </div>
+                  </div>
+                  <Show when={mealPlanError()}>
+                    <p class="error">{mealPlanError()}</p>
+                  </Show>
+                </div>
+              </Show>
+            </Modal>
           </>
         )}
       </Show>

@@ -122,7 +122,8 @@ export default function MealPlanPage() {
   const getMealsForSlot = (date: Date, mealType: MealTypeValue) => {
     const dateStr = formatDateLocal(date);
     return mealPlans().filter(
-      (mp) => formatDateUtc(mp.mealDate) === dateStr && mp.mealType === mealType,
+      (mp) =>
+        formatDateUtc(mp.mealDate) === dateStr && mp.mealType === mealType,
     );
   };
 
