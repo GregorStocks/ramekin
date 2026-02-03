@@ -1,12 +1,72 @@
 import Foundation
 
+/// URLSession delegate that accepts self-signed certificates for development
+private class InsecureSessionDelegate: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
+    func urlSession(
+        _ session: URLSession,
+        didReceive challenge: URLAuthenticationChallenge,
+        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+    ) {
+        acceptChallenge(challenge, completionHandler: completionHandler)
+    }
+
+    func urlSession(
+        _ session: URLSession,
+        task: URLSessionTask,
+        didReceive challenge: URLAuthenticationChallenge,
+        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+    ) {
+        acceptChallenge(challenge, completionHandler: completionHandler)
+    }
+
+    private func acceptChallenge(
+        _ challenge: URLAuthenticationChallenge,
+        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+    ) {
+        if let serverTrust = challenge.protectionSpace.serverTrust {
+            completionHandler(.useCredential, URLCredential(trust: serverTrust))
+        } else {
+            completionHandler(.performDefaultHandling, nil)
+        }
+    }
+}
+
+/// Shared insecure URLSession for development
+private let insecureSession: URLSession = {
+    URLSession(configuration: .default, delegate: InsecureSessionDelegate(), delegateQueue: nil)
+}()
+
+/// Request builder that accepts self-signed certificates
+private class InsecureRequestBuilder<T>: URLSessionRequestBuilder<T> {
+    override func createURLSession() -> URLSessionProtocol { insecureSession }
+}
+
+/// Decodable request builder that accepts self-signed certificates
+private class InsecureDecodableBuilder<T: Decodable>: URLSessionDecodableRequestBuilder<T> {
+    override func createURLSession() -> URLSessionProtocol { insecureSession }
+}
+
+/// Factory for insecure request builders
+private class InsecureBuilderFactory: RequestBuilderFactory {
+    func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type { InsecureRequestBuilder<T>.self }
+    func getBuilder<T: Decodable>() -> RequestBuilder<T>.Type { InsecureDecodableBuilder<T>.self }
+}
+
 /// API client for interacting with the Ramekin server
 class RamekinAPI {
     static let shared = RamekinAPI()
 
     private let logger = DebugLogger.shared
 
+    /// Custom URLSession that accepts self-signed certificates
+    private lazy var urlSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        return URLSession(configuration: config, delegate: InsecureSessionDelegate(), delegateQueue: nil)
+    }()
+
     private init() {
+        // Configure generated client to accept self-signed certificates
+        RamekinClientAPI.requestBuilderFactory = InsecureBuilderFactory()
         // Configure generated client with any existing credentials
         updateGeneratedClientConfig()
     }
@@ -133,7 +193,7 @@ class RamekinAPI {
         let body = LoginRequest(username: username, password: password)
         request.httpBody = try JSONEncoder().encode(body)
 
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await urlSession.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.invalidResponse
@@ -203,7 +263,7 @@ class RamekinAPI {
         logger.log("REQUEST BODY: \(String(data: request.httpBody ?? Data(), encoding: .utf8) ?? "nil")")
 
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await urlSession.data(for: request)
 
             guard let httpResponse = response as? HTTPURLResponse else {
                 logger.log("ERROR: Invalid response (not HTTPURLResponse)")
@@ -252,7 +312,7 @@ class RamekinAPI {
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await urlSession.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.invalidResponse
@@ -283,7 +343,7 @@ class RamekinAPI {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
 
-        let (_, response) = try await URLSession.shared.data(for: request)
+        let (_, response) = try await urlSession.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.invalidResponse
