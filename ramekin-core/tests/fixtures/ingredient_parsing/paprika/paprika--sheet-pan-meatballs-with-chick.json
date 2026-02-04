@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "CHICKPEAS",
-      "expected": {
-        "item": "CHICKPEAS",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 (15-ounce) cans chickpeas, drained and rinsed",
@@ -24,7 +20,8 @@
             "unit": null
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "section": "Chickpeas"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chickpeas"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chickpeas"
       }
     },
     {
@@ -67,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chickpeas"
       }
     },
     {
@@ -80,7 +80,8 @@
             "unit": "large"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "section": "Chickpeas"
       }
     },
     {
@@ -97,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Chickpeas"
       }
     },
     {
@@ -105,16 +107,13 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Chickpeas"
       }
     },
     {
       "raw": "MEATBALLS",
-      "expected": {
-        "item": "MEATBALLS",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) ground turkey",
@@ -130,7 +129,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -143,7 +143,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -160,7 +161,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -177,7 +179,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -190,7 +193,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -203,7 +207,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -216,7 +221,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Meatballs"
       }
     },
     {
@@ -229,7 +235,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -242,7 +249,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -259,7 +267,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -272,7 +281,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "section": "Meatballs"
       }
     },
     {
@@ -285,7 +295,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to garnish"
+        "note": "plus more to garnish",
+        "section": "Meatballs"
       }
     },
     {

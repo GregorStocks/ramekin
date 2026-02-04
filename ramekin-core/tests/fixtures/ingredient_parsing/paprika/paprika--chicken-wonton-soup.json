@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "WONTONS",
-      "expected": {
-        "item": "WONTONS",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 pound ground chicken",
@@ -24,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
@@ -76,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
@@ -89,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
@@ -97,7 +99,8 @@
       "expected": {
         "item": "Ground white pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "Wontons"
       }
     },
     {
@@ -118,7 +121,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
@@ -126,16 +130,13 @@
       "expected": {
         "item": "Cornstarch, to prevent sticking",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Wontons"
       }
     },
     {
       "raw": "BROTH",
-      "expected": {
-        "item": "BROTH",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 cups prepared chicken stock or broth, storebought or homemade",
@@ -147,7 +148,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Broth"
       }
     },
     {
@@ -155,7 +157,8 @@
       "expected": {
         "item": "A 3-inch piece of ginger",
         "measurements": [],
-        "note": "peeled and sliced"
+        "note": "peeled and sliced",
+        "section": "Broth"
       }
     },
     {
@@ -168,7 +171,8 @@
             "unit": "large"
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "section": "Broth"
       }
     },
     {
@@ -181,7 +185,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Broth"
       }
     },
     {
@@ -189,7 +194,8 @@
       "expected": {
         "item": "Soy sauce or salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "section": "Broth"
       }
     },
     {

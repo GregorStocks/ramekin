@@ -1593,10 +1593,25 @@ fn title_case(s: &str) -> String {
 }
 
 /// Detect if a line is a section header (e.g., "For the sauce:", "FILLING:", "Topping Ingredients:").
+/// Also detects ALL CAPS lines without colons (e.g., "DOUGH", "FILLING", "BERRY SAUCE").
 /// Returns Some(normalized_section_name) if it's a header, None if it's a regular ingredient.
 /// Section names are normalized: "FILLING" → "Filling", "for the sauce" → "For the Sauce".
 pub fn detect_section_header(raw: &str) -> Option<String> {
     let trimmed = raw.trim();
+
+    // Check for ALL CAPS without colon first (e.g., "DOUGH", "FILLING", "BERRY SAUCE")
+    // Pattern: Line is entirely uppercase letters/spaces, no digits, reasonable length
+    if trimmed.len() <= 40
+        && !trimmed.contains(':')
+        && !trimmed.chars().any(|c| c.is_ascii_digit())
+        && trimmed
+            .chars()
+            .filter(|c| c.is_alphabetic())
+            .all(|c| c.is_uppercase())
+        && trimmed.chars().any(|c| c.is_alphabetic())
+    {
+        return Some(normalize_section_name(trimmed));
+    }
 
     // Must end with colon - strip it to get the section name
     let name = trimmed.strip_suffix(':')?.trim();
@@ -1724,7 +1739,7 @@ mod tests {
 
     #[test]
     fn test_detect_section_header_all_caps() {
-        // All-caps headers should be normalized to title case
+        // All-caps headers WITH colon should be normalized to title case
         assert_eq!(
             detect_section_header("FILLING:"),
             Some("Filling".to_string())
@@ -1744,6 +1759,32 @@ mod tests {
         assert_eq!(
             detect_section_header("FOR THE SAUCE:"),
             Some("For the Sauce".to_string())
+        );
+    }
+
+    #[test]
+    fn test_detect_section_header_all_caps_no_colon() {
+        // All-caps headers WITHOUT colon should also be detected
+        assert_eq!(
+            detect_section_header("FILLING"),
+            Some("Filling".to_string())
+        );
+        assert_eq!(detect_section_header("DOUGH"), Some("Dough".to_string()));
+        assert_eq!(
+            detect_section_header("ASSEMBLY"),
+            Some("Assembly".to_string())
+        );
+        assert_eq!(
+            detect_section_header("BERRY SAUCE"),
+            Some("Berry Sauce".to_string())
+        );
+        assert_eq!(
+            detect_section_header("WHIPPED COTTAGE CHEESE"),
+            Some("Whipped Cottage Cheese".to_string())
+        );
+        assert_eq!(
+            detect_section_header("TOASTS AND ASSEMBLY"),
+            Some("Toasts and Assembly".to_string())
         );
     }
 
@@ -1851,6 +1892,21 @@ mod tests {
         assert_eq!(result[0].section, Some("Filling".to_string()));
         assert_eq!(result[1].item, "cheese");
         assert_eq!(result[1].section, Some("Topping".to_string()));
+    }
+
+    #[test]
+    fn test_parse_ingredients_all_caps_no_colon_sections() {
+        // ALL CAPS without colon should also be detected as section headers
+        let blob = "DOUGH\n2 cups flour\n1 tsp yeast\nFILLING\n1 cup onions";
+        let result = parse_ingredients(blob);
+
+        assert_eq!(result.len(), 3);
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[0].section, Some("Dough".to_string()));
+        assert_eq!(result[1].item, "yeast");
+        assert_eq!(result[1].section, Some("Dough".to_string()));
+        assert_eq!(result[2].item, "onions");
+        assert_eq!(result[2].section, Some("Filling".to_string()));
     }
 
     #[test]
