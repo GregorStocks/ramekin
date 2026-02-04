@@ -1306,6 +1306,50 @@ fn pct(num: usize, denom: usize) -> f64 {
     }
 }
 
+/// Generate a sorted text file of unique ingredient names from a pipeline run
+pub fn generate_unique_ingredients_file(run_dir: &Path) -> Result<String> {
+    use std::collections::BTreeSet;
+
+    let urls_dir = run_dir.join("urls");
+    if !urls_dir.exists() {
+        return Ok(String::new());
+    }
+
+    let mut unique_ingredients: BTreeSet<String> = BTreeSet::new();
+
+    for entry in fs::read_dir(&urls_dir)?.filter_map(|e| e.ok()) {
+        if !entry.path().is_dir() {
+            continue;
+        }
+
+        let parse_path = entry.path().join("parse_ingredients").join("output.json");
+        if !parse_path.exists() {
+            continue;
+        }
+
+        if let Ok(content) = fs::read_to_string(&parse_path) {
+            if let Ok(output) = serde_json::from_str::<serde_json::Value>(&content) {
+                if let Some(ingredients) = output.get("ingredients").and_then(|v| v.as_array()) {
+                    for ingredient in ingredients {
+                        if let Some(item) = ingredient.get("item").and_then(|v| v.as_str()) {
+                            let item = item.trim();
+                            if !item.is_empty() {
+                                unique_ingredients.insert(item.to_string());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Return newline-separated sorted list
+    Ok(unique_ingredients
+        .into_iter()
+        .collect::<Vec<_>>()
+        .join("\n"))
+}
+
 /// Simplify error messages for grouping (remove URL-specific parts)
 fn simplify_error(error: &str) -> String {
     // Extract just the error type for grouping
