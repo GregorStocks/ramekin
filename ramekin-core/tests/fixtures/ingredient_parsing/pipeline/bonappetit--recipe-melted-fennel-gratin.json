@@ -60,14 +60,14 @@
     {
       "raw": "4 medium fennel bulbs, trimmed, some fronds reserved",
       "expected": {
-        "item": "fennel bulbs, trimmed, some fronds reserved",
+        "item": "fennel bulbs, trimmed",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "some fronds reserved",
         "category": "Produce"
       }
     },

@@ -55,14 +55,14 @@
     {
       "raw": "1  can pineapple rings (juice reserved)",
       "expected": {
-        "item": "pineapple rings (juice reserved)",
+        "item": "pineapple rings",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "juice reserved",
         "category": "Produce"
       }
     },

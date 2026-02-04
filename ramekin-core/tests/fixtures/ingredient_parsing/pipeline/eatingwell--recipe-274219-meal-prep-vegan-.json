@@ -47,14 +47,14 @@
     {
       "raw": "0.33333334326744 cup chopped fresh mint (reserved from bean salad recipe)",
       "expected": {
-        "item": "chopped fresh mint (reserved from bean salad recipe)",
+        "item": "chopped fresh mint",
         "measurements": [
           {
             "amount": "0.33333334326744",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "reserved from bean salad recipe",
         "category": "Produce"
       }
     }

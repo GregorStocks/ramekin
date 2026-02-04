@@ -682,6 +682,21 @@
         "note": "optional",
         "category": "Beverages"
       }
+    },
+    {
+      "name": "parenthetical_reserved",
+      "raw": "3 tablespoons (reserved) bacon grease",
+      "expected": {
+        "item": "bacon grease",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "reserved",
+        "category": "Meat & Seafood"
+      }
     }
   ]
 }

@@ -37,7 +37,7 @@
     {
       "raw": "1 cup (235 ml) pasta water, reserved",
       "expected": {
-        "item": "pasta water, reserved",
+        "item": "pasta water",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +48,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "reserved",
         "category": "Pasta & Rice"
       }
     },

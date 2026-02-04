@@ -123,7 +123,7 @@
     {
       "raw": "1 (5-ounce; 140 g) olive oil-packed tuna, preferably ventresca (tuna belly; see notes), oil reserved",
       "expected": {
-        "item": "olive oil-packed tuna, preferably ventresca (tuna belly; see notes), oil reserved",
+        "item": "olive oil-packed tuna, preferably ventresca (tuna belly; see notes)",
         "measurements": [
           {
             "amount": "1",
@@ -138,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "oil reserved",
         "category": "Oils & Vinegars"
       }
     },
