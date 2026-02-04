@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "MEATBALLS",
-      "expected": {
-        "item": "MEATBALLS",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -109,6 +110,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -145,17 +148,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "INGREDIENT SECTION",
-      "expected": {
-        "item": "INGREDIENT SECTION",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 ounces (170 grams) soup noodles of your choice (I choose these)",
@@ -172,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredient Section",
         "category": "Pasta & Rice"
       }
     },
@@ -194,6 +194,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredient Section",
         "category": "Oils & Vinegars"
       }
     },
@@ -208,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredient Section",
         "category": "Produce"
       }
     },
@@ -222,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredient Section",
         "category": "Produce"
       }
     },
@@ -236,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredient Section",
         "category": "Produce"
       }
     },
@@ -254,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "Ingredient Section",
         "category": "Canned Goods"
       }
     },
@@ -263,6 +268,7 @@
         "item": "Minced parsley and/or dill to finish",
         "measurements": [],
         "note": null,
+        "section": "Ingredient Section",
         "category": "Spices & Seasonings"
       }
     }

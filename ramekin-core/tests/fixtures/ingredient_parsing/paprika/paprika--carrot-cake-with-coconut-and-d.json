@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "CAKE",
-      "expected": {
-        "item": "CAKE",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 large eggs",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": "gently packed; start with more to account for trimming and peeling",
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Produce"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -130,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -166,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Spices & Seasonings"
       }
     },
@@ -184,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
@@ -202,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Oils & Vinegars"
       }
     },
@@ -220,17 +226,13 @@
           }
         ],
         "note": null,
+        "section": "Cake",
         "category": "Baking"
       }
     },
     {
       "raw": "FROSTING",
-      "expected": {
-        "item": "FROSTING",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 cup (8 ounces or 225 grams) non-dairy or regular cream cheese [see Note]",
@@ -251,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Cheese"
       }
     },
@@ -269,6 +272,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Dairy & Eggs"
       }
     },
@@ -287,6 +291,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     },
@@ -301,6 +306,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Spices & Seasonings"
       }
     },
@@ -319,6 +325,7 @@
           }
         ],
         "note": null,
+        "section": "Frosting",
         "category": "Baking"
       }
     }

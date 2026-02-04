@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "MEATBALL MIXTURE",
-      "expected": {
-        "item": "MEATBALL MIXTURE",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 tbsp panko breadcrumbs or regular breadcrumbs",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Bakery & Bread"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Dairy & Eggs"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Produce"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Produce"
       }
     },
@@ -78,6 +77,7 @@
           }
         ],
         "note": "or ground chicken thigh",
+        "section": "Meatball Mixture",
         "category": "Meat & Seafood"
       }
     },
@@ -92,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -106,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Other"
       }
     },
@@ -138,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Baking"
       }
     },
@@ -152,17 +156,13 @@
           }
         ],
         "note": null,
+        "section": "Meatball Mixture",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "TERIYAKI GLAZE",
-      "expected": {
-        "item": "TERIYAKI GLAZE",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1½ tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -175,6 +175,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -189,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Beverages"
       }
     },
@@ -203,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Condiments & Sauces"
       }
     },
@@ -221,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Baking"
       }
     },
@@ -235,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Produce"
       }
     },
@@ -249,17 +254,13 @@
           }
         ],
         "note": null,
+        "section": "Teriyaki Glaze",
         "category": "Produce"
       }
     },
     {
       "raw": "TOPPINGS",
-      "expected": {
-        "item": "TOPPINGS",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "toasted white sesame seeds to taste",
@@ -267,6 +268,7 @@
         "item": "toasted white sesame seeds to taste",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Spices & Seasonings"
       }
     },
@@ -276,6 +278,7 @@
         "item": "finely chopped green onions to taste",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -285,6 +288,7 @@
         "item": "grated hard cheese to taste, Parmesan, Pecorino, Grana Padano",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Cheese"
       }
     }

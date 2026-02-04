@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "BREAD",
-      "expected": {
-        "item": "BREAD",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 15-ounce can (1 3/4 cups) pumpkin puree",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Produce"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Dairy & Eggs"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },
@@ -130,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,6 +180,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,6 +195,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Spices & Seasonings"
       }
     },
@@ -208,6 +214,7 @@
           }
         ],
         "note": null,
+        "section": "Bread",
         "category": "Baking"
       }
     },

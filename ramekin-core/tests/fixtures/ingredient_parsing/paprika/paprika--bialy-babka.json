@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "DOUGH",
-      "expected": {
-        "item": "DOUGH",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 tablespoons (2 ounces or 55 grams) unsalted butter, melted",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "melted",
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Dairy & Eggs"
       }
     },
@@ -140,17 +142,13 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
     {
       "raw": "FILLING",
-      "expected": {
-        "item": "FILLING",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 pounds (680 grams) yellow onions, diced",
@@ -167,6 +165,7 @@
           }
         ],
         "note": "diced",
+        "section": "Filling",
         "category": "Produce"
       }
     },
@@ -189,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,6 +218,7 @@
           }
         ],
         "note": "plus more to finish",
+        "section": "Filling",
         "category": "Spices & Seasonings"
       }
     }

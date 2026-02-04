@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "BERRY SAUCE",
-      "expected": {
-        "item": "BERRY SAUCE",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups (10 ounces) mixed frozen berries",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce",
         "category": "Frozen"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": "divided",
+        "section": "Berry Sauce",
         "category": "Beverages"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce",
         "category": "Baking"
       }
     },
@@ -108,17 +108,13 @@
           }
         ],
         "note": null,
+        "section": "Berry Sauce",
         "category": "Beverages"
       }
     },
     {
       "raw": "WHIPPED COTTAGE CHEESE",
-      "expected": {
-        "item": "WHIPPED COTTAGE CHEESE",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups (16 ounces or 455 grams) cottage cheese, whole or low-fat",
@@ -139,6 +135,7 @@
           }
         ],
         "note": "whole or low-fat",
+        "section": "Whipped Cottage Cheese",
         "category": "Dairy & Eggs"
       }
     },
@@ -157,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cottage Cheese",
         "category": "Baking"
       }
     },
@@ -171,17 +169,13 @@
           }
         ],
         "note": null,
+        "section": "Whipped Cottage Cheese",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "FRENCH TOAST",
-      "expected": {
-        "item": "FRENCH TOAST",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 large eggs",
@@ -194,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -208,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Spices & Seasonings"
       }
     },
@@ -226,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -244,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "French Toast",
         "category": "Bakery & Bread"
       }
     },
@@ -253,6 +251,7 @@
         "item": "Butter for the pan, salted (my preference) or unsalted",
         "measurements": [],
         "note": null,
+        "section": "French Toast",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,6 +261,7 @@
         "item": "Powdered sugar, for dusting",
         "measurements": [],
         "note": null,
+        "section": "French Toast",
         "category": "Baking"
       }
     }

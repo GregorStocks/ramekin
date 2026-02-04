@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "ASSEMBLY",
-      "expected": {
-        "item": "ASSEMBLY",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 ears corn, husked",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Other"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -59,6 +57,7 @@
         "item": "Nonstick spray",
         "measurements": [],
         "note": "or 2 teaspoons oil",
+        "section": "Assembly",
         "category": "Oils & Vinegars"
       }
     },
@@ -81,6 +80,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -103,6 +103,7 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Cheese"
       }
     },
@@ -117,17 +118,13 @@
           }
         ],
         "note": null,
+        "section": "Assembly",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "TOPPINGS",
-      "expected": {
-        "item": "TOPPINGS",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Thinly sliced jalapeno (1 used 1/2 a big one)",
@@ -140,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -149,6 +147,7 @@
         "item": "Thinly sliced radishes (I used 2 medium)",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -163,6 +162,7 @@
           }
         ],
         "note": null,
+        "section": "Toppings",
         "category": "Canned Goods"
       }
     },
@@ -177,6 +177,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -186,6 +187,7 @@
         "item": "Diced tomatoes",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Canned Goods"
       }
     },
@@ -195,6 +197,7 @@
         "item": "Shredded lettuce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -204,6 +207,7 @@
         "item": "Sliced avocado",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -213,6 +217,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Produce"
       }
     },
@@ -222,6 +227,7 @@
         "item": "Hot sauce",
         "measurements": [],
         "note": null,
+        "section": "Toppings",
         "category": "Condiments & Sauces"
       }
     }

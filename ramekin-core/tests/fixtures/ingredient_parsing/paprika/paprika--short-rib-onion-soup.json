@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "BRAISE",
-      "expected": {
-        "item": "BRAISE",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 pounds (1.3 kg) bone-in beef short ribs",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Braise",
         "category": "Meat & Seafood"
       }
     },
@@ -35,6 +31,7 @@
         "item": "Kosher salt and freshly ground pepper",
         "measurements": [],
         "note": null,
+        "section": "Braise",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +50,7 @@
           }
         ],
         "note": null,
+        "section": "Braise",
         "category": "Oils & Vinegars"
       }
     },
@@ -71,6 +69,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Braise",
         "category": "Produce"
       }
     },
@@ -85,6 +84,7 @@
           }
         ],
         "note": "plus 1 large leek, chopped",
+        "section": "Braise",
         "category": "Produce"
       }
     },
@@ -99,6 +99,7 @@
           }
         ],
         "note": null,
+        "section": "Braise",
         "category": "Produce"
       }
     },
@@ -113,6 +114,7 @@
           }
         ],
         "note": null,
+        "section": "Braise",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +129,7 @@
           }
         ],
         "note": "smashed and peeled",
+        "section": "Braise",
         "category": "Produce"
       }
     },
@@ -141,6 +144,7 @@
           }
         ],
         "note": null,
+        "section": "Braise",
         "category": "Canned Goods"
       }
     },
@@ -159,6 +163,7 @@
           }
         ],
         "note": null,
+        "section": "Braise",
         "category": "Beverages"
       }
     },
@@ -177,17 +182,13 @@
           }
         ],
         "note": null,
+        "section": "Braise",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "SOUP",
-      "expected": {
-        "item": "SOUP",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 tablespoons (3 ounces or 85 grams) unsalted butter",
@@ -208,6 +209,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -226,6 +228,7 @@
           }
         ],
         "note": "peeled and thinly sliced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -244,17 +247,13 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Beverages"
       }
     },
     {
       "raw": "TOASTS AND ASSEMBLY",
-      "expected": {
-        "item": "TOASTS AND ASSEMBLY",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 to 8 (one per bowl) thick slices sourdough or country bread",
@@ -267,6 +266,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts and Assembly",
         "category": "Bakery & Bread"
       }
     },
@@ -281,6 +281,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Toasts and Assembly",
         "category": "Produce"
       }
     },
@@ -303,6 +304,7 @@
           }
         ],
         "note": null,
+        "section": "Toasts and Assembly",
         "category": "Cheese"
       }
     },
@@ -312,6 +314,7 @@
         "item": "Chopped fresh chives",
         "measurements": [],
         "note": "for serving",
+        "section": "Toasts and Assembly",
         "category": "Produce"
       }
     }

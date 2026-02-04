@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "CRUST",
-      "expected": {
-        "item": "CRUST",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups (260 grams) all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Baking"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Spices & Seasonings"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Crust",
         "category": "Other"
       }
     },
@@ -81,6 +80,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Crust",
         "category": "Oils & Vinegars"
       }
     },

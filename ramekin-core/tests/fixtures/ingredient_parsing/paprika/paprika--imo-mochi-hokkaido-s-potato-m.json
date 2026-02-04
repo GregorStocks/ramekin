@@ -129,12 +129,7 @@
     },
     {
       "raw": "SWEET-SAVORY SAUCE",
-      "expected": {
-        "item": "SWEET-SAVORY SAUCE",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
@@ -147,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet-savory Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -161,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet-savory Sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -179,6 +176,7 @@
           }
         ],
         "note": null,
+        "section": "Sweet-savory Sauce",
         "category": "Baking"
       }
     }

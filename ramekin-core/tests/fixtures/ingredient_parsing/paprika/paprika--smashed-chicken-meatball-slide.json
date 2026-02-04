@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "MEATBALLS",
-      "expected": {
-        "item": "MEATBALLS",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound ground chicken",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": "divided",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,6 +125,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,17 +140,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "SLAW",
-      "expected": {
-        "item": "SLAW",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/3 cup buttermilk, well-shaken",
@@ -160,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Dairy & Eggs"
       }
     },
@@ -174,6 +174,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Condiments & Sauces"
       }
     },
@@ -188,6 +189,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Oils & Vinegars"
       }
     },
@@ -206,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Baking"
       }
     },
@@ -220,6 +223,7 @@
           }
         ],
         "note": null,
+        "section": "Slaw",
         "category": "Produce"
       }
     },
@@ -229,17 +233,13 @@
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Slaw",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "ASSEMBLY",
-      "expected": {
-        "item": "ASSEMBLY",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Butter to toast buns; oil to cook meatballs",
@@ -247,6 +247,7 @@
         "item": "Butter to toast buns; oil to cook meatballs",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Meat & Seafood"
       }
     },
@@ -256,6 +257,7 @@
         "item": "Slider buns, such as potato or Hawaiian rolls",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Produce"
       }
     },
@@ -265,6 +267,7 @@
         "item": "Barbecue sauce, bottled or from the quickie recipe, below",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Condiments & Sauces"
       }
     },
@@ -274,6 +277,7 @@
         "item": "Thinly-sliced pickles",
         "measurements": [],
         "note": null,
+        "section": "Assembly",
         "category": "Canned Goods"
       }
     }

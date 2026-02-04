@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "WONTONS",
-      "expected": {
-        "item": "WONTONS",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 pound ground chicken",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Meat & Seafood"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Condiments & Sauces"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Spices & Seasonings"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Oils & Vinegars"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Produce"
       }
     },
@@ -96,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Produce"
       }
     },
@@ -105,6 +106,7 @@
         "item": "Ground white pepper",
         "measurements": [],
         "note": "to taste",
+        "section": "Wontons",
         "category": "Spices & Seasonings"
       }
     },
@@ -127,6 +129,7 @@
           }
         ],
         "note": null,
+        "section": "Wontons",
         "category": "Frozen"
       }
     },
@@ -136,17 +139,13 @@
         "item": "Cornstarch, to prevent sticking",
         "measurements": [],
         "note": null,
+        "section": "Wontons",
         "category": "Baking"
       }
     },
     {
       "raw": "BROTH",
-      "expected": {
-        "item": "BROTH",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 cups prepared chicken stock or broth, storebought or homemade",
@@ -159,6 +158,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Meat & Seafood"
       }
     },
@@ -168,6 +168,7 @@
         "item": "A 3-inch piece of ginger",
         "measurements": [],
         "note": "peeled and sliced",
+        "section": "Broth",
         "category": "Beverages"
       }
     },
@@ -182,6 +183,7 @@
           }
         ],
         "note": "crushed",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -196,6 +198,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -205,6 +208,7 @@
         "item": "Soy sauce or salt",
         "measurements": [],
         "note": "to taste",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },

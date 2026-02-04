@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "CHICKPEAS",
-      "expected": {
-        "item": "CHICKPEAS",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 (15-ounce) cans chickpeas, drained and rinsed",
@@ -26,6 +21,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": "divided",
+        "section": "Chickpeas",
         "category": "Produce"
       }
     },
@@ -104,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Oils & Vinegars"
       }
     },
@@ -113,17 +114,13 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "MEATBALLS",
-      "expected": {
-        "item": "MEATBALLS",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (455 grams) ground turkey",
@@ -140,6 +137,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -154,6 +152,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -172,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -190,6 +190,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Other"
       }
     },
@@ -204,6 +205,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -218,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -232,6 +235,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -246,6 +250,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -278,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -292,6 +299,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
@@ -306,6 +314,7 @@
           }
         ],
         "note": "plus more to garnish",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
