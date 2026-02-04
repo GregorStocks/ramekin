@@ -32,7 +32,7 @@ url = "2.5"
 quick-xml = { version = "0.39", features = ["serialize"] }
 
 # Regex for URL pattern matching
-regex = "1.10"
+regex = "1.12"
 
 # Date/time
 chrono = { version = "0.4", features = ["serde"] }
@@ -54,13 +54,13 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 dirs = "6.0"
 
 # Paprika import
-zip = "7.2"
+zip = "7.3"
 flate2 = "1.1"
 base64 = "0.22"
 
 # Load testing
 rand = "0.9"
-rand_chacha = "0.9"
+rand_chacha = "0.10"
 
 # Headless browser
 headless_chrome = "1.0"
