@@ -83,9 +83,14 @@
     {
       "raw": "Optional: 1/4 cup cocoa powder * (reduce the powdered sugar by the amount of cocoa used)",
       "expected": {
-        "item": "Optional: 1/4 cup cocoa powder * (reduce the powdered sugar by the amount of cocoa used)",
-        "measurements": [],
-        "note": null,
+        "item": "cocoa powder * (reduce the powdered sugar by the amount of cocoa used)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
         "category": "Baking"
       }
     }

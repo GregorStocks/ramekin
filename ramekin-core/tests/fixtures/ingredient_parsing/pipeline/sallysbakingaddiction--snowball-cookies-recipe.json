@@ -91,14 +91,18 @@
     {
       "raw": "optional: 3/4 cup (100g) finely chopped and toasted pecans*",
       "expected": {
-        "item": "optional: 3/4 cup finely chopped and toasted pecans*",
+        "item": "finely chopped and toasted pecans*",
         "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "cup"
+          },
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "optional",
         "category": "Nuts & Dried Fruit"
       }
     },

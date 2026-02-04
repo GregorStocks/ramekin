@@ -201,9 +201,14 @@
     {
       "raw": "optional: 2 Tablespoons shredded parmesan cheese or crumbled feta cheese",
       "expected": {
-        "item": "optional: 2 Tablespoons shredded parmesan cheese or crumbled feta cheese",
-        "measurements": [],
-        "note": null,
+        "item": "shredded parmesan cheese or crumbled feta cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional",
         "category": "Cheese"
       }
     },
