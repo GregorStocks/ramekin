@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "rinsed (or equivalent)"
+        "note": "rinsed (or equivalent)",
+        "category": "Canned Goods"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Canned Goods"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "cup"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "g"
           }
         ],
-        "note": "frozen is ok"
+        "note": "frozen is ok",
+        "category": "Produce"
       }
     },
     {
@@ -119,7 +127,8 @@
       "expected": {
         "item": "a couple handfuls chopped herbs (cilantro, dill, celery leaves)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": "cup"
           }
         ],
-        "note": "well rinsed"
+        "note": "well rinsed",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -140,7 +150,8 @@
       "expected": {
         "item": "a big pinch of saffron",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +159,8 @@
       "expected": {
         "item": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "sliced lengthwise into quarters and then chopped into 1-inch segments"
+        "note": "sliced lengthwise into quarters and then chopped into 1-inch segments",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": "well chopped"
+        "note": "well chopped",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": "tops and tails trimmed"
+        "note": "tops and tails trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "fine-grain sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

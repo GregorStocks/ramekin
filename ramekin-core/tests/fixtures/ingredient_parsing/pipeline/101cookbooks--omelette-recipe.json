@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "beaten"
+        "note": "beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "a tiny pinch of fine grain sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "a few tablespoons of chopped chives or herbs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -36,7 +39,8 @@
       "expected": {
         "item": "a dollop of pesto",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -44,7 +48,8 @@
       "expected": {
         "item": "a bit of goat cheese or feta",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -52,7 +57,8 @@
       "expected": {
         "item": "a small handful of mixed salad greens",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

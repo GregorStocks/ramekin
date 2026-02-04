@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "Dry mustard",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -40,7 +43,8 @@
       "expected": {
         "item": "Pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -48,7 +52,8 @@
       "expected": {
         "item": "Unsalted butter",
         "measurements": [],
-        "note": "softened to room temperature"
+        "note": "softened to room temperature",
+        "category": "Dairy & Eggs"
       }
     }
   ]

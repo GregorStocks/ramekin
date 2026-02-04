@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "cold from refrigerator"
+        "note": "cold from refrigerator",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "pinch"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "minced fresh tarragon or dill",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

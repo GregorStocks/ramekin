@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced into 1/4-inch pieces"
+        "note": "diced into 1/4-inch pieces",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": "or more broth"
+        "note": "or more broth",
+        "category": "Other"
       }
     },
     {
@@ -152,7 +160,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -165,7 +174,8 @@
             "unit": "small"
           }
         ],
-        "note": "diced (1 cup"
+        "note": "diced (1 cup",
+        "category": "Produce"
       }
     },
     {
@@ -178,7 +188,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -195,7 +206,8 @@
             "unit": null
           }
         ],
-        "note": "plus shredded parmesan for serving"
+        "note": "plus shredded parmesan for serving",
+        "category": "Cheese"
       }
     },
     {
@@ -203,7 +215,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": "and freshly ground black pepper"
+        "note": "and freshly ground black pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -224,7 +237,8 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -245,7 +259,8 @@
             "unit": "g"
           }
         ],
-        "note": "or cannellini beans, drained and rinsed"
+        "note": "or cannellini beans, drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -253,7 +268,8 @@
       "expected": {
         "item": "Red pepper flakes",
         "measurements": [],
-        "note": "to taste (optional"
+        "note": "to taste (optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

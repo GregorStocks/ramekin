@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": "(fresh or canned"
+        "note": "(fresh or canned",
+        "category": "Produce"
       }
     },
     {
@@ -62,7 +64,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -79,7 +82,8 @@
             "unit": "g"
           }
         ],
-        "note": "(optional"
+        "note": "(optional",
+        "category": "Beverages"
       }
     },
     {
@@ -96,7 +100,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -104,7 +109,8 @@
       "expected": {
         "item": "garnish: pineapple spears",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

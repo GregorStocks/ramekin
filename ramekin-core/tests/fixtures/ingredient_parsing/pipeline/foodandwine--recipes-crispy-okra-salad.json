@@ -12,7 +12,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional, see Note"
+        "note": "optional, see Note",
+        "category": "Other"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "Vegetable oil, for frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": "very thinly sliced"
+        "note": "very thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -92,7 +98,8 @@
             "unit": "medium"
           }
         ],
-        "note": "seeded and sliced into thin strips"
+        "note": "seeded and sliced into thin strips",
+        "category": "Produce"
       }
     },
     {
@@ -105,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -118,7 +126,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

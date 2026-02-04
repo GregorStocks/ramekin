@@ -7,7 +7,8 @@
       "expected": {
         "item": "about a pound of red-skinned (or other) potatoes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -23,7 +25,8 @@
       "expected": {
         "item": "kosher salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -36,7 +39,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -53,7 +57,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -66,7 +71,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -83,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -96,7 +103,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -109,7 +117,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -117,7 +126,8 @@
       "expected": {
         "item": "Mix of finely chopped herbs, such as: 1/2 cup chives, 2 teaspoons fresh thyme",
         "measurements": [],
-        "note": "1/4 cup fresh tarragon"
+        "note": "1/4 cup fresh tarragon",
+        "category": "Produce"
       }
     }
   ]

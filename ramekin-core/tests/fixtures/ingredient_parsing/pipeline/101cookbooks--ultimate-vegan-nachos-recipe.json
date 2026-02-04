@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "can"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +63,8 @@
       "expected": {
         "item": "any/all of the following - sliced olives, chopped scallions, cilantro, chopped red onions, pickled serranos chiles*, favorite salsa",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +72,8 @@
       "expected": {
         "item": "swap chickpeas for the black beans, roasted broccoli, guacamole, cilantro, hemp seeds, pickled serrano chiles*",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     }
   ]

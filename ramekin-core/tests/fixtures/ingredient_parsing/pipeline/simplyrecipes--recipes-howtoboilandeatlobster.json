@@ -7,7 +7,8 @@
       "expected": {
         "item": "Live lobsters, 1 per person",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "A large pot of salted water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -28,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -36,7 +39,8 @@
       "expected": {
         "item": "Butter",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -44,7 +48,8 @@
       "expected": {
         "item": "Bread for dipping into the lobster-infused butter",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Meat & Seafood"
       }
     }
   ]

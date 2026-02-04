@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "thawed (25 cm x 25cm / 10\" x 10\""
+        "note": "thawed (25 cm x 25cm / 10\" x 10\"",
+        "category": "Frozen"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "Oil spray",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and roughly diced into 1.5cm/0.5\" cubes"
+        "note": "peeled and roughly diced into 1.5cm/0.5\" cubes",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -101,7 +108,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

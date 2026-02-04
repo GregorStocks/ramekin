@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "bacon), cut into 1/2\" pieces",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "g"
           }
         ],
-        "note": "quartered"
+        "note": "quartered",
+        "category": "Produce"
       }
     },
     {
@@ -53,7 +56,8 @@
       "expected": {
         "item": "through root ends",
         "measurements": [],
-        "note": "thinly sliced crosswise"
+        "note": "thinly sliced crosswise",
+        "category": "Other"
       }
     },
     {
@@ -61,7 +65,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -69,7 +74,8 @@
       "expected": {
         "item": "Extra-virgin olive oil (for pan and drizzling)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -90,7 +96,8 @@
             "unit": "g"
           }
         ],
-        "note": "quartered through root"
+        "note": "quartered through root",
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +105,8 @@
       "expected": {
         "item": "end, cored, cut into 1\" pieces",
         "measurements": [],
-        "note": "divided"
+        "note": "divided",
+        "category": "Other"
       }
     },
     {
@@ -111,7 +119,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -124,7 +133,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,7 +147,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -154,7 +165,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -171,7 +183,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -188,7 +201,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -209,7 +223,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated"
+        "note": "finely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -217,7 +232,8 @@
       "expected": {
         "item": "Freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -225,7 +241,8 @@
       "expected": {
         "item": "Lemon wedges",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

@@ -7,7 +7,8 @@
       "expected": {
         "item": "Sausage:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -28,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -54,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +100,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -110,7 +118,8 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -118,7 +127,8 @@
       "expected": {
         "item": "Herby yogurt:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -135,7 +145,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -143,7 +154,8 @@
       "expected": {
         "item": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof)",
         "measurements": [],
-        "note": "plus a few roughly chopped, to serve"
+        "note": "plus a few roughly chopped, to serve",
+        "category": "Produce"
       }
     },
     {
@@ -156,7 +168,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or more to taste"
+        "note": "or more to taste",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -164,7 +177,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -172,7 +186,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -180,7 +195,8 @@
       "expected": {
         "item": "A handful shredded red cabbage to serve",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +204,8 @@
       "expected": {
         "item": "Lemon wedges, to serve",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

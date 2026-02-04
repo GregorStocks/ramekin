@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more if needed"
+        "note": "plus more if needed",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "kg"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -66,7 +69,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +83,8 @@
             "unit": "medium"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -96,7 +101,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more if desired"
+        "note": "plus more if desired",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -113,7 +119,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -130,7 +137,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -143,7 +151,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more as needed"
+        "note": "plus more as needed",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -160,7 +169,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more if desired"
+        "note": "plus more if desired",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -177,7 +187,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -198,7 +209,8 @@
             "unit": "g"
           }
         ],
-        "note": "juices drained and reserved"
+        "note": "juices drained and reserved",
+        "category": "Produce"
       }
     },
     {
@@ -215,7 +227,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -232,7 +245,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -249,7 +263,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -262,7 +277,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -283,7 +299,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained (see notes)"
+        "note": "drained (see notes)",
+        "category": "Canned Goods"
       }
     },
     {
@@ -291,7 +308,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -299,7 +317,8 @@
       "expected": {
         "item": "Sour cream, cilantro leaves, thinly sliced fresh chile or jalapeño, grated cheese, thinly sliced scallions, lime wedges, and more",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Dairy & Eggs"
       }
     }
   ]

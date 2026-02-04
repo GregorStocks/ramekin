@@ -7,7 +7,8 @@
       "expected": {
         "item": "WONTONS",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "Ground white pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +126,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -126,7 +135,8 @@
       "expected": {
         "item": "Cornstarch, to prevent sticking",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -134,7 +144,8 @@
       "expected": {
         "item": "BROTH",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -147,7 +158,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -155,7 +167,8 @@
       "expected": {
         "item": "A 3-inch piece of ginger",
         "measurements": [],
-        "note": "peeled and sliced"
+        "note": "peeled and sliced",
+        "category": "Beverages"
       }
     },
     {
@@ -168,7 +181,8 @@
             "unit": "large"
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Produce"
       }
     },
     {
@@ -181,7 +195,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -189,7 +204,8 @@
       "expected": {
         "item": "Soy sauce or salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -211,7 +227,8 @@
           }
         ],
         "note": null,
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Produce"
       }
     },
     {
@@ -220,7 +237,8 @@
         "item": "Toasted sesame oil and soy sauce",
         "measurements": [],
         "note": "to taste",
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Oils & Vinegars"
       }
     }
   ]

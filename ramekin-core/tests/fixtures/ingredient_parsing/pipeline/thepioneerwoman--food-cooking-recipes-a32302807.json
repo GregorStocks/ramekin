@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "hulled and quartered"
+        "note": "hulled and quartered",
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -45,7 +47,8 @@
       "expected": {
         "item": "Juice of 3 limes",
         "measurements": [],
-        "note": "plus lime wedges for garnish"
+        "note": "plus lime wedges for garnish",
+        "category": "Beverages"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

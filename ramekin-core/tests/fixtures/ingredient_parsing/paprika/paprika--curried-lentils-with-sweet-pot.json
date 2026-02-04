@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped small"
+        "note": "chopped small",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and grated"
+        "note": "peeled and grated",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": null
           }
         ],
-        "note": "then minced"
+        "note": "then minced",
+        "category": "Produce"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -132,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch cubes"
+        "note": "peeled and cut into 1/2-inch cubes",
+        "category": "Produce"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -175,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": "leaves thinly sliced"
+        "note": "leaves thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "more to taste"
+        "note": "more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -201,7 +214,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -214,7 +228,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -222,7 +237,8 @@
       "expected": {
         "item": "Finely grated zest of 1 lime",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -230,7 +246,8 @@
       "expected": {
         "item": "Juice of 1/2 lime",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -243,7 +260,8 @@
             "unit": "cup"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -256,7 +274,8 @@
             "unit": "cup"
           }
         ],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

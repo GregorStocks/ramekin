@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -45,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1/2 cup olive oil, not extra-virgin"
+        "note": "plus 1/2 cup olive oil, not extra-virgin",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +62,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +76,8 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "category": "Produce"
       }
     }
   ]

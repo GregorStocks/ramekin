@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -88,7 +93,8 @@
       "expected": {
         "item": "Sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -96,7 +102,8 @@
       "expected": {
         "item": "Ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -113,7 +120,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -126,7 +134,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -139,7 +148,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and sliced"
+        "note": "peeled and sliced",
+        "category": "Produce"
       }
     },
     {
@@ -152,7 +162,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and minced"
+        "note": "peeled and minced",
+        "category": "Produce"
       }
     },
     {
@@ -169,7 +180,8 @@
             "unit": "g"
           }
         ],
-        "note": "250 g, thinly sliced"
+        "note": "250 g, thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -182,7 +194,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -195,7 +208,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -212,7 +226,8 @@
             "unit": "fl oz"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -229,7 +244,8 @@
             "unit": "fl oz"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1 teaspoon all-purpose flour"
+        "note": "plus 1 teaspoon all-purpose flour",
+        "category": "Baking"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -75,7 +79,8 @@
       "expected": {
         "item": "Salt and ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +139,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -148,7 +157,8 @@
             "unit": "g"
           }
         ],
-        "note": "the remainder sliced thin"
+        "note": "the remainder sliced thin",
+        "category": "Produce"
       }
     },
     {
@@ -165,7 +175,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -186,7 +197,8 @@
             "unit": null
           }
         ],
-        "note": "sliced 1/8-inch thick"
+        "note": "sliced 1/8-inch thick",
+        "category": "Produce"
       }
     },
     {
@@ -203,7 +215,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

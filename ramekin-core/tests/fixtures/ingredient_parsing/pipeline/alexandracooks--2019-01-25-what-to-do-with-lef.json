@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "a mix of greens, whatever you like: arugula, endive, kale (thinly sliced), etc",
         "measurements": [],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +76,8 @@
       "expected": {
         "item": "leftover roasted chicken",
         "measurements": [],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -79,7 +85,8 @@
       "expected": {
         "item": "shaved parmesan or Manchego",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     },
     {
@@ -87,7 +94,8 @@
       "expected": {
         "item": "toasted pine nuts or other toasted nuts",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -95,7 +103,8 @@
       "expected": {
         "item": "orange segments or diced apple or pear",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -103,7 +112,8 @@
       "expected": {
         "item": "freshly cracked pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

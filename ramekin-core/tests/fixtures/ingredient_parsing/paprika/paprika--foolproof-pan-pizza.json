@@ -20,7 +20,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for dusting"
+        "note": "plus more for dusting",
+        "category": "Baking"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more for sprinkling"
+        "note": "plus more for sprinkling",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -62,7 +64,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -83,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -104,7 +108,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to coat pans and for drizzling"
+        "note": "plus more to coat pans and for drizzling",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -117,7 +122,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -134,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -142,7 +149,8 @@
       "expected": {
         "item": "Toppings as desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -155,7 +163,8 @@
             "unit": "small"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -172,7 +181,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     }
   ]

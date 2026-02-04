@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "Olive brine",
         "measurements": [],
-        "note": "for serving; optional"
+        "note": "for serving; optional",
+        "category": "Canned Goods"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "Green olives or lemon twists",
         "measurements": [],
-        "note": "for serving; optional"
+        "note": "for serving; optional",
+        "category": "Produce"
       }
     }
   ]

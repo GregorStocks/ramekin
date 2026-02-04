@@ -4,6 +4,7 @@
 
 use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
+use ramekin_core::ingredient_categorizer;
 use ramekin_core::ingredient_parser::{
     detect_section_header, parse_ingredient, parse_ingredients, should_ignore_line, Measurement,
     ParsedIngredient,
@@ -51,15 +52,19 @@ struct Expected {
     note: Option<String>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     section: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    category: Option<String>,
 }
 
 impl From<ParsedIngredient> for Expected {
     fn from(ing: ParsedIngredient) -> Self {
+        let category = ingredient_categorizer::categorize(&ing.item).to_string();
         Self {
             item: ing.item,
             measurements: ing.measurements,
             note: ing.note,
             section: ing.section,
+            category: Some(category),
         }
     }
 }

@@ -16,7 +16,8 @@
             "unit": "ml"
           }
         ],
-        "note": "chilled *see note below"
+        "note": "chilled *see note below",
+        "category": "Beverages"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "juice of 1 orange",
         "measurements": [],
-        "note": "or 1/2 cup orange juice"
+        "note": "or 1/2 cup orange juice",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "cup"
           }
         ],
-        "note": "rum, grand mariner etc., or to taste"
+        "note": "rum, grand mariner etc., or to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Other"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "cup"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "extra slices of fruit for garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     }
   ]

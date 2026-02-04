@@ -7,7 +7,8 @@
       "expected": {
         "item": "Corn tortillas",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "Olive oil, avocado oil, or vegetable oil, (for brushing on tortillas)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -23,7 +25,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

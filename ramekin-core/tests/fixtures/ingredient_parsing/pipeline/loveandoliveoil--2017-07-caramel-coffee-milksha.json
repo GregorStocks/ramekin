@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "softened slightly"
+        "note": "softened slightly",
+        "category": "Frozen"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chilled"
+        "note": "chilled",
+        "category": "Beverages"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -71,7 +75,8 @@
       "expected": {
         "item": "whipped cream and caramel sauce, optional",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Dairy & Eggs"
       }
     }
   ]

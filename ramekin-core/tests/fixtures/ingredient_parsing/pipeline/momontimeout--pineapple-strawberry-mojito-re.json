@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "hulled, quartered"
+        "note": "hulled, quartered",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "fresh is best but canned will work too"
+        "note": "fresh is best but canned will work too",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": "plus more for garnishing"
+        "note": "plus more for garnishing",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -123,7 +131,8 @@
       "expected": {
         "item": "soda water (club soda, lemon-lime soda)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

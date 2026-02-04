@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -45,7 +48,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -58,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "smashed and peeled"
+        "note": "smashed and peeled",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +76,8 @@
             "unit": "sprig"
           }
         ],
-        "note": "optional because I’ve forgotten it each time, and not regretted it"
+        "note": "optional because I’ve forgotten it each time, and not regretted it",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -97,7 +104,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -105,7 +113,8 @@
       "expected": {
         "item": "About 4 cups homemade or storebought chicken or vegetable broth",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -118,7 +127,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -126,7 +136,8 @@
       "expected": {
         "item": "Shaved parmesan, to finish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

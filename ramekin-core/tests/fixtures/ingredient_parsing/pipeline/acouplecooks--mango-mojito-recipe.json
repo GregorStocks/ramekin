@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "plus additional for garnish"
+        "note": "plus additional for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -101,7 +107,8 @@
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": "for serving (try clear ice!)"
+        "note": "for serving (try clear ice!)",
+        "category": "Other"
       }
     }
   ]

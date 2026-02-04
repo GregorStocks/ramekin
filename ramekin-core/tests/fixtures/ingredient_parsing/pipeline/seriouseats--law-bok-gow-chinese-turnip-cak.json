@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and finely grated on a box grater"
+        "note": "peeled and finely grated on a box grater",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus 2 teaspoons brown sugar, divided"
+        "note": "plus 2 teaspoons brown sugar, divided",
+        "category": "Baking"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced (see note)"
+        "note": "diced (see note)",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": null
           }
         ],
-        "note": "diced (see note)"
+        "note": "diced (see note)",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed and patted dry (see note)"
+        "note": "rinsed and patted dry (see note)",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -131,7 +139,8 @@
       "expected": {
         "item": "Toasted sesame oil",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -144,7 +153,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -157,7 +167,8 @@
             "unit": "bunch"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -165,7 +176,8 @@
       "expected": {
         "item": "Toasted sesame seeds, for serving",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -173,7 +185,8 @@
       "expected": {
         "item": "Hoisin sauce and Sriracha",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Condiments & Sauces"
       }
     }
   ]

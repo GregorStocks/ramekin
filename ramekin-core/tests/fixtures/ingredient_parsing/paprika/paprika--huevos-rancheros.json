@@ -7,7 +7,8 @@
       "expected": {
         "item": "Egg:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "Corn tortilla",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -23,7 +25,8 @@
       "expected": {
         "item": "Mexican cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -36,7 +39,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -49,7 +53,8 @@
         "item": "Salsa",
         "measurements": [],
         "note": null,
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -58,7 +63,8 @@
         "item": "Black beans",
         "measurements": [],
         "note": null,
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Canned Goods"
       }
     },
     {
@@ -67,7 +73,8 @@
         "item": "Cilantro",
         "measurements": [],
         "note": null,
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +83,8 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -85,7 +93,8 @@
         "item": "Mexican cheese",
         "measurements": [],
         "note": null,
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Cheese"
       }
     },
     {
@@ -94,7 +103,8 @@
         "item": "Coteja",
         "measurements": [],
         "note": null,
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Other"
       }
     }
   ]

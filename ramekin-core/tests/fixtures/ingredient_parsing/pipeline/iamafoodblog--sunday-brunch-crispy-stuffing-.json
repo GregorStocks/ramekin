@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "oil or butter for the pan",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "quail eggs",
         "measurements": [],
-        "note": "as needed"
+        "note": "as needed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -57,7 +62,8 @@
       "expected": {
         "item": "sriracha, if desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

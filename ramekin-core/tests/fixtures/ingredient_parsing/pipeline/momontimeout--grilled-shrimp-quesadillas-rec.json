@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "I used 31-40 ct, raw, peeled, tail-on - deveined"
+        "note": "I used 31-40 ct, raw, peeled, tail-on - deveined",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "pico de gallo",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "fresh guacamole",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
@@ -83,7 +89,8 @@
       "expected": {
         "item": "cilantro",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -91,7 +98,8 @@
       "expected": {
         "item": "grilled peppers and onions",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

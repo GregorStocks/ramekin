@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 1/2 cups cooked chickpeas"
+        "note": "or 1 1/2 cups cooked chickpeas",
+        "category": "Canned Goods"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": "more to taste"
+        "note": "more to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "more as needed"
+        "note": "more as needed",
+        "category": "Other"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -136,7 +145,8 @@
       "expected": {
         "item": "Any of the following garnishes:  drizzle of olive oil or zhoug sauce, sprinkle of ground sumac or paprika",
         "measurements": [],
-        "note": "chopped fresh parsley"
+        "note": "chopped fresh parsley",
+        "category": "Oils & Vinegars"
       }
     }
   ]

@@ -7,7 +7,8 @@
       "expected": {
         "item": "Coarse salt and ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and thinly sliced"
+        "note": "peeled and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for serving"
+        "note": "plus more for serving",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -123,7 +131,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Beverages"
       }
     }
   ]

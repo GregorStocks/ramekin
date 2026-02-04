@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": null
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Produce"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided 3 ways"
+        "note": "divided 3 ways",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided 3 ways"
+        "note": "divided 3 ways",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -149,7 +159,8 @@
       "expected": {
         "item": "vegetable oil",
         "measurements": [],
-        "note": "like canola oil; for frying (approximately 1-2 cups"
+        "note": "like canola oil; for frying (approximately 1-2 cups",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -166,7 +177,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -179,7 +191,8 @@
             "unit": "large"
           }
         ],
-        "note": "plus 1/4 cup water, whisked"
+        "note": "plus 1/4 cup water, whisked",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -192,7 +205,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -205,7 +219,8 @@
             "unit": "cup"
           }
         ],
-        "note": "freshly grated, divided"
+        "note": "freshly grated, divided",
+        "category": "Cheese"
       }
     },
     {
@@ -218,7 +233,8 @@
             "unit": "cup"
           }
         ],
-        "note": "freshly shredded, plus more if desired"
+        "note": "freshly shredded, plus more if desired",
+        "category": "Cheese"
       }
     },
     {
@@ -226,7 +242,8 @@
       "expected": {
         "item": "fresh basil",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -41,7 +43,8 @@
       "expected": {
         "item": "Grapefruit soda",
         "measurements": [],
-        "note": "such as San Pellegrino Pompelmo; for serving"
+        "note": "such as San Pellegrino Pompelmo; for serving",
+        "category": "Produce"
       }
     },
     {
@@ -49,7 +52,8 @@
       "expected": {
         "item": "Lemon wedge",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

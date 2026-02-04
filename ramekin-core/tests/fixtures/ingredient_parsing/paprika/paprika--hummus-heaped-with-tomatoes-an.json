@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped small"
+        "note": "chopped small",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped small"
+        "note": "chopped small",
+        "category": "Produce"
       }
     },
     {
@@ -92,7 +98,8 @@
       "expected": {
         "item": "Juice of half a lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -100,7 +107,8 @@
       "expected": {
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -108,7 +116,8 @@
       "expected": {
         "item": "Sumac and/or za’atar",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -121,7 +130,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more for garnish"
+        "note": "plus more for garnish",
+        "category": "Spices & Seasonings"
       }
     }
   ]

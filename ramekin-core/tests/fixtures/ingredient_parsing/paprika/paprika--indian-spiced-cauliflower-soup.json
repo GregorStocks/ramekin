@@ -7,7 +7,8 @@
       "expected": {
         "item": "Soup:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +49,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +63,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": null
           }
         ],
-        "note": "more or less to taste"
+        "note": "more or less to taste",
+        "category": "Other"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -145,7 +155,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -162,7 +173,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -175,7 +187,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -183,7 +196,8 @@
       "expected": {
         "item": "About 3 1/2 cups cauliflower florets (from about 1/2 a large 2.75-pound head)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -196,7 +210,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled and chopped or 1 1/2 cups canned chopped tomatoes"
+        "note": "peeled and chopped or 1 1/2 cups canned chopped tomatoes",
+        "category": "Produce"
       }
     },
     {
@@ -209,7 +224,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or to taste (we wanted more)"
+        "note": "or to taste (we wanted more)",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -222,7 +238,8 @@
         "item": "A couple spoonfuls heavy cream or dollops of yogurt",
         "measurements": [],
         "note": null,
-        "section": "To Finish (All Optional)"
+        "section": "To Finish (All Optional)",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -236,7 +253,8 @@
           }
         ],
         "note": null,
-        "section": "To Finish (All Optional)"
+        "section": "To Finish (All Optional)",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -250,7 +268,8 @@
           }
         ],
         "note": "chopped",
-        "section": "To Finish (All Optional)"
+        "section": "To Finish (All Optional)",
+        "category": "Produce"
       }
     },
     {
@@ -259,7 +278,8 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "To Finish (All Optional)"
+        "section": "To Finish (All Optional)",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -268,7 +288,8 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
-        "section": "To Finish (All Optional)"
+        "section": "To Finish (All Optional)",
+        "category": "Produce"
       }
     },
     {
@@ -277,7 +298,8 @@
         "item": "Toasted pita or naan wedges",
         "measurements": [],
         "note": null,
-        "section": "To Finish (All Optional)"
+        "section": "To Finish (All Optional)",
+        "category": "Bakery & Bread"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "medium"
           }
         ],
-        "note": "2 halved crosswise and 2 peeled and cut into half-moons"
+        "note": "2 halved crosswise and 2 peeled and cut into half-moons",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "stalk"
           }
         ],
-        "note": "with the leaves reserved for garnish"
+        "note": "with the leaves reserved for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "quart"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -163,7 +174,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled and cut into quarter-moons"
+        "note": "peeled and cut into quarter-moons",
+        "category": "Produce"
       }
     },
     {
@@ -176,7 +188,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -184,7 +197,8 @@
       "expected": {
         "item": "Freshly squeezed lemon juice, to taste",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     },
     {
@@ -192,7 +206,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Spices & Seasonings"
       }
     }
   ]

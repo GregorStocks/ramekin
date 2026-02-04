@@ -12,7 +12,8 @@
             "unit": "bottle"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or 2 ounces gin (both are good! gin is dryer)"
+        "note": "or 2 ounces gin (both are good! gin is dryer)",
+        "category": "Beverages"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "8-ounce can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -90,7 +96,8 @@
             "unit": "cup"
           }
         ],
-        "note": "fresh or frozen"
+        "note": "fresh or frozen",
+        "category": "Produce"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -115,7 +123,8 @@
       "expected": {
         "item": "Ginger ale or your bubbly of choice: sparkling water; sparkling wine",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

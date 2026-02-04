@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "oz"
           }
         ],
-        "note": "sliced down the centre"
+        "note": "sliced down the centre",
+        "category": "Beverages"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "lb"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "lb"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "lb"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -170,7 +180,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -187,7 +198,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -200,7 +212,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -217,7 +230,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -234,7 +248,8 @@
             "unit": "oz"
           }
         ],
-        "note": "or 120g/4oz fresh"
+        "note": "or 120g/4oz fresh",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -251,7 +266,8 @@
             "unit": "oz"
           }
         ],
-        "note": "very thinly sliced (Note 4)"
+        "note": "very thinly sliced (Note 4)",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -264,7 +280,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -272,7 +289,8 @@
       "expected": {
         "item": "Beansprouts, handful",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -280,7 +298,8 @@
       "expected": {
         "item": "Thai basil, 3 - 5 sprigs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -288,7 +307,8 @@
       "expected": {
         "item": "Coriander/cilantro, 3 - 5 sprigs",
         "measurements": [],
-        "note": "or more basil"
+        "note": "or more basil",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -296,7 +316,8 @@
       "expected": {
         "item": "Lime wedges*",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -304,7 +325,8 @@
       "expected": {
         "item": "Finely sliced red chilli*",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -312,7 +334,8 @@
       "expected": {
         "item": "Hoisin sauce*",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -320,7 +343,8 @@
       "expected": {
         "item": "Sriracha* (for spiciness)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

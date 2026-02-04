@@ -12,7 +12,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced thinly"
+        "note": "sliced thinly",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +91,8 @@
       "expected": {
         "item": "vegetable oil (for frying)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -98,7 +105,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -111,7 +119,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -124,7 +133,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -132,7 +142,8 @@
       "expected": {
         "item": "cilantro",
         "measurements": [],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -149,7 +160,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided in 2"
+        "note": "divided in 2",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -162,7 +174,8 @@
             "unit": "g"
           }
         ],
-        "note": "~3 large cloves, crushed & chopped"
+        "note": "~3 large cloves, crushed & chopped",
+        "category": "Produce"
       }
     },
     {
@@ -175,7 +188,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "category": "Beverages"
       }
     },
     {
@@ -188,7 +202,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced into wedges"
+        "note": "sliced into wedges",
+        "category": "Produce"
       }
     },
     {
@@ -201,7 +216,8 @@
             "unit": "g"
           }
         ],
-        "note": "~1/2 pepper, sliced"
+        "note": "~1/2 pepper, sliced",
+        "category": "Produce"
       }
     },
     {
@@ -209,7 +225,8 @@
       "expected": {
         "item": "Aji Amarillo",
         "measurements": [],
-        "note": "or other spicy chili pepper, optional"
+        "note": "or other spicy chili pepper, optional",
+        "category": "Other"
       }
     },
     {
@@ -222,7 +239,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -230,7 +248,8 @@
       "expected": {
         "item": "Cilantro",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

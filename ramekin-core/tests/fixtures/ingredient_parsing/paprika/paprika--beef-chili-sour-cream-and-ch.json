@@ -7,7 +7,8 @@
       "expected": {
         "item": "Chili:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -28,7 +29,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": "g"
           }
         ],
-        "note": "ground coarse or 3 pounds ground beef"
+        "note": "ground coarse or 3 pounds ground beef",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -105,7 +111,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -135,7 +143,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +157,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -156,7 +166,8 @@
       "expected": {
         "item": "Dried red pepper flakes",
         "measurements": [],
-        "note": "to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)"
+        "note": "to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -169,7 +180,8 @@
             "unit": "8-ounce cans"
           }
         ],
-        "note": "or 2 cups fresh tomato sauce or tomato puree"
+        "note": "or 2 cups fresh tomato sauce or tomato puree",
+        "category": "Canned Goods"
       }
     },
     {
@@ -182,7 +194,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -195,7 +208,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -208,7 +222,8 @@
             "unit": "19-ounce can"
           }
         ],
-        "note": "rinsed and drained"
+        "note": "rinsed and drained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -221,7 +236,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -243,7 +259,8 @@
           }
         ],
         "note": null,
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Baking"
       }
     },
     {
@@ -261,7 +278,8 @@
           }
         ],
         "note": null,
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Baking"
       }
     },
     {
@@ -279,7 +297,8 @@
           }
         ],
         "note": null,
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Baking"
       }
     },
     {
@@ -293,7 +312,8 @@
           }
         ],
         "note": null,
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -307,7 +327,8 @@
           }
         ],
         "note": null,
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -329,7 +350,8 @@
           }
         ],
         "note": "coarsely grated",
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Cheese"
       }
     },
     {
@@ -338,7 +360,8 @@
         "item": "Drained and chopped pickled jalapeños",
         "measurements": [],
         "note": "to taste (I used about 2 tablespoons)",
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Produce"
       }
     },
     {
@@ -356,7 +379,8 @@
           }
         ],
         "note": null,
-        "section": "Sour Cream and Cheddar Biscuits"
+        "section": "Sour Cream and Cheddar Biscuits",
+        "category": "Dairy & Eggs"
       }
     }
   ]

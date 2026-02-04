@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "packed in oil, drained & chopped (@ 1/4 cup"
+        "note": "packed in oil, drained & chopped (@ 1/4 cup",
+        "category": "Canned Goods"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "clove"
           }
         ],
-        "note": "sliced thin"
+        "note": "sliced thin",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or dried thyme"
+        "note": "or dried thyme",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "Crackers, bread, nuts and/or fruit",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Snacks"
       }
     }
   ]

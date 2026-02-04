@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "cooked any way you'd like (see notes"
+        "note": "cooked any way you'd like (see notes",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed"
+        "note": "trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped or sliced"
+        "note": "chopped or sliced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "sliced thin"
+        "note": "sliced thin",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "diced or thinly sliced onion",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "diced or thinly sliced bell pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -92,7 +99,8 @@
       "expected": {
         "item": "sliced olives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -100,7 +108,8 @@
       "expected": {
         "item": "fresh parsley to garnish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -108,7 +117,8 @@
       "expected": {
         "item": "extra crumbled feta cheese (I'm guilty of this one! Yum!)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -125,7 +135,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -138,7 +149,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -155,7 +167,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -168,7 +181,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -181,7 +195,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -198,7 +213,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 tsp fresh"
+        "note": "or 1 tsp fresh",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -215,7 +231,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -228,7 +245,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -241,7 +259,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -254,7 +273,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -271,7 +291,8 @@
             "unit": "g"
           }
         ],
-        "note": "if/as needed to thin the sauce"
+        "note": "if/as needed to thin the sauce",
+        "category": "Other"
       }
     },
     {
@@ -279,7 +300,8 @@
       "expected": {
         "item": "black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

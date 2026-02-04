@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": "frozen"
+        "note": "frozen",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": "frozen"
+        "note": "frozen",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -97,7 +103,8 @@
       "expected": {
         "item": "additional milk or yogurt",
         "measurements": [],
-        "note": "as needed"
+        "note": "as needed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -105,7 +112,8 @@
       "expected": {
         "item": "fresh fruit",
         "measurements": [],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Other"
       }
     },
     {
@@ -113,7 +121,8 @@
       "expected": {
         "item": "dried fruits",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -121,7 +130,8 @@
       "expected": {
         "item": "cocoa nibs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -129,7 +139,8 @@
       "expected": {
         "item": "coconut chips",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -137,7 +148,8 @@
       "expected": {
         "item": "chia seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -145,7 +157,8 @@
       "expected": {
         "item": "oats",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "sesame seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "soy sauce",
         "measurements": [],
-        "note": "optional for dipping"
+        "note": "optional for dipping",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -92,7 +99,8 @@
       "expected": {
         "item": "wasabi",
         "measurements": [],
-        "note": "optional for dipping"
+        "note": "optional for dipping",
+        "category": "Condiments & Sauces"
       }
     }
   ]

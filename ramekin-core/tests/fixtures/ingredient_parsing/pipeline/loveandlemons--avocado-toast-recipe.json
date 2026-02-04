@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Lemon wedge (for squeezing)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "Sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +44,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "Desired toppings",
         "measurements": [],
-        "note": "listed above, optional"
+        "note": "listed above, optional",
+        "category": "Other"
       }
     }
   ]

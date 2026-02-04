@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "salt and freshly ground pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -54,7 +58,8 @@
       "expected": {
         "item": "tortilla chips",
         "measurements": [],
-        "note": "as needed"
+        "note": "as needed",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -67,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -80,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +95,8 @@
       "expected": {
         "item": "seaweed strips, to garnish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -96,7 +104,8 @@
       "expected": {
         "item": "sriracha, if desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

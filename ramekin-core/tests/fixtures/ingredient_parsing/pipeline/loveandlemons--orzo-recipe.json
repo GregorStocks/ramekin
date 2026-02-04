@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or 1 small shallot"
+        "note": "or 1 small shallot",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +95,8 @@
       "expected": {
         "item": "Juice and zest of 1 lemon",
         "measurements": [],
-        "note": "plus 4 small wedges for serving"
+        "note": "plus 4 small wedges for serving",
+        "category": "Beverages"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced into 1/2-inch rounds"
+        "note": "sliced into 1/2-inch rounds",
+        "category": "Produce"
       }
     },
     {
@@ -115,7 +123,8 @@
             "unit": "small"
           }
         ],
-        "note": "sliced in half lengthwise"
+        "note": "sliced in half lengthwise",
+        "category": "Produce"
       }
     },
     {
@@ -128,7 +137,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -141,7 +151,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -154,7 +165,8 @@
             "unit": "cup"
           }
         ],
-        "note": "toasted"
+        "note": "toasted",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -167,7 +179,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -180,7 +193,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -188,7 +202,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

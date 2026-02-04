@@ -30,6 +30,7 @@
 //! ```
 
 use glob::glob;
+use ramekin_core::ingredient_categorizer;
 use ramekin_core::ingredient_parser::{
     parse_ingredient, parse_ingredients, Measurement, ParsedIngredient,
 };
@@ -92,15 +93,19 @@ struct Expected {
     note: Option<String>,
     #[serde(default)]
     section: Option<String>,
+    #[serde(default)]
+    category: Option<String>,
 }
 
 impl From<ParsedIngredient> for Expected {
     fn from(parsed: ParsedIngredient) -> Self {
+        let category = ingredient_categorizer::categorize(&parsed.item).to_string();
         Self {
             item: parsed.item,
             measurements: parsed.measurements,
             note: parsed.note,
             section: parsed.section,
+            category: Some(category),
         }
     }
 }

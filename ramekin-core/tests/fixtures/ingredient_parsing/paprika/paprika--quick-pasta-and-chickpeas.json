@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled and smashed"
+        "note": "peeled and smashed",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "Freshly ground black pepper or red pepper flakes",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "cup"
           }
         ],
-        "note": "from one 15-ounce can, drained and rinsed"
+        "note": "from one 15-ounce can, drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -132,7 +140,8 @@
           }
         ],
         "note": null,
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -146,7 +155,8 @@
           }
         ],
         "note": "peeled and finely chopped",
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Produce"
       }
     },
     {
@@ -160,7 +170,8 @@
           }
         ],
         "note": null,
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Produce"
       }
     },
     {
@@ -169,7 +180,8 @@
         "item": "Salt and red pepper flakes",
         "measurements": [],
         "note": null,
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Spices & Seasonings"
       }
     }
   ]

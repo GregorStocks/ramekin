@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or 1 inch fresh ginger root"
+        "note": "or 1 inch fresh ginger root",
+        "category": "Beverages"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "ml"
           }
         ],
-        "note": "or 2 tablespoons black vinegar and 2 tablespoons rice (see Note)"
+        "note": "or 2 tablespoons black vinegar and 2 tablespoons rice (see Note)",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -97,7 +103,8 @@
       "expected": {
         "item": "Toasted sesame seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -105,7 +112,8 @@
       "expected": {
         "item": "Thinly-sliced scallion",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -113,7 +121,8 @@
       "expected": {
         "item": "Chili crisp",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
@@ -121,7 +130,8 @@
       "expected": {
         "item": "Brown rice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     }
   ]

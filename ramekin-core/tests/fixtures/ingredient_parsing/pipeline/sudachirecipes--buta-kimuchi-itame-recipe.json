@@ -12,7 +12,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "clove"
           }
         ],
-        "note": "finely diced"
+        "note": "finely diced",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely diced"
+        "note": "finely diced",
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": null
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -163,7 +174,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -176,7 +188,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -184,7 +197,8 @@
       "expected": {
         "item": "toasted white sesame seeds",
         "measurements": [],
-        "note": "optional garnish"
+        "note": "optional garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -192,7 +206,8 @@
       "expected": {
         "item": "finely chopped green onions",
         "measurements": [],
-        "note": "optional garnish"
+        "note": "optional garnish",
+        "category": "Produce"
       }
     },
     {
@@ -200,7 +215,8 @@
       "expected": {
         "item": "dried red chili pepper",
         "measurements": [],
-        "note": "slices, optional garnish"
+        "note": "slices, optional garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -208,7 +224,8 @@
       "expected": {
         "item": "toasted sesame oil",
         "measurements": [],
-        "note": "optional garnish"
+        "note": "optional garnish",
+        "category": "Oils & Vinegars"
       }
     }
   ]

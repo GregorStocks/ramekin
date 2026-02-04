@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 2 3/4  tablespoons    cocoa"
+        "note": "or 2 3/4  tablespoons    cocoa",
+        "category": "Other"
       }
     },
     {
@@ -132,7 +140,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -149,7 +158,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -162,7 +172,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -175,7 +186,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1/2  teaspoon    cayenne pepper"
+        "note": "or 1/2  teaspoon    cayenne pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -205,7 +218,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -222,7 +236,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -235,7 +250,8 @@
             "unit": null
           }
         ],
-        "note": "or 1/8  teaspoon    bay leaf powder"
+        "note": "or 1/8  teaspoon    bay leaf powder",
+        "category": "Other"
       }
     },
     {
@@ -243,7 +259,8 @@
       "expected": {
         "item": "chopped onion",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -251,7 +268,8 @@
       "expected": {
         "item": "finely shredded cheddar cheese",
         "measurements": [],
-        "note": "certainly NOT optional"
+        "note": "certainly NOT optional",
+        "category": "Cheese"
       }
     },
     {
@@ -259,7 +277,8 @@
       "expected": {
         "item": "kidney bean",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Canned Goods"
       }
     }
   ]

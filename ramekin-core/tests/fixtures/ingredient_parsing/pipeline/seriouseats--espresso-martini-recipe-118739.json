@@ -16,7 +16,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "ml"
           }
         ],
-        "note": "or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate"
+        "note": "or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate",
+        "category": "Beverages"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -66,7 +69,8 @@
       "expected": {
         "item": "Very tiny pinch of kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -74,7 +78,8 @@
       "expected": {
         "item": "Ice, for shaking",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,7 +92,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     }
   ]

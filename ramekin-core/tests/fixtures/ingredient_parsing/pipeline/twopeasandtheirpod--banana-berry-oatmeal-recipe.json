@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": null
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -89,7 +94,8 @@
         "item": "Strawberries",
         "measurements": [],
         "note": "sliced",
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Produce"
       }
     },
     {
@@ -103,7 +109,8 @@
           }
         ],
         "note": null,
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Produce"
       }
     },
     {
@@ -112,7 +119,8 @@
         "item": "Blackberries",
         "measurements": [],
         "note": null,
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Produce"
       }
     }
   ]

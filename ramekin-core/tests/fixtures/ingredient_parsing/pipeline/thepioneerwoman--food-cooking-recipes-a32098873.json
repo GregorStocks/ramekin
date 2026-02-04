@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "heaping tbsp"
           }
         ],
-        "note": "plus more for sprinkling"
+        "note": "plus more for sprinkling",
+        "category": "Baking"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "stick"
           }
         ],
-        "note": "plus 2 tablespoons cold salted butter, cut into pieces"
+        "note": "plus 2 tablespoons cold salted butter, cut into pieces",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -153,7 +162,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -166,7 +176,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -174,7 +185,8 @@
       "expected": {
         "item": "Vanilla ice cream",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Frozen"
       }
     }
   ]

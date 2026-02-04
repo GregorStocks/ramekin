@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "cooked until crisp then crumbled"
+        "note": "cooked until crisp then crumbled",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced into 1-inch-thick rounds (should get about 4 to 5 rounds)"
+        "note": "sliced into 1-inch-thick rounds (should get about 4 to 5 rounds)",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": "9 strawberries"
+        "note": "9 strawberries",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled"
+        "note": "crumbled",
+        "category": "Cheese"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "pinch"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Baking"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -144,7 +153,8 @@
       "expected": {
         "item": "Salt and fresh ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

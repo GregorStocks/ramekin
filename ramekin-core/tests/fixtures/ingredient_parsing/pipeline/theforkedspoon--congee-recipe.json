@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced, to garnish"
+        "note": "thinly sliced, to garnish",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +76,8 @@
       "expected": {
         "item": "Fresh ginger",
         "measurements": [],
-        "note": "julienned, to garnish"
+        "note": "julienned, to garnish",
+        "category": "Produce"
       }
     },
     {
@@ -79,7 +85,8 @@
       "expected": {
         "item": "Sesame oil and soy sauce (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

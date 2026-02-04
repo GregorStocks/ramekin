@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for serving"
+        "note": "plus more for serving",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "large"
           }
         ],
-        "note": "finely grated"
+        "note": "finely grated",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Salt and black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": "or thawed frozen spinach (no need to squeeze)"
+        "note": "or thawed frozen spinach (no need to squeeze)",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more as needed"
+        "note": "plus more as needed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -123,7 +131,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more juice to taste"
+        "note": "plus more juice to taste",
+        "category": "Beverages"
       }
     }
   ]

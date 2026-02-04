@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "sliced 1/2 inch thick"
+        "note": "sliced 1/2 inch thick",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Brie cheese",
         "measurements": [],
-        "note": "thinly sliced, rind removed"
+        "note": "thinly sliced, rind removed",
+        "category": "Cheese"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": null
           }
         ],
-        "note": "halved, cored, and thinly sliced"
+        "note": "halved, cored, and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "Honey",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "Fresh rosemary",
         "measurements": [],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     }
   ]

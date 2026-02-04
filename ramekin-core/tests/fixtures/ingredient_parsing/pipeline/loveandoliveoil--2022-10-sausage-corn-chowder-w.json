@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -132,7 +140,8 @@
             "unit": "medium"
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": null
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "category": "Produce"
       }
     },
     {
@@ -171,7 +182,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch pieces"
+        "note": "peeled and cut into 1/2-inch pieces",
+        "category": "Produce"
       }
     },
     {
@@ -201,7 +214,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -214,7 +228,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more as needed"
+        "note": "plus more as needed",
+        "category": "Other"
       }
     },
     {
@@ -227,7 +242,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -235,7 +251,8 @@
       "expected": {
         "item": "salt and freshly ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -248,7 +265,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "more or less to taste"
+        "note": "more or less to taste",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -256,7 +274,8 @@
       "expected": {
         "item": "chopped fresh cilantro (for topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

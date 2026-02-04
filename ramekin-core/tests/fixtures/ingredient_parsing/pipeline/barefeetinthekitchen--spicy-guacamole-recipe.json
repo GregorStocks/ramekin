@@ -12,7 +12,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "small"
           }
         ],
-        "note": "diced small, 1/2 cups worth"
+        "note": "diced small, 1/2 cups worth",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "large"
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "adjust to taste"
+        "note": "adjust to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +77,8 @@
       "expected": {
         "item": "Optional: dash of cayenne pepper",
         "measurements": [],
-        "note": "adjust to taste"
+        "note": "adjust to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

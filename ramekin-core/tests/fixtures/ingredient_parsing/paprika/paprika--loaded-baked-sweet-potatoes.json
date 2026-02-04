@@ -20,7 +20,8 @@
             "unit": "g each"
           }
         ],
-        "note": "and dried"
+        "note": "and dried",
+        "category": "Produce"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -49,7 +51,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -57,7 +60,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -70,7 +74,8 @@
         "item": "Grated cheddar cheese",
         "measurements": [],
         "note": null,
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Cheese"
       }
     },
     {
@@ -79,7 +84,8 @@
         "item": "Crispy diced bacon bits",
         "measurements": [],
         "note": null,
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -88,7 +94,8 @@
         "item": "Minced chives",
         "measurements": [],
         "note": null,
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +104,8 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -106,7 +114,8 @@
         "item": "Chili",
         "measurements": [],
         "note": null,
-        "section": "Toppings"
+        "section": "Toppings",
+        "category": "Other"
       }
     }
   ]

@@ -7,7 +7,8 @@
       "expected": {
         "item": "About 4 tablespoons olive oil",
         "measurements": [],
-        "note": "plus more if needed"
+        "note": "plus more if needed",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": null
           }
         ],
-        "note": "quartered and thinly sliced"
+        "note": "quartered and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "large"
           }
         ],
-        "note": "quartered and thinly sliced (a leftover potato works great here)"
+        "note": "quartered and thinly sliced (a leftover potato works great here)",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "jar"
           }
         ],
-        "note": "and thinly sliced"
+        "note": "and thinly sliced",
+        "category": "Canned Goods"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "Coarse salt (kosher or sea)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

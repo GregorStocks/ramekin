@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +61,8 @@
       "expected": {
         "item": "sweetened shredded coconut",
         "measurements": [],
-        "note": "OPTIONAL for topping"
+        "note": "OPTIONAL for topping",
+        "category": "Produce"
       }
     }
   ]

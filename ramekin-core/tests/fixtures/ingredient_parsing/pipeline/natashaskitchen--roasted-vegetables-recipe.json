@@ -12,7 +12,8 @@
             "unit": "medium"
           }
         ],
-        "note": "unpeeled and sliced into 3/4\" to 1\" thick pieces"
+        "note": "unpeeled and sliced into 3/4\" to 1\" thick pieces",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled, seeded and sliced into 3/4\" - 1\" thick pieces"
+        "note": "peeled, seeded and sliced into 3/4\" - 1\" thick pieces",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and sliced into 1/2\" thick rounds"
+        "note": "peeled and sliced into 1/2\" thick rounds",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "clove"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced into 3/4\" thick rounds"
+        "note": "sliced into 3/4\" thick rounds",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +109,8 @@
       "expected": {
         "item": "Freshly grated black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +118,8 @@
       "expected": {
         "item": "Extra light olive oil (or avocado oil, or vegetable oil)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -123,7 +132,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -140,7 +150,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     }
   ]

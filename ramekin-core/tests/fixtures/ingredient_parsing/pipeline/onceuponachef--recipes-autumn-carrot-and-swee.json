@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus a bit more for serving"
+        "note": "plus a bit more for serving",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and chopped into 1-inch (2.5-cm"
+        "note": "peeled and chopped into 1-inch (2.5-cm",
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +92,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and chopped into 1-inch pieces)"
+        "note": "peeled and chopped into 1-inch pieces)",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -127,7 +134,8 @@
             "unit": null
           }
         ],
-        "note": "such as Honeycrisp or Fuji, peeled and chopped"
+        "note": "such as Honeycrisp or Fuji, peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -144,7 +152,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -152,7 +161,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

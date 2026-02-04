@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or more"
+        "note": "or more",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "mild chile flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "large"
           }
         ],
-        "note": "beaten to blend"
+        "note": "beaten to blend",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -127,7 +135,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -135,7 +144,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "freshly ground pepper"
+        "note": "freshly ground pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -156,7 +166,8 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated"
+        "note": "coarsely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -177,7 +188,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated"
+        "note": "finely grated",
+        "category": "Cheese"
       }
     }
   ]

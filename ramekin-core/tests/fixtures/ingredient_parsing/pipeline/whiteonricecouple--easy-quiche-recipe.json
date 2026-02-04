@@ -7,7 +7,8 @@
       "expected": {
         "item": "Homemade Pie Dough ( or Pre-made Dough)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or whole milk"
+        "note": "or whole milk",
+        "category": "Other"
       }
     },
     {
@@ -46,7 +49,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +63,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "slice"
           }
         ],
-        "note": "chopped  or 1/2 cup diced ham"
+        "note": "chopped  or 1/2 cup diced ham",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +118,8 @@
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

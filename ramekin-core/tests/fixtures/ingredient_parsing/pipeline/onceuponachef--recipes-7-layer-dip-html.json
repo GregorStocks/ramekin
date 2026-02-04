@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "seeded, and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes"
+        "note": "seeded, and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes",
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "bunch"
           }
         ],
-        "note": "thinly sliced, light and dark green parts separated (divided"
+        "note": "thinly sliced, light and dark green parts separated (divided",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": "seeded and finely diced (divided"
+        "note": "seeded and finely diced (divided",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": "from 2 limes (divided"
+        "note": "from 2 limes (divided",
+        "category": "Beverages"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced (divided"
+        "note": "minced (divided",
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +135,8 @@
             "unit": null
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -140,7 +149,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -157,7 +167,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -170,7 +181,8 @@
             "unit": "medium"
           }
         ],
-        "note": "halved, pitted and diced"
+        "note": "halved, pitted and diced",
+        "category": "Produce"
       }
     },
     {
@@ -187,7 +199,8 @@
             "unit": null
           }
         ],
-        "note": "shredded (see note)"
+        "note": "shredded (see note)",
+        "category": "Cheese"
       }
     },
     {
@@ -208,7 +221,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -221,7 +235,8 @@
             "unit": "cup"
           }
         ],
-        "note": "and drained corn kernels"
+        "note": "and drained corn kernels",
+        "category": "Canned Goods"
       }
     },
     {
@@ -229,7 +244,8 @@
       "expected": {
         "item": "Tortilla chips",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Bakery & Bread"
       }
     }
   ]

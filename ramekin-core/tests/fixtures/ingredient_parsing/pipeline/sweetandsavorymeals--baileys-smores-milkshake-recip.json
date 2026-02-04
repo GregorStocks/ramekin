@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "Mini marshmallow",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "Chocolate fudge",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -92,7 +99,8 @@
       "expected": {
         "item": "Whipped cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -100,7 +108,8 @@
       "expected": {
         "item": "Chocolate squares",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -108,7 +117,8 @@
       "expected": {
         "item": "Graham crackers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -116,7 +126,8 @@
       "expected": {
         "item": "Graham cracker crumbs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -124,7 +135,8 @@
       "expected": {
         "item": "Chocolate sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

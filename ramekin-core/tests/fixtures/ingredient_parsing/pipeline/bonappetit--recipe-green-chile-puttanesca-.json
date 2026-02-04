@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tsp. all-purpose flour"
+        "note": "plus 2 tsp. all-purpose flour",
+        "category": "Baking"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "freshly ground pepper"
+        "note": "freshly ground pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "large"
           }
         ],
-        "note": "thinly sliced into rings"
+        "note": "thinly sliced into rings",
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": null
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more"
+        "note": "or more",
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +136,8 @@
       "expected": {
         "item": "peppers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -140,7 +150,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -153,7 +164,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -166,7 +178,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

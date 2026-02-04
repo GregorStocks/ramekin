@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "large"
           }
         ],
-        "note": "beaten"
+        "note": "beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more if needed (crushed pork rinds, almond flour or coconut flour for low carb"
+        "note": "or more if needed (crushed pork rinds, almond flour or coconut flour for low carb",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "oil spray (, for coating)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -71,7 +76,8 @@
       "expected": {
         "item": "Mustard and/or hot sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

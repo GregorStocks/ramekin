@@ -7,7 +7,8 @@
       "expected": {
         "item": "Extra Virgin Olive Oil (I used Private Reserve Greek olive oil)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "Unsalted butter",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -28,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -45,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced into rings"
+        "note": "sliced into rings",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -58,7 +62,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -66,7 +71,8 @@
       "expected": {
         "item": "Juice of 1 1/2 limes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -74,7 +80,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -87,7 +94,8 @@
             "unit": "pinch"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -100,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "plus 2"
+        "note": "plus 2",
+        "category": "Baking"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 Tbsp. plus 1 tsp. sugar, divided"
+        "note": "plus 2 Tbsp. plus 1 tsp. sugar, divided",
+        "category": "Baking"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more for dusting"
+        "note": "plus more for dusting",
+        "category": "Baking"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more"
+        "note": "plus more",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -132,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -149,7 +158,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -162,7 +172,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -170,7 +181,8 @@
       "expected": {
         "item": "Chopped chocolate-covered coffee beans",
         "measurements": [],
-        "note": "for topping; optional"
+        "note": "for topping; optional",
+        "category": "Beverages"
       }
     }
   ]

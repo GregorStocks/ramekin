@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "julienned"
+        "note": "julienned",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "julienned"
+        "note": "julienned",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "large"
           }
         ],
-        "note": "julienned"
+        "note": "julienned",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "cup"
           }
         ],
-        "note": "finely sliced"
+        "note": "finely sliced",
+        "category": "Produce"
       }
     },
     {
@@ -90,7 +96,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -103,7 +110,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -116,7 +124,8 @@
             "unit": "cup"
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "g"
           }
         ],
-        "note": "or Maifun brown rice noodles, or cooked quinoa or rice"
+        "note": "or Maifun brown rice noodles, or cooked quinoa or rice",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -146,7 +156,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -154,7 +165,8 @@
       "expected": {
         "item": "Peanut sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

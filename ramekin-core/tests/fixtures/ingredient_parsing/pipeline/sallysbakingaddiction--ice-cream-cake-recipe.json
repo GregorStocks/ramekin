@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "l"
           }
         ],
-        "note": "softened (or other flavor)"
+        "note": "softened (or other flavor)",
+        "category": "Frozen"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": null
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Other"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "l"
           }
         ],
-        "note": "softened (or other flavor)"
+        "note": "softened (or other flavor)",
+        "category": "Frozen"
       }
     },
     {
@@ -105,7 +110,8 @@
             "unit": "g"
           }
         ],
-        "note": "cold"
+        "note": "cold",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -122,7 +128,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -135,7 +142,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -143,7 +151,8 @@
       "expected": {
         "item": "optional for garnish: sprinkles",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

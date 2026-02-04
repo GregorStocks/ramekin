@@ -7,7 +7,8 @@
       "expected": {
         "item": "CRUST",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -93,7 +99,8 @@
           }
         ],
         "note": null,
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Canned Goods"
       }
     },
     {
@@ -111,7 +118,8 @@
           }
         ],
         "note": "1 1/3 cup grated",
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Cheese"
       }
     },
     {
@@ -125,7 +133,8 @@
           }
         ],
         "note": null,
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Cheese"
       }
     },
     {
@@ -134,7 +143,8 @@
         "item": "Seasonings such as salt, pepper flakes",
         "measurements": [],
         "note": "and dried oregano",
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +158,8 @@
           }
         ],
         "note": null,
-        "section": "To Finish"
+        "section": "To Finish",
+        "category": "Produce"
       }
     }
   ]

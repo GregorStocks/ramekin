@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "freshly ground pepper"
+        "note": "freshly ground pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -62,7 +65,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced into 1/2\"-thick rings"
+        "note": "sliced into 1/2\"-thick rings",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -75,7 +79,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 1/4 cup brine"
+        "note": "plus 1/4 cup brine",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -131,7 +139,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -148,7 +157,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -169,7 +179,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated"
+        "note": "finely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -177,7 +188,8 @@
       "expected": {
         "item": "Basil leaves",
         "measurements": [],
-        "note": "for serving; optional"
+        "note": "for serving; optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

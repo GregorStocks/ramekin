@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": "packed"
+        "note": "packed",
+        "category": "Baking"
       }
     },
     {
@@ -75,7 +78,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -88,7 +92,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional or use orange zest"
+        "note": "optional or use orange zest",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +124,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": "large"
           }
         ],
-        "note": "slightly beaten"
+        "note": "slightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -148,7 +156,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -161,7 +170,8 @@
             "unit": null
           }
         ],
-        "note": "beaten for the egg wash"
+        "note": "beaten for the egg wash",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -169,7 +179,8 @@
       "expected": {
         "item": "sesame seeds",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "small"
           }
         ],
-        "note": "sliced thinly"
+        "note": "sliced thinly",
+        "category": "Cheese"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": "thawed"
+        "note": "thawed",
+        "category": "Other"
       }
     },
     {
@@ -59,7 +63,8 @@
       "expected": {
         "item": "mustard",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -72,7 +77,8 @@
             "unit": null
           }
         ],
-        "note": "lightly beaten with 1 tablespoon of water"
+        "note": "lightly beaten with 1 tablespoon of water",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -80,7 +86,8 @@
       "expected": {
         "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -88,7 +95,8 @@
       "expected": {
         "item": "eggs to serve, if desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

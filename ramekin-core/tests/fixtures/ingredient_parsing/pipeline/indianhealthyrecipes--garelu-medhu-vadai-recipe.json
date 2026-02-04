@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "adjust to taste"
+        "note": "adjust to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "Ice cold water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "Oil ( for deep frying)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -54,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "crushed coarsely"
+        "note": "crushed coarsely",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Other"
       }
     },
     {
@@ -88,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +108,8 @@
             "unit": "sprig"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -114,7 +122,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": "fine grated"
+        "note": "fine grated",
+        "category": "Beverages"
       }
     }
   ]

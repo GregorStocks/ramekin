@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "leaves only, washed and dried"
+        "note": "leaves only, washed and dried",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "roughly 3/4 cup Parmesan",
         "measurements": [],
-        "note": "loosely packed and freshly grated"
+        "note": "loosely packed and freshly grated",
+        "category": "Cheese"
       }
     },
     {
@@ -54,7 +58,8 @@
       "expected": {
         "item": "A few tablespoons of extra-virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

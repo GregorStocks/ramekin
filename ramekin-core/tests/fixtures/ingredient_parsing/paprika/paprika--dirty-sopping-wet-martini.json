@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -62,7 +64,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -70,7 +73,8 @@
       "expected": {
         "item": "Pitted manzanilla olives",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Canned Goods"
       }
     }
   ]

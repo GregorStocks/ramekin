@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed well"
+        "note": "rinsed well",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "small"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "packed cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "packed cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "can"
           }
         ],
-        "note": "14.5 oz diced tomato with juice"
+        "note": "14.5 oz diced tomato with juice",
+        "category": "Canned Goods"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "scant tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "scant tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -145,7 +155,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -158,7 +169,8 @@
             "unit": "large"
           }
         ],
-        "note": "divided (3 to be cored and stuffed, and 1 to be sliced"
+        "note": "divided (3 to be cored and stuffed, and 1 to be sliced",
+        "category": "Produce"
       }
     },
     {
@@ -171,7 +183,8 @@
             "unit": "small"
           }
         ],
-        "note": "sliced into rounds"
+        "note": "sliced into rounds",
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +201,8 @@
             "unit": "g"
           }
         ],
-        "note": "about 8 or so zucchini, lightly peeled"
+        "note": "about 8 or so zucchini, lightly peeled",
+        "category": "Produce"
       }
     },
     {
@@ -209,7 +223,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -226,7 +241,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

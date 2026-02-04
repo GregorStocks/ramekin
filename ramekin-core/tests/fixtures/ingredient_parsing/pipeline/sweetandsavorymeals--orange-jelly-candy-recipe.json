@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "preferably freshly squeezed"
+        "note": "preferably freshly squeezed",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": "for sprinkling - optional"
+        "note": "for sprinkling - optional",
+        "category": "Baking"
       }
     },
     {
@@ -71,7 +75,8 @@
       "expected": {
         "item": "orange or yellow food coloring",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Baking"
       }
     }
   ]

@@ -7,7 +7,8 @@
       "expected": {
         "item": "BRAISE",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "kg"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -49,7 +52,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -66,7 +70,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -79,7 +84,8 @@
             "unit": "large"
           }
         ],
-        "note": "plus 1 large leek, chopped"
+        "note": "plus 1 large leek, chopped",
+        "category": "Produce"
       }
     },
     {
@@ -92,7 +98,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -105,7 +112,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +126,8 @@
             "unit": null
           }
         ],
-        "note": "smashed and peeled"
+        "note": "smashed and peeled",
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +140,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -148,7 +158,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -165,7 +176,8 @@
             "unit": "l"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -173,7 +185,8 @@
       "expected": {
         "item": "SOUP",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -194,7 +207,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -211,7 +225,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and thinly sliced"
+        "note": "peeled and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -228,7 +243,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -236,7 +252,8 @@
       "expected": {
         "item": "TOASTS AND ASSEMBLY",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -249,7 +266,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -262,7 +280,8 @@
             "unit": "small"
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "category": "Produce"
       }
     },
     {
@@ -283,7 +302,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -291,7 +311,8 @@
       "expected": {
         "item": "Chopped fresh chives",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

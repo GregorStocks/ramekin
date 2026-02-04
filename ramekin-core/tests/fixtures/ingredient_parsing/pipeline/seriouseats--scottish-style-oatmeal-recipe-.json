@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more if needed"
+        "note": "plus more if needed",
+        "category": "Other"
       }
     },
     {
@@ -45,7 +47,8 @@
       "expected": {
         "item": "Kosher or sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -53,7 +56,8 @@
       "expected": {
         "item": "Unsalted butter or cream, for serving",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -61,7 +65,8 @@
       "expected": {
         "item": "Flaky sea salt, for sprinkling",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

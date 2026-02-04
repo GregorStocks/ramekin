@@ -7,7 +7,8 @@
       "expected": {
         "item": "Meatloaf:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": "medium"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +49,8 @@
             "unit": null
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -167,7 +178,8 @@
           }
         ],
         "note": null,
-        "section": "Glaze"
+        "section": "Glaze",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -185,7 +197,8 @@
           }
         ],
         "note": null,
-        "section": "Glaze"
+        "section": "Glaze",
+        "category": "Baking"
       }
     },
     {
@@ -199,7 +212,8 @@
           }
         ],
         "note": null,
-        "section": "Glaze"
+        "section": "Glaze",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -213,7 +227,8 @@
           }
         ],
         "note": null,
-        "section": "Glaze"
+        "section": "Glaze",
+        "category": "Condiments & Sauces"
       }
     }
   ]

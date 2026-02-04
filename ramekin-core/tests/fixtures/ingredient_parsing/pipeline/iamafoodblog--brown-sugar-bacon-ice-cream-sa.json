@@ -12,7 +12,8 @@
             "unit": "slice"
           }
         ],
-        "note": "chopped as finely as possible"
+        "note": "chopped as finely as possible",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "wafers or cookies of your choice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -45,7 +48,8 @@
       "expected": {
         "item": "ice cream of your choice",
         "measurements": [],
-        "note": "slightly softened (I used vanilla)"
+        "note": "slightly softened (I used vanilla)",
+        "category": "Frozen"
       }
     }
   ]

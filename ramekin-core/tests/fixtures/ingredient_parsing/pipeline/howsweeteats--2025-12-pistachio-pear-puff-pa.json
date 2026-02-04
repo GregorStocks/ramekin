@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "thawed if frozen"
+        "note": "thawed if frozen",
+        "category": "Frozen"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +63,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -72,7 +77,8 @@
             "unit": null
           }
         ],
-        "note": "beaten together for egg wash"
+        "note": "beaten together for egg wash",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -80,7 +86,8 @@
       "expected": {
         "item": "hot honey, (for drizzling)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

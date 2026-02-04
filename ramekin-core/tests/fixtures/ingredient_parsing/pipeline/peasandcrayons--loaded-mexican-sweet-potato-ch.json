@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Queso",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -45,7 +48,8 @@
       "expected": {
         "item": "Black Beans or Pinto Beans",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -53,7 +57,8 @@
       "expected": {
         "item": "Pickled or Sliced Jalapeño Peppers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -61,7 +66,8 @@
       "expected": {
         "item": "Fresh Cilantro and/or chopped green onion",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -69,7 +75,8 @@
       "expected": {
         "item": "Diced Bell Peppers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -77,7 +84,8 @@
       "expected": {
         "item": "Chopped Tomato",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +93,8 @@
       "expected": {
         "item": "Pico de Gallo",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -93,7 +102,8 @@
       "expected": {
         "item": "Salsa",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -101,7 +111,8 @@
       "expected": {
         "item": "Guacamole",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -109,7 +120,8 @@
       "expected": {
         "item": "Chopped Avocado",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -117,7 +129,8 @@
       "expected": {
         "item": "Shredded Lettuce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -125,7 +138,8 @@
       "expected": {
         "item": "Sour Cream or Greek Yogurt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -133,7 +147,8 @@
       "expected": {
         "item": "Jalapeno Ranch",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -141,7 +156,8 @@
       "expected": {
         "item": "Season the fries with chili powder, paprika, and garlic powder (before baking)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -149,7 +165,8 @@
       "expected": {
         "item": "Feeling the heat? You can even add cayenne pepper too! (I always do)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]
