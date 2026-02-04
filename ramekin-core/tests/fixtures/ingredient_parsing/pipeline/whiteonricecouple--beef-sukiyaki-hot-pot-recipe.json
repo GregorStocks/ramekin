@@ -220,9 +220,14 @@
     {
       "raw": "optional- 1 egg for each person (, beaten)",
       "expected": {
-        "item": "optional- 1 egg for each person",
-        "measurements": [],
-        "note": "beaten",
+        "item": "egg for each person",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional, beaten",
         "category": "Dairy & Eggs"
       }
     }

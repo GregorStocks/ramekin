@@ -133,9 +133,14 @@
     {
       "raw": "Optional: 1 cup add-ins (chocolate chips, berries, nuts, dried fruit, etc.)",
       "expected": {
-        "item": "Optional: 1 cup add-ins",
-        "measurements": [],
-        "note": "chocolate chips, berries, nuts, dried fruit, etc.",
+        "item": "add-ins",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional, chocolate chips, berries, nuts, dried fruit, etc.",
         "category": "Other"
       }
     },

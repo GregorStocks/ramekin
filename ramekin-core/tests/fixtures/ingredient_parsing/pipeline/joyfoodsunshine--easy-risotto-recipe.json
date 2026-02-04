@@ -125,9 +125,14 @@
     {
       "raw": "Optional – ½ cup dry white wine ((see step 4))",
       "expected": {
-        "item": "Optional - 1/2 cup dry white wine (see step 4)",
-        "measurements": [],
-        "note": null,
+        "item": "dry white wine (see step 4)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
         "category": "Beverages"
       }
     }

@@ -191,14 +191,18 @@
     {
       "raw": "optional: 1 cup (180g) semi-sweet chocolate chips",
       "expected": {
-        "item": "optional: 1 cup semi-sweet chocolate chips",
+        "item": "semi-sweet chocolate chips",
         "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
           {
             "amount": "180",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "optional",
         "category": "Baking"
       }
     },

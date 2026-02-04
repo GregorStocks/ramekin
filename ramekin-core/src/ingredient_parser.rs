@@ -521,6 +521,20 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let mut measurements = Vec::new();
     let mut note = None;
 
+    // Strip "Optional:" or "Optional -" prefix, capturing for note
+    let mut optional_prefix = false;
+    let remaining_lower = remaining.to_lowercase();
+    if remaining_lower.starts_with("optional:") {
+        remaining = remaining.get(9..).unwrap_or("").trim().to_string();
+        optional_prefix = true;
+    } else if remaining_lower.starts_with("optional -") {
+        remaining = remaining.get(10..).unwrap_or("").trim().to_string();
+        optional_prefix = true;
+    } else if remaining_lower.starts_with("optional-") {
+        remaining = remaining.get(9..).unwrap_or("").trim().to_string();
+        optional_prefix = true;
+    }
+
     // Issue 5: Normalize double parentheses to single
     // e.g., "((about 4 cloves))" -> "(about 4 cloves)"
     while remaining.contains("((") {
@@ -895,6 +909,14 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         .trim()
         .replace(" ,", ",")
         .to_string();
+
+    // Prepend "optional" to note if we stripped that prefix
+    if optional_prefix {
+        note = match note {
+            Some(n) => Some(format!("optional, {}", n)),
+            None => Some("optional".to_string()),
+        };
+    }
 
     // If we didn't extract anything useful, just use raw as item
     if item.is_empty() && measurements.is_empty() {

@@ -141,9 +141,14 @@
     {
       "raw": "optional: 1/4 cup freshly grated parmesan cheese",
       "expected": {
-        "item": "optional: 1/4 cup freshly grated parmesan cheese",
-        "measurements": [],
-        "note": null,
+        "item": "freshly grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
         "category": "Cheese"
       }
     }

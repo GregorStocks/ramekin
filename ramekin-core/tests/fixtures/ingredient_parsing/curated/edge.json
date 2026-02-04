@@ -638,6 +638,50 @@
         "note": null,
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "name": "optional_prefix_with_amount",
+      "raw": "Optional: 1/4 cup cocoa powder",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "optional_prefix_no_amount",
+      "raw": "Optional: fresh basil leaves, for garnish",
+      "expected": {
+        "item": "fresh basil leaves",
+        "measurements": [],
+        "note": "optional, for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "optional_dash_prefix",
+      "raw": "Optional - 1/2 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Beverages"
+      }
     }
   ]
 }

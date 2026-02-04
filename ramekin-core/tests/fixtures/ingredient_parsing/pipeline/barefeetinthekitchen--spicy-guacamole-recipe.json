@@ -75,9 +75,14 @@
     {
       "raw": "Optional: dash of cayenne pepper (adjust to taste)",
       "expected": {
-        "item": "Optional: dash of cayenne pepper",
-        "measurements": [],
-        "note": "adjust to taste",
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "dash"
+          }
+        ],
+        "note": "optional, adjust to taste",
         "category": "Spices & Seasonings"
       }
     }
