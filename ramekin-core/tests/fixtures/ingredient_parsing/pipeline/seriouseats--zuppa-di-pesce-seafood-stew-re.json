@@ -27,7 +27,7 @@
     {
       "raw": "8 ounces (226 g) large shrimp (26 to 30 per pound), peeled and deveined, shells reserved separately",
       "expected": {
-        "item": "large shrimp, peeled and deveined, shells reserved separately",
+        "item": "large shrimp, peeled and deveined",
         "measurements": [
           {
             "amount": "8",
@@ -42,8 +42,8 @@
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "shells reserved separately",
+        "category": "Meat & Seafood"
       }
     },
     {

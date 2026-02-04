@@ -157,14 +157,14 @@
     {
       "raw": "1 lemon, thinly sliced (or 1 preserved lemon, cut up into small pieces)",
       "expected": {
-        "item": "lemon, thinly sliced (or 1 preserved lemon, cut up into small pieces)",
+        "item": "lemon, thinly sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 preserved lemon, cut up into small pieces",
         "category": "Produce"
       }
     },

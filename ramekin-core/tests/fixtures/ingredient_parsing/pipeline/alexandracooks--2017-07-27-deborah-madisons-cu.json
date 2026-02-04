@@ -33,14 +33,14 @@
     {
       "raw": "1/2&nbsp;cup finely diced red or white onion, trimmings reserved",
       "expected": {
-        "item": "finely diced red or white onion, trimmings reserved",
+        "item": "finely diced red or white onion",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "trimmings reserved",
         "category": "Produce"
       }
     },

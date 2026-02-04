@@ -5,7 +5,7 @@
     {
       "raw": "1 lb. (454 g) carrots (6–8 medium) with tops, peeled and cut into 1\" (2.5-cm) pieces, green tops reserved (see Topping)",
       "expected": {
-        "item": "carrots with tops, peeled and cut into 1\" pieces, green tops reserved (see Topping)",
+        "item": "carrots with tops, peeled and cut into 1\" pieces",
         "measurements": [
           {
             "amount": "1",
@@ -24,7 +24,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "green tops reserved (see Topping)",
         "category": "Produce"
       }
     },

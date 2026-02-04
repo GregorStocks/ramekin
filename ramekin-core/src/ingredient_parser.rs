@@ -275,6 +275,7 @@ const PREP_NOTES: &[&str] = &[
     "softened",
     "uncooked",
     "combined",
+    "reserved",
     "or more",
     "or less",
     "optional",
@@ -593,7 +594,17 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
 
         // First check if this is a prep note (like "softened", "chopped", etc.)
-        if is_prep_note(paren_content) && note.is_none() {
+        // Skip if content starts with a digit AND has nested parens - that's a measurement, not prep note
+        // e.g., "(15.5 oz (liquid reserved))" should parse as measurement, not prep note
+        // but "(quartered (approx. 15 mushrooms))" is a valid prep note
+        let has_nested_parens = paren_content.contains('(') || paren_content.contains(')');
+        let starts_with_digit = paren_content
+            .trim()
+            .chars()
+            .next()
+            .is_some_and(|c| c.is_ascii_digit());
+        let skip_prep_note = has_nested_parens && starts_with_digit;
+        if is_prep_note(paren_content) && note.is_none() && !skip_prep_note {
             // Strip leading comma (e.g., from raw like "tomato (, sliced)")
             note = Some(
                 paren_content

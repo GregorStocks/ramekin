@@ -19,14 +19,14 @@
     {
       "raw": "3 tablespoons (reserved) bacon grease or butter",
       "expected": {
-        "item": "(reserved) bacon grease or butter",
+        "item": "bacon grease or butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "reserved",
         "category": "Dairy & Eggs"
       }
     },

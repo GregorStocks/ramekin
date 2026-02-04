@@ -188,14 +188,14 @@
     {
       "raw": "1 scallion, ends trimmed and sliced thinly on a bias for garnish, trimmings reserved",
       "expected": {
-        "item": "scallion, ends trimmed and sliced thinly on a bias for garnish, trimmings reserved",
+        "item": "scallion, ends trimmed and sliced thinly on a bias for garnish",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "trimmings reserved",
         "category": "Produce"
       }
     },
