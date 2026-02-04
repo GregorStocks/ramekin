@@ -2,6 +2,21 @@
 
 This document explains how to find and document new ingredient parsing issues.
 
+## Finding New Issues via unique-ingredients.txt
+
+The file `data/unique-ingredients.txt` is a sorted, deduplicated list of all ingredient names after parsing. This is useful for spotting patterns that suggest parsing problems (e.g., ingredient names that still contain quantities, prep notes, or junk). Regenerate it with `make pipeline`.
+
+```bash
+# Items that look like they still have quantities
+rg -n "^[0-9]" data/unique-ingredients.txt
+
+# Items with parentheses (may contain unparsed notes)
+rg -n "\\(" data/unique-ingredients.txt
+
+# Very long lines (often unparsed or malformed)
+awk 'length > 50' data/unique-ingredients.txt
+```
+
 ## Finding New Issues via ingredient-categories.csv
 
 The file `data/ingredient-categories.csv` is a quick way to spot pipeline parsing problems. Each row is a raw ingredient string paired with its assigned category; malformed or odd-looking strings often reveal parsing gaps or upstream extraction noise. Regenerate it with `make pipeline` (runs the pipeline and refreshes the CSV) or `make ingredient-categories-generate`.
