@@ -31,11 +31,11 @@
     {
       "raw": "1 1/2 - 2 tbsp honey",
       "expected": {
-        "item": "- 2 tbsp honey",
+        "item": "honey",
         "measurements": [
           {
-            "amount": "1 1/2",
-            "unit": null
+            "amount": "1 1/2-2",
+            "unit": "tbsp"
           }
         ],
         "note": null

@@ -22,11 +22,11 @@
     {
       "raw": "2 1/2 - 4 1/2 cups  low-sodium chicken broth",
       "expected": {
-        "item": "- 4 1/2 cups  low-sodium chicken broth",
+        "item": "low-sodium chicken broth",
         "measurements": [
           {
-            "amount": "2 1/2",
-            "unit": null
+            "amount": "2 1/2-4 1/2",
+            "unit": "cup"
           }
         ],
         "note": null
