@@ -7,7 +7,8 @@
       "expected": {
         "item": "Chili Butter:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "clove"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -92,7 +98,8 @@
       "expected": {
         "item": "Eggs:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -105,7 +112,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -118,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -136,7 +145,8 @@
           }
         ],
         "note": "toasted",
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -150,7 +160,8 @@
           }
         ],
         "note": null,
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Produce"
       }
     },
     {
@@ -159,7 +170,8 @@
         "item": "fresh herbs",
         "measurements": [],
         "note": "optional",
-        "section": "Assembly"
+        "section": "Assembly",
+        "category": "Produce"
       }
     }
   ]

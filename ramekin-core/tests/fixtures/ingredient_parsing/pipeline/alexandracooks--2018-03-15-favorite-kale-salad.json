@@ -7,7 +7,8 @@
       "expected": {
         "item": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and coarsely chopped"
+        "note": "peeled and coarsely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "Tuscan kale, however many heads you need, stems removed",
         "measurements": [],
-        "note": "leaves finely chopped"
+        "note": "leaves finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -105,7 +113,8 @@
       "expected": {
         "item": "grated Parmigiano Reggiano",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -113,7 +122,8 @@
       "expected": {
         "item": "toasted bread crumbs",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -121,7 +131,8 @@
       "expected": {
         "item": "shallot vinaigrette to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -129,7 +140,8 @@
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

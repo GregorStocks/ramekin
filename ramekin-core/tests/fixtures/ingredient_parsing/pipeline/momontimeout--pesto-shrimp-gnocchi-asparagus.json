@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and deveined"
+        "note": "peeled and deveined",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "more or less depending on preference"
+        "note": "more or less depending on preference",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": "shaved or grated"
+        "note": "shaved or grated",
+        "category": "Cheese"
       }
     },
     {
@@ -139,7 +147,8 @@
       "expected": {
         "item": "salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed"
+        "note": "trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -54,7 +57,8 @@
       "expected": {
         "item": "Diamond Crystal kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -62,7 +66,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -70,7 +75,8 @@
       "expected": {
         "item": "Lemon juice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -78,7 +84,8 @@
       "expected": {
         "item": "Splash of vinegar",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -91,7 +98,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

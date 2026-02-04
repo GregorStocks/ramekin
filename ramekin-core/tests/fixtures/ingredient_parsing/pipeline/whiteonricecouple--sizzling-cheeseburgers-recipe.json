@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -114,7 +121,8 @@
       "expected": {
         "item": "salt (, to personal taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +139,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -144,7 +153,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(for more daring, savory depth, use 2 tablespoons"
+        "note": "(for more daring, savory depth, use 2 tablespoons",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -157,7 +167,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced (or 1 teaspoon garlic powder"
+        "note": "minced (or 1 teaspoon garlic powder",
+        "category": "Produce"
       }
     },
     {
@@ -165,7 +176,8 @@
       "expected": {
         "item": "fresh ground black pepper and salt (, to personal taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -178,7 +190,8 @@
             "unit": null
           }
         ],
-        "note": "sliced (optional"
+        "note": "sliced (optional",
+        "category": "Produce"
       }
     },
     {
@@ -191,7 +204,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -199,7 +213,8 @@
       "expected": {
         "item": "condiments of choice (, pickles, burger sauce, ketchup, mustard",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

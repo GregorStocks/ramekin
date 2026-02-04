@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained + rinsed"
+        "note": "drained + rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -180,7 +192,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +201,8 @@
       "expected": {
         "item": "leafy green lettuce of choice for topping",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -201,7 +215,8 @@
             "unit": "heaping cup"
           }
         ],
-        "note": "finely chopped/shredded"
+        "note": "finely chopped/shredded",
+        "category": "Produce"
       }
     },
     {
@@ -214,7 +229,8 @@
             "unit": null
           }
         ],
-        "note": "sliced thin (optional"
+        "note": "sliced thin (optional",
+        "category": "Produce"
       }
     },
     {
@@ -231,7 +247,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -244,7 +261,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -252,7 +270,8 @@
       "expected": {
         "item": "juice of 1 lime",
         "measurements": [],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -260,7 +279,8 @@
       "expected": {
         "item": "a pinch of salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -268,7 +288,8 @@
       "expected": {
         "item": "fresh cilantro",
         "measurements": [],
-        "note": "optional + to taste"
+        "note": "optional + to taste",
+        "category": "Produce"
       }
     },
     {
@@ -281,7 +302,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -294,7 +316,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -307,7 +330,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -320,7 +344,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

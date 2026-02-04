@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed"
+        "note": "trimmed",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "large"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced into 1/4-inch strips"
+        "note": "sliced into 1/4-inch strips",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced into 1/4-inch strips"
+        "note": "sliced into 1/4-inch strips",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced lengthwise (root to top)"
+        "note": "thinly sliced lengthwise (root to top)",
+        "category": "Produce"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": null
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -123,7 +131,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

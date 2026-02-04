@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": null
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "clove"
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": null
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Other"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -149,7 +159,8 @@
       "expected": {
         "item": "chopped cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

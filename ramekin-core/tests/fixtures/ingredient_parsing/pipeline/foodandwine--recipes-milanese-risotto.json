@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "small"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -92,7 +98,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -105,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -118,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -135,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -148,7 +158,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

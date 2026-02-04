@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "marinara sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -45,7 +48,8 @@
       "expected": {
         "item": "sliced pepperoni",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -62,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -70,7 +75,8 @@
       "expected": {
         "item": "butter",
         "measurements": [],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -83,7 +89,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -91,7 +98,8 @@
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -99,7 +107,8 @@
       "expected": {
         "item": "pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -112,7 +121,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -120,7 +130,8 @@
       "expected": {
         "item": "shredded parmesan cheese, for topping",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

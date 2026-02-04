@@ -20,7 +20,8 @@
             "unit": "oz"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -71,7 +74,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "large"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons flour"
+        "note": "plus 2 tablespoons flour",
+        "category": "Baking"
       }
     },
     {
@@ -148,7 +156,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -161,7 +170,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -178,7 +188,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -186,7 +197,8 @@
       "expected": {
         "item": "flaky sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

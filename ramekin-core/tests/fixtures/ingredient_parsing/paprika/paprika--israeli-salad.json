@@ -12,7 +12,8 @@
             "unit": "medium"
           }
         ],
-        "note": "cubed"
+        "note": "cubed",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "cubed"
+        "note": "cubed",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "Juice of half a lemon",
         "measurements": [],
-        "note": "or more to taste"
+        "note": "or more to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +118,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -118,7 +127,8 @@
       "expected": {
         "item": "Olive oil cooking spray",
         "measurements": [],
-        "note": "or 2 tablespoons olive oil"
+        "note": "or 2 tablespoons olive oil",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -126,7 +136,8 @@
       "expected": {
         "item": "Flaky sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -139,7 +150,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

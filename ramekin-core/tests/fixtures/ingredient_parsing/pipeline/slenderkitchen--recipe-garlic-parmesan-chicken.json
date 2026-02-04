@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +135,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -140,7 +149,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -157,7 +167,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -170,7 +181,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -187,7 +199,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -200,7 +213,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -213,7 +227,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -221,7 +236,8 @@
       "expected": {
         "item": "Salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -234,7 +250,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

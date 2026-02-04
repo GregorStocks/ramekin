@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -97,7 +103,8 @@
       "expected": {
         "item": "zest of one large lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "package"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -127,7 +135,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -144,7 +153,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -157,7 +167,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -170,7 +181,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -183,7 +195,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

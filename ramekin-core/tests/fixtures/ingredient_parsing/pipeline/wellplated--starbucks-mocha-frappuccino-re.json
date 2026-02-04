@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chilled"
+        "note": "chilled",
+        "category": "Beverages"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "medium"
           }
         ],
-        "note": "cut into chunks and frozen"
+        "note": "cut into chunks and frozen",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus additional to taste"
+        "note": "plus additional to taste",
+        "category": "Baking"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -89,7 +95,8 @@
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "Optional for serving: whipped cream (whipped coconut cream, chocolate shavings, chocolate syrup or mini chocolate chips)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

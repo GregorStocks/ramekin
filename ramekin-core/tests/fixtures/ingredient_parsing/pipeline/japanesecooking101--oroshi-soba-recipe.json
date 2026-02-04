@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": "grated"
+        "note": "grated",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "ginger root",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +108,8 @@
       "expected": {
         "item": "Nori",
         "measurements": [],
-        "note": "roasted seaweed, thinly sliced"
+        "note": "roasted seaweed, thinly sliced",
+        "category": "Other"
       }
     }
   ]

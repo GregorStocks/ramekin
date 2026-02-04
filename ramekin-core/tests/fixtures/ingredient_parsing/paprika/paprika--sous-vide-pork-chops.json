@@ -20,7 +20,8 @@
             "unit": "kg"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "ml"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -62,7 +65,8 @@
             "unit": "ml"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -75,7 +79,8 @@
             "unit": "sprig"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

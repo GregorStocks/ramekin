@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced 1/4 inch thick"
+        "note": "sliced 1/4 inch thick",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -132,7 +140,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "clove"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -175,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -196,7 +209,8 @@
       "expected": {
         "item": "soy sauce",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Condiments & Sauces"
       }
     }
   ]

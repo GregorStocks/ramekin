@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled or un-peeled, your choice"
+        "note": "peeled or un-peeled, your choice",
+        "category": "Produce"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -45,7 +48,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -75,7 +80,8 @@
             "unit": "can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -88,7 +94,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -96,7 +103,8 @@
       "expected": {
         "item": "A 14-ounce can of crushed tomatoes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -109,7 +117,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -126,7 +135,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -139,7 +149,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -156,7 +167,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

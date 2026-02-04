@@ -7,7 +7,8 @@
       "expected": {
         "item": "Filling",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 3/4-inch chunks"
+        "note": "trimmed and cut into 3/4-inch chunks",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "slice"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and halved if medium or quartered if large"
+        "note": "trimmed and halved if medium or quartered if large",
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +135,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -140,7 +149,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -153,7 +163,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -170,7 +181,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -187,7 +199,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -200,7 +213,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -208,7 +222,8 @@
       "expected": {
         "item": "Crust",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -221,7 +236,8 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -238,7 +254,8 @@
             "unit": "g"
           }
         ],
-        "note": "chilled"
+        "note": "chilled",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -259,7 +276,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -272,7 +290,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -289,7 +308,8 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 1/2-inch pieces and chilled"
+        "note": "cut into 1/2-inch pieces and chilled",
+        "category": "Dairy & Eggs"
       }
     }
   ]

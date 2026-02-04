@@ -12,7 +12,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "large"
           }
         ],
-        "note": "diced (about 3/4 cup diced"
+        "note": "diced (about 3/4 cup diced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "large"
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -171,7 +182,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": "g"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Baking"
       }
     },
     {
@@ -196,7 +209,8 @@
       "expected": {
         "item": "salt and freshly ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

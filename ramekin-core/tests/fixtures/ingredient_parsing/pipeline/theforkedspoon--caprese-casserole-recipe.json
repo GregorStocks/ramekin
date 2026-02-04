@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "medium"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "seeded and diced"
+        "note": "seeded and diced",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +85,8 @@
       "expected": {
         "item": "salt and pepper (to season)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -140,7 +149,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -153,7 +163,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -170,7 +181,8 @@
             "unit": "g"
           }
         ],
-        "note": "tough stems removed, chopped (note 1"
+        "note": "tough stems removed, chopped (note 1",
+        "category": "Produce"
       }
     },
     {
@@ -183,7 +195,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -196,7 +209,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -209,7 +223,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -222,7 +237,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded (divided"
+        "note": "shredded (divided",
+        "category": "Cheese"
       }
     },
     {
@@ -239,7 +255,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Cheese"
       }
     },
     {
@@ -247,7 +264,8 @@
       "expected": {
         "item": "Fresh basil",
         "measurements": [],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -264,7 +282,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     }
   ]

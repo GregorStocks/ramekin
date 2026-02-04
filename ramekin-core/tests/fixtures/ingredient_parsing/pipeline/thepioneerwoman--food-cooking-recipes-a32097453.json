@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "stick"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and sliced"
+        "note": "peeled and sliced",
+        "category": "Produce"
       }
     },
     {
@@ -148,7 +157,8 @@
       "expected": {
         "item": "Grated zest and juice of 1/2 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -165,7 +175,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -173,7 +184,8 @@
       "expected": {
         "item": "Vanilla ice cream",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Frozen"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Other"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -149,7 +158,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -157,7 +167,8 @@
       "expected": {
         "item": "ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

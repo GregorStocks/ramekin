@@ -1,7 +1,6 @@
 mod export;
 mod generate_test_urls;
 mod import;
-mod ingredient_categories;
 mod ingredient_tests;
 mod load_test;
 mod parse_html;
@@ -252,15 +251,6 @@ enum Commands {
         #[arg(long)]
         fixtures_dir: Option<PathBuf>,
     },
-    /// Generate ingredient categories audit file from recipe fixtures
-    IngredientCategoriesGenerate {
-        /// Fixtures directory (default: ramekin-core/tests/fixtures/ingredient_parsing)
-        #[arg(long)]
-        fixtures_dir: Option<PathBuf>,
-        /// Output CSV file path
-        #[arg(short, long, default_value = "data/ingredient-categories.csv")]
-        output: PathBuf,
-    },
 }
 
 #[tokio::main]
@@ -423,12 +413,6 @@ async fn main() -> Result<()> {
         }
         Commands::IngredientTestsMigrateCurated { fixtures_dir } => {
             ingredient_tests::migrate_curated(fixtures_dir.as_deref())?;
-        }
-        Commands::IngredientCategoriesGenerate {
-            fixtures_dir,
-            output,
-        } => {
-            ingredient_categories::generate(fixtures_dir.as_deref(), &output)?;
         }
     }
 

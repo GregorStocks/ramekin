@@ -7,7 +7,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "About 1 pound broccoli, although the weight isn’t that important, either in 1 big head or 2 or so “trees”",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -23,7 +25,8 @@
       "expected": {
         "item": "Grated aged cheddar",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     },
     {
@@ -31,7 +34,8 @@
       "expected": {
         "item": "Dry rub",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -44,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -57,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -74,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -91,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -99,7 +107,8 @@
       "expected": {
         "item": "Chipotle powder or ground red pepper (cayenne) to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -112,7 +121,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "and more to taste"
+        "note": "and more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -120,7 +130,8 @@
       "expected": {
         "item": "Cider vinegar dip",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -133,7 +144,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -146,7 +158,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -159,7 +172,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -172,7 +186,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -180,7 +195,8 @@
       "expected": {
         "item": "Shake of smoked hot paprika or chipotle powder",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

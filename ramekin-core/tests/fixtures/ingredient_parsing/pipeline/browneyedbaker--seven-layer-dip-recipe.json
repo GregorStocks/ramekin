@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -88,7 +93,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -105,7 +111,8 @@
             "unit": "g"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": null
           }
         ],
-        "note": "seeds and membrane removed, finely chopped"
+        "note": "seeds and membrane removed, finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +139,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -144,7 +153,8 @@
             "unit": null
           }
         ],
-        "note": "seeds and juices removed, finely chopped"
+        "note": "seeds and juices removed, finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -161,7 +171,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -178,7 +189,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     }
   ]

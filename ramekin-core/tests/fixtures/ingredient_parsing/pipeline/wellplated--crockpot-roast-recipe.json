@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "clove"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -171,7 +182,8 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed and left whole"
+        "note": "scrubbed and left whole",
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch chunks (about 5 medium"
+        "note": "peeled and cut into 1-inch chunks (about 5 medium",
+        "category": "Produce"
       }
     },
     {
@@ -201,7 +214,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -209,7 +223,8 @@
       "expected": {
         "item": "Chopped fresh parsley",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

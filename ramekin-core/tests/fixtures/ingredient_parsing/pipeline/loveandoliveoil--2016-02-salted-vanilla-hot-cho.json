@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": "sifted"
+        "note": "sifted",
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "marshmallows or freshly whipped cream",
         "measurements": [],
-        "note": "optional, for serving"
+        "note": "optional, for serving",
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "or thinly sliced chicken breasts"
+        "note": "or thinly sliced chicken breasts",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +99,8 @@
       "expected": {
         "item": "Zest from 1 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -153,7 +163,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -166,7 +177,8 @@
             "unit": "pint"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -179,7 +191,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -192,7 +205,8 @@
             "unit": "large"
           }
         ],
-        "note": "about 2 packed cups"
+        "note": "about 2 packed cups",
+        "category": "Produce"
       }
     },
     {
@@ -205,7 +219,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -222,7 +237,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -230,7 +246,8 @@
       "expected": {
         "item": "Crusty bread, to serve",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     }
   ]

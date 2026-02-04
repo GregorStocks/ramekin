@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and sliced"
+        "note": "peeled and sliced",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and sliced"
+        "note": "peeled and sliced",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -89,7 +95,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "dill",
         "measurements": [],
-        "note": "for garnishment"
+        "note": "for garnishment",
+        "category": "Spices & Seasonings"
       }
     }
   ]

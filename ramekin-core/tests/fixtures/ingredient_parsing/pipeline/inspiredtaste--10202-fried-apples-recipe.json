@@ -7,7 +7,8 @@
       "expected": {
         "item": "Vegetable oil, or other high smoke-point oil such as canola or peanut for frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and cored"
+        "note": "peeled and cored",
+        "category": "Produce"
       }
     },
     {
@@ -118,7 +126,8 @@
       "expected": {
         "item": "Sea salt",
         "measurements": [],
-        "note": "powdered sugar or caramel sauce for serving"
+        "note": "powdered sugar or caramel sauce for serving",
+        "category": "Spices & Seasonings"
       }
     }
   ]

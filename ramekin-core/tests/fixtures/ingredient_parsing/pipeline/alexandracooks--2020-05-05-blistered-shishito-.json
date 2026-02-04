@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "flaky sea salt, such as Maldon",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "Aleppo pepper, if you have it, see notes above",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -75,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -92,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": "or other nut butter of choice, optional but delicious"
+        "note": "or other nut butter of choice, optional but delicious",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "Chia seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "Protein powder",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -92,7 +99,8 @@
       "expected": {
         "item": "Ground cinnamon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -100,7 +108,8 @@
       "expected": {
         "item": "Citrus zest (I love orange zest with honey and cinnamon!)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -108,7 +117,8 @@
       "expected": {
         "item": "Dried fruit",
         "measurements": [],
-        "note": "favorites: reduced-sugar dried cranberries, raisins, chopped dates"
+        "note": "favorites: reduced-sugar dried cranberries, raisins, chopped dates",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -116,7 +126,8 @@
       "expected": {
         "item": "Fresh fruit",
         "measurements": [],
-        "note": "or frozen and thawed fruit"
+        "note": "or frozen and thawed fruit",
+        "category": "Other"
       }
     },
     {
@@ -124,7 +135,8 @@
       "expected": {
         "item": "Toasted almonds (walnuts, or pecans (add just before serving to maintain the most crunch)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -132,7 +144,8 @@
       "expected": {
         "item": "An extra drizzle of honey ( or maple syrup)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

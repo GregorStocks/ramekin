@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "goat cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -57,7 +62,8 @@
       "expected": {
         "item": "bacon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -65,7 +71,8 @@
       "expected": {
         "item": "chives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

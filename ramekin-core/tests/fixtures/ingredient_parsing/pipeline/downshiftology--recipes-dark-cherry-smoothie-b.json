@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "whole cherries",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -54,7 +58,8 @@
       "expected": {
         "item": "coconut flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -62,7 +67,8 @@
       "expected": {
         "item": "sliced almonds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -70,7 +76,8 @@
       "expected": {
         "item": "raw cacao nibs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

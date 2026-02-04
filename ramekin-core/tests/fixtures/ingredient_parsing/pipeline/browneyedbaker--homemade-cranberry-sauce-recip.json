@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed and dried"
+        "note": "rinsed and dried",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "peeled, cored and finely chopped"
+        "note": "peeled, cored and finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -54,7 +57,8 @@
       "expected": {
         "item": "Grated zest and juice of 1 orange",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -62,7 +66,8 @@
       "expected": {
         "item": "Grated zest and juice of 1 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "Private Reserve extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -92,7 +99,8 @@
       "expected": {
         "item": "Water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -105,7 +113,8 @@
             "unit": "cup"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -118,7 +127,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +141,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -148,7 +159,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -165,7 +177,8 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped if needed"
+        "note": "roughly chopped if needed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -178,7 +191,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -191,7 +205,8 @@
             "unit": null
           }
         ],
-        "note": "roughly chopped or torn; more for garnish"
+        "note": "roughly chopped or torn; more for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -208,7 +223,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     }
   ]

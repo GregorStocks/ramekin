@@ -7,7 +7,8 @@
       "expected": {
         "item": "ice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -49,7 +52,8 @@
       "expected": {
         "item": "club soda or sparkling water",
         "measurements": [],
-        "note": "optional, to taste"
+        "note": "optional, to taste",
+        "category": "Beverages"
       }
     }
   ]

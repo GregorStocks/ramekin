@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or very finely ground pistachios"
+        "note": "or very finely ground pistachios",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "large"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -153,7 +162,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -166,7 +176,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -179,7 +190,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for topping"
+        "note": "plus more for topping",
+        "category": "Other"
       }
     },
     {
@@ -192,7 +204,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for topping"
+        "note": "plus more for topping",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -200,7 +213,8 @@
       "expected": {
         "item": "flake sea salt (for topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

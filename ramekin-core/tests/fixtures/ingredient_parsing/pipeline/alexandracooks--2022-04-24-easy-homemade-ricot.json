@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "such as the pre-grated Locatelli brand"
+        "note": "such as the pre-grated Locatelli brand",
+        "category": "Cheese"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for dusting"
+        "note": "plus more for dusting",
+        "category": "Baking"
       }
     },
     {
@@ -84,7 +89,8 @@
       "expected": {
         "item": "kosher salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -105,7 +112,8 @@
       "expected": {
         "item": "fresh basil",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -113,7 +121,8 @@
       "expected": {
         "item": "Parmigiano Reggiano or pecorino",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     },
     {
@@ -130,7 +139,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -147,7 +157,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -160,7 +171,8 @@
             "unit": "stick"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -173,7 +185,8 @@
             "unit": "small"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -181,7 +194,8 @@
       "expected": {
         "item": "parsley",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -189,7 +203,8 @@
       "expected": {
         "item": "lemon zest",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -206,7 +221,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -219,7 +235,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -227,7 +244,8 @@
       "expected": {
         "item": "Parmigiano Reggiano",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -235,7 +253,8 @@
       "expected": {
         "item": "Black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

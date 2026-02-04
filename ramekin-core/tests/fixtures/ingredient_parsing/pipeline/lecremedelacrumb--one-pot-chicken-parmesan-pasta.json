@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "chopped into 1-inch pieces"
+        "note": "chopped into 1-inch pieces",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "cup"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Cheese"
       }
     },
     {
@@ -149,7 +158,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -157,7 +167,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -174,7 +185,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -187,7 +199,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or regular bread crumbs + 1/2 teaspoon dried Italian seasoning"
+        "note": "or regular bread crumbs + 1/2 teaspoon dried Italian seasoning",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -195,7 +208,8 @@
       "expected": {
         "item": "optional: fresh parsley, basil",
         "measurements": [],
-        "note": "or thyme for garnish"
+        "note": "or thyme for garnish",
+        "category": "Produce"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil (divided"
+        "note": "or olive oil (divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled and minced"
+        "note": "peeled and minced",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "cup"
           }
         ],
-        "note": "canned or cooked from scratch"
+        "note": "canned or cooked from scratch",
+        "category": "Canned Goods"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -90,7 +96,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -103,7 +110,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -116,7 +124,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -124,7 +133,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,7 +147,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -150,7 +161,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -163,7 +175,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -176,7 +189,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -189,7 +203,8 @@
             "unit": null
           }
         ],
-        "note": "cut into wedges (for an optional burst of citrus"
+        "note": "cut into wedges (for an optional burst of citrus",
+        "category": "Produce"
       }
     },
     {
@@ -197,7 +212,8 @@
       "expected": {
         "item": "guacamole",
         "measurements": [],
-        "note": "or sliced avocado"
+        "note": "or sliced avocado",
+        "category": "Other"
       }
     },
     {
@@ -205,7 +221,8 @@
       "expected": {
         "item": "sliced jalapeno peppers",
         "measurements": [],
-        "note": "fresh or pickled"
+        "note": "fresh or pickled",
+        "category": "Produce"
       }
     },
     {
@@ -213,7 +230,8 @@
       "expected": {
         "item": "salsa",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -221,7 +239,8 @@
       "expected": {
         "item": "salsa verde",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -229,7 +248,8 @@
       "expected": {
         "item": "pickled red onion",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -237,7 +257,8 @@
       "expected": {
         "item": "sliced black olives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -245,7 +266,8 @@
       "expected": {
         "item": "crushed tortilla chips",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -258,7 +280,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -271,7 +294,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -284,7 +308,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -297,7 +322,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus extra to taste"
+        "note": "plus extra to taste",
+        "category": "Produce"
       }
     },
     {
@@ -305,7 +331,8 @@
       "expected": {
         "item": "fresh squeezed lime juice",
         "measurements": [],
-        "note": "to taste (approx 1/4 a lime"
+        "note": "to taste (approx 1/4 a lime",
+        "category": "Beverages"
       }
     },
     {
@@ -318,7 +345,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

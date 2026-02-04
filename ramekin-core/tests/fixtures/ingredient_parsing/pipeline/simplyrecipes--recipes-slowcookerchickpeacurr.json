@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed"
+        "note": "rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and diced (See Recipe Note)"
+        "note": "peeled and diced (See Recipe Note)",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -135,7 +142,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -152,7 +160,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -165,7 +174,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -178,7 +188,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -191,7 +202,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -204,7 +216,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -212,7 +225,8 @@
       "expected": {
         "item": "Cooked rice, to serve",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -220,7 +234,8 @@
       "expected": {
         "item": "Chopped cilantro, to serve",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -228,7 +243,8 @@
       "expected": {
         "item": "Lime or lemon wedges, to serve",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

@@ -7,7 +7,8 @@
       "expected": {
         "item": "Chicken:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "crumbled"
+        "note": "crumbled",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -114,7 +122,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -135,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -153,7 +163,8 @@
           }
         ],
         "note": "chopped",
-        "section": "Serving"
+        "section": "Serving",
+        "category": "Produce"
       }
     },
     {
@@ -167,7 +178,8 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "Serving"
+        "section": "Serving",
+        "category": "Produce"
       }
     },
     {
@@ -185,7 +197,8 @@
           }
         ],
         "note": "chopped",
-        "section": "Serving"
+        "section": "Serving",
+        "category": "Produce"
       }
     },
     {
@@ -199,7 +212,8 @@
           }
         ],
         "note": "chopped",
-        "section": "Serving"
+        "section": "Serving",
+        "category": "Produce"
       }
     },
     {
@@ -213,7 +227,8 @@
           }
         ],
         "note": null,
-        "section": "Serving"
+        "section": "Serving",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -222,7 +237,8 @@
         "item": "Tzatziki",
         "measurements": [],
         "note": null,
-        "section": "Serving"
+        "section": "Serving",
+        "category": "Condiments & Sauces"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved and sliced 1/2-inch thick"
+        "note": "halved and sliced 1/2-inch thick",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +74,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -79,7 +83,8 @@
       "expected": {
         "item": "Kosher salt and black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -92,7 +97,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -105,7 +111,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -122,7 +129,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -139,7 +147,8 @@
             "unit": "g"
           }
         ],
-        "note": "about 5 packed cups"
+        "note": "about 5 packed cups",
+        "category": "Produce"
       }
     },
     {
@@ -152,7 +161,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus lime wedges for serving"
+        "note": "plus lime wedges for serving",
+        "category": "Beverages"
       }
     },
     {
@@ -160,7 +170,8 @@
       "expected": {
         "item": "Steamed rice, such as jasmine or basmati",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -173,7 +184,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -186,7 +198,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

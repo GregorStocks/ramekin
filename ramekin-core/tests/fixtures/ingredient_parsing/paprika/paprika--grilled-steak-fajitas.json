@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 1 tablespoon vegetable oil"
+        "note": "plus 1 tablespoon vegetable oil",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut crosswise into 6 equal pieces"
+        "note": "trimmed and cut crosswise into 6 equal pieces",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced into 1/2-inch-thick rounds"
+        "note": "sliced into 1/2-inch-thick rounds",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +109,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "Steamed Rice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -71,7 +76,8 @@
       "expected": {
         "item": "sesame seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +85,8 @@
       "expected": {
         "item": "Wasabi",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -87,7 +94,8 @@
       "expected": {
         "item": "Nori roasted Seaweed (thinly cut)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     }
   ]

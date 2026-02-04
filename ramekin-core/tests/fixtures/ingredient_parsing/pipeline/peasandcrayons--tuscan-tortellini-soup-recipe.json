@@ -12,7 +12,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -90,7 +96,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -103,7 +110,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "g"
           }
         ],
-        "note": "crushed or diced"
+        "note": "crushed or diced",
+        "category": "Canned Goods"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -184,7 +196,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -201,7 +214,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -214,7 +228,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -222,7 +237,8 @@
       "expected": {
         "item": "grated parmesan cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -230,7 +246,8 @@
       "expected": {
         "item": "red pepper flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -238,7 +255,8 @@
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -246,7 +264,8 @@
       "expected": {
         "item": "fresh chopped basil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

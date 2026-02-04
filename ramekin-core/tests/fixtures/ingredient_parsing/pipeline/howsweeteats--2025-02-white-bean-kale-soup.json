@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -123,7 +131,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": "bunch"
           }
         ],
-        "note": "wash and torn from the stems, coarsely chopped"
+        "note": "wash and torn from the stems, coarsely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -153,7 +163,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -161,7 +172,8 @@
       "expected": {
         "item": "parmesan cheese, (for topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -169,7 +181,8 @@
       "expected": {
         "item": "crushed red pepper, (for topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

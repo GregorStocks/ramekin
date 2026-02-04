@@ -20,7 +20,8 @@
             "unit": "oz"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "oz"
           }
         ],
-        "note": "cubed"
+        "note": "cubed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -66,7 +68,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -87,7 +90,8 @@
             "unit": "oz"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -100,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -113,7 +118,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -130,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped*"
+        "note": "finely chopped*",
+        "category": "Other"
       }
     },
     {
@@ -138,7 +145,8 @@
       "expected": {
         "item": "coarse sea salt or flaky sea salt, for sprinkling on top",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

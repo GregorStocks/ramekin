@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "large"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "Salt and freshly ground black pepper or red pepper flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "large"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "ml"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped or torn"
+        "note": "chopped or torn",
+        "category": "Produce"
       }
     },
     {
@@ -139,7 +147,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -156,7 +165,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -169,7 +179,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -186,7 +197,8 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated"
+        "note": "coarsely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -203,7 +215,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -220,7 +233,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

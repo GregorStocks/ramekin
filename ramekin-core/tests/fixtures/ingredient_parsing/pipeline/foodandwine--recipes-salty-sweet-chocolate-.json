@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "28 whole crackers"
+        "note": "28 whole crackers",
+        "category": "Snacks"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "stick"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "14-ounce can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "10-ounce bag"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -114,7 +121,8 @@
       "expected": {
         "item": "Flaky sea salt, for sprinkling",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

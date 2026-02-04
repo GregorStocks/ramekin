@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cubed"
+        "note": "peeled and cubed",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +99,8 @@
       "expected": {
         "item": "grated gouda or cheddar cheese (skip for vegan/dairy-free)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -101,7 +108,8 @@
       "expected": {
         "item": "chopped bacon (or vegan bacon bits)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -109,7 +117,8 @@
       "expected": {
         "item": "roasted pepitas",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -117,7 +126,8 @@
       "expected": {
         "item": "sesame seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -125,7 +135,8 @@
       "expected": {
         "item": "a dash of ground cinnamon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -133,7 +144,8 @@
       "expected": {
         "item": "fresh chives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

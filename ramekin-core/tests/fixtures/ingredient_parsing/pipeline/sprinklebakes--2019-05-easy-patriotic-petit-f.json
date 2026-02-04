@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "thawed"
+        "note": "thawed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -41,7 +43,8 @@
       "expected": {
         "item": "Red and sky blue gel food color",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -49,7 +52,8 @@
       "expected": {
         "item": "Gold star sprinkles",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -57,7 +61,8 @@
       "expected": {
         "item": "Edible gold glitter",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     }
   ]

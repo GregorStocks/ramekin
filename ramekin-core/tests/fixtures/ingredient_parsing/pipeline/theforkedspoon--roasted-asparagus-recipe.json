@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +85,8 @@
       "expected": {
         "item": "red pepper flakes",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "minced, optional for serving"
+        "note": "minced, optional for serving",
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": null
           }
         ],
-        "note": "cut into wedges, for serving"
+        "note": "cut into wedges, for serving",
+        "category": "Produce"
       }
     }
   ]

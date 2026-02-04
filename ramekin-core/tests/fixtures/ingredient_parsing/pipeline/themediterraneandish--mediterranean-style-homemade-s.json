@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Canned Goods"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": null
           }
         ],
-        "note": "optional if you want to add spice"
+        "note": "optional if you want to add spice",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +109,8 @@
       "expected": {
         "item": "Kosher salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -115,7 +123,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -128,7 +137,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -136,7 +146,8 @@
       "expected": {
         "item": "Extra virgin olive oil (I used Early Harvest Greek extra virgin olive oil)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

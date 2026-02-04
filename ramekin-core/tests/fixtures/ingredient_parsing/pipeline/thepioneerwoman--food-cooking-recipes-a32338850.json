@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "15-ounce can"
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -123,7 +131,8 @@
       "expected": {
         "item": "Juice of 1 lime",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -162,7 +173,8 @@
             "unit": "cup"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -175,7 +187,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +201,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "grapeseed oil for frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "toasted black sesame seeds",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -92,7 +99,8 @@
       "expected": {
         "item": "sliced green onions",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -100,7 +108,8 @@
       "expected": {
         "item": "fluffy white rice or grain of choice, to serve",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "chopped small, about 1/3 cup worth"
+        "note": "chopped small, about 1/3 cup worth",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "cooked and chopped small"
+        "note": "cooked and chopped small",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "kosher salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "freshly ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

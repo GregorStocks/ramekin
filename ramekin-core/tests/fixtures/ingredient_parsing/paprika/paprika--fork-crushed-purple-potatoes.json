@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "washed"
+        "note": "washed",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "small"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "Fleur de sel to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -71,7 +76,8 @@
       "expected": {
         "item": "White pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Spices & Seasonings"
       }
     }
   ]

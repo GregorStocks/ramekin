@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "small"
           }
         ],
-        "note": "thinly sliced (approx 1/4 cup"
+        "note": "thinly sliced (approx 1/4 cup",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "g"
           }
         ],
-        "note": "loosely packed"
+        "note": "loosely packed",
+        "category": "Produce"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -153,7 +163,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -161,7 +172,8 @@
       "expected": {
         "item": "shaved parmesan",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -169,7 +181,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

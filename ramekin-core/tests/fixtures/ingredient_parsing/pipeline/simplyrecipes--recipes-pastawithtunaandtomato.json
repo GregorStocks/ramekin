@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "28-ounce can"
           }
         ],
-        "note": "whole or crushed"
+        "note": "whole or crushed",
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "6-ounce can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped or torn"
+        "note": "chopped or torn",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +108,8 @@
       "expected": {
         "item": "A generous 1/2 cup grated Parmesan cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

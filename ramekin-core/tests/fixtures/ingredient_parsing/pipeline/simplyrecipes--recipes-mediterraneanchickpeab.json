@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "clove"
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "16-ounce can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -146,7 +156,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -159,7 +170,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -172,7 +184,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -185,7 +198,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -202,7 +216,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -215,7 +230,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -228,7 +244,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
@@ -241,7 +258,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -254,7 +272,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -267,7 +286,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -280,7 +300,8 @@
             "unit": "pint"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -293,7 +314,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -314,7 +336,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely diced"
+        "note": "finely diced",
+        "category": "Produce"
       }
     },
     {
@@ -322,7 +345,8 @@
       "expected": {
         "item": "Fresh mint leaves",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

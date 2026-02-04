@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "large"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -132,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -175,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -183,7 +195,8 @@
       "expected": {
         "item": "parsley",
         "measurements": [],
-        "note": "chopped, for serving"
+        "note": "chopped, for serving",
+        "category": "Spices & Seasonings"
       }
     }
   ]

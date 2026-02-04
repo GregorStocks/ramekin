@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced (different colors"
+        "note": "sliced (different colors",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +113,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     }
   ]

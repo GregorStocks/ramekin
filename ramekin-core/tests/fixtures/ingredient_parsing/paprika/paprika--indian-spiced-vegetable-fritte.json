@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled"
+        "note": "peeled",
+        "category": "Produce"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -90,7 +96,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -158,7 +169,8 @@
       "expected": {
         "item": "A pinch of cayenne",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -171,7 +183,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -184,7 +197,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -192,7 +206,8 @@
       "expected": {
         "item": "Curry-Lime Yogurt:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -205,7 +220,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -222,7 +238,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -239,7 +256,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -247,7 +265,8 @@
       "expected": {
         "item": "A squeeze or two of fresh lime juice",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -255,7 +274,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

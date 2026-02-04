@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Juice of half a lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -135,7 +143,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -152,7 +161,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -160,7 +170,8 @@
       "expected": {
         "item": "Powdered sugar, for dusting",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Baking"
       }
     }
   ]

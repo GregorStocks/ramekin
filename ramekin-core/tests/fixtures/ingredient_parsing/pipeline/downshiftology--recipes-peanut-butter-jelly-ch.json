@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for garnish"
+        "note": "plus more for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "blackberries",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for serving"
+        "note": "plus more for serving",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "kg"
           }
         ],
-        "note": "scrubbed"
+        "note": "scrubbed",
+        "category": "Produce"
       }
     },
     {
@@ -75,7 +78,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus for as needed"
+        "note": "plus for as needed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -92,7 +96,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -100,7 +105,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and deveined"
+        "note": "peeled and deveined",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -93,7 +99,8 @@
       "expected": {
         "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -114,7 +122,8 @@
       "expected": {
         "item": "olive oil, to finish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

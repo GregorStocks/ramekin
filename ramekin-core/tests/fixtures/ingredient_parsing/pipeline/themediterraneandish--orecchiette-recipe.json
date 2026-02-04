@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -45,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +62,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +76,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -79,7 +85,8 @@
       "expected": {
         "item": "Juice 1 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -92,7 +99,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -105,7 +113,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +127,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +141,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -144,7 +155,8 @@
             "unit": null
           }
         ],
-        "note": "or white beans of your choice, drained and rinsed"
+        "note": "or white beans of your choice, drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -157,7 +169,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -170,7 +183,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -178,7 +192,8 @@
       "expected": {
         "item": "Feta cheese for garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     }
   ]

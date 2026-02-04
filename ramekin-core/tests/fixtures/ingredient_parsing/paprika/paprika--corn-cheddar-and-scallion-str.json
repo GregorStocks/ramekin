@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional, see Note up top"
+        "note": "optional, see Note up top",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -157,7 +166,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 2 teaspoons of a coarse sea salt"
+        "note": "or 2 teaspoons of a coarse sea salt",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -165,7 +175,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

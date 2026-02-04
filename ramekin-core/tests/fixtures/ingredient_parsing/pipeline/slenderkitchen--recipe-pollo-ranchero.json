@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced thin"
+        "note": "sliced thin",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "diced (or yellow chile pepper)"
+        "note": "diced (or yellow chile pepper)",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "seeds removed for less heat"
+        "note": "seeds removed for less heat",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -128,7 +137,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -141,7 +151,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -154,7 +165,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Other"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -83,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -108,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": "peeled and roughly chopped"
+        "note": "peeled and roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -133,7 +138,8 @@
             "unit": "cup"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -146,7 +152,8 @@
             "unit": "medium"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -159,7 +166,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -172,7 +180,8 @@
             "unit": "sprig"
           }
         ],
-        "note": "plus finely chopped parsley leaves and tender stems for garnish"
+        "note": "plus finely chopped parsley leaves and tender stems for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -185,7 +194,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -206,7 +216,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -223,7 +234,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -231,7 +243,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -239,7 +252,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

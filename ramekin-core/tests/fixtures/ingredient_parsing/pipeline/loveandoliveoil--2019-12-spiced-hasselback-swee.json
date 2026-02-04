@@ -16,7 +16,8 @@
             "unit": "oz each"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "sliced green onions (for topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

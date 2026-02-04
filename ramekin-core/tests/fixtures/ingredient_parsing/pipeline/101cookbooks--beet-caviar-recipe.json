@@ -12,7 +12,8 @@
             "unit": "medium"
           }
         ],
-        "note": "washed and trimmed"
+        "note": "washed and trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "pitted and chopped"
+        "note": "pitted and chopped",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and smashed"
+        "note": "peeled and smashed",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -115,7 +123,8 @@
       "expected": {
         "item": "lots of freshly chopped chives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

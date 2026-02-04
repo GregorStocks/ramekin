@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for drizzling"
+        "note": "plus more for drizzling",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Canned Goods"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "large"
           }
         ],
-        "note": "beaten"
+        "note": "beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for garnish"
+        "note": "plus more for garnish",
+        "category": "Cheese"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -149,7 +158,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1 tablespoon fresh lemon juice"
+        "note": "plus 1 tablespoon fresh lemon juice",
+        "category": "Produce"
       }
     },
     {
@@ -162,7 +172,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -170,7 +181,8 @@
       "expected": {
         "item": "Fine sea salt or kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -178,7 +190,8 @@
       "expected": {
         "item": "Garlic bread and lemon wedges",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

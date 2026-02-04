@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 3 tablespoons extra-virgin olive oil"
+        "note": "plus 3 tablespoons extra-virgin olive oil",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -89,7 +95,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed and cut into 4 equal parts"
+        "note": "trimmed and cut into 4 equal parts",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

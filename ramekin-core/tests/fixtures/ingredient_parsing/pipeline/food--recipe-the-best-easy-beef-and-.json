@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Baking"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Other"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 1   lb   charcoal chuck steak, cut into thin 3-inch strips"
+        "note": "or 1   lb   charcoal chuck steak, cut into thin 3-inch strips",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -153,7 +162,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -170,7 +180,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -178,7 +189,8 @@
       "expected": {
         "item": "hot cooked rice",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -186,7 +198,8 @@
       "expected": {
         "item": "toasted sesame seeds, for serving",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": "whole wheat or regular"
+        "note": "whole wheat or regular",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "as needed"
+        "note": "as needed",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Optional additional seasonings: za’atar, sesame seeds, dried oregano",
         "measurements": [],
-        "note": "dried minced onion or garlic"
+        "note": "dried minced onion or garlic",
+        "category": "Spices & Seasonings"
       }
     }
   ]

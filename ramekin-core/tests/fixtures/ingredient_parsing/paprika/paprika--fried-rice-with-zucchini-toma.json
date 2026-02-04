@@ -7,7 +7,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": null
           }
         ],
-        "note": "diced or 1/2 a large onion"
+        "note": "diced or 1/2 a large onion",
+        "category": "Produce"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
-        "note": "plus red pepper flakes for heat if desired"
+        "note": "plus red pepper flakes for heat if desired",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -62,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -75,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": "halved if tiny"
+        "note": "halved if tiny",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +108,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -114,7 +122,8 @@
             "unit": "cup"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Cheese"
       }
     },
     {
@@ -127,7 +136,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -140,7 +150,8 @@
             "unit": "large"
           }
         ],
-        "note": "or 4 large eggs (for an egg on top of each portion)"
+        "note": "or 4 large eggs (for an egg on top of each portion)",
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": null
           }
         ],
-        "note": "divided into small florets"
+        "note": "divided into small florets",
+        "category": "Produce"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -136,7 +145,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -144,7 +154,8 @@
       "expected": {
         "item": "Private Reserve extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -157,7 +168,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -170,7 +182,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -183,7 +196,8 @@
             "unit": "14-oz cans"
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -196,7 +210,8 @@
             "unit": "28-oz can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -209,7 +224,8 @@
             "unit": "cup"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -217,7 +233,8 @@
       "expected": {
         "item": "Toasted slivered almonds",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -225,7 +242,8 @@
       "expected": {
         "item": "Toasted pine nuts",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

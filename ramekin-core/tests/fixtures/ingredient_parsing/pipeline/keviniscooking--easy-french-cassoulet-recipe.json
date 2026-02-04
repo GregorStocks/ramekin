@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -58,7 +61,8 @@
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -66,7 +70,8 @@
       "expected": {
         "item": "black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -83,7 +88,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -96,7 +102,8 @@
             "unit": "large"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -109,7 +116,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -122,7 +130,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -135,7 +144,8 @@
             "unit": "stalk"
           }
         ],
-        "note": "chopped into 1 inch pieces"
+        "note": "chopped into 1 inch pieces",
+        "category": "Produce"
       }
     },
     {
@@ -148,7 +158,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and chopped into 1 inch pieces"
+        "note": "peeled and chopped into 1 inch pieces",
+        "category": "Produce"
       }
     },
     {
@@ -165,7 +176,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -182,7 +194,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -199,7 +212,8 @@
             "unit": "piece"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -212,7 +226,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -225,7 +240,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     }
   ]

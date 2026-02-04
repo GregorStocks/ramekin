@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "plus one sprig for garnish"
+        "note": "plus one sprig for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "or more to taste"
+        "note": "or more to taste",
+        "category": "Other"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -62,7 +65,8 @@
       "expected": {
         "item": "Crushed ice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -70,7 +74,8 @@
       "expected": {
         "item": "Sugar, for garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Baking"
       }
     }
   ]

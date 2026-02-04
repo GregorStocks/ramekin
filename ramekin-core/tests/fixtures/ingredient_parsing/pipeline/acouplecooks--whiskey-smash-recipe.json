@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": null
           }
         ],
-        "note": "sliced into 2 wedges"
+        "note": "sliced into 2 wedges",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -75,7 +79,8 @@
       "expected": {
         "item": "Soda water",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Beverages"
       }
     },
     {
@@ -83,7 +88,8 @@
       "expected": {
         "item": "Crushed ice",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Other"
       }
     }
   ]

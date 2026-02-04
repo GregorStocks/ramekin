@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Your favorite vinaigrette",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -45,7 +48,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -53,7 +57,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -61,7 +66,8 @@
       "expected": {
         "item": "Shaved Parmesan cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

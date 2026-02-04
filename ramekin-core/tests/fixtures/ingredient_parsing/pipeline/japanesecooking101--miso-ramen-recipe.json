@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "clove"
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Beverages"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -180,7 +192,8 @@
             "unit": "clove"
           }
         ],
-        "note": "grated"
+        "note": "grated",
+        "category": "Produce"
       }
     },
     {
@@ -197,7 +210,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -214,7 +228,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -231,7 +246,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -239,7 +255,8 @@
       "expected": {
         "item": "Yakibuta (roast pork)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -247,7 +264,8 @@
       "expected": {
         "item": "soft boiled egg halves",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -255,7 +273,8 @@
       "expected": {
         "item": "green onions (cut finely)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -263,7 +282,8 @@
       "expected": {
         "item": "corn (pan-fried with butter and salt)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

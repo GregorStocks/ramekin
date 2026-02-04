@@ -12,7 +12,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -85,7 +91,8 @@
       "expected": {
         "item": "red pickled ginger (benishoga) (optional topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -93,7 +100,8 @@
       "expected": {
         "item": "bonito flakes (katsuobushi) (optional topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +109,8 @@
       "expected": {
         "item": "aonori (optional topping)",
         "measurements": [],
-        "note": "dried green seaweed powder"
+        "note": "dried green seaweed powder",
+        "category": "Other"
       }
     },
     {
@@ -114,7 +123,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -127,7 +137,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -140,7 +151,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -153,7 +165,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -166,7 +179,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -179,7 +193,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -196,7 +211,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -213,7 +229,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -226,7 +243,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

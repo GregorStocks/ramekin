@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste (see notes)"
+        "note": "plus more to taste (see notes)",
+        "category": "Baking"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -105,7 +110,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -113,7 +119,8 @@
       "expected": {
         "item": "Ground cinnamon",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -121,7 +128,8 @@
       "expected": {
         "item": "Desiccated coconut, for serving",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -129,7 +137,8 @@
       "expected": {
         "item": "Very finely chopped pistachios (see notes)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

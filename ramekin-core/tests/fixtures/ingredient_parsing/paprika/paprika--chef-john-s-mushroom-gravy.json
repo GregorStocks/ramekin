@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -41,7 +43,8 @@
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "g"
           }
         ],
-        "note": "or as needed"
+        "note": "or as needed",
+        "category": "Baking"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "quart"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "pinch"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Produce"
       }
     }
   ]

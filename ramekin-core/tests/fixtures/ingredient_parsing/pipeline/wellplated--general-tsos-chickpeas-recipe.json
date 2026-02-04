@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "small"
           }
         ],
-        "note": "cored and sliced"
+        "note": "cored and sliced",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced, white and green parts divided"
+        "note": "thinly sliced, white and green parts divided",
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +99,8 @@
       "expected": {
         "item": "Toasted sesame seeds",
         "measurements": [],
-        "note": "optional for serving"
+        "note": "optional for serving",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +108,8 @@
       "expected": {
         "item": "Prepared brown rice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -118,7 +126,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -131,7 +140,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -144,7 +154,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -157,7 +168,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -170,7 +182,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -187,7 +200,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -200,7 +214,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -213,7 +228,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "sifted"
+        "note": "sifted",
+        "category": "Baking"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -93,7 +99,8 @@
       "expected": {
         "item": "confectioners’ sugar",
         "measurements": [],
-        "note": "as needed"
+        "note": "as needed",
+        "category": "Baking"
       }
     }
   ]

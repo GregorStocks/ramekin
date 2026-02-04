@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed"
+        "note": "scrubbed",
+        "category": "Produce"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved if you like"
+        "note": "halved if you like",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -75,7 +78,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -83,7 +87,8 @@
       "expected": {
         "item": "Quality Extra Virgin Olive Oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -91,7 +96,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -104,7 +110,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more for later"
+        "note": "plus more for later",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -117,7 +124,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -134,7 +142,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -147,7 +156,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

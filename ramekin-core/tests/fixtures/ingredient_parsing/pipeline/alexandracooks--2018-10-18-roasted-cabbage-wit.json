@@ -12,7 +12,8 @@
             "unit": "head"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "kosher salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or 2 tablespoons balsamic, I like white balsamic"
+        "note": "or 2 tablespoons balsamic, I like white balsamic",
+        "category": "Other"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for serving"
+        "note": "plus more for serving",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -110,7 +118,8 @@
       "expected": {
         "item": "juice of 1 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 2-3 inch cubes"
+        "note": "trimmed and cut into 2-3 inch cubes",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled and finely diced"
+        "note": "peeled and finely diced",
+        "category": "Produce"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "clove"
           }
         ],
-        "note": "whole"
+        "note": "whole",
+        "category": "Produce"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -180,7 +192,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -201,7 +214,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -214,7 +228,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -227,7 +242,8 @@
             "unit": null
           }
         ],
-        "note": "red or yellow, or combo - chopped"
+        "note": "red or yellow, or combo - chopped",
+        "category": "Produce"
       }
     },
     {
@@ -240,7 +256,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -248,7 +265,8 @@
       "expected": {
         "item": "Juice of 1 lime",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -256,7 +274,8 @@
       "expected": {
         "item": "Zest of 1 lime",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -269,7 +288,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -282,7 +302,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -295,7 +316,8 @@
             "unit": "bunch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -308,7 +330,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled and cut into 1/4-inch rounds"
+        "note": "peeled and cut into 1/4-inch rounds",
+        "category": "Produce"
       }
     },
     {
@@ -325,7 +348,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -342,7 +366,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into halves"
+        "note": "peeled and cut into halves",
+        "category": "Produce"
       }
     },
     {
@@ -359,7 +384,8 @@
             "unit": "g"
           }
         ],
-        "note": "cleaned, stem removed and cap cut into halves"
+        "note": "cleaned, stem removed and cap cut into halves",
+        "category": "Produce"
       }
     },
     {
@@ -367,7 +393,8 @@
       "expected": {
         "item": "Chopped fresh cilantro",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Baking"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -93,7 +99,8 @@
       "expected": {
         "item": "sliced green onions for garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

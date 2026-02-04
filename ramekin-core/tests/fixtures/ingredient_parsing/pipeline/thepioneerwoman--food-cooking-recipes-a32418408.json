@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more as needed"
+        "note": "plus more as needed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "5-ounce package"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "bunch"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +113,8 @@
       "expected": {
         "item": "Black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -162,7 +173,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -170,7 +182,8 @@
       "expected": {
         "item": "Juice of 1 lime",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -178,7 +191,8 @@
       "expected": {
         "item": "Ancho chile powder",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Other"
       }
     },
     {
@@ -186,7 +200,8 @@
       "expected": {
         "item": "Sour cream and hot sauce, for serving",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Dairy & Eggs"
       }
     }
   ]

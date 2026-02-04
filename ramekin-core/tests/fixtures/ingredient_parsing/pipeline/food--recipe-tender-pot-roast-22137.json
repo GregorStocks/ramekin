@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed"
+        "note": "trimmed",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or 2   cups    beef stock (or a combination)"
+        "note": "or 2   cups    beef stock (or a combination)",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -127,7 +135,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -140,7 +149,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -153,7 +163,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -161,7 +172,8 @@
       "expected": {
         "item": "water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

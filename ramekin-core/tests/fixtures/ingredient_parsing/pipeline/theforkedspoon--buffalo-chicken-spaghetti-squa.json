@@ -16,7 +16,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": "approximately 1 pound"
+        "note": "approximately 1 pound",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "small"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": null
           }
         ],
-        "note": "seeded and diced"
+        "note": "seeded and diced",
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -180,7 +192,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -193,7 +206,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -206,7 +220,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -214,7 +229,8 @@
       "expected": {
         "item": "Ranch or Blue Cheese dressing",
         "measurements": [],
-        "note": "for serving, optional"
+        "note": "for serving, optional",
+        "category": "Cheese"
       }
     }
   ]

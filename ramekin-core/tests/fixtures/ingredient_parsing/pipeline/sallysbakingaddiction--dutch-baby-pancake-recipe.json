@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature (or nondairy)"
+        "note": "at room temperature (or nondairy)",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -127,7 +134,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -148,7 +157,8 @@
       "expected": {
         "item": "optional toppings: berries, whipped cream, maple syrup",
         "measurements": [],
-        "note": "and/or strawberry sauce"
+        "note": "and/or strawberry sauce",
+        "category": "Dairy & Eggs"
       }
     }
   ]

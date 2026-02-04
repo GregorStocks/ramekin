@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "room temperature"
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature"
+        "note": "room temperature",
+        "category": "Other"
       }
     },
     {
@@ -123,7 +131,8 @@
       "expected": {
         "item": "cooking oil (for frying)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "fine grain sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced into 1/4-inch thick coins"
+        "note": "sliced into 1/4-inch thick coins",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +76,8 @@
       "expected": {
         "item": "a good handful of dill and/or scallions",
         "measurements": [],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +90,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

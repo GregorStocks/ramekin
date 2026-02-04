@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": null
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Produce"
       }
     },
     {
@@ -171,7 +182,8 @@
             "unit": "bunch"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -184,7 +196,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -201,7 +214,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -214,7 +228,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -222,7 +237,8 @@
       "expected": {
         "item": "Mixed greens and vinaigrette",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

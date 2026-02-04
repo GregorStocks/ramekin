@@ -7,7 +7,8 @@
       "expected": {
         "item": "Chipotle Sour Cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -109,7 +116,8 @@
       "expected": {
         "item": "Burritos",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -126,7 +134,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -139,7 +148,8 @@
             "unit": "cup"
           }
         ],
-        "note": "thawed and patted dry"
+        "note": "thawed and patted dry",
+        "category": "Frozen"
       }
     },
     {
@@ -156,7 +166,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -169,7 +180,8 @@
             "unit": "large"
           }
         ],
-        "note": "beaten"
+        "note": "beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -190,7 +202,8 @@
             "unit": "g"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -207,7 +220,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     }
   ]

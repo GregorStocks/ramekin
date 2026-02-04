@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "small"
           }
         ],
-        "note": "quartered and separated"
+        "note": "quartered and separated",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": "undrained"
+        "note": "undrained",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -127,7 +134,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -135,7 +143,8 @@
       "expected": {
         "item": "Hot cooked rice",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Pasta & Rice"
       }
     }
   ]

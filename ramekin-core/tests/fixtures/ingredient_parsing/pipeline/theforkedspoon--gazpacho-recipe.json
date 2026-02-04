@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "peeled, seeded, and chopped"
+        "note": "peeled, seeded, and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "seeded and chopped"
+        "note": "seeded and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "for heat (optional"
+        "note": "for heat (optional",
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled and minced"
+        "note": "peeled and minced",
+        "category": "Produce"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -163,7 +174,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -176,7 +188,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -184,7 +197,8 @@
       "expected": {
         "item": "Diced bell pepper, cucumber, cherry tomatoes, and red onion (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -192,7 +206,8 @@
       "expected": {
         "item": "Fresh basil",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

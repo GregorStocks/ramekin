@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "crushed into crumbs"
+        "note": "crushed into crumbs",
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled"
+        "note": "melted and cooled",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Cheese"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": null
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -148,7 +157,8 @@
       "expected": {
         "item": "Chocolate syrup",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -161,7 +171,8 @@
             "unit": null
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "category": "Dairy & Eggs"
       }
     }
   ]

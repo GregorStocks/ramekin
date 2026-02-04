@@ -12,7 +12,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "lb"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more"
+        "note": "plus more",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "Freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +63,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or more"
+        "note": "or more",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced 1/4\" thick"
+        "note": "sliced 1/4\" thick",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -115,7 +123,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -162,7 +173,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -175,7 +187,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -188,7 +201,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -201,7 +215,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -214,7 +229,8 @@
             "unit": "dash"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -222,7 +238,8 @@
       "expected": {
         "item": "Chopped parsley and cooked egg noodles, mashed potatoes, steamed",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -230,7 +247,8 @@
       "expected": {
         "item": "rice, or country-style bread",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Bakery & Bread"
       }
     }
   ]

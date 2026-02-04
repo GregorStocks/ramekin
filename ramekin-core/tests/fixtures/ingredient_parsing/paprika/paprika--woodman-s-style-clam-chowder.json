@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch dice"
+        "note": "peeled and cut into 1/2-inch dice",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -144,7 +153,8 @@
       "expected": {
         "item": "Oyster crackers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     }
   ]

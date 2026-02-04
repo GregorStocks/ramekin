@@ -12,7 +12,8 @@
             "unit": "g"
           }
         ],
-        "note": "washed and peeled"
+        "note": "washed and peeled",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely diced"
+        "note": "finely diced",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -184,7 +196,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -197,7 +210,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -210,7 +224,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -223,7 +238,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -231,7 +247,8 @@
       "expected": {
         "item": "cooking oil (for deep frying)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

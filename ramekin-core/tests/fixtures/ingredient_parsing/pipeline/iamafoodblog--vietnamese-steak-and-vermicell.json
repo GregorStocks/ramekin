@@ -7,7 +7,8 @@
       "expected": {
         "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -41,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -54,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +72,8 @@
             "unit": "pint"
           }
         ],
-        "note": "sliced in half"
+        "note": "sliced in half",
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +95,8 @@
       "expected": {
         "item": "mixed fish sauce to taste, see below",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -101,7 +109,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -114,7 +123,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -131,7 +141,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -139,7 +150,8 @@
       "expected": {
         "item": "juice of 1/2 lime",
         "measurements": [],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -156,7 +168,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -169,7 +182,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

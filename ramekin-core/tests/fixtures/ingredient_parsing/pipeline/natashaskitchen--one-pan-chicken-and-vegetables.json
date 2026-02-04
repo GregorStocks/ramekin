@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved or quartered if larger into 3/4\"-thick pieces"
+        "note": "halved or quartered if larger into 3/4\"-thick pieces",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -118,7 +124,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -139,7 +147,8 @@
       "expected": {
         "item": "Parsley for garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

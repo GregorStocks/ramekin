@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "about 8 packed cups"
+        "note": "about 8 packed cups",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "Kosher salt and black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": null
           }
         ],
-        "note": "stemmed and minced"
+        "note": "stemmed and minced",
+        "category": "Produce"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -157,7 +168,8 @@
       "expected": {
         "item": "Steamed rice and Indian flatbread",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Bakery & Bread"
       }
     }
   ]

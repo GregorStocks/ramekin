@@ -16,7 +16,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "fine sea salt + fresly cracked black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "package"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": null
           }
         ],
-        "note": "minced + divided"
+        "note": "minced + divided",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "handful"
           }
         ],
-        "note": "chopped + more for serving"
+        "note": "chopped + more for serving",
+        "category": "Produce"
       }
     },
     {
@@ -115,7 +123,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -123,7 +132,8 @@
       "expected": {
         "item": "dried herbs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +141,8 @@
       "expected": {
         "item": "lemon zest or lemon juice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -139,7 +150,8 @@
       "expected": {
         "item": "red pepper chili flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

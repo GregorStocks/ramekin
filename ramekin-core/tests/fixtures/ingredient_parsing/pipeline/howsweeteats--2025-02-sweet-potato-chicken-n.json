@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and diced"
+        "note": "peeled and diced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and chopped"
+        "note": "peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
       "expected": {
         "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -115,7 +123,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded chicken"
+        "note": "shredded chicken",
+        "category": "Other"
       }
     },
     {
@@ -128,7 +137,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -141,7 +151,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -154,7 +165,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -167,7 +179,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -180,7 +193,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more for topping"
+        "note": "plus more for topping",
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +202,8 @@
       "expected": {
         "item": "parmesan cheese, (for topping)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -196,7 +211,8 @@
       "expected": {
         "item": "lemon wedges, (for spritzing)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

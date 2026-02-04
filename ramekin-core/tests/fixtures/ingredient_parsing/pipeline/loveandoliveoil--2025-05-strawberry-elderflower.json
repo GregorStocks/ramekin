@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed"
+        "note": "hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional, or other liqueur of your choice"
+        "note": "optional, or other liqueur of your choice",
+        "category": "Beverages"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": "cold"
+        "note": "cold",
+        "category": "Cheese"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "g"
           }
         ],
-        "note": "cold"
+        "note": "cold",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -157,7 +166,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -170,7 +180,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional, or other flavored syrup of your choice"
+        "note": "optional, or other flavored syrup of your choice",
+        "category": "Other"
       }
     },
     {
@@ -178,7 +189,8 @@
       "expected": {
         "item": "freeze dried strawberry powder",
         "measurements": [],
-        "note": "optional, for topping"
+        "note": "optional, for topping",
+        "category": "Produce"
       }
     }
   ]

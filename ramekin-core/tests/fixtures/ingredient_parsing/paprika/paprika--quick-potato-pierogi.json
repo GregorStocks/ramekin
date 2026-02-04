@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into chunks"
+        "note": "peeled and cut into chunks",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Salt and black pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "package"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": null
           }
         ],
-        "note": "or 1/4 cup chopped chives or 2 tablespoons chopped parsley or additional fried onions (see note), to serve"
+        "note": "or 1/4 cup chopped chives or 2 tablespoons chopped parsley or additional fried onions (see note), to serve",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +90,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": "melted butter or vinegar to serve"
+        "note": "melted butter or vinegar to serve",
+        "category": "Dairy & Eggs"
       }
     }
   ]

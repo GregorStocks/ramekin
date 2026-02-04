@@ -7,7 +7,8 @@
       "expected": {
         "item": "Private Reserve Greek extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "Cornmeal",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -23,7 +25,8 @@
       "expected": {
         "item": "Flour (any kind) for dusting",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -36,7 +39,8 @@
             "unit": null
           }
         ],
-        "note": "whole wheat dough, if you prefer"
+        "note": "whole wheat dough, if you prefer",
+        "category": "Other"
       }
     },
     {
@@ -49,7 +53,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -62,7 +67,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +85,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -92,7 +99,8 @@
             "unit": "scant"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -100,7 +108,8 @@
       "expected": {
         "item": "Kosher salt and black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -113,7 +122,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -121,7 +131,8 @@
       "expected": {
         "item": "Crumbled feta cheese, to your liking",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     },
     {
@@ -134,7 +145,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -147,7 +159,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -160,7 +173,8 @@
             "unit": "handful"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

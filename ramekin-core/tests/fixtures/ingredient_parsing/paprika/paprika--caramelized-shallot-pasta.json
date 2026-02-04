@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": "very thinly sliced"
+        "note": "very thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "1 finely chopped"
+        "note": "1 finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": null
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -109,7 +115,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -126,7 +133,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -139,7 +147,8 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -147,7 +156,8 @@
       "expected": {
         "item": "Flaky sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -155,7 +165,8 @@
       "expected": {
         "item": "parmesan cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

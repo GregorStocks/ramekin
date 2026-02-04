@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups"
+        "note": "stemmed, seeded, and coarsely chopped into 3/4-inch pieces (about 3 cups",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peels on and left whole"
+        "note": "peels on and left whole",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": "seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup"
+        "note": "seeds and membranes removed and chopped into 1/4- to 1/2-inch pieces (about 1/2 cup",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped into 1/4- to 1/2-inch pieces (about 1 cup"
+        "note": "chopped into 1/4- to 1/2-inch pieces (about 1 cup",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": "jar"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -171,7 +182,8 @@
             "unit": "cup"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Canned Goods"
       }
     },
     {
@@ -184,7 +196,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -197,7 +210,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -218,7 +232,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained )"
+        "note": "drained )",
+        "category": "Other"
       }
     },
     {
@@ -226,7 +241,8 @@
       "expected": {
         "item": "Sliced avocado",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -234,7 +250,8 @@
       "expected": {
         "item": "Chopped fresh cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -242,7 +259,8 @@
       "expected": {
         "item": "Plain nonfat Greek yogurt (or sour cream)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

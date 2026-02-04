@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": "thinly sliced through root end"
+        "note": "thinly sliced through root end",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -115,7 +123,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more"
+        "note": "plus more",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -153,7 +163,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated"
+        "note": "finely grated",
+        "category": "Cheese"
       }
     }
   ]

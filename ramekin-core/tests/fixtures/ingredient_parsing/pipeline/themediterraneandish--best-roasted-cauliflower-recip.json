@@ -12,7 +12,8 @@
             "unit": "head"
           }
         ],
-        "note": "cored and divided into small florets"
+        "note": "cored and divided into small florets",
+        "category": "Produce"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Private Reserve Greek extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +49,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -54,7 +58,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -80,7 +86,8 @@
             "unit": "handful"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +100,8 @@
             "unit": null
           }
         ],
-        "note": "or toasted slivered almonds, optional"
+        "note": "or toasted slivered almonds, optional",
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

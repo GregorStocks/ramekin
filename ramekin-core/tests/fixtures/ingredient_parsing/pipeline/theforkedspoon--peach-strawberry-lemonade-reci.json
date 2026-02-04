@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "chopped into large chunks"
+        "note": "chopped into large chunks",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": "stems removed and halved"
+        "note": "stems removed and halved",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -84,7 +89,8 @@
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -118,7 +126,8 @@
       "expected": {
         "item": "Fresh chopped strawberries (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -126,7 +135,8 @@
       "expected": {
         "item": "Fresh sliced peaches (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -134,7 +144,8 @@
       "expected": {
         "item": "Lemon wedges (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -142,7 +153,8 @@
       "expected": {
         "item": "Mint (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": "thawed and well-drained"
+        "note": "thawed and well-drained",
+        "category": "Frozen"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": "well-drained and coarsely chopped"
+        "note": "well-drained and coarsely chopped",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "cup"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -114,7 +121,8 @@
       "expected": {
         "item": "sliced vegetables",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -122,7 +130,8 @@
       "expected": {
         "item": "sliced baguette",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -130,7 +139,8 @@
       "expected": {
         "item": "Hawaiian rolls, (cut into cubes)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     }
   ]

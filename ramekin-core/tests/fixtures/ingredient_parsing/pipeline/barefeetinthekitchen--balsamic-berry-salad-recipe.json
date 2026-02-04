@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "quartered or cut bite-size"
+        "note": "quartered or cut bite-size",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
       "expected": {
         "item": "optional 1 tablespoon white sugar",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": null
           }
         ],
-        "note": "sliced very thin"
+        "note": "sliced very thin",
+        "category": "Spices & Seasonings"
       }
     }
   ]

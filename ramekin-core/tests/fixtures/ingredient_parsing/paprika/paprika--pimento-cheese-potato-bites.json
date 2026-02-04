@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -75,7 +78,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -88,7 +92,8 @@
             "unit": null
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -109,7 +115,8 @@
       "expected": {
         "item": "Cayenne or hot sauce",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -117,7 +124,8 @@
       "expected": {
         "item": "Salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -125,7 +133,8 @@
       "expected": {
         "item": "Smoked hot or sweet paprika, more cayenne",
         "measurements": [],
-        "note": "chipotle powder and/or minced chives to garnish"
+        "note": "chipotle powder and/or minced chives to garnish",
+        "category": "Spices & Seasonings"
       }
     }
   ]

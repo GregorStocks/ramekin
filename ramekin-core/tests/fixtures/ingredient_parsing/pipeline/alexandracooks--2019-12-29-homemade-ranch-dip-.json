@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +113,8 @@
       "expected": {
         "item": "flaky sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -114,7 +122,8 @@
       "expected": {
         "item": "endive",
         "measurements": [],
-        "note": "quartered through the core or cut into sixths"
+        "note": "quartered through the core or cut into sixths",
+        "category": "Produce"
       }
     },
     {
@@ -122,7 +131,8 @@
       "expected": {
         "item": "Romaine leaves",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -130,7 +140,8 @@
       "expected": {
         "item": "radishes",
         "measurements": [],
-        "note": "quartered"
+        "note": "quartered",
+        "category": "Produce"
       }
     },
     {
@@ -138,7 +149,8 @@
       "expected": {
         "item": "carrots, cut into sticks",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -146,7 +158,8 @@
       "expected": {
         "item": "chips or crackers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "g"
           }
         ],
-        "note": "thawed and drained"
+        "note": "thawed and drained",
+        "category": "Frozen"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": null
           }
         ],
-        "note": "about 1/2 14-ounce can, drained and diced"
+        "note": "about 1/2 14-ounce can, drained and diced",
+        "category": "Canned Goods"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely diced and sauteed"
+        "note": "finely diced and sauteed",
+        "category": "Produce"
       }
     },
     {
@@ -180,7 +192,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -188,7 +201,8 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

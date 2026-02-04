@@ -7,7 +7,8 @@
       "expected": {
         "item": "Pancakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -32,7 +33,8 @@
             "unit": "g"
           }
         ],
-        "note": "very thinly sliced which will be easiest on a mandoline if you have one"
+        "note": "very thinly sliced which will be easiest on a mandoline if you have one",
+        "category": "Produce"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled into ribbons with a vegetable peeler"
+        "note": "peeled into ribbons with a vegetable peeler",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced on an angle"
+        "note": "thinly sliced on an angle",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -122,7 +130,8 @@
       "expected": {
         "item": "Canola, safflower or peanut oil for frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -130,7 +139,8 @@
       "expected": {
         "item": "Tangy Sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -143,7 +153,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -156,7 +167,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -169,7 +181,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -182,7 +195,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -195,7 +209,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -208,7 +223,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -225,7 +241,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

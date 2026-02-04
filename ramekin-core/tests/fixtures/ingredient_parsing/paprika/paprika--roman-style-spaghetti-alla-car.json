@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "ml"
           }
         ],
-        "note": "plus more for finishing pasta"
+        "note": "plus more for finishing pasta",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "medium"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for garnish"
+        "note": "plus more for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "g"
           }
         ],
-        "note": "thoroughly crushed"
+        "note": "thoroughly crushed",
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -139,7 +147,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -156,7 +165,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     }
   ]

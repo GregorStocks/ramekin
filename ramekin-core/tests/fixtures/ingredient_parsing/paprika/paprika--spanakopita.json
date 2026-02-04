@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more to taste"
+        "note": "or more to taste",
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more to taste"
+        "note": "or more to taste",
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +134,8 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled"
+        "note": "crumbled",
+        "category": "Cheese"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -148,7 +157,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -165,7 +175,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -173,7 +184,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

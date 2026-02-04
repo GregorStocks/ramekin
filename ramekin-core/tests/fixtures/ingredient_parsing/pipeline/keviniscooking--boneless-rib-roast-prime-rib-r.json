@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "visible fat trimmed to 1/2-inch (See Note 1"
+        "note": "visible fat trimmed to 1/2-inch (See Note 1",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": "espresso-ground"
+        "note": "espresso-ground",
+        "category": "Beverages"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": null
           }
         ],
-        "note": "medium-sized shallots, unpeeled, tops trimmed"
+        "note": "medium-sized shallots, unpeeled, tops trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -171,7 +182,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "espresso-ground"
+        "note": "espresso-ground",
+        "category": "Beverages"
       }
     },
     {
@@ -179,7 +191,8 @@
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

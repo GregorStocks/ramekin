@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "beaten"
+        "note": "beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -54,7 +58,8 @@
       "expected": {
         "item": "pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -84,7 +90,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -97,7 +104,8 @@
             "unit": "clove"
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Produce"
       }
     },
     {
@@ -110,7 +118,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -123,7 +132,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -136,7 +146,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -144,7 +155,8 @@
       "expected": {
         "item": "spring onion",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -152,7 +164,8 @@
       "expected": {
         "item": "sesame seed",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Spices & Seasonings"
       }
     }
   ]

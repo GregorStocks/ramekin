@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
       "expected": {
         "item": "Fresh fruit",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -71,7 +76,8 @@
       "expected": {
         "item": "Sweetener (honey, maple syrup, brown sugar)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -79,7 +85,8 @@
       "expected": {
         "item": "Nuts & Seeds",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -87,7 +94,8 @@
       "expected": {
         "item": "Nut Butter (peanut butter, almond butter)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -95,7 +103,8 @@
       "expected": {
         "item": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -103,7 +112,8 @@
       "expected": {
         "item": "Ground cinnamon or Nutmeg",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

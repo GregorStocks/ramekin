@@ -12,7 +12,8 @@
             "unit": "head"
           }
         ],
-        "note": "and chopped"
+        "note": "and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "bunch"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "pint"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or fresh mozzarella cheese"
+        "note": "or fresh mozzarella cheese",
+        "category": "Cheese"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -153,7 +163,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

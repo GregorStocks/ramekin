@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "sliced thin"
+        "note": "sliced thin",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "small"
           }
         ],
-        "note": "trimmed but whole"
+        "note": "trimmed but whole",
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced thinly"
+        "note": "sliced thinly",
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "clove"
           }
         ],
-        "note": "grated"
+        "note": "grated",
+        "category": "Produce"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -163,7 +174,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -176,7 +188,8 @@
             "unit": "clove"
           }
         ],
-        "note": "finely grated (not pressed"
+        "note": "finely grated (not pressed",
+        "category": "Produce"
       }
     },
     {
@@ -189,7 +202,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -202,7 +216,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -215,7 +230,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -228,7 +244,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "coarsely ground"
+        "note": "coarsely ground",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -241,7 +258,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely minced (salted pork fat"
+        "note": "finely minced (salted pork fat",
+        "category": "Other"
       }
     },
     {
@@ -254,7 +272,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -267,7 +286,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -275,7 +295,8 @@
       "expected": {
         "item": "sliced chashu",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -288,7 +309,8 @@
             "unit": null
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     }
   ]

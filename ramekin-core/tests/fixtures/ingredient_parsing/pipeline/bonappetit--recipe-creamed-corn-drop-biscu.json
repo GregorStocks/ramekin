@@ -16,7 +16,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": null
           }
         ],
-        "note": "cold and cut into 1/2\" cubes"
+        "note": "cold and cut into 1/2\" cubes",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -118,7 +124,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -135,7 +142,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -143,7 +151,8 @@
       "expected": {
         "item": "Calabrian Chile Honey Butter",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -151,7 +160,8 @@
       "expected": {
         "item": "Honey, for drizzling",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Baking"
       }
     },
     {
@@ -168,7 +178,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -185,7 +196,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -198,7 +210,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -211,7 +224,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -219,7 +233,8 @@
       "expected": {
         "item": "Freshly cracked black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

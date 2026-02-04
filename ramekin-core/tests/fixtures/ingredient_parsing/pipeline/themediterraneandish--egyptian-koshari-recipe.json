@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced into thin rings"
+        "note": "sliced into thin rings",
+        "category": "Produce"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "Cooking oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -71,7 +76,8 @@
             "unit": "small"
           }
         ],
-        "note": "grated"
+        "note": "grated",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +90,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -123,7 +132,8 @@
             "unit": "can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -131,7 +141,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -144,7 +155,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -157,7 +169,8 @@
             "unit": "cup"
           }
         ],
-        "note": "picked over and well-rinsed"
+        "note": "picked over and well-rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -170,7 +183,8 @@
             "unit": "cup"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -183,7 +197,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -196,7 +211,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -209,7 +225,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -217,7 +234,8 @@
       "expected": {
         "item": "Cooking oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -225,7 +243,8 @@
       "expected": {
         "item": "Water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -238,7 +257,8 @@
             "unit": "15-oz can"
           }
         ],
-        "note": "drained and warmed"
+        "note": "drained and warmed",
+        "category": "Canned Goods"
       }
     }
   ]

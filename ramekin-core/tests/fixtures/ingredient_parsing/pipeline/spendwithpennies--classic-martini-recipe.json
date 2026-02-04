@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "ice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

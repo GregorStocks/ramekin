@@ -20,7 +20,8 @@
             "unit": "g each"
           }
         ],
-        "note": "scrubbed clean"
+        "note": "scrubbed clean",
+        "category": "Produce"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -36,7 +38,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -53,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -74,7 +78,8 @@
             "unit": "slice"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -82,7 +87,8 @@
       "expected": {
         "item": "Butter",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -90,7 +96,8 @@
       "expected": {
         "item": "Sharp orange cheddar",
         "measurements": [],
-        "note": "coarsely grated"
+        "note": "coarsely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -98,7 +105,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -106,7 +114,8 @@
       "expected": {
         "item": "Minced fresh chives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

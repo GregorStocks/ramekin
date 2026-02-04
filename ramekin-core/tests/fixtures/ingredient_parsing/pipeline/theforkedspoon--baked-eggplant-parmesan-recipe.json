@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced into 1/2-inch thick rounds"
+        "note": "sliced into 1/2-inch thick rounds",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "large"
           }
         ],
-        "note": "whisked"
+        "note": "whisked",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "jar"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -128,7 +137,8 @@
       "expected": {
         "item": "fresh chopped parsley (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

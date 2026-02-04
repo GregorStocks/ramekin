@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 lemon slices to serve"
+        "note": "plus 2 lemon slices to serve",
+        "category": "Beverages"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "few shakes of Worcestershire sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "few shakes of Tabasco (chipotle Tabasco is nice)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -88,7 +94,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +108,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -114,7 +122,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

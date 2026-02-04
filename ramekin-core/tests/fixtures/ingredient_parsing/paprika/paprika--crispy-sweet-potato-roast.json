@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Coarse salt and black pepper or red pepper flakes to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and sliced thin"
+        "note": "peeled and sliced thin",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and sliced thin"
+        "note": "peeled and sliced thin",
+        "category": "Produce"
       }
     }
   ]

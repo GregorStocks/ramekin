@@ -12,7 +12,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "washed and spun dry"
+        "note": "washed and spun dry",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -59,7 +63,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +72,8 @@
       "expected": {
         "item": "Ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +86,8 @@
             "unit": "slice"
           }
         ],
-        "note": "sturdy whole wheat bread (I like sourdough"
+        "note": "sturdy whole wheat bread (I like sourdough",
+        "category": "Other"
       }
     },
     {
@@ -93,7 +100,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -106,7 +114,8 @@
             "unit": null
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     }
   ]

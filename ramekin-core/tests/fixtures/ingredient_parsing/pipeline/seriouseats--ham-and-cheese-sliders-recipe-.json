@@ -7,7 +7,8 @@
       "expected": {
         "item": "Cooking spray",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "ml"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -79,7 +83,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved crosswise with buns all still attached"
+        "note": "halved crosswise with buns all still attached",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -100,7 +105,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -121,7 +127,8 @@
             "unit": "g each"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -134,7 +141,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -151,7 +159,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -164,7 +173,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -177,7 +187,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

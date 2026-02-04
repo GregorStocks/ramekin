@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": null
           }
         ],
-        "note": "drained with juice reserved"
+        "note": "drained with juice reserved",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": null
           }
         ],
-        "note": "drained with juice discarded"
+        "note": "drained with juice discarded",
+        "category": "Produce"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": null
           }
         ],
-        "note": "drained with juice discarded"
+        "note": "drained with juice discarded",
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": null
           }
         ],
-        "note": "drained with juice discarded"
+        "note": "drained with juice discarded",
+        "category": "Other"
       }
     },
     {
@@ -144,7 +152,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -157,7 +166,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -174,7 +184,8 @@
             "unit": null
           }
         ],
-        "note": "thawed"
+        "note": "thawed",
+        "category": "Other"
       }
     },
     {
@@ -182,7 +193,8 @@
       "expected": {
         "item": "Reddi wip",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

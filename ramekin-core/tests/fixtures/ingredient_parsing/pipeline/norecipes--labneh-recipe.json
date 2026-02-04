@@ -12,7 +12,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "zaatar",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "sumac",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Spices & Seasonings"
       }
     }
   ]

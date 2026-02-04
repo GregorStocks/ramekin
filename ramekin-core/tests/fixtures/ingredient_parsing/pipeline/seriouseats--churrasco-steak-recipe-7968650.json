@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "about 1 whole skirt steak"
+        "note": "about 1 whole skirt steak",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "Neutral oil, such as corn or canola, for greasing grill grate or for the plancha/skillet",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -45,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

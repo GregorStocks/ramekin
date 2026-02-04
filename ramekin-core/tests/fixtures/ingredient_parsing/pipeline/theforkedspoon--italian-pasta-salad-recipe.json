@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +77,8 @@
       "expected": {
         "item": "salt + black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "g"
           }
         ],
-        "note": "cooked to al dente (may also use rotini pasta or bowtie pasta"
+        "note": "cooked to al dente (may also use rotini pasta or bowtie pasta",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and sliced in half"
+        "note": "drained and sliced in half",
+        "category": "Cheese"
       }
     },
     {
@@ -123,7 +131,8 @@
             "unit": "g"
           }
         ],
-        "note": "sliced and quartered"
+        "note": "sliced and quartered",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -140,7 +149,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -157,7 +167,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved (or grape tomatoes"
+        "note": "halved (or grape tomatoes",
+        "category": "Produce"
       }
     },
     {
@@ -178,7 +189,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and chopped"
+        "note": "drained and chopped",
+        "category": "Canned Goods"
       }
     },
     {
@@ -199,7 +211,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and chopped"
+        "note": "drained and chopped",
+        "category": "Canned Goods"
       }
     }
   ]

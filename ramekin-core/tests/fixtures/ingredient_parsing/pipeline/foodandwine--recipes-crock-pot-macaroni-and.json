@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated"
+        "note": "coarsely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated"
+        "note": "coarsely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -62,7 +64,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated"
+        "note": "finely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -75,7 +78,8 @@
             "unit": "12-ounce cans"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -92,7 +96,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -109,7 +114,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -122,7 +128,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -130,7 +137,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -138,7 +146,8 @@
       "expected": {
         "item": "Black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -151,7 +160,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -168,7 +178,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -185,7 +196,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -198,7 +210,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -211,7 +224,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -224,7 +238,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1 pinch for the topping"
+        "note": "plus 1 pinch for the topping",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "cleaned of any meat or fat on the exterior of the bone"
+        "note": "cleaned of any meat or fat on the exterior of the bone",
+        "category": "Other"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -163,7 +174,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -176,7 +188,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "drained and chopped"
+        "note": "drained and chopped",
+        "category": "Canned Goods"
       }
     },
     {
@@ -189,7 +202,8 @@
             "unit": "slice"
           }
         ],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -197,7 +211,8 @@
       "expected": {
         "item": "Flaky sea salt or additional kosher salt",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Spices & Seasonings"
       }
     }
   ]

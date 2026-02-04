@@ -12,7 +12,8 @@
             "unit": "package"
           }
         ],
-        "note": "2 sheets Pepperidge Farm Puff Pastry, thawed"
+        "note": "2 sheets Pepperidge Farm Puff Pastry, thawed",
+        "category": "Frozen"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Powdered Sugar",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "g"
           }
         ],
-        "note": "softened at room temperature"
+        "note": "softened at room temperature",
+        "category": "Cheese"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

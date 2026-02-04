@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed"
+        "note": "rinsed",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -46,7 +49,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -59,7 +63,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +77,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +91,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -98,7 +105,8 @@
             "unit": "small"
           }
         ],
-        "note": "halved lengthwise"
+        "note": "halved lengthwise",
+        "category": "Other"
       }
     },
     {
@@ -111,7 +119,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced thinly"
+        "note": "sliced thinly",
+        "category": "Produce"
       }
     },
     {
@@ -124,7 +133,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

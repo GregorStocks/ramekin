@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "stalk"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "clove"
           }
         ],
-        "note": "whole"
+        "note": "whole",
+        "category": "Produce"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or dried"
+        "note": "fresh or dried",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -162,7 +172,8 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or dried"
+        "note": "fresh or dried",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -179,7 +190,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -187,7 +199,8 @@
       "expected": {
         "item": "salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -204,7 +217,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into cubes"
+        "note": "peeled and cut into cubes",
+        "category": "Produce"
       }
     },
     {
@@ -217,7 +231,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -230,7 +245,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -243,7 +259,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -256,7 +273,8 @@
             "unit": "cup"
           }
         ],
-        "note": "frozen"
+        "note": "frozen",
+        "category": "Produce"
       }
     },
     {
@@ -273,7 +291,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -286,7 +305,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -303,7 +323,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

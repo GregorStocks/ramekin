@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Kosher salt and black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -62,7 +65,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -75,7 +79,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "heaping tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more as needed"
+        "note": "or more as needed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -127,7 +135,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for garnish"
+        "note": "plus more for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -135,7 +144,8 @@
       "expected": {
         "item": "Buttered egg noodles",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Pasta & Rice"
       }
     }
   ]

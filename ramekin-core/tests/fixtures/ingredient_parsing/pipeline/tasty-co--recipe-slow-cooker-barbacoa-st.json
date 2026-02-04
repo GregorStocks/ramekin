@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -40,7 +43,8 @@
       "expected": {
         "item": "oil, a drizzle",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -53,7 +57,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -66,7 +71,8 @@
             "unit": "clove"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -79,7 +85,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -92,7 +99,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -109,7 +117,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -122,7 +131,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -135,7 +145,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -148,7 +159,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -161,7 +173,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -169,7 +182,8 @@
       "expected": {
         "item": "flour tortilla, or corn tortillas",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -177,7 +191,8 @@
       "expected": {
         "item": "rice",
         "measurements": [],
-        "note": "cooked"
+        "note": "cooked",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -185,7 +200,8 @@
       "expected": {
         "item": "pico de gallo",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -193,7 +209,8 @@
       "expected": {
         "item": "shredded cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -201,7 +218,8 @@
       "expected": {
         "item": "sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -209,7 +227,8 @@
       "expected": {
         "item": "guacamole",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -217,7 +236,8 @@
       "expected": {
         "item": "fresh cilantro leaf",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -225,7 +245,8 @@
       "expected": {
         "item": "avocado",
         "measurements": [],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -45,7 +47,8 @@
       "expected": {
         "item": "Simple syrup, oleo-saccharum, to taste",
         "measurements": [],
-        "note": "optional, see notes"
+        "note": "optional, see notes",
+        "category": "Beverages"
       }
     },
     {
@@ -53,7 +56,8 @@
       "expected": {
         "item": "Lemon peel",
         "measurements": [],
-        "note": "optional, see notes"
+        "note": "optional, see notes",
+        "category": "Produce"
       }
     }
   ]

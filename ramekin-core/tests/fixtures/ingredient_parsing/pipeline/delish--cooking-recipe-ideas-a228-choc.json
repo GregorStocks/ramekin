@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more for drizzling"
+        "note": "plus more for drizzling",
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -71,7 +75,8 @@
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -79,7 +84,8 @@
       "expected": {
         "item": "Chocolate shavings, for serving",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     }
   ]

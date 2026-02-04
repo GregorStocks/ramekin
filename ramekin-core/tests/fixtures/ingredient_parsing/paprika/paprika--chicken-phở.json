@@ -7,7 +7,8 @@
       "expected": {
         "item": "Broth",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": null
           }
         ],
-        "note": "quartered"
+        "note": "quartered",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": null
           }
         ],
-        "note": "quartered"
+        "note": "quartered",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -118,7 +126,8 @@
       "expected": {
         "item": "Additional spices : Cinnamon, star anise, black cardamoms, coriander seeds, fennel seeds or cloves",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +140,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -148,7 +158,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -156,7 +167,8 @@
       "expected": {
         "item": "Garnishes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -169,7 +181,8 @@
             "unit": "large"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -186,7 +199,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -199,7 +213,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -212,7 +227,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -225,7 +241,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -238,7 +255,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -246,7 +264,8 @@
       "expected": {
         "item": "Asian chili-garlic sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -254,7 +273,8 @@
       "expected": {
         "item": "Hoisin sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -262,7 +282,8 @@
       "expected": {
         "item": "Crispy shallots, recipe follows",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -279,7 +300,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -296,7 +318,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

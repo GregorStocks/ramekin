@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "a generous splash of cashew or coconut milk",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions",
         "measurements": [],
-        "note": "chopped olives"
+        "note": "chopped olives",
+        "category": "Produce"
       }
     }
   ]

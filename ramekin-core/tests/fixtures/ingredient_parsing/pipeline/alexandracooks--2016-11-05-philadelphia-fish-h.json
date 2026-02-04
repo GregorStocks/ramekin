@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -88,7 +92,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -109,7 +114,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 1/4 cup Cognac, which is how I always make it now"
+        "note": "or 1/4 cup Cognac, which is how I always make it now",
+        "category": "Beverages"
       }
     },
     {
@@ -117,7 +123,8 @@
       "expected": {
         "item": "Garnish: lemon slices",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

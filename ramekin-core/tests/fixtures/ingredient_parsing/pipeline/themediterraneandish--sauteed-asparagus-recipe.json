@@ -7,7 +7,8 @@
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and sliced into 3-inch pieces"
+        "note": "trimmed and sliced into 3-inch pieces",
+        "category": "Produce"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -40,7 +43,8 @@
       "expected": {
         "item": "Black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -53,7 +57,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -66,7 +71,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -79,7 +85,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -92,7 +99,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -105,7 +113,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +127,8 @@
             "unit": "cup"
           }
         ],
-        "note": "drained and chopped"
+        "note": "drained and chopped",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +141,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more to your liking"
+        "note": "or more to your liking",
+        "category": "Cheese"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "sliced in half and seeds removed"
+        "note": "sliced in half and seeds removed",
+        "category": "Produce"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "kosher salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "olive oil spray",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -41,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -54,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -62,7 +67,8 @@
       "expected": {
         "item": "sour cream",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -70,7 +76,8 @@
       "expected": {
         "item": "green onions",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     },
     {
@@ -78,7 +85,8 @@
       "expected": {
         "item": "tortilla chips",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -86,7 +94,8 @@
       "expected": {
         "item": "cilantro",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

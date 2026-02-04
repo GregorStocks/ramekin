@@ -20,7 +20,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -71,7 +74,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more for step 1"
+        "note": "plus more for step 1",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +116,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 2 teaspoons fresh"
+        "note": "or 2 teaspoons fresh",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1/2 teaspoon dried"
+        "note": "or 1/2 teaspoon dried",
+        "category": "Produce"
       }
     },
     {
@@ -149,7 +158,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or 1 and 1/2 teaspoons dried"
+        "note": "or 1 and 1/2 teaspoons dried",
+        "category": "Produce"
       }
     },
     {
@@ -166,7 +176,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -183,7 +194,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -191,7 +203,8 @@
       "expected": {
         "item": "optional: 2 Tablespoons shredded parmesan cheese or crumbled feta cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -199,7 +212,8 @@
       "expected": {
         "item": "optional for serving: red pepper flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

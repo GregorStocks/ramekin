@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "woody ends trimmed or snapped"
+        "note": "woody ends trimmed or snapped",
+        "category": "Produce"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": null
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -45,7 +48,8 @@
       "expected": {
         "item": "Flaky sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -53,7 +57,8 @@
       "expected": {
         "item": "Red pepper flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -66,7 +71,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

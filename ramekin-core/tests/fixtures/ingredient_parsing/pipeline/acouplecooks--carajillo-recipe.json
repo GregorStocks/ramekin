@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": "for serving (try clear ice)"
+        "note": "for serving (try clear ice)",
+        "category": "Other"
       }
     }
   ]

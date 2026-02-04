@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "sliced thin"
+        "note": "sliced thin",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -141,7 +151,8 @@
       "expected": {
         "item": "warm water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -154,7 +165,8 @@
             "unit": null
           }
         ],
-        "note": "seeded and diced"
+        "note": "seeded and diced",
+        "category": "Produce"
       }
     },
     {
@@ -167,7 +179,8 @@
             "unit": "small"
           }
         ],
-        "note": "seeded and diced"
+        "note": "seeded and diced",
+        "category": "Produce"
       }
     },
     {
@@ -180,7 +193,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -193,7 +207,8 @@
             "unit": "small"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -210,7 +225,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -218,7 +234,8 @@
       "expected": {
         "item": "hot sauce",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     }
   ]

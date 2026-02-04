@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and smashed"
+        "note": "peeled and smashed",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": "avocado oil, melted ghee, or melted lard"
+        "note": "avocado oil, melted ghee, or melted lard",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "Diamond Crystal kosher salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "Freshly ground pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -83,7 +89,8 @@
       "expected": {
         "item": "Juice from 1 lemon (or 2 tablespoons aged balsamic vinegar)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

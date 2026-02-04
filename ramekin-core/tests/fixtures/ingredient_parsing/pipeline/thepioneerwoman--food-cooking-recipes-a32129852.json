@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Green candy melts",
         "measurements": [],
-        "note": "melted"
+        "note": "melted",
+        "category": "Other"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "Candy eyeballs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

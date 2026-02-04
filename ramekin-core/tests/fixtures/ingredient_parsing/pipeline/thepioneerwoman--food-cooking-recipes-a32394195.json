@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": "grated"
+        "note": "grated",
+        "category": "Produce"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": null
           }
         ],
-        "note": "sliced 1/4 inch thick"
+        "note": "sliced 1/4 inch thick",
+        "category": "Produce"
       }
     },
     {
@@ -162,7 +173,8 @@
       "expected": {
         "item": "White rice",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -170,7 +182,8 @@
       "expected": {
         "item": "Sliced scallions and chopped cilantro, for topping",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

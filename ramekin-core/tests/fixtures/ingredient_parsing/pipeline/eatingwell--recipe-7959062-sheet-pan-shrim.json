@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "large"
           }
         ],
-        "note": "halved and sliced"
+        "note": "halved and sliced",
+        "category": "Produce"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise"
+        "note": "halved lengthwise",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -175,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -196,7 +209,8 @@
       "expected": {
         "item": "Lime wedges, chopped fresh cilantro, sour cream",
         "measurements": [],
-        "note": "avocado  and/or  pico de gallo for serving"
+        "note": "avocado  and/or  pico de gallo for serving",
+        "category": "Dairy & Eggs"
       }
     }
   ]

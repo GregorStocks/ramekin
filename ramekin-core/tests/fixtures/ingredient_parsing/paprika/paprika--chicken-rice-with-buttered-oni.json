@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -71,7 +74,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced into just shy of 1/2″ pieces"
+        "note": "diced into just shy of 1/2″ pieces",
+        "category": "Produce"
       }
     },
     {
@@ -79,7 +83,8 @@
       "expected": {
         "item": "A few sprigs of thyme",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -92,7 +97,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -105,7 +111,8 @@
             "unit": "cup"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": "freshly ground black pepper"
+        "note": "freshly ground black pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "A big pat of butter",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "A few garlic cloves, halved lengthwise",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -57,7 +62,8 @@
       "expected": {
         "item": "Mayonnaise, for dipping sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

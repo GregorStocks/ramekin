@@ -20,7 +20,8 @@
             "unit": "lb"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -71,7 +74,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "scant tsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Other"
       }
     },
     {
@@ -92,7 +97,8 @@
       "expected": {
         "item": "rose petals",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     }
   ]

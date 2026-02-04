@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": "or more, to taste"
+        "note": "or more, to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "Chili flakes",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

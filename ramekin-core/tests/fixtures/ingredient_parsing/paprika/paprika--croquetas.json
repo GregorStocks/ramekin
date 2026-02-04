@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Ham ends or trimmings",
         "measurements": [],
-        "note": "optional; see notes"
+        "note": "optional; see notes",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -62,7 +65,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -83,7 +87,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely minced"
+        "note": "finely minced",
+        "category": "Produce"
       }
     },
     {
@@ -100,7 +105,8 @@
             "unit": "g"
           }
         ],
-        "note": "minced (see notes)"
+        "note": "minced (see notes)",
+        "category": "Produce"
       }
     },
     {
@@ -117,7 +123,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1 cup all-purpose flour (for dredging), divided"
+        "note": "plus 1 cup all-purpose flour (for dredging), divided",
+        "category": "Baking"
       }
     },
     {
@@ -125,7 +132,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -138,7 +146,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -151,7 +160,8 @@
             "unit": "large"
           }
         ],
-        "note": "beaten"
+        "note": "beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -164,7 +174,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -172,7 +183,8 @@
       "expected": {
         "item": "Vegetable of other neutral oil, for frying",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

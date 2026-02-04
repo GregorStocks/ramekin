@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +124,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -126,7 +133,8 @@
       "expected": {
         "item": "kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -139,7 +147,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -147,7 +156,8 @@
       "expected": {
         "item": "shredded lettuce/cabbage",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     },
     {
@@ -169,7 +179,8 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Cheese"
       }
     },
     {
@@ -183,7 +194,8 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Produce"
       }
     },
     {
@@ -201,7 +213,8 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -210,7 +223,8 @@
         "item": "sea salt",
         "measurements": [],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -219,7 +233,8 @@
         "item": "Mango Salsa:",
         "measurements": [],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Produce"
       }
     },
     {
@@ -233,7 +248,8 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Produce"
       }
     },
     {
@@ -247,7 +263,8 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Produce"
       }
     },
     {
@@ -261,7 +278,8 @@
           }
         ],
         "note": "if desired and chopped",
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Produce"
       }
     },
     {
@@ -275,7 +293,8 @@
           }
         ],
         "note": "chopped",
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Produce"
       }
     },
     {
@@ -289,7 +308,8 @@
           }
         ],
         "note": "plus 1/4 cup lime juice",
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Produce"
       }
     },
     {
@@ -303,7 +323,8 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream"
+        "section": "Jalapeño Cream",
+        "category": "Condiments & Sauces"
       }
     }
   ]

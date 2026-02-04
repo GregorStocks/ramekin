@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": "1/2 cup chopped"
+        "note": "1/2 cup chopped",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Snacks"
       }
     },
     {
@@ -79,7 +82,8 @@
             "unit": "g"
           }
         ],
-        "note": "undrained"
+        "note": "undrained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -96,7 +100,8 @@
             "unit": "ml"
           }
         ],
-        "note": "plus more as needed, divided"
+        "note": "plus more as needed, divided",
+        "category": "Canned Goods"
       }
     },
     {
@@ -109,7 +114,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus 1 tablespoon juice from 1 lime"
+        "note": "plus 1 tablespoon juice from 1 lime",
+        "category": "Produce"
       }
     },
     {
@@ -122,7 +128,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -130,7 +137,8 @@
       "expected": {
         "item": "Lime wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -138,7 +146,8 @@
       "expected": {
         "item": "Sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -146,7 +155,8 @@
       "expected": {
         "item": "Cilantro leaves",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -154,7 +164,8 @@
       "expected": {
         "item": "Sliced scallion",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -162,7 +173,8 @@
       "expected": {
         "item": "Crumbled cotija cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

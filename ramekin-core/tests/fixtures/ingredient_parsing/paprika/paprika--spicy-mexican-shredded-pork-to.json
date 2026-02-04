@@ -7,7 +7,8 @@
       "expected": {
         "item": "Tinga",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed of excess fat and cut into 1-inch pieces (see note)"
+        "note": "trimmed of excess fat and cut into 1-inch pieces (see note)",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "medium"
           }
         ],
-        "note": "1 quartered and 1 chopped fine"
+        "note": "1 quartered and 1 chopped fine",
+        "category": "Produce"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "3 peeled and smashed and 2 minced or pressed through garlic press"
+        "note": "3 peeled and smashed and 2 minced or pressed through garlic press",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "sprig"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "table salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -92,7 +98,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -105,7 +112,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -122,7 +130,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -135,7 +144,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +158,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -156,7 +167,8 @@
       "expected": {
         "item": "Tostadas",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -173,7 +185,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -190,7 +203,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -198,7 +212,8 @@
       "expected": {
         "item": "table salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -206,7 +221,8 @@
       "expected": {
         "item": "Garnishes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -214,7 +230,8 @@
       "expected": {
         "item": "queso fresco or feta cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -222,7 +239,8 @@
       "expected": {
         "item": "fresh cilantro leaves",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -230,7 +248,8 @@
       "expected": {
         "item": "sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -238,7 +257,8 @@
       "expected": {
         "item": "Diced avocado",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -246,7 +266,8 @@
       "expected": {
         "item": "Lime wedge",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

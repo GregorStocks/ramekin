@@ -12,7 +12,8 @@
             "unit": "14-ounce can"
           }
         ],
-        "note": "drained and rinsed well (see notes)"
+        "note": "drained and rinsed well (see notes)",
+        "category": "Canned Goods"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more as needed"
+        "note": "plus more as needed",
+        "category": "Beverages"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more as needed; if using table salt, use half as much by volume"
+        "note": "plus more as needed; if using table salt, use half as much by volume",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
       "expected": {
         "item": "Cooked chickpeas",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -92,7 +98,8 @@
       "expected": {
         "item": "extra-virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -100,7 +107,8 @@
       "expected": {
         "item": "Pita",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -108,7 +116,8 @@
       "expected": {
         "item": "Sliced tomatoes, onions, and Middle Eastern cucumber pickles",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

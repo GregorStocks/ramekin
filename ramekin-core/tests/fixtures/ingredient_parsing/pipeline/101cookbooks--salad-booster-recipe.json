@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -54,7 +57,8 @@
       "expected": {
         "item": "zest of one lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +84,8 @@
       "expected": {
         "item": "Wildcards: nutritional yeast, smoked salt to taste, a bit of smoked paprika",
         "measurements": [],
-        "note": "dried herbs"
+        "note": "dried herbs",
+        "category": "Spices & Seasonings"
       }
     }
   ]

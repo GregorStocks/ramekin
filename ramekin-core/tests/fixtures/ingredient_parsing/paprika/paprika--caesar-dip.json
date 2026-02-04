@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "rinsed"
+        "note": "rinsed",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "g"
           }
         ],
-        "note": "softened (see notes)"
+        "note": "softened (see notes)",
+        "category": "Cheese"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -161,7 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -169,7 +179,8 @@
       "expected": {
         "item": "Chopped parsley for garnish, if desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -177,7 +188,8 @@
       "expected": {
         "item": "Fresh cut vegetables, romaine lettuce wedges, chips",
         "measurements": [],
-        "note": "or crackers for serving"
+        "note": "or crackers for serving",
+        "category": "Produce"
       }
     }
   ]

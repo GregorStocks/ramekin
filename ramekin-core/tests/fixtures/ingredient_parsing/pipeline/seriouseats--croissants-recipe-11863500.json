@@ -20,7 +20,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -62,7 +64,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -83,7 +86,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -104,7 +108,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -125,7 +130,8 @@
             "unit": "cup"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -146,7 +152,8 @@
             "unit": "cup"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Other"
       }
     },
     {
@@ -171,7 +178,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -179,7 +187,8 @@
       "expected": {
         "item": "Flour, for dusting",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -187,7 +196,8 @@
       "expected": {
         "item": "Nonstick cooking spray, for greasing",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -200,7 +210,8 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
       }
     }
   ]

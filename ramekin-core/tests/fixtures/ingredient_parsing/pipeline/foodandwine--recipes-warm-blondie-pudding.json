@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for greasing pan"
+        "note": "plus more for greasing pan",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Other"
       }
     },
     {
@@ -54,7 +56,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons packed light brown sugar"
+        "note": "plus 2 tablespoons packed light brown sugar",
+        "category": "Baking"
       }
     },
     {
@@ -71,7 +74,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +88,8 @@
             "unit": "large"
           }
         ],
-        "note": "at room temperature"
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -105,7 +110,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -118,7 +124,8 @@
             "unit": "cup"
           }
         ],
-        "note": "roughly chopped"
+        "note": "roughly chopped",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -126,7 +133,8 @@
       "expected": {
         "item": "Crème fraîche and fresh raspberries",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -134,7 +142,8 @@
       "expected": {
         "item": "Fresh raspberries",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

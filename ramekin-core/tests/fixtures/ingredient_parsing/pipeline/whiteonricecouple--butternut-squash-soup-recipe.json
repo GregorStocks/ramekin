@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "medium"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": "seeded and cubed into 1-inch sized pieces)"
+        "note": "seeded and cubed into 1-inch sized pieces)",
+        "category": "Produce"
       }
     },
     {
@@ -75,7 +79,8 @@
       "expected": {
         "item": "about 10 sprigs Italian parsley",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -109,7 +116,8 @@
       "expected": {
         "item": "kosher salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -130,7 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -147,7 +156,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -155,7 +165,8 @@
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -163,7 +174,8 @@
       "expected": {
         "item": "chopped Italian parsley leaves",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -171,7 +183,8 @@
       "expected": {
         "item": "sour cream or crème fraîche",
         "measurements": [],
-        "note": "for garnish - optional"
+        "note": "for garnish - optional",
+        "category": "Dairy & Eggs"
       }
     }
   ]

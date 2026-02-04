@@ -7,7 +7,8 @@
       "expected": {
         "item": "oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": "clove"
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "juice of 1/2 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -62,7 +67,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -75,7 +81,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -88,7 +95,8 @@
             "unit": "stalk"
           }
         ],
-        "note": "ends trimmed and cut into 1 inch pieces"
+        "note": "ends trimmed and cut into 1 inch pieces",
+        "category": "Produce"
       }
     },
     {
@@ -96,7 +104,8 @@
       "expected": {
         "item": "crushed red pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -104,7 +113,8 @@
       "expected": {
         "item": "zest of 1 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -117,7 +127,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -130,7 +141,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

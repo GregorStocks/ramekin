@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus additional for serving"
+        "note": "plus additional for serving",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -101,7 +107,8 @@
       "expected": {
         "item": "Diced avocado",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -109,7 +116,8 @@
       "expected": {
         "item": "Diced red onion",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -117,7 +125,8 @@
       "expected": {
         "item": "Sliced cabbage",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -125,7 +134,8 @@
       "expected": {
         "item": "Shredded cheese (I used queso fresco)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -133,7 +143,8 @@
       "expected": {
         "item": "Sour cream (or plain Greek yogurt)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -141,7 +152,8 @@
       "expected": {
         "item": "Salsa",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -149,7 +161,8 @@
       "expected": {
         "item": "Diced tomatoes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -157,7 +170,8 @@
       "expected": {
         "item": "Jalapeño slices",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -165,7 +179,8 @@
       "expected": {
         "item": "Fresh cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -173,7 +188,8 @@
       "expected": {
         "item": "Freshly squeezed lime juice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     }
   ]

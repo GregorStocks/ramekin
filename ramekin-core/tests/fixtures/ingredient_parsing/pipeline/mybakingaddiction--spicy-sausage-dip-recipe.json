@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "10 ounce can"
           }
         ],
-        "note": "undrained"
+        "note": "undrained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -58,7 +61,8 @@
       "expected": {
         "item": "Hot sauce of your choice",
         "measurements": [],
-        "note": "to taste (Cholula, Frank’s RedHot, Sriracha, etc"
+        "note": "to taste (Cholula, Frank’s RedHot, Sriracha, etc",
+        "category": "Condiments & Sauces"
       }
     }
   ]

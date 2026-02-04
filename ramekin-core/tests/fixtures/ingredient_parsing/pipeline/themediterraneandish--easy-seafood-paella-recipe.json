@@ -16,7 +16,8 @@
             "unit": "oz each"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "Water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "cup"
           }
         ],
-        "note": "soaked in water for 20 minutes and then drained"
+        "note": "soaked in water for 20 minutes and then drained",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -123,7 +131,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -144,7 +154,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -157,7 +168,8 @@
             "unit": "large"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -174,7 +186,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed"
+        "note": "trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -191,7 +204,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and deveined"
+        "note": "peeled and deveined",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -204,7 +218,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

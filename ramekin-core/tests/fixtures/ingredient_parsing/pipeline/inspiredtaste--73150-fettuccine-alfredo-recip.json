@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated"
+        "note": "finely grated",
+        "category": "Cheese"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "small"
           }
         ],
-        "note": "finely grated on a microplane"
+        "note": "finely grated on a microplane",
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +93,8 @@
       "expected": {
         "item": "Salt and fresh ground black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     }
   ]

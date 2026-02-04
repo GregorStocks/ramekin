@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "1/2 roughly chopped and 1/2 thinly sliced"
+        "note": "1/2 roughly chopped and 1/2 thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and roughly chopped"
+        "note": "peeled and roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "1 cut into pieces and 2 sliced into 1/4-inch rounds"
+        "note": "1 cut into pieces and 2 sliced into 1/4-inch rounds",
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "cup"
           }
         ],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -175,7 +187,8 @@
       "expected": {
         "item": "Banchan (Korean side dishes)",
         "measurements": [],
-        "note": "for serving (optional)"
+        "note": "for serving (optional)",
+        "category": "Other"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "clove"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "g"
           }
         ],
-        "note": "dried flat rice noodles"
+        "note": "dried flat rice noodles",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -146,7 +156,8 @@
             "unit": "cup"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -159,7 +170,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Produce"
       }
     },
     {
@@ -176,7 +188,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -184,7 +197,8 @@
       "expected": {
         "item": "cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -192,7 +206,8 @@
       "expected": {
         "item": "beef tenderloin",
         "measurements": [],
-        "note": "sliced paper thin"
+        "note": "sliced paper thin",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -200,7 +215,8 @@
       "expected": {
         "item": "bean sprouts",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -208,7 +224,8 @@
       "expected": {
         "item": "lime",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -216,7 +233,8 @@
       "expected": {
         "item": "Thai basil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -224,7 +242,8 @@
       "expected": {
         "item": "hoisin sauce",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -232,7 +251,8 @@
       "expected": {
         "item": "sriracha",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Condiments & Sauces"
       }
     }
   ]

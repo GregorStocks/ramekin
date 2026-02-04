@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": null
           }
         ],
-        "note": "drained with 1/2 cup juice reserved"
+        "note": "drained with 1/2 cup juice reserved",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": "Chopped~Divided"
+        "note": "Chopped~Divided",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "cup"
           }
         ],
-        "note": "thawed"
+        "note": "thawed",
+        "category": "Frozen"
       }
     },
     {
@@ -80,7 +85,8 @@
       "expected": {
         "item": "Maraschino cherries",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

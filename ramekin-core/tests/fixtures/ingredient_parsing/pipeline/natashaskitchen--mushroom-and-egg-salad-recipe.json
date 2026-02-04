@@ -7,7 +7,8 @@
       "expected": {
         "item": "Olive oil to sauté",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely diced"
+        "note": "finely diced",
+        "category": "Produce"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "large"
           }
         ],
-        "note": "diced (click here for quick tutorial"
+        "note": "diced (click here for quick tutorial",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -127,7 +136,8 @@
       "expected": {
         "item": "Salt & Pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

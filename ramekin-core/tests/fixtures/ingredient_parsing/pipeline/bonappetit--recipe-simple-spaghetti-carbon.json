@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more"
+        "note": "plus more",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "large"
           }
         ],
-        "note": "plus 3 large egg yolks"
+        "note": "plus 3 large egg yolks",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     }
   ]

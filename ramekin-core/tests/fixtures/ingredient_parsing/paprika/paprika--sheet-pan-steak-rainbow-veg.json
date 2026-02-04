@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "raw ≈ 180 kcal, 28 g P"
+        "note": "raw ≈ 180 kcal, 28 g P",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Spice rub: smoked paprika + garlic powder + salt/pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

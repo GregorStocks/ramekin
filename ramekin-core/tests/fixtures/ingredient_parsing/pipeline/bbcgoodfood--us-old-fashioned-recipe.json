@@ -12,7 +12,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1 tsp granulated sugar"
+        "note": "or 1 tsp granulated sugar",
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "dash"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "splash of  water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "soda water",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     },
     {
@@ -66,7 +71,8 @@
       "expected": {
         "item": "orange slice to garnish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -74,7 +80,8 @@
       "expected": {
         "item": "maraschino cherry to garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

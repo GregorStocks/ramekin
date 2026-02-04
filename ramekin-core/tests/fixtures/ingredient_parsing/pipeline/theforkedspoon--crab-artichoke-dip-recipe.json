@@ -12,7 +12,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": "brought to room temperature"
+        "note": "brought to room temperature",
+        "category": "Cheese"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -127,7 +134,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded, divided"
+        "note": "shredded, divided",
+        "category": "Cheese"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded"
+        "note": "shredded",
+        "category": "Cheese"
       }
     },
     {
@@ -153,7 +162,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -166,7 +176,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -183,7 +194,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -196,7 +208,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -209,7 +222,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -222,7 +236,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -230,7 +245,8 @@
       "expected": {
         "item": "Diced red bell pepper",
         "measurements": [],
-        "note": "to garnish, optional"
+        "note": "to garnish, optional",
+        "category": "Produce"
       }
     }
   ]

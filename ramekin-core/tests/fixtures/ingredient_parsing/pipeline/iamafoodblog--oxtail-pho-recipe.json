@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into large chunks"
+        "note": "peeled and cut into large chunks",
+        "category": "Produce"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "small"
           }
         ],
-        "note": "peeled and cut into large chunks"
+        "note": "peeled and cut into large chunks",
+        "category": "Produce"
       }
     },
     {
@@ -150,7 +160,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "g"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Baking"
       }
     },
     {
@@ -175,7 +187,8 @@
       "expected": {
         "item": "pho noodles",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -183,7 +196,8 @@
       "expected": {
         "item": "sliced green onions",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -191,7 +205,8 @@
       "expected": {
         "item": "roughly chopped cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -199,7 +214,8 @@
       "expected": {
         "item": "red chilis",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -207,7 +223,8 @@
       "expected": {
         "item": "Thai basil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -215,7 +232,8 @@
       "expected": {
         "item": "lime wedges",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -223,7 +241,8 @@
       "expected": {
         "item": "hoisin sauce",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -231,7 +250,8 @@
       "expected": {
         "item": "sriracha",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

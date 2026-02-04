@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "raw"
+        "note": "raw",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -124,7 +132,8 @@
             "unit": "pinch"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,7 +146,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Baking"
       }
     },
     {
@@ -145,7 +155,8 @@
       "expected": {
         "item": "to serve (all or some of the others): sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives",
         "measurements": [],
-        "note": "thread of toasted sesame oil"
+        "note": "thread of toasted sesame oil",
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "almond milk, cashew milk, whole milk, coconut milk, etc."
+        "note": "almond milk, cashew milk, whole milk, coconut milk, etc.",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -76,7 +81,8 @@
       "expected": {
         "item": "Optional toppings: fresh berries, sliced bananas, nut butter, extra maple syrup or honey, etc.",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

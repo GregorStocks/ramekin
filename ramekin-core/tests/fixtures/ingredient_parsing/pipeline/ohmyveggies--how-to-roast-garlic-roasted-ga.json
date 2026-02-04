@@ -12,7 +12,8 @@
             "unit": "medium"
           }
         ],
-        "note": "roasted according to instructions above"
+        "note": "roasted according to instructions above",
+        "category": "Produce"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "salt + freshly cracked black pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "about 1 tablespoon butter",
         "measurements": [],
-        "note": "softened"
+        "note": "softened",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -41,7 +44,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -58,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

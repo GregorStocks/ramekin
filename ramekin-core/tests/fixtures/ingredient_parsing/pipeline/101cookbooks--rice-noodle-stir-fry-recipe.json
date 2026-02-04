@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "sliced 1/8-inch thinly"
+        "note": "sliced 1/8-inch thinly",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled"
+        "note": "crumbled",
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": null
           }
         ],
-        "note": "sliced 1/4-inch thick"
+        "note": "sliced 1/4-inch thick",
+        "category": "Produce"
       }
     },
     {
@@ -132,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "head"
           }
         ],
-        "note": "trimmed into small florets"
+        "note": "trimmed into small florets",
+        "category": "Produce"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -166,7 +177,8 @@
       "expected": {
         "item": "For serving: slivered market lime, Meyer lemon zest, or orange zest",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

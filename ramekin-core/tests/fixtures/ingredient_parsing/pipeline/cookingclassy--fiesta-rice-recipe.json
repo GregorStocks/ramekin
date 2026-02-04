@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chilled"
+        "note": "chilled",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed and drained well"
+        "note": "rinsed and drained well",
+        "category": "Canned Goods"
       }
     },
     {
@@ -136,7 +144,8 @@
             "unit": "medium"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -149,7 +158,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -162,7 +172,8 @@
             "unit": "small"
           }
         ],
-        "note": "seeded and minced"
+        "note": "seeded and minced",
+        "category": "Produce"
       }
     },
     {
@@ -175,7 +186,8 @@
             "unit": "cup"
           }
         ],
-        "note": "thawed according to package instructions*"
+        "note": "thawed according to package instructions*",
+        "category": "Frozen"
       }
     },
     {
@@ -188,7 +200,8 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed under cold water to remove harsh bite and drained well"
+        "note": "rinsed under cold water to remove harsh bite and drained well",
+        "category": "Produce"
       }
     },
     {
@@ -201,7 +214,8 @@
             "unit": null
           }
         ],
-        "note": "diced (optional"
+        "note": "diced (optional",
+        "category": "Produce"
       }
     },
     {
@@ -209,7 +223,8 @@
       "expected": {
         "item": "Salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

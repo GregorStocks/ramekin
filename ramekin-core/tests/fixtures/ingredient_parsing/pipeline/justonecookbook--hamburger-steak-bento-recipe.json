@@ -7,7 +7,8 @@
       "expected": {
         "item": "cooked Japanese short-grain rice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "hambagu (hamburger steak)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -23,7 +25,8 @@
       "expected": {
         "item": "broccoli",
         "measurements": [],
-        "note": "pre-blanched"
+        "note": "pre-blanched",
+        "category": "Produce"
       }
     },
     {
@@ -31,7 +34,8 @@
       "expected": {
         "item": "tomato",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -39,7 +43,8 @@
       "expected": {
         "item": "celery",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -47,7 +52,8 @@
       "expected": {
         "item": "frozen or canned corn",
         "measurements": [],
-        "note": "cooked"
+        "note": "cooked",
+        "category": "Canned Goods"
       }
     },
     {
@@ -55,7 +61,8 @@
       "expected": {
         "item": "furikake (rice seasoning)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

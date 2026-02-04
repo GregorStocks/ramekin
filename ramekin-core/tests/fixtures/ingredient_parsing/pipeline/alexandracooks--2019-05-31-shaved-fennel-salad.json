@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "splash white balsamic vinegar",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": null
           }
         ],
-        "note": "sliced thinly on a mandoline or with a knife"
+        "note": "sliced thinly on a mandoline or with a knife",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +49,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more"
+        "note": "or more",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed and sliced on the diagonal"
+        "note": "stemmed and sliced on the diagonal",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "small"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Beverages"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -127,7 +136,8 @@
       "expected": {
         "item": "salt, I’ve been using Maldon sea salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -135,7 +145,8 @@
       "expected": {
         "item": "freshly cracked pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +159,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -156,7 +168,8 @@
       "expected": {
         "item": "Parmigiano-Reggiano cheese or Pecorino Romano, shaved with a vegetable peeler",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

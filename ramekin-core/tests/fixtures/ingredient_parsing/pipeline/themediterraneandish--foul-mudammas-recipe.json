@@ -12,7 +12,8 @@
             "unit": "can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": null
           }
         ],
-        "note": "chopped (jalapenos will work here"
+        "note": "chopped (jalapenos will work here",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -110,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -123,7 +132,8 @@
             "unit": null
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +141,8 @@
       "expected": {
         "item": "Warm (pita bread)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -139,7 +150,8 @@
       "expected": {
         "item": "Sliced tomatoes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -147,7 +159,8 @@
       "expected": {
         "item": "Sliced cucumbers",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -155,7 +168,8 @@
       "expected": {
         "item": "Green onions",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -163,7 +177,8 @@
       "expected": {
         "item": "Olives",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     }
   ]

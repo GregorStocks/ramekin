@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into 1/3-inch cubes"
+        "note": "chopped into 1/3-inch cubes",
+        "category": "Produce"
       }
     },
     {
@@ -58,7 +61,8 @@
       "expected": {
         "item": "a handful of watercress or spinach",
         "measurements": [],
-        "note": "well washed and stems trimmed"
+        "note": "well washed and stems trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": null
           }
         ],
-        "note": "tops removed thinly sliced"
+        "note": "tops removed thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -79,7 +84,8 @@
       "expected": {
         "item": "a small handful of cilantro",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -87,7 +93,8 @@
       "expected": {
         "item": "a pinch of red pepper flakes",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

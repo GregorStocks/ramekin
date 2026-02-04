@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "small"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "stalk"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "clove"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or more"
+        "note": "or more",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -136,7 +145,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "sprig"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -157,7 +168,8 @@
       "expected": {
         "item": "Tabasco sauce",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Condiments & Sauces"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped into small cubes and some shredded"
+        "note": "chopped into small cubes and some shredded",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped finely"
+        "note": "chopped finely",
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or slivered almonds, optional"
+        "note": "or slivered almonds, optional",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -119,7 +127,8 @@
       "expected": {
         "item": "Salt and Pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

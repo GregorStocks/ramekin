@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "or pancetta, diced"
+        "note": "or pancetta, diced",
+        "category": "Other"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": "freshly grated"
+        "note": "freshly grated",
+        "category": "Cheese"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "ground black pepepr",
         "measurements": [],
-        "note": "freshly ground, to taste"
+        "note": "freshly ground, to taste",
+        "category": "Other"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "salt (for pasta water)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     }
   ]

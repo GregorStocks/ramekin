@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "sliced into 1/4-inch pieces"
+        "note": "sliced into 1/4-inch pieces",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": "cubed"
+        "note": "cubed",
+        "category": "Cheese"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "Extra-virgin olive oil, for drizzling",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "Sea salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -75,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -88,7 +94,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -101,7 +108,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -114,7 +122,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -131,7 +140,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -144,7 +154,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -152,7 +163,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -165,7 +177,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -178,7 +191,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -191,7 +205,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -204,7 +219,8 @@
             "unit": "small"
           }
         ],
-        "note": "peeled and sliced paper thin (or 2 additional carrots)"
+        "note": "peeled and sliced paper thin (or 2 additional carrots)",
+        "category": "Produce"
       }
     },
     {
@@ -217,7 +233,8 @@
             "unit": null
           }
         ],
-        "note": "peeled into ribbons"
+        "note": "peeled into ribbons",
+        "category": "Produce"
       }
     },
     {
@@ -230,7 +247,8 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -243,7 +261,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -256,7 +275,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -269,7 +289,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -282,7 +303,8 @@
             "unit": "handful"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
@@ -290,7 +312,8 @@
       "expected": {
         "item": "Fresh lemon juice",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Beverages"
       }
     }
   ]

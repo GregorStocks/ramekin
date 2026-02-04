@@ -16,7 +16,8 @@
             "unit": "kg"
           }
         ],
-        "note": "peeled and seeded"
+        "note": "peeled and seeded",
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "medium"
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and cored"
+        "note": "peeled and cored",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "sprig"
           }
         ],
-        "note": "plus 8 sage leaves, divided"
+        "note": "plus 8 sage leaves, divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -97,7 +103,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -135,7 +143,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -152,7 +161,8 @@
             "unit": "ml"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Canned Goods"
       }
     },
     {
@@ -165,7 +175,8 @@
             "unit": "medium"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -182,7 +193,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -199,7 +211,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -216,7 +229,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -224,7 +238,8 @@
       "expected": {
         "item": "Parmigiano-Reggiano cheese, for grating",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -41,7 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -49,7 +51,8 @@
       "expected": {
         "item": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

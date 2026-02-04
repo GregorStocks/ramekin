@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "sprinkles",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Baking"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "water (for sprinkles)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

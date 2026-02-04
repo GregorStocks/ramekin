@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Frying Oil (Vegetable, Canola, Peanut, etc)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -28,7 +30,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": "Optional"
+        "note": "Optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

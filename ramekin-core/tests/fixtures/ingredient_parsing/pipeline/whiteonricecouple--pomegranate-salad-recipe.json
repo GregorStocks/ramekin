@@ -12,7 +12,8 @@
             "unit": "head"
           }
         ],
-        "note": "washed, drained, torn"
+        "note": "washed, drained, torn",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": null
           }
         ],
-        "note": "minced and peeled"
+        "note": "minced and peeled",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "I also like to use whole grain mustard"
+        "note": "I also like to use whole grain mustard",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -106,7 +113,8 @@
       "expected": {
         "item": "fresh thyme or other herbs)",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

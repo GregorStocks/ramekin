@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "cut in half or quartered to make 3/4-inch thick pieces"
+        "note": "cut in half or quartered to make 3/4-inch thick pieces",
+        "category": "Produce"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +61,8 @@
       "expected": {
         "item": "Salt",
         "measurements": [],
-        "note": "preferably kosher or sea salt, to taste"
+        "note": "preferably kosher or sea salt, to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -66,7 +70,8 @@
       "expected": {
         "item": "Black pepper",
         "measurements": [],
-        "note": "freshly ground, to taste"
+        "note": "freshly ground, to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +84,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped, plus more to garnish"
+        "note": "chopped, plus more to garnish",
+        "category": "Produce"
       }
     }
   ]

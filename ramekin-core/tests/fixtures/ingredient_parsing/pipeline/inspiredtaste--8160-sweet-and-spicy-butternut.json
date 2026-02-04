@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": "about 3 pounds or 8 cups, cubed"
+        "note": "about 3 pounds or 8 cups, cubed",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "cup"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     },
     {
@@ -93,7 +99,8 @@
       "expected": {
         "item": "Fresh herbs for serving like basil or parsley",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

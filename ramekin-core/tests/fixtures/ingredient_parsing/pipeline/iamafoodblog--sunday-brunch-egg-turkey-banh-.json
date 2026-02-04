@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "kewpie mayo",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -33,7 +35,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "quick-pickled daikon and carrots",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "cucumber spears",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -57,7 +62,8 @@
       "expected": {
         "item": "fresh cilantro sprigs",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -65,7 +71,8 @@
       "expected": {
         "item": "sliced jalapeños, if desired",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -78,7 +85,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -91,7 +99,8 @@
             "unit": "large"
           }
         ],
-        "note": "julienned"
+        "note": "julienned",
+        "category": "Produce"
       }
     },
     {
@@ -104,7 +113,8 @@
             "unit": null
           }
         ],
-        "note": "julienned"
+        "note": "julienned",
+        "category": "Produce"
       }
     },
     {
@@ -117,7 +127,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -134,7 +145,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

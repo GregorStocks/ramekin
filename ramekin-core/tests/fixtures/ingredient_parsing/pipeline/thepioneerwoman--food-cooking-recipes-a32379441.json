@@ -7,7 +7,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 1 tablespoon olive oil"
+        "note": "plus 1 tablespoon olive oil",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +62,8 @@
       "expected": {
         "item": "Black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -71,7 +76,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +90,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +104,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -110,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -123,7 +132,8 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Canned Goods"
       }
     },
     {
@@ -140,7 +150,8 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled"
+        "note": "crumbled",
+        "category": "Cheese"
       }
     },
     {
@@ -148,7 +159,8 @@
       "expected": {
         "item": "chopped fresh dill",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

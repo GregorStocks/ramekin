@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": null
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -76,7 +81,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -119,7 +127,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -127,7 +136,8 @@
       "expected": {
         "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -140,7 +150,8 @@
             "unit": null
           }
         ],
-        "note": "lightly toasted"
+        "note": "lightly toasted",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -148,7 +159,8 @@
       "expected": {
         "item": "mayo",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -156,7 +168,8 @@
       "expected": {
         "item": "mustard",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -164,7 +177,8 @@
       "expected": {
         "item": "tonkatsu sauce",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Condiments & Sauces"
       }
     }
   ]

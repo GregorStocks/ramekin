@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -58,7 +60,8 @@
             "unit": "kg"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -66,7 +69,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -79,7 +83,8 @@
             "unit": "medium"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -100,7 +105,8 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced"
+        "note": "thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -117,7 +123,8 @@
             "unit": "l"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -134,7 +141,8 @@
             "unit": "l"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -155,7 +163,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -172,7 +181,8 @@
             "unit": "g"
           }
         ],
-        "note": "quartered"
+        "note": "quartered",
+        "category": "Produce"
       }
     },
     {
@@ -185,7 +195,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -206,7 +217,8 @@
             "unit": "g"
           }
         ],
-        "note": "and thinly sliced"
+        "note": "and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -223,7 +235,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -231,7 +244,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -248,7 +262,8 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed"
+        "note": "rinsed",
+        "category": "Produce"
       }
     }
   ]

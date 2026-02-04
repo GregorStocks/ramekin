@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "medium"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": null
           }
         ],
-        "note": "sliced or diced"
+        "note": "sliced or diced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled and sliced into half-moons or diced"
+        "note": "peeled and sliced into half-moons or diced",
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "clove"
           }
         ],
-        "note": "sliced (reserve half for later in recipe)"
+        "note": "sliced (reserve half for later in recipe)",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -105,7 +112,8 @@
       "expected": {
         "item": "A pinch of crushed red pepper flakes",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -118,7 +126,8 @@
             "unit": "cup"
           }
         ],
-        "note": "sorted and rinsed"
+        "note": "sorted and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -131,7 +140,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -144,7 +154,8 @@
             "unit": "28-ounce can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -161,7 +172,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -169,7 +181,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -182,7 +195,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -190,7 +204,8 @@
       "expected": {
         "item": "Grated Pecorino Romano cheese to finish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "bunch"
           }
         ],
-        "note": "rough ends trimmed off"
+        "note": "rough ends trimmed off",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -50,7 +53,8 @@
       "expected": {
         "item": "coarse flake sea salt or fleur de sel (for finishing)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

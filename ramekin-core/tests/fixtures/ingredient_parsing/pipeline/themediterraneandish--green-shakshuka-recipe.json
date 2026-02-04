@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and thinly sliced"
+        "note": "trimmed and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "large"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +67,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "g"
           }
         ],
-        "note": "thick veins and stems removed, chopped"
+        "note": "thick veins and stems removed, chopped",
+        "category": "Produce"
       }
     },
     {
@@ -105,7 +111,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1/2 tsp crushed red pepper flakes"
+        "note": "or 1/2 tsp crushed red pepper flakes",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,7 +139,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -144,7 +153,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -152,7 +162,8 @@
       "expected": {
         "item": "Juice of 1/2 lemon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -165,7 +176,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -178,7 +190,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed and chopped, both white and green parts"
+        "note": "trimmed and chopped, both white and green parts",
+        "category": "Produce"
       }
     },
     {
@@ -191,7 +204,8 @@
             "unit": "handful"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -199,7 +213,8 @@
       "expected": {
         "item": "Crumbled feta for garnish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

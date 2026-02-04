@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus 3 quarts for blanching the broccoli"
+        "note": "plus 3 quarts for blanching the broccoli",
+        "category": "Other"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "florets broken into bite-sized pieces and stems peeled and chopped"
+        "note": "florets broken into bite-sized pieces and stems peeled and chopped",
+        "category": "Produce"
       }
     },
     {
@@ -41,7 +43,8 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": "cup"
           }
         ],
-        "note": "sliced"
+        "note": "sliced",
+        "category": "Produce"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -88,7 +93,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -114,7 +121,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -131,7 +139,8 @@
             "unit": "g"
           }
         ],
-        "note": "grated"
+        "note": "grated",
+        "category": "Cheese"
       }
     },
     {
@@ -144,7 +153,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -157,7 +167,8 @@
             "unit": "large"
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -170,7 +181,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -183,7 +195,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

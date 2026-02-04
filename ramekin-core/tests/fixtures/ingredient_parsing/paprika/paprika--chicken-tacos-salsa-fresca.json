@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and quartered"
+        "note": "peeled and quartered",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "clove"
           }
         ],
-        "note": "peeled and lightly crushed"
+        "note": "peeled and lightly crushed",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "large"
           }
         ],
-        "note": "peeled and minced"
+        "note": "peeled and minced",
+        "category": "Produce"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Produce"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": null
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Produce"
       }
     },
     {
@@ -146,7 +156,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -159,7 +170,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or 1 teaspoon red-wine vinegar"
+        "note": "or 1 teaspoon red-wine vinegar",
+        "category": "Beverages"
       }
     },
     {
@@ -167,7 +179,8 @@
       "expected": {
         "item": "Salt and freshly ground pepper.",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

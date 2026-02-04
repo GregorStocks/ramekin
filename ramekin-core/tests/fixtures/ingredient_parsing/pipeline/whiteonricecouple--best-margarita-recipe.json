@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "or to taste *see headnote"
+        "note": "or to taste *see headnote",
+        "category": "Beverages"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": "or to taste *see headnote"
+        "note": "or to taste *see headnote",
+        "category": "Other"
       }
     },
     {
@@ -75,7 +79,8 @@
       "expected": {
         "item": "a few dashes Orange Bitters",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -83,7 +88,8 @@
       "expected": {
         "item": "flaky salt",
         "measurements": [],
-        "note": "for the rim (optional"
+        "note": "for the rim (optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

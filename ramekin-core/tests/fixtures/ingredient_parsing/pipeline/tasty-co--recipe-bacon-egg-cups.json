@@ -12,7 +12,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "salt, taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "pepper, taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -54,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -62,7 +67,8 @@
       "expected": {
         "item": "chive",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Produce"
       }
     },
     {
@@ -70,7 +76,8 @@
       "expected": {
         "item": "muffin tin",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     }
   ]

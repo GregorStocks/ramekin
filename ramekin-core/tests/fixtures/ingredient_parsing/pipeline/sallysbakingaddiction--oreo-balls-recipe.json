@@ -16,7 +16,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "softened to room temperature"
+        "note": "softened to room temperature",
+        "category": "Cheese"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely chopped"
+        "note": "coarsely chopped",
+        "category": "Other"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -71,7 +75,8 @@
       "expected": {
         "item": "optional for garnish: sprinkles, Oreo crumbs",
         "measurements": [],
-        "note": "additional melted chocolate"
+        "note": "additional melted chocolate",
+        "category": "Baking"
       }
     }
   ]

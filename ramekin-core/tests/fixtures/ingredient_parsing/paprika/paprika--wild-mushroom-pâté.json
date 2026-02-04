@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +93,8 @@
       "expected": {
         "item": "Coarse salt and freshly ground black pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -105,7 +111,8 @@
             "unit": "g"
           }
         ],
-        "note": "any tough stems discarded and roughly chopped"
+        "note": "any tough stems discarded and roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -118,7 +125,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -131,7 +139,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -139,7 +148,8 @@
       "expected": {
         "item": "To serve:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -147,7 +157,8 @@
       "expected": {
         "item": "Crackers or matzo, sieved hard-boiled egg, chopped flat-leaf parsley and/or chives, small pickles or cornichons, additional caramelized onions or pickled shallots or red onions (recipe below)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Snacks"
       }
     }
   ]

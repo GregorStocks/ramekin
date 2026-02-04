@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -24,7 +25,8 @@
       "expected": {
         "item": "simple syrup",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -32,7 +34,8 @@
       "expected": {
         "item": "Angostura bitters",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -40,7 +43,8 @@
       "expected": {
         "item": "ice",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Other"
       }
     }
   ]

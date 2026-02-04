@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or frozen"
+        "note": "fresh or frozen",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
       "expected": {
         "item": "splash of  port wine",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     }
   ]

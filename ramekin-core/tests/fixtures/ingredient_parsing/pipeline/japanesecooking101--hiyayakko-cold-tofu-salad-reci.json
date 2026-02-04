@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +49,8 @@
       "expected": {
         "item": "Katsuobushi",
         "measurements": [],
-        "note": "dried bonito flakes"
+        "note": "dried bonito flakes",
+        "category": "Other"
       }
     },
     {
@@ -54,7 +58,8 @@
       "expected": {
         "item": "soy sauce",
         "measurements": [],
-        "note": "or optionally Ponzu Sauce"
+        "note": "or optionally Ponzu Sauce",
+        "category": "Condiments & Sauces"
       }
     }
   ]

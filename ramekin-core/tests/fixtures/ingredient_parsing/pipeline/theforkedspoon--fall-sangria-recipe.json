@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "cored and thinly sliced"
+        "note": "cored and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": "cored and thinly sliced"
+        "note": "cored and thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": "sliced and cut into quarters"
+        "note": "sliced and cut into quarters",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -110,7 +117,8 @@
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -118,7 +126,8 @@
       "expected": {
         "item": "tonic water",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Beverages"
       }
     },
     {
@@ -126,7 +135,8 @@
       "expected": {
         "item": "fresh rosemary (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

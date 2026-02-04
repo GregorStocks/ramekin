@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "bottle"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -88,7 +93,8 @@
       "expected": {
         "item": "Salt and fresh ground pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -101,7 +107,8 @@
             "unit": "cup"
           }
         ],
-        "note": "toasted and roughly chopped"
+        "note": "toasted and roughly chopped",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -109,7 +116,8 @@
       "expected": {
         "item": "Parmigiano-Reggiano cheese",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Cheese"
       }
     }
   ]

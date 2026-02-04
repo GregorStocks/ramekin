@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "cup"
           }
         ],
-        "note": "cold and cubed"
+        "note": "cold and cubed",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -76,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": null
           }
         ],
-        "note": "slightly beaten"
+        "note": "slightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -123,7 +130,8 @@
             "unit": "g"
           }
         ],
-        "note": "packed"
+        "note": "packed",
+        "category": "Baking"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -157,7 +166,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -174,7 +184,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -191,7 +202,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -204,7 +216,8 @@
             "unit": "large"
           }
         ],
-        "note": "tart, firm apples, thinly sliced (tested with Granny Smith"
+        "note": "tart, firm apples, thinly sliced (tested with Granny Smith",
+        "category": "Produce"
       }
     },
     {
@@ -221,7 +234,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -229,7 +243,8 @@
       "expected": {
         "item": "Egg wash",
         "measurements": [],
-        "note": "1 egg beaten with 1 tbsp. water"
+        "note": "1 egg beaten with 1 tbsp. water",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -237,7 +252,8 @@
       "expected": {
         "item": "Coarse crystal sugar",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     }
   ]

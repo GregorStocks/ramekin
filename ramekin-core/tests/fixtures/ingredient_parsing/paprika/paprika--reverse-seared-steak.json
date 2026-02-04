@@ -7,7 +7,8 @@
       "expected": {
         "item": "Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -15,7 +16,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -23,7 +25,8 @@
       "expected": {
         "item": "Vegetable oil",
         "measurements": [],
-        "note": "if finishing on the stovetop; optional"
+        "note": "if finishing on the stovetop; optional",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -40,7 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": "if finishing on the stovetop; optional"
+        "note": "if finishing on the stovetop; optional",
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "from about 9 whole graham crackers"
+        "note": "from about 9 whole graham crackers",
+        "category": "Snacks"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1/2 teaspoon ground ginger"
+        "note": "or 1/2 teaspoon ground ginger",
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +48,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "stick"
           }
         ],
-        "note": "melted)"
+        "note": "melted)",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -101,7 +106,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -118,7 +124,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -131,7 +138,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -144,7 +152,8 @@
             "unit": "large"
           }
         ],
-        "note": "slightly beaten"
+        "note": "slightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -157,7 +166,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -174,7 +184,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -187,7 +198,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -204,7 +216,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -221,7 +234,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -229,7 +243,8 @@
       "expected": {
         "item": "whipped cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -237,7 +252,8 @@
       "expected": {
         "item": "pecan halves",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

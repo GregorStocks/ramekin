@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus 10 cups water for boiling"
+        "note": "plus 10 cups water for boiling",
+        "category": "Other"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "package"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -89,7 +94,8 @@
             "unit": "g"
           }
         ],
-        "note": "melted"
+        "note": "melted",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "large"
           }
         ],
-        "note": "beaten with 1 tablespoon water"
+        "note": "beaten with 1 tablespoon water",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -127,7 +135,8 @@
       "expected": {
         "item": "Vegetable oil, for the bowl and pan",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -135,7 +144,8 @@
       "expected": {
         "item": "Pretzel salt",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     }
   ]

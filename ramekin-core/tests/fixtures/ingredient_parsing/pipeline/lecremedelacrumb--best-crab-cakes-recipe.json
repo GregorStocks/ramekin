@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "large"
           }
         ],
-        "note": "whisked"
+        "note": "whisked",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": null
           }
         ],
-        "note": "whisked"
+        "note": "whisked",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped"
+        "note": "finely chopped",
+        "category": "Produce"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -146,7 +156,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -159,7 +170,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or to taste (use only 1/8 teaspoon if using ground black pepper"
+        "note": "or to taste (use only 1/8 teaspoon if using ground black pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -167,7 +179,8 @@
       "expected": {
         "item": "olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -175,7 +188,8 @@
       "expected": {
         "item": "tartar sauce/crab cake sauce",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Condiments & Sauces"
       }
     }
   ]

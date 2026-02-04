@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": "or whatever ground meat you like - chicken, turkey, pork, lamb, etc."
+        "note": "or whatever ground meat you like - chicken, turkey, pork, lamb, etc.",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "medium"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -63,7 +66,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced or crushed"
+        "note": "minced or crushed",
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "g"
           }
         ],
-        "note": "diced or regular depending on what texture you want)"
+        "note": "diced or regular depending on what texture you want)",
+        "category": "Canned Goods"
       }
     },
     {
@@ -97,7 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed)"
+        "note": "drained and rinsed)",
+        "category": "Canned Goods"
       }
     },
     {
@@ -114,7 +120,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -127,7 +134,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -140,7 +148,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or chopped fresh oregano"
+        "note": "or chopped fresh oregano",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -153,7 +162,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "or to taste"
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -161,7 +171,8 @@
       "expected": {
         "item": "fresh cracked black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -169,7 +180,8 @@
       "expected": {
         "item": "grated cheese",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -177,7 +189,8 @@
       "expected": {
         "item": "sour cream",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -185,7 +198,8 @@
       "expected": {
         "item": "diced red onions",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -193,7 +207,8 @@
       "expected": {
         "item": "sliced green onions",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

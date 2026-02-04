@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "Fresh lime wedges, for rimming the glasses and garnish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -46,7 +49,8 @@
             "unit": null
           }
         ],
-        "note": "use more or less, depending on how spicy you prefer it"
+        "note": "use more or less, depending on how spicy you prefer it",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +63,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -72,7 +77,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -85,7 +91,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -102,7 +109,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -110,7 +118,8 @@
       "expected": {
         "item": "Extra jalapeño slice, pineapple wedges",
         "measurements": [],
-        "note": "and lime wedges for garnish"
+        "note": "and lime wedges for garnish",
+        "category": "Produce"
       }
     }
   ]

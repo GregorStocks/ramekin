@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -33,7 +35,8 @@
       "expected": {
         "item": "Optional add ins: 1/2 teaspoon vanilla extract (or seeds from 1 vanilla bean), 1/4 teaspoon cinnamon",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +44,8 @@
       "expected": {
         "item": "Other ideas: Chai Spices or Pumpkin Spices",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Produce"
       }
     },
     {
@@ -49,7 +53,8 @@
       "expected": {
         "item": "Grapeseed or canola oil",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Oils & Vinegars"
       }
     }
   ]

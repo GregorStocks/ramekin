@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -89,7 +95,8 @@
       "expected": {
         "item": "Katsuobushi",
         "measurements": [],
-        "note": "Dried Bonito Flakes"
+        "note": "Dried Bonito Flakes",
+        "category": "Other"
       }
     },
     {
@@ -97,7 +104,8 @@
       "expected": {
         "item": "Nori",
         "measurements": [],
-        "note": "Roasted Seaweed, thinly cut"
+        "note": "Roasted Seaweed, thinly cut",
+        "category": "Other"
       }
     }
   ]

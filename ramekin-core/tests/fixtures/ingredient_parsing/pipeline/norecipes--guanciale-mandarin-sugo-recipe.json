@@ -12,7 +12,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "large"
           }
         ],
-        "note": "sliced thinly"
+        "note": "sliced thinly",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "medium"
           }
         ],
-        "note": "sliced thinly"
+        "note": "sliced thinly",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": "medium"
           }
         ],
-        "note": "unpeeled and torn into chunks"
+        "note": "unpeeled and torn into chunks",
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -128,7 +137,8 @@
       "expected": {
         "item": "fennel pollen",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -141,7 +151,8 @@
             "unit": "g"
           }
         ],
-        "note": "cooked according to package directions"
+        "note": "cooked according to package directions",
+        "category": "Pasta & Rice"
       }
     }
   ]

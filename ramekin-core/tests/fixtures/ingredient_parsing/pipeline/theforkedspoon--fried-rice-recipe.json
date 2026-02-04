@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "large"
           }
         ],
-        "note": "whisked"
+        "note": "whisked",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "small"
           }
         ],
-        "note": "diced (approx. 1 cup"
+        "note": "diced (approx. 1 cup",
+        "category": "Produce"
       }
     },
     {
@@ -59,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -102,7 +108,8 @@
             "unit": "g"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -115,7 +122,8 @@
             "unit": "cup"
           }
         ],
-        "note": "preferably cold, day-old rice"
+        "note": "preferably cold, day-old rice",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -162,7 +173,8 @@
       "expected": {
         "item": "white pepper",
         "measurements": [],
-        "note": "as needed to season"
+        "note": "as needed to season",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -170,7 +182,8 @@
       "expected": {
         "item": "Thinly sliced green onions (to garnish)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

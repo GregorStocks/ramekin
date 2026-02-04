@@ -12,7 +12,8 @@
             "unit": "can"
           }
         ],
-        "note": "rinsed and drained"
+        "note": "rinsed and drained",
+        "category": "Canned Goods"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "halved"
+        "note": "halved",
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": "PLUS a few onion slices for garnish"
+        "note": "PLUS a few onion slices for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": "PLUS more for garnish"
+        "note": "PLUS more for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "5-oz cans"
           }
         ],
-        "note": "drained"
+        "note": "drained",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -141,7 +151,8 @@
       "expected": {
         "item": "Salt and Pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -154,7 +165,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -167,7 +179,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Beverages"
       }
     },
     {
@@ -180,7 +193,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -193,7 +207,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and halved"
+        "note": "peeled and halved",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -206,7 +221,8 @@
             "unit": "8.8-oz package"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     }
   ]

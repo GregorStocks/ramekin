@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": "scrubbed and cut into big chunks"
+        "note": "scrubbed and cut into big chunks",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": "scrubbed and cut into big chunks"
+        "note": "scrubbed and cut into big chunks",
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": null
           }
         ],
-        "note": "unpeeled and quartered"
+        "note": "unpeeled and quartered",
+        "category": "Produce"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "head"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -90,7 +96,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -103,7 +110,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -116,7 +124,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -141,7 +151,8 @@
       "expected": {
         "item": "and/or",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -149,7 +160,8 @@
       "expected": {
         "item": "Any vegetables you have stashed in your Stock Bag (described above)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -157,7 +169,8 @@
       "expected": {
         "item": "Matzo Balls",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -170,7 +183,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -183,7 +197,8 @@
             "unit": null
           }
         ],
-        "note": "lightly beaten"
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -196,7 +211,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -209,7 +225,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -222,7 +239,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -235,7 +253,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -253,7 +272,8 @@
           }
         ],
         "note": null,
-        "section": "For Soup"
+        "section": "For Soup",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -267,7 +287,8 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "For Soup"
+        "section": "For Soup",
+        "category": "Produce"
       }
     },
     {
@@ -276,7 +297,8 @@
         "item": "A few sprigs of dill",
         "measurements": [],
         "note": null,
-        "section": "For Soup"
+        "section": "For Soup",
+        "category": "Spices & Seasonings"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "small"
           }
         ],
-        "note": "diced"
+        "note": "diced",
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "large"
           }
         ],
-        "note": "scrubbed and diced"
+        "note": "scrubbed and diced",
+        "category": "Produce"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch chunks"
+        "note": "peeled and cut into 1/2-inch chunks",
+        "category": "Produce"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus additional to taste"
+        "note": "plus additional to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -145,7 +154,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -158,7 +168,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus additional for serving"
+        "note": "plus additional for serving",
+        "category": "Cheese"
       }
     },
     {
@@ -171,7 +182,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus additional for serving"
+        "note": "plus additional for serving",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -179,7 +191,8 @@
       "expected": {
         "item": "Cooked crumbled bacon",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -187,7 +200,8 @@
       "expected": {
         "item": "Chopped fresh chives",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

@@ -12,7 +12,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "small"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": null
           }
         ],
-        "note": "peeled and minced"
+        "note": "peeled and minced",
+        "category": "Beverages"
       }
     },
     {
@@ -59,7 +63,8 @@
       "expected": {
         "item": "crushed red pepper flakes to taste",
         "measurements": [],
-        "note": "I use 1/2 teaspoon or less"
+        "note": "I use 1/2 teaspoon or less",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +72,8 @@
       "expected": {
         "item": "kosher salt and pepper to taste",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -80,7 +86,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +100,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -106,7 +114,8 @@
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed"
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -123,7 +132,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or 1 lb. diced fresh tomatoes"
+        "note": "or 1 lb. diced fresh tomatoes",
+        "category": "Canned Goods"
       }
     },
     {
@@ -136,7 +146,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -149,7 +160,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -162,7 +174,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -175,7 +188,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or more"
+        "note": "or more",
+        "category": "Canned Goods"
       }
     },
     {
@@ -183,7 +197,8 @@
       "expected": {
         "item": "coconut rice, see notes above",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -191,7 +206,8 @@
       "expected": {
         "item": "naan",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -199,7 +215,8 @@
       "expected": {
         "item": "cilantro",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -207,7 +224,8 @@
       "expected": {
         "item": "lime",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

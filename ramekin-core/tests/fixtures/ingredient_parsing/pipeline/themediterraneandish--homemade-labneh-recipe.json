@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -41,7 +43,8 @@
       "expected": {
         "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -49,7 +52,8 @@
       "expected": {
         "item": "Za’atar",
         "measurements": [],
-        "note": "or chopped fresh herbs"
+        "note": "or chopped fresh herbs",
+        "category": "Other"
       }
     },
     {
@@ -57,7 +61,8 @@
       "expected": {
         "item": "Warm pita bread",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -65,7 +70,8 @@
       "expected": {
         "item": "Sliced vegetables",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     }
   ]

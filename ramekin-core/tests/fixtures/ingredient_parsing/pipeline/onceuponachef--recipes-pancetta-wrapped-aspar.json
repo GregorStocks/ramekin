@@ -24,7 +24,8 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed"
+        "note": "trimmed",
+        "category": "Produce"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -45,7 +47,8 @@
       "expected": {
         "item": "Vegetable oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     }
   ]

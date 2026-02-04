@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": null
           }
         ],
-        "note": "fresh or frozen, or cooked dried noodle"
+        "note": "fresh or frozen, or cooked dried noodle",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -89,7 +95,8 @@
       "expected": {
         "item": "Green onions",
         "measurements": [],
-        "note": "sliced thinly"
+        "note": "sliced thinly",
+        "category": "Produce"
       }
     }
   ]

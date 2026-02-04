@@ -12,7 +12,8 @@
             "unit": null
           }
         ],
-        "note": "whole heads"
+        "note": "whole heads",
+        "category": "Produce"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": "or as needed"
+        "note": "or as needed",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Flakey Salt (, such as kosher salt, Murray River salt, Maldon salt)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -45,7 +48,8 @@
       "expected": {
         "item": "fresh cracked Black Pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -53,7 +57,8 @@
       "expected": {
         "item": "optional-fresh thyme leaves",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

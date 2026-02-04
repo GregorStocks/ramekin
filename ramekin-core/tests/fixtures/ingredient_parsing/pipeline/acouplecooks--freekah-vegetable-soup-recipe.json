@@ -12,7 +12,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -38,7 +40,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -51,7 +54,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -64,7 +68,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -77,7 +82,8 @@
             "unit": "medium"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for drizzling"
+        "note": "plus more for drizzling",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -107,7 +114,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more for seasoning"
+        "note": "plus more for seasoning",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -120,7 +128,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more for seasoning"
+        "note": "plus more for seasoning",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -133,7 +142,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more if needed"
+        "note": "plus more if needed",
+        "category": "Canned Goods"
       }
     },
     {
@@ -146,7 +156,8 @@
             "unit": null
           }
         ],
-        "note": "optional"
+        "note": "optional",
+        "category": "Cheese"
       }
     },
     {
@@ -159,7 +170,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -176,7 +188,8 @@
             "unit": "g"
           }
         ],
-        "note": "or more to taste"
+        "note": "or more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -184,7 +197,8 @@
       "expected": {
         "item": "Chopped fresh herbs (za’atar, parsley, chives, or scallions)",
         "measurements": [],
-        "note": "for garnish"
+        "note": "for garnish",
+        "category": "Produce"
       }
     }
   ]

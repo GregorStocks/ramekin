@@ -12,7 +12,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -20,7 +21,8 @@
       "expected": {
         "item": "Water",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -41,7 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -54,7 +57,8 @@
             "unit": null
           }
         ],
-        "note": "peeled, chopped"
+        "note": "peeled, chopped",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": null
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": null
           }
         ],
-        "note": "cored, seeded, roughly chopped"
+        "note": "cored, seeded, roughly chopped",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -93,7 +99,8 @@
             "unit": null
           }
         ],
-        "note": "trimmed, roughly chopped, more for garnish"
+        "note": "trimmed, roughly chopped, more for garnish",
+        "category": "Produce"
       }
     },
     {
@@ -106,7 +113,8 @@
             "unit": null
           }
         ],
-        "note": "peeled, roughly chopped"
+        "note": "peeled, roughly chopped",
+        "category": "Produce"
       }
     },
     {
@@ -114,7 +122,8 @@
       "expected": {
         "item": "Extra Virgin Olive Oil",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -127,7 +136,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -135,7 +145,8 @@
       "expected": {
         "item": "Salt and pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +159,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -165,7 +177,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional if you like spicy"
+        "note": "optional if you like spicy",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -178,7 +191,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -191,7 +205,8 @@
             "unit": "small"
           }
         ],
-        "note": "torn or chopped"
+        "note": "torn or chopped",
+        "category": "Produce"
       }
     },
     {
@@ -204,7 +219,8 @@
             "unit": "small"
           }
         ],
-        "note": "torn or chopped"
+        "note": "torn or chopped",
+        "category": "Produce"
       }
     }
   ]

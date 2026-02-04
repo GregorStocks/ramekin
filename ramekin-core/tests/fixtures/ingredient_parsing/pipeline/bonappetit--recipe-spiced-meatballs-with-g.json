@@ -12,7 +12,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -25,7 +26,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -68,7 +72,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -81,7 +86,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for serving"
+        "note": "plus more for serving",
+        "category": "Cheese"
       }
     },
     {
@@ -94,7 +100,8 @@
             "unit": "tsp"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided"
+        "note": "divided",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -128,7 +136,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -141,7 +150,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -154,7 +164,8 @@
             "unit": null
           }
         ],
-        "note": "crushed"
+        "note": "crushed",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -167,7 +178,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -180,7 +192,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for"
+        "note": "plus more for",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -188,7 +201,8 @@
       "expected": {
         "item": "serving",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -201,7 +215,8 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for serving"
+        "note": "plus more for serving",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -209,7 +224,8 @@
       "expected": {
         "item": "Mint leaves",
         "measurements": [],
-        "note": "for serving; optional"
+        "note": "for serving; optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

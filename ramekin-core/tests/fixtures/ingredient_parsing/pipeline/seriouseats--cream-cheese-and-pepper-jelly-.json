@@ -24,7 +24,8 @@
             "unit": "oz"
           }
         ],
-        "note": "thawed"
+        "note": "thawed",
+        "category": "Frozen"
       }
     },
     {
@@ -32,7 +33,8 @@
       "expected": {
         "item": "All-purpose flour, for dusting",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -45,7 +47,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -53,7 +56,8 @@
       "expected": {
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -70,7 +74,8 @@
             "unit": "g"
           }
         ],
-        "note": "softened"
+        "note": "softened",
+        "category": "Cheese"
       }
     },
     {
@@ -91,7 +96,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -99,7 +105,8 @@
       "expected": {
         "item": "Thinly sliced scallions, for garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Produce"
       }
     },
     {
@@ -107,7 +114,8 @@
       "expected": {
         "item": "Toasted white sesame seeds, for garnish",
         "measurements": [],
-        "note": "optional"
+        "note": "optional",
+        "category": "Spices & Seasonings"
       }
     }
   ]

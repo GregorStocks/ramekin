@@ -20,7 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -37,7 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": "or more to taste"
+        "note": "or more to taste",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -50,7 +52,8 @@
             "unit": "clove"
           }
         ],
-        "note": "finely minced or sliced"
+        "note": "finely minced or sliced",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -80,7 +84,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -93,7 +98,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -106,7 +112,8 @@
             "unit": "cup"
           }
         ],
-        "note": "or cilantro, parsley, basil, chopped"
+        "note": "or cilantro, parsley, basil, chopped",
+        "category": "Produce"
       }
     },
     {
@@ -119,7 +126,8 @@
             "unit": "stalk"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +135,8 @@
       "expected": {
         "item": "additional salt and pepper (to personal taste)",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     }
   ]

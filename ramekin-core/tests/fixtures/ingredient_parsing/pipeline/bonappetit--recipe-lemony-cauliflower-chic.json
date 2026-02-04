@@ -20,7 +20,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -28,7 +29,8 @@
       "expected": {
         "item": "Kosher salt, freshly cracked black pepper",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -36,7 +38,8 @@
       "expected": {
         "item": "Extra-virgin olive oil, for searing",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -49,7 +52,8 @@
             "unit": "large"
           }
         ],
-        "note": "small diced"
+        "note": "small diced",
+        "category": "Produce"
       }
     },
     {
@@ -62,7 +66,8 @@
             "unit": null
           }
         ],
-        "note": "small diced"
+        "note": "small diced",
+        "category": "Produce"
       }
     },
     {
@@ -75,7 +80,8 @@
             "unit": "small"
           }
         ],
-        "note": "cored and small diced"
+        "note": "cored and small diced",
+        "category": "Produce"
       }
     },
     {
@@ -88,7 +94,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -105,7 +112,8 @@
             "unit": "l"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -126,7 +134,8 @@
             "unit": "g"
           }
         ],
-        "note": "cored and cut into bite-size florets"
+        "note": "cored and cut into bite-size florets",
+        "category": "Produce"
       }
     },
     {
@@ -139,7 +148,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -152,7 +162,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -165,7 +176,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -173,7 +185,8 @@
       "expected": {
         "item": "Zest and juice of 2 lemons",
         "measurements": [],
-        "note": "zest reserved for serving"
+        "note": "zest reserved for serving",
+        "category": "Beverages"
       }
     },
     {
@@ -181,7 +194,8 @@
       "expected": {
         "item": "Cooked jasmine rice",
         "measurements": [],
-        "note": "to taste (see Note)"
+        "note": "to taste (see Note)",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -189,7 +203,8 @@
       "expected": {
         "item": "Fresh dill fronds",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Produce"
       }
     },
     {
@@ -197,7 +212,8 @@
       "expected": {
         "item": "Freshly grated Pecorino Romano",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Cheese"
       }
     }
   ]

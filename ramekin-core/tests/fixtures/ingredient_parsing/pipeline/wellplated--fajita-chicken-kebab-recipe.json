@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -33,7 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -41,7 +43,8 @@
       "expected": {
         "item": "Zest and juice of 1 large lime",
         "measurements": [],
-        "note": "plus additional for serving"
+        "note": "plus additional for serving",
+        "category": "Beverages"
       }
     },
     {
@@ -58,7 +61,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -71,7 +75,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -84,7 +89,8 @@
             "unit": "clove"
           }
         ],
-        "note": "chopped"
+        "note": "chopped",
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": null
           }
         ],
-        "note": "chopped (remove seeds and membrane if sensitive to spice"
+        "note": "chopped (remove seeds and membrane if sensitive to spice",
+        "category": "Produce"
       }
     },
     {
@@ -110,7 +117,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -123,7 +131,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -136,7 +145,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -149,7 +159,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -157,7 +168,8 @@
       "expected": {
         "item": "Fresh cilantro",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     },
     {
@@ -165,7 +177,8 @@
       "expected": {
         "item": "Salsa, (sour cream (or plain yogurt), and guacamole",
         "measurements": [],
-        "note": "optional for serving)"
+        "note": "optional for serving)",
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -7,7 +7,8 @@
       "expected": {
         "item": "Apple and Herb Stuffing* for All Seasons",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -20,7 +21,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "large"
           }
         ],
-        "note": "chopped small"
+        "note": "chopped small",
+        "category": "Produce"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "small"
           }
         ],
-        "note": "diced small"
+        "note": "diced small",
+        "category": "Produce"
       }
     },
     {
@@ -80,7 +85,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -97,7 +103,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more to taste"
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -105,7 +112,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -122,7 +130,8 @@
             "unit": "small"
           }
         ],
-        "note": "cored and diced small"
+        "note": "cored and diced small",
+        "category": "Produce"
       }
     },
     {
@@ -135,7 +144,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +158,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -161,7 +172,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -174,7 +186,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

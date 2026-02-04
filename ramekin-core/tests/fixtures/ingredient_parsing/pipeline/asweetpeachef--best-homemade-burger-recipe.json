@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "can also use ground chuck, ground sirloin, or ground bison"
+        "note": "can also use ground chuck, ground sirloin, or ground bison",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -37,7 +39,8 @@
       "expected": {
         "item": "Optional toppings: smashed avocado, sliced cheddar cheese, ketchup, mustard, sliced tomatoes, lettuce, dill pickles, bacon, sautéed onions, etc.",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

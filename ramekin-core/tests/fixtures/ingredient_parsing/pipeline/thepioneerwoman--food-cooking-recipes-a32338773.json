@@ -16,7 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -29,7 +30,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -42,7 +44,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -55,7 +58,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -72,7 +76,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for grilling"
+        "note": "plus more for grilling",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -85,7 +90,8 @@
             "unit": null
           }
         ],
-        "note": "cored and cut into rings"
+        "note": "cored and cut into rings",
+        "category": "Produce"
       }
     },
     {
@@ -98,7 +104,8 @@
             "unit": "slice"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -111,7 +118,8 @@
             "unit": null
           }
         ],
-        "note": "halved crosswise"
+        "note": "halved crosswise",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -119,7 +127,8 @@
       "expected": {
         "item": "Butter, for the rolls",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -132,7 +141,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -145,7 +155,8 @@
             "unit": null
           }
         ],
-        "note": "very thinly sliced"
+        "note": "very thinly sliced",
+        "category": "Produce"
       }
     },
     {
@@ -153,7 +164,8 @@
       "expected": {
         "item": "Lettuce, for topping",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -161,7 +173,8 @@
       "expected": {
         "item": "Potato chips",
         "measurements": [],
-        "note": "for serving"
+        "note": "for serving",
+        "category": "Produce"
       }
     }
   ]

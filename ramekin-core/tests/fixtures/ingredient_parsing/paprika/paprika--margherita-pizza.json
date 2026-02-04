@@ -7,7 +7,8 @@
       "expected": {
         "item": "Dough:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -24,7 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -37,7 +39,8 @@
             "unit": "slightly heaped"
           }
         ],
-        "note": "or 1/2 teaspoon active dry yeast (for Overnight, All-Day, or Part-Day Schedules respectively)"
+        "note": "or 1/2 teaspoon active dry yeast (for Overnight, All-Day, or Part-Day Schedules respectively)",
+        "category": "Other"
       }
     },
     {
@@ -50,7 +53,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -67,7 +71,8 @@
             "unit": "g"
           }
         ],
-        "note": "plus an additional tablespoon or two if needed (updated)"
+        "note": "plus an additional tablespoon or two if needed (updated)",
+        "category": "Other"
       }
     },
     {
@@ -75,7 +80,8 @@
       "expected": {
         "item": "Pizza:",
         "measurements": [],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -88,7 +94,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Other"
       }
     },
     {
@@ -101,7 +108,8 @@
             "unit": "28-ounce can"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -114,7 +122,8 @@
             "unit": "clove"
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "category": "Produce"
       }
     },
     {
@@ -127,7 +136,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -135,7 +145,8 @@
       "expected": {
         "item": "Red pepper flakes",
         "measurements": [],
-        "note": "to taste"
+        "note": "to taste",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -148,7 +159,8 @@
             "unit": "pinch"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -165,7 +177,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -178,7 +191,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Cheese"
       }
     },
     {
@@ -191,7 +205,8 @@
             "unit": null
           }
         ],
-        "note": null
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -199,7 +214,8 @@
       "expected": {
         "item": "Few leaves of fresh basil",
         "measurements": [],
-        "note": "torn or sliced"
+        "note": "torn or sliced",
+        "category": "Produce"
       }
     }
   ]
