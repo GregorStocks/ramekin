@@ -9,8 +9,10 @@ Pick and solve exactly **one** bead, then create a PR.
 3. Implement the fix
 4. Update tests to expect the correct behavior
 5. Run `make test` and `make lint` to verify
-6. **Document ALL issues you discover** during exploration, even if you're only fixing one. Future Claudes benefit from this documentation!
-7. Create a PR, then stop - leave remaining issues for the next Claude
+6. Run `make pipeline` and spot-check the diff for regressions
+7. Close the bead with `bd close <bead-id>` (do this before committing so it's included in the PR)
+8. **Document ALL issues you discover** during exploration, even if you're only fixing one. Future Claudes benefit from this documentation!
+9. Create a PR, then stop - leave remaining issues for the next Claude
 
 ## Is It Worth Fixing?
 
