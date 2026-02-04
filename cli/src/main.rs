@@ -390,6 +390,17 @@ async fn main() -> Result<()> {
                 tag_report_path.display(),
                 run_id
             );
+
+            // Generate and save unique ingredients file
+            let unique_ingredients =
+                pipeline_orchestrator::generate_unique_ingredients_file(&run_dir)?;
+            let unique_ingredients_path = PathBuf::from("data/unique-ingredients.txt");
+            std::fs::write(&unique_ingredients_path, &unique_ingredients)?;
+            println!(
+                "Unique ingredients saved to: {} ({} ingredients)",
+                unique_ingredients_path.display(),
+                unique_ingredients.lines().count()
+            );
         }
         Commands::PipelineCacheStats { cache_dir } => {
             let cache_dir = cache_dir.unwrap_or_else(ramekin_core::http::DiskCache::default_dir);
