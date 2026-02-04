@@ -40,11 +40,11 @@
         "item": "butter",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "stick"
+            "amount": "1 stick plus 1 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 1 tbsp",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -72,15 +72,11 @@
         "item": "whole milk",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
+            "amount": "1/2 cup plus 1 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 1 tbsp",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

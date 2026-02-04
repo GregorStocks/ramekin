@@ -69,14 +69,14 @@
     {
       "raw": "3 tablespoons lemon juice plus 2 teaspoons, divided",
       "expected": {
-        "item": "lemon juice, divided",
+        "item": "lemon juice plus 2 teaspoons",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 2 teaspoons",
+        "note": "divided",
         "category": "Beverages"
       }
     },

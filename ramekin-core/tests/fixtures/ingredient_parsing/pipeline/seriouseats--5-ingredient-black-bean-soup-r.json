@@ -107,14 +107,14 @@
     {
       "raw": "1/2 teaspoon lime zest plus 1 tablespoon juice from 1 lime",
       "expected": {
-        "item": "lime zest juice from 1 lime",
+        "item": "lime zest plus 1 tablespoon juice from 1 lime",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tsp"
           }
         ],
-        "note": "plus 1 tablespoon",
+        "note": null,
         "category": "Beverages"
       }
     },

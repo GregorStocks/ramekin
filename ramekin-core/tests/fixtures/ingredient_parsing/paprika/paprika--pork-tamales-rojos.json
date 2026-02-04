@@ -258,12 +258,8 @@
         "item": "lard, melted",
         "measurements": [
           {
-            "amount": "1 1/4",
-            "unit": "cup"
-          },
-          {
-            "amount": "256",
-            "unit": "g"
+            "amount": "1 1/4 cups plus 2 tablespoons",
+            "unit": null
           }
         ],
         "note": "or more",
@@ -329,11 +325,11 @@
     {
       "raw": "1¼ cups plus 2 tablespoons lard, melted, plus more if needed",
       "expected": {
-        "item": "plus 2 tablespoons lard, melted",
+        "item": "lard, melted",
         "measurements": [
           {
-            "amount": "1 1/4",
-            "unit": "cup"
+            "amount": "1 1/4 cups plus 2 tablespoons",
+            "unit": null
           }
         ],
         "note": "plus more if needed",

@@ -83,14 +83,14 @@
     {
       "raw": "1 cup half and half or 1/2 cup heavy cream plus 1/2 cup whole milk",
       "expected": {
-        "item": "half and half or 1/2 cup heavy cream whole milk",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "plus 1/2 cup",
+        "note": "or 1/2 cup heavy cream plus 1/2 cup whole milk",
         "category": "Dairy & Eggs"
       }
     },

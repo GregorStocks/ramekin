@@ -5,11 +5,11 @@
     {
       "raw": "1/4 cup (60 ml) plus 1 tablespoon (15 ml) extra-virgin olive oil, plus extra for drizzling",
       "expected": {
-        "item": "plus 1 tablespoon extra-virgin olive oil",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
-            "amount": "1/4",
-            "unit": "cup"
+            "amount": "1/4 cup plus 1 tablespoon",
+            "unit": null
           },
           {
             "amount": "60",
@@ -18,6 +18,10 @@
           {
             "amount": "15",
             "unit": "ml"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
           }
         ],
         "note": "plus extra for drizzling",

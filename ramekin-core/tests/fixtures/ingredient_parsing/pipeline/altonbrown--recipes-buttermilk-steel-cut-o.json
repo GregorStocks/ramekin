@@ -69,14 +69,14 @@
     {
       "raw": "1/2 cup plus 1 tablespoon low-fat buttermilk, divided",
       "expected": {
-        "item": "low-fat buttermilk, divided",
+        "item": "low-fat buttermilk",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
+            "amount": "1/2 cup plus 1 tablespoon",
+            "unit": null
           }
         ],
-        "note": "plus 1 tablespoon",
+        "note": "divided",
         "category": "Dairy & Eggs"
       }
     },

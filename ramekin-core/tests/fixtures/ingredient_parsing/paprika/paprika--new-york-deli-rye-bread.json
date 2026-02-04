@@ -172,7 +172,7 @@
     {
       "raw": "1/2 plus 1/8 teaspoon (2 grams) instant yeast",
       "expected": {
-        "item": "instant yeast",
+        "item": "plus 1/8 teaspoon instant yeast",
         "measurements": [
           {
             "amount": "1/2",
@@ -183,7 +183,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1/8 teaspoon",
+        "note": null,
         "section": "Sponge",
         "category": "Baking"
       }

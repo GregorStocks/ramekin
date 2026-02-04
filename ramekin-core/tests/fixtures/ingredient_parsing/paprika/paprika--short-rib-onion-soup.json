@@ -76,14 +76,14 @@
     {
       "raw": "2 large yellow onions, or 1 large onion plus 1 large leek, chopped",
       "expected": {
-        "item": "yellow onions, or 1 large onion leek, chopped",
+        "item": "yellow onions, or 1 large onion plus 1 large leek",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "plus 1 large",
+        "note": "chopped",
         "section": "Braise",
         "category": "Produce"
       }

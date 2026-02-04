@@ -41,28 +41,28 @@
     {
       "raw": "1/2 Tbsp sea salt for the lamb plus 1 tsp for stew",
       "expected": {
-        "item": "sea salt for the lamb for stew",
+        "item": "sea salt for the lamb plus 1 tsp for stew",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1 tsp",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 tsp black pepper for lamb plus 1/2 tsp for stew",
       "expected": {
-        "item": "black pepper for lamb for stew",
+        "item": "black pepper for lamb plus 1/2 tsp for stew",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "plus 1/2 tsp",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

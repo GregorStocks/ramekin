@@ -83,11 +83,11 @@
     {
       "raw": "1/4 cup plus 3 tablespoons extra-virgin olive oil, plus more for serving",
       "expected": {
-        "item": "plus 3 tablespoons extra-virgin olive oil",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
-            "amount": "1/4",
-            "unit": "cup"
+            "amount": "1/4 cup plus 3 tablespoons",
+            "unit": null
           }
         ],
         "note": "plus more for serving",

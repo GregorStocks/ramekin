@@ -91,7 +91,7 @@
     {
       "raw": "2 teaspoons (10 ml) vanilla extract or 1 teaspoon vanilla extract plus 1 teaspoon vanilla bean paste",
       "expected": {
-        "item": "vanilla extract or 1 teaspoon vanilla extract vanilla bean paste",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "2",
@@ -100,10 +100,14 @@
           {
             "amount": "10",
             "unit": "ml"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
           }
         ],
-        "note": "plus 1 teaspoon",
-        "category": "Spices & Seasonings"
+        "note": "or 1 teaspoon vanilla extract plus 1 teaspoon vanilla bean paste",
+        "category": "Baking"
       }
     },
     {

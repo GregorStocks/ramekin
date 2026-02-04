@@ -73,14 +73,14 @@
     {
       "raw": "3 tablespoons lemon zest plus 2 teaspoons fresh lemon juice",
       "expected": {
-        "item": "lemon zest fresh lemon juice",
+        "item": "lemon zest plus 2 teaspoons fresh lemon juice",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 2 teaspoons",
+        "note": null,
         "category": "Beverages"
       }
     },

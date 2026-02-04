@@ -224,14 +224,14 @@
     {
       "raw": "1 teaspoon grated lemon zest plus 1 1/2 teaspoons fresh juice (from 1 lemon)",
       "expected": {
-        "item": "grated lemon zest fresh juice (from 1 lemon)",
+        "item": "grated lemon zest plus 1 1/2 teaspoons fresh juice (from 1 lemon)",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "plus 1 1/2 teaspoons",
+        "note": null,
         "category": "Beverages"
       }
     },

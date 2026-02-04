@@ -666,11 +666,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    // Step 2: Handle "plus" pattern - extract the "plus X" portion as note
-    // e.g., "1 cup flour, plus 2 tablespoons" -> note = "plus 2 tablespoons"
-    // Look for ", plus " or just " plus " with a measurement after
+    // Step 2: Handle "plus" patterns
+    // ", plus " -> always extract as note (e.g., "flour, plus more for dusting")
+    // " plus " -> check if followed by valid measurement (amount+unit)
+    //   - If valid measurement: handled later as compound amount (e.g., "1 cup plus 2 tbsp flour")
+    //   - If no valid measurement: extract as note (e.g., "1 egg plus 1 yolk")
     if let Some(plus_idx) = remaining.to_lowercase().find(", plus ") {
-        // Skip ", " to get "plus ..."
+        // With comma: always extract as note
         if let Some(plus_part) = remaining.get(plus_idx + 2..) {
             if note.is_none() {
                 note = Some(plus_part.trim().to_string());
@@ -678,30 +680,15 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
         remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
     } else if let Some(plus_idx) = remaining.to_lowercase().find(" plus ") {
-        // Check if there's a measurement after "plus"
-        // e.g., "1/2 cup plus 2 tablespoons flour" -> note="plus 2 tbsp", remaining="1/2 cup flour"
+        // Without comma: check if followed by valid measurement
         let after_plus = remaining.get(plus_idx + 6..).unwrap_or("").trim();
         if !after_plus.is_empty() {
-            // Try to parse a measurement from what follows "plus"
-            let (plus_amount, after_plus_amount) = extract_amount(after_plus);
-            let (plus_unit, after_plus_unit) = extract_unit(&after_plus_amount);
+            let (test_amount, after_test_amount) = extract_amount(after_plus);
+            let (test_unit, _) = extract_unit(&after_test_amount);
 
-            // Only treat as plus-measurement if we got BOTH amount AND unit
-            if let (Some(amt), Some(unit)) = (plus_amount, plus_unit) {
-                // Build note as "plus [amount] [unit]"
-                if note.is_none() {
-                    note = Some(format!("plus {} {}", amt, unit));
-                }
-                // remaining = before " plus " + whatever's left after the measurement
-                let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
-                let after_measurement = after_plus_unit.trim();
-                remaining = if after_measurement.is_empty() {
-                    before_plus.to_string()
-                } else {
-                    format!("{} {}", before_plus, after_measurement)
-                };
-            } else {
-                // No valid measurement after "plus", use old behavior (take everything)
+            // Only if we DON'T have both amount+unit, treat as note (fallback)
+            // Cases with valid measurement are handled later as compound amounts
+            if test_amount.is_none() || test_unit.is_none() {
                 if let Some(plus_part) = remaining.get(plus_idx + 1..) {
                     if note.is_none() {
                         note = Some(plus_part.trim().to_string());
@@ -740,11 +727,37 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     // Combine modifiers with unit: prefer pre-unit modifier, fall back to pre-amount modifier
     let modifier = pre_unit_modifier.or(pre_amount_modifier);
-    let primary_unit = match (modifier, base_unit) {
+    let mut primary_unit = match (modifier, base_unit) {
         (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
         (Some(m), None) => Some(m), // modifier without unit (rare but possible)
         (None, u) => u,
     };
+
+    // Step 4.4b: Handle "plus [amount] [unit]" compound quantities
+    // e.g., "1/2 cup plus 2 tablespoons flour" -> amount="1/2 cup plus 2 tablespoons", unit=null
+    // This keeps the compound quantity together as a single amount rather than splitting into note
+    let mut primary_amount = primary_amount;
+    {
+        let remaining_trimmed = remaining.trim_start();
+        let remaining_lower = remaining_trimmed.to_lowercase();
+        if remaining_lower.starts_with("plus ") {
+            let after_plus = remaining_trimmed.get(5..).unwrap_or("").trim_start();
+
+            // Try to parse a measurement from what follows "plus"
+            let (plus_amount, after_plus_amount) = extract_amount(after_plus);
+            let (plus_unit, after_plus_unit) = extract_unit(&after_plus_amount);
+
+            // Only combine if we got BOTH amount AND unit after "plus"
+            if let (Some(p_amt), Some(p_unit)) = (plus_amount, plus_unit) {
+                // Combine into a single compound amount: "1/2 cup plus 2 tablespoons"
+                if let (Some(amt), Some(unit)) = (&primary_amount, &primary_unit) {
+                    primary_amount = Some(format!("{} {} plus {} {}", amt, unit, p_amt, p_unit));
+                    primary_unit = None; // Unit is now embedded in the compound amount
+                    remaining = after_plus_unit;
+                }
+            }
+        }
+    }
 
     // Step 4.5: Handle " or " alternatives in remaining text
     // e.g., remaining = " or 3 heaping cups frozen pineapple"

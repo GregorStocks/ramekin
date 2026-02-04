@@ -67,14 +67,14 @@
     {
       "raw": "1 cup plus 1 tablespoon unsalted sunflower kernels, divided",
       "expected": {
-        "item": "unsalted sunflower kernels, divided",
+        "item": "unsalted sunflower kernels",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "cup"
+            "amount": "1 cup plus 1 tablespoon",
+            "unit": null
           }
         ],
-        "note": "plus 1 tablespoon",
+        "note": "divided",
         "category": "Spices & Seasonings"
       }
     },
