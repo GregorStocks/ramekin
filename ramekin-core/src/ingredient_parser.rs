@@ -522,6 +522,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let mut measurements = Vec::new();
     let mut note = None;
 
+    // Strip "More " prefix (e.g., "More parsley" → "parsley")
+    // These are typically garnish additions in ingredient lists
+    let remaining_lower = remaining.to_lowercase();
+    if remaining_lower.starts_with("more ") {
+        remaining = remaining.get(5..).unwrap_or("").trim().to_string();
+    }
+
     // Strip "Optional:" or "Optional -" prefix, capturing for note
     let mut optional_prefix = false;
     let remaining_lower = remaining.to_lowercase();

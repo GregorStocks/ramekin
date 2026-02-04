@@ -712,6 +712,16 @@
         "note": null,
         "category": "Baking"
       }
+    },
+    {
+      "name": "more_prefix_garnish",
+      "raw": "More parsley",
+      "expected": {
+        "item": "parsley",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
     }
   ]
 }
