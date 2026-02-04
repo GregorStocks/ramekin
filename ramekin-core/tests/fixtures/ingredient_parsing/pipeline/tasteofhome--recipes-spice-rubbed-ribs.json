@@ -23,28 +23,28 @@
     {
       "raw": "2 tablespoons plus 1 teaspoon salt",
       "expected": {
-        "item": "2 tablespoons plus 1 teaspoon salt",
+        "item": "salt",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "2 tablespoons plus 1 teaspoon",
+            "unit": null
           }
         ],
-        "note": "plus 1 teaspoon salt",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 tablespoons plus 1 teaspoon garlic powder",
       "expected": {
-        "item": "2 tablespoons plus 1 teaspoon garlic powder",
+        "item": "garlic powder",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "2 tablespoons plus 1 teaspoon",
+            "unit": null
           }
         ],
-        "note": "plus 1 teaspoon garlic powder",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

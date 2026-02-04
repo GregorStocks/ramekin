@@ -37,14 +37,14 @@
     {
       "raw": "1 tbsp. plus 2 teaspoons packed light brown sugar",
       "expected": {
-        "item": "1 tbsp. plus 2 teaspoons packed light brown sugar",
+        "item": "packed light brown sugar",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "tbsp"
+            "amount": "1 tbsp plus 2 teaspoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 teaspoons packed light brown sugar",
+        "note": null,
         "category": "Baking"
       }
     },

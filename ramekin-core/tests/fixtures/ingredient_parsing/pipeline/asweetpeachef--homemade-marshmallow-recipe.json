@@ -14,11 +14,11 @@
     {
       "raw": "½ cup plus ¼ cup water (divided)",
       "expected": {
-        "item": "½ cup plus ¼ cup water (divided)",
+        "item": "water",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
+            "amount": "1/2 cup plus 1/4 cup",
+            "unit": null
           }
         ],
         "note": "divided",

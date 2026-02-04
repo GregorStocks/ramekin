@@ -33,14 +33,14 @@
     {
       "raw": "½ cup plus 3 tablespoons extra-virgin olive oil",
       "expected": {
-        "item": "½ cup plus 3 tablespoons extra-virgin olive oil",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
+            "amount": "1/2 cup plus 3 tablespoons",
+            "unit": null
           }
         ],
-        "note": "plus 3 tablespoons extra-virgin olive oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },

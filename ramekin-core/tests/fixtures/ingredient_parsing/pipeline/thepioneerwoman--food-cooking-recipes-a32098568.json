@@ -23,14 +23,14 @@
     {
       "raw": "1 1/4 c. plus 2 teaspoons sugar",
       "expected": {
-        "item": "1 1/4 c. plus 2 teaspoons sugar",
+        "item": "sugar",
         "measurements": [
           {
-            "amount": "1 1/4",
-            "unit": "cup"
+            "amount": "1 1/4 c plus 2 teaspoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 teaspoons sugar",
+        "note": null,
         "category": "Baking"
       }
     },

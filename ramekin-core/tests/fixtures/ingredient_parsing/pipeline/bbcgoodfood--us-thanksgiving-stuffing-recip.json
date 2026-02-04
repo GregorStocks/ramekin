@@ -5,14 +5,14 @@
     {
       "raw": "1 stick plus 2 tbsp butter plus extra for the dish",
       "expected": {
-        "item": "1 stick plus 2 tbsp butter plus extra for the dish",
+        "item": "butter plus extra for the dish",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "stick"
+            "amount": "1 stick plus 2 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 2 tbsp butter plus extra for the dish",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -89,14 +89,14 @@
     {
       "raw": "1½ cups plus 2 tbsp chicken broth",
       "expected": {
-        "item": "1½ cups plus 2 tbsp chicken broth",
+        "item": "chicken broth",
         "measurements": [
           {
-            "amount": "1 1/2",
-            "unit": "cup"
+            "amount": "1 1/2 cups plus 2 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 2 tbsp chicken broth",
+        "note": null,
         "category": "Canned Goods"
       }
     },

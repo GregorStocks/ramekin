@@ -19,14 +19,14 @@
     {
       "raw": "1/2 cup plus 1 tablespoon olive oil",
       "expected": {
-        "item": "1/2 cup plus 1 tablespoon olive oil",
+        "item": "olive oil",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
+            "amount": "1/2 cup plus 1 tablespoon",
+            "unit": null
           }
         ],
-        "note": "plus 1 tablespoon olive oil",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },

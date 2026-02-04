@@ -49,14 +49,14 @@
     {
       "raw": "1 cup plus 4 teaspoons of sugar",
       "expected": {
-        "item": "1 cup plus 4 teaspoons of sugar",
+        "item": "sugar",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "cup"
+            "amount": "1 cup plus 4 teaspoons",
+            "unit": null
           }
         ],
-        "note": "plus 4 teaspoons of sugar",
+        "note": null,
         "category": "Baking"
       }
     },

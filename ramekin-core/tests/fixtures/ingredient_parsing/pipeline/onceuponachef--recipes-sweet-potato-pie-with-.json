@@ -45,14 +45,14 @@
     {
       "raw": "1 cup plus 2 tablespoons packed light brown sugar",
       "expected": {
-        "item": "1 cup plus 2 tablespoons packed light brown sugar",
+        "item": "packed light brown sugar",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "cup"
+            "amount": "1 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 tablespoons packed light brown sugar",
+        "note": null,
         "category": "Baking"
       }
     },

@@ -55,14 +55,14 @@
     {
       "raw": "5 tablespoons plus 1 teaspoon coconut water, divided",
       "expected": {
-        "item": "5 tablespoons plus 1 teaspoon coconut water, divided",
+        "item": "coconut water",
         "measurements": [
           {
-            "amount": "5",
-            "unit": "tbsp"
+            "amount": "5 tablespoons plus 1 teaspoon",
+            "unit": null
           }
         ],
-        "note": "plus 1 teaspoon coconut water, divided",
+        "note": "divided",
         "category": "Produce"
       }
     },

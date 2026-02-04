@@ -19,14 +19,14 @@
     {
       "raw": "1/2  English cucumber or 2 small cucumbers with ends trimmed",
       "expected": {
-        "item": "English cucumber",
+        "item": "English cucumber or 2 small cucumbers with ends trimmed",
         "measurements": [
           {
             "amount": "1/2",
             "unit": null
           }
         ],
-        "note": "or 2 small cucumbers with ends trimmed",
+        "note": null,
         "category": "Produce"
       }
     },

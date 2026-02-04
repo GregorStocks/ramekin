@@ -19,14 +19,14 @@
     {
       "raw": "1/2 teaspoon cumin seeds or a heaped 1/2 teaspoon ground",
       "expected": {
-        "item": "cumin seeds or a heaped 1/2 teaspoon ground",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or a heaped 1/2 teaspoon ground",
         "section": "Sausage",
         "category": "Spices & Seasonings"
       }
@@ -34,14 +34,14 @@
     {
       "raw": "1/2 teaspoon coriander seeds or a heaped 1/2 teaspoon ground",
       "expected": {
-        "item": "coriander seeds or a heaped 1/2 teaspoon ground",
+        "item": "coriander seeds",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or a heaped 1/2 teaspoon ground",
         "section": "Sausage",
         "category": "Spices & Seasonings"
       }
@@ -49,14 +49,14 @@
     {
       "raw": "1/2 teaspoon fennel seeds or a heaped 1/2 teaspoon ground",
       "expected": {
-        "item": "fennel seeds or a heaped 1/2 teaspoon ground",
+        "item": "fennel seeds",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or a heaped 1/2 teaspoon ground",
         "section": "Sausage",
         "category": "Spices & Seasonings"
       }

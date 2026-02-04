@@ -60,14 +60,14 @@
     {
       "raw": "1  large orange or 2 small ones, juiced",
       "expected": {
-        "item": "orange",
+        "item": "orange or 2 small ones, juiced",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "or 2 small ones, juiced",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -37,14 +37,14 @@
     {
       "raw": "2 tablespoons plus 2 teaspoons instant espresso powder",
       "expected": {
-        "item": "2 tablespoons plus 2 teaspoons instant espresso powder",
+        "item": "instant espresso powder",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "2 tablespoons plus 2 teaspoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 teaspoons instant espresso powder",
+        "note": null,
         "category": "Beverages"
       }
     },

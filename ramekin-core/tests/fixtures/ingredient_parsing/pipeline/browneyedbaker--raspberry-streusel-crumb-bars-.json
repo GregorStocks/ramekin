@@ -55,11 +55,11 @@
     {
       "raw": "1 cup plus 2 tablespoons unsalted butter (divided, cut into ½-inch pieces and at cool room temperature)",
       "expected": {
-        "item": "1 cup plus 2 tablespoons unsalted butter (divided, cut into ½-inch pieces and at cool room temperature)",
+        "item": "unsalted butter",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "cup"
+            "amount": "1 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
         "note": "divided, cut into 1/2-inch pieces and at cool room temperature",

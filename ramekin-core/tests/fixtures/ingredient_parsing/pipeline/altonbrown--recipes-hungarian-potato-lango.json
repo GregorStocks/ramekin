@@ -41,25 +41,25 @@
     {
       "raw": "3/4 cup plus 2 tablespoons whole milk",
       "expected": {
-        "item": "3/4 cup plus 2 tablespoons whole milk",
+        "item": "whole milk",
         "measurements": [
           {
-            "amount": "3/4",
-            "unit": "cup"
+            "amount": "3/4 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 tablespoons whole milk",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 tablespoon plus 1 teaspoon neutral oil, plus 5 to 7 cups (1.2 to 1.7 liters) for frying ((such as sunflower or peanut))",
       "expected": {
-        "item": "plus 1 teaspoon neutral oil",
+        "item": "neutral oil",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "tbsp"
+            "amount": "1 tablespoon plus 1 teaspoon",
+            "unit": null
           },
           {
             "amount": "1.2 to 1.7",

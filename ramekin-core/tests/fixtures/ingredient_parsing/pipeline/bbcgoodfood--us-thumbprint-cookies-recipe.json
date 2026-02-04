@@ -5,14 +5,14 @@
     {
       "raw": "2 cups plus 1 tbsp all-purpose flour",
       "expected": {
-        "item": "2 cups plus 1 tbsp all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "cup"
+            "amount": "2 cups plus 1 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 1 tbsp all-purpose flour",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "1 tbsp vanilla sugar or 1 tbsp granulated sugar plus 1 tsp vanilla extract",
       "expected": {
-        "item": "vanilla sugar or 1 tbsp granulated sugar",
+        "item": "vanilla sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1 tsp vanilla extract",
+        "note": "or 1 tbsp granulated sugar plus 1 tsp vanilla extract",
         "category": "Baking"
       }
     },

@@ -23,14 +23,14 @@
     {
       "raw": "2 tablespoons plus 2 cups water",
       "expected": {
-        "item": "2 tablespoons plus 2 cups water",
+        "item": "water",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "2 tablespoons plus 2 cups",
+            "unit": null
           }
         ],
-        "note": "plus 2 cups water",
+        "note": null,
         "category": "Other"
       }
     },

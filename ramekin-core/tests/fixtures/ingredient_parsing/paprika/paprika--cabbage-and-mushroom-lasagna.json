@@ -23,11 +23,11 @@
     {
       "raw": "3 tablespoons (25 grams) plus 1 teaspoon (3 grams) all-purpose flour",
       "expected": {
-        "item": "3 tablespoons (25 grams) plus 1 teaspoon (3 grams) all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "3",
-            "unit": "tbsp"
+            "amount": "3 tablespoons plus 1 teaspoon",
+            "unit": null
           },
           {
             "amount": "25",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1 teaspoon all-purpose flour",
+        "note": null,
         "category": "Baking"
       }
     },

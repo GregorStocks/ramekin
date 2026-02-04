@@ -37,11 +37,11 @@
     {
       "raw": "1 cup plus 1/4 cup water (divided)",
       "expected": {
-        "item": "1 cup plus 1/4 cup water (divided)",
+        "item": "water",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "cup"
+            "amount": "1 cup plus 1/4 cup",
+            "unit": null
           }
         ],
         "note": "divided",
@@ -107,11 +107,11 @@
     {
       "raw": "1/4 cup plus 2 tablespoons minced garlic (about 16-20 cloves, minced)",
       "expected": {
-        "item": "1/4 cup plus 2 tablespoons minced garlic (about 16-20 cloves, minced)",
+        "item": "minced garlic",
         "measurements": [
           {
-            "amount": "1/4",
-            "unit": "cup"
+            "amount": "1/4 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
         "note": "about 16-20 cloves, minced",

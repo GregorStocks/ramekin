@@ -47,14 +47,14 @@
     {
       "raw": "1/4 cup plus 2 tablespoons mayonnaise",
       "expected": {
-        "item": "1/4 cup plus 2 tablespoons mayonnaise",
+        "item": "mayonnaise",
         "measurements": [
           {
-            "amount": "1/4",
-            "unit": "cup"
+            "amount": "1/4 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 tablespoons mayonnaise",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

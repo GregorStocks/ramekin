@@ -5,18 +5,22 @@
     {
       "raw": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
       "expected": {
-        "item": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
+        "item": "vegetable oil",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "2 tablespoons plus 2 teaspoons",
+            "unit": null
           },
           {
             "amount": "40",
             "unit": "ml"
+          },
+          {
+            "amount": "37",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 teaspoons vegetable oil, divided",
+        "note": "divided",
         "category": "Oils & Vinegars"
       }
     },

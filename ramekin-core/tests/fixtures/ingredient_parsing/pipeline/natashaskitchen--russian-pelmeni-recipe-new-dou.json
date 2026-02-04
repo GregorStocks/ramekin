@@ -87,14 +87,14 @@
     {
       "raw": "7 cups plus 6 Tbsp unbleached all-purpose flour",
       "expected": {
-        "item": "7 cups plus 6 Tbsp unbleached all-purpose flour",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
-            "amount": "7",
-            "unit": "cup"
+            "amount": "7 cups plus 6 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 6 Tbsp unbleached all-purpose flour",
+        "note": null,
         "category": "Baking"
       }
     },

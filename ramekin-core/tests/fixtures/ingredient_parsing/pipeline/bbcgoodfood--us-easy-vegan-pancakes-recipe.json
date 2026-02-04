@@ -69,14 +69,14 @@
     {
       "raw": "1½ cups plus 2 tbsp plant-based milk (such as oat, almond or soya)",
       "expected": {
-        "item": "1½ cups plus 2 tbsp plant-based milk (such as oat, almond or soya)",
+        "item": "plant-based milk (such as oat, almond or soya)",
         "measurements": [
           {
-            "amount": "1 1/2",
-            "unit": "cup"
+            "amount": "1 1/2 cups plus 2 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 2 tbsp plant-based milk (such as oat, almond or soya)",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

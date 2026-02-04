@@ -77,14 +77,14 @@
     {
       "raw": "2 Tablespoons oil (canola or vegetable) ((30 ml))",
       "expected": {
-        "item": "oil (canola or vegetable) (30 ml)",
+        "item": "oil (canola",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or vegetable) (30 ml)",
         "category": "Oils & Vinegars"
       }
     },

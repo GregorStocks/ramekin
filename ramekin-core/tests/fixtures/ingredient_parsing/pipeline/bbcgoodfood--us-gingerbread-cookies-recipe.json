@@ -5,14 +5,14 @@
     {
       "raw": "1 stick plus 1 tbsp unsalted butter softened",
       "expected": {
-        "item": "1 stick plus 1 tbsp unsalted butter softened",
+        "item": "unsalted butter softened",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "stick"
+            "amount": "1 stick plus 1 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 1 tbsp unsalted butter softened",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -75,14 +75,14 @@
     {
       "raw": "1¾ cups plus 1 tbsp all-purpose flour",
       "expected": {
-        "item": "1¾ cups plus 1 tbsp all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "1 3/4",
-            "unit": "cup"
+            "amount": "1 3/4 cups plus 1 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 1 tbsp all-purpose flour",
+        "note": null,
         "category": "Baking"
       }
     },

@@ -19,14 +19,14 @@
     {
       "raw": "1/2 Cup Plus 2 Tablespoons All-Purpose Flour",
       "expected": {
-        "item": "1/2 Cup Plus 2 Tablespoons All-Purpose Flour",
+        "item": "All-Purpose Flour",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
+            "amount": "1/2 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
-        "note": "Plus 2 Tablespoons All-Purpose Flour",
+        "note": null,
         "category": "Baking"
       }
     },

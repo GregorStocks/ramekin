@@ -41,14 +41,14 @@
     {
       "raw": "2 cups plus 1 Tbsp milk",
       "expected": {
-        "item": "2 cups plus 1 Tbsp milk",
+        "item": "milk",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "cup"
+            "amount": "2 cups plus 1 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 1 Tbsp milk",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

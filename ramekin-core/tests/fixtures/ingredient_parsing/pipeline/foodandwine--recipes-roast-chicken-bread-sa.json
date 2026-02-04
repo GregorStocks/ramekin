@@ -269,14 +269,14 @@
     {
       "raw": "4 cups lightly packed greens (such as chicory, escarole, or radicchio) (about 4 ounces)",
       "expected": {
-        "item": "lightly packed greens (such as chicory, escarole, or radicchio) (about 4 ounces)",
+        "item": "lightly packed greens (such as chicory, escarole",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or radicchio) (about 4 ounces)",
         "category": "Produce"
       }
     }

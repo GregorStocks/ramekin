@@ -41,14 +41,14 @@
     {
       "raw": "2 tablespoons plus 1/2 cup olive oil, not extra-virgin",
       "expected": {
-        "item": "2 tablespoons plus 1/2 cup olive oil, not extra-virgin",
+        "item": "olive oil, not extra-virgin",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "2 tablespoons plus 1/2 cup",
+            "unit": null
           }
         ],
-        "note": "plus 1/2 cup olive oil, not extra-virgin",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },

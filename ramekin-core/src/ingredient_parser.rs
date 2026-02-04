@@ -666,11 +666,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    // Step 2: Handle "plus" pattern - extract the "plus X" portion as note
-    // e.g., "1 cup flour, plus 2 tablespoons" -> note = "plus 2 tablespoons"
-    // Look for ", plus " or just " plus " with a measurement after
+    // Step 2: Handle "plus" patterns
+    // ", plus " -> always extract as note (e.g., "flour, plus more for dusting")
+    // " plus " -> check if followed by valid measurement (amount+unit)
+    //   - If valid measurement: handled later as compound amount (e.g., "1 cup plus 2 tbsp flour")
+    //   - If no valid measurement: extract as note (e.g., "1 egg plus 1 yolk")
     if let Some(plus_idx) = remaining.to_lowercase().find(", plus ") {
-        // Skip ", " to get "plus ..."
+        // With comma: always extract as note
         if let Some(plus_part) = remaining.get(plus_idx + 2..) {
             if note.is_none() {
                 note = Some(plus_part.trim().to_string());
@@ -678,16 +680,22 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
         remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
     } else if let Some(plus_idx) = remaining.to_lowercase().find(" plus ") {
-        // Check if there's a measurement-like thing after "plus"
+        // Without comma: check if followed by valid measurement
         let after_plus = remaining.get(plus_idx + 6..).unwrap_or("").trim();
         if !after_plus.is_empty() {
-            // Extract just the "plus ..." part (skip the leading space)
-            if let Some(plus_part) = remaining.get(plus_idx + 1..) {
-                if note.is_none() {
-                    note = Some(plus_part.trim().to_string());
+            let (test_amount, after_test_amount) = extract_amount(after_plus);
+            let (test_unit, _) = extract_unit(&after_test_amount);
+
+            // Only if we DON'T have both amount+unit, treat as note (fallback)
+            // Cases with valid measurement are handled later as compound amounts
+            if test_amount.is_none() || test_unit.is_none() {
+                if let Some(plus_part) = remaining.get(plus_idx + 1..) {
+                    if note.is_none() {
+                        note = Some(plus_part.trim().to_string());
+                    }
                 }
+                remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
             }
-            remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
         }
     }
 
@@ -719,11 +727,37 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     // Combine modifiers with unit: prefer pre-unit modifier, fall back to pre-amount modifier
     let modifier = pre_unit_modifier.or(pre_amount_modifier);
-    let primary_unit = match (modifier, base_unit) {
+    let mut primary_unit = match (modifier, base_unit) {
         (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
         (Some(m), None) => Some(m), // modifier without unit (rare but possible)
         (None, u) => u,
     };
+
+    // Step 4.4b: Handle "plus [amount] [unit]" compound quantities
+    // e.g., "1/2 cup plus 2 tablespoons flour" -> amount="1/2 cup plus 2 tablespoons", unit=null
+    // This keeps the compound quantity together as a single amount rather than splitting into note
+    let mut primary_amount = primary_amount;
+    {
+        let remaining_trimmed = remaining.trim_start();
+        let remaining_lower = remaining_trimmed.to_lowercase();
+        if remaining_lower.starts_with("plus ") {
+            let after_plus = remaining_trimmed.get(5..).unwrap_or("").trim_start();
+
+            // Try to parse a measurement from what follows "plus"
+            let (plus_amount, after_plus_amount) = extract_amount(after_plus);
+            let (plus_unit, after_plus_unit) = extract_unit(&after_plus_amount);
+
+            // Only combine if we got BOTH amount AND unit after "plus"
+            if let (Some(p_amt), Some(p_unit)) = (plus_amount, plus_unit) {
+                // Combine into a single compound amount: "1/2 cup plus 2 tablespoons"
+                if let (Some(amt), Some(unit)) = (&primary_amount, &primary_unit) {
+                    primary_amount = Some(format!("{} {} plus {} {}", amt, unit, p_amt, p_unit));
+                    primary_unit = None; // Unit is now embedded in the compound amount
+                    remaining = after_plus_unit;
+                }
+            }
+        }
+    }
 
     // Step 4.5: Handle " or " alternatives in remaining text
     // e.g., remaining = " or 3 heaping cups frozen pineapple"
@@ -863,26 +897,72 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 
     // Step 5.5: Handle " or " alternatives in the MIDDLE of remaining text
-    // e.g., remaining = "fresh dill or 1 teaspoon dried dill"
-    // This handles fresh/dried herb alternatives like "1 tbsp fresh basil or 1 tsp dried basil"
-    // The text before " or " becomes the item, and "or [measurement] [item]" goes into the note
-    // Only apply if note isn't already set
+    // e.g., remaining = "dried Italian seasoning or a combination of 1/4 teaspoon dried oregano..."
+    // The text before " or " becomes the item, and "or ..." goes into the note
+    // Only apply if:
+    // - Note isn't already set
+    // - The text after " or " contains a measurement somewhere (indicating an alternative preparation)
+    // This avoids breaking compound noun phrases like "chicken or vegetable stock"
     if note.is_none() {
         if let Some(or_idx) = remaining.to_lowercase().find(" or ") {
             let before_or = remaining.get(..or_idx).unwrap_or("").trim();
             let after_or = remaining.get(or_idx + 4..).unwrap_or("").trim(); // Skip " or "
 
-            // Try to parse what's after "or" as a measurement
-            let (_or_pre_amount_modifier, after_or_modifier) = strip_measurement_modifier(after_or);
-            let (or_amount, after_or_amount) = extract_amount(&after_or_modifier);
-            let (_or_pre_unit_modifier, after_or_pre_unit) =
-                strip_measurement_modifier(&after_or_amount);
-            let (or_base_unit, _after_or_unit) = extract_unit(&after_or_pre_unit);
+            // Check if after_or contains a measurement pattern (number + unit)
+            // This catches cases like "a combination of 1/4 teaspoon..."
+            // We require BOTH a number AND a unit to be present to avoid false positives
+            // Only check content before the first comma (to avoid "orange or lemon zest, 1 tsp...")
+            // Exclude content in parentheses from the check (e.g., "(I used 5 cups...)")
+            let after_or_lower = after_or.to_lowercase();
+            // Get content before first comma, then remove parentheticals
+            let before_comma = after_or_lower.split(',').next().unwrap_or(&after_or_lower);
+            let without_parens: String = {
+                let mut result = String::new();
+                let mut depth: i32 = 0;
+                for c in before_comma.chars() {
+                    match c {
+                        '(' | '[' => depth += 1,
+                        ')' | ']' => depth = depth.saturating_sub(1),
+                        _ if depth == 0 => result.push(c),
+                        _ => {}
+                    }
+                }
+                result
+            };
+            let unit_patterns = [
+                "teaspoon",
+                "tsp",
+                "tablespoon",
+                "tbsp",
+                "cup",
+                "cups",
+                "ounce",
+                "ounces",
+                "oz",
+                "pound",
+                "pounds",
+                "lb",
+                "lbs",
+                "gram",
+                "grams",
+                "kg",
+                "ml",
+                "liter",
+                "liters",
+                "pinch",
+                "dash",
+                "handful",
+                "bunch",
+            ];
+            let has_unit = without_parens.split_whitespace().any(|word| {
+                unit_patterns
+                    .iter()
+                    .any(|p| word == *p || word.starts_with(p))
+            });
+            let has_number = without_parens.chars().any(|c| c.is_ascii_digit());
+            let contains_measurement = has_unit && has_number;
 
-            // Only treat as alternative if we got BOTH amount AND unit
-            // This avoids false positives like "vanilla or chocolate ice cream"
-            if or_amount.is_some() && or_base_unit.is_some() {
-                // Move the alternative to the note and keep just the item before "or"
+            if !before_or.is_empty() && !after_or.is_empty() && contains_measurement {
                 note = Some(format!("or {}", after_or));
                 remaining = before_or.to_string();
             }

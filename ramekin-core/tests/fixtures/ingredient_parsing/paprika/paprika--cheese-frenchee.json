@@ -63,18 +63,22 @@
     {
       "raw": "1/4 cup plus 2 tablespoons (90 ml) whole milk",
       "expected": {
-        "item": "1/4 cup plus 2 tablespoons (90 ml) whole milk",
+        "item": "whole milk",
         "measurements": [
           {
-            "amount": "1/4",
-            "unit": "cup"
+            "amount": "1/4 cup plus 2 tablespoons",
+            "unit": null
           },
           {
             "amount": "90",
             "unit": "ml"
+          },
+          {
+            "amount": "93",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons whole milk",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

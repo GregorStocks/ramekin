@@ -111,14 +111,14 @@
     {
       "raw": "2 cups plus 2 tablespoons almond flour",
       "expected": {
-        "item": "2 cups plus 2 tablespoons almond flour",
+        "item": "almond flour",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "cup"
+            "amount": "2 cups plus 2 tablespoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 tablespoons almond flour",
+        "note": null,
         "category": "Baking"
       }
     },

@@ -127,14 +127,14 @@
     {
       "raw": "2 tablespoons plus 2 teaspoons of sugar",
       "expected": {
-        "item": "2 tablespoons plus 2 teaspoons of sugar",
+        "item": "sugar",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tbsp"
+            "amount": "2 tablespoons plus 2 teaspoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 teaspoons of sugar",
+        "note": null,
         "category": "Baking"
       }
     },

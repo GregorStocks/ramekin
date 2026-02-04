@@ -27,14 +27,14 @@
     {
       "raw": "1 tablespoon plus 2 teaspoons canola oil, divided",
       "expected": {
-        "item": "1 tablespoon plus 2 teaspoons canola oil, divided",
+        "item": "canola oil",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "tbsp"
+            "amount": "1 tablespoon plus 2 teaspoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 teaspoons canola oil, divided",
+        "note": "divided",
         "category": "Oils & Vinegars"
       }
     },

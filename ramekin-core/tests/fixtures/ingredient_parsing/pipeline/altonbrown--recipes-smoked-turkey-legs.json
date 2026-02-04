@@ -19,14 +19,14 @@
     {
       "raw": "1 1/3 cups plus 1 1/2 teaspoons kosher salt",
       "expected": {
-        "item": "1 1/3 cups plus 1 1/2 teaspoons kosher salt",
+        "item": "kosher salt",
         "measurements": [
           {
-            "amount": "1 1/3",
-            "unit": "cup"
+            "amount": "1 1/3 cups plus 1 1/2 teaspoons",
+            "unit": null
           }
         ],
-        "note": "plus 1 1/2 teaspoons kosher salt",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

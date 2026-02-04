@@ -145,18 +145,18 @@
     {
       "raw": "1/4 cup plus 2 tablespoons (65g) mini chocolate chips",
       "expected": {
-        "item": "1/4 cup plus 2 tablespoons (65g) mini chocolate chips",
+        "item": "mini chocolate chips",
         "measurements": [
           {
-            "amount": "1/4",
-            "unit": "cup"
+            "amount": "1/4 cup plus 2 tablespoons",
+            "unit": null
           },
           {
             "amount": "65",
             "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons mini chocolate chips",
+        "note": null,
         "category": "Baking"
       }
     }

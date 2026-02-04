@@ -183,14 +183,14 @@
     {
       "raw": "¾ tsp. Diamond Crystal or ¼ tsp. plus ⅛ tsp. Morton kosher salt",
       "expected": {
-        "item": "Diamond Crystal or 1/4 tsp.",
+        "item": "Diamond Crystal",
         "measurements": [
           {
             "amount": "3/4",
             "unit": "tsp"
           }
         ],
-        "note": "plus 1/8 tsp. Morton kosher salt",
+        "note": "or 1/4 tsp. plus 1/8 tsp. Morton kosher salt",
         "category": "Other"
       }
     },

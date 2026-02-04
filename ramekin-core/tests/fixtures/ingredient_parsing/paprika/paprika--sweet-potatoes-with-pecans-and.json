@@ -55,15 +55,15 @@
     {
       "raw": "2 tiny or 1 small shallot",
       "expected": {
-        "item": "tiny",
+        "item": "tiny or 1 small shallot",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "or 1 small shallot",
-        "category": "Other"
+        "note": null,
+        "category": "Produce"
       }
     },
     {

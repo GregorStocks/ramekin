@@ -123,14 +123,14 @@
     {
       "raw": "1/2 c. plus 2 tablespoons whole milk",
       "expected": {
-        "item": "1/2 c. plus 2 tablespoons whole milk",
+        "item": "whole milk",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
+            "amount": "1/2 c plus 2 tablespoons",
+            "unit": null
           }
         ],
-        "note": "plus 2 tablespoons whole milk",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

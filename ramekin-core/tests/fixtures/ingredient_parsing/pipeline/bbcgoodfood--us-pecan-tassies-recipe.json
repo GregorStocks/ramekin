@@ -47,14 +47,14 @@
     {
       "raw": "½ cup plus 2 tbsp all-purpose flour plus extra for dusting",
       "expected": {
-        "item": "½ cup plus 2 tbsp all-purpose flour plus extra for dusting",
+        "item": "all-purpose flour plus extra for dusting",
         "measurements": [
           {
-            "amount": "1/2",
-            "unit": "cup"
+            "amount": "1/2 cup plus 2 tbsp",
+            "unit": null
           }
         ],
-        "note": "plus 2 tbsp all-purpose flour plus extra for dusting",
+        "note": null,
         "category": "Baking"
       }
     },

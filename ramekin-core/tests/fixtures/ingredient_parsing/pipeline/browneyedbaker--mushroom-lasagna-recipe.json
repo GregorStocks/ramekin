@@ -222,11 +222,11 @@
     {
       "raw": "¼ cup plus 2 tablespoons minced fresh basil (divided)",
       "expected": {
-        "item": "¼ cup plus 2 tablespoons minced fresh basil (divided)",
+        "item": "minced fresh basil",
         "measurements": [
           {
-            "amount": "1/4",
-            "unit": "cup"
+            "amount": "1/4 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
         "note": "divided",
