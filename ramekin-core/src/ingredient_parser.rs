@@ -5,6 +5,7 @@
 use std::collections::HashMap;
 use std::sync::LazyLock;
 
+use regex::Regex;
 use serde::{Deserialize, Serialize};
 
 /// A single measurement (amount + unit pair)
@@ -473,6 +474,28 @@ fn strip_leading_list_marker(s: &str) -> String {
     remaining.to_string()
 }
 
+/// Insert space between digits and letters that are clearly separate words.
+/// Handles cases like "1finely" → "1 finely" and "450gpowdered" → "450g powdered"
+/// But preserves dimension patterns like "6x6-inch".
+fn normalize_digit_letter_spacing(s: &str) -> String {
+    // Step 1: Handle unit words like "grams" attached to numbers
+    // "450grams" → "450 grams" (insert space before the whole unit word)
+    let re_unit_word = Regex::new(r"(?i)(\d+)(grams?)\b").unwrap();
+    let s = re_unit_word.replace_all(s, "$1 $2");
+
+    // Step 2: Handle "g" metric unit followed by other letters
+    // "450gpowdered" → "450g powdered"
+    let re_metric_g = Regex::new(r"(?i)(\d+g)([a-z])").unwrap();
+    let s = re_metric_g.replace_all(&s, "$1 $2");
+
+    // Step 3: Handle digit(s) followed by 4+ letters (clearly a word)
+    // "1finely" → "1 finely"
+    let re_digit_word = Regex::new(r"(?i)(\d+)([a-z]{4,})").unwrap();
+    let s = re_digit_word.replace_all(&s, "$1 $2");
+
+    s.into_owned()
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -493,6 +516,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let decoded = decode_html_entities(raw);
     let normalized = normalize_unicode(&decoded);
     let normalized = strip_leading_list_marker(&normalized);
+    let normalized = normalize_digit_letter_spacing(&normalized);
     let mut remaining = normalize_word_numbers(&normalized);
     let mut measurements = Vec::new();
     let mut note = None;

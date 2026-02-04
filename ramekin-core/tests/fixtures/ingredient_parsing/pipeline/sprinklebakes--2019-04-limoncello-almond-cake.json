@@ -188,11 +188,15 @@
     {
       "raw": "4 cups 450gpowdered sugar",
       "expected": {
-        "item": "450gpowdered sugar",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
           }
         ],
         "note": null
