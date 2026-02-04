@@ -60,15 +60,10 @@
     {
       "raw": "2 cups cooked, shredded chicken",
       "expected": {
-        "item": "cooked",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "cup"
-          }
-        ],
-        "note": "shredded chicken",
-        "category": "Other"
+        "item": "2 cups cooked, shredded chicken",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

@@ -55,15 +55,10 @@
     {
       "raw": "2 cups roasted (salted peanuts (whole))",
       "expected": {
-        "item": "roasted",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "cup"
-          }
-        ],
-        "note": "salted peanuts (whole",
-        "category": "Meat & Seafood"
+        "item": "2 cups roasted (salted peanuts (whole))",
+        "measurements": [],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

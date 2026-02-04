@@ -54,15 +54,10 @@
     {
       "raw": "1/2 teaspoon finely grated",
       "expected": {
-        "item": "finely grated",
-        "measurements": [
-          {
-            "amount": "1/2",
-            "unit": "tsp"
-          }
-        ],
+        "item": "1/2 teaspoon finely grated",
+        "measurements": [],
         "note": null,
-        "category": "Other"
+        "category": "Beverages"
       }
     },
     {

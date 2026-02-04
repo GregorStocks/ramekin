@@ -116,15 +116,10 @@
     {
       "raw": "1 ½ cups cooked, shredded chicken",
       "expected": {
-        "item": "cooked",
-        "measurements": [
-          {
-            "amount": "1 1/2",
-            "unit": "cup"
-          }
-        ],
-        "note": "shredded chicken",
-        "category": "Other"
+        "item": "1 ½ cups cooked, shredded chicken",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

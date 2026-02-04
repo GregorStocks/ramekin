@@ -1029,6 +1029,19 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
     }
 
+    // If item is only prep words, the parse failed - return raw as item
+    // This handles cases like "2 cups finely chopped, cooked chicken meat" where
+    // the comma causes "finely chopped" to be extracted as the item instead of "chicken meat"
+    if is_only_prep_words(&item) && !item.is_empty() {
+        return ParsedIngredient {
+            item: raw.to_string(),
+            measurements: vec![],
+            note: None,
+            raw: Some(raw.to_string()),
+            section: None,
+        };
+    }
+
     ParsedIngredient {
         item: if item.is_empty() {
             raw.to_string()
@@ -1541,6 +1554,39 @@ fn try_extract_attached_metric(s: &str) -> Option<(Measurement, String)> {
 fn is_prep_note(s: &str) -> bool {
     let s_lower = s.to_lowercase();
     PREP_NOTES.iter().any(|note| s_lower.contains(note))
+}
+
+/// Check if a string consists only of prep words (comma-separated).
+/// e.g., "finely chopped" -> true, "cooked chicken" -> false, "sliced" -> true
+fn is_only_prep_words(s: &str) -> bool {
+    let s_lower = s.to_lowercase();
+
+    // Split by commas and check each part
+    for part in s_lower.split(',') {
+        let part = part.trim();
+        if part.is_empty() {
+            continue;
+        }
+
+        // Check if this part is entirely prep words
+        let words: Vec<&str> = part.split_whitespace().collect();
+        if words.is_empty() {
+            continue;
+        }
+
+        let all_prep = words.iter().all(|word| {
+            PREP_NOTES.iter().any(|note| {
+                // Check if word matches note exactly or note starts with word
+                *word == *note || note.starts_with(&format!("{} ", word))
+            })
+        });
+
+        if !all_prep {
+            return false;
+        }
+    }
+
+    true
 }
 
 /// Normalize a unit string to its canonical form.
@@ -2078,5 +2124,41 @@ mod tests {
             title_case("FOR THE STEAK FAJITA MARINADE"),
             "For the Steak Fajita Marinade"
         );
+    }
+
+    #[test]
+    fn test_is_only_prep_words() {
+        // Single prep words
+        assert!(is_only_prep_words("sliced"));
+        assert!(is_only_prep_words("chopped"));
+        assert!(is_only_prep_words("cooked"));
+        assert!(is_only_prep_words("toasted"));
+        assert!(is_only_prep_words("roasted"));
+
+        // Multiple prep words
+        assert!(is_only_prep_words("finely chopped"));
+        assert!(is_only_prep_words("thinly sliced"));
+
+        // Not only prep words (contains actual ingredient)
+        assert!(!is_only_prep_words("cooked chicken"));
+        assert!(!is_only_prep_words("chicken"));
+        assert!(!is_only_prep_words("sliced onions"));
+
+        // Edge cases
+        assert!(is_only_prep_words("")); // empty returns true (no non-prep words)
+        assert!(!is_only_prep_words("salt"));
+        assert!(!is_only_prep_words("butter"));
+    }
+
+    #[test]
+    fn test_orphaned_prep_word_fallback() {
+        // When the item would be just a prep word, return raw
+        let result = parse_ingredient("sliced");
+        assert_eq!(result.item, "sliced");
+
+        // When comma causes prep word to be extracted as item, return raw
+        let result = parse_ingredient("2 cups finely chopped, cooked chicken meat");
+        assert_eq!(result.item, "2 cups finely chopped, cooked chicken meat");
+        assert!(result.measurements.is_empty());
     }
 }

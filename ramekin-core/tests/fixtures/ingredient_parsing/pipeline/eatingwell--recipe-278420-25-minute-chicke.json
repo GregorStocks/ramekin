@@ -79,45 +79,19 @@
     {
       "raw": "1.5 cups shredded, cooked chicken breast (about 4 1/2 oz.)",
       "expected": {
-        "item": "shredded",
-        "measurements": [
-          {
-            "amount": "1.5",
-            "unit": "cup"
-          },
-          {
-            "amount": "4 1/2",
-            "unit": "oz"
-          },
-          {
-            "amount": "128",
-            "unit": "g"
-          }
-        ],
-        "note": "cooked chicken breast",
-        "category": "Other"
+        "item": "1.5 cups shredded, cooked chicken breast (about 4 1/2 oz.)",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
       "raw": "0.5 cup shredded, cooked chicken thigh (about 1 1/2 oz.)",
       "expected": {
-        "item": "shredded",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          },
-          {
-            "amount": "1 1/2",
-            "unit": "oz"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
-          }
-        ],
-        "note": "cooked chicken thigh",
-        "category": "Other"
+        "item": "0.5 cup shredded, cooked chicken thigh (about 1 1/2 oz.)",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {
