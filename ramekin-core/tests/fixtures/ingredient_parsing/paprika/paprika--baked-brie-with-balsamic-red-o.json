@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Pastry:",
-      "expected": {
-        "item": "Pastry:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup plus 2 tablespoons (10 tablespoons total; 85 grams) all-purpose flour",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "plus 2 tablespoons all-purpose flour",
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": "diced",
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -108,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Other"
       }
     },
@@ -117,6 +118,7 @@
         "item": "Balsamic onions:",
         "measurements": [],
         "note": null,
+        "section": "Pastry",
         "category": "Oils & Vinegars"
       }
     },
@@ -135,6 +137,7 @@
           }
         ],
         "note": "halved and thinly sliced",
+        "section": "Pastry",
         "category": "Produce"
       }
     },
@@ -153,6 +156,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,6 +171,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -181,6 +186,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Pastry",
         "category": "Oils & Vinegars"
       }
     },
@@ -204,6 +211,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },

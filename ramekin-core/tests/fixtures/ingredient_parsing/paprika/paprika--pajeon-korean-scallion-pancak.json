@@ -106,13 +106,7 @@
     },
     {
       "raw": "Pancakes:",
-      "expected": {
-        "item": "Pancakes:",
-        "measurements": [],
-        "note": null,
-        "section": "Sauce",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "10 scallions",
@@ -125,7 +119,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -148,7 +142,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -167,7 +161,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -186,7 +180,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -205,7 +199,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -224,7 +218,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Baking"
       }
     },
@@ -239,7 +233,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -258,7 +252,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,7 +267,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Other"
       }
     },
@@ -288,7 +282,7 @@
           }
         ],
         "note": "minced",
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Produce"
       }
     },
@@ -307,7 +301,7 @@
           }
         ],
         "note": "divided",
-        "section": "Sauce",
+        "section": "Pancakes",
         "category": "Oils & Vinegars"
       }
     }

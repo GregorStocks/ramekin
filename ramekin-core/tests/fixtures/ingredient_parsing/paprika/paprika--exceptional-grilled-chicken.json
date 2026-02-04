@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Brine:",
-      "expected": {
-        "item": "Brine:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 quarts cold water",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Other"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Baking"
       }
     },
@@ -54,17 +51,13 @@
           }
         ],
         "note": null,
+        "section": "Brine",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Chicken:",
-      "expected": {
-        "item": "Chicken:",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 1/2 pounds chicken parts with skin and bones",
@@ -81,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -90,6 +84,7 @@
         "item": "Oil for grill",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     }

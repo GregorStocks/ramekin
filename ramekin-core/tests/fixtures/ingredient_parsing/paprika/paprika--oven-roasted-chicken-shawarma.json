@@ -188,12 +188,7 @@
     },
     {
       "raw": "Sides:",
-      "expected": {
-        "item": "Sides:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Tomatoes",
@@ -201,6 +196,7 @@
         "item": "Tomatoes",
         "measurements": [],
         "note": null,
+        "section": "Sides",
         "category": "Produce"
       }
     },
@@ -210,6 +206,7 @@
         "item": "Cucumbers",
         "measurements": [],
         "note": null,
+        "section": "Sides",
         "category": "Produce"
       }
     },
@@ -219,6 +216,7 @@
         "item": "Pita",
         "measurements": [],
         "note": null,
+        "section": "Sides",
         "category": "Bakery & Bread"
       }
     },
@@ -228,6 +226,7 @@
         "item": "Greek yogurt",
         "measurements": [],
         "note": null,
+        "section": "Sides",
         "category": "Dairy & Eggs"
       }
     },
@@ -237,6 +236,7 @@
         "item": "Feta",
         "measurements": [],
         "note": null,
+        "section": "Sides",
         "category": "Cheese"
       }
     }

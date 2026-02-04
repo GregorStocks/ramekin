@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Meatloaf:",
-      "expected": {
-        "item": "Meatloaf:",
-        "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 medium yellow onion, roughly chopped",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": "roughly chopped",
+        "section": "Meatloaf",
         "category": "Produce"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Bakery & Bread"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Canned Goods"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Canned Goods"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -128,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Condiments & Sauces"
       }
     },
@@ -142,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Dairy & Eggs"
       }
     },
@@ -160,6 +164,7 @@
           }
         ],
         "note": null,
+        "section": "Meatloaf",
         "category": "Meat & Seafood"
       }
     },

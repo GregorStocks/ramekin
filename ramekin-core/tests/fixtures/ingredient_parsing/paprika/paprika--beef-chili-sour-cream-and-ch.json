@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Chili:",
-      "expected": {
-        "item": "Chili:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 large onions, chopped (about 3 cups)",
@@ -30,6 +25,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chili",
         "category": "Produce"
       }
     },
@@ -48,6 +44,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Oils & Vinegars"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Produce"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Produce"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": "ground coarse or 3 pounds ground beef",
+        "section": "Chili",
         "category": "Meat & Seafood"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Spices & Seasonings"
       }
     },
@@ -126,6 +127,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Spices & Seasonings"
       }
     },
@@ -158,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +171,7 @@
         "item": "Dried red pepper flakes",
         "measurements": [],
         "note": "to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)",
+        "section": "Chili",
         "category": "Spices & Seasonings"
       }
     },
@@ -181,6 +186,7 @@
           }
         ],
         "note": "or 2 cups fresh tomato sauce or tomato puree",
+        "section": "Chili",
         "category": "Canned Goods"
       }
     },
@@ -195,6 +201,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Canned Goods"
       }
     },
@@ -209,6 +216,7 @@
           }
         ],
         "note": null,
+        "section": "Chili",
         "category": "Oils & Vinegars"
       }
     },
@@ -223,6 +231,7 @@
           }
         ],
         "note": "rinsed and drained",
+        "section": "Chili",
         "category": "Canned Goods"
       }
     },
@@ -237,6 +246,7 @@
           }
         ],
         "note": "chopped",
+        "section": "Chili",
         "category": "Produce"
       }
     },

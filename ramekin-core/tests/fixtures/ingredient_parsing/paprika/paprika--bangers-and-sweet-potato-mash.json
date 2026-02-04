@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Sausage:",
-      "expected": {
-        "item": "Sausage:",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 lb ground pork",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Meat & Seafood"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,6 +74,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -94,6 +93,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -130,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -144,6 +146,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -158,6 +161,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,6 +171,7 @@
         "item": "Grated zest of 1 lemon",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -176,6 +181,7 @@
         "item": "Sweet potato mash:",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -190,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -208,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Dairy & Eggs"
       }
     },
@@ -222,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Canned Goods"
       }
     },
@@ -231,6 +240,7 @@
         "item": "Caramelized onions:",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -245,6 +255,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -259,6 +270,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -273,6 +285,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     }

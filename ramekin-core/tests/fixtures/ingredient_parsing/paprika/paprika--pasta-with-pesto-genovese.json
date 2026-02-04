@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Pesto:",
-      "expected": {
-        "item": "Pesto:",
-        "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 ounces (55 grams) aged parmesan or pecorino romano",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Pesto",
         "category": "Cheese"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Pesto",
         "category": "Produce"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": null,
+        "section": "Pesto",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -67,6 +65,7 @@
         "item": "Kosher salt and freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Pesto",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,6 +88,7 @@
           }
         ],
         "note": "from approximately a 5-6-ounce bundle with stems",
+        "section": "Pesto",
         "category": "Produce"
       }
     },
@@ -111,6 +111,7 @@
           }
         ],
         "note": "plus more as needed",
+        "section": "Pesto",
         "category": "Oils & Vinegars"
       }
     },

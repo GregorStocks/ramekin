@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Egg:",
-      "expected": {
-        "item": "Egg:",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Corn tortilla",
@@ -17,6 +12,7 @@
         "item": "Corn tortilla",
         "measurements": [],
         "note": null,
+        "section": "Egg",
         "category": "Bakery & Bread"
       }
     },
@@ -26,6 +22,7 @@
         "item": "Mexican cheese",
         "measurements": [],
         "note": null,
+        "section": "Egg",
         "category": "Cheese"
       }
     },
@@ -40,6 +37,7 @@
           }
         ],
         "note": null,
+        "section": "Egg",
         "category": "Dairy & Eggs"
       }
     },

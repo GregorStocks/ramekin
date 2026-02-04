@@ -191,13 +191,7 @@
     },
     {
       "raw": "Pasta:",
-      "expected": {
-        "item": "Pasta:",
-        "measurements": [],
-        "note": null,
-        "section": "Bolognese Sauce",
-        "category": "Pasta & Rice"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups all-purpose flour",
@@ -214,7 +208,7 @@
           }
         ],
         "note": null,
-        "section": "Bolognese Sauce",
+        "section": "Pasta",
         "category": "Baking"
       }
     },
@@ -229,7 +223,7 @@
           }
         ],
         "note": null,
-        "section": "Bolognese Sauce",
+        "section": "Pasta",
         "category": "Dairy & Eggs"
       }
     },
@@ -244,7 +238,7 @@
           }
         ],
         "note": null,
-        "section": "Bolognese Sauce",
+        "section": "Pasta",
         "category": "Spices & Seasonings"
       }
     },
@@ -259,7 +253,7 @@
           }
         ],
         "note": null,
-        "section": "Bolognese Sauce",
+        "section": "Pasta",
         "category": "Other"
       }
     },

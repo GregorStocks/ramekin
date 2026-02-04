@@ -95,12 +95,7 @@
     },
     {
       "raw": "Eggs:",
-      "expected": {
-        "item": "Eggs:",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 large eggs",
@@ -113,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Eggs",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Eggs",
         "category": "Cheese"
       }
     },

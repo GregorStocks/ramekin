@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Chickpeas:",
-      "expected": {
-        "item": "Chickpeas:",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound dried chickpeas (garbanzo beans) or 4 15-ounce cans cooked chickpeas",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Oils & Vinegars"
       }
     },
@@ -58,6 +55,7 @@
           }
         ],
         "note": "halved and thinly sliced",
+        "section": "Chickpeas",
         "category": "Produce"
       }
     },
@@ -72,6 +70,7 @@
           }
         ],
         "note": "peeled and minced",
+        "section": "Chickpeas",
         "category": "Produce"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -128,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Condiments & Sauces"
       }
     },
@@ -137,6 +140,7 @@
         "item": "Few gratings fresh lemon zest",
         "measurements": [],
         "note": null,
+        "section": "Chickpeas",
         "category": "Produce"
       }
     },
@@ -151,6 +155,7 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,6 +170,7 @@
           }
         ],
         "note": "for dried but soaked chickpeas",
+        "section": "Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -179,17 +185,13 @@
           }
         ],
         "note": null,
+        "section": "Chickpeas",
         "category": "Other"
       }
     },
     {
       "raw": "Fixings:",
-      "expected": {
-        "item": "Fixings:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Fresh pitas for pita chips",
@@ -197,6 +199,7 @@
         "item": "Fresh pitas for pita chips",
         "measurements": [],
         "note": null,
+        "section": "Fixings",
         "category": "Snacks"
       }
     },
@@ -206,6 +209,7 @@
         "item": "Big handful of parsley (or a mix of parsley, cilantro and mint would be good too)",
         "measurements": [],
         "note": null,
+        "section": "Fixings",
         "category": "Produce"
       }
     },
@@ -220,6 +224,7 @@
           }
         ],
         "note": null,
+        "section": "Fixings",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -229,6 +234,7 @@
         "item": "Tomato-cucumber “relish” salad",
         "measurements": [],
         "note": null,
+        "section": "Fixings",
         "category": "Produce"
       }
     },
@@ -238,6 +244,7 @@
         "item": "Lemon-tahini yogurt or plain yogurt",
         "measurements": [],
         "note": null,
+        "section": "Fixings",
         "category": "Condiments & Sauces"
       }
     },
@@ -247,6 +254,7 @@
         "item": "Additional paprika or sumac for sprinkling",
         "measurements": [],
         "note": null,
+        "section": "Fixings",
         "category": "Spices & Seasonings"
       }
     }

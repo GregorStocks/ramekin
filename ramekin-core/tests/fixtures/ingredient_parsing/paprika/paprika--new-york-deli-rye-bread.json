@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Sponge:",
-      "expected": {
-        "item": "Sponge:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3/4 cup (4 ounces, 117 grams) bread flour",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -52,6 +48,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -70,6 +67,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -92,6 +90,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -110,6 +109,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -132,6 +132,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Sponge",
         "category": "Other"
       }
     },
@@ -141,6 +142,7 @@
         "item": "Flour Mixture:",
         "measurements": [],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -163,6 +165,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -181,6 +184,7 @@
           }
         ],
         "note": "plus 1/8 teaspoon instant yeast",
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -203,6 +207,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Spices & Seasonings"
       }
     },
@@ -225,6 +230,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Spices & Seasonings"
       }
     },
@@ -234,6 +240,7 @@
         "item": "Dough and Baking",
         "measurements": [],
         "note": null,
+        "section": "Sponge",
         "category": "Other"
       }
     },
@@ -256,6 +263,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Oils & Vinegars"
       }
     },
@@ -274,6 +282,7 @@
           }
         ],
         "note": null,
+        "section": "Sponge",
         "category": "Baking"
       }
     }

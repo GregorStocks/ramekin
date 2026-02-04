@@ -131,13 +131,7 @@
     },
     {
       "raw": "Wraps:",
-      "expected": {
-        "item": "Wraps:",
-        "measurements": [],
-        "note": null,
-        "section": "Caesar Dressing",
-        "category": "Bakery & Bread"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 large tortillas",
@@ -150,7 +144,7 @@
           }
         ],
         "note": null,
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Bakery & Bread"
       }
     },
@@ -165,7 +159,7 @@
           }
         ],
         "note": null,
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Produce"
       }
     },
@@ -180,7 +174,7 @@
           }
         ],
         "note": "diced",
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Produce"
       }
     },
@@ -195,7 +189,7 @@
           }
         ],
         "note": null,
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Produce"
       }
     },
@@ -210,7 +204,7 @@
           }
         ],
         "note": null,
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Spices & Seasonings"
       }
     },
@@ -225,7 +219,7 @@
           }
         ],
         "note": "cubed or shredded",
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Meat & Seafood"
       }
     },
@@ -240,7 +234,7 @@
           }
         ],
         "note": "crumbled",
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Meat & Seafood"
       }
     },
@@ -255,7 +249,7 @@
           }
         ],
         "note": null,
-        "section": "Caesar Dressing",
+        "section": "Wraps",
         "category": "Cheese"
       }
     }
