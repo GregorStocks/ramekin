@@ -4,11 +4,7 @@
   "ingredients": [
     {
       "raw": "MEATBALLS",
-      "expected": {
-        "item": "MEATBALLS",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -20,7 +16,8 @@
             "unit": "large"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -37,7 +34,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -50,7 +48,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -63,7 +62,8 @@
             "unit": null
           }
         ],
-        "note": "minced"
+        "note": "minced",
+        "section": "Meatballs"
       }
     },
     {
@@ -80,7 +80,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -93,7 +94,8 @@
             "unit": "tsp"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -101,7 +103,8 @@
       "expected": {
         "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -118,7 +121,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
@@ -135,16 +139,13 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Meatballs"
       }
     },
     {
       "raw": "INGREDIENT SECTION",
-      "expected": {
-        "item": "INGREDIENT SECTION",
-        "measurements": [],
-        "note": null
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 ounces (170 grams) soup noodles of your choice (I choose these)",
@@ -160,7 +161,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ingredient Section"
       }
     },
     {
@@ -181,7 +183,8 @@
             "unit": "g"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ingredient Section"
       }
     },
     {
@@ -194,7 +197,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ingredient Section"
       }
     },
     {
@@ -207,7 +211,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ingredient Section"
       }
     },
     {
@@ -220,7 +225,8 @@
             "unit": "cup"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ingredient Section"
       }
     },
     {
@@ -237,7 +243,8 @@
             "unit": "ml"
           }
         ],
-        "note": null
+        "note": null,
+        "section": "Ingredient Section"
       }
     },
     {
@@ -245,7 +252,8 @@
       "expected": {
         "item": "Minced parsley and/or dill to finish",
         "measurements": [],
-        "note": null
+        "note": null,
+        "section": "Ingredient Section"
       }
     }
   ]
