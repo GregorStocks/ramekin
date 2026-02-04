@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Meatballs:",
-      "expected": {
-        "item": "Meatballs:",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 pounds ground pork",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Meat & Seafood"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Dairy & Eggs"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Bakery & Bread"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": "minced",
+        "section": "Meatballs",
         "category": "Produce"
       }
     },
@@ -96,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Condiments & Sauces"
       }
     },
@@ -110,17 +111,13 @@
           }
         ],
         "note": null,
+        "section": "Meatballs",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Broth:",
-      "expected": {
-        "item": "Broth:",
-        "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
-      }
+      "is_section_header": true
     },
     {
       "raw": "One 13.5-oz can unsweetened coconut milk",
@@ -133,6 +130,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Canned Goods"
       }
     },
@@ -147,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Meat & Seafood"
       }
     },
@@ -161,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -175,6 +175,7 @@
           }
         ],
         "note": "thinly sliced",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -189,6 +190,7 @@
           }
         ],
         "note": "plus extra for serving",
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -198,6 +200,7 @@
         "item": "Finely grated zest and juice of 1/2 lime",
         "measurements": [],
         "note": null,
+        "section": "Broth",
         "category": "Beverages"
       }
     },
@@ -212,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -230,6 +234,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -248,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Broth",
         "category": "Baking"
       }
     },
@@ -257,6 +263,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -266,6 +273,7 @@
         "item": "A few handfuls of baby spinach",
         "measurements": [],
         "note": null,
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -275,6 +283,7 @@
         "item": "To serve:",
         "measurements": [],
         "note": null,
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -284,6 +293,7 @@
         "item": "Steamed jasmine rice",
         "measurements": [],
         "note": null,
+        "section": "Broth",
         "category": "Pasta & Rice"
       }
     }

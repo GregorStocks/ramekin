@@ -87,13 +87,7 @@
     },
     {
       "raw": "Broth:",
-      "expected": {
-        "item": "Broth:",
-        "measurements": [],
-        "note": null,
-        "section": "Dipping Sauce",
-        "category": "Canned Goods"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 1/2 cups distilled white vinegar",
@@ -106,7 +100,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Oils & Vinegars"
       }
     },
@@ -121,7 +115,7 @@
           }
         ],
         "note": "finely minced",
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Produce"
       }
     },
@@ -136,7 +130,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Other"
       }
     },
@@ -151,7 +145,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -170,7 +164,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Baking"
       }
     },
@@ -185,7 +179,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Condiments & Sauces"
       }
     },
@@ -204,7 +198,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
@@ -219,19 +213,13 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Broth",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Chicken:",
-      "expected": {
-        "item": "Chicken:",
-        "measurements": [],
-        "note": null,
-        "section": "Dipping Sauce",
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 pounds chicken pieces with skin, thighs and/or drumsticks, plus wings if desired (do not use breasts)",
@@ -248,7 +236,7 @@
           }
         ],
         "note": "plus wings if desired (do not use breasts)",
-        "section": "Dipping Sauce",
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -258,7 +246,7 @@
         "item": "Salt",
         "measurements": [],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -277,7 +265,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Chicken",
         "category": "Dairy & Eggs"
       }
     },
@@ -296,7 +284,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Chicken",
         "category": "Baking"
       }
     },
@@ -315,7 +303,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -330,7 +318,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -340,7 +328,7 @@
         "item": "About 8 cups peanut oil",
         "measurements": [],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     }

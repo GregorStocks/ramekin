@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Lamb:",
-      "expected": {
-        "item": "Lamb:",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "9 cloves garlic, peeled",
@@ -22,6 +17,7 @@
           }
         ],
         "note": "peeled",
+        "section": "Lamb",
         "category": "Produce"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": "shank end chopped off by the butcher",
+        "section": "Lamb",
         "category": "Meat & Seafood"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Canned Goods"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Spices & Seasonings"
       }
     },
@@ -78,6 +77,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Condiments & Sauces"
       }
     },
@@ -92,6 +92,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Produce"
       }
     },
@@ -106,6 +107,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Spices & Seasonings"
       }
     },
@@ -124,6 +126,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Baking"
       }
     },
@@ -138,6 +141,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Spices & Seasonings"
       }
     },
@@ -147,6 +151,7 @@
         "item": "White beans:",
         "measurements": [],
         "note": null,
+        "section": "Lamb",
         "category": "Canned Goods"
       }
     },
@@ -161,6 +166,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Meat & Seafood"
       }
     },
@@ -175,6 +181,7 @@
           }
         ],
         "note": "diced",
+        "section": "Lamb",
         "category": "Produce"
       }
     },
@@ -189,6 +196,7 @@
           }
         ],
         "note": "minced",
+        "section": "Lamb",
         "category": "Produce"
       }
     },
@@ -203,6 +211,7 @@
           }
         ],
         "note": "drained and rinsed",
+        "section": "Lamb",
         "category": "Canned Goods"
       }
     },
@@ -217,6 +226,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Canned Goods"
       }
     },
@@ -231,6 +241,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Condiments & Sauces"
       }
     },
@@ -245,6 +256,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Spices & Seasonings"
       }
     },
@@ -259,6 +271,7 @@
           }
         ],
         "note": null,
+        "section": "Lamb",
         "category": "Spices & Seasonings"
       }
     }

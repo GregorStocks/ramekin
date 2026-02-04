@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Salmon:",
-      "expected": {
-        "item": "Salmon:",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 salmon fillets (5oz each), skin removed",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Meat & Seafood"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Spices & Seasonings"
       }
     },
@@ -68,17 +66,13 @@
           }
         ],
         "note": null,
+        "section": "Salmon",
         "category": "Other"
       }
     },
     {
       "raw": "Eggs:",
-      "expected": {
-        "item": "Eggs:",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 large eggs",
@@ -91,17 +85,13 @@
           }
         ],
         "note": null,
+        "section": "Eggs",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Hollandaise:",
-      "expected": {
-        "item": "Hollandaise:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "6 tbsp unsalted butter",
@@ -118,6 +108,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise",
         "category": "Dairy & Eggs"
       }
     },
@@ -132,6 +123,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise",
         "category": "Dairy & Eggs"
       }
     },
@@ -150,6 +142,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise",
         "category": "Beverages"
       }
     },
@@ -164,6 +157,7 @@
           }
         ],
         "note": null,
+        "section": "Hollandaise",
         "category": "Spices & Seasonings"
       }
     },
@@ -178,6 +172,7 @@
           }
         ],
         "note": "optional",
+        "section": "Hollandaise",
         "category": "Spices & Seasonings"
       }
     },

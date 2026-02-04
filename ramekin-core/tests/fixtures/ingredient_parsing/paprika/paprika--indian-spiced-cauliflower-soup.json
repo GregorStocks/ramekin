@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Soup:",
-      "expected": {
-        "item": "Soup:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 tablespoons olive or peanut oil",
@@ -22,6 +17,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -36,6 +32,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,6 +47,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -64,6 +62,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": "peeled and chopped",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -128,6 +130,7 @@
           }
         ],
         "note": "more or less to taste",
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -142,6 +145,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -156,6 +160,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -174,6 +179,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -188,6 +194,7 @@
           }
         ],
         "note": "to taste",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -197,6 +204,7 @@
         "item": "About 3 1/2 cups cauliflower florets (from about 1/2 a large 2.75-pound head)",
         "measurements": [],
         "note": null,
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -211,6 +219,7 @@
           }
         ],
         "note": "peeled and chopped or 1 1/2 cups canned chopped tomatoes",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -225,6 +234,7 @@
           }
         ],
         "note": "or to taste (we wanted more)",
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },

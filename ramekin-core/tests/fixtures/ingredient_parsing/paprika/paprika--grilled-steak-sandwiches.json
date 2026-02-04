@@ -86,13 +86,7 @@
     },
     {
       "raw": "Steak:",
-      "expected": {
-        "item": "Steak:",
-        "measurements": [],
-        "note": null,
-        "section": "Blue Cheese Sauce",
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 (1-pound) skirt steak, cut crosswise into 4 equal pieces and trimmed",
@@ -109,7 +103,7 @@
           }
         ],
         "note": "cut crosswise into 4 equal pieces and trimmed",
-        "section": "Blue Cheese Sauce",
+        "section": "Steak",
         "category": "Meat & Seafood"
       }
     },
@@ -128,7 +122,7 @@
           }
         ],
         "note": null,
-        "section": "Blue Cheese Sauce",
+        "section": "Steak",
         "category": "Oils & Vinegars"
       }
     },

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Dough:",
-      "expected": {
-        "item": "Dough:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 cups (375 grams) all-purpose flour (bread flour works too)",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": "or 1/2 teaspoon active dry yeast (for Overnight, All-Day, or Part-Day Schedules respectively)",
+        "section": "Dough",
         "category": "Other"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -72,17 +70,13 @@
           }
         ],
         "note": "plus an additional tablespoon or two if needed (updated)",
+        "section": "Dough",
         "category": "Other"
       }
     },
     {
       "raw": "Pizza:",
-      "expected": {
-        "item": "Pizza:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 12-inch round or 9×13 rectangular pizza doughs",
@@ -95,6 +89,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Other"
       }
     },
@@ -109,6 +104,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Produce"
       }
     },
@@ -123,6 +119,7 @@
           }
         ],
         "note": "minced",
+        "section": "Pizza",
         "category": "Produce"
       }
     },
@@ -137,6 +134,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Spices & Seasonings"
       }
     },
@@ -146,6 +144,7 @@
         "item": "Red pepper flakes",
         "measurements": [],
         "note": "to taste",
+        "section": "Pizza",
         "category": "Spices & Seasonings"
       }
     },
@@ -160,6 +159,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Baking"
       }
     },
@@ -178,6 +178,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Cheese"
       }
     },
@@ -192,6 +193,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Cheese"
       }
     },
@@ -206,6 +208,7 @@
           }
         ],
         "note": null,
+        "section": "Pizza",
         "category": "Oils & Vinegars"
       }
     },
@@ -215,6 +218,7 @@
         "item": "Few leaves of fresh basil",
         "measurements": [],
         "note": "torn or sliced",
+        "section": "Pizza",
         "category": "Produce"
       }
     }

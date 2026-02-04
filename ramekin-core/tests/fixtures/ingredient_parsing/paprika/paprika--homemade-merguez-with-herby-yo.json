@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Sausage:",
-      "expected": {
-        "item": "Sausage:",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Kosher salt",
@@ -17,6 +12,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -31,6 +27,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -45,6 +42,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,6 +57,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -73,6 +72,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,6 +87,7 @@
           }
         ],
         "note": "minced",
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -101,6 +102,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,6 +121,7 @@
           }
         ],
         "note": "at room temperature",
+        "section": "Sausage",
         "category": "Meat & Seafood"
       }
     },
@@ -128,6 +131,7 @@
         "item": "Herby yogurt:",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Dairy & Eggs"
       }
     },
@@ -146,6 +150,7 @@
           }
         ],
         "note": null,
+        "section": "Sausage",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,6 +160,7 @@
         "item": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof)",
         "measurements": [],
         "note": "plus a few roughly chopped, to serve",
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -169,6 +175,7 @@
           }
         ],
         "note": "or more to taste",
+        "section": "Sausage",
         "category": "Oils & Vinegars"
       }
     },
@@ -178,6 +185,7 @@
         "item": "Kosher salt",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,6 +195,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Oils & Vinegars"
       }
     },
@@ -196,6 +205,7 @@
         "item": "A handful shredded red cabbage to serve",
         "measurements": [],
         "note": "optional",
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -205,6 +215,7 @@
         "item": "Lemon wedges, to serve",
         "measurements": [],
         "note": null,
+        "section": "Sausage",
         "category": "Produce"
       }
     }

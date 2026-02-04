@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Soup:",
-      "expected": {
-        "item": "Soup:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "5 pounds bone-in, skin-on chicken thighs",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Meat & Seafood"
       }
     },
@@ -35,6 +31,7 @@
         "item": "Table salt and ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
@@ -53,6 +50,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Oils & Vinegars"
       }
     },
@@ -75,6 +73,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -89,6 +88,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -103,6 +103,7 @@
           }
         ],
         "note": "minced",
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -117,6 +118,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Baking"
       }
     },
@@ -131,6 +133,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Beverages"
       }
     },
@@ -145,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Canned Goods"
       }
     },
@@ -163,6 +167,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Dairy & Eggs"
       }
     },
@@ -177,6 +182,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Produce"
       }
     },
@@ -191,6 +197,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Other"
       }
     },
@@ -205,6 +212,7 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Frozen"
       }
     },
@@ -219,17 +227,13 @@
           }
         ],
         "note": null,
+        "section": "Soup",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Dumplings:",
-      "expected": {
-        "item": "Dumplings:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups unbleached all-purpose flour",
@@ -242,6 +246,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Baking"
       }
     },
@@ -260,6 +265,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Baking"
       }
     },
@@ -278,6 +284,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Spices & Seasonings"
       }
     },
@@ -296,6 +303,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Dairy & Eggs"
       }
     },
@@ -310,6 +318,7 @@
           }
         ],
         "note": null,
+        "section": "Dumplings",
         "category": "Meat & Seafood"
       }
     }

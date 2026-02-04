@@ -1669,6 +1669,12 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
         }
     }
 
+    // Pattern 5: Single-word headers ending with colon (e.g., "Dough:", "Brine:", "Chicken:")
+    // Must be a single word (no spaces), reasonable length, no digits
+    if !name.contains(' ') && name.len() <= 20 && !name.chars().any(|c| c.is_ascii_digit()) {
+        return Some(normalize_section_name(name));
+    }
+
     None
 }
 
@@ -1827,6 +1833,26 @@ mod tests {
         assert_eq!(
             detect_section_header("For serving:"),
             Some("For Serving".to_string())
+        );
+    }
+
+    #[test]
+    fn test_detect_section_header_single_word() {
+        // Single-word headers ending with colon should be detected
+        assert_eq!(detect_section_header("Dough:"), Some("Dough".to_string()));
+        assert_eq!(detect_section_header("Brine:"), Some("Brine".to_string()));
+        assert_eq!(
+            detect_section_header("Chicken:"),
+            Some("Chicken".to_string())
+        );
+        assert_eq!(detect_section_header("Eggs:"), Some("Eggs".to_string()));
+        assert_eq!(
+            detect_section_header("Caramel:"),
+            Some("Caramel".to_string())
+        );
+        assert_eq!(
+            detect_section_header("Meatballs:"),
+            Some("Meatballs".to_string())
         );
     }
 

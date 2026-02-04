@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Dough:",
-      "expected": {
-        "item": "Dough:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3 cups (15 ounces/425 grams) all-purpose flour",
@@ -30,6 +25,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Other"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Spices & Seasonings"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Dough",
         "category": "Oils & Vinegars"
       }
     },
@@ -261,13 +262,7 @@
     },
     {
       "raw": "Pizza:",
-      "expected": {
-        "item": "Pizza:",
-        "measurements": [],
-        "note": null,
-        "section": "Sauce",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 ounce (28 grams) Parmesan cheese, grated (½ cup), plus extra for sprinkling",
@@ -288,7 +283,7 @@
           }
         ],
         "note": "plus extra for sprinkling",
-        "section": "Sauce",
+        "section": "Pizza",
         "category": "Cheese"
       }
     },
@@ -311,7 +306,7 @@
           }
         ],
         "note": "shredded",
-        "section": "Sauce",
+        "section": "Pizza",
         "category": "Cheese"
       }
     },
@@ -330,7 +325,7 @@
           }
         ],
         "note": null,
-        "section": "Sauce",
+        "section": "Pizza",
         "category": "Meat & Seafood"
       }
     }

@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Chicken:",
-      "expected": {
-        "item": "Chicken:",
-        "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 tablespoon olive oil",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Oils & Vinegars"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Beverages"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": "minced",
+        "section": "Chicken",
         "category": "Produce"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -86,6 +85,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -100,6 +100,7 @@
           }
         ],
         "note": "plus more to taste",
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,6 +115,7 @@
           }
         ],
         "note": "crumbled",
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,6 +125,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
+        "section": "Chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,6 +148,7 @@
           }
         ],
         "note": null,
+        "section": "Chicken",
         "category": "Meat & Seafood"
       }
     },

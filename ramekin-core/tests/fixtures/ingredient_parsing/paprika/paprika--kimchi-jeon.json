@@ -87,13 +87,7 @@
     },
     {
       "raw": "Pancake:",
-      "expected": {
-        "item": "Pancake:",
-        "measurements": [],
-        "note": null,
-        "section": "Dipping Sauce",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "¼ cup (1¼ ounces/35 grams) all-purpose flour",
@@ -114,7 +108,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Pancake",
         "category": "Baking"
       }
     },
@@ -129,7 +123,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Pancake",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,7 +138,7 @@
           }
         ],
         "note": "chopped coarse",
-        "section": "Dipping Sauce",
+        "section": "Pancake",
         "category": "Produce"
       }
     },
@@ -159,7 +153,7 @@
           }
         ],
         "note": null,
-        "section": "Dipping Sauce",
+        "section": "Pancake",
         "category": "Produce"
       }
     },
@@ -178,7 +172,7 @@
           }
         ],
         "note": "divided",
-        "section": "Dipping Sauce",
+        "section": "Pancake",
         "category": "Oils & Vinegars"
       }
     }

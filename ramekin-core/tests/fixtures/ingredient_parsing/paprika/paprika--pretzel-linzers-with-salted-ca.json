@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Cookies:",
-      "expected": {
-        "item": "Cookies:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "3½ cups (155 grams) small pretzel twists",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Bakery & Bread"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Baking"
       }
     },
@@ -112,6 +112,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Spices & Seasonings"
       }
     },
@@ -130,6 +131,7 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,17 +146,13 @@
           }
         ],
         "note": null,
+        "section": "Cookies",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Caramel:",
-      "expected": {
-        "item": "Caramel:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "½ cup heavy cream",
@@ -171,6 +169,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,6 +188,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Dairy & Eggs"
       }
     },
@@ -203,6 +203,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,6 +222,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -235,6 +237,7 @@
           }
         ],
         "note": null,
+        "section": "Caramel",
         "category": "Baking"
       }
     },
@@ -244,6 +247,7 @@
         "item": "Powdered sugar",
         "measurements": [],
         "note": "for serving",
+        "section": "Caramel",
         "category": "Baking"
       }
     }
