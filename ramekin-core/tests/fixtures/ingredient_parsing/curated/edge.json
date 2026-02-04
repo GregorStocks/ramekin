@@ -500,6 +500,34 @@
       }
     },
     {
+      "name": "mixed_number_range",
+      "raw": "2 1/2 - 4 1/2 cups flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "2 1/2-4 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
+      "name": "mixed_number_range_to_whole",
+      "raw": "2 1/2 - 3 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2 1/2-3",
+            "unit": "cup"
+          }
+        ],
+        "note": null
+      }
+    },
+    {
       "name": "word_number",
       "raw": "One teaspoon of baking powder",
       "expected": {

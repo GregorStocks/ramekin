@@ -211,11 +211,11 @@
     {
       "raw": "4 1/2 - 5 cups confectioners sugar (or more if needed)",
       "expected": {
-        "item": "- 5 cups confectioners sugar",
+        "item": "confectioners sugar",
         "measurements": [
           {
-            "amount": "4 1/2",
-            "unit": null
+            "amount": "4 1/2-5",
+            "unit": "cup"
           }
         ],
         "note": "or more if needed"

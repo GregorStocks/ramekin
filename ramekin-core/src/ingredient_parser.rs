@@ -1038,6 +1038,25 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
         let first = words[0];
         let second = words[1];
 
+        // Check for mixed number range first: "2 1/2 - 4 1/2" or "2 1/2 - 3"
+        // Pattern: digit, fraction, "-", digit (optionally followed by fraction)
+        if words.len() >= 4
+            && first.chars().all(|c| c.is_ascii_digit())
+            && is_fraction(second)
+            && words[2] == "-"
+            && is_amount_like(words[3])
+        {
+            // Could be "2 1/2 - 4 1/2" (5+ words) or "2 1/2 - 3" (4+ words)
+            let (second_amount, remaining_start) = if words.len() >= 5 && is_fraction(words[4]) {
+                (format!("{} {}", words[3], words[4]), 5)
+            } else {
+                (words[3].to_string(), 4)
+            };
+            let amount = format!("{} {}-{}", first, second, second_amount);
+            let remaining = words[remaining_start..].join(" ");
+            return (Some(amount), remaining);
+        }
+
         // Check if first is a whole number and second is a fraction
         if first.chars().all(|c| c.is_ascii_digit()) && is_fraction(second) {
             let amount = format!("{} {}", first, second);

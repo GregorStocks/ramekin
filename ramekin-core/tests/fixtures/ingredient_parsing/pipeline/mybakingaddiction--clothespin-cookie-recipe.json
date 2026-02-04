@@ -154,11 +154,11 @@
     {
       "raw": "1 ½ - 2 ½ tablespoons cream or milk",
       "expected": {
-        "item": "- 2 1/2 tablespoons cream or milk",
+        "item": "cream or milk",
         "measurements": [
           {
-            "amount": "1 1/2",
-            "unit": null
+            "amount": "1 1/2-2 1/2",
+            "unit": "tbsp"
           }
         ],
         "note": null
