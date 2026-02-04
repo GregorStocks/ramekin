@@ -41,9 +41,9 @@
     {
       "raw": "Zest of 1 large lime or 2 small limes",
       "expected": {
-        "item": "Zest of 1 large lime",
+        "item": "Zest of 1 large lime or 2 small limes",
         "measurements": [],
-        "note": "or 2 small limes",
+        "note": null,
         "category": "Produce"
       }
     },

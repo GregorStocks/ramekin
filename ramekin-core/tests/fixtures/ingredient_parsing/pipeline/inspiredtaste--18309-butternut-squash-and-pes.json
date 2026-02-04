@@ -5,7 +5,7 @@
     {
       "raw": "1 (13.8 ounce) can Pillsbury Artisan Crust with Wholegrain or substitute 12 ounces of refrigerated pizza dough",
       "expected": {
-        "item": "Pillsbury Artisan Crust with Wholegrain or substitute 12 ounces of refrigerated pizza dough",
+        "item": "Pillsbury Artisan Crust with Wholegrain",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or substitute 12 ounces of refrigerated pizza dough",
         "category": "Pasta & Rice"
       }
     },

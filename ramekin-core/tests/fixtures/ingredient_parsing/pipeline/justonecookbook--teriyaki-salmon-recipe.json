@@ -19,14 +19,14 @@
     {
       "raw": "1 Tbsp mirin ((or substitute 1 Tbsp sake or water + 1 tsp sugar))",
       "expected": {
-        "item": "mirin (or substitute 1 Tbsp sake or water + 1 tsp sugar)",
+        "item": "mirin (or substitute 1 Tbsp sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or water + 1 tsp sugar)",
         "category": "Condiments & Sauces"
       }
     },

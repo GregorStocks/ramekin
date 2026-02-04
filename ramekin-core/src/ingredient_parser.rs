@@ -897,26 +897,72 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 
     // Step 5.5: Handle " or " alternatives in the MIDDLE of remaining text
-    // e.g., remaining = "fresh dill or 1 teaspoon dried dill"
-    // This handles fresh/dried herb alternatives like "1 tbsp fresh basil or 1 tsp dried basil"
-    // The text before " or " becomes the item, and "or [measurement] [item]" goes into the note
-    // Only apply if note isn't already set
+    // e.g., remaining = "dried Italian seasoning or a combination of 1/4 teaspoon dried oregano..."
+    // The text before " or " becomes the item, and "or ..." goes into the note
+    // Only apply if:
+    // - Note isn't already set
+    // - The text after " or " contains a measurement somewhere (indicating an alternative preparation)
+    // This avoids breaking compound noun phrases like "chicken or vegetable stock"
     if note.is_none() {
         if let Some(or_idx) = remaining.to_lowercase().find(" or ") {
             let before_or = remaining.get(..or_idx).unwrap_or("").trim();
             let after_or = remaining.get(or_idx + 4..).unwrap_or("").trim(); // Skip " or "
 
-            // Try to parse what's after "or" as a measurement
-            let (_or_pre_amount_modifier, after_or_modifier) = strip_measurement_modifier(after_or);
-            let (or_amount, after_or_amount) = extract_amount(&after_or_modifier);
-            let (_or_pre_unit_modifier, after_or_pre_unit) =
-                strip_measurement_modifier(&after_or_amount);
-            let (or_base_unit, _after_or_unit) = extract_unit(&after_or_pre_unit);
+            // Check if after_or contains a measurement pattern (number + unit)
+            // This catches cases like "a combination of 1/4 teaspoon..."
+            // We require BOTH a number AND a unit to be present to avoid false positives
+            // Only check content before the first comma (to avoid "orange or lemon zest, 1 tsp...")
+            // Exclude content in parentheses from the check (e.g., "(I used 5 cups...)")
+            let after_or_lower = after_or.to_lowercase();
+            // Get content before first comma, then remove parentheticals
+            let before_comma = after_or_lower.split(',').next().unwrap_or(&after_or_lower);
+            let without_parens: String = {
+                let mut result = String::new();
+                let mut depth: i32 = 0;
+                for c in before_comma.chars() {
+                    match c {
+                        '(' | '[' => depth += 1,
+                        ')' | ']' => depth = depth.saturating_sub(1),
+                        _ if depth == 0 => result.push(c),
+                        _ => {}
+                    }
+                }
+                result
+            };
+            let unit_patterns = [
+                "teaspoon",
+                "tsp",
+                "tablespoon",
+                "tbsp",
+                "cup",
+                "cups",
+                "ounce",
+                "ounces",
+                "oz",
+                "pound",
+                "pounds",
+                "lb",
+                "lbs",
+                "gram",
+                "grams",
+                "kg",
+                "ml",
+                "liter",
+                "liters",
+                "pinch",
+                "dash",
+                "handful",
+                "bunch",
+            ];
+            let has_unit = without_parens.split_whitespace().any(|word| {
+                unit_patterns
+                    .iter()
+                    .any(|p| word == *p || word.starts_with(p))
+            });
+            let has_number = without_parens.chars().any(|c| c.is_ascii_digit());
+            let contains_measurement = has_unit && has_number;
 
-            // Only treat as alternative if we got BOTH amount AND unit
-            // This avoids false positives like "vanilla or chocolate ice cream"
-            if or_amount.is_some() && or_base_unit.is_some() {
-                // Move the alternative to the note and keep just the item before "or"
+            if !before_or.is_empty() && !after_or.is_empty() && contains_measurement {
                 note = Some(format!("or {}", after_or));
                 remaining = before_or.to_string();
             }

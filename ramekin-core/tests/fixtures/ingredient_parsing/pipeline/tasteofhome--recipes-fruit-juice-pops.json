@@ -83,7 +83,7 @@
     {
       "raw": "30 freezer pop molds or 20 paper cups (3 ounces each) and wooden pop sticks",
       "expected": {
-        "item": "freezer pop molds or 20 paper cups and wooden pop sticks",
+        "item": "freezer pop molds",
         "measurements": [
           {
             "amount": "30",
@@ -94,7 +94,7 @@
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "or 20 paper cups and wooden pop sticks",
         "category": "Other"
       }
     }

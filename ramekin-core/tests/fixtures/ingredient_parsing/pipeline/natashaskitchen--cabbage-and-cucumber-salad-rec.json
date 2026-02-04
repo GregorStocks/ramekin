@@ -33,14 +33,14 @@
     {
       "raw": "1  English cucumber or 4 small cucumbers",
       "expected": {
-        "item": "English cucumber",
+        "item": "English cucumber or 4 small cucumbers",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 4 small cucumbers",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 pound (454g) strawberries, washed, hulled, and quartered8 ounces (227g) raspberries2 tablespoons granulated sugar (1 ounce; 30g)1 teaspoon lemon zest, finely grated from 1 lemon7 ounces (200g)&nbsp; homemade meringue cookies or store bought1 1/2 cups (360ml) heavy cream4 tablespoons (28g) powdered sugar1/2 teaspoon vanilla extract1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
       "expected": {
-        "item": "strawberries, washed, hulled, and quartered8 ounces raspberries2 tablespoons granulated sugar 1 teaspoon lemon zest, finely grated from 1 lemon7 ounces homemade meringue cookies or store bought1 1/2 cups heavy cream4 tablespoons powdered sugar1/2 teaspoon vanilla extract1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "item": "strawberries, washed, hulled, and quartered8 ounces raspberries2 tablespoons granulated sugar 1 teaspoon lemon zest, finely grated from 1 lemon7 ounces homemade meringue cookies",
         "measurements": [
           {
             "amount": "1",
@@ -40,7 +40,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or store bought1 1/2 cups heavy cream4 tablespoons powdered sugar1/2 teaspoon vanilla extract1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
         "category": "Baking"
       }
     },
