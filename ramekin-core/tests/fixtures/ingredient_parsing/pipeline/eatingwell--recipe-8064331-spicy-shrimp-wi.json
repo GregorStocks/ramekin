@@ -41,14 +41,14 @@
     {
       "raw": "2 tablespoons salt-free Cajun seasoning plus 1 teaspoon, divided",
       "expected": {
-        "item": "salt-free Cajun seasoning",
+        "item": "salt-free Cajun seasoning, divided",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1 teaspoon, divided",
+        "note": "plus 1 teaspoon",
         "category": "Spices & Seasonings"
       }
     },

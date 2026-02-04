@@ -23,14 +23,14 @@
     {
       "raw": "1 tablespoon chopped fresh rosemary plus 3 teaspoons, divided",
       "expected": {
-        "item": "chopped fresh rosemary",
+        "item": "chopped fresh rosemary, divided",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 3 teaspoons, divided",
+        "note": "plus 3 teaspoons",
         "category": "Produce"
       }
     },

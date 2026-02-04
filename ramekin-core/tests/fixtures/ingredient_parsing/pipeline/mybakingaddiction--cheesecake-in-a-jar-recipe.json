@@ -5,14 +5,18 @@
     {
       "raw": "½ cup plus 2 tablespoons granulated sugar",
       "expected": {
-        "item": "½ cup plus 2 tablespoons granulated sugar",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons granulated sugar",
+        "note": "plus 2 tablespoons",
         "category": "Baking"
       }
     },

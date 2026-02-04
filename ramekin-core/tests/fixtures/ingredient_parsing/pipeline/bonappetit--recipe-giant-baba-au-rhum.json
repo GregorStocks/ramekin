@@ -19,7 +19,7 @@
     {
       "raw": "4 cups plus 2 Tbsp. (516 g) all-purpose flour",
       "expected": {
-        "item": "4 cups plus 2 Tbsp. (516 g) all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "4",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 Tbsp. all-purpose flour",
+        "note": "plus 2 tbsp",
         "category": "Baking"
       }
     },

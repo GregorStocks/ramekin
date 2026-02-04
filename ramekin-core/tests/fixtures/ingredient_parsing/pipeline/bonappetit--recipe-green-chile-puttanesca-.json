@@ -5,14 +5,18 @@
     {
       "raw": "1 cup plus 2 tsp. all-purpose flour",
       "expected": {
-        "item": "1 cup plus 2 tsp. all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 tsp. all-purpose flour",
+        "note": "plus 2 tsp",
         "category": "Baking"
       }
     },

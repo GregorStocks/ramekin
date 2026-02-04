@@ -177,14 +177,18 @@
     {
       "raw": "1/2 c. plus 1 tablespoon&nbsp;water",
       "expected": {
-        "item": "1/2 c. plus 1 tablespoon&nbsp;water",
+        "item": "water",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": "plus 1 tablespoon water",
+        "note": "plus 1 tablespoon",
         "category": "Other"
       }
     },

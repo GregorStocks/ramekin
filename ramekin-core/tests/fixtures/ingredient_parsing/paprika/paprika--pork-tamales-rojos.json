@@ -255,11 +255,15 @@
     {
       "raw": "1¼ cups plus 2 tablespoons (or more) lard, melted",
       "expected": {
-        "item": "1¼ cups plus 2 tablespoons (or more) lard, melted",
+        "item": "lard, melted",
         "measurements": [
           {
             "amount": "1 1/4",
             "unit": "cup"
+          },
+          {
+            "amount": "256",
+            "unit": "g"
           }
         ],
         "note": "or more",

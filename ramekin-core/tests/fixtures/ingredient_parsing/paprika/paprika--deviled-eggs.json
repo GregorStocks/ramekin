@@ -19,7 +19,7 @@
     {
       "raw": "3 tablespoons plus 1 teaspoon (45 grams) mayonnaise",
       "expected": {
-        "item": "3 tablespoons plus 1 teaspoon (45 grams) mayonnaise",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "3",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1 teaspoon mayonnaise",
+        "note": "plus 1 teaspoon",
         "category": "Condiments & Sauces"
       }
     },

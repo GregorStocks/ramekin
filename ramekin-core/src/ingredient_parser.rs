@@ -678,16 +678,37 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
         remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
     } else if let Some(plus_idx) = remaining.to_lowercase().find(" plus ") {
-        // Check if there's a measurement-like thing after "plus"
+        // Check if there's a measurement after "plus"
+        // e.g., "1/2 cup plus 2 tablespoons flour" -> note="plus 2 tbsp", remaining="1/2 cup flour"
         let after_plus = remaining.get(plus_idx + 6..).unwrap_or("").trim();
         if !after_plus.is_empty() {
-            // Extract just the "plus ..." part (skip the leading space)
-            if let Some(plus_part) = remaining.get(plus_idx + 1..) {
+            // Try to parse a measurement from what follows "plus"
+            let (plus_amount, after_plus_amount) = extract_amount(after_plus);
+            let (plus_unit, after_plus_unit) = extract_unit(&after_plus_amount);
+
+            // Only treat as plus-measurement if we got BOTH amount AND unit
+            if let (Some(amt), Some(unit)) = (plus_amount, plus_unit) {
+                // Build note as "plus [amount] [unit]"
                 if note.is_none() {
-                    note = Some(plus_part.trim().to_string());
+                    note = Some(format!("plus {} {}", amt, unit));
                 }
+                // remaining = before " plus " + whatever's left after the measurement
+                let before_plus = remaining.get(..plus_idx).unwrap_or("").trim();
+                let after_measurement = after_plus_unit.trim();
+                remaining = if after_measurement.is_empty() {
+                    before_plus.to_string()
+                } else {
+                    format!("{} {}", before_plus, after_measurement)
+                };
+            } else {
+                // No valid measurement after "plus", use old behavior (take everything)
+                if let Some(plus_part) = remaining.get(plus_idx + 1..) {
+                    if note.is_none() {
+                        note = Some(plus_part.trim().to_string());
+                    }
+                }
+                remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
             }
-            remaining = remaining.get(..plus_idx).unwrap_or("").trim().to_string();
         }
     }
 

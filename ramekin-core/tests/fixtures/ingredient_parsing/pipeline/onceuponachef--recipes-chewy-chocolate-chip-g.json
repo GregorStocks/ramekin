@@ -41,14 +41,18 @@
     {
       "raw": "¼ cup plus 2 tablespoons honey",
       "expected": {
-        "item": "¼ cup plus 2 tablespoons honey",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1/4",
             "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons honey",
+        "note": "plus 2 tablespoons",
         "category": "Baking"
       }
     },

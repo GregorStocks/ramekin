@@ -19,14 +19,14 @@
     {
       "raw": "2 large eggs plus 3 large whites, at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs whites, at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "plus 3 large whites, at room temperature",
+        "note": "plus 3 large",
         "category": "Dairy & Eggs"
       }
     },

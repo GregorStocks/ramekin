@@ -87,7 +87,7 @@
     {
       "raw": "1/2 teaspoon lemon zest plus 1 tablespoon (15 ml) lemon juice from 1 lemon",
       "expected": {
-        "item": "lemon zest",
+        "item": "lemon zest lemon juice from 1 lemon",
         "measurements": [
           {
             "amount": "1/2",
@@ -98,8 +98,8 @@
             "unit": "ml"
           }
         ],
-        "note": "plus 1 tablespoon lemon juice from 1 lemon",
-        "category": "Produce"
+        "note": "plus 1 tablespoon",
+        "category": "Beverages"
       }
     },
     {

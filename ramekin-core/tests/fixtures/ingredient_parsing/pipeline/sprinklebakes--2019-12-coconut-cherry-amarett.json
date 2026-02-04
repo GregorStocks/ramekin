@@ -41,14 +41,18 @@
     {
       "raw": "1/4 cup plus 2 tablespoons sour cream",
       "expected": {
-        "item": "1/4 cup plus 2 tablespoons sour cream",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "1/4",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons sour cream",
+        "note": "plus 2 tablespoons",
         "category": "Dairy & Eggs"
       }
     },

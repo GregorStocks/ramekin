@@ -50,14 +50,14 @@
     {
       "raw": "4 whole sprigs of tarragon plus 1 tablespoon minced fresh tarragon leaves, divided",
       "expected": {
-        "item": "whole sprigs of tarragon",
+        "item": "whole sprigs of tarragon minced fresh tarragon leaves, divided",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "plus 1 tablespoon minced fresh tarragon leaves, divided",
+        "note": "plus 1 tablespoon",
         "category": "Spices & Seasonings"
       }
     },

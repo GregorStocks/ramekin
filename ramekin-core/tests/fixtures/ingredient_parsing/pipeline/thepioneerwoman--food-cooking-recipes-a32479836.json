@@ -5,14 +5,18 @@
     {
       "raw": "2 tbsp. plus 1 teaspoon olive oil",
       "expected": {
-        "item": "2 tbsp. plus 1 teaspoon olive oil",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": "plus 1 teaspoon olive oil",
+        "note": "plus 1 teaspoon",
         "category": "Oils & Vinegars"
       }
     },

@@ -98,7 +98,7 @@
     {
       "raw": "1/2 cup plus 2 tablespoons (80 grams) all-purpose flour",
       "expected": {
-        "item": "1/2 cup plus 2 tablespoons (80 grams) all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1/2",
@@ -109,7 +109,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons all-purpose flour",
+        "note": "plus 2 tablespoons",
         "category": "Baking"
       }
     },

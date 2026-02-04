@@ -28,14 +28,14 @@
     {
       "raw": "1 cup plus 2 tablespoons milk, any variety",
       "expected": {
-        "item": "1 cup plus 2 tablespoons milk, any variety",
+        "item": "milk, any variety",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons milk, any variety",
+        "note": "plus 2 tablespoons",
         "section": "Simple Potato Filling",
         "category": "Dairy & Eggs"
       }
@@ -256,14 +256,18 @@
     {
       "raw": "3/4 cup plus 2 to 3 tablespoons cold water",
       "expected": {
-        "item": "3/4 cup plus 2 to 3 tablespoons cold water",
+        "item": "cold water",
         "measurements": [
           {
             "amount": "3/4",
             "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 to 3 tablespoons cold water",
+        "note": "plus 2 to 3 tablespoons",
         "section": "Dumpling Dough",
         "category": "Other"
       }

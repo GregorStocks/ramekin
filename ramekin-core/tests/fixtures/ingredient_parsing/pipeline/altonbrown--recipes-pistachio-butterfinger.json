@@ -19,14 +19,18 @@
     {
       "raw": "1 1/4 cups plus 1 1/2 teaspoons sugar",
       "expected": {
-        "item": "1 1/4 cups plus 1 1/2 teaspoons sugar",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1 1/4",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": "plus 1 1/2 teaspoons sugar",
+        "note": "plus 1 1/2 teaspoons",
         "category": "Baking"
       }
     },
@@ -65,14 +69,14 @@
     {
       "raw": "3 tablespoons plus 1/2 teaspoon light corn syrup",
       "expected": {
-        "item": "3 tablespoons plus 1/2 teaspoon light corn syrup",
+        "item": "light corn syrup",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1/2 teaspoon light corn syrup",
+        "note": "plus 1/2 teaspoon",
         "category": "Baking"
       }
     },

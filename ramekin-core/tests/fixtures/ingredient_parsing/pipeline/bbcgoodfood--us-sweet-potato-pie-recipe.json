@@ -37,14 +37,14 @@
     {
       "raw": "1 stick plus 1 tbsp butter",
       "expected": {
-        "item": "1 stick plus 1 tbsp butter",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "stick"
           }
         ],
-        "note": "plus 1 tbsp butter",
+        "note": "plus 1 tbsp",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,14 +69,18 @@
     {
       "raw": "½ cup plus 1 tbsp whole milk",
       "expected": {
-        "item": "½ cup plus 1 tbsp whole milk",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": "plus 1 tbsp whole milk",
+        "note": "plus 1 tbsp",
         "category": "Dairy & Eggs"
       }
     },

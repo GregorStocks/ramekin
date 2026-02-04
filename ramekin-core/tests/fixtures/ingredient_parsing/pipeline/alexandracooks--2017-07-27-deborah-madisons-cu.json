@@ -19,14 +19,14 @@
     {
       "raw": "8&nbsp;cilantro sprigs plus 2 to 4 tablespoons finely chopped cilantro leaves",
       "expected": {
-        "item": "cilantro sprigs",
+        "item": "cilantro sprigs finely chopped cilantro leaves",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "plus 2 to 4 tablespoons finely chopped cilantro leaves",
+        "note": "plus 2 to 4 tablespoons",
         "category": "Produce"
       }
     },

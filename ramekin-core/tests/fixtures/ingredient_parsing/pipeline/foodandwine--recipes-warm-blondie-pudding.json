@@ -49,14 +49,14 @@
     {
       "raw": "3/4 cup plus 2 tablespoons packed light brown sugar",
       "expected": {
-        "item": "3/4 cup plus 2 tablespoons packed light brown sugar",
+        "item": "packed light brown sugar",
         "measurements": [
           {
             "amount": "3/4",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons packed light brown sugar",
+        "note": "plus 2 tablespoons",
         "category": "Baking"
       }
     },

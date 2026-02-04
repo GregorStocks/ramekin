@@ -37,28 +37,28 @@
     {
       "raw": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
       "expected": {
-        "item": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
+        "item": "ketchup or chili sauce",
         "measurements": [
           {
             "amount": "1/4",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons  ketchup or chili sauce",
+        "note": "plus 2 tablespoons",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "¼ cup plus 2 tablespoons  dill relish",
       "expected": {
-        "item": "¼ cup plus 2 tablespoons  dill relish",
+        "item": "dill relish",
         "measurements": [
           {
             "amount": "1/4",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons  dill relish",
+        "note": "plus 2 tablespoons",
         "category": "Condiments & Sauces"
       }
     },

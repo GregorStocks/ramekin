@@ -127,7 +127,7 @@
     {
       "raw": "1  cup plus 2 tablespoons (150g) flour",
       "expected": {
-        "item": "1  cup plus 2 tablespoons (150g) flour",
+        "item": "flour",
         "measurements": [
           {
             "amount": "1",
@@ -138,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons flour",
+        "note": "plus 2 tablespoons",
         "category": "Baking"
       }
     },

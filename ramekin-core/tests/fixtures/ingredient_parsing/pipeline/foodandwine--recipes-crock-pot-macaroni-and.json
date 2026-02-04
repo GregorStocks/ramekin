@@ -153,11 +153,15 @@
     {
       "raw": "1/2 teaspoon plus 1/8 teaspoon&nbsp;cayenne pepper (optional)",
       "expected": {
-        "item": "1/2 teaspoon plus 1/8 teaspoon&nbsp;cayenne pepper (optional)",
+        "item": "cayenne pepper",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
           }
         ],
         "note": "optional",

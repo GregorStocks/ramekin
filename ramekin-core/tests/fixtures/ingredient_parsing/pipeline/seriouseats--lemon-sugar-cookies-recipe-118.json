@@ -27,7 +27,7 @@
     {
       "raw": "6g (2 tablespoons) packed grated lemon zest plus 1 1/2 tablespoons fresh juice from 4 large lemons, divided",
       "expected": {
-        "item": "packed grated lemon zest",
+        "item": "packed grated lemon zest fresh juice from 4 large lemons, divided",
         "measurements": [
           {
             "amount": "6",
@@ -38,8 +38,8 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1 1/2 tablespoons fresh juice from 4 large lemons, divided",
-        "category": "Produce"
+        "note": "plus 1 1/2 tablespoons",
+        "category": "Beverages"
       }
     },
     {

@@ -697,6 +697,25 @@
         "note": "reserved",
         "category": "Meat & Seafood"
       }
+    },
+    {
+      "name": "plus_without_comma",
+      "raw": "1/2 cup plus 2 tablespoons flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 2 tablespoons",
+        "category": "Baking"
+      }
     }
   ]
 }

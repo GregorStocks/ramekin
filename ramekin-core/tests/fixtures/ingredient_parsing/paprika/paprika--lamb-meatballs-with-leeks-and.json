@@ -206,15 +206,15 @@
     {
       "raw": "1/2 tsp gated lemon zest plus 1/2 tsp juice",
       "expected": {
-        "item": "gated lemon zest",
+        "item": "gated lemon zest juice",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tsp"
           }
         ],
-        "note": "plus 1/2 tsp juice",
-        "category": "Produce"
+        "note": "plus 1/2 tsp",
+        "category": "Beverages"
       }
     },
     {

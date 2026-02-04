@@ -79,14 +79,14 @@
     {
       "raw": "1/2 cup plus 2 tablespoons good soy sauce",
       "expected": {
-        "item": "1/2 cup plus 2 tablespoons good soy sauce",
+        "item": "good soy sauce",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "cup"
           }
         ],
-        "note": "plus 2 tablespoons good soy sauce",
+        "note": "plus 2 tablespoons",
         "category": "Condiments & Sauces"
       }
     },

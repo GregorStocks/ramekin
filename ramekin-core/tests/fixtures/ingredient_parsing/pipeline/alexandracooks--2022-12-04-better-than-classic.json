@@ -23,7 +23,7 @@
     {
       "raw": "1 cup (200 g) plus 1 tablespoon (15 g) sugar",
       "expected": {
-        "item": "1 cup (200 g) plus 1 tablespoon (15 g) sugar",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1 tablespoon sugar",
+        "note": "plus 1 tablespoon",
         "category": "Baking"
       }
     },

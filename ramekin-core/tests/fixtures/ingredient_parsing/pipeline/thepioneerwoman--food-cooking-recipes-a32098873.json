@@ -137,14 +137,14 @@
     {
       "raw": "1 1/2 sticks plus 2 tablespoons cold salted butter, cut into pieces",
       "expected": {
-        "item": "1 1/2 sticks plus 2 tablespoons cold salted butter, cut into pieces",
+        "item": "cold salted butter, cut into pieces",
         "measurements": [
           {
             "amount": "1 1/2",
             "unit": "stick"
           }
         ],
-        "note": "plus 2 tablespoons cold salted butter, cut into pieces",
+        "note": "plus 2 tablespoons",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1/4 cup plus 1 tablespoon granulated sugar (about 2 1/4 ounces; 65g)",
       "expected": {
-        "item": "1/4 cup plus 1 tablespoon granulated sugar (about 2 1/4 ounces; 65g)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1/4",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus 1 tablespoon granulated sugar",
+        "note": "plus 1 tablespoon",
         "category": "Baking"
       }
     },

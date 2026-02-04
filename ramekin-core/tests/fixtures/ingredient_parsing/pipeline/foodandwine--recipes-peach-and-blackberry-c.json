@@ -179,14 +179,14 @@
     {
       "raw": "1 stick plus 1 tablespoon cold unsalted butter, cubed",
       "expected": {
-        "item": "1 stick plus 1 tablespoon cold unsalted butter, cubed",
+        "item": "cold unsalted butter, cubed",
         "measurements": [
           {
             "amount": "1",
             "unit": "stick"
           }
         ],
-        "note": "plus 1 tablespoon cold unsalted butter, cubed",
+        "note": "plus 1 tablespoon",
         "category": "Dairy & Eggs"
       }
     }

@@ -109,14 +109,14 @@
     {
       "raw": "2 tablespoons plus 1/2 teaspoon kosher salt, divided",
       "expected": {
-        "item": "2 tablespoons plus 1/2 teaspoon kosher salt, divided",
+        "item": "kosher salt, divided",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 1/2 teaspoon kosher salt, divided",
+        "note": "plus 1/2 teaspoon",
         "category": "Spices & Seasonings"
       }
     },

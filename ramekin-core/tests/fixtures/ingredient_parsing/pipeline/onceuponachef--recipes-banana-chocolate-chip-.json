@@ -91,14 +91,18 @@
     {
       "raw": "¾ cup plus 2 tablespoons sugar",
       "expected": {
-        "item": "¾ cup plus 2 tablespoons sugar",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "3/4",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
-        "note": "plus 2 tablespoons sugar",
+        "note": "plus 2 tablespoons",
         "category": "Baking"
       }
     },

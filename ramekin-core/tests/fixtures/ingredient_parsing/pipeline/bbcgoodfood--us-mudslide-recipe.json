@@ -74,14 +74,18 @@
     {
       "raw": "⅓ cup plus 1 tbsp heavy whipping cream",
       "expected": {
-        "item": "⅓ cup plus 1 tbsp heavy whipping cream",
+        "item": "heavy whipping cream",
         "measurements": [
           {
             "amount": "1/3",
             "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
           }
         ],
-        "note": "plus 1 tbsp heavy whipping cream",
+        "note": "plus 1 tbsp",
         "category": "Dairy & Eggs"
       }
     }

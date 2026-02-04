@@ -340,7 +340,7 @@
     {
       "raw": "3 tablespoons plus 1 teaspoon (50ml) Thai thin soy sauce",
       "expected": {
-        "item": "3 tablespoons plus 1 teaspoon (50ml) Thai thin soy sauce",
+        "item": "Thai thin soy sauce",
         "measurements": [
           {
             "amount": "3",
@@ -351,7 +351,7 @@
             "unit": "ml"
           }
         ],
-        "note": "plus 1 teaspoon Thai thin soy sauce",
+        "note": "plus 1 teaspoon",
         "section": "For the Stir-fry Sauce",
         "category": "Condiments & Sauces"
       }

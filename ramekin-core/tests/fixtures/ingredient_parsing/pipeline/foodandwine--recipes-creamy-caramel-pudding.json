@@ -19,14 +19,18 @@
     {
       "raw": "1/4 cup plus 3 tablespoons cornstarch",
       "expected": {
-        "item": "1/4 cup plus 3 tablespoons cornstarch",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1/4",
             "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": "plus 3 tablespoons cornstarch",
+        "note": "plus 3 tablespoons",
         "category": "Baking"
       }
     },

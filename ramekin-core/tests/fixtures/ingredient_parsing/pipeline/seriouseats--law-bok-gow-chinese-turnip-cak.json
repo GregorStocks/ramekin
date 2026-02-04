@@ -45,14 +45,14 @@
     {
       "raw": "1 tablespoon plus 2 teaspoons brown sugar, divided",
       "expected": {
-        "item": "1 tablespoon plus 2 teaspoons brown sugar, divided",
+        "item": "brown sugar, divided",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 2 teaspoons brown sugar, divided",
+        "note": "plus 2 teaspoons",
         "category": "Baking"
       }
     },

@@ -23,14 +23,14 @@
     {
       "raw": "2 tablespoons plus 2 teaspoons sherry vinegar",
       "expected": {
-        "item": "2 tablespoons plus 2 teaspoons sherry vinegar",
+        "item": "sherry vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 2 teaspoons sherry vinegar",
+        "note": "plus 2 teaspoons",
         "category": "Oils & Vinegars"
       }
     },

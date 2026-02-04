@@ -19,14 +19,14 @@
     {
       "raw": "1/4 cup plus 1 tablespoon coffee, ground medium in a burr grinder",
       "expected": {
-        "item": "1/4 cup plus 1 tablespoon coffee, ground medium in a burr grinder",
+        "item": "coffee, ground medium in a burr grinder",
         "measurements": [
           {
             "amount": "1/4",
             "unit": "cup"
           }
         ],
-        "note": "plus 1 tablespoon coffee, ground medium in a burr grinder",
+        "note": "plus 1 tablespoon",
         "category": "Beverages"
       }
     }

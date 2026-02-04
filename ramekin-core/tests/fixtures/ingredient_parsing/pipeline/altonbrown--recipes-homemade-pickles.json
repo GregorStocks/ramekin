@@ -111,14 +111,14 @@
     {
       "raw": "2 tablespoons plus 2 teaspoons kosher salt",
       "expected": {
-        "item": "2 tablespoons plus 2 teaspoons kosher salt",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus 2 teaspoons kosher salt",
+        "note": "plus 2 teaspoons",
         "category": "Spices & Seasonings"
       }
     },
