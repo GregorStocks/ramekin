@@ -5,7 +5,7 @@
     {
       "raw": "6 cups peeled, cored, and thinly sliced baking apples  (about 6 large)",
       "expected": {
-        "item": "peeled, cored",
+        "item": "peeled, cored, and thinly sliced baking apples",
         "measurements": [
           {
             "amount": "6",
@@ -16,14 +16,14 @@
             "unit": "large"
           }
         ],
-        "note": "and thinly sliced baking apples",
-        "category": "Other"
+        "note": null,
+        "category": "Produce"
       }
     },
     {
       "raw": "4 cups peeled, cored, and thinly sliced pears  (about 5 large)",
       "expected": {
-        "item": "peeled, cored",
+        "item": "peeled, cored, and thinly sliced pears",
         "measurements": [
           {
             "amount": "4",
@@ -34,8 +34,8 @@
             "unit": "large"
           }
         ],
-        "note": "and thinly sliced pears",
-        "category": "Other"
+        "note": null,
+        "category": "Produce"
       }
     },
     {

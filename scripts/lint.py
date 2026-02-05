@@ -536,6 +536,69 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
     return ("Raw SQL check", True)
 
 
+def lint_issues(project_root: Path) -> tuple[str, bool]:
+    """Validate issue JSON files in issues/ directory."""
+    issues_dir = project_root / "issues"
+    if not issues_dir.exists():
+        return ("Issues", True)
+
+    required_fields = {
+        "title",
+        "description",
+        "status",
+        "priority",
+        "type",
+        "labels",
+        "created_at",
+        "updated_at",
+    }
+    errors = []
+
+    for issue_file in issues_dir.glob("*.json"):
+        try:
+            with open(issue_file) as f:
+                issue = json.load(f)
+        except json.JSONDecodeError as e:
+            errors.append(f"{issue_file.name}: invalid JSON - {e}")
+            continue
+
+        # Check for unexpected id field (filename is the id)
+        if "id" in issue:
+            errors.append(f"{issue_file.name}: has 'id' field (filename serves as id)")
+
+        # Check required fields
+        missing = required_fields - set(issue.keys())
+        if missing:
+            errors.append(
+                f"{issue_file.name}: missing fields: {', '.join(sorted(missing))}"
+            )
+            continue
+
+        # Closed issues should be deleted
+        if issue["status"] == "closed":
+            errors.append(
+                f"{issue_file.name}: status is 'closed' (delete closed issues)"
+            )
+
+        # Priority should be 1-4
+        if not isinstance(issue["priority"], int) or not 1 <= issue["priority"] <= 4:
+            errors.append(
+                f"{issue_file.name}: priority must be int 1-4, got {issue['priority']}"
+            )
+
+        # Labels should be a list
+        if not isinstance(issue["labels"], list):
+            errors.append(f"{issue_file.name}: labels must be an array")
+
+    if errors:
+        print("Issue validation errors:", file=sys.stderr)
+        for error in errors:
+            print(f"  {error}", file=sys.stderr)
+        return ("Issues", False)
+
+    return ("Issues", True)
+
+
 def run_with_timing(name: str, func: callable) -> tuple[str, bool, float]:
     """Run a linter function and return (name, success, elapsed_seconds)."""
 
@@ -567,6 +630,7 @@ def main() -> None:
         ("YAML", lambda: lint_yaml(project_root)),
         ("Shell", lambda: lint_shell(project_root)),
         ("Raw SQL check", lambda: check_raw_sql(project_root)),
+        ("Issues", lambda: lint_issues(project_root)),
     ]
 
     # Run all linters in parallel with timing

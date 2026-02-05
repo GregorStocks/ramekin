@@ -477,15 +477,15 @@
     {
       "raw": "1/2 teaspoon peeled, finely grated fresh ginger",
       "expected": {
-        "item": "peeled",
+        "item": "peeled, finely grated fresh ginger",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "tsp"
           }
         ],
-        "note": "finely grated fresh ginger",
-        "category": "Other"
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

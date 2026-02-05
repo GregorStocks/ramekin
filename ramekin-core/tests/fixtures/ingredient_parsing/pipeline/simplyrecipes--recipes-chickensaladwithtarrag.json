@@ -5,15 +5,15 @@
     {
       "raw": "2 cups finely chopped, cooked chicken meat",
       "expected": {
-        "item": "finely chopped",
+        "item": "finely chopped, cooked chicken meat",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "cooked chicken meat",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

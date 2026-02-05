@@ -1,5 +1,4 @@
 {
-  "id": "ramekin-vky",
   "title": "to NUMBER range orphans",
   "description": "~30 lines start with 'to' followed by a number: 'to 1 cup water', 'to 1 1/2 cups'. These are the second half of 'X to Y' range patterns where the first part got separated upstream. Cannot recover the missing first value.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
   "status": "open",
@@ -10,6 +9,5 @@
     "upstream"
   ],
   "created_at": "2026-02-03T13:42:12.085613-08:00",
-  "updated_at": "2026-02-03T13:43:57.616919-08:00",
-  "closed_at": null
+  "updated_at": "2026-02-03T13:43:57.616919-08:00"
 }

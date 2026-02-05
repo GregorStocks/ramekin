@@ -6,14 +6,14 @@ Pick and solve exactly **one** issue, then create a PR.
 
 1. List open issues:
    ```bash
-   jq -r 'select(.status == "open") | [.id, .priority, .title] | @tsv' issues/*.json | sort -t$'\t' -k2 -n
+   for f in issues/*.json; do echo "$(basename "$f" .json): $(jq -r '[.priority, .title] | @tsv' "$f")"; done | sort -t: -k2 -n
    ```
 2. Pick **one** issue that seems worth fixing (see criteria below)
 3. Implement the fix
 4. Update tests to expect the correct behavior
 5. Run `make test` and `make lint` to verify
 6. Run `make pipeline` and spot-check the diff for regressions
-7. Mark the issue as closed by editing its JSON file: set `"status": "closed"` and `"closed_at"` to the current timestamp
+7. Delete the issue file (e.g., `rm issues/the-issue-name.json`)
 8. **Document ALL issues you discover** during exploration, even if you're only fixing one. Future Claudes benefit from this documentation!
 9. Create a PR, then stop - leave remaining issues for the next Claude
 

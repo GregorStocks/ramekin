@@ -33,15 +33,10 @@
     {
       "raw": "1 cup roasted (salted peanuts, divided)",
       "expected": {
-        "item": "roasted",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "cup"
-          }
-        ],
-        "note": "salted peanuts, divided",
-        "category": "Meat & Seafood"
+        "item": "1 cup roasted (salted peanuts, divided)",
+        "measurements": [],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
       }
     }
   ]

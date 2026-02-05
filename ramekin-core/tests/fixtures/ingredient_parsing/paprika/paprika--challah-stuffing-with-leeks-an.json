@@ -115,15 +115,15 @@
     {
       "raw": "1/2 cup packed, chopped flat-leaf parsley",
       "expected": {
-        "item": "packed",
+        "item": "packed, chopped flat-leaf parsley",
         "measurements": [
           {
             "amount": "1/2",
             "unit": "cup"
           }
         ],
-        "note": "chopped flat-leaf parsley",
-        "category": "Other"
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {
