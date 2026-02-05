@@ -120,15 +120,15 @@
     {
       "raw": "1 ½ cups cooked, shredded chicken (from a rotisserie)",
       "expected": {
-        "item": "cooked",
+        "item": "cooked, shredded chicken (from a rotisserie)",
         "measurements": [
           {
             "amount": "1 1/2",
             "unit": "cup"
           }
         ],
-        "note": "shredded chicken (from a rotisserie)",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

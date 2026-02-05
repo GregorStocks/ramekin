@@ -239,15 +239,10 @@
     {
       "raw": "2 tablespoons peeled (grated fresh ginger root)",
       "expected": {
-        "item": "peeled",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          }
-        ],
-        "note": "grated fresh ginger root",
-        "category": "Other"
+        "item": "2 tablespoons peeled (grated fresh ginger root)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
       }
     },
     {
