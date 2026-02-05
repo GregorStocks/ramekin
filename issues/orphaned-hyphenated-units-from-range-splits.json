@@ -1,0 +1,13 @@
+{
+  "title": "Orphaned hyphenated units from range splits",
+  "description": "~18 lines start with hyphenated units: '-ounce can chickpeas', '-inch piece ginger', '-pound ground beef'. These came from patterns like '14-ounce can' where the leading number got separated during upstream extraction. Cannot be fixed by parser since the number is lost.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "upstream"
+  ],
+  "created_at": "2026-02-03T13:42:06.248501-08:00",
+  "updated_at": "2026-02-03T13:43:51.460313-08:00"
+}

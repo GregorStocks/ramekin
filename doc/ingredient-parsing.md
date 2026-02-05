@@ -1,6 +1,6 @@
-# So Your Bead Relates to Ingredient Parsing
+# Ingredient Parser Guide
 
-This document covers specifics for working on the ingredient parser. See [solving-a-bead.md](solving-a-bead.md) for general workflow.
+This document covers specifics for working on the ingredient parser. See `doc/issues.md` for issue format and queries.
 
 ## How the Parser Works
 
@@ -11,7 +11,7 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 - **Curated** (`ramekin-core/tests/fixtures/ingredient_parsing/curated/`): Hand-picked test cases representing important scenarios. Update these manually when fixing issues.
 - **Pipeline** (`ramekin-core/tests/fixtures/ingredient_parsing/pipeline/`): ~5500 auto-generated fixtures from real recipe sites. Run `make ingredient-tests-update` to sync these with current parser behavior.
 
-## Workflow for Ingredient Parser Beads
+## Workflow for Ingredient Parser Issues
 
 1. Look at the curated test fixtures in `ramekin-core/tests/fixtures/ingredient_parsing/curated/`
 2. These fixtures document both working behavior and known issues

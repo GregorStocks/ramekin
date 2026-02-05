@@ -1,0 +1,12 @@
+{
+  "title": "Decimal amounts not converted to fractions",
+  "description": "~1100+ fixtures have amounts like '0.5', '0.75', '1.5' that could be displayed as '1/2', '3/4', '1 1/2' for readability. This is a presentation choice - current behavior isn't wrong, just less idiomatic for recipes. Would need a conversion function for common decimals. Low priority.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser"
+  ],
+  "created_at": "2026-02-03T13:00:23.491746-08:00",
+  "updated_at": "2026-02-03T13:00:23.491746-08:00"
+}

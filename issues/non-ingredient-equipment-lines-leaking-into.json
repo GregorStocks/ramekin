@@ -1,0 +1,12 @@
+{
+  "title": "Non-ingredient/equipment lines leaking into ingredient lists",
+  "description": "Spotty but recurring issue where equipment/non-ingredient lines end up in ingredient lists. Examples: 'A 12-cup Bundt pan, a pastry bag, and a large star tip', '9x13 metal baking pans or large roasting pan lined with foil', 'Burger accompaniments, as you like'. Should be filtered upstream or flagged as section headers.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ingredient-parser"
+  ],
+  "created_at": "2026-02-03T13:00:20.885809-08:00",
+  "updated_at": "2026-02-03T13:00:20.885809-08:00"
+}
