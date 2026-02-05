@@ -1,0 +1,15 @@
+{
+  "id": "ramekin-c26",
+  "title": "Concatenated ingredient lines",
+  "description": "Unknown count of cases where multiple ingredients end up on one line like '3/4 cup (180ml) milk 1/4 cup (60ml) vegetable oil'. This is an extraction bug upstream (ingredients should be on separate lines), not a parser bug. The parser can't reasonably split these without risking false positives.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "upstream"
+  ],
+  "created_at": "2026-02-03T13:00:28.392659-08:00",
+  "updated_at": "2026-02-03T13:00:28.392659-08:00",
+  "closed_at": null
+}

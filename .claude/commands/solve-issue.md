@@ -1,16 +1,19 @@
-# Solve a Bead
+# Solve an Issue
 
-Pick and solve exactly **one** bead, then create a PR.
+Pick and solve exactly **one** issue, then create a PR.
 
 ## Workflow
 
-1. Run `bd list` to see open beads
+1. List open issues:
+   ```bash
+   jq -r 'select(.status == "open") | [.id, .priority, .title] | @tsv' issues/*.json | sort -t$'\t' -k2 -n
+   ```
 2. Pick **one** issue that seems worth fixing (see criteria below)
 3. Implement the fix
 4. Update tests to expect the correct behavior
 5. Run `make test` and `make lint` to verify
 6. Run `make pipeline` and spot-check the diff for regressions
-7. Close the bead with `bd close <bead-id>` (do this before committing so it's included in the PR)
+7. Mark the issue as closed by editing its JSON file: set `"status": "closed"` and `"closed_at"` to the current timestamp
 8. **Document ALL issues you discover** during exploration, even if you're only fixing one. Future Claudes benefit from this documentation!
 9. Create a PR, then stop - leave remaining issues for the next Claude
 

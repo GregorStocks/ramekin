@@ -1,0 +1,14 @@
+{
+  "id": "ramekin-adn",
+  "title": "Optional: prefix lines",
+  "description": "~16 lines start with 'Optional:' or 'Optional -' followed by ingredients: 'Optional: 1/4 cup cocoa powder', 'Optional - 1/2 cup dry white wine'. Could extract 'Optional' as a note and parse the rest normally.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "closed",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser"
+  ],
+  "created_at": "2026-02-03T13:41:56.516015-08:00",
+  "updated_at": "2026-02-03T20:11:29.629675-08:00",
+  "closed_at": "2026-02-03T20:11:29.629675-08:00"
+}

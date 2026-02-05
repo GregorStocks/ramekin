@@ -1,0 +1,14 @@
+{
+  "id": "ramekin-o1p",
+  "title": "Orphaned prep words without ingredient",
+  "description": "~11 lines are single prep words with no ingredient: 'sliced', 'cooked', 'shredded', 'peeled', 'dried', 'toasted', etc. These are orphaned from upstream extraction where the ingredient got separated. Parser could filter out single-word prep terms.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser"
+  ],
+  "created_at": "2026-02-03T13:41:39.12755-08:00",
+  "updated_at": "2026-02-03T13:43:23.111698-08:00",
+  "closed_at": null
+}
