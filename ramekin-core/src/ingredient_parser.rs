@@ -890,14 +890,17 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 
     // Step 5: Extract note from the end (after comma), if not already set
+    // But don't extract if it would leave only prep words as the item
     if note.is_none() {
         if let Some(comma_idx) = remaining.rfind(',') {
             if let Some(potential_note) = remaining.get(comma_idx + 1..) {
                 let potential_note = potential_note.trim();
-                // Check if it looks like a prep note
-                if is_prep_note(potential_note) {
+                let potential_item = remaining.get(..comma_idx).unwrap_or("").trim();
+                // Check if it looks like a prep note AND extracting it wouldn't
+                // leave only prep words as the item
+                if is_prep_note(potential_note) && !is_only_prep_words(potential_item) {
                     note = Some(potential_note.to_string());
-                    remaining = remaining.get(..comma_idx).unwrap_or("").trim().to_string();
+                    remaining = potential_item.to_string();
                 }
             }
         }
@@ -1030,8 +1033,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 
     // If item is only prep words, the parse failed - return raw as item
-    // This handles cases like "2 cups finely chopped, cooked chicken meat" where
-    // the comma causes "finely chopped" to be extracted as the item instead of "chicken meat"
+    // This handles cases like "⅓ cup toasted (chopped pistachios)" where
+    // parenthetical extraction leaves only a prep word as the item
     if is_only_prep_words(&item) && !item.is_empty() {
         return ParsedIngredient {
             item: raw.to_string(),
@@ -2156,9 +2159,14 @@ mod tests {
         let result = parse_ingredient("sliced");
         assert_eq!(result.item, "sliced");
 
-        // When comma causes prep word to be extracted as item, return raw
+        // When comma is between prep words and ingredient, don't split there
+        // "2 cups finely chopped, cooked chicken meat" should NOT extract
+        // "cooked chicken meat" as note, leaving "finely chopped" as item
         let result = parse_ingredient("2 cups finely chopped, cooked chicken meat");
-        assert_eq!(result.item, "2 cups finely chopped, cooked chicken meat");
-        assert!(result.measurements.is_empty());
+        // Item should include the ingredient, not just prep words
+        assert_eq!(result.item, "finely chopped, cooked chicken meat");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 }

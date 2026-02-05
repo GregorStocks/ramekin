@@ -173,8 +173,13 @@
     {
       "raw": "1-2 tablespoons dried, shredded wakame or dulse",
       "expected": {
-        "item": "1-2 tablespoons dried, shredded wakame or dulse",
-        "measurements": [],
+        "item": "dried, shredded wakame or dulse",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
         "note": null,
         "category": "Other"
       }

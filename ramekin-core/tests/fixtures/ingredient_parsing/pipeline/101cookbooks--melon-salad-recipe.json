@@ -70,8 +70,13 @@
     {
       "raw": "1/3 cup loosely chopped, toasted almonds",
       "expected": {
-        "item": "1/3 cup loosely chopped, toasted almonds",
-        "measurements": [],
+        "item": "loosely chopped, toasted almonds",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
         "note": null,
         "category": "Nuts & Dried Fruit"
       }
