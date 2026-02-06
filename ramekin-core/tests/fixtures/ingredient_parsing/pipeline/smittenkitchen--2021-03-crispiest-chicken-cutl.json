@@ -1,0 +1,84 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2021-03-crispiest-chicken-cutl",
+  "ingredients": [
+    {
+      "raw": "1 1/4 to 1/2 pounds boneless, skinless chicken thighs",
+      "expected": {
+        "item": "to 1/2 pounds boneless, skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Additional seasoning (optional) such as garlic or onion powder or a spice blend",
+      "expected": {
+        "item": "Additional seasoning such as garlic or onion powder or a spice blend",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 cups plain breadcrumbs, either homemade (see above for instructions) or panko-style",
+      "expected": {
+        "item": "plain breadcrumbs, either homemade (see above for instructions) or panko-style",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Oil for frying (see above for suggestions)",
+      "expected": {
+        "item": "Oil for frying (see above for suggestions)",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-07-tomato-and-fried-provo",
+  "ingredients": [
+    {
+      "raw": "4 1/2-inch thick slices your favorite sturdy bread",
+      "expected": {
+        "item": "1/2-inch thick slices your favorite sturdy bread",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "4 tablespoons mayonnaise, or more to taste",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 medium-sized perfectly ripe tomatoes, sliced",
+      "expected": {
+        "item": "medium-sized perfectly ripe tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Flaky salt and freshly ground black pepper",
+      "expected": {
+        "item": "Flaky salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 to 2 slices of provolone, pre-sliced is fine, per piece of bread (see Note at end)",
+      "expected": {
+        "item": "provolone, pre-sliced is fine, per piece of bread (see Note at end)",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2022-07-buttered-noodles-for-f",
+  "ingredients": [
+    {
+      "raw": "Kosher salt plus some pinches of flaky sea salt to finish, if you wish",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": "plus some pinches of flaky sea salt to finish, if you wish",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 16-ounce package of egg noodles or box of dried pasta",
+      "expected": {
+        "item": "of egg noodles or box of dried pasta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "16-ounce package"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "6 tablespoons salted butter, divided, plus more as your spirit requires that day",
+      "expected": {
+        "item": "salted butter, divided",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more as your spirit requires that day",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Any extras you see fit, listed up top",
+      "expected": {
+        "item": "Any extras you see fit, listed up top",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

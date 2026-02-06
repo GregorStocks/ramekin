@@ -1,0 +1,85 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2017-02-guacamole",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons minced white onion (from about 1/8 large one)",
+      "expected": {
+        "item": "minced white onion (from about 1/8 large one)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons minced, seeded jalapeño (from about half a medium one)",
+      "expected": {
+        "item": "minced, seeded jalapeño (from about half a medium one)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons cilantro leaves, minced, plus more to taste",
+      "expected": {
+        "item": "cilantro leaves, minced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Juice of half a lime",
+      "expected": {
+        "item": "Juice of half a lime",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon coarse or kosher salt, plus more to taste",
+      "expected": {
+        "item": "coarse or kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 medium-large ripe avocados",
+      "expected": {
+        "item": "medium-large ripe avocados",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

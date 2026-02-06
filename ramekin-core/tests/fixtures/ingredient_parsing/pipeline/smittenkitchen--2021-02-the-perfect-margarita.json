@@ -1,0 +1,123 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2021-02-the-perfect-margarita",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon kosher salt (I’m using Diamond)",
+      "expected": {
+        "item": "kosher salt (I’m using Diamond)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon Tajín or 1/2 teaspoon chili powder",
+      "expected": {
+        "item": "Tajín",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/2 teaspoon chili powder",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 lime wedges",
+      "expected": {
+        "item": "lime wedges",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 1/2 ounces (9 tablespoons) tequila",
+      "expected": {
+        "item": "tequila",
+        "measurements": [
+          {
+            "amount": "4 1/2",
+            "unit": "oz"
+          },
+          {
+            "amount": "9",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 ounces (6 tablespoons) Cointreau, Triple Sec, or Grand Marnier",
+      "expected": {
+        "item": "Cointreau, Triple Sec, or Grand Marnier",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 ounces (6 tablespoons) freshly squeezed lime juice",
+      "expected": {
+        "item": "freshly squeezed lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

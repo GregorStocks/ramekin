@@ -1,0 +1,151 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-07-cherry-clafoutis",
+  "ingredients": [
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup (100 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 tablespoons (85 grams) unsalted butter, melted and cooled slightly, plus more to butter dish",
+      "expected": {
+        "item": "unsalted butter, melted and cooled slightly",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to butter dish",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (130 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "A couple pinches of salt",
+      "expected": {
+        "item": "A couple pinches of salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (235 ml) milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon almond extract",
+      "expected": {
+        "item": "almond extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons brandy or rum (optional)",
+      "expected": {
+        "item": "brandy or rum",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 generous (245 grams) cups sweet cherries, pitted if you wish",
+      "expected": {
+        "item": "sweet cherries, pitted if you wish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "generous cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

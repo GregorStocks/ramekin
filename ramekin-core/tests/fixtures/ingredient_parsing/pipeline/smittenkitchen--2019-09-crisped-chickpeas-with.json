@@ -1,0 +1,120 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-09-crisped-chickpeas-with",
+  "ingredients": [
+    {
+      "raw": "1 15-ounce can chickpeas, drained and rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 small garlic clove, minced or microplane-d",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "minced or microplane-d",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup plain yogurt",
+      "expected": {
+        "item": "plain yogurt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Salt and red pepper flakes",
+      "expected": {
+        "item": "Salt and red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Half a large lemon",
+      "expected": {
+        "item": "a large lemon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small zucchini (about 6 ounces), thinly sliced",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Handful of chopped fresh mint, oregano, basil, parsley, or a mix thereof",
+      "expected": {
+        "item": "chopped fresh mint, oregano, basil, parsley, or a mix thereof",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

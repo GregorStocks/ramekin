@@ -1,0 +1,194 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-07-red-bean-chili",
+  "ingredients": [
+    {
+      "raw": "2 pounds ground beef or turkey",
+      "expected": {
+        "item": "ground beef or turkey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 large onion, chopped (about 1 1/2 cups)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "206",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup beef broth",
+      "expected": {
+        "item": "beef broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/3 cup chili powder (to taste; see Note)",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "to taste; see Note",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon unsweetened cocoa",
+      "expected": {
+        "item": "unsweetened cocoa",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 14 1/2-ounce can diced tomatoes",
+      "expected": {
+        "item": "14 1/2-ounce can diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 15 1/2-ounce cans kidney beans, drained and rinsed",
+      "expected": {
+        "item": "15 1/2-ounce cans kidney beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon cider vinegar",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Hot sauce, cayenne, chipotle en adobo puree to taste (optional)",
+      "expected": {
+        "item": "Hot sauce, cayenne, chipotle en adobo puree to taste",
+        "measurements": [],
+        "note": "optional",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Toppings such as sour cream, cheddar, jalapeño (pickled or fresh), and corn bread",
+      "expected": {
+        "item": "Toppings such as sour cream, cheddar, jalapeño, and corn bread",
+        "measurements": [],
+        "note": "pickled or fresh",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

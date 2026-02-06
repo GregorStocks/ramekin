@@ -1,0 +1,150 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2021-10-old-school-dinner-roll",
+  "ingredients": [
+    {
+      "raw": "1 cup (235 grams) warm water",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 grams) unsalted butter, cold is fine, diced small, plus 3 tablespoons (45 grams) salted or unsalted, melted",
+      "expected": {
+        "item": "unsalted butter, cold is fine, diced small",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 3 tablespoons salted or unsalted, melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup (50 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons kosher salt (I used Diamond brand; use half of another)",
+      "expected": {
+        "item": "kosher salt (I used Diamond brand; use half of another)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/4-ounce (2 1/4 teaspoons or 7 grams) packet instant yeast",
+      "expected": {
+        "item": "1/4-ounce packet instant yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2 1/4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 1/2 cups (455 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Oil, for the bowl",
+      "expected": {
+        "item": "Oil, for the bowl",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Flaky sea salt, for sprinkling (optional)",
+      "expected": {
+        "item": "Flaky sea salt, for sprinkling",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

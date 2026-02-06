@@ -1,0 +1,117 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2020-12-small-batch-eggnog",
+  "ingredients": [
+    {
+      "raw": "1 large egg, ideally pasteurized [see Note]",
+      "expected": {
+        "item": "egg, ideally pasteurized [see Note]",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 1 teaspoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 tablespoon plus 1 teaspoon",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 tablespoons rum, brandy, whiskey, or a combination thereof",
+      "expected": {
+        "item": "rum, brandy, whiskey, or a combination thereof",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon vanilla (optional)",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground cinnamon (optional)",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.3",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 to 6 tablespoons milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 to 6 tablespoons heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Freshly grated nutmeg",
+      "expected": {
+        "item": "Freshly grated nutmeg",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

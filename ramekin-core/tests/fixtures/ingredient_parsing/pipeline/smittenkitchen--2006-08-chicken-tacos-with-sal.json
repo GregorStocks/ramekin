@@ -1,0 +1,103 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2006-08-chicken-tacos-with-sal",
+  "ingredients": [
+    {
+      "raw": "2 pounds (900 grams) boneless, skinless chicken thighs",
+      "expected": {
+        "item": "boneless, skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "900",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 large white onion, quartered (no need to peel)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "quartered (no need to peel)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 cloves garlic, peeled and lightly crushed",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and lightly crushed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 ancho or other mild dried chili (to chili powder, to taste)",
+      "expected": {
+        "item": "ancho or other mild dried chili",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "to chili powder, to taste",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

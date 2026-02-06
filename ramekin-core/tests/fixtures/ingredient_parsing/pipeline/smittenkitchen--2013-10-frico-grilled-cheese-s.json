@@ -1,0 +1,56 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-10-frico-grilled-cheese-s",
+  "ingredients": [
+    {
+      "raw": "2 slices bread of your choice (I’m using a hearty country wheat bread), sliced 1/2-inch thick",
+      "expected": {
+        "item": "bread of your choice (I’m using a hearty country wheat bread)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": "sliced 1/2-inch thick",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 teaspoons butter, salted or unsalted",
+      "expected": {
+        "item": "butter, salted or unsalted",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup (2 ounces) coarsely grated cheddar, plus more to taste",
+      "expected": {
+        "item": "coarsely grated cheddar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

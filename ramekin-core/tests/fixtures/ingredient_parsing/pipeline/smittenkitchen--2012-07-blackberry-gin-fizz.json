@@ -1,0 +1,97 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-07-blackberry-gin-fizz",
+  "ingredients": [
+    {
+      "raw": "1/4 cup fresh blackberries",
+      "expected": {
+        "item": "fresh blackberries",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (4 ounces) gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh lime juice (from two juicy limes)",
+      "expected": {
+        "item": "fresh lime juice (from two juicy limes)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Seltzer",
+      "expected": {
+        "item": "Seltzer",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 sprigs sweet basil or 2 thin lime wedges (optional, for garnish)",
+      "expected": {
+        "item": "sweet basil or 2 thin lime wedges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": "optional, for garnish",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

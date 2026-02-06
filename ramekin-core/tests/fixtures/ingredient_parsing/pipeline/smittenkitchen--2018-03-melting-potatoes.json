@@ -1,0 +1,112 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2018-03-melting-potatoes",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh thyme or rosemary leaves (I skipped because mine are under snow)",
+      "expected": {
+        "item": "chopped fresh thyme or rosemary leaves (I skipped because mine are under snow)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 pounds yukon gold potatoes, peeled, cut into 1-inch slices",
+      "expected": {
+        "item": "yukon gold potatoes, peeled, cut into 1-inch slices",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup chicken or vegetable stock or low-sodium broth",
+      "expected": {
+        "item": "chicken or vegetable stock or low-sodium broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 to 4 garlic cloves, peeled and smashed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed",
+        "category": "Produce"
+      }
+    }
+  ]
+}

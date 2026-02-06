@@ -1,0 +1,190 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2018-01-split-pea-soup",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil or 1 tablespoon olive oil and 1 tablespoon butter",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1 tablespoon olive oil and 1 tablespoon butter",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 leeks, halved and sliced into ribbons",
+      "expected": {
+        "item": "leeks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "halved and sliced into ribbons",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 carrot, chopped small",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "chopped small",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large rib celery, chopped",
+      "expected": {
+        "item": "rib celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly black pepper",
+      "expected": {
+        "item": "Salt and freshly black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, cloves peeled and sliced thin",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "cloves peeled and sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound dried green split peas, rinsed and picked over",
+      "expected": {
+        "item": "dried green split peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed and picked over",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 quarts vegetable stock or broth.",
+      "expected": {
+        "item": "vegetable stock or broth.",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 to 3 sprigs of thyme, leaves still on (optional)",
+      "expected": {
+        "item": "thyme, leaves still on",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "sprig"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Fresh herb sauce (instructions up top)",
+      "expected": {
+        "item": "Fresh herb sauce (instructions up top)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Sour cream",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Two slices of crumbled crisp bacon (obviously would no longer be vegetarian)",
+      "expected": {
+        "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Garlicky or gruyere croutons",
+      "expected": {
+        "item": "Garlicky or gruyere croutons",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

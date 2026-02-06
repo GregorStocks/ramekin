@@ -1,0 +1,164 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-04-avocado-salad-with-car",
+  "ingredients": [
+    {
+      "raw": "1 large carrot, peeled and roughly chopped",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small shallot, peeled and roughly chopped",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled and roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons roughly chopped fresh ginger",
+      "expected": {
+        "item": "roughly chopped fresh ginger",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons white miso",
+      "expected": {
+        "item": "white miso",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons toasted sesame seed oil",
+      "expected": {
+        "item": "toasted sesame seed oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup grape seed or another neutral oil",
+      "expected": {
+        "item": "grape seed or another neutral oil",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 small/medium head of lettuce (I used Bibb)",
+      "expected": {
+        "item": "small/medium head of lettuce (I used Bibb)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 red onion, thinly sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 avocado, quartered and thinly sliced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "quartered and thinly sliced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

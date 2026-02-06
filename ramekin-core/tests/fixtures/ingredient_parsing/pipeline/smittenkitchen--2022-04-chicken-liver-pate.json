@@ -1,0 +1,107 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2022-04-chicken-liver-pate",
+  "ingredients": [
+    {
+      "raw": "A lot of kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "A lot of kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 to 5 medium-large yellow onions [see Note], halved and thinly sliced",
+      "expected": {
+        "item": "medium-large yellow onions [see Note]",
+        "measurements": [
+          {
+            "amount": "4 to 5",
+            "unit": null
+          }
+        ],
+        "note": "halved and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound fresh chicken livers, drained",
+      "expected": {
+        "item": "fresh chicken livers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "drained",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/4 cup dry madeira, marsala, or sherry",
+      "expected": {
+        "item": "dry madeira, marsala, or sherry",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 tablespoon sherry vinegar",
+      "expected": {
+        "item": "sherry vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 cup rendered chicken fat (schmaltz) or vegetable oil",
+      "expected": {
+        "item": "rendered chicken fat (schmaltz) or vegetable oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Matzo crackers, to serve",
+      "expected": {
+        "item": "Matzo crackers, to serve",
+        "measurements": [],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "Fixings of you choice: Pickled and/or fried shallots, chopped chives, hard-boiled eggs, chopped cornichon or other pickles",
+      "expected": {
+        "item": "Fixings of you choice: Pickled and/or fried shallots, chopped chives, hard-boiled eggs",
+        "measurements": [],
+        "note": "chopped cornichon or other pickles",
+        "category": "Produce"
+      }
+    }
+  ]
+}

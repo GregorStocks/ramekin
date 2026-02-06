@@ -1,0 +1,254 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2022-03-simple-chicken-tortill",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 large white onion, finely chopped",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 jalapeño, finely chopped (see Note about other heat options)",
+      "expected": {
+        "item": "jalapeño",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped (see Note about other heat options)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground chile powder (see Note about other heat options)",
+      "expected": {
+        "item": "ground chile powder (see Note about other heat options)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 to 4 cups chicken stock or broth",
+      "expected": {
+        "item": "chicken stock or broth",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 pound boneless, skinless chicken thighs (see Note)",
+      "expected": {
+        "item": "boneless, skinless chicken thighs (see Note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 can black beans, drained and rinsed",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 cup fresh or frozen corn kernels (optional)",
+      "expected": {
+        "item": "fresh or frozen corn kernels",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Juice of half a lime",
+      "expected": {
+        "item": "Juice of half a lime",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Cotija cheese, crumbled",
+      "expected": {
+        "item": "Cotija cheese",
+        "measurements": [],
+        "note": "crumbled",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 medium avocado, sliced",
+      "expected": {
+        "item": "avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Sour cream or Mexican crema",
+      "expected": {
+        "item": "Sour cream or Mexican crema",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Second half of lime, cut into wedges",
+      "expected": {
+        "item": "Second half of lime, cut into wedges",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Chopped fresh cilantro",
+      "expected": {
+        "item": "Chopped fresh cilantro",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Corn tortillas, cut into thin ribbons, to fry (instructions below)",
+      "expected": {
+        "item": "Corn tortillas, cut into thin ribbons, to fry (instructions below)",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Hot sauce",
+      "expected": {
+        "item": "Hot sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

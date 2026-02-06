@@ -1,0 +1,180 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-02-steak-sandwiches",
+  "ingredients": [
+    {
+      "raw": "1/3 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons smooth Dijon mustard",
+      "expected": {
+        "item": "smooth Dijon mustard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon whole-grain mustard",
+      "expected": {
+        "item": "whole-grain mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons sour cream (to make this dairy-free, just use additional mayo)",
+      "expected": {
+        "item": "sour cream (to make this dairy-free, just use additional mayo)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 (16-ounce) 1-inch thick New York strip boneless beef top loin or hangar steak",
+      "expected": {
+        "item": "1-inch thick New York strip boneless beef top loin or hangar steak",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Olive oil, or a neutral high-heat oil such as grapeseed",
+      "expected": {
+        "item": "Olive oil, or a neutral high-heat oil such as grapeseed",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 medium-large yellow onions, sliced in thin rings",
+      "expected": {
+        "item": "medium-large yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced in thin rings",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fresh thyme leaves (if desired)",
+      "expected": {
+        "item": "fresh thyme leaves (if desired)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 large or 4 medium (about 6″) focaccia or ciabatta buns, split and toasted, if you wish",
+      "expected": {
+        "item": "focaccia or ciabatta buns, split and toasted, if you wish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 cup baby arugula",
+      "expected": {
+        "item": "baby arugula",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2017-09-chocolate-tahini-chall",
+  "ingredients": [
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup (50 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) vegetable or another neutral oil, or melted butter",
+      "expected": {
+        "item": "vegetable or another neutral oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": "or melted butter",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2/3 cup (150 ml) milk or water, plus an additional tablespoon if needed",
+      "expected": {
+        "item": "milk or water",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus an additional tablespoon if needed",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 3/4 (490 grams) cups all-purpose flour, plus more for the counter",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for the counter",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 packet (7 grams or 2 1/4 teaspoons) instant yeast",
+      "expected": {
+        "item": "packet instant yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": "g"
+          },
+          {
+            "amount": "2 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons coarse or kosher salt",
+      "expected": {
+        "item": "coarse or kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Butter or nonstick spray for baking pan",
+      "expected": {
+        "item": "Butter or nonstick spray for baking pan",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 ounces (115 grams) dark (semi- or bittersweet) chocolate (or approximately 3/4 cup chocolate chips)",
+      "expected": {
+        "item": "dark (semi-",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "or bittersweet) chocolate (or approximately 3/4 cup chocolate chips)",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup (115 grams) unsalted butter, cold is fine",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "cold is fine",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Scant 1/2 cup (50 grams) powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "scant cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (20 grams) cocoa powder",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup tahini (30 grams), well-stirred",
+      "expected": {
+        "item": "tahini, well-stirred",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 large egg, beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Sesame seeds",
+      "expected": {
+        "item": "Sesame seeds",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups (240 grams) powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 to 4 tablespoons lemon or orange juice",
+      "expected": {
+        "item": "lemon or orange juice",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

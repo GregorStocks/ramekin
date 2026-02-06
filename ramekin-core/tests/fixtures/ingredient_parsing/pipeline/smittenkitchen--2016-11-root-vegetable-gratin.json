@@ -1,0 +1,228 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-11-root-vegetable-gratin",
+  "ingredients": [
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 large onion, sliced (1 1/2 cups)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "206",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups (1/4-inch-sliced) fennel, top and core, if thick, removed",
+      "expected": {
+        "item": "fennel, top and core, if thick, removed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "1/4-inch-sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 cloves garlic, minced (1 tablespoon)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.5",
+            "unit": "g"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound sweet potatoes, peeled and sliced 1/4-inch thick",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and sliced 1/4-inch thick",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound celery root, peeled and sliced 1/4-inch thick",
+      "expected": {
+        "item": "celery root",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and sliced 1/4-inch thick",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound yukon gold, peeled and sliced 1/4-inch thick",
+      "expected": {
+        "item": "yukon gold",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and sliced 1/4-inch thick",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup heavy cream (see Note up top)",
+      "expected": {
+        "item": "heavy cream (see Note up top)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups chicken or vegetable stock or broth",
+      "expected": {
+        "item": "chicken or vegetable stock or broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 cups grated gruyere cheese (6 ounces with rind)",
+      "expected": {
+        "item": "grated gruyere cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 teaspoons minced fresh thyme leaves",
+      "expected": {
+        "item": "minced fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 1/2 cups coarse fresh breadcrumbs or panko (what I used)",
+      "expected": {
+        "item": "coarse fresh breadcrumbs or panko (what I used)",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons melted butter",
+      "expected": {
+        "item": "melted butter",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

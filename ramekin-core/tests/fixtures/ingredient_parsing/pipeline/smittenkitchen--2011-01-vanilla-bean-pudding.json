@@ -1,0 +1,101 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-01-vanilla-bean-pudding",
+  "ingredients": [
+    {
+      "raw": "1/2 cup (100 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (32 grams) cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Seeds scraped from 1/2 a vanilla bean, or 2 teaspoons vanilla bean paste or 2 teaspoons vanilla extract, or a combination thereof [see Note]",
+      "expected": {
+        "item": "Seeds scraped from 1/2 a vanilla bean",
+        "measurements": [],
+        "note": "or 2 teaspoons vanilla bean paste or 2 teaspoons vanilla extract, or a combination thereof [see Note]",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 2/3 cups (630 ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "2 2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "630",
+            "unit": "ml"
+          },
+          {
+            "amount": "653",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

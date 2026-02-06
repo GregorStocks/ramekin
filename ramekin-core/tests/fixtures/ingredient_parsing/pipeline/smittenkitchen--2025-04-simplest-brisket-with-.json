@@ -1,0 +1,127 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2025-04-simplest-brisket-with-",
+  "ingredients": [
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "One (6-pound or 2.75 kg) first-cut beef brisket",
+      "expected": {
+        "item": "first-cut beef brisket",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "2.75",
+            "unit": "kg"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Vegetable oil",
+      "expected": {
+        "item": "Vegetable oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 pounds (1.35 kg) of yellow onions (about 8 medium)",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.35",
+            "unit": "kg"
+          },
+          {
+            "amount": "8",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 garlic cloves, peeled and smashed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 tablespoons (65 grams) tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 to 1 1/2 pounds (455 to 680 grams) thick carrots, peeled, trimmed, and cut into 1-inch chunks",
+      "expected": {
+        "item": "1/2 pounds thick carrots, peeled, trimmed, and cut into 1-inch chunks",
+        "measurements": [
+          {
+            "amount": "1 to 1",
+            "unit": null
+          },
+          {
+            "amount": "455 to 680",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

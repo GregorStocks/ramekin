@@ -1,0 +1,127 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-05-zucchini-carpaccio-sal",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pound zucchini (about 3 large) or a mix of thin summer squash",
+      "expected": {
+        "item": "zucchini or a mix of thin summer squash",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": "large"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 pound arugula, stems discarded and leaves cut into 1/2-inch-wide strips (6 cups), or baby arugula",
+      "expected": {
+        "item": "arugula, stems discarded and leaves cut into 1/2-inch-wide strips, or baby arugula",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 ounce parmesan, coarsely grated (on large holes of a box grater; about 1/2 cup) or shaved with a vegetable peeler",
+      "expected": {
+        "item": "parmesan",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely grated or shaved with a vegetable peeler",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Juice of one lemon",
+      "expected": {
+        "item": "Juice of one lemon",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

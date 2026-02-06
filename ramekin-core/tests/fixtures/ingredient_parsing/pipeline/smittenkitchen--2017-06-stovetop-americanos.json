@@ -1,0 +1,29 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2017-06-stovetop-americanos",
+  "ingredients": [
+    {
+      "raw": "Water to fill pot without going over valve (about 1 1/2 cups)",
+      "expected": {
+        "item": "Water to fill pot without going over valve",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "About 5 tablespoons ground espresso powder",
+      "expected": {
+        "item": "About 5 tablespoons ground espresso powder",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

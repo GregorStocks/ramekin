@@ -1,0 +1,60 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-07-raspberry-brown-sugar-",
+  "ingredients": [
+    {
+      "raw": "1 pint (2 cups) fresh raspberries (or your choice of berry)",
+      "expected": {
+        "item": "fresh raspberries (or your choice of berry)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pint (2 cups) sour cream (or crème fraîche)",
+      "expected": {
+        "item": "sour cream (or crème fraîche)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (190 grams) dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2018-04-asparagus-and-egg-sala",
+  "ingredients": [
+    {
+      "raw": "4 large eggs, cold from fridge",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "cold from fridge",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup (1 ounce or 30 grams) grated parmesan cheese",
+      "expected": {
+        "item": "grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup (2 ounces or 55 grams) finely chopped lightly well-toasted walnuts",
+      "expected": {
+        "item": "finely chopped lightly well-toasted walnuts",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 teaspoon finely grated lemon zest",
+      "expected": {
+        "item": "finely grated lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Dried chile flakes",
+      "expected": {
+        "item": "Dried chile flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 pound asparagus, any thickness, tough ends trimmed",
+      "expected": {
+        "item": "asparagus, any thickness",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "tough ends trimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "About 1/4 cup fresh lemon juice",
+      "expected": {
+        "item": "About 1/4 cup fresh lemon juice",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup lightly packed fresh mint leaves, chopped",
+      "expected": {
+        "item": "lightly packed fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil, preferably extra-virgin",
+      "expected": {
+        "item": "olive oil, preferably extra-virgin",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

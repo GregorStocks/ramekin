@@ -1,0 +1,191 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2021-11-fall-bliss-salad",
+  "ingredients": [
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1-pound (455 grams) honeynut squash, peeled, seeded, and sliced thin (¼-inch)",
+      "expected": {
+        "item": "-pound honeynut squash, peeled, seeded",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "and sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 medium (4 ounces) shallots, halved lengthwise and peeled",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "halved lengthwise and peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 ounces (225 grams) kale or spinach leaves, torn or chopped into bit-sized pieces",
+      "expected": {
+        "item": "kale or spinach leaves",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "torn or chopped into bit-sized pieces",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 grams) sherry vinegar or balsamic vinegar, plus more to taste",
+      "expected": {
+        "item": "sherry vinegar or balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon smooth dijon mustard",
+      "expected": {
+        "item": "smooth dijon mustard",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons water, as needed",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "as needed",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup pomegranate arils",
+      "expected": {
+        "item": "pomegranate arils",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 ounces (55 grams) soft goat cheese (chèvre), crumbled",
+      "expected": {
+        "item": "soft goat cheese (chèvre)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup (60 grams) toasted, salted pepitas (see Note)",
+      "expected": {
+        "item": "toasted, salted pepitas (see Note)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

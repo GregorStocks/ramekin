@@ -148,7 +148,10 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
 
 generate-test-urls: ## Generate test URL list from top recipe sites
-	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
+	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json \
+		$(if $(SITE),--site $(SITE),) \
+		$(if $(MIN_YEAR),--min-year $(MIN_YEAR),) \
+		$(if $(NO_LIMIT),--no-limit,)
 
 pipeline: ## Run pipeline for test URLs and generate reports (offline by default, use OFFLINE=false to enable network)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \

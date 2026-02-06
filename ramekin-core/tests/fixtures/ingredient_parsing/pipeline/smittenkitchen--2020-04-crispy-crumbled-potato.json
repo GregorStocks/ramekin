@@ -1,0 +1,52 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2020-04-crispy-crumbled-potato",
+  "ingredients": [
+    {
+      "raw": "4 medium/large Russet potatoes",
+      "expected": {
+        "item": "medium/large Russet potatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups vegetable or peanut oil",
+      "expected": {
+        "item": "vegetable or peanut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Finishes of your choice (see suggestions in post)",
+      "expected": {
+        "item": "Finishes of your choice (see suggestions in post)",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

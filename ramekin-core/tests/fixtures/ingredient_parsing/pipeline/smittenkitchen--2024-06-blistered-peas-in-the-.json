@@ -1,0 +1,88 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2024-06-blistered-peas-in-the-",
+  "ingredients": [
+    {
+      "raw": "1 pound fresh English or sweet peas, still in their pods",
+      "expected": {
+        "item": "fresh English or sweet peas, still in their pods",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper or red pepper flakes",
+      "expected": {
+        "item": "Freshly ground black pepper or red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Finely grated zest and a few wedges of one lemon",
+      "expected": {
+        "item": "Finely grated zest and a few wedges of one lemon",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Handful mint leaves, chopped (optional)",
+      "expected": {
+        "item": "mint leaves, chopped",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup crumbled ricotta salata or feta (optional)",
+      "expected": {
+        "item": "crumbled ricotta salata or feta",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

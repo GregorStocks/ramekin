@@ -1,0 +1,105 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2022-11-green-angel-hair-with-",
+  "ingredients": [
+    {
+      "raw": "1/2 cup (4 ounces or 115 grams) salted or unsalted butter, sliced into a few pieces",
+      "expected": {
+        "item": "salted or unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced into a few pieces",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large head garlic, halved crosswise",
+      "expected": {
+        "item": "head garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved crosswise",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "5 ounces (140 grams) baby spinach",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound (455 grams) thin spaghetti such as angel hair or capellini",
+      "expected": {
+        "item": "thin spaghetti such as angel hair or capellini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pecorino romano, to finish",
+      "expected": {
+        "item": "Pecorino romano, to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}
