@@ -1667,7 +1667,112 @@ const IGNORED_LINE_PREFIXES: &[&str] = &[
     "tips:",
 ];
 
-/// Check if a line should be completely ignored (scraper artifact).
+/// Equipment phrases that indicate a line is about kitchen tools, not ingredients.
+/// Only compound phrases to avoid false positives (e.g., bare "pan" would match "pan spray").
+const EQUIPMENT_PHRASES: &[&str] = &[
+    "bundt pan",
+    "cake pan",
+    "tart pan",
+    "roasting pan",
+    "baking pan",
+    "loaf pan",
+    "sheet pan",
+    "baking sheet",
+    "cookie sheet",
+    "muffin tin",
+    "dutch oven",
+    "slow cooker",
+    "stand mixer",
+    "hand mixer",
+    "immersion blender",
+    "food processor",
+    "pastry bag",
+    "piping bag",
+    "pastry tip",
+    "piping tip",
+    "star tip",
+    "saucepan",
+    "stockpot",
+    "skillet",
+    "electric mixer",
+];
+
+/// Words that indicate a line is about food/ingredients even if it mentions equipment.
+const INGREDIENT_INDICATOR_WORDS: &[&str] = &[
+    "oil",
+    "butter",
+    "spray",
+    "drippings",
+    "grease",
+    "greasing",
+    "paper",
+    "parchment",
+    "wrap",
+    "flour",
+    "sugar",
+    "salt",
+    "water",
+    "cream",
+    "milk",
+    "egg",
+    "bread",
+    "crumb",
+    "seed",
+    "nut",
+    "walnut",
+    "pistachio",
+    "pecan",
+    "crab",
+    "meat",
+    "pork",
+    "beef",
+    "chicken",
+    "turkey",
+    "cheese",
+    "onion",
+    "garlic",
+    "pepper",
+    "tomato",
+    "carrot",
+    "coconut",
+    "lard",
+    "frosting",
+    "batter",
+    "dough",
+    "beet",
+];
+
+/// Check if a word appears at a word boundary in the text.
+/// The word must start at a word boundary (beginning of text or preceded by non-alpha char),
+/// but may be followed by additional letters (to allow plurals like "seeds" matching "seed").
+fn contains_word_prefix(text: &str, word: &str) -> bool {
+    for (i, _) in text.match_indices(word) {
+        let before_ok = i == 0 || !text.as_bytes()[i - 1].is_ascii_alphabetic();
+        if before_ok {
+            return true;
+        }
+    }
+    false
+}
+
+/// Check if a line describes kitchen equipment rather than an ingredient.
+fn is_equipment_line(lower: &str) -> bool {
+    // Equipment phrases can match as substrings (they're multi-word and specific enough)
+    if !EQUIPMENT_PHRASES.iter().any(|&eq| lower.contains(eq)) {
+        return false;
+    }
+    // Ingredient indicators must match as whole words to avoid false matches
+    // (e.g., "foil" should not match "oil")
+    if INGREDIENT_INDICATOR_WORDS
+        .iter()
+        .any(|&ing| contains_word_prefix(lower, ing))
+    {
+        return false;
+    }
+    true
+}
+
+/// Check if a line should be completely ignored (scraper artifact or equipment).
 /// Returns true if the line should be skipped entirely.
 pub fn should_ignore_line(raw: &str) -> bool {
     let trimmed = raw.trim();
@@ -1685,6 +1790,11 @@ pub fn should_ignore_line(raw: &str) -> bool {
         if lower.starts_with(prefix) {
             return true;
         }
+    }
+
+    // Check if the line is purely about equipment/tools
+    if is_equipment_line(&lower) {
+        return true;
     }
 
     false
@@ -2050,6 +2160,63 @@ mod tests {
         assert!(!should_ignore_line("1 cup flour"));
         assert!(!should_ignore_line("salt to taste"));
         assert!(!should_ignore_line("For the sauce:"));
+    }
+
+    #[test]
+    fn test_should_ignore_equipment_lines() {
+        // Equipment-only lines should be ignored
+        assert!(should_ignore_line(
+            "A 12-cup Bundt pan, a pastry bag, and a large star tip"
+        ));
+        assert!(should_ignore_line(
+            "A 9½\"-diameter tart pan with removable bottom"
+        ));
+        assert!(should_ignore_line(
+            "Large dutch oven, pot, or high-sided skillet."
+        ));
+        assert!(should_ignore_line(
+            "A dutch oven or large heavy-bottomed pot"
+        ));
+        assert!(should_ignore_line(
+            "9  \" wide cake pan with 2\" tall sides."
+        ));
+        assert!(should_ignore_line(
+            "2 9x13 metal baking pans or (1) large roasting pan lined with foil."
+        ));
+        assert!(should_ignore_line("11.38 x 16.5 lipped baking pan"));
+        assert!(should_ignore_line("6 QT Slow Cooker"));
+        assert!(should_ignore_line(
+            "Hand immersion blender (preferred & easier, or food processor, or blender)"
+        ));
+        assert!(should_ignore_line("stand mixer"));
+        assert!(should_ignore_line("food processor"));
+        assert!(should_ignore_line(
+            "1 large disposable aluminum roasting pan (if using charcoal)"
+        ));
+
+        // Ingredient lines mentioning equipment should NOT be ignored
+        assert!(!should_ignore_line("Pan drippings from roasting pan"));
+        assert!(!should_ignore_line("oil, for the pan"));
+        assert!(!should_ignore_line("butter for the pan"));
+        assert!(!should_ignore_line("pan spray"));
+        assert!(!should_ignore_line("Parchment paper"));
+        assert!(!should_ignore_line(
+            "4 18×13-inch (approximately) pieces parchment paper"
+        ));
+        assert!(!should_ignore_line(
+            "8  16-inch long pieces of Reynolds Wrap Heavy Duty Foil"
+        ));
+        assert!(!should_ignore_line("Vegetable oil, for greasing pan"));
+        assert!(!should_ignore_line("2 cups pan drippings liquid"));
+        assert!(!should_ignore_line(
+            "ghee (butter or coconut oil (to coat skillet))"
+        ));
+        assert!(!should_ignore_line(
+            "2 cups panko breadcrumbs, pulsed in a food processor"
+        ));
+        assert!(!should_ignore_line(
+            "1 tsp caraway seeds, (toasted and ground (use food processor))"
+        ));
     }
 
     #[test]

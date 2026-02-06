@@ -199,34 +199,6 @@
         "note": "whisked",
         "category": "Dairy & Eggs"
       }
-    },
-    {
-      "raw": "Large dutch oven, pot, or high-sided skillet.",
-      "expected": {
-        "item": "dutch oven, pot, or high-sided skillet.",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "large"
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
-    },
-    {
-      "raw": "6 QT Slow Cooker",
-      "expected": {
-        "item": "Slow Cooker",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": "quart"
-          }
-        ],
-        "note": null,
-        "category": "Other"
-      }
     }
   ]
 }
